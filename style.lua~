@@ -154,14 +154,6 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["railway"]   == "abandoned"  )) then
       keyvalues["railway"] = "disused"
    end
-
--- ----------------------------------------------------------------------------
--- Remove road names that are not signed on the ground
--- ----------------------------------------------------------------------------
-   if (keyvalues["name:signed"] == "no") then
-      keyvalues["name"] = nil
-   end
-
 -- ----------------------------------------------------------------------------
 -- End of AJT additions.
 -- ----------------------------------------------------------------------------
