@@ -100,6 +100,12 @@ function filter_tags_generic(keyvalues, nokeys)
       keyvalues["highway"] = "path"
    end
 
+   if ((keyvalues["highway"] == "unclassified") and
+       (keyvalues["surface"] == "unpaved"     )) then
+      keyvalues["highway"] = "track"
+      keyvalues["tracktype"] = "grade1"
+   end
+
    if ((keyvalues["designation"] == "unclassified_county_road") or
        (keyvalues["designation"] == "unclassified_country_road") or
        (keyvalues["designation"] == "unclassified_highway")) then
