@@ -100,6 +100,9 @@ function filter_tags_generic(keyvalues, nokeys)
       keyvalues["highway"] = "path"
    end
 
+-- ----------------------------------------------------------------------------
+-- This currently doesn't work - seems to be processed twice?
+-- ----------------------------------------------------------------------------
    if ((keyvalues["highway"] == "unclassified") and
        (keyvalues["surface"] == "unpaved"     )) then
       keyvalues["highway"] = "track"
@@ -159,6 +162,15 @@ function filter_tags_generic(keyvalues, nokeys)
    if (( keyvalues["railway"]   == "dismantled" ) or
        ( keyvalues["railway"]   == "abandoned"  )) then
       keyvalues["railway"] = "disused"
+   end
+
+-- ----------------------------------------------------------------------------
+-- tourism=bed_and_breakfast was removed by the "style police" in
+-- https://github.com/gravitystorm/openstreetmap-carto/pull/695
+-- I'll pretend that they're "guest_house".
+-- ----------------------------------------------------------------------------
+   if ( keyvalues["tourism"]   == "bed_and_breakfast" ) then
+      keyvalues["tourism"] = "guest_house"
    end
 
 -- ----------------------------------------------------------------------------
