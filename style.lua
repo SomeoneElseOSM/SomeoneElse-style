@@ -181,10 +181,20 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
--- Remove road refs that are not signed on the ground
+-- Handle dodgy access tags.  Note that this doesn't affect my "designation"
+-- processing, but may be used by the main style, as "foot", "bicycle" and 
+-- "horse" are all in as columns.
 -- ----------------------------------------------------------------------------
-   if (keyvalues["ref:signed"] == "no") then
-      keyvalues["ref"] = nil
+   if (keyvalues["access:foot"] == "yes") then
+      keyvalues["foot"] = "yes"
+   end
+
+   if (keyvalues["access:bicycle"] == "yes") then
+      keyvalues["bicycle"] = "yes"
+   end
+
+   if (keyvalues["access:horse"] == "yes") then
+      keyvalues["horse"] = "yes"
    end
 
 -- ----------------------------------------------------------------------------
