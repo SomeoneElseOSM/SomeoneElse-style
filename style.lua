@@ -183,6 +183,13 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- natural=tree_row was added to the standard style file after my version
+-- ----------------------------------------------------------------------------
+   if ( keyvalues["natural"]   == "tree_row" ) then
+      keyvalues["barrier"] = "hedge"
+   end
+
+-- ----------------------------------------------------------------------------
 -- Remove road names that are not signed on the ground
 -- ----------------------------------------------------------------------------
    if (keyvalues["name:signed"] == "no") then
