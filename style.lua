@@ -151,17 +151,28 @@ function filter_tags_generic(keyvalues, nokeys)
 
 -- ----------------------------------------------------------------------------
 -- Pretend add landuse=industrial to some industrial sub-types to force 
--- name rendering.
+-- name rendering.  Similarly, some commercial and leisure.
 -- ----------------------------------------------------------------------------
    if ((keyvalues["man_made"]   == "works") or 
        (keyvalues["man_made"]   == "wastewater_plant") or 
+       (keyvalues["industrial"] == "depot") or 
        (keyvalues["industrial"] == "warehouse")) then
       keyvalues["landuse"] = "industrial"
    end
 
    if ((keyvalues["amenity"]   == "car_wash") or
-       (keyvalues["amenity"]   == "conference_centre")) then
+       (keyvalues["amenity"]   == "conference_centre") or
+       (keyvalues["amenity"]   == "nursing_home") or
+       (keyvalues["amenity"]   == "care_home") or
+       (keyvalues["shop"]      == "truck") or
+       (keyvalues["commercial"] == "office") or
+       (keyvalues["office"]    == "hvac") or
+       (keyvalues["office"]    == "auctioneer")) then
       keyvalues["landuse"] = "commercial"
+   end
+
+   if (keyvalues["leisure"]   == "fishing") then
+      keyvalues["leisure"] = "park"
    end
 
 -- ----------------------------------------------------------------------------
@@ -171,6 +182,13 @@ function filter_tags_generic(keyvalues, nokeys)
    if (( keyvalues["railway"]   == "dismantled" ) or
        ( keyvalues["railway"]   == "abandoned"  )) then
       keyvalues["railway"] = "disused"
+   end
+
+-- ----------------------------------------------------------------------------
+-- Railway construction
+-- ----------------------------------------------------------------------------
+   if ( keyvalues["railway"]   == "proposed" ) then
+      keyvalues["railway"] = "construction"
    end
 
 -- ----------------------------------------------------------------------------
