@@ -192,12 +192,29 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Historic canal
+-- ----------------------------------------------------------------------------
+   if ( keyvalues["historic"]   == "canal" ) then
+      keyvalues["waterway"] = "derelict_canal"
+   end
+
+-- ----------------------------------------------------------------------------
 -- tourism=bed_and_breakfast was removed by the "style police" in
 -- https://github.com/gravitystorm/openstreetmap-carto/pull/695
 -- I'll pretend that they're "guest_house".
 -- ----------------------------------------------------------------------------
    if ( keyvalues["tourism"]   == "bed_and_breakfast" ) then
       keyvalues["tourism"] = "guest_house"
+   end
+
+-- ----------------------------------------------------------------------------
+-- Things that are both hotels and pubs should render as pubs
+-- https://github.com/gravitystorm/openstreetmap-carto/pull/695
+-- I'll pretend that they're "guest_house".
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["amenity"]   == "pub"   ) and
+       ( keyvalues["tourism"]   == "hotel" )) then
+      keyvalues["tourism"] = nil
    end
 
 -- ----------------------------------------------------------------------------
