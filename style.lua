@@ -252,6 +252,42 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- render barrier=kissing_gate as barrier=gate for now
+-- render barrier=swing_gate as barrier=gate (it's a gate)
+-- render barrier=bar as barrier=gate (Norfolk mapped swing_gate)
+-- render barrier=footgate as barrier=gate, since that's what it means
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["barrier"]   == "kissing_gate"          )  or
+       ( keyvalues["barrier"]   == "swing_gate"            )  or
+       ( keyvalues["barrier"]   == "bar"                   )  or
+       ( keyvalues["barrier"]   == "footgate"              )  or
+       ( keyvalues["barrier"]   == "hampshire_gate"        )  or
+       ( keyvalues["barrier"]   == "turnstile"             )  or
+       ( keyvalues["barrier"]   == "full-height_turnstile" )  or
+       ( keyvalues["barrier"]   == "bump_gate"             )  or
+       ( keyvalues["barrier"]   == "lytch_gate"            )  or
+       ( keyvalues["barrier"]   == "horse_jump"            )  or
+       ( keyvalues["barrier"]   == "flood_gate"            )  or
+       ( keyvalues["barrier"]   == "chain"                 )) then
+      keyvalues["barrier"] = "gate"
+   end
+
+-- ----------------------------------------------------------------------------
+-- Note that there is a catch-all for barriers so there's no need to 
+-- specifically catch e.g. "barrier=wire_fence" on ways
+-- ----------------------------------------------------------------------------
+
+-- ----------------------------------------------------------------------------
+-- render barrier=v_stile as barrier=stile
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["barrier"]   == "v_stile"         )  or
+       ( keyvalues["barrier"]   == "squeeze_stile"   )  or
+       ( keyvalues["barrier"]   == "squeeze_point"   )  or
+       ( keyvalues["barrier"]   == "step_over"       )) then
+      keyvalues["barrier"] = "stile"
+   end
+
+-- ----------------------------------------------------------------------------
 -- natural=tree_row was added to the standard style file after my version.
 -- I'm not convinced that it makes sense to distinguish from hedge, so I'll
 -- just display as hedge.
