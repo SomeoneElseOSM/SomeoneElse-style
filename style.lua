@@ -136,6 +136,8 @@ function filter_tags_generic(keyvalues, nokeys)
 
 -- ----------------------------------------------------------------------------
 -- Remove admin boundaries from the map
+-- I do this because I'm simply not interest in admin boundaries and I'm lucky
+-- enough to live in a place where I don't have to be.
 -- ----------------------------------------------------------------------------
    if (keyvalues["boundary"] == "administrative") then
       keyvalues["boundary"] = nil
@@ -176,8 +178,9 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
--- As of 21st May, abandoned ralways are no longer rendered in the standard
--- style.  I'll pretend that they're "disused".
+-- As of 21st May 2014, abandoned ralways are no longer rendered in the 
+-- standard style.  I'll pretend that they're "disused" so that they appear
+-- on the map.  Abandoned railways are often major landscape features.
 -- ----------------------------------------------------------------------------
    if (( keyvalues["railway"]   == "dismantled" ) or
        ( keyvalues["railway"]   == "abandoned"  )) then
@@ -186,6 +189,7 @@ function filter_tags_generic(keyvalues, nokeys)
 
 -- ----------------------------------------------------------------------------
 -- Railway construction
+-- This is done mostly to make the HS2 show up.
 -- ----------------------------------------------------------------------------
    if ( keyvalues["railway"]   == "proposed" ) then
       keyvalues["railway"] = "construction"
@@ -193,9 +197,39 @@ function filter_tags_generic(keyvalues, nokeys)
 
 -- ----------------------------------------------------------------------------
 -- Historic canal
+-- A former canal can, like an abandoned railway, still be a major
+-- physical feature.
 -- ----------------------------------------------------------------------------
    if ( keyvalues["historic"]   == "canal" ) then
       keyvalues["waterway"] = "derelict_canal"
+   end
+
+-- ----------------------------------------------------------------------------
+-- Supermarkets as normal buildings
+-- In the version of OSM-carto that I use this with, Supermarkets would 
+-- otherwise display as pink, which does not show up over pink retail landuse.
+-- ----------------------------------------------------------------------------
+   if ( keyvalues["building"]   == "supermarket" ) then
+      keyvalues["building"] = "yes"
+   end
+
+-- ----------------------------------------------------------------------------
+-- highway=byway to track
+-- The "bywayness" of something should be handled by designation now.  byway
+-- isn't otherwise rendered (and really should no longer be used), so change 
+-- to track (which is what it probably will be).
+-- ----------------------------------------------------------------------------
+   if ( keyvalues["highway"]   == "byway" ) then
+      keyvalues["highway"] = "track"
+   end
+
+-- ----------------------------------------------------------------------------
+-- highway=living_street to residential
+-- This is done because it's a difference I don't want to draw attention to -
+-- they aren't "different enough to make them render differently".
+-- ----------------------------------------------------------------------------
+   if ( keyvalues["highway"]   == "living_street" ) then
+      keyvalues["highway"] = "residential"
    end
 
 -- ----------------------------------------------------------------------------
@@ -208,9 +242,9 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
--- Things that are both hotels and pubs should render as pubs
--- https://github.com/gravitystorm/openstreetmap-carto/pull/695
--- I'll pretend that they're "guest_house".
+-- Things that are both hotels and pubs should render as pubs, because I'm 
+-- far more likely to be looking for the latter than the former.
+-- This is done by removing the tourism tag for them.
 -- ----------------------------------------------------------------------------
    if (( keyvalues["amenity"]   == "pub"   ) and
        ( keyvalues["tourism"]   == "hotel" )) then
@@ -218,7 +252,9 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
--- natural=tree_row was added to the standard style file after my version
+-- natural=tree_row was added to the standard style file after my version.
+-- I'm not convinced that it makes sense to distinguish from hedge, so I'll
+-- just display as hedge.
 -- ----------------------------------------------------------------------------
    if ( keyvalues["natural"]   == "tree_row" ) then
       keyvalues["barrier"] = "hedge"
