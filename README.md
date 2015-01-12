@@ -33,3 +33,5 @@ The extra changes here generally fall into one of the following categories:
 - Handle some mappers' "special" tags.  Where it's obvious what something means (e.g. "access:foot" obviously means "foot") just change it.
 
 - Where tags collide, manually choose one of the pair to render (e.g. "amenity=pub" and "tourism=hotel" - I'm far more likely to be looking for a pub than a hotel, so show that symbol).
+
+- For barriers that are essentially either stiles or gates, display as either stile or gate.
