@@ -254,12 +254,10 @@ function filter_tags_generic(keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
 -- render barrier=kissing_gate as barrier=gate for now
 -- render barrier=swing_gate as barrier=gate (it's a gate)
--- render barrier=bar as barrier=gate (Norfolk mapped swing_gate)
 -- render barrier=footgate as barrier=gate, since that's what it means
 -- ----------------------------------------------------------------------------
    if (( keyvalues["barrier"]   == "kissing_gate"          )  or
        ( keyvalues["barrier"]   == "swing_gate"            )  or
-       ( keyvalues["barrier"]   == "bar"                   )  or
        ( keyvalues["barrier"]   == "footgate"              )  or
        ( keyvalues["barrier"]   == "hampshire_gate"        )  or
        ( keyvalues["barrier"]   == "turnstile"             )  or
@@ -267,9 +265,25 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["barrier"]   == "bump_gate"             )  or
        ( keyvalues["barrier"]   == "lytch_gate"            )  or
        ( keyvalues["barrier"]   == "horse_jump"            )  or
-       ( keyvalues["barrier"]   == "flood_gate"            )  or
-       ( keyvalues["barrier"]   == "chain"                 )) then
+       ( keyvalues["barrier"]   == "flood_gate"            )) then
       keyvalues["barrier"] = "gate"
+   end
+
+-- ----------------------------------------------------------------------------
+-- render barrier=bar as barrier=horse_stile (Norfolk)
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["barrier"]   == "bar"                   )  or
+       ( keyvalues["barrier"]   == "chain"                 )) then
+      keyvalues["barrier"] = "horse_stile"
+   end
+
+-- ----------------------------------------------------------------------------
+-- render barrier=bar as barrier=horse_stile (Norfolk)
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["barrier"]   == "chicane"               )  or
+       ( keyvalues["barrier"]   == "squeeze"               )  or
+       ( keyvalues["barrier"]   == "motorcycle_barrier"    )) then
+      keyvalues["barrier"] = "cycle_barrier"
    end
 
 -- ----------------------------------------------------------------------------
