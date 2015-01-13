@@ -178,6 +178,14 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- landuse=field is rarely used.  I tried unsuccessfully to change the colour 
+-- in the stylesheet so am mapping it here.
+-- ----------------------------------------------------------------------------
+   if (keyvalues["landuse"]   == "field") then
+      keyvalues["landuse"] = "farmland"
+   end
+
+-- ----------------------------------------------------------------------------
 -- As of 21st May 2014, abandoned ralways are no longer rendered in the 
 -- standard style.  I'll pretend that they're "disused" so that they appear
 -- on the map.  Abandoned railways are often major landscape features.
