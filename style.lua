@@ -310,6 +310,13 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- remove barrier=entrance as it's not really a barrier.
+-- ----------------------------------------------------------------------------
+   if ( keyvalues["barrier"]   == "entrance" ) then
+      keyvalues["barrier"] = nil
+   end
+
+-- ----------------------------------------------------------------------------
 -- natural=tree_row was added to the standard style file after my version.
 -- I'm not convinced that it makes sense to distinguish from hedge, so I'll
 -- just display as hedge.
