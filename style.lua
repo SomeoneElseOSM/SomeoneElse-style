@@ -241,6 +241,14 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- highway=escape to service
+-- There aren't many escape lanes mapped, but they do exist
+-- ----------------------------------------------------------------------------
+   if ( keyvalues["highway"]   == "escape" ) then
+      keyvalues["highway"] = "service"
+   end
+
+-- ----------------------------------------------------------------------------
 -- tourism=bed_and_breakfast was removed by the "style police" in
 -- https://github.com/gravitystorm/openstreetmap-carto/pull/695
 -- I'll pretend that they're "guest_house".
