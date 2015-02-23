@@ -365,6 +365,20 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Masts etc.  Consolidate various sorts of masts and towers into the "mast"
+-- group.  Note that this includes "tower" temporarily.
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["man_made"] == "phone_mast"          )  or
+       ( keyvalues["man_made"] == "radio_mast"          )  or
+       ( keyvalues["man_made"] == "communications_mast" )  or
+       ( keyvalues["man_made"] == "communication_mast"  )  or
+       ( keyvalues["man_made"] == "tower"               )  or
+       ( keyvalues["man_made"] == "communications_tower" )) then
+      keyvalues["man_made"] = "mast"
+   end
+
+
+-- ----------------------------------------------------------------------------
 -- End of AJT additions.
 -- ----------------------------------------------------------------------------
 
