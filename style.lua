@@ -164,12 +164,17 @@ function filter_tags_generic(keyvalues, nokeys)
 -- Pretend add landuse=industrial to some industrial sub-types to force 
 -- name rendering.  Similarly, some commercial and leisure.
 -- ----------------------------------------------------------------------------
-   if ((keyvalues["man_made"]   == "works") or 
-       (keyvalues["man_made"]   == "wastewater_plant") or 
+   if ((keyvalues["man_made"]   == "wastewater_plant") or 
+       (keyvalues["man_made"]   == "petroleum_well") or 
        (keyvalues["industrial"] == "depot") or 
        (keyvalues["industrial"] == "warehouse") or
        (keyvalues["amenity"]    == "recycling") or
        (keyvalues["amenity"]    == "animal_shelter")) then
+      keyvalues["landuse"] = "industrial"
+   end
+
+   if ( keyvalues["man_made"]   == "works" ) then
+      keyvalues["man_made"] = nil
       keyvalues["landuse"] = "industrial"
    end
 
@@ -178,6 +183,7 @@ function filter_tags_generic(keyvalues, nokeys)
        (keyvalues["amenity"]    == "nursing_home") or
        (keyvalues["amenity"]    == "care_home") or
        (keyvalues["shop"]       == "truck") or
+       (keyvalues["shop"]       == "truck_repair") or
        (keyvalues["shop"]       == "garden_centre") or
        (keyvalues["shop"]       == "gates") or
        (keyvalues["commercial"] == "office") or
@@ -249,7 +255,8 @@ function filter_tags_generic(keyvalues, nokeys)
 -- In the version of OSM-carto that I use this with, Supermarkets would 
 -- otherwise display as pink, which does not show up over pink retail landuse.
 -- ----------------------------------------------------------------------------
-   if ( keyvalues["building"]   == "supermarket" ) then
+   if (( keyvalues["building"]   == "supermarket"  ) or
+       ( keyvalues["man_made"]   == "storage_tank" )) then
       keyvalues["building"] = "yes"
    end
 
