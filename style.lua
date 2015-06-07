@@ -135,6 +135,15 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Render narrow tertiary roads as unclassified
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["highway"] == "tertiary"   )  and
+       (( keyvalues["width"]  == "2"         )   or
+        ( keyvalues["width"]  == "3"         ))) then
+      keyvalues["highway"] = "unclassified"
+   end
+
+-- ----------------------------------------------------------------------------
 -- Remove admin boundaries from the map
 -- I do this because I'm simply not interest in admin boundaries and I'm lucky
 -- enough to live in a place where I don't have to be.
