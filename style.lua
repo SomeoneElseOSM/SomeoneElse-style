@@ -158,8 +158,8 @@ function filter_tags_generic(keyvalues, nokeys)
    if ((keyvalues["man_made"]   == "works") or 
        (keyvalues["man_made"]   == "wastewater_plant") or 
        (keyvalues["industrial"] == "depot") or 
-       (keyvalues["industrial"] == "warehouse")
-       (keyvalues["amenity"]    == "recycling")
+       (keyvalues["industrial"] == "warehouse") or
+       (keyvalues["amenity"]    == "recycling") or
        (keyvalues["amenity"]    == "animal_shelter")) then
       keyvalues["landuse"] = "industrial"
    end
