@@ -158,18 +158,23 @@ function filter_tags_generic(keyvalues, nokeys)
    if ((keyvalues["man_made"]   == "works") or 
        (keyvalues["man_made"]   == "wastewater_plant") or 
        (keyvalues["industrial"] == "depot") or 
-       (keyvalues["industrial"] == "warehouse")) then
+       (keyvalues["industrial"] == "warehouse")
+       (keyvalues["amenity"]    == "recycling")
+       (keyvalues["amenity"]    == "animal_shelter")) then
       keyvalues["landuse"] = "industrial"
    end
 
-   if ((keyvalues["amenity"]   == "car_wash") or
-       (keyvalues["amenity"]   == "conference_centre") or
-       (keyvalues["amenity"]   == "nursing_home") or
-       (keyvalues["amenity"]   == "care_home") or
-       (keyvalues["shop"]      == "truck") or
+   if ((keyvalues["amenity"]    == "car_wash") or
+       (keyvalues["amenity"]    == "conference_centre") or
+       (keyvalues["amenity"]    == "nursing_home") or
+       (keyvalues["amenity"]    == "care_home") or
+       (keyvalues["shop"]       == "truck") or
+       (keyvalues["shop"]       == "garden_centre") or
+       (keyvalues["shop"]       == "gates") or
        (keyvalues["commercial"] == "office") or
-       (keyvalues["office"]    == "hvac") or
-       (keyvalues["office"]    == "auctioneer")) then
+       (keyvalues["office"]     == "hvac") or
+       (keyvalues["office"]     == "auctioneer")
+       (keyvalues["landuse"]     == "churchyard")) then
       keyvalues["landuse"] = "commercial"
    end
 
