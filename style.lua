@@ -158,7 +158,8 @@ function filter_tags_generic(keyvalues, nokeys)
    if ((keyvalues["man_made"]   == "works") or 
        (keyvalues["man_made"]   == "wastewater_plant") or 
        (keyvalues["industrial"] == "depot") or 
-       (keyvalues["industrial"] == "warehouse")) then
+       (keyvalues["industrial"] == "warehouse") or
+       (keyvalues["amenity"] == "animal_shelter")) then
       keyvalues["landuse"] = "industrial"
    end
 
@@ -255,6 +256,13 @@ function filter_tags_generic(keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
    if ( keyvalues["tourism"]   == "bed_and_breakfast" ) then
       keyvalues["tourism"] = "guest_house"
+   end
+
+-- ----------------------------------------------------------------------------
+-- Nightclubs wouldn't ordinarily be rendered - render them as bars.
+-- ----------------------------------------------------------------------------
+   if ( keyvalues["amenity"]   == "nightclub"   ) then
+      keyvalues["amenity"] = "bar"
    end
 
 -- ----------------------------------------------------------------------------
