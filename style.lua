@@ -191,7 +191,25 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
--- As of 21st May 2014, abandoned ralways are no longer rendered in the 
+-- Attempt to do something sensible with trees
+-- ----------------------------------------------------------------------------
+   if (keyvalues["landuse"]   == "forest") then
+      keyvalues["landuse"] = nil
+      keyvalues["natural"] = "wood"
+   end
+
+   if (keyvalues["leaf_type"]   == "broadleaved") then
+      keyvalues["landuse"] = nil
+      keyvalues["natural"] = "broadleaved"
+   end
+
+   if (keyvalues["leaf_type"]   == "needleleaved") then
+      keyvalues["landuse"] = nil
+      keyvalues["natural"] = "needleleaved"
+   end
+
+-- ----------------------------------------------------------------------------
+-- As of 21st May 2014, abandoned railways are no longer rendered in the 
 -- standard style.  I'll pretend that they're "disused" so that they appear
 -- on the map.  Abandoned railways are often major landscape features.
 -- ----------------------------------------------------------------------------
@@ -270,6 +288,13 @@ function filter_tags_generic(keyvalues, nokeys)
    if (( keyvalues["amenity"]   == "pub"   ) and
        ( keyvalues["tourism"]   == "hotel" )) then
       keyvalues["tourism"] = nil
+   end
+
+-- ----------------------------------------------------------------------------
+-- Nightclubs wouldn't ordinarily be rendered - render them as bar
+-- ----------------------------------------------------------------------------
+   if ( keyvalues["amenity"]   == "nightclub"   ) then
+      keyvalues["amenity"] = "bar"
    end
 
 -- ----------------------------------------------------------------------------
