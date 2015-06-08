@@ -226,6 +226,26 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Attempt to do something sensible with pubs
+-- Pubs that serve real_ale get a nice IPA, ones that don't a yellowy lager,
+-- closed pubs an "X".  Others get the default empty glass.
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["real_ale"] ~= nil     ) and
+       ( keyvalues["real_ale"] ~= "maybe" ) and
+       ( keyvalues["real_ale"] ~= "no"    )) then
+      keyvalues["amenity"] = "realaleyes"
+   end
+
+   if (keyvalues["real_ale"] == "no") then
+      keyvalues["amenity"] = "realaleno"
+   end
+
+   if (keyvalues["disused:amenity"] == "pub") then
+      keyvalues["amenity"] = "pubdead"
+   end
+
+
+-- ----------------------------------------------------------------------------
 -- As of 21st May 2014, abandoned railways are no longer rendered in the 
 -- standard style.  I'll pretend that they're "disused" so that they appear
 -- on the map.  Abandoned railways are often major landscape features.
