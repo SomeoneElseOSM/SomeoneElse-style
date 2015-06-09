@@ -225,6 +225,11 @@ function filter_tags_generic(keyvalues, nokeys)
       keyvalues["natural"] = "needleleaved"
    end
 
+   if (keyvalues["leaf_type"]   == "mixed") then
+      keyvalues["landuse"] = nil
+      keyvalues["natural"] = "mixedleaved"
+   end
+
 -- ----------------------------------------------------------------------------
 -- Attempt to do something sensible with pubs
 -- Pubs that serve real_ale get a nice IPA, ones that don't a yellowy lager,
