@@ -164,12 +164,13 @@ function filter_tags_generic(keyvalues, nokeys)
 -- Pretend add landuse=industrial to some industrial sub-types to force 
 -- name rendering.  Similarly, some commercial and leisure.
 -- ----------------------------------------------------------------------------
-   if ((keyvalues["man_made"]   == "wastewater_plant") or 
-       (keyvalues["man_made"]   == "petroleum_well") or 
-       (keyvalues["industrial"] == "depot") or 
-       (keyvalues["industrial"] == "warehouse") or
-       (keyvalues["amenity"]    == "recycling") or
-       (keyvalues["amenity"]    == "animal_shelter")) then
+   if (( keyvalues["man_made"]   == "wastewater_plant" ) or 
+       ( keyvalues["man_made"]   == "petroleum_well"   ) or 
+       ( keyvalues["industrial"] == "depot"            ) or 
+       ( keyvalues["industrial"] == "warehouse"        ) or
+       ( keyvalues["amenity"]    == "recycling"        ) or
+       ( keyvalues["amenity"]    == "animal_boarding"  ) or
+       ( keyvalues["amenity"]    == "animal_shelter"   )) then
       keyvalues["landuse"] = "industrial"
    end
 
