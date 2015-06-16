@@ -195,7 +195,10 @@ function filter_tags_generic(keyvalues, nokeys)
       keyvalues["landuse"] = "commercial"
    end
 
-   if (keyvalues["leisure"]   == "fishing") then
+   if (( keyvalues["amenity"]   == "scout_camp"     ) or
+       ( keyvalues["landuse"]   == "scout_camp"     ) or	
+       ( keyvalues["leisure"]   == "fishing"        ) or
+       ( keyvalues["leisure"]   == "outdoor_centre" )) then
       keyvalues["leisure"] = "park"
    end
 
