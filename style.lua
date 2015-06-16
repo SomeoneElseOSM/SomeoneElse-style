@@ -89,7 +89,7 @@ function filter_tags_generic(keyvalues, nokeys)
 -- These changes do mean that the the resulting database isn't any use for
 -- anything other than rendering, but they do allow designations to be 
 -- displayed without any stylesheet changes.  Also, some information is
--- lost in the process (e.g. track or steps vs path).
+-- lost in the process (e.g. track s path).
 -- ----------------------------------------------------------------------------
 
    keyvalues["tracktype"] = nil
@@ -100,11 +100,8 @@ function filter_tags_generic(keyvalues, nokeys)
       keyvalues["highway"] = "path"
    end
 
--- ----------------------------------------------------------------------------
--- This currently doesn't work - seems to be processed twice?
--- ----------------------------------------------------------------------------
-   if ((keyvalues["highway"] == "unclassified") and
-       (keyvalues["surface"] == "unpaved"     )) then
+   if (( keyvalues["highway"] == "unclassified" ) and
+       ( keyvalues["surface"] == "unpaved"      )) then
       keyvalues["highway"] = "track"
       keyvalues["tracktype"] = "grade1"
    end
@@ -132,6 +129,17 @@ function filter_tags_generic(keyvalues, nokeys)
 
    if (keyvalues["designation"] == "public_footpath") then
       keyvalues["highway"] = "footway"
+   end
+
+   if ((  keyvalues["access"]      == "private"                    ) and
+       (( keyvalues["designation"] == "public_footpath"           )  or
+        ( keyvalues["designation"] == "public_bridleway"          )  or
+        ( keyvalues["designation"] == "restricted_byway"          )  or
+        ( keyvalues["designation"] == "byway_open_to_all_traffic" )  or
+        ( keyvalues["designation"] == "unclassified_county_road"  )  or
+        ( keyvalues["designation"] == "unclassified_country_road" )  or
+        ( keyvalues["designation"] == "unclassified_highway"      ))) then
+      keyvalues["access"] = nil
    end
 
 -- ----------------------------------------------------------------------------
