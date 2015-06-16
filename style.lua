@@ -356,6 +356,14 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Where military has been overtagged over natural=wood, remove military.
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["natural"]   == "wood"        ) and
+       ( keyvalues["military"]  == "danger_area" )) then
+      keyvalues["military"] = nil
+   end
+
+-- ----------------------------------------------------------------------------
 -- Nightclubs wouldn't ordinarily be rendered - render them as bar
 -- ----------------------------------------------------------------------------
    if ( keyvalues["amenity"]   == "nightclub"   ) then
