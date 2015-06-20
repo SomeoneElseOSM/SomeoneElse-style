@@ -349,8 +349,10 @@ function filter_tags_generic(keyvalues, nokeys)
 -- tourism=bed_and_breakfast was removed by the "style police" in
 -- https://github.com/gravitystorm/openstreetmap-carto/pull/695
 -- I'll pretend that they're "guest_house".
+-- Also "self_catering" (used occasionally).
 -- ----------------------------------------------------------------------------
-   if ( keyvalues["tourism"]   == "bed_and_breakfast" ) then
+   if (( keyvalues["tourism"]   == "bed_and_breakfast" ) or
+       ( keyvalues["tourism"]   == "self_catering"     )) then
       keyvalues["tourism"] = "guest_house"
    end
 
