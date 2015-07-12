@@ -73,14 +73,14 @@ function filter_tags_generic(keyvalues, nokeys)
 -- designations.
 --
 -- The changes here do the following:
--- 1) Render any non-designated footway, bridleway or track as "path" 
+-- 1) Render any non-designated footway, bridleway, cycleway or track as "path" 
 --    (grey dashes in the "standard" style)
 -- 2) Render anything designated as "public_footpath" as a "footway" (dotted 
 --    salmon)
--- 3) Render anything designated as "public_bridleway" as a "footway" (dotted 
---    green)
+-- 3) Render anything designated as "public_bridleway" as a "bridleway" (dotted 
+--    green).
 -- 4) Render anything designated as "restricted_byway" as a "grade4 track" 
---    (dashed and dotted brown).
+--    (dashed and dotted brown).  Likewise "public_right_of_way".
 -- 5) Render anything designated as "byway_open_to_all_traffic" as a 
 --    "grade3 track" (dashed brown)
 -- 6) Render anything designated as "unclassified_county_road" or a 
@@ -94,9 +94,10 @@ function filter_tags_generic(keyvalues, nokeys)
 
    keyvalues["tracktype"] = nil
 
-   if ((keyvalues["highway"] == "footway") or 
-       (keyvalues["highway"] == "bridleway") or 
-       (keyvalues["highway"] == "track")) then
+   if (( keyvalues["highway"] == "footway"   ) or 
+       ( keyvalues["highway"] == "bridleway" ) or 
+       ( keyvalues["highway"] == "cycleway"  ) or 
+       ( keyvalues["highway"] == "track"     )) then
       keyvalues["highway"] = "path"
    end
 
@@ -118,7 +119,8 @@ function filter_tags_generic(keyvalues, nokeys)
       keyvalues["tracktype"] = "grade3"
    end
 
-   if (keyvalues["designation"] == "restricted_byway") then
+   if (( keyvalues["designation"] == "restricted_byway"    ) or
+       ( keyvalues["designation"] == "public_right_of_way" )) then
       keyvalues["highway"] = "track"
       keyvalues["tracktype"] = "grade4"
    end
@@ -140,6 +142,13 @@ function filter_tags_generic(keyvalues, nokeys)
         ( keyvalues["designation"] == "unclassified_country_road" )  or
         ( keyvalues["designation"] == "unclassified_highway"      ))) then
       keyvalues["access"] = nil
+   end
+
+-- ----------------------------------------------------------------------------
+-- Render Access land the same as nature reserve / national park currently is
+-- ----------------------------------------------------------------------------
+   if (keyvalues["designation"] == "access_land") then
+      keyvalues["leisure"] = "nature_reserve"
    end
 
 -- ----------------------------------------------------------------------------
@@ -178,7 +187,14 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["industrial"] == "warehouse"        ) or
        ( keyvalues["amenity"]    == "recycling"        ) or
        ( keyvalues["amenity"]    == "animal_boarding"  ) or
-       ( keyvalues["amenity"]    == "animal_shelter"   )) then
+       ( keyvalues["amenity"]    == "animal_shelter"   ) or
+       ( keyvalues["craft"]      == "bakery"           ) or
+       ( keyvalues["craft"]      == "boatbuilder"      ) or
+       ( keyvalues["craft"]      == "carpenter"        ) or
+       ( keyvalues["craft"]      == "brewery"          ) or
+       ( keyvalues["craft"]      == "decorator"        ) or
+       ( keyvalues["craft"]      == "plumber"          ) or
+       ( keyvalues["craft"]      == "window_construction" )) then
       keyvalues["landuse"] = "industrial"
    end
 
@@ -196,6 +212,7 @@ function filter_tags_generic(keyvalues, nokeys)
        (keyvalues["shop"]       == "truck_repair") or
        (keyvalues["shop"]       == "garden_centre") or
        (keyvalues["shop"]       == "gates") or
+       (keyvalues["shop"]       == "builders_merchant") or
        (keyvalues["commercial"] == "office") or
        (keyvalues["highway"]    == "services") or
        (keyvalues["office"]     == "hvac") or
