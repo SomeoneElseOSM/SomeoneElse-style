@@ -96,9 +96,12 @@ function filter_tags_generic(keyvalues, nokeys)
 
    if (( keyvalues["highway"] == "footway"   ) or 
        ( keyvalues["highway"] == "bridleway" ) or 
-       ( keyvalues["highway"] == "cycleway"  ) or 
-       ( keyvalues["highway"] == "track"     )) then
+       ( keyvalues["highway"] == "cycleway"  )) then
       keyvalues["highway"] = "path"
+   end
+
+   if ( keyvalues["highway"] == "track" ) then
+      keyvalues["highway"] = "pathwide"
    end
 
    if (( keyvalues["highway"] == "unclassified" ) and
@@ -126,11 +129,25 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
    if (keyvalues["designation"] == "public_bridleway") then
-      keyvalues["highway"] = "bridleway"
+      if (( keyvalues["highway"] == "footway"   ) or 
+          ( keyvalues["highway"] == "bridleway" ) or 
+	  ( keyvalues["highway"] == "cycleway"  ) or
+	  ( keyvalues["highway"] == "path"      )) then
+	  keyvalues["highway"] = "bridleway"
+      else
+	  keyvalues["highway"] = "bridlewaywide"
+      end
    end
 
    if (keyvalues["designation"] == "public_footpath") then
-      keyvalues["highway"] = "footway"
+      if (( keyvalues["highway"] == "footway"   ) or 
+          ( keyvalues["highway"] == "bridleway" ) or 
+	  ( keyvalues["highway"] == "cycleway"  ) or
+	  ( keyvalues["highway"] == "path"      )) then
+	  keyvalues["highway"] = "footway"
+      else
+	  keyvalues["highway"] = "footwaywide"
+      end
    end
 
    if ((  keyvalues["access"]      == "private"                    ) and
