@@ -141,6 +141,7 @@ function filter_tags_generic(keyvalues, nokeys)
 
    if (keyvalues["designation"] == "public_footpath") then
       if (( keyvalues["highway"] == "footway"   ) or 
+          ( keyvalues["highway"] == "steps"     ) or 
           ( keyvalues["highway"] == "bridleway" ) or 
 	  ( keyvalues["highway"] == "cycleway"  ) or
 	  ( keyvalues["highway"] == "path"      )) then
