@@ -95,6 +95,7 @@ function filter_tags_generic(keyvalues, nokeys)
    keyvalues["tracktype"] = nil
 
    if (( keyvalues["highway"] == "footway"   ) or 
+       ( keyvalues["highway"] == "steps"     ) or 
        ( keyvalues["highway"] == "bridleway" ) or 
        ( keyvalues["highway"] == "cycleway"  )) then
       keyvalues["highway"] = "path"
@@ -113,23 +114,48 @@ function filter_tags_generic(keyvalues, nokeys)
    if ((keyvalues["designation"] == "unclassified_county_road") or
        (keyvalues["designation"] == "unclassified_country_road") or
        (keyvalues["designation"] == "unclassified_highway")) then
-      keyvalues["highway"] = "track"
-      keyvalues["tracktype"] = "grade2"
+      if (( keyvalues["highway"] == "footway"   ) or 
+          ( keyvalues["highway"] == "steps"     ) or 
+          ( keyvalues["highway"] == "bridleway" ) or 
+	  ( keyvalues["highway"] == "cycleway"  ) or
+	  ( keyvalues["highway"] == "path"      )) then
+	  keyvalues["tracktype"] = "grade5"
+      else
+          keyvalues["highway"] = "track"
+	  keyvalues["tracktype"] = "grade2"
+      end
    end
 
    if (keyvalues["designation"] == "byway_open_to_all_traffic") then
-      keyvalues["highway"] = "track"
-      keyvalues["tracktype"] = "grade3"
+      if (( keyvalues["highway"] == "footway"   ) or 
+          ( keyvalues["highway"] == "steps"     ) or 
+          ( keyvalues["highway"] == "bridleway" ) or 
+	  ( keyvalues["highway"] == "cycleway"  ) or
+	  ( keyvalues["highway"] == "path"      )) then
+	  keyvalues["tracktype"] = "grade5"
+      else
+          keyvalues["highway"] = "track"
+	  keyvalues["tracktype"] = "grade3"
+      end
    end
 
    if (( keyvalues["designation"] == "restricted_byway"    ) or
        ( keyvalues["designation"] == "public_right_of_way" )) then
-      keyvalues["highway"] = "track"
-      keyvalues["tracktype"] = "grade4"
+      if (( keyvalues["highway"] == "footway"   ) or 
+          ( keyvalues["highway"] == "steps"     ) or 
+          ( keyvalues["highway"] == "bridleway" ) or 
+	  ( keyvalues["highway"] == "cycleway"  ) or
+	  ( keyvalues["highway"] == "path"      )) then
+	  keyvalues["tracktype"] = "grade5"
+      else
+          keyvalues["highway"] = "track"
+	  keyvalues["tracktype"] = "grade4"
+      end
    end
 
    if (keyvalues["designation"] == "public_bridleway") then
       if (( keyvalues["highway"] == "footway"   ) or 
+          ( keyvalues["highway"] == "steps"     ) or 
           ( keyvalues["highway"] == "bridleway" ) or 
 	  ( keyvalues["highway"] == "cycleway"  ) or
 	  ( keyvalues["highway"] == "path"      )) then
