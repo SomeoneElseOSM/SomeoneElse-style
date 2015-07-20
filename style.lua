@@ -98,7 +98,14 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["highway"] == "steps"     ) or 
        ( keyvalues["highway"] == "bridleway" ) or 
        ( keyvalues["highway"] == "cycleway"  )) then
-      keyvalues["highway"] = "path"
+      if (( keyvalues["width"] == "2"   ) or
+          ( keyvalues["width"] == "2.5" ) or
+          ( keyvalues["width"] == "3"   ) or
+          ( keyvalues["width"] == "4"   )) then
+          keyvalues["highway"] = "pathwide"
+      else
+          keyvalues["highway"] = "path"
+      end
    end
 
    if ( keyvalues["highway"] == "track" ) then
