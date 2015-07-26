@@ -112,6 +112,23 @@ function filter_tags_generic(keyvalues, nokeys)
       keyvalues["highway"] = "pathwide"
    end
 
+-- ----------------------------------------------------------------------------
+-- The OSM Carto derivative that I'm using still tries to second-guess paths
+-- as footway or cycleway.  We don't want to do this - set "designated" to
+-- "yes"
+-- ----------------------------------------------------------------------------
+   if ( keyvalues["foot"] == "designated" ) then
+      keyvalues["foot"] = "yes"
+   end
+
+   if ( keyvalues["bicycle"] == "designated" ) then
+      keyvalues["bicycle"] = "yes"
+   end
+
+   if ( keyvalues["horse"] == "designated" ) then
+      keyvalues["horse"] = "yes"
+   end
+
    if (( keyvalues["highway"] == "unclassified" ) and
        ( keyvalues["surface"] == "unpaved"      )) then
       keyvalues["highway"] = "track"
