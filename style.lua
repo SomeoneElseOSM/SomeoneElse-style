@@ -355,6 +355,7 @@ function filter_tags_generic(keyvalues, nokeys)
        (  keyvalues["amenity"] == "former_pub"     ) or
        (  keyvalues["amenity"] == "old_pub"        ) or
        (  keyvalues["disused"] == "pub"            ) or
+       (  keyvalues["disused:pub"] == "yes"        ) or
        (  keyvalues["former_amenity"] == "former_pub" ) or
        (  keyvalues["former_amenity"] == "pub"     ) or
        (  keyvalues["former_amenity"] == "old_pub" ) or
