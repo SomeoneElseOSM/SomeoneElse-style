@@ -476,6 +476,14 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Render concert hall theatres as concert halls with the nightclub icon
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["amenity"] == "theatre"      ) and
+       ( keyvalues["theatre"] == "concert_hall" )) then
+      keyvalues["amenity"] = "concert_hall"
+   end
+
+-- ----------------------------------------------------------------------------
 -- render barrier=kissing_gate as barrier=gate for now
 -- render barrier=swing_gate as barrier=gate (it's a gate)
 -- render barrier=footgate as barrier=gate, since that's what it means
