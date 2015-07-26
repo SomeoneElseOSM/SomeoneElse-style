@@ -442,6 +442,15 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- PNFS guideposts
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["tourism"]    == "information"                          ) and
+       (( keyvalues["operator"]  == "Peak & Northern Footpaths Society"   )  or
+        ( keyvalues["operator"]  == "Peak and Northern Footpaths Society" ))) then
+      keyvalues["tourism"] = "informationpnfs"
+   end
+
+-- ----------------------------------------------------------------------------
 -- Things that are both hotels and pubs should render as pubs, because I'm 
 -- far more likely to be looking for the latter than the former.
 -- This is done by removing the tourism tag for them.
