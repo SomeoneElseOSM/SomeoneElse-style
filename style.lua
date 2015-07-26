@@ -478,8 +478,9 @@ function filter_tags_generic(keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
 -- Render concert hall theatres as concert halls with the nightclub icon
 -- ----------------------------------------------------------------------------
-   if (( keyvalues["amenity"] == "theatre"      ) and
-       ( keyvalues["theatre"] == "concert_hall" )) then
+   if ((( keyvalues["amenity"] == "theatre"      )  and
+        ( keyvalues["theatre"] == "concert_hall" )) or
+       (  keyvalues["amenity"] == "music_venue"   )) then
       keyvalues["amenity"] = "concert_hall"
    end
 
