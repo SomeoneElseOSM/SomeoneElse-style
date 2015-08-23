@@ -285,7 +285,11 @@ function filter_tags_generic(keyvalues, nokeys)
        (keyvalues["highway"]    == "services") or
        (keyvalues["office"]     == "hvac") or
        (keyvalues["office"]     == "auctioneer") or
-       (keyvalues["landuse"]    == "churchyard")) then
+       (keyvalues["landuse"]    == "churchyard") or
+       (keyvalues["landuse"]    == "plant_nursery") or
+       (keyvalues["amenity"]    == "marketplace") or
+       (keyvalues["amenity"]    == "social_facility") or
+       (keyvalues["amenity"]    == "community_centre")) then
       keyvalues["landuse"] = "commercial"
    end
 
