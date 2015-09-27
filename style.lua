@@ -253,6 +253,7 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["man_made"]   == "petroleum_well"      ) or 
        ( keyvalues["industrial"] == "depot"               ) or 
        ( keyvalues["industrial"] == "warehouse"           ) or
+       ( keyvalues["industrial"] == "engineering"         ) or
        ( keyvalues["amenity"]    == "recycling"           ) or
        ( keyvalues["amenity"]    == "animal_boarding"     ) or
        ( keyvalues["amenity"]    == "animal_shelter"      ) or
