@@ -112,6 +112,13 @@ function filter_tags_generic(keyvalues, nokeys)
       keyvalues["highway"] = "pathwide"
    end
 
+   if ((  keyvalues["designation"]      == nil         ) and
+       (( keyvalues["trail_visibility"] == "no"       )  or
+        ( keyvalues["trail_visibility"] == "horrible" )  or
+        ( keyvalues["trail_visibility"] == "bad"      ))) then
+      keyvalues["highway"] = nil
+   end
+
 -- ----------------------------------------------------------------------------
 -- The OSM Carto derivative that I'm using still tries to second-guess paths
 -- as footway or cycleway.  We don't want to do this - set "designated" to
