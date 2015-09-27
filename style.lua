@@ -565,9 +565,12 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
--- Remove road names that are not signed on the ground
+-- Remove road names that are not signed on the ground.
+-- "unsigned" tends to apply to road names.
 -- ----------------------------------------------------------------------------
-   if (keyvalues["name:signed"] == "no") then
+   if (( keyvalues["name:signed"] == "no"   ) or
+       ( keyvalues["unsigned"]    == "yes"  ) or
+       ( keyvalues["unsigned"]    == "true" )) then
       keyvalues["name"] = nil
    end
 
