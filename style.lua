@@ -257,6 +257,7 @@ function filter_tags_generic(keyvalues, nokeys)
 -- name rendering.  Similarly, some commercial and leisure.
 -- ----------------------------------------------------------------------------
    if (( keyvalues["man_made"]   == "wastewater_plant"    ) or 
+       ( keyvalues["man_made"]   == "reservoir_covered"   ) or 
        ( keyvalues["man_made"]   == "petroleum_well"      ) or 
        ( keyvalues["industrial"] == "depot"               ) or 
        ( keyvalues["industrial"] == "warehouse"           ) or
