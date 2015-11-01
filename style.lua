@@ -429,6 +429,15 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- highway=passing_place to turning_circle
+-- Not really the same thing, but a "widening of the road" should be good 
+-- enough.
+-- ----------------------------------------------------------------------------
+   if ( keyvalues["highway"]   == "passing_place" ) then
+      keyvalues["highway"] = "turning_circle"
+   end
+
+-- ----------------------------------------------------------------------------
 -- highway=living_street to residential
 -- This is done because it's a difference I don't want to draw attention to -
 -- they aren't "different enough to make them render differently".
