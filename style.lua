@@ -293,6 +293,7 @@ function filter_tags_generic(keyvalues, nokeys)
        (keyvalues["shop"]       == "builders_merchant") or
        (keyvalues["commercial"] == "office") or
        (keyvalues["highway"]    == "services") or
+       (keyvalues["craft"]      == "hvac") or
        (keyvalues["office"]     == "hvac") or
        (keyvalues["office"]     == "auctioneer") or
        (keyvalues["office"]     == "yes") or
