@@ -583,6 +583,14 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Render shop=newsagent as shop=convenience
+-- It's near enough in meaning I think.
+-- ----------------------------------------------------------------------------
+   if ( keyvalues["shop"]   == "newsagent" ) then
+      keyvalues["shop"] = "convenience"
+   end
+
+-- ----------------------------------------------------------------------------
 -- Remove road names that are not signed on the ground.
 -- "unsigned" tends to apply to road names.
 -- ----------------------------------------------------------------------------
