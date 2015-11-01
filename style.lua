@@ -298,12 +298,18 @@ function filter_tags_generic(keyvalues, nokeys)
        (keyvalues["office"]     == "hvac") or
        (keyvalues["office"]     == "auctioneer") or
        (keyvalues["office"]     == "yes") or
+       (keyvalues["office"]     == "company") or
+       (keyvalues["office"]     == "government") or
        (keyvalues["landuse"]    == "churchyard") or
        (keyvalues["landuse"]    == "plant_nursery") or
        (keyvalues["amenity"]    == "marketplace") or
        (keyvalues["amenity"]    == "social_facility") or
        (keyvalues["amenity"]    == "community_centre")) then
       keyvalues["landuse"] = "commercial"
+   end
+
+   if ( keyvalues["office"]   == "estate_agent" ) then
+      keyvalues["landuse"] = "retail"
    end
 
    if (( keyvalues["amenity"]   == "scout_camp"     ) or
