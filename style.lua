@@ -286,6 +286,7 @@ function filter_tags_generic(keyvalues, nokeys)
        (keyvalues["amenity"]    == "nursing_home") or
        (keyvalues["amenity"]    == "care_home") or
        (keyvalues["amenity"]    == "social_club") or
+       (keyvalues["shop"]       == "car") or
        (keyvalues["shop"]       == "truck") or
        (keyvalues["shop"]       == "truck_repair") or
        (keyvalues["shop"]       == "garden_centre") or
