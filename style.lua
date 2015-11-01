@@ -628,13 +628,15 @@ function filter_tags_generic(keyvalues, nokeys)
 
 -- ----------------------------------------------------------------------------
 -- Masts etc.  Consolidate various sorts of masts and towers into the "mast"
--- group.  Note that this includes "tower" temporarily.
+-- group.  Note that this includes "tower" temporarily, and "campanile" is in 
+-- here as a sort of tower (only 2 mapped in UK currently).
 -- ----------------------------------------------------------------------------
    if (( keyvalues["man_made"] == "phone_mast"          )  or
        ( keyvalues["man_made"] == "radio_mast"          )  or
        ( keyvalues["man_made"] == "communications_mast" )  or
        ( keyvalues["man_made"] == "communication_mast"  )  or
        ( keyvalues["man_made"] == "tower"               )  or
+       ( keyvalues["man_made"] == "campanile"           )  or
        ( keyvalues["man_made"] == "communications_tower" )) then
       keyvalues["man_made"] = "mast"
    end
