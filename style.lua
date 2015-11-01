@@ -575,6 +575,14 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Render historic=wayside_cross as historic=memorial
+-- It's near enough in meaning I think.
+-- ----------------------------------------------------------------------------
+   if ( keyvalues["historic"]   == "wayside_cross" ) then
+      keyvalues["historic"] = "memorial"
+   end
+
+-- ----------------------------------------------------------------------------
 -- Remove road names that are not signed on the ground.
 -- "unsigned" tends to apply to road names.
 -- ----------------------------------------------------------------------------
