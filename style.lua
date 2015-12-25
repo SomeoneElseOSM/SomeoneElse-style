@@ -494,6 +494,14 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Things that are both peaks and memorials should render as the latter.
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["natural"]   == "peak"     ) and
+       ( keyvalues["historic"]  == "memorial" )) then
+      keyvalues["natural"] = nil
+   end
+
+-- ----------------------------------------------------------------------------
 -- Where military has been overtagged over natural=wood, remove military.
 -- ----------------------------------------------------------------------------
    if (( keyvalues["natural"]   == "wood"        ) and
