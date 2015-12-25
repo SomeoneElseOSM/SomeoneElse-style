@@ -621,13 +621,39 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
--- Shops that don't have a specific icon are handled here:
+-- Currently handle beauty salons etc. as just generic.  Also "chemist"
 -- ----------------------------------------------------------------------------
-   if (( keyvalues["shop"]   == "card"       ) or
-       ( keyvalues["shop"]   == "cards"      ) or
-       ( keyvalues["shop"]   == "gift"       ) or
-       ( keyvalues["shop"]   == "stationery" )) then
+   if (( keyvalues["shop"]   == "beauty"            ) or
+       ( keyvalues["shop"]   == "beauty_salon"      ) or
+       ( keyvalues["shop"]   == "chemist"           ) or
+       ( keyvalues["shop"]   == "health_and_beauty" )) then
       keyvalues["shop"] = "nonspecific"
+   end
+
+-- ----------------------------------------------------------------------------
+-- Other shops that don't have a specific icon are handled here.
+-- "shoes" is more popular by far than "shoe".
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["shop"]   == "card"                    ) or
+       ( keyvalues["shop"]   == "cards"                   ) or
+       ( keyvalues["shop"]   == "gift"                    ) or
+       ( keyvalues["shop"]   == "shoes"                   ) or
+       ( keyvalues["shop"]   == "shoe_repair"             ) or
+       ( keyvalues["shop"]   == "shoe_repair;key_cutting" ) or
+       ( keyvalues["shop"]   == "shoe"                    ) or
+       ( keyvalues["shop"]   == "stationery"              )) then
+      keyvalues["shop"] = "nonspecific"
+   end
+
+-- ----------------------------------------------------------------------------
+-- Similarly, nonspecific offices.  Job Centres first:
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["amenity"] == "job_centre"     ) or
+       ( keyvalues["amenity"] == "jobcentre"      ) or
+       ( keyvalues["name"]   == "Jobcentre Plus"  ) or
+       ( keyvalues["name"]   == "JobCentre Plus"  ) or
+       ( keyvalues["name"]   == "Job Centre Plus" )) then
+      keyvalues["office"] = "nonspecific"
    end
 
 -- ----------------------------------------------------------------------------
