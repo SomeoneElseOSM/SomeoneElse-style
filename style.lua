@@ -621,6 +621,22 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- "electrical" consolidation
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["trade"] == "electrical"              ) or
+       ( keyvalues["name"]  == "City Electrical Factors" )) then
+      keyvalues["shop"] = "electrical"
+   end
+
+-- ----------------------------------------------------------------------------
+-- "jewellery" consolidation.  "jewelry" is most popular in the database, 
+-- but both are used.
+-- ----------------------------------------------------------------------------
+   if ( keyvalues["shop"] == "jewelry" ) then
+      keyvalues["shop"] = "jewellery"
+   end
+
+-- ----------------------------------------------------------------------------
 -- Currently handle beauty salons etc. as just generic.  Also "chemist"
 -- ----------------------------------------------------------------------------
    if (( keyvalues["shop"]   == "beauty"            ) or
@@ -640,11 +656,28 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["shop"]   == "card;gift"               ) or
        ( keyvalues["shop"]   == "gift"                    ) or
        ( keyvalues["shop"]   == "confectionary"           ) or
+       ( keyvalues["craft"]  == "cobbler"                 ) or
+       ( keyvalues["shop"]   == "optician"                ) or
        ( keyvalues["shop"]   == "shoes"                   ) or
        ( keyvalues["shop"]   == "shoe_repair"             ) or
        ( keyvalues["shop"]   == "shoe_repair;key_cutting" ) or
        ( keyvalues["shop"]   == "shoe"                    ) or
-       ( keyvalues["shop"]   == "stationery"              )) then
+       ( keyvalues["office"] == "travel_agent"            ) or
+       ( keyvalues["shop"]   == "travel_agent"            ) or
+       ( keyvalues["shop"]   == "floor"                   ) or
+       ( keyvalues["shop"]   == "flooring"                ) or
+       ( keyvalues["shop"]   == "floors"                  ) or
+       ( keyvalues["shop"]   == "floor_covering"          ) or
+       ( keyvalues["shop"]   == "health_food"             ) or
+       ( keyvalues["shop"]   == "organic"                 ) or
+       ( keyvalues["name"]   == "Holland and Barrett"     ) or
+       ( keyvalues["shop"]   == "alcohol"                 ) or
+       ( keyvalues["shop"]   == "homeware"                ) or
+       ( keyvalues["shop"]   == "furniture"               ) or
+       ( keyvalues["shop"]   == "stationery"              ) or
+       ( keyvalues["shop"]   == "bookmaker"               ) or
+       ( keyvalues["shop"]   == "betting"                 ) or
+       ( keyvalues["shop"]   == "yes"                     )) then
       keyvalues["shop"] = "nonspecific"
    end
 
@@ -655,7 +688,8 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["amenity"] == "jobcentre"      ) or
        ( keyvalues["name"]   == "Jobcentre Plus"  ) or
        ( keyvalues["name"]   == "JobCentre Plus"  ) or
-       ( keyvalues["name"]   == "Job Centre Plus" )) then
+       ( keyvalues["name"]   == "Job Centre Plus" ) or
+       ( keyvalues["office"] == "yes"             )) then
       keyvalues["office"] = "nonspecific"
    end
 
