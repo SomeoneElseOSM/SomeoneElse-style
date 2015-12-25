@@ -664,6 +664,21 @@ function filter_tags_generic(keyvalues, nokeys)
       end
    end
 
+-- ----------------------------------------------------------------------------
+-- Drop some highway areas.
+-- "track" and "cycleway" etc. wherever I have seen them are garbage.
+-- "footway" (pedestrian areas) and "service" (e.g. petrol station forecourts)
+-- tend to be OK.  Other options tend not to occur.
+-- ----------------------------------------------------------------------------
+   if ((( keyvalues["highway"] == "track"          )  or
+        ( keyvalues["highway"] == "cycleway"       )  or
+        ( keyvalues["highway"] == "residential"    )  or
+        ( keyvalues["highway"] == "unclassified"   )  or
+        ( keyvalues["highway"] == "tertiary"       )) and
+       (  keyvalues["area"]    == "yes"             )) then
+      keyvalues["highway"] = "nil"
+   end
+
 
 -- ----------------------------------------------------------------------------
 -- End of AJT additions.
