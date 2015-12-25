@@ -656,6 +656,12 @@ function filter_tags_generic(keyvalues, nokeys)
       keyvalues["man_made"] = "mast"
    end
 
+   if (keyvalues["highway"] == "bus_stop") then
+      if (keyvalues["naptan:Indicator"] ~= nil) then
+         keyvalues["name"] = keyvalues["name"] .. " " .. keyvalues["naptan:Indicator"]
+      end
+   end
+
 
 -- ----------------------------------------------------------------------------
 -- End of AJT additions.
