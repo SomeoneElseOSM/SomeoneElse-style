@@ -289,6 +289,7 @@ function filter_tags_generic(keyvalues, nokeys)
        (keyvalues["shop"]       == "car") or
        (keyvalues["shop"]       == "truck") or
        (keyvalues["shop"]       == "truck_repair") or
+       (keyvalues["shop"]       == "caravan") or
        (keyvalues["shop"]       == "garden_centre") or
        (keyvalues["shop"]       == "gates") or
        (keyvalues["shop"]       == "builders_merchant") or
@@ -304,7 +305,8 @@ function filter_tags_generic(keyvalues, nokeys)
        (keyvalues["landuse"]    == "plant_nursery") or
        (keyvalues["amenity"]    == "marketplace") or
        (keyvalues["amenity"]    == "social_facility") or
-       (keyvalues["amenity"]    == "community_centre")) then
+       (keyvalues["amenity"]    == "community_centre") or
+       (keyvalues["club"]       == "sport")) then
       keyvalues["landuse"] = "commercial"
    end
 
