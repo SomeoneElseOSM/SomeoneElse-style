@@ -636,7 +636,10 @@ function filter_tags_generic(keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
    if (( keyvalues["shop"]   == "card"                    ) or
        ( keyvalues["shop"]   == "cards"                   ) or
+       ( keyvalues["shop"]   == "greeting_card"           ) or
+       ( keyvalues["shop"]   == "card;gift"               ) or
        ( keyvalues["shop"]   == "gift"                    ) or
+       ( keyvalues["shop"]   == "confectionary"           ) or
        ( keyvalues["shop"]   == "shoes"                   ) or
        ( keyvalues["shop"]   == "shoe_repair"             ) or
        ( keyvalues["shop"]   == "shoe_repair;key_cutting" ) or
