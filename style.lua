@@ -622,8 +622,11 @@ function filter_tags_generic(keyvalues, nokeys)
 
 -- ----------------------------------------------------------------------------
 -- "electrical" consolidation
+-- Looking at the tagging of shop=electronics, there's a fair crossover with 
+-- electrical.
 -- ----------------------------------------------------------------------------
-   if (( keyvalues["trade"] == "electrical"              ) or
+   if (( keyvalues["shop"]  == "electronics"             ) or
+       ( keyvalues["trade"] == "electrical"              ) or
        ( keyvalues["name"]  == "City Electrical Factors" )) then
       keyvalues["shop"] = "electrical"
    end
@@ -634,6 +637,13 @@ function filter_tags_generic(keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
    if ( keyvalues["shop"] == "jewelry" ) then
       keyvalues["shop"] = "jewellery"
+   end
+
+-- ----------------------------------------------------------------------------
+-- Render shop=hardware stores as shop=doityourself
+-- ----------------------------------------------------------------------------
+   if ( keyvalues["shop"] == "hardware" ) then
+      keyvalues["shop"] = "doityourself"
    end
 
 -- ----------------------------------------------------------------------------
@@ -664,6 +674,7 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["shop"]   == "shoe"                    ) or
        ( keyvalues["office"] == "travel_agent"            ) or
        ( keyvalues["shop"]   == "travel_agent"            ) or
+       ( keyvalues["shop"]   == "travel_agency"           ) or
        ( keyvalues["shop"]   == "floor"                   ) or
        ( keyvalues["shop"]   == "flooring"                ) or
        ( keyvalues["shop"]   == "floors"                  ) or
@@ -677,6 +688,17 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["shop"]   == "stationery"              ) or
        ( keyvalues["shop"]   == "bookmaker"               ) or
        ( keyvalues["shop"]   == "betting"                 ) or
+       ( keyvalues["shop"]   == "mobile_phone"            ) or
+       ( keyvalues["shop"]   == "books"                   ) or
+       ( keyvalues["shop"]   == "laundry"                 ) or
+       ( keyvalues["shop"]   == "dry_cleaning"            ) or
+       ( keyvalues["shop"]   == "pet"                     ) or
+       ( keyvalues["shop"]   == "pets"                    ) or
+       ( keyvalues["shop"]   == "sports"                  ) or
+       ( keyvalues["shop"]   == "computer"                ) or
+       ( keyvalues["shop"]   == "carpet"                  ) or
+       ( keyvalues["shop"]   == "carpets"                 ) or
+       ( keyvalues["shop"]   == "art"                     ) or
        ( keyvalues["shop"]   == "yes"                     )) then
       keyvalues["shop"] = "nonspecific"
    end
