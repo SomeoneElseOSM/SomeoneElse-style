@@ -610,6 +610,27 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Render shop=variety as shop=supermarket.  Most UK variety stores (Wilko,
+-- Poundstretcher) do have a supermarket element, and most supermarkets have
+-- a non-food variety element too.  "variety_store" is the most popular 
+-- tagging but "variety" is also used.
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["shop"]   == "variety"       ) or
+       ( keyvalues["shop"]   == "variety_store" )) then
+      keyvalues["shop"] = "supermarket"
+   end
+
+-- ----------------------------------------------------------------------------
+-- Shops that don't have a specific icon are handled here:
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["shop"]   == "card"       ) or
+       ( keyvalues["shop"]   == "cards"      ) or
+       ( keyvalues["shop"]   == "gift"       ) or
+       ( keyvalues["shop"]   == "stationery" )) then
+      keyvalues["shop"] = "nonspecific"
+   end
+
+-- ----------------------------------------------------------------------------
 -- Remove road names that are not signed on the ground.
 -- "unsigned" tends to apply to road names.
 -- ----------------------------------------------------------------------------
