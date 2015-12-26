@@ -310,8 +310,9 @@ function filter_tags_generic(keyvalues, nokeys)
       keyvalues["landuse"] = "commercial"
    end
 
-   if (( keyvalues["office"]  == "estate_agent" ) or
-       ( keyvalues["shop"]    == "mall" )) then
+   if (( keyvalues["office"]  == "estate_agent"    ) or
+       ( keyvalues["shop"]    == "mall"            ) or
+       ( keyvalues["shop"]    == "shopping_centre" )) then
       keyvalues["landuse"] = "retail"
    end
 
@@ -620,24 +621,36 @@ function filter_tags_generic(keyvalues, nokeys)
 -- tagging but "variety" is also used.
 -- ----------------------------------------------------------------------------
    if (( keyvalues["shop"]   == "variety"       ) or
-       ( keyvalues["shop"]   == "variety_store" )) then
+       ( keyvalues["shop"]   == "variety_store" ) or
+       ( keyvalues["shop"]   == "discount"      )) then
       keyvalues["shop"] = "supermarket"
    end
 
 -- ----------------------------------------------------------------------------
--- "clothes" consolidation
+-- "clothes" consolidation.  "baby_goods" is here because there will surely
+-- be some clothes there!
 -- ----------------------------------------------------------------------------
-   if (( keyvalues["shop"] == "fashion"  ) or
-       ( keyvalues["shop"] == "boutique" )) then
+   if (( keyvalues["shop"] == "fashion"    ) or
+       ( keyvalues["shop"] == "boutique"   ) or
+       ( keyvalues["shop"] == "bridal"     ) or
+       ( keyvalues["shop"] == "wedding"    ) or
+       ( keyvalues["shop"] == "shoes"      ) or
+       ( keyvalues["shop"] == "shoe"       ) or
+       ( keyvalues["shop"] == "baby_goods" ) or
+       ( keyvalues["shop"] == "baby"       )) then
       keyvalues["shop"] = "clothes"
    end
 
 -- ----------------------------------------------------------------------------
 -- "electrical" consolidation
 -- Looking at the tagging of shop=electronics, there's a fair crossover with 
--- electrical.
+-- electrical.  "security" is less of a fit here.
 -- ----------------------------------------------------------------------------
    if (( keyvalues["shop"]  == "electronics"             ) or
+       ( keyvalues["shop"]  == "appliance"               ) or
+       ( keyvalues["shop"]  == "appliances"              ) or
+       ( keyvalues["shop"]  == "vacuum_cleaner"          ) or
+       ( keyvalues["shop"]  == "domestic_appliances"     ) or
        ( keyvalues["trade"] == "electrical"              ) or
        ( keyvalues["name"]  == "City Electrical Factors" )) then
       keyvalues["shop"] = "electrical"
@@ -660,7 +673,8 @@ function filter_tags_generic(keyvalues, nokeys)
 -- but both are used.
 -- ----------------------------------------------------------------------------
    if (( keyvalues["shop"] == "jewelry" ) or
-       ( keyvalues["shop"] == "watch"   )) then
+       ( keyvalues["shop"] == "watch"   ) or
+       ( keyvalues["shop"] == "watches" )) then
       keyvalues["shop"] = "jewellery"
    end
 
@@ -675,39 +689,320 @@ function filter_tags_generic(keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
 -- "cafe" and "fast_food" consolidation.  
 -- ----------------------------------------------------------------------------
-   if ( keyvalues["shop"] == "cafe" ) then
+   if ( keyvalues["shop"] == "cafe"       ) then
       keyvalues["amenity"] = "cafe"
    end
 
-   if ( keyvalues["shop"] == "fast_food" ) then
+   if (( keyvalues["shop"] == "sandwiches" ) or
+       ( keyvalues["shop"] == "sandwich"   )) then
+      keyvalues["amenity"] = "cafe"
+      keyvalues["cuisine"] = "sandwich"
+   end
+
+   if ( keyvalues["shop"] == "fish_and_chips" ) then
+      keyvalues["amenity"] = "fast_food"
+      keyvalues["cuisine"] = "fish_and_chips"
+   end
+
+   if (( keyvalues["shop"] == "fast_food" ) or
+       ( keyvalues["shop"] == "take_away" )) then
       keyvalues["amenity"] = "fast_food"
    end
 
 -- ----------------------------------------------------------------------------
 -- Render shop=hardware stores etc. as shop=doityourself
 -- ----------------------------------------------------------------------------
-   if (( keyvalues["shop"] == "hardware"          ) or
-       ( keyvalues["shop"] == "tool_hire"         ) or
-       ( keyvalues["shop"] == "builders_merchant" )) then
+   if (( keyvalues["shop"] == "hardware"           ) or
+       ( keyvalues["shop"] == "tool_hire"          ) or
+       ( keyvalues["shop"] == "builders_merchant"  ) or
+       ( keyvalues["shop"] == "building_supplies"  ) or
+       ( keyvalues["shop"] == "plant_hire"         ) or
+       ( keyvalues["shop"] == "signs"              ) or
+       ( keyvalues["shop"] == "building_materials" )) then
       keyvalues["shop"] = "doityourself"
    end
 
 -- ----------------------------------------------------------------------------
 -- Consolidate "lenders of last resort" as pawnbroker
+-- "money_transfer" and down from there is perhaps a bit of a stretch; 
+-- as there is a distinctive pawnbroker icon.
 -- ----------------------------------------------------------------------------
-   if (( keyvalues["shop"] == "money"        ) or
-       ( keyvalues["shop"] == "money_lender" ) or
-       ( keyvalues["shop"] == "cash"         )) then
+   if (( keyvalues["shop"] == "money"              ) or
+       ( keyvalues["shop"] == "money_lender"       ) or
+       ( keyvalues["shop"] == "cash"               ) or
+       ( keyvalues["shop"] == "money_transfer"     ) or
+       ( keyvalues["shop"] == "finance"            ) or
+       ( keyvalues["shop"] == "financial_services" )) then
       keyvalues["shop"] = "pawnbroker"
    end
 
 -- ----------------------------------------------------------------------------
+-- hairdresser;beauty
+-- ----------------------------------------------------------------------------
+   if ( keyvalues["shop"] == "hairdresser;beauty" ) then
+      keyvalues["shop"] = "hairdresser"
+   end
+
+-- ----------------------------------------------------------------------------
 -- Currently handle beauty salons etc. as just generic.  Also "chemist"
+-- Mostly these have names that describe the business, so less need for a
+-- specific icon.
 -- ----------------------------------------------------------------------------
    if (( keyvalues["shop"]   == "beauty"            ) or
        ( keyvalues["shop"]   == "beauty_salon"      ) or
+       ( keyvalues["shop"]   == "salon"             ) or
+       ( keyvalues["shop"]   == "nails"             ) or
        ( keyvalues["shop"]   == "chemist"           ) or
-       ( keyvalues["shop"]   == "health_and_beauty" )) then
+       ( keyvalues["shop"]   == "beauty_products"   ) or
+       ( keyvalues["shop"]   == "perfume"           ) or
+       ( keyvalues["shop"]   == "perfumery"         ) or
+       ( keyvalues["shop"]   == "cosmetics"         ) or
+       ( keyvalues["shop"]   == "tanning"           ) or
+       ( keyvalues["shop"]   == "tanning_salon"     ) or
+       ( keyvalues["shop"]   == "health_and_beauty" ) or
+       ( keyvalues["shop"]   == "beautician"        )) then
+      keyvalues["shop"] = "nonspecific"
+   end
+
+-- ----------------------------------------------------------------------------
+-- "Non-electrical" electronics (i.e. ones for which the "electrical" icon
+-- is inappropriate).
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["shop"]  == "security"         ) or
+       ( keyvalues["shop"]   == "computer"        ) or
+       ( keyvalues["shop"]   == "computer_repair" )) then
+      keyvalues["shop"] = "nonspecific"
+   end
+
+-- ----------------------------------------------------------------------------
+-- Betting Shops etc.
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["shop"]   == "bookmaker"  ) or
+       ( keyvalues["shop"]   == "bookmakers" ) or
+       ( keyvalues["shop"]   == "betting"    ) or
+       ( keyvalues["shop"]   == "gambling"   ) or
+       ( keyvalues["shop"]   == "amusements" )) then
+      keyvalues["shop"] = "nonspecific"
+   end
+
+-- ----------------------------------------------------------------------------
+-- mobile_phone shops as displayed just generic.
+-- Again, the name describes the business
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["shop"]   == "mobile_phone" ) or
+       ( keyvalues["shop"]   == "phone"        )) then
+      keyvalues["shop"] = "nonspecific"
+   end
+
+-- ----------------------------------------------------------------------------
+-- gift and other tat shops are rendered generically
+-- Difficult to do an icon for and often the name describes the business.
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["shop"]   == "gift"        ) or
+       ( keyvalues["shop"]   == "souvenir"    ) or
+       ( keyvalues["shop"]   == "leather"     ) or
+       ( keyvalues["shop"]   == "luxury"      ) or
+       ( keyvalues["shop"]   == "sunglasses"  ) or
+       ( keyvalues["shop"]   == "tourist"     ) or
+       ( keyvalues["shop"]   == "bag"         ) or
+       ( keyvalues["shop"]   == "accessories" )) then
+      keyvalues["shop"] = "nonspecific"
+   end
+
+-- ----------------------------------------------------------------------------
+-- Various photo, camera and copy shops
+-- Difficult to do an icon for.
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["shop"]   == "copyshop"     ) or
+       ( keyvalues["shop"]   == "camera"       ) or
+       ( keyvalues["shop"]   == "photo"        ) or
+       ( keyvalues["shop"]   == "photo_studio" ) or
+       ( keyvalues["shop"]   == "photography"  ) or
+       ( keyvalues["shop"]   == "photographic" ) or
+       ( keyvalues["shop"]   == "printing"     ) or
+       ( keyvalues["shop"]   == "printer"      ) or
+       ( keyvalues["shop"]   == "print"        ) or
+       ( keyvalues["shop"]   == "printers"     )) then
+      keyvalues["shop"] = "nonspecific"
+   end
+
+-- ----------------------------------------------------------------------------
+-- Various single food item and other food shops
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["shop"]   == "cake"      ) or
+       ( keyvalues["shop"]   == "fish"      ) or
+       ( keyvalues["shop"]   == "farm"          ) or
+       ( keyvalues["shop"]   == "seafood"       ) or
+       ( keyvalues["shop"]   == "beverages"     ) or
+       ( keyvalues["shop"]   == "ice_cream"     ) or
+       ( keyvalues["shop"]   == "coffee"        ) or
+       ( keyvalues["shop"]   == "tea"           ) or
+       ( keyvalues["shop"]   == "chocolate"     ) or
+       ( keyvalues["shop"]   == "cheese"        ) or
+       ( keyvalues["shop"]   == "deli"          ) or
+       ( keyvalues["shop"]   == "delicatessen"  ) or
+       ( keyvalues["shop"]   == "patissery"     ) or
+       ( keyvalues["shop"]   == "fishmonger"    ) or
+       ( keyvalues["shop"]   == "grocery"       ) or
+       ( keyvalues["shop"]   == "grocer"        ) or
+       ( keyvalues["shop"]   == "confectionery" ) or
+       ( keyvalues["shop"]   == "sweets"        ) or
+       ( keyvalues["shop"]   == "sweet"         ) or
+       ( keyvalues["shop"]   == "alcohol"       ) or
+       ( keyvalues["shop"]   == "off_licence"   ) or
+       ( keyvalues["shop"]   == "wine"          )) then
+      keyvalues["shop"] = "nonspecific"
+   end
+
+-- ----------------------------------------------------------------------------
+-- Various "homeware" shops.  Some of these, e.g. chandlery, are a bit of a 
+-- stretch.
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["shop"]   == "floor"               ) or
+       ( keyvalues["shop"]   == "flooring"            ) or
+       ( keyvalues["shop"]   == "floors"              ) or
+       ( keyvalues["shop"]   == "floor_covering"      ) or
+       ( keyvalues["shop"]   == "homeware"            ) or
+       ( keyvalues["shop"]   == "home"                ) or
+       ( keyvalues["shop"]   == "furniture"           ) or
+       ( keyvalues["shop"]   == "luggage"             ) or
+       ( keyvalues["shop"]   == "interior_decoration" ) or
+       ( keyvalues["shop"]   == "interior_design"     ) or
+       ( keyvalues["shop"]   == "carpet"              ) or
+       ( keyvalues["shop"]   == "carpets"             ) or
+       ( keyvalues["shop"]   == "kitchen"             ) or
+       ( keyvalues["shop"]   == "kitchen;bathroom"    ) or
+       ( keyvalues["shop"]   == "kitchens"            ) or
+       ( keyvalues["shop"]   == "houseware"           ) or
+       ( keyvalues["shop"]   == "bathroom_furnishing" ) or
+       ( keyvalues["shop"]   == "household"           ) or
+       ( keyvalues["shop"]   == "bathroom"            ) or
+       ( keyvalues["shop"]   == "glaziery"            ) or
+       ( keyvalues["shop"]   == "tiles"               ) or
+       ( keyvalues["shop"]   == "tile"                ) or
+       ( keyvalues["shop"]   == "paint"               ) or
+       ( keyvalues["shop"]   == "lighting"            ) or
+       ( keyvalues["shop"]   == "windows"             ) or
+       ( keyvalues["shop"]   == "window"              ) or
+       ( keyvalues["shop"]   == "fireplace"           ) or
+       ( keyvalues["shop"]   == "fireplaces"          ) or
+       ( keyvalues["shop"]   == "furnace"             ) or
+       ( keyvalues["shop"]   == "plumbing"            ) or
+       ( keyvalues["shop"]   == "plumbers_merchant"   ) or
+       ( keyvalues["shop"]   == "blinds"              ) or
+       ( keyvalues["shop"]   == "window_blind"        ) or
+       ( keyvalues["shop"]   == "bed"                 ) or
+       ( keyvalues["shop"]   == "beds"                ) or
+       ( keyvalues["shop"]   == "frame"               ) or
+       ( keyvalues["shop"]   == "curtain"             ) or
+       ( keyvalues["shop"]   == "furnishings"         ) or
+       ( keyvalues["shop"]   == "furnishing"          ) or
+       ( keyvalues["shop"]   == "glass"               ) or
+       ( keyvalues["shop"]   == "garage"              ) or
+       ( keyvalues["shop"]   == "bathrooms"           ) or
+       ( keyvalues["shop"]   == "fitted_furniture"    ) or
+       ( keyvalues["shop"]   == "kitchenware"         ) or
+       ( keyvalues["shop"]   == "upholstery"          ) or
+       ( keyvalues["shop"]   == "chandler"            ) or
+       ( keyvalues["shop"]   == "chandlery"           ) or
+       ( keyvalues["shop"]   == "saddlery"            )) then
+      keyvalues["shop"] = "nonspecific"
+   end
+
+-- ----------------------------------------------------------------------------
+-- fabric and wool etc.
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["shop"]   == "fabric"               ) or
+       ( keyvalues["shop"]   == "haberdashery"         ) or
+       ( keyvalues["shop"]   == "sewing"               ) or
+       ( keyvalues["shop"]   == "knitting"             ) or
+       ( keyvalues["shop"]   == "wool"                 ) or
+       ( keyvalues["shop"]   == "clothing_alterations" )) then
+      keyvalues["shop"] = "nonspecific"
+   end
+
+-- ----------------------------------------------------------------------------
+-- health_food etc.
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["shop"]   == "health_food"             ) or
+       ( keyvalues["shop"]   == "healthfood"              ) or
+       ( keyvalues["shop"]   == "health"                  ) or
+       ( keyvalues["shop"]   == "organic"                 ) or
+       ( keyvalues["shop"]   == "supplements"             ) or
+       ( keyvalues["shop"]   == "alternative_medicine"    ) or
+       ( keyvalues["name"]   == "Holland and Barrett"     ) or
+       ( keyvalues["shop"]   == "herbalist"               )) then
+      keyvalues["shop"] = "nonspecific"
+   end
+
+-- ----------------------------------------------------------------------------
+-- travel agents
+-- the name is usually characteristic
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["office"] == "travel_agent"  ) or
+       ( keyvalues["shop"]   == "travel_agent"  ) or
+       ( keyvalues["shop"]   == "travel_agency" )) then
+      keyvalues["shop"] = "nonspecific"
+   end
+
+-- ----------------------------------------------------------------------------
+-- books and stationery
+-- the name is usually characteristic
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["shop"]   == "stationery"      ) or
+       ( keyvalues["shop"]   == "books"           ) or
+       ( keyvalues["shop"]   == "office_supplies" )) then
+      keyvalues["shop"] = "nonspecific"
+   end
+
+-- ----------------------------------------------------------------------------
+-- sports
+-- the name is usually characteristic
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["shop"]   == "sports"       ) or
+       ( keyvalues["shop"]   == "golf"         ) or
+       ( keyvalues["shop"]   == "scuba_diving" ) or
+       ( keyvalues["shop"]   == "fishing"      ) or
+       ( keyvalues["shop"]   == "angling"      )) then
+      keyvalues["shop"] = "nonspecific"
+   end
+
+-- ----------------------------------------------------------------------------
+-- toys and games etc.
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["shop"]   == "toys"           ) or
+       ( keyvalues["shop"]   == "model"          ) or
+       ( keyvalues["shop"]   == "games"          ) or
+       ( keyvalues["shop"]   == "game"           ) or
+       ( keyvalues["shop"]   == "computer_games" ) or
+       ( keyvalues["shop"]   == "video_games"    ) or
+       ( keyvalues["shop"]   == "hobby"          ) or
+       ( keyvalues["shop"]   == "craft"          ) or
+       ( keyvalues["shop"]   == "crafts"         ) or
+       ( keyvalues["shop"]   == "art_supplies"   ) or
+       ( keyvalues["shop"]   == "pottery"        ) or
+       ( keyvalues["shop"]   == "party"          ) or
+       ( keyvalues["shop"]   == "fancy_dress"    )) then
+      keyvalues["shop"] = "nonspecific"
+   end
+
+-- ----------------------------------------------------------------------------
+-- pets and pet services
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["shop"]   == "pet"                     ) or
+       ( keyvalues["shop"]   == "pets"                    ) or
+       ( keyvalues["shop"]   == "pet_supplies"            ) or
+       ( keyvalues["shop"]   == "pet_grooming"            ) or
+       ( keyvalues["shop"]   == "dog_grooming"            )) then
+      keyvalues["shop"] = "nonspecific"
+   end
+
+-- ----------------------------------------------------------------------------
+-- opticians
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["shop"]   == "optician"    ) or
+       ( keyvalues["shop"]   == "opticians"   ) or
+       ( keyvalues["shop"]   == "optometrist" )) then
       keyvalues["shop"] = "nonspecific"
    end
 
@@ -717,131 +1012,73 @@ function filter_tags_generic(keyvalues, nokeys)
 --
 -- Shops are in this list either because they tend to have a characteristic
 -- name (e.g. the various card shops), they're difficult to do an icon for
--- (toys) or they're rare (many of the others).
+-- or they're rare.
 -- ----------------------------------------------------------------------------
    if (( keyvalues["shop"]   == "card"                    ) or
        ( keyvalues["shop"]   == "cards"                   ) or
        ( keyvalues["shop"]   == "greeting_card"           ) or
+       ( keyvalues["shop"]   == "greeting_cards"          ) or
        ( keyvalues["shop"]   == "card;gift"               ) or
-       ( keyvalues["shop"]   == "gift"                    ) or
-       ( keyvalues["shop"]   == "confectionary"           ) or
        ( keyvalues["craft"]  == "cobbler"                 ) or
-       ( keyvalues["shop"]   == "optician"                ) or
-       ( keyvalues["shop"]   == "shoes"                   ) or
        ( keyvalues["shop"]   == "shoe_repair"             ) or
        ( keyvalues["shop"]   == "shoe_repair;key_cutting" ) or
-       ( keyvalues["shop"]   == "shoe"                    ) or
-       ( keyvalues["office"] == "travel_agent"            ) or
-       ( keyvalues["shop"]   == "travel_agent"            ) or
-       ( keyvalues["shop"]   == "travel_agency"           ) or
-       ( keyvalues["shop"]   == "floor"                   ) or
-       ( keyvalues["shop"]   == "flooring"                ) or
-       ( keyvalues["shop"]   == "floors"                  ) or
-       ( keyvalues["shop"]   == "floor_covering"          ) or
-       ( keyvalues["shop"]   == "health_food"             ) or
-       ( keyvalues["shop"]   == "health"                  ) or
-       ( keyvalues["shop"]   == "organic"                 ) or
-       ( keyvalues["name"]   == "Holland and Barrett"     ) or
-       ( keyvalues["shop"]   == "alcohol"                 ) or
-       ( keyvalues["shop"]   == "homeware"                ) or
-       ( keyvalues["shop"]   == "furniture"               ) or
-       ( keyvalues["shop"]   == "interior_decoration"     ) or
-       ( keyvalues["shop"]   == "stationery"              ) or
-       ( keyvalues["shop"]   == "bookmaker"               ) or
-       ( keyvalues["shop"]   == "betting"                 ) or
-       ( keyvalues["shop"]   == "gambling"                ) or
-       ( keyvalues["shop"]   == "mobile_phone"            ) or
-       ( keyvalues["shop"]   == "books"                   ) or
+       ( keyvalues["shop"]   == "key_cutting"             ) or
        ( keyvalues["shop"]   == "laundry"                 ) or
        ( keyvalues["shop"]   == "dry_cleaning"            ) or
-       ( keyvalues["shop"]   == "pet"                     ) or
-       ( keyvalues["shop"]   == "pets"                    ) or
-       ( keyvalues["shop"]   == "sports"                  ) or
-       ( keyvalues["shop"]   == "computer"                ) or
-       ( keyvalues["shop"]   == "carpet"                  ) or
-       ( keyvalues["shop"]   == "carpets"                 ) or
        ( keyvalues["shop"]   == "art"                     ) or
-       ( keyvalues["shop"]   == "deli"                    ) or
-       ( keyvalues["shop"]   == "delicatessen"            ) or
-       ( keyvalues["shop"]   == "art"                     ) or
-       ( keyvalues["shop"]   == "toys"                    ) or
        ( keyvalues["shop"]   == "tattoo"                  ) or
        ( keyvalues["shop"]   == "car_parts"               ) or
-       ( keyvalues["shop"]   == "trade"                   ) or
-       ( keyvalues["shop"]   == "kitchen"                 ) or
+       ( keyvalues["shop"]   == "car_accessories"         ) or
        ( keyvalues["shop"]   == "music"                   ) or
+       ( keyvalues["shop"]   == "records"                 ) or
        ( keyvalues["shop"]   == "motorcycle"              ) or
-       ( keyvalues["shop"]   == "farm"                    ) or
        ( keyvalues["shop"]   == "tyres"                   ) or
        ( keyvalues["shop"]   == "musical_instrument"      ) or
-       ( keyvalues["shop"]   == "fabric"                  ) or
        ( keyvalues["shop"]   == "hifi"                    ) or
-       ( keyvalues["shop"]   == "craft"                   ) or
-       ( keyvalues["shop"]   == "copyshop"                ) or
-       ( keyvalues["shop"]   == "photo"                   ) or
-       ( keyvalues["shop"]   == "photo_studio"            ) or
-       ( keyvalues["shop"]   == "photography"             ) or
        ( keyvalues["shop"]   == "tailor"                  ) or
-       ( keyvalues["shop"]   == "bed"                     ) or
-       ( keyvalues["shop"]   == "second_hand"             ) or
-       ( keyvalues["shop"]   == "general"                 ) or
-       ( keyvalues["shop"]   == "copyshop"                ) or
-       ( keyvalues["shop"]   == "discount"                ) or
-       ( keyvalues["shop"]   == "bag"                     ) or
        ( keyvalues["shop"]   == "video"                   ) or
        ( keyvalues["shop"]   == "erotic"                  ) or
-       ( keyvalues["shop"]   == "frame"                   ) or
        ( keyvalues["shop"]   == "locksmith"               ) or
-       ( keyvalues["shop"]   == "cosmetics"               ) or
-       ( keyvalues["shop"]   == "seafood"                 ) or
-       ( keyvalues["shop"]   == "beverages"               ) or
-       ( keyvalues["shop"]   == "houseware"               ) or
-       ( keyvalues["shop"]   == "fishmonger"              ) or
-       ( keyvalues["shop"]   == "curtain"                 ) or
-       ( keyvalues["shop"]   == "video_games"             ) or
-       ( keyvalues["shop"]   == "accessories"             ) or
-       ( keyvalues["shop"]   == "bathroom_furnishing"     ) or
        ( keyvalues["shop"]   == "e-cigarette"             ) or
        ( keyvalues["shop"]   == "tobacco"                 ) or
        ( keyvalues["shop"]   == "massage"                 ) or
-       ( keyvalues["shop"]   == "household"               ) or
-       ( keyvalues["shop"]   == "bathroom"                ) or
        ( keyvalues["shop"]   == "ticket"                  ) or
-       ( keyvalues["shop"]   == "glaziery"                ) or
-       ( keyvalues["shop"]   == "wine"                    ) or
        ( keyvalues["shop"]   == "hearing_aids"            ) or
-       ( keyvalues["shop"]   == "baby_goods"              ) or
-       ( keyvalues["shop"]   == "fishing"                 ) or
-       ( keyvalues["shop"]   == "tiles"                   ) or
        ( keyvalues["shop"]   == "insurance"               ) or
        ( keyvalues["shop"]   == "gallery"                 ) or
-       ( keyvalues["shop"]   == "herbalist"               ) or
-       ( keyvalues["shop"]   == "grocery"                 ) or
-       ( keyvalues["shop"]   == "paint"                   ) or
-       ( keyvalues["shop"]   == "lighting"                ) or
-       ( keyvalues["shop"]   == "coffee"                  ) or
-       ( keyvalues["shop"]   == "mobility"                ) or
-       ( keyvalues["shop"]   == "amusements"              ) or
-       ( keyvalues["shop"]   == "wholesale"               ) or
-       ( keyvalues["shop"]   == "tanning"                 ) or
-       ( keyvalues["shop"]   == "perfume"                 ) or
-       ( keyvalues["shop"]   == "perfumery"               ) or
-       ( keyvalues["shop"]   == "market"                  ) or
-       ( keyvalues["shop"]   == "wedding"                 ) or
-       ( keyvalues["shop"]   == "ice_cream"               ) or
-       ( keyvalues["shop"]   == "party"                   ) or
-       ( keyvalues["shop"]   == "tea"                     ) or
-       ( keyvalues["shop"]   == "games"                   ) or
-       ( keyvalues["shop"]   == "windows"                 ) or
-       ( keyvalues["shop"]   == "chocolate"               ) or
-       ( keyvalues["shop"]   == "cheese"                  ) or
-       ( keyvalues["shop"]   == "fireplace"               ) or
-       ( keyvalues["shop"]   == "angling"                 ) or
-       ( keyvalues["shop"]   == "pet_grooming"            ) or
-       ( keyvalues["shop"]   == "plumbing"                ) or
-       ( keyvalues["shop"]   == "blinds"                  ) or
-       ( keyvalues["shop"]   == "unknown"                 ) or
-       ( keyvalues["shop"]   == "yes"                     )) then
+       ( keyvalues["shop"]   == "caravan"                 ) or
+       ( keyvalues["shop"]   == "medical_supply"          ) or
+       ( keyvalues["shop"]   == "plumber"                 ) or
+       ( keyvalues["shop"]   == "builder"                 ) or
+       ( keyvalues["shop"]   == "trophy"                  ) or
+       ( keyvalues["shop"]   == "communication"           ) or
+       ( keyvalues["shop"]   == "communications"          ) or
+       ( keyvalues["shop"]   == "recycling"               ) or
+       ( keyvalues["shop"]   == "gun"                     ) or
+       ( keyvalues["shop"]   == "chiropodist"             ) or
+       ( keyvalues["shop"]   == "auction"                 ) or
+       ( keyvalues["shop"]   == "auction_house"           ) or
+       ( keyvalues["shop"]   == "religion"                ) or
+       ( keyvalues["shop"]   == "gas"                     ) or
+       ( keyvalues["shop"]   == "market"                  )) then
+      keyvalues["shop"] = "nonspecific"
+   end
+
+-- ----------------------------------------------------------------------------
+-- Shops that we don't know the type of.  Things such as "hire" are here 
+-- because we don't know "hire of what".
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["shop"]   == "yes"            ) or
+       ( keyvalues["shop"]   == "other"          ) or
+       ( keyvalues["shop"]   == "hire"           ) or
+       ( keyvalues["shop"]   == "second_hand"    ) or
+       ( keyvalues["shop"]   == "general"        ) or
+       ( keyvalues["shop"]   == "unknown"        ) or
+       ( keyvalues["shop"]   == "trade"          ) or
+       ( keyvalues["shop"]   == "cash_and_carry" ) or
+       ( keyvalues["shop"]   == "fixme"          ) or
+       ( keyvalues["shop"]   == "design"         ) or
+       ( keyvalues["shop"]   == "wholesale"      )) then
       keyvalues["shop"] = "nonspecific"
    end
 
@@ -853,6 +1090,7 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["name"]   == "Jobcentre Plus"  ) or
        ( keyvalues["name"]   == "JobCentre Plus"  ) or
        ( keyvalues["name"]   == "Job Centre Plus" ) or
+       ( keyvalues["shop"]   == "office"          ) or
        ( keyvalues["office"] == "yes"             )) then
       keyvalues["office"] = "nonspecific"
    end
