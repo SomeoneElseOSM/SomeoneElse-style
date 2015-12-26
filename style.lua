@@ -303,7 +303,6 @@ function filter_tags_generic(keyvalues, nokeys)
        (keyvalues["office"]     == "government") or
        (keyvalues["landuse"]    == "churchyard") or
        (keyvalues["landuse"]    == "plant_nursery") or
-       (keyvalues["amenity"]    == "marketplace") or
        (keyvalues["amenity"]    == "social_facility") or
        (keyvalues["amenity"]    == "community_centre") or
        (keyvalues["club"]       == "sport")) then
@@ -311,6 +310,7 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
    if (( keyvalues["shop"]    == "mall"            ) or
+       ( keyvalues["amenity"] == "marketplace"     ) or
        ( keyvalues["shop"]    == "shopping_centre" )) then
       keyvalues["landuse"] = "retail"
    end
@@ -856,8 +856,8 @@ function filter_tags_generic(keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
 -- Various single food item and other food shops
 -- ----------------------------------------------------------------------------
-   if (( keyvalues["shop"]   == "cake"      ) or
-       ( keyvalues["shop"]   == "fish"      ) or
+   if (( keyvalues["shop"]   == "cake"          ) or
+       ( keyvalues["shop"]   == "fish"          ) or
        ( keyvalues["shop"]   == "farm"          ) or
        ( keyvalues["shop"]   == "seafood"       ) or
        ( keyvalues["shop"]   == "beverages"     ) or
@@ -1015,12 +1015,15 @@ function filter_tags_generic(keyvalues, nokeys)
 
 -- ----------------------------------------------------------------------------
 -- pets and pet services
+-- Normally the names are punningly characteristic (e.g. "Bark-in-Style" 
+-- dog grooming).
 -- ----------------------------------------------------------------------------
-   if (( keyvalues["shop"]   == "pet"                     ) or
-       ( keyvalues["shop"]   == "pets"                    ) or
-       ( keyvalues["shop"]   == "pet_supplies"            ) or
-       ( keyvalues["shop"]   == "pet_grooming"            ) or
-       ( keyvalues["shop"]   == "dog_grooming"            )) then
+   if (( keyvalues["shop"]    == "pet"                     ) or
+       ( keyvalues["shop"]    == "pets"                    ) or
+       ( keyvalues["shop"]    == "pet_supplies"            ) or
+       ( keyvalues["shop"]    == "pet_grooming"            ) or
+       ( keyvalues["shop"]    == "dog_grooming"            ) or
+       ( keyvalues["amenity"] == "veterinary"              )) then
       keyvalues["shop"] = "nonspecific"
    end
 
@@ -1097,32 +1100,52 @@ function filter_tags_generic(keyvalues, nokeys)
 -- Shops that we don't know the type of.  Things such as "hire" are here 
 -- because we don't know "hire of what".
 -- ----------------------------------------------------------------------------
-   if (( keyvalues["shop"]   == "yes"            ) or
-       ( keyvalues["shop"]   == "other"          ) or
-       ( keyvalues["shop"]   == "hire"           ) or
-       ( keyvalues["shop"]   == "second_hand"    ) or
-       ( keyvalues["shop"]   == "general"        ) or
-       ( keyvalues["shop"]   == "unknown"        ) or
-       ( keyvalues["shop"]   == "trade"          ) or
-       ( keyvalues["shop"]   == "cash_and_carry" ) or
-       ( keyvalues["shop"]   == "fixme"          ) or
-       ( keyvalues["shop"]   == "wholesale"      )) then
+   if (( keyvalues["shop"]    == "yes"            ) or
+       ( keyvalues["shop"]    == "other"          ) or
+       ( keyvalues["shop"]    == "hire"           ) or
+       ( keyvalues["shop"]    == "second_hand"    ) or
+       ( keyvalues["shop"]    == "general"        ) or
+       ( keyvalues["shop"]    == "unknown"        ) or
+       ( keyvalues["shop"]    == "trade"          ) or
+       ( keyvalues["shop"]    == "cash_and_carry" ) or
+       ( keyvalues["shop"]    == "fixme"          ) or
+       ( keyvalues["shop"]    == "wholesale"      )) then
       keyvalues["shop"] = "nonspecific"
    end
 
 -- ----------------------------------------------------------------------------
--- Similarly, nonspecific offices.  Job Centres first.
--- "communication" below seems to be used for marketing / commercial PR.
+-- Offices that we don't know the type of.  
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["office"]  == "company" ) or
+       ( keyvalues["shop"]    == "office"  ) or
+       ( keyvalues["office"]  == "yes"     )) then
+      keyvalues["office"] = "nonspecific"
+   end
+
+-- ----------------------------------------------------------------------------
+-- Similarly, various government offices.  Job Centres first.
 -- ----------------------------------------------------------------------------
    if (( keyvalues["amenity"] == "job_centre"              ) or
        ( keyvalues["amenity"] == "jobcentre"               ) or
        ( keyvalues["name"]    == "Jobcentre Plus"          ) or
        ( keyvalues["name"]    == "JobCentre Plus"          ) or
        ( keyvalues["name"]    == "Job Centre Plus"         ) or
-       ( keyvalues["shop"]    == "office"                  ) or
-       ( keyvalues["office"]  == "company"                 ) or
-       ( keyvalues["office"]  == "yes"                     ) or
-       ( keyvalues["office"]  == "it"                      ) or
+       ( keyvalues["office"]  == "government"              ) or
+       ( keyvalues["office"]  == "administrative"          ) or
+       ( keyvalues["office"]  == "register"                ) or
+       ( keyvalues["office"]  == "drainage_board"          ) or
+       ( keyvalues["office"]  == "council"                 ) or
+       ( keyvalues["amenity"] == "townhall"                ) or
+       ( keyvalues["amenity"] == "village_hall"            ) or
+       ( keyvalues["amenity"] == "clinic"                  )) then
+      keyvalues["office"] = "nonspecific"
+   end
+
+-- ----------------------------------------------------------------------------
+-- Non-government (commercial) offices that you might visit for a service.
+-- "communication" below seems to be used for marketing / commercial PR.
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["office"]  == "it"                      ) or
        ( keyvalues["office"]  == "lawyer"                  ) or
        ( keyvalues["shop"]    == "lawyer"                  ) or
        ( keyvalues["office"]  == "solicitor"               ) or
@@ -1132,35 +1155,22 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["office"]  == "accountant"              ) or
        ( keyvalues["office"]  == "accountants"             ) or
        ( keyvalues["shop"]    == "accountant"              ) or
-       ( keyvalues["office"]  == "government"              ) or
-       ( keyvalues["office"]  == "administrative"          ) or
        ( keyvalues["office"]  == "employment_agency"       ) or
        ( keyvalues["shop"]    == "employment_agency"       ) or
        ( keyvalues["office"]  == "recruitment_agency"      ) or
        ( keyvalues["office"]  == "recruitment"             ) or
        ( keyvalues["shop"]    == "recruitment"             ) or
        ( keyvalues["office"]  == "insurance"               ) or
-       ( keyvalues["office"]  == "ngo"                     ) or
        ( keyvalues["office"]  == "architect"               ) or
-       ( keyvalues["office"]  == "educational_institution" ) or
-       ( keyvalues["office"]  == "university"              ) or
        ( keyvalues["office"]  == "telecommunication"       ) or
        ( keyvalues["office"]  == "financial"               ) or
-       ( keyvalues["office"]  == "charity"                 ) or
        ( keyvalues["office"]  == "newspaper"               ) or
-       ( keyvalues["office"]  == "university"              ) or
-       ( keyvalues["office"]  == "political_party"         ) or
        ( keyvalues["office"]  == "delivery"                ) or
        ( keyvalues["office"]  == "therapist"               ) or
        ( keyvalues["office"]  == "surveyor"                ) or
        ( keyvalues["office"]  == "marketing"               ) or
        ( keyvalues["office"]  == "graphic_design"          ) or
-       ( keyvalues["office"]  == "register"                ) or
-       ( keyvalues["office"]  == "drainage_board"          ) or
        ( keyvalues["office"]  == "builder"                 ) or
-       ( keyvalues["office"]  == "quango"                  ) or
-       ( keyvalues["office"]  == "association"             ) or
-       ( keyvalues["office"]  == "council"                 ) or
        ( keyvalues["office"]  == "training"                ) or
        ( keyvalues["office"]  == "web_design"              ) or
        ( keyvalues["office"]  == "design"                  ) or
@@ -1168,6 +1178,30 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["office"]  == "communication"           ) or
        ( keyvalues["office"]  == "security"                )) then
       keyvalues["office"] = "nonspecific"
+   end
+
+-- ----------------------------------------------------------------------------
+-- Other nonspecific offices.  
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["office"]  == "it"                      ) or
+       ( keyvalues["office"]  == "ngo"                     ) or
+       ( keyvalues["office"]  == "educational_institution" ) or
+       ( keyvalues["office"]  == "university"              ) or
+       ( keyvalues["office"]  == "charity"                 ) or
+       ( keyvalues["office"]  == "university"              ) or
+       ( keyvalues["office"]  == "political_party"         ) or
+       ( keyvalues["office"]  == "quango"                  ) or
+       ( keyvalues["office"]  == "association"             )) then
+      keyvalues["office"] = "nonspecific"
+   end
+
+-- ----------------------------------------------------------------------------
+-- Similarly, nonspecific leisure facilities.
+-- Non-private swimming pools:
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["amenity"] == "swimming_pool" ) and
+       ( keyvalues["access"]  ~= "private"       )) then
+      keyvalues["leisure"] = "nonspecific"
    end
 
 -- ----------------------------------------------------------------------------
