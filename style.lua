@@ -298,6 +298,7 @@ function filter_tags_generic(keyvalues, nokeys)
    if (( keyvalues["shop"]    == "mall"            ) or
        ( keyvalues["amenity"] == "marketplace"     ) or
        ( keyvalues["shop"]    == "market"          ) or
+       ( keyvalues["amenity"] == "market"          ) or
        ( keyvalues["shop"]    == "shopping_centre" )) then
       keyvalues["landuse"] = "retail"
    end
@@ -651,7 +652,8 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["office"]  == "funeral_directors"   ) or
        ( keyvalues["amenity"] == "funeral"             ) or
        ( keyvalues["amenity"] == "funeral_director"    ) or
-       ( keyvalues["amenity"] == "funeral_directors"   )) then
+       ( keyvalues["amenity"] == "funeral_directors"   ) or
+       ( keyvalues["amenity"] == "undertaker"          )) then
       keyvalues["shop"] = "funeral_directors"
    end
 
@@ -686,12 +688,13 @@ function filter_tags_generic(keyvalues, nokeys)
 -- office=estate_agent.  There's now an icon for "shop", so use that.
 -- Also letting_agent
 -- ----------------------------------------------------------------------------
-   if (( keyvalues["office"] == "estate_agent"      ) or
-       ( keyvalues["office"] == "estate_agents"     ) or
-       ( keyvalues["shop"]   == "letting_agent"     ) or
-       ( keyvalues["office"] == "letting_agent"     ) or
-       ( keyvalues["shop"]   == "estate_agency"     ) or
-       ( keyvalues["office"] == "property_services" )) then
+   if (( keyvalues["office"]  == "estate_agent"      ) or
+       ( keyvalues["office"]  == "estate_agents"     ) or
+       ( keyvalues["amenity"] == "estate_agent"      ) or
+       ( keyvalues["shop"]    == "letting_agent"     ) or
+       ( keyvalues["office"]  == "letting_agent"     ) or
+       ( keyvalues["shop"]    == "estate_agency"     ) or
+       ( keyvalues["office"]  == "property_services" )) then
       keyvalues["shop"] = "estate_agent"
    end
 
@@ -762,6 +765,7 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["shop"]    == "financial_services" ) or
        ( keyvalues["office"]  == "financial_services" ) or
        ( keyvalues["office"]  == "financial_advisor"  ) or
+       ( keyvalues["amenity"] == "financial_advice"   ) or
        ( keyvalues["amenity"] == "bureau_de_change"   )) then
       keyvalues["shop"] = "shopnonspecific"
    end
@@ -810,11 +814,15 @@ function filter_tags_generic(keyvalues, nokeys)
    if (( keyvalues["shop"]    == "bookmaker"           ) or
        ( keyvalues["shop"]    == "bookmakers"          ) or
        ( keyvalues["shop"]    == "betting"             ) or
+       ( keyvalues["amenity"] == "betting"             ) or
        ( keyvalues["shop"]    == "gambling"            ) or
        ( keyvalues["amenity"] == "gambling"            ) or
        ( keyvalues["shop"]    == "amusements"          ) or
+       ( keyvalues["amenity"] == "amusements"          ) or
+       ( keyvalues["amenity"] == "amusement"           ) or
        ( keyvalues["leisure"] == "adult_gaming_centre" ) or
-       ( keyvalues["amenity"] == "casino"              )) then
+       ( keyvalues["amenity"] == "casino"              ) or
+       ( keyvalues["amenity"] == "bingo"               )) then
       keyvalues["shop"] = "shopnonspecific"
    end
 
@@ -1041,6 +1049,7 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["shop"]    == "pet_supplies"            ) or
        ( keyvalues["shop"]    == "pet_grooming"            ) or
        ( keyvalues["shop"]    == "dog_grooming"            ) or
+       ( keyvalues["amenity"] == "dog_grooming"            ) or
        ( keyvalues["amenity"] == "veterinary"              ) or
        ( keyvalues["amenity"] == "animal_boarding"         ) or
        ( keyvalues["amenity"] == "cattery"                 ) or
@@ -1061,7 +1070,8 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["shop"]    == "caravan"                 ) or
        ( keyvalues["amenity"] == "car_wash"                ) or
        ( keyvalues["shop"]    == "truck"                   ) or
-       ( keyvalues["shop"]    == "truck_repair"            )) then
+       ( keyvalues["shop"]    == "truck_repair"            ) or
+       ( keyvalues["amenity"] == "driving_school"          )) then
       keyvalues["landuse"] = "unnamedcommercial"
       keyvalues["shop"]    = "shopnonspecific"
    end
@@ -1104,6 +1114,8 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["shop"]    == "ticket"                  ) or
        ( keyvalues["shop"]    == "insurance"               ) or
        ( keyvalues["shop"]    == "gallery"                 ) or
+       ( keyvalues["amenity"] == "gallery"                 ) or
+       ( keyvalues["amenity"] == "art_gallery"             ) or
        ( keyvalues["shop"]    == "plumber"                 ) or
        ( keyvalues["shop"]    == "builder"                 ) or
        ( keyvalues["shop"]    == "trophy"                  ) or
@@ -1115,14 +1127,20 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["craft"]   == "gunsmith"                ) or
        ( keyvalues["shop"]    == "auction"                 ) or
        ( keyvalues["shop"]    == "auction_house"           ) or
+       ( keyvalues["auction"] == "auction_house"           ) or
        ( keyvalues["office"]  == "auctioneer"              ) or
        ( keyvalues["shop"]    == "religion"                ) or
        ( keyvalues["shop"]    == "gas"                     ) or
        ( keyvalues["shop"]    == "taxi"                    ) or
        ( keyvalues["office"]  == "taxi"                    ) or
+       ( keyvalues["amenity"] == "minicab_office"          ) or
        ( keyvalues["amenity"] == "training"                ) or
        ( keyvalues["shop"]    == "mobility"                ) or
-       ( keyvalues["amenity"] == "stripclub"               )) then
+       ( keyvalues["amenity"] == "stripclub"               ) or
+       ( keyvalues["amenity"] == "brothel"                 ) or
+       ( keyvalues["amenity"] == "sauna"                   ) or
+       ( keyvalues["amenity"] == "self_storage"            ) or
+       ( keyvalues["amenity"] == "courier"                 )) then
       keyvalues["landuse"] = "unnamedcommercial"
       keyvalues["shop"] = "shopnonspecific"
    end
@@ -1164,28 +1182,35 @@ function filter_tags_generic(keyvalues, nokeys)
 -- opticians - render as "nonspecific health".
 -- Add unnamedcommercial landuse to give non-building areas a background.
 -- ----------------------------------------------------------------------------
-   if (( keyvalues["shop"]       == "optician"         ) or
-       ( keyvalues["shop"]       == "opticians"        ) or
-       ( keyvalues["amenity"]    == "optician"         ) or
-       ( keyvalues["shop"]       == "optometrist"      ) or
-       ( keyvalues["shop"]       == "hearing_aids"     ) or
-       ( keyvalues["shop"]       == "medical_supply"   ) or
-       ( keyvalues["shop"]       == "chiropodist"      ) or
-       ( keyvalues["healthcare"] == "podiatrist"       ) or
-       ( keyvalues["amenity"]    == "healthcare"       ) or
-       ( keyvalues["amenity"]    == "clinic"           ) or
-       ( keyvalues["amenity"]    == "social_facility"  ) or
-       ( keyvalues["amenity"]    == "nursing_home"     ) or
-       ( keyvalues["amenity"]    == "care_home"        ) or
-       ( keyvalues["amenity"]    == "retirement_home"  ) or
-       ( keyvalues["amenity"]    == "residential_home" ) or
-       ( keyvalues["amenity"]    == "childcare"        ) or
-       ( keyvalues["amenity"]    == "childrens_centre" ) or
-       ( keyvalues["amenity"]    == "preschool"        ) or
-       ( keyvalues["amenity"]    == "nursery"          ) or
-       ( keyvalues["amenity"]    == "health_centre"    ) or
-       ( keyvalues["amenity"]    == "medical_centre"   ) or
-       ( keyvalues["amenity"]    == "hospice"          )) then
+   if (( keyvalues["shop"]       == "optician"          ) or
+       ( keyvalues["shop"]       == "opticians"         ) or
+       ( keyvalues["amenity"]    == "optician"          ) or
+       ( keyvalues["shop"]       == "optometrist"       ) or
+       ( keyvalues["amenity"]    == "optometrist"       ) or
+       ( keyvalues["shop"]       == "hearing_aids"      ) or
+       ( keyvalues["shop"]       == "medical_supply"    ) or
+       ( keyvalues["shop"]       == "chiropodist"       ) or
+       ( keyvalues["amenity"]    == "chiropodist"       ) or
+       ( keyvalues["amenity"]    == "chiropractor"      ) or
+       ( keyvalues["amenity"]    == "osteopath"         ) or
+       ( keyvalues["amenity"]    == "physiotherapist"   ) or
+       ( keyvalues["healthcare"] == "podiatrist"        ) or
+       ( keyvalues["amenity"]    == "healthcare"        ) or
+       ( keyvalues["amenity"]    == "clinic"            ) or
+       ( keyvalues["amenity"]    == "social_facility"   ) or
+       ( keyvalues["amenity"]    == "nursing_home"      ) or
+       ( keyvalues["amenity"]    == "care_home"         ) or
+       ( keyvalues["amenity"]    == "retirement_home"   ) or
+       ( keyvalues["amenity"]    == "residential_home"  ) or
+       ( keyvalues["amenity"]    == "sheltered_housing" ) or
+       ( keyvalues["amenity"]    == "childcare"         ) or
+       ( keyvalues["amenity"]    == "childrens_centre"  ) or
+       ( keyvalues["amenity"]    == "preschool"         ) or
+       ( keyvalues["amenity"]    == "nursery"           ) or
+       ( keyvalues["amenity"]    == "health_centre"     ) or
+       ( keyvalues["amenity"]    == "medical_centre"    ) or
+       ( keyvalues["amenity"]    == "hospice"           ) or
+       ( keyvalues["amenity"]    == "daycare"           )) then
       keyvalues["landuse"] = "unnamedcommercial"
       keyvalues["shop"]    = "healthnonspecific"
    end
@@ -1225,7 +1250,9 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["amenity"] == "hall"                    ) or
        ( keyvalues["amenity"] == "ambulance_station"       ) or
        ( keyvalues["amenity"] == "lifeboat_station"        ) or
-       ( keyvalues["amenity"] == "coast_guard"             )) then
+       ( keyvalues["amenity"] == "coast_guard"             ) or
+       ( keyvalues["amenity"] == "monastery"               ) or
+       ( keyvalues["amenity"] == "convent"                 )) then
       keyvalues["landuse"] = "unnamedcommercial"
       keyvalues["office"]  = "nonspecific"
    end
@@ -1239,13 +1266,17 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["office"]  == "computer"                ) or
        ( keyvalues["office"]  == "lawyer"                  ) or
        ( keyvalues["shop"]    == "lawyer"                  ) or
+       ( keyvalues["amenity"] == "lawyer"                  ) or
        ( keyvalues["office"]  == "solicitor"               ) or
        ( keyvalues["shop"]    == "solicitor"               ) or
+       ( keyvalues["amenity"] == "solicitor"               ) or
        ( keyvalues["office"]  == "solicitors"              ) or
        ( keyvalues["shop"]    == "solicitors"              ) or
+       ( keyvalues["amenity"] == "solicitors"              ) or
        ( keyvalues["office"]  == "accountant"              ) or
-       ( keyvalues["office"]  == "accountants"             ) or
        ( keyvalues["shop"]    == "accountant"              ) or
+       ( keyvalues["office"]  == "accountants"             ) or
+       ( keyvalues["amenity"] == "accountants"             ) or
        ( keyvalues["office"]  == "employment_agency"       ) or
        ( keyvalues["shop"]    == "employment_agency"       ) or
        ( keyvalues["office"]  == "recruitment_agency"      ) or
@@ -1274,7 +1305,8 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["craft"]   == "hvac"                    ) or
        ( keyvalues["office"]  == "hvac"                    ) or
        ( keyvalues["office"]  == "laundry"                 ) or
-       ( keyvalues["amenity"] == "telephone_exchange"      )) then
+       ( keyvalues["amenity"] == "telephone_exchange"      ) or
+       ( keyvalues["amenity"] == "coworking_space"         )) then
       keyvalues["landuse"] = "unnamedcommercial"
       keyvalues["office"] = "nonspecific"
    end
@@ -1287,11 +1319,13 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["office"]  == "educational_institution" ) or
        ( keyvalues["office"]  == "university"              ) or
        ( keyvalues["office"]  == "charity"                 ) or
-       ( keyvalues["office"]  == "university"              ) or
+       ( keyvalues["amenity"] == "education_centre"        ) or
        ( keyvalues["office"]  == "political_party"         ) or
        ( keyvalues["office"]  == "quango"                  ) or
        ( keyvalues["office"]  == "association"             ) or
-       ( keyvalues["amenity"] == "advice"                  )) then
+       ( keyvalues["amenity"] == "advice"                  ) or
+       ( keyvalues["amenity"] == "advice_service"          ) or
+       ( keyvalues["amenity"] == "citizens_advice_bureau"  )) then
       keyvalues["office"] = "nonspecific"
    end
 
@@ -1310,6 +1344,8 @@ function filter_tags_generic(keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
    if (( keyvalues["amenity"] == "events_venue"      ) or
        ( keyvalues["amenity"] == "conference_centre" ) or
+       ( keyvalues["amenity"] == "exhibition_centre" ) or
+       ( keyvalues["amenity"] == "function_room"     ) or
        ( keyvalues["amenity"] == "arts_centre"       ) or
        ( keyvalues["amenity"] == "community_hall"    ) or
        ( keyvalues["amenity"] == "church_hall"       ) or
@@ -1319,12 +1355,15 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["amenity"] == "youth_club"        ) or
        ( keyvalues["amenity"] == "youth_centre"      ) or
        ( keyvalues["amenity"] == "social_club"       ) or
+       ( keyvalues["amenity"] == "working_mens_club" ) or
        ( keyvalues["amenity"] == "social_centre"     ) or
        ( keyvalues["amenity"] == "club"              ) or
        ( keyvalues["amenity"] == "gym"               ) or
        ( keyvalues["amenity"] == "scout_hut"         ) or
        ( keyvalues["amenity"] == "scout_hall"        ) or
-       ( keyvalues["amenity"] == "clubhouse"         )) then
+       ( keyvalues["amenity"] == "scouts"            ) or
+       ( keyvalues["amenity"] == "clubhouse"         ) or
+       ( keyvalues["amenity"] == "club_house"        )) then
       keyvalues["landuse"] = "unnamedcommercial"
       keyvalues["leisure"] = "nonspecific"
    end
