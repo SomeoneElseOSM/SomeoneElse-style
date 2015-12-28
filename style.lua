@@ -259,12 +259,31 @@ function filter_tags_generic(keyvalues, nokeys)
    if (( keyvalues["man_made"]   == "wastewater_plant"    ) or 
        ( keyvalues["man_made"]   == "reservoir_covered"   ) or 
        ( keyvalues["man_made"]   == "petroleum_well"      ) or 
-       ( keyvalues["industrial"] == "depot"               ) or 
        ( keyvalues["industrial"] == "warehouse"           ) or
+       ( keyvalues["building"]   == "warehouse"           ) or
+       ( keyvalues["industrial"] == "brewery"             ) or 
+       ( keyvalues["industrial"] == "factory"             ) or 
+       ( keyvalues["industrial"] == "yes"                 ) or 
+       ( keyvalues["industrial"] == "depot"               ) or 
+       ( keyvalues["building"]   == "depot"               ) or 
+       ( keyvalues["industrial"] == "scrap_yard"          ) or 
+       ( keyvalues["industrial"] == "scrapyard"           ) or 
+       ( keyvalues["industrial"] == "yard"                ) or 
        ( keyvalues["industrial"] == "engineering"         ) or
+       ( keyvalues["industrial"] == "machine_shop"        ) or
+       ( keyvalues["industrial"] == "packaging"           ) or
+       ( keyvalues["industrial"] == "haulage"             ) or
+       ( keyvalues["building"]   == "industrial"          ) or
        ( keyvalues["amenity"]    == "recycling"           ) or
        ( keyvalues["craft"]      == "brewery"             ) or
-       ( keyvalues["power"]      == "plant"               )) then
+       ( keyvalues["power"]      == "plant"               ) or
+       ( keyvalues["building"]   == "works"               ) or
+       ( keyvalues["building"]   == "manufacture"         ) or
+       ( keyvalues["man_made"]   == "gas_station"         ) or
+       ( keyvalues["man_made"]   == "gas_works"           ) or
+       ( keyvalues["man_made"]   == "water_treatment"     ) or
+       ( keyvalues["man_made"]   == "pumping_station"     ) or
+       ( keyvalues["man_made"]   == "water_works"         )) then
       keyvalues["landuse"] = "industrial"
    end
 
@@ -286,9 +305,15 @@ function filter_tags_generic(keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
 -- Things without icons - add "commercial" landuse to include name too.
 -- ----------------------------------------------------------------------------
-   if ((keyvalues["highway"]    == "services") or
-       (keyvalues["landuse"]    == "churchyard") or
-       (keyvalues["club"]       == "sport")) then
+   if (( keyvalues["building"]   == "commercial"         ) or
+       ( keyvalues["building"]   == "office"             ) or
+       ( keyvalues["man_made"]   == "telephone_exchange" ) or
+       ( keyvalues["amenity"]    == "telephone_exchange" ) or
+       ( keyvalues["building"]   == "telephone_exchange" ) or
+       ( keyvalues["utility"]    == "telephone_exchange" ) or
+       ( keyvalues["highway"]    == "services"           ) or
+       ( keyvalues["landuse"]    == "churchyard"         ) or
+       ( keyvalues["club"]       == "sport"              )) then
       keyvalues["landuse"] = "commercial"
    end
 
@@ -413,9 +438,48 @@ function filter_tags_generic(keyvalues, nokeys)
 -- In the version of OSM-carto that I use this with, Supermarkets would 
 -- otherwise display as pink, which does not show up over pink retail landuse.
 -- ----------------------------------------------------------------------------
-   if (( keyvalues["building"]   == "supermarket"  ) or
-       ( keyvalues["man_made"]   == "storage_tank" )) then
+   if (( keyvalues["building"]   == "supermarket"      ) or
+       ( keyvalues["man_made"]   == "storage_tank"     ) or
+       ( keyvalues["man_made"]   == "silo"             ) or
+       ( keyvalues["man_made"]   == "tank"             ) or
+       ( keyvalues["man_made"]   == "water_tank"       ) or
+       ( keyvalues["man_made"]   == "kiln"             ) or
+       ( keyvalues["man_made"]   == "gasometer"        ) or
+       ( keyvalues["man_made"]   == "oil_tank"         ) or
+       ( keyvalues["man_made"]   == "greenhouse"       ) or
+       ( keyvalues["man_made"]   == "water_treatment"  ) or
+       ( keyvalues["man_made"]   == "trickling_filter" ) or
+       ( keyvalues["man_made"]   == "filter_bed"       ) or
+       ( keyvalues["man_made"]   == "filtration_bed"   ) or
+       ( keyvalues["man_made"]   == "waste_treatment"  )) then
       keyvalues["building"] = "yes"
+   end
+
+-- ----------------------------------------------------------------------------
+-- Add "water" to some "wet" features for rendering.
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["man_made"]   == "wastewater_reservoir"  ) or
+       ( keyvalues["man_made"]   == "lagoon"                ) or
+       ( keyvalues["man_made"]   == "lake"                  ) or
+       ( keyvalues["man_made"]   == "reservoir"             )) then
+      keyvalues["natural"] = "water"
+   end
+
+-- ----------------------------------------------------------------------------
+-- Mistaggings for wastewater_plant
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["man_made"]   == "sewage_works"      ) or
+       ( keyvalues["man_made"]   == "wastewater_works"  )) then
+      keyvalues["man_made"] = "wastewater_plant"
+   end
+
+-- ----------------------------------------------------------------------------
+-- Map wind turbines to, er, wind turbines:
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["man_made"]   == "wind_turbine" ) or
+       ( keyvalues["man_made"]   == "windpump"     )) then
+      keyvalues["power"]        = "generator"
+      keyvalues["power_source"] = "wind"
    end
 
 -- ----------------------------------------------------------------------------
@@ -1184,33 +1248,35 @@ function filter_tags_generic(keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
    if (( keyvalues["shop"]       == "optician"          ) or
        ( keyvalues["shop"]       == "opticians"         ) or
-       ( keyvalues["amenity"]    == "optician"          ) or
-       ( keyvalues["shop"]       == "optometrist"       ) or
-       ( keyvalues["amenity"]    == "optometrist"       ) or
-       ( keyvalues["shop"]       == "hearing_aids"      ) or
-       ( keyvalues["shop"]       == "medical_supply"    ) or
-       ( keyvalues["shop"]       == "chiropodist"       ) or
-       ( keyvalues["amenity"]    == "chiropodist"       ) or
-       ( keyvalues["amenity"]    == "chiropractor"      ) or
-       ( keyvalues["amenity"]    == "osteopath"         ) or
-       ( keyvalues["amenity"]    == "physiotherapist"   ) or
-       ( keyvalues["healthcare"] == "podiatrist"        ) or
-       ( keyvalues["amenity"]    == "healthcare"        ) or
-       ( keyvalues["amenity"]    == "clinic"            ) or
-       ( keyvalues["amenity"]    == "social_facility"   ) or
-       ( keyvalues["amenity"]    == "nursing_home"      ) or
-       ( keyvalues["amenity"]    == "care_home"         ) or
-       ( keyvalues["amenity"]    == "retirement_home"   ) or
-       ( keyvalues["amenity"]    == "residential_home"  ) or
-       ( keyvalues["amenity"]    == "sheltered_housing" ) or
-       ( keyvalues["amenity"]    == "childcare"         ) or
-       ( keyvalues["amenity"]    == "childrens_centre"  ) or
-       ( keyvalues["amenity"]    == "preschool"         ) or
-       ( keyvalues["amenity"]    == "nursery"           ) or
-       ( keyvalues["amenity"]    == "health_centre"     ) or
-       ( keyvalues["amenity"]    == "medical_centre"    ) or
-       ( keyvalues["amenity"]    == "hospice"           ) or
-       ( keyvalues["amenity"]    == "daycare"           )) then
+       ( keyvalues["amenity"]     == "optician"          ) or
+       ( keyvalues["shop"]        == "optometrist"       ) or
+       ( keyvalues["amenity"]     == "optometrist"       ) or
+       ( keyvalues["shop"]        == "hearing_aids"      ) or
+       ( keyvalues["shop"]        == "medical_supply"    ) or
+       ( keyvalues["shop"]        == "chiropodist"       ) or
+       ( keyvalues["amenity"]     == "chiropodist"       ) or
+       ( keyvalues["amenity"]     == "chiropractor"      ) or
+       ( keyvalues["amenity"]     == "osteopath"         ) or
+       ( keyvalues["amenity"]     == "physiotherapist"   ) or
+       ( keyvalues["healthcare"]  == "podiatrist"        ) or
+       ( keyvalues["amenity"]     == "healthcare"        ) or
+       ( keyvalues["amenity"]     == "clinic"            ) or
+       ( keyvalues["amenity"]     == "social_facility"   ) or
+       ( keyvalues["amenity"]     == "nursing_home"      ) or
+       ( keyvalues["amenity"]     == "care_home"         ) or
+       ( keyvalues["amenity"]     == "retirement_home"   ) or
+       ( keyvalues["amenity"]     == "residential_home"  ) or
+       ( keyvalues["building"]    == "residential_home"  ) or
+       ( keyvalues["residential"] == "residential_home"  ) or
+       ( keyvalues["amenity"]     == "sheltered_housing" ) or
+       ( keyvalues["amenity"]     == "childcare"         ) or
+       ( keyvalues["amenity"]     == "childrens_centre"  ) or
+       ( keyvalues["amenity"]     == "preschool"         ) or
+       ( keyvalues["amenity"]     == "nursery"           ) or
+       ( keyvalues["amenity"]     == "health_centre"     ) or
+       ( keyvalues["amenity"]     == "medical_centre"    ) or
+       ( keyvalues["amenity"]     == "hospice"           ) or
+       ( keyvalues["amenity"]     == "daycare"           )) then
       keyvalues["landuse"] = "unnamedcommercial"
       keyvalues["shop"]    = "healthnonspecific"
    end
@@ -1237,22 +1303,23 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["name"]    == "Jobcentre Plus"          ) or
        ( keyvalues["name"]    == "JobCentre Plus"          ) or
        ( keyvalues["name"]    == "Job Centre Plus"         ) or
-       ( keyvalues["office"]  == "government"              ) or
-       ( keyvalues["office"]  == "administrative"          ) or
-       ( keyvalues["office"]  == "register"                ) or
-       ( keyvalues["amenity"] == "register_office"         ) or
-       ( keyvalues["office"]  == "drainage_board"          ) or
-       ( keyvalues["office"]  == "council"                 ) or
-       ( keyvalues["amenity"] == "courthouse"              ) or
-       ( keyvalues["amenity"] == "townhall"                ) or
-       ( keyvalues["amenity"] == "village_hall"            ) or
-       ( keyvalues["amenity"] == "crematorium"             ) or
-       ( keyvalues["amenity"] == "hall"                    ) or
-       ( keyvalues["amenity"] == "ambulance_station"       ) or
-       ( keyvalues["amenity"] == "lifeboat_station"        ) or
-       ( keyvalues["amenity"] == "coast_guard"             ) or
-       ( keyvalues["amenity"] == "monastery"               ) or
-       ( keyvalues["amenity"] == "convent"                 )) then
+       ( keyvalues["office"]   == "government"              ) or
+       ( keyvalues["office"]   == "administrative"          ) or
+       ( keyvalues["office"]   == "register"                ) or
+       ( keyvalues["amenity"]  == "register_office"         ) or
+       ( keyvalues["office"]   == "drainage_board"          ) or
+       ( keyvalues["office"]   == "council"                 ) or
+       ( keyvalues["amenity"]  == "courthouse"              ) or
+       ( keyvalues["amenity"]  == "townhall"                ) or
+       ( keyvalues["amenity"]  == "village_hall"            ) or
+       ( keyvalues["building"] == "village_hall"            ) or
+       ( keyvalues["amenity"]  == "crematorium"             ) or
+       ( keyvalues["amenity"]  == "hall"                    ) or
+       ( keyvalues["amenity"]  == "ambulance_station"       ) or
+       ( keyvalues["amenity"]  == "lifeboat_station"        ) or
+       ( keyvalues["amenity"]  == "coast_guard"             ) or
+       ( keyvalues["amenity"]  == "monastery"               ) or
+       ( keyvalues["amenity"]  == "convent"                 )) then
       keyvalues["landuse"] = "unnamedcommercial"
       keyvalues["office"]  = "nonspecific"
    end
@@ -1314,19 +1381,22 @@ function filter_tags_generic(keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
 -- Other nonspecific offices.  
 -- ----------------------------------------------------------------------------
-   if (( keyvalues["office"]  == "it"                      ) or
-       ( keyvalues["office"]  == "ngo"                     ) or
-       ( keyvalues["office"]  == "educational_institution" ) or
-       ( keyvalues["office"]  == "university"              ) or
-       ( keyvalues["office"]  == "charity"                 ) or
-       ( keyvalues["amenity"] == "education_centre"        ) or
-       ( keyvalues["office"]  == "political_party"         ) or
-       ( keyvalues["office"]  == "quango"                  ) or
-       ( keyvalues["office"]  == "association"             ) or
-       ( keyvalues["amenity"] == "advice"                  ) or
-       ( keyvalues["amenity"] == "advice_service"          ) or
-       ( keyvalues["amenity"] == "citizens_advice_bureau"  )) then
-      keyvalues["office"] = "nonspecific"
+   if (( keyvalues["office"]   == "it"                      ) or
+       ( keyvalues["office"]   == "ngo"                     ) or
+       ( keyvalues["office"]   == "educational_institution" ) or
+       ( keyvalues["office"]   == "university"              ) or
+       ( keyvalues["office"]   == "charity"                 ) or
+       ( keyvalues["amenity"]  == "education_centre"        ) or
+       ( keyvalues["amenity"]  == "college"                 ) or
+       ( keyvalues["man_made"] == "observatory"            ) or
+       ( keyvalues["office"]   == "political_party"         ) or
+       ( keyvalues["office"]   == "quango"                  ) or
+       ( keyvalues["office"]   == "association"             ) or
+       ( keyvalues["amenity"]  == "advice"                  ) or
+       ( keyvalues["amenity"]  == "advice_service"          ) or
+       ( keyvalues["amenity"]  == "citizens_advice_bureau"  )) then
+      keyvalues["landuse"] = "unnamedcommercial"
+      keyvalues["office"]  = "nonspecific"
    end
 
 -- ----------------------------------------------------------------------------
@@ -1342,28 +1412,31 @@ function filter_tags_generic(keyvalues, nokeys)
 -- Other nonspecific leisure
 -- Add unnamedcommercial landuse to give non-building areas a background.
 -- ----------------------------------------------------------------------------
-   if (( keyvalues["amenity"] == "events_venue"      ) or
-       ( keyvalues["amenity"] == "conference_centre" ) or
-       ( keyvalues["amenity"] == "exhibition_centre" ) or
-       ( keyvalues["amenity"] == "function_room"     ) or
-       ( keyvalues["amenity"] == "arts_centre"       ) or
-       ( keyvalues["amenity"] == "community_hall"    ) or
-       ( keyvalues["amenity"] == "church_hall"       ) or
-       ( keyvalues["amenity"] == "community_centre"  ) or
-       ( keyvalues["amenity"] == "dojo"              ) or
-       ( keyvalues["leisure"] == "indoor_play"       ) or
-       ( keyvalues["amenity"] == "youth_club"        ) or
-       ( keyvalues["amenity"] == "youth_centre"      ) or
-       ( keyvalues["amenity"] == "social_club"       ) or
-       ( keyvalues["amenity"] == "working_mens_club" ) or
-       ( keyvalues["amenity"] == "social_centre"     ) or
-       ( keyvalues["amenity"] == "club"              ) or
-       ( keyvalues["amenity"] == "gym"               ) or
-       ( keyvalues["amenity"] == "scout_hut"         ) or
-       ( keyvalues["amenity"] == "scout_hall"        ) or
-       ( keyvalues["amenity"] == "scouts"            ) or
-       ( keyvalues["amenity"] == "clubhouse"         ) or
-       ( keyvalues["amenity"] == "club_house"        )) then
+   if (( keyvalues["amenity"]  == "events_venue"      ) or
+       ( keyvalues["amenity"]  == "conference_centre" ) or
+       ( keyvalues["amenity"]  == "exhibition_centre" ) or
+       ( keyvalues["amenity"]  == "function_room"     ) or
+       ( keyvalues["amenity"]  == "arts_centre"       ) or
+       ( keyvalues["amenity"]  == "community_hall"    ) or
+       ( keyvalues["amenity"]  == "church_hall"       ) or
+       ( keyvalues["amenity"]  == "community_centre"  ) or
+       ( keyvalues["building"] == "community_centre"  ) or
+       ( keyvalues["amenity"]  == "dojo"              ) or
+       ( keyvalues["leisure"]  == "indoor_play"       ) or
+       ( keyvalues["amenity"]  == "youth_club"        ) or
+       ( keyvalues["amenity"]  == "youth_centre"      ) or
+       ( keyvalues["amenity"]  == "social_club"       ) or
+       ( keyvalues["amenity"]  == "working_mens_club" ) or
+       ( keyvalues["amenity"]  == "social_centre"     ) or
+       ( keyvalues["amenity"]  == "club"              ) or
+       ( keyvalues["amenity"]  == "gym"               ) or
+       ( keyvalues["amenity"]  == "scout_hut"         ) or
+       ( keyvalues["amenity"]  == "scout_hall"        ) or
+       ( keyvalues["amenity"]  == "scouts"            ) or
+       ( keyvalues["amenity"]  == "clubhouse"         ) or
+       ( keyvalues["building"] == "clubhouse"         ) or
+       ( keyvalues["amenity"]  == "club_house"        ) or
+       ( keyvalues["building"] == "club_house"        )) then
       keyvalues["landuse"] = "unnamedcommercial"
       keyvalues["leisure"] = "nonspecific"
    end
@@ -1407,18 +1480,21 @@ function filter_tags_generic(keyvalues, nokeys)
 -- group.  Note that this includes "tower" temporarily, and "campanile" is in 
 -- here as a sort of tower (only 2 mapped in UK currently).
 -- ----------------------------------------------------------------------------
-   if (( keyvalues["man_made"] == "phone_mast"          )  or
-       ( keyvalues["man_made"] == "radio_mast"          )  or
-       ( keyvalues["man_made"] == "communications_mast" )  or
-       ( keyvalues["man_made"] == "communication_mast"  )  or
-       ( keyvalues["man_made"] == "tower"               )  or
-       ( keyvalues["man_made"] == "campanile"           )  or
-       ( keyvalues["man_made"] == "communications_tower" )) then
+   if (( keyvalues["man_made"] == "phone_mast"           ) or
+       ( keyvalues["man_made"] == "radio_mast"           ) or
+       ( keyvalues["man_made"] == "communications_mast"  ) or
+       ( keyvalues["man_made"] == "communication_mast"   ) or
+       ( keyvalues["man_made"] == "tower"                ) or
+       ( keyvalues["man_made"] == "campanile"            ) or
+       ( keyvalues["man_made"] == "communications_tower" ) or
+       ( keyvalues["man_made"] == "transmitter"          ) or
+       ( keyvalues["man_made"] == "antenna"              )) then
       keyvalues["man_made"] = "mast"
    end
 
-   if (keyvalues["highway"] == "bus_stop") then
-      if (keyvalues["naptan:Indicator"] ~= nil) then
+   if ( keyvalues["highway"] == "bus_stop" ) then
+      if (( keyvalues["name"]             ~= nil ) and
+          ( keyvalues["naptan:Indicator"] ~= nil )) then
          keyvalues["name"] = keyvalues["name"] .. " " .. keyvalues["naptan:Indicator"]
       end
    end
