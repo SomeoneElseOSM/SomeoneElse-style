@@ -1113,6 +1113,8 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["shop"]    == "pet_supplies"            ) or
        ( keyvalues["shop"]    == "pet_grooming"            ) or
        ( keyvalues["shop"]    == "dog_grooming"            ) or
+       ( keyvalues["shop"]    == "pet;corn"                ) or
+       ( keyvalues["shop"]    == "animal_feed"             ) or
        ( keyvalues["amenity"] == "dog_grooming"            ) or
        ( keyvalues["amenity"] == "veterinary"              ) or
        ( keyvalues["amenity"] == "animal_boarding"         ) or
