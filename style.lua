@@ -915,19 +915,24 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
--- Various photo, camera and copy shops
+-- Various photo, camera, copy and print shops
 -- Difficult to do an icon for.
 -- ----------------------------------------------------------------------------
-   if (( keyvalues["shop"]   == "copyshop"     ) or
-       ( keyvalues["shop"]   == "camera"       ) or
-       ( keyvalues["shop"]   == "photo"        ) or
-       ( keyvalues["shop"]   == "photo_studio" ) or
-       ( keyvalues["shop"]   == "photography"  ) or
-       ( keyvalues["shop"]   == "photographic" ) or
-       ( keyvalues["shop"]   == "printing"     ) or
-       ( keyvalues["shop"]   == "printer"      ) or
-       ( keyvalues["shop"]   == "print"        ) or
-       ( keyvalues["shop"]   == "printers"     )) then
+   if (( keyvalues["shop"]    == "copyshop"           ) or
+       ( keyvalues["shop"]    == "camera"             ) or
+       ( keyvalues["shop"]    == "photo"              ) or
+       ( keyvalues["shop"]    == "photo_studio"       ) or
+       ( keyvalues["shop"]    == "photography"        ) or
+       ( keyvalues["shop"]    == "photographic"       ) or
+       ( keyvalues["shop"]    == "printing"           ) or
+       ( keyvalues["shop"]    == "printer"            ) or
+       ( keyvalues["shop"]    == "print"              ) or
+       ( keyvalues["shop"]    == "printers"           ) or
+       ( keyvalues["craft"]   == "printer"            ) or
+       ( keyvalues["shop"]    == "printer_cartridges" ) or
+       ( keyvalues["shop"]    == "printer_ink"        ) or
+       ( keyvalues["amenity"] == "printer"            ) or
+       ( keyvalues["office"]  == "printer"            )) then
       keyvalues["shop"] = "shopnonspecific"
    end
 
