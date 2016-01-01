@@ -703,6 +703,7 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["shop"]  == "appliances"              ) or
        ( keyvalues["shop"]  == "vacuum_cleaner"          ) or
        ( keyvalues["shop"]  == "domestic_appliances"     ) or
+       ( keyvalues["shop"]  == "white_goods"             ) or
        ( keyvalues["trade"] == "electrical"              ) or
        ( keyvalues["name"]  == "City Electrical Factors" )) then
       keyvalues["shop"] = "electrical"
@@ -1437,6 +1438,7 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["amenity"]  == "social_centre"     ) or
        ( keyvalues["amenity"]  == "club"              ) or
        ( keyvalues["amenity"]  == "gym"               ) or
+       ( keyvalues["leisure"]  == "fitness_centre"    ) or
        ( keyvalues["amenity"]  == "scout_hut"         ) or
        ( keyvalues["amenity"]  == "scout_hall"        ) or
        ( keyvalues["amenity"]  == "scouts"            ) or
