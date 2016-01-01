@@ -775,6 +775,7 @@ function filter_tags_generic(keyvalues, nokeys)
 
 -- ----------------------------------------------------------------------------
 -- "cafe" and "fast_food" consolidation.  
+-- Also render fish and chips with a unique icon.
 -- ----------------------------------------------------------------------------
    if ( keyvalues["shop"] == "cafe"       ) then
       keyvalues["amenity"] = "cafe"
@@ -786,14 +787,18 @@ function filter_tags_generic(keyvalues, nokeys)
       keyvalues["cuisine"] = "sandwich"
    end
 
-   if ( keyvalues["shop"] == "fish_and_chips" ) then
-      keyvalues["amenity"] = "fast_food"
-      keyvalues["cuisine"] = "fish_and_chips"
-   end
-
    if (( keyvalues["shop"] == "fast_food" ) or
        ( keyvalues["shop"] == "take_away" )) then
       keyvalues["amenity"] = "fast_food"
+   end
+
+   if (( keyvalues["amenity"] == "fast_food"      ) and
+       ( keyvalues["cuisine"] == "fish_and_chips" )) then
+      keyvalues["amenity"] = "fish_and_chips"
+   end
+
+   if ( keyvalues["shop"] == "fish_and_chips" ) then
+      keyvalues["amenity"] = "fish_and_chips"
    end
 
 -- ----------------------------------------------------------------------------
