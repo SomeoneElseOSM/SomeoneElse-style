@@ -255,6 +255,8 @@ function filter_tags_generic(keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
 -- Pretend add landuse=industrial to some industrial sub-types to force 
 -- name rendering.  Similarly, some commercial and leisure.
+-- man_made=works drops the man_made tag to avoid duplicate labelling.
+-- "parking=depot" is a special case - drop the parking tag there too.
 -- ----------------------------------------------------------------------------
    if (( keyvalues["man_made"]   == "wastewater_plant"    ) or 
        ( keyvalues["man_made"]   == "reservoir_covered"   ) or 
@@ -266,6 +268,9 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["industrial"] == "yes"                 ) or 
        ( keyvalues["industrial"] == "depot"               ) or 
        ( keyvalues["building"]   == "depot"               ) or 
+       ( keyvalues["landuse"]    == "depot"               ) or
+       ( keyvalues["amenity"]    == "depot"               ) or
+       ( keyvalues["amenity"]    == "fuel_depot"          ) or
        ( keyvalues["industrial"] == "scrap_yard"          ) or 
        ( keyvalues["industrial"] == "scrapyard"           ) or 
        ( keyvalues["industrial"] == "yard"                ) or 
@@ -292,6 +297,11 @@ function filter_tags_generic(keyvalues, nokeys)
       keyvalues["landuse"] = "industrial"
    end
 
+   if ( keyvalues["parking"]   == "depot" ) then
+      keyvalues["parking"] = nil
+      keyvalues["landuse"] = "commercial"
+   end
+
 -- ----------------------------------------------------------------------------
 -- Shops etc. with icons already - just add "unnamedcommercial" landuse.
 -- ----------------------------------------------------------------------------
@@ -316,6 +326,7 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["club"]       == "sport"              )) then
       keyvalues["landuse"] = "commercial"
    end
+
 
 -- ----------------------------------------------------------------------------
 -- Shop groups - just treat as retail landuse.
@@ -1439,7 +1450,7 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
--- Other nonspecific leisure
+-- Other nonspecific leisure.  Add an icon and label via "nonspecific".
 -- Add unnamedcommercial landuse to give non-building areas a background.
 -- ----------------------------------------------------------------------------
    if (( keyvalues["amenity"]  == "events_venue"      ) or
@@ -1467,7 +1478,9 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["amenity"]  == "clubhouse"         ) or
        ( keyvalues["building"] == "clubhouse"         ) or
        ( keyvalues["amenity"]  == "club_house"        ) or
-       ( keyvalues["building"] == "club_house"        )) then
+       ( keyvalues["building"] == "club_house"        ) or
+       ( keyvalues["amenity"]  == "dancing_school"    ) or
+       ( keyvalues["leisure"]  == "dance"             )) then
       keyvalues["landuse"] = "unnamedcommercial"
       keyvalues["leisure"] = "nonspecific"
    end
