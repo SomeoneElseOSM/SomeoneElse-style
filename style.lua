@@ -272,6 +272,8 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["amenity"]    == "depot"                  ) or
        ( keyvalues["amenity"]    == "bus_depot"              ) or
        ( keyvalues["amenity"]    == "fuel_depot"             ) or
+       ( keyvalues["amenity"]    == "scrap_yard"             ) or 
+       ( keyvalues["amenity"]    == "scrapyard"              ) or 
        ( keyvalues["industrial"] == "scrap_yard"             ) or 
        ( keyvalues["industrial"] == "scrapyard"              ) or 
        ( keyvalues["industrial"] == "yard"                   ) or 
@@ -487,7 +489,18 @@ function filter_tags_generic(keyvalues, nokeys)
 -- A former canal can, like an abandoned railway, still be a major
 -- physical feature.
 -- ----------------------------------------------------------------------------
-   if ( keyvalues["historic"]   == "canal" ) then
+   if (( keyvalues["historic"]           == "canal"           ) or
+       ( keyvalues["historic:waterway"]  == "canal"           ) or
+       ( keyvalues["disused:waterway"]   == "canal"           ) or
+       ( keyvalues["disused"]            == "canal"           ) or
+       ( keyvalues["abandoned:waterway"] == "canal"           ) or
+       ( keyvalues["waterway"]           == "disused_canal"   ) or
+       ( keyvalues["waterway"]           == "historic_canal"  ) or
+       ( keyvalues["waterway"]           == "abandoned_canal" ) or
+       ( keyvalues["waterway"]           == "former_canal"    ) or
+       ( keyvalues["waterway:historic"]  == "canal"           ) or
+       ( keyvalues["waterway:abandoned"] == "canal"           )
+       ( keyvalues["abandoned"]          == "waterway=canal"  )) then
       keyvalues["waterway"] = "derelict_canal"
    end
 
