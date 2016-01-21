@@ -499,7 +499,7 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["waterway"]           == "abandoned_canal" ) or
        ( keyvalues["waterway"]           == "former_canal"    ) or
        ( keyvalues["waterway:historic"]  == "canal"           ) or
-       ( keyvalues["waterway:abandoned"] == "canal"           )
+       ( keyvalues["waterway:abandoned"] == "canal"           ) or
        ( keyvalues["abandoned"]          == "waterway=canal"  )) then
       keyvalues["waterway"] = "derelict_canal"
    end
