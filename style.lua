@@ -1352,35 +1352,52 @@ function filter_tags_generic(keyvalues, nokeys)
 -- opticians - render as "nonspecific health".
 -- Add unnamedcommercial landuse to give non-building areas a background.
 -- ----------------------------------------------------------------------------
-   if (( keyvalues["shop"]       == "optician"          ) or
-       ( keyvalues["shop"]       == "opticians"         ) or
+   if (( keyvalues["shop"]        == "optician"          ) or
        ( keyvalues["amenity"]     == "optician"          ) or
+       ( keyvalues["craft"]       == "optician"          ) or
+       ( keyvalues["office"]      == "optician"          ) or
+       ( keyvalues["shop"]        == "opticians"         ) or
        ( keyvalues["shop"]        == "optometrist"       ) or
        ( keyvalues["amenity"]     == "optometrist"       ) or
+       ( keyvalues["healthcare"]  == "optometrist"       ) or
        ( keyvalues["shop"]        == "hearing_aids"      ) or
        ( keyvalues["shop"]        == "medical_supply"    ) or
        ( keyvalues["shop"]        == "chiropodist"       ) or
        ( keyvalues["amenity"]     == "chiropodist"       ) or
+       ( keyvalues["healthcare"]  == "chiropodist"       ) or
        ( keyvalues["amenity"]     == "chiropractor"      ) or
+       ( keyvalues["healthcare"]  == "chiropractor"      ) or
        ( keyvalues["amenity"]     == "osteopath"         ) or
+       ( keyvalues["healthcare"]  == "osteopath"         ) or
+       ( keyvalues["shop"]        == "osteopath"         ) or
        ( keyvalues["amenity"]     == "physiotherapist"   ) or
+       ( keyvalues["healthcare"]  == "physiotherapist"   ) or
        ( keyvalues["healthcare"]  == "podiatrist"        ) or
+       ( keyvalues["amenity"]     == "podiatrist"        ) or
        ( keyvalues["amenity"]     == "healthcare"        ) or
        ( keyvalues["amenity"]     == "clinic"            ) or
+       ( keyvalues["healthcare"]  == "clinic"            ) or
        ( keyvalues["amenity"]     == "social_facility"   ) or
        ( keyvalues["amenity"]     == "nursing_home"      ) or
+       ( keyvalues["residential"] == "nursing_home"      ) or
+       ( keyvalues["building"]    == "nursing_home"      ) or
        ( keyvalues["amenity"]     == "care_home"         ) or
+       ( keyvalues["residential"] == "care_home"         ) or
        ( keyvalues["amenity"]     == "retirement_home"   ) or
        ( keyvalues["amenity"]     == "residential_home"  ) or
        ( keyvalues["building"]    == "residential_home"  ) or
        ( keyvalues["residential"] == "residential_home"  ) or
        ( keyvalues["amenity"]     == "sheltered_housing" ) or
+       ( keyvalues["residential"] == "sheltered_housing" ) or
        ( keyvalues["amenity"]     == "childcare"         ) or
        ( keyvalues["amenity"]     == "childrens_centre"  ) or
        ( keyvalues["amenity"]     == "preschool"         ) or
+       ( keyvalues["building"]    == "preschool"         ) or
        ( keyvalues["amenity"]     == "nursery"           ) or
        ( keyvalues["amenity"]     == "health_centre"     ) or
+       ( keyvalues["building"]    == "health_centre"     ) or
        ( keyvalues["amenity"]     == "medical_centre"    ) or
+       ( keyvalues["building"]    == "medical_centre"    ) or
        ( keyvalues["amenity"]     == "hospice"           ) or
        ( keyvalues["amenity"]     == "daycare"           ) or
        ( keyvalues["emergency"]   == "defibrillator"     )) then
