@@ -227,6 +227,27 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Use tertiary_link to indicate sidewalk
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["highway"] == "tertiary"      ) or 
+       ( keyvalues["highway"] == "tertiary_link" )) then
+      if (( keyvalues["sidewalk"] == "both"      ) or 
+          ( keyvalues["sidewalk"] == "left"      ) or 
+          ( keyvalues["sidewalk"] == "separate"  ) or 
+          ( keyvalues["sidewalk"] == "right"     ) or 
+          ( keyvalues["sidewalk"] == "shared"    ) or 
+          ( keyvalues["sidewalk"] == "yes"       ) or
+          ( keyvalues["footway"]  == "both"      ) or 
+          ( keyvalues["footway"]  == "left"      ) or 
+          ( keyvalues["footway"]  == "separate"  ) or 
+          ( keyvalues["footway"]  == "right"     ) or 
+          ( keyvalues["footway"]  == "shared"    ) or 
+          ( keyvalues["footway"]  == "yes"       )) then
+          keyvalues["highway"] = "tertiary_sidewalk"
+      end
+   end
+
+-- ----------------------------------------------------------------------------
 -- Render narrow tertiary roads as unclassified
 -- ----------------------------------------------------------------------------
    if (( keyvalues["highway"] == "tertiary"   )  and
