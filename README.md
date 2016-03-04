@@ -35,3 +35,5 @@ The extra changes here generally fall into one of the following categories:
 - Where tags collide, manually choose one of the pair to render (e.g. "amenity=pub" and "tourism=hotel" - I'm far more likely to be looking for a pub than a hotel, so show that symbol).
 
 - For barriers that are essentially either stiles or gates, display as either stile or gate.
+
+- Consolidated shops, offices and leisure facilities so that most or all will get rendered (by openstreetmap-carto-AJT)
