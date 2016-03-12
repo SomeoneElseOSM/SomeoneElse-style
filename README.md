@@ -38,6 +38,6 @@ The extra changes here generally fall into one of the following categories:
 
 - Consolidated shops, offices and leisure facilities so that most or all will get rendered (by openstreetmap-carto-AJT)
 
-- Created a new road class "tertiary_sidewalk" (that will get rendered differently by the "sidewalk" branch of openstreetmap-carto-AJT).  Still a work in progress; z-order handling not there yet.
+- Created new road classes "secondary_sidewalk" and "tertiary_sidewalk" that get rendered with a wider casing by the "sidewalk" branch of openstreetmap-carto-AJT,
 
 
