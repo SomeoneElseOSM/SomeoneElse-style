@@ -228,7 +228,7 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
--- Use tertiary_link to indicate sidewalk
+-- Use tertiary_sidewalk to indicate sidewalk
 -- ----------------------------------------------------------------------------
    if (( keyvalues["highway"] == "tertiary"      ) or 
        ( keyvalues["highway"] == "tertiary_link" )) then
@@ -249,7 +249,7 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
--- Use secondary_link to indicate sidewalk
+-- Use secondary_sidewalk to indicate sidewalk
 -- ----------------------------------------------------------------------------
    if (( keyvalues["highway"] == "secondary"      ) or 
        ( keyvalues["highway"] == "secondary_link" )) then
