@@ -1542,6 +1542,7 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["office"]  == "delivery"                ) or
        ( keyvalues["amenity"] == "delivery_office"         ) or
        ( keyvalues["amenity"] == "sorting_office"          ) or
+       ( keyvalues["office"]  == "parcel"                  ) or
        ( keyvalues["office"]  == "therapist"               ) or
        ( keyvalues["office"]  == "surveyor"                ) or
        ( keyvalues["office"]  == "marketing"               ) or
