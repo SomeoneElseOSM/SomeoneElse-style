@@ -37,3 +37,6 @@ The extra changes here generally fall into one of the following categories:
 - For barriers that are essentially either stiles or gates, display as either stile or gate.
 
 - Consolidated shops, offices and leisure facilities so that most or all will get rendered (by openstreetmap-carto-AJT)
+
+- Created new road classes "secondary_sidewalk" and "tertiary_sidewalk" that get rendered with a wider casing by the "sidewalk" branch of openstreetmap-carto-AJT,
+
