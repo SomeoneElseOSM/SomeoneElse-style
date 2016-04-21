@@ -409,8 +409,13 @@ function filter_tags_generic(keyvalues, nokeys)
 
 -- ----------------------------------------------------------------------------
 -- Attempt to do something sensible with trees
+--
+-- There are a few 10s of landuse=wood and natural=forest; treat them the same
+-- as other woodland.
 -- ----------------------------------------------------------------------------
-   if (keyvalues["landuse"]   == "forest") then
+   if ((( keyvalues["landuse"]   == "forest" )  or
+        ( keyvalues["landuse"]   == "wood"   )) or
+       (  keyvalues["natural"]   == "forest"  )) then
       keyvalues["landuse"] = nil
       keyvalues["natural"] = "wood"
    end
