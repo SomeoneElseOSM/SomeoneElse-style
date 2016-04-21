@@ -292,14 +292,6 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
--- Remove leisure=common from the map.  It's well-defined in the wiki but
--- (at least in the UK) used so inconsistently as to be useless.
--- ----------------------------------------------------------------------------
-   if (keyvalues["leisure"] == "common") then
-      keyvalues["leisure"] = nil
-   end
-
--- ----------------------------------------------------------------------------
 -- Pretend add landuse=industrial to some industrial sub-types to force 
 -- name rendering.  Similarly, some commercial and leisure.
 -- man_made=works drops the man_made tag to avoid duplicate labelling.
