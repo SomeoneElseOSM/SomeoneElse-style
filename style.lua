@@ -403,14 +403,18 @@ function filter_tags_generic(keyvalues, nokeys)
 -- Attempt to do something sensible with trees
 --
 -- There are a few 10s of landuse=wood and natural=forest; treat them the same
--- as other woodland.  If we have landuse=forest (or wood) on its own without
+-- as other woodland.  If we have landuse=forest on its own without
 -- leaf_type, then we don't change it - we'll handle that separately in the
 -- rss file.
 -- ----------------------------------------------------------------------------
-  if (((( keyvalues["landuse"]   == "forest" )   or 
-        ( keyvalues["landuse"]   == "wood"   ))  and
-       (  keyvalues["leaf_type"] ~= nil       )) or
-      (   keyvalues["natural"]   == "forest"   )) then
+  if ( keyvalues["landuse"] == "forestry" ) then
+      keyvalues["landuse"] = "forest"
+  end
+
+  if ((( keyvalues["landuse"]   == "forest" )  and
+       ( keyvalues["leaf_type"] ~= nil      )) or
+      (  keyvalues["natural"]   == "forest"  ) or
+      (  keyvalues["landuse"]   == "wood"    )) then
       keyvalues["landuse"] = nil
       keyvalues["natural"] = "wood"
    end
