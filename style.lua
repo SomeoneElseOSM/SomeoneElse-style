@@ -794,9 +794,12 @@ function filter_tags_generic(keyvalues, nokeys)
 
 -- ----------------------------------------------------------------------------
 -- Render historic=wayside_cross as historic=memorial
+-- Also man_made=obelisk and landmark=obelisk
 -- It's near enough in meaning I think.
 -- ----------------------------------------------------------------------------
-   if ( keyvalues["historic"]   == "wayside_cross" ) then
+   if (( keyvalues["historic"]   == "wayside_cross" ) or
+       ( keyvalues["man_made"]   == "obelisk"       ) or
+       ( keyvalues["landmark"]   == "obelisk"       )) then
       keyvalues["historic"] = "memorial"
    end
 
@@ -1241,11 +1244,12 @@ function filter_tags_generic(keyvalues, nokeys)
 -- sports
 -- the name is usually characteristic
 -- ----------------------------------------------------------------------------
-   if (( keyvalues["shop"]   == "sports"       ) or
-       ( keyvalues["shop"]   == "golf"         ) or
-       ( keyvalues["shop"]   == "scuba_diving" ) or
-       ( keyvalues["shop"]   == "fishing"      ) or
-       ( keyvalues["shop"]   == "angling"      )) then
+   if (( keyvalues["shop"]   == "sports"         ) or
+       ( keyvalues["shop"]   == "golf"           ) or
+       ( keyvalues["shop"]   == "scuba_diving"   ) or
+       ( keyvalues["shop"]   == "fishing"        ) or
+       ( keyvalues["shop"]   == "fishing_tackle" ) or
+       ( keyvalues["shop"]   == "angling"        )) then
       keyvalues["shop"] = "shopnonspecific"
    end
 
@@ -1665,7 +1669,10 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["amenity"]  == "club_house"        ) or
        ( keyvalues["building"] == "club_house"        ) or
        ( keyvalues["amenity"]  == "dancing_school"    ) or
-       ( keyvalues["leisure"]  == "dance"             )) then
+       ( keyvalues["leisure"]  == "dance"             ) or
+       (( keyvalues["building"] == "yes"             )  and
+        ( keyvalues["amenity"]  == nil               )  and
+        ( keyvalues["sport"]    ~= nil               ))) then
       keyvalues["landuse"] = "unnamedcommercial"
       keyvalues["leisure"] = "nonspecific"
    end
