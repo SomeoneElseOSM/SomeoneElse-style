@@ -234,18 +234,24 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["highway"] == "tertiary_link" )) then
       if (( keyvalues["sidewalk"] == "both"           ) or 
           ( keyvalues["sidewalk"] == "left"           ) or 
+          ( keyvalues["sidewalk"] == "mapped"         ) or 
           ( keyvalues["sidewalk"] == "separate"       ) or 
           ( keyvalues["sidewalk"] == "right"          ) or 
           ( keyvalues["sidewalk"] == "shared"         ) or 
           ( keyvalues["sidewalk"] == "yes"            ) or
           ( keyvalues["footway"]  == "both"           ) or 
           ( keyvalues["footway"]  == "left"           ) or 
+          ( keyvalues["footway"]  == "mapped"         ) or 
           ( keyvalues["footway"]  == "separate"       ) or 
           ( keyvalues["footway"]  == "right"          ) or 
           ( keyvalues["footway"]  == "shared"         ) or 
           ( keyvalues["footway"]  == "yes"            ) or
           ( keyvalues["cycleway"] == "track"          ) or
-          ( keyvalues["cycleway"] == "opposite_track" )) then
+          ( keyvalues["cycleway"] == "opposite_track" ) or
+          ( keyvalues["cycleway"] == "yes"            ) or
+          ( keyvalues["cycleway"] == "separate"       ) or
+          ( keyvalues["cycleway"] == "sidewalk"       ) or
+          ( keyvalues["cycleway"] == "sidepath"       )) then
           keyvalues["highway"] = "tertiary_sidewalk"
       end
    end
@@ -257,18 +263,24 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["highway"] == "secondary_link" )) then
       if (( keyvalues["sidewalk"] == "both"           ) or 
           ( keyvalues["sidewalk"] == "left"           ) or 
+          ( keyvalues["sidewalk"] == "mapped"         ) or 
           ( keyvalues["sidewalk"] == "separate"       ) or 
           ( keyvalues["sidewalk"] == "right"          ) or 
           ( keyvalues["sidewalk"] == "shared"         ) or 
           ( keyvalues["sidewalk"] == "yes"            ) or
           ( keyvalues["footway"]  == "both"           ) or 
           ( keyvalues["footway"]  == "left"           ) or 
+          ( keyvalues["footway"]  == "mapped"         ) or 
           ( keyvalues["footway"]  == "separate"       ) or 
           ( keyvalues["footway"]  == "right"          ) or 
           ( keyvalues["footway"]  == "shared"         ) or 
           ( keyvalues["footway"]  == "yes"            ) or
           ( keyvalues["cycleway"] == "track"          ) or
-          ( keyvalues["cycleway"] == "opposite_track" )) then
+          ( keyvalues["cycleway"] == "opposite_track" ) or
+          ( keyvalues["cycleway"] == "yes"            ) or
+          ( keyvalues["cycleway"] == "separate"       ) or
+          ( keyvalues["cycleway"] == "sidewalk"       ) or
+          ( keyvalues["cycleway"] == "sidepath"       )) then
           keyvalues["highway"] = "secondary_sidewalk"
       end
    end
