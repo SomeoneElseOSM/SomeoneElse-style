@@ -20,7 +20,8 @@ function add_z_order(keyvalues)
    zordering_tags = {{ 'railway', nil, 5, 1}, { 'boundary', 'administrative', 0, 1}, 
       { 'bridge', 'yes', 10, 0 }, { 'bridge', 'true', 10, 0 }, { 'bridge', 1, 10, 0 },
       { 'tunnel', 'yes', -10, 0}, { 'tunnel', 'true', -10, 0}, { 'tunnel', 1, -10, 0}, 
-      { 'highway', 'minor', 3, 0}, { 'highway', 'road', 3, 0 }, { 'highway', 'unclassified', 3, 0 },
+      { 'highway', 'minor', 3, 0}, { 'highway', 'road', 3, 0 }, 
+      { 'highway', 'unclassified', 3, 0 }, { 'highway', 'unclassified_sidewalk', 3, 0 },
       { 'highway', 'residential', 3, 0 }, 
       { 'highway', 'tertiary_link', 4, 0}, { 'highway', 'tertiary', 4, 0}, { 'highway', 'tertiary_sidewalk', 4, 0},
       { 'highway', 'secondary_link', 6, 1}, { 'highway', 'secondary', 6, 1}, { 'highway', 'secondary_sidewalk', 6, 1},
@@ -225,6 +226,35 @@ function filter_tags_generic(keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
    if (keyvalues["designation"] == "access_land") then
       keyvalues["leisure"] = "nature_reserve"
+   end
+
+-- ----------------------------------------------------------------------------
+-- Use unclassified_sidewalk to indicate sidewalk
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["highway"] == "unclassified"      ) or 
+       ( keyvalues["highway"] == "unclassified_link" )) then
+      if (( keyvalues["sidewalk"] == "both"           ) or 
+          ( keyvalues["sidewalk"] == "left"           ) or 
+          ( keyvalues["sidewalk"] == "mapped"         ) or 
+          ( keyvalues["sidewalk"] == "separate"       ) or 
+          ( keyvalues["sidewalk"] == "right"          ) or 
+          ( keyvalues["sidewalk"] == "shared"         ) or 
+          ( keyvalues["sidewalk"] == "yes"            ) or
+          ( keyvalues["footway"]  == "both"           ) or 
+          ( keyvalues["footway"]  == "left"           ) or 
+          ( keyvalues["footway"]  == "mapped"         ) or 
+          ( keyvalues["footway"]  == "separate"       ) or 
+          ( keyvalues["footway"]  == "right"          ) or 
+          ( keyvalues["footway"]  == "shared"         ) or 
+          ( keyvalues["footway"]  == "yes"            ) or
+          ( keyvalues["cycleway"] == "track"          ) or
+          ( keyvalues["cycleway"] == "opposite_track" ) or
+          ( keyvalues["cycleway"] == "yes"            ) or
+          ( keyvalues["cycleway"] == "separate"       ) or
+          ( keyvalues["cycleway"] == "sidewalk"       ) or
+          ( keyvalues["cycleway"] == "sidepath"       )) then
+          keyvalues["highway"] = "unclassified_sidewalk"
+      end
    end
 
 -- ----------------------------------------------------------------------------
