@@ -1795,13 +1795,25 @@ function filter_tags_generic(keyvalues, nokeys)
 
 
 -- ----------------------------------------------------------------------------
--- End of AJT additions.
+-- End of AJT generic additions.
 -- ----------------------------------------------------------------------------
 
    return filter, keyvalues
 end
 
 function filter_tags_node (keyvalues, nokeys)
+
+-- ----------------------------------------------------------------------------
+-- AJT node-only additions.
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["ford"] == "yes"             ) or
+       ( keyvalues["ford"] == "stepping_stones" ))then
+      keyvalues["highway"] = "ford"
+   end
+-- ----------------------------------------------------------------------------
+-- End of AJT node-only additions.
+-- ----------------------------------------------------------------------------
+
    return filter_tags_generic(keyvalues, nokeys)
 end
 
