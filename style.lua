@@ -1838,6 +1838,20 @@ function filter_tags_way (keyvalues, nokeys)
    tagcount = 0
    roads = 0
 
+-- ----------------------------------------------------------------------------
+-- AJT way-only additions.
+--
+-- "barrier=gate" on a way is a dark line; on bridleways it looks 
+-- "sufficiently different" to mark fords out.
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["ford"] == "yes"             ) or
+       ( keyvalues["ford"] == "stepping_stones" ))then
+      keyvalues["barrier"] = "gate"
+   end
+-- ----------------------------------------------------------------------------
+-- End of AJT way-only additions.
+-- ----------------------------------------------------------------------------
+
    filter, keyvalues = filter_tags_generic(keyvalues, nokeys)
    if filter == 1 then
       return filter, keyvalues, poly, roads
