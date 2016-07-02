@@ -1933,6 +1933,23 @@ function filter_tags_relation_member (keyvalues, keyvaluemembers, roles, memberc
    keyvalues["type"] = nil
   
 
+-- ----------------------------------------------------------------------------
+-- AJT relation-only additions.
+--
+-- Note that we're not doing any per-member processing for routes - which just
+-- add a highway type to the relation and ensure that the style rules for it
+-- handle it sensibly, as it's going to be overlaid over other highway types.
+-- "ldpnwn" is used to allow for future different processing of different 
+-- relations.
+-- ----------------------------------------------------------------------------
+   if (type == "route") then
+      if (( keyvalues["network"] == "nwn" ) or
+          ( keyvalues["network"] == "rwn" ) or
+          ( keyvalues["network"] == "lwn" )) then
+         keyvalues["highway"] = "ldpnwn"
+      end
+   end
+
    if (type == "boundary") then
       boundary = 1
    end
