@@ -90,14 +90,16 @@ function filter_tags_generic(keyvalues, nokeys)
 --
 -- These changes do mean that the the resulting database isn't any use for
 -- anything other than rendering, but they do allow designations to be 
--- displayed without any stylesheet changes.  Also, some information is
--- lost in the process (e.g. track s path).
+-- displayed without any stylesheet changes.
 -- ----------------------------------------------------------------------------
 
    keyvalues["tracktype"] = nil
 
+-- ----------------------------------------------------------------------------
+-- Note that "steps" and "footwaysteps" are unchanged by the 
+-- pathwide / path choice below:
+-- ----------------------------------------------------------------------------
    if (( keyvalues["highway"] == "footway"   ) or 
-       ( keyvalues["highway"] == "steps"     ) or 
        ( keyvalues["highway"] == "bridleway" ) or 
        ( keyvalues["highway"] == "cycleway"  )) then
       if (( keyvalues["width"] == "2"   ) or
@@ -172,6 +174,13 @@ function filter_tags_generic(keyvalues, nokeys)
       end
    end
 
+-- ----------------------------------------------------------------------------
+-- Note that a designated restricted_byway up some steps would be rendered
+-- as a restricted_byway.  I've never seen one though.
+-- There is special processing for "public footpath" and "public_bridleway"
+-- steps (see below) and non-designated steps are rendered as is by the
+-- stylesheet.
+-- ----------------------------------------------------------------------------
    if (( keyvalues["designation"] == "restricted_byway"    ) or
        ( keyvalues["designation"] == "public_right_of_way" )) then
       if (( keyvalues["highway"] == "footway"   ) or 
@@ -186,27 +195,43 @@ function filter_tags_generic(keyvalues, nokeys)
       end
    end
 
+-- ----------------------------------------------------------------------------
+-- When a value is changed we get called again.  That's why there's a check
+-- for "bridlewaysteps" below "before the only place that it can be set".
+-- ----------------------------------------------------------------------------
    if (keyvalues["designation"] == "public_bridleway") then
       if (( keyvalues["highway"] == "footway"   ) or 
-          ( keyvalues["highway"] == "steps"     ) or 
           ( keyvalues["highway"] == "bridleway" ) or 
 	  ( keyvalues["highway"] == "cycleway"  ) or
 	  ( keyvalues["highway"] == "path"      )) then
 	  keyvalues["highway"] = "bridleway"
       else
-	  keyvalues["highway"] = "bridlewaywide"
+         if (( keyvalues["highway"] == "steps" ) or
+             ( keyvalues["highway"] == "bridlewaysteps" )) then
+            keyvalues["highway"] = "bridlewaysteps"
+         else
+            keyvalues["highway"] = "bridlewaywide"
+         end
       end
    end
 
+-- ----------------------------------------------------------------------------
+-- When a value is changed we get called again.  That's why there's a check
+-- for "footwaysteps" below "before the only place that it can be set".
+-- ----------------------------------------------------------------------------
    if (keyvalues["designation"] == "public_footpath") then
       if (( keyvalues["highway"] == "footway"   ) or 
-          ( keyvalues["highway"] == "steps"     ) or 
           ( keyvalues["highway"] == "bridleway" ) or 
-	  ( keyvalues["highway"] == "cycleway"  ) or
-	  ( keyvalues["highway"] == "path"      )) then
-	  keyvalues["highway"] = "footway"
+          ( keyvalues["highway"] == "cycleway"  ) or
+          ( keyvalues["highway"] == "path"      )) then
+         keyvalues["highway"] = "footway"
       else
-	  keyvalues["highway"] = "footwaywide"
+         if (( keyvalues["highway"] == "steps" ) or
+             ( keyvalues["highway"] == "footwaysteps" )) then
+            keyvalues["highway"] = "footwaysteps"
+         else
+            keyvalues["highway"] = "footwaywide"
+         end
       end
    end
 
