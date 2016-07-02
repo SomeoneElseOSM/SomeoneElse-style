@@ -618,6 +618,13 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Goods Conveyors - render as miniature railway.
+-- ----------------------------------------------------------------------------
+   if ( keyvalues["man_made"] == "goods_conveyor" ) then
+      keyvalues["railway"] = "miniature"
+   end
+
+-- ----------------------------------------------------------------------------
 -- Historic canal
 -- A former canal can, like an abandoned railway, still be a major
 -- physical feature.
