@@ -1780,7 +1780,7 @@ function filter_tags_generic(keyvalues, nokeys)
 
 -- ----------------------------------------------------------------------------
 -- Drop some highway areas.
--- "track" and "cycleway" etc. wherever I have seen them are garbage.
+-- "track" and "cycleway" etc. areas wherever I have seen them are garbage.
 -- "footway" (pedestrian areas) and "service" (e.g. petrol station forecourts)
 -- tend to be OK.  Other options tend not to occur.
 -- ----------------------------------------------------------------------------
