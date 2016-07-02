@@ -140,9 +140,10 @@ function filter_tags_generic(keyvalues, nokeys)
       keyvalues["horse"] = "yes"
    end
 
-   if (( keyvalues["highway"] == "unclassified" ) and
-       ( keyvalues["surface"] == "unpaved"      )) then
-      keyvalues["highway"] = "track"
+   if ((  keyvalues["highway"] == "unclassified"  ) and
+       (( keyvalues["surface"] == "unpaved"      )  or 
+        ( keyvalues["surface"] == "gravel"       ))) then
+      keyvalues["highway"] = "track_graded"
       keyvalues["tracktype"] = "grade1"
    end
 
@@ -156,7 +157,7 @@ function filter_tags_generic(keyvalues, nokeys)
 	  ( keyvalues["highway"] == "path"      )) then
 	  keyvalues["tracktype"] = "grade5"
       else
-          keyvalues["highway"] = "track"
+          keyvalues["highway"] = "track_graded"
 	  keyvalues["tracktype"] = "grade2"
       end
    end
@@ -169,7 +170,7 @@ function filter_tags_generic(keyvalues, nokeys)
 	  ( keyvalues["highway"] == "path"      )) then
 	  keyvalues["tracktype"] = "grade5"
       else
-          keyvalues["highway"] = "track"
+          keyvalues["highway"] = "track_graded"
 	  keyvalues["tracktype"] = "grade3"
       end
    end
@@ -190,7 +191,7 @@ function filter_tags_generic(keyvalues, nokeys)
 	  ( keyvalues["highway"] == "path"      )) then
 	  keyvalues["tracktype"] = "grade5"
       else
-          keyvalues["highway"] = "track"
+          keyvalues["highway"] = "track_graded"
 	  keyvalues["tracktype"] = "grade4"
       end
    end
@@ -1816,6 +1817,7 @@ function filter_tags_generic(keyvalues, nokeys)
 -- tend to be OK.  Other options tend not to occur.
 -- ----------------------------------------------------------------------------
    if ((( keyvalues["highway"] == "track"          )  or
+        ( keyvalues["highway"] == "track_graded"   )  or
         ( keyvalues["highway"] == "cycleway"       )  or
         ( keyvalues["highway"] == "residential"    )  or
         ( keyvalues["highway"] == "unclassified"   )  or
