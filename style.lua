@@ -28,6 +28,7 @@ function add_z_order(keyvalues)
       { 'highway', 'primary_link', 7, 1}, { 'highway', 'primary', 7, 1},
       { 'highway', 'trunk_link', 8, 1}, { 'highway', 'trunk', 8, 1},
       { 'highway', 'motorway_link', 9, 1}, { 'highway', 'motorway', 9, 1},
+      { 'highway', 'ldpnwn', 9, 1},
 }
    
    for i,k in ipairs(zordering_tags) do
@@ -463,6 +464,14 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["leisure"]   == "fishing"        ) or
        ( keyvalues["leisure"]   == "outdoor_centre" )) then
       keyvalues["leisure"] = "park"
+   end
+
+-- ----------------------------------------------------------------------------
+-- leisure=dog_park is used a few times.  Map to pitch to differentiate from
+-- underlying park.
+-- ----------------------------------------------------------------------------
+   if (keyvalues["leisure"] == "dog_park") then
+      keyvalues["leisure"] = "pitch"
    end
 
 -- ----------------------------------------------------------------------------
@@ -1752,6 +1761,8 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["building"] == "club_house"        ) or
        ( keyvalues["amenity"]  == "dancing_school"    ) or
        ( keyvalues["leisure"]  == "dance"             ) or
+       ( keyvalues["sport"]    == "model_Aerodrome"   ) or
+       ( keyvalues["leisure"]  == "trampoline_park"   ) or
        (( keyvalues["building"] == "yes"             )  and
         ( keyvalues["amenity"]  == nil               )  and
         ( keyvalues["sport"]    ~= nil               ))) then
