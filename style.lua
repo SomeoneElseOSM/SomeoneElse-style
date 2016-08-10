@@ -1844,6 +1844,10 @@ function filter_tags_generic(keyvalues, nokeys)
       keyvalues["highway"] = "nil"
    end
 
+   if (( keyvalues["area:highway"] == "traffic_island" )  or
+       ( keyvalues["landuse"]      == "traffic_island" )) then
+      keyvalues["barrier"] = "kerb"
+   end
 
 -- ----------------------------------------------------------------------------
 -- End of AJT generic additions.
