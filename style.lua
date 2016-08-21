@@ -830,7 +830,8 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["barrier"]   == "bump_gate"             )  or
        ( keyvalues["barrier"]   == "lytch_gate"            )  or
        ( keyvalues["barrier"]   == "horse_jump"            )  or
-       ( keyvalues["barrier"]   == "flood_gate"            )) then
+       ( keyvalues["barrier"]   == "flood_gate"            )  or
+       ( keyvalues["barrier"]   == "ramblers_gate"         )) then
       keyvalues["barrier"] = "gate"
    end
 
