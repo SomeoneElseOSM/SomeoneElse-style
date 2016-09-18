@@ -1173,6 +1173,7 @@ function filter_tags_generic(keyvalues, nokeys)
 -- Difficult to do an icon for.
 -- ----------------------------------------------------------------------------
    if (( keyvalues["shop"]    == "copyshop"           ) or
+       ( keyvalues["office"]  == "design"             ) or
        ( keyvalues["shop"]    == "camera"             ) or
        ( keyvalues["shop"]    == "photo"              ) or
        ( keyvalues["shop"]    == "photo_studio"       ) or
