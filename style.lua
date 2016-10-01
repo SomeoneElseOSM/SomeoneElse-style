@@ -997,6 +997,7 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["office"]  == "estate_agents"     ) or
        ( keyvalues["amenity"] == "estate_agent"      ) or
        ( keyvalues["shop"]    == "letting_agent"     ) or
+       ( keyvalues["shop"]    == "council_house"     ) or
        ( keyvalues["office"]  == "letting_agent"     ) or
        ( keyvalues["shop"]    == "estate_agency"     ) or
        ( keyvalues["office"]  == "property_services" )) then
