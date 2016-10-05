@@ -1439,6 +1439,7 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["shop"]    == "musical_instrument"      ) or
        ( keyvalues["shop"]    == "hifi"                    ) or
        ( keyvalues["shop"]    == "tailor"                  ) or
+       ( keyvalues["craft"]   == "tailor"                  ) or
        ( keyvalues["shop"]    == "video"                   ) or
        ( keyvalues["shop"]    == "erotic"                  ) or
        ( keyvalues["shop"]    == "locksmith"               ) or
