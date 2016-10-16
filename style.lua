@@ -1245,6 +1245,7 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["shop"]   == "kitchen"             ) or
        ( keyvalues["shop"]   == "kitchen;bathroom"    ) or
        ( keyvalues["shop"]   == "kitchens"            ) or
+       ( keyvalues["shop"]   == "bedroom"             ) or
        ( keyvalues["shop"]   == "houseware"           ) or
        ( keyvalues["shop"]   == "bathroom_furnishing" ) or
        ( keyvalues["shop"]   == "household"           ) or
