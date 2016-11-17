@@ -676,6 +676,14 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Add a building tag to "historic=ruins" ways so that buildings.mss can 
+-- process it
+-- ----------------------------------------------------------------------------
+   if ( keyvalues["historic"] == "ruins" ) then
+      keyvalues["building"] = "ruins"
+   end
+
+-- ----------------------------------------------------------------------------
 -- Add "water" to some "wet" features for rendering.
 -- ----------------------------------------------------------------------------
    if (( keyvalues["man_made"]   == "wastewater_reservoir"  ) or
@@ -1869,6 +1877,7 @@ function filter_tags_node (keyvalues, nokeys)
        ( keyvalues["ford"] == "stepping_stones" ))then
       keyvalues["highway"] = "ford"
    end
+
 -- ----------------------------------------------------------------------------
 -- End of AJT node-only additions.
 -- ----------------------------------------------------------------------------
