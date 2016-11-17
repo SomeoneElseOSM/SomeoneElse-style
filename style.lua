@@ -1005,6 +1005,7 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["office"]  == "estate_agents"     ) or
        ( keyvalues["amenity"] == "estate_agent"      ) or
        ( keyvalues["shop"]    == "letting_agent"     ) or
+       ( keyvalues["shop"]    == "council_house"     ) or
        ( keyvalues["office"]  == "letting_agent"     ) or
        ( keyvalues["shop"]    == "estate_agency"     ) or
        ( keyvalues["office"]  == "property_services" )) then
@@ -1252,6 +1253,7 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["shop"]   == "kitchen"             ) or
        ( keyvalues["shop"]   == "kitchen;bathroom"    ) or
        ( keyvalues["shop"]   == "kitchens"            ) or
+       ( keyvalues["shop"]   == "bedroom"             ) or
        ( keyvalues["shop"]   == "houseware"           ) or
        ( keyvalues["shop"]   == "bathroom_furnishing" ) or
        ( keyvalues["shop"]   == "household"           ) or
@@ -1433,6 +1435,8 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["shop"]    == "card;gift"               ) or
        ( keyvalues["craft"]   == "cobbler"                 ) or
        ( keyvalues["shop"]    == "cobbler"                 ) or
+       ( keyvalues["craft"]   == "shoemaker"               ) or
+       ( keyvalues["shop"]    == "shoemaker"               ) or
        ( keyvalues["shop"]    == "shoe_repair"             ) or
        ( keyvalues["shop"]    == "shoe_repair;key_cutting" ) or
        ( keyvalues["shop"]    == "key_cutting"             ) or
@@ -1446,6 +1450,7 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["shop"]    == "musical_instrument"      ) or
        ( keyvalues["shop"]    == "hifi"                    ) or
        ( keyvalues["shop"]    == "tailor"                  ) or
+       ( keyvalues["craft"]   == "tailor"                  ) or
        ( keyvalues["shop"]    == "video"                   ) or
        ( keyvalues["shop"]    == "erotic"                  ) or
        ( keyvalues["shop"]    == "locksmith"               ) or
