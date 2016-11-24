@@ -634,6 +634,13 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Slipways - render as miniature railway
+-- ----------------------------------------------------------------------------
+   if ( keyvalues["leisure"] == "slipway" ) then
+      keyvalues["railway"] = "miniature"
+   end
+
+-- ----------------------------------------------------------------------------
 -- Historic canal
 -- A former canal can, like an abandoned railway, still be a major
 -- physical feature.
