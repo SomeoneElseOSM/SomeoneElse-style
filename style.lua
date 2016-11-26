@@ -900,13 +900,14 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
--- Render historic=wayside_cross as historic=memorial
+-- Render historic=wayside_cross and wayside_shrine as historic=memorial
 -- Also man_made=obelisk and landmark=obelisk
 -- It's near enough in meaning I think.
 -- ----------------------------------------------------------------------------
-   if (( keyvalues["historic"]   == "wayside_cross" ) or
-       ( keyvalues["man_made"]   == "obelisk"       ) or
-       ( keyvalues["landmark"]   == "obelisk"       )) then
+   if (( keyvalues["historic"]   == "wayside_cross"  ) or
+       ( keyvalues["historic"]   == "wayside_shrine" ) or
+       ( keyvalues["man_made"]   == "obelisk"        ) or
+       ( keyvalues["landmark"]   == "obelisk"        )) then
       keyvalues["historic"] = "memorial"
    end
 
