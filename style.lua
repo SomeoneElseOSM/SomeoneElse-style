@@ -1059,6 +1059,11 @@ function filter_tags_generic(keyvalues, nokeys)
       keyvalues["amenity"] = "fish_and_chips"
    end
 
+   if (( keyvalues["amenity"] == "fast_food" )  and
+       ( keyvalues["cuisine"] == "pizza"     )) then
+      keyvalues["amenity"] = "pizza"
+   end
+
 -- ----------------------------------------------------------------------------
 -- Render shop=hardware stores etc. as shop=doityourself
 -- Add unnamedcommercial landuse to give non-building areas a background.
