@@ -740,11 +740,12 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
--- highway=passing_place to turning_circle
+-- highway=passing_place and turning_loop to turning_circle
 -- Not really the same thing, but a "widening of the road" should be good 
--- enough.
+-- enough.  "turning_loop" seems only to be used on nodes locally.
 -- ----------------------------------------------------------------------------
-   if ( keyvalues["highway"]   == "passing_place" ) then
+   if (( keyvalues["highway"]   == "passing_place" )  or
+       ( keyvalues["highway"]   == "turning_loop"  )) then
       keyvalues["highway"] = "turning_circle"
    end
 
