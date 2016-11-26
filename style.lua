@@ -1793,6 +1793,7 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["leisure"]  == "dance"             ) or
        ( keyvalues["sport"]    == "model_Aerodrome"   ) or
        ( keyvalues["leisure"]  == "trampoline_park"   ) or
+       ( keyvalues["tourism"]  == "wilderness_hut"    ) or
        (( keyvalues["building"] == "yes"             )  and
         ( keyvalues["amenity"]  == nil               )  and
         ( keyvalues["sport"]    ~= nil               ))) then
