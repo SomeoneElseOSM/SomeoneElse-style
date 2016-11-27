@@ -421,6 +421,13 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Handle spoil heaps as landfill
+-- ----------------------------------------------------------------------------
+   if ( keyvalues["man_made"] == "spoil_heap" ) then
+      keyvalues["landuse"] = "landfill"
+   end
+
+-- ----------------------------------------------------------------------------
 -- Shops etc. with icons already - just add "unnamedcommercial" landuse.
 -- ----------------------------------------------------------------------------
    if (( keyvalues["shop"]       == "car"           ) or
