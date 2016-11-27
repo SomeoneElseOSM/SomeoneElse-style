@@ -693,6 +693,13 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- If something has a "lock_name", use it in preference to "name".
+-- ----------------------------------------------------------------------------
+   if ( keyvalues["lock_name"] ~= nil ) then
+      keyvalues["name"] = keyvalues["lock_name"]
+   end
+
+-- ----------------------------------------------------------------------------
 -- Add "water" to some "wet" features for rendering.
 -- ----------------------------------------------------------------------------
    if (( keyvalues["man_made"]   == "wastewater_reservoir"  ) or
