@@ -485,6 +485,14 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Treat harbour=yes as landuse=harbour, if not already landuse.
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["harbour"] == "yes" ) and
+       ( keyvalues["landuse"] == nil   )) then
+      keyvalues["landuse"] = "harbour"
+   end
+
+-- ----------------------------------------------------------------------------
 -- landuse=field is rarely used.  I tried unsuccessfully to change the colour 
 -- in the stylesheet so am mapping it here.
 -- ----------------------------------------------------------------------------
