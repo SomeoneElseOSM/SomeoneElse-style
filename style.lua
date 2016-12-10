@@ -447,6 +447,7 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["building"]   == "telephone_exchange" ) or
        ( keyvalues["utility"]    == "telephone_exchange" ) or
        ( keyvalues["amenity"]    == "ferry_terminal"     ) or
+       ( keyvalues["landuse"]    == "ferry_terminal"     ) or
        ( keyvalues["highway"]    == "services"           ) or
        ( keyvalues["landuse"]    == "churchyard"         ) or
        ( keyvalues["leisure"]    == "racetrack"          ) or
