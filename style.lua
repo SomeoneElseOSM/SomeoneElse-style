@@ -1139,6 +1139,18 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- sports
+-- the name is usually characteristic, but try and use an icon.
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["shop"]   == "golf"           ) or
+       ( keyvalues["shop"]   == "scuba_diving"   ) or
+       ( keyvalues["shop"]   == "fishing"        ) or
+       ( keyvalues["shop"]   == "fishing_tackle" ) or
+       ( keyvalues["shop"]   == "angling"        )) then
+      keyvalues["shop"] = "sports"
+   end
+
+-- ----------------------------------------------------------------------------
 -- Currently handle beauty salons etc. as just generic.  Also "chemist"
 -- Mostly these have names that describe the business, so less need for a
 -- specific icon.
@@ -1381,19 +1393,6 @@ function filter_tags_generic(keyvalues, nokeys)
    if (( keyvalues["shop"]   == "stationery"      ) or
        ( keyvalues["shop"]   == "books"           ) or
        ( keyvalues["shop"]   == "office_supplies" )) then
-      keyvalues["shop"] = "shopnonspecific"
-   end
-
--- ----------------------------------------------------------------------------
--- sports
--- the name is usually characteristic
--- ----------------------------------------------------------------------------
-   if (( keyvalues["shop"]   == "sports"         ) or
-       ( keyvalues["shop"]   == "golf"           ) or
-       ( keyvalues["shop"]   == "scuba_diving"   ) or
-       ( keyvalues["shop"]   == "fishing"        ) or
-       ( keyvalues["shop"]   == "fishing_tackle" ) or
-       ( keyvalues["shop"]   == "angling"        )) then
       keyvalues["shop"] = "shopnonspecific"
    end
 
