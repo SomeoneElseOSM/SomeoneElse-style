@@ -1945,6 +1945,14 @@ function filter_tags_generic(keyvalues, nokeys)
       keyvalues["barrier"] = "kerb"
    end
 
+   if ( keyvalues["addr:unit"] ~= nil ) then
+      if ( keyvalues["addr:housenumber"] ~= nil ) then
+         keyvalues["addr:housenumber"] = keyvalues["addr:unit"] .. ", " .. keyvalues["addr:housenumber"]
+      else
+         keyvalues["addr:housenumber"] = keyvalues["addr:unit"]
+      end
+   end
+
 -- ----------------------------------------------------------------------------
 -- End of AJT generic additions.
 -- ----------------------------------------------------------------------------
