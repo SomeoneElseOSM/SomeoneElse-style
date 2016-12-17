@@ -1221,6 +1221,8 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["shop"]   == "souvenir"    ) or
        ( keyvalues["shop"]   == "leather"     ) or
        ( keyvalues["shop"]   == "luxury"      ) or
+       ( keyvalues["shop"]   == "candle"      ) or
+       ( keyvalues["shop"]   == "candles"     ) or
        ( keyvalues["shop"]   == "sunglasses"  ) or
        ( keyvalues["shop"]   == "tourist"     ) or
        ( keyvalues["shop"]   == "bag"         ) or
