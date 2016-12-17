@@ -662,6 +662,15 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- The "OpenRailwayMap" crowd prefer the less popular railway:preserved=yes
+-- instead of railway=preserved (which has the advantage of still allowing
+-- e.g. narrow_gauge in addition to rail).
+-- ----------------------------------------------------------------------------
+   if ( keyvalues["railway:preserved"] == "yes" ) then
+      keyvalues["railway"] = "preserved"
+   end
+
+-- ----------------------------------------------------------------------------
 -- Goods Conveyors - render as miniature railway.
 -- ----------------------------------------------------------------------------
    if ( keyvalues["man_made"] == "goods_conveyor" ) then
