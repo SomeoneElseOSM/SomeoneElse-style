@@ -592,6 +592,13 @@ function filter_tags_generic(keyvalues, nokeys)
       keyvalues["amenity"] = "pubdead"
    end
 
+   if ( keyvalues["amenity"] == "pub" ) then
+      if (( keyvalues["food"] ~= nil  ) and
+          ( keyvalues["food"] ~= "no" )) then
+         keyvalues["amenity"] = "pubfood"
+      end
+   end
+
 
 -- ----------------------------------------------------------------------------
 -- Render building societies as banks.
