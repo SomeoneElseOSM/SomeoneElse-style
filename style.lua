@@ -551,11 +551,21 @@ function filter_tags_generic(keyvalues, nokeys)
    if (( keyvalues["real_ale"] ~= nil     ) and
        ( keyvalues["real_ale"] ~= "maybe" ) and
        ( keyvalues["real_ale"] ~= "no"    )) then
-      keyvalues["amenity"] = "realaleyes"
+      if (( keyvalues["food"] ~= nil  ) and
+          ( keyvalues["food"] ~= "no" )) then
+         keyvalues["amenity"] = "realaleyesfood"
+      else
+         keyvalues["amenity"] = "realaleyes"
+      end
    end
 
    if (keyvalues["real_ale"] == "no") then
-      keyvalues["amenity"] = "realaleno"
+      if (( keyvalues["food"] ~= nil  ) and
+          ( keyvalues["food"] ~= "no" )) then
+         keyvalues["amenity"] = "realalenofood"
+      else
+         keyvalues["amenity"] = "realaleno"
+      end
    end
 
 -- ----------------------------------------------------------------------------
