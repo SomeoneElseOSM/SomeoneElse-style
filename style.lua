@@ -875,22 +875,23 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
--- render barrier=kissing_gate as barrier=gate for now
--- render barrier=swing_gate as barrier=gate (it's a gate)
--- render barrier=footgate as barrier=gate, since that's what it means
+-- There's now a barrier=kissing_gate icon.
+-- Choose which of the two gate icons to used based on tagging.
 -- ----------------------------------------------------------------------------
-   if (( keyvalues["barrier"]   == "kissing_gate"          )  or
-       ( keyvalues["barrier"]   == "swing_gate"            )  or
+   if (( keyvalues["barrier"]   == "swing_gate"            )  or
        ( keyvalues["barrier"]   == "footgate"              )  or
        ( keyvalues["barrier"]   == "hampshire_gate"        )  or
-       ( keyvalues["barrier"]   == "turnstile"             )  or
-       ( keyvalues["barrier"]   == "full-height_turnstile" )  or
        ( keyvalues["barrier"]   == "bump_gate"             )  or
        ( keyvalues["barrier"]   == "lytch_gate"            )  or
        ( keyvalues["barrier"]   == "horse_jump"            )  or
        ( keyvalues["barrier"]   == "flood_gate"            )  or
        ( keyvalues["barrier"]   == "ramblers_gate"         )) then
       keyvalues["barrier"] = "gate"
+   end
+
+   if (( keyvalues["barrier"]   == "turnstile"             )  or
+       ( keyvalues["barrier"]   == "full-height_turnstile" )) then
+      keyvalues["barrier"] = "kissing_gate"
    end
 
 -- ----------------------------------------------------------------------------
