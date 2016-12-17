@@ -1873,6 +1873,11 @@ function filter_tags_generic(keyvalues, nokeys)
 -- group.  Note that this includes "tower" temporarily, and "campanile" is in 
 -- here as a sort of tower (only 2 mapped in UK currently).
 -- ----------------------------------------------------------------------------
+   if (( keyvalues["man_made"]   == "tower"   ) and
+       ( keyvalues["tower:type"] == "cooling" )) then
+      keyvalues["man_made"] = "chimney"
+   end
+
    if (( keyvalues["man_made"] == "phone_mast"           ) or
        ( keyvalues["man_made"] == "radio_mast"           ) or
        ( keyvalues["man_made"] == "communications_mast"  ) or
