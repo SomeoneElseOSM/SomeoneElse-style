@@ -501,6 +501,13 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Change landuse=greenhouse_horticulture to farmyard.
+-- ----------------------------------------------------------------------------
+   if (keyvalues["landuse"]   == "greenhouse_horticulture") then
+      keyvalues["landuse"] = "farmyard"
+   end
+
+-- ----------------------------------------------------------------------------
 -- Attempt to do something sensible with trees
 --
 -- There are a few 10s of landuse=wood and natural=forest; treat them the same
