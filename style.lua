@@ -1133,17 +1133,19 @@ function filter_tags_generic(keyvalues, nokeys)
 -- Render shop=hardware stores etc. as shop=doityourself
 -- Add unnamedcommercial landuse to give non-building areas a background.
 -- ----------------------------------------------------------------------------
-   if (( keyvalues["shop"]  == "hardware"             ) or
-       ( keyvalues["shop"]  == "tool_hire"            ) or
-       ( keyvalues["shop"]  == "tools"                ) or
-       ( keyvalues["shop"]  == "builders_merchant"    ) or
-       ( keyvalues["shop"]  == "plumbers_merchant"    ) or
-       ( keyvalues["shop"]  == "building_supplies"    ) or
-       ( keyvalues["shop"]  == "plant_hire"           ) or
-       ( keyvalues["shop"]  == "plant_hire;tool_hire" ) or
-       ( keyvalues["shop"]  == "signs"                ) or
-       ( keyvalues["craft"] == "signmaker"            ) or
-       ( keyvalues["shop"]  == "building_materials"   )) then
+   if (( keyvalues["shop"]   == "hardware"             ) or
+       ( keyvalues["shop"]   == "tool_hire"            ) or
+       ( keyvalues["shop"]   == "tools"                ) or
+       ( keyvalues["shop"]   == "builders_merchant"    ) or
+       ( keyvalues["shop"]   == "plumbers_merchant"    ) or
+       ( keyvalues["shop"]   == "building_supplies"    ) or
+       ( keyvalues["shop"]   == "industrial_supplies"  ) or
+       ( keyvalues["office"] == "industrial_supplies"  ) or
+       ( keyvalues["shop"]   == "plant_hire"           ) or
+       ( keyvalues["shop"]   == "plant_hire;tool_hire" ) or
+       ( keyvalues["shop"]   == "signs"                ) or
+       ( keyvalues["craft"]  == "signmaker"            ) or
+       ( keyvalues["shop"]   == "building_materials"   )) then
       keyvalues["landuse"] = "unnamedcommercial"
       keyvalues["shop"]    = "doityourself"
    end
