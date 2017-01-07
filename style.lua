@@ -1574,6 +1574,21 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Stonemasons etc.
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["craft"]   == "stonemason"        ) or
+       ( keyvalues["shop"]    == "gravestone"        ) or
+       ( keyvalues["shop"]    == "monumental_mason"  ) or
+       ( keyvalues["shop"]    == "memorials"         ) or
+       ( keyvalues["shop"]    == "funeral_directors" ) or
+       ( keyvalues["amenity"] == "funeral_directors" ) or
+       ( keyvalues["office"]  == "funeral_directors" )) then
+      keyvalues["landuse"] = "unnamedcommercial"
+      keyvalues["shop"]    = "shopnonspecific"
+   end
+
+
+-- ----------------------------------------------------------------------------
 -- Shops that we don't know the type of.  Things such as "hire" are here 
 -- because we don't know "hire of what".
 -- ----------------------------------------------------------------------------
