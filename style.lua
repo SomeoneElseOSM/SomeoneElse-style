@@ -1954,6 +1954,16 @@ function filter_tags_generic(keyvalues, nokeys)
       end
    end
 
+   if (( keyvalues["highway"] == "footway"       ) or
+       ( keyvalues["highway"] == "footwaywide"   ) or
+       ( keyvalues["highway"] == "bridleway"     ) or
+       ( keyvalues["highway"] == "bridlewaywide" )) then
+      if (( keyvalues["name"]     == nil ) and
+          ( keyvalues["prow_ref"] ~= nil )) then
+         keyvalues["name"] = keyvalues["prow_ref"]
+      end
+   end
+
 -- ----------------------------------------------------------------------------
 -- Drop some highway areas.
 -- "track" and "cycleway" etc. areas wherever I have seen them are garbage.
