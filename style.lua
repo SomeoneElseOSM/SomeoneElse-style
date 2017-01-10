@@ -1960,7 +1960,7 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["highway"] == "bridlewaywide" )) then
       if (( keyvalues["name"]     == nil ) and
           ( keyvalues["prow_ref"] ~= nil )) then
-         keyvalues["name"] = keyvalues["prow_ref"]
+         keyvalues["name"] = "(" .. keyvalues["prow_ref"] .. ")"
       end
    end
 
