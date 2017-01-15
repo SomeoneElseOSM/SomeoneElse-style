@@ -1892,6 +1892,14 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- If a quarry is disused, it's still likely a hole in the ground, so render it
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["disused:landuse"] == "quarry" ) and
+       ( keyvalues["landuse"]         == nil      )) then
+      keyvalues["landuse"] = "quarry"
+   end
+
+-- ----------------------------------------------------------------------------
 -- Remove road names that are not signed on the ground.
 -- "unsigned" tends to apply to road names.
 -- ----------------------------------------------------------------------------
