@@ -1955,6 +1955,10 @@ function filter_tags_generic(keyvalues, nokeys)
       keyvalues["man_made"] = "mast"
    end
 
+-- ----------------------------------------------------------------------------
+-- Concatenate a couple of names for bus stops so that the most useful ones
+-- are displayed.
+-- ----------------------------------------------------------------------------
    if ( keyvalues["highway"] == "bus_stop" ) then
       if (( keyvalues["name"]             ~= nil ) and
           ( keyvalues["naptan:Indicator"] ~= nil )) then
@@ -1962,6 +1966,18 @@ function filter_tags_generic(keyvalues, nokeys)
       end
    end
 
+-- ----------------------------------------------------------------------------
+-- Remove public transport shelters (at least until I creat a sensible 
+-- rendering for them)
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["amenity"]      == "shelter"          ) and
+       ( keyvalues["shelter_type"] == "public_transport" )) then
+      keyvalues["amenity"] = nil
+   end
+
+-- ----------------------------------------------------------------------------
+-- Add the prow_ref for PRoWs in brackets, if it exists.
+-- ----------------------------------------------------------------------------
    if (( keyvalues["highway"] == "footway"       ) or
        ( keyvalues["highway"] == "footwaywide"   ) or
        ( keyvalues["highway"] == "bridleway"     ) or
