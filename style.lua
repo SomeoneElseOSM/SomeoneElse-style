@@ -749,6 +749,14 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- If something has a "tpuk_ref", use it in preference to "name".
+-- It's in brackets because it's likely not signed.
+-- ----------------------------------------------------------------------------
+   if ( keyvalues["tpuk_ref"] ~= nil ) then
+      keyvalues["name"] = "(" .. keyvalues["tpuk_ref"] .. ")"
+   end
+
+-- ----------------------------------------------------------------------------
 -- Add "water" to some "wet" features for rendering.
 -- ----------------------------------------------------------------------------
    if (( keyvalues["man_made"]   == "wastewater_reservoir"  ) or
