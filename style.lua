@@ -554,24 +554,46 @@ function filter_tags_generic(keyvalues, nokeys)
 -- Attempt to do something sensible with pubs
 -- Pubs that serve real_ale get a nice IPA, ones that don't a yellowy lager,
 -- closed pubs an "X".  Others get the default empty glass.
+--
+-- Pub flags:
+-- Live or dead pub?  y or n
+-- Real ale?          y n or d (for don't know)
+-- Food 	      y or d (don't know)
+-- Floor	      y or d (don't know)
 -- ----------------------------------------------------------------------------
    if (( keyvalues["real_ale"] ~= nil     ) and
        ( keyvalues["real_ale"] ~= "maybe" ) and
        ( keyvalues["real_ale"] ~= "no"    )) then
       if (( keyvalues["food"] ~= nil  ) and
           ( keyvalues["food"] ~= "no" )) then
-         keyvalues["amenity"] = "realaleyesfood"
+         if ( keyvalues["description:floor"] ~= nil  ) then
+            keyvalues["amenity"] = "pub_yyyy"
+         else
+            keyvalues["amenity"] = "pub_yyyd"
+         end
       else
-         keyvalues["amenity"] = "realaleyes"
+         if ( keyvalues["description:floor"] ~= nil  ) then
+            keyvalues["amenity"] = "pub_yydy"
+         else
+            keyvalues["amenity"] = "pub_yydd"
+         end
       end
    end
 
    if (keyvalues["real_ale"] == "no") then
       if (( keyvalues["food"] ~= nil  ) and
           ( keyvalues["food"] ~= "no" )) then
-         keyvalues["amenity"] = "realalenofood"
+         if ( keyvalues["description:floor"] ~= nil  ) then
+            keyvalues["amenity"] = "pub_ynyy"
+         else
+            keyvalues["amenity"] = "pub_ynyd"
+         end
       else
-         keyvalues["amenity"] = "realaleno"
+         if ( keyvalues["description:floor"] ~= nil  ) then
+            keyvalues["amenity"] = "pub_yndy"
+         else
+            keyvalues["amenity"] = "pub_yndd"
+         end
       end
    end
 
@@ -596,13 +618,24 @@ function filter_tags_generic(keyvalues, nokeys)
        (  keyvalues["old_amenity"] == "pub"        ) or
        (( keyvalues["amenity"] == "pub"           )  and
         ( keyvalues["disused"] == "yes"           ))) then
-      keyvalues["amenity"] = "pubdead"
+      keyvalues["amenity"] = "pub_nddd"
    end
 
+-- ----------------------------------------------------------------------------
+-- The catch-all here is still "pub" (leaving the tag unchanged)
+-- ----------------------------------------------------------------------------
    if ( keyvalues["amenity"] == "pub" ) then
       if (( keyvalues["food"] ~= nil  ) and
           ( keyvalues["food"] ~= "no" )) then
-         keyvalues["amenity"] = "pubfood"
+         if ( keyvalues["description:floor"] ~= nil  ) then
+            keyvalues["amenity"] = "pub_ydyy"
+         else
+            keyvalues["amenity"] = "pub_ydyd"
+         end
+      else
+         if ( keyvalues["description:floor"] ~= nil  ) then
+            keyvalues["amenity"] = "pub_yddy"
+         end
       end
    end
 
