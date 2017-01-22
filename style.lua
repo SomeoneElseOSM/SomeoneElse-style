@@ -2021,6 +2021,14 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Drop tourism=attraction if leisure=park
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["tourism"] == "attraction" ) and
+       ( keyvalues["leisure"] == "park"       )) then
+      keyvalues["tourism"] = nil
+   end
+
+-- ----------------------------------------------------------------------------
 -- Add the prow_ref for PRoWs in brackets, if it exists.
 -- ----------------------------------------------------------------------------
    if (( keyvalues["highway"] == "footway"       ) or
