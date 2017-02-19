@@ -2020,6 +2020,28 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Names for vacant shops
+-- ----------------------------------------------------------------------------
+   if ((( keyvalues["disused:shop"]    ~= nil )  or
+        ( keyvalues["disused:amenity"] ~= nil )) and
+        ( keyvalues["shop"]            == nil  ) and
+        ( keyvalues["amenity"]         == nil  )) then
+      keyvalues["shop"] = "vacant"
+   end
+
+   if ( keyvalues["shop"] == "vacant" ) then
+      if (( keyvalues["name"] == nil ) and
+          ( keyvalues["ref"]  == nil )) then
+         keyvalues["ref"] = "(vacant)"
+      else
+         if ( keyvalues["ref"] == nil ) then
+            keyvalues["ref"] = "(vacant: " .. keyvalues["name"] .. ")"
+            keyvalues["name"] = nil
+	 end
+      end
+   end
+
+-- ----------------------------------------------------------------------------
 -- Remove public transport shelters (at least until I creat a sensible 
 -- rendering for them)
 -- ----------------------------------------------------------------------------
