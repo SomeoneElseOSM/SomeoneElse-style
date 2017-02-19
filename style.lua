@@ -899,6 +899,14 @@ function filter_tags_generic(keyvalues, nokeys)
       keyvalues["amenity"] = "bar"
    end
 
+   if ( keyvalues["shop"] == "greengrocer;florist" ) then
+      keyvalues["shop"] = "greengrocer"
+   end
+
+   if ( keyvalues["shop"] == "butcher;greengrocer" ) then
+      keyvalues["shop"] = "butcher"
+   end
+
 -- ----------------------------------------------------------------------------
 -- Things that are both peaks and memorials should render as the latter.
 -- ----------------------------------------------------------------------------
