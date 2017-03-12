@@ -1054,7 +1054,8 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["shop"] == "shoes"      ) or
        ( keyvalues["shop"] == "shoe"       ) or
        ( keyvalues["shop"] == "baby_goods" ) or
-       ( keyvalues["shop"] == "baby"       )) then
+       ( keyvalues["shop"] == "baby"       ) or
+       ( keyvalues["shop"] == "hat"        )) then
       keyvalues["shop"] = "clothes"
    end
 
@@ -1462,6 +1463,7 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["shop"]   == "sewing"               ) or
        ( keyvalues["shop"]   == "knitting"             ) or
        ( keyvalues["shop"]   == "wool"                 ) or
+       ( keyvalues["shop"]   == "yarn"                 ) or
        ( keyvalues["shop"]   == "clothing_alterations" )) then
       keyvalues["shop"] = "shopnonspecific"
    end
