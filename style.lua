@@ -1971,6 +1971,14 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Emergency phones
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["emergency"] == "phone" ) and
+       ( keyvalues["amenity"]   == nil     )) then
+      keyvalues["amenity"] = "emergency_phone"
+   end
+
+-- ----------------------------------------------------------------------------
 -- If a quarry is disused, it's still likely a hole in the ground, so render it
 -- ----------------------------------------------------------------------------
    if (( keyvalues["disused:landuse"] == "quarry" ) and
