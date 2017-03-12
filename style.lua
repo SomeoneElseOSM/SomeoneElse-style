@@ -1066,6 +1066,7 @@ function filter_tags_generic(keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
    if (( keyvalues["shop"]  == "electronics"             ) or
        ( keyvalues["shop"]  == "appliance"               ) or
+       ( keyvalues["shop"]  == "electrical_supplies"     ) or
        ( keyvalues["shop"]  == "appliances"              ) or
        ( keyvalues["shop"]  == "vacuum_cleaner"          ) or
        ( keyvalues["shop"]  == "domestic_appliances"     ) or
