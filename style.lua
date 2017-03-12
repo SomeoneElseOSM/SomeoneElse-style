@@ -1618,6 +1618,7 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["shop"]    == "ticket"                  ) or
        ( keyvalues["shop"]    == "insurance"               ) or
        ( keyvalues["shop"]    == "gallery"                 ) or
+       ( keyvalues["tourism"] == "gallery"                 ) or
        ( keyvalues["amenity"] == "gallery"                 ) or
        ( keyvalues["amenity"] == "art_gallery"             ) or
        ( keyvalues["shop"]    == "plumber"                 ) or
