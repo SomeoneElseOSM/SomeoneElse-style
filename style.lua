@@ -835,6 +835,13 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- railway=crossing - show as level crossings.
+-- ----------------------------------------------------------------------------
+   if ( keyvalues["railway"] == "crossing" ) then
+      keyvalues["railway"] = "level_crossing"
+   end
+
+-- ----------------------------------------------------------------------------
 -- highway=byway to track
 -- The "bywayness" of something should be handled by designation now.  byway
 -- isn't otherwise rendered (and really should no longer be used), so change 
