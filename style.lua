@@ -1866,6 +1866,7 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["office"]  == "surveyor"                ) or
        ( keyvalues["office"]  == "marketing"               ) or
        ( keyvalues["office"]  == "graphic_design"          ) or
+       ( keyvalues["office"]  == "interior_design"         ) or
        ( keyvalues["office"]  == "builder"                 ) or
        ( keyvalues["office"]  == "training"                ) or
        ( keyvalues["office"]  == "web_design"              ) or
