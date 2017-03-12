@@ -2013,6 +2013,14 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- man_made=water_tap
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["man_made"] == "water_tap" ) and
+       ( keyvalues["amenity"]  == nil         )) then
+      keyvalues["amenity"] = "drinking_water"
+   end
+   
+-- ----------------------------------------------------------------------------
 -- Concatenate a couple of names for bus stops so that the most useful ones
 -- are displayed.
 -- ----------------------------------------------------------------------------
