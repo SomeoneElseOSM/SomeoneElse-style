@@ -1541,6 +1541,7 @@ function filter_tags_generic(keyvalues, nokeys)
    if (( keyvalues["shop"]    == "pet"                     ) or
        ( keyvalues["shop"]    == "pets"                    ) or
        ( keyvalues["shop"]    == "pet_supplies"            ) or
+       ( keyvalues["shop"]    == "pet_food"                ) or
        ( keyvalues["shop"]    == "pet_grooming"            ) or
        ( keyvalues["shop"]    == "dog_grooming"            ) or
        ( keyvalues["shop"]    == "pet;corn"                ) or
