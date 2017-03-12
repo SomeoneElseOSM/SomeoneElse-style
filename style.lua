@@ -1607,6 +1607,8 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["shop"]    == "dry_cleaning"            ) or
        ( keyvalues["shop"]    == "art"                     ) or
        ( keyvalues["shop"]    == "tattoo"                  ) or
+       ( keyvalues["shop"]    == "piercing"                ) or
+       ( keyvalues["shop"]    == "tattoo;piercing"         ) or
        ( keyvalues["shop"]    == "music"                   ) or
        ( keyvalues["shop"]    == "records"                 ) or
        ( keyvalues["shop"]    == "tyres"                   ) or
