@@ -1781,11 +1781,11 @@ function filter_tags_generic(keyvalues, nokeys)
 -- Offices that we don't know the type of.  
 -- Add unnamedcommercial landuse to give non-building areas a background.
 -- ----------------------------------------------------------------------------
-   if (( keyvalues["office"]     == "company" ) or
-       ( keyvalues["shop"]       == "office"  ) or
-       ( keyvalues["amenity"]    == "office"  ) or
-       ( keyvalues["office"]     == "yes"     ) or
-       ( keyvalues["commercial"] == "office"  )) then
+   if (( keyvalues["office"]     == "company"           ) or
+       ( keyvalues["shop"]       == "office"            ) or
+       ( keyvalues["amenity"]    == "office"            ) or
+       ( keyvalues["office"]     == "yes"               ) or
+       ( keyvalues["commercial"] == "office"            )) then
       keyvalues["landuse"] = "unnamedcommercial"
       keyvalues["office"]  = "nonspecific"
    end
@@ -1879,6 +1879,7 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["amenity"] == "coworking_space"         ) or
        ( keyvalues["office"]  == "coworking"               ) or
        ( keyvalues["office"]  == "coworking_space"         ) or
+       ( keyvalues["office"]  == "serviced_offices"        ) or
        ( keyvalues["amenity"] == "studio"                  ) or
        ( keyvalues["amenity"] == "prison"                  )) then
       keyvalues["landuse"] = "unnamedcommercial"
