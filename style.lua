@@ -21,10 +21,10 @@ function add_z_order(keyvalues)
       { 'bridge', 'yes', 10, 0 }, { 'bridge', 'true', 10, 0 }, { 'bridge', 1, 10, 0 },
       { 'tunnel', 'yes', -10, 0}, { 'tunnel', 'true', -10, 0}, { 'tunnel', 1, -10, 0}, 
       { 'highway', 'minor', 3, 0}, { 'highway', 'road', 3, 0 }, 
-      { 'highway', 'unclassified', 3, 0 }, { 'highway', 'unclassified_sidewalk', 3, 0 },
+      { 'highway', 'unclassified', 3, 0 }, { 'highway', 'unclassified_sidewalk', 3, 0 }, { 'highway', 'unclassified_verge', 3, 0 },
       { 'highway', 'residential', 3, 0 }, 
-      { 'highway', 'tertiary_link', 4, 0}, { 'highway', 'tertiary', 4, 0}, { 'highway', 'tertiary_sidewalk', 4, 0},
-      { 'highway', 'secondary_link', 6, 1}, { 'highway', 'secondary', 6, 1}, { 'highway', 'secondary_sidewalk', 6, 1},
+      { 'highway', 'tertiary_link', 4, 0}, { 'highway', 'tertiary', 4, 0}, { 'highway', 'tertiary_sidewalk', 4, 0}, { 'highway', 'tertiary_verge', 4, 0},
+      { 'highway', 'secondary_link', 6, 1}, { 'highway', 'secondary', 6, 1}, { 'highway', 'secondary_sidewalk', 6, 1}, { 'highway', 'secondary_verge', 6, 1},
       { 'highway', 'primary_link', 7, 1}, { 'highway', 'primary', 7, 1},
       { 'highway', 'trunk_link', 8, 1}, { 'highway', 'trunk', 8, 1},
       { 'highway', 'motorway_link', 9, 1}, { 'highway', 'motorway', 9, 1},
@@ -259,7 +259,9 @@ function filter_tags_generic(keyvalues, nokeys)
 -- Use unclassified_sidewalk to indicate sidewalk
 -- ----------------------------------------------------------------------------
    if (( keyvalues["highway"] == "unclassified"      ) or 
-       ( keyvalues["highway"] == "unclassified_link" )) then
+       ( keyvalues["highway"] == "unclassified_link" ) or
+       ( keyvalues["highway"] == "residential"       ) or
+       ( keyvalues["highway"] == "residential_link"  )) then
       if (( keyvalues["sidewalk"] == "both"           ) or 
           ( keyvalues["sidewalk"] == "left"           ) or 
           ( keyvalues["sidewalk"] == "mapped"         ) or 
@@ -281,6 +283,24 @@ function filter_tags_generic(keyvalues, nokeys)
           ( keyvalues["cycleway"] == "sidewalk"       ) or
           ( keyvalues["cycleway"] == "sidepath"       )) then
           keyvalues["highway"] = "unclassified_sidewalk"
+      end
+   end
+
+-- ----------------------------------------------------------------------------
+-- Use unclassified_verge to indicate verge
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["highway"] == "unclassified"      ) or 
+       ( keyvalues["highway"] == "unclassified_link" ) or
+       ( keyvalues["highway"] == "residential"       ) or
+       ( keyvalues["highway"] == "residential_link"  )) then
+      if (( keyvalues["verge"] == "both"           ) or 
+          ( keyvalues["verge"] == "left"           ) or 
+          ( keyvalues["verge"] == "mapped"         ) or 
+          ( keyvalues["verge"] == "separate"       ) or 
+          ( keyvalues["verge"] == "right"          ) or 
+          ( keyvalues["verge"] == "shared"         ) or 
+          ( keyvalues["verge"] == "yes"            )) then
+          keyvalues["highway"] = "unclassified_verge"
       end
    end
 
@@ -314,6 +334,22 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Use tertiary_verge to indicate verge
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["highway"] == "tertiary"      ) or 
+       ( keyvalues["highway"] == "tertiary_link" )) then
+      if (( keyvalues["verge"] == "both"           ) or 
+          ( keyvalues["verge"] == "left"           ) or 
+          ( keyvalues["verge"] == "mapped"         ) or 
+          ( keyvalues["verge"] == "separate"       ) or 
+          ( keyvalues["verge"] == "right"          ) or 
+          ( keyvalues["verge"] == "shared"         ) or 
+          ( keyvalues["verge"] == "yes"            )) then
+          keyvalues["highway"] = "tertiary_verge"
+      end
+   end
+
+-- ----------------------------------------------------------------------------
 -- Use secondary_sidewalk to indicate sidewalk
 -- ----------------------------------------------------------------------------
    if (( keyvalues["highway"] == "secondary"      ) or 
@@ -343,12 +379,34 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Use secondary_verge to indicate verge
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["highway"] == "secondary"      ) or 
+       ( keyvalues["highway"] == "secondary_link" )) then
+      if (( keyvalues["verge"] == "both"           ) or 
+          ( keyvalues["verge"] == "left"           ) or 
+          ( keyvalues["verge"] == "mapped"         ) or 
+          ( keyvalues["verge"] == "separate"       ) or 
+          ( keyvalues["verge"] == "right"          ) or 
+          ( keyvalues["verge"] == "shared"         ) or 
+          ( keyvalues["verge"] == "yes"            )) then
+          keyvalues["highway"] = "secondary_verge"
+      end
+   end
+
+-- ----------------------------------------------------------------------------
 -- Render narrow tertiary roads as unclassified
 -- ----------------------------------------------------------------------------
    if (( keyvalues["highway"] == "tertiary_sidewalk"   )  and
        (( keyvalues["width"]  == "2"         )   or
         ( keyvalues["width"]  == "3"         ))) then
       keyvalues["highway"] = "unclassified_sidewalk"
+   end
+
+   if (( keyvalues["highway"] == "tertiary_verge"   )  and
+       (( keyvalues["width"]  == "2"         )   or
+        ( keyvalues["width"]  == "3"         ))) then
+      keyvalues["highway"] = "unclassified_verge"
    end
 
    if (( keyvalues["highway"] == "tertiary"   )  and
