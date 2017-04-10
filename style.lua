@@ -1356,8 +1356,10 @@ function filter_tags_generic(keyvalues, nokeys)
 -- is inappropriate).
 -- ----------------------------------------------------------------------------
    if (( keyvalues["shop"]  == "security"         ) or
-       ( keyvalues["shop"]   == "computer"        ) or
-       ( keyvalues["shop"]   == "computer_repair" )) then
+       ( keyvalues["shop"]  == "survey"           ) or
+       ( keyvalues["shop"]  == "survey_equipment" ) or       
+       ( keyvalues["shop"]  == "computer"         ) or
+       ( keyvalues["shop"]  == "computer_repair"  )) then
       keyvalues["shop"] = "shopnonspecific"
    end
 
