@@ -1378,6 +1378,8 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["leisure"] == "amusement_arcade"    ) or
        ( keyvalues["leisure"] == "video_arcade"        ) or
        ( keyvalues["leisure"] == "adult_gaming_centre" ) or
+       ( keyvalues["leisure"] == "bowling_alley"       ) or
+       ( keyvalues["sport"]   == "laser_tag"           ) or
        ( keyvalues["amenity"] == "casino"              ) or
        ( keyvalues["amenity"] == "bingo"               ) or
        ( keyvalues["leisure"] == "bingo"               )) then
