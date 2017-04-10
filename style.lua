@@ -1518,6 +1518,8 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["shop"]   == "furnishing"          ) or
        ( keyvalues["shop"]   == "glass"               ) or
        ( keyvalues["shop"]   == "garage"              ) or
+       ( keyvalues["shop"]   == "conservatory"        ) or
+       ( keyvalues["shop"]   == "conservatories"      ) or
        ( keyvalues["shop"]   == "bathrooms"           ) or
        ( keyvalues["shop"]   == "fitted_furniture"    ) or
        ( keyvalues["shop"]   == "kitchenware"         ) or
