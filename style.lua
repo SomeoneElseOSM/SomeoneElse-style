@@ -1748,7 +1748,8 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["shop"]    == "trade"          ) or
        ( keyvalues["shop"]    == "cash_and_carry" ) or
        ( keyvalues["shop"]    == "fixme"          ) or
-       ( keyvalues["shop"]    == "wholesale"      )) then
+       ( keyvalues["shop"]    == "wholesale"      ) or
+       ( keyvalues["shop"]    == "service"        )) then
       keyvalues["landuse"] = "unnamedcommercial"
       keyvalues["shop"]    = "shopnonspecific"
    end
