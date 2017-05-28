@@ -486,6 +486,13 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Handle place=quarter
+-- ----------------------------------------------------------------------------
+   if ( keyvalues["place"] == "quarter" ) then
+      keyvalues["place"] = "neighbourhood"
+   end
+
+-- ----------------------------------------------------------------------------
 -- Shops etc. with icons already - just add "unnamedcommercial" landuse.
 -- ----------------------------------------------------------------------------
    if (( keyvalues["shop"]       == "car"           ) or
@@ -1138,6 +1145,7 @@ function filter_tags_generic(keyvalues, nokeys)
 -- electrical.  "security" is less of a fit here.
 -- ----------------------------------------------------------------------------
    if (( keyvalues["shop"]  == "electronics"             ) or
+       ( keyvalues["shop"]  == "radiotechnics"           ) or
        ( keyvalues["shop"]  == "appliance"               ) or
        ( keyvalues["shop"]  == "electrical_supplies"     ) or
        ( keyvalues["shop"]  == "appliances"              ) or
@@ -1372,6 +1380,8 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["amenity"] == "betting"             ) or
        ( keyvalues["shop"]    == "gambling"            ) or
        ( keyvalues["amenity"] == "gambling"            ) or
+       ( keyvalues["shop"]    == "lottery"             ) or
+       ( keyvalues["amenity"] == "lottery"             ) or
        ( keyvalues["shop"]    == "amusements"          ) or
        ( keyvalues["amenity"] == "amusements"          ) or
        ( keyvalues["amenity"] == "amusement"           ) or
@@ -1452,6 +1462,7 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["shop"]    == "tea"           ) or
        ( keyvalues["shop"]    == "chocolate"     ) or
        ( keyvalues["shop"]    == "cheese"        ) or
+       ( keyvalues["shop"]    == "dairy"         ) or
        ( keyvalues["shop"]    == "deli"          ) or
        ( keyvalues["shop"]    == "delicatessen"  ) or
        ( keyvalues["shop"]    == "patissery"     ) or
@@ -1709,6 +1720,7 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["office"]  == "auctioneer"              ) or
        ( keyvalues["shop"]    == "religion"                ) or
        ( keyvalues["shop"]    == "gas"                     ) or
+       ( keyvalues["shop"]    == "energy"                  ) or
        ( keyvalues["shop"]    == "taxi"                    ) or
        ( keyvalues["office"]  == "taxi"                    ) or
        ( keyvalues["amenity"] == "minicab_office"          ) or
@@ -1720,6 +1732,8 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["amenity"] == "sauna"                   ) or
        ( keyvalues["amenity"] == "self_storage"            ) or
        ( keyvalues["amenity"] == "storage"                 ) or
+       ( keyvalues["shop"]    == "storage_rental"          ) or
+       ( keyvalues["amenity"] == "storage_rental"          ) or
        ( keyvalues["amenity"] == "courier"                 )) then
       keyvalues["landuse"] = "unnamedcommercial"
       keyvalues["shop"] = "shopnonspecific"
