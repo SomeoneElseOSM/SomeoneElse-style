@@ -1126,9 +1126,8 @@ function filter_tags_generic(keyvalues, nokeys)
 -- tagging but "variety" is also used.
 -- ----------------------------------------------------------------------------
    if (( keyvalues["shop"]   == "variety"       ) or
-       ( keyvalues["shop"]   == "variety_store" ) or
-       ( keyvalues["shop"]   == "discount"      )) then
-      keyvalues["shop"] = "supermarket"
+       ( keyvalues["shop"]   == "variety_store" )) then
+      keyvalues["shop"] = "discount"
    end
 
 -- ----------------------------------------------------------------------------
