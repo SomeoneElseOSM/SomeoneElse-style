@@ -1552,7 +1552,7 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
--- health_food etc., and also "non-medical medical".
+-- health_food etc., and also "non-medical medical" and "woo" shops.
 -- ----------------------------------------------------------------------------
    if (( keyvalues["shop"]    == "health_food"             ) or
        ( keyvalues["shop"]    == "healthfood"              ) or
@@ -1563,6 +1563,7 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["name"]    == "Holland and Barrett"     ) or
        ( keyvalues["shop"]    == "massage"                 ) or
        ( keyvalues["shop"]    == "herbalist"               ) or
+       ( keyvalues["shop"]    == "new_age"                 ) or
        ( keyvalues["amenity"] == "spa"                     )) then
       keyvalues["shop"] = "shopnonspecific"
    end
