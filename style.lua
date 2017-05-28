@@ -1632,7 +1632,7 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
--- Nonspecific car shops.
+-- Nonspecific car and related shops.
 -- Add unnamedcommercial landuse to give non-building areas a background.
 -- ----------------------------------------------------------------------------
    if (( keyvalues["shop"]    == "car_parts"               ) or
@@ -1642,6 +1642,7 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["shop"]    == "caravan"                 ) or
        ( keyvalues["amenity"] == "car_wash"                ) or
        ( keyvalues["shop"]    == "truck"                   ) or
+       ( keyvalues["shop"]    == "van"                     ) or
        ( keyvalues["shop"]    == "truck_repair"            ) or
        ( keyvalues["amenity"] == "driving_school"          )) then
       keyvalues["landuse"] = "unnamedcommercial"
@@ -1712,6 +1713,7 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["amenity"] == "minicab_office"          ) or
        ( keyvalues["amenity"] == "training"                ) or
        ( keyvalues["shop"]    == "mobility"                ) or
+       ( keyvalues["shop"]    == "ironing"                 ) or
        ( keyvalues["amenity"] == "stripclub"               ) or
        ( keyvalues["amenity"] == "brothel"                 ) or
        ( keyvalues["amenity"] == "sauna"                   ) or
