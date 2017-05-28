@@ -493,6 +493,14 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Handle various sorts of milestones.
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["historic"] == "milestone" )  or
+       ( keyvalues["waterway"] == "milestone" )) then
+      keyvalues["highway"] = "milestone"
+   end
+
+-- ----------------------------------------------------------------------------
 -- Shops etc. with icons already - just add "unnamedcommercial" landuse.
 -- ----------------------------------------------------------------------------
    if (( keyvalues["shop"]       == "car"           ) or
