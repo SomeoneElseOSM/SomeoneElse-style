@@ -1285,6 +1285,11 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
    if (( keyvalues["amenity"] == "fast_food" )  and
+       ( keyvalues["cuisine"] == "burger"  )) then
+      keyvalues["amenity"] = "fast_food_burger"
+   end
+
+   if (( keyvalues["amenity"] == "fast_food" )  and
        ( keyvalues["cuisine"] == "chinese"     )) then
       keyvalues["amenity"] = "chinese"
    end
