@@ -1779,11 +1779,10 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["shop"]    == "gravestone"        ) or
        ( keyvalues["shop"]    == "monumental_mason"  ) or
        ( keyvalues["shop"]    == "memorials"         ) or
-       ( keyvalues["shop"]    == "funeral_directors" ) or
        ( keyvalues["amenity"] == "funeral_directors" ) or
        ( keyvalues["office"]  == "funeral_directors" )) then
       keyvalues["landuse"] = "unnamedcommercial"
-      keyvalues["shop"]    = "shopnonspecific"
+      keyvalues["shop"]    = "funeral_directors"
    end
 
 
