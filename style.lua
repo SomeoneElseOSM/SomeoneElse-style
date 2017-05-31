@@ -640,7 +640,11 @@ function filter_tags_generic(keyvalues, nokeys)
       if (( keyvalues["food"] ~= nil  ) and
           ( keyvalues["food"] ~= "no" )) then
          if ( keyvalues["description:floor"] ~= nil  ) then
-            keyvalues["amenity"] = "pub_yyyy"
+            if ( keyvalues["microbrewery"] == "yes"  ) then
+               keyvalues["amenity"] = "pub_yyyyy"
+            else
+               keyvalues["amenity"] = "pub_yyyy"
+	    end
          else
             keyvalues["amenity"] = "pub_yyyd"
          end
@@ -708,6 +712,10 @@ function filter_tags_generic(keyvalues, nokeys)
       else
          if ( keyvalues["description:floor"] ~= nil  ) then
             keyvalues["amenity"] = "pub_yddy"
+	 else
+            if ( keyvalues["microbrewery"] == "yes"  ) then
+               keyvalues["amenity"] = "pub_ydddy"
+	    end
          end
       end
    end
