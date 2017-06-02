@@ -1504,6 +1504,8 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["shop"]    == "tea"           ) or
        ( keyvalues["shop"]    == "chocolate"     ) or
        ( keyvalues["shop"]    == "cheese"        ) or
+       ( keyvalues["shop"]    == "cheese;wine"   ) or
+       ( keyvalues["shop"]    == "wine;cheese"   ) or
        ( keyvalues["shop"]    == "dairy"         ) or
        ( keyvalues["shop"]    == "deli"          ) or
        ( keyvalues["shop"]    == "delicatessen"  ) or
@@ -1539,6 +1541,10 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["shop"]   == "interior_decoration" ) or
        ( keyvalues["shop"]   == "interior_design"     ) or
        ( keyvalues["shop"]   == "carpet"              ) or
+       ( keyvalues["shop"]   == "carpets"             ) or
+       ( keyvalues["shop"]   == "carpet;bed"          ) or
+       ( keyvalues["shop"]   == "bed;carpet"          ) or
+       ( keyvalues["shop"]   == "carpet; bed"         ) or
        ( keyvalues["shop"]   == "carpets"             ) or
        ( keyvalues["shop"]   == "country"             ) or
        ( keyvalues["shop"]   == "country_store"       ) or
