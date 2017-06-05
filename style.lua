@@ -646,13 +646,25 @@ function filter_tags_generic(keyvalues, nokeys)
                keyvalues["amenity"] = "pub_yyyy"
 	    end
          else
-            keyvalues["amenity"] = "pub_yyyd"
+            if ( keyvalues["microbrewery"] == "yes"  ) then
+               keyvalues["amenity"] = "pub_yyydy"
+	    else
+               keyvalues["amenity"] = "pub_yyyd"
+	    end
          end
       else
          if ( keyvalues["description:floor"] ~= nil  ) then
-            keyvalues["amenity"] = "pub_yydy"
+            if ( keyvalues["microbrewery"] == "yes"  ) then
+               keyvalues["amenity"] = "pub_yydyy"
+	    else
+               keyvalues["amenity"] = "pub_yydy"
+	    end
          else
-            keyvalues["amenity"] = "pub_yydd"
+            if ( keyvalues["microbrewery"] == "yes"  ) then
+               keyvalues["amenity"] = "pub_yyddy"
+	    else
+               keyvalues["amenity"] = "pub_yydd"
+	    end
          end
       end
    end
@@ -705,13 +717,25 @@ function filter_tags_generic(keyvalues, nokeys)
       if (( keyvalues["food"] ~= nil  ) and
           ( keyvalues["food"] ~= "no" )) then
          if ( keyvalues["description:floor"] ~= nil  ) then
-            keyvalues["amenity"] = "pub_ydyy"
+            if ( keyvalues["microbrewery"] == "yes"  ) then
+               keyvalues["amenity"] = "pub_ydyyy"
+	    else
+               keyvalues["amenity"] = "pub_ydyy"
+	    end
          else
-            keyvalues["amenity"] = "pub_ydyd"
+            if ( keyvalues["microbrewery"] == "yes"  ) then
+               keyvalues["amenity"] = "pub_ydydy"
+	    else
+               keyvalues["amenity"] = "pub_ydyd"
+	    end
          end
       else
          if ( keyvalues["description:floor"] ~= nil  ) then
-            keyvalues["amenity"] = "pub_yddy"
+            if ( keyvalues["microbrewery"] == "yes"  ) then
+               keyvalues["amenity"] = "pub_yddyy"
+	    else
+               keyvalues["amenity"] = "pub_yddy"
+	    end
 	 else
             if ( keyvalues["microbrewery"] == "yes"  ) then
                keyvalues["amenity"] = "pub_ydddy"
