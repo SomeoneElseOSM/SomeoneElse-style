@@ -1252,10 +1252,19 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
--- plant_nursery to garden_centre
+-- plant_nursery and lawnmower etc. to garden_centre
 -- Add unnamedcommercial landuse to give non-building areas a background.
 -- ----------------------------------------------------------------------------
-   if ( keyvalues["landuse"] == "plant_nursery" ) then
+   if (( keyvalues["landuse"] == "plant_nursery"              ) or
+       ( keyvalues["shop"]    == "lawnmower"                  ) or
+       ( keyvalues["shop"]    == "garden_furniture"           ) or
+       ( keyvalues["shop"]    == "garden_machinery"           ) or
+       ( keyvalues["shop"]    == "gardening"                  ) or
+       ( keyvalues["shop"]    == "garden_equipment"           ) or
+       ( keyvalues["shop"]    == "garden_tools"               ) or
+       ( keyvalues["shop"]    == "garden"                     ) or
+       ( keyvalues["shop"]    == "doityourself;garden_centre" ) or
+       ( keyvalues["shop"]    == "garden_machines"            )) then
       keyvalues["landuse"] = "unnamedcommercial"
       keyvalues["shop"]    = "garden_centre"
    end
