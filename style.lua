@@ -417,11 +417,46 @@ function filter_tags_generic(keyvalues, nokeys)
 
 -- ----------------------------------------------------------------------------
 -- Remove admin boundaries from the map
--- I do this because I'm simply not interest in admin boundaries and I'm lucky
--- enough to live in a place where I don't have to be.
+-- I do this because I'm simply not interested in admin boundaries and I'm 
+-- lucky enough to live in a place where I don't have to be.
 -- ----------------------------------------------------------------------------
    if (keyvalues["boundary"] == "administrative") then
       keyvalues["boundary"] = nil
+   end
+
+-- ----------------------------------------------------------------------------
+-- Bridge types - only some types (including "yes") are selected in project.mml
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["bridge"] == "viaduct"     ) or
+       ( keyvalues["bridge"] == "aqueduct"    ) or
+       ( keyvalues["bridge"] == "movable"     ) or
+       ( keyvalues["bridge"] == "boadwalk"    ) or
+       ( keyvalues["bridge"] == "suspension"  ) or
+       ( keyvalues["bridge"] == "swing"       ) or
+       ( keyvalues["bridge"] == "lift"        ) or
+       ( keyvalues["bridge"] == "cantilever"  ) or
+       ( keyvalues["bridge"] == "footbridge"  ) or
+       ( keyvalues["bridge"] == "undefined"   ) or
+       ( keyvalues["bridge"] == "covered"     ) or
+       ( keyvalues["bridge"] == "duck_boards" ) or
+       ( keyvalues["bridge"] == "duckboards"  ) or
+       ( keyvalues["bridge"] == "duckboard"   ) or
+       ( keyvalues["bridge"] == "footplank"   ) or
+       ( keyvalues["bridge"] == "clapper"     ) or
+       ( keyvalues["bridge"] == "cantilever"  ) or
+       ( keyvalues["bridge"] == "gangway"     ) or
+       ( keyvalues["bridge"] == "foot"        ) or
+       ( keyvalues["bridge"] == "lock_gate"   ) or
+       ( keyvalues["bridge"] == "sleepers"    ) or
+       ( keyvalues["bridge"] == "plank"       ) or
+       ( keyvalues["bridge"] == "rope"        ) or
+       ( keyvalues["bridge"] == "pontoon"     ) or
+       ( keyvalues["bridge"] == "footpath"    ) or
+       ( keyvalues["bridge"] == "wire"        ) or
+       ( keyvalues["bridge"] == "pier"        ) or
+       ( keyvalues["bridge"] == "chain"       ) or
+       ( keyvalues["bridge"] == "trestle"     )) then
+      keyvalues["bridge"] = "yes"
    end
 
 -- ----------------------------------------------------------------------------
