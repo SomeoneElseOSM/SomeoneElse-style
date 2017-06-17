@@ -460,6 +460,13 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Bridge structures - display as building=roof.
+-- ----------------------------------------------------------------------------
+   if ( keyvalues["man_made"] == "bridge" ) then
+      keyvalues["building"] = "roof"
+   end
+
+-- ----------------------------------------------------------------------------
 -- Pretend add landuse=industrial to some industrial sub-types to force 
 -- name rendering.  Similarly, some commercial and leisure.
 -- man_made=works drops the man_made tag to avoid duplicate labelling.
