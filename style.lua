@@ -1295,21 +1295,48 @@ function filter_tags_generic(keyvalues, nokeys)
       keyvalues["amenity"] = "fast_food"
    end
 
+   if ((  keyvalues["amenity"] == "fast_food" )  and
+       (( keyvalues["cuisine"] == "burger"   )   or
+        ( keyvalues["cuisine"] == "american" ))) then
+      keyvalues["amenity"] = "fast_food_burger"
+   end
+
+   if (( keyvalues["amenity"] == "fast_food" )  and
+       ( keyvalues["cuisine"] == "chicken"   )) then
+      keyvalues["amenity"] = "fast_food_chicken"
+   end
+
+   if ((  keyvalues["amenity"] == "fast_food" )  and
+       (( keyvalues["cuisine"] == "chinese"  )   or
+        ( keyvalues["cuisine"] == "asian"    )   or
+        ( keyvalues["cuisine"] == "japanese" )   or
+        ( keyvalues["cuisine"] == "sushi"    ))) then
+      keyvalues["amenity"] = "fast_food_chinese"
+   end
+
+   if ((  keyvalues["amenity"] == "fast_food"    )  and
+       (( keyvalues["cuisine"] == "coffee"      )   or
+        ( keyvalues["cuisine"] == "coffee_shop" ))) then
+      keyvalues["amenity"] = "fast_food_coffee"
+   end
+
    if ((  keyvalues["amenity"] == "fast_food"               ) and
        (( keyvalues["cuisine"] == "fish_and_chips"         )  or
         ( keyvalues["cuisine"] == "chinese;fish_and_chips" )  or
+        ( keyvalues["cuisine"] == "fish"                   )  or
         ( keyvalues["cuisine"] == "fish_and_chips;chinese" ))) then
-      keyvalues["amenity"] = "fish_and_chips"
+      keyvalues["amenity"] = "fast_food_fish_and_chips"
    end
 
    if ( keyvalues["shop"] == "fish_and_chips" ) then
-      keyvalues["amenity"] = "fish_and_chips"
+      keyvalues["amenity"] = "fast_food_fish_and_chips"
    end
 
-   if ((  keyvalues["amenity"] == "fast_food"  )  and
-       (( keyvalues["cuisine"] == "pizza"     )   or
-        ( keyvalues["cuisine"] == "italian"   ))) then
-      keyvalues["amenity"] = "pizza"
+   if ((( keyvalues["amenity"] == "fast_food" )   and
+        ( keyvalues["cuisine"] == "ice_cream" ))  or
+       (  keyvalues["shop"]    == "ice_cream"  )  or
+       (  keyvalues["amenity"] == "ice_cream"  )) then
+      keyvalues["amenity"] = "fast_food_ice_cream"
    end
 
    if (( keyvalues["amenity"] == "fast_food" )  and
@@ -1317,29 +1344,30 @@ function filter_tags_generic(keyvalues, nokeys)
       keyvalues["amenity"] = "fast_food_indian"
    end
 
-   if (( keyvalues["amenity"] == "fast_food" )  and
-       ( keyvalues["cuisine"] == "chicken"     )) then
-      keyvalues["amenity"] = "fast_food_chicken"
+   if ((  keyvalues["amenity"] == "fast_food" )  and
+       (( keyvalues["cuisine"] == "kebab"     )  or
+        ( keyvalues["cuisine"] == "turkish"   ))) then
+      keyvalues["amenity"] = "fast_food_kebab"
+   end
+
+   if ((  keyvalues["amenity"] == "fast_food"   )  and
+       (( keyvalues["cuisine"] == "pastie"     )   or
+        ( keyvalues["cuisine"] == "pasties"    )   or
+        ( keyvalues["cuisine"] == "pasty"      )   or
+        ( keyvalues["cuisine"] == "pie"        )   or
+        ( keyvalues["cuisine"] == "pies"       ))) then
+      keyvalues["amenity"] = "fast_food_pie"
+   end
+
+   if ((  keyvalues["amenity"] == "fast_food"  )  and
+       (( keyvalues["cuisine"] == "pizza"     )   or
+        ( keyvalues["cuisine"] == "italian"   ))) then
+      keyvalues["amenity"] = "fast_food_pizza"
    end
 
    if (( keyvalues["amenity"] == "fast_food" )  and
        ( keyvalues["cuisine"] == "sandwich"  )) then
       keyvalues["amenity"] = "fast_food_sandwich"
-   end
-
-   if (( keyvalues["amenity"] == "fast_food" )  and
-       ( keyvalues["cuisine"] == "coffee"  )) then
-      keyvalues["amenity"] = "fast_food_coffee"
-   end
-
-   if (( keyvalues["amenity"] == "fast_food" )  and
-       ( keyvalues["cuisine"] == "burger"  )) then
-      keyvalues["amenity"] = "fast_food_burger"
-   end
-
-   if (( keyvalues["amenity"] == "fast_food" )  and
-       ( keyvalues["cuisine"] == "chinese"     )) then
-      keyvalues["amenity"] = "chinese"
    end
 
    if (( keyvalues["amenity"] == "clock"   )  and
@@ -1537,8 +1565,6 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["shop"]    == "farm_shop"     ) or
        ( keyvalues["shop"]    == "seafood"       ) or
        ( keyvalues["shop"]    == "beverages"     ) or
-       ( keyvalues["shop"]    == "ice_cream"     ) or
-       ( keyvalues["amenity"] == "ice_cream"     ) or
        ( keyvalues["shop"]    == "coffee"        ) or
        ( keyvalues["shop"]    == "tea"           ) or
        ( keyvalues["shop"]    == "chocolate"     ) or
