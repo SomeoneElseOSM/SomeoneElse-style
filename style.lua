@@ -1947,10 +1947,17 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["healthcare"]  == "blood_bank"               ) or
        ( keyvalues["healthcare"]  == "sports_massage_therapist" ) or
        ( keyvalues["healthcare"]  == "rehabilitation"           ) or
-       ( keyvalues["amenity"]     == "daycare"                  ) or
-       ( keyvalues["emergency"]   == "defibrillator"            )) then
+       ( keyvalues["amenity"]     == "daycare"                  )) then
       keyvalues["landuse"] = "unnamedcommercial"
       keyvalues["shop"]    = "healthnonspecific"
+   end
+
+-- ----------------------------------------------------------------------------
+-- opticians - render as "nonspecific health".
+-- Add unnamedcommercial landuse to give non-building areas a background.
+-- ----------------------------------------------------------------------------
+   if ( keyvalues["emergency"] == "defibrillator" ) then
+      keyvalues["amenity"] = "defibrillator"
    end
 
 -- ----------------------------------------------------------------------------
