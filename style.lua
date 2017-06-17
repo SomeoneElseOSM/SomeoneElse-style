@@ -467,6 +467,18 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Tunnel values - render as "yes" if appropriate.
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["tunnel"] == "culvert"             ) or
+       ( keyvalues["tunnel"] == "covered"             ) or
+       ( keyvalues["tunnel"] == "avalanche_protector" ) or
+       ( keyvalues["tunnel"] == "passage"             ) or
+       ( keyvalues["tunnel"] == "1"                   ) or
+       ( keyvalues["tunnel"] == "cave"                )) then
+      keyvalues["tunnel"] = "yes"
+   end
+
+-- ----------------------------------------------------------------------------
 -- Pretend add landuse=industrial to some industrial sub-types to force 
 -- name rendering.  Similarly, some commercial and leisure.
 -- man_made=works drops the man_made tag to avoid duplicate labelling.
