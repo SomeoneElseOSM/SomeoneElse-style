@@ -1699,6 +1699,7 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["shop"]   == "frame"               ) or
        ( keyvalues["shop"]   == "framing"             ) or
        ( keyvalues["shop"]   == "picture_framing"     ) or
+       ( keyvalues["craft"]  == "framing"             ) or
        ( keyvalues["shop"]   == "curtain"             ) or
        ( keyvalues["shop"]   == "furnishings"         ) or
        ( keyvalues["shop"]   == "furnishing"          ) or
