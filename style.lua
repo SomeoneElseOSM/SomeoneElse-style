@@ -1415,11 +1415,13 @@ function filter_tags_generic(keyvalues, nokeys)
       keyvalues["amenity"] = "fast_food_chicken"
    end
 
-   if ((  keyvalues["amenity"] == "fast_food" )  and
-       (( keyvalues["cuisine"] == "chinese"  )   or
-        ( keyvalues["cuisine"] == "asian"    )   or
-        ( keyvalues["cuisine"] == "japanese" )   or
-        ( keyvalues["cuisine"] == "sushi"    ))) then
+   if ((  keyvalues["amenity"] == "fast_food"     )  and
+       (( keyvalues["cuisine"] == "chinese"      )   or
+        ( keyvalues["cuisine"] == "thai"         )   or
+        ( keyvalues["cuisine"] == "chinese;thai" )   or
+        ( keyvalues["cuisine"] == "asian"        )   or
+        ( keyvalues["cuisine"] == "japanese"     )   or
+        ( keyvalues["cuisine"] == "sushi"        ))) then
       keyvalues["amenity"] = "fast_food_chinese"
    end
 
