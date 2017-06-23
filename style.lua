@@ -816,15 +816,6 @@ function filter_tags_generic(keyvalues, nokeys)
 
 
 -- ----------------------------------------------------------------------------
--- Render amenity=information as tourism
--- ----------------------------------------------------------------------------
-   if (( keyvalues["amenity"] == "information"  ) or
-       ( keyvalues["amenity"] == "notice_board" )) then
-      keyvalues["tourism"] = "information"
-   end
-
-
--- ----------------------------------------------------------------------------
 -- Render amenity=leisure_centre as leisure=sports_centre
 -- ----------------------------------------------------------------------------
    if ( keyvalues["amenity"] == "leisure_centre" ) then
@@ -1054,6 +1045,70 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["tourism"]   == "self_catering"     )) then
       keyvalues["tourism"] = "guest_house"
    end
+
+-- ----------------------------------------------------------------------------
+-- Render amenity=information as tourism
+-- ----------------------------------------------------------------------------
+   if ( keyvalues["amenity"] == "information"  ) then
+      keyvalues["tourism"] = "information"
+   end
+
+-- ----------------------------------------------------------------------------
+-- Various types of information
+-- ----------------------------------------------------------------------------
+   if ((   keyvalues["amenity"]     == "notice_board"                       )  or
+       ((  keyvalues["tourism"]     == "information"                       )   and
+        (( keyvalues["information"] == "board"                            )    or
+         ( keyvalues["information"] == "map"                              )    or
+         ( keyvalues["information"] == "history"                          )    or
+         ( keyvalues["information"] == "terminal"                         )    or
+         ( keyvalues["information"] == "nature"                           )    or
+         ( keyvalues["information"] == "noticeboard"                      )    or
+         ( keyvalues["information"] == "sign"                             )    or
+         ( keyvalues["information"] == "tactile_model"                    )    or
+         ( keyvalues["information"] == "map_board"                        )    or
+         ( keyvalues["information"] == "wildlife"                         )    or
+         ( keyvalues["information"] == "sitemap"                          )    or
+         ( keyvalues["information"] == "notice_board"                     )    or
+         ( keyvalues["information"] == "tactile_map"                      )    or
+         ( keyvalues["information"] == "electronic_board"                 )    or
+         ( keyvalues["information"] == "hikingmap"                        )    or
+         ( keyvalues["information"] == "psoters"                          )    or
+         ( keyvalues["information"] == "interpretation"                   )    or
+         ( keyvalues["information"] == "map;board"                        )    or
+         ( keyvalues["information"] == "former_telephone_box"             )    or
+         ( keyvalues["information"] == "leaflets"                         )    or
+         ( keyvalues["information"] == "departure times and destinations" )    or
+         ( keyvalues["information"] == "board;map"                        )))) then
+      keyvalues["tourism"] = "informationboard"
+   end
+
+   if ((  keyvalues["tourism"]     == "information"                       )  and
+       (( keyvalues["information"] == "guidepost"                        )   or
+        ( keyvalues["information"] == "route_marker"                     )   or
+        ( keyvalues["information"] == "fingerpost"                       )   or
+        ( keyvalues["information"] == "marker"                           ))) then
+      keyvalues["tourism"] = "informationmarker"
+   end
+
+   if ((  keyvalues["tourism"]     == "information"                       )  and
+       (( keyvalues["information"] == "office"                           )   or
+        ( keyvalues["information"] == "kiosk"                            )   or
+        ( keyvalues["information"] == "visior_centre"                    ))) then
+      keyvalues["tourism"] = "informationoffice"
+   end
+
+   if ((  keyvalues["tourism"]     == "information"                       )  and
+       (( keyvalues["information"] == "blue_plaque"                      )   or
+        ( keyvalues["information"] == "plaque"                           ))) then
+      keyvalues["tourism"] = "informationplaque"
+   end
+
+   if (( keyvalues["tourism"]     == "information"                       )  and
+       ( keyvalues["information"] == "audioguide"                        )) then
+      keyvalues["tourism"] = "informationear"
+   end
+
 
 -- ----------------------------------------------------------------------------
 -- PNFS guideposts
