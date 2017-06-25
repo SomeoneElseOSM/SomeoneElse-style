@@ -1175,6 +1175,28 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- man_mande=embankment and natural=cliff displays as a non-sided cliff
+-- (direction is important)
+-- man_made=levee displays as a two-sided cliff.  
+-- Often it's combined with highway though, and that is handled separately.
+-- ----------------------------------------------------------------------------
+   if ((( keyvalues["barrier"]  == "flood_bank" )  or
+        ( keyvalues["man_made"] == "dyke"       )  or
+        ( keyvalues["man_made"] == "levee"      )) and
+       (  keyvalues["highway"]  == nil           )) then
+      keyvalues["man_made"] = "levee"
+      keyvalues["barrier"] = nil
+   end
+
+   if ((( keyvalues["barrier"]  == "flood_bank" )  or
+        ( keyvalues["man_made"] == "dyke"       )  or
+        ( keyvalues["man_made"] == "levee"      )) and
+       (  keyvalues["highway"]  ~= nil           )) then
+      keyvalues["levee"] = "yes"
+      keyvalues["barrier"] = nil
+   end
+
+-- ----------------------------------------------------------------------------
 -- There's now a barrier=kissing_gate icon.
 -- Choose which of the two gate icons to used based on tagging.
 -- ----------------------------------------------------------------------------
