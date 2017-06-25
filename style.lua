@@ -2311,6 +2311,14 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Grass runways
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["aeroway"] == "runway" ) and
+       ( keyvalues["surface"] == "grass"  )) then
+      keyvalues["aeroway"] = "grass_runway"
+   end
+
+-- ----------------------------------------------------------------------------
 -- If a quarry is disused, it's still likely a hole in the ground, so render it
 -- ----------------------------------------------------------------------------
    if (( keyvalues["disused:landuse"] == "quarry" ) and
