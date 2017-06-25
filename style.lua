@@ -2301,6 +2301,16 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Aerodrome size
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["aeroway"]        == "aerodrome" ) and
+       ( keyvalues["iata"]           ~= nil         ) and
+       ( keyvalues["aerodrome:type"] ~= "military"  ) and
+       ( keyvalues["military"]       == nil         )) then
+      keyvalues["aeroway"] = "large_aerodrome"
+   end
+
+-- ----------------------------------------------------------------------------
 -- If a quarry is disused, it's still likely a hole in the ground, so render it
 -- ----------------------------------------------------------------------------
    if (( keyvalues["disused:landuse"] == "quarry" ) and
