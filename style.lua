@@ -1179,6 +1179,7 @@ function filter_tags_generic(keyvalues, nokeys)
 -- (direction is important)
 -- man_made=levee displays as a two-sided cliff.  
 -- Often it's combined with highway though, and that is handled separately.
+-- In that case it's passed through to the stylesheet as bridge=levee.
 -- ----------------------------------------------------------------------------
    if ((( keyvalues["barrier"]  == "flood_bank" )  or
         ( keyvalues["man_made"] == "dyke"       )  or
@@ -1192,7 +1193,7 @@ function filter_tags_generic(keyvalues, nokeys)
         ( keyvalues["man_made"] == "dyke"       )  or
         ( keyvalues["man_made"] == "levee"      )) and
        (  keyvalues["highway"]  ~= nil           )) then
-      keyvalues["levee"] = "yes"
+      keyvalues["bridge"] = "levee"
       keyvalues["barrier"] = nil
    end
 
