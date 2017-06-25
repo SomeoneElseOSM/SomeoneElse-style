@@ -2301,7 +2301,29 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
--- Aerodrome size
+-- Disused aerodromes etc. - handle disused=yes.
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["aeroway"]        == "aerodrome" ) and
+       ( keyvalues["disused"]        == "yes"       )) then
+      keyvalues["aeroway"] = nil
+      keyvalues["disused:aeroway"] = "aerodrome"
+   end
+
+   if (( keyvalues["aeroway"]        == "runway" ) and
+       ( keyvalues["disused"]        == "yes"       )) then
+      keyvalues["aeroway"] = nil
+      keyvalues["disused:aeroway"] = "runway"
+   end
+
+   if (( keyvalues["aeroway"]        == "taxiway" ) and
+       ( keyvalues["disused"]        == "yes"       )) then
+      keyvalues["aeroway"] = nil
+      keyvalues["disused:aeroway"] = "taxiway"
+   end
+
+-- ----------------------------------------------------------------------------
+-- Aerodrome size.
+-- Large public airports should have an airport icon.  Others should not.
 -- ----------------------------------------------------------------------------
    if (( keyvalues["aeroway"]        == "aerodrome" ) and
        ( keyvalues["iata"]           ~= nil         ) and
@@ -2312,6 +2334,7 @@ function filter_tags_generic(keyvalues, nokeys)
 
 -- ----------------------------------------------------------------------------
 -- Grass runways
+-- These are rendered less prominently.
 -- ----------------------------------------------------------------------------
    if (( keyvalues["aeroway"] == "runway" ) and
        ( keyvalues["surface"] == "grass"  )) then
