@@ -1660,6 +1660,7 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["shop"]   == "candles"     ) or
        ( keyvalues["shop"]   == "sunglasses"  ) or
        ( keyvalues["shop"]   == "tourist"     ) or
+       ( keyvalues["shop"]   == "tourism"     ) or
        ( keyvalues["shop"]   == "bag"         ) or
        ( keyvalues["shop"]   == "accessories" )) then
       keyvalues["shop"] = "shopnonspecific"
