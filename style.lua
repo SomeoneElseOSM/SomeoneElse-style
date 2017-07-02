@@ -580,6 +580,7 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["leisure"]    == "racetrack"          ) or
        ( keyvalues["club"]       == "sport"              ) or
        ( keyvalues["office"]     == "courier"            ) or
+       ( keyvalues["office"]     == "advertising"        ) or
        ( keyvalues["amenity"]    == "post_depot"         )) then
       keyvalues["landuse"] = "commercial"
    end
