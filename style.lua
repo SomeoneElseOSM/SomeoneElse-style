@@ -1902,6 +1902,8 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["shop"]    == "pet;corn"                ) or
        ( keyvalues["shop"]    == "animal_feed"             ) or
        ( keyvalues["amenity"] == "dog_grooming"            ) or
+       ( keyvalues["craft"]   == "dog_grooming"            ) or
+       ( keyvalues["animal"]  == "wellness"                ) or
        ( keyvalues["amenity"] == "veterinary"              ) or
        ( keyvalues["amenity"] == "animal_boarding"         ) or
        ( keyvalues["amenity"] == "cattery"                 ) or
