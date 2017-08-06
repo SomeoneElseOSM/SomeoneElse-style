@@ -1977,6 +1977,7 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["office"]  == "auctioneer"              ) or
        ( keyvalues["shop"]    == "religion"                ) or
        ( keyvalues["shop"]    == "gas"                     ) or
+       ( keyvalues["shop"]    == "fuel"                    ) or
        ( keyvalues["shop"]    == "energy"                  ) or
        ( keyvalues["shop"]    == "taxi"                    ) or
        ( keyvalues["office"]  == "taxi"                    ) or
