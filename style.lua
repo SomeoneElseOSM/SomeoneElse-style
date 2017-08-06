@@ -2319,12 +2319,14 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["name"]     == "Scout Hall"        ) or
        ( keyvalues["amenity"]  == "scouts"            ) or
        ( keyvalues["club"]     == "scout"             ) or
+       ( keyvalues["club"]     == "sport"             ) or
        ( keyvalues["amenity"]  == "clubhouse"         ) or
        ( keyvalues["building"] == "clubhouse"         ) or
        ( keyvalues["amenity"]  == "club_house"        ) or
        ( keyvalues["building"] == "club_house"        ) or
        ( keyvalues["amenity"]  == "dancing_school"    ) or
        ( keyvalues["leisure"]  == "dance"             ) or
+       ( keyvalues["leisure"]  == "sailing_club"      ) or
        ( keyvalues["sport"]    == "model_Aerodrome"   ) or
        ( keyvalues["leisure"]  == "trampoline_park"   ) or
        ( keyvalues["tourism"]  == "wilderness_hut"    ) or
