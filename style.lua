@@ -817,6 +817,19 @@ function filter_tags_generic(keyvalues, nokeys)
 
 
 -- ----------------------------------------------------------------------------
+-- Render parking spaces as parking.  Most in the UK are not part of larger
+-- parking areas, and most do not have an access tag, but many should have.
+-- ----------------------------------------------------------------------------
+   if ( keyvalues["amenity"] == "parking_space" ) then
+      keyvalues["amenity"] = "parking"
+
+      if ( keyvalues["access"] == nil  ) then
+         keyvalues["access"] = "private"
+      end
+   end
+
+
+-- ----------------------------------------------------------------------------
 -- Render amenity=leisure_centre as leisure=sports_centre
 -- ----------------------------------------------------------------------------
    if ( keyvalues["amenity"] == "leisure_centre" ) then
