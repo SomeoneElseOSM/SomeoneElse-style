@@ -1444,7 +1444,8 @@ function filter_tags_generic(keyvalues, nokeys)
 
    if ((  keyvalues["amenity"] == "fast_food" )  and
        (( keyvalues["cuisine"] == "burger"   )   or
-        ( keyvalues["cuisine"] == "american" ))) then
+        ( keyvalues["cuisine"] == "american" )   or
+        ( keyvalues["cuisine"] == "diner"    ))) then
       keyvalues["amenity"] = "fast_food_burger"
    end
 
@@ -1459,6 +1460,13 @@ function filter_tags_generic(keyvalues, nokeys)
         ( keyvalues["cuisine"] == "chinese;thai" )   or
         ( keyvalues["cuisine"] == "asian"        )   or
         ( keyvalues["cuisine"] == "japanese"     )   or
+        ( keyvalues["cuisine"] == "vietnamese"   )   or
+        ( keyvalues["cuisine"] == "korean"       )   or
+        ( keyvalues["cuisine"] == "ramen"        )   or
+        ( keyvalues["cuisine"] == "noodle"       )   or
+        ( keyvalues["cuisine"] == "noodle;ramen" )   or
+        ( keyvalues["cuisine"] == "malaysian"    )   or
+        ( keyvalues["cuisine"] == "indonesian"   )   or
         ( keyvalues["cuisine"] == "sushi"        ))) then
       keyvalues["amenity"] = "fast_food_chinese"
    end
@@ -1488,8 +1496,9 @@ function filter_tags_generic(keyvalues, nokeys)
       keyvalues["amenity"] = "fast_food_ice_cream"
    end
 
-   if (( keyvalues["amenity"] == "fast_food" )  and
-       ( keyvalues["cuisine"] == "indian"     )) then
+   if ((  keyvalues["amenity"] == "fast_food"   ) and
+       (( keyvalues["cuisine"] == "indian"     )  or
+        ( keyvalues["cuisine"] == "curry"      ))) then
       keyvalues["amenity"] = "fast_food_indian"
    end
 
@@ -1508,9 +1517,10 @@ function filter_tags_generic(keyvalues, nokeys)
       keyvalues["amenity"] = "fast_food_pie"
    end
 
-   if ((  keyvalues["amenity"] == "fast_food"  )  and
-       (( keyvalues["cuisine"] == "pizza"     )   or
-        ( keyvalues["cuisine"] == "italian"   ))) then
+   if ((  keyvalues["amenity"] == "fast_food"      )  and
+       (( keyvalues["cuisine"] == "pizza"         )   or
+        ( keyvalues["cuisine"] == "italian"       )   or
+        ( keyvalues["cuisine"] == "italian;pizza" ))) then
       keyvalues["amenity"] = "fast_food_pizza"
    end
 
