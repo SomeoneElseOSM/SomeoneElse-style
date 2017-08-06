@@ -2325,6 +2325,7 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["amenity"]  == "club_house"        ) or
        ( keyvalues["building"] == "club_house"        ) or
        ( keyvalues["amenity"]  == "dancing_school"    ) or
+       ( keyvalues["leisure"]  == "club"              ) or
        ( keyvalues["leisure"]  == "dance"             ) or
        ( keyvalues["leisure"]  == "sailing_club"      ) or
        ( keyvalues["sport"]    == "model_Aerodrome"   ) or
