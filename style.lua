@@ -555,10 +555,27 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Mappings to shop=car
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["shop"]    == "car;car_repair"  )  or
+       ( keyvalues["shop"]    == "cars"            )  or
+       ( keyvalues["shop"]    == "vehicle"         )) then
+      keyvalues["shop"] = "car"
+   end
+
+-- ----------------------------------------------------------------------------
 -- Map amenity=car_repair etc. to shop=car_repair
 -- ----------------------------------------------------------------------------
-   if (( keyvalues["amenity"] == "car_repair" )  or
-       ( keyvalues["craft"]   == "car_repair" )) then
+   if (( keyvalues["amenity"] == "car_repair"         )  or
+       ( keyvalues["craft"]   == "car_repair"         )  or
+       ( keyvalues["shop"]    == "car_service"        )  or
+       ( keyvalues["shop"]    == "car_inspection"     )  or
+       ( keyvalues["shop"]    == "car_bodyshop"       )  or
+       ( keyvalues["shop"]    == "vehicle_inspection" )  or
+       ( keyvalues["shop"]    == "mechanic"           )  or
+       ( keyvalues["shop"]    == "car_repair;car"     )  or
+       ( keyvalues["shop"]    == "car_repair;tyres"   )  or
+       ( keyvalues["shop"]    == "auto_repair"        )) then
       keyvalues["shop"] = "car_repair"
    end
 
@@ -1932,13 +1949,25 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Car parts
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["shop"]    == "car_accessories"              )  or
+       ( keyvalues["shop"]    == "tyres"                        )  or
+       ( keyvalues["shop"]    == "automotive"                   )  or
+       ( keyvalues["shop"]    == "battery"                      )  or
+       ( keyvalues["shop"]    == "batteries"                    )  or
+       ( keyvalues["shop"]    == "number_plate"                 )  or
+       ( keyvalues["shop"]    == "licence_plates"               )  or
+       ( keyvalues["shop"]    == "car_audio"                    )  or
+       ( keyvalues["shop"]    == "bicycle;car_repair;car_parts" )) then
+      keyvalues["shop"] = "car_parts"
+   end
+
+-- ----------------------------------------------------------------------------
 -- Nonspecific car and related shops.
 -- Add unnamedcommercial landuse to give non-building areas a background.
 -- ----------------------------------------------------------------------------
-   if (( keyvalues["shop"]    == "car_parts"                    ) or
-       ( keyvalues["shop"]    == "car_accessories"              ) or
-       ( keyvalues["shop"]    == "bicycle;car_repair;car_parts" ) or
-       ( keyvalues["amenity"] == "car_rental"                   ) or
+   if (( keyvalues["amenity"] == "car_rental"                   ) or
        ( keyvalues["shop"]    == "motorcycle"                   ) or
        ( keyvalues["shop"]    == "caravan"                      ) or
        ( keyvalues["amenity"] == "car_wash"                     ) or
