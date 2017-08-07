@@ -555,6 +555,14 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Map amenity=car_repair etc. to shop=car_repair
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["amenity"] == "car_repair" )  or
+       ( keyvalues["craft"]   == "car_repair" )) then
+      keyvalues["shop"] = "car_repair"
+   end
+
+-- ----------------------------------------------------------------------------
 -- Shops etc. with icons already - just add "unnamedcommercial" landuse.
 -- ----------------------------------------------------------------------------
    if (( keyvalues["shop"]       == "car"           ) or
