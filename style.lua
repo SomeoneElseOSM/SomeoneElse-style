@@ -1970,7 +1970,6 @@ function filter_tags_generic(keyvalues, nokeys)
    if (( keyvalues["amenity"] == "car_rental"                   ) or
        ( keyvalues["shop"]    == "motorcycle"                   ) or
        ( keyvalues["shop"]    == "caravan"                      ) or
-       ( keyvalues["amenity"] == "car_wash"                     ) or
        ( keyvalues["shop"]    == "truck"                        ) or
        ( keyvalues["shop"]    == "van"                          ) or
        ( keyvalues["shop"]    == "truck_repair"                 ) or
