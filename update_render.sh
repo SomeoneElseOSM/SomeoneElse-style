@@ -27,8 +27,9 @@ file_page=http://download.geofabrik.de/europe/${file_prefix}.html
 file_url=http://download.geofabrik.de/europe/${file_prefix}-latest.osm.pbf
 #
 #file_prefix=england
-#file_page=http://download.geofabrik.de/europe/great-britain/england.html
-#file_url=http://download.geofabrik.de/europe/great-britain/england-latest.osm.pbf
+#file_prefix=wales
+#file_page=http://download.geofabrik.de/europe/great-britain/${file_prefix}.html
+#file_url=http://download.geofabrik.de/europe/great-britain/${file_prefix}-latest.osm.pbf
 #
 #file_prefix=cambridgeshire
 #file_prefix=cheshire
@@ -88,13 +89,29 @@ fi
 /etc/init.d/renderd stop
 /etc/init.d/apache2 stop
 #
+# Convert a Welsh name portion to Welsh and and English portion to English
+#
+osmosis  --read-pbf ${file_prefix}_${file_extension}.osm.pbf  --bounding-box left=-4.82 bottom=52.02 right=-3.34 top=53.69 --write-pbf welshlangpart_${file_extension}_before.pbf
+#
+osmosis --read-pbf welshlangpart_${file_extension}_before.pbf --tag-transform /home/${local_user}/src/SomeoneElse-style/transform_cy.xml --write-pbf welshlangpart_${file_extension}_after.pbf
+#
+osmosis --read-pbf ${file_prefix}_${file_extension}.osm.pbf --tag-transform /home/${local_user}/src/SomeoneElse-style/transform_en.xml --write-pbf englangpart_${file_extension}_after.pbf
+#
+# Merge them
+#
+osmosis --read-pbf welshlangpart_${file_extension}_after.pbf --read-pbf englangpart_${file_extension}_after.pbf  --merge --write-pbf  langs_${file_extension}_merged.pbf
+#
 # Run osm2pgsql
 #
-sudo -u ${local_user} osm2pgsql --create --slim -d gis -C 2500 --number-processes 2 -S /home/${local_user}/src/openstreetmap-carto-AJT/openstreetmap-carto.style --multi-geometry --tag-transform-script /home/${local_user}/src/SomeoneElse-style/style.lua /home/${local_user}/data/${file_prefix}_${file_extension}.osm.pbf
+sudo -u ${local_user} osm2pgsql --create --slim -d gis -C 2500 --number-processes 2 -S /home/${local_user}/src/openstreetmap-carto-AJT/openstreetmap-carto.style --multi-geometry --tag-transform-script /home/${local_user}/src/SomeoneElse-style/style.lua langs_${file_extension}_merged.pbf
 #
 sudo -u ${local_user} osm2pgsql --append --slim -d gis -C 250 --number-processes 2 -S /home/${local_user}/src/openstreetmap-carto-AJT/openstreetmap-carto.style --multi-geometry --tag-transform-script /home/${local_user}/src/SomeoneElse-style/style.lua /home/${local_user}/src/SomeoneElse-style-legend/legend_roads.osm
 #
 sudo -u ${local_user} osm2pgsql --append --slim -d gis -C 250 --number-processes 2 -S /home/${local_user}/src/openstreetmap-carto-AJT/openstreetmap-carto.style --multi-geometry --tag-transform-script /home/${local_user}/src/SomeoneElse-style/style.lua /home/${local_user}/src/SomeoneElse-style-legend/legend_pub.osm
+#
+# Tidy temporary files
+#
+rm welshlangpart_${file_extension}_before.pbf welshlangpart_${file_extension}_after.pbf englangpart_${file_extension}_after.pbf langs_${file_extension}_merged.pbf
 #
 # Reinitialise updating
 #
