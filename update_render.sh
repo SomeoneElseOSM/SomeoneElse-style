@@ -37,6 +37,7 @@ file_url=http://download.geofabrik.de/europe/${file_prefix}-latest.osm.pbf
 #file_prefix=leicestershire
 #file_prefix=nottinghamshire
 #file_prefix=staffordshire
+#file_prefix=worcestershire
 #file_page=http://download.geofabrik.de/europe/great-britain/england/${file_prefix}.html
 #file_url=http://download.geofabrik.de/europe/great-britain/england/${file_prefix}-latest.osm.pbf
 #
