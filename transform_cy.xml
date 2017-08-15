@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<translations>
+ 
+  <translation>
+    <name>Simplify Access</name>
+    <description>Simplifies the access restrictions to yes/no. We could limit for specific keys, but lets live dangerously.</description>
+    <match>
+      <tag k="name:cy" v=".*" match_id="namecy"/>
+    </match>
+    <output>
+      <copy-all/>
+      <tag from_match="namecy" k="name" v="{0}"/>
+    </output>
+  </translation>
+  
+</translations>
