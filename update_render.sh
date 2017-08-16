@@ -27,6 +27,7 @@ file_page=http://download.geofabrik.de/europe/${file_prefix}.html
 file_url=http://download.geofabrik.de/europe/${file_prefix}-latest.osm.pbf
 #
 #file_prefix=england
+#file_prefix=scotland
 #file_prefix=wales
 #file_page=http://download.geofabrik.de/europe/great-britain/${file_prefix}.html
 #file_url=http://download.geofabrik.de/europe/great-britain/${file_prefix}-latest.osm.pbf
@@ -95,6 +96,12 @@ osmosis  --read-pbf ${file_prefix}_${file_extension}.osm.pbf  --bounding-box lef
 #
 osmosis --read-pbf welshlangpart_${file_extension}_before.pbf --tag-transform /home/${local_user}/src/SomeoneElse-style/transform_cy.xml --write-pbf welshlangpart_${file_extension}_after.pbf
 #
+# Likewise, Scots Gaelic
+#
+osmosis  --read-pbf ${file_prefix}_${file_extension}.osm.pbf  --bounding-box left=-9.23 bottom=55.56 right=-5.7 top=59.92 --write-pbf scotsgdlangpart_${file_extension}_before.pbf
+#
+osmosis --read-pbf scotsgdlangpart_${file_extension}_before.pbf --tag-transform /home/${local_user}/src/SomeoneElse-style/transform_gd.xml --write-pbf scotsgdlangpart_${file_extension}_after.pbf
+#
 osmosis --read-pbf ${file_prefix}_${file_extension}.osm.pbf --tag-transform /home/${local_user}/src/SomeoneElse-style/transform_en.xml --write-pbf englangpart_${file_extension}_after.pbf
 #
 # Merge them
@@ -111,7 +118,7 @@ sudo -u ${local_user} osm2pgsql --append --slim -d gis -C 250 --number-processes
 #
 # Tidy temporary files
 #
-rm welshlangpart_${file_extension}_before.pbf welshlangpart_${file_extension}_after.pbf englangpart_${file_extension}_after.pbf langs_${file_extension}_merged.pbf
+rm welshlangpart_${file_extension}_before.pbf welshlangpart_${file_extension}_after.pbf englangpart_${file_extension}_after.pbf scotsgdlangpart_${file_extension}_before.pbf scotsgdlangpart_${file_extension}_after.pbf langs_${file_extension}_merged.pbf
 #
 # Reinitialise updating
 #
