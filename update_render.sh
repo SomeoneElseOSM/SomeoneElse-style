@@ -20,28 +20,44 @@ then
 else
     touch update_render.running
 fi
+# -----------------------------------------------------------------------------
+# This script works with several different geographic regions.  
+# Areas within Great Britain can be processed into CY, GD and EN speaking 
+# areas and are handled by the "1" versions of e.v.s.
+# Ireland, if needed, needs no language processing and is is handled by the 
+# "2" versions of e.v.s.
+# The results are then merged together.
+# ----------------------------------------------------------------------------
+# What's the first file that we are interested in?
 #
-file_prefix=british-isles
-#file_prefix=great-britain
-file_page=http://download.geofabrik.de/europe/${file_prefix}.html
-file_url=http://download.geofabrik.de/europe/${file_prefix}-latest.osm.pbf
+#file_prefix1=british-isles
+file_prefix1=great-britain
+file_page1=http://download.geofabrik.de/europe/${file_prefix1}.html
+file_url1=http://download.geofabrik.de/europe/${file_prefix1}-latest.osm.pbf
 #
-#file_prefix=england
-#file_prefix=scotland
-#file_prefix=wales
-#file_page=http://download.geofabrik.de/europe/great-britain/${file_prefix}.html
-#file_url=http://download.geofabrik.de/europe/great-britain/${file_prefix}-latest.osm.pbf
+#file_prefix1=england
+#file_prefix1=scotland
+#file_prefix1=wales
+#file_page1=http://download.geofabrik.de/europe/great-britain/${file_prefix1}.html
+#file_url1=http://download.geofabrik.de/europe/great-britain/${file_prefix1}-latest.osm.pbf
 #
-#file_prefix=cambridgeshire
-#file_prefix=cheshire
-#file_prefix=derbyshire
-#file_prefix=herefordshire
-#file_prefix=leicestershire
-#file_prefix=nottinghamshire
-#file_prefix=staffordshire
-#file_prefix=worcestershire
-#file_page=http://download.geofabrik.de/europe/great-britain/england/${file_prefix}.html
-#file_url=http://download.geofabrik.de/europe/great-britain/england/${file_prefix}-latest.osm.pbf
+#file_prefix1=cambridgeshire
+#file_prefix1=cheshire
+#file_prefix1=derbyshire
+#file_prefix1=herefordshire
+#file_prefix1=leicestershire
+#file_prefix1=nottinghamshire
+#file_prefix1=staffordshire
+#file_prefix1=worcestershire
+#file_page1=http://download.geofabrik.de/europe/great-britain/england/${file_prefix1}.html
+#file_url1=http://download.geofabrik.de/europe/great-britain/england/${file_prefix1}-latest.osm.pbf
+#
+# What's the second file that we are interested in?
+# Note that if this is commented out, also change the "merge" below to not use it.
+#
+file_prefix2=ireland-and-northern-ireland
+file_page2=http://download.geofabrik.de/europe/${file_prefix2}.html
+file_url2=http://download.geofabrik.de/europe/${file_prefix2}-latest.osm.pbf
 #
 # Remove the openstreetmap-tiles-update-expire entry from the crontab.
 # Note that this matches a comment on the crontab line.
@@ -70,19 +86,26 @@ carto project.mml > mapnik.xml
 #
 df
 #
-# When was the target file last modified?
+# When was the first target file last modified?
 #
 cd /home/${local_user}/data
-wget $file_page -O file_page.$$
-grep " and contains all OSM data up to " file_page.$$ | sed "s/.*and contains all OSM data up to //" | sed "s/. File size.*//" > last_modified.$$
+wget $file_page1 -O file_page1.$$
+grep " and contains all OSM data up to " file_page1.$$ | sed "s/.*and contains all OSM data up to //" | sed "s/. File size.*//" > last_modified.$$
 #
-file_extension=`cat last_modified.$$`
+file_extension1=`cat last_modified.$$`
 #
-if test -e ${file_prefix}_${file_extension}.osm.pbf
+if test -e ${file_prefix1}_${file_extension1}.osm.pbf
 then
-    echo "File already downloaded"
+    echo "File1 already downloaded"
 else
-    wget $file_url -O ${file_prefix}_${file_extension}.osm.pbf
+    wget $file_url1 -O ${file_prefix1}_${file_extension1}.osm.pbf
+fi
+#
+if test -e ${file_prefix2}_${file_extension2}.osm.pbf
+then
+    echo "File2 already downloaded"
+else
+    wget $file_url2 -O ${file_prefix2}_${file_extension2}.osm.pbf
 fi
 #
 # Stop rendering to free up memory
@@ -90,27 +113,32 @@ fi
 /etc/init.d/renderd stop
 /etc/init.d/apache2 stop
 #
-# Convert a Welsh name portion to Welsh and and English portion to English
+# Welsh, English and Scottish names need to be converted to "cy or en", "en" and "gd or en" respectively.
+# First, convert a Welsh name portion intoto Welsh
 #
-osmosis  --read-pbf ${file_prefix}_${file_extension}.osm.pbf --bounding-polygon file="/home/${local_user}/src/SomeoneElse-style/welsh_areas.poly" --write-pbf welshlangpart_${file_extension}_before.pbf
+osmosis  --read-pbf ${file_prefix1}_${file_extension1}.osm.pbf --bounding-polygon file="/home/${local_user}/src/SomeoneElse-style/welsh_areas.poly" --write-pbf welshlangpart_${file_extension1}_before.pbf
 #
-osmosis --read-pbf welshlangpart_${file_extension}_before.pbf --tag-transform /home/${local_user}/src/SomeoneElse-style/transform_cy.xml --write-pbf welshlangpart_${file_extension}_after.pbf
+osmosis --read-pbf welshlangpart_${file_extension1}_before.pbf --tag-transform /home/${local_user}/src/SomeoneElse-style/transform_cy.xml --write-pbf welshlangpart_${file_extension1}_after.pbf
 #
 # Likewise, Scots Gaelic
 #
-osmosis  --read-pbf ${file_prefix}_${file_extension}.osm.pbf  --bounding-box left=-9.23 bottom=55.56 right=-5.7 top=59.92 --write-pbf scotsgdlangpart_${file_extension}_before.pbf
+osmosis  --read-pbf ${file_prefix1}_${file_extension1}.osm.pbf  --bounding-box left=-9.23 bottom=55.56 right=-5.7 top=59.92 --write-pbf scotsgdlangpart_${file_extension1}_before.pbf
 #
-osmosis --read-pbf scotsgdlangpart_${file_extension}_before.pbf --tag-transform /home/${local_user}/src/SomeoneElse-style/transform_gd.xml --write-pbf scotsgdlangpart_${file_extension}_after.pbf
+osmosis --read-pbf scotsgdlangpart_${file_extension1}_before.pbf --tag-transform /home/${local_user}/src/SomeoneElse-style/transform_gd.xml --write-pbf scotsgdlangpart_${file_extension1}_after.pbf
 #
-osmosis --read-pbf ${file_prefix}_${file_extension}.osm.pbf --tag-transform /home/${local_user}/src/SomeoneElse-style/transform_en.xml --write-pbf englangpart_${file_extension}_after.pbf
+# Convert the remaining file to "English"
 #
-# Merge them
+osmosis --read-pbf ${file_prefix1}_${file_extension1}.osm.pbf --tag-transform /home/${local_user}/src/SomeoneElse-style/transform_en.xml --write-pbf englangpart_${file_extension1}_after.pbf
 #
-osmosis --read-pbf welshlangpart_${file_extension}_after.pbf --read-pbf scotsgdlangpart_${file_extension}_after.pbf --read-pbf englangpart_${file_extension}_after.pbf  --merge --merge --write-pbf  langs_${file_extension}_merged.pbf
+# Note that "file2", if we need it, does not need processing.
+#
+# Merge them, in such a way that the cy and gd files take precedence over the en one.
+#
+osmosis --read-pbf welshlangpart_${file_extension1}_after.pbf --read-pbf scotsgdlangpart_${file_extension1}_after.pbf --read-pbf englangpart_${file_extension1}_after.pbf  --read-pbf ${file_prefix2}_${file_extension2}.osm.pbf --merge --merge --merge --write-pbf  langs_${file_extension1}_merged.pbf
 #
 # Run osm2pgsql
 #
-sudo -u ${local_user} osm2pgsql --create --slim -d gis -C 2500 --number-processes 2 -S /home/${local_user}/src/openstreetmap-carto-AJT/openstreetmap-carto.style --multi-geometry --tag-transform-script /home/${local_user}/src/SomeoneElse-style/style.lua langs_${file_extension}_merged.pbf
+sudo -u ${local_user} osm2pgsql --create --slim -d gis -C 2500 --number-processes 2 -S /home/${local_user}/src/openstreetmap-carto-AJT/openstreetmap-carto.style --multi-geometry --tag-transform-script /home/${local_user}/src/SomeoneElse-style/style.lua langs_${file_extension1}_merged.pbf
 #
 sudo -u ${local_user} osm2pgsql --append --slim -d gis -C 250 --number-processes 2 -S /home/${local_user}/src/openstreetmap-carto-AJT/openstreetmap-carto.style --multi-geometry --tag-transform-script /home/${local_user}/src/SomeoneElse-style/style.lua /home/${local_user}/src/SomeoneElse-style-legend/legend_roads.osm
 #
@@ -118,13 +146,13 @@ sudo -u ${local_user} osm2pgsql --append --slim -d gis -C 250 --number-processes
 #
 # Tidy temporary files
 #
-rm welshlangpart_${file_extension}_before.pbf welshlangpart_${file_extension}_after.pbf englangpart_${file_extension}_after.pbf scotsgdlangpart_${file_extension}_before.pbf scotsgdlangpart_${file_extension}_after.pbf langs_${file_extension}_merged.pbf
+rm welshlangpart_${file_extension1}_before.pbf welshlangpart_${file_extension1}_after.pbf englangpart_${file_extension1}_after.pbf scotsgdlangpart_${file_extension1}_before.pbf scotsgdlangpart_${file_extension1}_after.pbf langs_${file_extension1}_merged.pbf
 #
 # Reinitialise updating
 #
 rm -rf /var/lib/mod_tile/.osmosis.old
 mv /var/lib/mod_tile/.osmosis /var/lib/mod_tile/.osmosis.old
-sudo -u ${local_user} /home/${local_user}/src/mod_tile/openstreetmap-tiles-update-expire ${file_extension}
+sudo -u ${local_user} /home/${local_user}/src/mod_tile/openstreetmap-tiles-update-expire ${file_extension1}
 /etc/init.d/renderd restart
 /etc/init.d/apache2 restart
 #
@@ -135,7 +163,7 @@ crontab -u $local_user local_user_crontab_safe.$$
 # And final tidying up
 #
 date | mail -s "Database reload complete on `hostname`" ${local_user}
-rm file_page.$$
+rm file_page1.$$
 rm last_modified.$$
 rm update_render.running
 #
