@@ -92,7 +92,7 @@ fi
 #
 # Convert a Welsh name portion to Welsh and and English portion to English
 #
-osmosis  --read-pbf ${file_prefix}_${file_extension}.osm.pbf  --bounding-box left=-4.82 bottom=52.02 right=-3.34 top=53.69 --write-pbf welshlangpart_${file_extension}_before.pbf
+osmosis  --read-pbf ${file_prefix}_${file_extension}.osm.pbf --bounding-polygon file="/home/${local_user}/src/SomeoneElse-style/welsh_areas.poly" --write-pbf welshlangpart_${file_extension}_before.pbf
 #
 osmosis --read-pbf welshlangpart_${file_extension}_before.pbf --tag-transform /home/${local_user}/src/SomeoneElse-style/transform_cy.xml --write-pbf welshlangpart_${file_extension}_after.pbf
 #
