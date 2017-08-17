@@ -106,7 +106,7 @@ osmosis --read-pbf ${file_prefix}_${file_extension}.osm.pbf --tag-transform /hom
 #
 # Merge them
 #
-osmosis --read-pbf welshlangpart_${file_extension}_after.pbf --read-pbf englangpart_${file_extension}_after.pbf  --merge --write-pbf  langs_${file_extension}_merged.pbf
+osmosis --read-pbf welshlangpart_${file_extension}_after.pbf --read-pbf scotsgdlangpart_${file_extension}_after.pbf --read-pbf englangpart_${file_extension}_after.pbf  --merge --merge --write-pbf  langs_${file_extension}_merged.pbf
 #
 # Run osm2pgsql
 #
