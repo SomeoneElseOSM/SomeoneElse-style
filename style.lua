@@ -1575,6 +1575,7 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["shop"]   == "plant_hire;tool_hire" ) or
        ( keyvalues["shop"]   == "signs"                ) or
        ( keyvalues["craft"]  == "signmaker"            ) or
+       ( keyvalues["craft"]  == "roofer"               ) or
        ( keyvalues["shop"]   == "building_materials"   )) then
       keyvalues["landuse"] = "unnamedcommercial"
       keyvalues["shop"]    = "doityourself"
