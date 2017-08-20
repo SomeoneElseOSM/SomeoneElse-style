@@ -994,6 +994,22 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- If set, move bridge:name to bridge_name
+-- ----------------------------------------------------------------------------
+   if ( keyvalues["bridge:name"] ~= nil ) then
+      keyvalues["bridge_name"] = keyvalues["bridge:name"]
+      keyvalues["bridge:name"] = nil
+   end
+
+-- ----------------------------------------------------------------------------
+-- If set, move bridge_name to name
+-- ----------------------------------------------------------------------------
+   if ( keyvalues["bridge_name"] ~= nil ) then
+      keyvalues["name"] = keyvalues["bridge_name"]
+      keyvalues["bridge_name"] = nil
+   end
+
+-- ----------------------------------------------------------------------------
 -- If something has a "tpuk_ref", use it in preference to "name".
 -- It's in brackets because it's likely not signed.
 -- ----------------------------------------------------------------------------
