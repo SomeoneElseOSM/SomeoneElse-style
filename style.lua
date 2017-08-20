@@ -1179,7 +1179,8 @@ function filter_tags_generic(keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
    if (( keyvalues["tourism"]    == "information"                          ) and
        (( keyvalues["operator"]  == "Peak & Northern Footpaths Society"   )  or
-        ( keyvalues["operator"]  == "Peak and Northern Footpaths Society" ))) then
+        ( keyvalues["operator"]  == "Peak and Northern Footpaths Society" )  or
+        ( keyvalues["operator"]  == "Peak District & Northern Counties Footpaths Preservation Sciety" ))) then
       keyvalues["tourism"] = "informationpnfs"
    end
 
