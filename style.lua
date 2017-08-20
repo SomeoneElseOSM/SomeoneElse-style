@@ -148,9 +148,10 @@ function filter_tags_generic(keyvalues, nokeys)
       keyvalues["tracktype"] = "grade1"
    end
 
-   if ((keyvalues["designation"] == "unclassified_county_road") or
-       (keyvalues["designation"] == "unclassified_country_road") or
-       (keyvalues["designation"] == "unclassified_highway")) then
+   if (( keyvalues["designation"] == "unclassified_county_road"  ) or
+       ( keyvalues["designation"] == "unclassified_country_road" ) or
+       ( keyvalues["designation"] == "unclassified_highway"      ) or
+       ( keyvalues["designation"] == "unmade_road"               )) then
       if (( keyvalues["highway"] == "footway"   ) or 
           ( keyvalues["highway"] == "steps"     ) or 
           ( keyvalues["highway"] == "bridleway" ) or 
