@@ -979,6 +979,14 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- If something has a "lock_ref", append it to "lock_name".
+-- ----------------------------------------------------------------------------
+   if ( keyvalues["lock_ref"] ~= nil ) then
+      keyvalues["lock_name"] = keyvalues["lock_name"] .. " (" .. keyvalues["lock_ref"] .. ")"
+      keyvalues["lock_ref"] = nil
+   end
+
+-- ----------------------------------------------------------------------------
 -- If something has a "lock_name", use it in preference to "name".
 -- ----------------------------------------------------------------------------
    if ( keyvalues["lock_name"] ~= nil ) then
