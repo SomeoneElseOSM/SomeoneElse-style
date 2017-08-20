@@ -2485,6 +2485,14 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- If name does not exist but name:en does, use it.
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["name"]    == nil ) and
+       ( keyvalues["name:en"] ~= nil )) then
+      keyvalues["name"] = keyvalues["name:en"]
+   end
+
+-- ----------------------------------------------------------------------------
 -- Handle dodgy access tags.  Note that this doesn't affect my "designation"
 -- processing, but may be used by the main style, as "foot", "bicycle" and 
 -- "horse" are all in as columns.
