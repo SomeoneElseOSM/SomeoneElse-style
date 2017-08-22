@@ -1129,6 +1129,17 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Various types of information - PNFS guideposts first.
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["tourism"]    == "information"                          ) and
+       (( keyvalues["operator"]  == "Peak & Northern Footpaths Society"   )  or
+        ( keyvalues["operator"]  == "Peak and Northern Footpaths Society" )  or
+        ( keyvalues["operator"]  == "Peak District & Northern Counties Footpaths Preservation Sciety"  ) or
+        ( keyvalues["operator"]  == "Peak District & Northern Counties Footpaths Preservation Society" ))) then
+      keyvalues["tourism"] = "informationpnfs"
+   end
+
+-- ----------------------------------------------------------------------------
 -- Various types of information
 -- ----------------------------------------------------------------------------
    if ((   keyvalues["amenity"]     == "notice_board"                       )  or
@@ -1148,7 +1159,6 @@ function filter_tags_generic(keyvalues, nokeys)
          ( keyvalues["information"] == "tactile_map"                      )    or
          ( keyvalues["information"] == "electronic_board"                 )    or
          ( keyvalues["information"] == "hikingmap"                        )    or
-         ( keyvalues["information"] == "psoters"                          )    or
          ( keyvalues["information"] == "interpretation"                   )    or
          ( keyvalues["information"] == "map;board"                        )    or
          ( keyvalues["information"] == "former_telephone_box"             )    or
@@ -1184,16 +1194,6 @@ function filter_tags_generic(keyvalues, nokeys)
       keyvalues["tourism"] = "informationear"
    end
 
-
--- ----------------------------------------------------------------------------
--- PNFS guideposts
--- ----------------------------------------------------------------------------
-   if (( keyvalues["tourism"]    == "information"                          ) and
-       (( keyvalues["operator"]  == "Peak & Northern Footpaths Society"   )  or
-        ( keyvalues["operator"]  == "Peak and Northern Footpaths Society" )  or
-        ( keyvalues["operator"]  == "Peak District & Northern Counties Footpaths Preservation Sciety" ))) then
-      keyvalues["tourism"] = "informationpnfs"
-   end
 
 -- ----------------------------------------------------------------------------
 -- Things that are both hotels and pubs should render as pubs, because I'm 
