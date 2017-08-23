@@ -1113,8 +1113,8 @@ function filter_tags_generic(keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
 -- tourism=bed_and_breakfast was removed by the "style police" in
 -- https://github.com/gravitystorm/openstreetmap-carto/pull/695
--- I'll pretend that they're "guest_house".
--- Also "self_catering" (used occasionally).
+-- That now has its own icon.
+-- Also "self_catering" et al (used occasionally) as guest_house.
 -- ----------------------------------------------------------------------------
    if (( keyvalues["tourism"]   == "self_catering"     ) or
        ( keyvalues["tourism"]   == "apartment"         ) or
@@ -2416,6 +2416,7 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["sport"]    == "model_Aerodrome"      ) or
        ( keyvalues["leisure"]  == "trampoline_park"      ) or
        ( keyvalues["tourism"]  == "wilderness_hut"       ) or
+       ( keyvalues["tourism"]  == "cabin"                ) or
        ( keyvalues["tourism"]  == "trail_riding_station" ) or
        ( keyvalues["tourism"]  == "resort"               ) or
        (( keyvalues["building"] == "yes"                )  and
