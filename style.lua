@@ -2376,49 +2376,50 @@ function filter_tags_generic(keyvalues, nokeys)
 -- Other nonspecific leisure.  Add an icon and label via "nonspecific".
 -- Add unnamedcommercial landuse to give non-building areas a background.
 -- ----------------------------------------------------------------------------
-   if (( keyvalues["amenity"]  == "events_venue"      ) or
-       ( keyvalues["amenity"]  == "conference_centre" ) or
-       ( keyvalues["amenity"]  == "exhibition_centre" ) or
-       ( keyvalues["amenity"]  == "function_room"     ) or
-       ( keyvalues["amenity"]  == "arts_centre"       ) or
-       ( keyvalues["amenity"]  == "community_hall"    ) or
-       ( keyvalues["amenity"]  == "church_hall"       ) or
-       ( keyvalues["amenity"]  == "community_centre"  ) or
-       ( keyvalues["building"] == "community_centre"  ) or
-       ( keyvalues["amenity"]  == "dojo"              ) or
-       ( keyvalues["leisure"]  == "indoor_play"       ) or
-       ( keyvalues["amenity"]  == "youth_club"        ) or
-       ( keyvalues["amenity"]  == "youth_centre"      ) or
-       ( keyvalues["amenity"]  == "social_club"       ) or
-       ( keyvalues["leisure"]  == "social_club"       ) or
-       ( keyvalues["amenity"]  == "working_mens_club" ) or
-       ( keyvalues["amenity"]  == "social_centre"     ) or
-       ( keyvalues["amenity"]  == "club"              ) or
-       ( keyvalues["amenity"]  == "gym"               ) or
-       ( keyvalues["leisure"]  == "fitness_centre"    ) or
-       ( keyvalues["amenity"]  == "scout_hut"         ) or
-       ( keyvalues["building"] == "scout_hut"         ) or
-       ( keyvalues["name"]     == "Scout Hut"         ) or
-       ( keyvalues["name"]     == "Scout hut"         ) or
-       ( keyvalues["amenity"]  == "scout_hall"        ) or
-       ( keyvalues["name"]     == "Scout Hall"        ) or
-       ( keyvalues["amenity"]  == "scouts"            ) or
-       ( keyvalues["club"]     == "scout"             ) or
-       ( keyvalues["club"]     == "sport"             ) or
-       ( keyvalues["amenity"]  == "clubhouse"         ) or
-       ( keyvalues["building"] == "clubhouse"         ) or
-       ( keyvalues["amenity"]  == "club_house"        ) or
-       ( keyvalues["building"] == "club_house"        ) or
-       ( keyvalues["amenity"]  == "dancing_school"    ) or
-       ( keyvalues["leisure"]  == "club"              ) or
-       ( keyvalues["leisure"]  == "dance"             ) or
-       ( keyvalues["leisure"]  == "sailing_club"      ) or
-       ( keyvalues["sport"]    == "model_Aerodrome"   ) or
-       ( keyvalues["leisure"]  == "trampoline_park"   ) or
-       ( keyvalues["tourism"]  == "wilderness_hut"    ) or
-       (( keyvalues["building"] == "yes"             )  and
-        ( keyvalues["amenity"]  == nil               )  and
-        ( keyvalues["sport"]    ~= nil               ))) then
+   if (( keyvalues["amenity"]  == "events_venue"         ) or
+       ( keyvalues["amenity"]  == "conference_centre"    ) or
+       ( keyvalues["amenity"]  == "exhibition_centre"    ) or
+       ( keyvalues["amenity"]  == "function_room"        ) or
+       ( keyvalues["amenity"]  == "arts_centre"          ) or
+       ( keyvalues["amenity"]  == "community_hall"       ) or
+       ( keyvalues["amenity"]  == "church_hall"          ) or
+       ( keyvalues["amenity"]  == "community_centre"     ) or
+       ( keyvalues["building"] == "community_centre"     ) or
+       ( keyvalues["amenity"]  == "dojo"                 ) or
+       ( keyvalues["leisure"]  == "indoor_play"          ) or
+       ( keyvalues["amenity"]  == "youth_club"           ) or
+       ( keyvalues["amenity"]  == "youth_centre"         ) or
+       ( keyvalues["amenity"]  == "social_club"          ) or
+       ( keyvalues["leisure"]  == "social_club"          ) or
+       ( keyvalues["amenity"]  == "working_mens_club"    ) or
+       ( keyvalues["amenity"]  == "social_centre"        ) or
+       ( keyvalues["amenity"]  == "club"                 ) or
+       ( keyvalues["amenity"]  == "gym"                  ) or
+       ( keyvalues["leisure"]  == "fitness_centre"       ) or
+       ( keyvalues["amenity"]  == "scout_hut"            ) or
+       ( keyvalues["building"] == "scout_hut"            ) or
+       ( keyvalues["name"]     == "Scout Hut"            ) or
+       ( keyvalues["name"]     == "Scout hut"            ) or
+       ( keyvalues["amenity"]  == "scout_hall"           ) or
+       ( keyvalues["name"]     == "Scout Hall"           ) or
+       ( keyvalues["amenity"]  == "scouts"               ) or
+       ( keyvalues["club"]     == "scout"                ) or
+       ( keyvalues["club"]     == "sport"                ) or
+       ( keyvalues["amenity"]  == "clubhouse"            ) or
+       ( keyvalues["building"] == "clubhouse"            ) or
+       ( keyvalues["amenity"]  == "club_house"           ) or
+       ( keyvalues["building"] == "club_house"           ) or
+       ( keyvalues["amenity"]  == "dancing_school"       ) or
+       ( keyvalues["leisure"]  == "club"                 ) or
+       ( keyvalues["leisure"]  == "dance"                ) or
+       ( keyvalues["leisure"]  == "sailing_club"         ) or
+       ( keyvalues["sport"]    == "model_Aerodrome"      ) or
+       ( keyvalues["leisure"]  == "trampoline_park"      ) or
+       ( keyvalues["tourism"]  == "wilderness_hut"       ) or
+       ( keyvalues["tourism"]  == "trail_riding_station" ) or
+       (( keyvalues["building"] == "yes"                )  and
+        ( keyvalues["amenity"]  == nil                  )  and
+        ( keyvalues["sport"]    ~= nil                  ))) then
       keyvalues["landuse"] = "unnamedcommercial"
       keyvalues["leisure"] = "nonspecific"
    end
