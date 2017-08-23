@@ -1126,6 +1126,13 @@ function filter_tags_generic(keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
 -- Render amenity=information as tourism
 -- ----------------------------------------------------------------------------
+   if ( keyvalues["tourism"] == "camping"  ) then
+      keyvalues["tourism"] = "camp_site"
+   end
+
+-- ----------------------------------------------------------------------------
+-- Render amenity=information as tourism
+-- ----------------------------------------------------------------------------
    if ( keyvalues["amenity"] == "information"  ) then
       keyvalues["tourism"] = "information"
    end
