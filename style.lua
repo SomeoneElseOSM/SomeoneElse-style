@@ -1116,8 +1116,10 @@ function filter_tags_generic(keyvalues, nokeys)
 -- I'll pretend that they're "guest_house".
 -- Also "self_catering" (used occasionally).
 -- ----------------------------------------------------------------------------
-   if (( keyvalues["tourism"]   == "bed_and_breakfast" ) or
-       ( keyvalues["tourism"]   == "self_catering"     )) then
+   if (( keyvalues["tourism"]   == "self_catering"     ) or
+       ( keyvalues["tourism"]   == "apartment"         ) or
+       ( keyvalues["tourism"]   == "apartments"        ) or
+       ( keyvalues["tourism"]   == "holiday_cottage"   )) then
       keyvalues["tourism"] = "guest_house"
    end
 
