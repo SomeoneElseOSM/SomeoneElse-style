@@ -1145,6 +1145,8 @@ function filter_tags_generic(keyvalues, nokeys)
 -- Various types of information
 -- ----------------------------------------------------------------------------
    if ((   keyvalues["amenity"]     == "notice_board"                       )  or
+       (   keyvalues["tourism"]     == "village_sign"                       )  or
+       (   keyvalues["tourism"]     == "sign"                               )  or
        ((  keyvalues["tourism"]     == "information"                       )   and
         (( keyvalues["information"] == "board"                            )    or
          ( keyvalues["information"] == "map"                              )    or
