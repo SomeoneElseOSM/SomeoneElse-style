@@ -40,3 +40,12 @@ The extra changes here generally fall into one of the following categories:
 
 - Created new road classes "secondary_sidewalk" and "tertiary_sidewalk" that get rendered with a wider casing by the "sidewalk" branch of openstreetmap-carto-AJT,
 
+A map based on this style is [here](https://map.atownsend.org.uk/maps/map/map.html).
+
+# Update script
+
+There's a script that gets the latest extract for an area [here](https://github.com/SomeoneElseOSM/SomeoneElse-style/blob/master/update_render.sh).  That gets two areas - by default Great Britain (which has extra name processing performed on it) and Ireland and Northern Ireland (which doesn't).  The two files are then combined.
+
+# Changelog
+
+A changelog has been [added](https://github.com/SomeoneElseOSM/SomeoneElse-style/blob/master/changelog.md), and it can be seen [here](https://map.atownsend.org.uk/maps/map/changelog.html).
