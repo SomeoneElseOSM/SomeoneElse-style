@@ -90,9 +90,9 @@ df
 #
 cd /home/${local_user}/data
 wget $file_page1 -O file_page1.$$
-grep " and contains all OSM data up to " file_page1.$$ | sed "s/.*and contains all OSM data up to //" | sed "s/. File size.*//" > last_modified.$$
+grep " and contains all OSM data up to " file_page1.$$ | sed "s/.*and contains all OSM data up to //" | sed "s/. File size.*//" > last_modified1.$$
 #
-file_extension1=`cat last_modified.$$`
+file_extension1=`cat last_modified1.$$`
 #
 if test -e ${file_prefix1}_${file_extension1}.osm.pbf
 then
@@ -100,6 +100,11 @@ then
 else
     wget $file_url1 -O ${file_prefix1}_${file_extension1}.osm.pbf
 fi
+#
+wget $file_page2 -O file_page2.$$
+grep " and contains all OSM data up to " file_page2.$$ | sed "s/.*and contains all OSM data up to //" | sed "s/. File size.*//" > last_modified2.$$
+#
+file_extension2=`cat last_modified2.$$`
 #
 if test -e ${file_prefix2}_${file_extension2}.osm.pbf
 then
@@ -164,6 +169,6 @@ crontab -u $local_user local_user_crontab_safe.$$
 #
 date | mail -s "Database reload complete on `hostname`" ${local_user}
 rm file_page1.$$
-rm last_modified.$$
+rm last_modified1.$$
 rm update_render.running
 #
