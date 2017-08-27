@@ -56,6 +56,7 @@ file_url1=http://download.geofabrik.de/europe/${file_prefix1}-latest.osm.pbf
 # Note that if this is commented out, also change the "merge" below to not use it.
 #
 file_prefix2=ireland-and-northern-ireland
+#file_prefix2=isle-of-man
 file_page2=http://download.geofabrik.de/europe/${file_prefix2}.html
 file_url2=http://download.geofabrik.de/europe/${file_prefix2}-latest.osm.pbf
 #
@@ -168,7 +169,7 @@ crontab -u $local_user local_user_crontab_safe.$$
 # And final tidying up
 #
 date | mail -s "Database reload complete on `hostname`" ${local_user}
-rm file_page1.$$
-rm last_modified1.$$
+rm file_page1.$$ file_page2.$$
+rm last_modified1.$$ last_modified2.$$
 rm update_render.running
 #
