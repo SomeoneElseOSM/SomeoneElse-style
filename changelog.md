@@ -3,6 +3,9 @@ This page describes changes made [here](https://github.com/SomeoneElseOSM), [her
 
 ## 28/08/2017 style updates
 Removed rendering of verges on secondary roads at z12.
+Split verge width from sidewalk width.  
+Reduced sidewalk width slightly at z13 and reduced verge width significantly at z13.
+Rendered sidewalks/verges for unclassified / residential.
 
 ## 26/08/2017 release
 Welsh-speaking areas rendered using "name:cy" in place of "name; Scots Gaelic areas similarly use "name:gd".  The rest of England, Wales and Scotland use "name:en"; Ireland and Northern Ireland use "name".  See [here](https://github.com/SomeoneElseOSM/SomeoneElse-style/blob/master/update_render.sh) for the script that handles this.
