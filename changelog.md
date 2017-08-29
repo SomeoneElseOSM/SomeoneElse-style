@@ -1,6 +1,13 @@
 # Changes made to this rendering
 This page describes changes made [here](https://github.com/SomeoneElseOSM), [here](https://github.com/SomeoneElseOSM/SomeoneElse-style-legend) and [here](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT), visible [here](http://map.atownsend.org.uk/maps/map/map.html).
 
+## 29/08/2017 style updates
+Further improved road rendering at z13-z19.  
+Added more granularity, including explicit z18 settings.
+Adjusted the size of verges to allow for the extra prominence of the colour.
+Reduced width of residential/unclassified at high zooms.
+Reduced service casing.
+
 ## 28/08/2017 style updates
 Removed rendering of verges on secondary roads at z12.
 Split verge width from sidewalk width.  
