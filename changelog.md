@@ -1,6 +1,9 @@
 # Changes made to this rendering
 This page describes changes made [here](https://github.com/SomeoneElseOSM), [here](https://github.com/SomeoneElseOSM/SomeoneElse-style-legend) and [here](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT), visible [here](http://map.atownsend.org.uk/maps/map/map.html).
 
+## 04/09/2017 release
+Added support for sidewalks and verges on primary roads.
+
 ## 29/08/2017 style updates
 Further improved road rendering at z13-z19.  
 Added more granularity, including explicit z18 settings.

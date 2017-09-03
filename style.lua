@@ -25,7 +25,7 @@ function add_z_order(keyvalues)
       { 'highway', 'residential', 3, 0 }, 
       { 'highway', 'tertiary_link', 4, 0}, { 'highway', 'tertiary', 4, 0}, { 'highway', 'tertiary_sidewalk', 4, 0}, { 'highway', 'tertiary_verge', 4, 0},
       { 'highway', 'secondary_link', 6, 1}, { 'highway', 'secondary', 6, 1}, { 'highway', 'secondary_sidewalk', 6, 1}, { 'highway', 'secondary_verge', 6, 1},
-      { 'highway', 'primary_link', 7, 1}, { 'highway', 'primary', 7, 1},
+      { 'highway', 'primary_link', 7, 1}, { 'highway', 'primary', 7, 1},{ 'highway', 'primary_sidewalk', 7, 1},{ 'highway', 'primary_verge', 7, 1},
       { 'highway', 'trunk_link', 8, 1}, { 'highway', 'trunk', 8, 1},
       { 'highway', 'motorway_link', 9, 1}, { 'highway', 'motorway', 9, 1},
       { 'highway', 'ldpnwn', 9, 1},
@@ -392,6 +392,51 @@ function filter_tags_generic(keyvalues, nokeys)
           ( keyvalues["verge"] == "shared"         ) or 
           ( keyvalues["verge"] == "yes"            )) then
           keyvalues["highway"] = "secondary_verge"
+      end
+   end
+
+-- ----------------------------------------------------------------------------
+-- Use primary_sidewalk to indicate sidewalk
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["highway"] == "primary"      ) or 
+       ( keyvalues["highway"] == "primary_link" )) then
+      if (( keyvalues["sidewalk"] == "both"           ) or 
+          ( keyvalues["sidewalk"] == "left"           ) or 
+          ( keyvalues["sidewalk"] == "mapped"         ) or 
+          ( keyvalues["sidewalk"] == "separate"       ) or 
+          ( keyvalues["sidewalk"] == "right"          ) or 
+          ( keyvalues["sidewalk"] == "shared"         ) or 
+          ( keyvalues["sidewalk"] == "yes"            ) or
+          ( keyvalues["footway"]  == "both"           ) or 
+          ( keyvalues["footway"]  == "left"           ) or 
+          ( keyvalues["footway"]  == "mapped"         ) or 
+          ( keyvalues["footway"]  == "separate"       ) or 
+          ( keyvalues["footway"]  == "right"          ) or 
+          ( keyvalues["footway"]  == "shared"         ) or 
+          ( keyvalues["footway"]  == "yes"            ) or
+          ( keyvalues["cycleway"] == "track"          ) or
+          ( keyvalues["cycleway"] == "opposite_track" ) or
+          ( keyvalues["cycleway"] == "yes"            ) or
+          ( keyvalues["cycleway"] == "separate"       ) or
+          ( keyvalues["cycleway"] == "sidewalk"       ) or
+          ( keyvalues["cycleway"] == "sidepath"       )) then
+          keyvalues["highway"] = "primary_sidewalk"
+      end
+   end
+
+-- ----------------------------------------------------------------------------
+-- Use primary_verge to indicate verge
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["highway"] == "primary"      ) or 
+       ( keyvalues["highway"] == "primary_link" )) then
+      if (( keyvalues["verge"] == "both"           ) or 
+          ( keyvalues["verge"] == "left"           ) or 
+          ( keyvalues["verge"] == "mapped"         ) or 
+          ( keyvalues["verge"] == "separate"       ) or 
+          ( keyvalues["verge"] == "right"          ) or 
+          ( keyvalues["verge"] == "shared"         ) or 
+          ( keyvalues["verge"] == "yes"            )) then
+          keyvalues["highway"] = "primary_verge"
       end
    end
 
