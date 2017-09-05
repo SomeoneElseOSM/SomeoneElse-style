@@ -159,6 +159,7 @@ rm welshlangpart_${file_extension1}_before.pbf welshlangpart_${file_extension1}_
 rm -rf /var/lib/mod_tile/.osmosis.old
 mv /var/lib/mod_tile/.osmosis /var/lib/mod_tile/.osmosis.old
 sudo -u ${local_user} /home/${local_user}/src/mod_tile/openstreetmap-tiles-update-expire ${file_extension1}
+pandoc /home/${local_user}/src/SomeoneElse-style/changelog.md > /var/www/html/maps/map/changelog.html
 /etc/init.d/renderd restart
 /etc/init.d/apache2 restart
 #
