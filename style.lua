@@ -880,6 +880,18 @@ function filter_tags_generic(keyvalues, nokeys)
 
 
 -- ----------------------------------------------------------------------------
+-- Left luggage
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["amenity"] == "luggage_locker"  ) or
+       ( keyvalues["amenity"] == "luggage_lockers" ) or
+       ( keyvalues["shop"]    == "luggage_locker"  ) or
+       ( keyvalues["shop"]    == "luggage_lockers" )) then
+      keyvalues["amenity"] = "left_luggage"
+      keyvalues["shop"]    = nil
+   end
+
+
+-- ----------------------------------------------------------------------------
 -- Render amenity=layby as parking
 -- ----------------------------------------------------------------------------
    if ( keyvalues["amenity"] == "layby" ) then
