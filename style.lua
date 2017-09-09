@@ -175,6 +175,15 @@ function filter_tags_generic(keyvalues, nokeys)
           keyvalues["highway"] = "track_graded"
 	  keyvalues["tracktype"] = "grade3"
       end
+      if ( keyvalues["prow_ref"] ~= nil ) then
+         if ( keyvalues["name"] == nil ) then
+            keyvalues["name"]     = "(" .. keyvalues["prow_ref"] .. ")"
+            keyvalues["prow_ref"] = nil
+         else
+            keyvalues["name"]     = keyvalues["name"] .. " (" .. keyvalues["prow_ref"] .. ")"
+            keyvalues["prow_ref"] = nil
+         end
+      end
    end
 
 -- ----------------------------------------------------------------------------
@@ -195,6 +204,15 @@ function filter_tags_generic(keyvalues, nokeys)
       else
           keyvalues["highway"] = "track_graded"
 	  keyvalues["tracktype"] = "grade4"
+      end
+      if ( keyvalues["prow_ref"] ~= nil ) then
+         if ( keyvalues["name"] == nil ) then
+            keyvalues["name"]     = "(" .. keyvalues["prow_ref"] .. ")"
+            keyvalues["prow_ref"] = nil
+         else
+            keyvalues["name"]     = keyvalues["name"] .. " (" .. keyvalues["prow_ref"] .. ")"
+            keyvalues["prow_ref"] = nil
+         end
       end
    end
 
@@ -2678,9 +2696,14 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["highway"] == "footwaywide"   ) or
        ( keyvalues["highway"] == "bridleway"     ) or
        ( keyvalues["highway"] == "bridlewaywide" )) then
-      if (( keyvalues["name"]     == nil ) and
-          ( keyvalues["prow_ref"] ~= nil )) then
-         keyvalues["name"] = "(" .. keyvalues["prow_ref"] .. ")"
+      if ( keyvalues["prow_ref"] ~= nil ) then
+         if ( keyvalues["name"] == nil ) then
+            keyvalues["name"]     = "(" .. keyvalues["prow_ref"] .. ")"
+            keyvalues["prow_ref"] = nil
+         else
+            keyvalues["name"]     = keyvalues["name"] .. " (" .. keyvalues["prow_ref"] .. ")"
+            keyvalues["prow_ref"] = nil
+         end
       end
    end
 
