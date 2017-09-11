@@ -1,6 +1,14 @@
 # Changes made to this rendering
 This page describes changes made [here](https://github.com/SomeoneElseOSM), [here](https://github.com/SomeoneElseOSM/SomeoneElse-style-legend) and [here](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT), visible [here](http://map.atownsend.org.uk/maps/map/map.html).
 
+
+## As yet unreleased
+Added road names for primary sidewalk and verge.
+Added more prow_ref names.
+In legend, split primary, trunk and motorway into sidewalk and trunk etc.
+Added a couple of prow_ref to show up on the legend.
+Added a "legend generator" to generate the "pub" legend and use that legend in reload scripts.
+
 ## 07/09/2017 release
 Added support for left luggage lockers.
 
