@@ -1037,6 +1037,7 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["man_made"]   == "filter_bed"       ) or
        ( keyvalues["man_made"]   == "filtration_bed"   ) or
        ( keyvalues["man_made"]   == "waste_treatment"  ) or
+       ( keyvalues["man_made"]   == "lighthouse"       ) or
        ( keyvalues["historic"]   == "aircraft"         ) or
        ( keyvalues["historic"]   == "locomotive"       ) or
        ( keyvalues["historic"]   == "wreck"            ) or
