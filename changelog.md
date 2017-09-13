@@ -8,6 +8,7 @@ Added more prow_ref names.
 In legend, split primary, trunk and motorway into sidewalk and trunk etc.
 Added a couple of prow_ref to show up on the legend.
 Added a "legend generator" to generate the "pub" legend and use that legend in reload scripts.
+Addd support for parcel lockers.
 
 ## 07/09/2017 release
 Added support for left luggage lockers.
