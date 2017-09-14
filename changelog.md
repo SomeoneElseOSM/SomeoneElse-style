@@ -2,6 +2,10 @@
 This page describes changes made [here](https://github.com/SomeoneElseOSM), [here](https://github.com/SomeoneElseOSM/SomeoneElse-style-legend) and [here](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT), visible [here](http://map.atownsend.org.uk/maps/map/map.html).
 
 
+## 14/09/2017 style updates
+Added more feature names.  See Legend for details of current coverage.
+Moved more features (e.g. slipway) to amenity brown.
+
 ## 13/09/2017 release
 Added road names for primary sidewalk and verge.
 Added more prow_ref names.
