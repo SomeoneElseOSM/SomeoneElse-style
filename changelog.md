@@ -2,6 +2,9 @@
 This page describes changes made [here](https://github.com/SomeoneElseOSM), [here](https://github.com/SomeoneElseOSM/SomeoneElse-style-legend) and [here](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT), visible [here](http://map.atownsend.org.uk/maps/map/map.html).
 
 
+## 18/09/2017 map layer change
+Added German Style layer to https://map.atownsend.org.uk/maps/map/map.html
+
 ## 14/09/2017 style updates
 Added more feature names.  See Legend for details of current coverage.
 Moved more features (e.g. slipway) to amenity brown.
