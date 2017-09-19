@@ -898,6 +898,16 @@ function filter_tags_generic(keyvalues, nokeys)
 
 
 -- ----------------------------------------------------------------------------
+-- ATMs - use operator if set (even if name is set).
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["amenity"]  == "atm" ) and
+       ( keyvalues["operator"] ~= nil   )) then
+      keyvalues["name"] = keyvalues["operator"]
+      keyvalues["operator"] = nil
+   end
+
+
+-- ----------------------------------------------------------------------------
 -- Left luggage
 -- ----------------------------------------------------------------------------
    if (( keyvalues["amenity"] == "luggage_locker"  ) or
@@ -1152,9 +1162,9 @@ function filter_tags_generic(keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
    if (( keyvalues["building"] == "air_shaft"         ) or
        ( keyvalues["man_made"] == "air_shaft"         ) or
-       ( keyvalues["man_made"] == "ventilation_shaft" ) or
+       ( keyvalues["railway"]  == "ventilation_shaft" ) or
        ( keyvalues["man_made"] == "tunnel_vent"       )) then
-      keyvalues["railway"] = "ventilation_shaft"
+      keyvalues["man_made"] = "ventilation_shaft"
    end
 
 -- ----------------------------------------------------------------------------
@@ -2664,6 +2674,14 @@ function filter_tags_generic(keyvalues, nokeys)
           ( keyvalues["naptan:Indicator"] ~= nil )) then
          keyvalues["name"] = keyvalues["name"] .. " " .. keyvalues["naptan:Indicator"]
       end
+   end
+
+-- ----------------------------------------------------------------------------
+-- Some people tag waste_basket on bus_stop.  We render just bus_stop.
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["highway"] == "bus_stop"     ) and
+       ( keyvalues["amenity"] == "waste_basket" )) then
+      keyvalues["amenity"] = nil
    end
 
 -- ----------------------------------------------------------------------------

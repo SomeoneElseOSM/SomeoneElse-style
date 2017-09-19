@@ -2,6 +2,17 @@
 This page describes changes made [here](https://github.com/SomeoneElseOSM), [here](https://github.com/SomeoneElseOSM/SomeoneElse-style-legend) and [here](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT), visible [here](http://map.atownsend.org.uk/maps/map/map.html).
 
 
+## As yet unreleased.
+Changed survey point et al names to black.
+Changed embassy to brown and changed similar brown z17 names to the same font.
+Changed ATM to use operator if set as the name.
+Changed lighthouse to black.
+Only render bus_stop on joint bus_stop/waste_baskets and fix rendering of bus_stop name in the legend.
+Render names for bicycle_rental, bicycle_parking etc.
+Changed water tower to render at z15 and added name.
+Changed other classes of points to render similarly (see the rows in the legend) and added names.
+Changed ventilation_shaft to man_made.
+
 ## 18/09/2017 map layer change
 Added German Style layer to https://map.atownsend.org.uk/maps/map/map.html
 
