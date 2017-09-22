@@ -2,6 +2,9 @@
 This page describes changes made [here](https://github.com/SomeoneElseOSM), [here](https://github.com/SomeoneElseOSM/SomeoneElse-style-legend) and [here](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT), visible [here](http://map.atownsend.org.uk/maps/map/map.html).
 
 
+## As yet unreleased
+Added public_bath to nonspecific leisure.
+
 ## 22/09/2017 release
 Changed survey point et al names to black.
 Changed embassy to brown and changed similar brown z17 names to the same font.
