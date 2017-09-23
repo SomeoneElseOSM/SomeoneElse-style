@@ -4,6 +4,8 @@ This page describes changes made [here](https://github.com/SomeoneElseOSM), [her
 
 ## As yet unreleased
 Added public_bath to nonspecific leisure.
+Added support for names on barriers.
+Various legend updates including education, rail and aeroway.
 
 ## 22/09/2017 release
 Changed survey point et al names to black.
