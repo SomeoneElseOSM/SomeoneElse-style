@@ -2525,7 +2525,7 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["leisure"]  == "sailing_club"         ) or
        ( keyvalues["sport"]    == "model_Aerodrome"      ) or
        ( keyvalues["leisure"]  == "trampoline_park"      ) or
-       ( keyvalues["leisure"]  == "public_bath"          ) or
+       ( keyvalues["amenity"]  == "public_bath"          ) or
        ( keyvalues["tourism"]  == "wilderness_hut"       ) or
        ( keyvalues["tourism"]  == "cabin"                ) or
        ( keyvalues["tourism"]  == "trail_riding_station" ) or
