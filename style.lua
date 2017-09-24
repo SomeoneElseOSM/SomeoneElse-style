@@ -1902,6 +1902,7 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["shop"]    == "coffee"        ) or
        ( keyvalues["shop"]    == "tea"           ) or
        ( keyvalues["shop"]    == "chocolate"     ) or
+       ( keyvalues["shop"]    == "milk"          ) or
        ( keyvalues["shop"]    == "cheese"        ) or
        ( keyvalues["shop"]    == "cheese;wine"   ) or
        ( keyvalues["shop"]    == "wine;cheese"   ) or
@@ -2117,6 +2118,7 @@ function filter_tags_generic(keyvalues, nokeys)
 -- Add unnamedcommercial landuse to give non-building areas a background.
 -- ----------------------------------------------------------------------------
    if (( keyvalues["amenity"] == "car_rental"                   ) or
+       ( keyvalues["amenity"] == "van_rental"                   ) or
        ( keyvalues["shop"]    == "motorcycle"                   ) or
        ( keyvalues["shop"]    == "caravan"                      ) or
        ( keyvalues["shop"]    == "truck"                        ) or
