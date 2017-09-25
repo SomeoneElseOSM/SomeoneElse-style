@@ -2609,6 +2609,14 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Different names on each side of the street
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["name:left"]  ~= nil ) and
+       ( keyvalues["name:right"] ~= nil )) then
+      keyvalues["name"] = keyvalues["name:left"] .. " / " .. keyvalues["name:right"]
+   end
+
+-- ----------------------------------------------------------------------------
 -- Remove road names that are not signed on the ground.
 -- "unsigned" tends to apply to road names.
 -- ----------------------------------------------------------------------------
