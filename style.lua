@@ -2214,6 +2214,8 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["office"]  == "taxi"                    ) or
        ( keyvalues["amenity"] == "minicab_office"          ) or
        ( keyvalues["amenity"] == "training"                ) or
+       ( keyvalues["amenity"] == "tutoring_centre"         ) or
+       ( keyvalues["office"]  == "tutoring"                ) or
        ( keyvalues["shop"]    == "mobility"                ) or
        ( keyvalues["shop"]    == "ironing"                 ) or
        ( keyvalues["amenity"] == "stripclub"               ) or
@@ -2476,6 +2478,7 @@ function filter_tags_generic(keyvalues, nokeys)
    if (( keyvalues["office"]   == "it"                      ) or
        ( keyvalues["office"]   == "ngo"                     ) or
        ( keyvalues["office"]   == "educational_institution" ) or
+       ( keyvalues["office"]   == "educational"             ) or
        ( keyvalues["office"]   == "university"              ) or
        ( keyvalues["office"]   == "charity"                 ) or
        ( keyvalues["amenity"]  == "education_centre"        ) or
