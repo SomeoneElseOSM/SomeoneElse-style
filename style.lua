@@ -1454,6 +1454,18 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- natural=fell is used for all sorts of things, but render as heath, except
+-- where someone's mapped it on a footpath.
+-- ----------------------------------------------------------------------------
+   if ( keyvalues["natural"] == "fell" ) then
+      if ( keyvalues["highway"] == nil ) then
+         keyvalues["natural"] = "heath"
+      else
+         keyvalues["natural"] = nil
+      end
+   end
+
+-- ----------------------------------------------------------------------------
 -- Render historic=wayside_cross and wayside_shrine as historic=memorial
 -- Also man_made=obelisk and landmark=obelisk
 -- It's near enough in meaning I think.
