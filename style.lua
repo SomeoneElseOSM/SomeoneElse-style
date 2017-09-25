@@ -1163,6 +1163,12 @@ function filter_tags_generic(keyvalues, nokeys)
       keyvalues["power_source"] = "wind"
    end
 
+   if (( keyvalues["man_made"]     == "tower"     ) and
+       ( keyvalues["power"]        == "generator" ) and
+       ( keyvalues["power_source"] == "wind"      )) then
+      keyvalues["man_made"] = nil
+   end
+
 -- ----------------------------------------------------------------------------
 -- Railway ventilation shaft nodes.
 -- Nodes of these are rendered as a stubby black tower
