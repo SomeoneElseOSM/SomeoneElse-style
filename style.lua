@@ -760,6 +760,13 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Treat access=permit as access-private
+-- ----------------------------------------------------------------------------
+   if ( keyvalues["access"]  == "permit" ) then
+      keyvalues["access"] = "private"
+   end
+
+-- ----------------------------------------------------------------------------
 -- Don't show pubs if you can't actually get to them.
 -- ----------------------------------------------------------------------------
    if (( keyvalues["amenity"] == "pub"     ) and
