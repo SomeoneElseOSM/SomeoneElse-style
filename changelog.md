@@ -5,7 +5,13 @@ This page describes changes made [here](https://github.com/SomeoneElseOSM), [her
 ## As yet unreleased
 Added public_bath to nonspecific leisure.
 Added support for names on barriers.
-Various legend updates including education, rail and aeroway.
+Various legend updates including cars, education, rail and aeroway.
+Added shop=milk and amenity=van_rental.
+Remove man_made=tower from wind turbines.
+Added healthcare=therapy, various tutoring places.
+Treat access=permit as access=private.
+If a street has different names on each side, render it.
+Render natural=fell as natural=heath ("generic upland").
 Added shop=milk and amenity=van_rental.
 
 ## 22/09/2017 release
