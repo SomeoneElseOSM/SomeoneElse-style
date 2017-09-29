@@ -2225,8 +2225,6 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["shop"]    == "mobility"                ) or
        ( keyvalues["shop"]    == "ironing"                 ) or
        ( keyvalues["amenity"] == "stripclub"               ) or
-       ( keyvalues["amenity"] == "brothel"                 ) or
-       ( keyvalues["amenity"] == "sauna"                   ) or
        ( keyvalues["amenity"] == "self_storage"            ) or
        ( keyvalues["amenity"] == "storage"                 ) or
        ( keyvalues["shop"]    == "storage_rental"          ) or
@@ -2556,7 +2554,16 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["leisure"]  == "sailing_club"         ) or
        ( keyvalues["sport"]    == "model_Aerodrome"      ) or
        ( keyvalues["leisure"]  == "trampoline_park"      ) or
+       ( keyvalues["leisure"]  == "water_park"           ) or
+       ( keyvalues["leisure"]  == "firepit"              ) or
+       ( keyvalues["leisure"]  == "fitness_station"      ) or
        ( keyvalues["amenity"]  == "public_bath"          ) or
+       ( keyvalues["amenity"]  == "brothel"              ) or
+       ( keyvalues["amenity"]  == "sauna"                ) or
+       ( keyvalues["leisure"]  == "sauna"                ) or
+       ( keyvalues["leisure"]  == "horse_riding"         ) or
+       ( keyvalues["leisure"]  == "miniature_golf"       ) or
+       ( keyvalues["leisure"]  == "ice_rink"             ) or
        ( keyvalues["tourism"]  == "wilderness_hut"       ) or
        ( keyvalues["tourism"]  == "cabin"                ) or
        ( keyvalues["tourism"]  == "trail_riding_station" ) or
