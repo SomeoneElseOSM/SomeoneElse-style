@@ -696,9 +696,18 @@ function filter_tags_generic(keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
 -- leisure=dog_park is used a few times.  Map to pitch to differentiate from
 -- underlying park.
+-- Also "court" often means "pitch" (tennis, basketball).
 -- ----------------------------------------------------------------------------
-   if (keyvalues["leisure"] == "dog_park") then
+   if (( keyvalues["leisure"] == "dog_park" ) or
+       ( keyvalues["leisure"] == "court"    )) then
       keyvalues["leisure"] = "pitch"
+   end
+
+-- ----------------------------------------------------------------------------
+-- Map leisure=wildlife_hide to bird_hide.  Many times it will be
+-- ----------------------------------------------------------------------------
+   if (keyvalues["leisure"] == "wildlife_hide") then
+      keyvalues["leisure"] = "bird_hide"
    end
 
 -- ----------------------------------------------------------------------------
@@ -1810,6 +1819,7 @@ function filter_tags_generic(keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
    if (( keyvalues["shop"]         == "beauty"            ) or
        ( keyvalues["shop"]         == "beauty_salon"      ) or
+       ( keyvalues["leisure"]      == "spa"               ) or
        ( keyvalues["shop"]         == "salon"             ) or
        ( keyvalues["shop"]         == "nails"             ) or
        ( keyvalues["shop"]         == "chemist"           ) or
@@ -1819,6 +1829,7 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["shop"]         == "cosmetics"         ) or
        ( keyvalues["shop"]         == "tanning"           ) or
        ( keyvalues["shop"]         == "tanning_salon"     ) or
+       ( keyvalues["leisure"]      == "tanning_salon"     ) or
        ( keyvalues["shop"]         == "health_and_beauty" ) or
        ( keyvalues["shop"]         == "beautician"        ) or
        ( keyvalues["shop"]         == "acupuncture"       ) or
@@ -1847,6 +1858,7 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["amenity"] == "betting"             ) or
        ( keyvalues["shop"]    == "gambling"            ) or
        ( keyvalues["amenity"] == "gambling"            ) or
+       ( keyvalues["leisure"] == "gambling"            ) or
        ( keyvalues["shop"]    == "lottery"             ) or
        ( keyvalues["amenity"] == "lottery"             ) or
        ( keyvalues["shop"]    == "amusements"          ) or
@@ -1855,7 +1867,7 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["leisure"] == "amusement_arcade"    ) or
        ( keyvalues["leisure"] == "video_arcade"        ) or
        ( keyvalues["leisure"] == "adult_gaming_centre" ) or
-       ( keyvalues["leisure"] == "bowling_alley"       ) or
+       ( keyvalues["leisure"] == "escape_game"         ) or
        ( keyvalues["sport"]   == "laser_tag"           ) or
        ( keyvalues["amenity"] == "casino"              ) or
        ( keyvalues["amenity"] == "bingo"               ) or
@@ -2505,10 +2517,40 @@ function filter_tags_generic(keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
 -- Similarly, nonspecific leisure facilities.
 -- Non-private swimming pools:
+--
+-- Note - this is an old tag that was for the whole area (building etc.) of
+-- a swimming pool.  It corresponds best with "leisure=sports_centre" 
+-- (rendered in its own right).  "leisure=swimming_pool" is for the wet bit;
+-- that is also rendered in its own right (in blue).
+-- Note there's no explicit "if private" check on the wet bit.
 -- ----------------------------------------------------------------------------
    if (( keyvalues["amenity"] == "swimming_pool" ) and
        ( keyvalues["access"]  ~= "private"       )) then
       keyvalues["leisure"] = "nonspecific"
+   end
+
+-- ----------------------------------------------------------------------------
+-- Render outdoor swimming areas with blue names (if named)
+-- leisure=pool is eithr a turkish bath, a hot spring or a private 
+-- swimming pool.
+-- leisure=swimming is either a mistagged swimming area or a 
+-- mistagged swimming pool
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["leisure"] == "swimming_area" ) or
+       ( keyvalues["leisure"] == "pool"          ) or
+       ( keyvalues["leisure"] == "swimming"      )) then
+      keyvalues["leisure"] = "swimming_pool"
+   end
+
+-- ----------------------------------------------------------------------------
+-- A counple of odd sports taggings:
+-- ----------------------------------------------------------------------------
+   if ( keyvalues["leisure"] == "sport" ) then
+      if ( keyvalues["sport"]   == "golf"  ) then
+         keyvalues["leisure"] = "golf_course"
+      else
+         keyvalues["leisure"] = "nonspecific"
+      end
    end
 
 -- ----------------------------------------------------------------------------
@@ -2551,9 +2593,15 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["amenity"]  == "dancing_school"       ) or
        ( keyvalues["leisure"]  == "club"                 ) or
        ( keyvalues["leisure"]  == "dance"                ) or
+       ( keyvalues["leisure"]  == "climbing"             ) or
+       ( keyvalues["leisure"]  == "high_ropes_course"    ) or
+       ( keyvalues["leisure"]  == "bowling_alley"        ) or
+       ( keyvalues["leisure"]  == "hackerspace"          ) or
+       ( keyvalues["leisure"]  == "summer_camp"          ) or
        ( keyvalues["leisure"]  == "sailing_club"         ) or
        ( keyvalues["sport"]    == "model_Aerodrome"      ) or
        ( keyvalues["leisure"]  == "trampoline_park"      ) or
+       ( keyvalues["leisure"]  == "trampoline"           ) or
        ( keyvalues["leisure"]  == "water_park"           ) or
        ( keyvalues["leisure"]  == "firepit"              ) or
        ( keyvalues["leisure"]  == "fitness_station"      ) or
@@ -2568,6 +2616,8 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["tourism"]  == "cabin"                ) or
        ( keyvalues["tourism"]  == "trail_riding_station" ) or
        ( keyvalues["tourism"]  == "resort"               ) or
+       ( keyvalues["leisure"]  == "resort"               ) or
+       ( keyvalues["leisure"]  == "beach_resort"         ) or
        (( keyvalues["building"] == "yes"                )  and
         ( keyvalues["amenity"]  == nil                  )  and
         ( keyvalues["sport"]    ~= nil                  ))) then

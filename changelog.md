@@ -4,6 +4,7 @@ This page describes changes made [here](https://github.com/SomeoneElseOSM), [her
 
 ## As yet unreleased
 Added more leisure values.  
+Added more mistaggings and aliases for e.g. swimming_pool.
 Updated legend with existing and new leisure values.
 
 ## 22/09/2017 release
