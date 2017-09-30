@@ -7,7 +7,7 @@ Added more leisure values.
 Added more mistaggings and aliases for e.g. swimming_pool.
 Updated legend with existing and new leisure values.
 
-## 22/09/2017 release
+## 27/09/2017 release
 Added public_bath to nonspecific leisure.
 Added support for names on barriers.
 Various legend updates including cars, education, rail and aeroway.
