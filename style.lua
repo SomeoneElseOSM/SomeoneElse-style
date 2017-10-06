@@ -1304,10 +1304,15 @@ function filter_tags_generic(keyvalues, nokeys)
 
    if ((  keyvalues["tourism"]     == "information"                       )  and
        (( keyvalues["information"] == "guidepost"                        )   or
-        ( keyvalues["information"] == "route_marker"                     )   or
         ( keyvalues["information"] == "fingerpost"                       )   or
         ( keyvalues["information"] == "marker"                           ))) then
       keyvalues["tourism"] = "informationmarker"
+   end
+
+   if ((  keyvalues["tourism"]     == "information"                       )  and
+       (( keyvalues["information"] == "route_marker"                     )   or
+        ( keyvalues["information"] == "trail_blaze"                      ))) then
+      keyvalues["tourism"] = "informationroutemarker"
    end
 
    if ((  keyvalues["tourism"]     == "information"                       )  and

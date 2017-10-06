@@ -2,6 +2,9 @@
 This page describes changes made [here](https://github.com/SomeoneElseOSM), [here](https://github.com/SomeoneElseOSM/SomeoneElse-style-legend) and [here](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT), visible [here](http://map.atownsend.org.uk/maps/map/map.html).
 
 
+## As yet unleleased
+New symbol for route markers (as distinct from guideposts et al).
+
 ## 01/10/2017 release
 Added more leisure values.  
 Added more mistaggings and aliases for e.g. swimming_pool.
