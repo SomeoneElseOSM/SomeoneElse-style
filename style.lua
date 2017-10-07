@@ -2156,6 +2156,26 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Shopmobility
+-- Note that "shop=mobility" is something that _sells_ mobility aids, and is
+-- handled as shop=nonspecific for now.
+-- We handle some specific cases of shop=mobility here; the reset below.
+-- ----------------------------------------------------------------------------
+   if ((   keyvalues["amenity"]  == "mobility"                 ) or
+       (   keyvalues["amenity"]  == "mobility_equipment_hire"  ) or
+       (   keyvalues["amenity"]  == "mobility_aids_hire"       ) or
+       (   keyvalues["amenity"]  == "shop_mobility"            ) or
+       ((( keyvalues["shop"]     == "yes"                    )   or
+         ( keyvalues["shop"]     == "mobility"               )   or
+         ( keyvalues["building"] == "yes"                    )   or
+         ( keyvalues["building"] == "unit"                   ))  and
+        (( keyvalues["name"]     == "Shopmobility"           )   or
+         (  keyvalues["name"]    == "Shop Mobility"          )))) then
+      keyvalues["landuse"] = "unnamedcommercial"
+      keyvalues["amenity"] = "shopmobility"
+   end
+
+-- ----------------------------------------------------------------------------
 -- Nonspecific car and related shops.
 -- Add unnamedcommercial landuse to give non-building areas a background.
 -- ----------------------------------------------------------------------------
@@ -2239,7 +2259,6 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["amenity"] == "training"                ) or
        ( keyvalues["amenity"] == "tutoring_centre"         ) or
        ( keyvalues["office"]  == "tutoring"                ) or
-       ( keyvalues["shop"]    == "mobility"                ) or
        ( keyvalues["shop"]    == "ironing"                 ) or
        ( keyvalues["amenity"] == "stripclub"               ) or
        ( keyvalues["amenity"] == "self_storage"            ) or
@@ -2307,8 +2326,11 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
--- opticians - render as "nonspecific health".
+-- opticians etc. - render as "nonspecific health".
 -- Add unnamedcommercial landuse to give non-building areas a background.
+--
+-- Places that _sell_ mobility aids are in here.  Shopmobility handled
+-- seperately.
 -- ----------------------------------------------------------------------------
    if (( keyvalues["shop"]        == "optician"          ) or
        ( keyvalues["amenity"]     == "optician"          ) or
@@ -2320,6 +2342,7 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["healthcare"]  == "optometrist"       ) or
        ( keyvalues["shop"]        == "hearing_aids"      ) or
        ( keyvalues["shop"]        == "medical_supply"    ) or
+       ( keyvalues["shop"]        == "mobility"          ) or
        ( keyvalues["shop"]        == "chiropodist"       ) or
        ( keyvalues["amenity"]     == "chiropodist"       ) or
        ( keyvalues["healthcare"]  == "chiropodist"       ) or
