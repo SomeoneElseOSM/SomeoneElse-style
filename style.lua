@@ -1318,7 +1318,7 @@ function filter_tags_generic(keyvalues, nokeys)
    if ((  keyvalues["tourism"]     == "information"                       )  and
        (( keyvalues["information"] == "office"                           )   or
         ( keyvalues["information"] == "kiosk"                            )   or
-        ( keyvalues["information"] == "visior_centre"                    ))) then
+        ( keyvalues["information"] == "visitor_centre"                   ))) then
       keyvalues["tourism"] = "informationoffice"
    end
 
