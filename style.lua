@@ -619,6 +619,15 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Boundary stones
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["historic"] == "boundary_stone" )  or
+       ( keyvalues["man_made"] == "boundary_stone" )  or
+       ( keyvalues["marker"]   == "boundary_stone" )) then
+      keyvalues["man_made"] = "survey_point"
+   end
+
+-- ----------------------------------------------------------------------------
 -- Mappings to shop=car
 -- ----------------------------------------------------------------------------
    if (( keyvalues["shop"]    == "car;car_repair"  )  or

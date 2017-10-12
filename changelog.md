@@ -2,6 +2,9 @@
 This page describes changes made [here](https://github.com/SomeoneElseOSM), [here](https://github.com/SomeoneElseOSM/SomeoneElse-style-legend) and [here](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT), visible [here](http://map.atownsend.org.uk/maps/map/map.html).
 
 
+## As yet unreleased
+Added support for boundary stones.
+
 ## 11/10/2017 release
 New symbol for route markers (as distinct from guideposts et al).
 Added icon for shopmobility and selected for it in style file.
