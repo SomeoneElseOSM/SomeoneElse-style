@@ -1088,9 +1088,10 @@ function filter_tags_generic(keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
 -- Display "waterway=leat" and "waterway=spillway" etc. as drain.
 -- ----------------------------------------------------------------------------
-   if (( keyvalues["waterway"] == "leat"     )  or
-       ( keyvalues["waterway"] == "spillway" )  or
-       ( keyvalues["waterway"] == "aqueduct" )) then
+   if (( keyvalues["waterway"] == "leat"      )  or
+       ( keyvalues["waterway"] == "spillway"  )  or
+       ( keyvalues["waterway"] == "aqueduct"  )  or
+       ( keyvalues["waterway"] == "fish_pass" )) then
       keyvalues["waterway"] = "drain"
    end
 
