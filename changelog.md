@@ -7,6 +7,7 @@ Added support for boundary stones.
 Added sluice gates (named, and as infrastructure).
 Like trail_visibility, suppress some demanding sac_scale paths if no designation.
 Treat waterway=fish_pass like waterway=drain.
+Added private parking to legend.
 
 ## 11/10/2017 release
 New symbol for route markers (as distinct from guideposts et al).
