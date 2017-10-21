@@ -125,6 +125,21 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Supress some "demanding" paths.  UK examples with sac_scale:
+-- alpine_hiking:
+-- http://www.openstreetmap.org/way/168426583   Crib Goch, Snowdon
+-- demanding_mountain_hiking:
+-- http://www.openstreetmap.org/way/114871124   Near Tryfan
+-- difficult_alpine_hiking:
+-- http://www.openstreetmap.org/way/334306672   Jack's Rake, Pavey Ark
+-- ----------------------------------------------------------------------------
+   if ((  keyvalues["designation"] == nil                        ) and
+       (( keyvalues["sac_scale"]   == "demanding_alpine_hiking" )  or
+        ( keyvalues["sac_scale"]   == "difficult_alpine_hiking" ))) then
+      keyvalues["highway"] = nil
+   end
+
+-- ----------------------------------------------------------------------------
 -- The OSM Carto derivative that I'm using still tries to second-guess paths
 -- as footway or cycleway.  We don't want to do this - set "designated" to
 -- "yes"
