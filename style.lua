@@ -1040,6 +1040,17 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Sluice gates - send through as man_made, also display as building=roof.
+-- ----------------------------------------------------------------------------
+   if ((  keyvalues["waterway"]     == "sluice_gate"   ) or
+       (  keyvalues["waterway"]     == "sluice"        ) or
+       (( keyvalues["waterway"]     == "flow_control" )  and
+        ( keyvalues["flow_control"] == "sluice_gate"  ))) then
+      keyvalues["man_made"] = "sluice_gate"
+      keyvalues["building"] = "roof"
+   end
+
+-- ----------------------------------------------------------------------------
 -- Historic canal
 -- A former canal can, like an abandoned railway, still be a major
 -- physical feature.
