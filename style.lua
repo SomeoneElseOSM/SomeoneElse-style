@@ -983,6 +983,22 @@ function filter_tags_generic(keyvalues, nokeys)
 
 
 -- ----------------------------------------------------------------------------
+-- Render for-pay parking areas differently.
+-- ----------------------------------------------------------------------------
+   if ((  keyvalues["amenity"] == "parking"  ) and
+       (( keyvalues["fee"]     ~= nil       )  and
+        ( keyvalues["fee"]     ~= "no"      )  and
+        ( keyvalues["fee"]     ~= "No"      )  and
+        ( keyvalues["fee"]     ~= "none"    )  and
+        ( keyvalues["fee"]     ~= "None"    )  and
+        ( keyvalues["fee"]     ~= "Free"    )  and
+        ( keyvalues["fee"]     ~= "free"    )  and
+        ( keyvalues["fee"]     ~= "0"       ))) then
+      keyvalues["amenity"] = "parking_pay"
+   end
+
+
+-- ----------------------------------------------------------------------------
 -- Render parking spaces as parking.  Most in the UK are not part of larger
 -- parking areas, and most do not have an access tag, but many should have.
 -- ----------------------------------------------------------------------------
