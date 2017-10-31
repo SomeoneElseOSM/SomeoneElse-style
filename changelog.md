@@ -4,6 +4,7 @@ This page describes changes made [here](https://github.com/SomeoneElseOSM), [her
 
 ## As yet unreleased
 Added support for man_made=bunker_silo as "not quite a building" (roof).
+Added new icon for boundary stones.
 
 ## 23/10/2017 release
 Added support for boundary stones.
