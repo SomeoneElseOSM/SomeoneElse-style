@@ -3044,13 +3044,18 @@ function filter_tags_relation_member (keyvalues, keyvaluemembers, roles, memberc
       membersuperseeded[i] = 0
    end
 
-   type = keyvalues["type"]
-   keyvalues["type"] = nil
-  
-
 -- ----------------------------------------------------------------------------
 -- AJT relation-only additions.
---
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["type"]     == "multipolygon" ) and
+       ( keyvalues["junction"] == "yes"          )) then
+      keyvalues["type"] = nil
+   end
+   
+   type = keyvalues["type"]
+   keyvalues["type"] = nil
+
+-- ----------------------------------------------------------------------------
 -- Note that we're not doing any per-member processing for routes - which just
 -- add a highway type to the relation and ensure that the style rules for it
 -- handle it sensibly, as it's going to be overlaid over other highway types.
