@@ -639,7 +639,8 @@ function filter_tags_generic(keyvalues, nokeys)
 -- Boundary stones
 -- ----------------------------------------------------------------------------
    if (( keyvalues["historic"] == "boundary_stone" )  or
-       ( keyvalues["marker"]   == "boundary_stone" )) then
+       ( keyvalues["marker"]   == "boundary_stone" )  or
+       ( keyvalues["boundary"] == "marker"         )) then
       keyvalues["man_made"] = "boundary_stone"
    end
 
