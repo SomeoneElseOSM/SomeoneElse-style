@@ -797,7 +797,10 @@ function filter_tags_generic(keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
 -- Treat access=permit as access-private
 -- ----------------------------------------------------------------------------
-   if ( keyvalues["access"]  == "permit" ) then
+   if (( keyvalues["access"]  == "permit"       ) or
+       ( keyvalues["access"]  == "agricultural" ) or
+       ( keyvalues["access"]  == "forestry"     ) or
+       ( keyvalues["access"]  == "delivery"     )) then
       keyvalues["access"] = "private"
    end
 
