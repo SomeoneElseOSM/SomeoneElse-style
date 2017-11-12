@@ -3,6 +3,7 @@ This page describes changes made [here](https://github.com/SomeoneElseOSM/Someon
 
 ## As yet released
 Treat access=agricltural, forestry and delivery as private (as "permit" already is).
+Added various "historic" items so that names get rendered and areas rendered as buildings.
 
 ## 11/11/2017 release
 Added support for man_made=bunker_silo as "not quite a building" (roof).

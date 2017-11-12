@@ -1147,10 +1147,19 @@ function filter_tags_generic(keyvalues, nokeys)
 
 -- ----------------------------------------------------------------------------
 -- Add a building tag to "historic=ruins" ways so that buildings.mss can 
--- process it
+-- process it.
+-- It's sent through as "nonspecific".
 -- ----------------------------------------------------------------------------
-   if ( keyvalues["historic"] == "ruins" ) then
-      keyvalues["building"] = "ruins"
+   if (( keyvalues["historic"] == "ruins"      ) or
+       ( keyvalues["historic"] == "monument"   ) or
+       ( keyvalues["historic"] == "castle"     ) or
+       ( keyvalues["historic"] == "building"   ) or
+       ( keyvalues["historic"] == "tomb"       ) or
+       ( keyvalues["historic"] == "mine_shaft" ) or
+       ( keyvalues["historic"] == "manor"      ) or
+       ( keyvalues["historic"] == "church"     )) then
+      keyvalues["building"] = "yes"
+      keyvalues["historic"] = "nonspecific"
    end
 
 -- ----------------------------------------------------------------------------
