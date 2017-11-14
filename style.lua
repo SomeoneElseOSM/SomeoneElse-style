@@ -631,6 +631,7 @@ function filter_tags_generic(keyvalues, nokeys)
 -- Handle various sorts of milestones.
 -- ----------------------------------------------------------------------------
    if (( keyvalues["historic"] == "milestone" )  or
+       ( keyvalues["historic"] == "milepost"  )  or
        ( keyvalues["waterway"] == "milestone" )) then
       keyvalues["highway"] = "milestone"
    end
@@ -638,9 +639,11 @@ function filter_tags_generic(keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
 -- Boundary stones
 -- ----------------------------------------------------------------------------
-   if (( keyvalues["historic"] == "boundary_stone" )  or
-       ( keyvalues["marker"]   == "boundary_stone" )  or
-       ( keyvalues["boundary"] == "marker"         )) then
+   if (( keyvalues["historic"] == "boundary_stone"  )  or
+       ( keyvalues["historic"] == "boundary_marker" )  or
+       ( keyvalues["marker"]   == "boundary_stone"  )  or
+       ( keyvalues["historic"] == "standing_stone"  )  or
+       ( keyvalues["boundary"] == "marker"          )) then
       keyvalues["man_made"] = "boundary_stone"
    end
 
@@ -1146,24 +1149,29 @@ function filter_tags_generic(keyvalues, nokeys)
 -- It's sent through as "nonspecific".
 -- "stone" has a building tag added because some are mapped as closed ways.
 -- ----------------------------------------------------------------------------
-   if (( keyvalues["historic"] == "ruins"          ) or
-       ( keyvalues["historic"] == "monument"       ) or
-       ( keyvalues["historic"] == "castle"         ) or
-       ( keyvalues["historic"] == "building"       ) or
-       ( keyvalues["historic"] == "manor"          ) or
-       ( keyvalues["historic"] == "church"         ) or
-       ( keyvalues["historic"] == "wayside_chapel" ) or
-       ( keyvalues["historic"] == "chapel"         ) or
-       ( keyvalues["historic"] == "aircraft"       ) or
-       ( keyvalues["historic"] == "locomotive"     ) or
-       ( keyvalues["historic"] == "ship"           ) or
-       ( keyvalues["historic"] == "tank"           ) or
-       ( keyvalues["historic"] == "house"          ) or
-       ( keyvalues["historic"] == "tomb"           ) or
-       ( keyvalues["historic"] == "mine_shaft"     ) or
-       ( keyvalues["historic"] == "mine"           ) or
-       ( keyvalues["historic"] == "lime_kiln"      ) or
-       ( keyvalues["historic"] == "stone"          )) then
+   if (( keyvalues["historic"] == "ruins"              ) or
+       ( keyvalues["historic"] == "monument"           ) or
+       ( keyvalues["historic"] == "castle"             ) or
+       ( keyvalues["historic"] == "building"           ) or
+       ( keyvalues["historic"] == "heritage_building"  ) or
+       ( keyvalues["historic"] == "manor"              ) or
+       ( keyvalues["historic"] == "protected_building" ) or
+       ( keyvalues["historic"] == "watermill"          ) or
+       ( keyvalues["historic"] == "windmill"           ) or
+       ( keyvalues["historic"] == "church"             ) or
+       ( keyvalues["historic"] == "wayside_chapel"     ) or
+       ( keyvalues["historic"] == "chapel"             ) or
+       ( keyvalues["historic"] == "aircraft"           ) or
+       ( keyvalues["historic"] == "locomotive"         ) or
+       ( keyvalues["historic"] == "ship"               ) or
+       ( keyvalues["historic"] == "tank"               ) or
+       ( keyvalues["historic"] == "house"              ) or
+       ( keyvalues["historic"] == "tomb"               ) or
+       ( keyvalues["historic"] == "mine_shaft"         ) or
+       ( keyvalues["historic"] == "mine"               ) or
+       ( keyvalues["historic"] == "lime_kiln"          ) or
+       ( keyvalues["historic"] == "kiln"               ) or
+       ( keyvalues["historic"] == "stone"              )) then
       keyvalues["building"] = "yes"
       keyvalues["historic"] = "nonspecific"
    end
@@ -1173,19 +1181,34 @@ function filter_tags_generic(keyvalues, nokeys)
       keyvalues["historic"] = "nonspecific"
    end
    
-   if (( keyvalues["historic"] == "fort"        ) or
-       ( keyvalues["historic"] == "earthworks"  ) or
-       ( keyvalues["historic"] == "battlefield" ) or
-       ( keyvalues["historic"] == "monastery"   ) or
-       ( keyvalues["historic"] == "palace"      ) or
-       ( keyvalues["historic"] == "tower"       ) or
-       ( keyvalues["historic"] == "shelter"     ) or
-       ( keyvalues["historic"] == "cannon"      )) then
+   if (( keyvalues["historic"] == "fort"           ) or
+       ( keyvalues["historic"] == "ringfort"       ) or
+       ( keyvalues["historic"] == "earthworks"     ) or
+       ( keyvalues["historic"] == "tumulus"        ) or
+       ( keyvalues["historic"] == "fortification"  ) or
+       ( keyvalues["historic"] == "battlefield"    ) or
+       ( keyvalues["historic"] == "monastery"      ) or
+       ( keyvalues["historic"] == "abbey"          ) or
+       ( keyvalues["historic"] == "palace"         ) or
+       ( keyvalues["historic"] == "tower"          ) or
+       ( keyvalues["historic"] == "shelter"        ) or
+       ( keyvalues["historic"] == "grave"          ) or
+       ( keyvalues["historic"] == "statue"         ) or
+       ( keyvalues["historic"] == "mine_adit"      ) or
+       ( keyvalues["historic"] == "well"           ) or
+       ( keyvalues["historic"] == "cannon"         )) then
       keyvalues["historic"] = "nonspecific"
    end
 
-   if ( keyvalues["historic"] == "marker" ) then
+   if (( keyvalues["historic"] == "marker"          ) or
+       ( keyvalues["historic"] == "plaque"          ) or
+       ( keyvalues["historic"] == "memorial_plaque" ) or
+       ( keyvalues["historic"] == "blue_plaque"     )) then
       keyvalues["tourism"] = "informationplaque"
+   end
+
+   if ( keyvalues["historic"] == "pillar" ) then
+      keyvalues["barrier"] = "bollard"
    end
 
 -- ----------------------------------------------------------------------------
