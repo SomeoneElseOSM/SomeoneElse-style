@@ -2,8 +2,8 @@
 This page describes changes made [here](https://github.com/SomeoneElseOSM/SomeoneElse-style), [here](https://github.com/SomeoneElseOSM/SomeoneElse-style-legend) and [here](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT), visible [here](http://map.atownsend.org.uk/maps/map/map.html).
 
 ## 16/11/2017 release
-Treat access=agricltural, forestry and delivery as private (as "permit" already is).
-Added various "historic" items so that names get rendered and areas rendered as buildings.
+Treat access=agricultural, forestry and delivery as private (as "permit" already is).
+Added various "historic" items, so that names get rendered and areas rendered as buildings (if appropriate).
 
 ## 11/11/2017 release
 Added support for man_made=bunker_silo as "not quite a building" (roof).
