@@ -1,6 +1,12 @@
 # Changes made to this rendering
 This page describes changes made [here](https://github.com/SomeoneElseOSM/SomeoneElse-style), [here](https://github.com/SomeoneElseOSM/SomeoneElse-style-legend) and [here](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT), visible [here](http://map.atownsend.org.uk/maps/map/map.html).
 
+## As yet unreleased.
+If "name:historic" is set and name is not, use "name:historic" on "waterway=derelict_canal"
+Add "newsagent;toys" to list of valid newsagents (handled as convenience).
+If bridge_ref or bridge_ref is set on e.g. a canal bridge, append to road name in brackets.
+Added name to waterway=weir ways.
+
 ## 16/11/2017 release
 Treat access=agricultural, forestry and delivery as private (as "permit" already is).
 Added various "historic" items, so that names get rendered and areas rendered as buildings (if appropriate).

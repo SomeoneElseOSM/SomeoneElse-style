@@ -1110,6 +1110,15 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Use historical names if present for historical canals.
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["waterway"]      == "derelict_canal" ) and
+       ( keyvalues["name"]          == nil              ) and
+       ( keyvalues["name:historic"] ~= nil              )) then
+      keyvalues["name"] = keyvalues["name:historic"]
+   end
+   
+-- ----------------------------------------------------------------------------
 -- Display "waterway=leat" and "waterway=spillway" etc. as drain.
 -- ----------------------------------------------------------------------------
    if (( keyvalues["waterway"] == "leat"      )  or
@@ -1250,6 +1259,38 @@ function filter_tags_generic(keyvalues, nokeys)
    if ( keyvalues["bridge_name"] ~= nil ) then
       keyvalues["name"] = keyvalues["bridge_name"]
       keyvalues["bridge_name"] = nil
+   end
+
+-- ----------------------------------------------------------------------------
+-- If set, move bridge:ref to bridge_ref
+-- ----------------------------------------------------------------------------
+   if ( keyvalues["bridge:ref"] ~= nil ) then
+      keyvalues["bridge_ref"] = keyvalues["bridge:ref"]
+      keyvalues["bridge:ref"] = nil
+   end
+
+-- ----------------------------------------------------------------------------
+-- If set, move canal_bridge_ref to bridge_ref
+-- ----------------------------------------------------------------------------
+   if ( keyvalues["canal_bridge_ref"] ~= nil ) then
+      keyvalues["bridge_ref"] = keyvalues["canal_bridge_ref"]
+      keyvalues["canal_bridge_ref"] = nil
+   end
+
+-- ----------------------------------------------------------------------------
+-- If set and relevant, do something with bridge_ref
+-- ----------------------------------------------------------------------------
+   if ((  keyvalues["bridge_ref"] ~= nil  ) and
+       (( keyvalues["highway"]    ~= nil )  or
+        ( keyvalues["railway"]    ~= nil )  or
+        ( keyvalues["waterway"]   ~= nil ))) then
+      if ( keyvalues["name"] == nil ) then
+         keyvalues["name"] = "{" .. keyvalues["bridge_ref"] .. ")"
+      else
+         keyvalues["name"] = keyvalues["name"] .. " {" .. keyvalues["bridge_ref"] .. ")"
+      end
+
+      keyvalues["bridge_ref"] = nil
    end
 
 -- ----------------------------------------------------------------------------
@@ -1624,10 +1665,11 @@ function filter_tags_generic(keyvalues, nokeys)
 -- It's near enough in meaning I think.  Likewise kiosk (bit of a stretch,
 -- but nearer than anything else)
 -- ----------------------------------------------------------------------------
-   if (( keyvalues["shop"]   == "newsagent"   ) or
-       ( keyvalues["shop"]   == "kiosk"       ) or
-       ( keyvalues["shop"]   == "food"        ) or
-       ( keyvalues["shop"]   == "frozen_food" )) then
+   if (( keyvalues["shop"]   == "newsagent"      ) or
+       ( keyvalues["shop"]   == "newsagent;toys" ) or
+       ( keyvalues["shop"]   == "kiosk"          ) or
+       ( keyvalues["shop"]   == "food"           ) or
+       ( keyvalues["shop"]   == "frozen_food"    )) then
       keyvalues["shop"] = "convenience"
    end
 
