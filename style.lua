@@ -571,6 +571,9 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["industrial"] == "warehouse"              ) or
        ( keyvalues["building"]   == "warehouse"              ) or
        ( keyvalues["industrial"] == "brewery"                ) or 
+       ( keyvalues["industrial"] == "distillery"             ) or 
+       ( keyvalues["craft"]      == "brewery"                ) or
+       ( keyvalues["craft"]      == "distillery"             ) or
        ( keyvalues["industrial"] == "factory"                ) or 
        ( keyvalues["industrial"] == "yes"                    ) or 
        ( keyvalues["industrial"] == "depot"                  ) or 
@@ -590,7 +593,6 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["industrial"] == "haulage"                ) or
        ( keyvalues["building"]   == "industrial"             ) or
        ( keyvalues["amenity"]    == "recycling"              ) or
-       ( keyvalues["craft"]      == "brewery"                ) or
        ( keyvalues["power"]      == "plant"                  ) or
        ( keyvalues["building"]   == "works"                  ) or
        ( keyvalues["building"]   == "manufacture"            ) or
@@ -1160,10 +1162,8 @@ function filter_tags_generic(keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
    if (( keyvalues["historic"] == "ruins"              ) or
        ( keyvalues["historic"] == "monument"           ) or
-       ( keyvalues["historic"] == "castle"             ) or
        ( keyvalues["historic"] == "building"           ) or
        ( keyvalues["historic"] == "heritage_building"  ) or
-       ( keyvalues["historic"] == "manor"              ) or
        ( keyvalues["historic"] == "protected_building" ) or
        ( keyvalues["historic"] == "watermill"          ) or
        ( keyvalues["historic"] == "windmill"           ) or
@@ -1195,17 +1195,35 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["historic"] == "earthworks"     ) or
        ( keyvalues["historic"] == "tumulus"        ) or
        ( keyvalues["historic"] == "fortification"  ) or
+       ( keyvalues["historic"] == "castle"         ) or
+       ( keyvalues["historic"] == "manor"          ) or
+       ( keyvalues["historic"] == "mansion"        ) or
        ( keyvalues["historic"] == "battlefield"    ) or
        ( keyvalues["historic"] == "monastery"      ) or
        ( keyvalues["historic"] == "abbey"          ) or
        ( keyvalues["historic"] == "palace"         ) or
        ( keyvalues["historic"] == "tower"          ) or
+       ( keyvalues["historic"] == "prison"         ) or
+       ( keyvalues["historic"] == "theatre"        ) or
        ( keyvalues["historic"] == "shelter"        ) or
        ( keyvalues["historic"] == "grave"          ) or
+       ( keyvalues["historic"] == "grave_yard"     ) or
        ( keyvalues["historic"] == "statue"         ) or
+       ( keyvalues["historic"] == "cross"          ) or
+       ( keyvalues["historic"] == "folly"          ) or
        ( keyvalues["historic"] == "mine_adit"      ) or
+       ( keyvalues["historic"] == "sawmill"        ) or
        ( keyvalues["historic"] == "well"           ) or
        ( keyvalues["historic"] == "cannon"         )) then
+      keyvalues["historic"] = "nonspecific"
+   end
+
+-- ----------------------------------------------------------------------------
+-- historic=icon shouldn't supersede amenity or tourism tags.
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["historic"] == "icon" ) and
+       ( keyvalues["amenity"]  == nil    ) and
+       ( keyvalues["tourism"]  == nil    )) then
       keyvalues["historic"] = "nonspecific"
    end
 
@@ -1218,6 +1236,12 @@ function filter_tags_generic(keyvalues, nokeys)
 
    if ( keyvalues["historic"] == "pillar" ) then
       keyvalues["barrier"] = "bollard"
+      keyvalues["historic"] = nil
+   end
+
+   if ( keyvalues["historic"] == "cairn" ) then
+      keyvalues["man_made"] = "cairn"
+      keyvalues["historic"] = nil
    end
 
 -- ----------------------------------------------------------------------------
@@ -1519,6 +1543,14 @@ function filter_tags_generic(keyvalues, nokeys)
    if (( keyvalues["natural"]   == "peak"     ) and
        ( keyvalues["historic"]  == "memorial" )) then
       keyvalues["natural"] = nil
+   end
+
+-- ----------------------------------------------------------------------------
+-- Things that are both peaks and cairns should render as the former.
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["natural"]   == "peak"     ) and
+       ( keyvalues["man_made"]  == "cairn" )) then
+      keyvalues["man_made"] = nil
    end
 
 -- ----------------------------------------------------------------------------

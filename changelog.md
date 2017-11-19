@@ -6,6 +6,10 @@ If "name:historic" is set and name is not, use "name:historic" on "waterway=dere
 Add "newsagent;toys" to list of valid newsagents (handled as convenience).
 If bridge_ref or bridge_ref is set on e.g. a canal bridge, append to road name in brackets.
 Added name to waterway=weir ways.
+Added craft= and industrial=distillery as industrial landuse.
+Added support for more historic tags.
+Moved some historic area tags (castle, manor) to non-building based on usage.
+If a cairn has been mapped at a peak, render the peak.
 
 ## 16/11/2017 release
 Treat access=agricultural, forestry and delivery as private (as "permit" already is).
