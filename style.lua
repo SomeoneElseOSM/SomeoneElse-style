@@ -1044,8 +1044,9 @@ function filter_tags_generic(keyvalues, nokeys)
 -- standard style.  I'll pretend that they're "disused" so that they appear
 -- on the map.  Abandoned railways are often major landscape features.
 -- ----------------------------------------------------------------------------
-   if (( keyvalues["railway"]   == "dismantled" ) or
-       ( keyvalues["railway"]   == "abandoned"  )) then
+   if (( keyvalues["railway"]  == "dismantled"     ) or
+       ( keyvalues["railway"]  == "abandoned"      ) or
+       ( keyvalues["historic"] == "inclined_plane" )) then
       keyvalues["railway"] = "disused"
    end
 
@@ -1180,6 +1181,7 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["historic"] == "mine"               ) or
        ( keyvalues["historic"] == "lime_kiln"          ) or
        ( keyvalues["historic"] == "kiln"               ) or
+       ( keyvalues["historic"] == "trough"             ) or
        ( keyvalues["historic"] == "stone"              )) then
       keyvalues["building"] = "yes"
       keyvalues["historic"] = "nonspecific"
@@ -1190,31 +1192,46 @@ function filter_tags_generic(keyvalues, nokeys)
       keyvalues["historic"] = "nonspecific"
    end
    
-   if (( keyvalues["historic"] == "fort"           ) or
-       ( keyvalues["historic"] == "ringfort"       ) or
-       ( keyvalues["historic"] == "earthworks"     ) or
-       ( keyvalues["historic"] == "tumulus"        ) or
-       ( keyvalues["historic"] == "fortification"  ) or
-       ( keyvalues["historic"] == "castle"         ) or
-       ( keyvalues["historic"] == "manor"          ) or
-       ( keyvalues["historic"] == "mansion"        ) or
-       ( keyvalues["historic"] == "battlefield"    ) or
-       ( keyvalues["historic"] == "monastery"      ) or
-       ( keyvalues["historic"] == "abbey"          ) or
-       ( keyvalues["historic"] == "palace"         ) or
-       ( keyvalues["historic"] == "tower"          ) or
-       ( keyvalues["historic"] == "prison"         ) or
-       ( keyvalues["historic"] == "theatre"        ) or
-       ( keyvalues["historic"] == "shelter"        ) or
-       ( keyvalues["historic"] == "grave"          ) or
-       ( keyvalues["historic"] == "grave_yard"     ) or
-       ( keyvalues["historic"] == "statue"         ) or
-       ( keyvalues["historic"] == "cross"          ) or
-       ( keyvalues["historic"] == "folly"          ) or
-       ( keyvalues["historic"] == "mine_adit"      ) or
-       ( keyvalues["historic"] == "sawmill"        ) or
-       ( keyvalues["historic"] == "well"           ) or
-       ( keyvalues["historic"] == "cannon"         )) then
+   if (( keyvalues["historic"] == "fort"              ) or
+       ( keyvalues["historic"] == "ringfort"          ) or
+       ( keyvalues["historic"] == "earthworks"        ) or
+       ( keyvalues["historic"] == "barrow"            ) or
+       ( keyvalues["historic"] == "tumulus"           ) or
+       ( keyvalues["historic"] == "fortification"     ) or
+       ( keyvalues["historic"] == "camp"              ) or
+       ( keyvalues["historic"] == "menhir"            ) or
+       ( keyvalues["historic"] == "stone_circle"      ) or
+       ( keyvalues["historic"] == "castle"            ) or
+       ( keyvalues["historic"] == "mound"             ) or
+       ( keyvalues["historic"] == "manor"             ) or
+       ( keyvalues["historic"] == "mansion"           ) or
+       ( keyvalues["historic"] == "hall"              ) or
+       ( keyvalues["historic"] == "stately_home"      ) or
+       ( keyvalues["historic"] == "almshouse"         ) or
+       ( keyvalues["historic"] == "police_box"        ) or
+       ( keyvalues["historic"] == "battlefield"       ) or
+       ( keyvalues["historic"] == "monastery"         ) or
+       ( keyvalues["historic"] == "abbey"             ) or
+       ( keyvalues["historic"] == "priory"            ) or
+       ( keyvalues["historic"] == "palace"            ) or
+       ( keyvalues["historic"] == "tower"             ) or
+       ( keyvalues["historic"] == "dovecote"          ) or
+       ( keyvalues["historic"] == "toll_house"        ) or
+       ( keyvalues["historic"] == "pinfold"           ) or
+       ( keyvalues["historic"] == "prison"            ) or
+       ( keyvalues["historic"] == "theatre"           ) or
+       ( keyvalues["historic"] == "shelter"           ) or
+       ( keyvalues["historic"] == "grave"             ) or
+       ( keyvalues["historic"] == "grave_yard"        ) or
+       ( keyvalues["historic"] == "statue"            ) or
+       ( keyvalues["historic"] == "cross"             ) or
+       ( keyvalues["historic"] == "market_cross"      ) or
+       ( keyvalues["historic"] == "folly"             ) or
+       ( keyvalues["historic"] == "drinking_fountain" ) or
+       ( keyvalues["historic"] == "mine_adit"         ) or
+       ( keyvalues["historic"] == "sawmill"           ) or
+       ( keyvalues["historic"] == "well"              ) or
+       ( keyvalues["historic"] == "cannon"            )) then
       keyvalues["historic"] = "nonspecific"
    end
 
@@ -1241,6 +1258,11 @@ function filter_tags_generic(keyvalues, nokeys)
 
    if ( keyvalues["historic"] == "cairn" ) then
       keyvalues["man_made"] = "cairn"
+      keyvalues["historic"] = nil
+   end
+
+   if ( keyvalues["historic"] == "chimney" ) then
+      keyvalues["man_made"] = "chimney"
       keyvalues["historic"] = nil
    end
 
@@ -1364,6 +1386,7 @@ function filter_tags_generic(keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
    if (( keyvalues["building"] == "air_shaft"         ) or
        ( keyvalues["man_made"] == "air_shaft"         ) or
+       ( keyvalues["historic"] == "air_shaft"         ) or
        ( keyvalues["railway"]  == "ventilation_shaft" ) or
        ( keyvalues["man_made"] == "tunnel_vent"       )) then
       keyvalues["man_made"] = "ventilation_shaft"
