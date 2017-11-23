@@ -643,6 +643,7 @@ function filter_tags_generic(keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
    if (( keyvalues["historic"] == "boundary_stone"  )  or
        ( keyvalues["historic"] == "boundary_marker" )  or
+       ( keyvalues["historic"] == "boundary_post"   )  or
        ( keyvalues["marker"]   == "boundary_stone"  )  or
        ( keyvalues["historic"] == "standing_stone"  )  or
        ( keyvalues["boundary"] == "marker"          )) then
@@ -1099,6 +1100,7 @@ function filter_tags_generic(keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
    if (( keyvalues["historic"]           == "canal"           ) or
        ( keyvalues["historic:waterway"]  == "canal"           ) or
+       ( keyvalues["historic"]           == "leat"            ) or
        ( keyvalues["disused:waterway"]   == "canal"           ) or
        ( keyvalues["disused"]            == "canal"           ) or
        ( keyvalues["abandoned:waterway"] == "canal"           ) or
@@ -1171,6 +1173,7 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["historic"] == "church"             ) or
        ( keyvalues["historic"] == "wayside_chapel"     ) or
        ( keyvalues["historic"] == "chapel"             ) or
+       ( keyvalues["historic"] == "gate_house"         ) or
        ( keyvalues["historic"] == "aircraft"           ) or
        ( keyvalues["historic"] == "locomotive"         ) or
        ( keyvalues["historic"] == "ship"               ) or
@@ -1180,6 +1183,8 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["historic"] == "mine_shaft"         ) or
        ( keyvalues["historic"] == "mine"               ) or
        ( keyvalues["historic"] == "lime_kiln"          ) or
+       ( keyvalues["historic"] == "lime_kilns"         ) or
+       ( keyvalues["historic"] == "limekiln"           ) or
        ( keyvalues["historic"] == "kiln"               ) or
        ( keyvalues["historic"] == "trough"             ) or
        ( keyvalues["historic"] == "stone"              )) then
@@ -1195,6 +1200,7 @@ function filter_tags_generic(keyvalues, nokeys)
    if (( keyvalues["historic"] == "fort"              ) or
        ( keyvalues["historic"] == "ringfort"          ) or
        ( keyvalues["historic"] == "earthworks"        ) or
+       ( keyvalues["historic"] == "motte"             ) or
        ( keyvalues["historic"] == "barrow"            ) or
        ( keyvalues["historic"] == "tumulus"           ) or
        ( keyvalues["historic"] == "fortification"     ) or
@@ -1207,10 +1213,13 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["historic"] == "mansion"           ) or
        ( keyvalues["historic"] == "hall"              ) or
        ( keyvalues["historic"] == "stately_home"      ) or
+       ( keyvalues["historic"] == "tower_house"       ) or
        ( keyvalues["historic"] == "almshouse"         ) or
        ( keyvalues["historic"] == "police_box"        ) or
+       ( keyvalues["historic"] == "bakery"            ) or
        ( keyvalues["historic"] == "battlefield"       ) or
        ( keyvalues["historic"] == "monastery"         ) or
+       ( keyvalues["historic"] == "monastic_grange"   ) or
        ( keyvalues["historic"] == "abbey"             ) or
        ( keyvalues["historic"] == "priory"            ) or
        ( keyvalues["historic"] == "palace"            ) or
@@ -1574,6 +1583,19 @@ function filter_tags_generic(keyvalues, nokeys)
    if (( keyvalues["natural"]   == "peak"     ) and
        ( keyvalues["man_made"]  == "cairn" )) then
       keyvalues["man_made"] = nil
+   end
+
+-- ----------------------------------------------------------------------------
+-- Beacons - render historic ones, not radio ones.
+-- ----------------------------------------------------------------------------
+   if ((( keyvalues["man_made"] == "beacon"        )  or
+        ( keyvalues["man_made"] == "signal_beacon" )  or
+        ( keyvalues["landmark"] == "beacon"        )  or
+        ( keyvalues["historic"] == "beacon"        )) and
+       (  keyvalues["airmark"]  == nil              ) and
+       (  keyvalues["aeroway"]  == nil              ) and
+       (  keyvalues["natural"]  ~= "peak"           )) then
+      keyvalues["historic"] = "nonspecific"
    end
 
 -- ----------------------------------------------------------------------------

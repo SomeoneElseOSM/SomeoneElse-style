@@ -1,6 +1,9 @@
 # Changes made to this rendering
 This page describes changes made [here](https://github.com/SomeoneElseOSM/SomeoneElse-style), [here](https://github.com/SomeoneElseOSM/SomeoneElse-style-legend) and [here](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT), visible [here](http://map.atownsend.org.uk/maps/map/map.html).
 
+## As yet unreleased
+Added support for more historic tags.
+
 ## 21/11/2017 release
 If "name:historic" is set and name is not, use "name:historic" on "waterway=derelict_canal"
 Add "newsagent;toys" to list of valid newsagents (handled as convenience).
