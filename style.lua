@@ -1122,6 +1122,12 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["name:historic"] ~= nil              )) then
       keyvalues["name"] = keyvalues["name:historic"]
    end
+
+   if (( keyvalues["waterway"]      == "derelict_canal" ) and
+       ( keyvalues["name"]          == nil              ) and
+       ( keyvalues["historic:name"] ~= nil              )) then
+      keyvalues["name"] = keyvalues["historic:name"]
+   end
    
 -- ----------------------------------------------------------------------------
 -- Display "waterway=leat" and "waterway=spillway" etc. as drain.
@@ -1163,8 +1169,7 @@ function filter_tags_generic(keyvalues, nokeys)
 -- It's sent through as "nonspecific".
 -- "stone" has a building tag added because some are mapped as closed ways.
 -- ----------------------------------------------------------------------------
-   if (( keyvalues["historic"] == "ruins"              ) or
-       ( keyvalues["historic"] == "monument"           ) or
+   if (( keyvalues["historic"] == "monument"           ) or
        ( keyvalues["historic"] == "building"           ) or
        ( keyvalues["historic"] == "heritage_building"  ) or
        ( keyvalues["historic"] == "protected_building" ) or
@@ -1179,9 +1184,7 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["historic"] == "ship"               ) or
        ( keyvalues["historic"] == "tank"               ) or
        ( keyvalues["historic"] == "house"              ) or
-       ( keyvalues["historic"] == "tomb"               ) or
        ( keyvalues["historic"] == "mine_shaft"         ) or
-       ( keyvalues["historic"] == "mine"               ) or
        ( keyvalues["historic"] == "lime_kiln"          ) or
        ( keyvalues["historic"] == "lime_kilns"         ) or
        ( keyvalues["historic"] == "limekiln"           ) or
@@ -1192,7 +1195,8 @@ function filter_tags_generic(keyvalues, nokeys)
       keyvalues["historic"] = "nonspecific"
    end
 
-   if ( keyvalues["historic"] == "wreck" ) then
+   if (( keyvalues["historic"] == "ruins" )  or
+       ( keyvalues["historic"] == "wreck" )) then
       keyvalues["building"] = "roof"
       keyvalues["historic"] = "nonspecific"
    end
@@ -1203,6 +1207,7 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["historic"] == "motte"             ) or
        ( keyvalues["historic"] == "barrow"            ) or
        ( keyvalues["historic"] == "tumulus"           ) or
+       ( keyvalues["historic"] == "tomb"              ) or
        ( keyvalues["historic"] == "fortification"     ) or
        ( keyvalues["historic"] == "camp"              ) or
        ( keyvalues["historic"] == "menhir"            ) or
@@ -1238,10 +1243,22 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["historic"] == "folly"             ) or
        ( keyvalues["historic"] == "drinking_fountain" ) or
        ( keyvalues["historic"] == "mine_adit"         ) or
+       ( keyvalues["historic"] == "mine"              ) or
        ( keyvalues["historic"] == "sawmill"           ) or
        ( keyvalues["historic"] == "well"              ) or
        ( keyvalues["historic"] == "cannon"            )) then
       keyvalues["historic"] = "nonspecific"
+
+      if ( keyvalues["landuse"] == nil ) then
+         keyvalues["landuse"] = "historic"
+         keyvalues["tourism"] = nil
+      end
+   end
+
+   if (( keyvalues["historic"] == "archaeological_site" )  and
+       ( keyvalues["landuse"]  == nil                   )) then
+      keyvalues["landuse"] = "historic"
+      keyvalues["tourism"] = nil
    end
 
 -- ----------------------------------------------------------------------------
@@ -2196,6 +2213,7 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["shop"]    == "spice"         ) or
        ( keyvalues["shop"]    == "alcohol"       ) or
        ( keyvalues["shop"]    == "off_licence"   ) or
+       ( keyvalues["shop"]    == "offlicence"    ) or
        ( keyvalues["shop"]    == "wine"          )) then
       keyvalues["shop"] = "shopnonspecific"
    end
