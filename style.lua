@@ -959,6 +959,34 @@ function filter_tags_generic(keyvalues, nokeys)
 
 
 -- ----------------------------------------------------------------------------
+-- If no name use brand or operator on amenity=fuel.  If there is brand or
+-- operator use that with name.
+-- ----------------------------------------------------------------------------
+   if ( keyvalues["amenity"] == "fuel" ) then
+      if ( keyvalues["name"] == nil ) then
+         if ( keyvalues["brand"] ~= nil ) then
+            keyvalues["name"] = keyvalues["brand"]
+            keyvalues["brand"] = nil
+         else
+            if ( keyvalues["operator"] ~= nil ) then
+               keyvalues["name"] = keyvalues["operator"]
+               keyvalues["operator"] = nil
+            end
+         end
+      else
+         if ( keyvalues["brand"] ~= nil ) then
+            keyvalues["name"] = keyvalues["name"] .. " (" .. keyvalues["brand"] .. ")"
+            keyvalues["brand"] = nil
+	 else
+            if ( keyvalues["operator"] ~= nil ) then
+               keyvalues["name"] = keyvalues["name"] .. " (" .. keyvalues["operator"] .. ")"
+               keyvalues["operator"] = nil
+            end
+         end
+      end
+   end
+
+-- ----------------------------------------------------------------------------
 -- Left luggage
 -- ----------------------------------------------------------------------------
    if (( keyvalues["amenity"] == "luggage_locker"  ) or
@@ -2438,6 +2466,7 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["shop"]    == "truck"                        ) or
        ( keyvalues["shop"]    == "van"                          ) or
        ( keyvalues["shop"]    == "truck_repair"                 ) or
+       ( keyvalues["shop"]    == "forklift_repair"              ) or
        ( keyvalues["amenity"] == "driving_school"               )) then
       keyvalues["landuse"] = "unnamedcommercial"
       keyvalues["shop"]    = "shopnonspecific"
