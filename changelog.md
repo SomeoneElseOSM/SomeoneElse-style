@@ -4,6 +4,7 @@ This page describes changes made [here](https://github.com/SomeoneElseOSM/Someon
 ## As yet unreleased
 Added support for more historic tags.
 More tweaks to historic rendering,  Added a slight background.
+Use brand and/or operator on amenity=fuel.
 
 ## 21/11/2017 release
 If "name:historic" is set and name is not, use "name:historic" on "waterway=derelict_canal"
