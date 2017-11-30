@@ -3,6 +3,10 @@ This page describes changes made [here](https://github.com/SomeoneElseOSM/Someon
 
 ## As yet unreleased
 Added support for more shop tags.
+Render craft=counsellor.
+Render landuse=religious.
+Render railway=milestone.
+Render waterfall as weir/sluice_gate (blue dot or grey line depending on whether node or way).
 
 ## 28/11/2017 release
 Added support for more historic tags.
