@@ -41,12 +41,15 @@ file_url1=http://download.geofabrik.de/europe/${file_prefix1}-latest.osm.pbf
 #file_page1=http://download.geofabrik.de/europe/great-britain/${file_prefix1}.html
 #file_url1=http://download.geofabrik.de/europe/great-britain/${file_prefix1}-latest.osm.pbf
 #
+# No extract for Bedfordshire
 #file_prefix1=buckinghamshire
 #file_prefix1=cambridgeshire
 #file_prefix1=cheshire
 #file_prefix1=cornwall
 #file_prefix1=cumbria
 #file_prefix1=derbyshire
+#file_prefix1=devon
+#file_prefix1=essex
 #file_prefix1=gloucestershire
 #file_prefix1=greater-london
 #file_prefix1=greater-manchester

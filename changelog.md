@@ -7,6 +7,10 @@ Render craft=counsellor.
 Render landuse=religious.
 Render railway=milestone.
 Render waterfall as weir/sluice_gate (blue dot or grey line depending on whether node or way).
+Moved landuse=landfill from construction to something nearer industrial.
+Used a better shopmobility icon.
+Rendered bus_guideway at zooms 11 and 12.
+Added bus_guideway to legend.
 
 ## 28/11/2017 release
 Added support for more historic tags.
