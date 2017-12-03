@@ -495,6 +495,15 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Render bus guideways as "a sort of railway" rather than in their own
+-- highway layer.
+-- ----------------------------------------------------------------------------
+   if (keyvalues["highway"] == "bus_guideway") then
+      keyvalues["highway"] = nil
+      keyvalues["railway"] = "bus_guideway"
+   end
+
+-- ----------------------------------------------------------------------------
 -- Remove admin boundaries from the map
 -- I do this because I'm simply not interested in admin boundaries and I'm 
 -- lucky enough to live in a place where I don't have to be.

@@ -9,7 +9,7 @@ Render railway=milestone.
 Render waterfall as weir/sluice_gate (blue dot or grey line depending on whether node or way).
 Moved landuse=landfill from construction to something nearer industrial.
 Used a better shopmobility icon.
-Rendered bus_guideway at zooms 11 and 12.
+Rendered bus_guideway at zooms 10 and 12 as a type of "railway" with a less in-your-face colour, so that bridges and tunnels are handled correctly.
 Added bus_guideway to legend.
 
 ## 28/11/2017 release
