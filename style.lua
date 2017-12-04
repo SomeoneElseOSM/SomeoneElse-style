@@ -1446,7 +1446,8 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
--- Map wind turbines to, er, wind turbines:
+-- Map wind turbines to, er, wind turbines and make sure that they don't also
+-- appear as towers.
 -- ----------------------------------------------------------------------------
    if (( keyvalues["man_made"]   == "wind_turbine" ) or
        ( keyvalues["man_made"]   == "windpump"     )) then
@@ -1454,9 +1455,14 @@ function filter_tags_generic(keyvalues, nokeys)
       keyvalues["power_source"] = "wind"
    end
 
-   if (( keyvalues["man_made"]     == "tower"     ) and
-       ( keyvalues["power"]        == "generator" ) and
-       ( keyvalues["power_source"] == "wind"      )) then
+   if ((  keyvalues["man_made"]         == "tower"         ) and
+       (  keyvalues["power"]            == "generator"     ) and
+       (( keyvalues["power_source"]     == "wind"         )  or
+        ( keyvalues["generator:source"] == "wind"         )  or
+        ( keyvalues["generator:method"] == "wind_turbine" )  or
+        ( keyvalues["plant:source"]     == "wind"         )  or
+        ( keyvalues["generator:type"]   == "wind"         )  or
+        ( keyvalues["generator:method"] == "wind"         ))) then
       keyvalues["man_made"] = nil
    end
 
