@@ -271,14 +271,18 @@ function filter_tags_generic(keyvalues, nokeys)
       end
    end
 
-   if ((  keyvalues["access"]      == "private"                    ) and
-       (( keyvalues["designation"] == "public_footpath"           )  or
-        ( keyvalues["designation"] == "public_bridleway"          )  or
-        ( keyvalues["designation"] == "restricted_byway"          )  or
-        ( keyvalues["designation"] == "byway_open_to_all_traffic" )  or
-        ( keyvalues["designation"] == "unclassified_county_road"  )  or
-        ( keyvalues["designation"] == "unclassified_country_road" )  or
-        ( keyvalues["designation"] == "unclassified_highway"      ))) then
+   if ((    keyvalues["access"]      == "private"                      ) and
+       ((   keyvalues["designation"] == "public_footpath"             )  or
+        (   keyvalues["designation"] == "public_bridleway"            )  or
+        (   keyvalues["designation"] == "restricted_byway"            )  or
+        (   keyvalues["designation"] == "byway_open_to_all_traffic"   )  or
+        (   keyvalues["designation"] == "unclassified_county_road"    )  or
+        (   keyvalues["designation"] == "unclassified_country_road"   )  or
+        (   keyvalues["designation"] == "unclassified_highway"        )  or
+        ((( keyvalues["highway"]     == "path"                      )    or
+          ( keyvalues["highway"]     == "pathwide"                  ))   and
+         (( keyvalues["foot"]        == "permissive"                )    or
+          ( keyvalues["foot"]        == "yes"                       ))))) then
       keyvalues["access"] = nil
    end
 
