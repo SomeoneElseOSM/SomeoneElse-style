@@ -3,7 +3,8 @@ This page describes changes made [here](https://github.com/SomeoneElseOSM/Someon
 
 ## As yet unreleased
 Ensure that wind turbines are shown as wind turbines (and not towers) at all zoom levels.
-Remove "private" indication on path and pathwide if foot=yes or permissive.
+Remove "private" indication on path and pathwide if foot=yes or foot=permissive.
+Render layer/level 0 highway=corridor as footways.  Non-ground corridors omitted (it'd get messy); indoor=corridor omitted (area highway features mostly supressed in this style).
 
 ## 03/12/2017 release
 Added support for more shop tags.

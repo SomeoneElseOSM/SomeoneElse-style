@@ -69,6 +69,10 @@ file_url1=http://download.geofabrik.de/europe/${file_prefix1}-latest.osm.pbf
 #file_page1=http://download.geofabrik.de/europe/great-britain/england/${file_prefix1}.html
 #file_url1=http://download.geofabrik.de/europe/great-britain/england/${file_prefix1}-latest.osm.pbf
 #
+#file_prefix1=new-york
+#file_page1=http://download.geofabrik.de/north-america/us/${file_prefix1}.html
+#file_url1=http://download.geofabrik.de/north-america/us/${file_prefix1}-latest.osm.pbf
+#
 # What's the second file that we are interested in?
 # Note that if this is commented out, also change the "merge" below to not use it.
 #

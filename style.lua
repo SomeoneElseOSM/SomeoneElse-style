@@ -97,6 +97,21 @@ function filter_tags_generic(keyvalues, nokeys)
    keyvalues["tracktype"] = nil
 
 -- ----------------------------------------------------------------------------
+-- Before processing footways, turn certain corridors into footways
+--
+-- Note that https://wiki.openstreetmap.org/wiki/Key:indoor defines
+-- indoor=corridor as a closed way.  highway=corridor is not documented there
+-- but is used for corridors.  We'll only process layer or level 0 (or nil)
+-- ----------------------------------------------------------------------------
+   if ((  keyvalues["highway"] == "corridor"   ) and
+       (( keyvalues["level"]   == nil         )  or
+        ( keyvalues["level"]   == "0"         )) and
+       (( keyvalues["layer"]   == nil         )  or
+        ( keyvalues["layer"]   == "0"         ))) then
+      keyvalues["highway"] = "footway"
+   end
+
+-- ----------------------------------------------------------------------------
 -- Note that "steps" and "footwaysteps" are unchanged by the 
 -- pathwide / path choice below:
 -- ----------------------------------------------------------------------------
