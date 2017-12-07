@@ -6,6 +6,7 @@ Ensure that wind turbines are shown as wind turbines (and not towers) at all zoo
 Remove "private" indication on path and pathwide if foot=yes or foot=permissive.
 Render layer/level 0 highway=corridor as footways.  Non-ground corridors omitted (it'd get messy); indoor=corridor omitted (area highway features mostly supressed in this style).
 Process some non-carpeted "floor:material" values the same way as "description:floor".  "floor:material" is extensively used in indoor tagging and it makes sense to consider it here too.
+Added fish farms (which may be tagged in several ways) as commercial landuse.
 
 ## 03/12/2017 release
 Added support for more shop tags.

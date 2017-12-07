@@ -1,12 +1,12 @@
 polygon_keys = { 'building', 'landuse', 'amenity', 'harbour', 'historic', 'leisure', 
       'man_made', 'military', 'natural', 'office', 'place', 'power',
-      'public_transport', 'shop', 'sport', 'tourism', 'waterway',
+      'public_transport', 'seamark:type', 'shop', 'sport', 'tourism', 'waterway',
       'wetland', 'water', 'aeroway' }
 
 generic_keys = {'access','addr:housename','addr:housenumber','addr:interpolation','admin_level','aerialway','aeroway','amenity','area','barrier',
    'bicycle','brand','bridge','boundary','building','capital','construction','covered','culvert','cutting','denomination','designation','disused','ele',
    'embarkment','emergency','foot','generation:source','harbour','highway','historic','hours','intermittent','junction','landuse','layer','leisure','lock',
-   'man_made','military','motor_car','name','natural','office','oneway','operator','place','poi','population','power','power_source','public_transport',
+   'man_made','military','motor_car','name','natural','office','oneway','operator','place','poi','population','power','power_source','public_transport','seamark:type',
    'railway','ref','religion','route','service','shop','sport','surface','toll','tourism','tower:type', 'tracktype','tunnel','water','waterway',
    'wetland','width','wood','type'}
 
@@ -726,22 +726,26 @@ function filter_tags_generic(keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
 -- Things without icons - add "commercial" landuse to include name too.
 -- ----------------------------------------------------------------------------
-   if (( keyvalues["building"]   == "commercial"         ) or
-       ( keyvalues["building"]   == "office"             ) or
-       ( keyvalues["man_made"]   == "telephone_exchange" ) or
-       ( keyvalues["amenity"]    == "telephone_exchange" ) or
-       ( keyvalues["building"]   == "telephone_exchange" ) or
-       ( keyvalues["utility"]    == "telephone_exchange" ) or
-       ( keyvalues["amenity"]    == "ferry_terminal"     ) or
-       ( keyvalues["landuse"]    == "ferry_terminal"     ) or
-       ( keyvalues["highway"]    == "services"           ) or
-       ( keyvalues["landuse"]    == "churchyard"         ) or
-       ( keyvalues["landuse"]    == "religious"          ) or
-       ( keyvalues["leisure"]    == "racetrack"          ) or
-       ( keyvalues["club"]       == "sport"              ) or
-       ( keyvalues["office"]     == "courier"            ) or
-       ( keyvalues["office"]     == "advertising"        ) or
-       ( keyvalues["amenity"]    == "post_depot"         )) then
+   if (( keyvalues["building"]     == "commercial"               ) or
+       ( keyvalues["building"]     == "office"                   ) or
+       ( keyvalues["man_made"]     == "telephone_exchange"       ) or
+       ( keyvalues["amenity"]      == "telephone_exchange"       ) or
+       ( keyvalues["building"]     == "telephone_exchange"       ) or
+       ( keyvalues["utility"]      == "telephone_exchange"       ) or
+       ( keyvalues["amenity"]      == "ferry_terminal"           ) or
+       ( keyvalues["landuse"]      == "ferry_terminal"           ) or
+       ( keyvalues["highway"]      == "services"                 ) or
+       ( keyvalues["landuse"]      == "churchyard"               ) or
+       ( keyvalues["landuse"]      == "religious"                ) or
+       ( keyvalues["leisure"]      == "racetrack"                ) or
+       ( keyvalues["club"]         == "sport"                    ) or
+       ( keyvalues["office"]       == "courier"                  ) or
+       ( keyvalues["office"]       == "advertising"              ) or
+       ( keyvalues["amenity"]      == "post_depot"               ) or
+       ( keyvalues["landuse"]      == "aquaculture"              ) or
+       ( keyvalues["landuse"]      == "fish_farm"                ) or
+       ( keyvalues["landuse"]      == "fishfarm"                 ) or
+       ( keyvalues["seamark:type"] == "marine_farm" )) then
       keyvalues["landuse"] = "commercial"
    end
 
@@ -868,12 +872,14 @@ function filter_tags_generic(keyvalues, nokeys)
 -- Food 	      y or d (don't know)
 -- Floor	      y or d (don't know)
 -- ----------------------------------------------------------------------------
-   if (( keyvalues["description:floor"] ~= nil      ) or
-       ( keyvalues["floor:material"]    == "tiles"  ) or
-       ( keyvalues["floor:material"]    == "stone"  ) or
-       ( keyvalues["floor:material"]    == "lino"   ) or
-       ( keyvalues["floor:material"]    == "slate"  ) or
-       ( keyvalues["floor:material"]    == "brick"  )) then
+   if (( keyvalues["description:floor"] ~= nil                ) or
+       ( keyvalues["floor:material"]    == "tiles"            ) or
+       ( keyvalues["floor:material"]    == "stone"            ) or
+       ( keyvalues["floor:material"]    == "lino"             ) or
+       ( keyvalues["floor:material"]    == "slate"            ) or
+       ( keyvalues["floor:material"]    == "brick"            ) or
+       ( keyvalues["floor:material"]    == "concrete"         ) or
+       ( keyvalues["floor:material"]    == "lino;tiles;stone" )) then
       keyvalues["noncarpeted"] = "yes"
    end
 
