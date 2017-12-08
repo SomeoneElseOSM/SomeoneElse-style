@@ -3148,7 +3148,6 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["leisure"]  == "trampoline"           ) or
        ( keyvalues["leisure"]  == "water_park"           ) or
        ( keyvalues["leisure"]  == "firepit"              ) or
-       ( keyvalues["leisure"]  == "fitness_station"      ) or
        ( keyvalues["amenity"]  == "public_bath"          ) or
        ( keyvalues["amenity"]  == "brothel"              ) or
        ( keyvalues["amenity"]  == "sauna"                ) or
