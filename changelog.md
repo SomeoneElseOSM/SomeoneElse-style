@@ -9,6 +9,7 @@ Process some non-carpeted "floor:material" values the same way as "description:f
 Added fish farms (which may be tagged in several ways) as commercial landuse.
 Added specific icon for leisure=fitness_station.
 Added support for more shop tags.
+Handle river bridges as canal bridges.
 
 ## 03/12/2017 release
 Added support for more shop tags.
