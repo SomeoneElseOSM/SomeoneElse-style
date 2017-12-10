@@ -1228,6 +1228,13 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Display "waterway=mill_pond" as dock.
+-- ----------------------------------------------------------------------------
+   if ( keyvalues["waterway"] == "mill_pond" ) then
+      keyvalues["waterway"] = "dock"
+   end
+
+-- ----------------------------------------------------------------------------
 -- Supermarkets as normal buildings
 -- In the version of OSM-carto that I use this with, Supermarkets would 
 -- otherwise display as pink, which does not show up over pink retail landuse.

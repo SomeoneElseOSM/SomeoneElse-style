@@ -9,7 +9,7 @@ Process some non-carpeted "floor:material" values the same way as "description:f
 Added fish farms (which may be tagged in several ways) as commercial landuse.
 Added specific icon for leisure=fitness_station.
 Added support for more shop tags.
-Handle river bridges as canal bridges.
+Apply changes from parent repository from https://github.com/gravitystorm/openstreetmap-carto/pull/814 and then reapply changes from https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT/commits/master/water.mss .
 
 ## 03/12/2017 release
 Added support for more shop tags.
