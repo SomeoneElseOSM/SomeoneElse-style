@@ -2235,8 +2235,7 @@ function filter_tags_generic(keyvalues, nokeys)
 -- Mostly these have names that describe the business, so less need for a
 -- specific icon.
 -- ----------------------------------------------------------------------------
-   if (( keyvalues["shop"]         == "beauty"            ) or
-       ( keyvalues["shop"]         == "beauty_salon"      ) or
+   if (( keyvalues["shop"]         == "beauty_salon"      ) or
        ( keyvalues["leisure"]      == "spa"               ) or
        ( keyvalues["shop"]         == "salon"             ) or
        ( keyvalues["shop"]         == "nails"             ) or
@@ -2256,7 +2255,7 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["leisure"]      == "tanning_salon"     ) or
        ( keyvalues["shop"]         == "health_and_beauty" ) or
        ( keyvalues["shop"]         == "beautician"        )) then
-      keyvalues["shop"] = "shopnonspecific"
+      keyvalues["shop"] = "beauty"
    end
 
 -- ----------------------------------------------------------------------------
@@ -2312,8 +2311,7 @@ function filter_tags_generic(keyvalues, nokeys)
 -- gift and other tat shops are rendered generically
 -- Difficult to do an icon for and often the name describes the business.
 -- ----------------------------------------------------------------------------
-   if (( keyvalues["shop"]   == "gift"                ) or
-       ( keyvalues["shop"]   == "souvenir"            ) or
+   if (( keyvalues["shop"]   == "souvenir"            ) or
        ( keyvalues["shop"]   == "souvenirs"           ) or
        ( keyvalues["shop"]   == "leather"             ) or
        ( keyvalues["shop"]   == "luxury"              ) or
@@ -2329,7 +2327,7 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["shop"]   == "beach"               ) or
        ( keyvalues["shop"]   == "magic"               ) or
        ( keyvalues["shop"]   == "fashion_accessories" )) then
-      keyvalues["shop"] = "shopnonspecific"
+      keyvalues["shop"] = "gift"
    end
 
 -- ----------------------------------------------------------------------------
