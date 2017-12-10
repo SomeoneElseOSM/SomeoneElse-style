@@ -1124,14 +1124,12 @@ function filter_tags_generic(keyvalues, nokeys)
 
 
 -- ----------------------------------------------------------------------------
--- As of 21st May 2014, abandoned railways are no longer rendered in the 
--- standard style.  I'll pretend that they're "disused" so that they appear
--- on the map.  Abandoned railways are often major landscape features.
+-- Handle razed railways and old inclined_planes as dismantled.
+-- dismantled, abandoned are now handled separately to disused in roads.mss
 -- ----------------------------------------------------------------------------
-   if (( keyvalues["railway"]  == "dismantled"     ) or
-       ( keyvalues["railway"]  == "abandoned"      ) or
+   if (( keyvalues["railway"]  == "razed"          ) or
        ( keyvalues["historic"] == "inclined_plane" )) then
-      keyvalues["railway"] = "disused"
+      keyvalues["railway"] = "dismantled"
    end
 
 -- ----------------------------------------------------------------------------

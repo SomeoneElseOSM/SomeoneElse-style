@@ -11,7 +11,8 @@ Added specific icon for leisure=fitness_station.
 Added support for more shop tags.
 Apply changes from parent repository from https://github.com/gravitystorm/openstreetmap-carto/pull/814 and then reapply changes from https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT/commits/master/water.mss .
 Changed motorway junction refs to black, as these are used on other roads too.
-	
+Differentiate between railway=disused/abandoned/dismantled etc.
+
 ## 03/12/2017 release
 Added support for more shop tags.
 Render craft=counsellor.
