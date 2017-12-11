@@ -2274,8 +2274,7 @@ function filter_tags_generic(keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
 -- Betting Shops etc.
 -- ----------------------------------------------------------------------------
-   if (( keyvalues["shop"]    == "bookmaker"           ) or
-       ( keyvalues["shop"]    == "bookmakers"          ) or
+   if (( keyvalues["shop"]    == "bookmakers"          ) or
        ( keyvalues["shop"]    == "betting"             ) or
        ( keyvalues["amenity"] == "betting"             ) or
        ( keyvalues["shop"]    == "gambling"            ) or
@@ -2294,7 +2293,7 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["amenity"] == "casino"              ) or
        ( keyvalues["amenity"] == "bingo"               ) or
        ( keyvalues["leisure"] == "bingo"               )) then
-      keyvalues["shop"] = "shopnonspecific"
+      keyvalues["shop"] = "bookmaker"
    end
 
 -- ----------------------------------------------------------------------------
@@ -2410,7 +2409,6 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["shop"]   == "homeware"            ) or
        ( keyvalues["shop"]   == "homewares"           ) or
        ( keyvalues["shop"]   == "home"                ) or
-       ( keyvalues["shop"]   == "furniture"           ) or
        ( keyvalues["shop"]   == "upholsterer"         ) or
        ( keyvalues["shop"]   == "chair"               ) or
        ( keyvalues["shop"]   == "luggage"             ) or
@@ -2427,7 +2425,6 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["shop"]   == "carpet;bed"          ) or
        ( keyvalues["shop"]   == "bed;carpet"          ) or
        ( keyvalues["shop"]   == "carpet; bed"         ) or
-       ( keyvalues["shop"]   == "carpets"             ) or
        ( keyvalues["shop"]   == "country"             ) or
        ( keyvalues["shop"]   == "country_store"       ) or
        ( keyvalues["shop"]   == "equestrian"          ) or
@@ -2500,7 +2497,7 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["craft"]  == "boatbuilder"         ) or
        ( keyvalues["shop"]   == "saddlery"            )) then
       keyvalues["landuse"] = "unnamedcommercial"
-      keyvalues["shop"] = "shopnonspecific"
+      keyvalues["shop"] = "furniture"
    end
 
 -- ----------------------------------------------------------------------------
