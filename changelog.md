@@ -9,7 +9,7 @@ Process some non-carpeted "floor:material" values the same way as "description:f
 Added fish farms (which may be tagged in several ways) as commercial landuse.
 Added specific icon for leisure=fitness_station.
 Added support for more shop tags.
-Apply changes from parent repository from https://github.com/gravitystorm/openstreetmap-carto/pull/814 and then reapply changes from https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT/commits/master/water.mss .
+Apply changes from parent repository from [pull 814](https://github.com/gravitystorm/openstreetmap-carto/pull/814) and then reapply changes from [here](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT/commits/master/water.mss) .
 Changed motorway junction refs to black, as these are used on other roads too.
 Differentiate between railway=disused/abandoned/dismantled etc.
 Added specific icons for shop=beauty and shop=gift.
@@ -92,7 +92,7 @@ Changed other classes of points to render similarly (see the rows in the legend)
 Changed ventilation_shaft to man_made.
 
 ## 18/09/2017 map layer change
-Added German Style layer to https://map.atownsend.org.uk/maps/map/map.html
+Added German Style layer to [this map](https://map.atownsend.org.uk/maps/map/map.html)
 
 ## 14/09/2017 style updates
 Added more feature names.  See Legend for details of current coverage.
