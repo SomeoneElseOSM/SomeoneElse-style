@@ -1256,6 +1256,16 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Map man_made=monument to historic=monument (handled below) if no better tag
+-- exists.
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["man_made"] == "monument" ) and
+       ( keyvalues["tourism"]  == nil        )) then
+      keyvalues["historic"] = "monument"
+      keyvalues["man_made"] = nil
+   end
+   
+-- ----------------------------------------------------------------------------
 -- Add a building tag to "historic=ruins" etc. ways so that buildings.mss can 
 -- process it.  Some shouldn't assume buildings (e.g. "fort" below).
 -- Some use "roof" (which I use for "nearly a building").
