@@ -56,6 +56,7 @@ file_url1=http://download.geofabrik.de/europe/${file_prefix1}-latest.osm.pbf
 #file_prefix1=hampshire
 #file_prefix1=herefordshire
 #file_prefix1=leicestershire
+# No file for Lincolnshire
 #file_prefix1=norfolk
 #file_prefix1=north-yorkshire
 #file_prefix1=northumberland
@@ -64,6 +65,7 @@ file_url1=http://download.geofabrik.de/europe/${file_prefix1}-latest.osm.pbf
 #file_prefix1=shropshire
 #file_prefix1=staffordshire
 #file_prefix1=suffolk
+# No file for Warwickshire
 #file_prefix1=west-yorkshire
 #file_prefix1=worcestershire
 #file_page1=http://download.geofabrik.de/europe/great-britain/england/${file_prefix1}.html

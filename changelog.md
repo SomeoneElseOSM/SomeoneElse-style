@@ -4,7 +4,7 @@ This page describes changes made [here](https://github.com/SomeoneElseOSM/Someon
 ## As yet unreleased.
 Added specific icons for shop=bookmaker and shop=furniture.
 Map man_made=monument to historic=monument (handled below) if no better tag exists.
-Added icon for barrier=door.
+Added icons for barriers door, toll_booth.
 
 ## 11/12/2017 release
 Ensure that wind turbines are shown as wind turbines (and not towers) at all zoom levels.
