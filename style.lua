@@ -1802,15 +1802,18 @@ function filter_tags_generic(keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
 -- There's now a barrier=kissing_gate icon.
 -- Choose which of the two gate icons to used based on tagging.
+-- "sally_port" is mapped to gate largely because of misuse in the data.
 -- ----------------------------------------------------------------------------
    if (( keyvalues["barrier"]   == "swing_gate"            )  or
        ( keyvalues["barrier"]   == "footgate"              )  or
        ( keyvalues["barrier"]   == "hampshire_gate"        )  or
        ( keyvalues["barrier"]   == "bump_gate"             )  or
+       ( keyvalues["barrier"]   == "lych_gate"             )  or
        ( keyvalues["barrier"]   == "lytch_gate"            )  or
        ( keyvalues["barrier"]   == "horse_jump"            )  or
        ( keyvalues["barrier"]   == "flood_gate"            )  or
-       ( keyvalues["barrier"]   == "ramblers_gate"         )) then
+       ( keyvalues["barrier"]   == "ramblers_gate"         )  or
+       ( keyvalues["barrier"]   == "sally_port"            )) then
       keyvalues["barrier"] = "gate"
    end
 
@@ -3504,8 +3507,11 @@ function filter_tags_node (keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
 -- Map non-linear unknown barriers to bollard
 -- ----------------------------------------------------------------------------
-   if (( keyvalues["barrier"] == "yes"     ) or
-       ( keyvalues["barrier"] == "barrier" )) then
+   if (( keyvalues["barrier"] == "yes"           ) or
+       ( keyvalues["barrier"] == "barrier"       ) or
+       ( keyvalues["barrier"] == "tank_trap"     ) or
+       ( keyvalues["barrier"] == "tank_traps"    ) or
+       ( keyvalues["barrier"] == "dragons_teeth" )) then
       keyvalues["barrier"] = "bollard"
    end
 
@@ -3549,12 +3555,22 @@ function filter_tags_way (keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Map linear tank traps to wall
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["barrier"] == "tank_trap"     ) or
+       ( keyvalues["barrier"] == "tank_traps"    ) or
+       ( keyvalues["barrier"] == "dragons_teeth" )) then
+      keyvalues["barrier"] = "wall"
+   end
+
+-- ----------------------------------------------------------------------------
 -- Map linear unknown barriers to fence.
 -- ----------------------------------------------------------------------------
    if (( keyvalues["barrier"] == "yes"     ) or
        ( keyvalues["barrier"] == "barrier" )) then
       keyvalues["barrier"] = "fence"
    end
+
 -- ----------------------------------------------------------------------------
 -- End of AJT way-only additions.
 -- ----------------------------------------------------------------------------

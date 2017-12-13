@@ -66,6 +66,8 @@ file_url1=http://download.geofabrik.de/europe/${file_prefix1}-latest.osm.pbf
 #file_prefix1=shropshire
 #file_prefix1=staffordshire
 #file_prefix1=suffolk
+# No file for Sussex
+#file_prefix1=surrey
 # No file for Warwickshire
 #file_prefix1=west-yorkshire
 #file_prefix1=worcestershire

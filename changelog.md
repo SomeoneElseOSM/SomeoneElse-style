@@ -6,6 +6,8 @@ Added specific icons for shop=bookmaker and shop=furniture.
 Map man_made=monument to historic=monument (handled below) if no better tag exists.
 Added icons for barriers door, toll_booth.
 Treat linear unknown barriers as "fence" and point ones as "bollard".
+Treat linear unknown tank traps as "wall" and point ones as "bollard".
+Treat sally_port as gate.
 If a pedestrian crossing includes traffic lights, render as traffic_signals.
 
 ## 11/12/2017 release
