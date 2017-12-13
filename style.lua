@@ -1795,7 +1795,9 @@ function filter_tags_generic(keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
 -- barrier=horse_jump is used almost exclusively on ways, so map to fence.
 -- ----------------------------------------------------------------------------
-   if ( keyvalues["barrier"] == "horse_jump" ) then
+   if (( keyvalues["barrier"] == "horse_jump"     ) or
+       ( keyvalues["barrier"] == "guard_retail"   ) or
+       ( keyvalues["barrier"] == "traffic_island" )) then
       keyvalues["barrier"] = "fence"
    end
 
@@ -1813,13 +1815,29 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["barrier"]   == "horse_jump"            )  or
        ( keyvalues["barrier"]   == "flood_gate"            )  or
        ( keyvalues["barrier"]   == "ramblers_gate"         )  or
-       ( keyvalues["barrier"]   == "sally_port"            )) then
+       ( keyvalues["barrier"]   == "sally_port"            )  or
+       ( keyvalues["barrier"]   == "pengate"               )  or
+       ( keyvalues["barrier"]   == "pengates"              )  or
+       ( keyvalues["barrier"]   == "gate;stile"            )  or
+       ( keyvalues["barrier"]   == "cattle_grid;gate"      )  or
+       ( keyvalues["barrier"]   == "gate;kissing_gate"     )  or
+       ( keyvalues["barrier"]   == "pull_apart_gate"       )) then
       keyvalues["barrier"] = "gate"
    end
 
    if (( keyvalues["barrier"]   == "turnstile"             )  or
-       ( keyvalues["barrier"]   == "full-height_turnstile" )) then
+       ( keyvalues["barrier"]   == "full-height_turnstile" )  or
+       ( keyvalues["barrier"]   == "kissing_gate;gate"     )) then
       keyvalues["barrier"] = "kissing_gate"
+   end
+
+   if (( keyvalues["barrier"] == "border_control"   ) or
+       ( keyvalues["barrier"] == "ticket_barrier"   ) or
+       ( keyvalues["barrier"] == "ticket"           ) or
+       ( keyvalues["barrier"] == "lift_gate,lights" ) or
+       ( keyvalues["barrier"] == "security_control" ) or
+       ( keyvalues["barrier"] == "checkpoint"       )) then
+      keyvalues["barrier"] = "lift_gate"
    end
 
 -- ----------------------------------------------------------------------------
@@ -1835,7 +1853,9 @@ function filter_tags_generic(keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
    if (( keyvalues["barrier"]   == "chicane"               )  or
        ( keyvalues["barrier"]   == "squeeze"               )  or
-       ( keyvalues["barrier"]   == "motorcycle_barrier"    )) then
+       ( keyvalues["barrier"]   == "motorcycle_barrier"    )  or
+       ( keyvalues["barrier"]   == "horse_barrier"         )  or
+       ( keyvalues["barrier"]   == "a_frame"               )) then
       keyvalues["barrier"] = "cycle_barrier"
    end
 
@@ -1850,7 +1870,8 @@ function filter_tags_generic(keyvalues, nokeys)
    if (( keyvalues["barrier"]   == "v_stile"         )  or
        ( keyvalues["barrier"]   == "squeeze_stile"   )  or
        ( keyvalues["barrier"]   == "squeeze_point"   )  or
-       ( keyvalues["barrier"]   == "step_over"       )) then
+       ( keyvalues["barrier"]   == "step_over"       )  or
+       ( keyvalues["barrier"]   == "stile;gate"      )) then
       keyvalues["barrier"] = "stile"
    end
 
@@ -3498,20 +3519,32 @@ function filter_tags_node (keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
 -- AJT node-only additions.
 -- ----------------------------------------------------------------------------
-   if (( keyvalues["ford"] == "yes"             ) or
-       ( keyvalues["ford"] == "stepping_stones" ))then
+   if (( keyvalues["ford"]    == "yes"             ) or
+       ( keyvalues["ford"]    == "stepping_stones" ) or
+       ( keyvalues["barrier"] == "stepping_stones" ))then
       keyvalues["highway"] = "ford"
       keyvalues["ford"]    = nil
    end
 
 -- ----------------------------------------------------------------------------
--- Map non-linear unknown barriers to bollard
+-- Map non-linear unknown (and some known) barriers to bollard
 -- ----------------------------------------------------------------------------
-   if (( keyvalues["barrier"] == "yes"           ) or
-       ( keyvalues["barrier"] == "barrier"       ) or
-       ( keyvalues["barrier"] == "tank_trap"     ) or
-       ( keyvalues["barrier"] == "tank_traps"    ) or
-       ( keyvalues["barrier"] == "dragons_teeth" )) then
+   if (( keyvalues["barrier"] == "yes"            ) or
+       ( keyvalues["barrier"] == "barrier"        ) or
+       ( keyvalues["barrier"] == "tank_trap"      ) or
+       ( keyvalues["barrier"] == "tank_traps"     ) or
+       ( keyvalues["barrier"] == "dragons_teeth"  ) or
+       ( keyvalues["barrier"] == "bollards"       ) or
+       ( keyvalues["barrier"] == "bus_trap"       ) or
+       ( keyvalues["barrier"] == "car_trap"       ) or
+       ( keyvalues["barrier"] == "rising_bollard" ) or
+       ( keyvalues["barrier"] == "steps"          ) or
+       ( keyvalues["barrier"] == "step"           ) or
+       ( keyvalues["barrier"] == "post"           ) or
+       ( keyvalues["barrier"] == "stone"          ) or
+       ( keyvalues["barrier"] == "hoarding"       ) or
+       ( keyvalues["barrier"] == "sump_buster"    ) or
+       ( keyvalues["barrier"] == "gate_pier"      )) then
       keyvalues["barrier"] = "bollard"
    end
 
@@ -3559,15 +3592,20 @@ function filter_tags_way (keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
    if (( keyvalues["barrier"] == "tank_trap"     ) or
        ( keyvalues["barrier"] == "tank_traps"    ) or
-       ( keyvalues["barrier"] == "dragons_teeth" )) then
+       ( keyvalues["barrier"] == "dragons_teeth" ) or
+       ( keyvalues["barrier"] == "obstruction"   )) then
       keyvalues["barrier"] = "wall"
    end
 
 -- ----------------------------------------------------------------------------
 -- Map linear unknown barriers to fence.
 -- ----------------------------------------------------------------------------
-   if (( keyvalues["barrier"] == "yes"     ) or
-       ( keyvalues["barrier"] == "barrier" )) then
+   if (( keyvalues["barrier"] == "yes"             ) or
+       ( keyvalues["barrier"] == "barrier"         ) or
+       ( keyvalues["barrier"] == "steps"           ) or
+       ( keyvalues["barrier"] == "step"            ) or
+       ( keyvalues["barrier"] == "hoarding"        ) or
+       ( keyvalues["barrier"] == "hand_rail_fence" )) then
       keyvalues["barrier"] = "fence"
    end
 

@@ -55,6 +55,7 @@ file_url1=http://download.geofabrik.de/europe/${file_prefix1}-latest.osm.pbf
 #file_prefix1=greater-manchester
 #file_prefix1=hampshire
 #file_prefix1=herefordshire
+#file_prefix1=kent
 #file_prefix1=leicestershire
 # No file for Lincolnshire
 #file_prefix1=norfolk

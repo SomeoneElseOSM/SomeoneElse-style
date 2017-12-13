@@ -7,8 +7,10 @@ Map man_made=monument to historic=monument (handled below) if no better tag exis
 Added icons for barriers door, toll_booth.
 Treat linear unknown barriers as "fence" and point ones as "bollard".
 Treat linear unknown tank traps as "wall" and point ones as "bollard".
-Treat sally_port as gate.
+Treat barrier=sally_port and various other gate types as gate.
+Mapped barrier=border_control as lift_gate.
 If a pedestrian crossing includes traffic lights, render as traffic_signals.
+Moved historic=ruins to the non-building historic rendering.
 
 ## 11/12/2017 release
 Ensure that wind turbines are shown as wind turbines (and not towers) at all zoom levels.
