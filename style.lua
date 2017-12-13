@@ -1793,6 +1793,13 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- barrier=horse_jump is used almost exclusively on ways, so map to fence.
+-- ----------------------------------------------------------------------------
+   if ( keyvalues["barrier"] == "horse_jump" ) then
+      keyvalues["barrier"] = "fence"
+   end
+
+-- ----------------------------------------------------------------------------
 -- There's now a barrier=kissing_gate icon.
 -- Choose which of the two gate icons to used based on tagging.
 -- ----------------------------------------------------------------------------
@@ -3491,6 +3498,15 @@ function filter_tags_node (keyvalues, nokeys)
    if (( keyvalues["ford"] == "yes"             ) or
        ( keyvalues["ford"] == "stepping_stones" ))then
       keyvalues["highway"] = "ford"
+      keyvalues["ford"]    = nil
+   end
+
+-- ----------------------------------------------------------------------------
+-- Map non-linear unknown barriers to bollard
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["barrier"] == "yes"     ) or
+       ( keyvalues["barrier"] == "barrier" )) then
+      keyvalues["barrier"] = "bollard"
    end
 
 -- ----------------------------------------------------------------------------
@@ -3530,6 +3546,14 @@ function filter_tags_way (keyvalues, nokeys)
    if (( keyvalues["ford"] == "yes"             ) or
        ( keyvalues["ford"] == "stepping_stones" ))then
       keyvalues["barrier"] = "gate"
+   end
+
+-- ----------------------------------------------------------------------------
+-- Map linear unknown barriers to fence.
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["barrier"] == "yes"     ) or
+       ( keyvalues["barrier"] == "barrier" )) then
+      keyvalues["barrier"] = "fence"
    end
 -- ----------------------------------------------------------------------------
 -- End of AJT way-only additions.

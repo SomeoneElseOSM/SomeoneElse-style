@@ -58,6 +58,7 @@ file_url1=http://download.geofabrik.de/europe/${file_prefix1}-latest.osm.pbf
 #file_prefix1=leicestershire
 # No file for Lincolnshire
 #file_prefix1=norfolk
+# No file for Northhamptonshire
 #file_prefix1=north-yorkshire
 #file_prefix1=northumberland
 #file_prefix1=nottinghamshire
