@@ -1535,6 +1535,27 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Various types of traffic light controlled crossings
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["crossing"] == "traffic_signals"         ) or
+       ( keyvalues["crossing"] == "toucan"                  ) or
+       ( keyvalues["crossing"] == "puffin"                  ) or
+       ( keyvalues["crossing"] == "traffic_signals;island"  ) or
+       ( keyvalues["crossing"] == "traffic_lights"          ) or
+       ( keyvalues["crossing"] == "island;traffic_signals"  ) or
+       ( keyvalues["crossing"] == "signals"                 ) or
+       ( keyvalues["crossing"] == "pegasus"                 ) or
+       ( keyvalues["crossing"] == "pedestrian_signals"      ) or
+       ( keyvalues["crossing"] == "traffic_signals; island" ) or
+       ( keyvalues["crossing"] == "light_controlled"        ) or
+       ( keyvalues["crossing"] == "pelican;island"          ) or
+       ( keyvalues["crossing"] == "light controlled"        ) or
+       ( keyvalues["crossing"] == "traffic_signals;pelican" )) then
+      keyvalues["highway"] = "traffic_signals"
+      keyvalues["crossing"] = nil
+   end
+
+-- ----------------------------------------------------------------------------
 -- highway=byway to track
 -- The "bywayness" of something should be handled by designation now.  byway
 -- isn't otherwise rendered (and really should no longer be used), so change 
