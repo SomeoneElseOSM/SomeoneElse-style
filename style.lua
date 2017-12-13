@@ -1266,9 +1266,9 @@ function filter_tags_generic(keyvalues, nokeys)
    end
    
 -- ----------------------------------------------------------------------------
--- Add a building tag to "historic=ruins" etc. ways so that buildings.mss can 
--- process it.  Some shouldn't assume buildings (e.g. "fort" below).
--- Some use "roof" (which I use for "nearly a building").
+-- Add a building tag to historic items that are likely buildings so that
+-- buildings.mss can process it.  Some shouldn't assume buildings (e.g. "fort"
+-- below).  Some use "roof" (which I use for "nearly a building" elsewhere).
 -- It's sent through as "nonspecific".
 -- "stone" has a building tag added because some are mapped as closed ways.
 -- ----------------------------------------------------------------------------
@@ -1298,13 +1298,13 @@ function filter_tags_generic(keyvalues, nokeys)
       keyvalues["historic"] = "nonspecific"
    end
 
-   if (( keyvalues["historic"] == "ruins" )  or
-       ( keyvalues["historic"] == "wreck" )) then
+   if ( keyvalues["historic"] == "wreck" ) then
       keyvalues["building"] = "roof"
       keyvalues["historic"] = "nonspecific"
    end
    
-   if (( keyvalues["historic"] == "fort"              ) or
+   if (( keyvalues["historic"] == "ruins"             ) or
+       ( keyvalues["historic"] == "fort"              ) or
        ( keyvalues["historic"] == "ringfort"          ) or
        ( keyvalues["historic"] == "earthworks"        ) or
        ( keyvalues["historic"] == "motte"             ) or
