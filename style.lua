@@ -1770,13 +1770,16 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
--- man_mande=embankment and natural=cliff displays as a non-sided cliff
+-- man_made=embankment and natural=cliff displays as a non-sided cliff
 -- (direction is important)
 -- man_made=levee displays as a two-sided cliff.  
 -- Often it's combined with highway though, and that is handled separately.
 -- In that case it's passed through to the stylesheet as bridge=levee.
 -- ----------------------------------------------------------------------------
    if ((( keyvalues["barrier"]  == "flood_bank" )  or
+        ( keyvalues["barrier"]  == "bund"       )  or
+        ( keyvalues["barrier"]  == "mound"      )  or
+        ( keyvalues["barrier"]  == "ridge"      )  or
         ( keyvalues["man_made"] == "dyke"       )  or
         ( keyvalues["man_made"] == "levee"      )) and
        (  keyvalues["highway"]  == nil           )) then
@@ -1821,7 +1824,8 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["barrier"]   == "gate;stile"            )  or
        ( keyvalues["barrier"]   == "cattle_grid;gate"      )  or
        ( keyvalues["barrier"]   == "gate;kissing_gate"     )  or
-       ( keyvalues["barrier"]   == "pull_apart_gate"       )) then
+       ( keyvalues["barrier"]   == "pull_apart_gate"       )  or
+       ( keyvalues["barrier"]   == "snow_gate"             )) then
       keyvalues["barrier"] = "gate"
    end
 
@@ -1836,7 +1840,8 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["barrier"] == "ticket"           ) or
        ( keyvalues["barrier"] == "lift_gate,lights" ) or
        ( keyvalues["barrier"] == "security_control" ) or
-       ( keyvalues["barrier"] == "checkpoint"       )) then
+       ( keyvalues["barrier"] == "checkpoint"       ) or
+       ( keyvalues["barrier"] == "gatehouse"        )) then
       keyvalues["barrier"] = "lift_gate"
    end
 
@@ -3544,7 +3549,9 @@ function filter_tags_node (keyvalues, nokeys)
        ( keyvalues["barrier"] == "stone"          ) or
        ( keyvalues["barrier"] == "hoarding"       ) or
        ( keyvalues["barrier"] == "sump_buster"    ) or
-       ( keyvalues["barrier"] == "gate_pier"      )) then
+       ( keyvalues["barrier"] == "gate_pier"      ) or
+       ( keyvalues["barrier"] == "gate_post"      ) or
+       ( keyvalues["barrier"] == "pole"           )) then
       keyvalues["barrier"] = "bollard"
    end
 
@@ -3593,7 +3600,8 @@ function filter_tags_way (keyvalues, nokeys)
    if (( keyvalues["barrier"] == "tank_trap"     ) or
        ( keyvalues["barrier"] == "tank_traps"    ) or
        ( keyvalues["barrier"] == "dragons_teeth" ) or
-       ( keyvalues["barrier"] == "obstruction"   )) then
+       ( keyvalues["barrier"] == "obstruction"   ) or
+       ( keyvalues["barrier"] == "sea_wall"      )) then
       keyvalues["barrier"] = "wall"
    end
 
