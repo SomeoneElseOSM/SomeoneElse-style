@@ -12,6 +12,7 @@ Mapped barrier=border_control as lift_gate.
 If a pedestrian crossing includes traffic lights, render as traffic_signals.
 Moved historic=ruins to the non-building historic rendering.
 Moved node barriers to POI area of legend and moved ford, passing place etc. up a row.
+Tidied up linear barriers, made fence and other default ones explicit, made wall wider.
 
 ## 11/12/2017 release
 Ensure that wind turbines are shown as wind turbines (and not towers) at all zoom levels.
