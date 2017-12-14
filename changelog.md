@@ -15,6 +15,7 @@ Moved node barriers to POI area of legend and moved ford, passing place etc. up 
 Tidied up linear barriers, made fence and other default ones explicit, made wall wider.
 Made hedge a proportionate width at >z20, also increased fence and wall.  
 Added cattle_grid rendering.
+Made larger versions of some point barrier symbols to fit nicely into the larger linear barriers.
 
 ## 11/12/2017 release
 Ensure that wind turbines are shown as wind turbines (and not towers) at all zoom levels.
