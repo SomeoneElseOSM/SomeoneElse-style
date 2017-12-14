@@ -567,6 +567,15 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Remove some combinations of bridge
+-- ----------------------------------------------------------------------------
+   if ((  keyvalues["bridge"]  == "yes"          ) and
+       (( keyvalues["barrier"] == "cattle_grid" )  or
+        ( keyvalues["barrier"] == "stile"       ))) then
+      keyvalues["barrier"] = nil
+   end
+
+-- ----------------------------------------------------------------------------
 -- Bridge structures - display as building=roof.
 -- Also farmyard "bunker silos".
 -- ----------------------------------------------------------------------------
