@@ -1809,8 +1809,17 @@ function filter_tags_generic(keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
    if (( keyvalues["barrier"] == "horse_jump"     ) or
        ( keyvalues["barrier"] == "guard_retail"   ) or
-       ( keyvalues["barrier"] == "traffic_island" )) then
+       ( keyvalues["barrier"] == "traffic_island" ) or
+       ( keyvalues["barrier"] == "wire_fence"     )) then
       keyvalues["barrier"] = "fence"
+   end
+
+-- ----------------------------------------------------------------------------
+-- barrier=ditch; handle as waterway=ditch.
+-- ----------------------------------------------------------------------------
+   if ( keyvalues["barrier"] == "ditch" ) then
+      keyvalues["waterway"] = "ditch"
+      keyvalues["barrier"]  = nil
    end
 
 -- ----------------------------------------------------------------------------
@@ -1872,11 +1881,6 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["barrier"]   == "a_frame"               )) then
       keyvalues["barrier"] = "cycle_barrier"
    end
-
--- ----------------------------------------------------------------------------
--- Note that there is a catch-all for barriers so there's no need to 
--- specifically catch e.g. "barrier=wire_fence" on ways
--- ----------------------------------------------------------------------------
 
 -- ----------------------------------------------------------------------------
 -- render barrier=v_stile as barrier=stile
