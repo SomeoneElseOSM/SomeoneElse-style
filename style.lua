@@ -1806,11 +1806,15 @@ function filter_tags_generic(keyvalues, nokeys)
 
 -- ----------------------------------------------------------------------------
 -- barrier=horse_jump is used almost exclusively on ways, so map to fence.
+-- Also some other barriers.
 -- ----------------------------------------------------------------------------
    if (( keyvalues["barrier"] == "horse_jump"     ) or
        ( keyvalues["barrier"] == "guard_retail"   ) or
        ( keyvalues["barrier"] == "traffic_island" ) or
-       ( keyvalues["barrier"] == "wire_fence"     )) then
+       ( keyvalues["barrier"] == "wire_fence"     ) or
+       ( keyvalues["barrier"] == "wood_fence"     ) or
+       ( keyvalues["barrier"] == "guard_rail"     ) or
+       ( keyvalues["barrier"] == "railing"        )) then
       keyvalues["barrier"] = "fence"
    end
 
@@ -1833,7 +1837,6 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["barrier"]   == "bump_gate"             )  or
        ( keyvalues["barrier"]   == "lych_gate"             )  or
        ( keyvalues["barrier"]   == "lytch_gate"            )  or
-       ( keyvalues["barrier"]   == "horse_jump"            )  or
        ( keyvalues["barrier"]   == "flood_gate"            )  or
        ( keyvalues["barrier"]   == "ramblers_gate"         )  or
        ( keyvalues["barrier"]   == "sally_port"            )  or
@@ -1866,8 +1869,7 @@ function filter_tags_generic(keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
 -- render barrier=bar as barrier=horse_stile (Norfolk)
 -- ----------------------------------------------------------------------------
-   if (( keyvalues["barrier"]   == "bar"                   )  or
-       ( keyvalues["barrier"]   == "chain"                 )) then
+   if ( keyvalues["barrier"] == "bar" ) then
       keyvalues["barrier"] = "horse_stile"
    end
 
@@ -3569,6 +3571,14 @@ function filter_tags_node (keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Render barrier=chain on nodes as horse_stile.  At least sone of the time 
+-- it's correct.
+-- ----------------------------------------------------------------------------
+   if ( keyvalues["barrier"] == "chain" ) then
+      keyvalues["barrier"] = "horse_stile"
+   end
+
+-- ----------------------------------------------------------------------------
 -- End of AJT node-only additions.
 -- ----------------------------------------------------------------------------
 
@@ -3608,6 +3618,14 @@ function filter_tags_way (keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Treat a linear "door" as "gate"
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["barrier"] == "door"       ) or
+       ( keyvalues["barrier"] == "swing_gate" )) then
+      keyvalues["barrier"] = "gate"
+   end
+
+-- ----------------------------------------------------------------------------
 -- Map linear tank traps, and some others, to wall
 -- ----------------------------------------------------------------------------
    if (( keyvalues["barrier"] == "tank_trap"     ) or
@@ -3627,7 +3645,9 @@ function filter_tags_way (keyvalues, nokeys)
        ( keyvalues["barrier"] == "steps"           ) or
        ( keyvalues["barrier"] == "step"            ) or
        ( keyvalues["barrier"] == "hoarding"        ) or
-       ( keyvalues["barrier"] == "hand_rail_fence" )) then
+       ( keyvalues["barrier"] == "hand_rail_fence" ) or
+       ( keyvalues["barrier"] == "horse_stile"     ) or
+       ( keyvalues["barrier"] == "chain"           )) then
       keyvalues["barrier"] = "fence"
    end
 
