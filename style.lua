@@ -577,11 +577,14 @@ function filter_tags_generic(keyvalues, nokeys)
 
 -- ----------------------------------------------------------------------------
 -- Bridge structures - display as building=roof.
--- Also farmyard "bunker silos".
+-- Also farmyard "bunker silos" and canopies.
 -- ----------------------------------------------------------------------------
-   if (( keyvalues["man_made"] == "bridge"      ) or
-       ( keyvalues["man_made"] == "bunker_silo" )) then
-      keyvalues["building"] = "roof"
+   if (( keyvalues["man_made"]      == "bridge"      ) or
+       ( keyvalues["man_made"]      == "bunker_silo" ) or
+       ( keyvalues["building"]      == "canopy"      ) or
+       ( keyvalues["building:type"] == "canopy"      )) then
+      keyvalues["building"]      = "roof"
+      keyvalues["building:type"] = nil
    end
 
 -- ----------------------------------------------------------------------------

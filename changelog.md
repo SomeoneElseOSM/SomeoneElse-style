@@ -1,6 +1,9 @@
 # Changes made to this rendering
 This page describes changes made [here](https://github.com/SomeoneElseOSM/SomeoneElse-style), [here](https://github.com/SomeoneElseOSM/SomeoneElse-style-legend) and [here](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT), visible [here](http://map.atownsend.org.uk/maps/map/map.html).
 
+## as yet unreleased
+Render building=canopy as building=roof
+
 ## 16/12/2017 release
 Added specific icons for shop=bookmaker and shop=furniture.
 Map man_made=monument to historic=monument (handled below) if no better tag exists.
