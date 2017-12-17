@@ -3650,7 +3650,11 @@ function filter_tags_way (keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
--- Map linear unknown barriers to fence.
+-- Map linear unknown and other barriers to fence.
+-- In some cases this is a bit of a stretch - you can walk up some steps, or
+-- through a cycle barrier for example.  Fence was chosen as the "current
+-- minimal thickness linear barrier".  If a narrower one is introduced it
+-- would make sense to make traversable ones in this list to that.
 -- ----------------------------------------------------------------------------
    if (( keyvalues["barrier"] == "yes"             ) or
        ( keyvalues["barrier"] == "barrier"         ) or
@@ -3661,7 +3665,8 @@ function filter_tags_way (keyvalues, nokeys)
        ( keyvalues["barrier"] == "horse_stile"     ) or
        ( keyvalues["barrier"] == "chain"           ) or
        ( keyvalues["barrier"] == "stile"           ) or
-       ( keyvalues["barrier"] == "v_stile"         )) then
+       ( keyvalues["barrier"] == "v_stile"         ) or
+       ( keyvalues["barrier"] == "cycle_barrier"   )) then
       keyvalues["barrier"] = "fence"
    end
 
