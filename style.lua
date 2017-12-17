@@ -128,7 +128,8 @@ function filter_tags_generic(keyvalues, nokeys)
       end
    end
 
-   if ( keyvalues["highway"] == "track" ) then
+   if (( keyvalues["highway"] == "track"  ) or
+       ( keyvalues["highway"] == "gallop" )) then
       keyvalues["highway"] = "pathwide"
    end
 
