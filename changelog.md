@@ -2,7 +2,9 @@
 This page describes changes made [here](https://github.com/SomeoneElseOSM/SomeoneElse-style), [here](https://github.com/SomeoneElseOSM/SomeoneElse-style-legend) and [here](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT), visible [here](http://map.atownsend.org.uk/maps/map/map.html).
 
 ## as yet unreleased
-Render building=canopy as building=roof
+Render building=canopy as building=roof.
+Change name of motorway junctions to black (to match the ref).
+Render ncn and rcn in a similar way to nwn, rwn and lwn, except use the ref as the label (unless National Byway, in which case the name is needed to inclde loop info).
 
 ## 16/12/2017 release
 Added specific icons for shop=bookmaker and shop=furniture.
