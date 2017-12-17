@@ -10,6 +10,7 @@ Render highway=waymarker as tourism=information;information=route_marker.
 Moved highway=road to a lower z_order.
 Render linear cycle barriers as fence.
 Removed catch-all for linear (but not area) barriers.
+Added linear barriers to legend.
 
 ## 16/12/2017 release
 Added specific icons for shop=bookmaker and shop=furniture.
