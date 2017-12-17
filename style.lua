@@ -1888,10 +1888,9 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
--- render barrier=v_stile as barrier=stile
+-- render various synonyms for stile as barrier=stile
 -- ----------------------------------------------------------------------------
-   if (( keyvalues["barrier"]   == "v_stile"         )  or
-       ( keyvalues["barrier"]   == "squeeze_stile"   )  or
+   if (( keyvalues["barrier"]   == "squeeze_stile"   )  or
        ( keyvalues["barrier"]   == "squeeze_point"   )  or
        ( keyvalues["barrier"]   == "step_over"       )  or
        ( keyvalues["barrier"]   == "stile;gate"      )) then
@@ -3582,6 +3581,13 @@ function filter_tags_node (keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Render barrier=v_stile on nodes as stile.  
+-- ----------------------------------------------------------------------------
+   if ( keyvalues["barrier"] == "v_stile" ) then
+      keyvalues["barrier"] = "stile"
+   end
+
+-- ----------------------------------------------------------------------------
 -- End of AJT node-only additions.
 -- ----------------------------------------------------------------------------
 
@@ -3650,7 +3656,9 @@ function filter_tags_way (keyvalues, nokeys)
        ( keyvalues["barrier"] == "hoarding"        ) or
        ( keyvalues["barrier"] == "hand_rail_fence" ) or
        ( keyvalues["barrier"] == "horse_stile"     ) or
-       ( keyvalues["barrier"] == "chain"           )) then
+       ( keyvalues["barrier"] == "chain"           ) or
+       ( keyvalues["barrier"] == "stile"           ) or
+       ( keyvalues["barrier"] == "v_stile"         )) then
       keyvalues["barrier"] = "fence"
    end
 
