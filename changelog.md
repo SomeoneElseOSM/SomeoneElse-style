@@ -5,7 +5,7 @@ This page describes changes made [here](https://github.com/SomeoneElseOSM/Someon
 Render building=canopy as building=roof.
 Change name of motorway junctions to black (to match the ref).
 Render ncn and rcn in a similar way to nwn, rwn and lwn, except use the ref as the label (unless National Byway, in which case the name is needed to inclde loop info).  Also nhn, and add to legend.
-Render gallop as pathwide (track).
+Render highway=unsurfaced and gallop as pathwide (track).
 Render highway=waymarker as tourism=information;information=route_marker.
 
 ## 16/12/2017 release
