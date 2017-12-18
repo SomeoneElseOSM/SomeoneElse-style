@@ -11,6 +11,7 @@ Moved highway=road to a lower z_order.
 Render linear cycle barriers as fence.
 Removed catch-all for linear (but not area) barriers.
 Added linear barriers to legend.
+Long fords on tertiary and below are now rendered with a water-coloured casing.
 
 ## 16/12/2017 release
 Added specific icons for shop=bookmaker and shop=furniture.

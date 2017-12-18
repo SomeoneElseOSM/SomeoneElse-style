@@ -21,7 +21,7 @@ function add_z_order(keyvalues)
       { 'bridge', 'yes', 10, 0 }, { 'bridge', 'true', 10, 0 }, { 'bridge', 1, 10, 0 },
       { 'tunnel', 'yes', -10, 0}, { 'tunnel', 'true', -10, 0}, { 'tunnel', 1, -10, 0}, 
       { 'highway', 'road', 2, 0 }, 
-      { 'highway', 'unclassified', 3, 0 }, { 'highway', 'unclassified_sidewalk', 3, 0 }, { 'highway', 'unclassified_verge', 3, 0 },
+      { 'highway', 'unclassified', 3, 0 }, { 'highway', 'unclassified_sidewalk', 3, 0 }, { 'highway', 'unclassified_verge', 3, 0 }, { 'highway', 'unclassified_ford', 3, 0 },
       { 'highway', 'residential', 3, 0 }, 
       { 'highway', 'tertiary_link', 4, 0}, { 'highway', 'tertiary', 4, 0}, { 'highway', 'tertiary_sidewalk', 4, 0}, { 'highway', 'tertiary_verge', 4, 0},
       { 'highway', 'secondary_link', 6, 1}, { 'highway', 'secondary', 6, 1}, { 'highway', 'secondary_sidewalk', 6, 1}, { 'highway', 'secondary_verge', 6, 1},
@@ -360,6 +360,28 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Use unclassified_ford to indicate ford
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["highway"] == "unclassified"      ) or 
+       ( keyvalues["highway"] == "unclassified_link" ) or
+       ( keyvalues["highway"] == "residential"       ) or
+       ( keyvalues["highway"] == "residential_link"  )) then
+      if ( keyvalues["ford"] == "yes" ) then
+          keyvalues["highway"] = "unclassified_ford"
+      end
+   end
+
+-- ----------------------------------------------------------------------------
+-- Use service_ford to indicate ford
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["highway"] == "service"      ) or
+       ( keyvalues["highway"] == "service_link" )) then
+      if ( keyvalues["ford"] == "yes" ) then
+          keyvalues["highway"] = "service_ford"
+      end
+   end
+
+-- ----------------------------------------------------------------------------
 -- Use tertiary_sidewalk to indicate sidewalk
 -- ----------------------------------------------------------------------------
    if (( keyvalues["highway"] == "tertiary"      ) or 
@@ -401,6 +423,16 @@ function filter_tags_generic(keyvalues, nokeys)
           ( keyvalues["verge"] == "shared"         ) or 
           ( keyvalues["verge"] == "yes"            )) then
           keyvalues["highway"] = "tertiary_verge"
+      end
+   end
+
+-- ----------------------------------------------------------------------------
+-- Use tertiary_ford to indicate ford
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["highway"] == "tertiary"      ) or 
+       ( keyvalues["highway"] == "tertiary_link" )) then
+      if ( keyvalues["ford"] == "yes" ) then
+          keyvalues["highway"] = "tertiary_ford"
       end
    end
 
@@ -3626,7 +3658,7 @@ function filter_tags_way (keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
    if (( keyvalues["ford"] == "yes"             ) or
        ( keyvalues["ford"] == "stepping_stones" ))then
-      keyvalues["barrier"] = "gate"
+      keyvalues["barrier"] = "ford"
    end
 
 -- ----------------------------------------------------------------------------
