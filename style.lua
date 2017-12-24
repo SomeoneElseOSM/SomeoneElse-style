@@ -3126,8 +3126,7 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["emergency"] == "lifeboat_station"        ) or
        ( keyvalues["emergency"] == "lifeboat_base"           ) or
        ( keyvalues["amenity"]   == "coast_guard"             ) or
-       ( keyvalues["amenity"]   == "monastery"               ) or
-       ( keyvalues["amenity"]   == "convent"                 )) then
+       ( keyvalues["amenity"]   == "archive"                 )) then
       keyvalues["landuse"] = "unnamedcommercial"
       keyvalues["office"]  = "nonspecific"
    end
@@ -3193,7 +3192,9 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["office"]  == "coworking_space"         ) or
        ( keyvalues["office"]  == "serviced_offices"        ) or
        ( keyvalues["amenity"] == "studio"                  ) or
-       ( keyvalues["amenity"] == "prison"                  )) then
+       ( keyvalues["amenity"] == "prison"                  ) or
+       ( keyvalues["amenity"] == "monastery"               ) or
+       ( keyvalues["amenity"] == "convent"                 )) then
       keyvalues["landuse"] = "unnamedcommercial"
       keyvalues["office"] = "nonspecific"
    end
