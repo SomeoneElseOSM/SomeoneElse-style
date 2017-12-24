@@ -1,7 +1,10 @@
 # Changes made to this rendering
 This page describes changes made [here](https://github.com/SomeoneElseOSM/SomeoneElse-style), [here](https://github.com/SomeoneElseOSM/SomeoneElse-style-legend) and [here](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT), visible [here](http://map.atownsend.org.uk/maps/map/map.html).
 
-## 19/12/2017
+## As yet unreleased
+Ensure that "agricultural" etc. are changed to "private" before "private is checked against "designation".
+
+## 19/12/2017 release
 Render building=canopy as building=roof.
 Change name of motorway junctions to black (to match the ref).
 Render ncn and rcn in a similar way to nwn, rwn and lwn, except use the ref as the label (unless National Byway, in which case the name is needed to inclde loop info).  Also nhn, and add to legend.

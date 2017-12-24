@@ -288,6 +288,16 @@ function filter_tags_generic(keyvalues, nokeys)
       end
    end
 
+-- ----------------------------------------------------------------------------
+-- Treat access=permit as access-private
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["access"]  == "permit"       ) or
+       ( keyvalues["access"]  == "agricultural" ) or
+       ( keyvalues["access"]  == "forestry"     ) or
+       ( keyvalues["access"]  == "delivery"     )) then
+      keyvalues["access"] = "private"
+   end
+
    if ((    keyvalues["access"]      == "private"                      ) and
        ((   keyvalues["designation"] == "public_footpath"             )  or
         (   keyvalues["designation"] == "public_bridleway"            )  or
@@ -887,16 +897,6 @@ function filter_tags_generic(keyvalues, nokeys)
    if (keyvalues["leaf_type"]   == "mixed") then
       keyvalues["landuse"] = nil
       keyvalues["natural"] = "mixedleaved"
-   end
-
--- ----------------------------------------------------------------------------
--- Treat access=permit as access-private
--- ----------------------------------------------------------------------------
-   if (( keyvalues["access"]  == "permit"       ) or
-       ( keyvalues["access"]  == "agricultural" ) or
-       ( keyvalues["access"]  == "forestry"     ) or
-       ( keyvalues["access"]  == "delivery"     )) then
-      keyvalues["access"] = "private"
    end
 
 -- ----------------------------------------------------------------------------
