@@ -644,6 +644,15 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Remove name from footway=sidewalk (we expect it to be rendered via the
+-- road that this is a sidewalk for).
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["footway"] == "sidewalk" ) and
+       ( keyvalues["name"]    ~= nil        )) then
+      keyvalues["name"] = nil
+   end
+
+-- ----------------------------------------------------------------------------
 -- Pretend add landuse=industrial to some industrial sub-types to force 
 -- name rendering.  Similarly, some commercial and leisure.
 -- man_made=works drops the man_made tag to avoid duplicate labelling.
