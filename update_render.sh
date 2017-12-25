@@ -42,6 +42,7 @@ file_url1=http://download.geofabrik.de/europe/${file_prefix1}-latest.osm.pbf
 #file_url1=http://download.geofabrik.de/europe/great-britain/${file_prefix1}-latest.osm.pbf
 #
 # No extract for Bedfordshire
+#file_prefix1=berkshire
 #file_prefix1=buckinghamshire
 #file_prefix1=cambridgeshire
 #file_prefix1=cheshire
