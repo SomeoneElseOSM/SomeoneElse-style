@@ -5,7 +5,7 @@ polygon_keys = { 'building', 'landuse', 'amenity', 'harbour', 'historic', 'leisu
 
 generic_keys = {'access','addr:housename','addr:housenumber','addr:interpolation','admin_level','aerialway','aeroway','amenity','area','barrier',
    'bicycle','brand','bridge','boundary','building','capital','construction','covered','culvert','cutting','denomination','designation','disused','ele',
-   'embarkment','emergency','foot','generation:source','harbour','highway','historic','hours','intermittent','junction','landuse','layer','leisure','lock',
+   'embankment','emergency','foot','generation:source','harbour','highway','historic','hours','intermittent','junction','landuse','layer','leisure','lock',
    'man_made','military','motor_car','name','natural','office','oneway','operator','place','poi','population','power','power_source','public_transport','seamark:type',
    'railway','ref','religion','route','service','shop','sport','surface','toll','tourism','tower:type', 'tracktype','tunnel','water','waterway',
    'wetland','width','wood','type'}
@@ -1838,24 +1838,33 @@ function filter_tags_generic(keyvalues, nokeys)
 -- man_made=levee displays as a two-sided cliff.  
 -- Often it's combined with highway though, and that is handled separately.
 -- In that case it's passed through to the stylesheet as bridge=levee.
+-- embankment handling is asymmetric for railways currently - it's checked
+-- before we apply the "man_made=levee" tag, but "bridge=levee" is not applied.
 -- ----------------------------------------------------------------------------
-   if ((( keyvalues["barrier"]  == "flood_bank" )  or
-        ( keyvalues["barrier"]  == "bund"       )  or
-        ( keyvalues["barrier"]  == "mound"      )  or
-        ( keyvalues["barrier"]  == "ridge"      )  or
-        ( keyvalues["man_made"] == "dyke"       )  or
-        ( keyvalues["man_made"] == "levee"      )) and
-       (  keyvalues["highway"]  == nil           )) then
+   if ((( keyvalues["barrier"]    == "flood_bank" )  or
+        ( keyvalues["barrier"]    == "bund"       )  or
+        ( keyvalues["barrier"]    == "mound"      )  or
+        ( keyvalues["barrier"]    == "ridge"      )  or
+        ( keyvalues["barrier"]    == "embankment" )  or
+        ( keyvalues["man_made"]   == "dyke"       )  or
+        ( keyvalues["man_made"]   == "levee"      )  or
+        ( keyvalues["embankment"] == "yes"        )) and
+       (  keyvalues["highway"]    == nil           ) and
+       (  keyvalues["railway"]    == nil           )) then
       keyvalues["man_made"] = "levee"
       keyvalues["barrier"] = nil
+      keyvalues["embankment"] = nil
    end
 
-   if ((( keyvalues["barrier"]  == "flood_bank" )  or
-        ( keyvalues["man_made"] == "dyke"       )  or
-        ( keyvalues["man_made"] == "levee"      )) and
-       (  keyvalues["highway"]  ~= nil           )) then
+   if ((( keyvalues["barrier"]    == "flood_bank" )  or
+        ( keyvalues["man_made"]   == "dyke"       )  or
+        ( keyvalues["man_made"]   == "levee"      )  or
+        ( keyvalues["embankment"] == "yes"        )) and
+       (  keyvalues["highway"]  ~= nil             )) then
       keyvalues["bridge"] = "levee"
       keyvalues["barrier"] = nil
+      keyvalues["man_made"] = nil
+      keyvalues["embankment"] = nil
    end
 
 -- ----------------------------------------------------------------------------

@@ -6,6 +6,7 @@ Extended the range of what counts as a "ventilation shaft".
 Ensure that "agricultural" etc. are changed to "private" before "private is checked against "designation".
 Remove names from footpaths explicitly tagged as sidewalks (the name will be on the road).
 Render amenity=archive as a government office.
+Treat embankment=yes as man_made=levee/bridge=levee.
 
 ## 19/12/2017 release
 Render building=canopy as building=roof.
