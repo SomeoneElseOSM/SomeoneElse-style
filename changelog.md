@@ -7,7 +7,8 @@ Ensure that "agricultural" etc. are changed to "private" before "private is chec
 Remove names from footpaths explicitly tagged as sidewalks (the name will be on the road).
 Render amenity=archive as a government office.
 Treat embankment=yes as man_made=levee/bridge=levee and tidied up or added embankment rendering on roads.
-Made non-designation steps narrower to make them less "in your face" on the map.
+Made non-designation steps a lot narrower to make them less "in your face" on the map.
+Made designation steps a little bit narrower also.
 
 ## 19/12/2017 release
 Render building=canopy as building=roof.
