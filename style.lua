@@ -28,7 +28,7 @@ function add_z_order(keyvalues)
       { 'highway', 'primary_link', 7, 1}, { 'highway', 'primary', 7, 1},{ 'highway', 'primary_sidewalk', 7, 1},{ 'highway', 'primary_verge', 7, 1},
       { 'highway', 'trunk_link', 8, 1}, { 'highway', 'trunk', 8, 1},
       { 'highway', 'motorway_link', 9, 1}, { 'highway', 'motorway', 9, 1},
-      { 'highway', 'ldpnwn', 9, 1}, { 'highway', 'ldpncn', 9, 1},{ 'highway', 'ldpnhn', 9, 1},
+      { 'highway', 'ldpnwn', 91, 1}, { 'highway', 'ldpncn', 91, 1},{ 'highway', 'ldpnhn', 91, 1},
 }
    
    for i,k in ipairs(zordering_tags) do
