@@ -1,7 +1,7 @@
 # Changes made to this rendering
 This page describes changes made [here](https://github.com/SomeoneElseOSM/SomeoneElse-style), [here](https://github.com/SomeoneElseOSM/SomeoneElse-style-legend) and [here](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT), visible [here](http://map.atownsend.org.uk/maps/map/map.html).
 
-## As yet unreleased
+## 27/12/2017 release
 Extended the range of what counts as a "ventilation shaft".
 Ensure that "agricultural" etc. are changed to "private" before "private is checked against "designation".
 Remove names from footpaths explicitly tagged as sidewalks (the name will be on the road).
