@@ -1,6 +1,11 @@
 # Changes made to this rendering
 This page describes changes made [here](https://github.com/SomeoneElseOSM/SomeoneElse-style), [here](https://github.com/SomeoneElseOSM/SomeoneElse-style-legend) and [here](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT), visible [here](http://map.atownsend.org.uk/maps/map/map.html).
 
+## As yet unreleased
+Added embankments and fords to legend.
+Added footway etc. tunnels and bridges to legend.
+Added more linear barriers to legend.
+
 ## 27/12/2017 release
 Extended the range of what counts as a "ventilation shaft".
 Ensure that "agricultural" etc. are changed to "private" before "private is checked against "designation".
