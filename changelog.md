@@ -5,6 +5,7 @@ This page describes changes made [here](https://github.com/SomeoneElseOSM/Someon
 Added embankments and fords to legend.
 Added footway etc. tunnels and bridges to legend.
 Added more linear barriers to legend.
+Render bridges on dismantled railways.
 
 ## 27/12/2017 release
 Extended the range of what counts as a "ventilation shaft".
