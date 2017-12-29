@@ -6,6 +6,7 @@ Added embankments and fords to legend.
 Added footway etc. tunnels and bridges to legend.
 Added more linear barriers to legend.
 Render bridges on dismantled railways.
+Added more waterway tag combinations to legend.
 
 ## 27/12/2017 release
 Extended the range of what counts as a "ventilation shaft".
