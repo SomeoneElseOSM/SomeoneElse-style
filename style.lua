@@ -6,7 +6,7 @@ polygon_keys = { 'building', 'landuse', 'amenity', 'harbour', 'historic', 'leisu
 generic_keys = {'access','addr:housename','addr:housenumber','addr:interpolation','admin_level','aerialway','aeroway','amenity','area','barrier',
    'bicycle','brand','bridge','boundary','building','capital','construction','covered','culvert','cutting','denomination','designation','disused','ele',
    'embankment','emergency','foot','generation:source','harbour','highway','historic','hours','intermittent','junction','landuse','layer','leisure','lock',
-   'man_made','military','motor_car','name','natural','office','oneway','operator','place','poi','population','power','power_source','public_transport','seamark:type',
+   'man_made','military','motor_car','name','natural','ncn_milepost','office','oneway','operator','place','poi','population','power','power_source','public_transport','seamark:type',
    'railway','ref','religion','route','service','shop','sport','surface','toll','tourism','tower:type', 'tracktype','tunnel','water','waterway',
    'wetland','width','wood','type'}
 
@@ -1753,6 +1753,36 @@ function filter_tags_generic(keyvalues, nokeys)
    if (( keyvalues["tourism"]     == "information"                       )  and
        ( keyvalues["information"] == "audioguide"                        )) then
       keyvalues["tourism"] = "informationear"
+   end
+
+
+-- ----------------------------------------------------------------------------
+-- NCN Route markers
+-- ----------------------------------------------------------------------------
+   if ( keyvalues["ncn_milepost"] == "dudgeon" ) then
+      keyvalues["tourism"] = "informationncndudgeon"
+      keyvalues["name"]    = keyvalues["sustrans_ref"]
+   end
+
+   if ( keyvalues["ncn_milepost"] == "mccoll" ) then
+      keyvalues["tourism"] = "informationncnmccoll"
+      keyvalues["name"]    = keyvalues["sustrans_ref"]
+   end
+
+   if ( keyvalues["ncn_milepost"] == "mills" ) then
+      keyvalues["tourism"] = "informationncnmills"
+      keyvalues["name"]    = keyvalues["sustrans_ref"]
+   end
+
+   if ( keyvalues["ncn_milepost"] == "rowe" ) then
+      keyvalues["tourism"] = "informationncnrowe"
+      keyvalues["name"]    = keyvalues["sustrans_ref"]
+   end
+
+   if (( keyvalues["ncn_milepost"] == "unknown" )  or
+       ( keyvalues["ncn_milepost"] == "yes"     )) then
+      keyvalues["tourism"] = "informationncnunknown"
+      keyvalues["name"]    = keyvalues["sustrans_ref"]
    end
 
 

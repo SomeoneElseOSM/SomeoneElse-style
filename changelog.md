@@ -7,6 +7,7 @@ Added footway etc. tunnels and bridges to legend.
 Added more linear barriers to legend.
 Render bridges on dismantled railways.
 Added more waterway tag combinations to legend.
+Render sustrans mileposts as indigo "information" icons with an icon based on the design of the milepost type.
 
 ## 27/12/2017 release
 Extended the range of what counts as a "ventilation shaft".
