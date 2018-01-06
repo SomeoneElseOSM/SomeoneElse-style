@@ -6,6 +6,7 @@ Added Sustrans route markers to legend.
 Added rendering support for railway and waterway embankments (actually, waterway embankments are rare and some may be mistagged)..
 Don't treat existing bridges or tunnels as embankments.
 Manually map some invalid layer tags to "what the mapper probably meant".
+Ensure "negative layer" bridges are treated as bridges.
 
 ## 06/01/2018 release
 Added embankments and fords to legend.

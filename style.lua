@@ -79,6 +79,14 @@ function filter_tags_generic(keyvalues, nokeys)
       keyvalues["layer"] = "0"
    end
 
+   if ((( keyvalues["bridge"]     == "yes" )   or
+        ( keyvalues["embankment"] == "yes" ))  and
+       (( keyvalues["layer"]      == "-3"  )   or
+        ( keyvalues["layer"]      == "-2"  )   or
+        ( keyvalues["layer"]      == "-1"  ))) then
+      keyvalues["layer"] = "0"
+   end
+
    if (( keyvalues["layer"] == "01"       ) or
        ( keyvalues["layer"] == "+1"       ) or
        ( keyvalues["layer"] == "yes"      ) or
