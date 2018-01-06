@@ -69,6 +69,44 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Invalid layer values
+-- ----------------------------------------------------------------------------
+   if ( keyvalues["layer"] == "-0.5" ) then
+      keyvalues["layer"] = "-1"
+   end
+
+   if ( keyvalues["layer"] == "covered" ) then
+      keyvalues["layer"] = "0"
+   end
+
+   if (( keyvalues["layer"] == "01"       ) or
+       ( keyvalues["layer"] == "+1"       ) or
+       ( keyvalues["layer"] == "yes"      ) or
+       ( keyvalues["layer"] == "0.5"      ) or
+       ( keyvalues["layer"] == "0-1"      ) or
+       ( keyvalues["layer"] == "0;1"      ) or
+       ( keyvalues["layer"] == "0;2"      ) or
+       ( keyvalues["layer"] == "0;1;2"    ) or
+       ( keyvalues["layer"] == "pipeline" )) then
+      keyvalues["layer"] = "1"
+   end
+   
+   if ( keyvalues["layer"] == "2;4" ) then
+      keyvalues["layer"] = "2"
+   end
+
+   if (( keyvalues["layer"] == "6"  )  or
+       ( keyvalues["layer"] == "7"  )  or
+       ( keyvalues["layer"] == "8"  )  or
+       ( keyvalues["layer"] == "9"  )  or
+       ( keyvalues["layer"] == "10" )  or
+       ( keyvalues["layer"] == "15" )  or
+       ( keyvalues["layer"] == "16" )) then
+      keyvalues["layer"] = "5"
+   end
+
+   
+-- ----------------------------------------------------------------------------
 -- Designation processing
 --
 -- The "standard" stylesheet contains rules for different sorts of tracks 
