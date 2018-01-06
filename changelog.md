@@ -1,6 +1,9 @@
 # Changes made to this rendering
 This page describes changes made [here](https://github.com/SomeoneElseOSM/SomeoneElse-style), [here](https://github.com/SomeoneElseOSM/SomeoneElse-style-legend) and [here](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT), visible [here](http://map.atownsend.org.uk/maps/map/map.html).
 
+## As yet unreleased
+Added Sustrans route markers to legend.
+
 ## 06/01/2018 release
 Added embankments and fords to legend.
 Added footway etc. tunnels and bridges to legend.
