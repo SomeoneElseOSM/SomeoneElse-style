@@ -1880,17 +1880,24 @@ function filter_tags_generic(keyvalues, nokeys)
         ( keyvalues["man_made"]   == "levee"      )  or
         ( keyvalues["embankment"] == "yes"        )) and
        (  keyvalues["highway"]    == nil           ) and
-       (  keyvalues["railway"]    == nil           )) then
+       (  keyvalues["railway"]    == nil           ) and
+       (  keyvalues["waterway"]   == nil           )) then
       keyvalues["man_made"] = "levee"
       keyvalues["barrier"] = nil
       keyvalues["embankment"] = nil
    end
 
+-- ----------------------------------------------------------------------------
+-- Re the "bridge" check below, we've already changed valid ones to "yes"
+-- above.
+-- ----------------------------------------------------------------------------
    if ((( keyvalues["barrier"]    == "flood_bank" )  or
         ( keyvalues["man_made"]   == "dyke"       )  or
         ( keyvalues["man_made"]   == "levee"      )  or
         ( keyvalues["embankment"] == "yes"        )) and
-       (  keyvalues["highway"]  ~= nil             )) then
+       (( keyvalues["highway"]    ~= nil          ) or
+        ( keyvalues["railway"]    ~= nil          )) and
+       (  keyvalues["bridge"]     ~= "yes"         )) then
       keyvalues["bridge"] = "levee"
       keyvalues["barrier"] = nil
       keyvalues["man_made"] = nil

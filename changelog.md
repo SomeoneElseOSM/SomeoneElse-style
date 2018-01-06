@@ -3,6 +3,7 @@ This page describes changes made [here](https://github.com/SomeoneElseOSM/Someon
 
 ## As yet unreleased
 Added Sustrans route markers to legend.
+Added rendering support for railway embankments.
 
 ## 06/01/2018 release
 Added embankments and fords to legend.
