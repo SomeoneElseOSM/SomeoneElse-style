@@ -50,6 +50,7 @@ file_url1=http://download.geofabrik.de/europe/${file_prefix1}-latest.osm.pbf
 #file_prefix1=cumbria
 #file_prefix1=derbyshire
 #file_prefix1=devon
+#file_prefix1=east-yorkshire-with-hull
 #file_prefix1=essex
 #file_prefix1=gloucestershire
 #file_prefix1=greater-london

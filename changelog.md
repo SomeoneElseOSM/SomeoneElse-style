@@ -7,6 +7,7 @@ Added rendering support for railway and waterway embankments (actually, waterway
 Don't treat existing bridges or tunnels as embankments.
 Manually map some invalid layer tags to "what the mapper probably meant".
 Ensure "negative layer" bridges are treated as bridges.
+Render red phoneboxes as such, with an appropriate icon for telephone, library, defibrillator, etc.
 
 ## 06/01/2018 release
 Added embankments and fords to legend.

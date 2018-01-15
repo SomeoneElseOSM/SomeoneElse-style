@@ -4,7 +4,7 @@ polygon_keys = { 'building', 'landuse', 'amenity', 'harbour', 'historic', 'leisu
       'wetland', 'water', 'aeroway' }
 
 generic_keys = {'access','addr:housename','addr:housenumber','addr:interpolation','admin_level','aerialway','aeroway','amenity','area','barrier',
-   'bicycle','brand','bridge','boundary','building','capital','construction','covered','culvert','cutting','denomination','designation','disused','ele',
+   'bicycle','brand','bridge','booth','boundary','building','capital','construction','covered','culvert','cutting','denomination','designation','disused','ele',
    'embankment','emergency','foot','generation:source','harbour','highway','historic','hours','intermittent','junction','landuse','layer','leisure','lock',
    'man_made','military','motor_car','name','natural','ncn_milepost','office','oneway','operator','place','poi','population','power','power_source','public_transport','seamark:type',
    'railway','ref','religion','route','service','shop','sport','surface','toll','tourism','tower:type', 'tracktype','tunnel','water','waterway',
@@ -791,6 +791,83 @@ function filter_tags_generic(keyvalues, nokeys)
       keyvalues["man_made"] = "boundary_stone"
    end
 
+-- ----------------------------------------------------------------------------
+-- Former telephone boxes
+-- ----------------------------------------------------------------------------
+   if ((( keyvalues["covered"]         == "booth"          )   and
+        ( keyvalues["booth"]           ~= "K1"             )   and
+        ( keyvalues["booth"]           ~= "KX100"          )   and
+        ( keyvalues["booth"]           ~= "KX200"          )   and
+        ( keyvalues["booth"]           ~= "KX300"          )   and
+        ( keyvalues["booth"]           ~= "KXPlus"         )   and
+        ( keyvalues["booth"]           ~= "KX410"          )   and
+        ( keyvalues["booth"]           ~= "KX420"          )   and
+        ( keyvalues["booth"]           ~= "KX520"          )   and
+        ( keyvalues["booth"]           ~= "ST6"            ))  or
+       (  keyvalues["booth"]           == "K2"              )  or
+       (  keyvalues["booth"]           == "K4_Post_Office"  )  or
+       (  keyvalues["booth"]           == "K6"              )  or
+       (  keyvalues["booth"]           == "k6"              )  or
+       (  keyvalues["booth"]           == "K8"              )  or
+       (  keyvalues["telephone_kiosk"] == "K4"              )  or
+       (  keyvalues["telephone_kiosk"] == "K6"              )  or
+       (  keyvalues["man_made"]        == "telephone_kiosk" )  or
+       (  keyvalues["building"]        == "telephone_kiosk" )  or
+       (  keyvalues["building"]        == "telephone_box"   )  or
+       (  keyvalues["historic"]        == "telephone"       )) then
+      if (( keyvalues["amenity"] == "telephone" )  or
+          ( keyvalues["amenity"] == "phone"     )) then
+         keyvalues["amenity"] = "boothtelephone"
+      else
+         if ( keyvalues["emergency"] == "defibrillator" ) then
+             keyvalues["amenity"]   = "boothdefibrillator"
+             keyvalues["disused:amenity"] = nil
+             keyvalues["emergency"] = nil
+         else
+            if (( keyvalues["amenity"] == "public_bookcase" )  or
+                ( keyvalues["amenity"] == "book_exchange"   )  or
+                ( keyvalues["amenity"] == "library"         )) then
+               keyvalues["amenity"] = "boothlibrary"
+               keyvalues["disused:amenity"] = nil
+            else
+               if ( keyvalues["amenity"] == "bicycle_repair_station" ) then
+                  keyvalues["amenity"] = "boothbicyclerepairstation"
+                  keyvalues["disused:amenity"] = nil
+               else
+                  if ( keyvalues["amenity"] == "atm" ) then
+                     keyvalues["amenity"] = "boothatm"
+                     keyvalues["disused:amenity"] = nil
+                  else
+                     if ( keyvalues["tourism"] == "information" ) then
+                        keyvalues["amenity"] = "boothinformation"
+                        keyvalues["disused:amenity"] = nil
+                        keyvalues["tourism"] = nil
+                     else
+                        if (( keyvalues["disused:amenity"]    == "telephone"        )  or
+                            ( keyvalues["abandoned:amenity"]  == "telephone"        )  or
+                            ( keyvalues["demolished:amenity"] == "telephone"        )  or
+                            ( keyvalues["razed:amenity"]      == "telephone"        )  or
+                            ( keyvalues["old_amenity"]        == "telephone"        )  or
+                            ( keyvalues["historic:amenity"]   == "telephone"        )  or
+                            ( keyvalues["disused"]            == "telephone"        )  or
+                            ( keyvalues["was:amenity"]        == "telephone"        )  or
+                            ( keyvalues["old:amenity"]        == "telephone"        )  or
+                            ( keyvalues["amenity"]            == "old_telephone"    )  or
+                            ( keyvalues["amenity"]            == "former_telephone" )  or
+                            ( keyvalues["amenity:old"]        == "telephone"        )  or
+                            ( keyvalues["historic"]           == "telephone"        )) then
+                           keyvalues["amenity"]         = "boothdisused"
+                           keyvalues["disused:amenity"] = nil
+                           keyvalues["historic"]        = nil
+                        end
+                     end
+                  end
+               end
+            end
+         end
+      end
+   end
+   
 -- ----------------------------------------------------------------------------
 -- Mappings to shop=car
 -- ----------------------------------------------------------------------------
