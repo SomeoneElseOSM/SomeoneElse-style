@@ -7,7 +7,7 @@ Added rendering support for railway and waterway embankments (actually, waterway
 Don't treat existing bridges or tunnels as embankments.
 Manually map some invalid layer tags to "what the mapper probably meant".
 Ensure "negative layer" bridges are treated as bridges.
-Render red phoneboxes as such, with an appropriate icon for telephone, library, defibrillator, etc.
+Render red phoneboxes as such, with an appropriate icon for telephone, library, defibrillator, etc.  Also added to legend.
 Even out town and suburb name sizes at z12-z14 to make the distinction clearer.
 
 ## 06/01/2018 release
