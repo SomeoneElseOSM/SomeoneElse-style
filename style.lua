@@ -3860,12 +3860,13 @@ function filter_tags_way (keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
 -- Map linear tank traps, and some others, to wall
 -- ----------------------------------------------------------------------------
-   if (( keyvalues["barrier"] == "tank_trap"     ) or
-       ( keyvalues["barrier"] == "tank_traps"    ) or
-       ( keyvalues["barrier"] == "dragons_teeth" ) or
-       ( keyvalues["barrier"] == "obstruction"   ) or
-       ( keyvalues["barrier"] == "sea_wall"      ) or
-       ( keyvalues["barrier"] == "block"         )) then
+   if (( keyvalues["barrier"] == "tank_trap"      ) or
+       ( keyvalues["barrier"] == "tank_traps"     ) or
+       ( keyvalues["barrier"] == "dragons_teeth"  ) or
+       ( keyvalues["barrier"] == "obstruction"    ) or
+       ( keyvalues["barrier"] == "sea_wall"       ) or
+       ( keyvalues["barrier"] == "block"          ) or
+       ( keyvalues["barrier"] == "jersey_barrier" )) then
       keyvalues["barrier"] = "wall"
    end
 
