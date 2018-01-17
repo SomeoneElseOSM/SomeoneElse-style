@@ -10,6 +10,7 @@ Ensure "negative layer" bridges are treated as bridges.
 Render red phoneboxes as such, with an appropriate icon for telephone, library, defibrillator, etc.  Also added to legend.
 Even out town and suburb name sizes at z12-z14 to make the distinction clearer.
 Added jersey_barrier to the list of linear features treated as wall.
+Added icon for fire extinguisher.
 
 ## 06/01/2018 release
 Added embankments and fords to legend.

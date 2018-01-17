@@ -3247,11 +3247,14 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
--- opticians - render as "nonspecific health".
--- Add unnamedcommercial landuse to give non-building areas a background.
+-- Defibrillators etc.
 -- ----------------------------------------------------------------------------
    if ( keyvalues["emergency"] == "defibrillator" ) then
       keyvalues["amenity"] = "defibrillator"
+   end
+
+   if ( keyvalues["emergency"] == "fire_extinguisher" ) then
+      keyvalues["amenity"] = "fire_extinguisher"
    end
 
 -- ----------------------------------------------------------------------------
