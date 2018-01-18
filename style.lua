@@ -4,7 +4,7 @@ polygon_keys = { 'building', 'landuse', 'amenity', 'harbour', 'historic', 'leisu
       'wetland', 'water', 'aeroway' }
 
 generic_keys = {'access','addr:housename','addr:housenumber','addr:interpolation','admin_level','aerialway','aeroway','amenity','area','barrier',
-   'bicycle','brand','bridge','booth','boundary','building','capital','construction','covered','culvert','cutting','denomination','designation','disused','ele',
+   'bicycle','brand','bridge','bridleway','booth','boundary','building','capital','construction','covered','culvert','cutting','denomination','designation','disused','ele',
    'embankment','emergency','foot','generation:source','golf','harbour','highway','historic','hours','intermittent','junction','landuse','layer','leisure','lock',
    'man_made','military','motor_car','name','natural','ncn_milepost','office','oneway','operator','place','poi','population','power','power_source','public_transport','seamark:type',
    'railway','ref','religion','route','service','shop','sport','surface','toll','tourism','tower:type', 'tracktype','tunnel','water','waterway',
@@ -1757,6 +1757,18 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["tower:type"] == "vent"              ) or
        ( keyvalues["man_made"]   == "tunnel_vent"       )) then
       keyvalues["man_made"] = "ventilation_shaft"
+   end
+
+-- ----------------------------------------------------------------------------
+-- Horse mounting blocks
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["amenity"]   == "mounting_block" ) or
+       ( keyvalues["bridleway"] == "mounting_block" ) or
+       ( keyvalues["historic"]  == "mounting_block" ) or
+       ( keyvalues["horse"]     == "mounting_block" ) or
+       ( keyvalues["amenity"]   == "mounting_step"  ) or
+       ( keyvalues["amenity"]   == "mounting_steps" )) then
+      keyvalues["man_made"] = "mounting_block"
    end
 
 -- ----------------------------------------------------------------------------

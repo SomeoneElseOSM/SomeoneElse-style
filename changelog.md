@@ -3,6 +3,7 @@ This page describes changes made [here](https://github.com/SomeoneElseOSM/Someon
 
 ## As yet unreleased
 Added support for some common golf tags.
+Added icon for horse mounting blocks and translated the most common tags to use it.
 
 ## 17/01/2018 release
 Added Sustrans route markers to legend.
