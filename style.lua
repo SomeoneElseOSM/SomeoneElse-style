@@ -5,7 +5,7 @@ polygon_keys = { 'building', 'landuse', 'amenity', 'harbour', 'historic', 'leisu
 
 generic_keys = {'access','addr:housename','addr:housenumber','addr:interpolation','admin_level','aerialway','aeroway','amenity','area','barrier',
    'bicycle','brand','bridge','booth','boundary','building','capital','construction','covered','culvert','cutting','denomination','designation','disused','ele',
-   'embankment','emergency','foot','generation:source','harbour','highway','historic','hours','intermittent','junction','landuse','layer','leisure','lock',
+   'embankment','emergency','foot','generation:source','golf','harbour','highway','historic','hours','intermittent','junction','landuse','layer','leisure','lock',
    'man_made','military','motor_car','name','natural','ncn_milepost','office','oneway','operator','place','poi','population','power','power_source','public_transport','seamark:type',
    'railway','ref','religion','route','service','shop','sport','surface','toll','tourism','tower:type', 'tracktype','tunnel','water','waterway',
    'wetland','width','wood','type'}
@@ -1290,6 +1290,53 @@ function filter_tags_generic(keyvalues, nokeys)
       keyvalues["leisure"] = "sports_centre"
    end
 
+-- ----------------------------------------------------------------------------
+-- Golf 
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["golf"]    == "bunker" ) and
+       ( keyvalues["natural"] == nil      )) then
+      keyvalues["natural"] = "sand"
+   end
+
+   if ( keyvalues["golf"] == "tee" ) then
+      keyvalues["leisure"] = "garden"
+      keyvalues["name"] = keyvalues["ref"]
+   end
+
+   if ( keyvalues["golf"] == "green" ) then
+      keyvalues["leisure"] = "garden"
+      keyvalues["name"] = keyvalues["ref"]
+   end
+
+   if ( keyvalues["golf"] == "fairway" ) then
+      keyvalues["leisure"] = "garden"
+      keyvalues["name"] = keyvalues["ref"]
+   end
+
+   if ( keyvalues["golf"] == "pin" ) then
+      keyvalues["leisure"] = "nonspecific"
+      keyvalues["name"] = keyvalues["ref"]
+   end
+
+   if (( keyvalues["golf"]    == "rough" ) and
+       ( keyvalues["natural"] == nil     )) then
+      keyvalues["natural"] = "scrub"
+   end
+
+   if (( keyvalues["golf"]    == "driving_range" ) and
+       ( keyvalues["leisure"] == nil             )) then
+      keyvalues["leisure"] = "pitch"
+   end
+
+   if (( keyvalues["golf"]    == "path" ) and
+       ( keyvalues["highway"] == nil    )) then
+      keyvalues["highway"] = "path"
+   end
+
+   if (( keyvalues["golf"]    == "practice" ) and
+       ( keyvalues["leisure"] == nil        )) then
+      keyvalues["leisure"] = "garden"
+   end
 
 -- ----------------------------------------------------------------------------
 -- Beer gardens etc.
