@@ -342,6 +342,7 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["access"]  == "agricultural" ) or
        ( keyvalues["access"]  == "forestry"     ) or
        ( keyvalues["access"]  == "delivery"     ) or
+       ( keyvalues["access"]  == "customers"    ) or
        ( keyvalues["access"]  == "no"           )) then
       keyvalues["access"] = "private"
    end
