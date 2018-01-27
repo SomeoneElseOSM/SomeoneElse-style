@@ -4,8 +4,8 @@ polygon_keys = { 'building', 'landuse', 'amenity', 'harbour', 'historic', 'leisu
       'wetland', 'water', 'aeroway' }
 
 generic_keys = {'access','addr:housename','addr:housenumber','addr:interpolation','admin_level','aerialway','aeroway','amenity','area','barrier',
-   'bicycle','brand','bridge','booth','boundary','building','capital','construction','covered','culvert','cutting','denomination','designation','disused','ele',
-   'embankment','emergency','foot','generation:source','harbour','highway','historic','hours','intermittent','junction','landuse','layer','leisure','lock',
+   'bicycle','brand','bridge','bridleway','booth','boundary','building','capital','construction','covered','culvert','cutting','denomination','designation','disused','ele',
+   'embankment','emergency','foot','generation:source','golf','harbour','highway','historic','hours','intermittent','junction','landuse','layer','leisure','lock',
    'man_made','military','motor_car','name','natural','ncn_milepost','office','oneway','operator','place','poi','population','power','power_source','public_transport','seamark:type',
    'railway','ref','religion','route','service','shop','sport','surface','toll','tourism','tower:type', 'tracktype','tunnel','water','waterway',
    'wetland','width','wood','type'}
@@ -1292,6 +1292,53 @@ function filter_tags_generic(keyvalues, nokeys)
       keyvalues["leisure"] = "sports_centre"
    end
 
+-- ----------------------------------------------------------------------------
+-- Golf 
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["golf"]    == "bunker" ) and
+       ( keyvalues["natural"] == nil      )) then
+      keyvalues["natural"] = "sand"
+   end
+
+   if ( keyvalues["golf"] == "tee" ) then
+      keyvalues["leisure"] = "garden"
+      keyvalues["name"] = keyvalues["ref"]
+   end
+
+   if ( keyvalues["golf"] == "green" ) then
+      keyvalues["leisure"] = "garden"
+      keyvalues["name"] = keyvalues["ref"]
+   end
+
+   if ( keyvalues["golf"] == "fairway" ) then
+      keyvalues["leisure"] = "garden"
+      keyvalues["name"] = keyvalues["ref"]
+   end
+
+   if ( keyvalues["golf"] == "pin" ) then
+      keyvalues["leisure"] = "nonspecific"
+      keyvalues["name"] = keyvalues["ref"]
+   end
+
+   if (( keyvalues["golf"]    == "rough" ) and
+       ( keyvalues["natural"] == nil     )) then
+      keyvalues["natural"] = "scrub"
+   end
+
+   if (( keyvalues["golf"]    == "driving_range" ) and
+       ( keyvalues["leisure"] == nil             )) then
+      keyvalues["leisure"] = "pitch"
+   end
+
+   if (( keyvalues["golf"]    == "path" ) and
+       ( keyvalues["highway"] == nil    )) then
+      keyvalues["highway"] = "path"
+   end
+
+   if (( keyvalues["golf"]    == "practice" ) and
+       ( keyvalues["leisure"] == nil        )) then
+      keyvalues["leisure"] = "garden"
+   end
 
 -- ----------------------------------------------------------------------------
 -- Beer gardens etc.
@@ -1712,6 +1759,18 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["tower:type"] == "vent"              ) or
        ( keyvalues["man_made"]   == "tunnel_vent"       )) then
       keyvalues["man_made"] = "ventilation_shaft"
+   end
+
+-- ----------------------------------------------------------------------------
+-- Horse mounting blocks
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["amenity"]   == "mounting_block" ) or
+       ( keyvalues["bridleway"] == "mounting_block" ) or
+       ( keyvalues["historic"]  == "mounting_block" ) or
+       ( keyvalues["horse"]     == "mounting_block" ) or
+       ( keyvalues["amenity"]   == "mounting_step"  ) or
+       ( keyvalues["amenity"]   == "mounting_steps" )) then
+      keyvalues["man_made"] = "mounting_block"
    end
 
 -- ----------------------------------------------------------------------------
@@ -3249,11 +3308,14 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
--- opticians - render as "nonspecific health".
--- Add unnamedcommercial landuse to give non-building areas a background.
+-- Defibrillators etc.
 -- ----------------------------------------------------------------------------
    if ( keyvalues["emergency"] == "defibrillator" ) then
       keyvalues["amenity"] = "defibrillator"
+   end
+
+   if ( keyvalues["emergency"] == "fire_extinguisher" ) then
+      keyvalues["amenity"] = "fire_extinguisher"
    end
 
 -- ----------------------------------------------------------------------------
@@ -3625,6 +3687,11 @@ function filter_tags_generic(keyvalues, nokeys)
       keyvalues["man_made"] = "chimney"
    end
 
+   if (( keyvalues["man_made"]   == "tower"        ) and
+       ( keyvalues["tower:type"] == "illumination" )) then
+      keyvalues["man_made"] = "illuminationtower"
+   end
+
    if (( keyvalues["man_made"] == "phone_mast"           ) or
        ( keyvalues["man_made"] == "radio_mast"           ) or
        ( keyvalues["man_made"] == "communications_mast"  ) or
@@ -3862,12 +3929,13 @@ function filter_tags_way (keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
 -- Map linear tank traps, and some others, to wall
 -- ----------------------------------------------------------------------------
-   if (( keyvalues["barrier"] == "tank_trap"     ) or
-       ( keyvalues["barrier"] == "tank_traps"    ) or
-       ( keyvalues["barrier"] == "dragons_teeth" ) or
-       ( keyvalues["barrier"] == "obstruction"   ) or
-       ( keyvalues["barrier"] == "sea_wall"      ) or
-       ( keyvalues["barrier"] == "block"         )) then
+   if (( keyvalues["barrier"] == "tank_trap"      ) or
+       ( keyvalues["barrier"] == "tank_traps"     ) or
+       ( keyvalues["barrier"] == "dragons_teeth"  ) or
+       ( keyvalues["barrier"] == "obstruction"    ) or
+       ( keyvalues["barrier"] == "sea_wall"       ) or
+       ( keyvalues["barrier"] == "block"          ) or
+       ( keyvalues["barrier"] == "jersey_barrier" )) then
       keyvalues["barrier"] = "wall"
    end
 
