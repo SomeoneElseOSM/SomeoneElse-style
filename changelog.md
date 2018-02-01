@@ -9,6 +9,7 @@ Treat access=no as access=private when deciding whether to ignore "no/private" o
 Treat access=customers as access=destination.
 Made meadow significantly less green.
 Removed access=permissive rendering on selected roads and footpaths.
+Changed destination colour and added to tracks etc.
 
 ## 17/01/2018 release
 Added Sustrans route markers to legend.
