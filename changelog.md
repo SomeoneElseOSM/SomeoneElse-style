@@ -8,6 +8,7 @@ Added icon for illumination towers.
 Treat access=no as access=private when deciding whether to ignore "no/private" on a footpath.
 Treat access=customers as access=destination.
 Made meadow significantly less green.
+Removed access=permissive rendering on selected roads and footpaths.
 
 ## 17/01/2018 release
 Added Sustrans route markers to legend.
