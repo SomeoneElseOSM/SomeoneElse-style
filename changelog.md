@@ -11,6 +11,7 @@ Made meadow significantly less green.
 Removed access=permissive rendering on selected roads and footpaths.
 Changed destination colour and added to tracks etc.
 Made "booth telephone" icon telephone larger.
+Added amenity=bbq
 
 ## 17/01/2018 release
 Added Sustrans route markers to legend.
