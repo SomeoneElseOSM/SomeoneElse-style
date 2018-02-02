@@ -1464,6 +1464,15 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Display intermittent waterways as "wadi"
+-- ----------------------------------------------------------------------------
+   if ((( keyvalues["waterway"]     == "river"  )  or
+        ( keyvalues["waterway"]     == "stream" )) and
+       (  keyvalues["intermittent"] == "yes"     )) then
+      keyvalues["waterway"] = "wadi"
+   end
+
+-- ----------------------------------------------------------------------------
 -- Supermarkets as normal buildings
 -- In the version of OSM-carto that I use this with, Supermarkets would 
 -- otherwise display as pink, which does not show up over pink retail landuse.
