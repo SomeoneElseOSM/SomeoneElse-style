@@ -1201,7 +1201,8 @@ function filter_tags_generic(keyvalues, nokeys)
 -- If no name use brand or operator on amenity=fuel.  If there is brand or
 -- operator use that with name.
 -- ----------------------------------------------------------------------------
-   if ( keyvalues["amenity"] == "fuel" ) then
+   if (( keyvalues["amenity"] == "fuel"             ) or
+       ( keyvalues["amenity"] == "charging_station" )) then
       if ( keyvalues["name"] == nil ) then
          if ( keyvalues["brand"] ~= nil ) then
             keyvalues["name"] = keyvalues["brand"]
