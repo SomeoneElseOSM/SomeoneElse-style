@@ -14,6 +14,7 @@ Made "booth telephone" icon telephone larger.
 Added amenity=bbq.
 Added support for intermittent rivers and streams.
 Added icon for amenity=charging_station.
+Added icon advertising columns.
 
 ## 17/01/2018 release
 Added Sustrans route markers to legend.

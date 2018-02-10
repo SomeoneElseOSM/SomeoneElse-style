@@ -3,9 +3,9 @@ polygon_keys = { 'building', 'landuse', 'amenity', 'harbour', 'historic', 'leisu
       'public_transport', 'seamark:type', 'shop', 'sport', 'tourism', 'waterway',
       'wetland', 'water', 'aeroway' }
 
-generic_keys = {'access','addr:housename','addr:housenumber','addr:interpolation','admin_level','aerialway','aeroway','amenity','area','barrier',
+generic_keys = {'access','addr:housename','addr:housenumber','addr:interpolation','admin_level','advertising','aerialway','aeroway','amenity','area','barrier',
    'bicycle','brand','bridge','bridleway','booth','boundary','building','capital','construction','covered','culvert','cutting','denomination','designation','disused','ele',
-   'embankment','emergency','foot','generation:source','golf','harbour','highway','historic','hours','intermittent','junction','landuse','layer','leisure','lock',
+   'embankment','emergency','foot','generation:source','golf','harbour','highway','historic','horse','hours','intermittent','junction','landuse','layer','leisure','lock',
    'man_made','military','motor_car','name','natural','ncn_milepost','office','oneway','operator','place','poi','population','power','power_source','public_transport','seamark:type',
    'railway','ref','religion','route','service','shop','sport','surface','toll','tourism','tower:type', 'tracktype','tunnel','water','waterway',
    'wetland','width','wood','type'}
@@ -1785,6 +1785,13 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["amenity"]   == "mounting_step"  ) or
        ( keyvalues["amenity"]   == "mounting_steps" )) then
       keyvalues["man_made"] = "mounting_block"
+   end
+
+-- ----------------------------------------------------------------------------
+-- Advertising Columns
+-- ----------------------------------------------------------------------------
+   if ( keyvalues["advertising"] == "column" ) then
+      keyvalues["tourism"] = "advertising_column"
    end
 
 -- ----------------------------------------------------------------------------
