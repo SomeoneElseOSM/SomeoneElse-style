@@ -2115,6 +2115,15 @@ function filter_tags_generic(keyvalues, nokeys)
 -- barrier=horse_jump is used almost exclusively on ways, so map to fence.
 -- Also some other barriers.
 -- ----------------------------------------------------------------------------
+   if (( keyvalues["barrier"]    == "fence" ) and
+       ( keyvalues["fence_type"] == "hedge" )) then
+      keyvalues["barrier"] = "hedge"
+   end
+
+-- ----------------------------------------------------------------------------
+-- barrier=horse_jump is used almost exclusively on ways, so map to fence.
+-- Also some other barriers.
+-- ----------------------------------------------------------------------------
    if (( keyvalues["barrier"] == "horse_jump"     ) or
        ( keyvalues["barrier"] == "guard_retail"   ) or
        ( keyvalues["barrier"] == "traffic_island" ) or
