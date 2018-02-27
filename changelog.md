@@ -4,6 +4,7 @@ This page describes changes made [here](https://github.com/SomeoneElseOSM/Someon
 ## As yet unreleased
 Treated "fence_type=hedge" as "hedge".
 Made tramlines less prominent betwen zooms 13 and 16.
+Added icon for defensive towers.
 
 ## 10/02/2018 release
 Added support for some common golf tags.
