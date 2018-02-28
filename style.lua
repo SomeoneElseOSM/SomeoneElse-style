@@ -1,11 +1,11 @@
-polygon_keys = { 'building', 'landuse', 'amenity', 'harbour', 'historic', 'leisure', 
+polygon_keys = { 'building', 'landcover', 'landuse', 'amenity', 'harbour', 'historic', 'leisure', 
       'man_made', 'military', 'natural', 'office', 'place', 'power',
       'public_transport', 'seamark:type', 'shop', 'sport', 'tourism', 'waterway',
       'wetland', 'water', 'aeroway' }
 
 generic_keys = {'access','addr:housename','addr:housenumber','addr:interpolation','admin_level','advertising','aerialway','aeroway','amenity','area','barrier',
    'bicycle','brand','bridge','bridleway','booth','boundary','building','capital','construction','covered','culvert','cutting','denomination','designation','disused','ele',
-   'embankment','emergency','foot','generation:source','golf','harbour','highway','historic','horse','hours','intermittent','junction','landuse','layer','leisure','lock',
+   'embankment','emergency','foot','generation:source','golf','harbour','highway','historic','horse','hours','intermittent','junction','landcover','landuse','layer','leisure','lock',
    'man_made','military','motor_car','name','natural','ncn_milepost','office','oneway','operator','place','poi','population','power','power_source','public_transport','seamark:type',
    'railway','ref','religion','route','service','shop','sport','surface','toll','tourism','tower:type', 'tracktype','tunnel','water','waterway',
    'wetland','width','wood','type'}
@@ -1017,7 +1017,8 @@ function filter_tags_generic(keyvalues, nokeys)
   if ((( keyvalues["landuse"]   == "forest" )  and
        ( keyvalues["leaf_type"] ~= nil      )) or
       (  keyvalues["natural"]   == "forest"  ) or
-      (  keyvalues["landuse"]   == "wood"    )) then
+      (  keyvalues["landuse"]   == "wood"    ) or
+      (  keyvalues["landcover"] == "trees"   )) then
       keyvalues["landuse"] = nil
       keyvalues["natural"] = "wood"
    end
