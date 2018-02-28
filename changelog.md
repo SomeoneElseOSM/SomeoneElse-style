@@ -5,6 +5,7 @@ This page describes changes made [here](https://github.com/SomeoneElseOSM/Someon
 Treated "fence_type=hedge" as "hedge".
 Made tramlines less prominent betwen zooms 13 and 16.
 Added icon for defensive and observation towers.
+Render ha-has as walls (there's usually a wall, even if recessed).
 
 ## 10/02/2018 release
 Added support for some common golf tags.
