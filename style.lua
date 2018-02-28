@@ -1202,7 +1202,8 @@ function filter_tags_generic(keyvalues, nokeys)
 -- operator use that with name.
 -- ----------------------------------------------------------------------------
    if (( keyvalues["amenity"] == "fuel"             ) or
-       ( keyvalues["amenity"] == "charging_station" )) then
+       ( keyvalues["amenity"] == "charging_station" ) or
+       ( keyvalues["tourism"] == "hotel"            )) then
       if ( keyvalues["name"] == nil ) then
          if ( keyvalues["brand"] ~= nil ) then
             keyvalues["name"] = keyvalues["brand"]
