@@ -3727,8 +3727,9 @@ function filter_tags_generic(keyvalues, nokeys)
       keyvalues["man_made"] = "chimney"
    end
 
-   if (( keyvalues["man_made"]   == "tower"        ) and
-       ( keyvalues["tower:type"] == "illumination" )) then
+   if (( keyvalues["man_made"]   == "tower"          ) and
+       (( keyvalues["tower:type"] == "illumination" )  or
+        ( keyvalues["tower:type"] == "lighting"     ))) then
       keyvalues["man_made"] = "illuminationtower"
    end
 
@@ -3740,6 +3741,11 @@ function filter_tags_generic(keyvalues, nokeys)
    if (( keyvalues["man_made"]   == "tower"       ) and
        ( keyvalues["tower:type"] == "observation" )) then
       keyvalues["man_made"] = "observationtower"
+   end
+
+   if (( keyvalues["man_made"]   == "tower" ) and
+       ( keyvalues["tower:type"] == "clock" )) then
+      keyvalues["man_made"] = "clocktower"
    end
 
    if (( keyvalues["man_made"] == "phone_mast"           ) or
