@@ -7,7 +7,7 @@ Made tramlines less prominent betwen zooms 13 and 16.
 Added icon for defensive and observation towers.
 Render ha-has as walls (there's usually a wall, even if recessed).
 Use brand and/or operator on tourism=hotel.
-Treat landcover=trees as "here be trees".
+Treat landcover=trees as "here be trees" and landcover=grass as "here be grass".
 Render non-private toilets as less brown.
 
 ## 10/02/2018 release

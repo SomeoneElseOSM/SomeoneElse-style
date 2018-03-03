@@ -1039,6 +1039,14 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Treat landcover=grass as landuse=grass
+-- ----------------------------------------------------------------------------
+   if ( keyvalues["landcover"] == "grass" ) then
+      keyvalues["landcover"] = nil
+      keyvalues["landuse"] = "grass"
+   end
+
+-- ----------------------------------------------------------------------------
 -- Don't show pubs if you can't actually get to them.
 -- ----------------------------------------------------------------------------
    if (( keyvalues["amenity"] == "pub"     ) and
