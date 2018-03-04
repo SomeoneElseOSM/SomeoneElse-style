@@ -11,7 +11,7 @@ Treat landcover=trees as "here be trees" and landcover=grass as "here be grass".
 Render non-private toilets as less brown.
 Use illumination tower icon for "lighting" as well as "illumination".
 Added rendering for clock towers and aircraft control towers.
-	
+
 ## 10/02/2018 release
 Added support for some common golf tags.
 Added icon for horse mounting blocks and translated the most common tags to use it.
