@@ -3760,6 +3760,12 @@ function filter_tags_generic(keyvalues, nokeys)
       keyvalues["building"] = "yes"
    end
 
+   if (( keyvalues["man_made"]   == "tower" ) and
+       ( keyvalues["tower:type"] == "firefighter_training" )) then
+      keyvalues["man_made"] = "squaretower"
+      keyvalues["building"] = "yes"
+   end
+
    if (( keyvalues["man_made"] == "phone_mast"           ) or
        ( keyvalues["man_made"] == "radio_mast"           ) or
        ( keyvalues["man_made"] == "communications_mast"  ) or
