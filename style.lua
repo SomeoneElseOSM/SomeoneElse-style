@@ -3760,9 +3760,29 @@ function filter_tags_generic(keyvalues, nokeys)
       keyvalues["building"] = "yes"
    end
 
-   if (( keyvalues["man_made"]   == "tower" ) and
+   if (( keyvalues["man_made"]   == "tower"                ) and
        ( keyvalues["tower:type"] == "firefighter_training" )) then
       keyvalues["man_made"] = "squaretower"
+      keyvalues["building"] = "yes"
+   end
+
+   if ((  keyvalues["man_made"]    == "tower"             ) and
+       ((  keyvalues["tower:type"] == "church"           )  or
+        (  keyvalues["tower:type"] == "square"           )) and
+       (( keyvalues["amenity"]     == nil                )  or
+        ( keyvalues["amenity"]     ~= "place_of_worship" ))) then
+      keyvalues["man_made"] = "churchtower"
+   end
+
+   if ((( keyvalues["man_made"]      == "tower"            ) or
+        ( keyvalues["building"]      == "tower"            ) or
+        ( keyvalues["building:part"] == "yes"              )) and
+       ((  keyvalues["tower:type"]   == "spire"            )  or
+        (  keyvalues["tower:type"]   == "round"            )  or
+        (  keyvalues["tower:type"]   == "bell_tower"       )) and
+       (( keyvalues["amenity"]       == nil                )  or
+        ( keyvalues["amenity"]       ~= "place_of_worship" ))) then
+      keyvalues["man_made"] = "churchspire"
       keyvalues["building"] = "yes"
    end
 

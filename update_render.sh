@@ -76,6 +76,7 @@ file_url1=http://download.geofabrik.de/europe/${file_prefix1}-latest.osm.pbf
 # No file for Warwickshire
 #file_prefix1=west-midlands
 #file_prefix1=west-yorkshire
+#file_prefix1=wiltshire
 #file_prefix1=worcestershire
 #file_page1=http://download.geofabrik.de/europe/great-britain/england/${file_prefix1}.html
 #file_url1=http://download.geofabrik.de/europe/great-britain/england/${file_prefix1}-latest.osm.pbf

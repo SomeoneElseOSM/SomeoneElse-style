@@ -10,7 +10,8 @@ Use brand and/or operator on tourism=hotel.
 Treat landcover=trees as "here be trees" and landcover=grass as "here be grass".
 Render non-private toilets as less brown.
 Use illumination tower icon for "lighting" as well as "illumination".
-Added rendering for clock towers, aircraft control towers, radar towers and firefighter training towers.
+Added rendering for clock towers, aircraft control towers, radar towers and firefighter training towers.  
+Also church towers and spires.
 
 ## 10/02/2018 release
 Added support for some common golf tags.
