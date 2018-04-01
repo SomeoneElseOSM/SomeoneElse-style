@@ -705,6 +705,19 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Recycling bins and recycling centres.
+-- Recycling bins are only shown from z19.  Recycling centres are shown from
+-- z16 and have a characteristic icon.  Any object without recycling_type
+-- is assumed to be a bin.
+-- ----------------------------------------------------------------------------
+   if ( keyvalues["amenity"] == "recycling" ) then
+      if ( keyvalues["recycling_type"] == "centre" ) then
+         keyvalues["amenity"] = "recyclingcentre"
+         keyvalues["landuse"] = "industrial"
+      end
+   end
+
+-- ----------------------------------------------------------------------------
 -- Pretend add landuse=industrial to some industrial sub-types to force 
 -- name rendering.  Similarly, some commercial and leisure.
 -- man_made=works drops the man_made tag to avoid duplicate labelling.
@@ -738,7 +751,6 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["industrial"] == "packaging"              ) or
        ( keyvalues["industrial"] == "haulage"                ) or
        ( keyvalues["building"]   == "industrial"             ) or
-       ( keyvalues["amenity"]    == "recycling"              ) or
        ( keyvalues["power"]      == "plant"                  ) or
        ( keyvalues["building"]   == "works"                  ) or
        ( keyvalues["building"]   == "manufacture"            ) or
@@ -3006,6 +3018,7 @@ function filter_tags_generic(keyvalues, nokeys)
    if (( keyvalues["shop"]    == "pet"                     ) or
        ( keyvalues["shop"]    == "pets"                    ) or
        ( keyvalues["shop"]    == "pet;garden"              ) or
+       ( keyvalues["shop"]    == "pet;florist"             ) or
        ( keyvalues["shop"]    == "aquatics"                ) or
        ( keyvalues["shop"]    == "aquarium"                ) or
        ( keyvalues["shop"]    == "pet_supplies"            ) or
