@@ -3779,11 +3779,14 @@ function filter_tags_generic(keyvalues, nokeys)
       keyvalues["building"] = "yes"
    end
 
-   if ((  keyvalues["man_made"]    == "tower"             ) and
-       ((  keyvalues["tower:type"] == "church"           )  or
-        (  keyvalues["tower:type"] == "square"           )) and
-       (( keyvalues["amenity"]     == nil                )  or
-        ( keyvalues["amenity"]     ~= "place_of_worship" ))) then
+   if ((((  keyvalues["man_made"]    == "tower"             )  and
+         (( keyvalues["tower:type"]  == "church"           )   or
+          ( keyvalues["tower:type"]  == "square"           )   or
+          ( keyvalues["tower:type"]  == "campanile"        )   or
+          ( keyvalues["tower:type"]  == "bell_tower"       ))) or
+        (   keyvalues["man_made"]    == "campanile"          )) and
+       ((   keyvalues["amenity"]     == nil                  )  or
+        (   keyvalues["amenity"]     ~= "place_of_worship"   ))) then
       keyvalues["man_made"] = "churchtower"
    end
 
@@ -3791,8 +3794,7 @@ function filter_tags_generic(keyvalues, nokeys)
         ( keyvalues["building"]      == "tower"            ) or
         ( keyvalues["building:part"] == "yes"              )) and
        ((  keyvalues["tower:type"]   == "spire"            )  or
-        (  keyvalues["tower:type"]   == "round"            )  or
-        (  keyvalues["tower:type"]   == "bell_tower"       )) and
+        (  keyvalues["tower:type"]   == "round"            )) and
        (( keyvalues["amenity"]       == nil                )  or
         ( keyvalues["amenity"]       ~= "place_of_worship" ))) then
       keyvalues["man_made"] = "churchspire"
@@ -3804,7 +3806,6 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["man_made"] == "communications_mast"  ) or
        ( keyvalues["man_made"] == "communication_mast"   ) or
        ( keyvalues["man_made"] == "tower"                ) or
-       ( keyvalues["man_made"] == "campanile"            ) or
        ( keyvalues["man_made"] == "communications_tower" ) or
        ( keyvalues["man_made"] == "transmitter"          ) or
        ( keyvalues["man_made"] == "antenna"              )) then
