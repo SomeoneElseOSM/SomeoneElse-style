@@ -41,7 +41,7 @@ file_url1=http://download.geofabrik.de/europe/${file_prefix1}-latest.osm.pbf
 #file_page1=http://download.geofabrik.de/europe/great-britain/${file_prefix1}.html
 #file_url1=http://download.geofabrik.de/europe/great-britain/${file_prefix1}-latest.osm.pbf
 #
-# No extract for Bedfordshire
+#file_prefix1=bedfordshire
 #file_prefix1=berkshire
 #file_prefix1=buckinghamshire
 #file_prefix1=cambridgeshire
@@ -50,6 +50,7 @@ file_url1=http://download.geofabrik.de/europe/${file_prefix1}-latest.osm.pbf
 #file_prefix1=cumbria
 #file_prefix1=derbyshire
 #file_prefix1=devon
+#file_prefix1=east-sussex
 #file_prefix1=east-yorkshire-with-hull
 #file_prefix1=essex
 #file_prefix1=gloucestershire
@@ -59,9 +60,9 @@ file_url1=http://download.geofabrik.de/europe/${file_prefix1}-latest.osm.pbf
 #file_prefix1=herefordshire
 #file_prefix1=kent
 #file_prefix1=leicestershire
-# No file for Lincolnshire
+#file_prefix1=lincolnshire
 #file_prefix1=norfolk
-# No file for Northhamptonshire
+#file_prefix1=northamptonshire
 #file_prefix1=north-yorkshire
 #file_prefix1=northumberland
 #file_prefix1=nottinghamshire
@@ -71,10 +72,11 @@ file_url1=http://download.geofabrik.de/europe/${file_prefix1}-latest.osm.pbf
 #file_prefix1=south-yorkshire
 #file_prefix1=staffordshire
 #file_prefix1=suffolk
-# No file for Sussex
 #file_prefix1=surrey
-# No file for Warwickshire
+#file_prefix1=west-sussex
+#file_prefix1=warwickshire
 #file_prefix1=west-midlands
+#file_prefix1=west-sussex
 #file_prefix1=west-yorkshire
 #file_prefix1=wiltshire
 #file_prefix1=worcestershire

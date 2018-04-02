@@ -3378,6 +3378,7 @@ function filter_tags_generic(keyvalues, nokeys)
    if (( keyvalues["office"]     == "company"           ) or
        ( keyvalues["shop"]       == "office"            ) or
        ( keyvalues["amenity"]    == "office"            ) or
+       ( keyvalues["office"]     == "research"          ) or
        ( keyvalues["office"]     == "yes"               ) or
        ( keyvalues["commercial"] == "office"            )) then
       keyvalues["landuse"] = "unnamedcommercial"
