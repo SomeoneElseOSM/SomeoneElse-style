@@ -73,7 +73,6 @@ file_url1=http://download.geofabrik.de/europe/${file_prefix1}-latest.osm.pbf
 #file_prefix1=staffordshire
 #file_prefix1=suffolk
 #file_prefix1=surrey
-#file_prefix1=west-sussex
 #file_prefix1=warwickshire
 #file_prefix1=west-midlands
 #file_prefix1=west-sussex
