@@ -1529,6 +1529,27 @@ function filter_tags_generic(keyvalues, nokeys)
    end
    
 -- ----------------------------------------------------------------------------
+-- Things that are both towers and monuments or memorials 
+-- should render as the latter.
+-- ----------------------------------------------------------------------------
+   if ((  keyvalues["man_made"]  == "tower"     ) and
+       (( keyvalues["historic"]  == "memorial" )  or
+        ( keyvalues["historic"]  == "monument" ))) then
+      keyvalues["man_made"] = nil
+   end
+
+-- ----------------------------------------------------------------------------
+-- Things that are both viewpoints or attractions and monuments or memorials 
+-- should render as the latter.
+-- ----------------------------------------------------------------------------
+   if ((( keyvalues["tourism"]   == "viewpoint"  )  or
+        ( keyvalues["tourism"]   == "attraction" )) and
+       (( keyvalues["historic"]  == "memorial"   )  or
+        ( keyvalues["historic"]  == "monument"   ))) then
+      keyvalues["tourism"] = nil
+   end
+
+-- ----------------------------------------------------------------------------
 -- Add a building tag to historic items that are likely buildings so that
 -- buildings.mss can process it.  Some shouldn't assume buildings (e.g. "fort"
 -- below).  Some use "roof" (which I use for "nearly a building" elsewhere).
@@ -3796,6 +3817,7 @@ function filter_tags_generic(keyvalues, nokeys)
         ( keyvalues["building"]      == "tower"            ) or
         ( keyvalues["building:part"] == "yes"              )) and
        ((  keyvalues["tower:type"]   == "spire"            )  or
+        (  keyvalues["tower:type"]   == "steeple"          )  or
         (  keyvalues["tower:type"]   == "round"            )) and
        (( keyvalues["amenity"]       == nil                )  or
         ( keyvalues["amenity"]       ~= "place_of_worship" ))) then
