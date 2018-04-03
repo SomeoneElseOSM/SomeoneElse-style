@@ -2612,6 +2612,13 @@ function filter_tags_generic(keyvalues, nokeys)
       keyvalues["shop"] = "pawnbroker"
    end
 
+-- ----------------------------------------------------------------------------
+-- Deli is quite popular and has its own icon
+-- ----------------------------------------------------------------------------
+   if ( keyvalues["shop"] == "delicatessen" ) then
+      keyvalues["shop"] = "deli"
+   end
+
    if (( keyvalues["shop"]    == "money_transfer"      ) or
        ( keyvalues["shop"]    == "finance"             ) or
        ( keyvalues["office"]  == "finance"             ) or
@@ -2816,8 +2823,6 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["shop"]    == "wine;cheese"     ) or
        ( keyvalues["shop"]    == "dairy"           ) or
        ( keyvalues["shop"]    == "eggs"            ) or
-       ( keyvalues["shop"]    == "deli"            ) or
-       ( keyvalues["shop"]    == "delicatessen"    ) or
        ( keyvalues["shop"]    == "catering"        ) or
        ( keyvalues["shop"]    == "patissery"       ) or
        ( keyvalues["shop"]    == "pastry"          ) or
