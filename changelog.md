@@ -5,6 +5,12 @@ This page describes changes made [here](https://github.com/SomeoneElseOSM/Someon
 ## As yet unreleased
 -->
 
+## 08/04/2018 release
+More detail about church spires and towers and other towers; better icons.
+Split recycling centres and bins.
+Added office=research_institute to list of rendered offices.
+Added icon for shop=deli.
+
 ## 04/03/2018 release
 Treated "fence_type=hedge" as "hedge".
 Made tramlines less prominent betwen zooms 13 and 16.
