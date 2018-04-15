@@ -1083,6 +1083,7 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["floor:material"]    == "lino"             ) or
        ( keyvalues["floor:material"]    == "slate"            ) or
        ( keyvalues["floor:material"]    == "brick"            ) or
+       ( keyvalues["floor:material"]    == "rough_wood"       ) or
        ( keyvalues["floor:material"]    == "concrete"         ) or
        ( keyvalues["floor:material"]    == "lino;tiles;stone" )) then
       keyvalues["noncarpeted"] = "yes"
@@ -1123,7 +1124,8 @@ function filter_tags_generic(keyvalues, nokeys)
       end
    end
 
-   if (keyvalues["real_ale"] == "no") then
+   if (( keyvalues["real_ale"] == "no" ) and
+       ( keyvalues["amenity"] == "pub" )) then
       if (( keyvalues["food"] ~= nil  ) and
           ( keyvalues["food"] ~= "no" )) then
          if ( keyvalues["noncarpeted"] == "yes"  ) then
