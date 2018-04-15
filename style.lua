@@ -1753,6 +1753,22 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- If set, move tunnel:name to tunnel_name
+-- ----------------------------------------------------------------------------
+   if ( keyvalues["tunnel:name"] ~= nil ) then
+      keyvalues["tunnel_name"] = keyvalues["tunnel:name"]
+      keyvalues["tunnel:name"] = nil
+   end
+
+-- ----------------------------------------------------------------------------
+-- If set, move tunnel_name to name
+-- ----------------------------------------------------------------------------
+   if ( keyvalues["tunnel_name"] ~= nil ) then
+      keyvalues["name"] = keyvalues["tunnel_name"]
+      keyvalues["tunnel_name"] = nil
+   end
+
+-- ----------------------------------------------------------------------------
 -- If something has a "tpuk_ref", use it in preference to "name".
 -- It's in brackets because it's likely not signed.
 -- ----------------------------------------------------------------------------
