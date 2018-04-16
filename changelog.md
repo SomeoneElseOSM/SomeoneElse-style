@@ -1,9 +1,11 @@
 # Changes made to this rendering
 This page describes changes made [here](https://github.com/SomeoneElseOSM/SomeoneElse-style), [here](https://github.com/SomeoneElseOSM/SomeoneElse-style-legend) and [here](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT), visible [here](//map.atownsend.org.uk/maps/map/map.html).
 
-<!---
 ## As yet unreleased
--->
+Increased the tags rendered as "clock tower".
+Render tunnel names if available.
+If a bar doesn't serve real ale, render as a bar not a lager pub.
+Render pipelines (with names) and add to legend.
 
 ## 08/04/2018 release
 More detail about church spires and towers and other towers; better icons.
