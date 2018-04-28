@@ -7,6 +7,7 @@ Render tunnel names if available.
 If a bar doesn't serve real ale, render as a bar not a lager pub.
 Render pipelines (with names) and add to legend.
 Render non-private bicycle_parking, bicycle_rental and car_sharing as less blue.
+Distinguish pay and free toilets.
 
 ## 08/04/2018 release
 More detail about church spires and towers and other towers; better icons.
