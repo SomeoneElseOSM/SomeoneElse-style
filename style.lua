@@ -4,7 +4,7 @@ polygon_keys = { 'building', 'landcover', 'landuse', 'amenity', 'harbour', 'hist
       'wetland', 'water', 'aeroway' }
 
 generic_keys = {'access','addr:housename','addr:housenumber','addr:interpolation','admin_level','advertising','aerialway','aeroway','amenity','area','barrier',
-   'bicycle','brand','bridge','bridleway','booth','boundary','building','capital','construction','covered','culvert','cutting','denomination','designation','disused','ele',
+   'bicycle','brand','bridge','bridleway','booth','boundary','building','capital','construction','covered','culvert','cutting','denomination','designation','disused','disused:shop','ele',
    'embankment','emergency','foot','generation:source','golf','harbour','highway','historic','horse','hours','intermittent','junction','landcover','landuse','layer','leisure','lock',
    'man_made','military','motor_car','name','natural','ncn_milepost','office','oneway','operator','place','poi','population','power','power_source','public_transport','seamark:type',
    'railway','ref','religion','route','service','shop','sport','surface','toll','tourism','tower:type', 'tracktype','tunnel','water','waterway',
@@ -3924,6 +3924,12 @@ function filter_tags_generic(keyvalues, nokeys)
        (   keyvalues["shop"]            == "closed"    ) or
        (   keyvalues["shop"]            == "abandoned" )) then
       keyvalues["shop"] = "vacant"
+   end
+
+   if (( keyvalues["name"]     == nil ) and
+       ( keyvalues["old_name"] ~= nil )) then
+      keyvalues["name"]     = keyvalues["old_name"]
+      keyvalues["old_name"] = nil
    end
 
    if ( keyvalues["shop"] == "vacant" ) then
