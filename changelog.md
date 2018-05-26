@@ -7,6 +7,7 @@ not yet on UbuntuVM51
 --->
 Render the areas of police and fire stations in line with other similar areas (unnamedcommercial).
 Render playground sandpits as sand.
+Render names for heathland from zoom 13.
 <!---
 not yet on Hetzner
 --->
