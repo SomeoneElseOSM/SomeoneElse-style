@@ -6,7 +6,7 @@ polygon_keys = { 'building', 'landcover', 'landuse', 'amenity', 'harbour', 'hist
 generic_keys = {'access','addr:housename','addr:housenumber','addr:interpolation','admin_level','advertising','aerialway','aeroway','amenity','area','barrier',
    'bicycle','brand','bridge','bridleway','booth','boundary','building','capital','construction','covered','culvert','cutting','denomination','designation','disused','disused:shop','ele',
    'embankment','emergency','foot','generation:source','golf','harbour','highway','historic','horse','hours','intermittent','junction','landcover','landuse','layer','leisure','lock',
-   'man_made','military','motor_car','name','natural','ncn_milepost','office','oneway','operator','place','poi','population','power','power_source','public_transport','seamark:type',
+   'man_made','military','motor_car','name','natural','ncn_milepost','office','oneway','operator','place','playground','poi','population','power','power_source','public_transport','seamark:type',
    'railway','ref','religion','route','service','shop','sport','surface','toll','tourism','tower:type', 'tracktype','tunnel','water','waterway',
    'wetland','width','wood','type'}
 
@@ -1340,10 +1340,11 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
--- Golf 
+-- Golf (and sandpits)
 -- ----------------------------------------------------------------------------
-   if (( keyvalues["golf"]    == "bunker" ) and
-       ( keyvalues["natural"] == nil      )) then
+   if ((( keyvalues["golf"]       == "bunker"  )  or
+        ( keyvalues["playground"] == "sandpit" )) and
+       ( keyvalues["natural"]     == nil        )) then
       keyvalues["natural"] = "sand"
    end
 

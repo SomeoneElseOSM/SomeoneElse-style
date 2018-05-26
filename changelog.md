@@ -5,7 +5,8 @@ This page describes changes made [here](https://github.com/SomeoneElseOSM/Someon
 <!---
 not yet on UbuntuVM51
 --->
-Render the areas of police and fire stations in line with other similar areas (unnamedcommercial); 
+Render the areas of police and fire stations in line with other similar areas (unnamedcommercial).
+Render playground sandpits as sand.
 <!---
 not yet on Hetzner
 --->
