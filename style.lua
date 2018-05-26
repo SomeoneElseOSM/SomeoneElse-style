@@ -2779,9 +2779,7 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["leisure"] == "adult_gaming_centre" ) or
        ( keyvalues["leisure"] == "escape_game"         ) or
        ( keyvalues["sport"]   == "laser_tag"           ) or
-       ( keyvalues["amenity"] == "casino"              ) or
-       ( keyvalues["amenity"] == "bingo"               ) or
-       ( keyvalues["leisure"] == "bingo"               )) then
+       ( keyvalues["amenity"] == "casino"              )) then
       keyvalues["shop"] = "bookmaker"
    end
 
@@ -3664,6 +3662,15 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["leisure"]  == "climbing"             ) or
        ( keyvalues["leisure"]  == "high_ropes_course"    ) or
        ( keyvalues["leisure"]  == "bowling_alley"        ) or
+       ( keyvalues["amenity"]  == "bingo"                ) or
+       ( keyvalues["leisure"]  == "bingo"                ) or
+       ( keyvalues["leisure"]  == "bingo_hall"           ) or
+       ( keyvalues["gambing"]  == "bingo"                ) or
+       ( keyvalues["name"]     == "Bingo Hall"           ) or
+       ( keyvalues["name"]     == "Gala Bingo"           ) or
+       ( keyvalues["name"]     == "Gala Bingo Hall"      ) or
+       ( keyvalues["name"]     == "Mecca Bingo"          ) or
+       ( keyvalues["name"]     == "Castle Bingo"         ) or
        ( keyvalues["leisure"]  == "hackerspace"          ) or
        ( keyvalues["leisure"]  == "summer_camp"          ) or
        ( keyvalues["leisure"]  == "sailing_club"         ) or
