@@ -925,7 +925,9 @@ function filter_tags_generic(keyvalues, nokeys)
    if (( keyvalues["shop"]       == "car"           ) or
        ( keyvalues["shop"]       == "car_repair"    ) or
        ( keyvalues["shop"]       == "garden_centre" ) or
-       ( keyvalues["amenity"]    == "embassy"       )) then
+       ( keyvalues["amenity"]    == "embassy"       ) or
+       ( keyvalues["amenity"]    == "police"        ) or
+       ( keyvalues["amenity"]    == "fire_station"  )) then
       keyvalues["landuse"] = "unnamedcommercial"
    end
 
@@ -951,7 +953,7 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["landuse"]      == "aquaculture"              ) or
        ( keyvalues["landuse"]      == "fish_farm"                ) or
        ( keyvalues["landuse"]      == "fishfarm"                 ) or
-       ( keyvalues["seamark:type"] == "marine_farm" )) then
+       ( keyvalues["seamark:type"] == "marine_farm"              )) then
       keyvalues["landuse"] = "commercial"
    end
 
@@ -1877,6 +1879,14 @@ function filter_tags_generic(keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
    if ( keyvalues["advertising"] == "column" ) then
       keyvalues["tourism"] = "advertising_column"
+   end
+
+-- ----------------------------------------------------------------------------
+-- railway=transfer_station - show as "halt"
+-- This is for Manulla Junction, https://www.openstreetmap.org/node/5524753168
+-- ----------------------------------------------------------------------------
+   if ( keyvalues["railway"] == "transfer_station" ) then
+      keyvalues["railway"] = "halt"
    end
 
 -- ----------------------------------------------------------------------------

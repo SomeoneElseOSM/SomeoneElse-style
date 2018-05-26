@@ -1,10 +1,14 @@
 # Changes made to this rendering
 This page describes changes made [here](https://github.com/SomeoneElseOSM/SomeoneElse-style), [here](https://github.com/SomeoneElseOSM/SomeoneElse-style-legend) and [here](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT), visible [here](//map.atownsend.org.uk/maps/map/map.html).
 
-<!---
-Nothing not on UbuntuVM51
---->
 ## As yet unreleased
+<!---
+not yet on UbuntuVM51
+--->
+Render the areas of police and fire stations in line with other similar areas (unnamedcommercial); 
+<!---
+not yet on Hetzner
+--->
 Added more bingo hall tags as "leisure".
 
 ## 29/04/2018 release
