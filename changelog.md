@@ -9,6 +9,7 @@ Render the areas of police and fire stations in line with other similar areas (u
 Render playground sandpits as sand.
 Render names for heathland from zoom 13.
 Change default Noto font to one that works better and avoids a "double spaced" effect.
+Increased text wrap width for various names.
 <!---
 not yet on Hetzner
 --->
