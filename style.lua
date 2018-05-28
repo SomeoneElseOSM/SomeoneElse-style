@@ -3606,8 +3606,9 @@ function filter_tags_generic(keyvalues, nokeys)
 -- Similarly, nonspecific leisure facilities.
 -- Non-private swimming pools:
 --
--- Note - this is an old tag that was for the whole area (building etc.) of
--- a swimming pool.  It corresponds best with "leisure=sports_centre" 
+-- Note - this is an old tag that was often used for the whole area 
+-- (building etc.) of a swimming pool, although the wiki documentation wasn't 
+-- explicit.  It corresponds best with "leisure=sports_centre" 
 -- (rendered in its own right).  "leisure=swimming_pool" is for the wet bit;
 -- that is also rendered in its own right (in blue).
 -- Note there's no explicit "if private" check on the wet bit.
