@@ -1280,6 +1280,18 @@ function filter_tags_generic(keyvalues, nokeys)
 
 
 -- ----------------------------------------------------------------------------
+-- Render amenity=piano as musical_instrument
+-- ----------------------------------------------------------------------------
+   if ( keyvalues["amenity"] == "piano" ) then
+      keyvalues["amenity"] = "musical_instrument"
+
+      if ( keyvalues["name"] == nil ) then
+            keyvalues["name"] = "Piano"
+      end
+   end
+
+
+-- ----------------------------------------------------------------------------
 -- Render amenity=layby as parking
 -- ----------------------------------------------------------------------------
    if ( keyvalues["amenity"] == "layby" ) then
