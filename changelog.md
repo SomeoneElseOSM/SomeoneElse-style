@@ -1,19 +1,24 @@
 # Changes made to this rendering
 This page describes changes made [here](https://github.com/SomeoneElseOSM/SomeoneElse-style), [here](https://github.com/SomeoneElseOSM/SomeoneElse-style-legend) and [here](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT), visible [here](//map.atownsend.org.uk/maps/map/map.html).
 
-## As yet unreleased
 <!---
+## As yet unreleased
 not yet on UbuntuVM51
 --->
+<!---
+not yet on Hetzner
+--->
+
+## 28/04/2018 release
 Render the areas of police and fire stations in line with other similar areas (unnamedcommercial).
 Render playground sandpits as sand.
 Render names for heathland from zoom 13.
 Change default Noto font to one that works better and avoids a "double spaced" effect.
 Increased text wrap width for various names.
-<!---
-not yet on Hetzner
---->
 Added more bingo hall tags as "leisure".
+Add a special case of railway=halt for Manulla Junction.
+Added nightclub and pay toilets to legend.
+Added icon for "amenity=musical_instrument", and also use that for pub and station pianos.
 
 ## 29/04/2018 release
 Increased the tags rendered as "clock tower".
