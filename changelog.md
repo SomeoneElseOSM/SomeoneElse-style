@@ -9,7 +9,7 @@ not yet on UbuntuVM51
 not yet on Hetzner
 --->
 
-## 28/04/2018 release
+## 28/05/2018 release
 Render the areas of police and fire stations in line with other similar areas (unnamedcommercial).
 Render playground sandpits as sand.
 Render names for heathland from zoom 13.
