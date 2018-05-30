@@ -1213,22 +1213,14 @@ function filter_tags_generic(keyvalues, nokeys)
 
 
 -- ----------------------------------------------------------------------------
--- ATMs - use operator if set (even if name is set).
+-- If no name use brand or operator on amenity=fuel, among others.  
+-- If there is brand or operator, use that with name.
 -- ----------------------------------------------------------------------------
-   if (( keyvalues["amenity"]  == "atm" ) and
-       ( keyvalues["operator"] ~= nil   )) then
-      keyvalues["name"] = keyvalues["operator"]
-      keyvalues["operator"] = nil
-   end
-
-
--- ----------------------------------------------------------------------------
--- If no name use brand or operator on amenity=fuel.  If there is brand or
--- operator use that with name.
--- ----------------------------------------------------------------------------
-   if (( keyvalues["amenity"] == "fuel"             ) or
+   if (( keyvalues["amenity"] == "atm"              ) or
+       ( keyvalues["amenity"] == "fuel"             ) or
        ( keyvalues["amenity"] == "charging_station" ) or
-       ( keyvalues["tourism"] == "hotel"            )) then
+       ( keyvalues["tourism"] == "hotel"            ) or
+       ( keyvalues["shop"]    ~= nil                )) then
       if ( keyvalues["name"] == nil ) then
          if ( keyvalues["brand"] ~= nil ) then
             keyvalues["name"] = keyvalues["brand"]
@@ -1240,11 +1232,13 @@ function filter_tags_generic(keyvalues, nokeys)
             end
          end
       else
-         if ( keyvalues["brand"] ~= nil ) then
+         if (( keyvalues["brand"] ~= nil                )  and
+             ( keyvalues["brand"] ~= keyvalues["name"]  )) then
             keyvalues["name"] = keyvalues["name"] .. " (" .. keyvalues["brand"] .. ")"
             keyvalues["brand"] = nil
 	 else
-            if ( keyvalues["operator"] ~= nil ) then
+            if (( keyvalues["operator"] ~= nil                )  and
+                ( keyvalues["operator"] ~= keyvalues["name"]  )) then
                keyvalues["name"] = keyvalues["name"] .. " (" .. keyvalues["operator"] .. ")"
                keyvalues["operator"] = nil
             end
