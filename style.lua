@@ -3119,8 +3119,7 @@ function filter_tags_generic(keyvalues, nokeys)
 -- dog grooming).
 -- Add unnamedcommercial landuse to give non-building areas a background.
 -- ----------------------------------------------------------------------------
-   if (( keyvalues["shop"]    == "pet"                     ) or
-       ( keyvalues["shop"]    == "pets"                    ) or
+   if (( keyvalues["shop"]    == "pets"                    ) or
        ( keyvalues["shop"]    == "pet;garden"              ) or
        ( keyvalues["shop"]    == "pet;florist"             ) or
        ( keyvalues["shop"]    == "aquatics"                ) or
@@ -3141,7 +3140,7 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["amenity"] == "kennels"                 ) or
        ( keyvalues["amenity"] == "animal_shelter"          )) then
       keyvalues["landuse"] = "unnamedcommercial"
-      keyvalues["shop"] = "shopnonspecific"
+      keyvalues["shop"] = "pet"
    end
 
 -- ----------------------------------------------------------------------------
