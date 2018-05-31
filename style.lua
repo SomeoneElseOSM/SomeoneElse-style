@@ -3238,13 +3238,7 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["shop"]    == "key_cutting"             ) or
        ( keyvalues["shop"]    == "keys"                    ) or
        ( keyvalues["shop"]    == "key"                     ) or
-       ( keyvalues["shop"]    == "laundry"                 ) or
-       ( keyvalues["shop"]    == "launderette"             ) or
-       ( keyvalues["shop"]    == "dry_cleaning"            ) or
-       ( keyvalues["shop"]    == "dry_cleaning;laundry"    ) or
        ( keyvalues["shop"]    == "cleaning"                ) or
-       ( keyvalues["shop"]    == "dry_cleaner"             ) or
-       ( keyvalues["shop"]    == "dry_cleaners"            ) or
        ( keyvalues["shop"]    == "art"                     ) or
        ( keyvalues["shop"]    == "tattoo"                  ) or
        ( keyvalues["shop"]    == "piercing"                ) or
@@ -3315,6 +3309,15 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["amenity"] == "courier"                 )) then
       keyvalues["landuse"] = "unnamedcommercial"
       keyvalues["shop"] = "shopnonspecific"
+   end
+
+   if (( keyvalues["shop"]    == "launderette"             ) or
+       ( keyvalues["shop"]    == "dry_cleaning"            ) or
+       ( keyvalues["shop"]    == "dry_cleaning;laundry"    ) or
+       ( keyvalues["shop"]    == "dry_cleaner"             ) or
+       ( keyvalues["shop"]    == "dry_cleaners"            )) then
+      keyvalues["landuse"] = "unnamedcommercial"
+      keyvalues["shop"] = "laundry"
    end
 
 -- ----------------------------------------------------------------------------

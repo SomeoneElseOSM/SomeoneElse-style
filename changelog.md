@@ -10,6 +10,7 @@ not yet on Hetzner
 --->
 Added more icons for male and female toilets.
 User operator / brand if set instead of name on shops.
+Added laundry icon.
 
 ## 28/05/2018 release
 Render the areas of police and fire stations in line with other similar areas (unnamedcommercial).
