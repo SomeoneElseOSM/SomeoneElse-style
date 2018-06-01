@@ -3083,13 +3083,12 @@ function filter_tags_generic(keyvalues, nokeys)
 -- the name is usually characteristic
 -- ----------------------------------------------------------------------------
    if (( keyvalues["shop"]   == "stationery"      ) or
-       ( keyvalues["shop"]   == "books"           ) or
        ( keyvalues["shop"]   == "comics"          ) or
        ( keyvalues["shop"]   == "comic"           ) or
        ( keyvalues["shop"]   == "anime"           ) or
        ( keyvalues["shop"]   == "maps"            ) or
        ( keyvalues["shop"]   == "office_supplies" )) then
-      keyvalues["shop"] = "shopnonspecific"
+      keyvalues["shop"] = "books"
    end
 
 -- ----------------------------------------------------------------------------
