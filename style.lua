@@ -3073,9 +3073,9 @@ function filter_tags_generic(keyvalues, nokeys)
 -- the name is usually characteristic
 -- ----------------------------------------------------------------------------
    if (( keyvalues["office"] == "travel_agent"  ) or
-       ( keyvalues["shop"]   == "travel_agent"  ) or
-       ( keyvalues["shop"]   == "travel_agency" )) then
-      keyvalues["shop"] = "shopnonspecific"
+       ( keyvalues["shop"]   == "travel_agency" ) or
+       ( keyvalues["shop"]   == "travel"        )) then
+      keyvalues["shop"] = "travel_agent"
    end
 
 -- ----------------------------------------------------------------------------
