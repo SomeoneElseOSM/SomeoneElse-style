@@ -1028,6 +1028,27 @@ function filter_tags_generic(keyvalues, nokeys)
       keyvalues["landuse"] = "forest"
   end
 
+-- ----------------------------------------------------------------------------
+-- Use operator (but not brand) on various natural objects, always in brackets.
+-- (compare with the similar check including "brand" for e.g. "atm" below)
+-- This is done before we change tags based on leaf_type.
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["landuse"] == "forest" )  or
+       ( keyvalues["natural"] == "wood"   )) then
+      if ( keyvalues["name"] == nil ) then
+         if ( keyvalues["operator"] ~= nil ) then
+            keyvalues["name"] = "(" .. keyvalues["operator"] .. ")"
+            keyvalues["operator"] = nil
+         end
+      else
+         if (( keyvalues["operator"] ~= nil                )  and
+             ( keyvalues["operator"] ~= keyvalues["name"]  )) then
+            keyvalues["name"] = keyvalues["name"] .. " (" .. keyvalues["operator"] .. ")"
+            keyvalues["operator"] = nil
+         end
+      end
+   end
+
   if ((( keyvalues["landuse"]   == "forest" )  and
        ( keyvalues["leaf_type"] ~= nil      )) or
       (  keyvalues["natural"]   == "forest"  ) or
