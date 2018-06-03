@@ -14,6 +14,7 @@ Added laundry, pet shop, travel agent and bookshop icons.
 Show the operator of woods and forests in brackets after the name if available.
 Change the dot frequency for long distance horse routes to match the walking route frequency instead of the cycle route frequency, so that more dots are visible.
 Added names for wetland.
+Added another key to translate for horse mounting blocks.
 
 ## 28/05/2018 release
 Render the areas of police and fire stations in line with other similar areas (unnamedcommercial).

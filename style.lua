@@ -1918,6 +1918,7 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["bridleway"] == "mounting_block" ) or
        ( keyvalues["historic"]  == "mounting_block" ) or
        ( keyvalues["horse"]     == "mounting_block" ) or
+       ( keyvalues["horse"]     == "mounting block" ) or
        ( keyvalues["amenity"]   == "mounting_step"  ) or
        ( keyvalues["amenity"]   == "mounting_steps" )) then
       keyvalues["man_made"] = "mounting_block"
