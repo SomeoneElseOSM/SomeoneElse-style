@@ -9,7 +9,7 @@ not yet on UbuntuVM51
 not yet on Hetzner
 --->
 Added more icons for male and female toilets.
-User operator / brand if set instead of name on shops.
+User operator / brand if set instead of name on shops and pubs.
 Added laundry, pet shop, travel agent and bookshop icons.
 Show the operator of woods and forests in brackets after the name if available.
 Change the dot frequency for long distance horse routes to match the walking route frequency instead of the cycle route frequency, so that more dots are visible.
