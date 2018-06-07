@@ -2883,6 +2883,18 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Various alcohol shops
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["shop"]    == "beer"            ) or
+       ( keyvalues["shop"]    == "off_licence"     ) or
+       ( keyvalues["shop"]    == "off_license"     ) or
+       ( keyvalues["shop"]    == "offlicence"      ) or
+       ( keyvalues["shop"]    == "wine"            ) or
+       ( keyvalues["shop"]    == "whisky"          )) then
+      keyvalues["shop"] = "alcohol"
+   end
+
+-- ----------------------------------------------------------------------------
 -- Various photo, camera, copy and print shops
 -- Difficult to do an icon for.
 -- ----------------------------------------------------------------------------
@@ -2937,14 +2949,7 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["shop"]    == "sweets"          ) or
        ( keyvalues["shop"]    == "sweet"           ) or
        ( keyvalues["shop"]    == "spice"           ) or
-       ( keyvalues["shop"]    == "nuts"            ) or
-       ( keyvalues["shop"]    == "alcohol"         ) or
-       ( keyvalues["shop"]    == "beer"            ) or
-       ( keyvalues["shop"]    == "off_licence"     ) or
-       ( keyvalues["shop"]    == "off_license"     ) or
-       ( keyvalues["shop"]    == "offlicence"      ) or
-       ( keyvalues["shop"]    == "wine"            ) or
-       ( keyvalues["shop"]    == "whisky"          )) then
+       ( keyvalues["shop"]    == "nuts"            )) then
       keyvalues["shop"] = "shopnonspecific"
    end
 
