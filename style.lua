@@ -2893,6 +2893,11 @@ function filter_tags_generic(keyvalues, nokeys)
       keyvalues["shop"] = "alcohol"
    end
 
+   if (( keyvalues["shop"]    == "sweets"          ) or
+       ( keyvalues["shop"]    == "sweet"           )) then
+      keyvalues["shop"] = "confectionery"
+   end
+
 -- ----------------------------------------------------------------------------
 -- Various photo, camera, copy and print shops
 -- Difficult to do an icon for.
@@ -2944,9 +2949,6 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["shop"]    == "patissery"       ) or
        ( keyvalues["shop"]    == "pastry"          ) or
        ( keyvalues["shop"]    == "fishmonger"      ) or
-       ( keyvalues["shop"]    == "confectionery"   ) or
-       ( keyvalues["shop"]    == "sweets"          ) or
-       ( keyvalues["shop"]    == "sweet"           ) or
        ( keyvalues["shop"]    == "spice"           ) or
        ( keyvalues["shop"]    == "nuts"            )) then
       keyvalues["shop"] = "shopnonspecific"
