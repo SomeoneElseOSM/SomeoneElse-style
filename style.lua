@@ -1205,23 +1205,25 @@ function filter_tags_generic(keyvalues, nokeys)
 -- People have used lots of tags for "former" or "dead" pubs.
 -- "disused:amenity=pub" is the most popular.
 -- ----------------------------------------------------------------------------
-   if ((  keyvalues["disused:amenity"] == "pub"    ) or
-       (  keyvalues["abandoned:amenity"] == "pub"  ) or
-       (  keyvalues["amenity:disused"] == "pub"    ) or
-       (  keyvalues["amenity"] == "closed_pub"     ) or
-       (  keyvalues["amenity"] == "dead_pub"       ) or
-       (  keyvalues["amenity"] == "disused_pub"    ) or
-       (  keyvalues["amenity"] == "former_pub"     ) or
-       (  keyvalues["amenity"] == "old_pub"        ) or
-       (  keyvalues["disused"] == "pub"            ) or
-       (  keyvalues["disused:pub"] == "yes"        ) or
-       (  keyvalues["former_amenity"] == "former_pub" ) or
-       (  keyvalues["former_amenity"] == "pub"     ) or
-       (  keyvalues["former_amenity"] == "old_pub" ) or
-       (  keyvalues["former:amenity"] == "pub"     ) or
-       (  keyvalues["old_amenity"] == "pub"        ) or
-       (( keyvalues["amenity"] == "pub"           )  and
-        ( keyvalues["disused"] == "yes"           ))) then
+   if (((  keyvalues["disused:amenity"]   == "pub"             )   or
+        (  keyvalues["abandoned:amenity"] == "pub"             )   or
+        (  keyvalues["amenity:disused"]   == "pub"             )   or
+        (  keyvalues["amenity"]           == "closed_pub"      )   or
+        (  keyvalues["amenity"]           == "dead_pub"        )   or
+        (  keyvalues["amenity"]           == "disused_pub"     )   or
+        (  keyvalues["amenity"]           == "former_pub"      )   or
+        (  keyvalues["amenity"]           == "old_pub"         )   or
+        (  keyvalues["disused"]           == "pub"             )   or
+        (  keyvalues["disused:pub"]       == "yes"             )   or
+        (  keyvalues["former_amenity"]    == "former_pub"      )   or
+        (  keyvalues["former_amenity"]    == "pub"             )   or
+        (  keyvalues["former_amenity"]    == "old_pub"         )   or
+        (  keyvalues["former:amenity"]    == "pub"             )   or
+        (  keyvalues["old_amenity"]       == "pub"             )   or
+        (( keyvalues["amenity"]           == "pub"            )    and
+         ( keyvalues["disused"]           == "yes"            )))  and
+       (   keyvalues["shop"]              == nil                )  and
+       (   keyvalues["tourism"]           == nil                )) then
       keyvalues["amenity"] = "pub_nddd"
    end
 

@@ -16,6 +16,7 @@ Added another key to translate for horse mounting blocks.
 not yet on UbuntuVM51
 --->
 Added "unclassified_road" as a designation to be processed as "unclassified_county_road" etc.
+If a former pub is a shop/hotel, render it as a shop/hotel.
 
 ## 28/05/2018 release
 Render the areas of police and fire stations in line with other similar areas (unnamedcommercial).
