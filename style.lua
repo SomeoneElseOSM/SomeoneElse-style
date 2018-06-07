@@ -1126,6 +1126,16 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Things that are both hotels, B&Bs etc. and pubs should render as pubs, 
+-- because I'm far more likely to be looking for the latter than the former.
+-- This is done by removing the tourism tag for them.
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["amenity"]   == "pub"   ) and
+       ( keyvalues["tourism"]   ~= nil     )) then
+      keyvalues["tourism"] = nil
+   end
+
+-- ----------------------------------------------------------------------------
 -- Attempt to do something sensible with pubs
 -- Pubs that serve real_ale get a nice IPA, ones that don't a yellowy lager,
 -- closed pubs an "X".  Others get the default empty glass.
@@ -2141,16 +2151,8 @@ function filter_tags_generic(keyvalues, nokeys)
 
 
 -- ----------------------------------------------------------------------------
--- Things that are both hotels and pubs should render as pubs, because I'm 
--- far more likely to be looking for the latter than the former.
--- This is done by removing the tourism tag for them.
--- Likewise, "bar;restaurant" to "bar".
+-- Change some common semicolon values to the first in the list.
 -- ----------------------------------------------------------------------------
-   if (( keyvalues["amenity"]   == "pub"   ) and
-       ( keyvalues["tourism"]   == "hotel" )) then
-      keyvalues["tourism"] = nil
-   end
-
    if ( keyvalues["amenity"] == "bar;restaurant" ) then
       keyvalues["amenity"] = "bar"
    end
