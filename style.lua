@@ -229,6 +229,7 @@ function filter_tags_generic(keyvalues, nokeys)
    if (( keyvalues["designation"] == "unclassified_county_road"  ) or
        ( keyvalues["designation"] == "unclassified_country_road" ) or
        ( keyvalues["designation"] == "unclassified_highway"      ) or
+       ( keyvalues["designation"] == "unclassified_road"         ) or
        ( keyvalues["designation"] == "unmade_road"               )) then
       if (( keyvalues["highway"] == "footway"   ) or 
           ( keyvalues["highway"] == "steps"     ) or 
