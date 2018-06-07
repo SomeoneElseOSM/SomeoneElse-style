@@ -4282,6 +4282,11 @@ function filter_tags_relation_member (keyvalues, keyvaluemembers, roles, memberc
 -- handle it sensibly, as it's going to be overlaid over other highway types.
 -- "ldpnwn" is used to allow for future different processing of different 
 -- relations.
+--
+-- Name handling for cycle routes makes as special case of the National Byway.
+--
+-- MTB routes are processed only if they are not also another type of cycle
+-- route (including LCN, which isn't actually shown in this rendering).
 -- ----------------------------------------------------------------------------
    if (type == "route") then
       if (( keyvalues["network"] == "nwn" ) or
@@ -4297,6 +4302,13 @@ function filter_tags_relation_member (keyvalues, keyvaluemembers, roles, memberc
          if ( keyvalues["ref"] ~= "NB" ) then
             keyvalues["name"] = keyvalues["ref"]
          end
+      end
+
+      if (( keyvalues["route"]   == "mtb" ) and
+          ( keyvalues["network"] ~= "ncn" ) and
+          ( keyvalues["network"] ~= "rcn" ) and
+          ( keyvalues["network"] ~= "lcn" )) then
+         keyvalues["highway"] = "ldpmtb"
       end
 
       if ( keyvalues["network"] == "nhn" ) then
