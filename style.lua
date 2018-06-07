@@ -2850,13 +2850,12 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
--- mobile_phone shops as displayed just generic.
--- Again, the name usually describes the business
+-- mobile_phone shops 
 -- ----------------------------------------------------------------------------
-   if (( keyvalues["shop"]   == "mobile_phone" ) or
-       ( keyvalues["shop"]   == "phone"        ) or
-       ( keyvalues["shop"]   == "phone_repair" )) then
-      keyvalues["shop"] = "shopnonspecific"
+   if (( keyvalues["shop"]   == "phone"        ) or
+       ( keyvalues["shop"]   == "phone_repair" ) or
+       ( keyvalues["shop"]   == "telephone"    )) then
+      keyvalues["shop"] = "mobile_phone"
    end
 
 -- ----------------------------------------------------------------------------

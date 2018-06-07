@@ -19,7 +19,7 @@ Added "unclassified_road" as a designation to be processed as "unclassified_coun
 If a former pub is a shop/hotel, render it as a shop/hotel.
 When checking if a pub is also a hotel, also check for B&Bs etc. (and render as pub).  Do this test before the "real_ale" logic so as not to exclude some pubs from it.
 Render MTB trails like cycle routes but with the dots and text closer together.
-Added icon for various alcohol shops.
+Added icon for various alcohol shops and mobile phone shops.
 
 ## 28/05/2018 release
 Render the areas of police and fire stations in line with other similar areas (unnamedcommercial).
