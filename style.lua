@@ -2398,7 +2398,62 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["historic"]   == "wayside_shrine" ) or
        ( keyvalues["man_made"]   == "obelisk"        ) or
        ( keyvalues["landmark"]   == "obelisk"        )) then
-      keyvalues["historic"] = "memorial"
+      keyvalues["historic"] = "memorialcross"
+   end
+
+   if (( keyvalues["historic"]   == "memorial"     ) and
+       ( keyvalues["memorial"]   == "war_memorial" )) then
+      keyvalues["historic"] = "warmemorial"
+   end
+
+   if ((  keyvalues["historic"]      == "memorial"     ) and
+       (( keyvalues["memorial"]      == "plaque"      )  or
+        ( keyvalues["memorial"]      == "blue_plaque" )  or
+        ( keyvalues["memorial:type"] == "plaque"      )  or
+        ( keyvalues["memorial:type"] == "blue_plaque" ))) then
+      keyvalues["historic"] = "memorialplaque"
+   end
+
+   if (( keyvalues["historic"]   == "memorial"        ) and
+       ( keyvalues["memorial"]   == "pavement plaque" )) then
+      keyvalues["historic"] = "memorialpavementplaque"
+   end
+
+   if ((  keyvalues["historic"]      == "memorial"  ) and
+       (( keyvalues["memorial"]      == "statue"   )  or
+        ( keyvalues["memorial:type"] == "statue"   ))) then
+      keyvalues["historic"] = "memorialstatue"
+   end
+
+   if (( keyvalues["historic"]   == "memorial"    ) and
+       ( keyvalues["memorial"]   == "sculpture"   )) then
+      keyvalues["historic"] = "memorialsculpture"
+   end
+
+   if (( keyvalues["historic"]   == "memorial"    ) and
+       ( keyvalues["memorial"]   == "cross"       )) then
+      keyvalues["historic"] = "memorialcross"
+   end
+
+   if (( keyvalues["historic"]   == "memorial"    ) and
+       ( keyvalues["memorial"]   == "stone"       )) then
+      keyvalues["historic"] = "memorialstone"
+   end
+
+   if ((  keyvalues["historic"]      == "memorial"  ) and
+       (( keyvalues["memorial"]      == "plate"    )  or
+        ( keyvalues["memorial:type"] == "plate"    ))) then
+      keyvalues["historic"] = "memorialplate"
+   end
+
+   if (( keyvalues["historic"]   == "memorial"    ) and
+       ( keyvalues["memorial"]   == "bench"       )) then
+      keyvalues["historic"] = "memorialbench"
+   end
+
+   if (( keyvalues["historic"]   == "memorial"    ) and
+       ( keyvalues["memorial"]   == "grave"       )) then
+      keyvalues["historic"] = "memorialgrave"
    end
 
 -- ----------------------------------------------------------------------------
