@@ -23,6 +23,7 @@ Added icon for various alcohol shops, mobile phone and confectionery shops.
 Added icons for different sorts of historic=memorial.
 Moved "shop=party" to "gift" and consolidated "spa" as "beauty".
 Added "motor_accessories" as "car_parts", "petfood" as "pet", "guns" as "shopnonspecific", "ship_chandler","chandlers","kitchen;bathroom_furnishing" as "furniture", "tan","nail_salon" as "beauty", "locksmiths" as "shopnonspecific" and "christmas" as "gift".
+Added boat_rental as nonspecific leisure.
 
 ## 28/05/2018 release
 Render the areas of police and fire stations in line with other similar areas (unnamedcommercial).
