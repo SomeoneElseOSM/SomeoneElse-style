@@ -17,7 +17,7 @@ If a former pub is a shop/hotel, render it as a shop/hotel.
 When checking if a pub is also a hotel, also check for B&Bs etc. (and render as pub).  Do this test before the "real_ale" logic so as not to exclude some pubs from it.
 Render MTB trails like cycle routes but with the dots and text closer together.
 Added icon for various alcohol shops, mobile phone and confectionery shops.
-Added icons for different sorts of historic=memorial.
+Added icons for different sorts of historic=memorial and similar objects (e.g. obelisks).
 Moved "shop=party" to "gift" and consolidated "spa" as "beauty".
 Added "motor_accessories" as "car_parts", "petfood" as "pet", "guns" as "shopnonspecific", "ship_chandler","chandlers","kitchen;bathroom_furnishing" as "furniture", "tan","nail_salon" as "beauty", "locksmiths" as "shopnonspecific" and "christmas" as "gift".
 Added boat_rental as nonspecific leisure.

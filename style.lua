@@ -1647,6 +1647,9 @@ function filter_tags_generic(keyvalues, nokeys)
 -- below).  Some use "roof" (which I use for "nearly a building" elsewhere).
 -- It's sent through as "nonspecific".
 -- "stone" has a building tag added because some are mapped as closed ways.
+--
+-- "historic=monument" is here rather than under e.g. obelisk because it's 
+-- used for all sorts of features.
 -- ----------------------------------------------------------------------------
    if (( keyvalues["historic"] == "monument"           ) or
        ( keyvalues["historic"] == "building"           ) or
@@ -2391,14 +2394,13 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
--- Render historic=wayside_cross and wayside_shrine as historic=memorial
--- Also man_made=obelisk and landmark=obelisk
--- It's near enough in meaning I think.
+-- Render historic=wayside_cross and wayside_shrine as historic=memorialcross
 -- ----------------------------------------------------------------------------
-   if (( keyvalues["historic"]   == "wayside_cross"  ) or
-       ( keyvalues["historic"]   == "wayside_shrine" ) or
-       ( keyvalues["man_made"]   == "obelisk"        ) or
-       ( keyvalues["landmark"]   == "obelisk"        )) then
+   if ((   keyvalues["historic"]   == "wayside_cross"    ) or
+       (   keyvalues["historic"]   == "wayside_shrine"   ) or
+       ((  keyvalues["historic"]   == "memorial"        )  and
+        (( keyvalues["memorial"]   == "cross"          )   or
+         ( keyvalues["memorial"]   == "mercat_cross"   )))) then
       keyvalues["historic"] = "memorialcross"
    end
 
@@ -2432,11 +2434,6 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
    if (( keyvalues["historic"]   == "memorial"    ) and
-       ( keyvalues["memorial"]   == "cross"       )) then
-      keyvalues["historic"] = "memorialcross"
-   end
-
-   if (( keyvalues["historic"]   == "memorial"    ) and
        ( keyvalues["memorial"]   == "stone"       )) then
       keyvalues["historic"] = "memorialstone"
    end
@@ -2452,9 +2449,18 @@ function filter_tags_generic(keyvalues, nokeys)
       keyvalues["historic"] = "memorialbench"
    end
 
-   if (( keyvalues["historic"]   == "memorial"    ) and
-       ( keyvalues["memorial"]   == "grave"       )) then
+   if ((  keyvalues["historic"]   == "memorial"     ) and
+       (( keyvalues["memorial"]   == "grave"       )  or
+        ( keyvalues["memorial"]   == "graveyard"   ))) then
       keyvalues["historic"] = "memorialgrave"
+   end
+
+   if ((   keyvalues["man_made"]      == "obelisk"     ) or
+       (   keyvalues["landmark"]      == "obelisk"     ) or
+       ((  keyvalues["historic"]      == "memorial"   ) and
+        (( keyvalues["memorial"]      == "obelisk"   )  or
+         ( keyvalues["memorial:type"] == "obelisk"   )))) then
+      keyvalues["historic"] = "memorialobelisk"
    end
 
 -- ----------------------------------------------------------------------------
