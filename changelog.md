@@ -12,9 +12,6 @@ Show the operator of woods and forests in brackets after the name if available.
 Change the dot frequency for long distance horse routes to match the walking route frequency instead of the cycle route frequency, so that more dots are visible.
 Added names for wetland.
 Added another key to translate for horse mounting blocks.
-<!---
-not yet on UbuntuVM51
---->
 Added "unclassified_road" as a designation to be processed as "unclassified_county_road" etc.
 If a former pub is a shop/hotel, render it as a shop/hotel.
 When checking if a pub is also a hotel, also check for B&Bs etc. (and render as pub).  Do this test before the "real_ale" logic so as not to exclude some pubs from it.
@@ -24,6 +21,9 @@ Added icons for different sorts of historic=memorial.
 Moved "shop=party" to "gift" and consolidated "spa" as "beauty".
 Added "motor_accessories" as "car_parts", "petfood" as "pet", "guns" as "shopnonspecific", "ship_chandler","chandlers","kitchen;bathroom_furnishing" as "furniture", "tan","nail_salon" as "beauty", "locksmiths" as "shopnonspecific" and "christmas" as "gift".
 Added boat_rental as nonspecific leisure.
+<!---
+not yet on UbuntuVM51
+--->
 
 ## 28/05/2018 release
 Render the areas of police and fire stations in line with other similar areas (unnamedcommercial).
