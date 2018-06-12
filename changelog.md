@@ -1,10 +1,12 @@
 # Changes made to this rendering
 This page describes changes made [here](https://github.com/SomeoneElseOSM/SomeoneElse-style), [here](https://github.com/SomeoneElseOSM/SomeoneElse-style-legend) and [here](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT), visible [here](//map.atownsend.org.uk/maps/map/map.html).
 
-## As yet unreleased
 <!---
 not yet on Hetzner
+## As yet unreleased
 --->
+
+## 12/06/2018 release
 Added more icons for male and female toilets.
 User operator / brand if set instead of name on shops and pubs.
 Added laundry, pet shop, travel agent and bookshop icons.
@@ -17,13 +19,13 @@ If a former pub is a shop/hotel, render it as a shop/hotel.
 When checking if a pub is also a hotel, also check for B&Bs etc. (and render as pub).  Do this test before the "real_ale" logic so as not to exclude some pubs from it.
 Render MTB trails like cycle routes but with the dots and text closer together.
 Added icon for various alcohol shops, mobile phone and confectionery shops.
-Added icons for different sorts of historic=memorial and similar objects (e.g. obelisks).
 Moved "shop=party" to "gift" and consolidated "spa" as "beauty".
 Added "motor_accessories" as "car_parts", "petfood" as "pet", "guns" as "shopnonspecific", "ship_chandler","chandlers","kitchen;bathroom_furnishing" as "furniture", "tan","nail_salon" as "beauty", "locksmiths" as "shopnonspecific" and "christmas" as "gift".
 Added boat_rental as nonspecific leisure.
 <!---
-not yet on UbuntuVM51
+not yet completely on UbuntuVM51
 --->
+Added icons for different sorts of historic=memorial and similar objects (e.g. obelisks).
 
 ## 28/05/2018 release
 Render the areas of police and fire stations in line with other similar areas (unnamedcommercial).
