@@ -2887,10 +2887,15 @@ function filter_tags_generic(keyvalues, nokeys)
    if (( keyvalues["shop"]  == "security"         ) or
        ( keyvalues["shop"]  == "survey"           ) or
        ( keyvalues["shop"]  == "survey_equipment" ) or       
-       ( keyvalues["shop"]  == "hifi"             ) or
-       ( keyvalues["shop"]  == "computer"         ) or
-       ( keyvalues["shop"]  == "computer_repair"  )) then
+       ( keyvalues["shop"]  == "hifi"             )) then
       keyvalues["shop"] = "shopnonspecific"
+   end
+
+-- ----------------------------------------------------------------------------
+-- Computer
+-- ----------------------------------------------------------------------------
+   if ( keyvalues["shop"]  == "computer_repair" ) then
+      keyvalues["shop"] = "computer"
    end
 
 -- ----------------------------------------------------------------------------
