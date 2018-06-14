@@ -3208,13 +3208,19 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["shop"]   == "computer_games" ) or
        ( keyvalues["shop"]   == "video_games"    ) or
        ( keyvalues["shop"]   == "hobby"          ) or
-       ( keyvalues["shop"]   == "craft"          ) or
+       ( keyvalues["shop"]   == "fancy_dress"    )) then
+      keyvalues["shop"] = "shopnonspecific"
+   end
+
+-- ----------------------------------------------------------------------------
+-- Art etc.
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["shop"]   == "craft"          ) or
        ( keyvalues["shop"]   == "crafts"         ) or
        ( keyvalues["shop"]   == "art_supplies"   ) or
        ( keyvalues["shop"]   == "pottery"        ) or
-       ( keyvalues["craft"]  == "pottery"        ) or
-       ( keyvalues["shop"]   == "fancy_dress"    )) then
-      keyvalues["shop"] = "shopnonspecific"
+       ( keyvalues["craft"]  == "pottery"        )) then
+      keyvalues["shop"] = "art"
    end
 
 -- ----------------------------------------------------------------------------
@@ -3345,7 +3351,6 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["shop"]    == "keys"                    ) or
        ( keyvalues["shop"]    == "key"                     ) or
        ( keyvalues["shop"]    == "cleaning"                ) or
-       ( keyvalues["shop"]    == "art"                     ) or
        ( keyvalues["shop"]    == "tattoo"                  ) or
        ( keyvalues["shop"]    == "piercing"                ) or
        ( keyvalues["shop"]    == "tattoo;piercing"         ) or

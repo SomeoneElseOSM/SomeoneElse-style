@@ -6,6 +6,7 @@ This page describes changes made [here](https://github.com/SomeoneElseOSM/Someon
 not yet on Hetzner or UbuntuVM51
 --->
 Fixed a [bug](https://github.com/SomeoneElseOSM/SomeoneElse-style/issues/4) where gendered hairdressers (or other features, actually) could render as male or female toilets.
+Added icon for shop=art and related shops.
 
 ## 12/06/2018 release
 <!---
