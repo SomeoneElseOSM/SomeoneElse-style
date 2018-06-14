@@ -1349,34 +1349,35 @@ function filter_tags_generic(keyvalues, nokeys)
 -- Render for-pay toilets differently.
 -- Also use different icons for male and female, if these are separate.
 -- ----------------------------------------------------------------------------
-   if ((  keyvalues["amenity"] == "toilets"  ) and
-       (( keyvalues["fee"]     ~= nil       )  and
-        ( keyvalues["fee"]     ~= "no"      )  and
-        ( keyvalues["fee"]     ~= "No"      )  and
-        ( keyvalues["fee"]     ~= "none"    )  and
-        ( keyvalues["fee"]     ~= "None"    )  and
-        ( keyvalues["fee"]     ~= "Free"    )  and
-        ( keyvalues["fee"]     ~= "free"    )  and
-        ( keyvalues["fee"]     ~= "0"       ))) then
-      if (( keyvalues["male"]   == "yes" ) and
-          ( keyvalues["female"] ~= "yes" )) then
-         keyvalues["amenity"] = "toilets_pay_m"
-      else
-         if (( keyvalues["female"] == "yes"       ) and
-             ( keyvalues["male"]   ~= "yes"       )) then
-            keyvalues["amenity"] = "toilets_pay_w"
+   if ( keyvalues["amenity"] == "toilets" ) then
+      if (( keyvalues["fee"]     ~= nil       )  and
+          ( keyvalues["fee"]     ~= "no"      )  and
+          ( keyvalues["fee"]     ~= "No"      )  and
+          ( keyvalues["fee"]     ~= "none"    )  and
+          ( keyvalues["fee"]     ~= "None"    )  and
+          ( keyvalues["fee"]     ~= "Free"    )  and
+          ( keyvalues["fee"]     ~= "free"    )  and
+          ( keyvalues["fee"]     ~= "0"       )) then
+         if (( keyvalues["male"]   == "yes" ) and
+             ( keyvalues["female"] ~= "yes" )) then
+            keyvalues["amenity"] = "toilets_pay_m"
          else
-            keyvalues["amenity"] = "toilets_pay"
+            if (( keyvalues["female"] == "yes"       ) and
+                ( keyvalues["male"]   ~= "yes"       )) then
+               keyvalues["amenity"] = "toilets_pay_w"
+            else
+               keyvalues["amenity"] = "toilets_pay"
+            end
          end
-      end
-   else
-      if (( keyvalues["male"]   == "yes" ) and
-          ( keyvalues["female"] ~= "yes" )) then
-         keyvalues["amenity"] = "toilets_free_m"
       else
-         if (( keyvalues["female"] == "yes"       ) and
-             ( keyvalues["male"]   ~= "yes"       )) then
-            keyvalues["amenity"] = "toilets_free_w"
+         if (( keyvalues["male"]   == "yes" ) and
+             ( keyvalues["female"] ~= "yes" )) then
+            keyvalues["amenity"] = "toilets_free_m"
+         else
+            if (( keyvalues["female"] == "yes"       ) and
+                ( keyvalues["male"]   ~= "yes"       )) then
+               keyvalues["amenity"] = "toilets_free_w"
+            end
          end
       end
    end
