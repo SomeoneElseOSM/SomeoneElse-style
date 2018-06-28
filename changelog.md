@@ -1,22 +1,20 @@
 # Changes made to this rendering
 This page describes changes made [here](https://github.com/SomeoneElseOSM/SomeoneElse-style), [here](https://github.com/SomeoneElseOSM/SomeoneElse-style-legend) and [here](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT), visible [here](//map.atownsend.org.uk/maps/map/map.html).
 
-## As yet unreleased
 <!---
+## As yet unreleased
 not yet on Hetzner or UbuntuVM51
 --->
+<!--
+On both Hetzner and UbuntuVM51:
+-->
+## 28/06/2018 release
 Fixed a [bug](https://github.com/SomeoneElseOSM/SomeoneElse-style/issues/4) where gendered hairdressers (or other features, actually) could render as male or female toilets.
 Added icon for shop=art, shop=computer and related shops.
 Resolved a layer calculation issue to fix https://github.com/SomeoneElseOSM/SomeoneElse-style/issues/5 .
 
 ## 12/06/2018 release
-<!---
-not yet completely on UbuntuVM51:
---->
-	Added icons for different sorts of historic=memorial and similar objects (e.g. obelisks).
-<!--
-On both Hetzner and UbuntuVM51:
--->
+Added icons for different sorts of historic=memorial and similar objects (e.g. obelisks).
 Added more icons for male and female toilets.
 User operator / brand if set instead of name on shops and pubs.
 Added laundry, pet shop, travel agent and bookshop icons.
