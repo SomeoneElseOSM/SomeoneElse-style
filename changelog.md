@@ -10,6 +10,7 @@ Extended brand and operator logic to doctors and pharmacy.
 Show skate parks etc. (that aren't skate shops) as pitches.
 Added maypoles.
 Added gas and electric street lamps.
+Render sport=yoga as leisure.
 <!--
 On both Hetzner and UbuntuVM51:
 -->

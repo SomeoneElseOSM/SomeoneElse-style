@@ -3873,7 +3873,10 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["leisure"]  == "beach_resort"         ) or
        (( keyvalues["building"] == "yes"                )  and
         ( keyvalues["amenity"]  == nil                  )  and
-        ( keyvalues["sport"]    ~= nil                  ))) then
+        ( keyvalues["sport"]    ~= nil                  )) or
+       (( keyvalues["sport"]    == "yoga"               )  and
+        ( keyvalues["shop"]     == nil                  )  and
+        ( keyvalues["amenity"]  == nil                  ))) then
       keyvalues["landuse"] = "unnamedcommercial"
       keyvalues["leisure"] = "nonspecific"
    end
