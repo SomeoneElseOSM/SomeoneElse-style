@@ -1091,6 +1091,8 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["amenity"] == "fuel"             ) or
        ( keyvalues["amenity"] == "charging_station" ) or
        ( keyvalues["amenity"] == "pub"              ) or
+       ( keyvalues["amenity"] == "doctors"          ) or
+       ( keyvalues["amenity"] == "pharmacy"         ) or
        ( keyvalues["tourism"] == "hotel"            ) or
        ( keyvalues["shop"]    ~= nil                )) then
       if ( keyvalues["name"] == nil ) then
