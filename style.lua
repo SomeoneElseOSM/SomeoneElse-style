@@ -4085,6 +4085,17 @@ function filter_tags_generic(keyvalues, nokeys)
    end
    
 -- ----------------------------------------------------------------------------
+-- highway=streetlamp
+-- ----------------------------------------------------------------------------
+   if ( keyvalues["highway"] == "street_lamp" ) then
+      if ( keyvalues["lamp_type"] == "gaslight" ) then
+         keyvalues["highway"] = "streetlamp_gas"
+      else
+         keyvalues["highway"] = "streetlamp_electric"
+      end
+   end
+   
+-- ----------------------------------------------------------------------------
 -- Concatenate a couple of names for bus stops so that the most useful ones
 -- are displayed.
 -- ----------------------------------------------------------------------------
