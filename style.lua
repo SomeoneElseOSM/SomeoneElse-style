@@ -4073,6 +4073,18 @@ function filter_tags_generic(keyvalues, nokeys)
    end
    
 -- ----------------------------------------------------------------------------
+-- man_made=maypole
+-- ----------------------------------------------------------------------------
+   if ((  keyvalues["man_made"] == "maypole"   ) or
+       (  keyvalues["man_made"] == "may_pole"  ) or
+       (( keyvalues["man_made"] == "pole"     )  and
+        ( keyvalues["pole"]      == "maypole" )) or
+       (  keyvalues["historic"] == "maypole"   )) then
+      keyvalues["man_made"] = "maypole"
+      keyvalues["tourism"] = nil
+   end
+   
+-- ----------------------------------------------------------------------------
 -- Concatenate a couple of names for bus stops so that the most useful ones
 -- are displayed.
 -- ----------------------------------------------------------------------------
