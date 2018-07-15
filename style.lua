@@ -1291,10 +1291,11 @@ function filter_tags_generic(keyvalues, nokeys)
 
 
 -- ----------------------------------------------------------------------------
--- Render building societies as banks.  Also shop=bank.
+-- Render building societies as banks.  Also shop=bank and credit unions.
 -- ----------------------------------------------------------------------------
    if (( keyvalues["amenity"] == "building_society" ) or
-       ( keyvalues["shop"]    == "bank"             )) then
+       ( keyvalues["shop"]    == "bank"             ) or
+       ( keyvalues["amenity"] == "credit_union"     )) then
       keyvalues["amenity"] = "bank"
    end
 
