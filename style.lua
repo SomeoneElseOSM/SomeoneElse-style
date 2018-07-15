@@ -789,6 +789,13 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Handle natural=cape
+-- ----------------------------------------------------------------------------
+   if ( keyvalues["natural"] == "cape" ) then
+      keyvalues["place"] = "locality"
+   end
+
+-- ----------------------------------------------------------------------------
 -- Handle various sorts of milestones.
 -- ----------------------------------------------------------------------------
    if (( keyvalues["historic"] == "milestone" )  or
