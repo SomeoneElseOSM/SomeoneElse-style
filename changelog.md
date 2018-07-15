@@ -7,6 +7,7 @@ not yet on Hetzner or UbuntuVM51
 ## As yet unreleased
 Added icon for grit_bin.
 Extended brand and operator logic to doctors and pharmacy.
+Show skate parks etc. (that aren't skate shops) as pitches.
 <!--
 On both Hetzner and UbuntuVM51:
 -->
