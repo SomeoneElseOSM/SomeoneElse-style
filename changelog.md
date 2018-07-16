@@ -21,7 +21,7 @@ On both Hetzner and UbuntuVM51:
 ## 28/06/2018 release
 Fixed a [bug](https://github.com/SomeoneElseOSM/SomeoneElse-style/issues/4) where gendered hairdressers (or other features, actually) could render as male or female toilets.
 Added icon for shop=art, shop=computer and related shops.
-Resolved a layer calculation issue to fix https://github.com/SomeoneElseOSM/SomeoneElse-style/issues/5 .
+Resolved a layer calculation issue to fix [this problem](https://github.com/SomeoneElseOSM/SomeoneElse-style/issues/5).
 
 ## 12/06/2018 release
 Added icons for different sorts of historic=memorial and similar objects (e.g. obelisks).
