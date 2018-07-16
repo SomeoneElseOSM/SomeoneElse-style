@@ -7,7 +7,7 @@ generic_keys = {'access','addr:housename','addr:housenumber','addr:interpolation
    'bicycle','brand','bridge','bridleway','booth','boundary','building','capital','construction','covered','culvert','cutting','denomination','designation','disused','disused:shop','ele',
    'embankment','emergency','foot','generation:source','golf','harbour','highway','historic','horse','hours','intermittent','junction','landcover','landuse','layer','leisure','lock',
    'man_made','military','motor_car','name','natural','ncn_milepost','office','oneway','operator','place','playground','poi','population','power','power_source','public_transport','seamark:type',
-   'railway','ref','religion','route','service','shop','sport','surface','toll','tourism','tower:type', 'tracktype','tunnel','water','waterway',
+   'railway','ref','religion','rescue_equipment','route','service','shop','sport','surface','toll','tourism','tower:type', 'tracktype','tunnel','water','waterway',
    'wetland','width','wood','type'}
 
 function add_z_order(keyvalues)
@@ -3628,11 +3628,14 @@ function filter_tags_generic(keyvalues, nokeys)
       keyvalues["amenity"] = "defibrillator"
    end
 
-   if (( keyvalues["emergency"] == "life_ring" ) or
-       ( keyvalues["waterway"]  == "life_ring" ) or
-       ( keyvalues["emergency"] == "lifebuoy"  ) or
-       ( keyvalues["emergency"] == "life_belt" ) or
-       ( keyvalues["waterway"]  == "life_belt" )) then
+   if ((   keyvalues["emergency"]        == "life_ring"          ) or
+       (   keyvalues["waterway"]         == "life_ring"          ) or
+       (   keyvalues["emergency"]        == "lifebuoy"           ) or
+       (   keyvalues["emergency"]        == "life_belt"          ) or
+       (   keyvalues["waterway"]         == "life_belt"          ) or
+       ((  keyvalues["emergency"]        == "rescue_equipment"  )  and
+        (( keyvalues["rescue_equipment"] == "lifering"         )   or
+         ( keyvalues["rescue_equipment"] == "lifebuoy"         )))) then
       keyvalues["amenity"] = "life_ring"
    end
 
