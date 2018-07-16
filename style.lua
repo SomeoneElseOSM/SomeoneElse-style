@@ -1102,14 +1102,15 @@ function filter_tags_generic(keyvalues, nokeys)
 -- If no name use brand or operator on amenity=fuel, among others.  
 -- If there is brand or operator, use that with name.
 -- ----------------------------------------------------------------------------
-   if (( keyvalues["amenity"] == "atm"              ) or
-       ( keyvalues["amenity"] == "fuel"             ) or
-       ( keyvalues["amenity"] == "charging_station" ) or
-       ( keyvalues["amenity"] == "pub"              ) or
-       ( keyvalues["amenity"] == "doctors"          ) or
-       ( keyvalues["amenity"] == "pharmacy"         ) or
-       ( keyvalues["tourism"] == "hotel"            ) or
-       ( keyvalues["shop"]    ~= nil                )) then
+   if (( keyvalues["amenity"]   == "atm"              ) or
+       ( keyvalues["amenity"]   == "fuel"             ) or
+       ( keyvalues["amenity"]   == "charging_station" ) or
+       ( keyvalues["amenity"]   == "pub"              ) or
+       ( keyvalues["amenity"]   == "doctors"          ) or
+       ( keyvalues["amenity"]   == "pharmacy"         ) or
+       ( keyvalues["tourism"]   == "hotel"            ) or
+       ( keyvalues["shop"]      ~= nil                ) or
+       ( keyvalues["emergency"] ~= nil                )) then
       if ( keyvalues["name"] == nil ) then
          if ( keyvalues["brand"] ~= nil ) then
             keyvalues["name"] = keyvalues["brand"]
@@ -3686,7 +3687,9 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["amenity"]   == "lifeboat_station"        ) or
        ( keyvalues["emergency"] == "lifeboat_station"        ) or
        ( keyvalues["emergency"] == "lifeboat_base"           ) or
+       ( keyvalues["emergency"] == "lifeguard_tower"         ) or
        ( keyvalues["amenity"]   == "coast_guard"             ) or
+       ( keyvalues["emergency"] == "coast_guard"             ) or
        ( keyvalues["amenity"]   == "archive"                 )) then
       keyvalues["landuse"] = "unnamedcommercial"
       keyvalues["office"]  = "nonspecific"
