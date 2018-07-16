@@ -3628,6 +3628,14 @@ function filter_tags_generic(keyvalues, nokeys)
       keyvalues["amenity"] = "defibrillator"
    end
 
+   if (( keyvalues["emergency"] == "life_ring" ) or
+       ( keyvalues["waterway"]  == "life_ring" ) or
+       ( keyvalues["emergency"] == "lifebuoy"  ) or
+       ( keyvalues["emergency"] == "life_belt" ) or
+       ( keyvalues["waterway"]  == "life_belt" )) then
+      keyvalues["amenity"] = "life_ring"
+   end
+
    if ( keyvalues["emergency"] == "fire_extinguisher" ) then
       keyvalues["amenity"] = "fire_extinguisher"
    end
