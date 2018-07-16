@@ -3348,14 +3348,19 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Motorcycle
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["shop"]    == "motorcycle_repair"            ) or
+       ( keyvalues["shop"]    == "motorcycle_parts"             )) then
+      keyvalues["shop"] = "motorcycle"
+   end
+
+-- ----------------------------------------------------------------------------
 -- Nonspecific car and related shops.
 -- Add unnamedcommercial landuse to give non-building areas a background.
 -- ----------------------------------------------------------------------------
    if (( keyvalues["amenity"] == "car_rental"                   ) or
        ( keyvalues["amenity"] == "van_rental"                   ) or
-       ( keyvalues["shop"]    == "motorcycle"                   ) or
-       ( keyvalues["shop"]    == "motorcycle_repair"            ) or
-       ( keyvalues["shop"]    == "motorcycle_parts"             ) or
        ( keyvalues["shop"]    == "caravan"                      ) or
        ( keyvalues["shop"]    == "caravans"                     ) or
        ( keyvalues["shop"]    == "motorhome"                    ) or

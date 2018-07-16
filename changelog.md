@@ -9,7 +9,7 @@ Changed the icons for women's toilets to include F rather than W to better disti
 Added icon for emergency=life_ring.
 Added "emergency" to the "brand/operator" logic (so that "RNLI" shows) and expanded the "emergency" office list.
 Added beach safety signs to the information=board list.
-Added icon for music shops.
+Added icon for music and motorcycle shops.
 <!---
 not yet on Hetzner
 --->
