@@ -2104,6 +2104,7 @@ function filter_tags_generic(keyvalues, nokeys)
    if ((   keyvalues["amenity"]     == "notice_board"                       )  or
        (   keyvalues["tourism"]     == "village_sign"                       )  or
        (   keyvalues["tourism"]     == "sign"                               )  or
+       (   keyvalues["emergency"]   == "beach_safety_sign"                  )  or
        ((  keyvalues["tourism"]     == "information"                       )   and
         (( keyvalues["information"] == "board"                            )    or
          ( keyvalues["information"] == "map"                              )    or
