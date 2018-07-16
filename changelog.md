@@ -5,6 +5,7 @@ This page describes changes made [here](https://github.com/SomeoneElseOSM/Someon
 not yet on UbuntuVM51
 --->
 ## As yet unreleased
+Changed the icons for women's toilets to include F rather than W to better distinguish it from M.
 <!---
 not yet on Hetzner
 --->
