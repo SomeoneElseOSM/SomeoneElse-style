@@ -12,6 +12,8 @@ Added maypoles.
 Added gas and electric street lamps.
 Render sport=yoga as leisure.
 Render credit union as bank.
+Render railway platform names, suppress disused platforms, and use platform 
+ref to create the name if set.
 <!--
 On both Hetzner and UbuntuVM51:
 -->

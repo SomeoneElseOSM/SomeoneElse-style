@@ -1891,6 +1891,24 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Disused railway platforms
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["railway"] == "platform" ) and
+       ( keyvalues["disused"] == "yes"       )) then
+      keyvalues["railway"] = nil
+      keyvalues["disused:railway"] = "platform"
+   end
+
+-- ----------------------------------------------------------------------------
+-- If railway platforms have a ref, use it.
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["railway"] == "platform" ) and
+       ( keyvalues["ref"]     ~= nil        )) then
+      keyvalues["name"] = "Platform " .. keyvalues["ref"]
+      keyvalues["ref"]  = nil
+   end
+
+-- ----------------------------------------------------------------------------
 -- Add "water" to some "wet" features for rendering.
 -- ----------------------------------------------------------------------------
    if (( keyvalues["man_made"]   == "wastewater_reservoir"  ) or
