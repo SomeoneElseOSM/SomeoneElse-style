@@ -3339,6 +3339,15 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Music
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["shop"]    == "music;video"             ) or
+       ( keyvalues["shop"]    == "records"                 ) or
+       ( keyvalues["shop"]    == "record"                  )) then
+      keyvalues["shop"] = "music"
+   end
+
+-- ----------------------------------------------------------------------------
 -- Nonspecific car and related shops.
 -- Add unnamedcommercial landuse to give non-building areas a background.
 -- ----------------------------------------------------------------------------
@@ -3397,10 +3406,6 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["shop"]    == "tattoo"                  ) or
        ( keyvalues["shop"]    == "piercing"                ) or
        ( keyvalues["shop"]    == "tattoo;piercing"         ) or
-       ( keyvalues["shop"]    == "music"                   ) or
-       ( keyvalues["shop"]    == "music;video"             ) or
-       ( keyvalues["shop"]    == "records"                 ) or
-       ( keyvalues["shop"]    == "record"                  ) or
        ( keyvalues["shop"]    == "collector"               ) or
        ( keyvalues["shop"]    == "collectables"            ) or
        ( keyvalues["shop"]    == "coins"                   ) or
