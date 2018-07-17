@@ -3357,6 +3357,14 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Tattoo
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["shop"]    == "piercing"                ) or
+       ( keyvalues["shop"]    == "tattoo;piercing"         )) then
+      keyvalues["shop"] = "tattoo"
+   end
+
+-- ----------------------------------------------------------------------------
 -- Nonspecific car and related shops.
 -- Add unnamedcommercial landuse to give non-building areas a background.
 -- ----------------------------------------------------------------------------
@@ -3409,9 +3417,6 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["shop"]    == "keys"                    ) or
        ( keyvalues["shop"]    == "key"                     ) or
        ( keyvalues["shop"]    == "cleaning"                ) or
-       ( keyvalues["shop"]    == "tattoo"                  ) or
-       ( keyvalues["shop"]    == "piercing"                ) or
-       ( keyvalues["shop"]    == "tattoo;piercing"         ) or
        ( keyvalues["shop"]    == "collector"               ) or
        ( keyvalues["shop"]    == "collectables"            ) or
        ( keyvalues["shop"]    == "coins"                   ) or
