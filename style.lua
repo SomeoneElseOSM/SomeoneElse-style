@@ -3015,20 +3015,22 @@ function filter_tags_generic(keyvalues, nokeys)
       keyvalues["shop"] = "farm"
    end
 
+   if (( keyvalues["shop"]    == "camera"             ) or
+       ( keyvalues["shop"]    == "photo_studio"       ) or
+       ( keyvalues["office"]  == "photo_studio"       ) or
+       ( keyvalues["shop"]    == "photography"        ) or
+       ( keyvalues["office"]  == "photography"        ) or
+       ( keyvalues["shop"]    == "photographic"       ) or
+       ( keyvalues["shop"]    == "photographer"       )) then
+      keyvalues["shop"] = "photo"
+   end
+
 -- ----------------------------------------------------------------------------
 -- Various photo, camera, copy and print shops
 -- Difficult to do an icon for.
 -- ----------------------------------------------------------------------------
    if (( keyvalues["shop"]    == "copyshop"           ) or
        ( keyvalues["office"]  == "design"             ) or
-       ( keyvalues["shop"]    == "camera"             ) or
-       ( keyvalues["shop"]    == "photo"              ) or
-       ( keyvalues["shop"]    == "photo_studio"       ) or
-       ( keyvalues["office"]  == "photo_studio"       ) or
-       ( keyvalues["shop"]    == "photography"        ) or
-       ( keyvalues["office"]  == "photography"        ) or
-       ( keyvalues["shop"]    == "photographic"       ) or
-       ( keyvalues["shop"]    == "photographer"       ) or
        ( keyvalues["shop"]    == "printing"           ) or
        ( keyvalues["shop"]    == "printer"            ) or
        ( keyvalues["shop"]    == "print"              ) or
