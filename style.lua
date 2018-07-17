@@ -3245,8 +3245,7 @@ function filter_tags_generic(keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
 -- toys and games etc.
 -- ----------------------------------------------------------------------------
-   if (( keyvalues["shop"]   == "toys"           ) or
-       ( keyvalues["shop"]   == "model"          ) or
+   if (( keyvalues["shop"]   == "model"          ) or
        ( keyvalues["shop"]   == "models"         ) or
        ( keyvalues["shop"]   == "games"          ) or
        ( keyvalues["shop"]   == "game"           ) or
@@ -3254,7 +3253,7 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["shop"]   == "video_games"    ) or
        ( keyvalues["shop"]   == "hobby"          ) or
        ( keyvalues["shop"]   == "fancy_dress"    )) then
-      keyvalues["shop"] = "shopnonspecific"
+      keyvalues["shop"] = "toys"
    end
 
 -- ----------------------------------------------------------------------------
