@@ -3,16 +3,20 @@ This page describes changes made [here](https://github.com/SomeoneElseOSM/Someon
 
 <!---
 not yet on UbuntuVM51
---->
 ## As yet unreleased
+--->
+<!---
+not yet on Hetzner
+--->
+<!--
+On both Hetzner and UbuntuVM51:
+-->
+## 22/07/2018 releas
 Changed the icons for women's toilets to include F rather than W to better distinguish it from M.
 Added icon for emergency=life_ring.
 Added "emergency" to the "brand/operator" logic (so that "RNLI" shows) and expanded the "emergency" office list.
 Added beach safety signs to the information=board list.
 Added icon for music, motorcycle, farm, toy, tattoo and photo shops.
-<!---
-not yet on Hetzner
---->
 Added icon for grit_bin.
 Extended brand and operator logic to doctors and pharmacy.
 Show skate parks etc. (that aren't skate shops) as pitches.
@@ -23,9 +27,6 @@ Render credit union as bank.
 Render railway platform names, suppress disused platforms, and use platform 
 ref to create the name if set.
 
-<!--
-On both Hetzner and UbuntuVM51:
--->
 ## 28/06/2018 release
 Fixed a [bug](https://github.com/SomeoneElseOSM/SomeoneElse-style/issues/4) where gendered hairdressers (or other features, actually) could render as male or female toilets.
 Added icon for shop=art, shop=computer and related shops.
