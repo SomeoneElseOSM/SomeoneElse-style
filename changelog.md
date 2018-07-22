@@ -11,7 +11,7 @@ not yet on Hetzner
 <!--
 On both Hetzner and UbuntuVM51:
 -->
-## 22/07/2018 releas
+## 22/07/2018 release
 Changed the icons for women's toilets to include F rather than W to better distinguish it from M.
 Added icon for emergency=life_ring.
 Added "emergency" to the "brand/operator" logic (so that "RNLI" shows) and expanded the "emergency" office list.
