@@ -1099,44 +1099,6 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
--- If no name use brand or operator on amenity=fuel, among others.  
--- If there is brand or operator, use that with name.
--- ----------------------------------------------------------------------------
-   if (( keyvalues["amenity"]   == "atm"              ) or
-       ( keyvalues["amenity"]   == "fuel"             ) or
-       ( keyvalues["amenity"]   == "charging_station" ) or
-       ( keyvalues["amenity"]   == "pub"              ) or
-       ( keyvalues["amenity"]   == "doctors"          ) or
-       ( keyvalues["amenity"]   == "pharmacy"         ) or
-       ( keyvalues["tourism"]   == "hotel"            ) or
-       ( keyvalues["shop"]      ~= nil                ) or
-       ( keyvalues["emergency"] ~= nil                )) then
-      if ( keyvalues["name"] == nil ) then
-         if ( keyvalues["brand"] ~= nil ) then
-            keyvalues["name"] = keyvalues["brand"]
-            keyvalues["brand"] = nil
-         else
-            if ( keyvalues["operator"] ~= nil ) then
-               keyvalues["name"] = keyvalues["operator"]
-               keyvalues["operator"] = nil
-            end
-         end
-      else
-         if (( keyvalues["brand"] ~= nil                )  and
-             ( keyvalues["brand"] ~= keyvalues["name"]  )) then
-            keyvalues["name"] = keyvalues["name"] .. " (" .. keyvalues["brand"] .. ")"
-            keyvalues["brand"] = nil
-	 else
-            if (( keyvalues["operator"] ~= nil                )  and
-                ( keyvalues["operator"] ~= keyvalues["name"]  )) then
-               keyvalues["name"] = keyvalues["name"] .. " (" .. keyvalues["operator"] .. ")"
-               keyvalues["operator"] = nil
-            end
-         end
-      end
-   end
-
--- ----------------------------------------------------------------------------
 -- Don't show pubs if you can't actually get to them.
 -- ----------------------------------------------------------------------------
    if (( keyvalues["amenity"] == "pub"     ) and
@@ -2638,6 +2600,45 @@ function filter_tags_generic(keyvalues, nokeys)
 
    if ( keyvalues["shop"] == "flower"  ) then
       keyvalues["shop"] = "florist"
+   end
+
+-- ----------------------------------------------------------------------------
+-- If no name use brand or operator on amenity=fuel, among others.  
+-- If there is brand or operator, use that with name.
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["amenity"]   == "atm"              ) or
+       ( keyvalues["amenity"]   == "fuel"             ) or
+       ( keyvalues["amenity"]   == "charging_station" ) or
+       ( keyvalues["amenity"]   == "pub"              ) or
+       ( keyvalues["amenity"]   == "doctors"          ) or
+       ( keyvalues["amenity"]   == "pharmacy"         ) or
+       ( keyvalues["emergency"] ~= nil                ) or
+       ( keyvalues["office"]    ~= nil                ) or
+       ( keyvalues["shop"]      ~= nil                ) or
+       ( keyvalues["tourism"]   == "hotel"            )) then
+      if ( keyvalues["name"] == nil ) then
+         if ( keyvalues["brand"] ~= nil ) then
+            keyvalues["name"] = keyvalues["brand"]
+            keyvalues["brand"] = nil
+         else
+            if ( keyvalues["operator"] ~= nil ) then
+               keyvalues["name"] = keyvalues["operator"]
+               keyvalues["operator"] = nil
+            end
+         end
+      else
+         if (( keyvalues["brand"] ~= nil                )  and
+             ( keyvalues["brand"] ~= keyvalues["name"]  )) then
+            keyvalues["name"] = keyvalues["name"] .. " (" .. keyvalues["brand"] .. ")"
+            keyvalues["brand"] = nil
+	 else
+            if (( keyvalues["operator"] ~= nil                )  and
+                ( keyvalues["operator"] ~= keyvalues["name"]  )) then
+               keyvalues["name"] = keyvalues["name"] .. " (" .. keyvalues["operator"] .. ")"
+               keyvalues["operator"] = nil
+            end
+         end
+      end
    end
 
 -- ----------------------------------------------------------------------------

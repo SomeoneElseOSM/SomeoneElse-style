@@ -6,6 +6,7 @@ Made ferry routes less prominent from zoom 11.
 Suppress "historic" for amenity=pub.
 Added IATA code to large aerodromes.
 Render man_made=spillway areas as water.
+Render brand on offices.
 <!---
 not yet on UbuntuVM51
 --->
