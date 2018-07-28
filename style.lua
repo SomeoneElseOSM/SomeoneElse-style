@@ -1145,6 +1145,14 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Suppress historic tag on pubs.
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["amenity"]  == "pub"     ) and
+       ( keyvalues["historic"] ~= nil       )) then
+      keyvalues["historic"] = nil
+   end
+
+-- ----------------------------------------------------------------------------
 -- Things that are both hotels, B&Bs etc. and pubs should render as pubs, 
 -- because I'm far more likely to be looking for the latter than the former.
 -- This is done by removing the tourism tag for them.
