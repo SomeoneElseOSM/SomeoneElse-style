@@ -1583,12 +1583,18 @@ function filter_tags_generic(keyvalues, nokeys)
    
 -- ----------------------------------------------------------------------------
 -- Display "waterway=leat" and "waterway=spillway" etc. as drain.
+-- man_made=spillway tends to be used on areas, hence show as natural=water.
 -- ----------------------------------------------------------------------------
    if (( keyvalues["waterway"] == "leat"      )  or
        ( keyvalues["waterway"] == "spillway"  )  or
        ( keyvalues["waterway"] == "aqueduct"  )  or
        ( keyvalues["waterway"] == "fish_pass" )) then
       keyvalues["waterway"] = "drain"
+   end
+
+   if ( keyvalues["man_made"] == "spillway" ) then
+      keyvalues["natural"] = "water"
+      keyvalues["man_made"] = nil
    end
 
 -- ----------------------------------------------------------------------------
