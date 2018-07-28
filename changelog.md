@@ -4,6 +4,7 @@ This page describes changes made [here](https://github.com/SomeoneElseOSM/Someon
 ## As yet unreleased
 Made ferry routes less prominent from zoom 11.
 Suppress "historic" for amenity=pub.
+Added IATA code to large aerodromes.
 <!---
 not yet on UbuntuVM51
 --->
