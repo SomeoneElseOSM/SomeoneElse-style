@@ -2,17 +2,18 @@
 This page describes changes made [here](https://github.com/SomeoneElseOSM/SomeoneElse-style), [here](https://github.com/SomeoneElseOSM/SomeoneElse-style-legend) and [here](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT), visible [here](//map.atownsend.org.uk/maps/map/map.html).
 
 ## As yet unreleased
+<!---
+not yet on UbuntuVM51
+--->
+<!---
+On UbuntuVM51 but not yet on Hetzner
+--->
 Made ferry routes less prominent from zoom 11.
 Suppress "historic" for amenity=pub.
 Added IATA code to large aerodromes.
 Render man_made=spillway areas as water.
 Render brand on offices.
-<!---
-not yet on UbuntuVM51
---->
-<!---
-not yet on Hetzner
---->
+
 <!--
 On both Hetzner and UbuntuVM51:
 -->
