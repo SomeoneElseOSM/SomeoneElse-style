@@ -158,6 +158,107 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Different names on each side of the street
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["name:left"]  ~= nil ) and
+       ( keyvalues["name:right"] ~= nil )) then
+      keyvalues["name"] = keyvalues["name:left"] .. " / " .. keyvalues["name:right"]
+   end
+
+-- ----------------------------------------------------------------------------
+-- If name does not exist but name:en does, use it.
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["name"]    == nil ) and
+       ( keyvalues["name:en"] ~= nil )) then
+      keyvalues["name"] = keyvalues["name:en"]
+   end
+
+-- ----------------------------------------------------------------------------
+-- Move refs to consider as "official" to official_ref
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["official_ref"]          == nil ) and
+       ( keyvalues["highway_authority_ref"] ~= nil )) then
+      keyvalues["official_ref"]          = keyvalues["highway_authority_ref"]
+      keyvalues["highway_authority_ref"] = nil
+   end
+
+   if (( keyvalues["official_ref"] == nil ) and
+       ( keyvalues["admin_ref"]    ~= nil )) then
+      keyvalues["official_ref"] = keyvalues["admin_ref"]
+      keyvalues["admin_ref"]    = nil
+   end
+
+-- ----------------------------------------------------------------------------
+-- Move unsigned road refs to the name, in brackets.
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["highway"] == "motorway"          ) or
+       ( keyvalues["highway"] == "motorway_link"     ) or
+       ( keyvalues["highway"] == "trunk"             ) or
+       ( keyvalues["highway"] == "trunk_link"        ) or
+       ( keyvalues["highway"] == "primary"           ) or
+       ( keyvalues["highway"] == "primary_link"      ) or
+       ( keyvalues["highway"] == "secondary"         ) or
+       ( keyvalues["highway"] == "secondary_link"    ) or
+       ( keyvalues["highway"] == "tertiary"          ) or
+       ( keyvalues["highway"] == "tertiary_link"     ) or
+       ( keyvalues["highway"] == "unclassified"      ) or
+       ( keyvalues["highway"] == "unclassified_link" ) or
+       ( keyvalues["highway"] == "residential"       ) or
+       ( keyvalues["highway"] == "residential_link"  ) or
+       ( keyvalues["highway"] == "road"              ) or
+       ( keyvalues["highway"] == "track"             ) or
+       ( keyvalues["highway"] == "cycleway"          ) or
+       ( keyvalues["highway"] == "bridleway"         ) or
+       ( keyvalues["highway"] == "footway"           ) or
+       ( keyvalues["highway"] == "path"              )) then
+      if ( keyvalues["name"] == nil   ) then
+         if (( keyvalues["ref"]        ~= nil  ) and
+             ( keyvalues["ref:signed"] == "no" )) then
+            keyvalues["name"]       = "(" .. keyvalues["ref"] .. ")"
+            keyvalues["ref"]        = nil
+            keyvalues["ref:signed"] = nil
+	 else
+            if ( keyvalues["official_ref"] ~= nil  ) then
+               keyvalues["name"]         = "(" .. keyvalues["official_ref"] .. ")"
+               keyvalues["official_ref"] = nil
+            end
+         end
+      else
+         if (( keyvalues["name:signed"] == "no"   ) or
+             ( keyvalues["unsigned"]    == "yes"  ) or
+             ( keyvalues["unsigned"]    == "true" )) then
+            keyvalues["name"] = "(" .. keyvalues["name"]
+            keyvalues["name:signed"] = nil
+
+            if ( keyvalues["ref:signed"] == "no" ) then
+               keyvalues["name"]       = keyvalues["name"] .. ", " .. keyvalues["ref"]
+               keyvalues["ref"]        = nil
+               keyvalues["ref:signed"] = nil
+            else
+               if ( keyvalues["official_ref"] ~= nil  ) then
+                  keyvalues["name"]         = keyvalues["name"] .. ", " .. keyvalues["official_ref"]
+                  keyvalues["official_ref"] = nil
+               end
+            end
+
+            keyvalues["name"] = keyvalues["name"] .. ")"
+         else
+            if (( keyvalues["ref"]        ~= nil  ) and
+                ( keyvalues["ref:signed"] == "no" )) then
+               keyvalues["name"]       = keyvalues["name"] .. " (" .. keyvalues["ref"] .. ")"
+               keyvalues["ref"]        = nil
+               keyvalues["ref:signed"] = nil
+            else
+               if ( keyvalues["official_ref"] ~= nil  ) then
+                  keyvalues["name"]         = keyvalues["name"] .. " (" .. keyvalues["official_ref"] .. ")"
+                  keyvalues["official_ref"] = nil
+               end
+            end
+         end
+      end
+   end
+
+-- ----------------------------------------------------------------------------
 -- Note that "steps" and "footwaysteps" are unchanged by the 
 -- pathwide / path choice below:
 -- ----------------------------------------------------------------------------
@@ -219,6 +320,16 @@ function filter_tags_generic(keyvalues, nokeys)
       keyvalues["horse"] = "yes"
    end
 
+-- ----------------------------------------------------------------------------
+-- Here we apply the track grade rendering to road designations:
+--   unpaved roads                      grade1 track
+--   narrow unclassigned_county_road    grade5
+--   wide unclassigned_county_road      grade2
+--   narrow BOAT			grade5
+--   wide BOAT				grade3
+--
+-- prow_ref is appending in brackets if present.
+-- ----------------------------------------------------------------------------
    if ((  keyvalues["highway"] == "unclassified"  ) and
        (( keyvalues["surface"] == "unpaved"      )  or 
         ( keyvalues["surface"] == "gravel"       ))) then
@@ -4004,39 +4115,6 @@ function filter_tags_generic(keyvalues, nokeys)
    if (( keyvalues["disused:landuse"] == "quarry" ) and
        ( keyvalues["landuse"]         == nil      )) then
       keyvalues["landuse"] = "quarry"
-   end
-
--- ----------------------------------------------------------------------------
--- Different names on each side of the street
--- ----------------------------------------------------------------------------
-   if (( keyvalues["name:left"]  ~= nil ) and
-       ( keyvalues["name:right"] ~= nil )) then
-      keyvalues["name"] = keyvalues["name:left"] .. " / " .. keyvalues["name:right"]
-   end
-
--- ----------------------------------------------------------------------------
--- Remove road names that are not signed on the ground.
--- "unsigned" tends to apply to road names.
--- ----------------------------------------------------------------------------
-   if (( keyvalues["name:signed"] == "no"   ) or
-       ( keyvalues["unsigned"]    == "yes"  ) or
-       ( keyvalues["unsigned"]    == "true" )) then
-      keyvalues["name"] = nil
-   end
-
--- ----------------------------------------------------------------------------
--- Remove road refs that are not signed on the ground
--- ----------------------------------------------------------------------------
-   if (keyvalues["ref:signed"] == "no") then
-      keyvalues["ref"] = nil
-   end
-
--- ----------------------------------------------------------------------------
--- If name does not exist but name:en does, use it.
--- ----------------------------------------------------------------------------
-   if (( keyvalues["name"]    == nil ) and
-       ( keyvalues["name:en"] ~= nil )) then
-      keyvalues["name"] = keyvalues["name:en"]
    end
 
 -- ----------------------------------------------------------------------------

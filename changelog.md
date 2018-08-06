@@ -5,6 +5,7 @@ This page describes changes made [here](https://github.com/SomeoneElseOSM/Someon
 <!---
 not yet on UbuntuVM51
 --->
+Render unsigned "official" road refs and names in brackets, after a signed name (if any), in the same way that PROW refs are handled.
 <!---
 On UbuntuVM51 but not yet on Hetzner
 --->
