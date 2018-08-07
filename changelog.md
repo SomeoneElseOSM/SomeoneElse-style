@@ -1,23 +1,25 @@
 # Changes made to this rendering
 This page describes changes made [here](https://github.com/SomeoneElseOSM/SomeoneElse-style), [here](https://github.com/SomeoneElseOSM/SomeoneElse-style-legend) and [here](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT), visible [here](//map.atownsend.org.uk/maps/map/map.html).
 
-## As yet unreleased
 <!---
+## As yet unreleased
 not yet on UbuntuVM51
 --->
-Render unsigned "official" road refs and names in brackets, after a signed name (if any), in the same way that PROW refs are handled.
 <!---
 On UbuntuVM51 but not yet on Hetzner
 --->
+
+<!--
+On both Hetzner and UbuntuVM51:
+-->
+## 08/08/2018 release
 Made ferry routes less prominent from zoom 11.
 Suppress "historic" for amenity=pub.
 Added IATA code to large aerodromes.
 Render man_made=spillway areas as water.
 Render brand on offices.
+Render unsigned "official" road refs and names in brackets, after a signed name (if any), in the same way that PROW refs are handled.
 
-<!--
-On both Hetzner and UbuntuVM51:
--->
 ## 22/07/2018 release
 Changed the icons for women's toilets to include F rather than W to better distinguish it from M.
 Added icon for emergency=life_ring.
