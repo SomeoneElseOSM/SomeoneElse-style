@@ -282,13 +282,6 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
--- If something is still "track" by this point change it to pathwide.
--- ----------------------------------------------------------------------------
-   if ( keyvalues["highway"] == "track" ) then
-      keyvalues["highway"] = "pathwide"
-   end
-
--- ----------------------------------------------------------------------------
 -- Note that "steps" and "footwaysteps" are unchanged by the 
 -- pathwide / path choice below:
 -- ----------------------------------------------------------------------------
@@ -365,11 +358,22 @@ function filter_tags_generic(keyvalues, nokeys)
       keyvalues["tracktype"] = "grade1"
    end
 
-   if (( keyvalues["designation"] == "unclassified_county_road"  ) or
-       ( keyvalues["designation"] == "unclassified_country_road" ) or
-       ( keyvalues["designation"] == "unclassified_highway"      ) or
-       ( keyvalues["designation"] == "unclassified_road"         ) or
-       ( keyvalues["designation"] == "unmade_road"               )) then
+   if (( keyvalues["designation"] == "unclassified_county_road"                       ) or
+       ( keyvalues["designation"] == "unclassified_country_road"                      ) or
+       ( keyvalues["designation"] == "unclassified_highway"                           ) or
+       ( keyvalues["designation"] == "unclassified_road"                              ) or
+       ( keyvalues["designation"] == "unmade_road"                                    ) or
+       ( keyvalues["designation"] == "public_highway"                                 ) or 
+       ( keyvalues["designation"] == "unclassified_highway;public_footpath"           ) or 
+       ( keyvalues["designation"] == "unmade_road"                                    ) or 
+       ( keyvalues["designation"] == "adopted"                                        ) or 
+       ( keyvalues["designation"] == "unclassified_highway;public_bridleway"          ) or 
+       ( keyvalues["designation"] == "adopted highway"                                ) or 
+       ( keyvalues["designation"] == "adopted_highway"                                ) or 
+       ( keyvalues["designation"] == "unclassified_highway;byway_open_to_all_traffic" ) or 
+       ( keyvalues["designation"] == "adopted_highway;public_footpath"                ) or 
+       ( keyvalues["designation"] == "tertiary_highway"                               ) or 
+       ( keyvalues["designation"] == "public_road"                                    )) then
       if (( keyvalues["highway"] == "footway"   ) or 
           ( keyvalues["highway"] == "steps"     ) or 
           ( keyvalues["highway"] == "bridleway" ) or 
@@ -395,7 +399,9 @@ function filter_tags_generic(keyvalues, nokeys)
       end
    end
 
-   if (keyvalues["designation"] == "byway_open_to_all_traffic") then
+   if (( keyvalues["designation"] == "byway_open_to_all_traffic" ) or
+       ( keyvalues["designation"] == "public_byway"              ) or 
+       ( keyvalues["designation"] == "byway"                     )) then
       if (( keyvalues["highway"] == "footway"   ) or 
           ( keyvalues["highway"] == "steps"     ) or 
           ( keyvalues["highway"] == "bridleway" ) or 
@@ -428,20 +434,25 @@ function filter_tags_generic(keyvalues, nokeys)
 -- steps (see below) and non-designated steps are rendered as is by the
 -- stylesheet.
 -- ----------------------------------------------------------------------------
-   if (( keyvalues["designation"] == "restricted_byway"    ) or
-       ( keyvalues["designation"] == "public_right_of_way" )) then
+   if (( keyvalues["designation"] == "restricted_byway"                        ) or
+       ( keyvalues["designation"] == "public_right_of_way"                     ) or
+       ( keyvalues["designation"] == "unclassified_highway;restricted_byway"   ) or 
+       ( keyvalues["designation"] == "unknown_byway"                           ) or 
+       ( keyvalues["designation"] == "public_way"                              ) or 
+       ( keyvalues["designation"] == "tertiary_highway;restricted_byway"       ) or 
+       ( keyvalues["designation"] == "orpa"                                    )) then
       if (( keyvalues["highway"] == "footway"   ) or 
           ( keyvalues["highway"] == "steps"     ) or 
           ( keyvalues["highway"] == "bridleway" ) or 
 	  ( keyvalues["highway"] == "cycleway"  ) or
 	  ( keyvalues["highway"] == "path"      )) then
-	  keyvalues["tracktype"] = "grade5"
+         keyvalues["tracktype"] = "grade5"
       else
          if (( keyvalues["highway"] == "service"   ) or 
              ( keyvalues["highway"] == "road"      ) or
              ( keyvalues["highway"] == "track"     )) then
-             keyvalues["highway"] = "track_graded"
-	     keyvalues["tracktype"] = "grade4"
+            keyvalues["highway"] = "track_graded"
+	    keyvalues["tracktype"] = "grade4"
          end
       end
       if ( keyvalues["prow_ref"] ~= nil ) then
@@ -459,7 +470,12 @@ function filter_tags_generic(keyvalues, nokeys)
 -- When a value is changed we get called again.  That's why there's a check
 -- for "bridlewaysteps" below "before the only place that it can be set".
 -- ----------------------------------------------------------------------------
-   if (keyvalues["designation"] == "public_bridleway") then
+   if (( keyvalues["designation"] == "public_bridleway"                    ) or
+       ( keyvalues["designation"] == "bridleway"                           ) or 
+       ( keyvalues["designation"] == "tertiary_highway;public_bridleway"   ) or 
+       ( keyvalues["designation"] == "public_bridleway;public_cycleway"    ) or 
+       ( keyvalues["designation"] == "public_cycleway;public_bridleway"    ) or 
+       ( keyvalues["designation"] == "public_bridleway;public_footpath"    )) then
       if (( keyvalues["highway"] == "footway"   ) or 
           ( keyvalues["highway"] == "bridleway" ) or 
 	  ( keyvalues["highway"] == "cycleway"  ) or
@@ -492,7 +508,11 @@ function filter_tags_generic(keyvalues, nokeys)
 -- When a value is changed we get called again.  That's why there's a check
 -- for "footwaysteps" below "before the only place that it can be set".
 -- ----------------------------------------------------------------------------
-   if (keyvalues["designation"] == "public_footpath") then
+   if (( keyvalues["designation"] == "public_footpath"                        ) or
+       ( keyvalues["designation"] == "core_path"                              ) or 
+       ( keyvalues["designation"] == "public_footway"                         ) or 
+       ( keyvalues["designation"] == "public_footpath;permissive_bridleway"   ) or 
+       ( keyvalues["designation"] == "public_footpath;public_cycleway"        )) then
       if (( keyvalues["highway"] == "footway"   ) or 
           ( keyvalues["highway"] == "bridleway" ) or 
           ( keyvalues["highway"] == "cycleway"  ) or
@@ -519,6 +539,13 @@ function filter_tags_generic(keyvalues, nokeys)
             keyvalues["prow_ref"] = nil
          end
       end
+   end
+
+-- ----------------------------------------------------------------------------
+-- If something is still "track" by this point change it to pathwide.
+-- ----------------------------------------------------------------------------
+   if ( keyvalues["highway"] == "track" ) then
+      keyvalues["highway"] = "pathwide"
    end
 
 -- ----------------------------------------------------------------------------

@@ -11,6 +11,7 @@ Added more comments to the "grade" logic.
 Moved prow_ref logic to below each designation.
 Reduced set of highways for which designation takes precedence (previously e.g. trunk_links turned into bridleways).
 Added military to set of "private" roads.
+Added many more "edge case" designations, including ones with semicolons where something is on the list of streets and has another designation.
 <!---
 On UbuntuVM51 but not yet on Hetzner
 --->
