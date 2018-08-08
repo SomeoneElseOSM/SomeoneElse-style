@@ -1,10 +1,16 @@
 # Changes made to this rendering
 This page describes changes made [here](https://github.com/SomeoneElseOSM/SomeoneElse-style), [here](https://github.com/SomeoneElseOSM/SomeoneElse-style-legend) and [here](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT), visible [here](//map.atownsend.org.uk/maps/map/map.html).
 
-<!---
 ## As yet unreleased
+<!---
 not yet on UbuntuVM51
 --->
+Added "service" to roads to handle "official" and unsigned refs and names on.
+Resolved order of byway/gallop code to process prow_refs etc. should any exist.
+Added more comments to the "grade" logic.
+Moved prow_ref logic to below each designation.
+Reduced set of highways for which designation takes precedence (previously e.g. trunk_links turned into bridleways).
+Added military to set of "private" roads.
 <!---
 On UbuntuVM51 but not yet on Hetzner
 --->

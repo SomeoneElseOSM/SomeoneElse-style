@@ -140,7 +140,9 @@ function filter_tags_generic(keyvalues, nokeys)
 -- displayed without any stylesheet changes.
 -- ----------------------------------------------------------------------------
 
-   keyvalues["tracktype"] = nil
+   if ( keyvalues["highway"] ~= "track_graded" ) then
+      keyvalues["tracktype"] = nil
+   end
 
 -- ----------------------------------------------------------------------------
 -- Before processing footways, turn certain corridors into footways
@@ -189,6 +191,26 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Consolidate some rare highway types into track
+--
+-- The "bywayness" of something should be handled by designation now.  byway
+-- isn't otherwise rendered (and really should no longer be used), so change 
+-- to track (which is what it probably will be).
+--
+-- "gallop" makes sense as a tag (it really isn't like anything else), but for
+-- rendering change to "track".  "unsurfaced" makes less sense; change to
+-- "track" also.
+--
+-- "track" will be changed into something else lower down 
+-- (path, pathwide or track_graded).
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["highway"] == "byway"      ) or
+       ( keyvalues["highway"] == "gallop"     ) or
+       ( keyvalues["highway"] == "unsurfaced" )) then
+      keyvalues["highway"] = "track"
+   end
+
+-- ----------------------------------------------------------------------------
 -- Move unsigned road refs to the name, in brackets.
 -- ----------------------------------------------------------------------------
    if (( keyvalues["highway"] == "motorway"          ) or
@@ -205,6 +227,7 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["highway"] == "unclassified_link" ) or
        ( keyvalues["highway"] == "residential"       ) or
        ( keyvalues["highway"] == "residential_link"  ) or
+       ( keyvalues["highway"] == "service"           ) or
        ( keyvalues["highway"] == "road"              ) or
        ( keyvalues["highway"] == "track"             ) or
        ( keyvalues["highway"] == "cycleway"          ) or
@@ -259,6 +282,13 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- If something is still "track" by this point change it to pathwide.
+-- ----------------------------------------------------------------------------
+   if ( keyvalues["highway"] == "track" ) then
+      keyvalues["highway"] = "pathwide"
+   end
+
+-- ----------------------------------------------------------------------------
 -- Note that "steps" and "footwaysteps" are unchanged by the 
 -- pathwide / path choice below:
 -- ----------------------------------------------------------------------------
@@ -273,12 +303,6 @@ function filter_tags_generic(keyvalues, nokeys)
       else
           keyvalues["highway"] = "path"
       end
-   end
-
-   if (( keyvalues["highway"] == "track"      ) or
-       ( keyvalues["highway"] == "gallop"     ) or
-       ( keyvalues["highway"] == "unsurfaced" )) then
-      keyvalues["highway"] = "pathwide"
    end
 
    if ((  keyvalues["designation"]      == nil         ) and
@@ -327,8 +351,12 @@ function filter_tags_generic(keyvalues, nokeys)
 --   wide unclassigned_county_road      grade2
 --   narrow BOAT			grade5
 --   wide BOAT				grade3
+--   narrow restricted byway		grade5
+--   wide restricted byway		grade4
 --
--- prow_ref is appending in brackets if present.
+-- prow_ref is appended in brackets if present.
+-- "track_graded" is a means of getting to the renderer without going through
+-- this code again.
 -- ----------------------------------------------------------------------------
    if ((  keyvalues["highway"] == "unclassified"  ) and
        (( keyvalues["surface"] == "unpaved"      )  or 
@@ -349,8 +377,21 @@ function filter_tags_generic(keyvalues, nokeys)
 	  ( keyvalues["highway"] == "path"      )) then
 	  keyvalues["tracktype"] = "grade5"
       else
-          keyvalues["highway"] = "track_graded"
-	  keyvalues["tracktype"] = "grade2"
+         if (( keyvalues["highway"] == "service"   ) or 
+             ( keyvalues["highway"] == "road"      ) or
+             ( keyvalues["highway"] == "track"     )) then
+             keyvalues["highway"] = "track_graded"
+	     keyvalues["tracktype"] = "grade2"
+         end
+      end
+      if ( keyvalues["prow_ref"] ~= nil ) then
+         if ( keyvalues["name"] == nil ) then
+            keyvalues["name"]     = "(" .. keyvalues["prow_ref"] .. ")"
+            keyvalues["prow_ref"] = nil
+         else
+            keyvalues["name"]     = keyvalues["name"] .. " (" .. keyvalues["prow_ref"] .. ")"
+            keyvalues["prow_ref"] = nil
+         end
       end
    end
 
@@ -362,8 +403,12 @@ function filter_tags_generic(keyvalues, nokeys)
 	  ( keyvalues["highway"] == "path"      )) then
 	  keyvalues["tracktype"] = "grade5"
       else
-          keyvalues["highway"] = "track_graded"
-	  keyvalues["tracktype"] = "grade3"
+         if (( keyvalues["highway"] == "service"   ) or 
+             ( keyvalues["highway"] == "road"      ) or
+             ( keyvalues["highway"] == "track"     )) then
+             keyvalues["highway"] = "track_graded"
+	     keyvalues["tracktype"] = "grade3"
+         end
       end
       if ( keyvalues["prow_ref"] ~= nil ) then
          if ( keyvalues["name"] == nil ) then
@@ -392,8 +437,12 @@ function filter_tags_generic(keyvalues, nokeys)
 	  ( keyvalues["highway"] == "path"      )) then
 	  keyvalues["tracktype"] = "grade5"
       else
-          keyvalues["highway"] = "track_graded"
-	  keyvalues["tracktype"] = "grade4"
+         if (( keyvalues["highway"] == "service"   ) or 
+             ( keyvalues["highway"] == "road"      ) or
+             ( keyvalues["highway"] == "track"     )) then
+             keyvalues["highway"] = "track_graded"
+	     keyvalues["tracktype"] = "grade4"
+         end
       end
       if ( keyvalues["prow_ref"] ~= nil ) then
          if ( keyvalues["name"] == nil ) then
@@ -417,11 +466,24 @@ function filter_tags_generic(keyvalues, nokeys)
 	  ( keyvalues["highway"] == "path"      )) then
 	  keyvalues["highway"] = "bridleway"
       else
-         if (( keyvalues["highway"] == "steps" ) or
+         if (( keyvalues["highway"] == "steps"          ) or
              ( keyvalues["highway"] == "bridlewaysteps" )) then
             keyvalues["highway"] = "bridlewaysteps"
          else
-            keyvalues["highway"] = "bridlewaywide"
+            if (( keyvalues["highway"] == "service"   ) or 
+                ( keyvalues["highway"] == "road"      ) or
+                ( keyvalues["highway"] == "track"     )) then
+               keyvalues["highway"] = "bridlewaywide"
+            end
+         end
+      end
+      if ( keyvalues["prow_ref"] ~= nil ) then
+         if ( keyvalues["name"] == nil ) then
+            keyvalues["name"]     = "(" .. keyvalues["prow_ref"] .. ")"
+            keyvalues["prow_ref"] = nil
+         else
+            keyvalues["name"]     = keyvalues["name"] .. " (" .. keyvalues["prow_ref"] .. ")"
+            keyvalues["prow_ref"] = nil
          end
       end
    end
@@ -437,11 +499,24 @@ function filter_tags_generic(keyvalues, nokeys)
           ( keyvalues["highway"] == "path"      )) then
          keyvalues["highway"] = "footway"
       else
-         if (( keyvalues["highway"] == "steps" ) or
+         if (( keyvalues["highway"] == "steps"        ) or
              ( keyvalues["highway"] == "footwaysteps" )) then
             keyvalues["highway"] = "footwaysteps"
          else
-            keyvalues["highway"] = "footwaywide"
+            if (( keyvalues["highway"] == "service"   ) or 
+                ( keyvalues["highway"] == "road"      ) or
+                ( keyvalues["highway"] == "track"     )) then
+               keyvalues["highway"] = "footwaywide"
+            end
+         end
+      end
+      if ( keyvalues["prow_ref"] ~= nil ) then
+         if ( keyvalues["name"] == nil ) then
+            keyvalues["name"]     = "(" .. keyvalues["prow_ref"] .. ")"
+            keyvalues["prow_ref"] = nil
+         else
+            keyvalues["name"]     = keyvalues["name"] .. " (" .. keyvalues["prow_ref"] .. ")"
+            keyvalues["prow_ref"] = nil
          end
       end
    end
@@ -454,6 +529,7 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["access"]  == "agricultural" ) or
        ( keyvalues["access"]  == "forestry"     ) or
        ( keyvalues["access"]  == "delivery"     ) or
+       ( keyvalues["access"]  == "military"     ) or
        ( keyvalues["access"]  == "no"           )) then
       keyvalues["access"] = "private"
    end
@@ -2108,16 +2184,6 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["crossing"] == "traffic_signals;pelican" )) then
       keyvalues["highway"] = "traffic_signals"
       keyvalues["crossing"] = nil
-   end
-
--- ----------------------------------------------------------------------------
--- highway=byway to track
--- The "bywayness" of something should be handled by designation now.  byway
--- isn't otherwise rendered (and really should no longer be used), so change 
--- to track (which is what it probably will be).
--- ----------------------------------------------------------------------------
-   if ( keyvalues["highway"]   == "byway" ) then
-      keyvalues["highway"] = "track"
    end
 
 -- ----------------------------------------------------------------------------
@@ -4317,24 +4383,6 @@ function filter_tags_generic(keyvalues, nokeys)
    if (( keyvalues["tourism"] == "attraction" ) and
        ( keyvalues["leisure"] == "park"       )) then
       keyvalues["tourism"] = nil
-   end
-
--- ----------------------------------------------------------------------------
--- Add the prow_ref for PRoWs in brackets, if it exists.
--- ----------------------------------------------------------------------------
-   if (( keyvalues["highway"] == "footway"       ) or
-       ( keyvalues["highway"] == "footwaywide"   ) or
-       ( keyvalues["highway"] == "bridleway"     ) or
-       ( keyvalues["highway"] == "bridlewaywide" )) then
-      if ( keyvalues["prow_ref"] ~= nil ) then
-         if ( keyvalues["name"] == nil ) then
-            keyvalues["name"]     = "(" .. keyvalues["prow_ref"] .. ")"
-            keyvalues["prow_ref"] = nil
-         else
-            keyvalues["name"]     = keyvalues["name"] .. " (" .. keyvalues["prow_ref"] .. ")"
-            keyvalues["prow_ref"] = nil
-         end
-      end
    end
 
 -- ----------------------------------------------------------------------------
