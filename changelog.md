@@ -6,6 +6,7 @@ This page describes changes made [here](https://github.com/SomeoneElseOSM/Someon
 not yet on UbuntuVM51
 --->
 Don't show underground railway platforms (stations are still shown of course).
+Added icon after water monitoring stations.
 <!---
 On UbuntuVM51 but not yet on Hetzner
 --->
