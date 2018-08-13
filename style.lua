@@ -358,6 +358,12 @@ function filter_tags_generic(keyvalues, nokeys)
       keyvalues["tracktype"] = "grade1"
    end
 
+   if ((  keyvalues["highway"] == "service"       ) and
+       (( keyvalues["surface"] == "unpaved"      )  or 
+        ( keyvalues["surface"] == "gravel"       ))) then
+      keyvalues["highway"] = "track"
+   end
+
    if (( keyvalues["designation"] == "unclassified_county_road"                       ) or
        ( keyvalues["designation"] == "unclassified_country_road"                      ) or
        ( keyvalues["designation"] == "unclassified_highway"                           ) or
