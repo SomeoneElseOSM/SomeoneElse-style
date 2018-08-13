@@ -2091,6 +2091,14 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Supress Underground railway platforms
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["railway"]  == "platform"    ) and
+       ( keyvalues["location"] == "underground" )) then
+      keyvalues["railway"] = nil
+   end
+
+-- ----------------------------------------------------------------------------
 -- If railway platforms have a ref, use it.
 -- ----------------------------------------------------------------------------
    if (( keyvalues["railway"] == "platform" ) and
