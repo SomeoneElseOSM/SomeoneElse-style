@@ -1129,7 +1129,8 @@ function filter_tags_generic(keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
 -- Mappings to shop=bicycle
 -- ----------------------------------------------------------------------------
-   if ( keyvalues["shop"] == "bicycle_repair" ) then
+   if (( keyvalues["shop"] == "bicycle_repair"   ) or
+       ( keyvalues["shop"] == "electric_bicycle" )) then
       keyvalues["shop"] = "bicycle"
    end
 
