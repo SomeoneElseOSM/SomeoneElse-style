@@ -190,6 +190,13 @@ function filter_tags_generic(keyvalues, nokeys)
       keyvalues["admin_ref"]    = nil
    end
 
+   if (( keyvalues["official_ref"] == nil              ) and
+       ( keyvalues["loc_ref"]      ~= nil              ) and
+       ( keyvalues["loc_ref"]      ~= keyvalues["ref"] )) then
+      keyvalues["official_ref"] = keyvalues["loc_ref"]
+      keyvalues["loc_ref"]    = nil
+   end
+
 -- ----------------------------------------------------------------------------
 -- Consolidate some rare highway types into track
 --
