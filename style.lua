@@ -185,9 +185,21 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
    if (( keyvalues["official_ref"] == nil ) and
+       ( keyvalues["highway_ref"]  ~= nil )) then
+      keyvalues["official_ref"] = keyvalues["highway_ref"]
+      keyvalues["highway_ref"]  = nil
+   end
+
+   if (( keyvalues["official_ref"] == nil ) and
        ( keyvalues["admin_ref"]    ~= nil )) then
       keyvalues["official_ref"] = keyvalues["admin_ref"]
       keyvalues["admin_ref"]    = nil
+   end
+
+   if (( keyvalues["official_ref"] == nil ) and
+       ( keyvalues["admin:ref"]    ~= nil )) then
+      keyvalues["official_ref"] = keyvalues["admin:ref"]
+      keyvalues["admin:ref"]    = nil
    end
 
    if (( keyvalues["official_ref"] == nil              ) and
@@ -342,6 +354,12 @@ function filter_tags_generic(keyvalues, nokeys)
 
    if ( keyvalues["horse"] == "designated" ) then
       keyvalues["horse"] = "yes"
+   end
+
+   if (( keyvalues["prow:ref"] ~= nil ) and
+       ( keyvalues["prow_ref"] == nil )) then
+      keyvalues["prow_ref"] = keyvalues["prow:ref"]
+      keyvalues["prow:ref"] = nil
    end
 
 -- ----------------------------------------------------------------------------

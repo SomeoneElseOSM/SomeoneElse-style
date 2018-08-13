@@ -10,6 +10,7 @@ Added icon after water monitoring stations.
 Show unpaved service roads and residentials as tracks.
 Show electric bike shops as bike shops.
 Render loc_ref on roads if appropriate.
+Add more spellings of "official" refs.
 <!---
 On UbuntuVM51 but not yet on Hetzner
 --->
