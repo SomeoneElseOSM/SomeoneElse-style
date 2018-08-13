@@ -13,6 +13,7 @@ Render loc_ref on roads if appropriate.
 Add more spellings of "official" refs.
 Add icon for bicycle repair station, compressed air.
 Add missing z_order setting for MTB routes.
+Only render tree names from z18.
 <!---
 On UbuntuVM51 but not yet on Hetzner
 --->
