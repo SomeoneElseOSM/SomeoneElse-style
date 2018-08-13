@@ -14,6 +14,8 @@ Add more spellings of "official" refs.
 Add icon for bicycle repair station, compressed air.
 Add missing z_order setting for MTB routes.
 Only render tree names from z18.
+Made LDP dots smaller at z13 and z14.
+Removed max zoom on which large_aerodrome name is displayed.
 <!---
 On UbuntuVM51 but not yet on Hetzner
 --->

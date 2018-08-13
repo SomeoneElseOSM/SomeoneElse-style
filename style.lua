@@ -4158,7 +4158,7 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["leisure"]  == "hackerspace"          ) or
        ( keyvalues["leisure"]  == "summer_camp"          ) or
        ( keyvalues["leisure"]  == "sailing_club"         ) or
-       ( keyvalues["sport"]    == "model_Aerodrome"      ) or
+       ( keyvalues["sport"]    == "model_aerodrome"      ) or
        ( keyvalues["leisure"]  == "trampoline_park"      ) or
        ( keyvalues["leisure"]  == "trampoline"           ) or
        ( keyvalues["leisure"]  == "water_park"           ) or
