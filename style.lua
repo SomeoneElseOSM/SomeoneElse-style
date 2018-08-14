@@ -5,7 +5,7 @@ polygon_keys = { 'building', 'landcover', 'landuse', 'amenity', 'harbour', 'hist
 
 generic_keys = {'access','addr:housename','addr:housenumber','addr:interpolation','admin_level','advertising','aerialway','aeroway','amenity','area','barrier',
    'bicycle','brand','bridge','bridleway','booth','boundary','building','capital','construction','covered','culvert','cutting','denomination','designation','disused','disused:shop','ele',
-   'embankment','emergency','foot','generation:source','golf','harbour','highway','historic','horse','hours','intermittent','junction','landcover','landuse','layer','leisure','lock',
+   'embankment','emergency','foot','generation:source','golf','harbour','highway','historic','horse','hours','intermittent','junction','landcover','landuse','layer','leisure','lcn_ref','lock',
    'man_made','military','motor_car','name','natural','ncn_milepost','office','oneway','operator','place','playground','poi','population','power','power_source','public_transport','seamark:type',
    'railway','ref','religion','rescue_equipment','route','service','shop','sport','surface','toll','tourism','tower:type', 'tracktype','tunnel','water','waterway',
    'wetland','width','wood','type'}
@@ -173,6 +173,16 @@ function filter_tags_generic(keyvalues, nokeys)
    if (( keyvalues["name"]    == nil ) and
        ( keyvalues["name:en"] ~= nil )) then
       keyvalues["name"] = keyvalues["name:en"]
+   end
+
+-- ----------------------------------------------------------------------------
+-- If lcn_ref exists, render it.
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["lcn_ref"] ~= nil ) and
+       ( keyvalues["ref"]     == nil )) then
+      keyvalues["man_made"] = "lcn_ref"
+      keyvalues["ref"]     = keyvalues["lcn_ref"]
+      keyvalues["lcn_ref"] = nil
    end
 
 -- ----------------------------------------------------------------------------
