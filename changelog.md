@@ -12,7 +12,7 @@ On Hetzner but not yet on UbuntuVM51
 
 ## 14/08/2018 release
 Don't show underground railway platforms (stations are still shown of course).
-Added icon after water monitoring stations.
+Added icon for water monitoring stations.
 Show unpaved service roads and residentials as tracks.
 Show electric bike shops as bike shops.
 Render loc_ref on roads if appropriate.
