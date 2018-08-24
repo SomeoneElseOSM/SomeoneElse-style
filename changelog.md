@@ -1,14 +1,19 @@
 # Changes made to this rendering
 This page describes changes made [here](https://github.com/SomeoneElseOSM/SomeoneElse-style), [here](https://github.com/SomeoneElseOSM/SomeoneElse-style-legend) and [here](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT), visible [here](//map.atownsend.org.uk/maps/map/map.html).
 
-## As yet unreleased
 <!---
+## As yet unreleased
 not yet on UbuntuVM51
 --->
-At z13, don't show linear barriers  or nature reserve / national park boundaries or ditches (but still show drains and streams).
 <!---
-On Hetzner but not yet on UbuntuVM51
+On Hetzner but not yet on UbuntuVM51:
 --->
+<!--
+On both Hetzner and UbuntuVM51:
+-->
+
+## 24/08/2018 release
+At z13, don't show linear barriers  or nature reserve / national park boundaries or ditches (but still show drains and streams).
 
 ## 14/08/2018 release
 Don't show underground railway platforms (stations are still shown of course).
@@ -31,9 +36,6 @@ Reduced set of highways for which designation takes precedence (previously e.g. 
 Added military to set of "private" roads.
 Added many more "edge case" designations, including ones with semicolons where something is on the list of streets and has another designation.
 
-<!--
-On both Hetzner and UbuntuVM51:
--->
 ## 08/08/2018 release
 Made ferry routes less prominent from zoom 11.
 Suppress "historic" for amenity=pub.
