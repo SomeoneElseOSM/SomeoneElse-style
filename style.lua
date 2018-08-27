@@ -2209,6 +2209,20 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Horse mounting blocks
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["amenity"]   == "mounting_block"       ) or
+       ( keyvalues["bridleway"] == "mounting_block"       ) or
+       ( keyvalues["historic"]  == "mounting_block"       ) or
+       ( keyvalues["horse"]     == "mounting_block"       ) or
+       ( keyvalues["horse"]     == "mounting block"       ) or
+       ( keyvalues["amenity"]   == "mounting_step"        ) or
+       ( keyvalues["amenity"]   == "mounting_steps"       ) or
+       ( keyvalues["amenity"]   == "horse_dismount_block" )) then
+      keyvalues["man_made"] = "mounting_block"
+   end
+
+-- ----------------------------------------------------------------------------
 -- Water Monitoring stations
 -- ----------------------------------------------------------------------------
    if (( keyvalues["man_made"]               == "monitoring_station" ) and
