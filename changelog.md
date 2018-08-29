@@ -3,6 +3,7 @@ This page describes changes made [here](https://github.com/SomeoneElseOSM/Someon
 
 ## As yet unreleased
 Re-added horse mounting block code and added "amenity=horse_dismount_block".
+Don't display the "private" fill on driveways if the driveway itself is not shown.
 <!---
 not yet on UbuntuVM51
 --->
