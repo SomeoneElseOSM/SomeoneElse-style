@@ -1864,6 +1864,17 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- building=ruins is rendered as a half-dark building.
+-- The wiki tries to guide building=ruins towards follies only but ruins=yes
+-- "not a folly but falling down".  That doesn't match what mappers do but 
+-- render both as half-dark.
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["building"] ~= nil   ) and
+       ( keyvalues["ruins"]    == "yes" )) then
+      keyvalues["building"] = "ruins"
+   end
+   
+-- ----------------------------------------------------------------------------
 -- Map man_made=monument to historic=monument (handled below) if no better tag
 -- exists.
 -- ----------------------------------------------------------------------------
