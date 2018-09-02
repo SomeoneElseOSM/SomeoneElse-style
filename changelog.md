@@ -5,6 +5,7 @@ This page describes changes made [here](https://github.com/SomeoneElseOSM/Someon
 Re-added horse mounting block code and added "amenity=horse_dismount_block".
 Don't display the "private" fill on driveways if the driveway itself is not shown.
 Render ruins=yes as building=ruins.
+Don't display alleged biergartens from z16.  In the UK, most are mistagged.
 <!---
 not yet on UbuntuVM51
 --->
