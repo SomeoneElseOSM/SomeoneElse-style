@@ -2,13 +2,17 @@
 This page describes changes made [here](https://github.com/SomeoneElseOSM/SomeoneElse-style), [here](https://github.com/SomeoneElseOSM/SomeoneElse-style-legend) and [here](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT), visible [here](//map.atownsend.org.uk/maps/map/map.html).
 
 ## As yet unreleased
-Re-added horse mounting block code and added "amenity=horse_dismount_block".
-Don't display the "private" fill on driveways if the driveway itself is not shown.
-Render ruins=yes as building=ruins.
-Don't display alleged biergartens from z16.  In the UK, most are mistagged.
 <!---
 not yet on UbuntuVM51
 --->
+<!---
+On UbuntuVM51 but not yet on Hetzner:
+--->
+Re-added horse mounting block code and added "amenity=horse_dismount_block".
+Don't display the "private" fill on driveways if the driveway itself is not shown.
+Render ruins=yes as building=ruins.
+Don't display alleged biergartens from z16.  In the UK, many are mistagged pub beer gardens.
+Added about button to example map.
 <!---
 On Hetzner but not yet on UbuntuVM51:
 --->
