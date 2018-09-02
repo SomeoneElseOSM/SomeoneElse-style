@@ -5,6 +5,7 @@ This page describes changes made [here](https://github.com/SomeoneElseOSM/Someon
 <!---
 not yet on UbuntuVM51
 --->
+Display name and/or operator and/or brand on vending machines.
 <!---
 On UbuntuVM51 but not yet on Hetzner:
 --->

@@ -1550,8 +1550,6 @@ function filter_tags_generic(keyvalues, nokeys)
         ( keyvalues["vending"] == "parcel_mail_in"                )  or
         ( keyvalues["vending"] == "parcel_pickup"                 ))) then
       keyvalues["amenity"]  = "parcel_locker"
-      keyvalues["name"]     = keyvalues["operator"]
-      keyvalues["operator"] = nil
    end
 
 
@@ -2887,6 +2885,7 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["amenity"]   == "pub"              ) or
        ( keyvalues["amenity"]   == "doctors"          ) or
        ( keyvalues["amenity"]   == "pharmacy"         ) or
+       ( keyvalues["amenity"]   == "parcel_locker"    ) or
        ( keyvalues["emergency"] ~= nil                ) or
        ( keyvalues["office"]    ~= nil                ) or
        ( keyvalues["shop"]      ~= nil                ) or
