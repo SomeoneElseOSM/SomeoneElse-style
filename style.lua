@@ -941,6 +941,15 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Render windmill buildings and former windmills as windmills.
+-- ----------------------------------------------------------------------------
+   if ((( keyvalues["building"] == "windmill"        )  or
+        ( keyvalues["building"] == "former_windmill" )) and
+       (  keyvalues["amenity"]  == nil                )) then
+      keyvalues["man_made"] = "windmill"
+   end
+
+-- ----------------------------------------------------------------------------
 -- Tunnel values - render as "yes" if appropriate.
 -- ----------------------------------------------------------------------------
    if (( keyvalues["tunnel"] == "culvert"             ) or
