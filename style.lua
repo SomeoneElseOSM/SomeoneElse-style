@@ -2520,9 +2520,9 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
--- man_made=embankment and natural=cliff displays as a non-sided cliff
--- (direction is important)
--- man_made=levee displays as a two-sided cliff.  
+-- man_made=embankment and natural=cliff displays as a non-sided cliff 
+-- (from z13 for cliff, z17 for embankment, direction is important)
+-- man_made=levee displays as a two-sided cliff (from z14).
 -- Often it's combined with highway though, and that is handled separately.
 -- In that case it's passed through to the stylesheet as bridge=levee.
 -- embankment handling is asymmetric for railways currently - it's checked
