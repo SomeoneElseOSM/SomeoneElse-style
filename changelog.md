@@ -8,6 +8,7 @@ not yet on UbuntuVM51
 Display name and/or operator and/or brand on vending machines.
 Render windmill buildings and former windmills as windmills.
 Render "two sided embankments" from z14 rather than z13.
+Render maypoles from z16 and use a larger icon from z18.
 <!---
 On UbuntuVM51 but not yet on Hetzner:
 --->
