@@ -1840,6 +1840,15 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Display "location=underground" waterways as tunnels.
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["waterway"] ~= nil           )  and
+       ( keyvalues["location"] == "underground" ) and
+       ( keyvalues["tunnel"]   == nil           )) then
+      keyvalues["tunnel"] = "yes"
+   end
+
+-- ----------------------------------------------------------------------------
 -- Display pipelines
 -- ----------------------------------------------------------------------------
    if ( keyvalues["man_made"] == "pipeline" ) then
