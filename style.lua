@@ -3442,6 +3442,7 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["shop"]   == "window_blind"                ) or
        ( keyvalues["shop"]   == "bed"                         ) or
        ( keyvalues["shop"]   == "beds"                        ) or
+       ( keyvalues["shop"]   == "mattress"                    ) or
        ( keyvalues["shop"]   == "waterbed"                    ) or
        ( keyvalues["shop"]   == "frame"                       ) or
        ( keyvalues["shop"]   == "framing"                     ) or
