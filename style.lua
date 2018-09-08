@@ -848,21 +848,27 @@ function filter_tags_generic(keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
 -- Render narrow tertiary roads as unclassified
 -- ----------------------------------------------------------------------------
-   if (( keyvalues["highway"] == "tertiary_sidewalk"   )  and
-       (( keyvalues["width"]  == "2"         )   or
-        ( keyvalues["width"]  == "3"         ))) then
+   if (( keyvalues["highway"]    == "tertiary_sidewalk"  )  and
+       (( keyvalues["width"]     == "2"                 )   or
+        ( keyvalues["width"]     == "3"                 )   or
+        ( keyvalues["maxwidth"]  == "2"                 )   or
+        ( keyvalues["maxwidth"]  == "3"                 ))) then
       keyvalues["highway"] = "unclassified_sidewalk"
    end
 
-   if (( keyvalues["highway"] == "tertiary_verge"   )  and
-       (( keyvalues["width"]  == "2"         )   or
-        ( keyvalues["width"]  == "3"         ))) then
+   if (( keyvalues["highway"]    == "tertiary_verge"  )  and
+       (( keyvalues["width"]     == "2"              )   or
+        ( keyvalues["width"]     == "3"              )   or
+        ( keyvalues["maxwidth"]  == "2"              )   or
+        ( keyvalues["maxwidth"]  == "3"              ))) then
       keyvalues["highway"] = "unclassified_verge"
    end
 
-   if (( keyvalues["highway"] == "tertiary"   )  and
-       (( keyvalues["width"]  == "2"         )   or
-        ( keyvalues["width"]  == "3"         ))) then
+   if (( keyvalues["highway"]    == "tertiary"   )  and
+       (( keyvalues["width"]     == "2"         )   or
+        ( keyvalues["width"]     == "3"         )   or
+        ( keyvalues["maxwidth"]  == "2"         )   or
+        ( keyvalues["maxwidth"]  == "3"         ))) then
       keyvalues["highway"] = "unclassified"
    end
 

@@ -8,6 +8,7 @@ not yet on UbuntuVM51
 Added "shop=mattress" to homeware shops list.
 Move non-money-losing "gaming" shops out of the "bookies" list.
 Render "location=underground" waterways as tunnels.
+Render "maxwidth" on tertiary roads as if "width" was set.
 <!---
 On UbuntuVM51 but not yet on Hetzner:
 --->
