@@ -1557,7 +1557,6 @@ function filter_tags_generic(keyvalues, nokeys)
 
 -- ----------------------------------------------------------------------------
 -- Parcel lockers
--- Other vending machines have their own icon
 -- ----------------------------------------------------------------------------
    if ((  keyvalues["amenity"] == "vending_machine"                ) and
        (( keyvalues["vending"] == "parcel_pickup;parcel_mail_in"  )  or
@@ -1565,6 +1564,15 @@ function filter_tags_generic(keyvalues, nokeys)
         ( keyvalues["vending"] == "parcel_mail_in"                )  or
         ( keyvalues["vending"] == "parcel_pickup"                 ))) then
       keyvalues["amenity"]  = "parcel_locker"
+   end
+
+-- ----------------------------------------------------------------------------
+-- Excrement bags
+-- Other vending machines have their own icon
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["amenity"] == "vending_machine" ) and
+       ( keyvalues["vending"] == "excrement_bags"  )) then
+      keyvalues["amenity"]  = "vending_excrement"
    end
 
 

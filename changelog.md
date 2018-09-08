@@ -10,6 +10,7 @@ Move non-money-losing "gaming" shops out of the "bookies" list.
 Render "location=underground" waterways as tunnels.
 Render "maxwidth" on tertiary roads as if "width" was set.
 Render canal spillways and headraces as drains.
+Render Excrement bag vending differently from ticket machines.
 <!---
 On UbuntuVM51 but not yet on Hetzner:
 --->
