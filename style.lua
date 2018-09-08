@@ -3251,8 +3251,6 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["leisure"] == "amusement_arcade"    ) or
        ( keyvalues["leisure"] == "video_arcade"        ) or
        ( keyvalues["leisure"] == "adult_gaming_centre" ) or
-       ( keyvalues["leisure"] == "escape_game"         ) or
-       ( keyvalues["sport"]   == "laser_tag"           ) or
        ( keyvalues["amenity"] == "casino"              )) then
       keyvalues["shop"] = "bookmaker"
    end
@@ -3705,6 +3703,8 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["shop"]    == "greetings_cards"         ) or
        ( keyvalues["shop"]    == "greetings"               ) or
        ( keyvalues["shop"]    == "card;gift"               ) or
+       ( keyvalues["leisure"] == "escape_game"             ) or
+       ( keyvalues["sport"]   == "laser_tag"               ) or
        ( keyvalues["craft"]   == "cobbler"                 ) or
        ( keyvalues["shop"]    == "cobbler"                 ) or
        ( keyvalues["shop"]    == "cobblers"                ) or
