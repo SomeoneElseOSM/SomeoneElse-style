@@ -1,10 +1,12 @@
 # Changes made to this rendering
 This page describes changes made [here](https://github.com/SomeoneElseOSM/SomeoneElse-style), [here](https://github.com/SomeoneElseOSM/SomeoneElse-style-legend) and [here](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT), visible [here](//map.atownsend.org.uk/maps/map/map.html).
 
+## As yet unreleased
 <!---
 not yet on UbuntuVM51
-## As yet unreleased
 --->
+Single-node stepping stones are now handled using a separate icon.
+Ways are still handled as fords.
 
 ## 09/09/2018 release
 <!---
@@ -15,9 +17,9 @@ Move non-money-losing "gaming" shops out of the "bookies" list.
 Render "location=underground" waterways as tunnels.
 Render "maxwidth" on tertiary roads as if "width" was set.
 Render canal spillways and headraces as drains.
-Render Excrement bag vending differently from ticket machines.
+Render excrement bag vending differently from ticket machines.
 <!---
-On UbuntuVM51 but not yet on Hetzner:
+On UbuntuVM51 and also on Hetzner:
 --->
 Display name and/or operator and/or brand on vending machines.
 Render windmill buildings and former windmills as windmills.

@@ -4559,10 +4559,13 @@ function filter_tags_node (keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
 -- AJT node-only additions.
 -- ----------------------------------------------------------------------------
-   if (( keyvalues["ford"]    == "yes"             ) or
-       ( keyvalues["ford"]    == "stepping_stones" ) or
-       ( keyvalues["barrier"] == "stepping_stones" ))then
+   if ( keyvalues["ford"] == "yes" ) then
       keyvalues["highway"] = "ford"
+      keyvalues["ford"]    = nil
+   end
+
+   if ( keyvalues["ford"]    == "stepping_stones" ) then
+      keyvalues["barrier"] = "stepping_stones"
       keyvalues["ford"]    = nil
    end
 
