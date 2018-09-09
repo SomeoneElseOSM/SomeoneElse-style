@@ -5,6 +5,11 @@ This page describes changes made [here](https://github.com/SomeoneElseOSM/Someon
 <!---
 not yet on UbuntuVM51
 --->
+
+## 09/09/2018 release
+<!---
+On Hetzner but not yet on UbuntuVM51:
+--->
 Added "shop=mattress" to homeware shops list.
 Move non-money-losing "gaming" shops out of the "bookies" list.
 Render "location=underground" waterways as tunnels.
