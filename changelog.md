@@ -7,6 +7,7 @@ not yet on UbuntuVM51
 --->
 Single-node stepping stones are now handled using a separate icon.  Ways are still handled as fords.
 Added telescopes to list of ways that get building tags added.
+Don't display the "private" fill on driveways if the driveway itself is not shown.
 
 ## 09/09/2018 release
 <!---
@@ -26,7 +27,6 @@ Render windmill buildings and former windmills as windmills.
 Render "two sided embankments" from z14 rather than z13.
 Render maypoles from z16 and use a larger icon from z18.
 Re-added horse mounting block code and added "amenity=horse_dismount_block".
-Don't display the "private" fill on driveways if the driveway itself is not shown.
 Render ruins=yes as building=ruins.
 Don't display alleged biergartens from z16.  In the UK, many are mistagged pub beer gardens.
 Added about button to example map.
