@@ -5,8 +5,8 @@ This page describes changes made [here](https://github.com/SomeoneElseOSM/Someon
 <!---
 not yet on UbuntuVM51
 --->
-Single-node stepping stones are now handled using a separate icon.
-Ways are still handled as fords.
+Single-node stepping stones are now handled using a separate icon.  Ways are still handled as fords.
+Added telescopes to list of ways that get building tags added.
 
 ## 09/09/2018 release
 <!---

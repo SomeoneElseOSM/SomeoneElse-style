@@ -1892,7 +1892,9 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["man_made"]   == "filter_bed"       ) or
        ( keyvalues["man_made"]   == "filtration_bed"   ) or
        ( keyvalues["man_made"]   == "waste_treatment"  ) or
-       ( keyvalues["man_made"]   == "lighthouse"       )) then
+       ( keyvalues["man_made"]   == "lighthouse"       ) or
+       ( keyvalues["man_made"]   == "telescope"        ) or
+       ( keyvalues["man_made"]   == "radio_telescope"  )) then
       keyvalues["building"] = "yes"
    end
 
