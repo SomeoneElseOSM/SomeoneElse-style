@@ -1110,6 +1110,7 @@ function filter_tags_generic(keyvalues, nokeys)
        (  keyvalues["telephone_kiosk"] == "K4"              )  or
        (  keyvalues["telephone_kiosk"] == "K6"              )  or
        (  keyvalues["man_made"]        == "telephone_kiosk" )  or
+       (  keyvalues["man_made"]        == "telephone_box"   )  or
        (  keyvalues["building"]        == "telephone_kiosk" )  or
        (  keyvalues["building"]        == "telephone_box"   )  or
        (  keyvalues["historic"]        == "telephone"       )) then
@@ -1541,6 +1542,15 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["shop"]    == "bank"             ) or
        ( keyvalues["amenity"] == "credit_union"     )) then
       keyvalues["amenity"] = "bank"
+   end
+
+
+-- ----------------------------------------------------------------------------
+-- Public bookcases are displayed as a small L, except for those in phone
+-- boxes
+-- ----------------------------------------------------------------------------
+   if ( keyvalues["amenity"] == "book_exchange" ) then
+      keyvalues["amenity"] = "public_bookcase"
    end
 
 
