@@ -9,7 +9,7 @@ Single-node stepping stones are now handled using a separate icon.  Ways are sti
 Added telescopes to list of ways that get building tags added.
 Don't display the "private" fill on driveways if the driveway itself is not shown.
 Accept "tunnel=flooded" as a valid tunnel tag.
-Display public bookcases (even those not in former phone boxes).  Treat telephone_box as telephone_kiosk.
+Display public bookcases (even those not in former phone boxes) and add to legend.  Treat telephone_box as telephone_kiosk.
 
 ## 09/09/2018 release
 <!---
