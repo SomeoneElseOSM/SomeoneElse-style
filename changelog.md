@@ -8,6 +8,7 @@ not yet on UbuntuVM51
 Single-node stepping stones are now handled using a separate icon.  Ways are still handled as fords.
 Added telescopes to list of ways that get building tags added.
 Don't display the "private" fill on driveways if the driveway itself is not shown.
+Accept "tunnel=flooded" as a valid tunnel tag.
 
 ## 09/09/2018 release
 <!---

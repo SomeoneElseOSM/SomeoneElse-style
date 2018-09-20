@@ -963,7 +963,8 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["tunnel"] == "avalanche_protector" ) or
        ( keyvalues["tunnel"] == "passage"             ) or
        ( keyvalues["tunnel"] == "1"                   ) or
-       ( keyvalues["tunnel"] == "cave"                )) then
+       ( keyvalues["tunnel"] == "cave"                ) or
+       ( keyvalues["tunnel"] == "flooded"             )) then
       keyvalues["tunnel"] = "yes"
    end
 
