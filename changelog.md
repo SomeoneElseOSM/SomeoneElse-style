@@ -5,6 +5,9 @@ This page describes changes made [here](https://github.com/SomeoneElseOSM/Someon
 <!---
 not yet on UbuntuVM51
 --->
+<!---
+On UbuntuVM51 but not yet on Hetzner:
+--->
 Single-node stepping stones are now handled using a separate icon.  Ways are still handled as fords.
 Added telescopes to list of ways that get building tags added.
 Don't display the "private" fill on driveways if the driveway itself is not shown.
@@ -13,7 +16,7 @@ Display public bookcases (even those not in former phone boxes) and add to legen
 
 ## 09/09/2018 release
 <!---
-On Hetzner but not yet on UbuntuVM51:
+On Hetzner but not previously on UbuntuVM51:
 --->
 Added "shop=mattress" to homeware shops list.
 Move non-money-losing "gaming" shops out of the "bookies" list.
@@ -21,9 +24,9 @@ Render "location=underground" waterways as tunnels.
 Render "maxwidth" on tertiary roads as if "width" was set.
 Render canal spillways and headraces as drains.
 Render excrement bag vending differently from ticket machines.
-<!---
-On UbuntuVM51 and also on Hetzner:
---->
+<!--
+On both Hetzner and UbuntuVM51:
+-->
 Display name and/or operator and/or brand on vending machines.
 Render windmill buildings and former windmills as windmills.
 Render "two sided embankments" from z14 rather than z13.
@@ -32,12 +35,6 @@ Re-added horse mounting block code and added "amenity=horse_dismount_block".
 Render ruins=yes as building=ruins.
 Don't display alleged biergartens from z16.  In the UK, many are mistagged pub beer gardens.
 Added about button to example map.
-<!---
-On Hetzner but not yet on UbuntuVM51:
---->
-<!--
-On both Hetzner and UbuntuVM51:
--->
 
 ## 24/08/2018 release
 At z13, don't show linear barriers  or nature reserve / national park boundaries or ditches (but still show drains and streams).
