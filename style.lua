@@ -1790,6 +1790,8 @@ function filter_tags_generic(keyvalues, nokeys)
        (( keyvalues["waterway"]     == "flow_control" )  and
         ( keyvalues["flow_control"] == "sluice_gate"  )) or
        (  keyvalues["waterway"]     == "waterfall"     ) or
+       (  keyvalues["natural"]      == "waterfall"     ) or
+       (  keyvalues["water"]        == "waterfall"     ) or
        (  keyvalues["waterway"]     == "weir"          )) then
       keyvalues["man_made"] = "sluice_gate"
       keyvalues["building"] = "roof"
