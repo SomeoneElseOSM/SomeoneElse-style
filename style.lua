@@ -1536,6 +1536,18 @@ function filter_tags_generic(keyvalues, nokeys)
 
 
 -- ----------------------------------------------------------------------------
+-- Render unnamed amenity=biergarten as gardens, which is all they likely are.
+-- ----------------------------------------------------------------------------
+   if ((  keyvalues["amenity"] == "biergarten"   )  and
+       (( keyvalues["name"]    == nil           )   or
+        ( keyvalues["name"]    == "Beer Garden" ))) then
+      keyvalues["amenity"] = nil
+      keyvalues["leisure"] = "garden"
+      keyvalues["garden"]  = "beer_garden"
+   end
+
+
+-- ----------------------------------------------------------------------------
 -- Render building societies as banks.  Also shop=bank and credit unions.
 -- ----------------------------------------------------------------------------
    if (( keyvalues["amenity"] == "building_society" ) or
