@@ -6,6 +6,7 @@ This page describes changes made [here](https://github.com/SomeoneElseOSM/Someon
 not yet on UbuntuVM51
 --->
 Added support for more tagging of waterfalls.
+Made grass aprons appear as grass; made grass runway width more reasonable at z14 and z15.
 <!---
 On UbuntuVM51 but not yet on Hetzner:
 --->
