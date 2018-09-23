@@ -1620,6 +1620,16 @@ function filter_tags_generic(keyvalues, nokeys)
 
 
 -- ----------------------------------------------------------------------------
+-- Lose any "access=permissive" on parking; it should not be greyed out as it
+-- is "somewhere we can park".
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["amenity"] == "parking"    ) and
+       ( keyvalues["access"]  == "permissive" )) then
+      keyvalues["access"] = nil
+   end
+
+
+-- ----------------------------------------------------------------------------
 -- Render for-pay parking areas differently.
 -- ----------------------------------------------------------------------------
    if ((  keyvalues["amenity"] == "parking"  ) and

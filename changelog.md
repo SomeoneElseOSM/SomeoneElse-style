@@ -9,6 +9,7 @@ Added support for more tagging of waterfalls.
 Made grass aprons appear as grass; made grass runway width more reasonable at z14 and z15.
 Render unnamed "amenity=biergarten" as "leisure=garden; garden=beer_garden", since that's likely what they are.
 Render tax advisors as accountants.
+Remove greyed-out effect from permissive parking.
 <!---
 On UbuntuVM51 but not yet on Hetzner:
 --->
