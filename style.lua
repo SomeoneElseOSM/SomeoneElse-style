@@ -4088,6 +4088,8 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["office"]  == "accountants"             ) or
        ( keyvalues["amenity"] == "accountants"             ) or
        ( keyvalues["shop"]    == "accountants"             ) or
+       ( keyvalues["office"]  == "tax_advisor"             ) or
+       ( keyvalues["amenity"] == "tax_advisor"             ) or
        ( keyvalues["office"]  == "employment_agency"       ) or
        ( keyvalues["shop"]    == "employment_agency"       ) or
        ( keyvalues["shop"]    == "employment"              ) or
