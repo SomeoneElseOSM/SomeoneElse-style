@@ -11,6 +11,7 @@ Render unnamed "amenity=biergarten" as "leisure=garden; garden=beer_garden", sin
 Render tax advisors as accountants.
 Remove greyed-out effect from permissive parking.
 Added home care offices as office.
+Processed operator and brand on animal shelters etc.
 <!---
 On UbuntuVM51 but not yet on Hetzner:
 --->

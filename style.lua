@@ -2958,6 +2958,11 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["amenity"]   == "doctors"          ) or
        ( keyvalues["amenity"]   == "pharmacy"         ) or
        ( keyvalues["amenity"]   == "parcel_locker"    ) or
+       ( keyvalues["amenity"]   == "veterinary"       ) or
+       ( keyvalues["amenity"]   == "animal_boarding"  ) or
+       ( keyvalues["amenity"]   == "cattery"          ) or
+       ( keyvalues["amenity"]   == "kennels"          ) or
+       ( keyvalues["amenity"]   == "animal_shelter"   ) or
        ( keyvalues["emergency"] ~= nil                ) or
        ( keyvalues["office"]    ~= nil                ) or
        ( keyvalues["shop"]      ~= nil                ) or
