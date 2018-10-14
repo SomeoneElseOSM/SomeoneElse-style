@@ -4101,6 +4101,7 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["office"]  == "tax_advisor"             ) or
        ( keyvalues["amenity"] == "tax_advisor"             ) or
        ( keyvalues["office"]  == "employment_agency"       ) or
+       ( keyvalues["office"]  == "home_care"               ) or
        ( keyvalues["shop"]    == "employment_agency"       ) or
        ( keyvalues["shop"]    == "employment"              ) or
        ( keyvalues["shop"]    == "jobs"                    ) or
