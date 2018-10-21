@@ -12,6 +12,7 @@ Render tax advisors as accountants.
 Remove greyed-out effect from permissive parking.
 Added home care offices as office.
 Processed operator and brand on animal shelters etc.
+Changed text-dy on vacant shops to work around a new Mapnik issue.
 <!---
 On UbuntuVM51 but not yet on Hetzner:
 --->
