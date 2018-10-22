@@ -3,6 +3,12 @@ This page describes changes made [here](https://github.com/SomeoneElseOSM/Someon
 
 ## As yet unreleased
 <!---
+not yet on map.atownsend.org.uk
+--->
+Changed text-dy on vacant shops to work around a new Mapnik issue (Ubuntu 18.04 version only).
+
+## 20/10/2018 release
+<!---
 not yet on UbuntuVM51
 --->
 Added support for more tagging of waterfalls.
@@ -12,9 +18,8 @@ Render tax advisors as accountants.
 Remove greyed-out effect from permissive parking.
 Added home care offices as office.
 Processed operator and brand on animal shelters etc.
-Changed text-dy on vacant shops to work around a new Mapnik issue.
 <!---
-On UbuntuVM51 but not yet on Hetzner:
+On both Hetzner and UbuntuVM51:
 --->
 Single-node stepping stones are now handled using a separate icon.  Ways are still handled as fords.
 Added telescopes to list of ways that get building tags added.
@@ -23,18 +28,12 @@ Accept "tunnel=flooded" as a valid tunnel tag.
 Display public bookcases (even those not in former phone boxes) and add to legend.  Treat telephone_box as telephone_kiosk.
 
 ## 09/09/2018 release
-<!---
-On Hetzner but not previously on UbuntuVM51:
---->
 Added "shop=mattress" to homeware shops list.
 Move non-money-losing "gaming" shops out of the "bookies" list.
 Render "location=underground" waterways as tunnels.
 Render "maxwidth" on tertiary roads as if "width" was set.
 Render canal spillways and headraces as drains.
 Render excrement bag vending differently from ticket machines.
-<!--
-On both Hetzner and UbuntuVM51:
--->
 Display name and/or operator and/or brand on vending machines.
 Render windmill buildings and former windmills as windmills.
 Render "two sided embankments" from z14 rather than z13.
