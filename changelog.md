@@ -3,13 +3,16 @@ This page describes changes made [here](https://github.com/SomeoneElseOSM/Someon
 
 ## As yet unreleased
 <!---
+not yet on UbuntuVM51
+--->
+<!---
 not yet on map.atownsend.org.uk
 --->
 Changed text-dy on vacant shops to work around a new Mapnik issue (Ubuntu 18.04 version only).
 
 ## 20/10/2018 release
 <!---
-not yet on UbuntuVM51
+On both Hetzner and UbuntuVM51:
 --->
 Added support for more tagging of waterfalls.
 Made grass aprons appear as grass; made grass runway width more reasonable at z14 and z15.
@@ -18,9 +21,6 @@ Render tax advisors as accountants.
 Remove greyed-out effect from permissive parking.
 Added home care offices as office.
 Processed operator and brand on animal shelters etc.
-<!---
-On both Hetzner and UbuntuVM51:
---->
 Single-node stepping stones are now handled using a separate icon.  Ways are still handled as fords.
 Added telescopes to list of ways that get building tags added.
 Don't display the "private" fill on driveways if the driveway itself is not shown.
