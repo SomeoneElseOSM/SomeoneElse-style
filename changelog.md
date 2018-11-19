@@ -8,6 +8,10 @@ not yet on UbuntuVM51
 <!---
 not yet on map.atownsend.org.uk
 --->
+Added "operator" etc. on all pubs, not just generic ones.
+
+## 22/10/2018 release
+Move to new larger and faster "map" server.
 Changed text-dy on vacant shops to work around a new Mapnik issue (Ubuntu 18.04 version only).
 
 ## 20/10/2018 release

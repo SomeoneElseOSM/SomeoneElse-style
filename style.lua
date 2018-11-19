@@ -2954,6 +2954,26 @@ function filter_tags_generic(keyvalues, nokeys)
    if (( keyvalues["amenity"]   == "atm"              ) or
        ( keyvalues["amenity"]   == "fuel"             ) or
        ( keyvalues["amenity"]   == "charging_station" ) or
+       ( keyvalues["amenity"]   == "pub_yyyyy"        ) or
+       ( keyvalues["amenity"]   == "pub_yyyy"         ) or
+       ( keyvalues["amenity"]   == "pub_yyydy"        ) or
+       ( keyvalues["amenity"]   == "pub_yyyd"         ) or
+       ( keyvalues["amenity"]   == "pub_yydyy"        ) or
+       ( keyvalues["amenity"]   == "pub_yydy"         ) or
+       ( keyvalues["amenity"]   == "pub_yyddy"        ) or
+       ( keyvalues["amenity"]   == "pub_yydd"         ) or
+       ( keyvalues["amenity"]   == "pub_ynyy"         ) or
+       ( keyvalues["amenity"]   == "pub_ynyd"         ) or
+       ( keyvalues["amenity"]   == "pub_yndy"         ) or
+       ( keyvalues["amenity"]   == "pub_yndd"         ) or
+       ( keyvalues["amenity"]   == "pub_nddd"         ) or
+       ( keyvalues["amenity"]   == "pub_ydyyy"        ) or
+       ( keyvalues["amenity"]   == "pub_ydyy"         ) or
+       ( keyvalues["amenity"]   == "pub_ydydy"        ) or
+       ( keyvalues["amenity"]   == "pub_ydyd"         ) or
+       ( keyvalues["amenity"]   == "pub_yddyy"        ) or
+       ( keyvalues["amenity"]   == "pub_yddy"         ) or
+       ( keyvalues["amenity"]   == "pub_ydddy"        ) or
        ( keyvalues["amenity"]   == "pub"              ) or
        ( keyvalues["amenity"]   == "doctors"          ) or
        ( keyvalues["amenity"]   == "pharmacy"         ) or
