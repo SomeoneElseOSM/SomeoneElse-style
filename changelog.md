@@ -8,11 +8,12 @@ not yet on UbuntuVM51
 <!---
 not yet on map.atownsend.org.uk
 --->
+Changed text-dy on vacant shops to work around a new Mapnik issue (required because of move to Ubuntu 18.04 only).
 Added "operator" etc. on all pubs, not just generic ones.
+Fixed bug in legend which suppressed narrow BOATs.
 
 ## 22/10/2018 release
 Move to new larger and faster "map" server.
-Changed text-dy on vacant shops to work around a new Mapnik issue (Ubuntu 18.04 version only).
 
 ## 20/10/2018 release
 <!---
