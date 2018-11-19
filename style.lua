@@ -625,7 +625,10 @@ function filter_tags_generic(keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
 -- Render Access land the same as nature reserve / national park currently is
 -- ----------------------------------------------------------------------------
-   if (keyvalues["designation"] == "access_land") then
+   if ((   keyvalues["designation"]   == "access_land"      ) or
+       ((  keyvalues["boundary"]      == "protected_area"  )  and
+        (( keyvalues["protect_class"] == "1"              )   or
+         ( keyvalues["protect_class"] == "4"              )))) then
       keyvalues["leisure"] = "nature_reserve"
    end
 

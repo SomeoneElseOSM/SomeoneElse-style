@@ -11,6 +11,7 @@ not yet on map.atownsend.org.uk
 Changed text-dy on vacant shops to work around a new Mapnik issue (required because of move to Ubuntu 18.04 only).
 Added "operator" etc. on all pubs, not just generic ones.
 Fixed bug in legend which suppressed narrow BOATs.
+Render some protect classes as nature reserves.
 
 ## 22/10/2018 release
 Move to new larger and faster "map" server.
