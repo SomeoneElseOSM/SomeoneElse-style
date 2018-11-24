@@ -3,13 +3,15 @@ This page describes changes made [here](https://github.com/SomeoneElseOSM/Someon
 
 <!---
 ## As yet unreleased
-not yet on map.atownsend.org.uk
+--->
+<!---
+On Hetzner only
 --->
 
+## 24/11/2018 release
+Removed rendering of natural earth boundaries, as map.atownsend.org.uk now has a separate boundary database.
+
 ## 20/11/2018 release
-<!---
-not yet on UbuntuVM51
---->
 Changed text-dy on vacant shops to work around a new Mapnik issue (required because of move to Ubuntu 18.04 only).
 Added "operator" etc. on all pubs, not just generic ones.
 Fixed bug in legend which suppressed narrow BOATs.
