@@ -129,12 +129,19 @@ carto project.mml > mapnik.xml
 # How much disk space are we currently using?
 #
 df
+cd /home/${local_user}/data
 #
 # When was the first target file last modified?
 #
-cd /home/${local_user}/data
-wget $file_page1 -O file_page1.$$
-grep " and contains all OSM data up to " file_page1.$$ | sed "s/.*and contains all OSM data up to //" | sed "s/. File size.*//" > last_modified1.$$
+if [ "$1" = "current" ]
+then
+    echo "Using current data"
+    ls -t | grep "${file_prefix1}_" | head -1 | sed "s/${file_prefix1}_//" | sed "s/.osm.pbf//" > last_modified1.$$
+else
+    wget $file_page1 -O file_page1.$$
+    grep " and contains all OSM data up to " file_page1.$$ | sed "s/.*and contains all OSM data up to //" | sed "s/. File size.*//" > last_modified1.$$
+    rm file_page1.$$
+fi
 #
 file_extension1=`cat last_modified1.$$`
 #
@@ -145,8 +152,16 @@ else
     wget $file_url1 -O ${file_prefix1}_${file_extension1}.osm.pbf
 fi
 #
-wget $file_page2 -O file_page2.$$
-grep " and contains all OSM data up to " file_page2.$$ | sed "s/.*and contains all OSM data up to //" | sed "s/. File size.*//" > last_modified2.$$
+# When was the second target file last modified?
+#
+if [ "$1" = "current" ]
+then
+    ls -t | grep "${file_prefix2}_" | head -1 | sed "s/${file_prefix2}_//" | sed "s/.osm.pbf//" > last_modified2.$$
+else
+    wget $file_page2 -O file_page2.$$
+    grep " and contains all OSM data up to " file_page2.$$ | sed "s/.*and contains all OSM data up to //" | sed "s/. File size.*//" > last_modified2.$$
+    rm file_page2.$$
+fi
 #
 file_extension2=`cat last_modified2.$$`
 #
@@ -214,7 +229,6 @@ crontab -u $local_user local_user_crontab_safe.$$
 # And final tidying up
 #
 date | mail -s "Database reload complete on `hostname`" ${local_user}
-rm file_page1.$$ file_page2.$$
 rm last_modified1.$$ last_modified2.$$
 rm update_render.running
 #
