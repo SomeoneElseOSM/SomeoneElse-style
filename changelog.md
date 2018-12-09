@@ -2,12 +2,13 @@
 This page describes changes made [here](https://github.com/SomeoneElseOSM/SomeoneElse-style), [here](https://github.com/SomeoneElseOSM/SomeoneElse-style-legend) and [here](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT), visible [here](//map.atownsend.org.uk/maps/map/map.html).
 
 <!---
-## As yet unreleased
 --->
+## As yet unreleased
+Added icons for ambulance station, mountain rescue and mountain rescue box.
+
 <!---
 On Hetzner only
 --->
-
 ## 24/11/2018 release
 Removed rendering of natural earth boundaries, as map.atownsend.org.uk now has a separate boundary database.
 

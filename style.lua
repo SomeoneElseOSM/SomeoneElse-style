@@ -4089,8 +4089,6 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["building"]  == "village_hall"            ) or
        ( keyvalues["amenity"]   == "crematorium"             ) or
        ( keyvalues["amenity"]   == "hall"                    ) or
-       ( keyvalues["amenity"]   == "ambulance_station"       ) or
-       ( keyvalues["emergency"] == "ambulance_station"       ) or
        ( keyvalues["amenity"]   == "fire_station"            ) or
        ( keyvalues["emergency"] == "fire_station"            ) or
        ( keyvalues["amenity"]   == "lifeboat_station"        ) or
@@ -4102,6 +4100,31 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["amenity"]   == "archive"                 )) then
       keyvalues["landuse"] = "unnamedcommercial"
       keyvalues["office"]  = "nonspecific"
+   end
+
+   if (( keyvalues["amenity"]   == "ambulance_station"       ) or
+       ( keyvalues["emergency"] == "ambulance_station"       )) then
+      keyvalues["landuse"] = "unnamedcommercial"
+      keyvalues["amenity"]  = "ambulance_station"
+   end
+
+   if (( keyvalues["amenity"]   == "mountain_rescue"       ) or
+       ( keyvalues["emergency"] == "mountain_rescue"       )) then
+      keyvalues["landuse"] = "unnamedcommercial"
+      keyvalues["amenity"]  = "mountain_rescue"
+
+      if ( keyvalues["name"] == nil ) then
+         keyvalues["name"] = "Mountain Rescue"
+      end
+   end
+
+   if (( keyvalues["amenity"]   == "mountain_rescue_box"       ) or
+       ( keyvalues["emergency"] == "mountain_rescue_box"       )) then
+      keyvalues["amenity"]  = "mountain_rescue_box"
+
+      if ( keyvalues["name"] == nil ) then
+         keyvalues["name"] = "Mountain Rescue Supplies"
+      end
    end
 
 -- ----------------------------------------------------------------------------
