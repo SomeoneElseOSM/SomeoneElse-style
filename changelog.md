@@ -6,6 +6,7 @@ This page describes changes made [here](https://github.com/SomeoneElseOSM/Someon
 ## As yet unreleased
 Added icons for ambulance station, mountain rescue and mountain rescue box.
 Cope with airports with iata codes but no names.
+Added Unclassified Unpaved and UCR to legend.
 
 <!---
 On Hetzner only
