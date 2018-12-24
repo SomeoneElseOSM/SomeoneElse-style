@@ -128,12 +128,12 @@ function filter_tags_generic(keyvalues, nokeys)
 --    salmon)
 -- 3) Render anything designated as "public_bridleway" as a "bridleway" (dotted 
 --    green).
--- 4) Render anything designated as "restricted_byway" as a "grade4 track" 
---    (dashed and dotted brown).  Likewise "public_right_of_way".
--- 5) Render anything designated as "byway_open_to_all_traffic" as a 
---    "grade3 track" (dashed brown)
+-- 4) Render anything designated as "restricted_byway" as something a bit like
+--    a bridleway, but with different dashes.  Likewise "public_right_of_way".
+-- 5) Render anything designated as "byway_open_to_all_traffic" as something
+--    like a track (dashed brown)
 -- 6) Render anything designated as "unclassified_county_road" or a 
---    misspelling as a "grade2 track" (long dashed brown)
+--    misspelling also like a track, but longer dashed brown.
 --
 -- These changes do mean that the the resulting database isn't any use for
 -- anything other than rendering, but they do allow designations to be 
@@ -374,13 +374,13 @@ function filter_tags_generic(keyvalues, nokeys)
 
 -- ----------------------------------------------------------------------------
 -- Here we apply the track grade rendering to road designations:
---   unpaved roads                      grade1 track
---   narrow unclassigned_county_road    grade5
---   wide unclassigned_county_road      grade2
---   narrow BOAT			grade5
---   wide BOAT				grade3
---   narrow restricted byway		grade5
---   wide restricted byway		grade4
+--   unpaved roads                      unpaved
+--   narrow unclassigned_county_road    ucrnarrow
+--   wide unclassigned_county_road      ucrwide
+--   narrow BOAT			boatnarrow
+--   wide BOAT				boatwide
+--   narrow restricted byway		rbynarrow
+--   wide restricted byway		rbywide
 --
 -- prow_ref is appended in brackets if present.
 -- "track_graded" is a means of getting to the renderer without going through
@@ -389,8 +389,7 @@ function filter_tags_generic(keyvalues, nokeys)
    if ((  keyvalues["highway"] == "unclassified"  ) and
        (( keyvalues["surface"] == "unpaved"      )  or 
         ( keyvalues["surface"] == "gravel"       ))) then
-      keyvalues["highway"] = "track_graded"
-      keyvalues["tracktype"] = "grade1"
+      keyvalues["highway"] = "unpaved"
    end
 
    if ((( keyvalues["highway"] == "residential"  )  or
@@ -421,13 +420,12 @@ function filter_tags_generic(keyvalues, nokeys)
           ( keyvalues["highway"] == "bridleway" ) or 
 	  ( keyvalues["highway"] == "cycleway"  ) or
 	  ( keyvalues["highway"] == "path"      )) then
-	  keyvalues["tracktype"] = "grade5"
+	  keyvalues["highway"] = "ucrnarrow"
       else
          if (( keyvalues["highway"] == "service"   ) or 
              ( keyvalues["highway"] == "road"      ) or
              ( keyvalues["highway"] == "track"     )) then
-             keyvalues["highway"] = "track_graded"
-	     keyvalues["tracktype"] = "grade2"
+	     keyvalues["highway"] = "ucrwide"
          end
       end
       if ( keyvalues["prow_ref"] ~= nil ) then
@@ -449,13 +447,12 @@ function filter_tags_generic(keyvalues, nokeys)
           ( keyvalues["highway"] == "bridleway" ) or 
 	  ( keyvalues["highway"] == "cycleway"  ) or
 	  ( keyvalues["highway"] == "path"      )) then
-	  keyvalues["tracktype"] = "grade5"
+	  keyvalues["highway"] = "boatnarrow"
       else
          if (( keyvalues["highway"] == "service"   ) or 
              ( keyvalues["highway"] == "road"      ) or
              ( keyvalues["highway"] == "track"     )) then
-             keyvalues["highway"] = "track_graded"
-	     keyvalues["tracktype"] = "grade3"
+	     keyvalues["highway"] = "boatwide"
          end
       end
       if ( keyvalues["prow_ref"] ~= nil ) then
@@ -488,13 +485,12 @@ function filter_tags_generic(keyvalues, nokeys)
           ( keyvalues["highway"] == "bridleway" ) or 
 	  ( keyvalues["highway"] == "cycleway"  ) or
 	  ( keyvalues["highway"] == "path"      )) then
-         keyvalues["tracktype"] = "grade5"
+         keyvalues["highway"] = "rbynarrow"
       else
          if (( keyvalues["highway"] == "service"   ) or 
              ( keyvalues["highway"] == "road"      ) or
              ( keyvalues["highway"] == "track"     )) then
-            keyvalues["highway"] = "track_graded"
-	    keyvalues["tracktype"] = "grade4"
+	    keyvalues["highway"] = "rbywide"
          end
       end
       if ( keyvalues["prow_ref"] ~= nil ) then
