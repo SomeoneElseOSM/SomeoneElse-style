@@ -1202,6 +1202,28 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Map various diplomatic things to embassy.
+-- Pedants may claim that some of these aren't legally embassies, and they'd
+-- be correct, but I use the same icon for all of these currently.
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["diplomatic"] == "embassy"            ) or
+       ( keyvalues["diplomatic"] == "consulate"          ) or
+       ( keyvalues["diplomatic"] == "consulate_general"  ) or
+       ( keyvalues["diplomatic"] == "honorary_consulate" ) or
+       ( keyvalues["diplomatic"] == "high_commission"    )) then
+      keyvalues["amenity"] = "embassy"
+   end
+
+   if (( keyvalues["diplomatic"] == "permanent_mission"     ) or
+       ( keyvalues["diplomatic"] == "ambassadors_residence" ) or
+       ( keyvalues["diplomatic"] == "trade_delegation"      )) then
+      if ( keyvalues["amenity"] == "embassy" ) then
+         keyvalues["amenity"] = nil
+      end
+      keyvalues["office"] = "yes"
+   end
+
+-- ----------------------------------------------------------------------------
 -- Shops etc. with icons already - just add "unnamedcommercial" landuse.
 -- ----------------------------------------------------------------------------
    if (( keyvalues["shop"]       == "car"           ) or
