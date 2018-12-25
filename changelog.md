@@ -3,6 +3,7 @@ This page describes changes made [here](https://github.com/SomeoneElseOSM/Someon
 
 ## As yet unreleased
 Added various "diplomatic"-tagged objects to use the same icon as "embassy".
+Treat minarets as church spires.
 
 <!---
 On Hetzner only

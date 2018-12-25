@@ -4521,6 +4521,7 @@ function filter_tags_generic(keyvalues, nokeys)
         ( keyvalues["building:part"] == "yes"              )) and
        ((  keyvalues["tower:type"]   == "spire"            )  or
         (  keyvalues["tower:type"]   == "steeple"          )  or
+        (  keyvalues["tower:type"]   == "minaret"          )  or
         (  keyvalues["tower:type"]   == "round"            )) and
        (( keyvalues["amenity"]       == nil                )  or
         ( keyvalues["amenity"]       ~= "place_of_worship" ))) then
