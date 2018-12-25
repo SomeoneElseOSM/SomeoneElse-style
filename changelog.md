@@ -2,16 +2,20 @@
 This page describes changes made [here](https://github.com/SomeoneElseOSM/SomeoneElse-style), [here](https://github.com/SomeoneElseOSM/SomeoneElse-style-legend) and [here](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT), visible [here](//map.atownsend.org.uk/maps/map/map.html).
 
 <!---
---->
 ## As yet unreleased
-Added icons for ambulance station, mountain rescue and mountain rescue box.
-Cope with airports with iata codes but no names.
-Added Unclassified Unpaved and UCR to legend.
-Changed restricted byways to blue.
-
+--->
 <!---
 On Hetzner only
 --->
+## 24/12/2018 release
+Cope with airports with iata codes but no names.
+Added Unclassified Unpaved and UCR to legend.
+Changed restricted byways to blue.
+<!---
+On both Hetzner and UbuntuVM51:
+--->
+Added icons for ambulance station, mountain rescue and mountain rescue box.
+
 ## 24/11/2018 release
 Removed rendering of natural earth boundaries, as map.atownsend.org.uk now has a separate boundary database.
 
@@ -25,9 +29,6 @@ Render some protect classes as nature reserves.
 Move to new larger and faster "map" server.
 
 ## 20/10/2018 release
-<!---
-On both Hetzner and UbuntuVM51:
---->
 Added support for more tagging of waterfalls.
 Made grass aprons appear as grass; made grass runway width more reasonable at z14 and z15.
 Render unnamed "amenity=biergarten" as "leisure=garden; garden=beer_garden", since that's likely what they are.
