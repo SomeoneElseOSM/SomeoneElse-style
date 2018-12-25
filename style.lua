@@ -3812,8 +3812,6 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["shop"]    == "greetings_cards"         ) or
        ( keyvalues["shop"]    == "greetings"               ) or
        ( keyvalues["shop"]    == "card;gift"               ) or
-       ( keyvalues["leisure"] == "escape_game"             ) or
-       ( keyvalues["sport"]   == "laser_tag"               ) or
        ( keyvalues["craft"]   == "cobbler"                 ) or
        ( keyvalues["shop"]    == "cobbler"                 ) or
        ( keyvalues["shop"]    == "cobblers"                ) or
@@ -4334,6 +4332,9 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["name"]     == "Gala Bingo Hall"      ) or
        ( keyvalues["name"]     == "Mecca Bingo"          ) or
        ( keyvalues["name"]     == "Castle Bingo"         ) or
+       ( keyvalues["leisure"]  == "escape_game"          ) or
+       ( keyvalues["amenity"]  == "escape_game"          ) or
+       ( keyvalues["sport"]    == "laser_tag"            ) or
        ( keyvalues["leisure"]  == "hackerspace"          ) or
        ( keyvalues["leisure"]  == "summer_camp"          ) or
        ( keyvalues["leisure"]  == "sailing_club"         ) or
