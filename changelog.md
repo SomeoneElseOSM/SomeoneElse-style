@@ -6,6 +6,7 @@ Added various "diplomatic"-tagged objects to use the same icon as "embassy".
 Treat minarets as church spires.
 Moved escape_game and sport=laser_tag from shop to leisure.
 Added more tower types (based on contruction).
+Render non-public and indoor defibrillators as less opaque, like car parks.
 
 <!---
 On Hetzner only

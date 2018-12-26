@@ -4049,9 +4049,15 @@ function filter_tags_generic(keyvalues, nokeys)
 
 -- ----------------------------------------------------------------------------
 -- Defibrillators etc.
+-- Move these to the "amenity" key to reduce the code needed to render them.
+-- Ones with an non-public, non-yes access value will be rendered less opaque,
+-- like other private items such as car parks.
 -- ----------------------------------------------------------------------------
    if ( keyvalues["emergency"] == "defibrillator" ) then
       keyvalues["amenity"] = "defibrillator"
+      if ( keyvalues["indoor"] == "yes" ) then
+         keyvalues["access"] = "customers"
+      end
    end
 
    if ((   keyvalues["emergency"]        == "life_ring"          ) or
