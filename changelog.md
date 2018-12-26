@@ -5,6 +5,7 @@ This page describes changes made [here](https://github.com/SomeoneElseOSM/Someon
 Added various "diplomatic"-tagged objects to use the same icon as "embassy".
 Treat minarets as church spires.
 Moved escape_game and sport=laser_tag from shop to leisure.
+Added more tower types (based on contruction).
 
 <!---
 On Hetzner only

@@ -4470,8 +4470,10 @@ function filter_tags_generic(keyvalues, nokeys)
       keyvalues["man_made"] = "illuminationtower"
    end
 
-   if (( keyvalues["man_made"]   == "tower"     ) and
-       ( keyvalues["tower:type"] == "defensive" )) then
+   if ((   keyvalues["man_made"]           == "tower"       ) and
+       ((  keyvalues["tower:type"]         == "defensive"  )  or
+        (( keyvalues["tower:type"]         == nil         )   and
+         ( keyvalues["tower:construction"] == "stone"     )))) then
       keyvalues["man_made"] = "defensivetower"
    end
 
@@ -4496,6 +4498,16 @@ function filter_tags_generic(keyvalues, nokeys)
    if ((( keyvalues["man_made"]   == "tower"              ) or
         ( keyvalues["man_made"]   == "monitoring_station" )) and
        (  keyvalues["tower:type"] == "radar"               )) then
+      keyvalues["man_made"] = "radartower"
+      keyvalues["building"] = "yes"
+   end
+
+-- ----------------------------------------------------------------------------
+-- All the domes in the UK are radomes.
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["man_made"]            == "tower"   ) and
+       (( keyvalues["tower:construction"] == "dome"   )  or
+        ( keyvalues["tower:construction"] == "dish"   ))) then
       keyvalues["man_made"] = "radartower"
       keyvalues["building"] = "yes"
    end
