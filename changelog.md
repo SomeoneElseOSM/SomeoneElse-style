@@ -7,7 +7,7 @@ Treat minarets as church spires.
 Moved escape_game and sport=laser_tag from shop to leisure.
 Added more tower types (based on contruction).
 Render non-public and indoor defibrillators as less opaque, like car parks.
-Render prisons from zoom level 15.
+Render prisons and zoos from zoom level 15.
 
 <!---
 On Hetzner only
