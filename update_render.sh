@@ -68,7 +68,6 @@ file_url1=http://download.geofabrik.de/europe/${file_prefix1}-latest.osm.pbf
 #file_prefix1=lincolnshire
 #file_prefix1=merseyside
 #file_prefix1=norfolk
-#file_prefix1=northamptonshire
 #file_prefix1=north-yorkshire
 #file_prefix1=northamptonshire
 #file_prefix1=northumberland
