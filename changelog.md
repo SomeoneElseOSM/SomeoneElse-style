@@ -8,6 +8,7 @@ Moved escape_game and sport=laser_tag from shop to leisure.
 Added more tower types (based on contruction).
 Render non-public and indoor defibrillators as less opaque, like car parks.
 Render prisons and zoos from zoom level 15.
+Extend the "ex-pubs" to show as non-ex-pubs to include e.g. offices.
 
 <!---
 On Hetzner only

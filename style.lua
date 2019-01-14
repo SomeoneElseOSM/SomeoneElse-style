@@ -1413,10 +1413,21 @@ function filter_tags_generic(keyvalues, nokeys)
 -- Things that are both hotels, B&Bs etc. and pubs should render as pubs, 
 -- because I'm far more likely to be looking for the latter than the former.
 -- This is done by removing the tourism tag for them.
+--
+-- Treat things that were pubs but are now something else as whatever else 
+-- they now are.
 -- ----------------------------------------------------------------------------
    if (( keyvalues["amenity"]   == "pub"   ) and
        ( keyvalues["tourism"]   ~= nil     )) then
       keyvalues["tourism"] = nil
+   end
+
+   if ((  keyvalues["disused:amenity"]   == "pub"    ) and
+       (( keyvalues["tourism"]           ~= nil     )  or
+        ( keyvalues["leisure"]           ~= nil     )  or
+        ( keyvalues["shop"]              ~= nil     )  or
+        ( keyvalues["office"]            ~= nil     ))) then
+      keyvalues["disused:amenity"] = nil
    end
 
 -- ----------------------------------------------------------------------------
