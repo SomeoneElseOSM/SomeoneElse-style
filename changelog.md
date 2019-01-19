@@ -1,14 +1,21 @@
 # Changes made to this rendering
 This page describes changes made [here](https://github.com/SomeoneElseOSM/SomeoneElse-style), [here](https://github.com/SomeoneElseOSM/SomeoneElse-style-legend) and [here](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT), visible [here](//map.atownsend.org.uk/maps/map/map.html).
 
+<!---
 ## As yet unreleased
+--->
+
+## 19/01/2019 release
+<!---
+On Hetzner only
+--->
 Render some military buildings in red.
 Added rendering for various "schools" that aren't actually schools (flying_school etc.).
-Added rendering for golf ball washers.
-Added a slightly different colour for golf greens.
-Added rendering for golf path features as paths.
+Golf: added rendering for golf ball washers;
+added a slightly different colour for golf greens;
+added rendering for golf path features as paths.
 <!---
-On UbuntuVM51 only
+On both Hetzner and UbuntuVM51:
 --->
 Added various "diplomatic"-tagged objects to use the same icon as "embassy".
 Treat minarets as church spires.
@@ -18,9 +25,6 @@ Render non-public and indoor defibrillators as less opaque, like car parks.
 Render prisons and zoos from zoom level 15.
 Extend the "ex-pubs" to show as non-ex-pubs to include e.g. offices.
 
-<!---
-On both Hetzner and UbuntuVM51:
---->
 ## 24/12/2018 release
 Cope with airports with iata codes but no names.
 Added Unclassified Unpaved and UCR to legend.
