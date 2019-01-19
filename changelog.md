@@ -2,6 +2,10 @@
 This page describes changes made [here](https://github.com/SomeoneElseOSM/SomeoneElse-style), [here](https://github.com/SomeoneElseOSM/SomeoneElse-style-legend) and [here](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT), visible [here](//map.atownsend.org.uk/maps/map/map.html).
 
 ## As yet unreleased
+Added rendering for golf path features as paths.
+<!---
+On UbuntuVM51 only
+--->
 Added various "diplomatic"-tagged objects to use the same icon as "embassy".
 Treat minarets as church spires.
 Moved escape_game and sport=laser_tag from shop to leisure.
@@ -11,15 +15,12 @@ Render prisons and zoos from zoom level 15.
 Extend the "ex-pubs" to show as non-ex-pubs to include e.g. offices.
 
 <!---
-On Hetzner only
+On both Hetzner and UbuntuVM51:
 --->
 ## 24/12/2018 release
 Cope with airports with iata codes but no names.
 Added Unclassified Unpaved and UCR to legend.
 Changed restricted byways to blue.
-<!---
-On both Hetzner and UbuntuVM51:
---->
 Added icons for ambulance station, mountain rescue and mountain rescue box.
 
 ## 24/11/2018 release

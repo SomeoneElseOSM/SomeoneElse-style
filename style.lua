@@ -233,10 +233,18 @@ function filter_tags_generic(keyvalues, nokeys)
 -- "track" will be changed into something else lower down 
 -- (path, pathwide or track_graded).
 -- ----------------------------------------------------------------------------
-   if (( keyvalues["highway"] == "byway"      ) or
-       ( keyvalues["highway"] == "gallop"     ) or
-       ( keyvalues["highway"] == "unsurfaced" )) then
+   if ((  keyvalues["highway"] == "byway"       ) or
+       (  keyvalues["highway"] == "gallop"      ) or
+       (  keyvalues["highway"] == "unsurfaced"  ) or
+       (( keyvalues["golf"]    == "track"      )  and
+        ( keyvalues["highway"] == nil         ))) then
       keyvalues["highway"] = "track"
+   end
+
+   if ((( keyvalues["golf"] == "path"         ) or
+        ( keyvalues["golf"] == "cartpath"     )) and
+       ( keyvalues["highway"] == nil           )) then
+      keyvalues["highway"] = "path"
    end
 
 -- ----------------------------------------------------------------------------
