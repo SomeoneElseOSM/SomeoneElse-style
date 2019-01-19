@@ -4049,6 +4049,7 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["amenity"]     == "preschool"                ) or
        ( keyvalues["building"]    == "preschool"                ) or
        ( keyvalues["amenity"]     == "nursery"                  ) or
+       ( keyvalues["amenity"]     == "nursery_school"           ) or
        ( keyvalues["amenity"]     == "health_centre"            ) or
        ( keyvalues["building"]    == "health_centre"            ) or
        ( keyvalues["amenity"]     == "medical_centre"           ) or
@@ -4241,7 +4242,10 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["amenity"] == "studio"                  ) or
        ( keyvalues["amenity"] == "prison"                  ) or
        ( keyvalues["amenity"] == "monastery"               ) or
-       ( keyvalues["amenity"] == "convent"                 )) then
+       ( keyvalues["amenity"] == "convent"                 ) or
+       ( keyvalues["amenity"] == "music_school"            ) or
+       ( keyvalues["amenity"] == "cooking_school"          ) or
+       ( keyvalues["amenity"] == "flying_school"           )) then
       keyvalues["landuse"] = "unnamedcommercial"
       keyvalues["office"] = "nonspecific"
    end
