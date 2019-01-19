@@ -2,6 +2,7 @@
 This page describes changes made [here](https://github.com/SomeoneElseOSM/SomeoneElse-style), [here](https://github.com/SomeoneElseOSM/SomeoneElse-style-legend) and [here](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT), visible [here](//map.atownsend.org.uk/maps/map/map.html).
 
 ## As yet unreleased
+Render some military buildings in red.
 Added rendering for various "schools" that aren't actually schools (flying_school etc.).
 Added rendering for golf ball washers.
 Added a slightly different colour for golf greens.

@@ -2614,6 +2614,20 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Add landuse=military to some military things.
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["military"] == "office"                             ) or
+       ( keyvalues["military"] == "offices"                            ) or
+       ( keyvalues["military"] == "barracks"                           ) or
+       ( keyvalues["military"] == "naval_base"                         ) or
+       ( keyvalues["military"] == "depot"                              ) or
+       ( keyvalues["military"] == "registration_and_enlistment_office" ) or
+       ( keyvalues["military"] == "ta centre"                          ) or
+       ( keyvalues["military"] == "checkpoint"                         )) then
+      keyvalues["landuse"] = "military"
+   end
+
+-- ----------------------------------------------------------------------------
 -- Nightclubs wouldn't ordinarily be rendered - render them as bar
 -- ----------------------------------------------------------------------------
    if ( keyvalues["amenity"]   == "nightclub"   ) then
@@ -3033,7 +3047,8 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["emergency"] ~= nil                ) or
        ( keyvalues["office"]    ~= nil                ) or
        ( keyvalues["shop"]      ~= nil                ) or
-       ( keyvalues["tourism"]   == "hotel"            )) then
+       ( keyvalues["tourism"]   == "hotel"            ) or
+       ( keyvalues["military"]  == "barracks"         )) then
       if ( keyvalues["name"] == nil ) then
          if ( keyvalues["brand"] ~= nil ) then
             keyvalues["name"] = keyvalues["brand"]
