@@ -1758,7 +1758,7 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
    if ( keyvalues["golf"] == "green" ) then
-      keyvalues["leisure"] = "garden"
+      keyvalues["leisure"] = "golfgreen"
       keyvalues["name"] = keyvalues["ref"]
    end
 
