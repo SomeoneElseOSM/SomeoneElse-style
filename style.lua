@@ -2352,6 +2352,13 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Golf ball washers
+-- ----------------------------------------------------------------------------
+   if ( keyvalues["golf"] == "ball_washer" ) then
+      keyvalues["man_made"] = "golfballwasher"
+   end
+
+-- ----------------------------------------------------------------------------
 -- Advertising Columns
 -- ----------------------------------------------------------------------------
    if ( keyvalues["advertising"] == "column" ) then
