@@ -1424,6 +1424,9 @@ function filter_tags_generic(keyvalues, nokeys)
 --
 -- Treat things that were pubs but are now something else as whatever else 
 -- they now are.
+--
+-- If a real_ale tag has got stuck on something unexpected, don't render that
+-- as a pub.
 -- ----------------------------------------------------------------------------
    if (( keyvalues["amenity"]   == "pub"   ) and
        ( keyvalues["tourism"]   ~= nil     )) then
@@ -1436,6 +1439,16 @@ function filter_tags_generic(keyvalues, nokeys)
         ( keyvalues["shop"]              ~= nil     )  or
         ( keyvalues["office"]            ~= nil     ))) then
       keyvalues["disused:amenity"] = nil
+   end
+
+   if ((  keyvalues["real_ale"]  ~= nil    ) and
+       (( keyvalues["amenity"]   == nil   )  and
+        ( keyvalues["shop"]      == nil   )  and
+        ( keyvalues["tourism"]   == nil   )  and
+        ( keyvalues["room"]      == nil   )  and
+        ( keyvalues["leisure"]   == nil   )  and
+        ( keyvalues["club"]      == nil   ))) then
+      keyvalues["real_ale"] = nil
    end
 
 -- ----------------------------------------------------------------------------
@@ -3044,11 +3057,13 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["amenity"]   == "cattery"          ) or
        ( keyvalues["amenity"]   == "kennels"          ) or
        ( keyvalues["amenity"]   == "animal_shelter"   ) or
-       ( keyvalues["emergency"] ~= nil                ) or
-       ( keyvalues["office"]    ~= nil                ) or
-       ( keyvalues["shop"]      ~= nil                ) or
-       ( keyvalues["tourism"]   == "hotel"            ) or
-       ( keyvalues["military"]  == "barracks"         )) then
+       ( keyvalues["craft"]      ~= nil               ) or
+       ( keyvalues["emergency"]  ~= nil               ) or
+       ( keyvalues["industrial"] ~= nil               ) or
+       ( keyvalues["office"]     ~= nil               ) or
+       ( keyvalues["shop"]       ~= nil               ) or
+       ( keyvalues["tourism"]    == "hotel"           ) or
+       ( keyvalues["military"]   == "barracks"        )) then
       if ( keyvalues["name"] == nil ) then
          if ( keyvalues["brand"] ~= nil ) then
             keyvalues["name"] = keyvalues["brand"]
