@@ -8,6 +8,7 @@ On neither
 Change destination and private colours so that private does not clash with footpath.
 Add a line showing destination and private to legend.
 Only render sensible things via "real_ale".
+Render craft=brewery with in icon.
 
 ## 19/01/2019 release
 <!---

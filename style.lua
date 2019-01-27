@@ -1010,7 +1010,6 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["building"]   == "warehouse"              ) or
        ( keyvalues["industrial"] == "brewery"                ) or 
        ( keyvalues["industrial"] == "distillery"             ) or 
-       ( keyvalues["craft"]      == "brewery"                ) or
        ( keyvalues["craft"]      == "distillery"             ) or
        ( keyvalues["craft"]      == "bakery"                 ) or
        ( keyvalues["industrial"] == "factory"                ) or 
@@ -1449,6 +1448,20 @@ function filter_tags_generic(keyvalues, nokeys)
         ( keyvalues["leisure"]   == nil   )  and
         ( keyvalues["club"]      == nil   ))) then
       keyvalues["real_ale"] = nil
+   end
+
+-- ----------------------------------------------------------------------------
+-- If something has been tagged both as a brewery and a pub or bar, render as
+-- a pub with a microbrewery.
+-- ----------------------------------------------------------------------------
+   if ((( keyvalues["amenity"]    == "pub"     )  or
+        ( keyvalues["amenity"]    == "bar"     )) and
+       (( keyvalues["craft"]      == "brewery" )  or
+        ( keyvalues["industrial"] == "brewery" ))) then
+      keyvalues["amenity"]  = "pub"
+      keyvalues["microbrewery"]  = "yes"
+      keyvalues["craft"]  = nil
+      keyvalues["industrial"]  = nil
    end
 
 -- ----------------------------------------------------------------------------
@@ -4130,6 +4143,19 @@ function filter_tags_generic(keyvalues, nokeys)
 
    if ( keyvalues["emergency"] == "fire_extinguisher" ) then
       keyvalues["amenity"] = "fire_extinguisher"
+   end
+
+-- ----------------------------------------------------------------------------
+-- Craft breweries
+-- Also remove tourism tag (we want to display brewery in preference to
+-- attraction or museum).
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["craft"] == "brewery"       ) or
+       ( keyvalues["craft"] == "brewery;cider" )) then
+      keyvalues["landuse"] = "unnamedcommercial"
+      keyvalues["office"]  = "craftbrewery"
+      keyvalues["craft"]  = nil
+      keyvalues["tourism"]  = nil
    end
 
 -- ----------------------------------------------------------------------------
