@@ -1482,6 +1482,7 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["floor:material"]    == "slate"            ) or
        ( keyvalues["floor:material"]    == "brick"            ) or
        ( keyvalues["floor:material"]    == "rough_wood"       ) or
+       ( keyvalues["floor:material"]    == "rough wood"       ) or
        ( keyvalues["floor:material"]    == "concrete"         ) or
        ( keyvalues["floor:material"]    == "lino;tiles;stone" )) then
       keyvalues["noncarpeted"] = "yes"
@@ -1496,13 +1497,23 @@ function filter_tags_generic(keyvalues, nokeys)
             if ( keyvalues["microbrewery"] == "yes"  ) then
                keyvalues["amenity"] = "pub_yyyyy"
             else
-               keyvalues["amenity"] = "pub_yyyy"
+	       if (( keyvalues["micropub"] == "yes"      ) or
+	           ( keyvalues["pub"]      == "micropub" )) then
+                  keyvalues["amenity"] = "pub_yyyyny"
+               else
+                  keyvalues["amenity"] = "pub_yyyynn"
+               end
 	    end
          else
             if ( keyvalues["microbrewery"] == "yes"  ) then
                keyvalues["amenity"] = "pub_yyydy"
 	    else
-               keyvalues["amenity"] = "pub_yyyd"
+	       if (( keyvalues["micropub"] == "yes"      ) or
+	           ( keyvalues["pub"]      == "micropub" )) then
+                  keyvalues["amenity"] = "pub_yyydny"
+               else
+                  keyvalues["amenity"] = "pub_yyydnn"
+               end
 	    end
          end
       else
@@ -1510,13 +1521,23 @@ function filter_tags_generic(keyvalues, nokeys)
             if ( keyvalues["microbrewery"] == "yes"  ) then
                keyvalues["amenity"] = "pub_yydyy"
 	    else
-               keyvalues["amenity"] = "pub_yydy"
+	       if (( keyvalues["micropub"] == "yes"      ) or
+	           ( keyvalues["pub"]      == "micropub" )) then
+                  keyvalues["amenity"] = "pub_yydyny"
+	       else
+                  keyvalues["amenity"] = "pub_yydynn"
+	       end
 	    end
          else
             if ( keyvalues["microbrewery"] == "yes"  ) then
                keyvalues["amenity"] = "pub_yyddy"
 	    else
-               keyvalues["amenity"] = "pub_yydd"
+	       if (( keyvalues["micropub"] == "yes"      ) or
+	           ( keyvalues["pub"]      == "micropub" )) then
+                  keyvalues["amenity"] = "pub_yyddny"
+               else
+                  keyvalues["amenity"] = "pub_yyddnn"
+               end
 	    end
          end
       end
@@ -1527,15 +1548,15 @@ function filter_tags_generic(keyvalues, nokeys)
       if (( keyvalues["food"] ~= nil  ) and
           ( keyvalues["food"] ~= "no" )) then
          if ( keyvalues["noncarpeted"] == "yes"  ) then
-            keyvalues["amenity"] = "pub_ynyy"
+            keyvalues["amenity"] = "pub_ynyyd"
          else
-            keyvalues["amenity"] = "pub_ynyd"
+            keyvalues["amenity"] = "pub_ynydd"
          end
       else
          if ( keyvalues["noncarpeted"] == "yes"  ) then
-            keyvalues["amenity"] = "pub_yndy"
+            keyvalues["amenity"] = "pub_yndyd"
          else
-            keyvalues["amenity"] = "pub_yndd"
+            keyvalues["amenity"] = "pub_ynddd"
          end
       end
    end
@@ -1563,7 +1584,7 @@ function filter_tags_generic(keyvalues, nokeys)
          ( keyvalues["disused"]           == "yes"            )))  and
        (   keyvalues["shop"]              == nil                )  and
        (   keyvalues["tourism"]           == nil                )) then
-      keyvalues["amenity"] = "pub_nddd"
+      keyvalues["amenity"] = "pub_ndddd"
    end
 
 -- ----------------------------------------------------------------------------
@@ -1576,13 +1597,13 @@ function filter_tags_generic(keyvalues, nokeys)
             if ( keyvalues["microbrewery"] == "yes"  ) then
                keyvalues["amenity"] = "pub_ydyyy"
 	    else
-               keyvalues["amenity"] = "pub_ydyy"
+               keyvalues["amenity"] = "pub_ydyyn"
 	    end
          else
             if ( keyvalues["microbrewery"] == "yes"  ) then
                keyvalues["amenity"] = "pub_ydydy"
 	    else
-               keyvalues["amenity"] = "pub_ydyd"
+               keyvalues["amenity"] = "pub_ydydn"
 	    end
          end
       else
@@ -1590,11 +1611,18 @@ function filter_tags_generic(keyvalues, nokeys)
             if ( keyvalues["microbrewery"] == "yes"  ) then
                keyvalues["amenity"] = "pub_yddyy"
 	    else
-               keyvalues["amenity"] = "pub_yddy"
+               keyvalues["amenity"] = "pub_yddyn"
 	    end
 	 else
             if ( keyvalues["microbrewery"] == "yes"  ) then
                keyvalues["amenity"] = "pub_ydddy"
+            else
+	       if (( keyvalues["micropub"] == "yes"      ) or
+	           ( keyvalues["pub"]      == "micropub" )) then
+                  keyvalues["amenity"] = "pub_ydddny"
+               else
+                  keyvalues["amenity"] = "pub_ydddnn"
+               end
 	    end
          end
       end
@@ -3042,25 +3070,31 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["amenity"]   == "fuel"             ) or
        ( keyvalues["amenity"]   == "charging_station" ) or
        ( keyvalues["amenity"]   == "pub_yyyyy"        ) or
-       ( keyvalues["amenity"]   == "pub_yyyy"         ) or
+       ( keyvalues["amenity"]   == "pub_yyyyny"       ) or
+       ( keyvalues["amenity"]   == "pub_yyyynn"       ) or
        ( keyvalues["amenity"]   == "pub_yyydy"        ) or
-       ( keyvalues["amenity"]   == "pub_yyyd"         ) or
+       ( keyvalues["amenity"]   == "pub_yyydny"       ) or
+       ( keyvalues["amenity"]   == "pub_yyydnn"       ) or
        ( keyvalues["amenity"]   == "pub_yydyy"        ) or
-       ( keyvalues["amenity"]   == "pub_yydy"         ) or
+       ( keyvalues["amenity"]   == "pub_yydyny"       ) or
+       ( keyvalues["amenity"]   == "pub_yydynn"       ) or
        ( keyvalues["amenity"]   == "pub_yyddy"        ) or
-       ( keyvalues["amenity"]   == "pub_yydd"         ) or
-       ( keyvalues["amenity"]   == "pub_ynyy"         ) or
-       ( keyvalues["amenity"]   == "pub_ynyd"         ) or
-       ( keyvalues["amenity"]   == "pub_yndy"         ) or
-       ( keyvalues["amenity"]   == "pub_yndd"         ) or
-       ( keyvalues["amenity"]   == "pub_nddd"         ) or
+       ( keyvalues["amenity"]   == "pub_yyddny"       ) or
+       ( keyvalues["amenity"]   == "pub_yyddnn"       ) or
+       ( keyvalues["amenity"]   == "pub_ynyyd"        ) or
+       ( keyvalues["amenity"]   == "pub_ynydd"        ) or
+       ( keyvalues["amenity"]   == "pub_yndyd"        ) or
+       ( keyvalues["amenity"]   == "pub_ynddd"        ) or
+       ( keyvalues["amenity"]   == "pub_ndddd"        ) or
        ( keyvalues["amenity"]   == "pub_ydyyy"        ) or
-       ( keyvalues["amenity"]   == "pub_ydyy"         ) or
+       ( keyvalues["amenity"]   == "pub_ydyyn"        ) or
        ( keyvalues["amenity"]   == "pub_ydydy"        ) or
-       ( keyvalues["amenity"]   == "pub_ydyd"         ) or
+       ( keyvalues["amenity"]   == "pub_ydydn"        ) or
        ( keyvalues["amenity"]   == "pub_yddyy"        ) or
-       ( keyvalues["amenity"]   == "pub_yddy"         ) or
+       ( keyvalues["amenity"]   == "pub_yddyn"        ) or
        ( keyvalues["amenity"]   == "pub_ydddy"        ) or
+       ( keyvalues["amenity"]   == "pub_ydddny"       ) or
+       ( keyvalues["amenity"]   == "pub_ydddnn"       ) or
        ( keyvalues["amenity"]   == "pub"              ) or
        ( keyvalues["amenity"]   == "doctors"          ) or
        ( keyvalues["amenity"]   == "pharmacy"         ) or
