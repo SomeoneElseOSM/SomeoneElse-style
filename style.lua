@@ -1488,6 +1488,12 @@ function filter_tags_generic(keyvalues, nokeys)
       keyvalues["noncarpeted"] = "yes"
    end
 
+   if (( keyvalues["micropub"] == "yes"   ) or
+       ( keyvalues["pub"]      == "micro" )) then
+      keyvalues["micropub"] = nil
+      keyvalues["pub"]      = "micropub"
+   end
+
    if (( keyvalues["real_ale"] ~= nil     ) and
        ( keyvalues["real_ale"] ~= "maybe" ) and
        ( keyvalues["real_ale"] ~= "no"    )) then
@@ -1497,8 +1503,7 @@ function filter_tags_generic(keyvalues, nokeys)
             if ( keyvalues["microbrewery"] == "yes"  ) then
                keyvalues["amenity"] = "pub_yyyyy"
             else
-	       if (( keyvalues["micropub"] == "yes"      ) or
-	           ( keyvalues["pub"]      == "micropub" )) then
+	       if ( keyvalues["pub"] == "micropub" ) then
                   keyvalues["amenity"] = "pub_yyyyny"
                else
                   keyvalues["amenity"] = "pub_yyyynn"
@@ -1508,8 +1513,7 @@ function filter_tags_generic(keyvalues, nokeys)
             if ( keyvalues["microbrewery"] == "yes"  ) then
                keyvalues["amenity"] = "pub_yyydy"
 	    else
-	       if (( keyvalues["micropub"] == "yes"      ) or
-	           ( keyvalues["pub"]      == "micropub" )) then
+	       if ( keyvalues["pub"] == "micropub" ) then
                   keyvalues["amenity"] = "pub_yyydny"
                else
                   keyvalues["amenity"] = "pub_yyydnn"
@@ -1521,8 +1525,7 @@ function filter_tags_generic(keyvalues, nokeys)
             if ( keyvalues["microbrewery"] == "yes"  ) then
                keyvalues["amenity"] = "pub_yydyy"
 	    else
-	       if (( keyvalues["micropub"] == "yes"      ) or
-	           ( keyvalues["pub"]      == "micropub" )) then
+	       if ( keyvalues["pub"] == "micropub" ) then
                   keyvalues["amenity"] = "pub_yydyny"
 	       else
                   keyvalues["amenity"] = "pub_yydynn"
@@ -1532,8 +1535,7 @@ function filter_tags_generic(keyvalues, nokeys)
             if ( keyvalues["microbrewery"] == "yes"  ) then
                keyvalues["amenity"] = "pub_yyddy"
 	    else
-	       if (( keyvalues["micropub"] == "yes"      ) or
-	           ( keyvalues["pub"]      == "micropub" )) then
+	       if ( keyvalues["pub"] == "micropub" ) then
                   keyvalues["amenity"] = "pub_yyddny"
                else
                   keyvalues["amenity"] = "pub_yyddnn"
@@ -1617,8 +1619,7 @@ function filter_tags_generic(keyvalues, nokeys)
             if ( keyvalues["microbrewery"] == "yes"  ) then
                keyvalues["amenity"] = "pub_ydddy"
             else
-	       if (( keyvalues["micropub"] == "yes"      ) or
-	           ( keyvalues["pub"]      == "micropub" )) then
+	       if ( keyvalues["pub"] == "micropub" ) then
                   keyvalues["amenity"] = "pub_ydddny"
                else
                   keyvalues["amenity"] = "pub_ydddnn"
