@@ -1421,6 +1421,9 @@ function filter_tags_generic(keyvalues, nokeys)
 -- because I'm far more likely to be looking for the latter than the former.
 -- This is done by removing the tourism tag for them.
 --
+-- People have used lots of tags for "former" or "dead" pubs.
+-- "disused:amenity=pub" is the most popular.
+--
 -- Treat things that were pubs but are now something else as whatever else 
 -- they now are.
 --
@@ -1432,8 +1435,42 @@ function filter_tags_generic(keyvalues, nokeys)
       keyvalues["tourism"] = nil
    end
 
+   if ((  keyvalues["abandoned:amenity"] == "pub"             )   or
+       (  keyvalues["amenity:disused"]   == "pub"             )   or
+       (  keyvalues["disused"]           == "pub"             )   or
+       (  keyvalues["disused:pub"]       == "yes"             )   or
+       (  keyvalues["former_amenity"]    == "former_pub"      )   or
+       (  keyvalues["former_amenity"]    == "pub"             )   or
+       (  keyvalues["former_amenity"]    == "old_pub"         )   or
+       (  keyvalues["former:amenity"]    == "pub"             )   or
+       (  keyvalues["old_amenity"]       == "pub"             )) then
+      keyvalues["disused:amenity"] = "pub"
+      keyvalues["amenity:disused"] = nil
+      keyvalues["disused"] = nil
+      keyvalues["disused:pub"] = nil
+      keyvalues["former_amenity"] = nil
+      keyvalues["old_amenity"] = nil
+   end
+
+   if ((  keyvalues["amenity"]           == "closed_pub"      )   or
+       (  keyvalues["amenity"]           == "dead_pub"        )   or
+       (  keyvalues["amenity"]           == "disused_pub"     )   or
+       (  keyvalues["amenity"]           == "former_pub"      )   or
+       (  keyvalues["amenity"]           == "old_pub"         )   or
+       (( keyvalues["amenity"]           == "pub"            )    and
+        ( keyvalues["disused"]           == "yes"            ))) then
+      keyvalues["disused:amenity"] = "pub"
+      keyvalues["amenity:disused"] = nil
+      keyvalues["disused"] = nil
+      keyvalues["disused:pub"] = nil
+      keyvalues["former_amenity"] = nil
+      keyvalues["old_amenity"] = nil
+      keyvalues["amenity"] = nil
+   end
+
    if ((  keyvalues["disused:amenity"]   == "pub"    ) and
        (( keyvalues["tourism"]           ~= nil     )  or
+        ( keyvalues["amenity"]           ~= nil     )  or
         ( keyvalues["leisure"]           ~= nil     )  or
         ( keyvalues["shop"]              ~= nil     )  or
         ( keyvalues["office"]            ~= nil     ))) then
@@ -1564,28 +1601,10 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
--- People have used lots of tags for "former" or "dead" pubs.
--- "disused:amenity=pub" is the most popular.
+-- The many and varied taggings for former pubs should have been turned into
+-- disused:amenity=pub above, unless some other tag applies.
 -- ----------------------------------------------------------------------------
-   if (((  keyvalues["disused:amenity"]   == "pub"             )   or
-        (  keyvalues["abandoned:amenity"] == "pub"             )   or
-        (  keyvalues["amenity:disused"]   == "pub"             )   or
-        (  keyvalues["amenity"]           == "closed_pub"      )   or
-        (  keyvalues["amenity"]           == "dead_pub"        )   or
-        (  keyvalues["amenity"]           == "disused_pub"     )   or
-        (  keyvalues["amenity"]           == "former_pub"      )   or
-        (  keyvalues["amenity"]           == "old_pub"         )   or
-        (  keyvalues["disused"]           == "pub"             )   or
-        (  keyvalues["disused:pub"]       == "yes"             )   or
-        (  keyvalues["former_amenity"]    == "former_pub"      )   or
-        (  keyvalues["former_amenity"]    == "pub"             )   or
-        (  keyvalues["former_amenity"]    == "old_pub"         )   or
-        (  keyvalues["former:amenity"]    == "pub"             )   or
-        (  keyvalues["old_amenity"]       == "pub"             )   or
-        (( keyvalues["amenity"]           == "pub"            )    and
-         ( keyvalues["disused"]           == "yes"            )))  and
-       (   keyvalues["shop"]              == nil                )  and
-       (   keyvalues["tourism"]           == nil                )) then
+   if ( keyvalues["disused:amenity"] == "pub" ) then
       keyvalues["amenity"] = "pub_ndddd"
    end
 
