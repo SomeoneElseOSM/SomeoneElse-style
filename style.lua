@@ -1435,6 +1435,19 @@ function filter_tags_generic(keyvalues, nokeys)
       keyvalues["tourism"] = nil
    end
 
+   if (( keyvalues["tourism"] == "hotel" ) and
+       ( keyvalues["pub"]     == "yes"   )) then
+      keyvalues["amenity"] = "pub"
+      keyvalues["pub"] = nil
+      keyvalues["tourism"] = nil
+   end
+
+   if (( keyvalues["leisure"]     == "outdoor_seating" ) and
+       ( keyvalues["beer_garden"] == "yes"             )) then
+      keyvalues["leisure"] = "garden"
+      keyvalues["garden"] = "beer_garden"
+   end
+
    if ((  keyvalues["abandoned:amenity"] == "pub"             )   or
        (  keyvalues["amenity:disused"]   == "pub"             )   or
        (  keyvalues["disused"]           == "pub"             )   or
