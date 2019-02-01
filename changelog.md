@@ -9,6 +9,7 @@ Include micropubs mapped as "pub=micro".
 Improve and consolidate disused:pub detection logic to not miss some new uses.
 Add "pub=yes" (on e.g. hotels) to the pub detection code.
 Detect more italian combinations as pizza places.
+Render Jehovah's Witness places of worship as generic religious rather than using a cross.
 
 ## 28/01/2019 release
 <!---

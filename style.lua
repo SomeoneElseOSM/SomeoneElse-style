@@ -4537,6 +4537,16 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Special case for Jehovahs Witnesses - don't use the normal Christian
+-- symbol (a cross)
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["amenity"]      == "place_of_worship" ) and
+       ( keyvalues["religion"]     == "christian"        ) and
+       ( keyvalues["denomination"] == "jehovahs_witness" )) then
+      keyvalues["religion"] = nil
+   end
+
+-- ----------------------------------------------------------------------------
 -- Disused aerodromes etc. - handle disused=yes.
 -- ----------------------------------------------------------------------------
    if (( keyvalues["aeroway"]        == "aerodrome" ) and
