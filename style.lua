@@ -2516,6 +2516,14 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Render guest houses subtagged as B&B as B&B
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["tourism"]     == "guest_house"       ) and
+       ( keyvalues["guest_house"] == "bed_and_breakfast" )) then
+      keyvalues["tourism"] = "bed_and_breakfast"
+   end
+
+-- ----------------------------------------------------------------------------
 -- tourism=bed_and_breakfast was removed by the "style police" in
 -- https://github.com/gravitystorm/openstreetmap-carto/pull/695
 -- That now has its own icon.
