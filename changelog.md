@@ -12,6 +12,7 @@ Detect more italian combinations as pizza places.
 Render Jehovah's Witness places of worship as generic religious rather than using a cross.
 Render B&Bs that are tagged as a subclass of guest_house as B&Bs.
 Render street cabinets that are mapped as ways as buildings.
+Render Mineshafts
 
 ## 28/01/2019 release
 <!---

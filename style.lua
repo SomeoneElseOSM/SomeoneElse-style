@@ -2104,6 +2104,29 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Mineshafts
+-- First make sure that we treat historic ones as historic
+-- ----------------------------------------------------------------------------
+   if ((( keyvalues["man_made"] == "mine"       )  or
+        ( keyvalues["man_made"] == "mineshaft"  )  or
+        ( keyvalues["man_made"] == "mine_shaft" )) and
+       (( keyvalues["historic"] == "yes"        )  or
+        ( keyvalues["historic"] == "mine"       )  or
+        ( keyvalues["historic"] == "mineshaft"  )  or
+        ( keyvalues["historic"] == "mine_shaft" ))) then
+      keyvalues["man_made"] = nil
+      keyvalues["historic"] = "nonspecific"
+   end
+
+-- ----------------------------------------------------------------------------
+-- Then other spellings of mineshaft
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["man_made"] == "mine"       )  or
+       ( keyvalues["man_made"] == "mine_shaft" )) then
+      keyvalues["man_made"] = "mineshaft"
+   end
+
+-- ----------------------------------------------------------------------------
 -- Add a building tag to historic items that are likely buildings so that
 -- buildings.mss can process it.  Some shouldn't assume buildings (e.g. "fort"
 -- below).  Some use "roof" (which I use for "nearly a building" elsewhere).
