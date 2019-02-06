@@ -1,9 +1,14 @@
 # Changes made to this rendering
 This page describes changes made [here](https://github.com/SomeoneElseOSM/SomeoneElse-style), [here](https://github.com/SomeoneElseOSM/SomeoneElse-style-legend) and [here](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT), visible [here](//map.atownsend.org.uk/maps/map/map.html).
 
-## As yet unreleased
 <!---
+## As yet unreleased
 On neither
+--->
+
+## 06/02/2019 release
+<!---
+On Hetzner only
 --->
 Include micropubs mapped as "pub=micro".
 Improve and consolidate disused:pub detection logic to not miss some new uses.
@@ -12,12 +17,9 @@ Detect more italian combinations as pizza places.
 Render Jehovah's Witness places of worship as generic religious rather than using a cross.
 Render B&Bs that are tagged as a subclass of guest_house as B&Bs.
 Render street cabinets that are mapped as ways as buildings.
-Render Mineshafts
+Render Mineshafts.
 
 ## 28/01/2019 release
-<!---
-On Hetzner only
---->
 Change destination and private colours so that private does not clash with footpath.
 Add a line showing destination and private to legend.
 Only render sensible things via "real_ale".
