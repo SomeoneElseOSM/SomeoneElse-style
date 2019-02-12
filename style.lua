@@ -1401,10 +1401,12 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
--- Don't show pubs if you can't actually get to them.
+-- Don't show pubs, cafes or restaurants if you can't actually get to them.
 -- ----------------------------------------------------------------------------
-   if (( keyvalues["amenity"] == "pub"     ) and
-       ( keyvalues["access"]  == "private" )) then
+   if ((( keyvalues["amenity"] == "pub"        ) or
+        ( keyvalues["amenity"] == "cafe"       ) or
+        ( keyvalues["amenity"] == "restaurant" )) and
+       (  keyvalues["access"]  == "private"     )) then
       keyvalues["amenity"] = nil
    end
 
