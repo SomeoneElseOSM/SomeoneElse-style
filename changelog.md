@@ -6,6 +6,7 @@ This page describes changes made [here](https://github.com/SomeoneElseOSM/Someon
 On neither
 --->
 Don't render private cafes or restaurants, in the same way that private pubs are not rendered.
+If a cafe or restaurant is rendered as serving real ale, also include the "F" for food.
 
 ## 06/02/2019 release
 <!---

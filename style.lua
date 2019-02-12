@@ -1517,7 +1517,20 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
--- Attempt to do something sensible with pubs
+-- If a food place has a real_ale tag, also add a food tag.
+-- ----------------------------------------------------------------------------
+   if ((( keyvalues["amenity"]  == "cafe"       )  or
+        ( keyvalues["amenity"]  == "restaurant" )) and
+       (( keyvalues["real_ale"] ~= nil          )  and
+        ( keyvalues["real_ale"] ~= "maybe"      )  and
+        ( keyvalues["real_ale"] ~= "no"         )) and
+       (  keyvalues["food"]     == nil           )) then
+      keyvalues["food"]  = "yes"
+   end
+
+-- ----------------------------------------------------------------------------
+-- Attempt to do something sensible with pubs (and other places that serve
+-- real_ale)
 -- Pubs that serve real_ale get a nice IPA, ones that don't a yellowy lager,
 -- closed pubs an "X".  Others get the default empty glass.
 --
