@@ -7,6 +7,7 @@ On neither
 --->
 Don't render private cafes or restaurants, in the same way that private pubs are not rendered.
 If a cafe or restaurant is rendered as serving real ale, also include the "F" for food.
+Render operator/brand in brackets on man_made objects.
 
 ## 06/02/2019 release
 <!---

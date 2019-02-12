@@ -3187,6 +3187,7 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["craft"]      ~= nil               ) or
        ( keyvalues["emergency"]  ~= nil               ) or
        ( keyvalues["industrial"] ~= nil               ) or
+       ( keyvalues["man_made"]   ~= nil               ) or
        ( keyvalues["office"]     ~= nil               ) or
        ( keyvalues["shop"]       ~= nil               ) or
        ( keyvalues["tourism"]    == "hotel"           ) or
