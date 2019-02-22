@@ -1736,11 +1736,14 @@ function filter_tags_generic(keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
 -- Parcel lockers
 -- ----------------------------------------------------------------------------
-   if ((  keyvalues["amenity"] == "vending_machine"                ) and
-       (( keyvalues["vending"] == "parcel_pickup;parcel_mail_in"  )  or
-        ( keyvalues["vending"] == "parcel_mail_in;parcel_pickup"  )  or
-        ( keyvalues["vending"] == "parcel_mail_in"                )  or
-        ( keyvalues["vending"] == "parcel_pickup"                 ))) then
+   if (((  keyvalues["amenity"]         == "vending_machine"                )  and
+        (( keyvalues["vending"]         == "parcel_pickup;parcel_mail_in"  )   or
+         ( keyvalues["vending"]         == "parcel_mail_in;parcel_pickup"  )   or
+         ( keyvalues["vending"]         == "parcel_mail_in"                )   or
+         ( keyvalues["vending"]         == "parcel_pickup"                 )   or
+         ( keyvalues["vending_machine"] == "parcel_pickup"                 )))  or
+       (   keyvalues["amenity"]         == "parcel_box"                      )  or
+       (   keyvalues["amenity"]         == "parcel_pickup"                   )) then
       keyvalues["amenity"]  = "parcel_locker"
    end
 

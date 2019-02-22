@@ -8,6 +8,7 @@ On neither
 Render names on vending machines.
 Render brand and operator on cafes, restaurants and vending machines.
 Try and make electricity substations more obvious.
+Detect more parcel lockers.
 <!---
 On UbuntuVM51:
 --->
