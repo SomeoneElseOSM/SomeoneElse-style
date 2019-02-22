@@ -5,13 +5,18 @@ This page describes changes made [here](https://github.com/SomeoneElseOSM/Someon
 <!---
 On neither
 --->
+Render names on vending machines.
+Render brand and operator on cafes, restaurants and vending machines.
+<!---
+On UbuntuVM51:
+--->
 Don't render private cafes or restaurants, in the same way that private pubs are not rendered.
 If a cafe or restaurant is rendered as serving real ale, also include the "F" for food.
 Render operator/brand in brackets on man_made objects.
 
 ## 06/02/2019 release
 <!---
-On Hetzner only
+On both Hetzner and UbuntuVM51:
 --->
 Include micropubs mapped as "pub=micro".
 Improve and consolidate disused:pub detection logic to not miss some new uses.
@@ -35,9 +40,6 @@ Added rendering for various "schools" that aren't actually schools (flying_schoo
 Golf: added rendering for golf ball washers;
 added a slightly different colour for golf greens;
 added rendering for golf path features as paths.
-<!---
-On both Hetzner and UbuntuVM51:
---->
 Added various "diplomatic"-tagged objects to use the same icon as "embassy".
 Treat minarets as church spires.
 Moved escape_game and sport=laser_tag from shop to leisure.
