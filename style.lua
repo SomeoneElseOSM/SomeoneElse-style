@@ -998,6 +998,19 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Electricity substations
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["power"] == "substation"  )  or
+       ( keyvalues["power"] == "sub_station" )) then
+      keyvalues["power"] = nil
+      if ( keyvalues["name"] == nil ) then
+         keyvalues["name"] = "(el.sub.)"
+      else
+         keyvalues["name"] = keyvalues["name"] .. " (el.sub.)"
+      end
+   end
+
+-- ----------------------------------------------------------------------------
 -- Pretend add landuse=industrial to some industrial sub-types to force 
 -- name rendering.  Similarly, some commercial and leisure.
 -- man_made=works drops the man_made tag to avoid duplicate labelling.
