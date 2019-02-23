@@ -9,6 +9,7 @@ Render names on vending machines.
 Render brand and operator on cafes, restaurants and vending machines.
 Try and make electricity substations more obvious.
 Detect more parcel lockers.
+Add a "hotel roof" to pubs with accommodation.
 <!---
 On UbuntuVM51:
 --->

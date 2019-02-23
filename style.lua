@@ -1551,7 +1551,10 @@ function filter_tags_generic(keyvalues, nokeys)
 -- Live or dead pub?  y or n
 -- Real ale?          y n or d (for don't know)
 -- Food 	      y or d (don't know)
--- Floor	      y or d (don't know)
+-- Noncarpeted floor  y or d (don't know)
+-- Microbrewery	      y or n
+-- Micropub	      y or n
+-- Accommodation      y or n
 -- ----------------------------------------------------------------------------
    if (( keyvalues["description:floor"] ~= nil                ) or
        ( keyvalues["floor:material"]    == "tiles"            ) or
@@ -1572,6 +1575,15 @@ function filter_tags_generic(keyvalues, nokeys)
       keyvalues["pub"]      = "micropub"
    end
 
+-- ----------------------------------------------------------------------------
+-- The misspelling "accomodation" is quite common.
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["accommodation"] == nil )  and
+       ( keyvalues["accomodation"]  ~= nil )) then
+      keyvalues["accommodation"] = keyvalues["accomodation"]
+      keyvalues["accomodation"]  = nil
+   end
+		  
    if (( keyvalues["real_ale"] ~= nil     ) and
        ( keyvalues["real_ale"] ~= "maybe" ) and
        ( keyvalues["real_ale"] ~= "no"    )) then
@@ -1584,7 +1596,11 @@ function filter_tags_generic(keyvalues, nokeys)
 	       if ( keyvalues["pub"] == "micropub" ) then
                   keyvalues["amenity"] = "pub_yyyyny"
                else
-                  keyvalues["amenity"] = "pub_yyyynn"
+                  if ( keyvalues["accommodation"] ~= "no" ) then
+                     keyvalues["amenity"] = "pub_yyyynny"
+		  else
+                     keyvalues["amenity"] = "pub_yyyynnn"
+		  end
                end
 	    end
          else
@@ -1594,7 +1610,11 @@ function filter_tags_generic(keyvalues, nokeys)
 	       if ( keyvalues["pub"] == "micropub" ) then
                   keyvalues["amenity"] = "pub_yyydny"
                else
-                  keyvalues["amenity"] = "pub_yyydnn"
+                  if ( keyvalues["accommodation"] ~= "no" ) then	       
+                     keyvalues["amenity"] = "pub_yyydnny"
+		  else
+                     keyvalues["amenity"] = "pub_yyydnnn"
+		  end
                end
 	    end
          end
@@ -1682,7 +1702,11 @@ function filter_tags_generic(keyvalues, nokeys)
 	       if ( keyvalues["pub"] == "micropub" ) then
                   keyvalues["amenity"] = "pub_ydddny"
                else
-                  keyvalues["amenity"] = "pub_ydddnn"
+                  if ( keyvalues["accommodation"] ~= "no" ) then
+                     keyvalues["amenity"] = "pub_ydddnny"
+		  else
+                     keyvalues["amenity"] = "pub_ydddnnn"
+		  end
                end
 	    end
          end
