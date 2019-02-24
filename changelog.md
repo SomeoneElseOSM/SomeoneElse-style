@@ -1,9 +1,14 @@
 # Changes made to this rendering
 This page describes changes made [here](https://github.com/SomeoneElseOSM/SomeoneElse-style), [here](https://github.com/SomeoneElseOSM/SomeoneElse-style-legend) and [here](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT), visible [here](//map.atownsend.org.uk/maps/map/map.html).
 
-## As yet unreleased
 <!---
-On neither
+## As yet unreleased
+On Neither
+--->
+
+## 23/02/2019 release
+<!---
+On Hetzner
 --->
 Render names on vending machines.
 Render brand and operator on cafes, restaurants and vending machines.
@@ -11,16 +16,13 @@ Try and make electricity substations more obvious.
 Detect more parcel lockers.
 Add a "hotel roof" to pubs with accommodation, and restaurants with rooms.
 <!---
-On UbuntuVM51:
+On both Hetzner and UbuntuVM51:
 --->
 Don't render private cafes or restaurants, in the same way that private pubs are not rendered.
 If a cafe or restaurant is rendered as serving real ale, also include the "F" for food.
 Render operator/brand in brackets on man_made objects.
 
 ## 06/02/2019 release
-<!---
-On both Hetzner and UbuntuVM51:
---->
 Include micropubs mapped as "pub=micro".
 Improve and consolidate disused:pub detection logic to not miss some new uses.
 Add "pub=yes" (on e.g. hotels) to the pub detection code.
