@@ -1161,23 +1161,29 @@ function filter_tags_generic(keyvalues, nokeys)
                         keyvalues["disused:amenity"] = nil
                         keyvalues["tourism"] = nil
                      else
-                        if (( keyvalues["disused:amenity"]    == "telephone"        )  or
-                            ( keyvalues["abandoned:amenity"]  == "telephone"        )  or
-                            ( keyvalues["demolished:amenity"] == "telephone"        )  or
-                            ( keyvalues["razed:amenity"]      == "telephone"        )  or
-                            ( keyvalues["old_amenity"]        == "telephone"        )  or
-                            ( keyvalues["historic:amenity"]   == "telephone"        )  or
-                            ( keyvalues["disused"]            == "telephone"        )  or
-                            ( keyvalues["was:amenity"]        == "telephone"        )  or
-                            ( keyvalues["old:amenity"]        == "telephone"        )  or
-                            ( keyvalues["amenity"]            == "old_telephone"    )  or
-                            ( keyvalues["amenity"]            == "former_telephone" )  or
-                            ( keyvalues["amenity:old"]        == "telephone"        )  or
-                            ( keyvalues["historic"]           == "telephone"        )) then
-                           keyvalues["amenity"]         = "boothdisused"
+                        if ( keyvalues["tourism"] == "artwork" ) then
+                           keyvalues["amenity"] = "boothartwork"
                            keyvalues["disused:amenity"] = nil
-                           keyvalues["historic"]        = nil
-                        end
+                           keyvalues["tourism"] = nil
+			else
+                           if (( keyvalues["disused:amenity"]    == "telephone"        )  or
+                               ( keyvalues["abandoned:amenity"]  == "telephone"        )  or
+                               ( keyvalues["demolished:amenity"] == "telephone"        )  or
+                               ( keyvalues["razed:amenity"]      == "telephone"        )  or
+                               ( keyvalues["old_amenity"]        == "telephone"        )  or
+                               ( keyvalues["historic:amenity"]   == "telephone"        )  or
+                               ( keyvalues["disused"]            == "telephone"        )  or
+                               ( keyvalues["was:amenity"]        == "telephone"        )  or
+                               ( keyvalues["old:amenity"]        == "telephone"        )  or
+                               ( keyvalues["amenity"]            == "old_telephone"    )  or
+                               ( keyvalues["amenity"]            == "former_telephone" )  or
+                               ( keyvalues["amenity:old"]        == "telephone"        )  or
+                               ( keyvalues["historic"]           == "telephone"        )) then
+                              keyvalues["amenity"]         = "boothdisused"
+                              keyvalues["disused:amenity"] = nil
+                              keyvalues["historic"]        = nil
+                           end
+			end
                      end
                   end
                end
@@ -3925,6 +3931,7 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["shop"]   == "haberdashers"         ) or
        ( keyvalues["shop"]   == "sewing"               ) or
        ( keyvalues["shop"]   == "needlecraft"          ) or
+       ( keyvalues["shop"]   == "embroidery"           ) or
        ( keyvalues["shop"]   == "knitting"             ) or
        ( keyvalues["shop"]   == "wool"                 ) or
        ( keyvalues["shop"]   == "yarn"                 ) or

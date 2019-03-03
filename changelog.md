@@ -5,7 +5,8 @@ This page describes changes made [here](https://github.com/SomeoneElseOSM/Someon
 On Neither
 --->
 ## As yet unreleased
-(nothing)
+Render shop=embroidery as a shop.
+Add "artwork" to the list of former telephone box uses.
 
 ## 23/02/2019 release
 <!---
