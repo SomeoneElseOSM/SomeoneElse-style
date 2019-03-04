@@ -7,6 +7,7 @@ On Neither
 ## As yet unreleased
 Render shop=embroidery as a shop.
 Add "artwork" to the list of former telephone box uses.
+Append "sewage" to wastewater plants.
 
 ## 23/02/2019 release
 <!---
