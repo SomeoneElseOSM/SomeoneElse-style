@@ -998,6 +998,14 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Mistaggings for wastewater_plant
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["man_made"]   == "sewage_works"      ) or
+       ( keyvalues["man_made"]   == "wastewater_works"  )) then
+      keyvalues["man_made"] = "wastewater_plant"
+   end
+
+-- ----------------------------------------------------------------------------
 -- Electricity substations
 -- ----------------------------------------------------------------------------
    if (( keyvalues["power"] == "substation"  )  or
@@ -1016,8 +1024,17 @@ function filter_tags_generic(keyvalues, nokeys)
 -- man_made=works drops the man_made tag to avoid duplicate labelling.
 -- "parking=depot" is a special case - drop the parking tag there too.
 -- ----------------------------------------------------------------------------
-   if (( keyvalues["man_made"]   == "wastewater_plant"       ) or 
-       ( keyvalues["man_made"]   == "reservoir_covered"      ) or 
+   if ( keyvalues["man_made"]   == "wastewater_plant"       ) then
+      keyvalues["man_made"] = nil
+      keyvalues["landuse"] = "industrial"
+      if ( keyvalues["name"] == nil ) then
+         keyvalues["name"] = "(sewage)"
+      else
+         keyvalues["name"] = keyvalues["name"] .. " (sewage)"
+      end
+   end
+
+   if (( keyvalues["man_made"]   == "reservoir_covered"      ) or 
        ( keyvalues["man_made"]   == "petroleum_well"         ) or 
        ( keyvalues["industrial"] == "warehouse"              ) or
        ( keyvalues["building"]   == "warehouse"              ) or
@@ -2536,14 +2553,6 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["man_made"]   == "lake"                  ) or
        ( keyvalues["man_made"]   == "reservoir"             )) then
       keyvalues["natural"] = "water"
-   end
-
--- ----------------------------------------------------------------------------
--- Mistaggings for wastewater_plant
--- ----------------------------------------------------------------------------
-   if (( keyvalues["man_made"]   == "sewage_works"      ) or
-       ( keyvalues["man_made"]   == "wastewater_works"  )) then
-      keyvalues["man_made"] = "wastewater_plant"
    end
 
 -- ----------------------------------------------------------------------------
