@@ -1835,6 +1835,22 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Cafes with accommodation
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["amenity"]       == "cafe" )  and
+       ( keyvalues["accommodation"] == "yes"  )) then
+      keyvalues["amenity"] = "cafeaccomm"
+   end
+
+-- ----------------------------------------------------------------------------
+-- Bars with accommodation
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["amenity"]       == "bar" )  and
+       ( keyvalues["accommodation"] == "yes" )) then
+      keyvalues["amenity"] = "baraccomm"
+   end
+
+-- ----------------------------------------------------------------------------
 -- Render building societies as banks.  Also shop=bank and credit unions.
 -- ----------------------------------------------------------------------------
    if (( keyvalues["amenity"] == "building_society" ) or
