@@ -4608,6 +4608,7 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["office"]   == "educational"             ) or
        ( keyvalues["office"]   == "university"              ) or
        ( keyvalues["office"]   == "charity"                 ) or
+       ( keyvalues["office"]   == "marriage_guidance"       ) or
        ( keyvalues["amenity"]  == "education_centre"        ) or
        ( keyvalues["amenity"]  == "college"                 ) or
        ( keyvalues["man_made"] == "observatory"             ) or
