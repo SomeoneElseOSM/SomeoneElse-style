@@ -11,6 +11,7 @@ Append "sewage" to wastewater plants.
 Render man_made=footwear_decontamination
 Add a "hotel roof" to cafes and bars with accommodation.
 Treat office=marriage_guidance as an office.
+Treat vacant offices like vacant shops.
 
 ## 23/02/2019 release
 <!---

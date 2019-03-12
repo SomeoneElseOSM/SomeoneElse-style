@@ -5006,6 +5006,8 @@ function filter_tags_generic(keyvalues, nokeys)
          ( keyvalues["disused:amenity"] ~= nil       ))  and
          ( keyvalues["shop"]            == nil        )  and
          ( keyvalues["amenity"]         == nil        )) or
+       (   keyvalues["office"]          == "vacant"    ) or
+       (   keyvalues["office"]          == "disused"   ) or
        (   keyvalues["shop"]            == "disused"   ) or
        (   keyvalues["shop"]            == "empty"     ) or
        (   keyvalues["shop"]            == "closed"    ) or
