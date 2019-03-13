@@ -12,6 +12,7 @@ Render man_made=footwear_decontamination
 Add a "hotel roof" to cafes and bars with accommodation.
 Treat office=marriage_guidance as an office.
 Treat vacant offices like vacant shops.
+Render man_made=village_sign.
 
 ## 23/02/2019 release
 <!---
