@@ -2,9 +2,9 @@
 This page describes changes made [here](https://github.com/SomeoneElseOSM/SomeoneElse-style), [here](https://github.com/SomeoneElseOSM/SomeoneElse-style-legend) and [here](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT), visible [here](//map.atownsend.org.uk/maps/map/map.html).
 
 <!---
-On UbuntuVM51
+On both Hetzner and UbuntuVM51:
 --->
-## As yet unreleased
+## 23/03/2019 release
 Render shop=embroidery as a shop.
 Add "artwork" to the list of former telephone box uses.
 Append "sewage" to wastewater plants.
@@ -16,9 +16,6 @@ Render man_made=village_sign.
 Make private tracks less prominent.
 
 ## 23/02/2019 release
-<!---
-On both Hetzner and UbuntuVM51:
---->
 Render names on vending machines.
 Render brand and operator on cafes, restaurants and vending machines.
 Try and make electricity substations more obvious.
