@@ -2,12 +2,18 @@
 This page describes changes made [here](https://github.com/SomeoneElseOSM/SomeoneElse-style), [here](https://github.com/SomeoneElseOSM/SomeoneElse-style-legend) and [here](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT), visible [here](//map.atownsend.org.uk/maps/map/map.html).
 
 <!---
+On Hetzner:
+--->
+## 16/05/2019 release
+Append "air quality" to name of air quality monitoring stations.
+
+<!---
 On both Hetzner and UbuntuVM51:
 --->
 ## 23/03/2019 release
 Render shop=embroidery as a shop.
 Add "artwork" to the list of former telephone box uses.
-Append "sewage" to wastewater plants.
+Append "sewage" to name of wastewater plants.
 Render man_made=footwear_decontamination
 Add a "hotel roof" to cafes and bars with accommodation.
 Treat office=marriage_guidance as an office.

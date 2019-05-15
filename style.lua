@@ -2626,11 +2626,25 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
--- Water Monitoring stations
+-- Water monitoring stations
 -- ----------------------------------------------------------------------------
    if (( keyvalues["man_made"]               == "monitoring_station" ) and
        ( keyvalues["monitoring:water_level"] == "yes"                )) then
       keyvalues["man_made"] = "monitoringwater"
+   end
+
+-- ----------------------------------------------------------------------------
+-- Air quality monitoring stations
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["man_made"]               == "monitoring_station" ) and
+       ( keyvalues["monitoring:air_quality"] == "yes"                )) then
+      keyvalues["man_made"] = nil
+      keyvalues["landuse"] = "industrial"
+      if ( keyvalues["name"] == nil ) then
+         keyvalues["name"] = "(air quality)"
+      else
+         keyvalues["name"] = keyvalues["name"] .. " (air quality)"
+      end
    end
 
 -- ----------------------------------------------------------------------------
