@@ -945,10 +945,11 @@ function filter_tags_generic(keyvalues, nokeys)
 -- Bridge structures - display as building=roof.
 -- Also farmyard "bunker silos" and canopies.
 -- ----------------------------------------------------------------------------
-   if (( keyvalues["man_made"]      == "bridge"      ) or
-       ( keyvalues["man_made"]      == "bunker_silo" ) or
-       ( keyvalues["building"]      == "canopy"      ) or
-       ( keyvalues["building:type"] == "canopy"      )) then
+   if (( keyvalues["man_made"]      == "bridge"        ) or
+       ( keyvalues["man_made"]      == "bunker_silo"   ) or
+       ( keyvalues["amenity"]       == "feeding_place" ) or
+       ( keyvalues["building"]      == "canopy"        ) or
+       ( keyvalues["building:type"] == "canopy"        )) then
       keyvalues["building"]      = "roof"
       keyvalues["building:type"] = nil
    end
@@ -5049,12 +5050,16 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
--- Remove public transport shelters (at least until I creat a sensible 
--- rendering for them)
+-- Remove icon for public transport and animal field shelters and render as
+-- "roof" (if they are a way).
 -- ----------------------------------------------------------------------------
-   if (( keyvalues["amenity"]      == "shelter"          ) and
-       ( keyvalues["shelter_type"] == "public_transport" )) then
+   if (( keyvalues["amenity"]      == "shelter"            ) and
+       (( keyvalues["shelter_type"] == "public_transport" )  or
+        ( keyvalues["shelter_type"] == "field_shelter"    ))) then
       keyvalues["amenity"] = nil
+      if ( keyvalues["building"] == nil ) then
+         keyvalues["building"] = "roof"
+      end
    end
 
 -- ----------------------------------------------------------------------------

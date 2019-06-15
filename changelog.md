@@ -2,6 +2,14 @@
 This page describes changes made [here](https://github.com/SomeoneElseOSM/SomeoneElse-style), [here](https://github.com/SomeoneElseOSM/SomeoneElse-style-legend) and [here](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT), visible [here](//map.atownsend.org.uk/maps/map/map.html).
 
 <!---
+On neither:
+--->
+## As yet unreleased:
+Render amenity=feeding_place as a roof, if not already a building.
+Likewise for bus shelters.
+Don't use the "shelter" icon on animal field shelters (it's already removed for bus shelters).
+
+<!---
 On Hetzner:
 --->
 ## 16/05/2019 release
