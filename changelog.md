@@ -4,7 +4,7 @@ This page describes changes made [here](https://github.com/SomeoneElseOSM/Someon
 <!---
 On UbuntuVM51:
 --->
-## 16/06/2019 release
+## 16/06/2019 (as yet unreleased)
 Render amenity=feeding_place as a roof, if not already a building.
 Likewise for bus shelters.
 Don't use the "shelter" icon on animal field shelters (it's already removed for bus shelters).
