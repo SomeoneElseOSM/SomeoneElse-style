@@ -8,6 +8,9 @@ On neither:
 Render amenity=feeding_place as a roof, if not already a building.
 Likewise for bus shelters.
 Don't use the "shelter" icon on animal field shelters (it's already removed for bus shelters).
+Include "support=tower" in those clocks rendered as clock towers.
+Render pedestal- and similar mounted clocks.
+Render fountains.
 
 <!---
 On Hetzner:

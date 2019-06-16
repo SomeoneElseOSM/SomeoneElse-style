@@ -4894,11 +4894,22 @@ function filter_tags_generic(keyvalues, nokeys)
       keyvalues["man_made"] = "observationtower"
    end
 
-   if ((  keyvalues["man_made"]   == "tower"        ) and
-       (( keyvalues["tower:type"] == "clock"       )  or
-        ( keyvalues["building"]   == "clock_tower" )  or
-        ( keyvalues["amenity"]    == "clock"       ))) then
+   if (((  keyvalues["man_made"]   == "tower"        )  and
+        (( keyvalues["tower:type"] == "clock"       )   or
+         ( keyvalues["building"]   == "clock_tower" )   or
+         ( keyvalues["amenity"]    == "clock"       ))) or
+       ((  keyvalues["amenity"]    == "clock"        )  and
+        (  keyvalues["support"]    == "tower"        ))) then
       keyvalues["man_made"] = "clocktower"
+   end
+
+   if ((  keyvalues["amenity"]    == "clock"         )  and
+       (( keyvalues["support"]    == "pedestal"     )   or
+        ( keyvalues["support"]    == "pole"         )   or
+        ( keyvalues["support"]    == "stone_pillar" )   or
+        ( keyvalues["support"]    == "plinth"       )   or
+        ( keyvalues["support"]    == "column"       ))) then
+      keyvalues["man_made"] = "clockpedestal"
    end
 
    if (( keyvalues["man_made"]   == "tower"            ) and
