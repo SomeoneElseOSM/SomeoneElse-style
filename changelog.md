@@ -2,9 +2,9 @@
 This page describes changes made [here](https://github.com/SomeoneElseOSM/SomeoneElse-style), [here](https://github.com/SomeoneElseOSM/SomeoneElse-style-legend) and [here](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT), visible [here](//map.atownsend.org.uk/maps/map/map.html).
 
 <!---
-On neither:
+On UbuntuVM51:
 --->
-## As yet unreleased:
+## 16/06/2019 release
 Render amenity=feeding_place as a roof, if not already a building.
 Likewise for bus shelters.
 Don't use the "shelter" icon on animal field shelters (it's already removed for bus shelters).
@@ -13,14 +13,11 @@ Render pedestal- and similar mounted clocks.
 Render fountains.
 
 <!---
-On Hetzner:
+On both Hetzner and UbuntuVM51:
 --->
 ## 16/05/2019 release
 Append "air quality" to name of air quality monitoring stations.
 
-<!---
-On both Hetzner and UbuntuVM51:
---->
 ## 23/03/2019 release
 Render shop=embroidery as a shop.
 Add "artwork" to the list of former telephone box uses.
