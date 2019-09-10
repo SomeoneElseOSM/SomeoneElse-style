@@ -4,6 +4,7 @@ This page describes changes made [here](https://github.com/SomeoneElseOSM/Someon
 ## As yet unreleased
 Render landuse=college_court as landuse=grass.
 Render man_made=geoglyph as historic=monument.
+Render parking positions at airports (only if mapped as nodes, to avoid duplication).
 
 <!---
 On UbuntuVM51 and Hetzner:

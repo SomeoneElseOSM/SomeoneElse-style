@@ -4845,6 +4845,19 @@ function filter_tags_generic(keyvalues, nokeys)
       keyvalues["aeroway"] = nil
    end
 
+
+-- ----------------------------------------------------------------------------
+-- Render airport parking positions as gates.
+-- ----------------------------------------------------------------------------
+   if ( keyvalues["aeroway"] == "parking_position" ) then
+      keyvalues["aeroway"] = "gate"
+
+      if ( keyvalues["ref"] ~= nil ) then
+         keyvalues["ref"] = "(" .. keyvalues["ref"] .. ")"
+      end
+   end
+
+
 -- ----------------------------------------------------------------------------
 -- If a quarry is disused, it's still likely a hole in the ground, so render it
 -- ----------------------------------------------------------------------------
