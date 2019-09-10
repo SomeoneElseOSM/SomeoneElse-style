@@ -2257,9 +2257,11 @@ function filter_tags_generic(keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
 -- Map man_made=monument to historic=monument (handled below) if no better tag
 -- exists.
+-- Also handle geoglyphs in this way.
 -- ----------------------------------------------------------------------------
-   if (( keyvalues["man_made"] == "monument" ) and
-       ( keyvalues["tourism"]  == nil        )) then
+   if ((( keyvalues["man_made"] == "monument" )  and
+        ( keyvalues["tourism"]  == nil        )) or
+       (  keyvalues["man_made"] == "geoglyph"  )) then
       keyvalues["historic"] = "monument"
       keyvalues["man_made"] = nil
    end
