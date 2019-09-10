@@ -2444,6 +2444,15 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- hazard=plant is fairly rare, but render as a nonspecific historic dot.
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["hazard"]  == "plant"         ) and
+       ( keyvalues["species"] == "giant_hogweed" )) then
+      keyvalues["historic"] = "nonspecific"
+      keyvalues["name"] = "Hogweed"
+   end
+
+-- ----------------------------------------------------------------------------
 -- If something has a "lock_ref", append it to "lock_name" (if it exists) or
 -- "name" (if it doesn't)
 -- ----------------------------------------------------------------------------
