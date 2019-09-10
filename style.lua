@@ -1431,8 +1431,10 @@ function filter_tags_generic(keyvalues, nokeys)
 
 -- ----------------------------------------------------------------------------
 -- Treat landcover=grass as landuse=grass
+-- Also landuse=college_court
 -- ----------------------------------------------------------------------------
-   if ( keyvalues["landcover"] == "grass" ) then
+   if (( keyvalues["landcover"] == "grass"         ) or
+       ( keyvalues["landuse"]   == "college_court" )) then
       keyvalues["landcover"] = nil
       keyvalues["landuse"] = "grass"
    end
