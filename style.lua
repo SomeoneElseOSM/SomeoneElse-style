@@ -620,7 +620,8 @@ function filter_tags_generic(keyvalues, nokeys)
         (   keyvalues["designation"] == "unclassified_country_road"   )  or
         (   keyvalues["designation"] == "unclassified_highway"        )  or
         ((( keyvalues["highway"]     == "path"                      )    or
-          ( keyvalues["highway"]     == "pathwide"                  ))   and
+          ( keyvalues["highway"]     == "pathwide"                  )    or
+          ( keyvalues["highway"]     == "service"                   ))   and
          (( keyvalues["foot"]        == "permissive"                )    or
           ( keyvalues["foot"]        == "yes"                       ))))) then
       keyvalues["access"] = nil
