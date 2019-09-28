@@ -1,7 +1,10 @@
 # Changes made to this rendering
 This page describes changes made [here](https://github.com/SomeoneElseOSM/SomeoneElse-style), [here](https://github.com/SomeoneElseOSM/SomeoneElse-style-legend) and [here](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT), visible [here](//map.atownsend.org.uk/maps/map/map.html).
 
-## As yet unreleased
+<!---
+On Hetzner:
+--->
+## 28/09/2019 release
 Render landuse=college_court as landuse=grass.
 Render man_made=geoglyph as historic=monument.
 Render parking positions at airports (only if mapped as nodes, to avoid duplication).
