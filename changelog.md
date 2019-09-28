@@ -8,6 +8,7 @@ Render parking positions at airports (only if mapped as nodes, to avoid duplicat
 Render hazard=plant (Hogweed) as a historic dot.
 Don't render service roads with foot=yes as private.
 Treat "was:" as "disused:".
+Render climbing boulders etc. from zoom 17.
 
 <!---
 On UbuntuVM51 and Hetzner:

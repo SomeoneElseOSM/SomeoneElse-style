@@ -3161,6 +3161,24 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Climbing features (boulders, stones, etc.)
+-- Deliberately only use this for outdoor features that would not otherwise
+-- display, so not cliffs etc.
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["sport"]    == "climbing"      ) and
+       ( keyvalues["natural"]  ~= "peak"          ) and
+       ( keyvalues["natural"]  ~= "cliff"         ) and
+       ( keyvalues["leisure"]  ~= "sports_centre" ) and
+       ( keyvalues["leisure"]  ~= "climbing_wall" ) and
+       ( keyvalues["shop"]     ~= "sports"        ) and
+       ( keyvalues["tourism"]  ~= "attraction"    ) and
+       ( keyvalues["building"] == nil             ) and
+       ( keyvalues["man_made"] ~= "tower"         ) and
+       ( keyvalues["barrier"]  ~= "wall"          )) then
+      keyvalues["natural"] = "climbing"
+   end
+
+-- ----------------------------------------------------------------------------
 -- natural=fell is used for all sorts of things, but render as heath, except
 -- where someone's mapped it on a footpath.
 -- ----------------------------------------------------------------------------
