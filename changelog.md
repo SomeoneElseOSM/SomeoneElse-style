@@ -7,6 +7,7 @@ Render man_made=geoglyph as historic=monument.
 Render parking positions at airports (only if mapped as nodes, to avoid duplication).
 Render hazard=plant (Hogweed) as a historic dot.
 Don't render service roads with foot=yes as private.
+Treat "was:" as "disused:".
 
 <!---
 On UbuntuVM51 and Hetzner:

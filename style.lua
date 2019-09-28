@@ -113,7 +113,45 @@ function filter_tags_generic(keyvalues, nokeys)
       keyvalues["layer"] = "5"
    end
 
-   
+
+-- ----------------------------------------------------------------------------
+-- Treat "was:" as "disused:"
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["was:amenity"]     ~= nil ) and
+       ( keyvalues["disused:amenity"] == nil )) then
+      keyvalues["disused:amenity"] = keyvalues["was:amenity"]
+   end
+
+   if (( keyvalues["was:pub"]     ~= nil ) and
+       ( keyvalues["disused:pub"] == nil )) then
+      keyvalues["disused:pub"] = keyvalues["was:pub"]
+   end
+
+   if (( keyvalues["was:waterway"]     ~= nil ) and
+       ( keyvalues["disused:waterway"] == nil )) then
+      keyvalues["disused:waterway"] = keyvalues["was:waterway"]
+   end
+
+   if (( keyvalues["was:railway"]     ~= nil ) and
+       ( keyvalues["disused:railway"] == nil )) then
+      keyvalues["disused:railway"] = keyvalues["was:railway"]
+   end
+
+   if (( keyvalues["was:aeroway"]     ~= nil ) and
+       ( keyvalues["disused:aeroway"] == nil )) then
+      keyvalues["disused:aeroway"] = keyvalues["was:aeroway"]
+   end
+
+   if (( keyvalues["was:landuse"]     ~= nil ) and
+       ( keyvalues["disused:landuse"] == nil )) then
+      keyvalues["disused:landuse"] = keyvalues["was:landuse"]
+   end
+
+   if (( keyvalues["was:shop"]     ~= nil ) and
+       ( keyvalues["disused:shop"] == nil )) then
+      keyvalues["disused:shop"] = keyvalues["was:shop"]
+   end
+
 -- ----------------------------------------------------------------------------
 -- Designation processing
 --
