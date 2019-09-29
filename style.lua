@@ -5390,13 +5390,13 @@ function filter_tags_relation_member (keyvalues, keyvaluemembers, roles, memberc
    keyvalues["type"] = nil
 
 -- ----------------------------------------------------------------------------
--- Note that we're not doing any per-member processing for routes - which just
+-- Note that we're not doing any per-member processing for routes - we just
 -- add a highway type to the relation and ensure that the style rules for it
 -- handle it sensibly, as it's going to be overlaid over other highway types.
 -- "ldpnwn" is used to allow for future different processing of different 
 -- relations.
 --
--- Name handling for cycle routes makes as special case of the National Byway.
+-- Name handling for cycle routes makes a special case of the National Byway.
 --
 -- MTB routes are processed only if they are not also another type of cycle
 -- route (including LCN, which isn't actually shown in this rendering).
@@ -5426,6 +5426,27 @@ function filter_tags_relation_member (keyvalues, keyvaluemembers, roles, memberc
 
       if ( keyvalues["network"] == "nhn" ) then
          keyvalues["highway"] = "ldpnhn"
+      end
+
+      if (( keyvalues["highway"] == "ldpnwn" ) or
+          ( keyvalues["highway"] == "ldpncn" ) or
+          ( keyvalues["highway"] == "ldpmtb" ) or
+          ( keyvalues["highway"] == "ldpnhn" )) then
+         if ((  keyvalues["name"]        ~= nil     ) and
+             (( keyvalues["name:signed"] == "no"   )  or
+              ( keyvalues["unsigned"]    == "yes"  )  or
+              ( keyvalues["unsigned"]    == "true" ))) then
+            keyvalues["name"] = "(" .. keyvalues["name"] .. ")"
+            keyvalues["name:signed"] = nil
+         end
+
+         if ((  keyvalues["ref"]        ~= nil     ) and
+             (( keyvalues["ref:signed"] == "no"   )  or
+              ( keyvalues["unsigned"]   == "yes"  )  or
+              ( keyvalues["unsigned"]   == "true" ))) then
+            keyvalues["ref"] = "(" .. keyvalues["ref"] .. ")"
+            keyvalues["ref:signed"] = nil
+         end
       end
    end
 
