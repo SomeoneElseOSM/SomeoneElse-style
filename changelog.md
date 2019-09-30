@@ -3,7 +3,7 @@ This page describes changes made [here](https://github.com/SomeoneElseOSM/Someon
 
 ## As yet unreleased
 Render names of unsigned routes in brackets.
-Render names on cliffs, embankments, levees and walls.
+Render names on cliffs, embankments, levees, walls and linear gates.
 
 <!---
 On Hetzner:
