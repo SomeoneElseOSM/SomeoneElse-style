@@ -6,6 +6,7 @@ Render names of unsigned routes in brackets.
 Render names on cliffs, embankments, levees, walls and linear gates.
 Render the names of canals more frequently along their length.
 Change private footways, tracks etc. to be more obviously different from non-private ones.
+Render "disused:building" as roof etc., as most seem to be still something.
 
 <!---
 On Hetzner:
