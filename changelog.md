@@ -5,6 +5,7 @@ This page describes changes made [here](https://github.com/SomeoneElseOSM/Someon
 Render names of unsigned routes in brackets.
 Render names on cliffs, embankments, levees, walls and linear gates.
 Render the names of canals more frequently along their length.
+Change private footways, tracks etc. to be more obviously different from non-private ones.
 
 <!---
 On Hetzner:
