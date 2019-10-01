@@ -7,6 +7,7 @@ Render names on cliffs, embankments, levees, walls and linear gates.
 Render the names of canals more frequently along their length.
 Change private footways, tracks etc. to be more obviously different from non-private ones.
 Render "disused:building" as roof etc., as most seem to be still something.
+Added more rental-tagged things.
 
 <!---
 On Hetzner:

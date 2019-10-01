@@ -3643,6 +3643,7 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["shop"]   == "equipment_hire"       ) or
        ( keyvalues["shop"]   == "diy"                  ) or
        ( keyvalues["shop"]   == "tools"                ) or
+       ( keyvalues["shop"]   == "hardware_rental"      ) or
        ( keyvalues["shop"]   == "builders_merchant"    ) or
        ( keyvalues["shop"]   == "builders_merchants"   ) or
        ( keyvalues["shop"]   == "timber"               ) or
@@ -4228,6 +4229,11 @@ function filter_tags_generic(keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
    if (( keyvalues["amenity"] == "car_rental"                   ) or
        ( keyvalues["amenity"] == "van_rental"                   ) or
+       ( keyvalues["amenity"] == "car_rental;bicycle_rental"    ) or
+       ( keyvalues["amenity"] == "scooter_rental"               ) or
+       ( keyvalues["amenity"] == "vehicle_rental"               ) or
+       ( keyvalues["shop"]    == "car_rental"                   ) or
+       ( keyvalues["shop"]    == "van_rental"                   ) or
        ( keyvalues["shop"]    == "caravan"                      ) or
        ( keyvalues["shop"]    == "caravans"                     ) or
        ( keyvalues["shop"]    == "motorhome"                    ) or
@@ -4373,6 +4379,8 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["shop"]    == "other"           ) or
        ( keyvalues["shop"]    == "hire"            ) or
        ( keyvalues["shop"]    == "rental"          ) or
+       ( keyvalues["office"]  == "rental"          ) or
+       ( keyvalues["amenity"] == "rental"          ) or
        ( keyvalues["shop"]    == "second_hand"     ) or
        ( keyvalues["shop"]    == "junk"            ) or
        ( keyvalues["shop"]    == "general"         ) or
