@@ -1018,6 +1018,19 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Covered values - render as "yes" if appropriate.
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["covered"] == "arcade"           ) or
+       ( keyvalues["covered"] == "covered"          ) or
+       ( keyvalues["covered"] == "colonnade"        ) or
+       ( keyvalues["covered"] == "building_passage" ) or
+       ( keyvalues["covered"] == "building_arcade"  ) or
+       ( keyvalues["covered"] == "roof"             ) or
+       ( keyvalues["covered"] == "portico"          )) then
+      keyvalues["covered"] = "yes"
+   end
+
+-- ----------------------------------------------------------------------------
 -- Remove name from footway=sidewalk (we expect it to be rendered via the
 -- road that this is a sidewalk for).
 -- ----------------------------------------------------------------------------
