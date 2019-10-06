@@ -4976,16 +4976,20 @@ function filter_tags_generic(keyvalues, nokeys)
 -- Masts etc.  Consolidate various sorts of masts and towers into the "mast"
 -- group.  Note that this includes "tower" temporarily, and "campanile" is in 
 -- here as a sort of tower (only 2 mapped in UK currently).
+-- Also remove any "tourism" tags (which may be semi-valid mapping but are
+-- often just "for the renderer").
 -- ----------------------------------------------------------------------------
    if (( keyvalues["man_made"]   == "tower"   ) and
        ( keyvalues["tower:type"] == "cooling" )) then
       keyvalues["man_made"] = "chimney"
+      keyvalues["tourism"] = nil
    end
 
    if (( keyvalues["man_made"]   == "tower"          ) and
        (( keyvalues["tower:type"] == "illumination" )  or
         ( keyvalues["tower:type"] == "lighting"     ))) then
       keyvalues["man_made"] = "illuminationtower"
+      keyvalues["tourism"] = nil
    end
 
    if ((   keyvalues["man_made"]           == "tower"       ) and
@@ -4993,11 +4997,13 @@ function filter_tags_generic(keyvalues, nokeys)
         (( keyvalues["tower:type"]         == nil         )   and
          ( keyvalues["tower:construction"] == "stone"     )))) then
       keyvalues["man_made"] = "defensivetower"
+      keyvalues["tourism"] = nil
    end
 
    if (( keyvalues["man_made"]   == "tower"       ) and
        ( keyvalues["tower:type"] == "observation" )) then
       keyvalues["man_made"] = "observationtower"
+      keyvalues["tourism"] = nil
    end
 
    if (((  keyvalues["man_made"]   == "tower"        )  and
@@ -5007,6 +5013,7 @@ function filter_tags_generic(keyvalues, nokeys)
        ((  keyvalues["amenity"]    == "clock"        )  and
         (  keyvalues["support"]    == "tower"        ))) then
       keyvalues["man_made"] = "clocktower"
+      keyvalues["tourism"] = nil
    end
 
    if ((  keyvalues["amenity"]    == "clock"         )  and
@@ -5016,12 +5023,14 @@ function filter_tags_generic(keyvalues, nokeys)
         ( keyvalues["support"]    == "plinth"       )   or
         ( keyvalues["support"]    == "column"       ))) then
       keyvalues["man_made"] = "clockpedestal"
+      keyvalues["tourism"] = nil
    end
 
    if (( keyvalues["man_made"]   == "tower"            ) and
        ( keyvalues["tower:type"] == "aircraft_control" )) then
       keyvalues["man_made"] = "aircraftcontroltower"
       keyvalues["building"] = "yes"
+      keyvalues["tourism"] = nil
    end
 
    if ((( keyvalues["man_made"]   == "tower"              ) or
@@ -5029,6 +5038,7 @@ function filter_tags_generic(keyvalues, nokeys)
        (  keyvalues["tower:type"] == "radar"               )) then
       keyvalues["man_made"] = "radartower"
       keyvalues["building"] = "yes"
+      keyvalues["tourism"] = nil
    end
 
 -- ----------------------------------------------------------------------------
@@ -5039,12 +5049,14 @@ function filter_tags_generic(keyvalues, nokeys)
         ( keyvalues["tower:construction"] == "dish"   ))) then
       keyvalues["man_made"] = "radartower"
       keyvalues["building"] = "yes"
+      keyvalues["tourism"] = nil
    end
 
    if (( keyvalues["man_made"]   == "tower"                ) and
        ( keyvalues["tower:type"] == "firefighter_training" )) then
       keyvalues["man_made"] = "squaretower"
       keyvalues["building"] = "yes"
+      keyvalues["tourism"] = nil
    end
 
    if ((((  keyvalues["man_made"]    == "tower"             )  and
@@ -5056,6 +5068,7 @@ function filter_tags_generic(keyvalues, nokeys)
        ((   keyvalues["amenity"]     == nil                  )  or
         (   keyvalues["amenity"]     ~= "place_of_worship"   ))) then
       keyvalues["man_made"] = "churchtower"
+      keyvalues["tourism"] = nil
    end
 
    if ((( keyvalues["man_made"]      == "tower"            ) or
@@ -5069,6 +5082,7 @@ function filter_tags_generic(keyvalues, nokeys)
         ( keyvalues["amenity"]       ~= "place_of_worship" ))) then
       keyvalues["man_made"] = "churchspire"
       keyvalues["building"] = "yes"
+      keyvalues["tourism"] = nil
    end
 
    if (( keyvalues["man_made"] == "phone_mast"           ) or
@@ -5080,6 +5094,7 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["man_made"] == "transmitter"          ) or
        ( keyvalues["man_made"] == "antenna"              )) then
       keyvalues["man_made"] = "mast"
+      keyvalues["tourism"] = nil
    end
 
 -- ----------------------------------------------------------------------------
