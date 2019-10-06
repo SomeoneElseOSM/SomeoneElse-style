@@ -5332,6 +5332,7 @@ function filter_tags_way (keyvalues, nokeys)
        ( keyvalues["barrier"] == "dragons_teeth"  ) or
        ( keyvalues["barrier"] == "obstruction"    ) or
        ( keyvalues["barrier"] == "sea_wall"       ) or
+       ( keyvalues["barrier"] == "flood_wall"     ) or
        ( keyvalues["barrier"] == "block"          ) or
        ( keyvalues["barrier"] == "haha"           ) or
        ( keyvalues["barrier"] == "ha-ha"          ) or
