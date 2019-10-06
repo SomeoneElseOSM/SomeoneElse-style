@@ -3,12 +3,12 @@ This page describes changes made [here](https://github.com/SomeoneElseOSM/Someon
 
 ## As yet unreleased
 Render barrier=flood_wall as wall.
+Don't render the names of unsigned long-distance foot, horse, cycle or mtb routes, as unfortunately a number of "routes from books" seem to be making their way into OSM and don't exist on the ground.
 
 <!---
 On UbuntuVM51
 --->
 ## As yet unreleased
-Render names of unsigned routes in brackets.
 Render names on cliffs, embankments, levees, walls and linear gates.
 Render the names of canals more frequently along their length.
 Change private footways, tracks etc. to be more obviously different from non-private ones.

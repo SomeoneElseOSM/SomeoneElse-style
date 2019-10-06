@@ -5460,16 +5460,18 @@ function filter_tags_relation_member (keyvalues, keyvaluemembers, roles, memberc
              (( keyvalues["name:signed"] == "no"   )  or
               ( keyvalues["unsigned"]    == "yes"  )  or
               ( keyvalues["unsigned"]    == "true" ))) then
-            keyvalues["name"] = "(" .. keyvalues["name"] .. ")"
+            keyvalues["name"] = nil
             keyvalues["name:signed"] = nil
+            keyvalues["highway"] = nil
          end
 
          if ((  keyvalues["ref"]        ~= nil     ) and
              (( keyvalues["ref:signed"] == "no"   )  or
               ( keyvalues["unsigned"]   == "yes"  )  or
               ( keyvalues["unsigned"]   == "true" ))) then
-            keyvalues["ref"] = "(" .. keyvalues["ref"] .. ")"
+            keyvalues["ref"] = nil
             keyvalues["ref:signed"] = nil
+            keyvalues["highway"] = nil
          end
       end
    end
