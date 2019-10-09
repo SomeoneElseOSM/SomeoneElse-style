@@ -6,6 +6,7 @@ Render barrier=flood_wall as wall.
 Don't render the names of unsigned long-distance foot, horse, cycle or mtb routes, as unfortunately a number of "routes from books" seem to be making their way into OSM and don't exist on the ground.
 Remove "tourism" tag from various towers that are already rendered as towers, and on some other amenity and historic items.
 If former_name is set, use it like old_name.
+Handle "soft_play" like "indoor_play".
 
 <!---
 On UbuntuVM51
