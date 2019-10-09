@@ -1,18 +1,19 @@
 # Changes made to this rendering
 This page describes changes made [here](https://github.com/SomeoneElseOSM/SomeoneElse-style), [here](https://github.com/SomeoneElseOSM/SomeoneElse-style-legend) and [here](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT), visible [here](//map.atownsend.org.uk/maps/map/map.html).
 
-## As yet unreleased
+<!---
+On Hetzner:
+--->
+## 10/09/2019 release
 Render barrier=flood_wall as wall.
 Don't render the names of unsigned long-distance foot, horse, cycle or mtb routes, as unfortunately a number of "routes from books" seem to be making their way into OSM and don't exist on the ground.
 Remove "tourism" tag from various towers that are already rendered as towers, and on some other amenity and historic items.
 If former_name is set, use it like old_name.
 Handle "soft_play" like "indoor_play".
 Choose which to render between some tourism and amenity tags.
-
 <!---
 On UbuntuVM51
 --->
-## As yet unreleased
 Render names on cliffs, embankments, levees, walls and linear gates.
 Render the names of canals more frequently along their length.
 Change private footways, tracks etc. to be more obviously different from non-private ones.
@@ -20,9 +21,6 @@ Render "disused:building" as roof etc., as most seem to be still something.
 Added more rental-tagged things.
 Render more "covered" values as "yes" (in a similar way to "tunnel").
 
-<!---
-On Hetzner:
---->
 ## 28/09/2019 release
 Render landuse=college_court as landuse=grass.
 Render man_made=geoglyph as historic=monument.
