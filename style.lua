@@ -2333,11 +2333,25 @@ function filter_tags_generic(keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
 -- Things that are both viewpoints or attractions and monuments or memorials 
 -- should render as the latter.
+-- Also handle some other combinations.
 -- ----------------------------------------------------------------------------
    if ((( keyvalues["tourism"]   == "viewpoint"  )  or
         ( keyvalues["tourism"]   == "attraction" )) and
        (( keyvalues["historic"]  == "memorial"   )  or
         ( keyvalues["historic"]  == "monument"   ))) then
+      keyvalues["tourism"] = nil
+   end
+
+   if ((( keyvalues["tourism"] == "gallery"     )   or
+        ( keyvalues["tourism"] == "museum"      ))  and
+       (  keyvalues["amenity"] == "arts_centre"  )) then
+      keyvalues["amenity"] = nil
+   end
+
+   if ((( keyvalues["tourism"] == "attraction"  )   or 
+        ( keyvalues["tourism"] == "artwork"     )   or
+        ( keyvalues["tourism"] == "yes"         ))  and
+       (  keyvalues["amenity"] == "arts_centre"  )) then
       keyvalues["tourism"] = nil
    end
 

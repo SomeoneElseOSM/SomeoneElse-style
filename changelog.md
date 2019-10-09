@@ -7,6 +7,7 @@ Don't render the names of unsigned long-distance foot, horse, cycle or mtb route
 Remove "tourism" tag from various towers that are already rendered as towers, and on some other amenity and historic items.
 If former_name is set, use it like old_name.
 Handle "soft_play" like "indoor_play".
+Choose which to render between some tourism and amenity tags.
 
 <!---
 On UbuntuVM51
