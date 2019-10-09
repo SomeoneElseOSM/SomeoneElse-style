@@ -5171,6 +5171,12 @@ function filter_tags_generic(keyvalues, nokeys)
       keyvalues["old_name"] = nil
    end
 
+   if (( keyvalues["name"]     == nil ) and
+       ( keyvalues["former_name"] ~= nil )) then
+      keyvalues["name"]     = keyvalues["former_name"]
+      keyvalues["former_name"] = nil
+   end
+
    if ( keyvalues["shop"] == "vacant" ) then
       if (( keyvalues["name"] == nil ) and
           ( keyvalues["ref"]  == nil )) then
