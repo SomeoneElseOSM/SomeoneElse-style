@@ -4188,21 +4188,27 @@ function filter_tags_generic(keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
 -- Car parts
 -- ----------------------------------------------------------------------------
-   if (( keyvalues["shop"]    == "car_accessories"              )  or
-       ( keyvalues["shop"]    == "tyres"                        )  or
-       ( keyvalues["shop"]    == "car_tyres"                    )  or
-       ( keyvalues["shop"]    == "automotive"                   )  or
-       ( keyvalues["shop"]    == "battery"                      )  or
-       ( keyvalues["shop"]    == "batteries"                    )  or
-       ( keyvalues["shop"]    == "number_plate"                 )  or
-       ( keyvalues["shop"]    == "licence_plates"               )  or
-       ( keyvalues["shop"]    == "car_audio"                    )  or
-       ( keyvalues["shop"]    == "motor"                        )  or
-       ( keyvalues["shop"]    == "motoring"                     )  or
-       ( keyvalues["shop"]    == "motor_spares"                 )  or
-       ( keyvalues["shop"]    == "motor_accessories"            )  or
-       ( keyvalues["shop"]    == "bicycle;car_parts"            )  or
-       ( keyvalues["shop"]    == "bicycle;car_repair;car_parts" )) then
+   if ((( keyvalues["shop"]    == "trade"                       )  and
+        ( keyvalues["trade"]   == "car_parts"                   )) or
+       (  keyvalues["shop"]    == "car_accessories"              )  or
+       (  keyvalues["shop"]    == "tyres"                        )  or
+       (  keyvalues["shop"]    == "car_tyres"                    )  or
+       (  keyvalues["shop"]    == "automotive"                   )  or
+       (  keyvalues["shop"]    == "battery"                      )  or
+       (  keyvalues["shop"]    == "batteries"                    )  or
+       (  keyvalues["shop"]    == "number_plate"                 )  or
+       (  keyvalues["shop"]    == "licence_plates"               )  or
+       (  keyvalues["shop"]    == "car_audio"                    )  or
+       (  keyvalues["shop"]    == "motor"                        )  or
+       (  keyvalues["shop"]    == "motoring"                     )  or
+       (  keyvalues["shop"]    == "motor_spares"                 )  or
+       (  keyvalues["shop"]    == "motor_accessories"            )  or
+       (  keyvalues["shop"]    == "car_parts;car_repair"         )  or
+       (  keyvalues["shop"]    == "bicycle;car_parts"            )  or
+       (  keyvalues["shop"]    == "car_parts;bicycle"            )  or
+       (  keyvalues["shop"]    == "car_parts;bicycle;hardware"   )  or
+       (  keyvalues["shop"]    == "car_parts;bicycle;outdoor"    )  or
+       (  keyvalues["shop"]    == "bicycle;car_repair;car_parts" )) then
       keyvalues["shop"] = "car_parts"
    end
 
