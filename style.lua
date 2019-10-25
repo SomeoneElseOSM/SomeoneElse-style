@@ -1068,7 +1068,8 @@ function filter_tags_generic(keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
    if (( keyvalues["power"] == "substation"  )  or
        ( keyvalues["power"] == "sub_station" )) then
-      keyvalues["power"] = nil
+      keyvalues["power"]   = nil
+      keyvalues["landuse"] = "industrial"
       if ( keyvalues["name"] == nil ) then
          keyvalues["name"] = "(el.sub.)"
       else
