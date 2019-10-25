@@ -649,7 +649,9 @@ function filter_tags_generic(keyvalues, nokeys)
       keyvalues["access"] = "destination"
    end
 
-   if ((    keyvalues["access"]      == "private"                      ) and
+   if (((   keyvalues["access"]      == "private"                     )  or
+        (   keyvalues["access"]      == "destination"                 )  or
+        (   keyvalues["service"]     == "driveway"                    )) and
        ((   keyvalues["designation"] == "public_footpath"             )  or
         (   keyvalues["designation"] == "public_bridleway"            )  or
         (   keyvalues["designation"] == "restricted_byway"            )  or
@@ -662,7 +664,8 @@ function filter_tags_generic(keyvalues, nokeys)
           ( keyvalues["highway"]     == "service"                   ))   and
          (( keyvalues["foot"]        == "permissive"                )    or
           ( keyvalues["foot"]        == "yes"                       ))))) then
-      keyvalues["access"] = nil
+      keyvalues["access"]  = nil
+      keyvalues["service"] = nil
    end
 
 -- ----------------------------------------------------------------------------
