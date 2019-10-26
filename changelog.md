@@ -1,16 +1,16 @@
 # Changes made to this rendering
 This page describes changes made [here](https://github.com/SomeoneElseOSM/SomeoneElse-style), [here](https://github.com/SomeoneElseOSM/SomeoneElse-style-legend) and [here](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT), visible [here](//map.atownsend.org.uk/maps/map/map.html).
 
-## As yet unreleased
+<!---
+On Hetzner:
+--->
+## 26/10/2019 release
 Added more "car parts" combinations.
 If we're allowed to walk somewhere but general access isn't allowed, then don't render as "private"
 or "destination", and don't degrade the display of service roads because they are driveways.
 Also add lnduse=industrial to substations.
 Added small text for natural=valley.
 
-<!---
-On Hetzner:
---->
 ## 10/10/2019 release
 Render barrier=flood_wall as wall.
 Don't render the names of unsigned long-distance foot, horse, cycle or mtb routes, as unfortunately a number of "routes from books" seem to be making their way into OSM and don't exist on the ground.
