@@ -6,6 +6,7 @@ Added more "car parts" combinations.
 If we're allowed to walk somewhere but general access isn't allowed, then don't render as "private"
 or "destination", and don't degrade the display of service roads because they are driveways.
 Also add lnduse=industrial to substations.
+Added small text for natural=valley.
 
 <!---
 On Hetzner:
