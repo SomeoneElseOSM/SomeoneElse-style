@@ -3213,6 +3213,25 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Big peaks and big prominent peaks
+-- ----------------------------------------------------------------------------
+   if ((  keyvalues["natural"]              == "peak"     ) and
+       (( tonumber(keyvalues["ele"]) or 0 ) >  914        )) then
+      if (( tonumber(keyvalues["prominence"]) or 0 ) == 0 ) then
+         if ( keyvalues["munro"] == "yes" ) then
+            keyvalues["prominence"] = "0"
+         else
+            keyvalues["prominence"] = keyvalues["ele"]
+	 end
+      end
+      if (( tonumber(keyvalues["prominence"]) or 0 ) >  500 ) then
+         keyvalues["natural"] = "bigprompeak"
+      else
+         keyvalues["natural"] = "bigpeak"
+      end
+   end
+
+-- ----------------------------------------------------------------------------
 -- natural=fell is used for all sorts of things, but render as heath, except
 -- where someone's mapped it on a footpath.
 -- ----------------------------------------------------------------------------

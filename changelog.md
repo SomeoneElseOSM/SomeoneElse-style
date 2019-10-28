@@ -3,6 +3,7 @@ This page describes changes made [here](https://github.com/SomeoneElseOSM/Someon
 
 ## As yet unrelased
 Make valley repeat text less frequent at high zooms.
+Display big peaks from zoom 10, with the name of prominent ones from zoom 11, and the name of all big ones from zoom 12.
 
 <!---
 On Hetzner:
