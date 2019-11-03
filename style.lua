@@ -1329,13 +1329,24 @@ function filter_tags_generic(keyvalues, nokeys)
 -- Shops etc. with icons already - just add "unnamedcommercial" landuse.
 -- The exception is where landuse is set to something we want to keep.
 -- ----------------------------------------------------------------------------
-   if ((( keyvalues["shop"]       ~= nil             )  or
-        ( keyvalues["amenity"]    ~= nil             )  or
-        ( keyvalues["tourism"]    ~= nil             )) and
-       (( keyvalues["landuse"]    ~= "meadow"        )  and
-        ( keyvalues["landuse"]    ~= "village_green" )  and
-        ( keyvalues["landuse"]    ~= "cemetery"      )  and
-        ( keyvalues["leisure"]    ~= "garden"        ))) then
+   if ((( keyvalues["shop"]       ~= nil                 )  or
+        ( keyvalues["amenity"]    ~= nil                 )  or
+        ( keyvalues["tourism"]    == "hotel"             )  or
+        ( keyvalues["tourism"]    == "guest_house"       )  or
+        ( keyvalues["tourism"]    == "attraction"        )  or
+        ( keyvalues["tourism"]    == "viewpoint"         )  or
+        ( keyvalues["tourism"]    == "museum"            )  or
+        ( keyvalues["tourism"]    == "hostel"            )  or
+        ( keyvalues["tourism"]    == "gallery"           )  or
+        ( keyvalues["tourism"]    == "apartment"         )  or
+        ( keyvalues["tourism"]    == "bed_and_breakfast" )  or
+        ( keyvalues["tourism"]    == "zoo"               )  or
+        ( keyvalues["tourism"]    == "motel"             )  or
+        ( keyvalues["tourism"]    == "theme_park"        )) and
+       (  keyvalues["landuse"]    ~= "meadow"             ) and
+       (  keyvalues["landuse"]    ~= "village_green"      ) and
+       (  keyvalues["landuse"]    ~= "cemetery"           ) and
+       (  keyvalues["leisure"]    ~= "garden"             )) then
       keyvalues["landuse"] = "unnamedcommercial"
    end
 
