@@ -1485,17 +1485,20 @@ function filter_tags_generic(keyvalues, nokeys)
       keyvalues["natural"] = "wood"
    end
 
-   if (keyvalues["leaf_type"]   == "broadleaved") then
+   if (( keyvalues["leaf_type"]   == "broadleaved"  )  and
+       ( keyvalues["natural"]     == "wood"         )) then
       keyvalues["landuse"] = nil
       keyvalues["natural"] = "broadleaved"
    end
 
-   if (keyvalues["leaf_type"]   == "needleleaved") then
+   if (( keyvalues["leaf_type"]   == "needleleaved" )  and
+       ( keyvalues["natural"]     == "wood"         )) then
       keyvalues["landuse"] = nil
       keyvalues["natural"] = "needleleaved"
    end
 
-   if (keyvalues["leaf_type"]   == "mixed") then
+   if (( keyvalues["leaf_type"]   == "mixed"        )  and
+       ( keyvalues["natural"]     == "wood"         )) then
       keyvalues["landuse"] = nil
       keyvalues["natural"] = "mixedleaved"
    end
@@ -2356,7 +2359,8 @@ function filter_tags_generic(keyvalues, nokeys)
         ( keyvalues["tourism"]   == "attraction"    )) and
        (( keyvalues["historic"]  == "memorial"      )  or
         ( keyvalues["historic"]  == "monument"      )  or
-        ( keyvalues["historic"]  == "monastery"     ))) then
+        ( keyvalues["historic"]  == "monastery"     )  or
+        ( keyvalues["natural"]   == "tree"          ))) then
       keyvalues["tourism"] = nil
    end
 
