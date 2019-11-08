@@ -2361,7 +2361,6 @@ function filter_tags_generic(keyvalues, nokeys)
         ( keyvalues["tourism"]   == "attraction"    )) and
        (( keyvalues["historic"]  == "memorial"      )  or
         ( keyvalues["historic"]  == "monument"      )  or
-        ( keyvalues["historic"]  == "monastery"     )  or
         ( keyvalues["natural"]   == "tree"          ))) then
       keyvalues["tourism"] = nil
    end
@@ -2390,8 +2389,9 @@ function filter_tags_generic(keyvalues, nokeys)
         ( keyvalues["historic"] == "mine"       )  or
         ( keyvalues["historic"] == "mineshaft"  )  or
         ( keyvalues["historic"] == "mine_shaft" ))) then
-      keyvalues["man_made"] = nil
       keyvalues["historic"] = "nonspecific"
+      keyvalues["man_made"] = nil
+      keyvalues["tourism"]  = nil
    end
 
 -- ----------------------------------------------------------------------------
@@ -2460,6 +2460,7 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["historic"] == "mound"             ) or
        ( keyvalues["historic"] == "manor"             ) or
        ( keyvalues["historic"] == "mansion"           ) or
+       ( keyvalues["historic"] == "mansion;castle"    ) or
        ( keyvalues["historic"] == "hall"              ) or
        ( keyvalues["historic"] == "stately_home"      ) or
        ( keyvalues["historic"] == "tower_house"       ) or
@@ -2492,10 +2493,10 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["historic"] == "well"              ) or
        ( keyvalues["historic"] == "cannon"            )) then
       keyvalues["historic"] = "nonspecific"
+      keyvalues["tourism"] = nil
 
       if ( keyvalues["landuse"] == nil ) then
          keyvalues["landuse"] = "historic"
-         keyvalues["tourism"] = nil
       end
    end
 

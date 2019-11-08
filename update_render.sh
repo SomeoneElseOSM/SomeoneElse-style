@@ -52,6 +52,7 @@ file_url1=http://download.geofabrik.de/europe/${file_prefix1}-latest.osm.pbf
 #file_prefix1=derbyshire
 #file_prefix1=devon
 #file_prefix1=dorset
+#file_prefix1=durham
 #file_prefix1=east-sussex
 #file_prefix1=east-yorkshire-with-hull
 #file_prefix1=essex
@@ -91,8 +92,13 @@ file_url1=http://download.geofabrik.de/europe/${file_prefix1}-latest.osm.pbf
 #file_url1=http://download.geofabrik.de/europe/great-britain/england/${file_prefix1}-latest.osm.pbf
 #
 #file_prefix1=new-york
+#file_prefix1=oregon
 #file_page1=http://download.geofabrik.de/north-america/us/${file_prefix1}.html
 #file_url1=http://download.geofabrik.de/north-america/us/${file_prefix1}-latest.osm.pbf
+#
+#file_prefix1=argentina
+#file_page1=http://download.geofabrik.de/south-america/${file_prefix1}.html
+#file_url1=http://download.geofabrik.de/south-america/${file_prefix1}-latest.osm.pbf
 #
 # What's the second file that we are interested in?
 # Note that if this is commented out, also change the "merge" below to not use it.

@@ -2,7 +2,7 @@
 This page describes changes made [here](https://github.com/SomeoneElseOSM/SomeoneElse-style), [here](https://github.com/SomeoneElseOSM/SomeoneElse-style-legend) and [here](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT), visible [here](//map.atownsend.org.uk/maps/map/map.html).
 
 ## As yet unreleased
-Remove "tourism" tag from monasteries so that they are displayed as "historic".  Also trees and boundary stones.
+Remove "tourism" tag from monasteries and other historic buildings so that they are displayed as "historic".  Also trees and boundary stones.
 
 <!---
 On Hetzner:
