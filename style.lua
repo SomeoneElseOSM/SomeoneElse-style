@@ -1173,7 +1173,8 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
--- Boundary stones
+-- Boundary stones.  If they're already tagged as tourism=attraction, remove
+-- that tag.
 -- ----------------------------------------------------------------------------
    if (( keyvalues["historic"] == "boundary_stone"  )  or
        ( keyvalues["historic"] == "boundary_marker" )  or
@@ -1182,6 +1183,7 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["historic"] == "standing_stone"  )  or
        ( keyvalues["boundary"] == "marker"          )) then
       keyvalues["man_made"] = "boundary_stone"
+      keyvalues["tourism"]  = nil
    end
 
 -- ----------------------------------------------------------------------------
