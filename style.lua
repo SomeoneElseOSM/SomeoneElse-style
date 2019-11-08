@@ -2355,7 +2355,8 @@ function filter_tags_generic(keyvalues, nokeys)
    if ((( keyvalues["tourism"]   == "viewpoint"     )  or
         ( keyvalues["tourism"]   == "attraction"    )) and
        (( keyvalues["historic"]  == "memorial"      )  or
-        ( keyvalues["historic"]  == "monument"      ))) then
+        ( keyvalues["historic"]  == "monument"      )  or
+        ( keyvalues["historic"]  == "monastery"     ))) then
       keyvalues["tourism"] = nil
    end
 
