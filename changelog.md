@@ -3,6 +3,7 @@ This page describes changes made [here](https://github.com/SomeoneElseOSM/Someon
 
 ## As yet unreleased
 Remove "tourism" tag from monasteries and other historic buildings so that they are displayed as "historic".  Also trees and boundary stones.
+Fixed a rendering issue where tourist attractions could get rendered as unnamedcommercial when other tags were also present.
 
 <!---
 On Hetzner:
