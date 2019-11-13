@@ -5166,8 +5166,13 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["man_made"] == "tower"                ) or
        ( keyvalues["man_made"] == "communications_tower" ) or
        ( keyvalues["man_made"] == "transmitter"          ) or
-       ( keyvalues["man_made"] == "antenna"              )) then
-      keyvalues["man_made"] = "mast"
+       ( keyvalues["man_made"] == "antenna"              ) or
+       ( keyvalues["man_made"] == "mast"                 )) then
+      if (( tonumber(keyvalues["height"]) or 0 ) >  300 ) then
+         keyvalues["man_made"] = "bigmast"
+      else
+         keyvalues["man_made"] = "mast"
+      end
       keyvalues["tourism"] = nil
    end
 
