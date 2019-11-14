@@ -2539,8 +2539,13 @@ function filter_tags_generic(keyvalues, nokeys)
       keyvalues["historic"] = nil
    end
 
-   if ( keyvalues["historic"] == "chimney" ) then
-      keyvalues["man_made"] = "chimney"
+   if (( keyvalues["historic"] == "chimney" ) or
+       ( keyvalues["man_made"] == "chimney" )) then
+      if (( tonumber(keyvalues["height"]) or 0 ) >  100 ) then
+         keyvalues["man_made"] = "bigchimney"
+      else
+         keyvalues["man_made"] = "chimney"
+      end
       keyvalues["historic"] = nil
    end
 
@@ -5055,7 +5060,11 @@ function filter_tags_generic(keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
    if (( keyvalues["man_made"]   == "tower"   ) and
        ( keyvalues["tower:type"] == "cooling" )) then
-      keyvalues["man_made"] = "chimney"
+      if (( tonumber(keyvalues["height"]) or 0 ) >  100 ) then
+         keyvalues["man_made"] = "bigchimney"
+      else
+         keyvalues["man_made"] = "chimney"
+      end
       keyvalues["tourism"] = nil
    end
 

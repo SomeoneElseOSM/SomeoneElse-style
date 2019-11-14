@@ -4,7 +4,7 @@ This page describes changes made [here](https://github.com/SomeoneElseOSM/Someon
 ## As yet unreleased
 Remove "tourism" tag from monasteries and other historic buildings so that they are displayed as "historic".  Also trees and boundary stones.
 Fixed a rendering issue where tourist attractions could get rendered as unnamedcommercial when other tags were also present.
-Display tall masts from zoom 12, with the names from zoom 13 (as opposed to 15 and 17 for other masts).
+Display tall masts from zoom 12, with the names from zoom 13 (as opposed to 15 and 17 for other masts).  Also tall chimneys from zoom 13.
 
 <!---
 On Hetzner:
