@@ -669,12 +669,26 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Render national parks and AONBs as such no matter how they are tagged.
+-- ----------------------------------------------------------------------------
+   if ((  keyvalues["boundary"]    == "protected_area"                      ) and
+       (( keyvalues["designation"] == "national_park"                      )  or 
+        ( keyvalues["designation"] == "area_of_outstanding_natural_beauty" )  or
+        ( keyvalues["designation"] == "Area of Outstanding Natural Beauty" ))) then
+      keyvalues["boundary"] = "national_park"
+   end
+
+-- ----------------------------------------------------------------------------
 -- Render Access land the same as nature reserve / national park currently is
 -- ----------------------------------------------------------------------------
-   if ((   keyvalues["designation"]   == "access_land"      ) or
-       ((  keyvalues["boundary"]      == "protected_area"  )  and
-        (( keyvalues["protect_class"] == "1"              )   or
-         ( keyvalues["protect_class"] == "4"              )))) then
+   if ((   keyvalues["designation"]   == "access_land"                ) or
+       ((  keyvalues["boundary"]      == "protected_area"            )  and
+        (( keyvalues["protect_class"] == "1"                        )   or
+         ( keyvalues["protect_class"] == "4"                        )   or
+         ( keyvalues["designation"]   == "national_nature_reserve"  )   or
+         ( keyvalues["designation"]   == "local_nature_reserve"     )   or
+         ( keyvalues["designation"]   == "Nature Reserve"           )   or
+         ( keyvalues["designation"]   == "Marine Conservation Zone" )))) then
       keyvalues["leisure"] = "nature_reserve"
    end
 
