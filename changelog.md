@@ -6,6 +6,7 @@ Remove "tourism" tag from monasteries and other historic buildings so that they 
 Fixed a rendering issue where tourist attractions could get rendered as unnamedcommercial when other tags were also present.
 Display tall masts from zoom 12, with the names from zoom 13 (as opposed to 15 and 17 for other masts).  Also tall chimneys from zoom 13.
 Render various designations as e.g. national park, nature reserve, etc.
+If a forest has been mapped as a military danger area because shooting takes place there, just show as forest.
 
 <!---
 On Hetzner:

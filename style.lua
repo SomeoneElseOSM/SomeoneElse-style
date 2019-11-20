@@ -3047,8 +3047,9 @@ function filter_tags_generic(keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
 -- Where military has been overtagged over natural=wood, remove military.
 -- ----------------------------------------------------------------------------
-   if (( keyvalues["natural"]   == "wood"        ) and
-       ( keyvalues["military"]  == "danger_area" )) then
+   if ((( keyvalues["natural"]   == "wood"        )  or
+        ( keyvalues["landuse"]   == "forest"      )) and
+       (  keyvalues["military"]  == "danger_area"  )) then
       keyvalues["military"] = nil
    end
 
