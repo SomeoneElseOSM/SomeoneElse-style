@@ -671,10 +671,11 @@ function filter_tags_generic(keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
 -- Render national parks and AONBs as such no matter how they are tagged.
 -- ----------------------------------------------------------------------------
-   if ((  keyvalues["boundary"]    == "protected_area"                      ) and
-       (( keyvalues["designation"] == "national_park"                      )  or 
-        ( keyvalues["designation"] == "area_of_outstanding_natural_beauty" )  or
-        ( keyvalues["designation"] == "Area of Outstanding Natural Beauty" ))) then
+   if ((  keyvalues["boundary"]      == "protected_area"                      ) and
+       (( keyvalues["designation"]   == "national_park"                      )  or 
+        ( keyvalues["designation"]   == "area_of_outstanding_natural_beauty" )  or
+        ( keyvalues["designation"]   == "Area of Outstanding Natural Beauty" )  or
+        ( keyvalues["protect_class"] == "5"                                  ))) then
       keyvalues["boundary"] = "national_park"
    end
 
