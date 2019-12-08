@@ -714,6 +714,10 @@ function filter_tags_generic(keyvalues, nokeys)
           ( keyvalues["footway"]  == "right"          ) or 
           ( keyvalues["footway"]  == "shared"         ) or 
           ( keyvalues["footway"]  == "yes"            ) or
+          ( keyvalues["shoulder"] == "both"           ) or
+          ( keyvalues["shoulder"] == "left"           ) or 
+          ( keyvalues["shoulder"] == "right"          ) or 
+          ( keyvalues["shoulder"] == "yes"            ) or
           ( keyvalues["cycleway"] == "track"          ) or
           ( keyvalues["cycleway"] == "opposite_track" ) or
           ( keyvalues["cycleway"] == "yes"            ) or
@@ -783,6 +787,10 @@ function filter_tags_generic(keyvalues, nokeys)
           ( keyvalues["footway"]  == "right"          ) or 
           ( keyvalues["footway"]  == "shared"         ) or 
           ( keyvalues["footway"]  == "yes"            ) or
+          ( keyvalues["shoulder"] == "both"           ) or
+          ( keyvalues["shoulder"] == "left"           ) or 
+          ( keyvalues["shoulder"] == "right"          ) or 
+          ( keyvalues["shoulder"] == "yes"            ) or
           ( keyvalues["cycleway"] == "track"          ) or
           ( keyvalues["cycleway"] == "opposite_track" ) or
           ( keyvalues["cycleway"] == "yes"            ) or
@@ -838,6 +846,10 @@ function filter_tags_generic(keyvalues, nokeys)
           ( keyvalues["footway"]  == "right"          ) or 
           ( keyvalues["footway"]  == "shared"         ) or 
           ( keyvalues["footway"]  == "yes"            ) or
+          ( keyvalues["shoulder"] == "both"           ) or
+          ( keyvalues["shoulder"] == "left"           ) or 
+          ( keyvalues["shoulder"] == "right"          ) or 
+          ( keyvalues["shoulder"] == "yes"            ) or
           ( keyvalues["cycleway"] == "track"          ) or
           ( keyvalues["cycleway"] == "opposite_track" ) or
           ( keyvalues["cycleway"] == "yes"            ) or
@@ -883,6 +895,10 @@ function filter_tags_generic(keyvalues, nokeys)
           ( keyvalues["footway"]  == "right"          ) or 
           ( keyvalues["footway"]  == "shared"         ) or 
           ( keyvalues["footway"]  == "yes"            ) or
+          ( keyvalues["shoulder"] == "both"           ) or
+          ( keyvalues["shoulder"] == "left"           ) or 
+          ( keyvalues["shoulder"] == "right"          ) or 
+          ( keyvalues["shoulder"] == "yes"            ) or
           ( keyvalues["cycleway"] == "track"          ) or
           ( keyvalues["cycleway"] == "opposite_track" ) or
           ( keyvalues["cycleway"] == "yes"            ) or
