@@ -1579,6 +1579,14 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Handle mistagged pubs
+-- ----------------------------------------------------------------------------
+   if ( keyvalues["tourism"]  == "pub;hotel" ) then
+      keyvalues["amenity"] = "pub"
+      keyvalues["tourism"] = nil
+   end
+
+-- ----------------------------------------------------------------------------
 -- Things that are both hotels, B&Bs etc. and pubs should render as pubs, 
 -- because I'm far more likely to be looking for the latter than the former.
 -- This is done by removing the tourism tag for them.
@@ -2889,10 +2897,21 @@ function filter_tags_generic(keyvalues, nokeys)
 -- That now has its own icon.
 -- Also "self_catering" et al (used occasionally) as guest_house.
 -- ----------------------------------------------------------------------------
-   if (( keyvalues["tourism"]   == "self_catering"     ) or
-       ( keyvalues["tourism"]   == "apartment"         ) or
-       ( keyvalues["tourism"]   == "apartments"        ) or
-       ( keyvalues["tourism"]   == "holiday_cottage"   )) then
+   if (( keyvalues["tourism"]   == "self_catering"           ) or
+       ( keyvalues["tourism"]   == "apartment"               ) or
+       ( keyvalues["tourism"]   == "apartments"              ) or
+       ( keyvalues["tourism"]   == "holiday_cottage"         ) or
+       ( keyvalues["tourism"]   == "cottage"                 ) or
+       ( keyvalues["tourism"]   == "holiday_village"         ) or
+       ( keyvalues["tourism"]   == "holiday_park"            ) or
+       ( keyvalues["tourism"]   == "spa_resort"              ) or
+       ( keyvalues["tourism"]   == "accommodation"           ) or
+       ( keyvalues["tourism"]   == "holiday_accommodation"   ) or
+       ( keyvalues["tourism"]   == "holiday_lets"            ) or
+       ( keyvalues["tourism"]   == "holiday_let"             ) or
+       ( keyvalues["tourism"]   == "Holiday Lodges"          ) or
+       ( keyvalues["tourism"]   == "guesthouse"              ) or
+       ( keyvalues["tourism"]   == "aparthotel"              )) then
       keyvalues["tourism"] = "guest_house"
    end
 
