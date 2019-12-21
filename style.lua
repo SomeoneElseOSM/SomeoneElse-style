@@ -2922,8 +2922,13 @@ function filter_tags_generic(keyvalues, nokeys)
       keyvalues["tourism"] = "camp_site"
    end
 
-   if ( keyvalues["tourism"] == "caravan_site;camp_site"  ) then
+   if (( keyvalues["tourism"] == "caravan_site;camp_site"    ) or
+       ( keyvalues["tourism"] == "caravan_site;camping_site" )) then
       keyvalues["tourism"] = "caravan_site"
+   end
+
+   if ( keyvalues["tourism"] == "adventure_holiday"  ) then
+      keyvalues["tourism"] = "hostel"
    end
 
 -- ----------------------------------------------------------------------------
@@ -3891,6 +3896,7 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["leisure"]      == "spa"               ) or
        ( keyvalues["shop"]         == "spa"               ) or
        ( keyvalues["amenity"]      == "spa"               ) or
+       ( keyvalues["tourism"]      == "spa"               ) or
        ( keyvalues["shop"]         == "salon"             ) or
        ( keyvalues["shop"]         == "nails"             ) or
        ( keyvalues["shop"]         == "nailbar"           ) or
