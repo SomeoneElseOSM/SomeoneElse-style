@@ -4219,6 +4219,7 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["shop"]       == "alternative_health"      ) or
        ( keyvalues["healthcare"] == "alternative"             ) or
        ( keyvalues["shop"]       == "acupuncture"             ) or
+       ( keyvalues["heathcare"]  == "acupuncture"             ) or
        ( keyvalues["shop"]       == "aromatherapy"            )) then
       keyvalues["shop"] = "shopnonspecific"
    end
@@ -4559,7 +4560,9 @@ function filter_tags_generic(keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
    if (( keyvalues["amenity"] == "doctors; pharmacy"       ) or
        ( keyvalues["amenity"] == "doctors;social_facility" ) or
-       ( keyvalues["amenity"] == "surgery"                 )) then
+       ( keyvalues["amenity"] == "surgery"                 ) or
+       ( keyvalues["amenity"] == "general_practitioner"    ) or
+       ( keyvalues["amenity"] == "doctor"                  )) then
       keyvalues["amenity"] = "doctors"
    end
 
@@ -4571,7 +4574,8 @@ function filter_tags_generic(keyvalues, nokeys)
       keyvalues["amenity"] = "hospital"
    end
 
-   if ( keyvalues["amenity"] == "pharmacy, doctors, dentist" ) then
+   if (( keyvalues["amenity"]    == "pharmacy, doctors, dentist" ) or
+       ( keyvalues["healthcare"] == "pharmacy"                   )) then
       keyvalues["amenity"] = "pharmacy"
    end
 
@@ -4582,77 +4586,89 @@ function filter_tags_generic(keyvalues, nokeys)
 -- Places that _sell_ mobility aids are in here.  Shopmobility handled
 -- seperately.
 -- ----------------------------------------------------------------------------
-   if (( keyvalues["shop"]        == "optician"                 ) or
-       ( keyvalues["amenity"]     == "optician"                 ) or
-       ( keyvalues["craft"]       == "optician"                 ) or
-       ( keyvalues["office"]      == "optician"                 ) or
-       ( keyvalues["shop"]        == "opticians"                ) or
-       ( keyvalues["shop"]        == "optometrist"              ) or
-       ( keyvalues["amenity"]     == "optometrist"              ) or
-       ( keyvalues["healthcare"]  == "optometrist"              ) or
-       ( keyvalues["shop"]        == "hearing_aids"             ) or
-       ( keyvalues["shop"]        == "medical_supply"           ) or
-       ( keyvalues["shop"]        == "mobility"                 ) or
-       ( keyvalues["shop"]        == "disability"               ) or
-       ( keyvalues["shop"]        == "chiropodist"              ) or
-       ( keyvalues["amenity"]     == "chiropodist"              ) or
-       ( keyvalues["healthcare"]  == "chiropodist"              ) or
-       ( keyvalues["amenity"]     == "chiropractor"             ) or
-       ( keyvalues["healthcare"]  == "chiropractor"             ) or
-       ( keyvalues["amenity"]     == "osteopath"                ) or
-       ( keyvalues["healthcare"]  == "osteopath"                ) or
-       ( keyvalues["shop"]        == "osteopath"                ) or
-       ( keyvalues["amenity"]     == "physiotherapist"          ) or
-       ( keyvalues["healthcare"]  == "physiotherapist"          ) or
-       ( keyvalues["shop"]        == "physiotherapist"          ) or
-       ( keyvalues["healthcare"]  == "physiotherapy"            ) or
-       ( keyvalues["shop"]        == "physiotherapy"            ) or
-       ( keyvalues["healthcare"]  == "psychotherapist"          ) or
-       ( keyvalues["healthcare"]  == "therapy"                  ) or
-       ( keyvalues["healthcare"]  == "podiatrist"               ) or
-       ( keyvalues["amenity"]     == "podiatrist"               ) or
-       ( keyvalues["amenity"]     == "healthcare"               ) or
-       ( keyvalues["amenity"]     == "clinic"                   ) or
-       ( keyvalues["healthcare"]  == "clinic"                   ) or
-       ( keyvalues["shop"]        == "clinic"                   ) or
-       ( keyvalues["amenity"]     == "social_facility"          ) or
-       ( keyvalues["amenity"]     == "nursing_home"             ) or
-       ( keyvalues["residential"] == "nursing_home"             ) or
-       ( keyvalues["building"]    == "nursing_home"             ) or
-       ( keyvalues["amenity"]     == "care_home"                ) or
-       ( keyvalues["residential"] == "care_home"                ) or
-       ( keyvalues["amenity"]     == "retirement_home"          ) or
-       ( keyvalues["amenity"]     == "residential_home"         ) or
-       ( keyvalues["building"]    == "residential_home"         ) or
-       ( keyvalues["residential"] == "residential_home"         ) or
-       ( keyvalues["amenity"]     == "sheltered_housing"        ) or
-       ( keyvalues["residential"] == "sheltered_housing"        ) or
-       ( keyvalues["amenity"]     == "childcare"                ) or
-       ( keyvalues["amenity"]     == "childrens_centre"         ) or
-       ( keyvalues["amenity"]     == "preschool"                ) or
-       ( keyvalues["building"]    == "preschool"                ) or
-       ( keyvalues["amenity"]     == "nursery"                  ) or
-       ( keyvalues["amenity"]     == "nursery_school"           ) or
-       ( keyvalues["amenity"]     == "health_centre"            ) or
-       ( keyvalues["building"]    == "health_centre"            ) or
-       ( keyvalues["amenity"]     == "medical_centre"           ) or
-       ( keyvalues["building"]    == "medical_centre"           ) or
-       ( keyvalues["healthcare"]  == "centre"                   ) or
-       ( keyvalues["healthcare"]  == "counselling"              ) or
-       ( keyvalues["craft"]       == "counsellor"               ) or
-       ( keyvalues["amenity"]     == "hospice"                  ) or
-       ( keyvalues["healthcare"]  == "hospice"                  ) or
-       ( keyvalues["healthcare"]  == "cosmetic"                 ) or
-       ( keyvalues["healthcare"]  == "cosmetic_surgery"         ) or
-       ( keyvalues["healthcare"]  == "cosmetic_treatments"      ) or
-       ( keyvalues["healthcare"]  == "dentures"                 ) or
-       ( keyvalues["shop"]        == "dentures"                 ) or
-       ( keyvalues["shop"]        == "denture"                  ) or
-       ( keyvalues["healthcare"]  == "blood_donation"           ) or
-       ( keyvalues["healthcare"]  == "blood_bank"               ) or
-       ( keyvalues["healthcare"]  == "sports_massage_therapist" ) or
-       ( keyvalues["healthcare"]  == "rehabilitation"           ) or
-       ( keyvalues["amenity"]     == "daycare"                  )) then
+   if (( keyvalues["shop"]        == "optician"                     ) or
+       ( keyvalues["amenity"]     == "optician"                     ) or
+       ( keyvalues["craft"]       == "optician"                     ) or
+       ( keyvalues["office"]      == "optician"                     ) or
+       ( keyvalues["shop"]        == "opticians"                    ) or
+       ( keyvalues["shop"]        == "optometrist"                  ) or
+       ( keyvalues["amenity"]     == "optometrist"                  ) or
+       ( keyvalues["healthcare"]  == "optometrist"                  ) or
+       ( keyvalues["shop"]        == "hearing_aids"                 ) or
+       ( keyvalues["shop"]        == "medical_supply"               ) or
+       ( keyvalues["shop"]        == "mobility"                     ) or
+       ( keyvalues["shop"]        == "disability"                   ) or
+       ( keyvalues["shop"]        == "chiropodist"                  ) or
+       ( keyvalues["amenity"]     == "chiropodist"                  ) or
+       ( keyvalues["healthcare"]  == "chiropodist"                  ) or
+       ( keyvalues["amenity"]     == "chiropractor"                 ) or
+       ( keyvalues["healthcare"]  == "chiropractor"                 ) or
+       ( keyvalues["healthcare"]  == "chiropractor;physiotherapist" ) or
+       ( keyvalues["amenity"]     == "osteopath"                    ) or
+       ( keyvalues["healthcare"]  == "osteopath"                    ) or
+       ( keyvalues["shop"]        == "osteopath"                    ) or
+       ( keyvalues["amenity"]     == "physiotherapist"              ) or
+       ( keyvalues["healthcare"]  == "physiotherapist"              ) or
+       ( keyvalues["shop"]        == "physiotherapist"              ) or
+       ( keyvalues["healthcare"]  == "physiotherapy"                ) or
+       ( keyvalues["shop"]        == "physiotherapy"                ) or
+       ( keyvalues["healthcare"]  == "psychotherapist"              ) or
+       ( keyvalues["healthcare"]  == "therapy"                      ) or
+       ( keyvalues["healthcare"]  == "footcare"                     ) or
+       ( keyvalues["healthcare"]  == "podiatrist"                   ) or
+       ( keyvalues["healthcare"]  == "podiatrist;chiropodist"       ) or
+       ( keyvalues["amenity"]     == "podiatrist"                   ) or
+       ( keyvalues["amenity"]     == "healthcare"                   ) or
+       ( keyvalues["amenity"]     == "clinic"                       ) or
+       ( keyvalues["healthcare"]  == "clinic"                       ) or
+       ( keyvalues["shop"]        == "clinic"                       ) or
+       ( keyvalues["amenity"]     == "social_facility"              ) or
+       ( keyvalues["amenity"]     == "nursing_home"                 ) or
+       ( keyvalues["residential"] == "nursing_home"                 ) or
+       ( keyvalues["building"]    == "nursing_home"                 ) or
+       ( keyvalues["amenity"]     == "care_home"                    ) or
+       ( keyvalues["residential"] == "care_home"                    ) or
+       ( keyvalues["amenity"]     == "retirement_home"              ) or
+       ( keyvalues["amenity"]     == "residential_home"             ) or
+       ( keyvalues["building"]    == "residential_home"             ) or
+       ( keyvalues["residential"] == "residential_home"             ) or
+       ( keyvalues["amenity"]     == "sheltered_housing"            ) or
+       ( keyvalues["residential"] == "sheltered_housing"            ) or
+       ( keyvalues["amenity"]     == "childcare"                    ) or
+       ( keyvalues["amenity"]     == "childrens_centre"             ) or
+       ( keyvalues["amenity"]     == "preschool"                    ) or
+       ( keyvalues["building"]    == "preschool"                    ) or
+       ( keyvalues["amenity"]     == "nursery"                      ) or
+       ( keyvalues["amenity"]     == "nursery_school"               ) or
+       ( keyvalues["amenity"]     == "health_centre"                ) or
+       ( keyvalues["building"]    == "health_centre"                ) or
+       ( keyvalues["amenity"]     == "medical_centre"               ) or
+       ( keyvalues["building"]    == "medical_centre"               ) or
+       ( keyvalues["healthcare"]  == "centre"                       ) or
+       ( keyvalues["healthcare"]  == "counselling"                  ) or
+       ( keyvalues["craft"]       == "counsellor"                   ) or
+       ( keyvalues["amenity"]     == "hospice"                      ) or
+       ( keyvalues["healthcare"]  == "hospice"                      ) or
+       ( keyvalues["healthcare"]  == "cosmetic"                     ) or
+       ( keyvalues["healthcare"]  == "cosmetic_surgery"             ) or
+       ( keyvalues["healthcare"]  == "cosmetic_treatments"          ) or
+       ( keyvalues["healthcare"]  == "dentures"                     ) or
+       ( keyvalues["shop"]        == "dentures"                     ) or
+       ( keyvalues["shop"]        == "denture"                      ) or
+       ( keyvalues["healthcare"]  == "blood_donation"               ) or
+       ( keyvalues["healthcare"]  == "blood_bank"                   ) or
+       ( keyvalues["healthcare"]  == "sports_massage_therapist"     ) or
+       ( keyvalues["healthcare"]  == "massage"                      ) or
+       ( keyvalues["healthcare"]  == "rehabilitation"               ) or
+       ( keyvalues["healthcare"]  == "drug_rehabilitation"          ) or
+       ( keyvalues["healthcare"]  == "occupational_therapist"       ) or
+       ( keyvalues["healthcare"]  == "tattoo_removal"               ) or
+       ( keyvalues["healthcare"]  == "trichologist"                 ) or
+       ( keyvalues["healthcare"]  == "ocular_prosthetics"           ) or
+       ( keyvalues["healthcare"]  == "audiologist"                  ) or
+       ( keyvalues["healthcare"]  == "hearing"                      ) or
+       ( keyvalues["healthcare"]  == "mental_health"                ) or
+       ( keyvalues["amenity"]     == "daycare"                      )) then
       keyvalues["landuse"] = "unnamedcommercial"
       keyvalues["shop"]    = "healthnonspecific"
    end
@@ -4778,71 +4794,72 @@ function filter_tags_generic(keyvalues, nokeys)
 -- "communication" below seems to be used for marketing / commercial PR.
 -- Add unnamedcommercial landuse to give non-building areas a background.
 -- ----------------------------------------------------------------------------
-   if (( keyvalues["office"]  == "it"                      ) or
-       ( keyvalues["office"]  == "computer"                ) or
-       ( keyvalues["office"]  == "lawyer"                  ) or
-       ( keyvalues["shop"]    == "lawyer"                  ) or
-       ( keyvalues["amenity"] == "lawyer"                  ) or
-       ( keyvalues["shop"]    == "legal"                   ) or
-       ( keyvalues["office"]  == "solicitor"               ) or
-       ( keyvalues["shop"]    == "solicitor"               ) or
-       ( keyvalues["amenity"] == "solicitor"               ) or
-       ( keyvalues["office"]  == "solicitors"              ) or
-       ( keyvalues["shop"]    == "solicitors"              ) or
-       ( keyvalues["amenity"] == "solicitors"              ) or
-       ( keyvalues["office"]  == "accountant"              ) or
-       ( keyvalues["shop"]    == "accountant"              ) or
-       ( keyvalues["office"]  == "accountants"             ) or
-       ( keyvalues["amenity"] == "accountants"             ) or
-       ( keyvalues["shop"]    == "accountants"             ) or
-       ( keyvalues["office"]  == "tax_advisor"             ) or
-       ( keyvalues["amenity"] == "tax_advisor"             ) or
-       ( keyvalues["office"]  == "employment_agency"       ) or
-       ( keyvalues["office"]  == "home_care"               ) or
-       ( keyvalues["shop"]    == "employment_agency"       ) or
-       ( keyvalues["shop"]    == "employment"              ) or
-       ( keyvalues["shop"]    == "jobs"                    ) or
-       ( keyvalues["office"]  == "recruitment_agency"      ) or
-       ( keyvalues["office"]  == "recruitment"             ) or
-       ( keyvalues["shop"]    == "recruitment"             ) or
-       ( keyvalues["office"]  == "insurance"               ) or
-       ( keyvalues["office"]  == "architect"               ) or
-       ( keyvalues["office"]  == "telecommunication"       ) or
-       ( keyvalues["office"]  == "financial"               ) or
-       ( keyvalues["office"]  == "newspaper"               ) or
-       ( keyvalues["office"]  == "delivery"                ) or
-       ( keyvalues["amenity"] == "delivery_office"         ) or
-       ( keyvalues["amenity"] == "sorting_office"          ) or
-       ( keyvalues["office"]  == "parcel"                  ) or
-       ( keyvalues["office"]  == "therapist"               ) or
-       ( keyvalues["office"]  == "surveyor"                ) or
-       ( keyvalues["office"]  == "marketing"               ) or
-       ( keyvalues["office"]  == "graphic_design"          ) or
-       ( keyvalues["office"]  == "interior_design"         ) or
-       ( keyvalues["office"]  == "builder"                 ) or
-       ( keyvalues["office"]  == "training"                ) or
-       ( keyvalues["office"]  == "web_design"              ) or
-       ( keyvalues["office"]  == "design"                  ) or
-       ( keyvalues["shop"]    == "design"                  ) or
-       ( keyvalues["office"]  == "communication"           ) or
-       ( keyvalues["office"]  == "security"                ) or
-       ( keyvalues["office"]  == "engineering"             ) or
-       ( keyvalues["craft"]   == "hvac"                    ) or
-       ( keyvalues["office"]  == "hvac"                    ) or
-       ( keyvalues["shop"]    == "heating"                 ) or
-       ( keyvalues["office"]  == "laundry"                 ) or
-       ( keyvalues["amenity"] == "telephone_exchange"      ) or
-       ( keyvalues["amenity"] == "coworking_space"         ) or
-       ( keyvalues["office"]  == "coworking"               ) or
-       ( keyvalues["office"]  == "coworking_space"         ) or
-       ( keyvalues["office"]  == "serviced_offices"        ) or
-       ( keyvalues["amenity"] == "studio"                  ) or
-       ( keyvalues["amenity"] == "prison"                  ) or
-       ( keyvalues["amenity"] == "monastery"               ) or
-       ( keyvalues["amenity"] == "convent"                 ) or
-       ( keyvalues["amenity"] == "music_school"            ) or
-       ( keyvalues["amenity"] == "cooking_school"          ) or
-       ( keyvalues["amenity"] == "flying_school"           )) then
+   if (( keyvalues["office"]      == "it"                      ) or
+       ( keyvalues["office"]      == "computer"                ) or
+       ( keyvalues["office"]      == "lawyer"                  ) or
+       ( keyvalues["shop"]        == "lawyer"                  ) or
+       ( keyvalues["amenity"]     == "lawyer"                  ) or
+       ( keyvalues["shop"]        == "legal"                   ) or
+       ( keyvalues["office"]      == "solicitor"               ) or
+       ( keyvalues["shop"]        == "solicitor"               ) or
+       ( keyvalues["amenity"]     == "solicitor"               ) or
+       ( keyvalues["office"]      == "solicitors"              ) or
+       ( keyvalues["shop"]        == "solicitors"              ) or
+       ( keyvalues["amenity"]     == "solicitors"              ) or
+       ( keyvalues["office"]      == "accountant"              ) or
+       ( keyvalues["shop"]        == "accountant"              ) or
+       ( keyvalues["office"]      == "accountants"             ) or
+       ( keyvalues["amenity"]     == "accountants"             ) or
+       ( keyvalues["shop"]        == "accountants"             ) or
+       ( keyvalues["office"]      == "tax_advisor"             ) or
+       ( keyvalues["amenity"]     == "tax_advisor"             ) or
+       ( keyvalues["office"]      == "employment_agency"       ) or
+       ( keyvalues["office"]      == "home_care"               ) or
+       ( keyvalues["healthcare"]  == "home_care"               ) or
+       ( keyvalues["shop"]        == "employment_agency"       ) or
+       ( keyvalues["shop"]        == "employment"              ) or
+       ( keyvalues["shop"]        == "jobs"                    ) or
+       ( keyvalues["office"]      == "recruitment_agency"      ) or
+       ( keyvalues["office"]      == "recruitment"             ) or
+       ( keyvalues["shop"]        == "recruitment"             ) or
+       ( keyvalues["office"]      == "insurance"               ) or
+       ( keyvalues["office"]      == "architect"               ) or
+       ( keyvalues["office"]      == "telecommunication"       ) or
+       ( keyvalues["office"]      == "financial"               ) or
+       ( keyvalues["office"]      == "newspaper"               ) or
+       ( keyvalues["office"]      == "delivery"                ) or
+       ( keyvalues["amenity"]     == "delivery_office"         ) or
+       ( keyvalues["amenity"]     == "sorting_office"          ) or
+       ( keyvalues["office"]      == "parcel"                  ) or
+       ( keyvalues["office"]      == "therapist"               ) or
+       ( keyvalues["office"]      == "surveyor"                ) or
+       ( keyvalues["office"]      == "marketing"               ) or
+       ( keyvalues["office"]      == "graphic_design"          ) or
+       ( keyvalues["office"]      == "interior_design"         ) or
+       ( keyvalues["office"]      == "builder"                 ) or
+       ( keyvalues["office"]      == "training"                ) or
+       ( keyvalues["office"]      == "web_design"              ) or
+       ( keyvalues["office"]      == "design"                  ) or
+       ( keyvalues["shop"]        == "design"                  ) or
+       ( keyvalues["office"]      == "communication"           ) or
+       ( keyvalues["office"]      == "security"                ) or
+       ( keyvalues["office"]      == "engineering"             ) or
+       ( keyvalues["craft"]       == "hvac"                    ) or
+       ( keyvalues["office"]      == "hvac"                    ) or
+       ( keyvalues["shop"]        == "heating"                 ) or
+       ( keyvalues["office"]      == "laundry"                 ) or
+       ( keyvalues["amenity"]     == "telephone_exchange"      ) or
+       ( keyvalues["amenity"]     == "coworking_space"         ) or
+       ( keyvalues["office"]      == "coworking"               ) or
+       ( keyvalues["office"]      == "coworking_space"         ) or
+       ( keyvalues["office"]      == "serviced_offices"        ) or
+       ( keyvalues["amenity"]     == "studio"                  ) or
+       ( keyvalues["amenity"]     == "prison"                  ) or
+       ( keyvalues["amenity"]     == "monastery"               ) or
+       ( keyvalues["amenity"]     == "convent"                 ) or
+       ( keyvalues["amenity"]     == "music_school"            ) or
+       ( keyvalues["amenity"]     == "cooking_school"          ) or
+       ( keyvalues["amenity"]     == "flying_school"           )) then
       keyvalues["landuse"] = "unnamedcommercial"
       keyvalues["office"] = "nonspecific"
    end
@@ -4850,25 +4867,26 @@ function filter_tags_generic(keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
 -- Other nonspecific offices.  
 -- ----------------------------------------------------------------------------
-   if (( keyvalues["office"]   == "it"                      ) or
-       ( keyvalues["office"]   == "ngo"                     ) or
-       ( keyvalues["office"]   == "educational_institution" ) or
-       ( keyvalues["office"]   == "educational"             ) or
-       ( keyvalues["office"]   == "university"              ) or
-       ( keyvalues["office"]   == "charity"                 ) or
-       ( keyvalues["office"]   == "marriage_guidance"       ) or
-       ( keyvalues["amenity"]  == "education_centre"        ) or
-       ( keyvalues["amenity"]  == "college"                 ) or
-       ( keyvalues["man_made"] == "observatory"             ) or
-       ( keyvalues["amenity"]  == "laboratory"              ) or
-       ( keyvalues["amenity"]  == "medical_laboratory"      ) or
-       ( keyvalues["amenity"]  == "research_institute"      ) or
-       ( keyvalues["office"]   == "political_party"         ) or
-       ( keyvalues["office"]   == "quango"                  ) or
-       ( keyvalues["office"]   == "association"             ) or
-       ( keyvalues["amenity"]  == "advice"                  ) or
-       ( keyvalues["amenity"]  == "advice_service"          ) or
-       ( keyvalues["amenity"]  == "citizens_advice_bureau"  )) then
+   if (( keyvalues["office"]     == "it"                      ) or
+       ( keyvalues["office"]     == "ngo"                     ) or
+       ( keyvalues["office"]     == "educational_institution" ) or
+       ( keyvalues["office"]     == "educational"             ) or
+       ( keyvalues["office"]     == "university"              ) or
+       ( keyvalues["office"]     == "charity"                 ) or
+       ( keyvalues["office"]     == "marriage_guidance"       ) or
+       ( keyvalues["amenity"]    == "education_centre"        ) or
+       ( keyvalues["amenity"]    == "college"                 ) or
+       ( keyvalues["man_made"]   == "observatory"             ) or
+       ( keyvalues["amenity"]    == "laboratory"              ) or
+       ( keyvalues["healthcare"] == "laboratory"              ) or
+       ( keyvalues["amenity"]    == "medical_laboratory"      ) or
+       ( keyvalues["amenity"]    == "research_institute"      ) or
+       ( keyvalues["office"]     == "political_party"         ) or
+       ( keyvalues["office"]     == "quango"                  ) or
+       ( keyvalues["office"]     == "association"             ) or
+       ( keyvalues["amenity"]    == "advice"                  ) or
+       ( keyvalues["amenity"]    == "advice_service"          ) or
+       ( keyvalues["amenity"]    == "citizens_advice_bureau"  )) then
       keyvalues["landuse"] = "unnamedcommercial"
       keyvalues["office"]  = "nonspecific"
    end
