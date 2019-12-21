@@ -2916,10 +2916,14 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
--- Render amenity=information as tourism
+-- Render alternative taggings of camp_site etc.
 -- ----------------------------------------------------------------------------
    if ( keyvalues["tourism"] == "camping"  ) then
       keyvalues["tourism"] = "camp_site"
+   end
+
+   if ( keyvalues["tourism"] == "caravan_site;camp_site"  ) then
+      keyvalues["tourism"] = "caravan_site"
    end
 
 -- ----------------------------------------------------------------------------

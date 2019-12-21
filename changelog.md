@@ -3,7 +3,7 @@ This page describes changes made [here](https://github.com/SomeoneElseOSM/Someon
 
 ## As yet unreleased
 Render shoulder as if a road has a sidewalk on primary, secondary, tertiary, unclassified and residential.  It's not perfect - if you are walking along a shoulder you'll want to watch out for farm traffic, but it's safer than walking along a normal road.
-Added more synonyms for hotels.
+Added more synonyms for hotels and caravan_sites.
 
 <!---
 On Hetzner:
