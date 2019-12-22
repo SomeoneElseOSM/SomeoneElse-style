@@ -1,14 +1,14 @@
 # Changes made to this rendering
 This page describes changes made [here](https://github.com/SomeoneElseOSM/SomeoneElse-style), [here](https://github.com/SomeoneElseOSM/SomeoneElse-style-legend) and [here](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT), visible [here](//map.atownsend.org.uk/maps/map/map.html).
 
-## As yet unreleased
+<!---
+On Hetzner:
+--->
+## 21/12/2019 release
 Render shoulder as if a road has a sidewalk on primary, secondary, tertiary, unclassified and residential.  It's not perfect - if you are walking along a shoulder you'll want to watch out for farm traffic, but it's safer than walking along a normal road.
 Added more synonyms for hotels, caravan_sites, beauty and healthcare places.
 Render agricultural meadows and grassy farmland with a colour half-way between existing farmland and meadow.
 
-<!---
-On Hetzner:
---->
 <!---
 On UbuntuVM51
 --->
