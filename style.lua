@@ -1484,6 +1484,32 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Some kinds of farmland and meadow should be changed to "landuse=farmgrass", 
+-- which is rendered slightly greener than the normal farmland (and less green 
+-- than landuse=meadow)
+-- ----------------------------------------------------------------------------
+   if ((  keyvalues["landuse"]  == "farmland"         ) and
+       (( keyvalues["farmland"] == "pasture"         )  or
+        ( keyvalues["farmland"] == "paddock"         )  or
+        ( keyvalues["farmland"] == "turf_production" )  or
+        ( keyvalues["farmland"] == "meadow"          )  or
+        ( keyvalues["farmland"] == "diary"           )  or
+        ( keyvalues["farmland"] == "animal_keeping"  ))) then
+      keyvalues["landuse"] = "farmgrass"
+   end
+
+   if ((  keyvalues["landuse"] == "meadow"        ) and
+       (( keyvalues["meadow"]  == "agricultural" )  or
+        ( keyvalues["meadow"]  == "paddock"      )  or
+        ( keyvalues["meadow"]  == "pasture"      )  or
+        ( keyvalues["meadow"]  == "agriculture"  )  or
+        ( keyvalues["meadow"]  == "hay"          )  or
+        ( keyvalues["meadow"]  == "managed"      )  or
+        ( keyvalues["meadow"]  == "cut"          ))) then
+      keyvalues["landuse"] = "farmgrass"
+   end
+
+-- ----------------------------------------------------------------------------
 -- Change landuse=greenhouse_horticulture to farmyard.
 -- ----------------------------------------------------------------------------
    if (keyvalues["landuse"]   == "greenhouse_horticulture") then
