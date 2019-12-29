@@ -4420,7 +4420,10 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["shop"]    == "commercial_vehicles"          ) or
        ( keyvalues["shop"]    == "commercial_vehicle"           ) or
        ( keyvalues["shop"]    == "agricultural_vehicles"        ) or
+       ( keyvalues["shop"]    == "tractor"                      ) or
        ( keyvalues["shop"]    == "tractors"                     ) or
+       ( keyvalues["shop"]    == "tractor_repair"               ) or
+       ( keyvalues["shop"]    == "tractor_parts"                ) or
        ( keyvalues["shop"]    == "van"                          ) or
        ( keyvalues["shop"]    == "truck_repair"                 ) or
        ( keyvalues["shop"]    == "forklift_repair"              ) or
