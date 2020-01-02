@@ -2782,6 +2782,15 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Change solar panels to "roof"
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["power"]            == "generator"    ) and
+       ( keyvalues["generator:method"] == "photovoltaic" )) then
+      keyvalues["power"]    = nil
+      keyvalues["building"] = "roof"
+   end
+
+-- ----------------------------------------------------------------------------
 -- Railway ventilation shaft nodes.
 -- Nodes of these are rendered as a stubby black tower
 -- ----------------------------------------------------------------------------

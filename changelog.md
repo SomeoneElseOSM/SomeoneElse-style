@@ -5,6 +5,7 @@ This page describes changes made [here](https://github.com/SomeoneElseOSM/Someon
 More synonyms for tractor sales added.
 Added rendering for natural=saddle.
 Added landuse=paddock as a synonym for "farmgrass".
+Render solar panels as "roof", not as other power generators.
 
 <!---
 On Hetzner:
