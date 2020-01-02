@@ -4,6 +4,7 @@ This page describes changes made [here](https://github.com/SomeoneElseOSM/Someon
 ## As yet unreleased
 More synonyms for tractor sales added.
 Added rendering for natural=saddle.
+Added landuse=paddock as a synonym for "farmgrass".
 
 <!---
 On Hetzner:

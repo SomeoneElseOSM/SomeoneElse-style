@@ -1509,6 +1509,10 @@ function filter_tags_generic(keyvalues, nokeys)
       keyvalues["landuse"] = "farmgrass"
    end
 
+   if ( keyvalues["landuse"] == "paddock" ) then
+      keyvalues["landuse"] = "farmgrass"
+   end
+
 -- ----------------------------------------------------------------------------
 -- Change landuse=greenhouse_horticulture to farmyard.
 -- ----------------------------------------------------------------------------
