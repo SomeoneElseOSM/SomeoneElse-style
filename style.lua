@@ -5208,7 +5208,11 @@ function filter_tags_generic(keyvalues, nokeys)
 
    if (( keyvalues["man_made"]   == "tower"       ) and
        ( keyvalues["tower:type"] == "observation" )) then
-      keyvalues["man_made"] = "observationtower"
+      if (( tonumber(keyvalues["height"]) or 0 ) >  100 ) then
+         keyvalues["man_made"] = "bigobservationtower"
+      else
+         keyvalues["man_made"] = "observationtower"
+      end
       keyvalues["tourism"] = nil
    end
 
