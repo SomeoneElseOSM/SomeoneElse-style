@@ -6,6 +6,7 @@ More synonyms for tractor sales added.
 Added rendering for natural=saddle.
 Added landuse=paddock as a synonym for "farmgrass".
 Render solar panels as "roof", not as other power generators.
+Render leisure=inflatable_park as other leisure places.
 
 <!---
 On Hetzner:
