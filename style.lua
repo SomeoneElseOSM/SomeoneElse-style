@@ -5054,6 +5054,7 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["tourism"]  == "resort"               ) or
        ( keyvalues["leisure"]  == "resort"               ) or
        ( keyvalues["leisure"]  == "beach_resort"         ) or
+       ( keyvalues["leisure"]  == "adventure_park"       ) or
        (( keyvalues["building"] == "yes"                )  and
         ( keyvalues["amenity"]  == nil                  )  and
         ( keyvalues["sport"]    ~= nil                  )) or
