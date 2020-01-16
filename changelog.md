@@ -10,6 +10,7 @@ Render leisure=inflatable_park as other leisure places.
 Render leisure=adventure_park as beach_resort.
 Display big observation towers from zoom 14.
 Render non-historic aeroplanes and helicopters as buildings.
+Render coachbuilders as car repair.
 
 <!---
 On Hetzner:

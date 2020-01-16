@@ -1325,6 +1325,7 @@ function filter_tags_generic(keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
    if (( keyvalues["amenity"] == "car_repair"         )  or
        ( keyvalues["craft"]   == "car_repair"         )  or
+       ( keyvalues["craft"]   == "coachbuilder"       )  or
        ( keyvalues["shop"]    == "car_service"        )  or
        ( keyvalues["shop"]    == "car_inspection"     )  or
        ( keyvalues["shop"]    == "car_bodyshop"       )  or
