@@ -1016,9 +1016,10 @@ function filter_tags_generic(keyvalues, nokeys)
 
 -- ----------------------------------------------------------------------------
 -- Bridge structures - display as building=roof.
--- Also farmyard "bunker silos" and canopies.
+-- Also farmyard "bunker silos" and canopies, and natural arches.
 -- ----------------------------------------------------------------------------
    if ((  keyvalues["man_made"]         == "bridge"        ) or
+       (  keyvalues["natural"]          == "arch"          ) or
        (  keyvalues["man_made"]         == "bunker_silo"   ) or
        (  keyvalues["amenity"]          == "feeding_place" ) or
        (  keyvalues["building"]         == "canopy"        ) or
