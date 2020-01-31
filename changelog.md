@@ -7,6 +7,7 @@ Render natural arches in the same was as bridges - the same as building=roof.  N
 Render highway=rest_area as amenity=parking.
 Render railway=traverser as building=roof.  It's not ideal, but it is better than nothing.
 Also render animal=horse_walker as building=roof.
+Treat animal=shelter as amenity=animal_shelter, as that is how it is used.
 
 <!---
 On Hetzner:

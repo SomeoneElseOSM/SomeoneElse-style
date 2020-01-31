@@ -3640,6 +3640,7 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["amenity"]   == "cattery"          ) or
        ( keyvalues["amenity"]   == "kennels"          ) or
        ( keyvalues["amenity"]   == "animal_shelter"   ) or
+       ( keyvalues["animal"]    == "shelter"          ) or
        ( keyvalues["craft"]      ~= nil               ) or
        ( keyvalues["emergency"]  ~= nil               ) or
        ( keyvalues["industrial"] ~= nil               ) or
@@ -4346,7 +4347,8 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["amenity"] == "animal_boarding"         ) or
        ( keyvalues["amenity"] == "cattery"                 ) or
        ( keyvalues["amenity"] == "kennels"                 ) or
-       ( keyvalues["amenity"] == "animal_shelter"          )) then
+       ( keyvalues["amenity"] == "animal_shelter"          ) or
+       ( keyvalues["animal"]  == "shelter"                 )) then
       keyvalues["landuse"] = "unnamedcommercial"
       keyvalues["shop"] = "pet"
    end
