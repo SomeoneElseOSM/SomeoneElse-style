@@ -2082,9 +2082,11 @@ function filter_tags_generic(keyvalues, nokeys)
 
 
 -- ----------------------------------------------------------------------------
--- Render amenity=layby as parking
+-- Render amenity=layby as parking.
+-- highway=rest_area is used a lot in the UK for laybies, so map that over too.
 -- ----------------------------------------------------------------------------
-   if ( keyvalues["amenity"] == "layby" ) then
+   if (( keyvalues["amenity"] == "layby"     ) or
+       ( keyvalues["highway"] == "rest_area" )) then
       keyvalues["amenity"] = "parking"
    end
 

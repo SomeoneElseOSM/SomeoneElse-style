@@ -4,6 +4,7 @@ This page describes changes made [here](https://github.com/SomeoneElseOSM/Someon
 ## As yet unreleased
 Render named building nodes.
 Render natural arches in the same was as bridges - the same as building=roof.  Names (even for nodes) are also displayed.
+Render highway=rest_area as amenity=parking.
 
 <!---
 On Hetzner:
