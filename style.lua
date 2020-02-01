@@ -1523,7 +1523,8 @@ function filter_tags_generic(keyvalues, nokeys)
       keyvalues["landuse"] = "farmgrass"
    end
 
-   if ( keyvalues["landuse"] == "paddock" ) then
+   if (( keyvalues["landuse"] == "paddock"        ) or
+       ( keyvalues["landuse"] == "animal_keeping" )) then
       keyvalues["landuse"] = "farmgrass"
    end
 
