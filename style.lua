@@ -1499,7 +1499,11 @@ function filter_tags_generic(keyvalues, nokeys)
         ( keyvalues["farmland"] == "turf_production" )  or
         ( keyvalues["farmland"] == "meadow"          )  or
         ( keyvalues["farmland"] == "diary"           )  or
-        ( keyvalues["farmland"] == "animal_keeping"  ))) then
+        ( keyvalues["farmland"] == "animal_keeping"  )  or
+        ( keyvalues["animal"]   == "cow"             )  or
+        ( keyvalues["animal"]   == "cattle"          )  or
+        ( keyvalues["animal"]   == "chicken"         )  or
+        ( keyvalues["animal"]   == "horse"           ))) then
       keyvalues["landuse"] = "farmgrass"
    end
 
@@ -1510,7 +1514,12 @@ function filter_tags_generic(keyvalues, nokeys)
         ( keyvalues["meadow"]  == "agriculture"  )  or
         ( keyvalues["meadow"]  == "hay"          )  or
         ( keyvalues["meadow"]  == "managed"      )  or
-        ( keyvalues["meadow"]  == "cut"          ))) then
+        ( keyvalues["meadow"]  == "cut"          )  or
+        ( keyvalues["animal"]  == "pig"          )  or
+        ( keyvalues["animal"]  == "sheep"        )  or
+        ( keyvalues["animal"]  == "cattle"       )  or
+        ( keyvalues["animal"]  == "chicken"      )  or
+        ( keyvalues["animal"]  == "horse"        ))) then
       keyvalues["landuse"] = "farmgrass"
    end
 
