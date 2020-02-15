@@ -2,6 +2,11 @@
 This page describes changes made [here](https://github.com/SomeoneElseOSM/SomeoneElse-style), [here](https://github.com/SomeoneElseOSM/SomeoneElse-style-legend) and [here](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT), visible [here](//map.atownsend.org.uk/maps/map/map.html).
 
 ## As yet unreleased
+Render the names of telescopes and radio telescopes.
+Render various other sorts of ruined buildings as building=ruins.
+<!---
+On UbuntuVM51
+--->
 Render named building nodes.
 Render natural arches in the same was as bridges - the same as building=roof.  Names (even for nodes) are also displayed.
 Render highway=rest_area as amenity=parking.
@@ -9,7 +14,6 @@ Render railway=traverser as building=roof.  It's not ideal, but it is better tha
 Also render animal=horse_walker as building=roof.
 Treat animal=shelter as amenity=animal_shelter, as that is how it is used.
 Look at more tags to suggest farmgrass, such as animals kept there.
-Render the names of telescopes and radio telescopes.
 
 <!---
 On Hetzner:
@@ -30,9 +34,6 @@ Render shoulder as if a road has a sidewalk on primary, secondary, tertiary, unc
 Added more synonyms for hotels, caravan_sites, beauty and healthcare places.
 Render agricultural meadows and grassy farmland with a colour half-way between existing farmland and meadow.
 
-<!---
-On UbuntuVM51
---->
 ## 21/11/2019 release
 Remove "tourism" tag from monasteries and other historic buildings so that they are displayed as "historic".  Also trees and boundary stones.
 Fixed a rendering issue where tourist attractions could get rendered as unnamedcommercial when other tags were also present.
