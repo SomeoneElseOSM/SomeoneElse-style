@@ -4940,6 +4940,8 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["amenity"]    == "education_centre"        ) or
        ( keyvalues["amenity"]    == "college"                 ) or
        ( keyvalues["man_made"]   == "observatory"             ) or
+       ( keyvalues["man_made"]   == "telescope"               ) or
+       ( keyvalues["man_made"]   == "radio_telescope"         ) or
        ( keyvalues["amenity"]    == "laboratory"              ) or
        ( keyvalues["healthcare"] == "laboratory"              ) or
        ( keyvalues["amenity"]    == "medical_laboratory"      ) or
