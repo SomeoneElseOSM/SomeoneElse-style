@@ -1,7 +1,10 @@
 # Changes made to this rendering
 This page describes changes made [here](https://github.com/SomeoneElseOSM/SomeoneElse-style), [here](https://github.com/SomeoneElseOSM/SomeoneElse-style-legend) and [here](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT), visible [here](//map.atownsend.org.uk/maps/map/map.html).
 
-## As yet unreleased
+<!---
+On Hetzner:
+--->
+## 16/02/2020 release
 Render wheelchair tags on pubs as part of the bar at the bottom of the icon - green for yes, yellow for limited and red for no.
 Render the names of telescopes and radio telescopes.
 Render various other sorts of ruined buildings as building=ruins.
@@ -16,9 +19,6 @@ Also render animal=horse_walker as building=roof.
 Treat animal=shelter as amenity=animal_shelter, as that is how it is used.
 Look at more tags to suggest farmgrass, such as animals kept there.
 
-<!---
-On Hetzner:
---->
 ## 17/01/2020 release
 More synonyms for tractor sales added.
 Added rendering for natural=saddle.
