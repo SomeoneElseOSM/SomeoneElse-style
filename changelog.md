@@ -2,6 +2,7 @@
 This page describes changes made [here](https://github.com/SomeoneElseOSM/SomeoneElse-style), [here](https://github.com/SomeoneElseOSM/SomeoneElse-style-legend) and [here](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT), visible [here](//map.atownsend.org.uk/maps/map/map.html).
 
 ## As yet unreleased
+Render wheelchair tags on pubs as part of the bar at the bottom of the icon - green for yes, yellow for limited and red for no.
 Render the names of telescopes and radio telescopes.
 Render various other sorts of ruined buildings as building=ruins.
 <!---
