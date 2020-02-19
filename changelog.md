@@ -3,6 +3,7 @@ This page describes changes made [here](https://github.com/SomeoneElseOSM/Someon
 
 ## As yet unreleased.
 Render wheelchair tags on rarer pubs as part of the bar at the bottom of the icon.
+Update legend to include wheelchair tags on pubs.
 
 <!---
 On Hetzner:
