@@ -15,7 +15,7 @@ Render various other sorts of ruined buildings as building=ruins.
 On UbuntuVM51
 --->
 Render named building nodes.
-Render natural arches in the same was as bridges - the same as building=roof.  Names (even for nodes) are also displayed.
+Render natural arches in the same way as bridges - the same as building=roof.  Names (even for nodes) are also displayed.
 Render highway=rest_area as amenity=parking.
 Render railway=traverser as building=roof.  It's not ideal, but it is better than nothing.
 Also render animal=horse_walker as building=roof.
