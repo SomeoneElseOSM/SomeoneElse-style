@@ -1136,6 +1136,8 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["industrial"] == "distillery"             ) or 
        ( keyvalues["craft"]      == "distillery"             ) or
        ( keyvalues["craft"]      == "bakery"                 ) or
+       ( keyvalues["craft"]      == "sawmill"                ) or
+       ( keyvalues["industrial"] == "sawmill"                ) or
        ( keyvalues["industrial"] == "factory"                ) or 
        ( keyvalues["industrial"] == "yes"                    ) or 
        ( keyvalues["industrial"] == "depot"                  ) or 
