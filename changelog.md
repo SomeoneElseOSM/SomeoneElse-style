@@ -5,6 +5,7 @@ This page describes changes made [here](https://github.com/SomeoneElseOSM/Someon
 Render wheelchair tags on rarer pubs as part of the bar at the bottom of the icon.
 Update legend to include wheelchair tags on pubs.
 Render craft=sawmill and industrial=sawmill as industrial, including the name on nodes.
+Render craft=electronics_repair (and other keys used with that value).
 
 <!---
 On Hetzner:

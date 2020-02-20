@@ -3815,23 +3815,26 @@ function filter_tags_generic(keyvalues, nokeys)
 -- Looking at the tagging of shop=electronics, there's a fair crossover with 
 -- electrical.  "security" is less of a fit here.
 -- ----------------------------------------------------------------------------
-   if (( keyvalues["shop"]  == "electronics"             ) or
-       ( keyvalues["shop"]  == "radiotechnics"           ) or
-       ( keyvalues["shop"]  == "appliance"               ) or
-       ( keyvalues["shop"]  == "electrical_supplies"     ) or
-       ( keyvalues["shop"]  == "electrical_repair"       ) or
-       ( keyvalues["shop"]  == "tv_repair"               ) or
-       ( keyvalues["shop"]  == "alarm"                   ) or
-       ( keyvalues["shop"]  == "gadget"                  ) or
-       ( keyvalues["shop"]  == "appliances"              ) or
-       ( keyvalues["shop"]  == "vacuum_cleaner"          ) or
-       ( keyvalues["shop"]  == "sewing_machines"         ) or
-       ( keyvalues["shop"]  == "domestic_appliances"     ) or
-       ( keyvalues["shop"]  == "white_goods"             ) or
-       ( keyvalues["shop"]  == "electricial"             ) or
-       ( keyvalues["shop"]  == "electricals"             ) or
-       ( keyvalues["trade"] == "electrical"              ) or
-       ( keyvalues["name"]  == "City Electrical Factors" )) then
+   if (( keyvalues["shop"]    == "electronics"             ) or
+       ( keyvalues["craft"]   == "electronics_repair"      ) or
+       ( keyvalues["shop"]    == "electronics_repair"      ) or
+       ( keyvalues["amenity"] == "electronics_repair"      ) or
+       ( keyvalues["shop"]    == "radiotechnics"           ) or
+       ( keyvalues["shop"]    == "appliance"               ) or
+       ( keyvalues["shop"]    == "electrical_supplies"     ) or
+       ( keyvalues["shop"]    == "electrical_repair"       ) or
+       ( keyvalues["shop"]    == "tv_repair"               ) or
+       ( keyvalues["shop"]    == "alarm"                   ) or
+       ( keyvalues["shop"]    == "gadget"                  ) or
+       ( keyvalues["shop"]    == "appliances"              ) or
+       ( keyvalues["shop"]    == "vacuum_cleaner"          ) or
+       ( keyvalues["shop"]    == "sewing_machines"         ) or
+       ( keyvalues["shop"]    == "domestic_appliances"     ) or
+       ( keyvalues["shop"]    == "white_goods"             ) or
+       ( keyvalues["shop"]    == "electricial"             ) or
+       ( keyvalues["shop"]    == "electricals"             ) or
+       ( keyvalues["trade"]   == "electrical"              ) or
+       ( keyvalues["name"]    == "City Electrical Factors" )) then
       keyvalues["shop"] = "electrical"
    end
 
