@@ -1,15 +1,16 @@
 # Changes made to this rendering
 This page describes changes made [here](https://github.com/SomeoneElseOSM/SomeoneElse-style), [here](https://github.com/SomeoneElseOSM/SomeoneElse-style-legend) and [here](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT), visible [here](//map.atownsend.org.uk/maps/map/map.html).
 
-## As yet unreleased.
+<!---
+On Hetzner:
+--->
+## 23/02/2020 release
 Render wheelchair tags on rarer pubs as part of the bar at the bottom of the icon.
+Render wheelchair tags on bar, cafe, bank, pharmacy in the same way.
 Update legend to include wheelchair tags on pubs.
 Render craft=sawmill and industrial=sawmill as industrial, including the name on nodes.
 Render craft=electronics_repair (and other keys used with that value).
 
-<!---
-On Hetzner:
---->
 ## 16/02/2020 release
 Render wheelchair tags on most pubs as part of the bar at the bottom of the icon - green for yes, yellow for limited and red for no.
 Render the names of telescopes and radio telescopes.

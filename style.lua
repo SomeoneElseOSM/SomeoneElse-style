@@ -2302,19 +2302,82 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
--- Cafes with accommodation
+-- "cafe" - consolidation of lesser used tags
 -- ----------------------------------------------------------------------------
-   if (( keyvalues["amenity"]       == "cafe" )  and
-       ( keyvalues["accommodation"] == "yes"  )) then
-      keyvalues["amenity"] = "cafeaccomm"
+   if ( keyvalues["shop"] == "cafe"       ) then
+      keyvalues["amenity"] = "cafe"
+   end
+
+   if (( keyvalues["shop"] == "sandwiches" ) or
+       ( keyvalues["shop"] == "sandwich"   )) then
+      keyvalues["amenity"] = "cafe"
+      keyvalues["cuisine"] = "sandwich"
    end
 
 -- ----------------------------------------------------------------------------
--- Bars with accommodation
+-- Cafes with accommodation, without, and with wheelchair tags or without
 -- ----------------------------------------------------------------------------
-   if (( keyvalues["amenity"]       == "bar" )  and
-       ( keyvalues["accommodation"] == "yes" )) then
-      keyvalues["amenity"] = "baraccomm"
+   if ( keyvalues["amenity"] == "cafe" ) then
+      if ( keyvalues["accommodation"] == "yes" ) then
+         if ( keyvalues["wheelchair"] == "yes" ) then
+            keyvalues["amenity"] = "cafe_yy"
+         else
+            if ( keyvalues["wheelchair"] == "limited" ) then
+               keyvalues["amenity"] = "cafe_yl"
+	    else
+	       if ( keyvalues["wheelchair"] == "no" ) then
+                  keyvalues["amenity"] = "cafe_yn"
+	       else
+                  keyvalues["amenity"] = "cafe_yd"
+	       end
+	    end
+         end
+      else
+         if ( keyvalues["wheelchair"] == "yes" ) then
+            keyvalues["amenity"] = "cafe_dy"
+         else
+            if ( keyvalues["wheelchair"] == "limited" ) then
+               keyvalues["amenity"] = "cafe_dl"
+	    else
+	       if ( keyvalues["wheelchair"] == "no" ) then
+                  keyvalues["amenity"] = "cafe_dn"
+	       end
+	    end
+         end
+      end
+   end
+
+-- ----------------------------------------------------------------------------
+-- Bars with accommodation, without, and with wheelchair tags or without
+-- ----------------------------------------------------------------------------
+   if ( keyvalues["amenity"] == "bar" ) then
+      if ( keyvalues["accommodation"] == "yes" ) then
+         if ( keyvalues["wheelchair"] == "yes" ) then
+            keyvalues["amenity"] = "bar_yy"
+         else
+            if ( keyvalues["wheelchair"] == "limited" ) then
+               keyvalues["amenity"] = "bar_yl"
+	    else
+	       if ( keyvalues["wheelchair"] == "no" ) then
+                  keyvalues["amenity"] = "bar_yn"
+	       else
+                  keyvalues["amenity"] = "bar_yd"
+	       end
+	    end
+         end
+      else
+         if ( keyvalues["wheelchair"] == "yes" ) then
+            keyvalues["amenity"] = "bar_dy"
+         else
+            if ( keyvalues["wheelchair"] == "limited" ) then
+               keyvalues["amenity"] = "bar_dl"
+	    else
+	       if ( keyvalues["wheelchair"] == "no" ) then
+                  keyvalues["amenity"] = "bar_dn"
+	       end
+	    end
+         end
+      end
    end
 
 -- ----------------------------------------------------------------------------
@@ -2326,6 +2389,39 @@ function filter_tags_generic(keyvalues, nokeys)
       keyvalues["amenity"] = "bank"
    end
 
+-- ----------------------------------------------------------------------------
+-- Banks with wheelchair tags or without
+-- ----------------------------------------------------------------------------
+   if ( keyvalues["amenity"] == "bank" ) then
+      if ( keyvalues["wheelchair"] == "yes" ) then
+         keyvalues["amenity"] = "bank_y"
+      else
+         if ( keyvalues["wheelchair"] == "limited" ) then
+            keyvalues["amenity"] = "bank_l"
+         else
+            if ( keyvalues["wheelchair"] == "no" ) then
+               keyvalues["amenity"] = "bank_n"
+            end
+          end
+      end
+   end
+
+-- ----------------------------------------------------------------------------
+-- Pharmacies with wheelchair tags or without
+-- ----------------------------------------------------------------------------
+   if ( keyvalues["amenity"] == "pharmacy" ) then
+      if ( keyvalues["wheelchair"] == "yes" ) then
+         keyvalues["amenity"] = "pharmacy_y"
+      else
+         if ( keyvalues["wheelchair"] == "limited" ) then
+            keyvalues["amenity"] = "pharmacy_l"
+         else
+            if ( keyvalues["wheelchair"] == "no" ) then
+               keyvalues["amenity"] = "pharmacy_n"
+            end
+          end
+      end
+   end
 
 -- ----------------------------------------------------------------------------
 -- Public bookcases are displayed as a small L, except for those in phone
@@ -4008,10 +4104,20 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["amenity"]   == "pub_ydddnnny"     ) or
        ( keyvalues["amenity"]   == "pub"              ) or
        ( keyvalues["amenity"]   == "cafe"             ) or
+       ( keyvalues["amenity"]   == "cafe_dl"          ) or
+       ( keyvalues["amenity"]   == "cafe_dn"          ) or
+       ( keyvalues["amenity"]   == "cafe_dy"          ) or
+       ( keyvalues["amenity"]   == "cafe_yd"          ) or
+       ( keyvalues["amenity"]   == "cafe_yl"          ) or
+       ( keyvalues["amenity"]   == "cafe_yn"          ) or
+       ( keyvalues["amenity"]   == "cafe_yy"          ) or
        ( keyvalues["amenity"]   == "restaurant"       ) or
        ( keyvalues["amenity"]   == "restaccomm"       ) or
        ( keyvalues["amenity"]   == "doctors"          ) or
        ( keyvalues["amenity"]   == "pharmacy"         ) or
+       ( keyvalues["amenity"]   == "pharmacy_l"       ) or
+       ( keyvalues["amenity"]   == "pharmacy_n"       ) or
+       ( keyvalues["amenity"]   == "pharmacy_y"       ) or
        ( keyvalues["amenity"]   == "parcel_locker"    ) or
        ( keyvalues["amenity"]   == "veterinary"       ) or
        ( keyvalues["amenity"]   == "animal_boarding"  ) or
@@ -4093,19 +4199,9 @@ function filter_tags_generic(keyvalues, nokeys)
 
 
 -- ----------------------------------------------------------------------------
--- "cafe" and "fast_food" consolidation.  
--- Also render fish and chips with a unique icon.
+-- "fast_food" consolidation of lesser used tags.  
+-- Also render fish and chips etc. with a unique icon.
 -- ----------------------------------------------------------------------------
-   if ( keyvalues["shop"] == "cafe"       ) then
-      keyvalues["amenity"] = "cafe"
-   end
-
-   if (( keyvalues["shop"] == "sandwiches" ) or
-       ( keyvalues["shop"] == "sandwich"   )) then
-      keyvalues["amenity"] = "cafe"
-      keyvalues["cuisine"] = "sandwich"
-   end
-
    if (( keyvalues["shop"] == "fast_food" ) or
        ( keyvalues["shop"] == "take_away" ) or
        ( keyvalues["shop"] == "takeaway"  )) then
