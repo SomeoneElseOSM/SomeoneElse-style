@@ -279,9 +279,10 @@ function filter_tags_generic(keyvalues, nokeys)
       keyvalues["highway"] = "track"
    end
 
-   if ((( keyvalues["golf"] == "path"         ) or
-        ( keyvalues["golf"] == "cartpath"     )) and
-       ( keyvalues["highway"] == nil           )) then
+   if ((( keyvalues["golf"]    == "path"      )  or
+        ( keyvalues["golf"]    == "cartpath"  )) and
+       (( keyvalues["highway"] == nil         )  or
+        ( keyvalues["highway"] == "service"   ))) then
       keyvalues["highway"] = "path"
    end
 
