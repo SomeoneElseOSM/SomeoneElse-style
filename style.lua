@@ -1492,6 +1492,19 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Various tags for showgrounds
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["amenity"] == "showground"       )  or
+       ( keyvalues["leisure"] == "showground"       )  or
+       ( keyvalues["amenity"] == "show_ground"      )  or
+       ( keyvalues["amenity"] == "show_grounds"     )  or
+       ( keyvalues["amenity"] == "festival_grounds" )) then
+      keyvalues["amenity"] = nil
+      keyvalues["leisure"] = nil
+      keyvalues["landuse"] = "meadow"
+   end
+
+-- ----------------------------------------------------------------------------
 -- Some kinds of farmland and meadow should be changed to "landuse=farmgrass", 
 -- which is rendered slightly greener than the normal farmland (and less green 
 -- than landuse=meadow)

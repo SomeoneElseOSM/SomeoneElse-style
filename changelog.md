@@ -3,6 +3,7 @@ This page describes changes made [here](https://github.com/SomeoneElseOSM/Someon
 
 ## As yet unreleased
 Render golf=cartpath as path rather than highway=service if that tag is set.
+Render variously tagged showgrounds as meadows.
 
 <!---
 On Hetzner:
