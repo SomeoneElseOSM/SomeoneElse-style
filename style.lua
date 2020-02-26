@@ -1498,7 +1498,8 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["leisure"] == "showground"       )  or
        ( keyvalues["amenity"] == "show_ground"      )  or
        ( keyvalues["amenity"] == "show_grounds"     )  or
-       ( keyvalues["amenity"] == "festival_grounds" )) then
+       ( keyvalues["amenity"] == "festival_grounds" )  or
+       ( keyvalues["amenity"] == "car_boot_sale"    )) then
       keyvalues["amenity"] = nil
       keyvalues["leisure"] = nil
       keyvalues["landuse"] = "meadow"
