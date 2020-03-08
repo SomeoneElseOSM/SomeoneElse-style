@@ -4758,7 +4758,8 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["healthcare"] == "alternative"             ) or
        ( keyvalues["shop"]       == "acupuncture"             ) or
        ( keyvalues["heathcare"]  == "acupuncture"             ) or
-       ( keyvalues["shop"]       == "aromatherapy"            )) then
+       ( keyvalues["shop"]       == "aromatherapy"            ) or
+       ( keyvalues["shop"]       == "meditation"              )) then
       keyvalues["shop"] = "shopnonspecific"
    end
 
