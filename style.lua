@@ -1594,6 +1594,19 @@ function filter_tags_generic(keyvalues, nokeys)
       keyvalues["natural"] = "wood"
    end
 
+-- ----------------------------------------------------------------------------
+-- The "landcover" layer considers a whole bunch of tags to incorporate into
+-- one layer.  The way that this is done (derived from OSM Carto from some
+-- years back) means that an unexpected and unrendered "landuse" tag might
+-- prevent a valid "natural" one from being displayed.
+-- Other combinations will also be affectedm, but have not been seen occurring
+-- together.
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["landuse"] ~= nil    ) and
+       ( keyvalues["natural"] == "wood" )) then
+      keyvalues["landuse"] = nil
+   end
+
    if (( keyvalues["leaf_type"]   == "broadleaved"  )  and
        ( keyvalues["natural"]     == "wood"         )) then
       keyvalues["landuse"] = nil
