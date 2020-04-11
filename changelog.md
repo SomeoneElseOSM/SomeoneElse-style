@@ -1,14 +1,16 @@
 # Changes made to this rendering
 This page describes changes made [here](https://github.com/SomeoneElseOSM/SomeoneElse-style), [here](https://github.com/SomeoneElseOSM/SomeoneElse-style-legend) and [here](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT), visible [here](//map.atownsend.org.uk/maps/map/map.html).
 
-## As yet unreleased
-Render golf=cartpath as path rather than highway=service if that tag is set.
-Render variously tagged showgrounds as meadows.
-Render shop=meditation as "woo".
-
 <!---
 On Hetzner:
 --->
+## 11/04/2020
+Render golf=cartpath as path rather than highway=service if that tag is set.
+Render variously tagged showgrounds as meadows.
+Render shop=meditation as "woo".
+Render woodland with an unexpected landuse tag as woodland.
+Render various synonyms for leisure=common.
+
 ## 23/02/2020 release
 Render wheelchair tags on rarer pubs as part of the bar at the bottom of the icon.
 Render wheelchair tags on bar, cafe, bank, pharmacy in the same way.
