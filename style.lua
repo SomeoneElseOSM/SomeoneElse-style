@@ -695,6 +695,17 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Render various synonyms for leisure=common.
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["landuse"]          == "common"   ) or
+       ( keyvalues["designation"]      == "common"   ) or
+       ( keyvalues["amenity"]          == "common"   ) or
+       ( keyvalues["protection_title"] == "common"   )) then
+      keyvalues["leisure"] = "common"
+      keyvalues["amenity"] = nil
+   end
+   
+-- ----------------------------------------------------------------------------
 -- Use unclassified_sidewalk to indicate sidewalk
 -- ----------------------------------------------------------------------------
    if (( keyvalues["highway"] == "unclassified"      ) or 
