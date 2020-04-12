@@ -2446,6 +2446,42 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Various mistagging, comma and semicolon healthcare
+-- Note that health centres currently appear as "health nonspecific".
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["amenity"] == "doctors; pharmacy"       ) or
+       ( keyvalues["amenity"] == "doctors;social_facility" ) or
+       ( keyvalues["amenity"] == "surgery"                 ) or
+       ( keyvalues["amenity"] == "general_practitioner"    ) or
+       ( keyvalues["amenity"] == "doctor"                  )) then
+      keyvalues["amenity"] = "doctors"
+   end
+
+   if (( keyvalues["healthcare"] == "dentist" ) and
+       ( keyvalues["amenity"]    == nil       )) then
+      keyvalues["amenity"] = "dentist"
+   end
+
+   if (( keyvalues["healthcare"] == "hospital" ) and
+       ( keyvalues["amenity"]    == nil        )) then
+      keyvalues["amenity"] = "hospital"
+   end
+
+   if ((  keyvalues["amenity"]    == "pharmacy, doctors, dentist"  ) or
+       (( keyvalues["healthcare"] == "pharmacy"                   )  and
+        ( keyvalues["amenity"]    == nil                          )) or
+       (( keyvalues["shop"]       == "cosmetics"                  )  and
+        ( keyvalues["pharmacy"]   == "yes"                        )  and
+        ( keyvalues["amenity"]    == nil                          )) or
+       (( keyvalues["shop"]       == "chemist"                    )  and
+        ( keyvalues["pharmacy"]   == "yes"                        )  and
+        ( keyvalues["amenity"]    == nil                          )) or
+       (( keyvalues["amenity"]    == "clinic"                     )  and
+        ( keyvalues["pharmacy"]   == "yes"                        ))) then
+      keyvalues["amenity"] = "pharmacy"
+   end
+
+-- ----------------------------------------------------------------------------
 -- Pharmacies with wheelchair tags or without
 -- ----------------------------------------------------------------------------
    if ( keyvalues["amenity"] == "pharmacy" ) then
@@ -5119,31 +5155,6 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["shop"]    == "specialist_shop" )) then
       keyvalues["landuse"] = "unnamedcommercial"
       keyvalues["shop"]    = "shopnonspecific"
-   end
-
--- ----------------------------------------------------------------------------
--- Various mistagging, comma and semicolon healthcare
--- Note that health centres currently appear as "health nonspecific".
--- ----------------------------------------------------------------------------
-   if (( keyvalues["amenity"] == "doctors; pharmacy"       ) or
-       ( keyvalues["amenity"] == "doctors;social_facility" ) or
-       ( keyvalues["amenity"] == "surgery"                 ) or
-       ( keyvalues["amenity"] == "general_practitioner"    ) or
-       ( keyvalues["amenity"] == "doctor"                  )) then
-      keyvalues["amenity"] = "doctors"
-   end
-
-   if ( keyvalues["healthcare"] == "dentist" ) then
-      keyvalues["amenity"] = "dentist"
-   end
-
-   if ( keyvalues["healthcare"] == "hospital" ) then
-      keyvalues["amenity"] = "hospital"
-   end
-
-   if (( keyvalues["amenity"]    == "pharmacy, doctors, dentist" ) or
-       ( keyvalues["healthcare"] == "pharmacy"                   )) then
-      keyvalues["amenity"] = "pharmacy"
    end
 
 -- ----------------------------------------------------------------------------
