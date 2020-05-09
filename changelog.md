@@ -3,6 +3,7 @@ This page describes changes made [here](https://github.com/SomeoneElseOSM/Someon
 
 ## Unreleased
 Render pharmacy=yes where it doesn't clash with another amenity tag.
+Suppress names on riverbanks where mapped as "natural=water; water=river" to avoid clash with the name of the actual river.
 
 <!---
 On Hetzner:

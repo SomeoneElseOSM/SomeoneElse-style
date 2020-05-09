@@ -3244,6 +3244,14 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Supress "name" on riverbanks mapped as "natural=water"
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["natural"]   == "water"  ) and
+       ( keyvalues["water"]     == "river"  )) then
+      keyvalues["name"] = nil
+   end
+   
+-- ----------------------------------------------------------------------------
 -- Map wind turbines to, er, wind turbines and make sure that they don't also
 -- appear as towers.
 -- ----------------------------------------------------------------------------
