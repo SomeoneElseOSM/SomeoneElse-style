@@ -1259,7 +1259,8 @@ function filter_tags_generic(keyvalues, nokeys)
        (  keyvalues["man_made"]        == "telephone_box"   )  or
        (  keyvalues["building"]        == "telephone_kiosk" )  or
        (  keyvalues["building"]        == "telephone_box"   )  or
-       (  keyvalues["historic"]        == "telephone"       )) then
+       (  keyvalues["historic"]        == "telephone"       )  or
+       (  keyvalues["disused:amenity"] == "telephone"       )) then
       if (( keyvalues["amenity"] == "telephone" )  or
           ( keyvalues["amenity"] == "phone"     )) then
          keyvalues["amenity"] = "boothtelephone"
