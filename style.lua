@@ -3639,7 +3639,9 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["military"] == "depot"                              ) or
        ( keyvalues["military"] == "registration_and_enlistment_office" ) or
        ( keyvalues["military"] == "ta centre"                          ) or
-       ( keyvalues["military"] == "checkpoint"                         )) then
+       ( keyvalues["military"] == "checkpoint"                         ) or
+       ( keyvalues["hazard"]   == "shooting_range"                     ) or
+       ( keyvalues["sport"]    == "shooting_range"                     )) then
       keyvalues["landuse"] = "military"
    end
 

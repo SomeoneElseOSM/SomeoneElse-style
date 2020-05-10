@@ -5,6 +5,7 @@ This page describes changes made [here](https://github.com/SomeoneElseOSM/Someon
 Render pharmacy=yes where it doesn't clash with another amenity tag.
 Suppress names on riverbanks where mapped as "natural=water; water=river" to avoid clash with the name of the actual river.
 Rendering AEDs in disused:amenity=telepone.
+Render shooting ranges with red "military" overlay.
 
 <!---
 On Hetzner:
