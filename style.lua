@@ -2468,6 +2468,15 @@ function filter_tags_generic(keyvalues, nokeys)
       keyvalues["amenity"] = "hospital"
    end
 
+-- ----------------------------------------------------------------------------
+-- If something is mapped both as a supermarket and a pharmacy, suppress the
+-- tags for the latter.
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["shop"]    == "supermarket" ) and
+       ( keyvalues["amenity"] == "pharmacy"    )) then
+      keyvalues["amenity"] = nil
+   end
+
    if ((  keyvalues["amenity"]    == "pharmacy, doctors, dentist"  ) or
        (( keyvalues["healthcare"] == "pharmacy"                   )  and
         ( keyvalues["amenity"]    == nil                          )) or

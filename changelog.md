@@ -8,6 +8,7 @@ Rendering AEDs in disused:amenity=telepone.
 Render shooting ranges with red "military" overlay.
 Render indoor_golf as leisure.
 Change fill for proposed and construction rail tunnels from grey to silver to show HS2 tunnels slightly more clearly.
+If something is tagged both as a supermarket and a pharmacy, remove the tag for the latter.
 
 <!---
 On Hetzner:
