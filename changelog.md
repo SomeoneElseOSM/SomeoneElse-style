@@ -1,7 +1,10 @@
 # Changes made to this rendering
 This page describes changes made [here](https://github.com/SomeoneElseOSM/SomeoneElse-style), [here](https://github.com/SomeoneElseOSM/SomeoneElse-style-legend) and [here](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT), visible [here](//map.atownsend.org.uk/maps/map/map.html).
 
-## Unreleased
+<!---
+On Hetzner:
+--->
+## 11/05/2020
 Render pharmacy=yes where it doesn't clash with another amenity tag.
 Suppress names on riverbanks where mapped as "natural=water; water=river" to avoid clash with the name of the actual river.
 Rendering AEDs in disused:amenity=telepone.
@@ -10,9 +13,6 @@ Render indoor_golf as leisure.
 Change fill for proposed and construction rail tunnels from grey to silver to show HS2 tunnels slightly more clearly.
 If something is tagged both as a supermarket and a pharmacy, remove the tag for the latter.
 
-<!---
-On Hetzner:
---->
 ## 11/04/2020
 Render golf=cartpath as path rather than highway=service if that tag is set.
 Render variously tagged showgrounds as meadows.
