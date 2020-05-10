@@ -5595,7 +5595,6 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["amenity"]  == "sauna"                ) or
        ( keyvalues["leisure"]  == "sauna"                ) or
        ( keyvalues["leisure"]  == "horse_riding"         ) or
-       ( keyvalues["leisure"]  == "miniature_golf"       ) or
        ( keyvalues["leisure"]  == "ice_rink"             ) or
        ( keyvalues["tourism"]  == "wilderness_hut"       ) or
        ( keyvalues["tourism"]  == "cabin"                ) or
@@ -5604,6 +5603,9 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["leisure"]  == "resort"               ) or
        ( keyvalues["leisure"]  == "beach_resort"         ) or
        ( keyvalues["leisure"]  == "adventure_park"       ) or
+       ( keyvalues["leisure"]  == "miniature_golf"       ) or
+       (( keyvalues["leisure"] == "indoor_golf"         )  and
+        ( keyvalues["amenity"]  == nil                  )) or
        (( keyvalues["building"] == "yes"                )  and
         ( keyvalues["amenity"]  == nil                  )  and
         ( keyvalues["sport"]    ~= nil                  )) or
