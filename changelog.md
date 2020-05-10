@@ -7,6 +7,7 @@ Suppress names on riverbanks where mapped as "natural=water; water=river" to avo
 Rendering AEDs in disused:amenity=telepone.
 Render shooting ranges with red "military" overlay.
 Render indoor_golf as leisure.
+Change fill for proposed and construction rail tunnels from grey to silver to show HS2 tunnels slightly more clearly.
 
 <!---
 On Hetzner:
