@@ -1856,16 +1856,48 @@ function filter_tags_generic(keyvalues, nokeys)
                else
                   if (( keyvalues["accommodation"] ~= nil  ) and
                       ( keyvalues["accommodation"] ~= "no" )) then
-		     if ( keyvalues["wheelchair"] == "yes" ) then
-                         keyvalues["amenity"] = "pub_yyyynnyy"
-		     else
-		        if ( keyvalues["wheelchair"] == "limited" ) then
-                             keyvalues["amenity"] = "pub_yyyynnyl"
-			else
-			   if ( keyvalues["wheelchair"] == "no" ) then
-                              keyvalues["amenity"] = "pub_yyyynnyn"
+		     if ( keyvalues["beer_garden"] == "yes" ) then
+		        if ( keyvalues["wheelchair"] == "yes" ) then
+                           keyvalues["amenity"] = "pub_yyyynnyyg"
+		        else
+		           if ( keyvalues["wheelchair"] == "limited" ) then
+                              keyvalues["amenity"] = "pub_yyyynnylg"
 			   else
-                              keyvalues["amenity"] = "pub_yyyynnyd"
+			      if ( keyvalues["wheelchair"] == "no" ) then
+                                 keyvalues["amenity"] = "pub_yyyynnyng"
+			      else
+                                 keyvalues["amenity"] = "pub_yyyynnydg"
+			      end
+			   end
+		        end
+		     else
+		        if ( keyvalues["outdoor_seating"] == "yes" ) then
+		           if ( keyvalues["wheelchair"] == "yes" ) then
+                              keyvalues["amenity"] = "pub_yyyynnyyo"
+		           else
+		              if ( keyvalues["wheelchair"] == "limited" ) then
+                                 keyvalues["amenity"] = "pub_yyyynnylo"
+			      else
+			         if ( keyvalues["wheelchair"] == "no" ) then
+                                    keyvalues["amenity"] = "pub_yyyynnyno"
+			         else
+                                    keyvalues["amenity"] = "pub_yyyynnydo"
+			         end
+			      end
+		           end
+			else
+		           if ( keyvalues["wheelchair"] == "yes" ) then
+                              keyvalues["amenity"] = "pub_yyyynnyyd"
+		           else
+		              if ( keyvalues["wheelchair"] == "limited" ) then
+                                 keyvalues["amenity"] = "pub_yyyynnyld"
+			      else
+			         if ( keyvalues["wheelchair"] == "no" ) then
+                                    keyvalues["amenity"] = "pub_yyyynnynd"
+			         else
+                                    keyvalues["amenity"] = "pub_yyyynnydd"
+			         end
+			      end
 			   end
 			end
 		     end
@@ -4250,10 +4282,18 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["amenity"]   == "pub_yyyyydy"      ) or
        ( keyvalues["amenity"]   == "pub_yyyyydn"      ) or
        ( keyvalues["amenity"]   == "pub_yyyynyd"      ) or
-       ( keyvalues["amenity"]   == "pub_yyyynnyd"     ) or
-       ( keyvalues["amenity"]   == "pub_yyyynnyl"     ) or
-       ( keyvalues["amenity"]   == "pub_yyyynnyn"     ) or
-       ( keyvalues["amenity"]   == "pub_yyyynnyy"     ) or
+       ( keyvalues["amenity"]   == "pub_yyyynnydd"    ) or
+       ( keyvalues["amenity"]   == "pub_yyyynnydg"    ) or
+       ( keyvalues["amenity"]   == "pub_yyyynnydo"    ) or
+       ( keyvalues["amenity"]   == "pub_yyyynnyld"    ) or
+       ( keyvalues["amenity"]   == "pub_yyyynnylg"    ) or
+       ( keyvalues["amenity"]   == "pub_yyyynnylo"    ) or
+       ( keyvalues["amenity"]   == "pub_yyyynnynd"    ) or
+       ( keyvalues["amenity"]   == "pub_yyyynnyng"    ) or
+       ( keyvalues["amenity"]   == "pub_yyyynnyno"    ) or
+       ( keyvalues["amenity"]   == "pub_yyyynnyyd"    ) or
+       ( keyvalues["amenity"]   == "pub_yyyynnyyg"    ) or
+       ( keyvalues["amenity"]   == "pub_yyyynnyyo"    ) or
        ( keyvalues["amenity"]   == "pub_yyyynnndd"    ) or
        ( keyvalues["amenity"]   == "pub_yyyynnndg"    ) or
        ( keyvalues["amenity"]   == "pub_yyyynnndo"    ) or
