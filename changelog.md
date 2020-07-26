@@ -3,6 +3,7 @@ This page describes changes made [here](https://github.com/SomeoneElseOSM/Someon
 
 ## As yet unpublished
 Render "guide_type=intermediary" guideposts like route_markers.
+Render beer garden ("green floor at right") and outside seating ("black floor at right") on a selection of pubs.
 
 <!---
 On Hetzner:
