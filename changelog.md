@@ -1,13 +1,13 @@
 # Changes made to this rendering
 This page describes changes made [here](https://github.com/SomeoneElseOSM/SomeoneElse-style), [here](https://github.com/SomeoneElseOSM/SomeoneElse-style-legend) and [here](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT), visible [here](//map.atownsend.org.uk/maps/map/map.html).
 
-## As yet unpublished
-Render "guide_type=intermediary" guideposts like route_markers.
-Render beer garden ("green floor at right") and outside seating ("black floor at right") on a selection of pubs.
-
 <!---
 On Hetzner:
 --->
+## 27/07/2020
+Render "guide_type=intermediary" guideposts like route_markers.
+Render beer garden ("green floor at right") and outside seating ("black floor at right") on a selection of pubs.
+
 ## 11/05/2020
 Render pharmacy=yes where it doesn't clash with another amenity tag.
 Suppress names on riverbanks where mapped as "natural=water; water=river" to avoid clash with the name of the actual river.
