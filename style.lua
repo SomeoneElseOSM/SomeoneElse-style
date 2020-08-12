@@ -6,7 +6,7 @@ polygon_keys = { 'building', 'landcover', 'landuse', 'amenity', 'harbour', 'hist
 generic_keys = {'access','addr:housename','addr:housenumber','addr:interpolation','admin_level','advertising','aerialway','aeroway','amenity','area','barrier',
    'bicycle','brand','bridge','bridleway','booth','boundary','building','capital','construction','covered','culvert','cutting','denomination','designation','disused','disused:shop','ele',
    'embankment','emergency','foot','generation:source','golf','harbour','highway','historic','horse','hours','intermittent','junction','landcover','landuse','layer','leisure','lcn_ref','lock',
-   'man_made','military','motor_car','name','natural','ncn_milepost','office','oneway','operator','place','playground','poi','population','power','power_source','public_transport','seamark:type',
+   'man_made','military','motor_car','name','natural','ncn_milepost','office','oneway','operator','opening_hours:covid19','place','playground','poi','population','power','power_source','public_transport','seamark:type',
    'railway','ref','religion','rescue_equipment','route','service','shop','sport','surface','toll','tourism','tower:type', 'tracktype','tunnel','water','waterway',
    'wetland','width','wood','type'}
 
@@ -1837,6 +1837,25 @@ function filter_tags_generic(keyvalues, nokeys)
       keyvalues["accomodation"]  = nil
    end
 		  
+-- ----------------------------------------------------------------------------
+-- Next, "closed due to covid" pubs
+-- ----------------------------------------------------------------------------
+   if ((  keyvalues["amenity"]               == "pub"        ) and
+       (( keyvalues["opening_hours:covid19"] == "off"       ) or
+        ( keyvalues["opening_hours:covid19"] == "closed"    ) or
+        ( keyvalues["opening_hours:covid19"] == "Mu-Su off" ))) then
+      keyvalues["amenity"] = "pub_cddddddd"
+      keyvalues["real_ale"] = nil
+   end
+
+-- ----------------------------------------------------------------------------
+-- Main "real_ale icon selection" logic
+-- Note that there's no "if pub" here, so any non-pub establishment that serves
+-- real ale will get the icon (hotels, restaurants, cafes, etc.)
+-- We have explicitly excluded pubs "closed for covid" above.
+-- After this large "if" there is no "else" but another "if" for non-real ale
+-- pubs (that does check that the thing is actually a pub).
+-- ----------------------------------------------------------------------------
    if (( keyvalues["real_ale"] ~= nil     ) and
        ( keyvalues["real_ale"] ~= "maybe" ) and
        ( keyvalues["real_ale"] ~= "no"    )) then
@@ -4599,6 +4618,7 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["amenity"]   == "pub_ynddddnl"     ) or
        ( keyvalues["amenity"]   == "pub_ynddddnn"     ) or
        ( keyvalues["amenity"]   == "pub_ynddddny"     ) or
+       ( keyvalues["amenity"]   == "pub_cddddddd"     ) or
        ( keyvalues["amenity"]   == "pub_nddddddd"     ) or
        ( keyvalues["amenity"]   == "pub_ydyyydd"      ) or
        ( keyvalues["amenity"]   == "pub_ydyyndd"      ) or
