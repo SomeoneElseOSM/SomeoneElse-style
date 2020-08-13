@@ -1,7 +1,7 @@
 # Changes made to this rendering
 This page describes changes made [here](https://github.com/SomeoneElseOSM/SomeoneElse-style), [here](https://github.com/SomeoneElseOSM/SomeoneElse-style-legend) and [here](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT), visible [here](//map.atownsend.org.uk/maps/map/map.html).
 
-## As yet unreleased
+## 13/08/2020
 Render "closed due to Covid 19" pubs as similar to. but not quite the same as, normal disused pubs.
 More beer garden and outside seating edge cases.
 Updated legend to include outside seating and beer gardens on pubs and also disused and "closed due to covid" pubs.
