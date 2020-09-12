@@ -1,14 +1,17 @@
 # Changes made to this rendering
 This page describes changes made [here](https://github.com/SomeoneElseOSM/SomeoneElse-style), [here](https://github.com/SomeoneElseOSM/SomeoneElse-style-legend) and [here](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT), visible [here](//map.atownsend.org.uk/maps/map/map.html).
 
+## As yet unreleased
+Added "access:covid19=no" as a "closed due to Covid 19" tag for pubs.
+
+<!---
+On Hetzner server map.atownsend.org.uk:
+--->
 ## 13/08/2020
 Render "closed due to Covid 19" pubs as similar to. but not quite the same as, normal disused pubs.
 More beer garden and outside seating edge cases.
 Updated legend to include outside seating and beer gardens on pubs and also disused and "closed due to covid" pubs.
 
-<!---
-On Hetzner:
---->
 ## 27/07/2020
 Render "guide_type=intermediary" guideposts like route_markers.
 Render beer garden ("green floor at right") and outside seating ("black floor at right") on a selection of pubs.

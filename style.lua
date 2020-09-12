@@ -1843,7 +1843,8 @@ function filter_tags_generic(keyvalues, nokeys)
    if ((  keyvalues["amenity"]               == "pub"        ) and
        (( keyvalues["opening_hours:covid19"] == "off"       ) or
         ( keyvalues["opening_hours:covid19"] == "closed"    ) or
-        ( keyvalues["opening_hours:covid19"] == "Mu-Su off" ))) then
+        ( keyvalues["opening_hours:covid19"] == "Mu-Su off" ) or
+        ( keyvalues["access:covid19"]        == "no"        ))) then
       keyvalues["amenity"] = "pub_cddddddd"
       keyvalues["real_ale"] = nil
    end
