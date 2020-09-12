@@ -3486,8 +3486,11 @@ function filter_tags_generic(keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
 -- hazard=plant is fairly rare, but render as a nonspecific historic dot.
 -- ----------------------------------------------------------------------------
-   if (( keyvalues["hazard"]  == "plant"         ) and
-       ( keyvalues["species"] == "giant_hogweed" )) then
+   if ((( keyvalues["hazard"]  == "plant"                    )  or
+        ( keyvalues["hazard"]  == "toxic_plant"              )) and
+       (( keyvalues["species"] == "giant_hogweed"            )  or
+        ( keyvalues["species"] == "Heracleum mantegazzianum" )  or
+        ( keyvalues["taxon"]   == "Heracleum mantegazzianum" ))) then
       keyvalues["historic"] = "nonspecific"
       keyvalues["name"] = "Hogweed"
    end

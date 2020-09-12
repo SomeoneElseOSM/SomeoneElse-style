@@ -4,6 +4,7 @@ This page describes changes made [here](https://github.com/SomeoneElseOSM/Someon
 ## As yet unreleased
 Added "access:covid19=no" as a "closed due to Covid 19" tag for pubs.
 Added international walking networks to ldpnwn - I have found one in the UK that is explicitly signed.  Previously they were ignored because I was aware of none that were signed; they are mostly just a fantasy in the same way that "E" roads are in the UK.  The "name:signed" and "ref:signed" tags will still be honoured.
+Extended test for Hogweed following undiscussed but well-meaning tagfiddling changes to values in UK.
 
 <!---
 On Hetzner server map.atownsend.org.uk:
