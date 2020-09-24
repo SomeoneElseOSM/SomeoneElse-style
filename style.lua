@@ -543,11 +543,13 @@ function filter_tags_generic(keyvalues, nokeys)
 	  ( keyvalues["highway"] == "cycleway"  ) or
 	  ( keyvalues["highway"] == "path"      )) then
 	  keyvalues["highway"] = "boatnarrow"
+	  keyvalues["designation"] = "byway_open_to_all_traffic"
       else
          if (( keyvalues["highway"] == "service"   ) or 
              ( keyvalues["highway"] == "road"      ) or
              ( keyvalues["highway"] == "track"     )) then
 	     keyvalues["highway"] = "boatwide"
+	     keyvalues["designation"] = "byway_open_to_all_traffic"
          end
       end
       if ( keyvalues["prow_ref"] ~= nil ) then
@@ -581,11 +583,13 @@ function filter_tags_generic(keyvalues, nokeys)
 	  ( keyvalues["highway"] == "cycleway"  ) or
 	  ( keyvalues["highway"] == "path"      )) then
          keyvalues["highway"] = "rbynarrow"
+         keyvalues["designation"] = "restricted_byway"
       else
          if (( keyvalues["highway"] == "service"   ) or 
              ( keyvalues["highway"] == "road"      ) or
              ( keyvalues["highway"] == "track"     )) then
 	    keyvalues["highway"] = "rbywide"
+            keyvalues["designation"] = "restricted_byway"
          end
       end
       if ( keyvalues["prow_ref"] ~= nil ) then
@@ -717,10 +721,15 @@ function filter_tags_generic(keyvalues, nokeys)
 -- picked up below; we need to make sure that those that do not get an
 -- access=private tag first.
 -- ----------------------------------------------------------------------------
-   if ((  keyvalues["access"]      == nil                 )  and
-       (( keyvalues["designation"] == "public_footpath"  )   or
-        ( keyvalues["designation"] == "public_bridleway" ))  and
-       (  keyvalues["foot"]        == "no"                )) then
+   if ((  keyvalues["access"]      == nil                          )  and
+       (( keyvalues["designation"] == "public_footpath"           )   or
+        ( keyvalues["designation"] == "public_bridleway"          )   or
+        ( keyvalues["designation"] == "restricted_byway"          )   or
+        ( keyvalues["designation"] == "byway_open_to_all_traffic" )   or
+        ( keyvalues["designation"] == "unclassified_county_road"  )   or
+        ( keyvalues["designation"] == "unclassified_country_road" )   or
+        ( keyvalues["designation"] == "unclassified_highway"      ))  and
+       (  keyvalues["foot"]        == "no"                         )) then
       keyvalues["access"]  = "no"
    end
 
@@ -734,14 +743,14 @@ function filter_tags_generic(keyvalues, nokeys)
    if (((   keyvalues["access"]      == "no"                          )  or
         (   keyvalues["access"]      == "destination"                 )) and
        (((( keyvalues["designation"] == "public_footpath"           )    or
-          ( keyvalues["designation"] == "public_bridleway"          ))   and
+          ( keyvalues["designation"] == "public_bridleway"          )    or
+          ( keyvalues["designation"] == "restricted_byway"          )    or
+          ( keyvalues["designation"] == "byway_open_to_all_traffic" )    or
+          ( keyvalues["designation"] == "unclassified_county_road"  )    or
+          ( keyvalues["designation"] == "unclassified_country_road" )    or
+          ( keyvalues["designation"] == "unclassified_highway"      ))   and
          (  keyvalues["foot"]        ~= nil                          )   and
          (  keyvalues["foot"]        ~= "no"                         ))  or
-        (   keyvalues["designation"] == "restricted_byway"            )  or
-        (   keyvalues["designation"] == "byway_open_to_all_traffic"   )  or
-        (   keyvalues["designation"] == "unclassified_county_road"    )  or
-        (   keyvalues["designation"] == "unclassified_country_road"   )  or
-        (   keyvalues["designation"] == "unclassified_highway"        )  or
         ((( keyvalues["highway"]     == "path"                      )    or
           ( keyvalues["highway"]     == "pathwide"                  )    or
           ( keyvalues["highway"]     == "service"                   ))   and
