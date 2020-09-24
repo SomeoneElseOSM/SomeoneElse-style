@@ -400,7 +400,13 @@ function filter_tags_generic(keyvalues, nokeys)
 -- The OSM Carto derivative that I'm using still tries to second-guess paths
 -- as footway or cycleway.  We don't want to do this - set "designated" to
 -- "yes"
+--
+-- First - lose "access=designated", which is meaningless.
 -- ----------------------------------------------------------------------------
+   if ( keyvalues["access"] == "designated" ) then
+      keyvalues["access"] = nil
+   end
+
    if ( keyvalues["foot"] == "designated" ) then
       keyvalues["foot"] = "yes"
    end
@@ -413,6 +419,48 @@ function filter_tags_generic(keyvalues, nokeys)
       keyvalues["horse"] = "yes"
    end
 
+-- ----------------------------------------------------------------------------
+-- Handle dodgy access tags.  Note that this doesn't affect my "designation"
+-- processing, but may be used by the main style, as "foot", "bicycle" and 
+-- "horse" are all in as columns.
+-- ----------------------------------------------------------------------------
+   if (keyvalues["access:foot"] == "yes") then
+      keyvalues["access:foot"] = nil
+      keyvalues["foot"] = "yes"
+   end
+
+   if (keyvalues["access:bicycle"] == "yes") then
+      keyvalues["access:bicycle"] = nil
+      keyvalues["bicycle"] = "yes"
+   end
+
+   if (keyvalues["access:horse"] == "yes") then
+      keyvalues["access:horse"] = nil
+      keyvalues["horse"] = "yes"
+   end
+
+-- ----------------------------------------------------------------------------
+-- When handling TROs etc. we test for "no", not private, hence this change:
+-- ----------------------------------------------------------------------------
+   if ( keyvalues["access"] == "private" ) then
+      keyvalues["access"] = "no"
+   end
+
+   if ( keyvalues["foot"] == "private" ) then
+      keyvalues["foot"] = "no"
+   end
+
+   if ( keyvalues["bicycle"] == "private" ) then
+      keyvalues["bicycle"] = "no"
+   end
+
+   if ( keyvalues["horse"] == "private" ) then
+      keyvalues["horse"] = "no"
+   end
+
+-- ----------------------------------------------------------------------------
+-- Consolidate various prow_ref variants
+-- ----------------------------------------------------------------------------
    if (( keyvalues["prow:ref"] ~= nil ) and
        ( keyvalues["prow_ref"] == nil )) then
       keyvalues["prow_ref"] = keyvalues["prow:ref"]
@@ -634,27 +682,61 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
--- Treat access=permit as access-private
--- Also access=no for the benefit of the "foot access" check below.
+-- Treat access=permit as access=no (which is what we have set "private" to 
+-- above).
 -- ----------------------------------------------------------------------------
    if (( keyvalues["access"]  == "permit"       ) or
        ( keyvalues["access"]  == "agricultural" ) or
        ( keyvalues["access"]  == "forestry"     ) or
        ( keyvalues["access"]  == "delivery"     ) or
-       ( keyvalues["access"]  == "military"     ) or
-       ( keyvalues["access"]  == "no"           )) then
-      keyvalues["access"] = "private"
+       ( keyvalues["access"]  == "military"     )) then
+      keyvalues["access"] = "no"
    end
 
    if ( keyvalues["access"]  == "customers" ) then
       keyvalues["access"] = "destination"
    end
 
-   if (((   keyvalues["access"]      == "private"                     )  or
-        (   keyvalues["access"]      == "destination"                 )  or
-        (   keyvalues["service"]     == "driveway"                    )) and
+-- ----------------------------------------------------------------------------
+-- Don't make driveways with a designation disappear.
+-- ----------------------------------------------------------------------------
+   if ((    keyvalues["service"]     == "driveway"                     ) and
        ((   keyvalues["designation"] == "public_footpath"             )  or
         (   keyvalues["designation"] == "public_bridleway"            )  or
+        (   keyvalues["designation"] == "restricted_byway"            )  or
+        (   keyvalues["designation"] == "byway_open_to_all_traffic"   )  or
+        (   keyvalues["designation"] == "unclassified_county_road"    )  or
+        (   keyvalues["designation"] == "unclassified_country_road"   )  or
+        (   keyvalues["designation"] == "unclassified_highway"        ))) then
+      keyvalues["service"] = nil
+   end
+
+-- ----------------------------------------------------------------------------
+-- Try and detect genuinely closed public footpaths, bridleways (not just those
+-- closed to motor traffic etc.).  Examples with "access=no/private" are
+-- picked up below; we need to make sure that those that do not get an
+-- access=private tag first.
+-- ----------------------------------------------------------------------------
+   if ((  keyvalues["access"]      == nil                 )  and
+       (( keyvalues["designation"] == "public_footpath"  )   or
+        ( keyvalues["designation"] == "public_bridleway" ))  and
+       (  keyvalues["foot"]        == "no"                )) then
+      keyvalues["access"]  = "no"
+   end
+
+-- ----------------------------------------------------------------------------
+-- The extra information "and"ed with "public_footpath" below checks that
+-- "It's access=private and designation=public_footpath, and ordinarily we'd
+-- just remove the access=private tag as you ought to be able to walk there,
+-- unless there isn't foot=yes/designated to say you can, or there is an 
+-- explicit foot=no".
+-- ----------------------------------------------------------------------------
+   if (((   keyvalues["access"]      == "no"                          )  or
+        (   keyvalues["access"]      == "destination"                 )) and
+       (((( keyvalues["designation"] == "public_footpath"           )    or
+          ( keyvalues["designation"] == "public_bridleway"          ))   and
+         (  keyvalues["foot"]        ~= nil                          )   and
+         (  keyvalues["foot"]        ~= "no"                         ))  or
         (   keyvalues["designation"] == "restricted_byway"            )  or
         (   keyvalues["designation"] == "byway_open_to_all_traffic"   )  or
         (   keyvalues["designation"] == "unclassified_county_road"    )  or
@@ -666,7 +748,6 @@ function filter_tags_generic(keyvalues, nokeys)
          (( keyvalues["foot"]        == "permissive"                )    or
           ( keyvalues["foot"]        == "yes"                       ))))) then
       keyvalues["access"]  = nil
-      keyvalues["service"] = nil
    end
 
 -- ----------------------------------------------------------------------------
@@ -1653,7 +1734,7 @@ function filter_tags_generic(keyvalues, nokeys)
    if ((( keyvalues["amenity"] == "pub"        ) or
         ( keyvalues["amenity"] == "cafe"       ) or
         ( keyvalues["amenity"] == "restaurant" )) and
-       (  keyvalues["access"]  == "private"     )) then
+       (  keyvalues["access"]  == "no"          )) then
       keyvalues["amenity"] = nil
    end
 
@@ -3019,7 +3100,7 @@ function filter_tags_generic(keyvalues, nokeys)
       keyvalues["amenity"] = "parking"
 
       if ( keyvalues["access"] == nil  ) then
-         keyvalues["access"] = "private"
+         keyvalues["access"] = "no"
       end
    end
 
@@ -5971,7 +6052,7 @@ function filter_tags_generic(keyvalues, nokeys)
 -- Note there's no explicit "if private" check on the wet bit.
 -- ----------------------------------------------------------------------------
    if (( keyvalues["amenity"] == "swimming_pool" ) and
-       ( keyvalues["access"]  ~= "private"       )) then
+       ( keyvalues["access"]  ~= "no"            )) then
       keyvalues["leisure"] = "nonspecific"
    end
 
@@ -6183,23 +6264,6 @@ function filter_tags_generic(keyvalues, nokeys)
    if (( keyvalues["disused:landuse"] == "quarry" ) and
        ( keyvalues["landuse"]         == nil      )) then
       keyvalues["landuse"] = "quarry"
-   end
-
--- ----------------------------------------------------------------------------
--- Handle dodgy access tags.  Note that this doesn't affect my "designation"
--- processing, but may be used by the main style, as "foot", "bicycle" and 
--- "horse" are all in as columns.
--- ----------------------------------------------------------------------------
-   if (keyvalues["access:foot"] == "yes") then
-      keyvalues["foot"] = "yes"
-   end
-
-   if (keyvalues["access:bicycle"] == "yes") then
-      keyvalues["bicycle"] = "yes"
-   end
-
-   if (keyvalues["access:horse"] == "yes") then
-      keyvalues["horse"] = "yes"
    end
 
 -- ----------------------------------------------------------------------------
