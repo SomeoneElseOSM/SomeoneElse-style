@@ -1,15 +1,15 @@
 # Changes made to this rendering
 This page describes changes made [here](https://github.com/SomeoneElseOSM/SomeoneElse-style), [here](https://github.com/SomeoneElseOSM/SomeoneElse-style-legend) and [here](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT), visible [here](//map.atownsend.org.uk/maps/map/map.html).
 
-## As yet unreleased
+<!---
+On Hetzner server map.atownsend.org.uk:
+--->
+## 25/09/2020
 Added "access:covid19=no" as a "closed due to Covid 19" tag for pubs.
 Added international walking networks to ldpnwn - I have found one in the UK that is explicitly signed.  Previously they were ignored because I was aware of none that were signed; they are mostly just a fantasy in the same way that "E" roads are in the UK.  The "name:signed" and "ref:signed" tags will still be honoured.
 Extended test for Hogweed following undiscussed but well-meaning tagfiddling changes to values in UK.
 Added support for public footpath, bridleway and byway closures - keep the footpath, bridleway or byway rendering, but add the "private" overprint.
 
-<!---
-On Hetzner server map.atownsend.org.uk:
---->
 ## 13/08/2020
 Render "closed due to Covid 19" pubs as similar to. but not quite the same as, normal disused pubs.
 More beer garden and outside seating edge cases.
