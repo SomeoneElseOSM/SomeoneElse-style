@@ -376,8 +376,12 @@ function filter_tags_generic(keyvalues, nokeys)
 
    if ((  keyvalues["designation"]      == nil         ) and
        (( keyvalues["trail_visibility"] == "no"       )  or
+        ( keyvalues["trail_visibility"] == "none"     )  or
+        ( keyvalues["trail_visibility"] == "nil"      )  or
         ( keyvalues["trail_visibility"] == "horrible" )  or
-        ( keyvalues["trail_visibility"] == "bad"      ))) then
+        ( keyvalues["trail_visibility"] == "very_bad" )  or
+        ( keyvalues["trail_visibility"] == "bad"      )  or
+        ( keyvalues["trail_visibility"] == "poor"     ))) then
       keyvalues["highway"] = nil
    end
 
