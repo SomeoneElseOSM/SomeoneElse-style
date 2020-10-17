@@ -363,14 +363,23 @@ function filter_tags_generic(keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
    if (( keyvalues["highway"] == "footway"   ) or 
        ( keyvalues["highway"] == "bridleway" ) or 
-       ( keyvalues["highway"] == "cycleway"  )) then
+       ( keyvalues["highway"] == "cycleway"  ) or
+       ( keyvalues["highway"] == "path"      )) then
       if (( keyvalues["width"] == "2"   ) or
           ( keyvalues["width"] == "2.5" ) or
           ( keyvalues["width"] == "3"   ) or
           ( keyvalues["width"] == "4"   )) then
-          keyvalues["highway"] = "pathwide"
+         if ( keyvalues["trail_visibility"] == "intermediate" )  then
+            keyvalues["highway"] = "intpathwide"
+         else
+            keyvalues["highway"] = "pathwide"
+         end
       else
-          keyvalues["highway"] = "path"
+         if ( keyvalues["trail_visibility"] == "intermediate" )  then
+            keyvalues["highway"] = "intpath"
+         else
+            keyvalues["highway"] = "path"
+         end
       end
    end
 
@@ -686,7 +695,11 @@ function filter_tags_generic(keyvalues, nokeys)
 -- If something is still "track" by this point change it to pathwide.
 -- ----------------------------------------------------------------------------
    if ( keyvalues["highway"] == "track" ) then
-      keyvalues["highway"] = "pathwide"
+      if ( keyvalues["trail_visibility"] == "intermediate" )  then
+         keyvalues["highway"] = "intpathwide"
+      else
+         keyvalues["highway"] = "pathwide"
+      end
    end
 
 -- ----------------------------------------------------------------------------
@@ -757,6 +770,8 @@ function filter_tags_generic(keyvalues, nokeys)
          (  keyvalues["foot"]        ~= "no"                         ))  or
         ((( keyvalues["highway"]     == "path"                      )    or
           ( keyvalues["highway"]     == "pathwide"                  )    or
+          ( keyvalues["highway"]     == "intpath"                   )    or
+          ( keyvalues["highway"]     == "intpathwide"               )    or
           ( keyvalues["highway"]     == "service"                   ))   and
          (( keyvalues["foot"]        == "permissive"                )    or
           ( keyvalues["foot"]        == "yes"                       ))))) then
