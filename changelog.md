@@ -3,7 +3,7 @@ This page describes changes made [here](https://github.com/SomeoneElseOSM/Someon
 
 ## As yet unreleased.
 Added support for more bad trail_visibility values, which remove non-designation paths and tracks from the map.
-Render trail_visibility=intermittent with wider spaces dashes on paths and tracks.
+Render trail_visibility=intermediate with wider spaces dashes on paths and tracks.
 
 <!---
 On Hetzner server map.atownsend.org.uk:
