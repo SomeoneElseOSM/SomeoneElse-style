@@ -4,6 +4,8 @@ This page describes changes made [here](https://github.com/SomeoneElseOSM/Someon
 ## As yet unreleased.
 Added support for more bad trail_visibility values, which remove non-designation paths and tracks from the map.
 Render trail_visibility=intermediate with wider spaces dashes on paths and tracks.
+Render trail_visibility=intermediate, =bad and =no with wider spaces dashes on wide and narrow bridleways and footpaths.
+Added less visible paths, tracks and wide and narrow bridleways and footpaths to the legend.
 
 <!---
 On Hetzner server map.atownsend.org.uk:

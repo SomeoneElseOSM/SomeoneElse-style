@@ -283,7 +283,7 @@ function filter_tags_generic(keyvalues, nokeys)
         ( keyvalues["golf"]    == "cartpath"  )) and
        (( keyvalues["highway"] == nil         )  or
         ( keyvalues["highway"] == "service"   ))) then
-      keyvalues["highway"] = "path"
+      keyvalues["highway"] = "pathnarrow"
    end
 
 -- ----------------------------------------------------------------------------
@@ -309,7 +309,9 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["highway"] == "cycleway"          ) or
        ( keyvalues["highway"] == "bridleway"         ) or
        ( keyvalues["highway"] == "footway"           ) or
-       ( keyvalues["highway"] == "path"              )) then
+       ( keyvalues["highway"] == "intfootway"        ) or
+       ( keyvalues["highway"] == "path"              ) or
+       ( keyvalues["highway"] == "intpath"           )) then
       if ( keyvalues["name"] == nil   ) then
          if (( keyvalues["ref"]        ~= nil  ) and
              ( keyvalues["ref:signed"] == "no" )) then
@@ -358,6 +360,41 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Rationalise the various trail_visibility values
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["trail_visibility"] == "no"       )  or
+       ( keyvalues["trail_visibility"] == "none"     )  or
+       ( keyvalues["trail_visibility"] == "nil"      )  or
+       ( keyvalues["trail_visibility"] == "horrible" )  or
+       ( keyvalues["trail_visibility"] == "very_bad" )  or
+       ( keyvalues["trail_visibility"] == "bad"      )  or
+       ( keyvalues["trail_visibility"] == "poor"     )) then
+      keyvalues["trail_visibility"] = "bad"
+   end
+
+   if (( keyvalues["trail_visibility"] == "intermittent" )  or
+       ( keyvalues["trail_visibility"] == "intermediate" )) then
+      keyvalues["trail_visibility"] = "intermediate"
+   end
+
+-- ----------------------------------------------------------------------------
+-- Supress non-designated very low-visibility paths
+-- ----------------------------------------------------------------------------
+   if ((  keyvalues["designation"]      == nil         ) and
+       (( keyvalues["trail_visibility"] == "no"       )  or
+        ( keyvalues["trail_visibility"] == "none"     )  or
+        ( keyvalues["trail_visibility"] == "nil"      )  or
+        ( keyvalues["trail_visibility"] == "horrible" )  or
+        ( keyvalues["trail_visibility"] == "very_bad" )  or
+        ( keyvalues["trail_visibility"] == "bad"      )  or
+        ( keyvalues["trail_visibility"] == "poor"     ))) then
+      keyvalues["highway"] = nil
+   end
+
+
+-- ----------------------------------------------------------------------------
+-- Where a wide width is specified on a normally narrow path, render as wider
+--
 -- Note that "steps" and "footwaysteps" are unchanged by the 
 -- pathwide / path choice below:
 -- ----------------------------------------------------------------------------
@@ -369,29 +406,20 @@ function filter_tags_generic(keyvalues, nokeys)
           ( keyvalues["width"] == "2.5" ) or
           ( keyvalues["width"] == "3"   ) or
           ( keyvalues["width"] == "4"   )) then
-         if ( keyvalues["trail_visibility"] == "intermediate" )  then
+         if (( keyvalues["trail_visibility"] == "bad"          )  or
+             ( keyvalues["trail_visibility"] == "intermediate" )) then
             keyvalues["highway"] = "intpathwide"
          else
             keyvalues["highway"] = "pathwide"
          end
       else
-         if ( keyvalues["trail_visibility"] == "intermediate" )  then
+         if (( keyvalues["trail_visibility"] == "bad"          )  or
+             ( keyvalues["trail_visibility"] == "intermediate" )) then
             keyvalues["highway"] = "intpath"
          else
-            keyvalues["highway"] = "path"
+            keyvalues["highway"] = "pathnarrow"
          end
       end
-   end
-
-   if ((  keyvalues["designation"]      == nil         ) and
-       (( keyvalues["trail_visibility"] == "no"       )  or
-        ( keyvalues["trail_visibility"] == "none"     )  or
-        ( keyvalues["trail_visibility"] == "nil"      )  or
-        ( keyvalues["trail_visibility"] == "horrible" )  or
-        ( keyvalues["trail_visibility"] == "very_bad" )  or
-        ( keyvalues["trail_visibility"] == "bad"      )  or
-        ( keyvalues["trail_visibility"] == "poor"     ))) then
-      keyvalues["highway"] = nil
    end
 
 -- ----------------------------------------------------------------------------
@@ -523,16 +551,20 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["designation"] == "adopted_highway;public_footpath"                ) or 
        ( keyvalues["designation"] == "tertiary_highway"                               ) or 
        ( keyvalues["designation"] == "public_road"                                    )) then
-      if (( keyvalues["highway"] == "footway"   ) or 
-          ( keyvalues["highway"] == "steps"     ) or 
-          ( keyvalues["highway"] == "bridleway" ) or 
-	  ( keyvalues["highway"] == "cycleway"  ) or
-	  ( keyvalues["highway"] == "path"      )) then
+      if (( keyvalues["highway"] == "footway"    ) or 
+          ( keyvalues["highway"] == "steps"      ) or 
+          ( keyvalues["highway"] == "bridleway"  ) or 
+	  ( keyvalues["highway"] == "cycleway"   ) or
+	  ( keyvalues["highway"] == "path"       ) or
+	  ( keyvalues["highway"] == "intpath"    ) or
+	  ( keyvalues["highway"] == "pathnarrow" )) then
 	  keyvalues["highway"] = "ucrnarrow"
       else
-         if (( keyvalues["highway"] == "service"   ) or 
-             ( keyvalues["highway"] == "road"      ) or
-             ( keyvalues["highway"] == "track"     )) then
+         if (( keyvalues["highway"] == "service"     ) or 
+             ( keyvalues["highway"] == "road"        ) or
+             ( keyvalues["highway"] == "track"       ) or
+             ( keyvalues["highway"] == "intpathwide" ) or
+             ( keyvalues["highway"] == "pathwide"    )) then
 	     keyvalues["highway"] = "ucrwide"
          end
       end
@@ -550,17 +582,21 @@ function filter_tags_generic(keyvalues, nokeys)
    if (( keyvalues["designation"] == "byway_open_to_all_traffic" ) or
        ( keyvalues["designation"] == "public_byway"              ) or 
        ( keyvalues["designation"] == "byway"                     )) then
-      if (( keyvalues["highway"] == "footway"   ) or 
-          ( keyvalues["highway"] == "steps"     ) or 
-          ( keyvalues["highway"] == "bridleway" ) or 
-	  ( keyvalues["highway"] == "cycleway"  ) or
-	  ( keyvalues["highway"] == "path"      )) then
+      if (( keyvalues["highway"] == "footway"    ) or 
+          ( keyvalues["highway"] == "steps"      ) or 
+          ( keyvalues["highway"] == "bridleway"  ) or 
+	  ( keyvalues["highway"] == "cycleway"   ) or
+	  ( keyvalues["highway"] == "path"       ) or
+	  ( keyvalues["highway"] == "intpath"    ) or
+	  ( keyvalues["highway"] == "pathnarrow" )) then
 	  keyvalues["highway"] = "boatnarrow"
 	  keyvalues["designation"] = "byway_open_to_all_traffic"
       else
-         if (( keyvalues["highway"] == "service"   ) or 
-             ( keyvalues["highway"] == "road"      ) or
-             ( keyvalues["highway"] == "track"     )) then
+         if (( keyvalues["highway"] == "service"     ) or 
+             ( keyvalues["highway"] == "road"        ) or
+             ( keyvalues["highway"] == "track"       ) or
+             ( keyvalues["highway"] == "intpathwide" ) or
+             ( keyvalues["highway"] == "pathwide"    )) then
 	     keyvalues["highway"] = "boatwide"
 	     keyvalues["designation"] = "byway_open_to_all_traffic"
          end
@@ -590,17 +626,21 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["designation"] == "public_way"                              ) or 
        ( keyvalues["designation"] == "tertiary_highway;restricted_byway"       ) or 
        ( keyvalues["designation"] == "orpa"                                    )) then
-      if (( keyvalues["highway"] == "footway"   ) or 
-          ( keyvalues["highway"] == "steps"     ) or 
-          ( keyvalues["highway"] == "bridleway" ) or 
-	  ( keyvalues["highway"] == "cycleway"  ) or
-	  ( keyvalues["highway"] == "path"      )) then
+      if (( keyvalues["highway"] == "footway"    ) or 
+          ( keyvalues["highway"] == "steps"      ) or 
+          ( keyvalues["highway"] == "bridleway"  ) or 
+	  ( keyvalues["highway"] == "cycleway"   ) or
+	  ( keyvalues["highway"] == "path"       ) or
+	  ( keyvalues["highway"] == "intpath"    ) or
+	  ( keyvalues["highway"] == "pathnarrow" )) then
          keyvalues["highway"] = "rbynarrow"
          keyvalues["designation"] = "restricted_byway"
       else
-         if (( keyvalues["highway"] == "service"   ) or 
-             ( keyvalues["highway"] == "road"      ) or
-             ( keyvalues["highway"] == "track"     )) then
+         if (( keyvalues["highway"] == "service"     ) or 
+             ( keyvalues["highway"] == "road"        ) or
+             ( keyvalues["highway"] == "track"       ) or
+             ( keyvalues["highway"] == "intpathwide" ) or
+             ( keyvalues["highway"] == "pathwide"    )) then
 	    keyvalues["highway"] = "rbywide"
             keyvalues["designation"] = "restricted_byway"
          end
@@ -626,20 +666,34 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["designation"] == "public_bridleway;public_cycleway"    ) or 
        ( keyvalues["designation"] == "public_cycleway;public_bridleway"    ) or 
        ( keyvalues["designation"] == "public_bridleway;public_footpath"    )) then
-      if (( keyvalues["highway"] == "footway"   ) or 
-          ( keyvalues["highway"] == "bridleway" ) or 
-	  ( keyvalues["highway"] == "cycleway"  ) or
-	  ( keyvalues["highway"] == "path"      )) then
-	  keyvalues["highway"] = "bridleway"
+      if (( keyvalues["highway"] == "footway"    ) or 
+          ( keyvalues["highway"] == "bridleway"  ) or 
+	  ( keyvalues["highway"] == "cycleway"   ) or
+	  ( keyvalues["highway"] == "path"       ) or
+	  ( keyvalues["highway"] == "intpath"    ) or
+	  ( keyvalues["highway"] == "pathnarrow" )) then
+         if (( keyvalues["trail_visibility"] == "bad"          )  or
+             ( keyvalues["trail_visibility"] == "intermediate" )) then
+            keyvalues["highway"] = "intbridleway"
+         else
+            keyvalues["highway"] = "bridleway"
+         end
       else
          if (( keyvalues["highway"] == "steps"          ) or
              ( keyvalues["highway"] == "bridlewaysteps" )) then
             keyvalues["highway"] = "bridlewaysteps"
          else
-            if (( keyvalues["highway"] == "service"   ) or 
-                ( keyvalues["highway"] == "road"      ) or
-                ( keyvalues["highway"] == "track"     )) then
-               keyvalues["highway"] = "bridlewaywide"
+            if (( keyvalues["highway"] == "service"     ) or 
+                ( keyvalues["highway"] == "road"        ) or
+                ( keyvalues["highway"] == "track"       ) or
+                ( keyvalues["highway"] == "intpathwide" ) or
+                ( keyvalues["highway"] == "pathwide"    )) then
+               if (( keyvalues["trail_visibility"] == "bad"          )  or
+                   ( keyvalues["trail_visibility"] == "intermediate" )) then
+                  keyvalues["highway"] = "intbridlewaywide"
+               else
+                  keyvalues["highway"] = "bridlewaywide"
+               end
             end
          end
       end
@@ -663,20 +717,34 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["designation"] == "public_footway"                         ) or 
        ( keyvalues["designation"] == "public_footpath;permissive_bridleway"   ) or 
        ( keyvalues["designation"] == "public_footpath;public_cycleway"        )) then
-      if (( keyvalues["highway"] == "footway"   ) or 
-          ( keyvalues["highway"] == "bridleway" ) or 
-          ( keyvalues["highway"] == "cycleway"  ) or
-          ( keyvalues["highway"] == "path"      )) then
-         keyvalues["highway"] = "footway"
+      if (( keyvalues["highway"] == "footway"    ) or 
+          ( keyvalues["highway"] == "bridleway"  ) or 
+          ( keyvalues["highway"] == "cycleway"   ) or
+          ( keyvalues["highway"] == "path"       ) or
+          ( keyvalues["highway"] == "intpath"    ) or
+          ( keyvalues["highway"] == "pathnarrow" )) then
+         if (( keyvalues["trail_visibility"] == "bad"          )  or
+             ( keyvalues["trail_visibility"] == "intermediate" )) then
+            keyvalues["highway"] = "intfootway"
+         else
+            keyvalues["highway"] = "footway"
+         end
       else
          if (( keyvalues["highway"] == "steps"        ) or
              ( keyvalues["highway"] == "footwaysteps" )) then
             keyvalues["highway"] = "footwaysteps"
          else
-            if (( keyvalues["highway"] == "service"   ) or 
-                ( keyvalues["highway"] == "road"      ) or
-                ( keyvalues["highway"] == "track"     )) then
-               keyvalues["highway"] = "footwaywide"
+            if (( keyvalues["highway"] == "service"     ) or 
+                ( keyvalues["highway"] == "road"        ) or
+                ( keyvalues["highway"] == "track"       ) or
+                ( keyvalues["highway"] == "intpathwide" ) or
+                ( keyvalues["highway"] == "pathwide"    )) then
+               if (( keyvalues["trail_visibility"] == "bad"          )  or
+                   ( keyvalues["trail_visibility"] == "intermediate" )) then
+                  keyvalues["highway"] = "intfootwaywide"
+               else
+                  keyvalues["highway"] = "footwaywide"
+               end
             end
          end
       end
@@ -695,7 +763,8 @@ function filter_tags_generic(keyvalues, nokeys)
 -- If something is still "track" by this point change it to pathwide.
 -- ----------------------------------------------------------------------------
    if ( keyvalues["highway"] == "track" ) then
-      if ( keyvalues["trail_visibility"] == "intermediate" )  then
+      if (( keyvalues["trail_visibility"] == "bad"          )  or
+          ( keyvalues["trail_visibility"] == "intermediate" )) then
          keyvalues["highway"] = "intpathwide"
       else
          keyvalues["highway"] = "pathwide"
@@ -3181,7 +3250,7 @@ function filter_tags_generic(keyvalues, nokeys)
 
    if (( keyvalues["golf"]    == "path" ) and
        ( keyvalues["highway"] == nil    )) then
-      keyvalues["highway"] = "path"
+      keyvalues["highway"] = "pathnarrow"
    end
 
    if (( keyvalues["golf"]    == "practice" ) and
