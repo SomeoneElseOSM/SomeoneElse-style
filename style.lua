@@ -361,6 +361,9 @@ function filter_tags_generic(keyvalues, nokeys)
 
 -- ----------------------------------------------------------------------------
 -- Rationalise the various trail_visibility values
+-- Also treat "overgrown=yes" as intermittent.  A discussion on talk-gb was
+-- largely inconclusive, but "overgrown" is the "most renderable" way to deal
+-- with things like this.
 -- ----------------------------------------------------------------------------
    if (( keyvalues["trail_visibility"] == "no"       )  or
        ( keyvalues["trail_visibility"] == "none"     )  or
@@ -373,7 +376,8 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
    if (( keyvalues["trail_visibility"] == "intermittent" )  or
-       ( keyvalues["trail_visibility"] == "intermediate" )) then
+       ( keyvalues["trail_visibility"] == "intermediate" )  or
+       ( keyvalues["overgrown"]        == "yes"          )) then
       keyvalues["trail_visibility"] = "intermediate"
    end
 
