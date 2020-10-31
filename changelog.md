@@ -6,6 +6,7 @@ Added support for more bad trail_visibility values, which remove non-designation
 Render trail_visibility=intermediate with wider spaces dashes on paths and tracks.
 Render trail_visibility=intermediate, =bad and =no with wider spaces dashes on wide and narrow bridleways and footpaths.
 Added less visible paths, tracks and wide and narrow bridleways and footpaths to the legend.
+A couple of hidden changes were also made, to reduce references to values in style.lua after they have been changed to something else, and changing output values for the .mss file to have different values (e.g. "bridlewaynarrow") to the value in the input file (which might be "bridleway").  This last change doesn't affect roads, which keep their original values in more situations.
 
 <!---
 On Hetzner server map.atownsend.org.uk:
