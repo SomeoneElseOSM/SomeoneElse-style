@@ -3248,6 +3248,50 @@ function filter_tags_generic(keyvalues, nokeys)
 
 
 -- ----------------------------------------------------------------------------
+-- Playground stuff
+-- ----------------------------------------------------------------------------
+   if ((  keyvalues["leisure"]    == nil            )  and
+       (( keyvalues["playground"] == "swing"       )   or
+        ( keyvalues["playground"] == "basketswing" ))) then
+      keyvalues["amenity"] = "playground_swing"
+   end
+
+   if (( keyvalues["leisure"]    == nil         )  and
+       ( keyvalues["playground"] == "structure" )) then
+      keyvalues["amenity"] = "playground_structure"
+   end
+
+   if (( keyvalues["leisure"]    == nil             )  and
+       ( keyvalues["playground"] == "climbingframe" )) then
+      keyvalues["amenity"] = "playground_climbingframe"
+   end
+
+   if (( keyvalues["leisure"]    == nil             )  and
+       ( keyvalues["playground"] == "slide" )) then
+      keyvalues["amenity"] = "playground_slide"
+   end
+
+   if (( keyvalues["leisure"]    == nil             )  and
+       ( keyvalues["playground"] == "springy" )) then
+      keyvalues["amenity"] = "playground_springy"
+   end
+
+   if (( keyvalues["leisure"]    == nil             )  and
+       ( keyvalues["playground"] == "zipwire" )) then
+      keyvalues["amenity"] = "playground_zipwire"
+   end
+
+   if (( keyvalues["leisure"]    == nil             )  and
+       ( keyvalues["playground"] == "seesaw" )) then
+      keyvalues["amenity"] = "playground_seesaw"
+   end
+
+   if (( keyvalues["leisure"]    == nil             )  and
+       ( keyvalues["playground"] == "roundabout" )) then
+      keyvalues["amenity"] = "playground_roundabout"
+   end
+
+-- ----------------------------------------------------------------------------
 -- Handle razed railways and old inclined_planes as dismantled.
 -- dismantled, abandoned are now handled separately to disused in roads.mss
 -- ----------------------------------------------------------------------------
