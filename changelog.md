@@ -1,16 +1,20 @@
 # Changes made to this rendering
 This page describes changes made [here](https://github.com/SomeoneElseOSM/SomeoneElse-style), [here](https://github.com/SomeoneElseOSM/SomeoneElse-style-legend) and [here](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT), visible [here](//map.atownsend.org.uk/maps/map/map.html).
 
-## As yet unreleased.
+<!---
+On Hetzner server map.atownsend.org.uk:
+--->
+## 01/11/2020
 Added support for more bad trail_visibility values, which remove non-designation paths and tracks from the map.
 Render trail_visibility=intermediate with wider spaces dashes on paths and tracks.
 Render trail_visibility=intermediate, =bad and =no with wider spaces dashes on wide and narrow bridleways and footpaths.
 Added less visible paths, tracks and wide and narrow bridleways and footpaths to the legend.
 A couple of hidden changes were also made, to reduce references to values in style.lua after they have been changed to something else, and changing output values for the .mss file to have different values (e.g. "bridlewaynarrow") to the value in the input file (which might be "bridleway").  This last change doesn't affect roads, which keep their original values in more situations.
 Render "overgrown=yes" as if the trail_visibility was intermediate.
+Made "barracks" less red.
 
 <!---
-On Hetzner server map.atownsend.org.uk:
+On UbuntuVM51
 --->
 ## 25/09/2020
 Added "access:covid19=no" as a "closed due to Covid 19" tag for pubs.
@@ -54,9 +58,6 @@ Render craft=electronics_repair (and other keys used with that value).
 Render wheelchair tags on most pubs as part of the bar at the bottom of the icon - green for yes, yellow for limited and red for no.
 Render the names of telescopes and radio telescopes.
 Render various other sorts of ruined buildings as building=ruins.
-<!---
-On UbuntuVM51
---->
 Render named building nodes.
 Render natural arches in the same way as bridges - the same as building=roof.  Names (even for nodes) are also displayed.
 Render highway=rest_area as amenity=parking.
