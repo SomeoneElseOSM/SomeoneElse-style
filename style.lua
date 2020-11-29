@@ -5507,7 +5507,7 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["shop"]       == "alternative_health"      ) or
        ( keyvalues["healthcare"] == "alternative"             ) or
        ( keyvalues["shop"]       == "acupuncture"             ) or
-       ( keyvalues["heathcare"]  == "acupuncture"             ) or
+       ( keyvalues["healthcare"] == "acupuncture"             ) or
        ( keyvalues["shop"]       == "aromatherapy"            ) or
        ( keyvalues["shop"]       == "meditation"              )) then
       keyvalues["shop"] = "shopnonspecific"
@@ -6249,7 +6249,7 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["amenity"]  == "bingo"                ) or
        ( keyvalues["leisure"]  == "bingo"                ) or
        ( keyvalues["leisure"]  == "bingo_hall"           ) or
-       ( keyvalues["gambing"]  == "bingo"                ) or
+       ( keyvalues["gambling"] == "bingo"                ) or
        ( keyvalues["name"]     == "Bingo Hall"           ) or
        ( keyvalues["name"]     == "Gala Bingo"           ) or
        ( keyvalues["name"]     == "Gala Bingo Hall"      ) or
