@@ -1,11 +1,11 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20201128T231800Z",
+  "data_updated": "20201129T141800Z",
   "project": {
-    "name": "SomeoneElse-style",
-    "description": "A map for rural pedestrians",
-    "project_url": "https://matekarte.strubbl.de",
+    "name": "SomeoneElse-style rural pedestran rendering",
+    "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
+    "project_url": "https://github.com/SomeoneElseOSM/SomeoneElse-style",
     "contact_name": "Andy Townsend",
     "contact_email": "SomeoneElse-style-taginfo@atownsend.org.uk"
   },
