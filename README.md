@@ -1,51 +1,47 @@
 SomeoneElse-style
 =================
-This is an osm2pgsql "style.lua" that incorporates "designation-style" but also does a couple of other changes to aid readability.
+[This project](https://github.com/SomeoneElseOSM/SomeoneElse-style) is one of four projects that together are used to create and display the map that is visible [here](https://map.atownsend.org.uk/maps/map/map.html).
 
-The rules in the new "style.lua" are used in place of osm2pgsql's native processing.  See [the answer to this help question](http://help.openstreetmap.org/questions/28465/osm2pqsql-and-lua/28466) and and [osm2pgsql's lua README](https://github.com/openstreetmap/osm2pgsql/blob/master/docs/lua.md).
+The three projects are:
 
-It's designed to work with https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT which is based on a copy of https://github.com/gravitystorm/openstreetmap-carto from Summer 2014 (before a number of problematical changes were made that prevented useful features showing up).
+* [SomeoneElse-style](https://github.com/SomeoneElseOSM/SomeoneElse-style) - the lua preprocessing.
+* [openstreetmap-carto-AJT](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT) - the OSM Carto style.
+* [SomeoneElse-style-legend)(https://github.com/SomeoneElseOSM/SomeoneElse-style-legend) - the data used to generate the map legend.
+* [SomeoneElse-map](https://github.com/SomeoneElseOSM/SomeoneElse-map) - a simple Leaflet map.
 
-See the readme for designation-style (https://github.com/SomeoneElseOSM/designation-style) for more details about the changes there.
+The map style is designed for "England and Wales-based rural pedestrians".  The example map area also covers Ireland and Scotland.
 
-The extra changes here generally fall into one of the following categories:
+The links from the top of the [example map](https://map.atownsend.org.uk/maps/map/map.html) are designed to answer common questions like "what is this map" on an ["about"](https://map.atownsend.org.uk/maps/map/about.html) page.  That page also addresses common questions about OSM-based maps (is it accurate and up to date, how do I fix it, what do people know about me if I use this map).  There's also a [change log](https://map.atownsend.org.uk/maps/map/changelog.html) that shows updates to the map style as they are released.
 
-- Remove some features I'm not interested in to remove clutter (e.g. admin boundaries)
+What the map is designed to show varies by zoom level.  Roughly speaking:
 
-- Remove some features that are misused by some mappers for "colouring in" landuse (e.g. leisure=common).  Obviously it's a shame that this removes *real* commons from the map - suggestions of better solutions here are welcome.  "highway=living_street" is also misused - they're displayed as residential.
+* At the lowest zoom levels only large scale features (coastline, motorways) are visible.
+* At zoom level 6 lakes are added.
+* Up to zoom level 12 progressively more man-made and natural features are added.  Roads are shown, but not paths and tracks.
+* At zoom level 13 foot, bicycle and horse navigation features are added, including public rights of way and named long distance paths.
+* Zoom level 14 adds hedges and ditches
+* Zoom level 15 adds the first "destination" points of interest (see the [legend](https://map.atownsend.org.uk/maps/map/map.html#zoom=15&lat=-24.99388&lon=135.18359)).
+* Higher zoom levels show progressively more detail - zoom in on the legend to see.
+* The [example map](https://map.atownsend.org.uk/maps/map/map.html) supports native zoom levels up to 24 because it uses a [forked version of mod_tile](https://github.com/SomeoneElseOSM/mod_tile/tree/zoom) that has been modified to support it.
 
-- Remove road and path names and refs that are not signed on the ground.  This is another "colouring in" problem.
+The general principle is that things that people map should be shown.  Sometimes there are multiple tags used to express the same concept; both forms of tagging will be shown.  Commonly-used typos are also shown as the desired feature.  If there's a conflict between being useful and being pretty, being useful wins.
 
-- Display many more names of things that are part of industrial, commercial and other areas.
+The "heavy lifting" of converting complicated tagging combinations (for example, pubs with different features) into something to be rendered is done here in style.lua, with the Carto CSS part of the project just rendering one of the couple of hundred of icons it corresponds to.
 
-- Display abandoned and dismantled railways.  Abandoned railways were removed from OSM-carto because the tag was being misused in some places; they're often major features and *really should* be shown.  Dismantled railways don't really belong on a general-purpose map, but they can be useful if you're trying to make sense of land features, so I've added them too.
+# Other things here
 
-- Display proposed railways.  This is mostly to help me identify where the HS2 will go locally - it will be of little benefit elsewhere.
+## Changelog
 
-- Display historic canals.  If a "waterway=canal" is like a "railway=rail", then the equivalent to "railway=disused" is "waterway=derelict_canal".  That gets rendered by OSM-carto (but in a barely visible light blue).  What gets used for the canal equivalent of "railway=abandoned" and "railway=dismantled" tends to be "historic=canal".  In the case of "abandoned-equivalent" canals, they're often still major physical features (but with no water), so they're rendered as per "derelict_canal".
+[Changelog.md](https://github.com/SomeoneElseOSM/SomeoneElse-style/blob/master/changelog.md) is a historical list of what's changed in the three main projects that make up this map style.
 
-- Display some widely-used tags that have been "deprecated" by OSM-carto, like tourism=bed_and_breakfast.
+## Update scripts
 
-- Fix some display issues that have since been fixed in OSM-carto.  One example of this was that supermarket buildings used to display in pink over the top of pink retail landuse.  OSM-carto has since fixed this by displaying all buildings apart from churches in a light grey; I just display supermarkets as normal buildings.  Some "new features" are also supported (e.g. tree rows as hedges).
+There's a script that gets the latest extract for an area [here](https://github.com/SomeoneElseOSM/SomeoneElse-style/blob/master/update_render.sh).  That gets two areas - by default Great Britain (which has extra name processing performed on it) and Ireland and Northern Ireland (which doesn't). The "extra name processing" involves using "name:cy" in place of "name" in part of Wales, and "name:gd" in place of "name" in part of Scotland.  The file splitting, name tag changing and file recombining is done with "osmosis".
 
-- Display some deprecated tags as "best guess" (e.g. highway=byway as highway=track).
+There is also [this script](https://github.com/SomeoneElseOSM/SomeoneElse-style/blob/master/update_carto.sh) that just reloads carto, not the database - useful if the lua preprocessing does not need to be run.
 
-- Handle some mappers' "special" tags.  Where it's obvious what something means (e.g. "access:foot" obviously means "foot") just change it.
+## Taginfo project files
 
-- Where tags collide, manually choose one of the pair to render (e.g. "amenity=pub" and "tourism=hotel" - I'm far more likely to be looking for a pub than a hotel, so show that symbol).
+[This file](https://github.com/SomeoneElseOSM/SomeoneElse-style/blob/master/taginfo.json) is designed to tell the [taginfo](https://github.com/taginfo/taginfo-projects) about the tags used within this map style.
 
-- For barriers that are essentially either stiles or gates, display as either stile or gate.
 
-- Consolidated shops, offices and leisure facilities so that most or all will get rendered (by openstreetmap-carto-AJT)
-
-- Created new road classes "secondary_sidewalk" and "tertiary_sidewalk" that get rendered with a wider casing by the "sidewalk" branch of openstreetmap-carto-AJT,
-
-A map based on this style is [here](https://map.atownsend.org.uk/maps/map/map.html).
-
-# Update script
-
-There's a script that gets the latest extract for an area [here](https://github.com/SomeoneElseOSM/SomeoneElse-style/blob/master/update_render.sh).  That gets two areas - by default Great Britain (which has extra name processing performed on it) and Ireland and Northern Ireland (which doesn't).  The two files are then combined.
-
-# Changelog
-
-A changelog has been [added](https://github.com/SomeoneElseOSM/SomeoneElse-style/blob/master/changelog.md), and it can be seen [here](https://map.atownsend.org.uk/maps/map/changelog.html).
