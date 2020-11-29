@@ -5,7 +5,7 @@ SomeoneElse-style
 The three projects are:
 
 * [SomeoneElse-style](https://github.com/SomeoneElseOSM/SomeoneElse-style) - the lua preprocessing.
-* [openstreetmap-carto-AJT](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT) - the OSM Carto style.
+* [openstreetmap-carto-AJT](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT) - the Carto style.
 * [SomeoneElse-style-legend](https://github.com/SomeoneElseOSM/SomeoneElse-style-legend) - the data used to generate the map legend.
 * [SomeoneElse-map](https://github.com/SomeoneElseOSM/SomeoneElse-map) - a simple Leaflet map.
 
