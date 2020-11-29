@@ -11,7 +11,7 @@ The three projects are:
 
 The map style is designed for "England and Wales-based rural pedestrians".  The example map area also covers Ireland and Scotland.
 
-The links from the top of the [example map](https://map.atownsend.org.uk/maps/map/map.html) are designed to answer common questions like "what is this map" on an ["about"](https://map.atownsend.org.uk/maps/map/about.html) page.  That page also addresses common questions about OSM-based maps (is it accurate and up to date, how do I fix it, what do people know about me if I use this map).  There's also a [change log](https://map.atownsend.org.uk/maps/map/changelog.html) that shows updates to the map style as they are released.
+The links from the top of the [example map](https://map.atownsend.org.uk/maps/map/map.html) are designed to answer common questions like "what is this map" on an ["about"](https://map.atownsend.org.uk/maps/map/about.html) page.  That page also addresses common questions about OSM-based maps (is it accurate and up to date, how do I fix it, what do people know about me if I use this map?).  There's also a [change log](https://map.atownsend.org.uk/maps/map/changelog.html) that shows updates to the map style as they are released.
 
 What the map is designed to show varies by zoom level.  Roughly speaking:
 
