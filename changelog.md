@@ -3,6 +3,7 @@ This page describes changes made [here](https://github.com/SomeoneElseOSM/Someon
 
 ## As yet unreleased
 Display various playground items from zoom 18.
+Display waterway=brook as waterway=stream.
 
 <!---
 On Hetzner server map.atownsend.org.uk:
