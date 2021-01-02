@@ -1,13 +1,14 @@
 # Changes made to this rendering
 This page describes changes made [here](https://github.com/SomeoneElseOSM/SomeoneElse-style), [here](https://github.com/SomeoneElseOSM/SomeoneElse-style-legend) and [here](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT), visible [here](//map.atownsend.org.uk/maps/map/map.html).
 
-## As yet unreleased
-Display various playground items from zoom 18.
-Display waterway=brook as waterway=stream.
-
+## 02/01/2021
 <!---
 On Hetzner server map.atownsend.org.uk:
 --->
+Display various playground items from zoom 18.
+Display waterway=brook as waterway=stream.
+Change "width" check for "pathwide" etc. to include any numeric values >= 2, and a selection of common legal non-numeric values.
+
 ## 01/11/2020
 Added support for more bad trail_visibility values, which remove non-designation paths and tracks from the map.
 Render trail_visibility=intermediate with wider spaces dashes on paths and tracks.

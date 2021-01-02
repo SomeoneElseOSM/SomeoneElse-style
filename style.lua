@@ -401,10 +401,11 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["highway"] == "bridleway" ) or 
        ( keyvalues["highway"] == "cycleway"  ) or
        ( keyvalues["highway"] == "path"      )) then
-      if (( keyvalues["width"] == "2"   ) or
-          ( keyvalues["width"] == "2.5" ) or
-          ( keyvalues["width"] == "3"   ) or
-          ( keyvalues["width"] == "4"   )) then
+      if ((( tonumber(keyvalues["width"]) or 0 ) >=  2 ) or
+          ( keyvalues["width"] == "2 m"                ) or
+          ( keyvalues["width"] == "2.5 m"              ) or
+          ( keyvalues["width"] == "3 m"                ) or
+          ( keyvalues["width"] == "4 m"                )) then
          if (( keyvalues["trail_visibility"] == "bad"          )  or
              ( keyvalues["trail_visibility"] == "intermediate" )) then
             keyvalues["highway"] = "intpathwide"
