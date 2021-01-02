@@ -69,7 +69,7 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
--- Invalid layer values
+-- Invalid layer values - change them to something plausible.
 -- ----------------------------------------------------------------------------
    if ( keyvalues["layer"] == "-0.5" ) then
       keyvalues["layer"] = "-1"
