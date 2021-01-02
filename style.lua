@@ -214,7 +214,8 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
--- If lcn_ref exists, render it.
+-- If lcn_ref exists (for example as a location in a local cycling network),
+-- render it via a "man_made" tag if there's no other tags on that node.
 -- ----------------------------------------------------------------------------
    if (( keyvalues["lcn_ref"] ~= nil ) and
        ( keyvalues["ref"]     == nil )) then
