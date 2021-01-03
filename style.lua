@@ -1147,7 +1147,7 @@ function filter_tags_generic(keyvalues, nokeys)
    if (( keyvalues["bridge"] == "viaduct"     ) or
        ( keyvalues["bridge"] == "aqueduct"    ) or
        ( keyvalues["bridge"] == "movable"     ) or
-       ( keyvalues["bridge"] == "boadwalk"    ) or
+       ( keyvalues["bridge"] == "boardwalk"   ) or
        ( keyvalues["bridge"] == "suspension"  ) or
        ( keyvalues["bridge"] == "swing"       ) or
        ( keyvalues["bridge"] == "lift"        ) or
