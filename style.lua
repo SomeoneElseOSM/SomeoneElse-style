@@ -364,7 +364,8 @@ function filter_tags_generic(keyvalues, nokeys)
 -- Rationalise the various trail_visibility values
 -- Also treat "overgrown=yes" as intermittent.  A discussion on talk-gb was
 -- largely inconclusive, but "overgrown" is the "most renderable" way to deal
--- with things like this.
+-- with things like this.  A later suggesting "foot:physical=no" is also 
+-- included.
 -- ----------------------------------------------------------------------------
    if (( keyvalues["trail_visibility"] == "no"       )  or
        ( keyvalues["trail_visibility"] == "none"     )  or
@@ -372,7 +373,8 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["trail_visibility"] == "horrible" )  or
        ( keyvalues["trail_visibility"] == "very_bad" )  or
        ( keyvalues["trail_visibility"] == "bad"      )  or
-       ( keyvalues["trail_visibility"] == "poor"     )) then
+       ( keyvalues["trail_visibility"] == "poor"     )  or
+       ( keyvalues["foot:physical"]    == "no"       )) then
       keyvalues["trail_visibility"] = "bad"
    end
 
