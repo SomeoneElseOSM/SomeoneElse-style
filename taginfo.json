@@ -85,6 +85,7 @@
     { "key": "flow_control", "description": "Sluice gates" },
     { "key": "food", "description": "Pubs that serve food" },
     { "key": "foot", "description": "Foot access permission" },
+    { "key": "foot:physical", "description": "Indicates no physical foot access possible" },
     { "key": "footway", "description": "Obscure synonym for sidewalk" },
     { "key": "ford", "description": "Fords on nodes (rendered as icon) and ways (rendered as long ford)" },
     { "key": "former_amenity", "description": "Handle disused version of tag" },

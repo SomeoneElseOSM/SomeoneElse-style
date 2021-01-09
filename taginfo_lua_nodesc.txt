@@ -73,6 +73,7 @@
     { "key": "flow_control", "description": "qqq" }
     { "key": "food", "description": "qqq" }
     { "key": "foot", "description": "qqq" }
+    { "key": "foot:physical", "description": "qqq" }
     { "key": "footway", "description": "qqq" }
     { "key": "ford", "description": "qqq" }
     { "key": "former_amenity", "description": "qqq" }
