@@ -2,7 +2,7 @@
 This page describes changes made [here](https://github.com/SomeoneElseOSM/SomeoneElse-style), [here](https://github.com/SomeoneElseOSM/SomeoneElse-style-legend) and [here](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT), visible [here](//map.atownsend.org.uk/maps/map/map.html).
 
 ## As yet unreleased
-Treat "foot:physical=no" as "trail_visibility=no".  Description also added to taginfo.json.
+Treat "foot:physical=no" as "trail_visibility=no".  Description also added to taginfo.json, and taginfo.json updated with openstreetmap-carto-AJT key use as well (only the addr:housename, aerialway and oneway keys pass through unchanged).  Also updated "last updated" date in taginfo.json.
 
 ## 02/01/2021
 <!---
