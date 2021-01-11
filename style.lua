@@ -1390,7 +1390,6 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["historic"] == "boundary_marker" )  or
        ( keyvalues["historic"] == "boundary_post"   )  or
        ( keyvalues["marker"]   == "boundary_stone"  )  or
-       ( keyvalues["historic"] == "standing_stone"  )  or
        ( keyvalues["boundary"] == "marker"          )) then
       keyvalues["man_made"] = "boundary_stone"
       keyvalues["tourism"]  = nil
@@ -3583,8 +3582,7 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["historic"] == "lime_kilns"         ) or
        ( keyvalues["historic"] == "limekiln"           ) or
        ( keyvalues["historic"] == "kiln"               ) or
-       ( keyvalues["historic"] == "trough"             ) or
-       ( keyvalues["historic"] == "stone"              )) then
+       ( keyvalues["historic"] == "trough"             )) then
       keyvalues["building"] = "yes"
       keyvalues["historic"] = "nonspecific"
       keyvalues["tourism"] = nil
@@ -3658,6 +3656,10 @@ function filter_tags_generic(keyvalues, nokeys)
 
    if (( keyvalues["historic"] == "archaeological_site" )  and
        ( keyvalues["landuse"]  == nil                   )) then
+      if ( keyvalues["megalith_type"] == "standing_stone" ) then
+         keyvalues["historic"] = "standing_stone"
+      end
+
       keyvalues["landuse"] = "historic"
       keyvalues["tourism"] = nil
    end
@@ -4515,6 +4517,23 @@ function filter_tags_generic(keyvalues, nokeys)
    if (( keyvalues["historic"]   == "memorial"    ) and
        ( keyvalues["memorial"]   == "stone"       )) then
       keyvalues["historic"] = "memorialstone"
+   end
+
+   if ( keyvalues["natural"]   == "stone" ) then
+      keyvalues["historic"] = "naturalstone"
+   end
+
+   if (( keyvalues["historic"]   == "stone"          ) or
+       ( keyvalues["historic"]   == "standing_stone" )) then
+      if ( keyvalues["stone_type"]   == "ogham_stone" ) then
+         keyvalues["historic"] = "oghamstone"
+      else
+         keyvalues["historic"] = "historicstone"
+      end
+   end
+
+   if ( keyvalues["historic"]   == "rune_stone" ) then
+      keyvalues["historic"] = "runestone"
    end
 
    if ((  keyvalues["historic"]      == "memorial"  ) and
