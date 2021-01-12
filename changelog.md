@@ -1,14 +1,14 @@
 # Changes made to this rendering
 This page describes changes made [here](https://github.com/SomeoneElseOSM/SomeoneElse-style), [here](https://github.com/SomeoneElseOSM/SomeoneElse-style-legend) and [here](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT), visible [here](//map.atownsend.org.uk/maps/map/map.html).
 
-## As yet unreleased
+## 12/01/2021
+<!---
+On Hetzner server map.atownsend.org.uk:
+--->
 Treat "foot:physical=no" as "trail_visibility=no".  Description also added to taginfo.json, and taginfo.json updated with openstreetmap-carto-AJT key use as well (only the addr:housename, aerialway and oneway keys pass through unchanged).  Also updated "last updated" date in taginfo.json.
 Added stupport for various sorts of stones - natural=stone, historic=stone, historic=standing_stone, megalith_type=standing_stone, historic=rune_stone, stone_type=ogham_stone
 
 ## 02/01/2021
-<!---
-On Hetzner server map.atownsend.org.uk:
---->
 Display various playground items from zoom 18.
 Display waterway=brook as waterway=stream.
 Change "width" check for "pathwide" etc. to include any numeric values >= 2, and a selection of common legal non-numeric values.
