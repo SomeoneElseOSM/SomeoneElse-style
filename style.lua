@@ -3657,7 +3657,7 @@ function filter_tags_generic(keyvalues, nokeys)
    if (( keyvalues["historic"] == "archaeological_site" )  and
        ( keyvalues["landuse"]  == nil                   )) then
       if ( keyvalues["megalith_type"] == "standing_stone" ) then
-         keyvalues["historic"] = "standing_stone"
+         keyvalues["historic"] = "historicstandingstone"
       end
 
       keyvalues["landuse"] = "historic"
@@ -4520,16 +4520,36 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
    if ( keyvalues["natural"]   == "stone" ) then
-      keyvalues["historic"] = "naturalstone"
-   end
-
-   if (( keyvalues["historic"]   == "stone"          ) or
-       ( keyvalues["historic"]   == "standing_stone" )) then
       if ( keyvalues["stone_type"]   == "ogham_stone" ) then
          keyvalues["historic"] = "oghamstone"
       else
-         keyvalues["historic"] = "historicstone"
+         keyvalues["historic"] = "naturalstone"
       end
+   end
+
+   if ( keyvalues["historic"]   == "stone" ) then
+      if ( keyvalues["stone_type"]   == "ogham_stone" ) then
+         keyvalues["historic"] = "oghamstone"
+      else
+         if ( keyvalues["historic:stone"]   == "standing_stone" ) then
+            keyvalues["historic"] = "historicstandingstone"
+         else
+            keyvalues["historic"] = "historicstone"
+         end
+      end
+   end
+
+   if ((   keyvalues["historic"]           == "standing_stone"        ) or
+       ((  keyvalues["historic"]           == "archaeological_site"  )  and
+        (( keyvalues["site_type"]          == "standing_stone"      )   or
+         ( keyvalues["Canmore_Site_Type"]  == "Standing Stone"      )))) then
+      if ( keyvalues["stone_type"]   == "ogham_stone" ) then
+         keyvalues["historic"] = "oghamstone"
+      else
+         keyvalues["historic"] = "historicstandingstone"
+      end
+
+      keyvalues["tourism"] = nil
    end
 
    if ( keyvalues["historic"]   == "rune_stone" ) then
