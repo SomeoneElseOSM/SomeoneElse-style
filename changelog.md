@@ -9,7 +9,7 @@ Render for-pay bicycle_parking differently from free ones.  Also updated legend.
 On Hetzner server map.atownsend.org.uk:
 --->
 Treat "foot:physical=no" as "trail_visibility=no".  Description also added to taginfo.json, and taginfo.json updated with openstreetmap-carto-AJT key use as well (only the addr:housename, aerialway and oneway keys pass through unchanged).  Also updated "last updated" date in taginfo.json.
-Added stupport for various sorts of stones - natural=stone, historic=stone, historic=standing_stone, megalith_type=standing_stone, historic=rune_stone, stone_type=ogham_stone
+Added stupport for various sorts of stones - natural=stone, historic=stone, historic=standing_stone, megalith_type=standing_stone, historic=rune_stone, stone_type=ogham_stone .
 
 ## 02/01/2021
 Display various playground items from zoom 18.
