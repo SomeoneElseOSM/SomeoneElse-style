@@ -3134,6 +3134,22 @@ function filter_tags_generic(keyvalues, nokeys)
 
 
 -- ----------------------------------------------------------------------------
+-- Render for-pay bicycle_parking areas differently.
+-- ----------------------------------------------------------------------------
+   if ((  keyvalues["amenity"] == "bicycle_parking"  ) and
+       (( keyvalues["fee"]     ~= nil               )  and
+        ( keyvalues["fee"]     ~= "no"              )  and
+        ( keyvalues["fee"]     ~= "No"              )  and
+        ( keyvalues["fee"]     ~= "none"            )  and
+        ( keyvalues["fee"]     ~= "None"            )  and
+        ( keyvalues["fee"]     ~= "Free"            )  and
+        ( keyvalues["fee"]     ~= "free"            )  and
+        ( keyvalues["fee"]     ~= "0"               ))) then
+      keyvalues["amenity"] = "bicycle_parking_pay"
+   end
+
+
+-- ----------------------------------------------------------------------------
 -- Render for-pay toilets differently.
 -- Also use different icons for male and female, if these are separate.
 -- ----------------------------------------------------------------------------
