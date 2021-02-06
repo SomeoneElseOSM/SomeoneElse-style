@@ -4,6 +4,7 @@ This page describes changes made [here](https://github.com/SomeoneElseOSM/Someon
 ## As yet unreleased
 Render for-pay bicycle_parking differently from free ones.  Also updated legend.
 Render highway=trailhead (used only occasionally) as information=route_marker.
+Render narrow tracks as narrow.
 
 ## 12/01/2021
 <!---
