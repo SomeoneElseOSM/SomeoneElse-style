@@ -40,6 +40,7 @@
     { "key": "building:ruins", "description": "qqq" }
     { "key": "building:type", "description": "qqq" }
     { "key": "canal_bridge_ref", "description": "qqq" }
+    { "key": "Canmore_Site_Type", "description": "qqq" }
     { "key": "club", "description": "qqq" }
     { "key": "commercial", "description": "qqq" }
     { "key": "covered", "description": "qqq" }
@@ -97,6 +98,7 @@
     { "key": "historic", "description": "qqq" }
     { "key": "historic:amenity", "description": "qqq" }
     { "key": "historic:name", "description": "qqq" }
+    { "key": "historic:stone", "description": "qqq" }
     { "key": "historic:waterway", "description": "qqq" }
     { "key": "horse", "description": "qqq" }
     { "key": "iata", "description": "qqq" }
@@ -123,6 +125,7 @@
     { "key": "marker", "description": "qqq" }
     { "key": "maxwidth", "description": "qqq" }
     { "key": "meadow", "description": "qqq" }
+    { "key": "megalith_type", "description": "qqq" }
     { "key": "memorial", "description": "qqq" }
     { "key": "memorial:type", "description": "qqq" }
     { "key": "microbrewery", "description": "qqq" }
@@ -187,8 +190,10 @@
     { "key": "shop", "description": "qqq" }
     { "key": "shoulder", "description": "qqq" }
     { "key": "sidewalk", "description": "qqq" }
+    { "key": "site_type", "description": "qqq" }
     { "key": "species", "description": "qqq" }
     { "key": "sport", "description": "qqq" }
+    { "key": "stone_type", "description": "qqq" }
     { "key": "support", "description": "qqq" }
     { "key": "surface", "description": "qqq" }
     { "key": "taxon", "description": "qqq" }
