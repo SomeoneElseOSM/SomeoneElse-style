@@ -3974,10 +3974,21 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Weather monitoring stations
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["man_made"]               == "monitoring_station" ) and
+       ( keyvalues["monitoring:weather"]     == "yes"                ) and
+       ( keyvalues["weather:radar"]          == nil                  ) and
+       ( keyvalues["monitoring:water_level"] == nil                  )) then
+      keyvalues["man_made"] = "monitoringweather"
+   end
+
+-- ----------------------------------------------------------------------------
 -- Air quality monitoring stations
 -- ----------------------------------------------------------------------------
    if (( keyvalues["man_made"]               == "monitoring_station" ) and
-       ( keyvalues["monitoring:air_quality"] == "yes"                )) then
+       ( keyvalues["monitoring:air_quality"] == "yes"                ) and
+       ( keyvalues["monitoring:weather"]     == nil                  )) then
       keyvalues["man_made"] = nil
       keyvalues["landuse"] = "industrial"
       if ( keyvalues["name"] == nil ) then
@@ -6560,7 +6571,8 @@ function filter_tags_generic(keyvalues, nokeys)
 
    if ((( keyvalues["man_made"]   == "tower"              ) or
         ( keyvalues["man_made"]   == "monitoring_station" )) and
-       (  keyvalues["tower:type"] == "radar"               )) then
+       (( keyvalues["tower:type"] == "radar"              ) or
+        ( keyvalues["tower:type"] == "weather_radar"      ))) then
       keyvalues["man_made"] = "radartower"
       keyvalues["building"] = "yes"
       keyvalues["tourism"] = nil
