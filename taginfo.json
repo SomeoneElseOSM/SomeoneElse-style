@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20210207T003300Z",
+  "data_updated": "20210228T003300Z",
   "project": {
     "name": "SomeoneElse-style rural pedestrian rendering",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -150,6 +150,7 @@
     { "key": "military", "description": "Detect various military items" },
     { "key": "monitoring:air_quality", "description": "Name air quality boxes as such" },
     { "key": "monitoring:water_level", "description": "Render water level boxes as such" },
+    { "key": "monitoring:weather", "description": "Render weather monitoring stations" },
     { "key": "munro", "description": "Detect big peaks (munros) and prominent peaks" },
     { "key": "name", "description": "Appended with operator and brand if appropriate" },
     { "key": "name:cy", "description": "Used as name in parts of Wales" },
