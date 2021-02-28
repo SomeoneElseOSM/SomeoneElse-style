@@ -6968,10 +6968,12 @@ function filter_tags_relation_member (keyvalues, keyvaluemembers, roles, memberc
 -- route (including LCN, which isn't actually shown in this rendering).
 -- ----------------------------------------------------------------------------
    if (type == "route") then
-      if (( keyvalues["network"] == "iwn" ) or
-          ( keyvalues["network"] == "nwn" ) or
-          ( keyvalues["network"] == "rwn" ) or
-          ( keyvalues["network"] == "lwn" )) then
+      if (( keyvalues["network"] == "iwn"         ) or
+          ( keyvalues["network"] == "nwn"         ) or
+          ( keyvalues["network"] == "rwn"         ) or
+          ( keyvalues["network"] == "lwn"         ) or
+          ( keyvalues["network"] == "lwn;lcn"     ) or
+          ( keyvalues["network"] == "lwn;lcn;lhn" )) then
          keyvalues["highway"] = "ldpnwn"
       end
 
@@ -6991,7 +6993,8 @@ function filter_tags_relation_member (keyvalues, keyvaluemembers, roles, memberc
          keyvalues["highway"] = "ldpmtb"
       end
 
-      if ( keyvalues["network"] == "nhn" ) then
+      if (( keyvalues["network"] == "nhn"         ) or
+          ( keyvalues["network"] == "ncn;nhn;nwn" )) then
          keyvalues["highway"] = "ldpnhn"
       end
 
