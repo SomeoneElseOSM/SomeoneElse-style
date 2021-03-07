@@ -3984,6 +3984,14 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Earthquake monitoring stations
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["man_made"]                     == "monitoring_station" ) and
+       ( keyvalues["monitoring:seismic_activity"]  == "yes"                )) then
+      keyvalues["man_made"] = "monitoringearthquake"
+   end
+
+-- ----------------------------------------------------------------------------
 -- Air quality monitoring stations
 -- ----------------------------------------------------------------------------
    if (( keyvalues["man_made"]               == "monitoring_station" ) and
