@@ -3984,6 +3984,16 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Rainfall monitoring stations
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["man_made"]               == "monitoring_station" ) and
+       ( keyvalues["monitoring:rainfall"]    == "yes"                ) and
+       ( keyvalues["monitoring:weather"]     == nil                  ) and
+       ( keyvalues["monitoring:water_level"] == nil                  )) then
+      keyvalues["man_made"] = "monitoringrainfall"
+   end
+
+-- ----------------------------------------------------------------------------
 -- Earthquake monitoring stations
 -- ----------------------------------------------------------------------------
    if (( keyvalues["man_made"]                     == "monitoring_station" ) and
@@ -3992,13 +4002,11 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
--- Rainfall monitoring stations
+-- Sky brightness monitoring stations
 -- ----------------------------------------------------------------------------
-   if (( keyvalues["man_made"]               == "monitoring_station" ) and
-       ( keyvalues["monitoring:rainfall"]    == "yes"                ) and
-       ( keyvalues["monitoring:weather"]     == nil                  ) and
-       ( keyvalues["monitoring:water_level"] == nil                  )) then
-      keyvalues["man_made"] = "monitoringrainfall"
+   if (( keyvalues["man_made"]                   == "monitoring_station" ) and
+       ( keyvalues["monitoring:sky_brightness"]  == "yes"                )) then
+      keyvalues["man_made"] = "monitoringsky"
    end
 
 -- ----------------------------------------------------------------------------
