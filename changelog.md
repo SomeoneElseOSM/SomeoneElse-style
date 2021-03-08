@@ -1,12 +1,13 @@
 # Changes made to this rendering
 This page describes changes made [here](https://github.com/SomeoneElseOSM/SomeoneElse-style), [here](https://github.com/SomeoneElseOSM/SomeoneElse-style-legend) and [here](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT), and visible [here](//map.atownsend.org.uk/maps/map/map.html).
 
-## As yet unreleased
+## 08/03/2021
 Render for-pay bicycle_parking differently from free ones.  Also updated legend.
 Render highway=trailhead (used only occasionally) as information=route_marker.
 Render narrow tracks as narrow.
 Render some semicolon network values "ncn;nhn;nwn" such as an appropriate value (here nhn).
 Added rendering for weather, rainfall, sky brightness and earthquake monitoring stations.
+Added support for more combinations used on Timpson-like shops.
 
 ## 12/01/2021
 <!---
