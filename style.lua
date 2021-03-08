@@ -5836,6 +5836,31 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Timpson and similar shops.
+-- Timpson is brand:wikidata=Q7807658, but all of those are name=Timpson.
+-- Currently there is no special icon (obviously for actual Timpson shops
+-- there is no need).
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["shop"]    == "shoe_repair"                        ) or
+       ( keyvalues["shop"]    == "keys"                               ) or
+       ( keyvalues["shop"]    == "key"                                ) or
+       ( keyvalues["shop"]    == "cobblers"                           ) or
+       ( keyvalues["shop"]    == "cobbler"                            ) or
+       ( keyvalues["shop"]    == "key_cutting"                        ) or
+       ( keyvalues["shop"]    == "keys_shoerepair"                    ) or
+       ( keyvalues["shop"]    == "key_cutting;shoe_repair"            ) or
+       ( keyvalues["shop"]    == "shoe_repair;keycutting"             ) or
+       ( keyvalues["shop"]    == "shoe_repair;key_cutting"            ) or
+       ( keyvalues["shop"]    == "Cobbler:Key_Cutting"                ) or
+       ( keyvalues["shop"]    == "locksmith;dry_cleaning;shoe_repair" ) or
+       ( keyvalues["craft"]   == "key_cutter"                         ) or
+       ( keyvalues["craft"]   == "shoe_repair"                        ) or
+       ( keyvalues["craft"]   == "key_cutter;shoe_repair"             )) then
+      keyvalues["landuse"] = "unnamedcommercial"
+      keyvalues["shop"]    = "shopnonspecific"
+   end
+
+-- ----------------------------------------------------------------------------
 -- Other shops that don't have a specific icon are handled here. including
 -- variations (for example "shoes" is more popular by far than "shoe").
 --
@@ -5853,17 +5878,9 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["shop"]    == "greetings"               ) or
        ( keyvalues["shop"]    == "card;gift"               ) or
        ( keyvalues["craft"]   == "cobbler"                 ) or
-       ( keyvalues["shop"]    == "cobbler"                 ) or
-       ( keyvalues["shop"]    == "cobblers"                ) or
        ( keyvalues["craft"]   == "shoemaker"               ) or
        ( keyvalues["shop"]    == "shoemaker"               ) or
-       ( keyvalues["shop"]    == "shoe_repair"             ) or
-       ( keyvalues["shop"]    == "shoe_repair;key_cutting" ) or
-       ( keyvalues["shop"]    == "key_cutting;shoe_repair" ) or
        ( keyvalues["shop"]    == "watch_repair"            ) or
-       ( keyvalues["shop"]    == "key_cutting"             ) or
-       ( keyvalues["shop"]    == "keys"                    ) or
-       ( keyvalues["shop"]    == "key"                     ) or
        ( keyvalues["shop"]    == "cleaning"                ) or
        ( keyvalues["shop"]    == "collector"               ) or
        ( keyvalues["shop"]    == "collectables"            ) or
@@ -5875,7 +5892,9 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["shop"]    == "erotic"                  ) or
        ( keyvalues["shop"]    == "adult"                   ) or
        ( keyvalues["shop"]    == "locksmith"               ) or
+       ( keyvalues["craft"]   == "locksmith"               ) or
        ( keyvalues["shop"]    == "locksmiths"              ) or
+       ( keyvalues["shop"]    == "service"                 ) or
        ( keyvalues["shop"]    == "tobacco"                 ) or
        ( keyvalues["shop"]    == "tobacconist"             ) or
        ( keyvalues["shop"]    == "ticket"                  ) or
@@ -5960,6 +5979,7 @@ function filter_tags_generic(keyvalues, nokeys)
 -- "wood" is here because it's used for different sorts of shops.
 -- ----------------------------------------------------------------------------
    if (( keyvalues["shop"]    == "yes"             ) or
+       ( keyvalues["craft"]   == "yes"             ) or
        ( keyvalues["shop"]    == "other"           ) or
        ( keyvalues["shop"]    == "hire"            ) or
        ( keyvalues["shop"]    == "rental"          ) or
@@ -5976,7 +5996,6 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["shop"]    == "cash_and_carry"  ) or
        ( keyvalues["shop"]    == "fixme"           ) or
        ( keyvalues["shop"]    == "wholesale"       ) or
-       ( keyvalues["shop"]    == "service"         ) or
        ( keyvalues["shop"]    == "wood"            ) or
        ( keyvalues["shop"]    == "childrens"       ) or
        ( keyvalues["shop"]    == "factory_outlet"  ) or
