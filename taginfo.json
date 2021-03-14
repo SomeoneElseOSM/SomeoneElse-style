@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20210228T003300Z",
+  "data_updated": "20210314T095000Z",
   "project": {
     "name": "SomeoneElse-style rural pedestrian rendering",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -52,7 +52,7 @@
     { "key": "bridge:ref", "description": "Used in place of ref on bridges" },
     { "key": "bridleway", "description": "Used as part of obscure synonym for mounting block" },
     { "key": "building", "description": "As well as normal buildings, used for detection of some other tags, also roofs, silos, ruins etc." },
-    { "key": "building:part", "description": "Detect clock towers" },
+    { "key": "building:part", "description": "Detect clock towers so that they can be rendered as clocks" },
     { "key": "building:ruins", "description": "Ruins" },
     { "key": "building:type", "description": "Detect some types of roofs" },
     { "key": "canal_bridge_ref", "description": "Used in place of ref on bridges" },
@@ -114,7 +114,7 @@
     { "key": "historic", "description": "Various historic items rendered.  Often another OSM tag is removed." },
     { "key": "historic:amenity", "description": "Former telephone boxes" },
     { "key": "historic:name", "description": "Name of derelict canals" },
-    { "key": "historic:stone", "description": "Used to identify standing and Ogham stones" },
+    { "key": "historic:stone", "description": "Potentially used to identify standing and Ogham stones" },
     { "key": "historic:waterway", "description": "Detect derelict canals" },
     { "key": "horse", "description": "Horse access permission" },
     { "key": "iata", "description": "Split large and small airports" },
@@ -142,13 +142,16 @@
     { "key": "marker", "description": "Boundary stones" },
     { "key": "maxwidth", "description": "Depending on context, go down a road class. Also changes path to track and vice versa." },
     { "key": "meadow", "description": "Show agricultural meadows as such" },
-    { "key": "megalith_type", "description": "Used to identify standing and Ogham stones" },
+    { "key": "megalith_type", "description": "Potentially used to identify standing and Ogham stones" },
     { "key": "memorial", "description": "Render different memorial types differently" },
     { "key": "memorial:type", "description": "Render different memorial types differently" },
     { "key": "microbrewery", "description": "Pubs with breweries onsite" },
     { "key": "micropub", "description": "Pubs that self-identify as micropubs" },
     { "key": "military", "description": "Detect various military items" },
     { "key": "monitoring:air_quality", "description": "Name air quality boxes as such" },
+    { "key": "monitoring:rainfall", "description": "Show and name rain gauges etc." }
+    { "key": "monitoring:seismic_activity", "description": "Show and name seismic monitoring stations" }
+    { "key": "monitoring:sky_brightness", "description": "Show and name sky brightness monitors" }
     { "key": "monitoring:water_level", "description": "Render water level boxes as such" },
     { "key": "monitoring:weather", "description": "Render weather monitoring stations" },
     { "key": "munro", "description": "Detect big peaks (munros) and prominent peaks" },
@@ -211,10 +214,10 @@
     { "key": "shop", "description": "All sorts of shops" },
     { "key": "shoulder", "description": "Render shoulder as sidewalk" },
     { "key": "sidewalk", "description": "Render sidewalks on roads" },
-    { "key": "site_type", "description": "Used to identify standing and Ogham stones" },
+    { "key": "site_type", "description": "Potentially used to identify standing and Ogham stones" },
     { "key": "species", "description": "Detect hogweed hazard" },
     { "key": "sport", "description": "Used to classify and clarigy many other tags" },
-    { "key": "stone_type", "description": "Used to identify standing and Ogham stones" },
+    { "key": "stone_type", "description": "Potentially used to identify standing and Ogham stones" },
     { "key": "support", "description": "Clock towers and pedestal clocks" },
     { "key": "surface", "description": "Render gravel residentials etc. as tracks" },
     { "key": "taxon", "description": "Detect hogweed hazard" },
@@ -248,6 +251,7 @@
     { "key": "waterway", "description": "Sluices and weirs and various water synonyms" },
     { "key": "waterway:abandoned", "description": "Handle disused version of tag" },
     { "key": "waterway:historic", "description": "Handle disused version of tag" },
+    { "key": "weather:radar", "description": "Include weather radar stations as radar towers" }
     { "key": "wheelchair", "description": "Show the wheelchair-friendliness of pubs" },
     { "key": "width", "description": "Depending on context, go down a road class. Also changes path to track and vice versa." }
   ]

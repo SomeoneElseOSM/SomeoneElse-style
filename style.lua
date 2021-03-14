@@ -4606,6 +4606,10 @@ function filter_tags_generic(keyvalues, nokeys)
       keyvalues["historic"] = "memorialstone"
    end
 
+   if ( keyvalues["historic"]   == "ogham_stone" ) then
+      keyvalues["historic"] = "oghamstone"
+   end
+
    if ( keyvalues["natural"]   == "stone" ) then
       if ( keyvalues["stone_type"]   == "ogham_stone" ) then
          keyvalues["historic"] = "oghamstone"

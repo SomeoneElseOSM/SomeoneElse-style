@@ -132,7 +132,11 @@
     { "key": "micropub", "description": "qqq" }
     { "key": "military", "description": "qqq" }
     { "key": "monitoring:air_quality", "description": "qqq" }
+    { "key": "monitoring:rainfall", "description": "qqq" }
+    { "key": "monitoring:seismic_activity", "description": "qqq" }
+    { "key": "monitoring:sky_brightness", "description": "qqq" }
     { "key": "monitoring:water_level", "description": "qqq" }
+    { "key": "monitoring:weather", "description": "qqq" }
     { "key": "munro", "description": "qqq" }
     { "key": "name", "description": "qqq" }
     { "key": "name:en", "description": "qqq" }
@@ -227,5 +231,6 @@
     { "key": "waterway", "description": "qqq" }
     { "key": "waterway:abandoned", "description": "qqq" }
     { "key": "waterway:historic", "description": "qqq" }
+    { "key": "weather:radar", "description": "qqq" }
     { "key": "wheelchair", "description": "qqq" }
     { "key": "width", "description": "qqq" }
