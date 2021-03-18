@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20210314T095000Z",
+  "data_updated": "20210318T095000Z",
   "project": {
     "name": "SomeoneElse-style rural pedestrian rendering",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -134,6 +134,7 @@
     { "key": "level", "description": "Show certain corridors as paths" },
     { "key": "location", "description": "Show underground waterways as tunnels" },
     { "key": "lock", "description": "Display locks" },
+    { "key": "locked", "description": "Display locked gates different to other ones" },
     { "key": "lock_name", "description": "Used in place of name on locks" },
     { "key": "lock_ref", "description": "Used in place of ref on locks" },
     { "key": "loc_ref", "description": "Indicates an unsigned ref" },
