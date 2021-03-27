@@ -6,6 +6,7 @@ Added support (following wiki vote) for historic=ogham_stone.
 The "taginfo.json" list was also updated with recent changes.
 Render locked gates differently (with an "L" in the icon) to other gates.
 Render more "fast_food" cuisine combinations.
+Treat car ports as building=roof, like other similar buildings.
 
 ## 08/03/2021
 Render for-pay bicycle_parking differently from free ones.  Also updated legend.
