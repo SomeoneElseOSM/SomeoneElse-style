@@ -5121,46 +5121,93 @@ function filter_tags_generic(keyvalues, nokeys)
       keyvalues["amenity"] = "fast_food"
    end
 
-   if ((  keyvalues["amenity"] == "fast_food" )  and
-       (( keyvalues["cuisine"] == "burger"   )   or
-        ( keyvalues["cuisine"] == "american" )   or
-        ( keyvalues["cuisine"] == "diner"    ))) then
+   if ((  keyvalues["amenity"] == "fast_food"                            )  and
+       (( keyvalues["cuisine"] == "burger"                              )   or
+        ( keyvalues["cuisine"] == "american"                            )   or
+        ( keyvalues["cuisine"] == "diner"                               )   or
+        ( keyvalues["cuisine"] == "burger;sandwich"                     )   or
+        ( keyvalues["cuisine"] == "burger;kebab;pizza"                  )   or
+        ( keyvalues["cuisine"] == "burger;fish_and_chips;kebab;pizza"   )   or
+        ( keyvalues["cuisine"] == "burger;fish_and_chips"               )   or
+        ( keyvalues["cuisine"] == "burger;indian;kebab;pizza"           )   or
+        ( keyvalues["cuisine"] == "burger;pizza"                        )   or
+        ( keyvalues["cuisine"] == "burger;kebab"                        )   or
+        ( keyvalues["cuisine"] == "burger;chicken"                      )   or
+        ( keyvalues["cuisine"] == "burger;chicken;kebab"                )   or
+        ( keyvalues["cuisine"] == "burger;chicken;pizza"                )   or
+        ( keyvalues["cuisine"] == "burger;chicken;fish_and_chips;kebab" )   or
+        ( keyvalues["cuisine"] == "burger;pizza;kebab"                  )   or
+        ( keyvalues["cuisine"] == "burger;chicken;indian;kebab;pizza"   )   or
+        ( keyvalues["cuisine"] == "burger;chicken;kebab;pizza"          ))) then
       keyvalues["amenity"] = "fast_food_burger"
    end
 
-   if (( keyvalues["amenity"] == "fast_food" )  and
-       ( keyvalues["cuisine"] == "chicken"   )) then
+   if ((  keyvalues["amenity"] == "fast_food"               )  and
+       (( keyvalues["cuisine"] == "chicken"                )   or
+        ( keyvalues["cuisine"] == "chicken;portuguese"     )   or
+        ( keyvalues["cuisine"] == "chicken;pizza"          )   or
+        ( keyvalues["cuisine"] == "chicken;burger;pizza"   )   or
+        ( keyvalues["cuisine"] == "chicken;kebab"          )   or
+        ( keyvalues["cuisine"] == "chicken;fish_and_chips" )   or
+        ( keyvalues["cuisine"] == "fried_chicken"          ))) then
       keyvalues["amenity"] = "fast_food_chicken"
    end
 
-   if ((  keyvalues["amenity"] == "fast_food"     )  and
-       (( keyvalues["cuisine"] == "chinese"      )   or
-        ( keyvalues["cuisine"] == "thai"         )   or
-        ( keyvalues["cuisine"] == "chinese;thai" )   or
-        ( keyvalues["cuisine"] == "asian"        )   or
-        ( keyvalues["cuisine"] == "japanese"     )   or
-        ( keyvalues["cuisine"] == "vietnamese"   )   or
-        ( keyvalues["cuisine"] == "korean"       )   or
-        ( keyvalues["cuisine"] == "ramen"        )   or
-        ( keyvalues["cuisine"] == "noodle"       )   or
-        ( keyvalues["cuisine"] == "noodle;ramen" )   or
-        ( keyvalues["cuisine"] == "malaysian"    )   or
-        ( keyvalues["cuisine"] == "indonesian"   )   or
-        ( keyvalues["cuisine"] == "sushi"        ))) then
+   if ((  keyvalues["amenity"] == "fast_food"               )  and
+       (( keyvalues["cuisine"] == "chinese"                )   or
+        ( keyvalues["cuisine"] == "thai"                   )   or
+        ( keyvalues["cuisine"] == "chinese;thai"           )   or
+        ( keyvalues["cuisine"] == "chinese;thai;malaysian" )   or
+        ( keyvalues["cuisine"] == "thai;chinese"           )   or
+        ( keyvalues["cuisine"] == "asian"                  )   or
+        ( keyvalues["cuisine"] == "japanese"               )   or
+        ( keyvalues["cuisine"] == "japanese;sushi"         )   or
+        ( keyvalues["cuisine"] == "sushi;japanese"         )   or
+        ( keyvalues["cuisine"] == "japanese;korean"        )   or
+        ( keyvalues["cuisine"] == "korean;japanese"        )   or
+        ( keyvalues["cuisine"] == "vietnamese"             )   or
+        ( keyvalues["cuisine"] == "korean"                 )   or
+        ( keyvalues["cuisine"] == "ramen"                  )   or
+        ( keyvalues["cuisine"] == "noodle"                 )   or
+        ( keyvalues["cuisine"] == "noodle;ramen"           )   or
+        ( keyvalues["cuisine"] == "malaysian"              )   or
+        ( keyvalues["cuisine"] == "malaysian;chinese"      )   or
+        ( keyvalues["cuisine"] == "indonesian"             )   or
+        ( keyvalues["cuisine"] == "cantonese"              )   or
+        ( keyvalues["cuisine"] == "chinese;cantonese"      )   or
+        ( keyvalues["cuisine"] == "chinese;asian"          )   or
+        ( keyvalues["cuisine"] == "oriental"               )   or
+        ( keyvalues["cuisine"] == "chinese;english"        )   or
+        ( keyvalues["cuisine"] == "chinese;japanese"       )   or
+        ( keyvalues["cuisine"] == "sushi"                  ))) then
       keyvalues["amenity"] = "fast_food_chinese"
    end
 
-   if ((  keyvalues["amenity"] == "fast_food"    )  and
-       (( keyvalues["cuisine"] == "coffee"      )   or
-        ( keyvalues["cuisine"] == "coffee_shop" ))) then
+   if ((  keyvalues["amenity"] == "fast_food"                  )  and
+       (( keyvalues["cuisine"] == "coffee"                    )   or
+        ( keyvalues["cuisine"] == "coffee_shop"               )   or
+        ( keyvalues["cuisine"] == "coffee_shop;sandwich"      )   or
+        ( keyvalues["cuisine"] == "coffee_shop;local"         )   or
+        ( keyvalues["cuisine"] == "coffee_shop;regional"      )   or
+        ( keyvalues["cuisine"] == "coffee_shop;cake"          )   or
+        ( keyvalues["cuisine"] == "coffee_shop;sandwich;cake" )   or
+        ( keyvalues["cuisine"] == "coffee_shop;breakfast"     )   or
+        ( keyvalues["cuisine"] == "coffee_shop;italian"       )   or
+        ( keyvalues["cuisine"] == "cake;coffee_shop"          )   or
+        ( keyvalues["cuisine"] == "coffee_shop;ice_cream"     ))) then
       keyvalues["amenity"] = "fast_food_coffee"
    end
 
-   if ((  keyvalues["amenity"] == "fast_food"               ) and
-       (( keyvalues["cuisine"] == "fish_and_chips"         )  or
-        ( keyvalues["cuisine"] == "chinese;fish_and_chips" )  or
-        ( keyvalues["cuisine"] == "fish"                   )  or
-        ( keyvalues["cuisine"] == "fish_and_chips;chinese" ))) then
+   if ((  keyvalues["amenity"] == "fast_food"                          ) and
+       (( keyvalues["cuisine"] == "fish_and_chips"                    )  or
+        ( keyvalues["cuisine"] == "chinese;fish_and_chips"            )  or
+        ( keyvalues["cuisine"] == "fish"                              )  or
+        ( keyvalues["cuisine"] == "fish_and_chips;chinese"            )  or
+        ( keyvalues["cuisine"] == "fish_and_chips;indian"             )  or
+        ( keyvalues["cuisine"] == "fish_and_chips;kebab"              )  or
+        ( keyvalues["cuisine"] == "fish_and_chips;pizza;kebab"        )  or
+        ( keyvalues["cuisine"] == "fish_and_chips;pizza;burger;kebab" )  or
+        ( keyvalues["cuisine"] == "fish_and_chips;pizza"              ))) then
       keyvalues["amenity"] = "fast_food_fish_and_chips"
    end
 
@@ -5168,44 +5215,85 @@ function filter_tags_generic(keyvalues, nokeys)
       keyvalues["amenity"] = "fast_food_fish_and_chips"
    end
 
-   if ((( keyvalues["amenity"] == "fast_food" )   and
-        ( keyvalues["cuisine"] == "ice_cream" ))  or
-       (  keyvalues["shop"]    == "ice_cream"  )  or
-       (  keyvalues["amenity"] == "ice_cream"  )) then
+   if ((( keyvalues["amenity"] == "fast_food"              )  and
+        ( keyvalues["cuisine"] == "ice_cream"             )   or
+        ( keyvalues["cuisine"] == "ice_cream;coffee_shop" ))  or
+       (  keyvalues["shop"]    == "ice_cream"              )  or
+       (  keyvalues["amenity"] == "ice_cream"              )) then
       keyvalues["amenity"] = "fast_food_ice_cream"
    end
 
-   if ((  keyvalues["amenity"] == "fast_food"   ) and
-       (( keyvalues["cuisine"] == "indian"     )  or
-        ( keyvalues["cuisine"] == "curry"      ))) then
+   if ((  keyvalues["amenity"] == "fast_food"            ) and
+       (( keyvalues["cuisine"] == "indian"              )  or
+        ( keyvalues["cuisine"] == "curry"               )  or
+        ( keyvalues["cuisine"] == "nepalese"            )  or
+        ( keyvalues["cuisine"] == "nepalese;indian"     )  or
+        ( keyvalues["cuisine"] == "indian;nepalese"     )  or
+        ( keyvalues["cuisine"] == "bangladeshi"         )  or
+        ( keyvalues["cuisine"] == "indian;bangladeshi"  )  or
+        ( keyvalues["cuisine"] == "bangladeshi;indian"  )  or
+        ( keyvalues["cuisine"] == "indian;curry"        )  or
+        ( keyvalues["cuisine"] == "indian;kebab"        )  or
+        ( keyvalues["cuisine"] == "indian;kebab;burger" )  or
+        ( keyvalues["cuisine"] == "indian;thai"         )  or
+        ( keyvalues["cuisine"] == "curry;indian"        )  or
+        ( keyvalues["cuisine"] == "pakistani"           )  or
+        ( keyvalues["cuisine"] == "indian;pakistani"    )  or
+        ( keyvalues["cuisine"] == "tandoori"            )  or
+        ( keyvalues["cuisine"] == "afghan"              )  or
+        ( keyvalues["cuisine"] == "sri_lankan"          )  or
+        ( keyvalues["cuisine"] == "punjabi"             )  or
+        ( keyvalues["cuisine"] == "indian;pizza"        ))) then
       keyvalues["amenity"] = "fast_food_indian"
    end
 
-   if ((  keyvalues["amenity"] == "fast_food" )  and
-       (( keyvalues["cuisine"] == "kebab"     )  or
-        ( keyvalues["cuisine"] == "turkish"   ))) then
+   if ((  keyvalues["amenity"] == "fast_food"             ) and
+       (( keyvalues["cuisine"] == "kebab"                )  or
+        ( keyvalues["cuisine"] == "kebab;pizza"          )  or
+        ( keyvalues["cuisine"] == "kebab;pizza;burger"   )  or
+        ( keyvalues["cuisine"] == "kebab;burger;pizza"   )  or
+        ( keyvalues["cuisine"] == "kebab;burger;chicken" )  or
+        ( keyvalues["cuisine"] == "kebab;burger"         )  or
+        ( keyvalues["cuisine"] == "kebab;fish_and_chips" )  or
+        ( keyvalues["cuisine"] == "turkish"              ))) then
       keyvalues["amenity"] = "fast_food_kebab"
    end
 
-   if ((  keyvalues["amenity"] == "fast_food"   )  and
-       (( keyvalues["cuisine"] == "pastie"     )   or
-        ( keyvalues["cuisine"] == "pasties"    )   or
-        ( keyvalues["cuisine"] == "pasty"      )   or
-        ( keyvalues["cuisine"] == "pie"        )   or
-        ( keyvalues["cuisine"] == "pies"       ))) then
+   if ((  keyvalues["amenity"] == "fast_food"      )  and
+       (( keyvalues["cuisine"] == "pastie"        )   or
+        ( keyvalues["cuisine"] == "pasties"       )   or
+        ( keyvalues["cuisine"] == "pasty"         )   or
+        ( keyvalues["cuisine"] == "cornish_pasty" )   or
+        ( keyvalues["cuisine"] == "pie"           )   or
+        ( keyvalues["cuisine"] == "pies"          ))) then
       keyvalues["amenity"] = "fast_food_pie"
    end
 
-   if ((  keyvalues["amenity"] == "fast_food"      )  and
-       (( keyvalues["cuisine"] == "pizza"         )   or
-        ( keyvalues["cuisine"] == "italian"       )   or
-        ( keyvalues["cuisine"] == "pizza;italian" )   or
-        ( keyvalues["cuisine"] == "italian;pizza" ))) then
+   if ((  keyvalues["amenity"] == "fast_food"                   )  and
+       (( keyvalues["cuisine"] == "pizza"                      )   or
+        ( keyvalues["cuisine"] == "italian"                    )   or
+        ( keyvalues["cuisine"] == "pasta"                      )   or
+        ( keyvalues["cuisine"] == "pizza;pasta"                )   or
+        ( keyvalues["cuisine"] == "pizza;italian"              )   or
+        ( keyvalues["cuisine"] == "italian;pizza"              )   or
+        ( keyvalues["cuisine"] == "pizza;kebab"                )   or
+        ( keyvalues["cuisine"] == "pizza;burger"               )   or
+        ( keyvalues["cuisine"] == "pizza;chicken"              )   or
+        ( keyvalues["cuisine"] == "pizza;indian"               )   or
+        ( keyvalues["cuisine"] == "pizza;fish_and_chips"       )   or
+        ( keyvalues["cuisine"] == "pizza;kebab;burger"         )   or
+        ( keyvalues["cuisine"] == "pizza;kebab;burger;chicken" )   or
+        ( keyvalues["cuisine"] == "pizza;kebab;chicken"        )   or
+        ( keyvalues["cuisine"] == "pizza;burger;kebab"         )   or
+        ( keyvalues["cuisine"] == "italian_pizza"              ))) then
       keyvalues["amenity"] = "fast_food_pizza"
    end
 
-   if (( keyvalues["amenity"] == "fast_food" )  and
-       ( keyvalues["cuisine"] == "sandwich"  )) then
+   if ((  keyvalues["amenity"] == "fast_food"             )  and
+       (( keyvalues["cuisine"] == "sandwich"             )   or
+        ( keyvalues["cuisine"] == "sandwich;bakery"      )   or
+        ( keyvalues["cuisine"] == "sandwiches"           )   or
+        ( keyvalues["cuisine"] == "sandwich;coffee_shop" ))) then
       keyvalues["amenity"] = "fast_food_sandwich"
    end
 
