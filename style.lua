@@ -1587,27 +1587,44 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Holy wells might be natural=spring or something else.
+-- Make sure that we set "amenity" to something other than "place_of_worship"
+-- ----------------------------------------------------------------------------
+   if ( keyvalues["place_of_worship"] == "holy_well" ) then
+      keyvalues["man_made"] = nil
+      if ( keyvalues["natural"] == "spring" ) then
+         keyvalues["amenity"] = "holy_spring"
+         keyvalues["natural"] = nil
+      else
+         keyvalues["amenity"] = "holy_well"
+         keyvalues["natural"] = nil
+      end
+   end
+
+-- ----------------------------------------------------------------------------
 -- Shops etc. with icons already - just add "unnamedcommercial" landuse.
 -- The exception is where landuse is set to something we want to keep.
 -- ----------------------------------------------------------------------------
-   if ((( keyvalues["shop"]       ~= nil                 )  or
-        ( keyvalues["amenity"]    ~= nil                 )  or
-        ( keyvalues["tourism"]    == "hotel"             )  or
-        ( keyvalues["tourism"]    == "guest_house"       )  or
-        ( keyvalues["tourism"]    == "attraction"        )  or
-        ( keyvalues["tourism"]    == "viewpoint"         )  or
-        ( keyvalues["tourism"]    == "museum"            )  or
-        ( keyvalues["tourism"]    == "hostel"            )  or
-        ( keyvalues["tourism"]    == "gallery"           )  or
-        ( keyvalues["tourism"]    == "apartment"         )  or
-        ( keyvalues["tourism"]    == "bed_and_breakfast" )  or
-        ( keyvalues["tourism"]    == "zoo"               )  or
-        ( keyvalues["tourism"]    == "motel"             )  or
-        ( keyvalues["tourism"]    == "theme_park"        )) and
-       (  keyvalues["landuse"]    ~= "meadow"             ) and
-       (  keyvalues["landuse"]    ~= "village_green"      ) and
-       (  keyvalues["landuse"]    ~= "cemetery"           ) and
-       (  keyvalues["leisure"]    ~= "garden"             )) then
+   if (((  keyvalues["shop"]       ~= nil                 )  or
+        (( keyvalues["amenity"]    ~= nil                )   and
+         ( keyvalues["amenity"]    ~= "holy_well"        )   and
+         ( keyvalues["amenity"]    ~= "holy_spring"      ))  or
+        (  keyvalues["tourism"]    == "hotel"             )  or
+        (  keyvalues["tourism"]    == "guest_house"       )  or
+        (  keyvalues["tourism"]    == "attraction"        )  or
+        (  keyvalues["tourism"]    == "viewpoint"         )  or
+        (  keyvalues["tourism"]    == "museum"            )  or
+        (  keyvalues["tourism"]    == "hostel"            )  or
+        (  keyvalues["tourism"]    == "gallery"           )  or
+        (  keyvalues["tourism"]    == "apartment"         )  or
+        (  keyvalues["tourism"]    == "bed_and_breakfast" )  or
+        (  keyvalues["tourism"]    == "zoo"               )  or
+        (  keyvalues["tourism"]    == "motel"             )  or
+        (  keyvalues["tourism"]    == "theme_park"        )) and
+       (   keyvalues["landuse"]    ~= "meadow"             ) and
+       (   keyvalues["landuse"]    ~= "village_green"      ) and
+       (   keyvalues["landuse"]    ~= "cemetery"           ) and
+       (   keyvalues["leisure"]    ~= "garden"             )) then
       keyvalues["landuse"] = "unnamedcommercial"
    end
 
