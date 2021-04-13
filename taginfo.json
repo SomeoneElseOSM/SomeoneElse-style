@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20210318T095000Z",
+  "data_updated": "20210414T002136Z",
   "project": {
     "name": "SomeoneElse-style rural pedestrian rendering",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -150,9 +150,9 @@
     { "key": "micropub", "description": "Pubs that self-identify as micropubs" },
     { "key": "military", "description": "Detect various military items" },
     { "key": "monitoring:air_quality", "description": "Name air quality boxes as such" },
-    { "key": "monitoring:rainfall", "description": "Show and name rain gauges etc." }
-    { "key": "monitoring:seismic_activity", "description": "Show and name seismic monitoring stations" }
-    { "key": "monitoring:sky_brightness", "description": "Show and name sky brightness monitors" }
+    { "key": "monitoring:rainfall", "description": "Show and name rain gauges etc." },
+    { "key": "monitoring:seismic_activity", "description": "Show and name seismic monitoring stations" },
+    { "key": "monitoring:sky_brightness", "description": "Show and name sky brightness monitors" },
     { "key": "monitoring:water_level", "description": "Render water level boxes as such" },
     { "key": "monitoring:weather", "description": "Render weather monitoring stations" },
     { "key": "munro", "description": "Detect big peaks (munros) and prominent peaks" },
@@ -252,7 +252,7 @@
     { "key": "waterway", "description": "Sluices and weirs and various water synonyms" },
     { "key": "waterway:abandoned", "description": "Handle disused version of tag" },
     { "key": "waterway:historic", "description": "Handle disused version of tag" },
-    { "key": "weather:radar", "description": "Include weather radar stations as radar towers" }
+    { "key": "weather:radar", "description": "Include weather radar stations as radar towers" },
     { "key": "wheelchair", "description": "Show the wheelchair-friendliness of pubs" },
     { "key": "width", "description": "Depending on context, go down a road class. Also changes path to track and vice versa." }
   ]
