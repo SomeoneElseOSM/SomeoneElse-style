@@ -1168,6 +1168,13 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Render bus-only service roads tagged as "highway=busway" as service roads.
+-- ----------------------------------------------------------------------------
+   if (keyvalues["highway"] == "busway") then
+      keyvalues["highway"] = "service"
+   end
+
+-- ----------------------------------------------------------------------------
 -- Remove admin boundaries from the map
 -- I do this because I'm simply not interested in admin boundaries and I'm 
 -- lucky enough to live in a place where I don't have to be.
