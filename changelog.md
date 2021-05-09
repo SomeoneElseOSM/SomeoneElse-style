@@ -3,6 +3,7 @@ This page describes changes made [here](https://github.com/SomeoneElseOSM/Someon
 
 ## As yet unreleased
 Render "highway=busway" as highway=service.
+Fix a bug where narrow "designation=public_footpath; trail_visibility=intermittent" paths were omitted.
 
 ## 29/03/2021
 Added support (following wiki vote) for historic=ogham_stone.
