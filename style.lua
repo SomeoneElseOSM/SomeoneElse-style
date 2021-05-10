@@ -4423,12 +4423,21 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
--- barrier=horse_jump is used almost exclusively on ways, so map to fence.
--- Also some other barriers.
+-- map "fences that are really hedges" as fences.
 -- ----------------------------------------------------------------------------
    if (( keyvalues["barrier"]    == "fence" ) and
        ( keyvalues["fence_type"] == "hedge" )) then
       keyvalues["barrier"] = "hedge"
+   end
+
+-- ----------------------------------------------------------------------------
+-- map "alleged shrubberies" as hedge areas.
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["natural"] == "shrubbery" ) and
+       ( keyvalues["barrier"] == nil         )) then
+      keyvalues["natural"] = nil
+      keyvalues["barrier"] = "hedge"
+      keyvalues["area"] = "yes"
    end
 
 -- ----------------------------------------------------------------------------
