@@ -6738,16 +6738,18 @@ function filter_tags_generic(keyvalues, nokeys)
       keyvalues["tourism"] = nil
    end
 
-   if (( keyvalues["man_made"]   == "tower"            ) and
-       ( keyvalues["tower:type"] == "aircraft_control" )) then
+   if (((  keyvalues["man_made"]   == "tower"             )   and
+        (( keyvalues["tower:type"] == "aircraft_control" )    or
+         ( keyvalues["service"]    == "aircraft_control" )))  or
+       (   keyvalues["aeroway"]    == "control_tower"      )) then
       keyvalues["man_made"] = "aircraftcontroltower"
       keyvalues["building"] = "yes"
       keyvalues["tourism"] = nil
    end
 
-   if ((( keyvalues["man_made"]   == "tower"              ) or
-        ( keyvalues["man_made"]   == "monitoring_station" )) and
-       (( keyvalues["tower:type"] == "radar"              ) or
+   if ((( keyvalues["man_made"]   == "tower"              )   or
+        ( keyvalues["man_made"]   == "monitoring_station" ))  and
+       (( keyvalues["tower:type"] == "radar"              )   or
         ( keyvalues["tower:type"] == "weather_radar"      ))) then
       keyvalues["man_made"] = "radartower"
       keyvalues["building"] = "yes"

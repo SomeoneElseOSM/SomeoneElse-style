@@ -1,6 +1,9 @@
 # Changes made to this rendering
 This page describes changes made [here](https://github.com/SomeoneElseOSM/SomeoneElse-style), [here](https://github.com/SomeoneElseOSM/SomeoneElse-style-legend) and [here](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT), and visible [here](//map.atownsend.org.uk/maps/map/map.html).
 
+## As yet unreleased.
+Render service=aircraft_control and aeroway=control_tower the same as tower:type=aircraft_control.
+
 ## 10/05/2021
 Render "highway=busway" as highway=service.
 Fix a bug where narrow "designation=public_footpath; trail_visibility=intermittent" paths were omitted.
