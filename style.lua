@@ -4686,6 +4686,11 @@ function filter_tags_generic(keyvalues, nokeys)
       keyvalues["historic"] = "runestone"
    end
 
+   if ( keyvalues["place_of_worship"]   == "mass_rock" ) then
+      keyvalues["amenity"] = nil
+      keyvalues["historic"] = "massrock"
+   end
+
    if ((  keyvalues["historic"]      == "memorial"  ) and
        (( keyvalues["memorial"]      == "plate"    )  or
         ( keyvalues["memorial:type"] == "plate"    ))) then
