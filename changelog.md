@@ -4,6 +4,7 @@ This page describes changes made [here](https://github.com/SomeoneElseOSM/Someon
 ## As yet unreleased.
 Render service=aircraft_control and aeroway=control_tower the same as tower:type=aircraft_control.
 Render "emergency=lifeguard;lifeguard=tower" as "emergency=lifeguard_tower".
+Render "chicken;grill" fast food as "chicken".
 
 ## 10/05/2021
 Render "highway=busway" as highway=service.
