@@ -6289,33 +6289,35 @@ function filter_tags_generic(keyvalues, nokeys)
 -- Similarly, various government offices.  Job Centres first.
 -- Add unnamedcommercial landuse to give non-building areas a background.
 -- ----------------------------------------------------------------------------
-   if (( keyvalues["amenity"]   == "job_centre"              ) or
-       ( keyvalues["amenity"]   == "jobcentre"               ) or
-       ( keyvalues["name"]      == "Jobcentre Plus"          ) or
-       ( keyvalues["name"]      == "JobCentre Plus"          ) or
-       ( keyvalues["name"]      == "Job Centre Plus"         ) or
-       ( keyvalues["office"]    == "government"              ) or
-       ( keyvalues["amenity"]   == "public_building"         ) or
-       ( keyvalues["office"]    == "administrative"          ) or
-       ( keyvalues["office"]    == "register"                ) or
-       ( keyvalues["amenity"]   == "register_office"         ) or
-       ( keyvalues["office"]    == "drainage_board"          ) or
-       ( keyvalues["office"]    == "council"                 ) or
-       ( keyvalues["amenity"]   == "courthouse"              ) or
-       ( keyvalues["amenity"]   == "townhall"                ) or
-       ( keyvalues["amenity"]   == "village_hall"            ) or
-       ( keyvalues["building"]  == "village_hall"            ) or
-       ( keyvalues["amenity"]   == "crematorium"             ) or
-       ( keyvalues["amenity"]   == "hall"                    ) or
-       ( keyvalues["amenity"]   == "fire_station"            ) or
-       ( keyvalues["emergency"] == "fire_station"            ) or
-       ( keyvalues["amenity"]   == "lifeboat_station"        ) or
-       ( keyvalues["emergency"] == "lifeboat_station"        ) or
-       ( keyvalues["emergency"] == "lifeboat_base"           ) or
-       ( keyvalues["emergency"] == "lifeguard_tower"         ) or
-       ( keyvalues["amenity"]   == "coast_guard"             ) or
-       ( keyvalues["emergency"] == "coast_guard"             ) or
-       ( keyvalues["amenity"]   == "archive"                 )) then
+   if ((  keyvalues["amenity"]   == "job_centre"              ) or
+       (  keyvalues["amenity"]   == "jobcentre"               ) or
+       (  keyvalues["name"]      == "Jobcentre Plus"          ) or
+       (  keyvalues["name"]      == "JobCentre Plus"          ) or
+       (  keyvalues["name"]      == "Job Centre Plus"         ) or
+       (  keyvalues["office"]    == "government"              ) or
+       (  keyvalues["amenity"]   == "public_building"         ) or
+       (  keyvalues["office"]    == "administrative"          ) or
+       (  keyvalues["office"]    == "register"                ) or
+       (  keyvalues["amenity"]   == "register_office"         ) or
+       (  keyvalues["office"]    == "drainage_board"          ) or
+       (  keyvalues["office"]    == "council"                 ) or
+       (  keyvalues["amenity"]   == "courthouse"              ) or
+       (  keyvalues["amenity"]   == "townhall"                ) or
+       (  keyvalues["amenity"]   == "village_hall"            ) or
+       (  keyvalues["building"]  == "village_hall"            ) or
+       (  keyvalues["amenity"]   == "crematorium"             ) or
+       (  keyvalues["amenity"]   == "hall"                    ) or
+       (  keyvalues["amenity"]   == "fire_station"            ) or
+       (  keyvalues["emergency"] == "fire_station"            ) or
+       (  keyvalues["amenity"]   == "lifeboat_station"        ) or
+       (  keyvalues["emergency"] == "lifeboat_station"        ) or
+       (  keyvalues["emergency"] == "lifeboat_base"           ) or
+       (  keyvalues["emergency"] == "lifeguard_tower"         ) or
+       (( keyvalues["emergency"] == "lifeguard"              )  and
+        ( keyvalues["lifeguard"] == "tower"                  )) or
+       (  keyvalues["amenity"]   == "coast_guard"             ) or
+       (  keyvalues["emergency"] == "coast_guard"             ) or
+       (  keyvalues["amenity"]   == "archive"                 )) then
       keyvalues["landuse"] = "unnamedcommercial"
       keyvalues["office"]  = "nonspecific"
       keyvalues["tourism"]  = nil
