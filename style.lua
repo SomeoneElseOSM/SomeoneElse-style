@@ -1462,9 +1462,15 @@ function filter_tags_generic(keyvalues, nokeys)
        (  keyvalues["building"]        == "telephone_box"   )  or
        (  keyvalues["historic"]        == "telephone"       )  or
        (  keyvalues["disused:amenity"] == "telephone"       )) then
-      if (( keyvalues["amenity"] == "telephone" )  or
-          ( keyvalues["amenity"] == "phone"     )) then
+      if ((( keyvalues["amenity"]   == "telephone"    )  or
+           ( keyvalues["amenity"]   == "phone"        )) and
+          (  keyvalues["emergency"] ~= "defibrillator" ) and
+          (  keyvalues["emergency"] ~= "phone"         ) and
+          (  keyvalues["tourism"]   ~= "information"   ) and
+          (  keyvalues["tourism"]   ~= "artwork"       )) then
          keyvalues["amenity"] = "boothtelephone"
+         keyvalues["tourism"] = nil
+         keyvalues["emergency"] = nil
       else
          if ( keyvalues["emergency"] == "defibrillator" ) then
              keyvalues["amenity"]   = "boothdefibrillator"
