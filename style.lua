@@ -1448,6 +1448,7 @@ function filter_tags_generic(keyvalues, nokeys)
         ( keyvalues["booth"]           ~= "KX410"          )   and
         ( keyvalues["booth"]           ~= "KX420"          )   and
         ( keyvalues["booth"]           ~= "KX520"          )   and
+        ( keyvalues["booth"]           ~= "oakham"         )   and
         ( keyvalues["booth"]           ~= "ST6"            ))  or
        (  keyvalues["booth"]           == "K2"              )  or
        (  keyvalues["booth"]           == "K4_Post_Office"  )  or
@@ -1468,7 +1469,33 @@ function filter_tags_generic(keyvalues, nokeys)
           (  keyvalues["emergency"] ~= "phone"         ) and
           (  keyvalues["tourism"]   ~= "information"   ) and
           (  keyvalues["tourism"]   ~= "artwork"       )) then
-         keyvalues["amenity"] = "boothtelephone"
+	 if ( keyvalues["colour"] == "black" ) then
+            keyvalues["amenity"] = "boothtelephoneblack"
+	 else
+	    if (( keyvalues["colour"] == "white" ) or
+	        ( keyvalues["colour"] == "cream" )) then
+               keyvalues["amenity"] = "boothtelephonewhite"
+	    else
+    	       if ( keyvalues["colour"] == "blue" ) then
+                  keyvalues["amenity"] = "boothtelephoneblue"
+	       else
+    	          if ( keyvalues["colour"] == "green" ) then
+                     keyvalues["amenity"] = "boothtelephonegreen"
+		  else
+    	             if ( keyvalues["colour"] == "grey" ) then
+                        keyvalues["amenity"] = "boothtelephonegrey"
+		     else
+    	                if ( keyvalues["colour"] == "gold" ) then
+                           keyvalues["amenity"] = "boothtelephonegold"
+			else
+                           keyvalues["amenity"] = "boothtelephonered"
+			end
+		     end
+		  end
+	       end
+	    end
+	 end
+	    
          keyvalues["tourism"] = nil
          keyvalues["emergency"] = nil
       else

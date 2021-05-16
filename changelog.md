@@ -6,7 +6,8 @@ Render service=aircraft_control and aeroway=control_tower the same as tower:type
 Render "emergency=lifeguard;lifeguard=tower" as "emergency=lifeguard_tower".
 Render "chicken;grill" fast food as "chicken".
 Added rendering for historic mass rocks.
-Where a phone box is allegedly something else, it probably isn't a phone box any more.  Render as something else.
+Where a phone box is allegedly something else, it probably isn't a phone box any more.  Render as that something else.
+Show black, white, blue, green, grey and gold phone boxes as the correct colour rather than red.
 
 ## 10/05/2021
 Render "highway=busway" as highway=service.
