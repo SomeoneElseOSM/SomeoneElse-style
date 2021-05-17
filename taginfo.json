@@ -133,7 +133,7 @@
     { "key": "leaf_type", "description": "Different sorts of trees" },
     { "key": "leisure", "description": "Leisure amenities shown in green" },
     { "key": "level", "description": "Show certain corridors as paths" },
-    { "key": "lifeguard", "description": "Used by one possible tagging of lifeguard towers" }.
+    { "key": "lifeguard", "description": "Used by one possible tagging of lifeguard towers" },
     { "key": "location", "description": "Show underground waterways as tunnels" },
     { "key": "lock", "description": "Display locks" },
     { "key": "locked", "description": "Display locked gates different to other ones" },
