@@ -42,6 +42,7 @@
     { "key": "canal_bridge_ref", "description": "qqq" }
     { "key": "Canmore_Site_Type", "description": "qqq" }
     { "key": "club", "description": "qqq" }
+    { "key": "colour", "description": "qqq" }
     { "key": "commercial", "description": "qqq" }
     { "key": "covered", "description": "qqq" }
     { "key": "craft", "description": "qqq" }
@@ -116,7 +117,9 @@
     { "key": "leaf_type", "description": "qqq" }
     { "key": "leisure", "description": "qqq" }
     { "key": "level", "description": "qqq" }
+    { "key": "lifeguard", "description": "qqq" }
     { "key": "location", "description": "qqq" }
+    { "key": "locked", "description": "qqq" }
     { "key": "lock_name", "description": "qqq" }
     { "key": "lock_ref", "description": "qqq" }
     { "key": "loc_ref", "description": "qqq" }
@@ -161,6 +164,7 @@
     { "key": "parking", "description": "qqq" }
     { "key": "pharmacy", "description": "qqq" }
     { "key": "place", "description": "qqq" }
+    { "key": "place_of_worship", "description": "qqq" }
     { "key": "plant:source", "description": "qqq" }
     { "key": "playground", "description": "qqq" }
     { "key": "pole", "description": "qqq" }

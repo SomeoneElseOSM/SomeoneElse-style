@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20210414T002136Z",
+  "data_updated": "20210516T003800Z",
   "project": {
     "name": "SomeoneElse-style rural pedestrian rendering",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -58,6 +58,7 @@
     { "key": "canal_bridge_ref", "description": "Used in place of ref on bridges" },
     { "key": "Canmore_Site_Type", "description": "Used to identify historic and Ogham stones" },
     { "key": "club", "description": "Detect some other keys, detect landuse" },
+    { "key": "colour", "description": "Show black, white, blue, green, grey and gold phone boxes as the correct colour rather than red" },
     { "key": "commercial", "description": "Obscure synonym for office" },
     { "key": "covered", "description": "Handle various synonyms for 'yes'" },
     { "key": "craft", "description": "Most common crafts rendered as either shop-style or office-style icons" },
@@ -132,6 +133,7 @@
     { "key": "leaf_type", "description": "Different sorts of trees" },
     { "key": "leisure", "description": "Leisure amenities shown in green" },
     { "key": "level", "description": "Show certain corridors as paths" },
+    { "key": "lifeguard", "description": "Used by one possible tagging of lifeguard towers" }.
     { "key": "location", "description": "Show underground waterways as tunnels" },
     { "key": "lock", "description": "Display locks" },
     { "key": "locked", "description": "Display locked gates different to other ones" },
@@ -182,6 +184,7 @@
     { "key": "parking", "description": "Detect e.g. bus depots" },
     { "key": "pharmacy", "description": "Render some non-pharmacy shops with pharmacies as pharmacies" },
     { "key": "place", "description": "Detect some obscure synonyms" },
+    { "key": "place_of_worship", "description": "Convert some places of worship to holy wells or mass rocks depending on other tags" },
     { "key": "plant:source", "description": "Detect wind turbines" },
     { "key": "playground", "description": "Explicitly render some playground features" },
     { "key": "pole", "description": "Detect maypoles" },
