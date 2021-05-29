@@ -6,6 +6,7 @@ Fix a bug where narrow "designation=public_bridleway; trail_visibility=intermitt
 Fix a bug where narrow paths without designations with trail_visibility=intermittent" paths were omitted.
 Added support for motorcycle_parking (including if mapped as a modifier for amenity=parking).
 Treat zero waste shops as other grocers.
+Added a few more combinations of ice_cream fast_food.
 
 ## 16/05/2021
 Render service=aircraft_control and aeroway=control_tower the same as tower:type=aircraft_control.

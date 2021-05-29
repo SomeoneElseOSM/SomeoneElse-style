@@ -5315,11 +5315,19 @@ function filter_tags_generic(keyvalues, nokeys)
       keyvalues["amenity"] = "fast_food_fish_and_chips"
    end
 
-   if ((( keyvalues["amenity"] == "fast_food"              )  and
-        ( keyvalues["cuisine"] == "ice_cream"             )   or
-        ( keyvalues["cuisine"] == "ice_cream;coffee_shop" ))  or
-       (  keyvalues["shop"]    == "ice_cream"              )  or
-       (  keyvalues["amenity"] == "ice_cream"              )) then
+   if ((( keyvalues["amenity"] == "fast_food"                        )  and
+        ( keyvalues["cuisine"] == "ice_cream"                       )   or
+        ( keyvalues["cuisine"] == "ice_cream;cake;coffee"           )   or
+        ( keyvalues["cuisine"] == "ice_cream;cake;sandwich"         )   or
+        ( keyvalues["cuisine"] == "ice_cream;coffee_shop"           )   or
+        ( keyvalues["cuisine"] == "ice_cream;coffee;waffle"         )   or
+        ( keyvalues["cuisine"] == "ice_cream;coffee;waffles;crepes" )   or
+        ( keyvalues["cuisine"] == "ice_cream;donut"                 )   or
+        ( keyvalues["cuisine"] == "ice_cream;pizza"                 )   or
+        ( keyvalues["cuisine"] == "ice_cream;sandwich"              )   or
+        ( keyvalues["cuisine"] == "ice_cream;tea;coffee"            ))  or
+       (  keyvalues["shop"]    == "ice_cream"                        )  or
+       (  keyvalues["amenity"] == "ice_cream"                        )) then
       keyvalues["amenity"] = "fast_food_ice_cream"
    end
 
