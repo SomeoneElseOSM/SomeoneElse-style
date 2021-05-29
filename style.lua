@@ -3189,6 +3189,15 @@ function filter_tags_generic(keyvalues, nokeys)
 
 
 -- ----------------------------------------------------------------------------
+-- Motorcycle parking
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["amenity"] == "parking"    )  and
+       ( keyvalues["parking"] == "motorcycle" )) then
+      keyvalues["amenity"] = "motorcycle_parking"
+   end
+
+
+-- ----------------------------------------------------------------------------
 -- Render amenity=layby as parking.
 -- highway=rest_area is used a lot in the UK for laybies, so map that over too.
 -- ----------------------------------------------------------------------------
@@ -3237,6 +3246,22 @@ function filter_tags_generic(keyvalues, nokeys)
         ( keyvalues["fee"]     ~= "free"            )  and
         ( keyvalues["fee"]     ~= "0"               ))) then
       keyvalues["amenity"] = "bicycle_parking_pay"
+   end
+
+
+-- ----------------------------------------------------------------------------
+-- Render for-pay morocycle_parking areas differently.
+-- ----------------------------------------------------------------------------
+   if ((  keyvalues["amenity"] == "motorcycle_parking"  ) and
+       (( keyvalues["fee"]     ~= nil               )  and
+        ( keyvalues["fee"]     ~= "no"              )  and
+        ( keyvalues["fee"]     ~= "No"              )  and
+        ( keyvalues["fee"]     ~= "none"            )  and
+        ( keyvalues["fee"]     ~= "None"            )  and
+        ( keyvalues["fee"]     ~= "Free"            )  and
+        ( keyvalues["fee"]     ~= "free"            )  and
+        ( keyvalues["fee"]     ~= "0"               ))) then
+      keyvalues["amenity"] = "motorcycle_parking_pay"
    end
 
 

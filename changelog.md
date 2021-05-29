@@ -1,6 +1,11 @@
 # Changes made to this rendering
 This page describes changes made [here](https://github.com/SomeoneElseOSM/SomeoneElse-style), [here](https://github.com/SomeoneElseOSM/SomeoneElse-style-legend) and [here](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT), and visible [here](//map.atownsend.org.uk/maps/map/map.html).
 
+## As yet unreleased
+Fix a bug where narrow "designation=public_bridleway; trail_visibility=intermittent" paths were omitted.
+Fix a bug where narrow paths without designations with trail_visibility=intermittent" paths were omitted.
+Added support for motorcycle_parking (including if mapped as a modifier for amenity=parking).
+
 ## 16/05/2021
 Render service=aircraft_control and aeroway=control_tower the same as tower:type=aircraft_control.
 Render "emergency=lifeguard;lifeguard=tower" as "emergency=lifeguard_tower".
