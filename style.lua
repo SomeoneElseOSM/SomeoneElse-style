@@ -7169,6 +7169,12 @@ function filter_tags_way (keyvalues, nokeys)
       keyvalues["barrier"] = "fence"
    end
 
+   if (( keyvalues["public_transport"] == "platform" ) and
+       ( keyvalues["highway"]          ~= "platform" ) and
+       ( keyvalues["railway"]          ~= "platform" )) then
+      keyvalues["highway"] = "platform"
+   end
+
 -- ----------------------------------------------------------------------------
 -- End of AJT way-only additions.
 -- ----------------------------------------------------------------------------
