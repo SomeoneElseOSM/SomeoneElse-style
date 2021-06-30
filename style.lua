@@ -4051,8 +4051,10 @@ function filter_tags_generic(keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
 -- Water monitoring stations
 -- ----------------------------------------------------------------------------
-   if (( keyvalues["man_made"]               == "monitoring_station" ) and
-       ( keyvalues["monitoring:water_level"] == "yes"                )) then
+   if ((  keyvalues["man_made"]                  == "monitoring_station"  ) and
+       (( keyvalues["monitoring:water_level"]    == "yes"                )  or
+        ( keyvalues["monitoring:water_flow"]     == "yes"                )  or
+        ( keyvalues["monitoring:water_velocity"] == "yes"                ))) then
       keyvalues["man_made"] = "monitoringwater"
    end
 
