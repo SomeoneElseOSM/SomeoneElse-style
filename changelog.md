@@ -4,6 +4,7 @@ This page describes changes made [here](https://github.com/SomeoneElseOSM/Someon
 ## As yet unreleased
 Render "public_transport=platform" as "highway=platform" if there is no "highway=platform" or "railway=platform" tag.
 Render a couple more water man_made=monitoring_station.
+Added protect_class=2 to protected areas shown as national parks.
 
 ## 31/05/2021
 Fix a bug where narrow "designation=public_bridleway; trail_visibility=intermittent" paths were omitted.
