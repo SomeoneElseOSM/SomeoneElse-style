@@ -1,10 +1,11 @@
 # Changes made to this rendering
 This page describes changes made [here](https://github.com/SomeoneElseOSM/SomeoneElse-style), [here](https://github.com/SomeoneElseOSM/SomeoneElse-style-legend) and [here](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT), and visible [here](//map.atownsend.org.uk/maps/map/map.html).
 
-## As yet unreleased
+## 31/07/2021
 Render "public_transport=platform" as "highway=platform" if there is no "highway=platform" or "railway=platform" tag.
 Render a couple more water man_made=monitoring_station.
 Added protect_class=2 to protected areas shown as national parks.
+Render castle walls as city walls.
 
 ## 31/05/2021
 Fix a bug where narrow "designation=public_bridleway; trail_visibility=intermittent" paths were omitted.

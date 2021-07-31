@@ -4613,6 +4613,14 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Render castle_wall as city_wall
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["barrier"]   == "wall"        )  and
+       ( keyvalues["wall"]      == "castle_wall" )) then
+      keyvalues["historic"] = "citywalls"
+   end
+
+-- ----------------------------------------------------------------------------
 -- Climbing features (boulders, stones, etc.)
 -- Deliberately only use this for outdoor features that would not otherwise
 -- display, so not cliffs etc.
