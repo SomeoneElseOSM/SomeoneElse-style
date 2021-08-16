@@ -818,6 +818,21 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- If motor_vehicle=no is set on a BOAT, it's probably a TRO, so display as
+-- an RBY instead
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["highway"]       == "boatwide"    )  and
+       ( keyvalues["motor_vehicle"] == "no"          )) then
+      keyvalues["highway"] = "rbywide"
+   end
+
+   if (( keyvalues["highway"]       == "boatnarrow"  )  and
+       ( keyvalues["motor_vehicle"] == "no"          )) then
+      keyvalues["highway"] = "rbynarrow"
+   end
+
+
+-- ----------------------------------------------------------------------------
 -- Try and detect genuinely closed public footpaths, bridleways (not just those
 -- closed to motor traffic etc.).  Examples with "access=no/private" are
 -- picked up below; we need to make sure that those that do not get an
