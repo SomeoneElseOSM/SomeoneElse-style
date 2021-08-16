@@ -1,6 +1,9 @@
 # Changes made to this rendering
 This page describes changes made [here](https://github.com/SomeoneElseOSM/SomeoneElse-style), [here](https://github.com/SomeoneElseOSM/SomeoneElse-style-legend) and [here](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT), and visible [here](//map.atownsend.org.uk/maps/map/map.html).
 
+## As yet unreleased
+Render various sidewalk:left and sidewalk:right combinations as sidewalk.
+
 ## 31/07/2021
 Render "public_transport=platform" as "highway=platform" if there is no "highway=platform" or "railway=platform" tag.
 Render a couple more water man_made=monitoring_station.
