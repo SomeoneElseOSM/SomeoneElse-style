@@ -7194,7 +7194,8 @@ function filter_tags_way (keyvalues, nokeys)
        ( keyvalues["barrier"] == "block"          ) or
        ( keyvalues["barrier"] == "haha"           ) or
        ( keyvalues["barrier"] == "ha-ha"          ) or
-       ( keyvalues["barrier"] == "jersey_barrier" )) then
+       ( keyvalues["barrier"] == "jersey_barrier" ) or
+       ( keyvalues["barrier"] == "retaining_wall" )) then
       keyvalues["barrier"] = "wall"
    end
 
