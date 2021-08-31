@@ -7226,6 +7226,12 @@ function filter_tags_way (keyvalues, nokeys)
       keyvalues["highway"] = "platform"
    end
 
+-- ----------------------------------------------------------------------------
+-- Map sinkholes mapped as ways to a non-area cliff.
+-- It's pot luck whether the triangles will appear on the right side of the
+-- cliff, but by chance most of the few UK ones do seem to be drawn the 
+-- "correct" way around.
+-- ----------------------------------------------------------------------------
    if ( keyvalues["natural"] == "sinkhole" ) then
       keyvalues["natural"] = "cliff"
       keyvalues["area"] = "no"

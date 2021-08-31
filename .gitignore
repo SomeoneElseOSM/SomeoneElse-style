@@ -1,2 +1,4 @@
 # Ignored files
 *~
+/.vs/SomeoneElse-style/v16/.suo
+/.vs/slnx.sqlite
