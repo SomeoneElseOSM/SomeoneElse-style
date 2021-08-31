@@ -7226,6 +7226,11 @@ function filter_tags_way (keyvalues, nokeys)
       keyvalues["highway"] = "platform"
    end
 
+   if ( keyvalues["natural"] == "sinkhole" ) then
+      keyvalues["natural"] = "cliff"
+      keyvalues["area"] = "no"
+   end
+
 -- ----------------------------------------------------------------------------
 -- End of AJT way-only additions.
 -- ----------------------------------------------------------------------------
