@@ -4836,11 +4836,38 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["shop"]   == "food"                ) or
        ( keyvalues["shop"]   == "grocery"             ) or
        ( keyvalues["shop"]   == "grocer"              ) or
-       ( keyvalues["shop"]   == "zero_waste"          ) or
-       ( keyvalues["shop"]   == "zero_waste_shop"     ) or
        ( keyvalues["shop"]   == "frozen_food"         ) or
        ( keyvalues["shop"]   == "convenience;alcohol" )) then
       keyvalues["shop"] = "convenience"
+   end
+
+-- ----------------------------------------------------------------------------
+-- Render "eco" shops with their own icons
+-- ----------------------------------------------------------------------------
+   if ((   keyvalues["shop"]               == "zero_waste"          ) or
+       (   keyvalues["shop"]               == "zero_waste_shop"     ) or
+       (   keyvalues["shop"]               == "eco-grocer"          ) or
+       (   keyvalues["shop"]               == "eco_refill"          ) or
+       (   keyvalues["shop"]               == "refill"              ) or
+       ((( keyvalues["shop"]               == "convenience"        )  or
+         ( keyvalues["shop"]               == "general"            )  or
+         ( keyvalues["shop"]               == "grocer"             )  or
+         ( keyvalues["shop"]               == "grocery"            )  or
+         ( keyvalues["shop"]               == "yes"                )  or
+         ( keyvalues["shop"]               == "food"               )) and
+        (( keyvalues["zero_waste"]         == "yes"                )  or
+         ( keyvalues["zero_waste"]         == "only"               )  or
+         ( keyvalues["bulk_purchase"]      == "yes"                )  or
+         ( keyvalues["reusable_packaging"] == "yes"                )))) then
+      keyvalues["shop"] = "ecoconv"
+   end
+
+   if ((  keyvalues["shop"]               == "supermarket"         ) and
+       (( keyvalues["zero_waste"]         == "yes"                )  or
+        ( keyvalues["zero_waste"]         == "only"               )  or
+        ( keyvalues["bulk_purchase"]      == "yes"                )  or
+        ( keyvalues["reusable_packaging"] == "yes"                ))) then
+      keyvalues["shop"] = "ecosupermarket"
    end
 
 -- ----------------------------------------------------------------------------
