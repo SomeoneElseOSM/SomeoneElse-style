@@ -5,7 +5,7 @@ This page describes changes made [here](https://github.com/SomeoneElseOSM/Someon
 Render various sidewalk:left and sidewalk:right combinations as sidewalk.
 If motor_vehicle=no is set on a BOAT, it's likely that a TRO is in place, so render as restricted byway instead.
 Render linear barrier=rendering_wall as wall.
-Render sinkholes that are mapped as ways as linear cliffs.
+Render sinkholes that are mapped as ways as linear cliffs, and sinkholes that are mapped as nodes with a separate icon.
 
 ## 31/07/2021
 Render "public_transport=platform" as "highway=platform" if there is no "highway=platform" or "railway=platform" tag.
