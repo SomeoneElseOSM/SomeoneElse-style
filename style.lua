@@ -4910,15 +4910,22 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
--- "electrical" consolidation
+-- "electronics"
 -- Looking at the tagging of shop=electronics, there's a fair crossover with 
--- electrical.  "security" is less of a fit here.
+-- electrical.
 -- ----------------------------------------------------------------------------
    if (( keyvalues["shop"]    == "electronics"             ) or
        ( keyvalues["craft"]   == "electronics_repair"      ) or
        ( keyvalues["shop"]    == "electronics_repair"      ) or
-       ( keyvalues["amenity"] == "electronics_repair"      ) or
-       ( keyvalues["shop"]    == "radiotechnics"           ) or
+       ( keyvalues["amenity"] == "electronics_repair"      )) then
+      keyvalues["shop"] = "electronics"
+   end
+
+-- ----------------------------------------------------------------------------
+-- "electrical" consolidation
+-- "security" is less of a fit here.
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["shop"]    == "radiotechnics"           ) or
        ( keyvalues["shop"]    == "appliance"               ) or
        ( keyvalues["shop"]    == "electrical_supplies"     ) or
        ( keyvalues["shop"]    == "electrical_repair"       ) or
