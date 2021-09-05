@@ -4,6 +4,7 @@ This page describes changes made [here](https://github.com/SomeoneElseOSM/Someon
 ## As yet unreleased
 Render shop=pastry as shop=bakery.
 Render shop=optician, shop=shoes, shop=electronics and shop=stationery with their own icons.
+Render shop=health_food with its own icon, and also zero-waste health food shops.
 Add an icon for various "soft" homeware shops ("hard" homeware shops still get the furniture icon).
 
 ## 02/09/2021

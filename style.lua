@@ -5939,8 +5939,19 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["shop"]       == "supplements"             ) or
        ( keyvalues["shop"]       == "nutrition_supplements"   ) or
        ( keyvalues["shop"]       == "dietary_supplements"     ) or
-       ( keyvalues["shop"]       == "alternative_medicine"    ) or
        ( keyvalues["name"]       == "Holland and Barrett"     ) or
+       ( keyvalues["shop"]       == "meditation"              )) then
+      if (( keyvalues["zero_waste"]         == "yes"                )  or
+          ( keyvalues["zero_waste"]         == "only"               )  or
+          ( keyvalues["bulk_purchase"]      == "yes"                )  or
+          ( keyvalues["reusable_packaging"] == "yes"                )) then
+         keyvalues["shop"] = "ecohealth_food"
+      else
+         keyvalues["shop"] = "health_food"
+      end
+   end
+
+   if (( keyvalues["shop"]       == "alternative_medicine"    ) or
        ( keyvalues["shop"]       == "massage"                 ) or
        ( keyvalues["shop"]       == "herbalist"               ) or
        ( keyvalues["shop"]       == "herbal_medicine"         ) or
