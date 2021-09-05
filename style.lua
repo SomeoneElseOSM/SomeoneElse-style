@@ -6290,22 +6290,25 @@ function filter_tags_generic(keyvalues, nokeys)
       keyvalues["shop"]    = "shopnonspecific"
    end
 
--- ----------------------------------------------------------------------------
--- opticians etc. - render as "nonspecific health".
--- Add unnamedcommercial landuse to give non-building areas a background.
---
--- Places that _sell_ mobility aids are in here.  Shopmobility handled
--- seperately.
--- ----------------------------------------------------------------------------
-   if (( keyvalues["shop"]        == "optician"                     ) or
-       ( keyvalues["amenity"]     == "optician"                     ) or
+   if (( keyvalues["amenity"]     == "optician"                     ) or
        ( keyvalues["craft"]       == "optician"                     ) or
        ( keyvalues["office"]      == "optician"                     ) or
        ( keyvalues["shop"]        == "opticians"                    ) or
        ( keyvalues["shop"]        == "optometrist"                  ) or
        ( keyvalues["amenity"]     == "optometrist"                  ) or
-       ( keyvalues["healthcare"]  == "optometrist"                  ) or
-       ( keyvalues["shop"]        == "hearing_aids"                 ) or
+       ( keyvalues["healthcare"]  == "optometrist"                  )) then
+      keyvalues["landuse"] = "unnamedcommercial"
+      keyvalues["shop"]    = "optician"
+   end
+
+-- ----------------------------------------------------------------------------
+-- chiropodists etc. - render as "nonspecific health".
+-- Add unnamedcommercial landuse to give non-building areas a background.
+--
+-- Places that _sell_ mobility aids are in here.  Shopmobility handled
+-- seperately.
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["shop"]        == "hearing_aids"                 ) or
        ( keyvalues["shop"]        == "medical_supply"               ) or
        ( keyvalues["shop"]        == "mobility"                     ) or
        ( keyvalues["shop"]        == "disability"                   ) or
