@@ -5724,6 +5724,10 @@ function filter_tags_generic(keyvalues, nokeys)
       keyvalues["shop"] = "farm"
    end
 
+   if ( keyvalues["shop"] == "pastry" ) then
+      keyvalues["shop"] = "bakery"
+   end
+
    if (( keyvalues["shop"]    == "camera"             ) or
        ( keyvalues["shop"]    == "photo_studio"       ) or
        ( keyvalues["office"]  == "photo_studio"       ) or
@@ -5773,7 +5777,6 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["shop"]    == "eggs"            ) or
        ( keyvalues["shop"]    == "catering"        ) or
        ( keyvalues["shop"]    == "patissery"       ) or
-       ( keyvalues["shop"]    == "pastry"          ) or
        ( keyvalues["shop"]    == "fishmonger"      ) or
        ( keyvalues["shop"]    == "spice"           ) or
        ( keyvalues["shop"]    == "nuts"            )) then
