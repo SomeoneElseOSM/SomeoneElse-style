@@ -5742,6 +5742,121 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Various "homeware" shops.  The icon for these is a generic "room interior".
+-- Add unnamedcommercial landuse to give non-building areas a background.
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["shop"]   == "floor"                       ) or
+       ( keyvalues["shop"]   == "flooring"                    ) or
+       ( keyvalues["shop"]   == "floors"                      ) or
+       ( keyvalues["shop"]   == "floor_covering"              ) or
+       ( keyvalues["shop"]   == "homeware"                    ) or
+       ( keyvalues["shop"]   == "homewares"                   ) or
+       ( keyvalues["shop"]   == "home"                        ) or
+       ( keyvalues["shop"]   == "carpet"                      ) or
+       ( keyvalues["shop"]   == "carpets"                     ) or
+       ( keyvalues["shop"]   == "carpet;bed"                  ) or
+       ( keyvalues["shop"]   == "interior_decoration"         ) or
+       ( keyvalues["shop"]   == "household"                   ) or
+       ( keyvalues["shop"]   == "houseware"                   ) or
+       ( keyvalues["shop"]   == "bathroom_furnishing"         ) or
+       ( keyvalues["shop"]   == "paint"                       ) or
+       ( keyvalues["shop"]   == "curtain"                     ) or
+       ( keyvalues["shop"]   == "furnishings"                 ) or
+       ( keyvalues["shop"]   == "furnishing"                  ) or
+       ( keyvalues["shop"]   == "fireplace"                   ) or
+       ( keyvalues["shop"]   == "fireplaces"                  ) or
+       ( keyvalues["shop"]   == "lighting"                    ) or
+       ( keyvalues["shop"]   == "blinds"                      ) or
+       ( keyvalues["shop"]   == "window_blind"                ) or
+       ( keyvalues["shop"]   == "kitchenware"                 ) or
+       ( keyvalues["shop"]   == "interior_design"             ) or
+       ( keyvalues["shop"]   == "interior"                    ) or
+       ( keyvalues["shop"]   == "interiors"                   ) or
+       ( keyvalues["shop"]   == "stoves"                      ) or
+       ( keyvalues["shop"]   == "stove"                       ) or
+       ( keyvalues["shop"]   == "lamps"                       ) or
+       ( keyvalues["shop"]   == "tiles"                       ) or
+       ( keyvalues["shop"]   == "tile"                        ) or
+       ( keyvalues["shop"]   == "ceramics"                    ) or
+       ( keyvalues["shop"]   == "windows"                     ) or
+       ( keyvalues["shop"]   == "window"                      ) or
+       ( keyvalues["craft"]  == "window_construction"         ) or
+       ( keyvalues["shop"]   == "frame"                       ) or
+       ( keyvalues["shop"]   == "framing"                     ) or
+       ( keyvalues["shop"]   == "picture_framing"             ) or
+       ( keyvalues["shop"]   == "picture_frames"              ) or
+       ( keyvalues["shop"]   == "picture_framer"              ) or
+       ( keyvalues["craft"]  == "framing"                     ) or
+       ( keyvalues["shop"]   == "bedding"                     ) or
+       ( keyvalues["shop"]   == "cookware"                    ) or
+       ( keyvalues["shop"]   == "glassware"                   ) or
+       ( keyvalues["shop"]   == "cookery"                     )) then
+      keyvalues["landuse"] = "unnamedcommercial"
+      keyvalues["shop"] = "homeware"
+   end
+
+-- ----------------------------------------------------------------------------
+-- Other "homeware-like" shops.  These, e.g. chandlery, that are a bit of a
+-- stretch get the shopnonspecific icon.
+-- Add unnamedcommercial landuse to give non-building areas a background.
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["shop"]   == "upholsterer"                 ) or
+       ( keyvalues["shop"]   == "chair"                       ) or
+       ( keyvalues["shop"]   == "luggage"                     ) or
+       ( keyvalues["shop"]   == "clock"                       ) or
+       ( keyvalues["shop"]   == "clocks"                      ) or
+       ( keyvalues["shop"]   == "home_improvement"            ) or
+       ( keyvalues["shop"]   == "decorating"                  ) or
+       ( keyvalues["shop"]   == "bed;carpet"                  ) or
+       ( keyvalues["shop"]   == "carpet; bed"                 ) or
+       ( keyvalues["shop"]   == "country"                     ) or
+       ( keyvalues["shop"]   == "country_store"               ) or
+       ( keyvalues["shop"]   == "equestrian"                  ) or
+       ( keyvalues["shop"]   == "kitchen"                     ) or
+       ( keyvalues["shop"]   == "kitchen;bathroom"            ) or
+       ( keyvalues["shop"]   == "kitchen;bathroom_furnishing" ) or
+       ( keyvalues["shop"]   == "kitchens"                    ) or
+       ( keyvalues["shop"]   == "bedroom"                     ) or
+       ( keyvalues["shop"]   == "bathroom"                    ) or
+       ( keyvalues["shop"]   == "glaziery"                    ) or
+       ( keyvalues["craft"]  == "glaziery"                    ) or
+       ( keyvalues["shop"]   == "glazier"                     ) or
+       ( keyvalues["craft"]  == "glazier"                     ) or
+       ( keyvalues["shop"]   == "glazing"                     ) or
+       ( keyvalues["shop"]   == "stone"                       ) or
+       ( keyvalues["shop"]   == "brewing"                     ) or
+       ( keyvalues["shop"]   == "gates"                       ) or
+       ( keyvalues["shop"]   == "sheds"                       ) or
+       ( keyvalues["shop"]   == "shed"                        ) or
+       ( keyvalues["shop"]   == "ironmonger"                  ) or
+       ( keyvalues["shop"]   == "furnace"                     ) or
+       ( keyvalues["shop"]   == "plumbing"                    ) or
+       ( keyvalues["craft"]  == "plumber"                     ) or
+       ( keyvalues["craft"]  == "carpenter"                   ) or
+       ( keyvalues["craft"]  == "decorator"                   ) or
+       ( keyvalues["shop"]   == "bed"                         ) or
+       ( keyvalues["shop"]   == "beds"                        ) or
+       ( keyvalues["shop"]   == "mattress"                    ) or
+       ( keyvalues["shop"]   == "waterbed"                    ) or
+       ( keyvalues["shop"]   == "glass"                       ) or
+       ( keyvalues["shop"]   == "garage"                      ) or
+       ( keyvalues["shop"]   == "conservatory"                ) or
+       ( keyvalues["shop"]   == "conservatories"              ) or
+       ( keyvalues["shop"]   == "bathrooms"                   ) or
+       ( keyvalues["shop"]   == "swimming_pool"               ) or
+       ( keyvalues["shop"]   == "fitted_furniture"            ) or
+       ( keyvalues["shop"]   == "upholstery"                  ) or
+       ( keyvalues["shop"]   == "chandler"                    ) or
+       ( keyvalues["shop"]   == "chandlers"                   ) or
+       ( keyvalues["shop"]   == "chandlery"                   ) or
+       ( keyvalues["shop"]   == "ship_chandler"               ) or
+       ( keyvalues["craft"]  == "boatbuilder"                 ) or
+       ( keyvalues["shop"]   == "saddlery"                    )) then
+      keyvalues["landuse"] = "unnamedcommercial"
+      keyvalues["shop"] = "furniture"
+   end
+
+-- ----------------------------------------------------------------------------
 -- Various photo, camera, copy and print shops
 -- Difficult to do an icon for.
 -- ----------------------------------------------------------------------------
@@ -5784,113 +5899,6 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["shop"]    == "spice"           ) or
        ( keyvalues["shop"]    == "nuts"            )) then
       keyvalues["shop"] = "shopnonspecific"
-   end
-
--- ----------------------------------------------------------------------------
--- Various "homeware" shops.  Some of these, e.g. chandlery, are a bit of a 
--- stretch.
--- Add unnamedcommercial landuse to give non-building areas a background.
--- ----------------------------------------------------------------------------
-   if (( keyvalues["shop"]   == "floor"                       ) or
-       ( keyvalues["shop"]   == "flooring"                    ) or
-       ( keyvalues["shop"]   == "floors"                      ) or
-       ( keyvalues["shop"]   == "floor_covering"              ) or
-       ( keyvalues["shop"]   == "homeware"                    ) or
-       ( keyvalues["shop"]   == "homewares"                   ) or
-       ( keyvalues["shop"]   == "home"                        ) or
-       ( keyvalues["shop"]   == "upholsterer"                 ) or
-       ( keyvalues["shop"]   == "chair"                       ) or
-       ( keyvalues["shop"]   == "luggage"                     ) or
-       ( keyvalues["shop"]   == "clock"                       ) or
-       ( keyvalues["shop"]   == "clocks"                      ) or
-       ( keyvalues["shop"]   == "home_improvement"            ) or
-       ( keyvalues["shop"]   == "interior_decoration"         ) or
-       ( keyvalues["shop"]   == "decorating"                  ) or
-       ( keyvalues["shop"]   == "interior_design"             ) or
-       ( keyvalues["shop"]   == "interior"                    ) or
-       ( keyvalues["shop"]   == "interiors"                   ) or
-       ( keyvalues["shop"]   == "carpet"                      ) or
-       ( keyvalues["shop"]   == "carpets"                     ) or
-       ( keyvalues["shop"]   == "carpet;bed"                  ) or
-       ( keyvalues["shop"]   == "bed;carpet"                  ) or
-       ( keyvalues["shop"]   == "carpet; bed"                 ) or
-       ( keyvalues["shop"]   == "country"                     ) or
-       ( keyvalues["shop"]   == "country_store"               ) or
-       ( keyvalues["shop"]   == "equestrian"                  ) or
-       ( keyvalues["shop"]   == "kitchen"                     ) or
-       ( keyvalues["shop"]   == "kitchen;bathroom"            ) or
-       ( keyvalues["shop"]   == "kitchen;bathroom_furnishing" ) or
-       ( keyvalues["shop"]   == "kitchens"                    ) or
-       ( keyvalues["shop"]   == "stoves"                      ) or
-       ( keyvalues["shop"]   == "stove"                       ) or
-       ( keyvalues["shop"]   == "lamps"                       ) or
-       ( keyvalues["shop"]   == "bedroom"                     ) or
-       ( keyvalues["shop"]   == "houseware"                   ) or
-       ( keyvalues["shop"]   == "bathroom_furnishing"         ) or
-       ( keyvalues["shop"]   == "household"                   ) or
-       ( keyvalues["shop"]   == "bathroom"                    ) or
-       ( keyvalues["shop"]   == "glaziery"                    ) or
-       ( keyvalues["craft"]  == "glaziery"                    ) or
-       ( keyvalues["shop"]   == "glazier"                     ) or
-       ( keyvalues["craft"]  == "glazier"                     ) or
-       ( keyvalues["shop"]   == "glazing"                     ) or
-       ( keyvalues["shop"]   == "tiles"                       ) or
-       ( keyvalues["shop"]   == "tile"                        ) or
-       ( keyvalues["shop"]   == "stone"                       ) or
-       ( keyvalues["shop"]   == "ceramics"                    ) or
-       ( keyvalues["shop"]   == "paint"                       ) or
-       ( keyvalues["shop"]   == "brewing"                     ) or
-       ( keyvalues["shop"]   == "lighting"                    ) or
-       ( keyvalues["shop"]   == "windows"                     ) or
-       ( keyvalues["shop"]   == "window"                      ) or
-       ( keyvalues["craft"]  == "window_construction"         ) or
-       ( keyvalues["shop"]   == "gates"                       ) or
-       ( keyvalues["shop"]   == "sheds"                       ) or
-       ( keyvalues["shop"]   == "shed"                        ) or
-       ( keyvalues["shop"]   == "ironmonger"                  ) or
-       ( keyvalues["shop"]   == "fireplace"                   ) or
-       ( keyvalues["shop"]   == "fireplaces"                  ) or
-       ( keyvalues["shop"]   == "furnace"                     ) or
-       ( keyvalues["shop"]   == "plumbing"                    ) or
-       ( keyvalues["craft"]  == "plumber"                     ) or
-       ( keyvalues["craft"]  == "carpenter"                   ) or
-       ( keyvalues["craft"]  == "decorator"                   ) or
-       ( keyvalues["shop"]   == "blinds"                      ) or
-       ( keyvalues["shop"]   == "window_blind"                ) or
-       ( keyvalues["shop"]   == "bed"                         ) or
-       ( keyvalues["shop"]   == "beds"                        ) or
-       ( keyvalues["shop"]   == "mattress"                    ) or
-       ( keyvalues["shop"]   == "waterbed"                    ) or
-       ( keyvalues["shop"]   == "frame"                       ) or
-       ( keyvalues["shop"]   == "framing"                     ) or
-       ( keyvalues["shop"]   == "picture_framing"             ) or
-       ( keyvalues["shop"]   == "picture_frames"              ) or
-       ( keyvalues["shop"]   == "picture_framer"              ) or
-       ( keyvalues["craft"]  == "framing"                     ) or
-       ( keyvalues["shop"]   == "curtain"                     ) or
-       ( keyvalues["shop"]   == "furnishings"                 ) or
-       ( keyvalues["shop"]   == "furnishing"                  ) or
-       ( keyvalues["shop"]   == "bedding"                     ) or
-       ( keyvalues["shop"]   == "glass"                       ) or
-       ( keyvalues["shop"]   == "garage"                      ) or
-       ( keyvalues["shop"]   == "conservatory"                ) or
-       ( keyvalues["shop"]   == "conservatories"              ) or
-       ( keyvalues["shop"]   == "bathrooms"                   ) or
-       ( keyvalues["shop"]   == "swimming_pool"               ) or
-       ( keyvalues["shop"]   == "fitted_furniture"            ) or
-       ( keyvalues["shop"]   == "kitchenware"                 ) or
-       ( keyvalues["shop"]   == "cookware"                    ) or
-       ( keyvalues["shop"]   == "glassware"                   ) or
-       ( keyvalues["shop"]   == "cookery"                     ) or
-       ( keyvalues["shop"]   == "upholstery"                  ) or
-       ( keyvalues["shop"]   == "chandler"                    ) or
-       ( keyvalues["shop"]   == "chandlers"                   ) or
-       ( keyvalues["shop"]   == "chandlery"                   ) or
-       ( keyvalues["shop"]   == "ship_chandler"               ) or
-       ( keyvalues["craft"]  == "boatbuilder"                 ) or
-       ( keyvalues["shop"]   == "saddlery"                    )) then
-      keyvalues["landuse"] = "unnamedcommercial"
-      keyvalues["shop"] = "furniture"
    end
 
 -- ----------------------------------------------------------------------------

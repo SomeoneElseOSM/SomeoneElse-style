@@ -4,6 +4,7 @@ This page describes changes made [here](https://github.com/SomeoneElseOSM/Someon
 ## As yet unreleased
 Render shop=pastry as shop=bakery.
 Render shop=optician and shop=shoes with their own icons.
+Add an icon for various "soft" homeware shops ("hard" homeware shops still get the furniture icon).
 
 ## 02/09/2021
 Render various sidewalk:left and sidewalk:right combinations as sidewalk.
