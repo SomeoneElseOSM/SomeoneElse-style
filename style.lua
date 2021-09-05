@@ -4881,6 +4881,12 @@ function filter_tags_generic(keyvalues, nokeys)
       keyvalues["shop"] = "discount"
    end
 
+   if (( keyvalues["shop"] == "shoes"        ) or
+       ( keyvalues["shop"] == "shoe"         ) or
+       ( keyvalues["shop"] == "footwear"     )) then
+      keyvalues["shop"] = "shoes"
+   end
+
 -- ----------------------------------------------------------------------------
 -- "clothes" consolidation.  "baby_goods" is here because there will surely
 -- be some clothes there!
@@ -4891,9 +4897,6 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["shop"] == "bridal"       ) or
        ( keyvalues["shop"] == "wedding"      ) or
        ( keyvalues["shop"] == "lingerie"     ) or
-       ( keyvalues["shop"] == "shoes"        ) or
-       ( keyvalues["shop"] == "shoe"         ) or
-       ( keyvalues["shop"] == "footwear"     ) or
        ( keyvalues["shop"] == "baby_goods"   ) or
        ( keyvalues["shop"] == "baby"         ) or
        ( keyvalues["shop"] == "dance"        ) or

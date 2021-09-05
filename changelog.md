@@ -3,7 +3,7 @@ This page describes changes made [here](https://github.com/SomeoneElseOSM/Someon
 
 ## As yet unreleased
 Render shop=pastry as shop=bakery.
-Render shop=optician as its own icon.
+Render shop=optician and shop=shoes with their own icons.
 
 ## 02/09/2021
 Render various sidewalk:left and sidewalk:right combinations as sidewalk.
