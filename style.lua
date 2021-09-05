@@ -5967,15 +5967,17 @@ function filter_tags_generic(keyvalues, nokeys)
 
 -- ----------------------------------------------------------------------------
 -- books and stationery
--- the name is usually characteristic
+-- the name is often characteristic
 -- ----------------------------------------------------------------------------
-   if (( keyvalues["shop"]   == "stationery"      ) or
-       ( keyvalues["shop"]   == "comics"          ) or
+   if (( keyvalues["shop"]   == "comics"          ) or
        ( keyvalues["shop"]   == "comic"           ) or
        ( keyvalues["shop"]   == "anime"           ) or
-       ( keyvalues["shop"]   == "maps"            ) or
-       ( keyvalues["shop"]   == "office_supplies" )) then
+       ( keyvalues["shop"]   == "maps"            )) then
       keyvalues["shop"] = "books"
+   end
+
+   if ( keyvalues["shop"]   == "office_supplies" ) then
+      keyvalues["shop"] = "stationery"
    end
 
 -- ----------------------------------------------------------------------------
