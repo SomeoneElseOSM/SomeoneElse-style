@@ -4977,13 +4977,14 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
--- "department_store" consolidation.  "department_store" is chosen for 
--- catalogue due to the range of items for sale rather than the physical 
--- similarity.
+-- "department_store" consolidation.
 -- ----------------------------------------------------------------------------
-   if (( keyvalues["shop"] == "catalogue"  ) or
-       ( keyvalues["shop"] == "department" )) then
+   if ( keyvalues["shop"] == "department" ) then
       keyvalues["shop"] = "department_store"
+   end
+
+   if ( keyvalues["shop"] == "outpost"  ) then
+      keyvalues["shop"] = "catalogue"
    end
 
    if ( keyvalues["shop"] == "flower"  ) then
@@ -5939,8 +5940,7 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["shop"]       == "supplements"             ) or
        ( keyvalues["shop"]       == "nutrition_supplements"   ) or
        ( keyvalues["shop"]       == "dietary_supplements"     ) or
-       ( keyvalues["name"]       == "Holland and Barrett"     ) or
-       ( keyvalues["shop"]       == "meditation"              )) then
+       ( keyvalues["name"]       == "Holland and Barrett"     )) then
       if (( keyvalues["zero_waste"]         == "yes"                )  or
           ( keyvalues["zero_waste"]         == "only"               )  or
           ( keyvalues["bulk_purchase"]      == "yes"                )  or
