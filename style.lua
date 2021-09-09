@@ -6121,6 +6121,13 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Musical Instrument
+-- ----------------------------------------------------------------------------
+   if ( keyvalues["shop"]    == "piano" ) then
+      keyvalues["shop"] = "musical_instrument"
+   end
+
+-- ----------------------------------------------------------------------------
 -- Nonspecific car and related shops.
 -- Add unnamedcommercial landuse to give non-building areas a background.
 -- ----------------------------------------------------------------------------
@@ -6201,8 +6208,6 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["shop"]    == "collector"               ) or
        ( keyvalues["shop"]    == "collectables"            ) or
        ( keyvalues["shop"]    == "coins"                   ) or
-       ( keyvalues["shop"]    == "musical_instrument"      ) or
-       ( keyvalues["shop"]    == "piano"                   ) or
        ( keyvalues["shop"]    == "video"                   ) or
        ( keyvalues["shop"]    == "audio_video"             ) or
        ( keyvalues["shop"]    == "erotic"                  ) or
