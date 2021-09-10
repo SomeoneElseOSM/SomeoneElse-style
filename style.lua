@@ -6128,6 +6128,15 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Locksmith
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["craft"]   == "locksmith"               ) or
+       ( keyvalues["shop"]    == "locksmiths"              )) then
+      keyvalues["landuse"] = "unnamedcommercial"
+      keyvalues["shop"] = "locksmith"
+   end
+
+-- ----------------------------------------------------------------------------
 -- Nonspecific car and related shops.
 -- Add unnamedcommercial landuse to give non-building areas a background.
 -- ----------------------------------------------------------------------------
@@ -6212,9 +6221,6 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["shop"]    == "audio_video"             ) or
        ( keyvalues["shop"]    == "erotic"                  ) or
        ( keyvalues["shop"]    == "adult"                   ) or
-       ( keyvalues["shop"]    == "locksmith"               ) or
-       ( keyvalues["craft"]   == "locksmith"               ) or
-       ( keyvalues["shop"]    == "locksmiths"              ) or
        ( keyvalues["shop"]    == "service"                 ) or
        ( keyvalues["shop"]    == "tobacco"                 ) or
        ( keyvalues["shop"]    == "tobacconist"             ) or
