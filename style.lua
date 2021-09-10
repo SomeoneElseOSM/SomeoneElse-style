@@ -6132,8 +6132,17 @@ function filter_tags_generic(keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
    if (( keyvalues["craft"]   == "locksmith"               ) or
        ( keyvalues["shop"]    == "locksmiths"              )) then
-      keyvalues["landuse"] = "unnamedcommercial"
       keyvalues["shop"] = "locksmith"
+   end
+
+-- ----------------------------------------------------------------------------
+-- Storage Rental
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["amenity"] == "storage"              ) or
+       ( keyvalues["amenity"] == "self_storage"         ) or
+       ( keyvalues["amenity"] == "storage_rental"       ) or
+       ( keyvalues["shop"]    == "storage"              )) then
+      keyvalues["shop"] = "storage_rental"
    end
 
 -- ----------------------------------------------------------------------------
@@ -6267,11 +6276,6 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["office"]  == "tutoring"                ) or
        ( keyvalues["shop"]    == "ironing"                 ) or
        ( keyvalues["amenity"] == "stripclub"               ) or
-       ( keyvalues["amenity"] == "self_storage"            ) or
-       ( keyvalues["amenity"] == "storage"                 ) or
-       ( keyvalues["shop"]    == "storage"                 ) or
-       ( keyvalues["shop"]    == "storage_rental"          ) or
-       ( keyvalues["amenity"] == "storage_rental"          ) or
        ( keyvalues["amenity"] == "courier"                 )) then
       keyvalues["landuse"] = "unnamedcommercial"
       keyvalues["shop"] = "shopnonspecific"
