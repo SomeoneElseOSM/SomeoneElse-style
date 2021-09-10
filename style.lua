@@ -6189,7 +6189,7 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["craft"]   == "shoe_repair"                        ) or
        ( keyvalues["craft"]   == "key_cutter;shoe_repair"             )) then
       keyvalues["landuse"] = "unnamedcommercial"
-      keyvalues["shop"]    = "shopnonspecific"
+      keyvalues["shop"]    = "shoe_repair_etc"
    end
 
 -- ----------------------------------------------------------------------------
