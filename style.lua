@@ -4998,6 +4998,7 @@ function filter_tags_generic(keyvalues, nokeys)
    if (( keyvalues["amenity"]   == "atm"              ) or
        ( keyvalues["amenity"]   == "fuel"             ) or
        ( keyvalues["amenity"]   == "charging_station" ) or
+       ( keyvalues["amenity"]   == "scooter_rental"   ) or
        ( keyvalues["amenity"]   == "vending_machine"  ) or
        ( keyvalues["amenity"]   == "pub_yyyyydy"      ) or
        ( keyvalues["amenity"]   == "pub_yyyyydn"      ) or
