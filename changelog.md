@@ -6,6 +6,7 @@ Rearrange legend to split the "shops" line.
 Render shop=seafood as its own icon.
 Include amenity=scooter_rental in the list of objects for which operator is counted as name.
 Don't include disused:amenity=grave_yard as "vacant" if still landuse=cemetery.
+Render shop=coffee etc. with its own icon.
 
 ## 12/09/2021
 Render shop=pastry as shop=bakery.

@@ -5870,6 +5870,16 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Shops that sell coffee etc.
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["shop"]    == "beverages"       ) or
+       ( keyvalues["shop"]    == "coffee"          ) or
+       ( keyvalues["shop"]    == "tea"             )) then
+      keyvalues["shop"] = "coffee"
+   end
+
+
+-- ----------------------------------------------------------------------------
 -- Various photo, camera, copy and print shops
 -- Difficult to do an icon for.
 -- ----------------------------------------------------------------------------
@@ -5894,9 +5904,6 @@ function filter_tags_generic(keyvalues, nokeys)
    if (( keyvalues["shop"]    == "cake"            ) or
        ( keyvalues["shop"]    == "cakes"           ) or
        ( keyvalues["shop"]    == "specialist_food" ) or
-       ( keyvalues["shop"]    == "beverages"       ) or
-       ( keyvalues["shop"]    == "coffee"          ) or
-       ( keyvalues["shop"]    == "tea"             ) or
        ( keyvalues["shop"]    == "chocolate"       ) or
        ( keyvalues["shop"]    == "milk"            ) or
        ( keyvalues["shop"]    == "cheese"          ) or
