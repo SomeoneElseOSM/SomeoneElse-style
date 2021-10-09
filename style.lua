@@ -7075,6 +7075,17 @@ function filter_tags_generic(keyvalues, nokeys)
       keyvalues["amenity"] = nil
    end
 
+
+-- ----------------------------------------------------------------------------
+-- A special case to check before the "vacant shops" check below - potentially
+-- remove disused:amenity=graveyard
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["disused:amenity"] == "grave_yard" ) and
+       ( keyvalues["landuse"]         == "cemetery"   )) then
+      keyvalues["disused:amenity"] = nil
+   end
+   
+
 -- ----------------------------------------------------------------------------
 -- Names for vacant shops
 -- ----------------------------------------------------------------------------
