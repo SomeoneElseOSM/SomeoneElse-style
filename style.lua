@@ -5880,21 +5880,24 @@ function filter_tags_generic(keyvalues, nokeys)
 
 
 -- ----------------------------------------------------------------------------
+-- Copyshops
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["shop"]    == "printing"       ) or
+       ( keyvalues["shop"]    == "print"          ) or
+       ( keyvalues["shop"]    == "printer"        )) then
+      keyvalues["shop"] = "copyshop"
+      keyvalues["amenity"] = nil
+      keyvalues["craft"] = nil
+      keyvalues["office"] = nil
+   end
+
+-- ----------------------------------------------------------------------------
 -- Various photo, camera, copy and print shops
 -- Difficult to do an icon for.
 -- ----------------------------------------------------------------------------
-   if (( keyvalues["shop"]    == "copyshop"           ) or
-       ( keyvalues["office"]  == "design"             ) or
-       ( keyvalues["shop"]    == "printing"           ) or
-       ( keyvalues["shop"]    == "printer"            ) or
-       ( keyvalues["shop"]    == "print"              ) or
-       ( keyvalues["shop"]    == "printers"           ) or
-       ( keyvalues["craft"]   == "printer"            ) or
-       ( keyvalues["shop"]    == "printer_cartridges" ) or
+   if (( keyvalues["shop"]    == "printer_cartridges" ) or
        ( keyvalues["shop"]    == "printer_ink"        ) or
-       ( keyvalues["shop"]    == "ink_cartridge"      ) or
-       ( keyvalues["amenity"] == "printer"            ) or
-       ( keyvalues["office"]  == "printer"            )) then
+       ( keyvalues["shop"]    == "ink_cartridge"      )) then
       keyvalues["shop"] = "shopnonspecific"
    end
 
@@ -6482,6 +6485,18 @@ function filter_tags_generic(keyvalues, nokeys)
       keyvalues["office"]  = "craftbrewery"
       keyvalues["craft"]  = nil
       keyvalues["tourism"]  = nil
+   end
+
+-- ----------------------------------------------------------------------------
+-- Various "printer" offices
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["shop"]       == "printers"          ) or
+       ( keyvalues["amenity"]    == "printer"           ) or
+       ( keyvalues["craft"]      == "printer"           ) or
+       ( keyvalues["office"]     == "printer"           ) or
+       ( keyvalues["office"]     == "design"            )) then
+      keyvalues["landuse"] = "unnamedcommercial"
+      keyvalues["office"]  = "nonspecific"
    end
 
 -- ----------------------------------------------------------------------------
