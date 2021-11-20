@@ -3,6 +3,7 @@ This page describes changes made [here](https://github.com/SomeoneElseOSM/Someon
 
 ## As yet unreleased
 Change start node of legend from 9100000000 to 29100000000 as OSM has now caught up: https://www.openstreetmap.org/node/9100000000 .
+Don't show long distance path relations without name or colour.
 
 ## 10/10/2021
 Rearrange legend to split the "shops" line.
