@@ -3826,6 +3826,16 @@ function filter_tags_generic(keyvalues, nokeys)
       end
    end
 
+-- ----------------------------------------------------------------------------
+-- If something is tagged as both an archaelogical site and a place, lose the
+-- place tag.
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["historic"] == "archaeological_site" )  and
+       ( keyvalues["place"]    ~= nil                   )) then
+      keyvalues["place"] = nil
+   end
+
+
    if (( keyvalues["historic"] == "archaeological_site" )  and
        ( keyvalues["landuse"]  == nil                   )) then
       if ( keyvalues["megalith_type"] == "standing_stone" ) then
