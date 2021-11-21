@@ -5,7 +5,7 @@ This page describes changes made [here](https://github.com/SomeoneElseOSM/Someon
 Change start node of legend from 9100000000 to 29100000000 as OSM has now caught up: https://www.openstreetmap.org/node/9100000000 .
 Don't show long distance path relations without name or colour.
 If something is tagged as both an archaelogical site and a place, lose the place tag.
-Don't display building names for amenities if the building tag is empty.
+Don't display building names for amenities if the building tag is empty, or if a name for an amenity is already displayed.
 
 ## 10/10/2021
 Rearrange legend to split the "shops" line.
