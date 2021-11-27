@@ -1,7 +1,7 @@
 # Changes made to this rendering
 This page describes changes made [here](https://github.com/SomeoneElseOSM/SomeoneElse-style), [here](https://github.com/SomeoneElseOSM/SomeoneElse-style-legend) and [here](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT), and visible [here](//map.atownsend.org.uk/maps/map/map.html).
 
-## 21/10/2021
+## 21/11/2021
 Change start node of legend from 9100000000 to 29100000000 as OSM has now caught up: https://www.openstreetmap.org/node/9100000000 .
 Don't show long distance path relations without name or colour.
 If something is tagged as both an archaelogical site and a place, lose the place tag.
