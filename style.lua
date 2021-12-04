@@ -5003,11 +5003,14 @@ function filter_tags_generic(keyvalues, nokeys)
 
 -- ----------------------------------------------------------------------------
 -- man_made=flagpole
+-- Non-MOD ones are passed straight through to be rendered.  MOD ones are
+-- changed to flagpole_red so that they can be rendered differently.
 -- ----------------------------------------------------------------------------
    if ((  keyvalues["man_made"] == "flagpole"             )  and
        (( keyvalues["operator"] == "Ministry of Defence" )   or
         ( keyvalues["operator"] == "MOD"                 ))) then
       keyvalues["man_made"] = "flagpole_red"
+      keyvalues["operator"] = nil
    end
    
 -- ----------------------------------------------------------------------------
