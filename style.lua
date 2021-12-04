@@ -5002,6 +5002,15 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- man_made=flagpole
+-- ----------------------------------------------------------------------------
+   if ((  keyvalues["man_made"] == "flagpole"             )  and
+       (( keyvalues["operator"] == "Ministry of Defence" )   or
+        ( keyvalues["operator"] == "MOD"                 ))) then
+      keyvalues["man_made"] = "flagpole_red"
+   end
+   
+-- ----------------------------------------------------------------------------
 -- If no name use brand or operator on amenity=fuel, among others.  
 -- If there is brand or operator, use that with name.
 -- ----------------------------------------------------------------------------
