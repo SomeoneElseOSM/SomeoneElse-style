@@ -364,8 +364,10 @@ function filter_tags_generic(keyvalues, nokeys)
 -- Rationalise the various trail_visibility values
 -- Also treat "overgrown=yes" as intermittent.  A discussion on talk-gb was
 -- largely inconclusive, but "overgrown" is the "most renderable" way to deal
--- with things like this.  A later suggesting "foot:physical=no" is also 
+-- with things like this.  A later suggestion "foot:physical=no" is also 
 -- included.
+-- "informal=yes" is less common in the UK but tends to crop up where land
+-- managers worry abour "official" paths (e.g. the US).
 -- ----------------------------------------------------------------------------
    if (( keyvalues["trail_visibility"] == "no"       )  or
        ( keyvalues["trail_visibility"] == "none"     )  or
@@ -378,9 +380,11 @@ function filter_tags_generic(keyvalues, nokeys)
       keyvalues["trail_visibility"] = "bad"
    end
 
-   if (( keyvalues["trail_visibility"] == "intermittent" )  or
-       ( keyvalues["trail_visibility"] == "intermediate" )  or
-       ( keyvalues["overgrown"]        == "yes"          )) then
+   if ((  keyvalues["trail_visibility"] == "intermittent"  ) or
+       (  keyvalues["trail_visibility"] == "intermediate"  ) or
+       (  keyvalues["overgrown"]        == "yes"           ) or
+       (( keyvalues["trail_visibility"] == nil            )  and
+        ( keyvalues["informal"]         == "yes"          ))) then
       keyvalues["trail_visibility"] = "intermediate"
    end
 
@@ -6545,6 +6549,7 @@ function filter_tags_generic(keyvalues, nokeys)
        (  keyvalues["name"]      == "JobCentre Plus"          ) or
        (  keyvalues["name"]      == "Job Centre Plus"         ) or
        (  keyvalues["office"]    == "government"              ) or
+       (  keyvalues["office"]    == "police"                  ) or
        (  keyvalues["amenity"]   == "public_building"         ) or
        (  keyvalues["office"]    == "administrative"          ) or
        (  keyvalues["office"]    == "register"                ) or
