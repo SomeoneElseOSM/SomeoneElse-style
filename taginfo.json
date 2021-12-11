@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20211212T183600Z",
+  "data_updated": "20211212T184700Z",
   "project": {
     "name": "SomeoneElse-style rural pedestrian rendering",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -10,9 +10,10 @@
     "contact_email": "SomeoneElse-style-taginfo@atownsend.org.uk"
   },
   "tags": [
-    { "key": "abandoned", "description": "Obscure tagging used to say if a canal has been abandoned" },
-    { "key": "abandoned:amenity", "description": "Obscure tagging used for former telephones or pubs" },
-    { "key": "abandoned:waterway", "description": "Former canals" },
+    { "key": "abandoned", "value": "waterway=canal", "description": "Obscure tagging used to say if a canal has been abandoned" },
+    { "key": "abandoned:amenity", "value": "pub", "description": "Obscure tagging used for former pubs" },
+    { "key": "abandoned:amenity", "value": "telephone", "description": "Obscure tagging used for former telephones" },
+    { "key": "abandoned:waterway", "value": "canal", "description": "Former canals" },
     { "key": "access", "description": "Many access values and synonyms handled" },
     { "key": "access:bicycle", "description": "Obscure synonym for bicycle" },
     { "key": "access:covid19", "description": "Detects pubs closed due to covid" },
