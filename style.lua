@@ -3878,7 +3878,7 @@ function filter_tags_generic(keyvalues, nokeys)
 
    if (( keyvalues["historic"] == "chimney" ) or
        ( keyvalues["man_made"] == "chimney" )) then
-      if (( tonumber(keyvalues["height"]) or 0 ) >  100 ) then
+      if (( tonumber(keyvalues["height"]) or 0 ) >  50 ) then
          keyvalues["man_made"] = "bigchimney"
       else
          keyvalues["man_made"] = "chimney"

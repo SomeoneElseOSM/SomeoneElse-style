@@ -6,6 +6,7 @@ Render flagpoles - normal ones in black; MOD ones in red, show name, and add to 
 Resolve an issue whereby maypole names weren't displayed at some zoom levels.
 Add "office=police" to the list of offices that are rendered.
 Render "informal=yes" the same as "trail_visibility=intermediate".
+Changed the "big chimney" threshold to 50m.
 
 ## 21/11/2021
 Change start node of legend from 9100000000 to 29100000000 as OSM has now caught up: https://www.openstreetmap.org/node/9100000000 .
