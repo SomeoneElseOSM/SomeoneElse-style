@@ -39,6 +39,7 @@
     { "key": "building:part", "description": "qqq" }
     { "key": "building:ruins", "description": "qqq" }
     { "key": "building:type", "description": "qqq" }
+    { "key": "bulk_purchase", "description": "qqq" }
     { "key": "canal_bridge_ref", "description": "qqq" }
     { "key": "Canmore_Site_Type", "description": "qqq" }
     { "key": "club", "description": "qqq" }
@@ -105,6 +106,7 @@
     { "key": "iata", "description": "qqq" }
     { "key": "indoor", "description": "qqq" }
     { "key": "industrial", "description": "qqq" }
+    { "key": "informal", "description": "qqq" }
     { "key": "information", "description": "qqq" }
     { "key": "intermittent", "description": "qqq" }
     { "key": "junction", "description": "qqq" }
@@ -138,8 +140,11 @@
     { "key": "monitoring:rainfall", "description": "qqq" }
     { "key": "monitoring:seismic_activity", "description": "qqq" }
     { "key": "monitoring:sky_brightness", "description": "qqq" }
+    { "key": "monitoring:water_flow", "description": "qqq" }
     { "key": "monitoring:water_level", "description": "qqq" }
+    { "key": "monitoring:water_velocity", "description": "qqq" }
     { "key": "monitoring:weather", "description": "qqq" }
+    { "key": "motor_vehicle", "description": "qqq" }
     { "key": "munro", "description": "qqq" }
     { "key": "name", "description": "qqq" }
     { "key": "name:en", "description": "qqq" }
@@ -176,6 +181,7 @@
     { "key": "prow_ref", "description": "qqq" }
     { "key": "prow:ref", "description": "qqq" }
     { "key": "pub", "description": "qqq" }
+    { "key": "public_transport", "description": "qqq" }
     { "key": "railway", "description": "qqq" }
     { "key": "railway:preserved", "description": "qqq" }
     { "key": "razed:amenity", "description": "qqq" }
@@ -186,6 +192,7 @@
     { "key": "religion", "description": "qqq" }
     { "key": "rescue_equipment", "description": "qqq" }
     { "key": "residential", "description": "qqq" }
+    { "key": "reusable_packaging", "description": "qqq" }
     { "key": "room", "description": "qqq" }
     { "key": "route", "description": "qqq" }
     { "key": "ruined:building", "description": "qqq" }
@@ -198,6 +205,9 @@
     { "key": "shop", "description": "qqq" }
     { "key": "shoulder", "description": "qqq" }
     { "key": "sidewalk", "description": "qqq" }
+    { "key": "sidewalk:both", "description": "qqq" }
+    { "key": "sidewalk:left", "description": "qqq" }
+    { "key": "sidewalk:right", "description": "qqq" }
     { "key": "site_type", "description": "qqq" }
     { "key": "species", "description": "qqq" }
     { "key": "sport", "description": "qqq" }
@@ -224,6 +234,7 @@
     { "key": "vending", "description": "qqq" }
     { "key": "vending_machine", "description": "qqq" }
     { "key": "verge", "description": "qqq" }
+    { "key": "wall", "description": "qqq" }
     { "key": "was:aeroway", "description": "qqq" }
     { "key": "was:amenity", "description": "qqq" }
     { "key": "was:landuse", "description": "qqq" }
@@ -238,3 +249,4 @@
     { "key": "weather:radar", "description": "qqq" }
     { "key": "wheelchair", "description": "qqq" }
     { "key": "width", "description": "qqq" }
+    { "key": "zero_waste", "description": "qqq" }
