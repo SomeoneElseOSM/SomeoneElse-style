@@ -1715,11 +1715,7 @@ function filter_tags_generic(keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
 -- Things without icons - add "commercial" landuse to include name too.
 -- ----------------------------------------------------------------------------
-   if (( keyvalues["man_made"]     == "telephone_exchange"       ) or
-       ( keyvalues["amenity"]      == "telephone_exchange"       ) or
-       ( keyvalues["building"]     == "telephone_exchange"       ) or
-       ( keyvalues["utility"]      == "telephone_exchange"       ) or
-       ( keyvalues["amenity"]      == "ferry_terminal"           ) or
+   if (( keyvalues["amenity"]      == "ferry_terminal"           ) or
        ( keyvalues["landuse"]      == "ferry_terminal"           ) or
        ( keyvalues["highway"]      == "services"                 ) or
        ( keyvalues["landuse"]      == "churchyard"               ) or
@@ -6547,6 +6543,24 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Telephone Exchanges
+-- ----------------------------------------------------------------------------
+   if ((   keyvalues["man_made"]   == "telephone_exchange"  )  or
+       (   keyvalues["amenity"]    == "telephone_exchange"  )  or
+       (   keyvalues["office"]     == "telephone_exchange"  )  or
+       ((  keyvalues["building"]   == "telephone_exchange" )   and
+        (( keyvalues["amenity"]    == nil                 )    and
+         ( keyvalues["man_made"]   == nil                 )    and
+         ( keyvalues["office"]     == nil                 ))   or
+        (  keyvalues["telecom"]    ~= nil                  ))) then
+      if ( keyvalues["name"] == nil ) then
+         keyvalues["name"]  = "Telephone Exchange"
+      end
+
+      keyvalues["office"]  = "nonspecific"
+   end
+
+-- ----------------------------------------------------------------------------
 -- If we know that something is a building=office, and it has a name, but is
 -- not already known as an amenity, office or shop, add office=nonspecific.
 -- ----------------------------------------------------------------------------
@@ -6697,7 +6711,6 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["office"]      == "hvac"                    ) or
        ( keyvalues["shop"]        == "heating"                 ) or
        ( keyvalues["office"]      == "laundry"                 ) or
-       ( keyvalues["amenity"]     == "telephone_exchange"      ) or
        ( keyvalues["amenity"]     == "coworking_space"         ) or
        ( keyvalues["office"]      == "coworking"               ) or
        ( keyvalues["office"]      == "coworking_space"         ) or
