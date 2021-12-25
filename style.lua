@@ -1715,9 +1715,7 @@ function filter_tags_generic(keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
 -- Things without icons - add "commercial" landuse to include name too.
 -- ----------------------------------------------------------------------------
-   if (( keyvalues["amenity"]      == "ferry_terminal"           ) or
-       ( keyvalues["landuse"]      == "ferry_terminal"           ) or
-       ( keyvalues["highway"]      == "services"                 ) or
+   if (( keyvalues["highway"]      == "services"                 ) or
        ( keyvalues["landuse"]      == "churchyard"               ) or
        ( keyvalues["landuse"]      == "religious"                ) or
        ( keyvalues["leisure"]      == "racetrack"                ) or
