@@ -1713,10 +1713,20 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- highway=services is translated to commercial landuse - any overlaid parking
+-- can then be seen.
+--
+-- highway=rest_area is translated lower down to amenity=parking.
+-- ----------------------------------------------------------------------------
+   if (  keyvalues["highway"]      == "services"                  ) then
+      keyvalues["highway"] = nil
+      keyvalues["landuse"] = "commercial"
+   end
+
+-- ----------------------------------------------------------------------------
 -- Things without icons - add "commercial" landuse to include name too.
 -- ----------------------------------------------------------------------------
-   if (( keyvalues["highway"]      == "services"                 ) or
-       ( keyvalues["landuse"]      == "churchyard"               ) or
+   if (( keyvalues["landuse"]      == "churchyard"               ) or
        ( keyvalues["landuse"]      == "religious"                ) or
        ( keyvalues["leisure"]      == "racetrack"                ) or
        ( keyvalues["club"]         == "sport"                    ) or

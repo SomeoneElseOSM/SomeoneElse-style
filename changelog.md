@@ -12,7 +12,8 @@ Display "location=overgroundground" pipelines as bridges.
 Display gantries as pipeline bridges.
 Move the handling of some offices from "building" and "landuse" to the "office" tag.
 Handle telephone exchanges as offices rather than just landuse.
-Remove ferry terminals from landuse=commercial handling.
+Remove ferry terminals and from landuse=commercial handling.
+Don't treat highway=services as rest_area but instead as landuse=commercial.
 
 ## 21/11/2021
 Change start node of legend from 9100000000 to 29100000000 as OSM has now caught up: https://www.openstreetmap.org/node/9100000000 .
