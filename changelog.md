@@ -9,6 +9,7 @@ Render "informal=yes" the same as "trail_visibility=intermediate".
 Changed the "big chimney" threshold to 50m so that a couple of very prominent York chimneys pass the threshold.
 Remove a couple of no-longer-existing-in-this-form maps from SomeoneElse-map.
 Display "location=overgroundground" pipelines as bridges.
+Display gantries as pipeline bridges.
 
 ## 21/11/2021
 Change start node of legend from 9100000000 to 29100000000 as OSM has now caught up: https://www.openstreetmap.org/node/9100000000 .

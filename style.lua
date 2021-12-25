@@ -3640,6 +3640,15 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Display gantries as pipeline bridges
+-- ----------------------------------------------------------------------------
+   if ( keyvalues["man_made"] == "gantry" ) then
+      keyvalues["man_made"] = nil
+      keyvalues["waterway"] = "pipeline"
+      keyvalues["bridge"] = "yes"
+   end
+
+-- ----------------------------------------------------------------------------
 -- Supermarkets as normal buildings
 -- In the version of OSM-carto that I use this with, Supermarkets would 
 -- otherwise display as pink, which does not show up over pink retail landuse.
