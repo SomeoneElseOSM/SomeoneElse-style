@@ -3610,6 +3610,9 @@ function filter_tags_generic(keyvalues, nokeys)
 
 -- ----------------------------------------------------------------------------
 -- Display "location=underground" waterways as tunnels.
+--
+-- There are currently no "location=overground" waterways that are not
+-- also "man_made=pipeline".
 -- ----------------------------------------------------------------------------
    if (( keyvalues["waterway"] ~= nil           )  and
        ( keyvalues["location"] == "underground" ) and
@@ -3618,7 +3621,18 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
--- Display pipelines
+-- Display "location=overgroundground" pipelines as bridges
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["man_made"] == "pipeline"   ) and
+       ( keyvalues["location"] == "overground" ) and
+       ( keyvalues["bridge"]   == nil          )) then
+      keyvalues["bridge"] = "yes"
+   end
+
+-- ----------------------------------------------------------------------------
+-- Display pipelines as waterways
+--
+-- There is explicit bridge handling for waterways.
 -- ----------------------------------------------------------------------------
    if ( keyvalues["man_made"] == "pipeline" ) then
       keyvalues["man_made"] = nil
