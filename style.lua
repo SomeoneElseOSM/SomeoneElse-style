@@ -1715,9 +1715,7 @@ function filter_tags_generic(keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
 -- Things without icons - add "commercial" landuse to include name too.
 -- ----------------------------------------------------------------------------
-   if (( keyvalues["building"]     == "commercial"               ) or
-       ( keyvalues["building"]     == "office"                   ) or
-       ( keyvalues["man_made"]     == "telephone_exchange"       ) or
+   if (( keyvalues["man_made"]     == "telephone_exchange"       ) or
        ( keyvalues["amenity"]      == "telephone_exchange"       ) or
        ( keyvalues["building"]     == "telephone_exchange"       ) or
        ( keyvalues["utility"]      == "telephone_exchange"       ) or
@@ -6549,6 +6547,18 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- If we know that something is a building=office, and it has a name, but is
+-- not already known as an amenity, office or shop, add office=nonspecific.
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["building"] == "office" ) and
+       ( keyvalues["name"]     ~= nil      ) and
+       ( keyvalues["amenity"]  == nil      ) and
+       ( keyvalues["office"]   == nil      ) and
+       ( keyvalues["shop"]     == nil      )) then
+      keyvalues["office"]  = "nonspecific"
+   end
+
+-- ----------------------------------------------------------------------------
 -- Offices that we don't know the type of.  
 -- Add unnamedcommercial landuse to give non-building areas a background.
 -- ----------------------------------------------------------------------------
@@ -6580,6 +6590,7 @@ function filter_tags_generic(keyvalues, nokeys)
        (  keyvalues["office"]    == "drainage_board"          ) or
        (  keyvalues["office"]    == "council"                 ) or
        (  keyvalues["amenity"]   == "courthouse"              ) or
+       (  keyvalues["office"]    == "justice"                 ) or
        (  keyvalues["amenity"]   == "townhall"                ) or
        (  keyvalues["amenity"]   == "village_hall"            ) or
        (  keyvalues["building"]  == "village_hall"            ) or
@@ -6633,6 +6644,7 @@ function filter_tags_generic(keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
    if (( keyvalues["office"]      == "it"                      ) or
        ( keyvalues["office"]      == "computer"                ) or
+       ( keyvalues["office"]      == "consulting"              ) or
        ( keyvalues["office"]      == "lawyer"                  ) or
        ( keyvalues["shop"]        == "lawyer"                  ) or
        ( keyvalues["amenity"]     == "lawyer"                  ) or
