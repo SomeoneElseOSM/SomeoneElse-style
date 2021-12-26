@@ -1730,7 +1730,6 @@ function filter_tags_generic(keyvalues, nokeys)
    if (( keyvalues["landuse"]      == "churchyard"               ) or
        ( keyvalues["landuse"]      == "religious"                ) or
        ( keyvalues["leisure"]      == "racetrack"                ) or
-       ( keyvalues["club"]         == "sport"                    ) or
        ( keyvalues["landuse"]      == "aquaculture"              ) or
        ( keyvalues["landuse"]      == "fish_farm"                ) or
        ( keyvalues["landuse"]      == "fishfarm"                 ) or
@@ -6794,7 +6793,7 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
--- A counple of odd sports taggings:
+-- A couple of odd sports taggings:
 -- ----------------------------------------------------------------------------
    if ( keyvalues["leisure"] == "sport" ) then
       if ( keyvalues["sport"]   == "golf"  ) then
