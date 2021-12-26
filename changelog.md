@@ -11,7 +11,7 @@ Remove a couple of no-longer-existing-in-this-form maps from SomeoneElse-map.
 Display "location=overgroundground" pipelines as bridges.
 Display gantries as pipeline bridges.
 Move the handling of some offices from "building" and "landuse" to the "office" tag.
-Handle telephone exchanges as offices rather than just landuse.
+Handle telephone exchanges and some other offices as offices rather than just landuse.
 Remove ferry terminals and from landuse=commercial handling.
 Don't treat highway=services as rest_area but instead as landuse=commercial.
 

@@ -1724,15 +1724,13 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
--- Things without icons - add "commercial" landuse to include name too.
+-- Things without icons - add "commercial" landuse to include a name 
+-- (if one exists) too.
 -- ----------------------------------------------------------------------------
    if (( keyvalues["landuse"]      == "churchyard"               ) or
        ( keyvalues["landuse"]      == "religious"                ) or
        ( keyvalues["leisure"]      == "racetrack"                ) or
        ( keyvalues["club"]         == "sport"                    ) or
-       ( keyvalues["office"]       == "courier"                  ) or
-       ( keyvalues["office"]       == "advertising"              ) or
-       ( keyvalues["amenity"]      == "post_depot"               ) or
        ( keyvalues["landuse"]      == "aquaculture"              ) or
        ( keyvalues["landuse"]      == "fish_farm"                ) or
        ( keyvalues["landuse"]      == "fishfarm"                 ) or
@@ -6667,6 +6665,9 @@ function filter_tags_generic(keyvalues, nokeys)
    if (( keyvalues["office"]      == "it"                      ) or
        ( keyvalues["office"]      == "computer"                ) or
        ( keyvalues["office"]      == "consulting"              ) or
+       ( keyvalues["office"]      == "courier"                 ) or
+       ( keyvalues["office"]      == "advertising"             ) or
+       ( keyvalues["amenity"]     == "post_depot"              ) or
        ( keyvalues["office"]      == "lawyer"                  ) or
        ( keyvalues["shop"]        == "lawyer"                  ) or
        ( keyvalues["amenity"]     == "lawyer"                  ) or
