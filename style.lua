@@ -5666,6 +5666,10 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["shop"]         == "spa"               ) or
        ( keyvalues["amenity"]      == "spa"               ) or
        ( keyvalues["tourism"]      == "spa"               ) or
+       (( keyvalues["club"]    == "health"               )  and
+        ( keyvalues["leisure"] == nil                    )  and
+        ( keyvalues["amenity"] == nil                    )  and
+        ( keyvalues["name"]    ~= nil                    )) or
        ( keyvalues["shop"]         == "salon"             ) or
        ( keyvalues["shop"]         == "nails"             ) or
        ( keyvalues["shop"]         == "nailbar"           ) or
@@ -6837,10 +6841,62 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["name"]     == "Scout Hall"           ) or
        ( keyvalues["amenity"]  == "scouts"               ) or
        ( keyvalues["club"]     == "scout"                ) or
+       ( keyvalues["club"]     == "scouts"               ) or
        ( keyvalues["club"]     == "sport"                ) or
-       (( keyvalues["club"]    == "yes"                 )  and
-        ( keyvalues["leisure"] == nil                   )  and
-        ( keyvalues["name"]    ~= nil                   )) or
+       ((( keyvalues["club"]    == "yes"               )   or
+         ( keyvalues["club"]    == "social"            )   or
+         ( keyvalues["club"]    == "freemasonry"       )   or
+         ( keyvalues["club"]    == "sailing"           )   or
+         ( keyvalues["club"]    == "youth"             )   or
+         ( keyvalues["club"]    == "politics"          )   or
+         ( keyvalues["club"]    == "veterans"          )   or
+         ( keyvalues["club"]    == "social_club"       )   or
+         ( keyvalues["club"]    == "music"             )   or
+         ( keyvalues["club"]    == "working_men"       )   or
+         ( keyvalues["club"]    == "yachting"          )   or
+         ( keyvalues["club"]    == "tennis"            )   or
+         ( keyvalues["club"]    == "army_cadets"       )   or
+         ( keyvalues["club"]    == "sports"            )   or
+         ( keyvalues["club"]    == "rowing"            )   or
+         ( keyvalues["club"]    == "football"          )   or
+         ( keyvalues["club"]    == "snooker"           )   or
+         ( keyvalues["club"]    == "fishing"           )   or
+         ( keyvalues["club"]    == "sea_scout"         )   or
+         ( keyvalues["club"]    == "conservative"      )   or
+         ( keyvalues["club"]    == "golf"              )   or
+         ( keyvalues["club"]    == "cadet"             )   or
+         ( keyvalues["club"]    == "youth_movement"    )   or
+         ( keyvalues["club"]    == "bridge"            )   or
+         ( keyvalues["club"]    == "bowling"           )   or
+         ( keyvalues["club"]    == "air_cadets"        )   or
+         ( keyvalues["club"]    == "scuba_diving"      )   or
+         ( keyvalues["club"]    == "model_railway"     )   or
+         ( keyvalues["club"]    == "boat"              )   or
+         ( keyvalues["club"]    == "card_games"        )   or
+         ( keyvalues["club"]    == "girlguiding"       )   or
+         ( keyvalues["club"]    == "guide"             )   or
+         ( keyvalues["club"]    == "photography"       )   or
+         ( keyvalues["club"]    == "sea_cadets"        )   or
+         ( keyvalues["club"]    == "theatre"           )   or
+         ( keyvalues["club"]    == "women"             )   or
+         ( keyvalues["club"]    == "charity"           )   or
+         ( keyvalues["club"]    == "bowls"             )   or
+         ( keyvalues["club"]    == "military"          )   or
+         ( keyvalues["club"]    == "model_aircraft"    )   or
+         ( keyvalues["club"]    == "labour_club"       )   or
+         ( keyvalues["club"]    == "boxing"            )   or
+         ( keyvalues["club"]    == "game"              )   or
+         ( keyvalues["club"]    == "automobile"        ))  and
+        (  keyvalues["leisure"] == nil                  )  and
+        (  keyvalues["amenity"] == nil                  )  and
+        (  keyvalues["shop"]    == nil                  )  and
+        (  keyvalues["name"]    ~= nil                  )) or
+       ((  keyvalues["club"]    == "cricket"            )  and
+        (  keyvalues["leisure"] == nil                  )  and
+        (  keyvalues["amenity"] == nil                  )  and
+        (  keyvalues["shop"]    == nil                  )  and
+        (  keyvalues["landuse"] == nil                  )  and
+        (  keyvalues["name"]    ~= nil                  )) or
        ( keyvalues["amenity"]  == "clubhouse"            ) or
        ( keyvalues["building"] == "clubhouse"            ) or
        ( keyvalues["amenity"]  == "club_house"           ) or
@@ -6898,6 +6954,7 @@ function filter_tags_generic(keyvalues, nokeys)
         ( keyvalues["amenity"]  == nil                  ))) then
       keyvalues["landuse"] = "unnamedcommercial"
       keyvalues["leisure"] = "nonspecific"
+      keyvalues["disused:amenity"] = nil
    end
 
 -- ----------------------------------------------------------------------------

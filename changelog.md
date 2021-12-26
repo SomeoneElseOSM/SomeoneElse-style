@@ -1,6 +1,9 @@
 # Changes made to this rendering
 This page describes changes made [here](https://github.com/SomeoneElseOSM/SomeoneElse-style), [here](https://github.com/SomeoneElseOSM/SomeoneElse-style-legend) and [here](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT), and visible [here](//map.atownsend.org.uk/maps/map/map.html).
 
+## As yet unreleased
+Add lots of other clubs (social, sailing, etc.) with no other tags as "leisure".
+
 ## 26/12/2021
 Render flagpoles - normal ones in black; MOD ones in red, show name, and add to legend.
 Resolve an issue whereby maypole names weren't displayed at some zoom levels.
