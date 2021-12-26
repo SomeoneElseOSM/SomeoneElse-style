@@ -6838,6 +6838,9 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["amenity"]  == "scouts"               ) or
        ( keyvalues["club"]     == "scout"                ) or
        ( keyvalues["club"]     == "sport"                ) or
+       (( keyvalues["club"]    == "yes"                 )  and
+        ( keyvalues["leisure"] == nil                   )  and
+        ( keyvalues["name"]    ~= nil                   )) or
        ( keyvalues["amenity"]  == "clubhouse"            ) or
        ( keyvalues["building"] == "clubhouse"            ) or
        ( keyvalues["amenity"]  == "club_house"           ) or

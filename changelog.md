@@ -15,6 +15,7 @@ Handle telephone exchanges and some other offices as offices rather than just la
 Remove ferry terminals and from landuse=commercial handling.
 Don't treat highway=services as rest_area but instead as landuse=commercial.
 Handle club=sport via noncommercial leisure rather than landuse.
+If there's no other information with a club=yes, assume it is "leisure".
 
 ## 21/11/2021
 Change start node of legend from 9100000000 to 29100000000 as OSM has now caught up: https://www.openstreetmap.org/node/9100000000 .
