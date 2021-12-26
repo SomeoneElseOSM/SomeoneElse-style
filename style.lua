@@ -5046,6 +5046,7 @@ function filter_tags_generic(keyvalues, nokeys)
    if (( keyvalues["amenity"]   == "atm"              ) or
        ( keyvalues["amenity"]   == "fuel"             ) or
        ( keyvalues["amenity"]   == "charging_station" ) or
+       ( keyvalues["amenity"]   == "bicycle_rental"   ) or
        ( keyvalues["amenity"]   == "scooter_rental"   ) or
        ( keyvalues["amenity"]   == "vending_machine"  ) or
        ( keyvalues["amenity"]   == "pub_yyyyydy"      ) or
@@ -6217,7 +6218,6 @@ function filter_tags_generic(keyvalues, nokeys)
    if (( keyvalues["amenity"] == "car_rental"                   ) or
        ( keyvalues["amenity"] == "van_rental"                   ) or
        ( keyvalues["amenity"] == "car_rental;bicycle_rental"    ) or
-       ( keyvalues["amenity"] == "scooter_rental"               ) or
        ( keyvalues["amenity"] == "vehicle_rental"               ) or
        ( keyvalues["shop"]    == "car_rental"                   ) or
        ( keyvalues["shop"]    == "van_rental"                   ) or

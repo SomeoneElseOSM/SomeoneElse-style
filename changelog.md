@@ -3,6 +3,7 @@ This page describes changes made [here](https://github.com/SomeoneElseOSM/Someon
 
 ## As yet unreleased
 Add lots of other clubs (social, sailing, etc.) with no other tags as "leisure".
+Added an icon for scooter rental and added to legend.
 
 ## 26/12/2021
 Render flagpoles - normal ones in black; MOD ones in red, show name, and add to legend.
