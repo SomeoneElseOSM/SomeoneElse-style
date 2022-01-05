@@ -6,13 +6,18 @@
 # things are.
 # -----------------------------------------------------------------------------
 #
-# The local user account we are using
+# The local user account we are using.
+# "local_filesystem_user" is whichever non-root account is used to fetch from
+# github.
+# On Debian 11 or above and Ubuntu 21.04 and above,
+# "local_renderd_user" will probably be "_renderd"
 #
-local_user=renderaccount
+local_filesystem_user=renderaccount
+local_renderd_user=renderaccount
 #
 # First things first - is another copy of the script already running?
 #
-cd /home/${local_user}/data
+cd /home/${local_filesystem_user}/data
 if test -e update_render.running
 then
     echo update_render.running exists so exiting
@@ -111,30 +116,30 @@ file_url2=http://download.geofabrik.de/europe/${file_prefix2}-latest.osm.pbf
 # Remove the openstreetmap-tiles-update-expire entry from the crontab.
 # Note that this matches a comment on the crontab line.
 #
-crontab -u $local_user -l > local_user_crontab_safe.$$
-grep -v "\#CONTROLLED BY update_render.sh" local_user_crontab_safe.$$ > local_user_crontab_new.$$
-crontab -u $local_user local_user_crontab_new.$$
-rm local_user_crontab_new.$$
+crontab -u $local_renderd_user -l > local_renderd_user_crontab_safe.$$
+grep -v "\#CONTROLLED BY update_render.sh" local_renderd_user_crontab_safe.$$ > local_renderd_user_crontab_new.$$
+crontab -u $local_renderd_user local_renderd_user_crontab_new.$$
+rm local_renderd_user_crontab_new.$$
 #
 # Next get the latest versions of each part of the map style
 #
-cd /home/${local_user}/src/SomeoneElse-style
+cd /home/${local_filesystem_user}/src/SomeoneElse-style
 pwd
-sudo -u ${local_user} git pull
+sudo -u ${local_filesystem_user} git pull
 #
-cd /home/${local_user}/src/SomeoneElse-style-legend
+cd /home/${local_filesystem_user}/src/SomeoneElse-style-legend
 pwd
-sudo -u ${local_user} git pull
+sudo -u ${local_filesystem_user} git pull
 #
-cd /home/${local_user}/src/openstreetmap-carto-AJT
+cd /home/${local_filesystem_user}/src/openstreetmap-carto-AJT
 pwd
-sudo -u ${local_user} git pull
+sudo -u ${local_filesystem_user} git pull
 carto project.mml > mapnik.xml
 #
 # How much disk space are we currently using?
 #
 df
-cd /home/${local_user}/data
+cd /home/${local_filesystem_user}/data
 #
 # When was the first target file last modified?
 #
@@ -185,19 +190,19 @@ fi
 # Welsh, English and Scottish names need to be converted to "cy or en", "en" and "gd or en" respectively.
 # First, convert a Welsh name portion intoto Welsh
 #
-osmosis  --read-pbf ${file_prefix1}_${file_extension1}.osm.pbf --bounding-polygon file="/home/${local_user}/src/SomeoneElse-style/welsh_areas.poly" --write-pbf welshlangpart_${file_extension1}_before.pbf
+osmosis  --read-pbf ${file_prefix1}_${file_extension1}.osm.pbf --bounding-polygon file="/home/${local_filesystem_user}/src/SomeoneElse-style/welsh_areas.poly" --write-pbf welshlangpart_${file_extension1}_before.pbf
 #
-osmosis --read-pbf welshlangpart_${file_extension1}_before.pbf --tag-transform /home/${local_user}/src/SomeoneElse-style/transform_cy.xml --write-pbf welshlangpart_${file_extension1}_after.pbf
+osmosis --read-pbf welshlangpart_${file_extension1}_before.pbf --tag-transform /home/${local_filesystem_user}/src/SomeoneElse-style/transform_cy.xml --write-pbf welshlangpart_${file_extension1}_after.pbf
 #
 # Likewise, Scots Gaelic
 #
 osmosis  --read-pbf ${file_prefix1}_${file_extension1}.osm.pbf  --bounding-box left=-9.23 bottom=55.56 right=-5.7 top=59.92 --write-pbf scotsgdlangpart_${file_extension1}_before.pbf
 #
-osmosis --read-pbf scotsgdlangpart_${file_extension1}_before.pbf --tag-transform /home/${local_user}/src/SomeoneElse-style/transform_gd.xml --write-pbf scotsgdlangpart_${file_extension1}_after.pbf
+osmosis --read-pbf scotsgdlangpart_${file_extension1}_before.pbf --tag-transform /home/${local_filesystem_user}/src/SomeoneElse-style/transform_gd.xml --write-pbf scotsgdlangpart_${file_extension1}_after.pbf
 #
 # Convert the remaining file to "English"
 #
-osmosis --read-pbf ${file_prefix1}_${file_extension1}.osm.pbf --tag-transform /home/${local_user}/src/SomeoneElse-style/transform_en.xml --write-pbf englangpart_${file_extension1}_after.pbf
+osmosis --read-pbf ${file_prefix1}_${file_extension1}.osm.pbf --tag-transform /home/${local_filesystem_user}/src/SomeoneElse-style/transform_en.xml --write-pbf englangpart_${file_extension1}_after.pbf
 #
 # Note that "file2", if we need it, does not need processing.
 #
@@ -207,11 +212,11 @@ osmosis --read-pbf welshlangpart_${file_extension1}_after.pbf --read-pbf scotsgd
 #
 # Run osm2pgsql
 #
-sudo -u ${local_user} osm2pgsql --create --slim -d gis -C 2500 --number-processes 2 -S /home/${local_user}/src/openstreetmap-carto-AJT/openstreetmap-carto.style --multi-geometry --tag-transform-script /home/${local_user}/src/SomeoneElse-style/style.lua langs_${file_extension1}_merged.pbf
+sudo -u ${local_renderd_user} osm2pgsql --create --slim -d gis -C 2500 --number-processes 2 -S /home/${local_filesystem_user}/src/openstreetmap-carto-AJT/openstreetmap-carto.style --multi-geometry --tag-transform-script /home/${local_filesystem_user}/src/SomeoneElse-style/style.lua langs_${file_extension1}_merged.pbf
 #
-sudo -u ${local_user} osm2pgsql --append --slim -d gis -C 250 --number-processes 2 -S /home/${local_user}/src/openstreetmap-carto-AJT/openstreetmap-carto.style --multi-geometry --tag-transform-script /home/${local_user}/src/SomeoneElse-style/style.lua /home/${local_user}/src/SomeoneElse-style-legend/legend_roads.osm
+sudo -u ${local_renderd_user} osm2pgsql --append --slim -d gis -C 250 --number-processes 2 -S /home/${local_filesystem_user}/src/openstreetmap-carto-AJT/openstreetmap-carto.style --multi-geometry --tag-transform-script /home/${local_filesystem_user}/src/SomeoneElse-style/style.lua /home/${local_filesystem_user}/src/SomeoneElse-style-legend/legend_roads.osm
 #
-sudo -u ${local_user} osm2pgsql --append --slim -d gis -C 250 --number-processes 2 -S /home/${local_user}/src/openstreetmap-carto-AJT/openstreetmap-carto.style --multi-geometry --tag-transform-script /home/${local_user}/src/SomeoneElse-style/style.lua /home/${local_user}/src/SomeoneElse-style-legend/generated_legend_pub.osm
+sudo -u ${local_renderd_user} osm2pgsql --append --slim -d gis -C 250 --number-processes 2 -S /home/${local_filesystem_user}/src/openstreetmap-carto-AJT/openstreetmap-carto.style --multi-geometry --tag-transform-script /home/${local_filesystem_user}/src/SomeoneElse-style/style.lua /home/${local_filesystem_user}/src/SomeoneElse-style-legend/generated_legend_pub.osm
 #
 # Tidy temporary files
 #
@@ -221,19 +226,19 @@ rm welshlangpart_${file_extension1}_before.pbf welshlangpart_${file_extension1}_
 #
 rm -rf /var/lib/mod_tile/.osmosis.old
 mv /var/lib/mod_tile/.osmosis /var/lib/mod_tile/.osmosis.old
-sudo -u ${local_user} /home/${local_user}/src/mod_tile/openstreetmap-tiles-update-expire ${file_extension1}
-pandoc /home/${local_user}/src/SomeoneElse-style/changelog.md > /var/www/html/maps/map/changelog.html
-pandoc /home/${local_user}/src/SomeoneElse-map/about.md > /var/www/html/maps/map/about.html
+sudo -u ${local_renderd_user} /home/${local_filesystem_user}/src/mod_tile/openstreetmap-tiles-update-expire ${file_extension1}
+pandoc /home/${local_filesystem_user}/src/SomeoneElse-style/changelog.md > /var/www/html/maps/map/changelog.html
+pandoc /home/${local_filesystem_user}/src/SomeoneElse-map/about.md > /var/www/html/maps/map/about.html
 /etc/init.d/renderd restart
 /etc/init.d/apache2 restart
 #
 # Reinstate the crontab
 #
-crontab -u $local_user local_user_crontab_safe.$$
+crontab -u $local_renderd_user local_renderd_user_crontab_safe.$$
 # 
 # And final tidying up
 #
-date | mail -s "Database reload complete on `hostname`" ${local_user}
+date | mail -s "Database reload complete on `hostname`" ${local_filesystem_user}
 rm last_modified1.$$ last_modified2.$$
 rm update_render.running
 #
