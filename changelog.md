@@ -5,6 +5,11 @@ This page describes changes made [here](https://github.com/SomeoneElseOSM/Someon
 Add lots of other clubs (social, sailing, etc.) with no other tags as "leisure".
 Added an icon for scooter rental and added to legend.
 
+## 05/01/2022
+Updated map at map.atownsend.org.uk to show "[flooded](https://github.com/SomeoneElseOSM/floodedmap)" layer and England and Wales-sourced local authority public rights-of-way.
+Moved the CSS file used and changed the layer switcher font to be legible on more platforms.
+Added attribution for non-OSM layers.
+
 ## 26/12/2021
 Render flagpoles - normal ones in black; MOD ones in red, show name, and add to legend.
 Resolve an issue whereby maypole names weren't displayed at some zoom levels.
