@@ -884,13 +884,18 @@ function filter_tags_generic(keyvalues, nokeys)
 
 -- ----------------------------------------------------------------------------
 -- Render national parks and AONBs as such no matter how they are tagged.
+--
+-- Any with "boundary=national_park" set already will be included and won't
+-- be affected by this.  Most national parks and AONBs in UK have 
+-- "protect_class=5", but also have one of the "designation" values below.
+-- Most IE ones have "protect_class=2".
+-- Many smaller nature reserves have other values for designation and are
+-- ignored here.
 -- ----------------------------------------------------------------------------
-   if ((  keyvalues["boundary"]      == "protected_area"                      ) and
-       (( keyvalues["designation"]   == "national_park"                      )  or 
-        ( keyvalues["designation"]   == "area_of_outstanding_natural_beauty" )  or
-        ( keyvalues["designation"]   == "Area of Outstanding Natural Beauty" )  or
-        ( keyvalues["protect_class"] == "2"                                  )  or
-        ( keyvalues["protect_class"] == "5"                                  ))) then
+   if ((   keyvalues["boundary"]      == "protected_area"                      ) and
+       ((  keyvalues["designation"]   == "national_park"                      )  or 
+        (  keyvalues["designation"]   == "area_of_outstanding_natural_beauty" )  or
+        (  keyvalues["protect_class"] == "2"                                  ))) then
       keyvalues["boundary"] = "national_park"
    end
 
