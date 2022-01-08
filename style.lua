@@ -6272,6 +6272,20 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Taxi offices
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["shop"]    == "taxi"                    ) or
+       ( keyvalues["office"]  == "taxi"                    ) or
+       ( keyvalues["office"]  == "minicab"                 ) or
+       ( keyvalues["shop"]    == "minicab"                 ) or
+       ( keyvalues["amenity"] == "minicab"                 )) then
+      keyvalues["landuse"] = "unnamedcommercial"
+      keyvalues["amenity"] = "taxi_office"
+      keyvalues["shop"]    = nil
+      keyvalues["office"]  = nil
+   end
+
+-- ----------------------------------------------------------------------------
 -- Other shops that don't have a specific icon are handled here. including
 -- variations (for example "shoes" is more popular by far than "shoe").
 --
@@ -6337,10 +6351,6 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["shop"]    == "fuel"                    ) or
        ( keyvalues["shop"]    == "energy"                  ) or
        ( keyvalues["shop"]    == "coal_merchant"           ) or
-       ( keyvalues["shop"]    == "taxi"                    ) or
-       ( keyvalues["office"]  == "taxi"                    ) or
-       ( keyvalues["amenity"] == "minicab_office"          ) or
-       ( keyvalues["shop"]    == "minicab"                 ) or
        ( keyvalues["amenity"] == "training"                ) or
        ( keyvalues["amenity"] == "tutoring_centre"         ) or
        ( keyvalues["office"]  == "tutoring"                ) or

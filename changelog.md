@@ -6,6 +6,8 @@ Add lots of other clubs (social, sailing, etc.) with no other tags as "leisure".
 Added an icon for scooter rental and added to legend.
 Changed criteria for national parks to exclude protect_class=5.  Many UK ones are tagged this way, but they will be included by other checks such as on "designation" or explicitly tagged as "boundary=national_park".
 Updated update_render.sh to handle separate users for "getting things from github" and "running renderd", as now required by Debian 11 and Ubuntu 21.04 and above.
+Added icons for taxi stand and taxi office, and added to legend.
+Updated taginfo.json  with recent updates.
 
 ## 05/01/2022
 Updated map at map.atownsend.org.uk to show "[flooded](https://github.com/SomeoneElseOSM/floodedmap)" layer and England and Wales-sourced local authority public rights-of-way.
