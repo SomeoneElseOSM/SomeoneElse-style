@@ -216,7 +216,8 @@ sudo -u ${local_renderd_user} osm2pgsql --create --slim -d gis -C 2500 --number-
 #
 sudo -u ${local_renderd_user} osm2pgsql --append --slim -d gis -C 250 --number-processes 2 -S /home/${local_filesystem_user}/src/openstreetmap-carto-AJT/openstreetmap-carto.style --multi-geometry --tag-transform-script /home/${local_filesystem_user}/src/SomeoneElse-style/style.lua /home/${local_filesystem_user}/src/SomeoneElse-style-legend/legend_roads.osm
 #
-sudo -u ${local_renderd_user} osm2pgsql --append --slim -d gis -C 250 --number-processes 2 -S /home/${local_filesystem_user}/src/openstreetmap-carto-AJT/openstreetmap-carto.style --multi-geometry --tag-transform-script /home/${local_filesystem_user}/src/SomeoneElse-style/style.lua /home/${local_filesystem_user}/src/SomeoneElse-style-legend/generated_legend_pub.osm
+sudo -u ${local_filesystem_user} osmium sort -o /home/${local_filesystem_user}/src/SomeoneElse-style-legend/generated_legend_pubs.osm /home/${local_filesystem_user}/src/SomeoneElse-style-legend/generated_legend_pub.osm
+sudo -u ${local_renderd_user} osm2pgsql --append --slim -d gis -C 250 --number-processes 2 -S /home/${local_filesystem_user}/src/openstreetmap-carto-AJT/openstreetmap-carto.style --multi-geometry --tag-transform-script /home/${local_filesystem_user}/src/SomeoneElse-style/style.lua /home/${local_filesystem_user}/src/SomeoneElse-style-legend/generated_legend_pubs.osm
 #
 # Tidy temporary files
 #
