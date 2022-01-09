@@ -122,11 +122,6 @@ function filter_tags_generic(keyvalues, nokeys)
       keyvalues["disused:amenity"] = keyvalues["was:amenity"]
    end
 
-   if (( keyvalues["was:pub"]     ~= nil ) and
-       ( keyvalues["disused:pub"] == nil )) then
-      keyvalues["disused:pub"] = keyvalues["was:pub"]
-   end
-
    if (( keyvalues["was:waterway"]     ~= nil ) and
        ( keyvalues["disused:waterway"] == nil )) then
       keyvalues["disused:waterway"] = keyvalues["was:waterway"]
@@ -6344,7 +6339,6 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["shop"]    == "fireworks"               ) or
        ( keyvalues["shop"]    == "auction"                 ) or
        ( keyvalues["shop"]    == "auction_house"           ) or
-       ( keyvalues["auction"] == "auction_house"           ) or
        ( keyvalues["office"]  == "auctioneer"              ) or
        ( keyvalues["shop"]    == "religion"                ) or
        ( keyvalues["shop"]    == "gas"                     ) or

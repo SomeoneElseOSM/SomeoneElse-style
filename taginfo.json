@@ -184,7 +184,6 @@
     { "key": "natural", "description": "All sorts of natural features.  Where multiple top=level tags exist, drop one or more." },
     { "key": "ncn_milepost", "description": "Render appropriate icon for ncn milepost artwork type" },
     { "key": "network", "description": "Detect and render walking, cycling and horse networks" },
-    { "key": "noncarpeted", "description": "Detect noncarpeted pub floors" },
     { "key": "office", "description": "Various non-embassy diplomatic places displayed as offices" },
     { "key": "official_ref", "description": "Indicates an unsigned ref" },
     { "key": "old_amenity", "description": "Former telephone boxes" },
