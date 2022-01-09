@@ -7,6 +7,7 @@ Added an icon for scooter rental and added to legend.
 Changed criteria for national parks to exclude protect_class=5.  Many UK ones are tagged this way, but they will be included by other checks such as on "designation" or explicitly tagged as "boundary=national_park".
 Added icons for taxi stand and taxi office, and added to legend.
 Following a [taginfo.json](https://taginfo.openstreetmap.org/projects/someoneelse_style#tags) update, removed some tags from the style.lua file that no longer occur in OSM anywhere.
+Updating taginfo.json with more key information.  Tag information is complete, but keys processed for those tags is still a work in progress.
 
 ## 09/01/2022
 Updated taginfo.json  with recent updates.

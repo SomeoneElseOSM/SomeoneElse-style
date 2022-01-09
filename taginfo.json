@@ -36,7 +36,7 @@
     { "key": "admin_level", "description": "Administrative level on admin boundaries" },
     { "key": "admin_ref", "description": "Indicates an unsigned ref" },
     { "key": "admin:ref", "description": "Indicates an unsigned ref" },
-    { "key": "advertising", "description": "Advertising columns" },
+    { "key": "advertising", "value": "column", "description": "Advertising columns" },
     { "key": "aerialway", "description": "Aerialways" },
     { "key": "aerodrome:type", "description": "Split large and small airports" },
     { "key": "aeroway", "description": "Detect large, small and disused airports" },
