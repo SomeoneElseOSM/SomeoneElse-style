@@ -4060,7 +4060,15 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["water"]     == "river"  )) then
       keyvalues["name"] = nil
    end
-   
+
+-- ----------------------------------------------------------------------------
+-- Handle intermittent water areas.
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["natural"]      == "water"  ) and
+       ( keyvalues["intermittent"] == "yes"  )) then
+      keyvalues["natural"] = "intermittentwater"
+   end
+
 -- ----------------------------------------------------------------------------
 -- Map wind turbines to, er, wind turbines and make sure that they don't also
 -- appear as towers.
