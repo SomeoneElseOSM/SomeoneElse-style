@@ -4080,6 +4080,14 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Handle intermittent wetland areas.
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["natural"]      == "wetland"  )  and
+       ( keyvalues["intermittent"] == "yes"      )) then
+      keyvalues["natural"] = "intermittentwetland"
+   end
+
+-- ----------------------------------------------------------------------------
 -- Map wind turbines to, er, wind turbines and make sure that they don't also
 -- appear as towers.
 -- ----------------------------------------------------------------------------
