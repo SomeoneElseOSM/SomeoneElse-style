@@ -5,7 +5,7 @@ polygon_keys = { 'building', 'landcover', 'landuse', 'amenity', 'harbour', 'hist
 
 generic_keys = {'access','addr:housename','addr:housenumber','addr:interpolation','admin_level','advertising','aerialway','aeroway','amenity','area','barrier',
    'bicycle','brand','bridge','bridleway','booth','boundary','building','capital','construction','covered','culvert','cutting','denomination','designation','disused','disused:shop','ele',
-   'embankment','emergency','foot','generation:source','golf','harbour','highway','historic','horse','hours','intermittent','junction','landcover','landuse','layer','leisure','lcn_ref','lock','locked',
+   'embankment','emergency','foot','flood_prone','generation:source','golf','harbour','highway','historic','horse','hours','intermittent','junction','landcover','landuse','layer','leisure','lcn_ref','lock','locked',
    'man_made','military','motor_car','name','natural','ncn_milepost','office','oneway','operator','opening_hours:covid19','place','playground','poi','population','power','power_source','public_transport','seamark:type',
    'railway','ref','religion','rescue_equipment','route','service','shop','sport','surface','toll','tourism','tower:type', 'tracktype','tunnel','water','waterway',
    'wetland','width','wood','type'}
@@ -4067,6 +4067,16 @@ function filter_tags_generic(keyvalues, nokeys)
    if (( keyvalues["natural"]      == "water"  ) and
        ( keyvalues["intermittent"] == "yes"  )) then
       keyvalues["natural"] = "intermittentwater"
+   end
+
+-- ----------------------------------------------------------------------------
+-- Also try and detect flood plains etc.
+-- ----------------------------------------------------------------------------
+   if ((  keyvalues["natural"]      == "floodplain"  ) or
+       (( keyvalues["flood_prone"]  == "yes"        )  and
+        ( keyvalues["natural"]      == nil          )  and
+        ( keyvalues["highway"]      == nil          ))) then
+      keyvalues["natural"] = "flood_prone"
    end
 
 -- ----------------------------------------------------------------------------
