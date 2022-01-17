@@ -10,6 +10,7 @@ Following a [taginfo.json](https://taginfo.openstreetmap.org/projects/someoneels
 Updating taginfo.json with more key information.  Tag information is complete, but keys processed for those tags is still a work in progress.
 Added blue hatching for "intermittent" water areas and a slightly less prominent blue hatching for areas that are merely flood-prone.
 Added a rendering for intermittent wetland.
+Re-saved some .pngs from gimp to make them much smaller (300 bytes rather than 30k).
 
 ## 09/01/2022
 Updated taginfo.json  with recent updates.
