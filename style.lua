@@ -890,6 +890,7 @@ function filter_tags_generic(keyvalues, nokeys)
    if ((   keyvalues["boundary"]      == "protected_area"                      ) and
        ((  keyvalues["designation"]   == "national_park"                      )  or 
         (  keyvalues["designation"]   == "area_of_outstanding_natural_beauty" )  or
+        (  keyvalues["designation"]   == "national_scenic_area"               )  or
         (  keyvalues["protect_class"] == "2"                                  ))) then
       keyvalues["boundary"] = "national_park"
    end
