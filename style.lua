@@ -516,6 +516,27 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- On footpaths, if foot=no set access=no
+--
+-- Tracks etc. that aren't narrow won't be "pathnarrow" at this stage, and we
+-- shouldn't set "access" based on "foot"
+--
+-- Things that are narrow but have a designation will either not be private to
+-- foot traffic or should be picked up by the TRO etc. handling below.
+-- ----------------------------------------------------------------------------
+   if ((  keyvalues["highway"] == "pathnarrow" ) and
+       (( keyvalues["foot"]    == "private"   )  or
+        ( keyvalues["foot"]    == "no"        )) and
+       (( keyvalues["bicycle"] == nil         )  or
+        ( keyvalues["bicycle"] == "private"   )  or
+        ( keyvalues["bicycle"] == "no"        )) and
+       (( keyvalues["horse"]   == nil         )  or
+        ( keyvalues["horse"]   == "private"   )  or
+        ( keyvalues["horse"]   == "no"        ))) then
+      keyvalues["access"] = "no"
+   end
+
+-- ----------------------------------------------------------------------------
 -- When handling TROs etc. we test for "no", not private, hence this change:
 -- ----------------------------------------------------------------------------
    if ( keyvalues["access"] == "private" ) then
