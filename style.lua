@@ -931,13 +931,25 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Treat landcover=grass as landuse=grass
+-- Also landuse=college_court
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["landcover"] == "grass"         ) or
+       ( keyvalues["landuse"]   == "college_court" )) then
+      keyvalues["landcover"] = nil
+      keyvalues["landuse"] = "grass"
+   end
+
+-- ----------------------------------------------------------------------------
 -- Render various synonyms for leisure=common.
 -- ----------------------------------------------------------------------------
    if (( keyvalues["landuse"]          == "common"   ) or
+       ( keyvalues["leisure"]          == "common"   ) or
        ( keyvalues["designation"]      == "common"   ) or
        ( keyvalues["amenity"]          == "common"   ) or
        ( keyvalues["protection_title"] == "common"   )) then
       keyvalues["leisure"] = "common"
+      keyvalues["landuse"] = nil
       keyvalues["amenity"] = nil
    end
    
@@ -1969,16 +1981,6 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["natural"]     == "wood"         )) then
       keyvalues["landuse"] = nil
       keyvalues["natural"] = "mixedleaved"
-   end
-
--- ----------------------------------------------------------------------------
--- Treat landcover=grass as landuse=grass
--- Also landuse=college_court
--- ----------------------------------------------------------------------------
-   if (( keyvalues["landcover"] == "grass"         ) or
-       ( keyvalues["landuse"]   == "college_court" )) then
-      keyvalues["landcover"] = nil
-      keyvalues["landuse"] = "grass"
    end
 
 -- ----------------------------------------------------------------------------
