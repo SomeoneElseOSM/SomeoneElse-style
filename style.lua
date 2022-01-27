@@ -7646,8 +7646,12 @@ function filter_tags_relation_member (keyvalues, keyvaluemembers, roles, memberc
          keyvalues["highway"] = "ldpnwn"
       end
 
-      if (( keyvalues["network"] == "ncn" ) or
-          ( keyvalues["network"] == "rcn" )) then
+      if (((  keyvalues["network"] == "ncn"           )  or
+           (  keyvalues["network"] == "rcn"           )) and
+          ((  keyvalues["state"]   == nil             )  or
+           (( keyvalues["state"]   ~= "proposed"     )   and
+            ( keyvalues["state"]   ~= "construction" )   and
+            ( keyvalues["state"]   ~= "abandoned"    )))) then
          keyvalues["highway"] = "ldpncn"
 
          if ( keyvalues["ref"] ~= "NB" ) then

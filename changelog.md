@@ -6,6 +6,7 @@ Treat the three National Scenic Areas in Scotland as AONBs.
 Changed line-cap on some roads to avoid non-embankments to appear "over" embankments of the same class.
 On footpaths, if foot=no set access=no.
 Where a building would come through as industrial on a building, only display from zoom 17.
+Exclude "state=proposed" etc. cycle routes.
 
 ## 17/01/2022
 Add lots of other clubs (social, sailing, etc.) with no other tags as "leisure".
