@@ -1384,7 +1384,15 @@ function filter_tags_generic(keyvalues, nokeys)
    if (( keyvalues["power"] == "substation"  )  or
        ( keyvalues["power"] == "sub_station" )) then
       keyvalues["power"]   = nil
-      keyvalues["landuse"] = "industrial"
+
+      if (( keyvalues["building"] == nil  ) or
+          ( keyvalues["building"] == "no" )) then
+         keyvalues["landuse"] = "industrial"
+      else
+         keyvalues["building"] = "yes"
+         keyvalues["landuse"] = "industrialbuilding"
+      end
+
       if ( keyvalues["name"] == nil ) then
          keyvalues["name"] = "(el.sub.)"
       else
@@ -1411,7 +1419,6 @@ function filter_tags_generic(keyvalues, nokeys)
    if (( keyvalues["man_made"]   == "reservoir_covered"      ) or 
        ( keyvalues["man_made"]   == "petroleum_well"         ) or 
        ( keyvalues["industrial"] == "warehouse"              ) or
-       ( keyvalues["building"]   == "warehouse"              ) or
        ( keyvalues["industrial"] == "brewery"                ) or 
        ( keyvalues["industrial"] == "distillery"             ) or 
        ( keyvalues["craft"]      == "distillery"             ) or
@@ -1421,7 +1428,6 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["industrial"] == "factory"                ) or 
        ( keyvalues["industrial"] == "yes"                    ) or 
        ( keyvalues["industrial"] == "depot"                  ) or 
-       ( keyvalues["building"]   == "depot"                  ) or 
        ( keyvalues["landuse"]    == "depot"                  ) or
        ( keyvalues["amenity"]    == "depot"                  ) or
        ( keyvalues["amenity"]    == "bus_depot"              ) or
@@ -1435,10 +1441,7 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["industrial"] == "machine_shop"           ) or
        ( keyvalues["industrial"] == "packaging"              ) or
        ( keyvalues["industrial"] == "haulage"                ) or
-       ( keyvalues["building"]   == "industrial"             ) or
        ( keyvalues["power"]      == "plant"                  ) or
-       ( keyvalues["building"]   == "works"                  ) or
-       ( keyvalues["building"]   == "manufacture"            ) or
        ( keyvalues["man_made"]   == "gas_station"            ) or
        ( keyvalues["man_made"]   == "gas_works"              ) or
        ( keyvalues["man_made"]   == "water_treatment"        ) or
@@ -1448,9 +1451,24 @@ function filter_tags_generic(keyvalues, nokeys)
       keyvalues["landuse"] = "industrial"
    end
 
+   if (( keyvalues["building"]   == "industrial"             ) or
+       ( keyvalues["building"]   == "depot"                  ) or 
+       ( keyvalues["building"]   == "warehouse"              ) or
+       ( keyvalues["building"]   == "works"                  ) or
+       ( keyvalues["building"]   == "manufacture"            )) then
+      keyvalues["landuse"] = "industrialbuilding"
+   end
+
    if ( keyvalues["man_made"]   == "works" ) then
       keyvalues["man_made"] = nil
-      keyvalues["landuse"] = "industrial"
+
+      if (( keyvalues["building"] == nil  ) or
+          ( keyvalues["building"] == "no" )) then
+         keyvalues["landuse"] = "industrial"
+      else
+         keyvalues["building"] = "yes"
+         keyvalues["landuse"] = "industrialbuilding"
+      end
    end
 
    if ( keyvalues["parking"]   == "depot" ) then
