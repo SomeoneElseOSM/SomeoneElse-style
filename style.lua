@@ -4091,7 +4091,8 @@ function filter_tags_generic(keyvalues, nokeys)
    if (( keyvalues["man_made"]   == "wastewater_reservoir"  ) or
        ( keyvalues["man_made"]   == "lagoon"                ) or
        ( keyvalues["man_made"]   == "lake"                  ) or
-       ( keyvalues["man_made"]   == "reservoir"             )) then
+       ( keyvalues["man_made"]   == "reservoir"             ) or
+       ( keyvalues["basin"]      == "wastewater"            )) then
       keyvalues["natural"] = "water"
    end
 
@@ -4114,10 +4115,16 @@ function filter_tags_generic(keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
 -- Also try and detect flood plains etc.
 -- ----------------------------------------------------------------------------
-   if ((  keyvalues["natural"]      == "floodplain"  ) or
-       (( keyvalues["flood_prone"]  == "yes"        )  and
-        ( keyvalues["natural"]      == nil          )  and
-        ( keyvalues["highway"]      == nil          ))) then
+   if ((   keyvalues["natural"]      == "floodplain"     ) or
+       ((  keyvalues["flood_prone"]  == "yes"           )  and
+        (  keyvalues["natural"]      == nil             )  and
+        (  keyvalues["highway"]      == nil             )) or
+       ((  keyvalues["natural"]      == nil             )  and
+        (  keyvalues["landuse"]      ~= "basin"         )  and
+        (( keyvalues["basin"]        == "detention"    )   or
+         ( keyvalues["basin"]        == "retention"    )   or
+         ( keyvalues["basin"]        == "infiltration" )   or
+         ( keyvalues["basin"]        == "side_pound"   )))) then
       keyvalues["natural"] = "flood_prone"
    end
 

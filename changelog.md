@@ -8,6 +8,7 @@ On footpaths, if foot=no set access=no.
 Where a building would come through as industrial on a building, only display from zoom 17.
 Exclude "state=proposed" etc. cycle routes.
 Where something is both landuse=grass and leisure=common, only render the name once.
+Render various non-water basins as flood_prone.
 
 ## 17/01/2022
 Add lots of other clubs (social, sailing, etc.) with no other tags as "leisure".
