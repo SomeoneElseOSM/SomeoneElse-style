@@ -9,6 +9,7 @@ Where a building would come through as industrial on a building, only display fr
 Exclude "state=proposed" etc. cycle routes.
 Where something is both landuse=grass and leisure=common, only render the name once.
 Render various non-water basins as flood_prone.
+Fixed a bug where the "legend" button sometimes had to be clicked twice.
 
 ## 17/01/2022
 Add lots of other clubs (social, sailing, etc.) with no other tags as "leisure".
