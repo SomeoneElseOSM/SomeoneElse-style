@@ -4292,20 +4292,21 @@ function filter_tags_generic(keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
 -- Various types of traffic light controlled crossings
 -- ----------------------------------------------------------------------------
-   if (( keyvalues["crossing"] == "traffic_signals"         ) or
-       ( keyvalues["crossing"] == "toucan"                  ) or
-       ( keyvalues["crossing"] == "puffin"                  ) or
-       ( keyvalues["crossing"] == "traffic_signals;island"  ) or
-       ( keyvalues["crossing"] == "traffic_lights"          ) or
-       ( keyvalues["crossing"] == "island;traffic_signals"  ) or
-       ( keyvalues["crossing"] == "signals"                 ) or
-       ( keyvalues["crossing"] == "pegasus"                 ) or
-       ( keyvalues["crossing"] == "pedestrian_signals"      ) or
-       ( keyvalues["crossing"] == "traffic_signals; island" ) or
-       ( keyvalues["crossing"] == "light_controlled"        ) or
-       ( keyvalues["crossing"] == "pelican;island"          ) or
-       ( keyvalues["crossing"] == "light controlled"        ) or
-       ( keyvalues["crossing"] == "traffic_signals;pelican" )) then
+   if ((( keyvalues["crossing"] == "traffic_signals"         )  or
+        ( keyvalues["crossing"] == "toucan"                  )  or
+        ( keyvalues["crossing"] == "puffin"                  )  or
+        ( keyvalues["crossing"] == "traffic_signals;island"  )  or
+        ( keyvalues["crossing"] == "traffic_lights"          )  or
+        ( keyvalues["crossing"] == "island;traffic_signals"  )  or
+        ( keyvalues["crossing"] == "signals"                 )  or
+        ( keyvalues["crossing"] == "pegasus"                 )  or
+        ( keyvalues["crossing"] == "pedestrian_signals"      )  or
+        ( keyvalues["crossing"] == "traffic_signals; island" )  or
+        ( keyvalues["crossing"] == "light_controlled"        )  or
+        ( keyvalues["crossing"] == "pelican;island"          )  or
+        ( keyvalues["crossing"] == "light controlled"        )  or
+        ( keyvalues["crossing"] == "traffic_signals;pelican" )) and
+       (  keyvalues["highway"]  == nil                        )) then
       keyvalues["highway"] = "traffic_signals"
       keyvalues["crossing"] = nil
    end

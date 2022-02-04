@@ -1,6 +1,9 @@
 # Changes made to this rendering
 This page describes changes made [here](https://github.com/SomeoneElseOSM/SomeoneElse-style), [here](https://github.com/SomeoneElseOSM/SomeoneElse-style-legend) and [here](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT), and visible [here](//map.atownsend.org.uk/maps/map/map.html).
 
+## As yet unreleased
+Fixed some minor issues with the display of crossings.
+
 ## 31/01/2022
 Treat the three National Scenic Areas in Scotland as AONBs.
 Changed line-cap on some roads to avoid non-embankments to appear "over" embankments of the same class.
