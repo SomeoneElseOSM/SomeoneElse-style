@@ -22,8 +22,8 @@
     { "key": "animal", "description": "qqq" }
     { "key": "area", "description": "qqq" }
     { "key": "area:highway", "description": "qqq" }
-    { "key": "auction", "description": "qqq" }
     { "key": "barrier", "description": "qqq" }
+    { "key": "basin", "description": "qqq" }
     { "key": "beer_garden", "description": "qqq" }
     { "key": "bicycle", "description": "qqq" }
     { "key": "booth", "description": "qqq" }
@@ -72,6 +72,7 @@
     { "key": "fee", "description": "qqq" }
     { "key": "female", "description": "qqq" }
     { "key": "fence_type", "description": "qqq" }
+    { "key": "flood_prone", "description": "qqq" }
     { "key": "floor:material", "description": "qqq" }
     { "key": "flow_control", "description": "qqq" }
     { "key": "food", "description": "qqq" }
@@ -110,6 +111,7 @@
     { "key": "information", "description": "qqq" }
     { "key": "intermittent", "description": "qqq" }
     { "key": "junction", "description": "qqq" }
+    { "key": "ladder", "description": "qqq" }
     { "key": "lamp_type", "description": "qqq" }
     { "key": "landcover", "description": "qqq" }
     { "key": "landmark", "description": "qqq" }
@@ -211,10 +213,12 @@
     { "key": "site_type", "description": "qqq" }
     { "key": "species", "description": "qqq" }
     { "key": "sport", "description": "qqq" }
+    { "key": "state", "description": "qqq" }
     { "key": "stone_type", "description": "qqq" }
     { "key": "support", "description": "qqq" }
     { "key": "surface", "description": "qqq" }
     { "key": "taxon", "description": "qqq" }
+    { "key": "telecom", "description": "qqq" }
     { "key": "telephone_kiosk", "description": "qqq" }
     { "key": "theatre", "description": "qqq" }
     { "key": "tourism", "description": "qqq" }
@@ -230,7 +234,6 @@
     { "key": "type", "description": "qqq" }
     { "key": "unsigned", "description": "qqq" }
     { "key": "usage", "description": "qqq" }
-    { "key": "utility", "description": "qqq" }
     { "key": "vending", "description": "qqq" }
     { "key": "vending_machine", "description": "qqq" }
     { "key": "verge", "description": "qqq" }
@@ -238,7 +241,6 @@
     { "key": "was:aeroway", "description": "qqq" }
     { "key": "was:amenity", "description": "qqq" }
     { "key": "was:landuse", "description": "qqq" }
-    { "key": "was:pub", "description": "qqq" }
     { "key": "was:railway", "description": "qqq" }
     { "key": "was:shop", "description": "qqq" }
     { "key": "was:waterway", "description": "qqq" }

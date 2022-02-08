@@ -6,6 +6,7 @@ Fixed some minor issues with the display of crossings.
 Show ladders on footways as steps.
 Show windsocks.
 Render golf=cartpath as wide, not narrow.
+Updated taginfo.json  with recent updates.  Also added a number of amenity values.
 
 ## 31/01/2022
 Treat the three National Scenic Areas in Scotland as AONBs.
