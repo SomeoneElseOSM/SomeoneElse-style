@@ -5124,6 +5124,14 @@ function filter_tags_generic(keyvalues, nokeys)
       keyvalues["man_made"] = "flagpole_red"
       keyvalues["operator"] = nil
    end
+
+-- ----------------------------------------------------------------------------
+-- Windsocks
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["aeroway"]  == "windsock" ) or
+       ( keyvalues["landmark"] == "windsock" )) then
+      keyvalues["man_made"] = "windsock"
+   end
    
 -- ----------------------------------------------------------------------------
 -- If no name use brand or operator on amenity=fuel, among others.  

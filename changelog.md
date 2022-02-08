@@ -4,6 +4,7 @@ This page describes changes made [here](https://github.com/SomeoneElseOSM/Someon
 ## As yet unreleased
 Fixed some minor issues with the display of crossings.
 Show ladders on footways as steps.
+Show windsocks.
 
 ## 31/01/2022
 Treat the three National Scenic Areas in Scotland as AONBs.
