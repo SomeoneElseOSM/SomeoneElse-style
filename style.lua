@@ -394,6 +394,16 @@ function filter_tags_generic(keyvalues, nokeys)
 
 
 -- ----------------------------------------------------------------------------
+-- Various low-visibility trail_visibility values have been set to "bad" above.
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["highway"] ~= nil   ) and
+       ( keyvalues["ladder"]  == "yes" )) then
+      keyvalues["highway"] = "steps"
+      keyvalues["ladder"]  = nil
+   end
+
+
+-- ----------------------------------------------------------------------------
 -- Where a wide width is specified on a normally narrow path, render as wider
 --
 -- Note that "steps" and "footwaysteps" are unchanged by the 
