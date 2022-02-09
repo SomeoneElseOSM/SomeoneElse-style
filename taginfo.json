@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "202209T134700Z",
+  "data_updated": "202209T135800Z",
   "project": {
     "name": "SomeoneElse-style rural pedestrian rendering",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -265,6 +265,7 @@
     { "key": "amenity", "value": "waste_basket", "description": "Removed from bus stops" },
     { "key": "amenity", "value": "shelter", "description": "Various shelters shown as a roof" },
     { "key": "amenity", "value": "holy_well", "description": "Usually mapped as place of worship" },
+    { "key": "amenity", "value": "playground_structure", "description": "Small piece of playground equipment" },
     { "key": "amenity", "description": "All common amenities rendered.  Also used to detect that some rare features such as windmills aren't now something else.  Some non-public e.g. cafes not shown" },
     { "key": "amenity:disused", "description": "Explicitly render disused pubs; handle disused telephones" },
     { "key": "amenity:old", "description": "Handle disused telephones" },
