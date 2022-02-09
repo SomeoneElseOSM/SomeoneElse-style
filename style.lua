@@ -1459,7 +1459,6 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["amenity"]    == "depot"                  ) or
        ( keyvalues["amenity"]    == "bus_depot"              ) or
        ( keyvalues["amenity"]    == "fuel_depot"             ) or
-       ( keyvalues["amenity"]    == "scrap_yard"             ) or 
        ( keyvalues["amenity"]    == "scrapyard"              ) or 
        ( keyvalues["industrial"] == "scrap_yard"             ) or 
        ( keyvalues["industrial"] == "scrapyard"              ) or 
@@ -1648,7 +1647,6 @@ function filter_tags_generic(keyvalues, nokeys)
                                ( keyvalues["disused"]            == "telephone"        )  or
                                ( keyvalues["was:amenity"]        == "telephone"        )  or
                                ( keyvalues["old:amenity"]        == "telephone"        )  or
-                               ( keyvalues["amenity"]            == "old_telephone"    )  or
                                ( keyvalues["amenity"]            == "former_telephone" )  or
                                ( keyvalues["amenity:old"]        == "telephone"        )  or
                                ( keyvalues["historic"]           == "telephone"        )) then
@@ -3174,9 +3172,7 @@ function filter_tags_generic(keyvalues, nokeys)
 -- Note that health centres currently appear as "health nonspecific".
 -- ----------------------------------------------------------------------------
    if (( keyvalues["amenity"] == "doctors; pharmacy"       ) or
-       ( keyvalues["amenity"] == "doctors;social_facility" ) or
        ( keyvalues["amenity"] == "surgery"                 ) or
-       ( keyvalues["amenity"] == "general_practitioner"    ) or
        ( keyvalues["amenity"] == "doctor"                  )) then
       keyvalues["amenity"] = "doctors"
    end
@@ -3200,8 +3196,7 @@ function filter_tags_generic(keyvalues, nokeys)
       keyvalues["amenity"] = nil
    end
 
-   if ((  keyvalues["amenity"]    == "pharmacy, doctors, dentist"  ) or
-       (( keyvalues["healthcare"] == "pharmacy"                   )  and
+   if ((( keyvalues["healthcare"] == "pharmacy"                   )  and
         ( keyvalues["amenity"]    == nil                          )) or
        (( keyvalues["shop"]       == "cosmetics"                  )  and
         ( keyvalues["pharmacy"]   == "yes"                        )  and
@@ -3244,7 +3239,6 @@ function filter_tags_generic(keyvalues, nokeys)
 -- Left luggage
 -- ----------------------------------------------------------------------------
    if (( keyvalues["amenity"] == "luggage_locker"  ) or
-       ( keyvalues["amenity"] == "luggage_lockers" ) or
        ( keyvalues["shop"]    == "luggage_locker"  ) or
        ( keyvalues["shop"]    == "luggage_lockers" )) then
       keyvalues["amenity"] = "left_luggage"
@@ -4527,10 +4521,6 @@ function filter_tags_generic(keyvalues, nokeys)
       keyvalues["amenity"] = "bar"
    end
 
-   if ( keyvalues["shop"] == "greengrocer;florist" ) then
-      keyvalues["shop"] = "greengrocer"
-   end
-
    if ( keyvalues["shop"] == "butcher;greengrocer" ) then
       keyvalues["shop"] = "butcher"
    end
@@ -4672,7 +4662,6 @@ function filter_tags_generic(keyvalues, nokeys)
 -- Also some other barriers.
 -- ----------------------------------------------------------------------------
    if (( keyvalues["barrier"] == "horse_jump"     ) or
-       ( keyvalues["barrier"] == "guard_retail"   ) or
        ( keyvalues["barrier"] == "traffic_island" ) or
        ( keyvalues["barrier"] == "wire_fence"     ) or
        ( keyvalues["barrier"] == "wood_fence"     ) or
@@ -5078,7 +5067,6 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["office"]  == "funeral_director"    ) or
        ( keyvalues["office"]  == "funeral_directors"   ) or
        ( keyvalues["amenity"] == "funeral"             ) or
-       ( keyvalues["amenity"] == "funeral_director"    ) or
        ( keyvalues["amenity"] == "funeral_directors"   ) or
        ( keyvalues["amenity"] == "undertaker"          ) or
        ( keyvalues["shop"]    == "undertaker"          )) then
@@ -6537,7 +6525,6 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["amenity"]     == "chiropractor"                 ) or
        ( keyvalues["healthcare"]  == "chiropractor"                 ) or
        ( keyvalues["healthcare"]  == "chiropractor;physiotherapist" ) or
-       ( keyvalues["amenity"]     == "osteopath"                    ) or
        ( keyvalues["healthcare"]  == "osteopath"                    ) or
        ( keyvalues["shop"]        == "osteopath"                    ) or
        ( keyvalues["amenity"]     == "physiotherapist"              ) or
@@ -6840,8 +6827,7 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["amenity"]     == "monastery"               ) or
        ( keyvalues["amenity"]     == "convent"                 ) or
        ( keyvalues["amenity"]     == "music_school"            ) or
-       ( keyvalues["amenity"]     == "cooking_school"          ) or
-       ( keyvalues["amenity"]     == "flying_school"           )) then
+       ( keyvalues["amenity"]     == "cooking_school"          )) then
       keyvalues["landuse"] = "unnamedcommercial"
       keyvalues["office"] = "nonspecific"
    end
@@ -6869,8 +6855,7 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["office"]     == "quango"                  ) or
        ( keyvalues["office"]     == "association"             ) or
        ( keyvalues["amenity"]    == "advice"                  ) or
-       ( keyvalues["amenity"]    == "advice_service"          ) or
-       ( keyvalues["amenity"]    == "citizens_advice_bureau"  )) then
+       ( keyvalues["amenity"]    == "advice_service"          )) then
       keyvalues["landuse"] = "unnamedcommercial"
       keyvalues["office"]  = "nonspecific"
    end
@@ -6947,7 +6932,6 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["name"]     == "Scout hut"            ) or
        ( keyvalues["amenity"]  == "scout_hall"           ) or
        ( keyvalues["name"]     == "Scout Hall"           ) or
-       ( keyvalues["amenity"]  == "scouts"               ) or
        ( keyvalues["club"]     == "scout"                ) or
        ( keyvalues["club"]     == "scouts"               ) or
        ( keyvalues["club"]     == "sport"                ) or
@@ -7040,7 +7024,6 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["leisure"]  == "firepit"              ) or
        ( keyvalues["amenity"]  == "public_bath"          ) or
        ( keyvalues["amenity"]  == "brothel"              ) or
-       ( keyvalues["amenity"]  == "sauna"                ) or
        ( keyvalues["leisure"]  == "sauna"                ) or
        ( keyvalues["leisure"]  == "horse_riding"         ) or
        ( keyvalues["leisure"]  == "ice_rink"             ) or
@@ -7559,7 +7542,6 @@ function filter_tags_way (keyvalues, nokeys)
        ( keyvalues["barrier"] == "flood_wall"     ) or
        ( keyvalues["barrier"] == "block"          ) or
        ( keyvalues["barrier"] == "haha"           ) or
-       ( keyvalues["barrier"] == "ha-ha"          ) or
        ( keyvalues["barrier"] == "jersey_barrier" ) or
        ( keyvalues["barrier"] == "retaining_wall" )) then
       keyvalues["barrier"] = "wall"
