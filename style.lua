@@ -1738,7 +1738,7 @@ function filter_tags_generic(keyvalues, nokeys)
    if ((  keyvalues["tourism"] == "attraction"  ) and
        (( keyvalues["shop"]    ~= nil          )  or
         ( keyvalues["amenity"] ~= nil          )  or
-        ( keyvalues["leisure"] == "park"       )) then
+        ( keyvalues["leisure"] == "park"       ))) then
       keyvalues["tourism"] = nil
    end
 
@@ -4451,6 +4451,12 @@ function filter_tags_generic(keyvalues, nokeys)
          ( keyvalues["information"] == "departure times and destinations" )    or
          ( keyvalues["information"] == "board;map"                        )))) then
       keyvalues["tourism"] = "informationboard"
+   end
+
+   if (( keyvalues["tourism"]     == "informationboard" )  and
+       ( keyvalues["name"]        == nil                )  and
+       ( keyvalues["board:title"] ~= nil                )) then
+      keyvalues["name"] = keyvalues["board:title"]
    end
 
    if ((  keyvalues["tourism"]     == "information"                       )  and
