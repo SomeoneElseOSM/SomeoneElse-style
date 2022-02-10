@@ -1735,6 +1735,13 @@ function filter_tags_generic(keyvalues, nokeys)
       keyvalues["tourism"] = nil
    end
 
+   if ((  keyvalues["tourism"] == "attraction"  ) and
+       (( keyvalues["shop"]    ~= nil          )  or
+        ( keyvalues["amenity"] ~= nil          )  or
+        ( keyvalues["leisure"] == "park"       )) then
+      keyvalues["tourism"] = nil
+   end
+
 -- ----------------------------------------------------------------------------
 -- Holy wells might be natural=spring or something else.
 -- Make sure that we set "amenity" to something other than "place_of_worship"
@@ -6457,9 +6464,7 @@ function filter_tags_generic(keyvalues, nokeys)
    if (( keyvalues["craft"]   == "stonemason"        ) or
        ( keyvalues["shop"]    == "gravestone"        ) or
        ( keyvalues["shop"]    == "monumental_mason"  ) or
-       ( keyvalues["shop"]    == "memorials"         ) or
-       ( keyvalues["amenity"] == "funeral_directors" ) or
-       ( keyvalues["office"]  == "funeral_directors" )) then
+       ( keyvalues["shop"]    == "memorials"         )) then
       keyvalues["landuse"] = "unnamedcommercial"
       keyvalues["shop"]    = "funeral_directors"
    end
