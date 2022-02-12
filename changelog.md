@@ -8,7 +8,9 @@ Show windsocks.
 Render golf=cartpath as wide, not narrow.
 Updated taginfo.json  with recent updates.  Also added a number of values through to "barrier".
 Remove tourism=attraction if a shop or amenity tag is present.
-IF board:title is set, use that as the name of information boards.
+If board:title is set, use that as the name of information boards.
+Changed leisure green dot to a slightly larger more green dot.
+Changed some name placements (nonspecific leisure, pubs, breweries) to be centroid instead of point, so that fewer name/icon clashes occur.
 
 ## 31/01/2022
 Treat the three National Scenic Areas in Scotland as AONBs.
