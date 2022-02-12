@@ -7693,6 +7693,7 @@ function filter_tags_relation_member (keyvalues, keyvaluemembers, roles, memberc
       end
 
       if (( keyvalues["network"] == "nhn"         ) or
+          ( keyvalues["network"] == "rhn"         )  or
           ( keyvalues["network"] == "ncn;nhn;nwn" )) then
          keyvalues["highway"] = "ldpnhn"
       end
