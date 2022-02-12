@@ -12,6 +12,7 @@ If board:title is set, use that as the name of information boards.
 Changed leisure green dot to a slightly larger more green dot.
 Changed some name placements (nonspecific leisure, pubs, breweries) to be centroid instead of point, so that fewer name/icon clashes occur.
 Also include regional horse routes in those that are rendered.
+Handle various synonyms for e-scooter rental.
 
 ## 31/01/2022
 Treat the three National Scenic Areas in Scotland as AONBs.

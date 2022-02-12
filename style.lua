@@ -5140,6 +5140,23 @@ function filter_tags_generic(keyvalues, nokeys)
    end
    
 -- ----------------------------------------------------------------------------
+-- Scooter rental
+-- All legal scooter rental / scooter parking in UK are private; these are the
+-- the tags currently used.
+-- ----------------------------------------------------------------------------
+   if ((  keyvalues["amenity"]                == "escooter_rental"      ) or
+       (  keyvalues["amenity"]                == "scooter_parking"      ) or
+       (  keyvalues["amenity"]                == "micro_scooter_rental" ) or
+       (  keyvalues["amenity"]                == "scooter_hire"         ) or
+       (  keyvalues["amenity"]                == "kick-scooter_rental"  ) or
+       (( keyvalues["amenity"]                == "parking"             )  and
+        ( keyvalues["parking"]                == "e-scooter"           )) or
+       (( keyvalues["amenity"]                == "bicycle_parking"     )  and
+        ( keyvalues["small_electric_vehicle"] == "designated"          ))) then
+      keyvalues["amenity"] = "scooter_rental"
+   end
+
+-- ----------------------------------------------------------------------------
 -- If no name use brand or operator on amenity=fuel, among others.  
 -- If there is brand or operator, use that with name.
 -- ----------------------------------------------------------------------------
