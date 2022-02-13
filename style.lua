@@ -4999,6 +4999,14 @@ function filter_tags_generic(keyvalues, nokeys)
       keyvalues["shop"] = "ecosupermarket"
    end
 
+   if ((  keyvalues["shop"]               == "greengrocer"         ) and
+       (( keyvalues["zero_waste"]         == "yes"                )  or
+        ( keyvalues["zero_waste"]         == "only"               )  or
+        ( keyvalues["bulk_purchase"]      == "yes"                )  or
+        ( keyvalues["reusable_packaging"] == "yes"                ))) then
+      keyvalues["shop"] = "ecogreengrocer"
+   end
+
 -- ----------------------------------------------------------------------------
 -- Render shop=variety etc. with a "pound" icon.  "variety_store" is the most 
 -- popular tagging but "variety" is also used.
