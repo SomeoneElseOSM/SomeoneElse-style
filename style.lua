@@ -3832,8 +3832,7 @@ function filter_tags_generic(keyvalues, nokeys)
 -- "historic=monument" is here rather than under e.g. obelisk because it's 
 -- used for all sorts of features.
 -- ----------------------------------------------------------------------------
-   if (( keyvalues["historic"] == "monument"           ) or
-       ( keyvalues["historic"] == "building"           ) or
+   if (( keyvalues["historic"] == "building"           ) or
        ( keyvalues["historic"] == "heritage_building"  ) or
        ( keyvalues["historic"] == "protected_building" ) or
        ( keyvalues["historic"] == "watermill"          ) or
@@ -3850,7 +3849,6 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["historic"] == "house"              ) or
        ( keyvalues["historic"] == "mine_shaft"         ) or
        ( keyvalues["historic"] == "lime_kiln"          ) or
-       ( keyvalues["historic"] == "lime_kilns"         ) or
        ( keyvalues["historic"] == "limekiln"           ) or
        ( keyvalues["historic"] == "kiln"               ) or
        ( keyvalues["historic"] == "trough"             )) then
@@ -3864,7 +3862,8 @@ function filter_tags_generic(keyvalues, nokeys)
       keyvalues["historic"] = "nonspecific"
    end
    
-   if (( keyvalues["historic"] == "ruins"             ) or
+   if (( keyvalues["historic"] == "monument"          ) or
+       ( keyvalues["historic"] == "ruins"             ) or
        ( keyvalues["historic"] == "fort"              ) or
        ( keyvalues["historic"] == "ringfort"          ) or
        ( keyvalues["historic"] == "earthworks"        ) or

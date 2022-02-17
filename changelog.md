@@ -5,6 +5,7 @@ This page describes changes made [here](https://github.com/SomeoneElseOSM/Someon
 Show flowerbeds as green.
 Ensure that vaccination centries (e.g. for COVID 19) that aren't already something else get shown as something.  Things that _are_ something else get (e.g. community centres) get left as that something else.
 Show wicket_gates as gates.  Detect kissing_gates where tagged as a subtag.
+Change "monument" to not assume "building".
 
 ## 17/02/2022
 Fixed some minor issues with the display of crossings.
