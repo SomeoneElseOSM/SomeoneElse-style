@@ -3196,6 +3196,20 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Ensure that vaccination centries (e.g. for COVID 19) that aren't already
+-- something else get shown as something.
+-- Things that _are_ something else get (e.g. community centres) get left as
+-- that something else.
+-- ----------------------------------------------------------------------------
+   if ((( keyvalues["healthcare"]            == "vaccination_centre" )  or
+        ( keyvalues["healthcare:speciality"] == "vaccination"        )) and
+       (  keyvalues["amenity"]               == nil                   ) and
+       (  keyvalues["leisure"]               == nil                   ) and
+       (  keyvalues["shop"]                  == nil                   )) then
+      keyvalues["amenity"] = "clinic"
+   end
+
+-- ----------------------------------------------------------------------------
 -- If something is mapped both as a supermarket and a pharmacy, suppress the
 -- tags for the latter.
 -- ----------------------------------------------------------------------------
