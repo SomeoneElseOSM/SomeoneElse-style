@@ -1755,7 +1755,14 @@ function filter_tags_generic(keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
 -- Holy wells might be natural=spring or something else.
 -- Make sure that we set "amenity" to something other than "place_of_worship"
+-- The one existing "holy_well" is actually a spring.
 -- ----------------------------------------------------------------------------
+   if (( keyvalues["amenity"] == "holy_well" ) and
+       ( keyvalues["natural"] == "spring"    )) then
+      keyvalues["amenity"] = "holy_spring"
+      keyvalues["natural"] = nil
+   end
+
    if ( keyvalues["place_of_worship"] == "holy_well" ) then
       keyvalues["man_made"] = nil
       if ( keyvalues["natural"] == "spring" ) then
