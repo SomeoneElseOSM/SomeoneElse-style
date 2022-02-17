@@ -4708,12 +4708,21 @@ function filter_tags_generic(keyvalues, nokeys)
 
 -- ----------------------------------------------------------------------------
 -- There's now a barrier=kissing_gate icon.
--- Choose which of the two gate icons to used based on tagging.
+-- For gates, choose which of the two gate icons to used based on tagging.
 -- "sally_port" is mapped to gate largely because of misuse in the data.
 -- ----------------------------------------------------------------------------
+   if ((  keyvalues["barrier"]   == "turnstile"              )  or
+       (  keyvalues["barrier"]   == "full-height_turnstile"  )  or
+       (  keyvalues["barrier"]   == "kissing_gate;gate"      )  or
+       (( keyvalues["barrier"]   == "gate"                  )   and
+        ( keyvalues["gate"]      == "kissing"               ))) then
+      keyvalues["barrier"] = "kissing_gate"
+   end
+
    if (( keyvalues["barrier"]   == "gate"                  )  or
        ( keyvalues["barrier"]   == "swing_gate"            )  or
        ( keyvalues["barrier"]   == "footgate"              )  or
+       ( keyvalues["barrier"]   == "wicket_gate"           )  or
        ( keyvalues["barrier"]   == "hampshire_gate"        )  or
        ( keyvalues["barrier"]   == "bump_gate"             )  or
        ( keyvalues["barrier"]   == "lych_gate"             )  or
@@ -4733,12 +4742,6 @@ function filter_tags_generic(keyvalues, nokeys)
       else
          keyvalues["barrier"] = "gate"
       end
-   end
-
-   if (( keyvalues["barrier"]   == "turnstile"             )  or
-       ( keyvalues["barrier"]   == "full-height_turnstile" )  or
-       ( keyvalues["barrier"]   == "kissing_gate;gate"     )) then
-      keyvalues["barrier"] = "kissing_gate"
    end
 
    if (( keyvalues["barrier"] == "border_control"   ) or
