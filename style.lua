@@ -1580,7 +1580,8 @@ function filter_tags_generic(keyvalues, nokeys)
           (  keyvalues["emergency"] ~= "defibrillator" ) and
           (  keyvalues["emergency"] ~= "phone"         ) and
           (  keyvalues["tourism"]   ~= "information"   ) and
-          (  keyvalues["tourism"]   ~= "artwork"       )) then
+          (  keyvalues["tourism"]   ~= "artwork"       ) and
+          (  keyvalues["tourism"]   ~= "museum"        )) then
 	 if ( keyvalues["colour"] == "black" ) then
             keyvalues["amenity"] = "boothtelephoneblack"
 	 else
@@ -1639,23 +1640,29 @@ function filter_tags_generic(keyvalues, nokeys)
                            keyvalues["amenity"] = "boothartwork"
                            keyvalues["disused:amenity"] = nil
                            keyvalues["tourism"] = nil
-			else
-                           if (( keyvalues["disused:amenity"]    == "telephone"        )  or
-                               ( keyvalues["removed:amenity"]    == "telephone"        )  or
-                               ( keyvalues["abandoned:amenity"]  == "telephone"        )  or
-                               ( keyvalues["demolished:amenity"] == "telephone"        )  or
-                               ( keyvalues["razed:amenity"]      == "telephone"        )  or
-                               ( keyvalues["old_amenity"]        == "telephone"        )  or
-                               ( keyvalues["historic:amenity"]   == "telephone"        )  or
-                               ( keyvalues["disused"]            == "telephone"        )  or
-                               ( keyvalues["was:amenity"]        == "telephone"        )  or
-                               ( keyvalues["old:amenity"]        == "telephone"        )  or
-                               ( keyvalues["amenity"]            == "former_telephone" )  or
-                               ( keyvalues["amenity:old"]        == "telephone"        )  or
-                               ( keyvalues["historic"]           == "telephone"        )) then
-                              keyvalues["amenity"]         = "boothdisused"
+                        else
+                           if ( keyvalues["tourism"] == "museum" ) then
+                              keyvalues["amenity"] = "boothmuseum"
                               keyvalues["disused:amenity"] = nil
-                              keyvalues["historic"]        = nil
+                              keyvalues["tourism"] = nil
+		  	   else
+                              if (( keyvalues["disused:amenity"]    == "telephone"        )  or
+                                  ( keyvalues["removed:amenity"]    == "telephone"        )  or
+                                  ( keyvalues["abandoned:amenity"]  == "telephone"        )  or
+                                  ( keyvalues["demolished:amenity"] == "telephone"        )  or
+                                  ( keyvalues["razed:amenity"]      == "telephone"        )  or
+                                  ( keyvalues["old_amenity"]        == "telephone"        )  or
+                                  ( keyvalues["historic:amenity"]   == "telephone"        )  or
+                                  ( keyvalues["disused"]            == "telephone"        )  or
+                                  ( keyvalues["was:amenity"]        == "telephone"        )  or
+                                  ( keyvalues["old:amenity"]        == "telephone"        )  or
+                                  ( keyvalues["amenity"]            == "former_telephone" )  or
+                                  ( keyvalues["amenity:old"]        == "telephone"        )  or
+                                  ( keyvalues["historic"]           == "telephone"        )) then
+                                 keyvalues["amenity"]         = "boothdisused"
+                                 keyvalues["disused:amenity"] = nil
+                                 keyvalues["historic"]        = nil
+                              end
                            end
 			end
                      end

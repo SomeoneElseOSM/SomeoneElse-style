@@ -7,6 +7,7 @@ Ensure that vaccination centries (e.g. for COVID 19) that aren't already somethi
 Show wicket_gates as gates.  Detect kissing_gates where tagged as a subtag.
 Change "monument" to not assume "building".
 "removed:amenity=telephone" is a tag that people use.
+Small museums in former phoneboxes are now shown.
 
 ## 17/02/2022
 Fixed some minor issues with the display of crossings.
