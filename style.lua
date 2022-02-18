@@ -7750,6 +7750,11 @@ function filter_tags_relation_member (keyvalues, keyvaluemembers, roles, memberc
            ( keyvalues["network"] == "lwn;lcn;lhn" )) and
           (( keyvalues["name"]    ~= nil           )  or
            ( keyvalues["colour"]  ~= nil           ))) then
+         if (( keyvalues["name"]   == nil ) and
+             ( keyvalues["colour"] ~= nil )) then
+            keyvalues["name"] = keyvalues["colour"]
+         end
+
          keyvalues["highway"] = "ldpnwn"
       end
 

@@ -12,6 +12,7 @@ If a "holy_well" is actually a spring, ensure it gets rendered as such.
 Show stone markers in a similar way to natural stones.
 Show aerial pipeline markers.
 Don't show stations on e.g. preserved railways as normal railway stations.
+If a walking route has no name but does have a colour, render the colour as the name.
 
 ## 17/02/2022
 Fixed some minor issues with the display of crossings.
