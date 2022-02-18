@@ -3180,27 +3180,61 @@ function filter_tags_generic(keyvalues, nokeys)
    if ( keyvalues["amenity"] == "bar" ) then
       if ( keyvalues["accommodation"] == "yes" ) then
          if ( keyvalues["wheelchair"] == "yes" ) then
-            keyvalues["amenity"] = "bar_yy"
+            if ( keyvalues["outdoor_seating"] == "yes" ) then
+               keyvalues["amenity"] = "bar_yyy"
+            else
+               keyvalues["amenity"] = "bar_yyd"
+            end
          else
             if ( keyvalues["wheelchair"] == "limited" ) then
-               keyvalues["amenity"] = "bar_yl"
+               if ( keyvalues["outdoor_seating"] == "yes" ) then
+                  keyvalues["amenity"] = "bar_yly"
+               else
+                  keyvalues["amenity"] = "bar_yld"
+               end
 	    else
 	       if ( keyvalues["wheelchair"] == "no" ) then
-                  keyvalues["amenity"] = "bar_yn"
+                  if ( keyvalues["outdoor_seating"] == "yes" ) then
+                     keyvalues["amenity"] = "bar_yny"
+                  else
+                     keyvalues["amenity"] = "bar_ynd"
+                  end
 	       else
-                  keyvalues["amenity"] = "bar_yd"
+                  if ( keyvalues["outdoor_seating"] == "yes" ) then
+                     keyvalues["amenity"] = "bar_ydy"
+                  else
+                     keyvalues["amenity"] = "bar_ydd"
+                  end
 	       end
 	    end
          end
       else
          if ( keyvalues["wheelchair"] == "yes" ) then
-            keyvalues["amenity"] = "bar_dy"
+            if ( keyvalues["outdoor_seating"] == "yes" ) then
+               keyvalues["amenity"] = "bar_dyy"
+            else
+               keyvalues["amenity"] = "bar_dyd"
+            end
          else
             if ( keyvalues["wheelchair"] == "limited" ) then
-               keyvalues["amenity"] = "bar_dl"
+               if ( keyvalues["outdoor_seating"] == "yes" ) then
+                  keyvalues["amenity"] = "bar_dly"
+               else
+                  keyvalues["amenity"] = "bar_dld"
+               end
 	    else
 	       if ( keyvalues["wheelchair"] == "no" ) then
-                  keyvalues["amenity"] = "bar_dn"
+                  if ( keyvalues["outdoor_seating"] == "yes" ) then
+                     keyvalues["amenity"] = "bar_dny"
+                  else
+                     keyvalues["amenity"] = "bar_dnd"
+                  end
+               else
+                  if ( keyvalues["outdoor_seating"] == "yes" ) then
+                     keyvalues["amenity"] = "bar_ddy"
+                  else
+                     keyvalues["amenity"] = "bar_ddd"
+                  end
 	       end
 	    end
          end
