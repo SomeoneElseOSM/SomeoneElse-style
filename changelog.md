@@ -11,6 +11,7 @@ Small museums in former phoneboxes are now shown.
 If a "holy_well" is actually a spring, ensure it gets rendered as such.
 Show stone markers in a similar way to natural stones.
 Show aerial pipeline markers.
+Don't show stations on e.g. preserved railways as normal railway stations.
 
 ## 17/02/2022
 Fixed some minor issues with the display of crossings.

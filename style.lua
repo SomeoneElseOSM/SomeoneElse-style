@@ -4337,6 +4337,16 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- "tourism" stations - show with brown text rather than blue.
+-- ----------------------------------------------------------------------------
+   if ((( keyvalues["railway"] == "station" ) or
+        ( keyvalues["railway"] == "halt"    )) and
+       (  keyvalues["usage"]   == "tourism"  )) then
+      keyvalues["amenity"] = "tourismstation"
+      keyvalues["railway"] = nil
+   end
+
+-- ----------------------------------------------------------------------------
 -- railway=crossing - show as level crossings.
 -- ----------------------------------------------------------------------------
    if ( keyvalues["railway"] == "crossing" ) then
