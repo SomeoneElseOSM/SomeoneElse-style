@@ -7450,19 +7450,19 @@ function filter_tags_generic(keyvalues, nokeys)
       keyvalues["shop"] = "vacant"
    end
 
-   if (( keyvalues["name"]     == nil ) and
-       ( keyvalues["old_name"] ~= nil )) then
-      keyvalues["name"]     = keyvalues["old_name"]
-      keyvalues["old_name"] = nil
-   end
-
-   if (( keyvalues["name"]     == nil ) and
-       ( keyvalues["former_name"] ~= nil )) then
-      keyvalues["name"]     = keyvalues["former_name"]
-      keyvalues["former_name"] = nil
-   end
-
    if ( keyvalues["shop"] == "vacant" ) then
+      if (( keyvalues["name"]     == nil ) and
+          ( keyvalues["old_name"] ~= nil )) then
+         keyvalues["name"]     = keyvalues["old_name"]
+         keyvalues["old_name"] = nil
+      end
+
+      if (( keyvalues["name"]     == nil ) and
+          ( keyvalues["former_name"] ~= nil )) then
+         keyvalues["name"]     = keyvalues["former_name"]
+         keyvalues["former_name"] = nil
+      end
+
       if (( keyvalues["name"] == nil ) and
           ( keyvalues["ref"]  == nil )) then
          keyvalues["ref"] = "(vacant)"
@@ -7470,7 +7470,7 @@ function filter_tags_generic(keyvalues, nokeys)
          if ( keyvalues["ref"] == nil ) then
             keyvalues["ref"] = "(vacant: " .. keyvalues["name"] .. ")"
             keyvalues["name"] = nil
-	 end
+	    end
       end
    end
 
