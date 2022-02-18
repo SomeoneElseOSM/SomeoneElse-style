@@ -10,6 +10,7 @@ Change "monument" to not assume "building".
 Small museums in former phoneboxes are now shown.
 If a "holy_well" is actually a spring, ensure it gets rendered as such.
 Show stone markers in a similar way to natural stones.
+Show aerial pipeline markers.
 
 ## 17/02/2022
 Fixed some minor issues with the display of crossings.
