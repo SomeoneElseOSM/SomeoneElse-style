@@ -14,6 +14,7 @@ Show aerial pipeline markers.
 Don't show stations on e.g. preserved railways as normal railway stations.
 If a walking route has no name but does have a colour, render the colour as the name.
 Only use old_name on vacant shops and offices.
+Show an "outdoor seating" indicator on cafes.
 
 ## 17/02/2022
 Fixed some minor issues with the display of crossings.
