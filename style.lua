@@ -2035,6 +2035,8 @@ function filter_tags_generic(keyvalues, nokeys)
    if ((( keyvalues["industrial"] == "brewery" ) or
         ( keyvalues["craft"]      == "brewery" )) and
        (  keyvalues["real_ale"]   ~= nil        ) and
+       (  keyvalues["real_ale"]   ~= "maybe"    ) and
+       (  keyvalues["real_ale"]   ~= "no"       ) and
        (  keyvalues["amenity"]    == nil        ) and
        (  keyvalues["tourism"]   ~= "hotel"     )) then
       keyvalues["real_ale"] = nil
@@ -2095,6 +2097,16 @@ function filter_tags_generic(keyvalues, nokeys)
       keyvalues["accommodation"] = "yes"
       keyvalues["amenity"] = "pub"
       keyvalues["pub"] = nil
+      keyvalues["tourism"] = nil
+   end
+
+   if ((( keyvalues["tourism"]  == "hotel"       )   or
+        ( keyvalues["tourism"]  == "guest_house" ))  and
+       (  keyvalues["real_ale"] ~= nil            )  and
+       (  keyvalues["real_ale"] ~= "maybe"        )  and
+       (  keyvalues["real_ale"] ~= "no"           )) then
+      keyvalues["accommodation"] = "yes"
+      keyvalues["amenity"] = "pub"
       keyvalues["tourism"] = nil
    end
 
