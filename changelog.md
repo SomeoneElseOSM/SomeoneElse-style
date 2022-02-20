@@ -18,6 +18,7 @@ Show an "outdoor seating" indicator on bars and cafes.
 Show beer garden and outside seating indicators on more pubs.
 Where "real_ale" is used on breweries, suppress it to avoid them appearing as pubs.
 Where "real_ale" is used on hotels and guest houses, render as a pub.
+Remove "shop" tag on industrial or craft breweries - we pick one thing to display them as, and in this case it's "brewery".
 
 ## 17/02/2022
 Fixed some minor issues with the display of crossings.

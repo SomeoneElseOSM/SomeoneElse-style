@@ -2043,6 +2043,16 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Remove "shop" tag on industrial or craft breweries.
+-- We pick one thing to display them as, and in this case it's "brewery".
+-- ----------------------------------------------------------------------------
+   if ((( keyvalues["industrial"] == "brewery" ) or
+        ( keyvalues["craft"]      == "brewery" )) and
+       (  keyvalues["shop"]       ~= nil        )) then
+      keyvalues["shop"] = nil
+   end
+
+-- ----------------------------------------------------------------------------
 -- Don't show pubs, cafes or restaurants if you can't actually get to them.
 -- ----------------------------------------------------------------------------
    if ((( keyvalues["amenity"] == "pub"        ) or
