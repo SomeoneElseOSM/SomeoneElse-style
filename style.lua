@@ -2029,6 +2029,18 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Remove "real_ale" tag on industrial and craft breweries that aren't also
+-- a pub, bar, restaurant, cafe etc. or hotel.
+-- ----------------------------------------------------------------------------
+   if ((( keyvalues["industrial"] == "brewery" ) or
+        ( keyvalues["craft"]      == "brewery" )) and
+       (  keyvalues["real_ale"]   ~= nil        ) and
+       (  keyvalues["amenity"]    == nil        ) and
+       (  keyvalues["tourism"]   ~= "hotel"     )) then
+      keyvalues["real_ale"] = nil
+   end
+
+-- ----------------------------------------------------------------------------
 -- Don't show pubs, cafes or restaurants if you can't actually get to them.
 -- ----------------------------------------------------------------------------
    if ((( keyvalues["amenity"] == "pub"        ) or
