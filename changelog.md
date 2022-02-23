@@ -1,6 +1,8 @@
 # Changes made to this rendering
 This page describes changes made [here](https://github.com/SomeoneElseOSM/SomeoneElse-style), [here](https://github.com/SomeoneElseOSM/SomeoneElse-style-legend) and [here](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT), and visible [here](//map.atownsend.org.uk/maps/map/map.html).
 
+## As yet unreleased
+
 ## 23/02/2022
 Show flowerbeds as green.
 Ensure that vaccination centries (e.g. for COVID 19) that aren't already something else get shown as something.  Things that _are_ something else get (e.g. community centres) get left as that something else.
