@@ -333,7 +333,10 @@ function filter_tags_generic(keyvalues, nokeys)
             keyvalues["name:signed"] = nil
 
             if ( keyvalues["ref:signed"] == "no" ) then
-               keyvalues["name"]       = keyvalues["name"] .. ", " .. keyvalues["ref"]
+               if ( keyvalues["ref"] ~= nil ) then
+                  keyvalues["name"]       = keyvalues["name"] .. ", " .. keyvalues["ref"]
+               end
+
                keyvalues["ref"]        = nil
                keyvalues["ref:signed"] = nil
             else
