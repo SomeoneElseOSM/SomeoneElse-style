@@ -364,6 +364,18 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Render old names on farmland etc.
+-- ----------------------------------------------------------------------------
+   if ((( keyvalues["landuse"]  == "farmland"       )  or
+        ( keyvalues["natural"]  == "grassland"      )  or
+        ( keyvalues["natural"]  == "scrub"          )) and
+       (  keyvalues["name"]     == nil               ) and
+       (  keyvalues["old_name"] ~= nil               )) then
+      keyvalues["name"] = "(" .. keyvalues["old_name"] .. ")"
+      keyvalues["old_name"] = nil
+   end
+ 
+-- ----------------------------------------------------------------------------
 -- Rationalise the various trail_visibility values
 -- Also treat "overgrown=yes" as intermittent.  A discussion on talk-gb was
 -- largely inconclusive, but "overgrown" is the "most renderable" way to deal

@@ -3,6 +3,7 @@ This page describes changes made [here](https://github.com/SomeoneElseOSM/Someon
 
 ## As yet unreleased
 Render pitch=line as a white line.
+Render old_name on farmland if name is not set.
 
 ## 23/02/2022
 Show flowerbeds as green.
