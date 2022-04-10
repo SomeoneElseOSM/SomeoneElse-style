@@ -4,6 +4,7 @@ This page describes changes made [here](https://github.com/SomeoneElseOSM/Someon
 ## As yet unreleased
 Render pitch=line as a white line.
 Render old_name on farmland if name is not set.
+Render natural=tree_group as wood, if it has no other relevant tags.
 
 ## 10/04/2022
 Correct the max native zoom on LA PRoW tiles to 18.
