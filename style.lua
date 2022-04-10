@@ -398,6 +398,7 @@ function filter_tags_generic(keyvalues, nokeys)
    if ((  keyvalues["trail_visibility"] == "intermittent"  ) or
        (  keyvalues["trail_visibility"] == "intermediate"  ) or
        (  keyvalues["overgrown"]        == "yes"           ) or
+       (  keyvalues["obstacle"]         == "vegetation"    ) or
        (( keyvalues["trail_visibility"] == nil            )  and
         ( keyvalues["informal"]         == "yes"          ))) then
       keyvalues["trail_visibility"] = "intermediate"
