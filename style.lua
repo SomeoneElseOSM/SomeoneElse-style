@@ -3983,12 +3983,19 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
--- Display intermittent waterways as "wadi"
+-- Display intermittent rivers as "intriver"
 -- ----------------------------------------------------------------------------
-   if ((( keyvalues["waterway"]     == "river"  )  or
-        ( keyvalues["waterway"]     == "stream" )) and
-       (  keyvalues["intermittent"] == "yes"     )) then
-      keyvalues["waterway"] = "wadi"
+   if (( keyvalues["waterway"]     == "river"  )  and
+       ( keyvalues["intermittent"] == "yes"    )) then
+      keyvalues["waterway"] = "intriver"
+   end
+
+-- ----------------------------------------------------------------------------
+-- Display intermittent stream as "intstream"
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["waterway"]     == "stream"  )  and
+       ( keyvalues["intermittent"] == "yes"     )) then
+      keyvalues["waterway"] = "intstream"
    end
 
 -- ----------------------------------------------------------------------------
