@@ -5,6 +5,9 @@ This page describes changes made [here](https://github.com/SomeoneElseOSM/Someon
 Render pitch=line as a white line.
 Render old_name on farmland if name is not set.
 
+## 10/04/2022
+Correct the max native zoom on LA PRoW tiles to 18.
+
 ## 23/02/2022
 Show flowerbeds as green.
 Ensure that vaccination centries (e.g. for COVID 19) that aren't already something else get shown as something.  Things that _are_ something else get (e.g. community centres) get left as that something else.
