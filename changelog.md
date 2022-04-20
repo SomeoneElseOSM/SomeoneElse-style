@@ -7,6 +7,7 @@ Render old_name on farmland if name is not set.
 Render natural=tree_group as wood, if it has no other relevant tags.
 Treat obstacle=vegetation as overgrown=yes and set trail_visibility accordingly.
 Handle intermittent rivers and streams better - make them more visible, but not too prominent.
+Added a couple of synonyms for pipeline markers.
 
 ## 10/04/2022
 Correct the max native zoom on LA PRoW tiles to 18.

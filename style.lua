@@ -1553,7 +1553,9 @@ function filter_tags_generic(keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
 -- Aerial markers for pipelines etc.
 -- ----------------------------------------------------------------------------
-   if ( keyvalues["marker"] == "aerial"  ) then
+   if (( keyvalues["marker"]   == "aerial"          ) or
+       ( keyvalues["marker"]   == "pipeline"        ) or
+       ( keyvalues["man_made"] == "pipeline_marker" )) then
       keyvalues["man_made"] = "markeraerial"
    end
 
