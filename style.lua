@@ -2061,6 +2061,7 @@ function filter_tags_generic(keyvalues, nokeys)
        (  keyvalues["amenity"]    == nil        ) and
        (  keyvalues["tourism"]   ~= "hotel"     )) then
       keyvalues["real_ale"] = nil
+      keyvalues["real_cider"] = nil
    end
 
 -- ----------------------------------------------------------------------------
@@ -2068,7 +2069,8 @@ function filter_tags_generic(keyvalues, nokeys)
 -- We pick one thing to display them as, and in this case it's "brewery".
 -- ----------------------------------------------------------------------------
    if ((( keyvalues["industrial"] == "brewery" ) or
-        ( keyvalues["craft"]      == "brewery" )) and
+        ( keyvalues["craft"]      == "brewery" ) or
+        ( keyvalues["craft"]      == "cider"   )) and
        (  keyvalues["shop"]       ~= nil        )) then
       keyvalues["shop"] = nil
    end
@@ -7053,6 +7055,20 @@ function filter_tags_generic(keyvalues, nokeys)
 
    if ( keyvalues["emergency"] == "fire_extinguisher" ) then
       keyvalues["amenity"] = "fire_extinguisher"
+   end
+
+-- ----------------------------------------------------------------------------
+-- Craft cider
+-- Also remove tourism tag (we want to display brewery in preference to
+-- attraction or museum).
+-- ----------------------------------------------------------------------------
+   if ((  keyvalues["craft"]   == "cider"    ) or
+       (( keyvalues["craft"]   == "brewery" )  and
+        ( keyvalues["product"] == "cider"   ))) then
+      keyvalues["landuse"] = "unnamedcommercial"
+      keyvalues["office"]  = "craftcider"
+      keyvalues["craft"]  = nil
+      keyvalues["tourism"]  = nil
    end
 
 -- ----------------------------------------------------------------------------
