@@ -7806,7 +7806,9 @@ function filter_tags_generic(keyvalues, nokeys)
        (   keyvalues["shop"]            == "disused"   ) or
        (   keyvalues["shop"]            == "empty"     ) or
        (   keyvalues["shop"]            == "closed"    ) or
-       (   keyvalues["shop"]            == "abandoned" )) then
+       (   keyvalues["shop"]            == "abandoned" ) or
+       ((  keyvalues["shop"]            ~= nil        )  and
+        (  keyvalues["opening_hours"]   == "closed"   ))) then
       keyvalues["shop"] = "vacant"
    end
 
