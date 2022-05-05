@@ -3,6 +3,7 @@ This page describes changes made [here](https://github.com/SomeoneElseOSM/Someon
 
 ## As yet unreleased
 Added craft cider.
+Render pubs with "opening_hours=closed" as closed.
 
 ## 21/04/2022
 Render pitch=line as a white line.

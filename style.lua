@@ -2172,7 +2172,9 @@ function filter_tags_generic(keyvalues, nokeys)
        (  keyvalues["amenity"]           == "former_pub"      )   or
        (  keyvalues["amenity"]           == "old_pub"         )   or
        (( keyvalues["amenity"]           == "pub"            )    and
-        ( keyvalues["disused"]           == "yes"            ))) then
+        ( keyvalues["disused"]           == "yes"            ))   or
+       (( keyvalues["amenity"]           == "pub"            )    and
+        ( keyvalues["opening_hours"]     == "closed"         ))) then
       keyvalues["disused:amenity"] = "pub"
       keyvalues["amenity:disused"] = nil
       keyvalues["disused"] = nil
