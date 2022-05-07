@@ -2,7 +2,7 @@
 This page describes changes made [here](https://github.com/SomeoneElseOSM/SomeoneElse-style), [here](https://github.com/SomeoneElseOSM/SomeoneElse-style-legend) and [here](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT), and visible [here](//map.atownsend.org.uk/maps/map/map.html).
 
 ## As yet unreleased
-Added craft cider.
+Added craft cider breweries.
 Render pubs with "opening_hours=closed" as closed.
 Render shops with "opening_hours=closed" as vacant.
 
