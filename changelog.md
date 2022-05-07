@@ -3,8 +3,8 @@ This page describes changes made [here](https://github.com/SomeoneElseOSM/Someon
 
 ## As yet unreleased
 Added craft cider breweries.
-Render pubs with "opening_hours=closed" as closed.
-Render shops with "opening_hours=closed" as vacant.
+Render pubs with "opening_hours=closed" as closed pubs.
+Render shops with "opening_hours=closed" as vacant shops.
 
 ## 21/04/2022
 Render pitch=line as a white line.
