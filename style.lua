@@ -3902,16 +3902,17 @@ function filter_tags_generic(keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
 -- Sluice gates - send through as man_made, also display as building=roof.
 -- Also waterfall (the dot or line is generic enough to work there too)
--- The change of waterway to weir ensires line features appear too.
+-- The change of waterway to weir ensures line features appear too.
 -- ----------------------------------------------------------------------------
-   if ((  keyvalues["waterway"]     == "sluice_gate"   ) or
-       (  keyvalues["waterway"]     == "sluice"        ) or
-       (( keyvalues["waterway"]     == "flow_control" )  and
-        ( keyvalues["flow_control"] == "sluice_gate"  )) or
-       (  keyvalues["waterway"]     == "waterfall"     ) or
-       (  keyvalues["natural"]      == "waterfall"     ) or
-       (  keyvalues["water"]        == "waterfall"     ) or
-       (  keyvalues["waterway"]     == "weir"          )) then
+   if ((  keyvalues["waterway"]     == "sluice_gate"      ) or
+       (  keyvalues["waterway"]     == "sluice"           ) or
+       (( keyvalues["waterway"]     == "flow_control"    )  and
+        ( keyvalues["flow_control"] == "sluice_gate"     )) or
+       (  keyvalues["waterway"]     == "waterfall"        ) or
+       (  keyvalues["natural"]      == "waterfall"        ) or
+       (  keyvalues["water"]        == "waterfall"        ) or
+       (  keyvalues["waterway"]     == "weir"             ) or
+       (  keyvalues["waterway"]     == "floating_barrier" )) then
       keyvalues["man_made"] = "sluice_gate"
       keyvalues["building"] = "roof"
       keyvalues["waterway"] = "weir"
