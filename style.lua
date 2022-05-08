@@ -5863,6 +5863,7 @@ function filter_tags_generic(keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
    if (( keyvalues["landuse"] == "plant_nursery"              ) or
        ( keyvalues["shop"]    == "plant_nursery"              ) or
+       ( keyvalues["shop"]    == "plant_centre"               ) or
        ( keyvalues["shop"]    == "nursery"                    ) or
        ( keyvalues["shop"]    == "lawnmower"                  ) or
        ( keyvalues["shop"]    == "lawnmowers"                 ) or
