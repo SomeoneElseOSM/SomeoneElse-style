@@ -5071,7 +5071,10 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["barrier"]   == "gate;kissing_gate"     )  or
        ( keyvalues["barrier"]   == "pull_apart_gate"       )  or
        ( keyvalues["barrier"]   == "snow_gate"             )) then
-      if ( keyvalues["locked"] == "yes" ) then
+      if (( keyvalues["locked"] == "yes"         ) or
+          ( keyvalues["locked"] == "permanently" ) or
+          ( keyvalues["status"] == "locked"      ) or
+          ( keyvalues["gate"]   == "locked"      )) then
          keyvalues["barrier"] = "gate_locked"
       else
          keyvalues["barrier"] = "gate"

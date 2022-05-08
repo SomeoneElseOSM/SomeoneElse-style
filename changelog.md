@@ -7,6 +7,7 @@ Render pubs with "opening_hours=closed" as closed pubs.
 Render shops with "opening_hours=closed" as vacant shops.
 Now that regional cycle networks are shown, the "name" logic needs to include the name (rather than the ref) in cases where there is no ref.
 Show waterway=floating_barrier in the same way as other waterway barriers.
+Catch various other ways of detecting locked gates.
 
 ## 21/04/2022
 Render pitch=line as a white line.
