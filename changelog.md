@@ -10,6 +10,7 @@ Show waterway=floating_barrier in the same way as other waterway barriers.
 Catch various other ways of detecting locked gates.
 Add shop=plant_centre as a garden centre synonym.
 Use "is_sidepath" as another tag to suppress names on cycleways etc.
+Added pipeline marks to legend.
 
 ## 21/04/2022
 Render pitch=line as a white line.
