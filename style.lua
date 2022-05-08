@@ -8128,7 +8128,8 @@ function filter_tags_relation_member (keyvalues, keyvaluemembers, roles, memberc
             ( keyvalues["state"]   ~= "abandoned"    )))) then
          keyvalues["highway"] = "ldpncn"
 
-         if ( keyvalues["ref"] ~= "NB" ) then
+         if (( keyvalues["ref"] ~= "NB" ) and
+             ( keyvalues["ref"] ~= nil  )) then
             keyvalues["name"] = keyvalues["ref"]
          end
       end

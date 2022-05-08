@@ -5,6 +5,7 @@ This page describes changes made [here](https://github.com/SomeoneElseOSM/Someon
 Added craft cider breweries.
 Render pubs with "opening_hours=closed" as closed pubs.
 Render shops with "opening_hours=closed" as vacant shops.
+Now that regional cycle networks are shown, the "name" logic needs to include the name (rather than the ref) in cases where there is no ref.
 
 ## 21/04/2022
 Render pitch=line as a white line.
