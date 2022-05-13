@@ -117,13 +117,20 @@ file_prefix2=ireland-and-northern-ireland
 file_page2=http://download.geofabrik.de/europe/${file_prefix2}.html
 file_url2=http://download.geofabrik.de/europe/${file_prefix2}-latest.osm.pbf
 #
-# Remove the openstreetmap-tiles-update-expire entry from the crontab.
-# Note that this matches a comment on the crontab line.
+# Remove some entries including the openstreetmap-tiles-update-expire one
+# from the crontab.  Note that this matches a comment on the crontab line.
+# The files are stored safely and restored at the end of the process.
 #
 crontab -u $local_renderd_user -l > local_renderd_user_crontab_safe.$$
 grep -v "\#CONTROLLED BY update_render.sh" local_renderd_user_crontab_safe.$$ > local_renderd_user_crontab_new.$$
 crontab -u $local_renderd_user local_renderd_user_crontab_new.$$
 rm local_renderd_user_crontab_new.$$
+#
+# Also move some cron entries from "/etc/cron.d" out of the way
+#
+mv /etc/cron.d/osm_ldp1 .
+mv /etc/cron.d/osm_ldp2 .
+mv /etc/cron.d/osm_ldp3 .
 #
 # Next get the latest versions of each part of the map style
 #
@@ -238,9 +245,12 @@ pandoc /home/${local_filesystem_user}/src/SomeoneElse-map/about.md > /var/www/ht
 /etc/init.d/renderd restart
 /etc/init.d/apache2 restart
 #
-# Reinstate the crontab
+# Reinstate the crontabs
 #
 crontab -u $local_renderd_user local_renderd_user_crontab_safe.$$
+mv osm_ldp1 /etc/cron.d/
+mv osm_ldp2 /etc/cron.d/
+mv osm_ldp3 /etc/cron.d/
 # 
 # And final tidying up
 #
