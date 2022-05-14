@@ -37,6 +37,7 @@ fi
 #
 #file_prefix1=british-isles
 file_prefix1=great-britain
+#file_prefix1=ireland-and-northern-ireland
 file_page1=http://download.geofabrik.de/europe/${file_prefix1}.html
 file_url1=http://download.geofabrik.de/europe/${file_prefix1}-latest.osm.pbf
 #
@@ -95,10 +96,6 @@ file_url1=http://download.geofabrik.de/europe/${file_prefix1}-latest.osm.pbf
 #file_prefix1=worcestershire
 #file_page1=http://download.geofabrik.de/europe/great-britain/england/${file_prefix1}.html
 #file_url1=http://download.geofabrik.de/europe/great-britain/england/${file_prefix1}-latest.osm.pbf
-#
-#file_prefix1=ireland-and-northern-ireland
-#file_page1=http://download.geofabrik.de/europe/${file_prefix1}.html
-#file_url1=http://download.geofabrik.de/europe/${file_prefix1}-latest.osm.pbf
 #
 #file_prefix1=new-york
 #file_prefix1=oregon
