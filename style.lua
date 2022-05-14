@@ -7310,6 +7310,8 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["amenity"]    == "medical_laboratory"      ) or
        ( keyvalues["amenity"]    == "research_institute"      ) or
        ( keyvalues["office"]     == "political_party"         ) or
+       ( keyvalues["office"]     == "politician"              ) or
+       ( keyvalues["office"]     == "political"               ) or
        ( keyvalues["office"]     == "quango"                  ) or
        ( keyvalues["office"]     == "association"             ) or
        ( keyvalues["amenity"]    == "advice"                  ) or
