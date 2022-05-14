@@ -13,6 +13,7 @@ Use "is_sidepath" as another tag to suppress names on cycleways etc.
 Added pipeline marks to legend.
 In "update_render.sh", remove the "pubs" file before sorting the input file into it.
 Add "office=politician" in addition to "political_party".
+Added more pub outside seating and wheelchair combinations for micropubs and microbreweries.
 
 ## 21/04/2022
 Render pitch=line as a white line.
