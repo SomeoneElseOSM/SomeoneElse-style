@@ -1403,6 +1403,29 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Waste transfer stations
+-- First, try and identify mistagged ones.
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["amenity"] == "waste_transfer_station" ) and
+       ( keyvalues["recycling_type"] == "centre"          )) then
+      keyvalues["amenity"] = "recyclingcentre"
+      keyvalues["landuse"] = "industrial"
+   end
+
+-- ----------------------------------------------------------------------------
+-- Next, treat "real" waste transfer stations as industrial.  We remove the 
+-- amenity tag here because there's no icon for amenity=waste_transfer_station;
+-- an amenity tag would see it treated as landuse=unnamedcommercial with the
+-- amenity tag bringing the name (which it won't here).  The "industrial" tag
+-- forces it through the brand/operator logic.
+-- ----------------------------------------------------------------------------
+   if ( keyvalues["amenity"] == "waste_transfer_station" ) then
+      keyvalues["amenity"] = nil
+      keyvalues["landuse"] = "industrial"
+      keyvalues["industrial"] = "waste_transfer_station"
+   end
+
+-- ----------------------------------------------------------------------------
 -- Recycling bins and recycling centres.
 -- Recycling bins are only shown from z19.  Recycling centres are shown from
 -- z16 and have a characteristic icon.  Any object without recycling_type
@@ -1451,7 +1474,7 @@ function filter_tags_generic(keyvalues, nokeys)
 -- man_made=works drops the man_made tag to avoid duplicate labelling.
 -- "parking=depot" is a special case - drop the parking tag there too.
 -- ----------------------------------------------------------------------------
-   if ( keyvalues["man_made"]   == "wastewater_plant"       ) then
+   if ( keyvalues["man_made"]   == "wastewater_plant" ) then
       keyvalues["man_made"] = nil
       keyvalues["landuse"] = "industrial"
       if ( keyvalues["name"] == nil ) then
@@ -1490,8 +1513,7 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["man_made"]   == "gas_works"              ) or
        ( keyvalues["man_made"]   == "water_treatment"        ) or
        ( keyvalues["man_made"]   == "pumping_station"        ) or
-       ( keyvalues["man_made"]   == "water_works"            ) or
-       ( keyvalues["amenity"]    == "waste_transfer_station" )) then
+       ( keyvalues["man_made"]   == "water_works"            )) then
       keyvalues["landuse"] = "industrial"
    end
 
