@@ -1,9 +1,11 @@
 # Changes made to this rendering
 This page describes changes made [here](https://github.com/SomeoneElseOSM/SomeoneElse-style), [here](https://github.com/SomeoneElseOSM/SomeoneElse-style-legend) and [here](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT), and visible [here](//map.atownsend.org.uk/maps/map/map.html).
 
+## As yet unreleased.
+Added craft=floorer to rge same list as "roofer" etc.
+
 ## 30/05/2022
 Added more pub outside seating and wheelchair combinations for more pubs.
-Added craft=floorer to rge same list as "roofer" etc.
 
 ## 14/05/2022
 Added craft cider breweries.
