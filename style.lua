@@ -1883,6 +1883,7 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["amenity"] == "marketplace"     ) or
        ( keyvalues["shop"]    == "market"          ) or
        ( keyvalues["amenity"] == "market"          ) or
+       ( keyvalues["amenity"] == "food_court"      ) or
        ( keyvalues["shop"]    == "shopping_centre" )) then
       keyvalues["landuse"] = "retail"
    end

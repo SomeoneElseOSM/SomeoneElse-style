@@ -5,6 +5,7 @@ This page describes changes made [here](https://github.com/SomeoneElseOSM/Someon
 Added craft=floorer to rge same list as "roofer" etc.
 Exclude "independent" and "free house" etc. from brand and operator.
 Render amenity=waste_transfer_station as industrial.
+Render amenity=food_court in the same way as marketplace - as a name, with no icon.
 
 ## 30/05/2022
 Added more pub outside seating and wheelchair combinations for more pubs.
