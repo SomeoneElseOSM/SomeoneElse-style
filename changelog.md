@@ -3,6 +3,7 @@ This page describes changes made [here](https://github.com/SomeoneElseOSM/Someon
 
 ## 30/05/2022
 Added more pub outside seating and wheelchair combinations for more pubs.
+Added craft=floorer to rge same list as "roofer" etc.
 
 ## 14/05/2022
 Added craft cider breweries.

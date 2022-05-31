@@ -3928,7 +3928,7 @@ function filter_tags_generic(keyvalues, nokeys)
 
 
 -- ----------------------------------------------------------------------------
--- Render for-pay morocycle_parking areas differently.
+-- Render for-pay motorcycle_parking areas differently.
 -- ----------------------------------------------------------------------------
    if ((  keyvalues["amenity"] == "motorcycle_parking"  ) and
        (( keyvalues["fee"]     ~= nil               )  and
@@ -6412,6 +6412,7 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["craft"]  == "signmaker"            ) or
        ( keyvalues["craft"]  == "roofer"               ) or
        ( keyvalues["shop"]   == "roofing"              ) or
+       ( keyvalues["craft"]  == "floorer"              ) or
        ( keyvalues["shop"]   == "building_materials"   )) then
       keyvalues["landuse"] = "unnamedcommercial"
       keyvalues["shop"]    = "doityourself"
