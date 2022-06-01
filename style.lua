@@ -8219,12 +8219,14 @@ function filter_tags_generic(keyvalues, nokeys)
 -- Remove icon for public transport and animal field shelters and render as
 -- "roof" (if they are a way).
 -- "roof" isn't rendered for nodes, so this has the effect of suppressing
--- public transport shelters on nodes.
+-- public_transport shelters and shopping_cart shelters on nodes.
+-- shopping_cart isn't really a "shelter" we are interested in (for humans).
 -- There are no field shelters on nodes in GB/IE.
 -- ----------------------------------------------------------------------------
    if (( keyvalues["amenity"]      == "shelter"            ) and
        (( keyvalues["shelter_type"] == "public_transport" )  or
-        ( keyvalues["shelter_type"] == "field_shelter"    ))) then
+        ( keyvalues["shelter_type"] == "field_shelter"    )  or
+        ( keyvalues["shelter_type"] == "shopping_cart"    ))) then
       keyvalues["amenity"] = nil
       if ( keyvalues["building"] == nil ) then
          keyvalues["building"] = "roof"

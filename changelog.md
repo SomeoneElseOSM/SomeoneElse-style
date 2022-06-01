@@ -10,6 +10,7 @@ Render historic railway stations in the same way as other historic items.
 Prevent highway=raceway from appearing in the polygon table.
 Render entrance=main at higher zoom levels (from 18).
 Render roofs for shelters mapped as ways.
+Remover shelter icon from "shopping cart shelters".
 
 ## 30/05/2022
 Added more pub outside seating and wheelchair combinations for more pubs.
