@@ -8220,15 +8220,17 @@ function filter_tags_generic(keyvalues, nokeys)
 -- "roof" (if they are a way).
 -- "roof" isn't rendered for nodes, so this has the effect of suppressing
 -- public_transport shelters and shopping_cart shelters on nodes.
--- shopping_cart or parking isn't really a "shelter" we are interested in
--- (for humans).  There are no field or parking shelters on nodes in GB/IE.
+-- shopping_cart, parking and animal_shelter aren't really a "shelter" type 
+-- that we are interested in (for humans).  There are no field or parking 
+-- shelters on nodes in GB/IE.
 -- ----------------------------------------------------------------------------
    if (( keyvalues["amenity"]      == "shelter"            ) and
        (( keyvalues["shelter_type"] == "public_transport" )  or
         ( keyvalues["shelter_type"] == "field_shelter"    )  or
         ( keyvalues["shelter_type"] == "shopping_cart"    )  or
         ( keyvalues["shelter_type"] == "trolley_park"     )  or
-        ( keyvalues["shelter_type"] == "parking"          ))) then
+        ( keyvalues["shelter_type"] == "parking"          )  or
+        ( keyvalues["shelter_type"] == "animal_shelter"   ))) then
       keyvalues["amenity"] = nil
       if ( keyvalues["building"] == nil ) then
          keyvalues["building"] = "roof"
