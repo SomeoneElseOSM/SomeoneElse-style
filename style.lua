@@ -8218,6 +8218,9 @@ function filter_tags_generic(keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
 -- Remove icon for public transport and animal field shelters and render as
 -- "roof" (if they are a way).
+-- "roof" isn't rendered for nodes, so this has the effect of suppressing
+-- public transport shelters on nodes.
+-- There are no field shelters on nodes in GB/IE.
 -- ----------------------------------------------------------------------------
    if (( keyvalues["amenity"]      == "shelter"            ) and
        (( keyvalues["shelter_type"] == "public_transport" )  or
@@ -8424,6 +8427,14 @@ function filter_tags_way (keyvalues, nokeys)
    if ( keyvalues["natural"] == "sinkhole" ) then
       keyvalues["natural"] = "cliff"
       keyvalues["area"] = "no"
+   end
+
+-- ----------------------------------------------------------------------------
+-- Add building=roof on shelters if no building tag already.
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["amenity"]  == "shelter"            ) and
+       ( keyvalues["building"] == nil                  )) then
+      keyvalues["building"] = "roof"
    end
 
 -- ----------------------------------------------------------------------------
