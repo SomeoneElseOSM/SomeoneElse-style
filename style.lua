@@ -8222,6 +8222,14 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Prevent highway=raceway from appearing in the polygon table.
+-- ----------------------------------------------------------------------------
+   if ( keyvalues["highway"] == "raceway" ) then
+      keyvalues["area"] = "no"
+   end
+
+
+-- ----------------------------------------------------------------------------
 -- Drop some highway areas - "track" etc. areas wherever I have seen them are 
 -- garbage.
 -- "footway" (pedestrian areas) and "service" (e.g. petrol station forecourts)
