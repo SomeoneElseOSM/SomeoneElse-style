@@ -11,6 +11,7 @@ Prevent highway=raceway from appearing in the polygon table.
 Render entrance=main at higher zoom levels (from 18).
 Render roofs for shelters mapped as ways, and bicycle_parking ways.
 Remove shelter icon from "shopping cart" and "trolley park" shelters.
+Render "bicycle_parking" shelters with a bicycle_parking icon.
 
 ## 30/05/2022
 Added more pub outside seating and wheelchair combinations for more pubs.

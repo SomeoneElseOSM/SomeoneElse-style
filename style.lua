@@ -8234,6 +8234,14 @@ function filter_tags_generic(keyvalues, nokeys)
       end
    end
 
+  if (( keyvalues["amenity"]      == "shelter"            ) and
+      ( keyvalues["shelter_type"] == "bicycle_parking"    )) then
+      keyvalues["amenity"] = "bicycle_parking"
+      if ( keyvalues["building"] == nil ) then
+         keyvalues["building"] = "roof"
+      end
+   end
+
 -- ----------------------------------------------------------------------------
 -- Prevent highway=raceway from appearing in the polygon table.
 -- ----------------------------------------------------------------------------
