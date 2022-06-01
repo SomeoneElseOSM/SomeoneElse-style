@@ -10,7 +10,7 @@ Render historic railway stations in the same way as other historic items.
 Prevent highway=raceway from appearing in the polygon table.
 Render entrance=main at higher zoom levels (from 18).
 Render roofs for shelters mapped as ways, and bicycle_parking ways.
-Remove shelter icon from "shopping cart" and "trolley park" shelters.
+Remove shelter icon from "shopping cart", "trolley park" and "parking" shelters.
 Render "bicycle_parking" shelters with a bicycle_parking icon.
 
 ## 30/05/2022
