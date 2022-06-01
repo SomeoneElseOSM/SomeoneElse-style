@@ -8433,9 +8433,11 @@ function filter_tags_way (keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
--- Add building=roof on shelters if no building tag already.
+-- Add building=roof on shelter and bicycle_parking ways if no building tag 
+-- already.
 -- ----------------------------------------------------------------------------
-   if (( keyvalues["amenity"]  == "shelter"            ) and
+   if ((( keyvalues["amenity"]  == "shelter"          )   or
+        ( keyvalues["amenity"]  == "bicycle_parking"  ))  and
        ( keyvalues["building"] == nil                  )) then
       keyvalues["building"] = "roof"
    end
