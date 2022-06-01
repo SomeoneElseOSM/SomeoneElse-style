@@ -5185,6 +5185,15 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Render historic railway stations.
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["abandoned:railway"] == "station" )  or
+       ( keyvalues["historic:railway"]  == "station" )  or
+       ( keyvalues["disused:railway"]   == "station" )) then
+      keyvalues["historic"] = "nonspecific"
+   end
+
+-- ----------------------------------------------------------------------------
 -- Where military has been overtagged over natural=wood, remove military.
 -- ----------------------------------------------------------------------------
    if ((( keyvalues["natural"]   == "wood"        )  or
