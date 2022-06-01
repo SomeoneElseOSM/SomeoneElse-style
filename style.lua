@@ -8226,7 +8226,8 @@ function filter_tags_generic(keyvalues, nokeys)
    if (( keyvalues["amenity"]      == "shelter"            ) and
        (( keyvalues["shelter_type"] == "public_transport" )  or
         ( keyvalues["shelter_type"] == "field_shelter"    )  or
-        ( keyvalues["shelter_type"] == "shopping_cart"    ))) then
+        ( keyvalues["shelter_type"] == "shopping_cart"    )  or
+        ( keyvalues["shelter_type"] == "trolley_park"     ))) then
       keyvalues["amenity"] = nil
       if ( keyvalues["building"] == nil ) then
          keyvalues["building"] = "roof"
