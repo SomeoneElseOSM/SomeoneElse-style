@@ -5,7 +5,7 @@ polygon_keys = { 'building', 'landcover', 'landuse', 'amenity', 'harbour', 'hist
 
 generic_keys = {'access','addr:housename','addr:housenumber','addr:interpolation','admin_level','advertising','aerialway','aeroway','amenity','area','barrier',
    'bicycle','brand','bridge','bridleway','booth','boundary','building','capital','construction','covered','culvert','cutting','denomination','designation','disused','disused:shop','ele',
-   'embankment','emergency','foot','flood_prone','generation:source','golf','harbour','highway','historic','horse','hours','intermittent','junction','landcover','landuse','layer','leisure','lcn_ref','lock','locked',
+   'embankment','emergency','entrance','foot','flood_prone','generation:source','golf','harbour','highway','historic','horse','hours','intermittent','junction','landcover','landuse','layer','leisure','lcn_ref','lock','locked',
    'man_made','marker','military','motor_car','name','natural','ncn_milepost','office','oneway','operator','opening_hours:covid19','pitch','place','playground','poi','population','power','power_source','public_transport','seamark:type',
    'railway','ref','religion','rescue_equipment','route','service','shop','sport','surface','toll','tourism','tower:type', 'tracktype','tunnel','water','waterway',
    'wetland','width','wood','type'}
@@ -5401,6 +5401,13 @@ function filter_tags_generic(keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
    if ( keyvalues["barrier"]   == "entrance" ) then
       keyvalues["barrier"] = nil
+   end
+
+-- ----------------------------------------------------------------------------
+-- Render main entrances
+-- ----------------------------------------------------------------------------
+   if ( keyvalues["entrance"]   == "main" ) then
+      keyvalues["amenity"] = "entrancemain"
    end
 
 -- ----------------------------------------------------------------------------

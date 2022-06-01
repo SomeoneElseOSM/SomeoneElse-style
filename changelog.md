@@ -8,6 +8,7 @@ Render amenity=waste_transfer_station as industrial.
 Render amenity=food_court in the same way as marketplace - as a name, with no icon.
 Render historic railway stations in the same way as other historic items.
 Prevent highway=raceway from appearing in the polygon table.
+Render entrance=main at higher zoom levels (from 18).
 
 ## 30/05/2022
 Added more pub outside seating and wheelchair combinations for more pubs.
