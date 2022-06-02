@@ -1340,7 +1340,7 @@ function filter_tags_generic(keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
 -- Bridge structures - display as building=roof.
 -- Also farmyard "bunker silos" and canopies, and natural arches.
--- Also railway traversers.
+-- Also railway traversers and more.
 -- ----------------------------------------------------------------------------
    if ((  keyvalues["man_made"]         == "bridge"        ) or
        (  keyvalues["natural"]          == "arch"          ) or
@@ -1350,6 +1350,7 @@ function filter_tags_generic(keyvalues, nokeys)
        (  keyvalues["animal"]           == "horse_walker"  ) or
        (  keyvalues["building"]         == "canopy"        ) or
        (  keyvalues["building"]         == "car_port"      ) or
+       (  keyvalues["leisure"]          == "bleachers"     ) or
        (( keyvalues["disused:building"] ~= nil            )  and
         ( keyvalues["building"]         == nil            )) or
        (  keyvalues["building:type"] == "canopy"           )) then
