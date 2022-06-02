@@ -2,7 +2,7 @@
 This page describes changes made [here](https://github.com/SomeoneElseOSM/SomeoneElse-style), [here](https://github.com/SomeoneElseOSM/SomeoneElse-style-legend) and [here](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT), and visible [here](//map.atownsend.org.uk/maps/map/map.html).
 
 ## As yet unreleased.
-Added craft=floorer to rge same list as "roofer" etc.
+Added craft=floorer to the same list as "roofer" etc.
 Exclude "independent" and "free house" etc. from brand and operator.
 Render amenity=waste_transfer_station as industrial.
 Render amenity=food_court in the same way as marketplace - as a name, with no icon.
