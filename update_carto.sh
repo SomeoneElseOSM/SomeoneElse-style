@@ -5,12 +5,17 @@
 # -----------------------------------------------------------------------------
 #
 # The local user account we are using
+# "local_filesystem_user" is whichever non-root account is used to fetch from
+# github.
+# On Debian 11 or above and Ubuntu 21.04 and above,
+# "local_renderd_user" will probably be "_renderd"
 #
-local_user=renderaccount
+local_filesystem_user=renderaccount
+local_renderd_user=renderaccount
 #
 # First things first - is another copy of the script already running?
 #
-cd /home/${local_user}/data
+cd /home/${local_filesystem_user}/data
 if test -e update_render.running
 then
     echo update_render.running exists so exiting
@@ -21,17 +26,17 @@ fi
 #
 # Next get the latest versions of each part of the map style
 #
-cd /home/${local_user}/src/SomeoneElse-style
+cd /home/${local_filesystem_user}/src/SomeoneElse-style
 pwd
-sudo -u ${local_user} git pull
+sudo -u ${local_filesystem_user} git pull
 #
-cd /home/${local_user}/src/SomeoneElse-style-legend
+cd /home/${local_filesystem_user}/src/SomeoneElse-style-legend
 pwd
-sudo -u ${local_user} git pull
+sudo -u ${local_filesystem_user} git pull
 #
-cd /home/${local_user}/src/openstreetmap-carto-AJT
+cd /home/${local_filesystem_user}/src/openstreetmap-carto-AJT
 pwd
-sudo -u ${local_user} git pull
+sudo -u ${local_filesystem_user} git pull
 carto project.mml > mapnik.xml
 #
 /etc/init.d/renderd restart
@@ -42,6 +47,6 @@ rm -rf /var/lib/mod_tile/ajt/??
 #
 # And final tidying up
 #
-cd /home/${local_user}/data
+cd /home/${local_filesystem_user}/data
 rm update_render.running
 #

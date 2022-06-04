@@ -2,7 +2,7 @@
 # update_render.sh
 # Designed to update rendering database and related styles to latest version.
 # Note that there's little error checking in here yet.  It also won't run on
-# e.g. an NTFS file system, and makes a number of assumptions abot where 
+# e.g. an NTFS file system, and makes a number of assumptions about where 
 # things are.
 # -----------------------------------------------------------------------------
 #
