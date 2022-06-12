@@ -232,7 +232,7 @@ sudo -u ${local_renderd_user} osm2pgsql --append --slim -d gis -C 250 --number-p
 #
 rm welshlangpart_${file_extension1}_before.pbf welshlangpart_${file_extension1}_after.pbf englangpart_${file_extension1}_after.pbf scotsgdlangpart_${file_extension1}_before.pbf scotsgdlangpart_${file_extension1}_after.pbf langs_${file_extension1}_merged.pbf
 #
-# Reinitialise updating
+# Reinitialise updating (osmosis)
 #
 rm -rf /var/lib/mod_tile/.osmosis.old
 mv /var/lib/mod_tile/.osmosis /var/lib/mod_tile/.osmosis.old
