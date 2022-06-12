@@ -4970,6 +4970,7 @@ function filter_tags_generic(keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
    if ( keyvalues["highway"]   == "escape" ) then
       keyvalues["highway"] = "service"
+      keyvalues["access"]  = "destination"
    end
 
 -- ----------------------------------------------------------------------------
