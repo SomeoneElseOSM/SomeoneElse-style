@@ -232,6 +232,8 @@ sudo -u ${local_renderd_user} osm2pgsql --append --slim -d gis -C 250 --number-p
 #
 rm welshlangpart_${file_extension1}_before.pbf welshlangpart_${file_extension1}_after.pbf englangpart_${file_extension1}_after.pbf scotsgdlangpart_${file_extension1}_before.pbf scotsgdlangpart_${file_extension1}_after.pbf langs_${file_extension1}_merged.pbf
 #
+# Note one of these next two sections only will be needed, depending on whether osmosis or osm2pgsql is used for updates
+#
 # Reinitialise updating (osmosis)
 #
 rm -rf /var/lib/mod_tile/.osmosis.old
@@ -241,6 +243,13 @@ pandoc /home/${local_filesystem_user}/src/SomeoneElse-style/changelog.md > /var/
 pandoc /home/${local_filesystem_user}/src/SomeoneElse-map/about.md > /var/www/html/maps/map/about.html
 /etc/init.d/renderd restart
 /etc/init.d/apache2 restart
+#
+# Reinitialise updating (pyosmium)                                                                                                            #
+#rm -rf /var/cache/renderd/pyosmium.old
+#mv /var/cache/renderd/pyosmium /var/cache/renderd/pyosmium.old
+#mkdir /var/cache/renderd/pyosmium
+#chown ${local_renderd_user} /var/cache/renderd/pyosmium
+#sudo -u ${local_renderd_user} pyosmium-get-changes -D ${file_extension1} -f /var/cache/renderd/pyosmium/sequence.state -v
 #
 # Reinstate the crontabs
 #
