@@ -4,6 +4,7 @@ This page describes changes made [here](https://github.com/SomeoneElseOSM/Someon
 ## As yet unreleased
 Treat school=entrance as entrance=main.
 Add access=destination to highway escape lanes.
+Removed very old "builtup areas" layer from project.mml
 
 ## 03/06/2022
 Added craft=floorer to the same list as "roofer" etc.
