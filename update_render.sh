@@ -13,7 +13,7 @@
 # "local_renderd_user" will probably be "_renderd"
 #
 local_filesystem_user=renderaccount
-local_renderd_user=renderaccount
+local_renderd_user=_renderd
 #
 # First things first - is another copy of the script already running?
 #
@@ -196,27 +196,32 @@ fi
 /etc/init.d/apache2 stop
 #
 # Welsh, English and Scottish names need to be converted to "cy or en", "en" and "gd or en" respectively.
-# First, convert a Welsh name portion intoto Welsh
+# First, convert a Welsh name portion into Welsh
 #
-osmosis  --read-pbf ${file_prefix1}_${file_extension1}.osm.pbf --bounding-polygon file="/home/${local_filesystem_user}/src/SomeoneElse-style/welsh_areas.poly" --write-pbf welshlangpart_${file_extension1}_before.pbf
+osmium extract --polygon /home/${local_filesystem_user}/src/SomeoneElse-style/welsh_areas.geojson ${file_prefix1}_${file_extension1}.osm.pbf -O -o welshlangpart_${file_extension1}_before.pbf
 #
-osmosis --read-pbf welshlangpart_${file_extension1}_before.pbf --tag-transform /home/${local_filesystem_user}/src/SomeoneElse-style/transform_cy.xml --write-pbf welshlangpart_${file_extension1}_after.pbf
+/home/${local_filesystem_user}/src/osm-tags-transform/build/src/osm-tags-transform -c /home/${local_filesystem_user}/src/SomeoneElse-style/transform_cy.lua /home/${local_filesystem_user}/data/welshlangpart_${file_extension1}_before.pbf -O -o /home/${local_filesystem_user}/data/welshlangpart_${file_extension1}_after.pbf
 #
 # Likewise, Scots Gaelic
 #
-osmosis  --read-pbf ${file_prefix1}_${file_extension1}.osm.pbf  --bounding-box left=-9.23 bottom=55.56 right=-5.7 top=59.92 --write-pbf scotsgdlangpart_${file_extension1}_before.pbf
+osmium extract --polygon /home/${local_filesystem_user}/src/SomeoneElse-style/scotsgd_areas.geojson ${file_prefix1}_${file_extension1}.osm.pbf -O -o scotsgdlangpart_${file_extension1}_before.pbf
 #
-osmosis --read-pbf scotsgdlangpart_${file_extension1}_before.pbf --tag-transform /home/${local_filesystem_user}/src/SomeoneElse-style/transform_gd.xml --write-pbf scotsgdlangpart_${file_extension1}_after.pbf
+/home/${local_filesystem_user}/src/osm-tags-transform/build/src/osm-tags-transform -c /home/${local_filesystem_user}/src/SomeoneElse-style/transform_gd.lua /home/${local_filesystem_user}/data/scotsgdlangpart_${file_extension1}_before.pbf -O -o /home/${local_filesystem_user}/data/scotsgdlangpart_${file_extension1}_after.pbf
 #
-# Convert the remaining file to "English"
+# Unlike when using osmosis, which merges in a predictable way, 
+# with osmium we have to explicitly extract the "English" part before conversion.
+# The "English" geojson is a large multipolygon with the "Welsh" and "ScotsGD" areas as holes
+# (using the exact same co-ordinates).
 #
-osmosis --read-pbf ${file_prefix1}_${file_extension1}.osm.pbf --tag-transform /home/${local_filesystem_user}/src/SomeoneElse-style/transform_en.xml --write-pbf englangpart_${file_extension1}_after.pbf
+osmium extract --polygon /home/${local_filesystem_user}/src/SomeoneElse-style/english_areas.geojson ${file_prefix1}_${file_extension1}.osm.pbf -O -o englangpart_${file_extension1}_before.pbf
+#
+/home/${local_filesystem_user}/src/osm-tags-transform/build/src/osm-tags-transform -c /home/${local_filesystem_user}/src/SomeoneElse-style/transform_en.lua englangpart_${file_extension1}_before.pbf -O -o englangpart_${file_extension1}_after.pbf
 #
 # Note that "file2", if we need it, does not need processing.
+# With "osmium merge" there is no way to merge so that cy and gd files take precedence 
+# over the en one, but following the extracts above all should be mutually exclusive.
 #
-# Merge them, in such a way that the cy and gd files take precedence over the en one.
-#
-osmosis --read-pbf welshlangpart_${file_extension1}_after.pbf --read-pbf scotsgdlangpart_${file_extension1}_after.pbf --read-pbf englangpart_${file_extension1}_after.pbf  --read-pbf ${file_prefix2}_${file_extension2}.osm.pbf --merge --merge --merge --write-pbf  langs_${file_extension1}_merged.pbf
+osmium merge ${file_prefix2}_${file_extension2}.osm.pbf englangpart_${file_extension1}_after.pbf welshlangpart_${file_extension1}_after.pbf scotsgdlangpart_${file_extension1}_after.pbf -O -o langs_${file_extension1}_merged.pbf
 #
 # Run osm2pgsql
 #
@@ -230,26 +235,28 @@ sudo -u ${local_renderd_user} osm2pgsql --append --slim -d gis -C 250 --number-p
 #
 # Tidy temporary files
 #
-rm welshlangpart_${file_extension1}_before.pbf welshlangpart_${file_extension1}_after.pbf englangpart_${file_extension1}_after.pbf scotsgdlangpart_${file_extension1}_before.pbf scotsgdlangpart_${file_extension1}_after.pbf langs_${file_extension1}_merged.pbf
+rm welshlangpart_${file_extension1}_before.pbf welshlangpart_${file_extension1}_after.pbf englangpart_${file_extension1}_before.pbf englangpart_${file_extension1}_after.pbf scotsgdlangpart_${file_extension1}_before.pbf scotsgdlangpart_${file_extension1}_after.pbf langs_${file_extension1}_merged.pbf
 #
 # Note one of these next two sections only will be needed, depending on whether osmosis or osm2pgsql is used for updates
 #
 # Reinitialise updating (osmosis)
 #
-rm -rf /var/lib/mod_tile/.osmosis.old
-mv /var/lib/mod_tile/.osmosis /var/lib/mod_tile/.osmosis.old
-sudo -u ${local_renderd_user} /home/${local_filesystem_user}/src/mod_tile/openstreetmap-tiles-update-expire ${file_extension1}
+#rm -rf /var/lib/mod_tile/.osmosis.old
+#mv /var/lib/mod_tile/.osmosis /var/lib/mod_tile/.osmosis.old
+#sudo -u ${local_renderd_user} /home/${local_filesystem_user}/src/mod_tile/openstreetmap-tiles-update-expire ${file_extension1}
+#
+# Reinitialise updating (pyosmium)
+#
+rm -rf /var/cache/renderd/pyosmium.old
+mv /var/cache/renderd/pyosmium /var/cache/renderd/pyosmium.old
+mkdir /var/cache/renderd/pyosmium
+chown ${local_renderd_user} /var/cache/renderd/pyosmium
+sudo -u ${local_renderd_user} pyosmium-get-changes -D ${file_extension1} -f /var/cache/renderd/pyosmium/sequence.state -v
+#
 pandoc /home/${local_filesystem_user}/src/SomeoneElse-style/changelog.md > /var/www/html/maps/map/changelog.html
 pandoc /home/${local_filesystem_user}/src/SomeoneElse-map/about.md > /var/www/html/maps/map/about.html
 /etc/init.d/renderd restart
 /etc/init.d/apache2 restart
-#
-# Reinitialise updating (pyosmium)                                                                                                            #
-#rm -rf /var/cache/renderd/pyosmium.old
-#mv /var/cache/renderd/pyosmium /var/cache/renderd/pyosmium.old
-#mkdir /var/cache/renderd/pyosmium
-#chown ${local_renderd_user} /var/cache/renderd/pyosmium
-#sudo -u ${local_renderd_user} pyosmium-get-changes -D ${file_extension1} -f /var/cache/renderd/pyosmium/sequence.state -v
 #
 # Reinstate the crontabs
 #
