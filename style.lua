@@ -1,4 +1,4 @@
-polygon_keys = { 'building', 'landcover', 'landuse', 'amenity', 'harbour', 'historic', 'leisure', 
+polygon_keys = { 'boundary', 'building', 'landcover', 'landuse', 'amenity', 'harbour', 'historic', 'leisure', 
       'man_made', 'military', 'natural', 'office', 'place', 'power',
       'public_transport', 'seamark:type', 'shop', 'sport', 'tourism', 'waterway',
       'wetland', 'water', 'aeroway' }

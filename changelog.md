@@ -5,6 +5,7 @@ This page describes changes made [here](https://github.com/SomeoneElseOSM/Someon
 Treat school=entrance as entrance=main.
 Add access=destination to highway escape lanes.
 Removed very old "builtup areas" layer from project.mml
+Add "boundary" as a multipolygon key so that national parks drawn as ways are still shown (specifically, St Kilda).
 
 ## 03/06/2022
 Added craft=floorer to the same list as "roofer" etc.
