@@ -15,7 +15,39 @@
 local_filesystem_user=renderaccount
 local_renderd_user=_renderd
 #
-# First things first - is another copy of the script already running?
+# First things first - define some shared functions
+#
+reinstate_crontabs()
+{
+    crontab -u $local_renderd_user local_renderd_user_crontab_safe.$$
+    mv osm_ldp1 /etc/cron.d/
+    mv osm_ldp2 /etc/cron.d/
+    mv osm_ldp3 /etc/cron.d/
+}
+
+final_tidy_up()
+{
+    rm last_modified1.$$ last_modified2.$$
+    rm update_render.running
+}
+
+m_error_01()
+{
+    reinstate_crontabs
+    final_tidy_up
+    date | mail -s "Database reload FAILED on `hostname`, previous database intact" ${local_filesystem_user}
+    exit
+}
+
+m_error_02()
+{
+    reinstate_crontabs
+    final_tidy_up
+    date | mail -s "Database reload FAILED on `hostname`, previous database lost" ${local_filesystem_user}
+    exit
+}
+
+# Next, is another copy of the script already running?
 #
 cd /home/${local_filesystem_user}/data
 if test -e update_render.running
@@ -198,40 +230,120 @@ fi
 # Welsh, English and Scottish names need to be converted to "cy or en", "en" and "gd or en" respectively.
 # First, convert a Welsh name portion into Welsh
 #
-osmium extract --polygon /home/${local_filesystem_user}/src/SomeoneElse-style/welsh_areas.geojson ${file_prefix1}_${file_extension1}.osm.pbf -O -o welshlangpart_${file_extension1}_before.pbf
+if osmium extract --polygon /home/${local_filesystem_user}/src/SomeoneElse-style/welsh_areas.geojson ${file_prefix1}_${file_extension1}.osm.pbf -O -o welshlangpart_${file_extension1}_before.pbf
+then
+    echo Welsh Extract OK
+else
+    echo Welsh Extract Error
+    m_error_01
+fi
+
 #
-/home/${local_filesystem_user}/src/osm-tags-transform/build/src/osm-tags-transform -c /home/${local_filesystem_user}/src/SomeoneElse-style/transform_cy.lua /home/${local_filesystem_user}/data/welshlangpart_${file_extension1}_before.pbf -O -o /home/${local_filesystem_user}/data/welshlangpart_${file_extension1}_after.pbf
+if /home/${local_filesystem_user}/src/osm-tags-transform/build/src/osm-tags-transform -c /home/${local_filesystem_user}/src/SomeoneElse-style/transform_cy.lua /home/${local_filesystem_user}/data/welshlangpart_${file_extension1}_before.pbf -O -o /home/${local_filesystem_user}/data/welshlangpart_${file_extension1}_after.pbf
+then
+    echo Welsh Transform OK
+else
+    echo Welsh Transform Error
+    m_error_01
+fi
+
 #
 # Likewise, Scots Gaelic
 #
-osmium extract --polygon /home/${local_filesystem_user}/src/SomeoneElse-style/scotsgd_areas.geojson ${file_prefix1}_${file_extension1}.osm.pbf -O -o scotsgdlangpart_${file_extension1}_before.pbf
+if osmium extract --polygon /home/${local_filesystem_user}/src/SomeoneElse-style/scotsgd_areas.geojson ${file_prefix1}_${file_extension1}.osm.pbf -O -o scotsgdlangpart_${file_extension1}_before.pbf
+then
+    echo Scots Gaelic Extract OK
+else
+    echo Scots Gaelic Extract Error
+    m_error_01
+fi
+
 #
-/home/${local_filesystem_user}/src/osm-tags-transform/build/src/osm-tags-transform -c /home/${local_filesystem_user}/src/SomeoneElse-style/transform_gd.lua /home/${local_filesystem_user}/data/scotsgdlangpart_${file_extension1}_before.pbf -O -o /home/${local_filesystem_user}/data/scotsgdlangpart_${file_extension1}_after.pbf
+if /home/${local_filesystem_user}/src/osm-tags-transform/build/src/osm-tags-transform -c /home/${local_filesystem_user}/src/SomeoneElse-style/transform_gd.lua /home/${local_filesystem_user}/data/scotsgdlangpart_${file_extension1}_before.pbf -O -o /home/${local_filesystem_user}/data/scotsgdlangpart_${file_extension1}_after.pbf
+then
+    echo Scots Gaelic Transform OK
+else
+    echo Scots Gaelic Transform Error
+    m_error_01
+fi
+
 #
 # Unlike when using osmosis, which merges in a predictable way, 
 # with osmium we have to explicitly extract the "English" part before conversion.
 # The "English" geojson is a large multipolygon with the "Welsh" and "ScotsGD" areas as holes
 # (using the exact same co-ordinates).
 #
-osmium extract --polygon /home/${local_filesystem_user}/src/SomeoneElse-style/english_areas.geojson ${file_prefix1}_${file_extension1}.osm.pbf -O -o englangpart_${file_extension1}_before.pbf
+if osmium extract --polygon /home/${local_filesystem_user}/src/SomeoneElse-style/english_areas.geojson ${file_prefix1}_${file_extension1}.osm.pbf -O -o englangpart_${file_extension1}_before.pbf
+then
+    echo English Extract OK
+else
+    ecjo English Extract Error
+    m_error_01
+fi
+
 #
-/home/${local_filesystem_user}/src/osm-tags-transform/build/src/osm-tags-transform -c /home/${local_filesystem_user}/src/SomeoneElse-style/transform_en.lua englangpart_${file_extension1}_before.pbf -O -o englangpart_${file_extension1}_after.pbf
+if /home/${local_filesystem_user}/src/osm-tags-transform/build/src/osm-tags-transform -c /home/${local_filesystem_user}/src/SomeoneElse-style/transform_en.lua englangpart_${file_extension1}_before.pbf -O -o englangpart_${file_extension1}_after.pbf
+then
+    echo English Transform OK
+else
+    echo English Transform Error
+    m_error_01
+fi
+
 #
 # Note that "file2", if we need it, does not need processing.
 # With "osmium merge" there is no way to merge so that cy and gd files take precedence 
 # over the en one, but following the extracts above all should be mutually exclusive.
 #
-osmium merge ${file_prefix2}_${file_extension2}.osm.pbf englangpart_${file_extension1}_after.pbf welshlangpart_${file_extension1}_after.pbf scotsgdlangpart_${file_extension1}_after.pbf -O -o langs_${file_extension1}_merged.pbf
+if osmium merge ${file_prefix2}_${file_extension2}.osm.pbf englangpart_${file_extension1}_after.pbf welshlangpart_${file_extension1}_after.pbf scotsgdlangpart_${file_extension1}_after.pbf -O -o langs_${file_extension1}_merged.pbf
+then
+    echo Merge OK
+else
+    echo Merge Error
+    m_error_01
+fi
+
 #
 # Run osm2pgsql
 #
-sudo -u ${local_renderd_user} osm2pgsql --create --slim -d gis -C 2500 --number-processes 2 -S /home/${local_filesystem_user}/src/openstreetmap-carto-AJT/openstreetmap-carto.style --multi-geometry --tag-transform-script /home/${local_filesystem_user}/src/SomeoneElse-style/style.lua langs_${file_extension1}_merged.pbf
+if sudo -u ${local_renderd_user} osm2pgsql --create --slim -d gis -C 2500 --number-processes 2 -S /home/${local_filesystem_user}/src/openstreetmap-carto-AJT/openstreetmap-carto.style --multi-geometry --tag-transform-script /home/${local_filesystem_user}/src/SomeoneElse-style/style.lua langs_${file_extension1}_merged.pbf
+then
+    echo Database load OK
+else
+    echo Database load Error
+    m_error_02
+fi
+
 #
-sudo -u ${local_renderd_user} osm2pgsql --append --slim -d gis -C 250 --number-processes 2 -S /home/${local_filesystem_user}/src/openstreetmap-carto-AJT/openstreetmap-carto.style --multi-geometry --tag-transform-script /home/${local_filesystem_user}/src/SomeoneElse-style/style.lua /home/${local_filesystem_user}/src/SomeoneElse-style-legend/legend_roads.osm
+if sudo -u ${local_renderd_user} osm2pgsql --append --slim -d gis -C 250 --number-processes 2 -S /home/${local_filesystem_user}/src/openstreetmap-carto-AJT/openstreetmap-carto.style --multi-geometry --tag-transform-script /home/${local_filesystem_user}/src/SomeoneElse-style/style.lua /home/${local_filesystem_user}/src/SomeoneElse-style-legend/legend_roads.osm
+then
+    echo Legend roads append OK
+else
+    echo Legend roads append Error
+    m_error_02
+fi
+
 #
 rm -f /home/${local_filesystem_user}/src/SomeoneElse-style-legend/generated_legend_pubs.osm
-sudo -u ${local_filesystem_user} osmium sort -o /home/${local_filesystem_user}/src/SomeoneElse-style-legend/generated_legend_pubs.osm /home/${local_filesystem_user}/src/SomeoneElse-style-legend/generated_legend_pub.osm
-sudo -u ${local_renderd_user} osm2pgsql --append --slim -d gis -C 250 --number-processes 2 -S /home/${local_filesystem_user}/src/openstreetmap-carto-AJT/openstreetmap-carto.style --multi-geometry --tag-transform-script /home/${local_filesystem_user}/src/SomeoneElse-style/style.lua /home/${local_filesystem_user}/src/SomeoneElse-style-legend/generated_legend_pubs.osm
+
+if sudo -u ${local_filesystem_user} osmium sort -o /home/${local_filesystem_user}/src/SomeoneElse-style-legend/generated_legend_pubs.osm /home/${local_filesystem_user}/src/SomeoneElse-style-legend/generated_legend_pub.osm
+then
+    echo Legend pubs sort OK
+else
+    echo Legend pubs sort Error
+    m_error_02
+fi
+
+if sudo -u ${local_renderd_user} osm2pgsql --append --slim -d gis -C 250 --number-processes 2 -S /home/${local_filesystem_user}/src/openstreetmap-carto-AJT/openstreetmap-carto.style --multi-geometry --tag-transform-script /home/${local_filesystem_user}/src/SomeoneElse-style/style.lua /home/${local_filesystem_user}/src/SomeoneElse-style-legend/generated_legend_pubs.osm
+then
+    echo LEgend pubs append OK
+else
+    echo Legend pubs append Error
+    m_error_02
+fi
+
+#
+date | mail -s "Database reload complete on `hostname`" ${local_filesystem_user}
 #
 # Tidy temporary files
 #
@@ -260,14 +372,9 @@ pandoc /home/${local_filesystem_user}/src/SomeoneElse-map/about.md > /var/www/ht
 #
 # Reinstate the crontabs
 #
-crontab -u $local_renderd_user local_renderd_user_crontab_safe.$$
-mv osm_ldp1 /etc/cron.d/
-mv osm_ldp2 /etc/cron.d/
-mv osm_ldp3 /etc/cron.d/
+reinstate_crontabs
 # 
 # And final tidying up
 #
-date | mail -s "Database reload complete on `hostname`" ${local_filesystem_user}
-rm last_modified1.$$ last_modified2.$$
-rm update_render.running
+final_tidy_up
 #
