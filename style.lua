@@ -406,11 +406,20 @@ function filter_tags_generic(keyvalues, nokeys)
 
 -- ----------------------------------------------------------------------------
 -- Supress non-designated very low-visibility paths
--- Various low-visibility trail_visibility values have been set to "bad" above.
+-- Various low-visibility trail_visibility values have been set to "bad" above
+-- from normal display.
 -- ----------------------------------------------------------------------------
    if (( keyvalues["designation"]      == nil   ) and
        ( keyvalues["trail_visibility"] == "bad" )) then
-      keyvalues["highway"] = nil
+      if ((( tonumber(keyvalues["width"]) or 0 ) >=  2 ) or
+          ( keyvalues["width"] == "2 m"                ) or
+          ( keyvalues["width"] == "2.5 m"              ) or
+          ( keyvalues["width"] == "3 m"                ) or
+          ( keyvalues["width"] == "4 m"                )) then
+         keyvalues["highway"] = "badpathwide"
+      else
+         keyvalues["highway"] = "badpathnarrow"
+      end
    end
 
 
@@ -500,7 +509,15 @@ function filter_tags_generic(keyvalues, nokeys)
    if ((  keyvalues["designation"] == nil                        ) and
        (( keyvalues["sac_scale"]   == "demanding_alpine_hiking" )  or
         ( keyvalues["sac_scale"]   == "difficult_alpine_hiking" ))) then
-      keyvalues["highway"] = nil
+      if ((( tonumber(keyvalues["width"]) or 0 ) >=  2 ) or
+          ( keyvalues["width"] == "2 m"                ) or
+          ( keyvalues["width"] == "2.5 m"              ) or
+          ( keyvalues["width"] == "3 m"                ) or
+          ( keyvalues["width"] == "4 m"                )) then
+         keyvalues["highway"] = "badpathwide"
+      else
+         keyvalues["highway"] = "badpathnarrow"
+      end
    end
 
 -- ----------------------------------------------------------------------------

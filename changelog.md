@@ -6,6 +6,7 @@ Treat school=entrance as entrance=main.
 Add access=destination to highway escape lanes.
 Removed very old "builtup areas" layer from project.mml
 Add "boundary" as a multipolygon key so that national parks drawn as ways are still shown (specifically, St Kilda).
+Paths suppressed for bad visibility or over-demanding sac_scale now get their own key, and an overlay optionally displays those.
 
 ## 03/06/2022
 Added craft=floorer to the same list as "roofer" etc.
