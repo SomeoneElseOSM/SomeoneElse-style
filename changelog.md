@@ -1,6 +1,9 @@
 # Changes made to this rendering
 This page describes changes made [here](https://github.com/SomeoneElseOSM/SomeoneElse-style), [here](https://github.com/SomeoneElseOSM/SomeoneElse-style-legend) and [here](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT), and visible [here](//map.atownsend.org.uk/maps/map/map.html).
 
+## As yet unreleased
+Add novispaths to the default (Ubuntu 22.04 LTS) update_render.sh
+
 ## 24/07/2022
 Treat school=entrance as entrance=main.
 Add access=destination to highway escape lanes.

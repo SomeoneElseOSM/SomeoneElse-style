@@ -175,6 +175,9 @@ cd /home/${local_filesystem_user}/src/openstreetmap-carto-AJT
 pwd
 sudo -u ${local_filesystem_user} git pull
 carto project.mml > mapnik.xml
+cd novispaths
+carto project.mml > mapnik.xml
+cd ..
 #
 # How much disk space are we currently using?
 #
