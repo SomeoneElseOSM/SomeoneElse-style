@@ -5824,15 +5824,16 @@ function filter_tags_generic(keyvalues, nokeys)
 -- All legal scooter rental / scooter parking in UK are private; these are the
 -- the tags currently used.
 -- ----------------------------------------------------------------------------
-   if ((  keyvalues["amenity"]                == "escooter_rental"      ) or
-       (  keyvalues["amenity"]                == "scooter_parking"      ) or
-       (  keyvalues["amenity"]                == "micro_scooter_rental" ) or
-       (  keyvalues["amenity"]                == "scooter_hire"         ) or
-       (  keyvalues["amenity"]                == "kick-scooter_rental"  ) or
-       (( keyvalues["amenity"]                == "parking"             )  and
-        ( keyvalues["parking"]                == "e-scooter"           )) or
-       (( keyvalues["amenity"]                == "bicycle_parking"     )  and
-        ( keyvalues["small_electric_vehicle"] == "designated"          ))) then
+   if ((  keyvalues["amenity"]                == "escooter_rental"        ) or
+       (  keyvalues["amenity"]                == "scooter_parking"        ) or
+       (  keyvalues["amenity"]                == "micro_scooter_rental"   ) or
+       (  keyvalues["amenity"]                == "scooter_hire"           ) or
+       (  keyvalues["amenity"]                == "kick-scooter_rental"    ) or
+       (  keyvalues["amenity"]                == "small_electric_vehicle" ) or
+       (( keyvalues["amenity"]                == "parking"               )  and
+        ( keyvalues["parking"]                == "e-scooter"             )) or
+       (( keyvalues["amenity"]                == "bicycle_parking"       )  and
+        ( keyvalues["small_electric_vehicle"] == "designated"            ))) then
       keyvalues["amenity"] = "scooter_rental"
    end
 
@@ -7099,7 +7100,8 @@ function filter_tags_generic(keyvalues, nokeys)
 -- Motorcycle
 -- ----------------------------------------------------------------------------
    if (( keyvalues["shop"]    == "motorcycle_repair"            ) or
-       ( keyvalues["shop"]    == "motorcycle_parts"             )) then
+       ( keyvalues["shop"]    == "motorcycle_parts"             ) or
+       ( keyvalues["amenity"] == "motorcycle_rental"            )) then
       keyvalues["shop"] = "motorcycle"
    end
 
