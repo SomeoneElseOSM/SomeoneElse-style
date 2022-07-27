@@ -6,6 +6,8 @@ Add novispaths to the default (Ubuntu 22.04 LTS) update_render.sh
 Render "small_electric_vehicle" as scooter_rental.
 Added selecting vending machine products such as "eggs" as the label.
 Added "beach" to the list of natural items for which names are renderd.
+Handled some edge cases of trail_visibility=bad - when there's a bridge, it can't be _that_ hard to see, can it?  
+Similarly if there's something that would display as a levee, let that still happen.
 
 ## 24/07/2022
 Treat school=entrance as entrance=main.

@@ -407,7 +407,9 @@ function filter_tags_generic(keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
 -- Supress non-designated very low-visibility paths
 -- Various low-visibility trail_visibility values have been set to "bad" above
--- from normal display.
+-- to suppress from normal display.
+-- The "bridge" check (on trail_visibility, not sac_scale) is because if 
+-- there's really a bridge there, surely you can see it?
 -- ----------------------------------------------------------------------------
    if (( keyvalues["designation"]      == nil   ) and
        ( keyvalues["trail_visibility"] == "bad" )) then
@@ -416,9 +418,17 @@ function filter_tags_generic(keyvalues, nokeys)
           ( keyvalues["width"] == "2.5 m"              ) or
           ( keyvalues["width"] == "3 m"                ) or
           ( keyvalues["width"] == "4 m"                )) then
-         keyvalues["highway"] = "badpathwide"
+         if ( keyvalues["bridge"] == nil ) then
+            keyvalues["highway"] = "badpathwide"
+         else
+            keyvalues["highway"] = "intpathwide"
+         end
       else
-         keyvalues["highway"] = "badpathnarrow"
+         if ( keyvalues["bridge"] == nil ) then
+            keyvalues["highway"] = "badpathnarrow"
+         else
+            keyvalues["highway"] = "intpathnarrow"
+         end
       end
    end
 
@@ -5282,17 +5292,19 @@ function filter_tags_generic(keyvalues, nokeys)
 -- embankment handling is asymmetric for railways currently - it's checked
 -- before we apply the "man_made=levee" tag, but "bridge=levee" is not applied.
 -- ----------------------------------------------------------------------------
-   if ((( keyvalues["barrier"]    == "flood_bank" )  or
-        ( keyvalues["barrier"]    == "bund"       )  or
-        ( keyvalues["barrier"]    == "mound"      )  or
-        ( keyvalues["barrier"]    == "ridge"      )  or
-        ( keyvalues["barrier"]    == "embankment" )  or
-        ( keyvalues["man_made"]   == "dyke"       )  or
-        ( keyvalues["man_made"]   == "levee"      )  or
-        ( keyvalues["embankment"] == "yes"        )) and
-       (  keyvalues["highway"]    == nil           ) and
-       (  keyvalues["railway"]    == nil           ) and
-       (  keyvalues["waterway"]   == nil           )) then
+   if ((( keyvalues["barrier"]    == "flood_bank"    )  or
+        ( keyvalues["barrier"]    == "bund"          )  or
+        ( keyvalues["barrier"]    == "mound"         )  or
+        ( keyvalues["barrier"]    == "ridge"         )  or
+        ( keyvalues["barrier"]    == "embankment"    )  or
+        ( keyvalues["man_made"]   == "dyke"          )  or
+        ( keyvalues["man_made"]   == "levee"         )  or
+        ( keyvalues["embankment"] == "yes"           )) and
+       (( keyvalues["highway"]    == nil             )  or
+        ( keyvalues["highway"]    == "badpathwide"   )  or
+        ( keyvalues["highway"]    == "badpathnarrow" )) and
+       (  keyvalues["railway"]    == nil              ) and
+       (  keyvalues["waterway"]   == nil              )) then
       keyvalues["man_made"] = "levee"
       keyvalues["barrier"] = nil
       keyvalues["embankment"] = nil
@@ -5302,15 +5314,17 @@ function filter_tags_generic(keyvalues, nokeys)
 -- Re the "bridge" check below, we've already changed valid ones to "yes"
 -- above.
 -- ----------------------------------------------------------------------------
-   if ((( keyvalues["barrier"]    == "flood_bank" )  or
-        ( keyvalues["man_made"]   == "dyke"       )  or
-        ( keyvalues["man_made"]   == "levee"      )  or
-        ( keyvalues["embankment"] == "yes"        )) and
-       (( keyvalues["highway"]    ~= nil          ) or
-        ( keyvalues["railway"]    ~= nil          ) or
-        ( keyvalues["waterway"]   ~= nil          )) and
-       (  keyvalues["bridge"]     ~= "yes"         ) and
-       (  keyvalues["tunnel"]     ~= "yes"         )) then
+   if (((  keyvalues["barrier"]    == "flood_bank"     )  or
+        (  keyvalues["man_made"]   == "dyke"           )  or
+        (  keyvalues["man_made"]   == "levee"          )  or
+        (  keyvalues["embankment"] == "yes"            )) and
+       ((( keyvalues["highway"]    ~= nil             )   and
+         ( keyvalues["highway"]    ~= "badpathwide"   )   and
+         ( keyvalues["highway"]    ~= "badpathnarrow" )) or
+        (  keyvalues["railway"]    ~= nil              ) or
+        (  keyvalues["waterway"]   ~= nil              )) and
+       (   keyvalues["bridge"]     ~= "yes"             ) and
+       (   keyvalues["tunnel"]     ~= "yes"             )) then
       keyvalues["bridge"] = "levee"
       keyvalues["barrier"] = nil
       keyvalues["man_made"] = nil
