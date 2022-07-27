@@ -4,6 +4,7 @@ This page describes changes made [here](https://github.com/SomeoneElseOSM/Someon
 ## As yet unreleased
 Add novispaths to the default (Ubuntu 22.04 LTS) update_render.sh
 Render "small_electric_vehicle" as scooter_rental.
+Added selecting vending machine products such as "eggs" as the label.
 
 ## 24/07/2022
 Treat school=entrance as entrance=main.

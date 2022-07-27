@@ -3896,6 +3896,26 @@ function filter_tags_generic(keyvalues, nokeys)
 
 
 -- ----------------------------------------------------------------------------
+-- Some vending machines get the thing sold as the label.
+-- ----------------------------------------------------------------------------
+   if ((  keyvalues["amenity"] == "vending_machine"  ) and
+       (  keyvalues["name"]    == nil                ) and
+       (( keyvalues["vending"] == "milk"            )  or
+        ( keyvalues["vending"] == "eggs"            )  or
+        ( keyvalues["vending"] == "potatoes"        )  or
+        ( keyvalues["vending"] == "honey"           )  or
+        ( keyvalues["vending"] == "cheese"          )  or
+        ( keyvalues["vending"] == "vegetables"      )  or
+        ( keyvalues["vending"] == "fruit"           )  or
+        ( keyvalues["vending"] == "food"            )  or
+        ( keyvalues["vending"] == "photos"          )  or
+        ( keyvalues["vending"] == "maps"            )  or
+        ( keyvalues["vending"] == "newspapers"      ))) then
+      keyvalues["name"] = "(" .. keyvalues["vending"] .. ")"
+   end
+
+
+-- ----------------------------------------------------------------------------
 -- Render amenity=piano as musical_instrument
 -- ----------------------------------------------------------------------------
    if ( keyvalues["amenity"] == "piano" ) then
