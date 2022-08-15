@@ -339,7 +339,7 @@ fi
 
 if sudo -u ${local_renderd_user} osm2pgsql --append --slim -d gis -C 250 --number-processes 2 -S /home/${local_filesystem_user}/src/openstreetmap-carto-AJT/openstreetmap-carto.style --multi-geometry --tag-transform-script /home/${local_filesystem_user}/src/SomeoneElse-style/style.lua /home/${local_filesystem_user}/src/SomeoneElse-style-legend/generated_legend_pubs.osm
 then
-    echo LEgend pubs append OK
+    echo Legend pubs append OK
 else
     echo Legend pubs append Error
     m_error_02
