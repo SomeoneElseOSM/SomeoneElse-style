@@ -5392,7 +5392,6 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["barrier"]   == "lych_gate"             )  or
        ( keyvalues["barrier"]   == "lytch_gate"            )  or
        ( keyvalues["barrier"]   == "flood_gate"            )  or
-       ( keyvalues["barrier"]   == "ramblers_gate"         )  or
        ( keyvalues["barrier"]   == "sally_port"            )  or
        ( keyvalues["barrier"]   == "pengate"               )  or
        ( keyvalues["barrier"]   == "pengates"              )  or
@@ -5443,6 +5442,7 @@ function filter_tags_generic(keyvalues, nokeys)
 -- render various synonyms for stile as barrier=stile
 -- ----------------------------------------------------------------------------
    if (( keyvalues["barrier"]   == "squeeze_stile"   )  or
+       ( keyvalues["barrier"]   == "ramblers_gate"   )  or
        ( keyvalues["barrier"]   == "squeeze_point"   )  or
        ( keyvalues["barrier"]   == "step_over"       )  or
        ( keyvalues["barrier"]   == "stile;gate"      )) then
