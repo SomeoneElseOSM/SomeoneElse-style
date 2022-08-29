@@ -13,6 +13,9 @@
 # On Debian 11 or above and Ubuntu 21.04 and above,
 # "local_renderd_user" will probably be "_renderd"
 #
+# If the data is loaded into gis it'll go live immediately after script completion.
+# If the data is loaded into gis3 it can be tested and then taken live with make_gis3_live.sh
+#
 local_filesystem_user=renderaccount
 local_renderd_user=_renderd
 local_database=gis
@@ -190,7 +193,18 @@ sudo -u ${local_filesystem_user} git pull
 cd /home/${local_filesystem_user}/src/openstreetmap-carto-AJT
 pwd
 sudo -u ${local_filesystem_user} git pull
+#
+# We create 3 XML files:
+#
+# The normal mapnik.xml, which uses database gis.
+# An identical mapnik3.xml, but which uses database gis3.
+#
+# Also, a "novispaths" mapnik.xml, based on the very simple layers at
+# https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT/tree/master/novispaths
+# This is a separate tile layer so that it can be used as an overlay.
+#
 carto project.mml > mapnik.xml
+sed "s/\[gis\]/[gis3]/" mapnik.xml > mapnik3.xml
 cd novispaths
 carto project.mml > mapnik.xml
 cd ..
