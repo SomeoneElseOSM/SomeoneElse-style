@@ -1,3 +1,4 @@
+#!/bin/bash
 # -----------------------------------------------------------------------------
 # update_render.sh
 # Designed to update rendering database and related styles to latest version.
@@ -14,6 +15,7 @@
 #
 local_filesystem_user=renderaccount
 local_renderd_user=_renderd
+local_database=gis
 #
 # First things first - define some shared functions
 #
@@ -35,25 +37,34 @@ m_error_01()
 {
     reinstate_crontabs
     final_tidy_up
-    date | mail -s "Database reload FAILED on `hostname`, previous database intact" ${local_filesystem_user}
-    exit
+    date | mail -s "Database reload FAILED on `hostname`, previous database ${local_database} intact" ${local_filesystem_user}
+    exit 1
 }
 
 m_error_02()
 {
     reinstate_crontabs
     final_tidy_up
-    date | mail -s "Database reload FAILED on `hostname`, previous database lost" ${local_filesystem_user}
-    exit
+    date | mail -s "Database reload FAILED on `hostname`, previous database ${local_database} lost" ${local_filesystem_user}
+    exit 1
 }
 
+#
+# Before anything else, is an update script for the previous database still running?
+#
+if [[ -f /var/cache/renderd/pyosmium.gis/call_pyosmium.running ]]
+then
+    echo "call_pyosmium still running; /var/cache/renderd/pyosmium.gis/call_pyosmium.running exists"
+    exit 1
+fi
+#
 # Next, is another copy of the script already running?
 #
 cd /home/${local_filesystem_user}/data
 if test -e update_render.running
 then
     echo update_render.running exists so exiting
-    exit
+    exit 1
 else
     touch update_render.running
 fi
@@ -145,6 +156,11 @@ file_prefix2=ireland-and-northern-ireland
 #file_prefix2=isle-of-man
 file_page2=http://download.geofabrik.de/europe/${file_prefix2}.html
 file_url2=http://download.geofabrik.de/europe/${file_prefix2}-latest.osm.pbf
+#file_prefix2=devon
+#file_prefix2=east-yorkshire-with-hull
+#file_prefix2=west-sussex
+#file_page2=http://download.geofabrik.de/europe/great-britain/england/${file_prefix2}.html
+#file_url2=http://download.geofabrik.de/europe/great-britain/england/${file_prefix2}-latest.osm.pbf
 #
 # Remove some entries including the openstreetmap-tiles-update-expire one
 # from the crontab.  Note that this matches a comment on the crontab line.
@@ -225,10 +241,11 @@ else
     wget $file_url2 -O ${file_prefix2}_${file_extension2}.osm.pbf
 fi
 #
-# Stop rendering to free up memory
+# Optionally stop rendering to free up memory
+# A restart on renderd is also an option to reduce memory use.
 #
-/etc/init.d/renderd stop
-/etc/init.d/apache2 stop
+#/etc/init.d/renderd stop
+#/etc/init.d/apache2 stop
 #
 # Welsh, English and Scottish names need to be converted to "cy or en", "en" and "gd or en" respectively.
 # First, convert a Welsh name portion into Welsh
@@ -280,7 +297,7 @@ if osmium extract --polygon /home/${local_filesystem_user}/src/SomeoneElse-style
 then
     echo English Extract OK
 else
-    ecjo English Extract Error
+    echo English Extract Error
     m_error_01
 fi
 
@@ -309,7 +326,7 @@ fi
 #
 # Run osm2pgsql
 #
-if sudo -u ${local_renderd_user} osm2pgsql --create --slim -d gis -C 2500 --number-processes 2 -S /home/${local_filesystem_user}/src/openstreetmap-carto-AJT/openstreetmap-carto.style --multi-geometry --tag-transform-script /home/${local_filesystem_user}/src/SomeoneElse-style/style.lua langs_${file_extension1}_merged.pbf
+if sudo -u ${local_renderd_user} osm2pgsql --create --slim -d ${local_database} -C 2500 --number-processes 2 -S /home/${local_filesystem_user}/src/openstreetmap-carto-AJT/openstreetmap-carto.style --multi-geometry --tag-transform-script /home/${local_filesystem_user}/src/SomeoneElse-style/style.lua langs_${file_extension1}_merged.pbf
 then
     echo Database load OK
 else
@@ -318,7 +335,7 @@ else
 fi
 
 #
-if sudo -u ${local_renderd_user} osm2pgsql --append --slim -d gis -C 250 --number-processes 2 -S /home/${local_filesystem_user}/src/openstreetmap-carto-AJT/openstreetmap-carto.style --multi-geometry --tag-transform-script /home/${local_filesystem_user}/src/SomeoneElse-style/style.lua /home/${local_filesystem_user}/src/SomeoneElse-style-legend/legend_roads.osm
+if sudo -u ${local_renderd_user} osm2pgsql --append --slim -d ${local_database} -C 250 --number-processes 2 -S /home/${local_filesystem_user}/src/openstreetmap-carto-AJT/openstreetmap-carto.style --multi-geometry --tag-transform-script /home/${local_filesystem_user}/src/SomeoneElse-style/style.lua /home/${local_filesystem_user}/src/SomeoneElse-style-legend/legend_roads.osm
 then
     echo Legend roads append OK
 else
@@ -337,7 +354,7 @@ else
     m_error_02
 fi
 
-if sudo -u ${local_renderd_user} osm2pgsql --append --slim -d gis -C 250 --number-processes 2 -S /home/${local_filesystem_user}/src/openstreetmap-carto-AJT/openstreetmap-carto.style --multi-geometry --tag-transform-script /home/${local_filesystem_user}/src/SomeoneElse-style/style.lua /home/${local_filesystem_user}/src/SomeoneElse-style-legend/generated_legend_pubs.osm
+if sudo -u ${local_renderd_user} osm2pgsql --append --slim -d ${local_database} -C 250 --number-processes 2 -S /home/${local_filesystem_user}/src/openstreetmap-carto-AJT/openstreetmap-carto.style --multi-geometry --tag-transform-script /home/${local_filesystem_user}/src/SomeoneElse-style/style.lua /home/${local_filesystem_user}/src/SomeoneElse-style-legend/generated_legend_pubs.osm
 then
     echo Legend pubs append OK
 else
@@ -346,7 +363,7 @@ else
 fi
 
 #
-date | mail -s "Database reload complete on `hostname`" ${local_filesystem_user}
+date | mail -s "Database ${local_database} reload complete on `hostname`" ${local_filesystem_user}
 #
 # Tidy temporary files
 #
@@ -362,14 +379,15 @@ rm welshlangpart_${file_extension1}_before.pbf welshlangpart_${file_extension1}_
 #
 # Reinitialise updating (pyosmium)
 #
-rm -rf /var/cache/renderd/pyosmium.old
-mv /var/cache/renderd/pyosmium /var/cache/renderd/pyosmium.old
-mkdir /var/cache/renderd/pyosmium
-chown ${local_renderd_user} /var/cache/renderd/pyosmium
-sudo -u ${local_renderd_user} pyosmium-get-changes -D ${file_extension1} -f /var/cache/renderd/pyosmium/sequence.state -v
+rm -rf /var/cache/renderd/pyosmium.${local_database}.old
+mv /var/cache/renderd/pyosmium.${local_database} /var/cache/renderd/pyosmium.${local_database}.old
+mkdir /var/cache/renderd/pyosmium.${local_database}
+chown ${local_renderd_user} /var/cache/renderd/pyosmium.${local_database}
+sudo -u ${local_renderd_user} pyosmium-get-changes -D ${file_extension1} -f /var/cache/renderd/pyosmium.${local_database}/sequence.state -v
 #
 pandoc /home/${local_filesystem_user}/src/SomeoneElse-style/changelog.md > /var/www/html/maps/map/changelog.html
 pandoc /home/${local_filesystem_user}/src/SomeoneElse-map/about.md > /var/www/html/maps/map/about.html
+#
 /etc/init.d/renderd restart
 /etc/init.d/apache2 restart
 #

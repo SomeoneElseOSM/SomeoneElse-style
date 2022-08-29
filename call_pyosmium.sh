@@ -5,7 +5,7 @@
 # Designed to be run from cron, as the user that owns the database (normally "_renderd").
 # Note that "render_expired" doesn't use TILEDIR from map name in /etc/renderd.conf
 # when deciding if tiles exist already; it assumes they must be below /var/cache .
-# It therefore makes sense to use /var/cache/renderd/pyosmium for the files needed here.
+# It therefore makes sense to use /var/cache/renderd/pyosmium.gis for the files needed here.
 #
 # First, define the local user account we are using.
 # "local_filesystem_user" is whichever non-root account is used to fetch from
@@ -15,16 +15,16 @@ local_filesystem_user=ajtown
 #
 # To initialise "sequence.state", run:
 #
-# sudo mkdir /var/cache/renderd/pyosmium
-# sudo chown _renderd /var/cache/renderd/pyosmium
-# cd /var/cache/renderd/pyosmium
+# sudo mkdir /var/cache/renderd/pyosmium.gis
+# sudo chown _renderd /var/cache/renderd/pyosmium.gis
+# cd /var/cache/renderd/pyosmium.gis
 # sudo -u _renderd pyosmium-get-changes -D 2022-06-08T20:21:25Z -f sequence.state -v
 #
 # with an appropriate date.
 #
-if [[ ! -f /var/cache/renderd/pyosmium/sequence.state ]]
+if [[ ! -f /var/cache/renderd/pyosmium.gis/sequence.state ]]
 then
-    echo "/var/cache/renderd/pyosmium/sequence.state does not exist"
+    echo "/var/cache/renderd/pyosmium.gis/sequence.state does not exist"
     exit 1
 fi
 #
@@ -46,18 +46,18 @@ then
     exit 1
 fi
 #
-if [[ -f /var/cache/renderd/pyosmium/call_pyosmium.running ]]
+if [[ -f /var/cache/renderd/pyosmium.gis/call_pyosmium.running ]]
 then
-    echo "call_pyosmium alreadying running; /var/cache/renderd/pyosmium/call_pyosmium.running exists"
+    echo "call_pyosmium already running; /var/cache/renderd/pyosmium.gis/call_pyosmium.running exists"
     exit 1
 else
-    touch /var/cache/renderd/pyosmium/call_pyosmium.running
+    touch /var/cache/renderd/pyosmium.gis/call_pyosmium.running
 fi
 #
 echo
 echo "Pyosmium update started: " `date`
 #
-cd /var/cache/renderd/pyosmium/
+cd /var/cache/renderd/pyosmium.gis/
 rm newchange.osc.gz > pyosmium.$$ 2>&1
 cp sequence.state sequence.state.old
 #------------------------------------------------------------------------------
@@ -95,7 +95,7 @@ fi
 # the number of zoom levels to write dirty tiles for.
 #------------------------------------------------------------------------------
 echo "Importing newchange.osc.gz"
-if ! osm2pgsql --append --slim -d gis -C 2500 --number-processes 2 --multi-geometry --tag-transform-script /home/${local_filesystem_user}/src/SomeoneElse-style/style.lua -S /home/${local_filesystem_user}/src/openstreetmap-carto-AJT/openstreetmap-carto.style --expire-tiles=1-20 --expire-output=/var/cache/renderd/pyosmium/dirty_tiles.txt /var/cache/renderd/pyosmium/newchange.osc.gz > osm2pgsql.$$ 2>&1
+if ! osm2pgsql --append --slim -d gis -C 2500 --number-processes 2 --multi-geometry --tag-transform-script /home/${local_filesystem_user}/src/SomeoneElse-style/style.lua -S /home/${local_filesystem_user}/src/openstreetmap-carto-AJT/openstreetmap-carto.style --expire-tiles=1-20 --expire-output=/var/cache/renderd/pyosmium.gis/dirty_tiles.txt /var/cache/renderd/pyosmium.gis/newchange.osc.gz > osm2pgsql.$$ 2>&1
 then
     # ------------------------------------------------------------------------------
     # The osm2pgsql import failed; show the error, revert to the previous import
@@ -105,7 +105,7 @@ then
     echo "osm2pgsql append error"
     cat osm2pgsql.$$
     cp sequence.state.old sequence.state
-    rm /var/cache/renderd/pyosmium/call_pyosmium.running
+    rm /var/cache/renderd/pyosmium.gis/call_pyosmium.running
     exit 1
 else
     tail -1 osm2pgsql.$$
@@ -117,15 +117,15 @@ fi
 # The arguments can be tailored to do different things at different zoom levels as desired.
 #------------------------------------------------------------------------------
 echo "Expiring tiles"
-render_expired --map=ajt --min-zoom=13 --touch-from=13 --delete-from=19 --max-zoom=20 -s /run/renderd/renderd.sock < /var/cache/renderd/pyosmium/dirty_tiles.txt > render_expired.$$ 2>&1
+render_expired --map=ajt --min-zoom=13 --touch-from=13 --delete-from=19 --max-zoom=20 -s /run/renderd/renderd.sock < /var/cache/renderd/pyosmium.gis/dirty_tiles.txt > render_expired.$$ 2>&1
 tail -9 render_expired.$$
 #
 #------------------------------------------------------------------------------
 # If debugging tile dirtying, comment out these two lines and uncomment the third.
 #------------------------------------------------------------------------------
-rm /var/cache/renderd/pyosmium/dirty_tiles.txt >> pyosmium.$$ 2>&1
+rm /var/cache/renderd/pyosmium.gis/dirty_tiles.txt >> pyosmium.$$ 2>&1
 rm render_expired.$$
-#mv /var/cache/renderd/pyosmium/dirty_tiles.txt /var/cache/renderd/pyosmium/dirty_tiles.txt.$$ >> pyosmium.$$ 2>&1
+#mv /var/cache/renderd/pyosmium.gis/dirty_tiles.txt /var/cache/renderd/pyosmium.gis/dirty_tiles.txt.$$ >> pyosmium.$$ 2>&1
 #
 #------------------------------------------------------------------------------
 # Tidy up files containing output from each command and the file that shows
@@ -134,7 +134,7 @@ rm render_expired.$$
 rm trim.$$
 rm osm2pgsql.$$
 rm pyosmium.$$
-rm /var/cache/renderd/pyosmium/call_pyosmium.running
+rm /var/cache/renderd/pyosmium.gis/call_pyosmium.running
 #
 echo "Database Replication Lag:" `pyosmium_replag.sh -h`
 #
