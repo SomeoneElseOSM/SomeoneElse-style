@@ -81,6 +81,10 @@ fi
 # ----------------------------------------------------------------------------
 # What's the first file that we are interested in?
 #
+#file_prefix1=europe
+#file_page1=http://download.geofabrik.de/${file_prefix1}.html
+#file_url1=http://download.geofabrik.de/${file_prefix1}-latest.osm.pbf
+#
 #file_prefix1=british-isles
 file_prefix1=great-britain
 #file_prefix1=ireland-and-northern-ireland
@@ -342,9 +346,9 @@ fi
 #
 if sudo -u ${local_renderd_user} osm2pgsql --create --slim -d ${local_database} -C 2500 --number-processes 2 -S /home/${local_filesystem_user}/src/openstreetmap-carto-AJT/openstreetmap-carto.style --multi-geometry --tag-transform-script /home/${local_filesystem_user}/src/SomeoneElse-style/style.lua langs_${file_extension1}_merged.pbf
 then
-    echo Database load OK
+    echo Database ${local_database} load OK
 else
-    echo Database load Error
+    echo Database ${local_database} load Error
     m_error_02
 fi
 
