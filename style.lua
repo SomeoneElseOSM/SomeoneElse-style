@@ -8235,6 +8235,7 @@ function filter_tags_generic(keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
    if (((( keyvalues["disused:shop"]    ~= nil       )   or
          ( keyvalues["disused:amenity"] ~= nil       ))  and
+         ( keyvalues["disused:amenity"] ~= "parking"  )  and
          ( keyvalues["shop"]            == nil        )  and
          ( keyvalues["amenity"]         == nil        )) or
        (   keyvalues["office"]          == "vacant"    ) or

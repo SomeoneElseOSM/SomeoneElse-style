@@ -1,6 +1,9 @@
 # Changes made to this rendering
 This page describes changes made [here](https://github.com/SomeoneElseOSM/SomeoneElse-style), [here](https://github.com/SomeoneElseOSM/SomeoneElse-style-legend) and [here](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT), and visible [here](//map.atownsend.org.uk/maps/map/map.html).
 
+## As yet unreleased
+Don't render disused car parks in the same way as vacant shops etc.
+
 ## 04/09/2022
 Major behind the scenes changes - support Ubuntu 22.04, 
 the latest osm2pgsql and mod_tile (patched to support zoom levels up to 24).  
