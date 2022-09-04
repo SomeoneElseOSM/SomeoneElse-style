@@ -1,7 +1,7 @@
 # Changes made to this rendering
 This page describes changes made [here](https://github.com/SomeoneElseOSM/SomeoneElse-style), [here](https://github.com/SomeoneElseOSM/SomeoneElse-style-legend) and [here](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT), and visible [here](//map.atownsend.org.uk/maps/map/map.html).
 
-## Under testing on map2.atownsend.org.uk only
+## 04/09/2022
 Major behind the scenes changes - support Ubuntu 22.04, 
 the latest osm2pgsql and mod_tile (patched to support zoom levels up to 24).  
 Also the use of osmosis was replaced with osmium, pyosmium and osm-tags-transform.
@@ -10,7 +10,7 @@ Update process now preserves language tags - places with a hybrid "name A / name
 Main database still "gis", but scripts amended to allow loading of new data into "gis3", testing, and swapping over later, in order to reduce downtime.
 The "borders" database is now "gis6", and no longer depends on any external styles or software run "ad hoc" at data load.
 
-## As yet unreleased on map.atownsend.org.uk
+## 04/09/2022
 Add novispaths to the default (Ubuntu 22.04 LTS) update_render.sh
 Render "small_electric_vehicle" as scooter_rental.
 Added selecting vending machine products such as "eggs" as the label.
