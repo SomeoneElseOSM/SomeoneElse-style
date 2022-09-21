@@ -3,6 +3,7 @@ This page describes changes made [here](https://github.com/SomeoneElseOSM/Someon
 
 ## 21/09/2022
 Don't render disused car parks in the same way as vacant shops etc.
+Don't process old-style polygons in lua.
 
 ## 04/09/2022
 Major behind the scenes changes - support Ubuntu 22.04, 

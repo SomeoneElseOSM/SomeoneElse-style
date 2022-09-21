@@ -8650,35 +8650,6 @@ function filter_tags_relation_member (keyvalues, keyvaluemembers, roles, memberc
       boundary = 1
    elseif (type == "multipolygon") then
       polygon = 1
-      polytagcount = 0;
-      for i,k in ipairs(polygon_keys) do
-         if keyvalues[k] then
-            polytagcount = polytagcount + 1
-         end
-      end
-      if (polytagcount == 0) then
-         for i = 1,membercount do
-            if (roles[i] == "outer") then
-               for k,v in pairs(keyvaluemembers[i]) do
-                  keyvalues[k] = v
-               end
-            end
-         end
-      end
-      for i = 1,membercount do
-         superseeded = 1
-         for k,v in pairs(keyvaluemembers[i]) do
-            if ((keyvalues[k] == nil) or (keyvalues[k] ~= v)) then
-               for j,k2 in ipairs(generic_keys) do
-                  if (k == k2) then
-                     superseeded = 0;
-                     break
-                  end
-               end
-            end
-         end
-         membersuperseeded[i] = superseeded
-      end
    end
 
    keyvalues, roads = add_z_order(keyvalues)
