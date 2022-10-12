@@ -4,6 +4,7 @@ This page describes changes made [here](https://github.com/SomeoneElseOSM/Someon
 ## As yet unreleased
 If est_width is set but width is not, use est_width.
 Handle non-integer-width narrow tertiary roads that should be shown as unclassified.
+Update taginfo.json with recent changes.
 
 ## 21/09/2022
 Don't render disused car parks in the same way as vacant shops etc.

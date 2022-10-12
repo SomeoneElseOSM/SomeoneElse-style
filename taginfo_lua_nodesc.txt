@@ -1,5 +1,6 @@
     { "key": "abandoned", "description": "qqq" }
     { "key": "abandoned:amenity", "description": "qqq" }
+    { "key": "abandoned:railway", "description": "qqq" }
     { "key": "abandoned:waterway", "description": "qqq" }
     { "key": "access", "description": "qqq" }
     { "key": "access:bicycle", "description": "qqq" }
@@ -10,8 +11,8 @@
     { "key": "accomodation", "description": "qqq" }
     { "key": "addr:housenumber", "description": "qqq" }
     { "key": "addr:unit", "description": "qqq" }
-    { "key": "admin_ref", "description": "qqq" }
     { "key": "admin:ref", "description": "qqq" }
+    { "key": "admin_ref", "description": "qqq" }
     { "key": "advertising", "description": "qqq" }
     { "key": "aerodrome:type", "description": "qqq" }
     { "key": "aeroway", "description": "qqq" }
@@ -26,14 +27,15 @@
     { "key": "basin", "description": "qqq" }
     { "key": "beer_garden", "description": "qqq" }
     { "key": "bicycle", "description": "qqq" }
+    { "key": "board:title", "description": "qqq" }
     { "key": "booth", "description": "qqq" }
     { "key": "boundary", "description": "qqq" }
     { "key": "brand", "description": "qqq" }
     { "key": "bridge", "description": "qqq" }
-    { "key": "bridge_name", "description": "qqq" }
     { "key": "bridge:name", "description": "qqq" }
-    { "key": "bridge_ref", "description": "qqq" }
+    { "key": "bridge_name", "description": "qqq" }
     { "key": "bridge:ref", "description": "qqq" }
+    { "key": "bridge_ref", "description": "qqq" }
     { "key": "bridleway", "description": "qqq" }
     { "key": "building", "description": "qqq" }
     { "key": "building:part", "description": "qqq" }
@@ -68,6 +70,8 @@
     { "key": "ele", "description": "qqq" }
     { "key": "embankment", "description": "qqq" }
     { "key": "emergency", "description": "qqq" }
+    { "key": "entrance", "description": "qqq" }
+    { "key": "est_width", "description": "qqq" }
     { "key": "farmland", "description": "qqq" }
     { "key": "fee", "description": "qqq" }
     { "key": "female", "description": "qqq" }
@@ -80,11 +84,12 @@
     { "key": "foot:physical", "description": "qqq" }
     { "key": "footway", "description": "qqq" }
     { "key": "ford", "description": "qqq" }
-    { "key": "former_amenity", "description": "qqq" }
     { "key": "former:amenity", "description": "qqq" }
+    { "key": "former_amenity", "description": "qqq" }
     { "key": "former_name", "description": "qqq" }
     { "key": "gambling", "description": "qqq" }
     { "key": "garden", "description": "qqq" }
+    { "key": "gate", "description": "qqq" }
     { "key": "generator:method", "description": "qqq" }
     { "key": "generator:source", "description": "qqq" }
     { "key": "generator:type", "description": "qqq" }
@@ -94,6 +99,7 @@
     { "key": "harbour", "description": "qqq" }
     { "key": "hazard", "description": "qqq" }
     { "key": "healthcare", "description": "qqq" }
+    { "key": "healthcare:speciality", "description": "qqq" }
     { "key": "height", "description": "qqq" }
     { "key": "highway", "description": "qqq" }
     { "key": "highway_authority_ref", "description": "qqq" }
@@ -101,6 +107,7 @@
     { "key": "historic", "description": "qqq" }
     { "key": "historic:amenity", "description": "qqq" }
     { "key": "historic:name", "description": "qqq" }
+    { "key": "historic:railway", "description": "qqq" }
     { "key": "historic:stone", "description": "qqq" }
     { "key": "historic:waterway", "description": "qqq" }
     { "key": "horse", "description": "qqq" }
@@ -110,6 +117,7 @@
     { "key": "informal", "description": "qqq" }
     { "key": "information", "description": "qqq" }
     { "key": "intermittent", "description": "qqq" }
+    { "key": "is_sidepath", "description": "qqq" }
     { "key": "junction", "description": "qqq" }
     { "key": "ladder", "description": "qqq" }
     { "key": "lamp_type", "description": "qqq" }
@@ -159,17 +167,20 @@
     { "key": "ncn_milepost", "description": "qqq" }
     { "key": "network", "description": "qqq" }
     { "key": "noncarpeted", "description": "qqq" }
+    { "key": "obstacle", "description": "qqq" }
     { "key": "office", "description": "qqq" }
     { "key": "official_ref", "description": "qqq" }
-    { "key": "old_amenity", "description": "qqq" }
     { "key": "old:amenity", "description": "qqq" }
+    { "key": "old_amenity", "description": "qqq" }
     { "key": "old_name", "description": "qqq" }
+    { "key": "opening_hours", "description": "qqq" }
     { "key": "opening_hours:covid19", "description": "qqq" }
     { "key": "operator", "description": "qqq" }
     { "key": "outdoor_seating", "description": "qqq" }
     { "key": "overgrown", "description": "qqq" }
     { "key": "parking", "description": "qqq" }
     { "key": "pharmacy", "description": "qqq" }
+    { "key": "pitch", "description": "qqq" }
     { "key": "place", "description": "qqq" }
     { "key": "place_of_worship", "description": "qqq" }
     { "key": "plant:source", "description": "qqq" }
@@ -177,21 +188,24 @@
     { "key": "pole", "description": "qqq" }
     { "key": "power", "description": "qqq" }
     { "key": "power_source", "description": "qqq" }
+    { "key": "product", "description": "qqq" }
     { "key": "prominence", "description": "qqq" }
     { "key": "protect_class", "description": "qqq" }
     { "key": "protection_title", "description": "qqq" }
-    { "key": "prow_ref", "description": "qqq" }
     { "key": "prow:ref", "description": "qqq" }
+    { "key": "prow_ref", "description": "qqq" }
     { "key": "pub", "description": "qqq" }
     { "key": "public_transport", "description": "qqq" }
     { "key": "railway", "description": "qqq" }
     { "key": "railway:preserved", "description": "qqq" }
     { "key": "razed:amenity", "description": "qqq" }
     { "key": "real_ale", "description": "qqq" }
+    { "key": "real_cider", "description": "qqq" }
     { "key": "recycling_type", "description": "qqq" }
     { "key": "ref", "description": "qqq" }
     { "key": "ref:signed", "description": "qqq" }
     { "key": "religion", "description": "qqq" }
+    { "key": "removed:amenity", "description": "qqq" }
     { "key": "rescue_equipment", "description": "qqq" }
     { "key": "residential", "description": "qqq" }
     { "key": "reusable_packaging", "description": "qqq" }
@@ -201,6 +215,7 @@
     { "key": "ruins", "description": "qqq" }
     { "key": "ruins:building", "description": "qqq" }
     { "key": "sac_scale", "description": "qqq" }
+    { "key": "school", "description": "qqq" }
     { "key": "seamark:type", "description": "qqq" }
     { "key": "service", "description": "qqq" }
     { "key": "shelter_type", "description": "qqq" }
@@ -211,9 +226,11 @@
     { "key": "sidewalk:left", "description": "qqq" }
     { "key": "sidewalk:right", "description": "qqq" }
     { "key": "site_type", "description": "qqq" }
+    { "key": "small_electric_vehicle", "description": "qqq" }
     { "key": "species", "description": "qqq" }
     { "key": "sport", "description": "qqq" }
     { "key": "state", "description": "qqq" }
+    { "key": "status", "description": "qqq" }
     { "key": "stone_type", "description": "qqq" }
     { "key": "support", "description": "qqq" }
     { "key": "surface", "description": "qqq" }
@@ -229,8 +246,8 @@
     { "key": "trade", "description": "qqq" }
     { "key": "trail_visibility", "description": "qqq" }
     { "key": "tunnel", "description": "qqq" }
-    { "key": "tunnel_name", "description": "qqq" }
     { "key": "tunnel:name", "description": "qqq" }
+    { "key": "tunnel_name", "description": "qqq" }
     { "key": "type", "description": "qqq" }
     { "key": "unsigned", "description": "qqq" }
     { "key": "usage", "description": "qqq" }

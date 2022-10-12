@@ -11,6 +11,6 @@
 # Example taginfo project file with lots in it:
 # https://raw.githubusercontent.com/mapbox/mapbox-navigation-ios/master/taginfo.json
 # ------------------------------------------------------------------------------
-STYLEFILE=/home/renderaccount/src/SomeoneElse-style/style.lua
+STYLEFILE=/home/ajtown/src/SomeoneElse-style/style.lua
 grep 'keyvalues\["' ${STYLEFILE} | sed "s/\].*//" | sed "s/.*keyvalues\[//" | grep -v "z_order" | sort -u | sed "s/^/    \{ \"key\": /" | sed "s/$/, \"description\": \"qqq\" }/"
 
