@@ -405,6 +405,14 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- If we have an est_width but no width, use the est_width
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["width"]     == nil  ) and
+       ( keyvalues["est_width"] ~= nil  )) then
+      keyvalues["width"] = keyvalues["est_width"]
+   end
+
+-- ----------------------------------------------------------------------------
 -- Supress non-designated very low-visibility paths
 -- Various low-visibility trail_visibility values have been set to "bad" above
 -- to suppress from normal display.
@@ -1272,26 +1280,20 @@ function filter_tags_generic(keyvalues, nokeys)
 -- Render narrow tertiary roads as unclassified
 -- ----------------------------------------------------------------------------
    if (( keyvalues["highway"]    == "tertiary_sidewalk"  )  and
-       (( keyvalues["width"]     == "2"                 )   or
-        ( keyvalues["width"]     == "3"                 )   or
-        ( keyvalues["maxwidth"]  == "2"                 )   or
-        ( keyvalues["maxwidth"]  == "3"                 ))) then
+       ((( tonumber(keyvalues["width"])    or 4 ) <=  3 ) or
+        (( tonumber(keyvalues["maxwidth"]) or 4 ) <=  3 ))) then
       keyvalues["highway"] = "unclassified_sidewalk"
    end
 
    if (( keyvalues["highway"]    == "tertiary_verge"  )  and
-       (( keyvalues["width"]     == "2"              )   or
-        ( keyvalues["width"]     == "3"              )   or
-        ( keyvalues["maxwidth"]  == "2"              )   or
-        ( keyvalues["maxwidth"]  == "3"              ))) then
+       ((( tonumber(keyvalues["width"])    or 4 ) <=  3 ) or
+        (( tonumber(keyvalues["maxwidth"]) or 4 ) <=  3 ))) then
       keyvalues["highway"] = "unclassified_verge"
    end
 
    if (( keyvalues["highway"]    == "tertiary"   )  and
-       (( keyvalues["width"]     == "2"         )   or
-        ( keyvalues["width"]     == "3"         )   or
-        ( keyvalues["maxwidth"]  == "2"         )   or
-        ( keyvalues["maxwidth"]  == "3"         ))) then
+       ((( tonumber(keyvalues["width"])    or 4 ) <=  3 ) or
+        (( tonumber(keyvalues["maxwidth"]) or 4 ) <=  3 ))) then
       keyvalues["highway"] = "unclassified"
    end
 
