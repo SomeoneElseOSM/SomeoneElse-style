@@ -5,7 +5,7 @@ polygon_keys = { 'boundary', 'building', 'landcover', 'landuse', 'amenity', 'har
 
 generic_keys = {'access','addr:housename','addr:housenumber','addr:interpolation','admin_level','advertising','aerialway','aeroway','amenity','area','barrier',
    'bicycle','brand','bridge','bridleway','booth','boundary','building','capital','construction','covered','culvert','cutting','denomination','designation','disused','disused:shop','ele',
-   'embankment','emergency','entrance','foot','flood_prone','generation:source','golf','harbour','highway','historic','horse','hours','intermittent','junction','landcover','landuse','layer','leisure','lcn_ref','lock','locked',
+   'embankment','emergency','entrance','foot','flood_prone','generation:source','geological','golf','harbour','highway','historic','horse','hours','intermittent','junction','landcover','landuse','layer','leisure','lcn_ref','lock','locked',
    'man_made','marker','military','motor_car','name','natural','ncn_milepost','office','oneway','operator','opening_hours:covid19','pitch','place','playground','poi','population','power','power_source','public_transport','school','seamark:type',
    'railway','ref','religion','rescue_equipment','route','service','shop','sport','surface','toll','tourism','tower:type', 'tracktype','tunnel','water','waterway',
    'wetland','width','wood','type'}
@@ -4568,6 +4568,13 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- palaeolontological_site
+-- ----------------------------------------------------------------------------
+   if ( keyvalues["geological"] == "palaeontological_site" ) then
+      keyvalues["historic"] = "palaeontological_site"
+   end
+
+-- ----------------------------------------------------------------------------
 -- If something is tagged as both an archaelogical site and a place, lose the
 -- place tag.
 -- ----------------------------------------------------------------------------
@@ -4575,7 +4582,6 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["place"]    ~= nil                   )) then
       keyvalues["place"] = nil
    end
-
 
    if (( keyvalues["historic"] == "archaeological_site" )  and
        ( keyvalues["landuse"]  == nil                   )) then
