@@ -413,7 +413,7 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
--- Supress non-designated very low-visibility paths
+-- Suppress non-designated very low-visibility paths
 -- Various low-visibility trail_visibility values have been set to "bad" above
 -- to suppress from normal display.
 -- The "bridge" check (on trail_visibility, not sac_scale) is because if 
@@ -516,7 +516,7 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
--- Supress some "demanding" paths.  UK examples with sac_scale:
+-- Suppress some "demanding" paths.  UK examples with sac_scale:
 -- alpine_hiking:
 -- http://www.openstreetmap.org/way/168426583   Crib Goch, Snowdon
 -- demanding_mountain_hiking:
@@ -4748,7 +4748,7 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
--- Supress Underground railway platforms
+-- Suppress Underground railway platforms
 -- ----------------------------------------------------------------------------
    if (( keyvalues["railway"]  == "platform"    ) and
        ( keyvalues["location"] == "underground" )) then
@@ -4776,7 +4776,7 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
--- Supress "name" on riverbanks mapped as "natural=water"
+-- Suppress "name" on riverbanks mapped as "natural=water"
 -- ----------------------------------------------------------------------------
    if (( keyvalues["natural"]   == "water"  ) and
        ( keyvalues["water"]     == "river"  )) then
