@@ -5605,6 +5605,14 @@ function filter_tags_generic(keyvalues, nokeys)
       else
          keyvalues["historic"] = "naturalstone"
       end
+
+      if ( keyvalues["inscription"] ~= nil ) then
+          if ( keyvalues["name"] == nil ) then
+              keyvalues["name"] = keyvalues["inscription"]
+          else
+              keyvalues["name"] = keyvalues["name"] .. " " .. keyvalues["inscription"]
+          end
+      end
    end
 
    if ( keyvalues["historic"]   == "stone" ) then

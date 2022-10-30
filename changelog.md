@@ -3,6 +3,7 @@ This page describes changes made [here](https://github.com/SomeoneElseOSM/Someon
 
 ## As yet unreleased
 Renderd geological=paleontological things.  Improve the icon for historic=archaelogical (less fuzzy, less brown).
+Render inscriptions on marker stones.
 
 ## 12/10/2022
 If est_width is set but width is not, use est_width.
