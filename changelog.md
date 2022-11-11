@@ -3,6 +3,7 @@ This page describes changes made [here](https://github.com/SomeoneElseOSM/Someon
 
 ## As yet unreleased.
 Show reservoir_covered as building=roof, so that they don't blend in with a wider industrial area.
+Also treat a couple of spellings of "hard shoulder" as "shoulder.
 
 ## 01/11/2022
 Renderd geological=paleontological things.  Improve the icon for historic=archaelogical (less fuzzy, less brown).
