@@ -1514,8 +1514,7 @@ function filter_tags_generic(keyvalues, nokeys)
       end
    end
 
-   if (( keyvalues["man_made"]   == "reservoir_covered"      ) or 
-       ( keyvalues["man_made"]   == "petroleum_well"         ) or 
+   if (( keyvalues["man_made"]   == "petroleum_well"         ) or 
        ( keyvalues["industrial"] == "warehouse"              ) or
        ( keyvalues["industrial"] == "brewery"                ) or 
        ( keyvalues["industrial"] == "distillery"             ) or 
@@ -1545,6 +1544,11 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["man_made"]   == "pumping_station"        ) or
        ( keyvalues["man_made"]   == "water_works"            )) then
       keyvalues["landuse"] = "industrial"
+   end
+
+   if ( keyvalues["man_made"]   == "reservoir_covered" ) then
+      keyvalues["building"] = "roof"
+      keyvalues["landuse"]  = "industrialbuilding"
    end
 
    if (( keyvalues["building"]   == "industrial"             ) or

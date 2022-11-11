@@ -1,6 +1,9 @@
 # Changes made to this rendering
 This page describes changes made [here](https://github.com/SomeoneElseOSM/SomeoneElse-style), [here](https://github.com/SomeoneElseOSM/SomeoneElse-style-legend) and [here](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT), and visible [here](//map.atownsend.org.uk/maps/map/map.html).
 
+## As yet unreleased.
+Show reservoir_covered as building=roof, so that they don't blend in with a wider industrial area.
+
 ## 01/11/2022
 Renderd geological=paleontological things.  Improve the icon for historic=archaelogical (less fuzzy, less brown).
 Render inscriptions on marker stones.
