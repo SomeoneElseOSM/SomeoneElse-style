@@ -2210,8 +2210,9 @@ function filter_tags_generic(keyvalues, nokeys)
       keyvalues["tourism"] = nil
    end
 
-   if (( keyvalues["leisure"]     == "outdoor_seating" ) and
-       ( keyvalues["beer_garden"] == "yes"             )) then
+   if ((  keyvalues["leisure"] == "outdoor_seating" ) and
+       (( keyvalues["surface"]     == "grass"      ) or
+        ( keyvalues["beer_garden"] == "yes"        ))) then
       keyvalues["leisure"] = "garden"
       keyvalues["garden"] = "beer_garden"
    end
