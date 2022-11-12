@@ -7,6 +7,7 @@ Also treat a couple of spellings of "hard shoulder" as "shoulder.
 Don't show narrow tertiary roads as unclassified if a oneway tag is set.
 Suppress "tourism" on showgrounds.
 Show grass outdoor_seating in green.
+Show unnamed farm shops with particular produce as farm "vending machines".
 
 ## 01/11/2022
 Renderd geological=paleontological things.  Improve the icon for historic=archaelogical (less fuzzy, less brown).

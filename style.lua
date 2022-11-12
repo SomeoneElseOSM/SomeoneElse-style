@@ -3922,6 +3922,19 @@ function filter_tags_generic(keyvalues, nokeys)
 
 
 -- ----------------------------------------------------------------------------
+-- If a farm shop doesn't have a name but does have named produce, map across
+-- to vending machine, and also the produce into "vending" for consideration 
+-- below.
+-- ----------------------------------------------------------------------------
+   if ((  keyvalues["shop"]    == "farm" ) and
+       (  keyvalues["name"]    == nil    ) and
+       (  keyvalues["produce"] ~= nil    )) then
+      keyvalues["amenity"] = "vending_machine"
+      keyvalues["vending"] = keyvalues["produce"]
+      keyvalues["shop"]    = nil
+   end
+
+-- ----------------------------------------------------------------------------
 -- Some vending machines get the thing sold as the label.
 -- ----------------------------------------------------------------------------
    if ((  keyvalues["amenity"] == "vending_machine"  ) and
