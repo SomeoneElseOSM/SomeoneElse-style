@@ -1282,18 +1282,21 @@ function filter_tags_generic(keyvalues, nokeys)
 -- Render narrow tertiary roads as unclassified
 -- ----------------------------------------------------------------------------
    if (( keyvalues["highway"]    == "tertiary_sidewalk"  )  and
+       ( keyvalues["oneway"]     == nil                  )  and
        ((( tonumber(keyvalues["width"])    or 4 ) <=  3 ) or
         (( tonumber(keyvalues["maxwidth"]) or 4 ) <=  3 ))) then
       keyvalues["highway"] = "unclassified_sidewalk"
    end
 
    if (( keyvalues["highway"]    == "tertiary_verge"  )  and
+       ( keyvalues["oneway"]     == nil               )  and
        ((( tonumber(keyvalues["width"])    or 4 ) <=  3 ) or
         (( tonumber(keyvalues["maxwidth"]) or 4 ) <=  3 ))) then
       keyvalues["highway"] = "unclassified_verge"
    end
 
    if (( keyvalues["highway"]    == "tertiary"   )  and
+       ( keyvalues["oneway"]     == nil          )  and
        ((( tonumber(keyvalues["width"])    or 4 ) <=  3 ) or
         (( tonumber(keyvalues["maxwidth"]) or 4 ) <=  3 ))) then
       keyvalues["highway"] = "unclassified"
