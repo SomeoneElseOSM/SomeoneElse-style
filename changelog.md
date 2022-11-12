@@ -5,6 +5,7 @@ This page describes changes made [here](https://github.com/SomeoneElseOSM/Someon
 Show reservoir_covered as building=roof, so that they don't blend in with a wider industrial area.
 Also treat a couple of spellings of "hard shoulder" as "shoulder.
 Don't show narrow tertiary roads as unclassified if a oneway tag is set.
+Suppress "tourism" on showgrounds.
 
 ## 01/11/2022
 Renderd geological=paleontological things.  Improve the icon for historic=archaelogical (less fuzzy, less brown).

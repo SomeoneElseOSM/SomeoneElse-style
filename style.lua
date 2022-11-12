@@ -1977,15 +1977,19 @@ function filter_tags_generic(keyvalues, nokeys)
 
 -- ----------------------------------------------------------------------------
 -- Various tags for showgrounds
+-- Other tags are suppressed to prevent them appearing ahead of "landuse"
 -- ----------------------------------------------------------------------------
-   if (( keyvalues["amenity"] == "showground"       )  or
-       ( keyvalues["leisure"] == "showground"       )  or
-       ( keyvalues["amenity"] == "show_ground"      )  or
-       ( keyvalues["amenity"] == "show_grounds"     )  or
-       ( keyvalues["amenity"] == "festival_grounds" )  or
-       ( keyvalues["amenity"] == "car_boot_sale"    )) then
+   if ((  keyvalues["amenity"]    == "showground"       )  or
+       (  keyvalues["leisure"]    == "showground"       )  or
+       (  keyvalues["amenity"]    == "show_ground"      )  or
+       (  keyvalues["amenity"]    == "show_grounds"     )  or
+       (( keyvalues["tourism"]    == "attraction"      )   and
+        ( keyvalues["attraction"] == "showground"      ))  or
+       (  keyvalues["amenity"]    == "festival_grounds" )  or
+       (  keyvalues["amenity"]    == "car_boot_sale"    )) then
       keyvalues["amenity"] = nil
       keyvalues["leisure"] = nil
+      keyvalues["tourism"] = nil
       keyvalues["landuse"] = "meadow"
    end
 
