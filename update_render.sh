@@ -32,7 +32,7 @@ reinstate_crontabs()
 
 final_tidy_up()
 {
-    rm last_modified1.$$ last_modified2.$$
+    rm last_modified1.$$ last_modified2.$$ last_modified3.$$ last_modified4.$$
     rm update_render.running
 }
 
@@ -178,6 +178,20 @@ file_url2=http://download.geofabrik.de/europe/${file_prefix2}-latest.osm.pbf
 #file_page2=http://download.geofabrik.de/europe/great-britain/england/${file_prefix2}.html
 #file_url2=http://download.geofabrik.de/europe/great-britain/england/${file_prefix2}-latest.osm.pbf
 #
+# What's the third file that we are interested in?
+# Note that if this is commented out, also change the "merge" below to not use it.
+#
+file_prefix3=isle-of-man
+file_page3=http://download.geofabrik.de/europe/${file_prefix3}.html
+file_url3=http://download.geofabrik.de/europe/${file_prefix3}-latest.osm.pbf
+#
+# What's the fourth file that we are interested in?
+# Note that if this is commented out, also change the "merge" below to not use it.
+#
+file_prefix4=guernsey-jersey
+file_page4=http://download.geofabrik.de/europe/${file_prefix4}.html
+file_url4=http://download.geofabrik.de/europe/${file_prefix4}-latest.osm.pbf
+#
 # Remove some entries including the openstreetmap-tiles-update-expire one
 # from the crontab.  Note that this matches a comment on the crontab line.
 # The files are stored safely and restored at the end of the process.
@@ -268,12 +282,53 @@ else
     wget $file_url2 -O ${file_prefix2}_${file_extension2}.osm.pbf
 fi
 #
+# When was the third target file last modified?
+#
+if [ "$1" = "current" ]
+then
+    ls -t | grep "${file_prefix3}_" | head -1 | sed "s/${file_prefix3}_//" | sed "s/.osm.pbf//" > last_modified3.$$
+else
+    wget $file_page3 -O file_page3.$$
+    grep " and contains all OSM data up to " file_page3.$$ | sed "s/.*and contains all OSM data up to //" | sed "s/. File size.*//" > last_modified3.$$
+    rm file_page3.$$
+fi
+#
+file_extension3=`cat last_modified3.$$`
+#
+if test -e ${file_prefix3}_${file_extension3}.osm.pbf
+then
+    echo "File3 already downloaded"
+else
+    wget $file_url3 -O ${file_prefix3}_${file_extension3}.osm.pbf
+fi
+#
+# When was the fourth target file last modified?
+#
+if [ "$1" = "current" ]
+then
+    ls -t | grep "${file_prefix4}_" | head -1 | sed "s/${file_prefix4}_//" | sed "s/.osm.pbf//" > last_modified4.$$
+else
+    wget $file_page4 -O file_page4.$$
+    grep " and contains all OSM data up to " file_page4.$$ | sed "s/.*and contains all OSM data up to //" | sed "s/. File size.*//" > last_modified4.$$
+    rm file_page4.$$
+fi
+#
+file_extension4=`cat last_modified4.$$`
+#
+if test -e ${file_prefix4}_${file_extension4}.osm.pbf
+then
+    echo "File4 already downloaded"
+else
+    wget $file_url4 -O ${file_prefix4}_${file_extension4}.osm.pbf
+fi
+#
 # Optionally stop rendering to free up memory
 # A restart on renderd is also an option to reduce memory use.
 #
 #/etc/init.d/renderd stop
 #/etc/init.d/apache2 stop
 #
+# In File1,
 # Welsh, English and Scottish names need to be converted to "cy or en", "en" and "gd or en" respectively.
 # First, convert a Welsh name portion into Welsh
 #
@@ -342,7 +397,7 @@ fi
 # With "osmium merge" there is no way to merge so that cy and gd files take precedence 
 # over the en one, but following the extracts above all should be mutually exclusive.
 #
-if osmium merge ${file_prefix2}_${file_extension2}.osm.pbf englangpart_${file_extension1}_after.pbf welshlangpart_${file_extension1}_after.pbf scotsgdlangpart_${file_extension1}_after.pbf -O -o langs_${file_extension1}_merged.pbf
+if osmium merge ${file_prefix2}_${file_extension2}.osm.pbf ${file_prefix3}_${file_extension3}.osm.pbf ${file_prefix4}_${file_extension4}.osm.pbf englangpart_${file_extension1}_after.pbf welshlangpart_${file_extension1}_after.pbf scotsgdlangpart_${file_extension1}_after.pbf -O -o langs_${file_extension1}_merged.pbf
 then
     echo Merge OK
 else

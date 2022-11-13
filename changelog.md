@@ -1,7 +1,7 @@
 # Changes made to this rendering
 This page describes changes made [here](https://github.com/SomeoneElseOSM/SomeoneElse-style), [here](https://github.com/SomeoneElseOSM/SomeoneElse-style-legend) and [here](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT), and visible [here](//map.atownsend.org.uk/maps/map/map.html).
 
-## As yet unreleased.
+## 13/11/2022
 Show reservoir_covered as building=roof, so that they don't blend in with a wider industrial area.
 Also treat a couple of spellings of "hard shoulder" as "shoulder".
 Don't show narrow tertiary roads as unclassified if a oneway tag is set.
@@ -13,6 +13,7 @@ Show military signs in red.
 Use board:title as the name on information signs as well.
 Increased maxzoom on test views to 24/25.
 Also render lifeguard bases (all lifeguard features in UK and IE now rendered).
+Include Isle of Man and Guernsey/Jersey in rendering.
 
 ## 01/11/2022
 Renderd geological=paleontological things.  Improve the icon for historic=archaelogical (less fuzzy, less brown).
