@@ -5127,8 +5127,6 @@ function filter_tags_generic(keyvalues, nokeys)
    if ((   keyvalues["amenity"]     == "notice_board"                       )  or
        (   keyvalues["tourism"]     == "village_sign"                       )  or
        (   keyvalues["man_made"]    == "village_sign"                       )  or
-       (   keyvalues["tourism"]     == "sign"                               )  or
-       (   keyvalues["emergency"]   == "beach_safety_sign"                  )  or
        ((  keyvalues["tourism"]     == "information"                       )   and
         (( keyvalues["information"] == "board"                            )    or
          ( keyvalues["information"] == "map"                              )    or
@@ -5136,7 +5134,6 @@ function filter_tags_generic(keyvalues, nokeys)
          ( keyvalues["information"] == "terminal"                         )    or
          ( keyvalues["information"] == "nature"                           )    or
          ( keyvalues["information"] == "noticeboard"                      )    or
-         ( keyvalues["information"] == "sign"                             )    or
          ( keyvalues["information"] == "tactile_model"                    )    or
          ( keyvalues["information"] == "map_board"                        )    or
          ( keyvalues["information"] == "wildlife"                         )    or
@@ -5152,6 +5149,14 @@ function filter_tags_generic(keyvalues, nokeys)
          ( keyvalues["information"] == "departure times and destinations" )    or
          ( keyvalues["information"] == "board;map"                        )))) then
       keyvalues["tourism"] = "informationboard"
+   end
+
+   if ((  keyvalues["amenity"]     == "notice_board"       )  or
+       (  keyvalues["tourism"]     == "sign"               )  or
+       (  keyvalues["emergency"]   == "beach_safety_sign"  )  or
+       (( keyvalues["tourism"]     == "information"       )   and
+        ( keyvalues["information"] == "sign"              ))) then
+      keyvalues["tourism"] = "informationsign"
    end
 
    if (( keyvalues["tourism"]     == "informationboard" )  and
