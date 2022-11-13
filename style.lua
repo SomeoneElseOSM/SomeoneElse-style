@@ -5163,9 +5163,11 @@ function filter_tags_generic(keyvalues, nokeys)
       end
    end
 
-   if (( keyvalues["tourism"]     == "informationboard" )  and
-       ( keyvalues["name"]        == nil                )  and
-       ( keyvalues["board:title"] ~= nil                )) then
+   if ((( keyvalues["tourism"]     == "informationboard" )   or
+        ( keyvalues["tourism"]     == "informationsign"  )   or
+        ( keyvalues["tourism"]     == "militarysign"     ))  and
+       (  keyvalues["name"]        == nil                 )  and
+       (  keyvalues["board:title"] ~= nil                 )) then
       keyvalues["name"] = keyvalues["board:title"]
    end
 
