@@ -7661,7 +7661,8 @@ function filter_tags_generic(keyvalues, nokeys)
        (  keyvalues["emergency"] == "lifeboat_base"           ) or
        (  keyvalues["emergency"] == "lifeguard_tower"         ) or
        (( keyvalues["emergency"] == "lifeguard"              )  and
-        ( keyvalues["lifeguard"] == "tower"                  )) or
+        (( keyvalues["lifeguard"] == "base"                 )   or
+         ( keyvalues["lifeguard"] == "tower"                ))) or
        (  keyvalues["amenity"]   == "coast_guard"             ) or
        (  keyvalues["emergency"] == "coast_guard"             ) or
        (  keyvalues["amenity"]   == "archive"                 )) then
