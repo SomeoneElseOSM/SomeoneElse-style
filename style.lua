@@ -5156,7 +5156,11 @@ function filter_tags_generic(keyvalues, nokeys)
        (  keyvalues["emergency"]   == "beach_safety_sign"  )  or
        (( keyvalues["tourism"]     == "information"       )   and
         ( keyvalues["information"] == "sign"              ))) then
-      keyvalues["tourism"] = "informationsign"
+      if ( keyvalues["operator:type"] == "military" ) then
+         keyvalues["tourism"] = "militarysign"
+      else
+         keyvalues["tourism"] = "informationsign"
+      end
    end
 
    if (( keyvalues["tourism"]     == "informationboard" )  and

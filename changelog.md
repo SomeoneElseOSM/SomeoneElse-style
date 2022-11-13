@@ -9,6 +9,7 @@ Suppress "tourism" on showgrounds.
 Show grass outdoor_seating in green.
 Show unnamed farm shops with particular produce as farm "vending machines".
 Show signs with a landscape information sign icon rather than a portrait information board one.
+Show military signs in red.
 
 ## 01/11/2022
 Renderd geological=paleontological things.  Improve the icon for historic=archaelogical (less fuzzy, less brown).
