@@ -78,6 +78,15 @@ fi
 # Ireland, if needed, needs no language processing and is is handled by the 
 # "2" versions of e.v.s.
 # The results are then merged together.
+#
+# If 2 GB counties are merged, they must be from the same Geofabrik extract, 
+# otherwise the "osmium merge" will fail, because some node in the GB 
+# coastline will have one version in one file and another version in another.
+# Any coastal English county (and Wales and Scotland) will include nodes in 
+# the coastline which are part of the island of GB, which will be dragged in
+# in full to both files.
+# "Using current data" (see comment below) will work if something like the
+# "Isle of Man" or "Ireland" is used as the second file.
 # ----------------------------------------------------------------------------
 # What's the first file that we are interested in?
 #
