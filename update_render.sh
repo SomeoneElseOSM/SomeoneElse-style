@@ -16,9 +16,9 @@
 # If the data is loaded into gis it'll go live immediately after script completion.
 # If the data is loaded into gis3 it can be tested and then taken live with make_gis3_live.sh
 #
-local_filesystem_user=renderaccount
+local_filesystem_user=ajtown
 local_renderd_user=_renderd
-local_database=gis
+local_database=gis3
 #
 # First things first - define some shared functions
 #
