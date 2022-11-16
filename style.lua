@@ -4363,7 +4363,7 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
--- Display "location=overgroundground" pipelines as bridges
+-- Display "location=overground" pipelines as bridges
 -- ----------------------------------------------------------------------------
    if (( keyvalues["man_made"] == "pipeline"   ) and
        ( keyvalues["location"] == "overground" ) and
