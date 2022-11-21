@@ -4647,7 +4647,8 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
    if (( keyvalues["historic"] == "chimney" ) or
-       ( keyvalues["man_made"] == "chimney" )) then
+       ( keyvalues["man_made"] == "chimney" ) or
+       ( keyvalues["building"] == "chimney" )) then
       if (( tonumber(keyvalues["height"]) or 0 ) >  50 ) then
          keyvalues["man_made"] = "bigchimney"
       else
@@ -8090,8 +8091,9 @@ function filter_tags_generic(keyvalues, nokeys)
 -- Also remove any "tourism" tags (which may be semi-valid mapping but are
 -- often just "for the renderer").
 -- ----------------------------------------------------------------------------
-   if (( keyvalues["man_made"]   == "tower"   ) and
-       ( keyvalues["tower:type"] == "cooling" )) then
+   if ((  keyvalues["man_made"]   == "tower"    ) and
+       (( keyvalues["tower:type"] == "cooling" )  or
+        ( keyvalues["tower:type"] == "chimney" ))) then
       if (( tonumber(keyvalues["height"]) or 0 ) >  100 ) then
          keyvalues["man_made"] = "bigchimney"
       else
