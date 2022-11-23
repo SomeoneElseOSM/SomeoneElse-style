@@ -7444,6 +7444,7 @@ function filter_tags_generic(keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
    if (( keyvalues["shop"]        == "hearing_aids"                 ) or
        ( keyvalues["shop"]        == "medical_supply"               ) or
+       ( keyvalues["office"]      == "medical_supply"               ) or
        ( keyvalues["shop"]        == "mobility"                     ) or
        ( keyvalues["shop"]        == "disability"                   ) or
        ( keyvalues["shop"]        == "chiropodist"                  ) or

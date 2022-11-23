@@ -3,6 +3,7 @@ This page describes changes made [here](https://github.com/SomeoneElseOSM/Someon
 
 ## As yet unreleased
 Render "tower:type=chimney" and "building=chimney" as "chimney" or "bigchimney", depending on height.
+Render office=medical_supply as shop=medical_supply.
 
 ## 13/11/2022
 Show reservoir_covered as building=roof, so that they don't blend in with a wider industrial area.
