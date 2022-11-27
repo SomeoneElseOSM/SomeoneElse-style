@@ -4396,26 +4396,28 @@ function filter_tags_generic(keyvalues, nokeys)
 -- In the version of OSM-carto that I use this with, Supermarkets would 
 -- otherwise display as pink, which does not show up over pink retail landuse.
 -- ----------------------------------------------------------------------------
-   if (( keyvalues["building"]   == "supermarket"      ) or
-       ( keyvalues["man_made"]   == "storage_tank"     ) or
-       ( keyvalues["man_made"]   == "silo"             ) or
-       ( keyvalues["man_made"]   == "tank"             ) or
-       ( keyvalues["man_made"]   == "water_tank"       ) or
-       ( keyvalues["man_made"]   == "kiln"             ) or
-       ( keyvalues["man_made"]   == "gasometer"        ) or
-       ( keyvalues["man_made"]   == "oil_tank"         ) or
-       ( keyvalues["man_made"]   == "greenhouse"       ) or
-       ( keyvalues["man_made"]   == "water_treatment"  ) or
-       ( keyvalues["man_made"]   == "trickling_filter" ) or
-       ( keyvalues["man_made"]   == "filter_bed"       ) or
-       ( keyvalues["man_made"]   == "filtration_bed"   ) or
-       ( keyvalues["man_made"]   == "waste_treatment"  ) or
-       ( keyvalues["man_made"]   == "lighthouse"       ) or
-       ( keyvalues["man_made"]   == "telescope"        ) or
-       ( keyvalues["man_made"]   == "radio_telescope"  ) or
-       ( keyvalues["man_made"]   == "street_cabinet"   ) or
-       ( keyvalues["man_made"]   == "aeroplane"        ) or
-       ( keyvalues["man_made"]   == "helicopter"       )) then
+   if ((  keyvalues["building"]   == "supermarket"      ) or
+       (  keyvalues["man_made"]   == "storage_tank"     ) or
+       (  keyvalues["man_made"]   == "silo"             ) or
+       (  keyvalues["man_made"]   == "tank"             ) or
+       (  keyvalues["man_made"]   == "water_tank"       ) or
+       (  keyvalues["man_made"]   == "kiln"             ) or
+       (  keyvalues["man_made"]   == "gasometer"        ) or
+       (  keyvalues["man_made"]   == "oil_tank"         ) or
+       (  keyvalues["man_made"]   == "greenhouse"       ) or
+       (  keyvalues["man_made"]   == "water_treatment"  ) or
+       (  keyvalues["man_made"]   == "trickling_filter" ) or
+       (  keyvalues["man_made"]   == "filter_bed"       ) or
+       (  keyvalues["man_made"]   == "filtration_bed"   ) or
+       (  keyvalues["man_made"]   == "waste_treatment"  ) or
+       (  keyvalues["man_made"]   == "lighthouse"       ) or
+       (  keyvalues["man_made"]   == "telescope"        ) or
+       (  keyvalues["man_made"]   == "radio_telescope"  ) or
+       (  keyvalues["man_made"]   == "street_cabinet"   ) or
+       (  keyvalues["man_made"]   == "aeroplane"        ) or
+       (  keyvalues["man_made"]   == "helicopter"       ) or
+       (( keyvalues["military"]   == "bunker"          )  and
+        ( keyvalues["building"]   == nil               ))) then
       keyvalues["building"] = "yes"
    end
 
