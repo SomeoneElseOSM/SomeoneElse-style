@@ -7,7 +7,7 @@ generic_keys = {'access','addr:housename','addr:housenumber','addr:interpolation
    'bicycle','brand','bridge','bridleway','booth','boundary','building','capital','construction','covered','culvert','cutting','denomination','designation','disused','disused:shop','ele',
    'embankment','emergency','entrance','foot','flood_prone','generation:source','geological','golf','harbour','highway','historic','horse','hours','intermittent','junction','landcover','landuse','layer','leisure','lcn_ref','lock','locked',
    'man_made','marker','military','motor_car','name','natural','ncn_milepost','office','oneway','operator','opening_hours:covid19','pitch','place','playground','poi','population','power','power_source','public_transport','school','seamark:type',
-   'railway','ref','religion','rescue_equipment','route','service','shop','sport','surface','toll','tourism','tower:type', 'tracktype','tunnel','water','waterway',
+   'railway','railway:historic','ref','religion','rescue_equipment','route','service','shop','sport','surface','toll','tourism','tower:type', 'tracktype','tunnel','water','waterway',
    'wetland','width','wood','type'}
 
 function add_z_order(keyvalues)
@@ -4208,8 +4208,9 @@ function filter_tags_generic(keyvalues, nokeys)
 -- Handle razed railways and old inclined_planes as dismantled.
 -- dismantled, abandoned are now handled separately to disused in roads.mss
 -- ----------------------------------------------------------------------------
-   if (( keyvalues["railway"]  == "razed"          ) or
-       ( keyvalues["historic"] == "inclined_plane" )) then
+   if (( keyvalues["railway:historic"] == "rail"           ) or
+       ( keyvalues["railway"]          == "razed"          ) or
+       ( keyvalues["historic"]         == "inclined_plane" )) then
       keyvalues["railway"] = "dismantled"
    end
 
