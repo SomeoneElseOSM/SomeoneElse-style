@@ -207,7 +207,11 @@ mv /etc/cron.d/osm_ldp1 .
 mv /etc/cron.d/osm_ldp2 .
 mv /etc/cron.d/osm_ldp3 .
 #
-# Next get the latest versions of each part of the map style
+# Next get the latest versions of each part of the map style.
+#
+# This is run from sudo without a connection to an authentication agent, 
+# so it makes sense for the git config url to be "https" and the pushurl "git".  
+# See https://stackoverflow.com/a/73836045/8145448
 #
 cd /home/${local_filesystem_user}/src/SomeoneElse-style
 pwd

@@ -6,6 +6,7 @@ Render "tower:type=chimney" and "building=chimney" as "chimney" or "bigchimney",
 Render office=medical_supply as shop=medical_supply.
 Added railway:historic to the style, for compatibility with mkgmap style.
 If it has no other tags, ensure that military bunkers appear as buildings.
+Updated (in SomeoneElse-style) update_render.sh, update_carto.sh and (in SomeoneElse-style-legend) update_generated_legend.sh to link to https://stackoverflow.com/a/73836045/8145448 .
 
 ## 13/11/2022
 Show reservoir_covered as building=roof, so that they don't blend in with a wider industrial area.
