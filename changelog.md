@@ -1,6 +1,9 @@
 # Changes made to this rendering
 This page describes changes made [here](https://github.com/SomeoneElseOSM/SomeoneElse-style), [here](https://github.com/SomeoneElseOSM/SomeoneElse-style-legend) and [here](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT), and visible [here](//map.atownsend.org.uk/maps/map/map.html).
 
+## 01/12/2022
+The automatic permalinks at https://map.atownsend.org.uk now support layers as well as zoom levels and location.  See https://github.com/SomeoneElseOSM/SomeoneElse-map/tree/leaflet-hash-plus-1 .
+
 ## 28/11/2022
 Update https://map.atownsend.org.uk to use https://github.com/mlevans/leaflet-hash .
 
