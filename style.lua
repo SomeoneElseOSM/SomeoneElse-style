@@ -8294,19 +8294,20 @@ function filter_tags_generic(keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
 -- Names for vacant shops
 -- ----------------------------------------------------------------------------
-   if (((( keyvalues["disused:shop"]    ~= nil       )   or
-         ( keyvalues["disused:amenity"] ~= nil       ))  and
-         ( keyvalues["disused:amenity"] ~= "parking"  )  and
-         ( keyvalues["shop"]            == nil        )  and
-         ( keyvalues["amenity"]         == nil        )) or
-       (   keyvalues["office"]          == "vacant"    ) or
-       (   keyvalues["office"]          == "disused"   ) or
-       (   keyvalues["shop"]            == "disused"   ) or
-       (   keyvalues["shop"]            == "empty"     ) or
-       (   keyvalues["shop"]            == "closed"    ) or
-       (   keyvalues["shop"]            == "abandoned" ) or
-       ((  keyvalues["shop"]            ~= nil        )  and
-        (  keyvalues["opening_hours"]   == "closed"   ))) then
+   if (((( keyvalues["disused:shop"]    ~= nil        )   or
+         ( keyvalues["disused:amenity"] ~= nil        ))  and
+         ( keyvalues["disused:amenity"] ~= "fountain"  )  and
+         ( keyvalues["disused:amenity"] ~= "parking"   )  and
+         ( keyvalues["shop"]            == nil         )  and
+         ( keyvalues["amenity"]         == nil         )) or
+       (   keyvalues["office"]          == "vacant"     ) or
+       (   keyvalues["office"]          == "disused"    ) or
+       (   keyvalues["shop"]            == "disused"    ) or
+       (   keyvalues["shop"]            == "empty"      ) or
+       (   keyvalues["shop"]            == "closed"     ) or
+       (   keyvalues["shop"]            == "abandoned"  ) or
+       ((  keyvalues["shop"]            ~= nil         )  and
+        (  keyvalues["opening_hours"]   == "closed"    ))) then
       keyvalues["shop"] = "vacant"
    end
 
