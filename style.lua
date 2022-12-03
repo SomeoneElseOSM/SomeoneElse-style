@@ -3980,6 +3980,7 @@ function filter_tags_generic(keyvalues, nokeys)
 -- highway=rest_area is used a lot in the UK for laybies, so map that over too.
 -- ----------------------------------------------------------------------------
    if (( keyvalues["amenity"] == "layby"     ) or
+       ( keyvalues["highway"] == "layby"     ) or
        ( keyvalues["highway"] == "rest_area" )) then
       keyvalues["amenity"] = "parking"
    end
