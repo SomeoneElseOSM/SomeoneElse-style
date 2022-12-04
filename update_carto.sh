@@ -1,3 +1,4 @@
+#!/bin/bash
 # -----------------------------------------------------------------------------
 # update_carto.sh
 # As per update_render.sh, but only does not reload the database - it only
@@ -14,7 +15,7 @@ local_filesystem_user=ajtown
 local_renderd_user=_renderd
 #
 # No reference to "local_database=gis3" here, but see
-# "rm -rf /var/lib/mod_tile/ajt3/?" below.
+# "rm -rf /var/cache/renderd/tiles/ajt3/?" below.
 #
 # First things first - define some shared functions
 #
@@ -80,8 +81,8 @@ cd ..
 /etc/init.d/renderd restart
 /etc/init.d/apache2 restart
 #
-rm -rf /var/lib/mod_tile/ajt3/?
-rm -rf /var/lib/mod_tile/ajt3/??
+rm -rf /var/cache/renderd/tiles/ajt3/?
+rm -rf /var/cache/renderd/tiles/ajt3/??
 #
 # And final tidying up
 #
