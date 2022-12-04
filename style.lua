@@ -1022,6 +1022,18 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Render quiet lanes as living streets.
+-- This is done because it's a difference I don't want to draw attention to -
+-- they aren't "different enough to make them render differently".
+-- ----------------------------------------------------------------------------
+   if ((( keyvalues["highway"]     == "tertiary"     ) or
+        ( keyvalues["highway"]     == "unclassified" ) or
+        ( keyvalues["highway"]     == "residential"  )) and
+       (  keyvalues["designation"] == "quiet_lane"    )) then
+      keyvalues["highway"] = "living_street"
+   end
+
+-- ----------------------------------------------------------------------------
 -- Use unclassified_sidewalk to indicate sidewalk
 -- ----------------------------------------------------------------------------
    if (( keyvalues["highway"] == "unclassified"      ) or 
