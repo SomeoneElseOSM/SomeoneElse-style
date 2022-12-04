@@ -22,6 +22,7 @@ function add_z_order(keyvalues)
       { 'tunnel', 'yes', -10, 0}, { 'tunnel', 'true', -10, 0}, { 'tunnel', 1, -10, 0}, 
       { 'highway', 'road', 2, 0 }, 
       { 'highway', 'unclassified', 3, 0 }, { 'highway', 'unclassified_sidewalk', 3, 0 }, { 'highway', 'unclassified_verge', 3, 0 }, { 'highway', 'unclassified_ford', 3, 0 },
+      { 'highway', 'living_street', 3, 0 }, { 'highway', 'living_street_sidewalk', 3, 0 }, { 'highway', 'living_street_verge', 3, 0 }, { 'highway', 'living_street_ford', 3, 0 },
       { 'highway', 'residential', 3, 0 }, 
       { 'highway', 'tertiary_link', 4, 0}, { 'highway', 'tertiary', 4, 0}, { 'highway', 'tertiary_sidewalk', 4, 0}, { 'highway', 'tertiary_verge', 4, 0},
       { 'highway', 'secondary_link', 6, 1}, { 'highway', 'secondary', 6, 1}, { 'highway', 'secondary_sidewalk', 6, 1}, { 'highway', 'secondary_verge', 6, 1},
@@ -1019,7 +1020,7 @@ function filter_tags_generic(keyvalues, nokeys)
       keyvalues["landuse"] = nil
       keyvalues["amenity"] = nil
    end
-   
+
 -- ----------------------------------------------------------------------------
 -- Use unclassified_sidewalk to indicate sidewalk
 -- ----------------------------------------------------------------------------
@@ -1090,6 +1091,73 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["highway"] == "residential_link"  )) then
       if ( keyvalues["ford"] == "yes" ) then
           keyvalues["highway"] = "unclassified_ford"
+      end
+   end
+
+-- ----------------------------------------------------------------------------
+-- Use living_street_sidewalk to indicate sidewalk
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["highway"] == "living_street"      ) or 
+       ( keyvalues["highway"] == "living_street_link" )) then
+      if (( keyvalues["sidewalk"] == "both"           ) or 
+          ( keyvalues["sidewalk"] == "left"           ) or 
+          ( keyvalues["sidewalk"] == "mapped"         ) or 
+          ( keyvalues["sidewalk"] == "separate"       ) or 
+          ( keyvalues["sidewalk"] == "right"          ) or 
+          ( keyvalues["sidewalk"] == "shared"         ) or 
+          ( keyvalues["sidewalk"] == "yes"            ) or
+          ( keyvalues["sidewalk:left"] == "separate"  ) or 
+          ( keyvalues["sidewalk:left"] == "yes"       ) or
+          ( keyvalues["sidewalk:right"] == "separate" ) or 
+          ( keyvalues["sidewalk:right"] == "yes"      ) or
+          ( keyvalues["sidewalk:both"] == "separate"  ) or 
+          ( keyvalues["sidewalk:both"] == "yes"       ) or
+          ( keyvalues["footway"]  == "both"           ) or 
+          ( keyvalues["footway"]  == "left"           ) or 
+          ( keyvalues["footway"]  == "mapped"         ) or 
+          ( keyvalues["footway"]  == "separate"       ) or 
+          ( keyvalues["footway"]  == "right"          ) or 
+          ( keyvalues["footway"]  == "shared"         ) or 
+          ( keyvalues["footway"]  == "yes"            ) or
+          ( keyvalues["shoulder"] == "both"           ) or
+          ( keyvalues["shoulder"] == "left"           ) or 
+          ( keyvalues["shoulder"] == "right"          ) or 
+          ( keyvalues["shoulder"] == "yes"            ) or
+          ( keyvalues["hard_shoulder"] == "yes"       ) or
+          ( keyvalues["hardshoulder"]  == "yes"       ) or
+          ( keyvalues["cycleway"] == "track"          ) or
+          ( keyvalues["cycleway"] == "opposite_track" ) or
+          ( keyvalues["cycleway"] == "yes"            ) or
+          ( keyvalues["cycleway"] == "separate"       ) or
+          ( keyvalues["cycleway"] == "sidewalk"       ) or
+          ( keyvalues["cycleway"] == "sidepath"       )) then
+          keyvalues["highway"] = "living_street_sidewalk"
+      end
+   end
+
+-- ----------------------------------------------------------------------------
+-- Use living_street_verge to indicate verge
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["highway"] == "living_street"      ) or 
+       ( keyvalues["highway"] == "living_street_link" )) then
+      if (( keyvalues["verge"] == "both"           ) or 
+          ( keyvalues["verge"] == "left"           ) or 
+          ( keyvalues["verge"] == "mapped"         ) or 
+          ( keyvalues["verge"] == "separate"       ) or 
+          ( keyvalues["verge"] == "right"          ) or 
+          ( keyvalues["verge"] == "shared"         ) or 
+          ( keyvalues["verge"] == "yes"            )) then
+          keyvalues["highway"] = "living_street_verge"
+      end
+   end
+
+-- ----------------------------------------------------------------------------
+-- Use living_street_ford to indicate ford
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["highway"] == "living_street"      ) or 
+       ( keyvalues["highway"] == "living_street_link" )) then
+      if ( keyvalues["ford"] == "yes" ) then
+          keyvalues["highway"] = "living_street_ford"
       end
    end
 
@@ -5040,15 +5108,6 @@ function filter_tags_generic(keyvalues, nokeys)
    if (( keyvalues["highway"]   == "passing_place" )  or
        ( keyvalues["highway"]   == "turning_loop"  )) then
       keyvalues["highway"] = "turning_circle"
-   end
-
--- ----------------------------------------------------------------------------
--- highway=living_street to residential
--- This is done because it's a difference I don't want to draw attention to -
--- they aren't "different enough to make them render differently".
--- ----------------------------------------------------------------------------
-   if ( keyvalues["highway"]   == "living_street" ) then
-      keyvalues["highway"] = "residential"
    end
 
 -- ----------------------------------------------------------------------------

@@ -4,6 +4,7 @@ This page describes changes made [here](https://github.com/SomeoneElseOSM/Someon
 ## As yet unreleased
 Don't render disused fountains in the same way as vacant shops etc.
 There are a couple of "highway=layby" in the UK.  Handle as "amenity=parking".
+Send living_street through to the database with that tag, not "residential".  This is essentially a null change (the rendering is currently the same), but will be changed later.
 
 ## 01/12/2022
 The automatic permalinks at https://map.atownsend.org.uk now support layers as well as zoom levels and location.  See https://github.com/SomeoneElseOSM/SomeoneElse-map/tree/leaflet-hash-plus-1 .
