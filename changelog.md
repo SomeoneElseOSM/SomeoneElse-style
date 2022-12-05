@@ -1,6 +1,9 @@
 # Changes made to this rendering
 This page describes changes made [here](https://github.com/SomeoneElseOSM/SomeoneElse-style), [here](https://github.com/SomeoneElseOSM/SomeoneElse-style-legend) and [here](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT), and visible [here](//map.atownsend.org.uk/maps/map/map.html).
 
+## As yet unreleased.
+Detect Quiet Lanes via "designation=quiet_lane;unclassified_highway" as well.
+
 ## 04/12/2022
 Don't render disused fountains in the same way as vacant shops etc.
 There are a couple of "highway=layby" in the UK.  Handle as "amenity=parking".

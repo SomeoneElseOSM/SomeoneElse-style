@@ -1026,10 +1026,11 @@ function filter_tags_generic(keyvalues, nokeys)
 -- This is done because it's a difference I don't want to draw attention to -
 -- they aren't "different enough to make them render differently".
 -- ----------------------------------------------------------------------------
-   if ((( keyvalues["highway"]     == "tertiary"     ) or
-        ( keyvalues["highway"]     == "unclassified" ) or
-        ( keyvalues["highway"]     == "residential"  )) and
-       (  keyvalues["designation"] == "quiet_lane"    )) then
+   if ((( keyvalues["highway"]     == "tertiary"                          )  or
+        ( keyvalues["highway"]     == "unclassified"                      )  or
+        ( keyvalues["highway"]     == "residential"                       )) and
+       (( keyvalues["designation"] == "quiet_lane"                        )  or
+        ( keyvalues["designation"] == "quiet_lane;unclassified_highway"   ))) then
       keyvalues["highway"] = "living_street"
    end
 
