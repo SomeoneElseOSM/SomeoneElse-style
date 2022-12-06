@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20221012T021000Z",
+  "data_updated": "20221206T094100Z",
   "project": {
     "name": "SomeoneElse-style rural pedestrian rendering",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -379,9 +379,9 @@
     { "key": "bicycle", "description": "Bicycle access; used with other tags to infer net access representation" },
     { "key": "board:title", "description": "Used as mames on information boards and signs" },
     { "key": "booth", "description": "Used when deciding how to show telephone boxes and former telephone boxes (e.g. red or not red)" },
-    { "key": "boundary", "value: "administrative", "description": "Admin boundaries not shown on main map but shown on overlay" },
-    { "key": "boundary", "value: "marker", "description": "Used as synonym for boundary stone" },
-    { "key": "boundary", "value: "protected_area", "description": "Used to detect AONBs and National Parks" },
+    { "key": "boundary", "value": "administrative", "description": "Admin boundaries not shown on main map but shown on overlay" },
+    { "key": "boundary", "value": "marker", "description": "Used as synonym for boundary stone" },
+    { "key": "boundary", "value": "protected_area", "description": "Used to detect AONBs and National Parks" },
     { "key": "brand", "description": "Used after name in brackets.  Some generic ones (e.g. Independent) are suppressed" },
     { "key": "bridge", "value": "viaduct", "description": "One of many bridge types detected" },
     { "key": "bridge", "value": "aqueduct", "description": "One of many bridge types detected" },
