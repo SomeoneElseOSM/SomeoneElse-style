@@ -3,6 +3,7 @@ This page describes changes made [here](https://github.com/SomeoneElseOSM/Someon
 
 ## As yet unreleased.
 Detect Quiet Lanes via "designation=quiet_lane;unclassified_highway" as well.
+Potentially detect bulk_purchase=only, even though it isn't widely used in UK/IE.
 
 ## 04/12/2022
 Don't render disused fountains in the same way as vacant shops etc.

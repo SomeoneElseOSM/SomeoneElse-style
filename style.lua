@@ -5824,6 +5824,7 @@ function filter_tags_generic(keyvalues, nokeys)
         (( keyvalues["zero_waste"]         == "yes"                )  or
          ( keyvalues["zero_waste"]         == "only"               )  or
          ( keyvalues["bulk_purchase"]      == "yes"                )  or
+         ( keyvalues["bulk_purchase"]      == "only"               )  or
          ( keyvalues["reusable_packaging"] == "yes"                )))) then
       keyvalues["shop"] = "ecoconv"
    end
@@ -5832,6 +5833,7 @@ function filter_tags_generic(keyvalues, nokeys)
        (( keyvalues["zero_waste"]         == "yes"                )  or
         ( keyvalues["zero_waste"]         == "only"               )  or
         ( keyvalues["bulk_purchase"]      == "yes"                )  or
+        ( keyvalues["bulk_purchase"]      == "only"               )  or
         ( keyvalues["reusable_packaging"] == "yes"                ))) then
       keyvalues["shop"] = "ecosupermarket"
    end
@@ -5840,6 +5842,7 @@ function filter_tags_generic(keyvalues, nokeys)
        (( keyvalues["zero_waste"]         == "yes"                )  or
         ( keyvalues["zero_waste"]         == "only"               )  or
         ( keyvalues["bulk_purchase"]      == "yes"                )  or
+        ( keyvalues["bulk_purchase"]      == "only"               )  or
         ( keyvalues["reusable_packaging"] == "yes"                ))) then
       keyvalues["shop"] = "ecogreengrocer"
    end
@@ -7101,6 +7104,7 @@ function filter_tags_generic(keyvalues, nokeys)
       if (( keyvalues["zero_waste"]         == "yes"                )  or
           ( keyvalues["zero_waste"]         == "only"               )  or
           ( keyvalues["bulk_purchase"]      == "yes"                )  or
+          ( keyvalues["bulk_purchase"]      == "only"               )  or
           ( keyvalues["reusable_packaging"] == "yes"                )) then
          keyvalues["shop"] = "ecohealth_food"
       else
