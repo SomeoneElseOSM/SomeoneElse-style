@@ -5742,12 +5742,13 @@ function filter_tags_generic(keyvalues, nokeys)
       end
    end
 
-   if ((   keyvalues["historic"]           == "standing_stone"        ) or
-       ((  keyvalues["historic"]           == "archaeological_site"  )  and
-        (( keyvalues["site_type"]          == "standing_stone"      )   or
-         ( keyvalues["site_type"]          == "megalith"            )   or
-         ( keyvalues["Canmore_Site_Type"]  == "Standing Stone"      )))) then
-      if ( keyvalues["stone_type"]   == "ogham_stone" ) then
+   if ((   keyvalues["historic"]            == "standing_stone"        ) or
+       ((  keyvalues["historic"]            == "archaeological_site"  )  and
+        (( keyvalues["site_type"]           == "standing_stone"      )   or
+         ( keyvalues["site_type"]           == "megalith"            )   or
+         ( keyvalues["archaeological_site"] == "megalith"            )   or
+         ( keyvalues["Canmore_Site_Type"]   == "Standing Stone"      )))) then
+      if ( keyvalues["stone_type"] == "ogham_stone" ) then
          keyvalues["historic"] = "oghamstone"
       else
          keyvalues["historic"] = "historicstandingstone"
