@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20221207T231200Z",
+  "data_updated": "20221208T225700Z",
   "project": {
     "name": "SomeoneElse-style rural pedestrian rendering",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -459,8 +459,8 @@
     { "key": "building:type", "value": "canopy", "description": "Shown as roof; a lighter colour building" },
     { "key": "bulk_purchase", "value": "only", "description": "Detect 'eco' shops and supermarkets" },
     { "key": "bulk_purchase", "value": "yes", "description": "Detect 'eco' shops and supermarkets" },
-    { "key": "canal_bridge_ref", "description": "Used in place of ref on bridges" },
-    { "key": "Canmore_Site_Type", "description": "Used to identify historic and Ogham stones" },
+    { "key": "canal_bridge_ref", "description": "Used as an obscure synonym for bridge_ref" },
+    { "key": "Canmore_Site_Type", "value": "Standing Stone", "description": "Used to identify standing stones" },
     { "key": "club", "description": "Detect some other keys, detect landuse" },
     { "key": "colour", "description": "Show black, white, blue, green, grey and gold phone boxes as the correct colour rather than red" },
     { "key": "commercial", "description": "Obscure synonym for office" },
