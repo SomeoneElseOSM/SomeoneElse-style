@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20221208T225700Z",
+  "data_updated": "20221209T001500Z",
   "project": {
     "name": "SomeoneElse-style rural pedestrian rendering",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -279,6 +279,8 @@
     { "key": "animal", "value": "sheep", "description": "Detect meadows as agricultural" },
     { "key": "animal", "value": "shelter", "description": "Rendered as animal shop, name incorporates brand" },
     { "key": "animal", "value": "wellness", "description": "Rendered as animal shop, name incorporates brand" },
+    { "key": "archaeological_site", "value": "megalith", "description": "Detect standing stones and ogham stones" },
+    { "key": "archaeological_site", "value": "standing_stone", "description": "Detect standing stones and ogham stones" },
     { "key": "area", "description": "Drop some highway areas" },
     { "key": "area:highway", "value": "traffic_island", "description": "Shown as a kerb" },
     { "key": "barrier", "value": "cattle_grid", "description": "Shown with an icon" },
@@ -643,7 +645,8 @@
     { "key": "sidewalk:both", "description": "Render sidewalks on roads" },
     { "key": "sidewalk:left", "description": "Render sidewalks on roads" },
     { "key": "sidewalk:right", "description": "Render sidewalks on roads" },
-    { "key": "site_type", "description": "Potentially used to identify standing and Ogham stones" },
+    { "key": "site_type", "value": "megalith", "description": "Detect standing stones and ogham stones" },
+    { "key": "site_type", "value": "standing_stone", "description": "Detect standing stones and ogham stones" },
     { "key": "small_electric_vehicle", "description": "Detect scooter etc. rentals" },
     { "key": "species", "description": "Detect hogweed hazard" },
     { "key": "sport", "description": "Used to classify and clarigy many other tags" },
