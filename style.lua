@@ -1423,28 +1423,17 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["bridge"] == "aqueduct"    ) or
        ( keyvalues["bridge"] == "movable"     ) or
        ( keyvalues["bridge"] == "boardwalk"   ) or
-       ( keyvalues["bridge"] == "suspension"  ) or
        ( keyvalues["bridge"] == "swing"       ) or
-       ( keyvalues["bridge"] == "lift"        ) or
        ( keyvalues["bridge"] == "cantilever"  ) or
        ( keyvalues["bridge"] == "footbridge"  ) or
        ( keyvalues["bridge"] == "undefined"   ) or
        ( keyvalues["bridge"] == "covered"     ) or
-       ( keyvalues["bridge"] == "duck_boards" ) or
-       ( keyvalues["bridge"] == "duckboards"  ) or
-       ( keyvalues["bridge"] == "duckboard"   ) or
-       ( keyvalues["bridge"] == "footplank"   ) or
-       ( keyvalues["bridge"] == "clapper"     ) or
        ( keyvalues["bridge"] == "cantilever"  ) or
        ( keyvalues["bridge"] == "gangway"     ) or
        ( keyvalues["bridge"] == "foot"        ) or
-       ( keyvalues["bridge"] == "lock_gate"   ) or
-       ( keyvalues["bridge"] == "sleepers"    ) or
        ( keyvalues["bridge"] == "plank"       ) or
        ( keyvalues["bridge"] == "rope"        ) or
        ( keyvalues["bridge"] == "pontoon"     ) or
-       ( keyvalues["bridge"] == "footpath"    ) or
-       ( keyvalues["bridge"] == "wire"        ) or
        ( keyvalues["bridge"] == "pier"        ) or
        ( keyvalues["bridge"] == "chain"       ) or
        ( keyvalues["bridge"] == "trestle"     )) then
@@ -1870,10 +1859,9 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
--- Map amenity=car_repair etc. to shop=car_repair
+-- Map craft=car_repair etc. to shop=car_repair
 -- ----------------------------------------------------------------------------
-   if (( keyvalues["amenity"] == "car_repair"         )  or
-       ( keyvalues["craft"]   == "car_repair"         )  or
+   if (( keyvalues["craft"]   == "car_repair"         )  or
        ( keyvalues["craft"]   == "coachbuilder"       )  or
        ( keyvalues["shop"]    == "car_service"        )  or
        ( keyvalues["shop"]    == "car_inspection"     )  or
@@ -4989,7 +4977,6 @@ function filter_tags_generic(keyvalues, nokeys)
 -- Horse mounting blocks
 -- ----------------------------------------------------------------------------
    if (( keyvalues["amenity"]   == "mounting_block"       ) or
-       ( keyvalues["bridleway"] == "mounting_block"       ) or
        ( keyvalues["historic"]  == "mounting_block"       ) or
        ( keyvalues["horse"]     == "mounting_block"       ) or
        ( keyvalues["horse"]     == "mounting block"       ) or
@@ -5544,7 +5531,6 @@ function filter_tags_generic(keyvalues, nokeys)
    if (( keyvalues["barrier"] == "border_control"   ) or
        ( keyvalues["barrier"] == "ticket_barrier"   ) or
        ( keyvalues["barrier"] == "ticket"           ) or
-       ( keyvalues["barrier"] == "lift_gate,lights" ) or
        ( keyvalues["barrier"] == "security_control" ) or
        ( keyvalues["barrier"] == "checkpoint"       ) or
        ( keyvalues["barrier"] == "gatehouse"        )) then
@@ -7323,7 +7309,6 @@ function filter_tags_generic(keyvalues, nokeys)
    if (( keyvalues["amenity"] == "car_rental"                   ) or
        ( keyvalues["amenity"] == "van_rental"                   ) or
        ( keyvalues["amenity"] == "car_rental;bicycle_rental"    ) or
-       ( keyvalues["amenity"] == "vehicle_rental"               ) or
        ( keyvalues["shop"]    == "car_rental"                   ) or
        ( keyvalues["shop"]    == "van_rental"                   ) or
        ( keyvalues["shop"]    == "caravan"                      ) or
@@ -8515,7 +8500,6 @@ function filter_tags_node (keyvalues, nokeys)
    if (( keyvalues["barrier"] == "yes"            ) or
        ( keyvalues["barrier"] == "barrier"        ) or
        ( keyvalues["barrier"] == "tank_trap"      ) or
-       ( keyvalues["barrier"] == "tank_traps"     ) or
        ( keyvalues["barrier"] == "dragons_teeth"  ) or
        ( keyvalues["barrier"] == "bollards"       ) or
        ( keyvalues["barrier"] == "bus_trap"       ) or
@@ -8599,7 +8583,6 @@ function filter_tags_way (keyvalues, nokeys)
 -- Map linear tank traps, and some others, to wall
 -- ----------------------------------------------------------------------------
    if (( keyvalues["barrier"] == "tank_trap"      ) or
-       ( keyvalues["barrier"] == "tank_traps"     ) or
        ( keyvalues["barrier"] == "dragons_teeth"  ) or
        ( keyvalues["barrier"] == "obstruction"    ) or
        ( keyvalues["barrier"] == "sea_wall"       ) or

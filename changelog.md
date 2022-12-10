@@ -6,6 +6,12 @@ Detect Quiet Lanes via "designation=quiet_lane;unclassified_highway" as well.
 Potentially detect bulk_purchase=only, even though it isn't widely used in UK/IE.
 "archaeological_site=megalith" has appeared as a duplicate of "site_type=megalith", so adding support for that.
 Don't show motorway junction names if name:signed=no.
+Removed support for bridleway=mounting_block as the one example of that has been changed to something more sensible.
+Removed support for some "bridge" values that have (sensibly) been moved in the data to e.g. "bridge:structure" or similar.
+Removed support for the misspelt "barrier=tank_traps" (no longer in the data).
+Removed support for "barrier=lift_gate,lights" (no longer in the data).
+Removed support for "amenity=vehicle_rental" (no longer in the data).
+Remobed support for "amenity=car_repair" (no longer in the data).
 
 ## 04/12/2022
 Don't render disused fountains in the same way as vacant shops etc.
