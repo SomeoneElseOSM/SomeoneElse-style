@@ -2,7 +2,7 @@ SomeoneElse-style
 =================
 [This project](https://github.com/SomeoneElseOSM/SomeoneElse-style) is one of four projects that together are used to create and display the map that is visible [here](https://map.atownsend.org.uk/maps/map/map.html).
 
-The three projects are:
+The four projects are:
 
 * [SomeoneElse-style](https://github.com/SomeoneElseOSM/SomeoneElse-style) - the lua preprocessing.
 * [openstreetmap-carto-AJT](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT) - the Carto style.
