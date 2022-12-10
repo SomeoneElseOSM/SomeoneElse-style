@@ -5,6 +5,7 @@ This page describes changes made [here](https://github.com/SomeoneElseOSM/Someon
 Detect Quiet Lanes via "designation=quiet_lane;unclassified_highway" as well.
 Potentially detect bulk_purchase=only, even though it isn't widely used in UK/IE.
 "archaeological_site=megalith" has appeared as a duplicate of "site_type=megalith", so adding support for that.
+Don't show motorway junction names if name:signed=no.
 
 ## 04/12/2022
 Don't render disused fountains in the same way as vacant shops etc.

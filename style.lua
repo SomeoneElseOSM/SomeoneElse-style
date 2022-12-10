@@ -288,6 +288,14 @@ function filter_tags_generic(keyvalues, nokeys)
       keyvalues["highway"] = "pathwide"
    end
 
+   if ((( keyvalues["highway"] == "motorway_junction"  ) and
+        ( keyvalues["name:signed"] == "no"            ) or
+        ( keyvalues["unsigned"]    == "yes"           ) or
+        ( keyvalues["unsigned"]    == "true"          ))) then
+      keyvalues["name"] = nil
+      keyvalues["name:signed"] = nil
+   end
+
 -- ----------------------------------------------------------------------------
 -- Move unsigned road refs to the name, in brackets.
 -- ----------------------------------------------------------------------------
