@@ -1,13 +1,21 @@
 SomeoneElse-style
 =================
-[This project](https://github.com/SomeoneElseOSM/SomeoneElse-style) is one of four projects that together are used to create and display the map that is visible [here](https://map.atownsend.org.uk/maps/map/map.html).
+[This project](https://github.com/SomeoneElseOSM/SomeoneElse-style) is one of eight projects that together are used to create and display the map that is visible [here](https://map.atownsend.org.uk/maps/map/map.html).
 
-The four projects are:
+The projects are:
 
-* [SomeoneElse-style](https://github.com/SomeoneElseOSM/SomeoneElse-style) - the lua preprocessing.
+* [SomeoneElse-style](https://github.com/SomeoneElseOSM/SomeoneElse-style) - the lua preprocessing that decides what tags get shown on the map.
 * [openstreetmap-carto-AJT](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT) - the Carto style.
 * [SomeoneElse-style-legend](https://github.com/SomeoneElseOSM/SomeoneElse-style-legend) - the data used to generate the map legend.
 * [SomeoneElse-map](https://github.com/SomeoneElseOSM/SomeoneElse-map) - a simple Leaflet map.
+* [Boundary_Scripts](https://github.com/SomeoneElseOSM/Boundary_Scripts) - create a map layer that shows adminstrative boundaries, which are not shown in the default style.
+* [floodedmap](https://github.com/SomeoneElseOSM/floodedmap) - create a map layer that shows whether certain things are flooded.
+* [mod_tile](https://github.com/SomeoneElseOSM/mod_tile) - a fork of mod_tile modified to show zoom levels up to 24.
+* [database_qa_scripts](https://github.com/SomeoneElseOSM/database_qa_scripts) - various QA scripts associated with both server health (database size etc.) and data quality (such as broken multipolygons).
+
+Related is:
+
+* [mkgmap_style_ajt](https://github.com/SomeoneElseOSM/mkgmap_style_ajt) - similar to "SomeoneElse-style", but for Garmin devices.
 
 The map style is designed for "England and Wales-based rural pedestrians".  The example map area also covers Ireland and Scotland.
 

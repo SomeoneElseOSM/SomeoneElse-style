@@ -11,7 +11,8 @@ Removed support for some "bridge" values that have (sensibly) been moved in the 
 Removed support for the misspelt "barrier=tank_traps" (no longer in the data).
 Removed support for "barrier=lift_gate,lights" (no longer in the data).
 Removed support for "amenity=vehicle_rental" (no longer in the data).
-Remobed support for "amenity=car_repair" (no longer in the data).
+Removed support for "amenity=car_repair" (no longer in the data).
+Updated README with more project information.
 
 ## 04/12/2022
 Don't render disused fountains in the same way as vacant shops etc.
