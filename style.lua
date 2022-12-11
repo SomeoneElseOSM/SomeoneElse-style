@@ -4683,7 +4683,7 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
--- If something is tagged as both an archaelogical site and a place, lose the
+-- If something is tagged as both an archaeological site and a place, lose the
 -- place tag.
 -- ----------------------------------------------------------------------------
    if (( keyvalues["historic"] == "archaeological_site" )  and
