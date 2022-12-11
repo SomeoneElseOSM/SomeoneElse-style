@@ -393,7 +393,7 @@ function filter_tags_generic(keyvalues, nokeys)
 -- with things like this.  A later suggestion "foot:physical=no" is also 
 -- included.
 -- "informal=yes" is less common in the UK but tends to crop up where land
--- managers worry abour "official" paths (e.g. the US).
+-- managers worry about "official" paths (e.g. the US).
 -- ----------------------------------------------------------------------------
    if (( keyvalues["trail_visibility"] == "no"       )  or
        ( keyvalues["trail_visibility"] == "none"     )  or
