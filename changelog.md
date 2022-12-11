@@ -13,6 +13,8 @@ Removed support for "barrier=lift_gate,lights" (no longer in the data).
 Removed support for "amenity=vehicle_rental" (no longer in the data).
 Removed support for "amenity=car_repair" (no longer in the data).
 Updated README with more project information.
+Render lifeboats on moorings (tagged as amenities or seamarks).
+Render coastguard stations tagged as seamarks.
 
 ## 04/12/2022
 Don't render disused fountains in the same way as vacant shops etc.

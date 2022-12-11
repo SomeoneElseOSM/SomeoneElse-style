@@ -6,8 +6,10 @@ polygon_keys = { 'boundary', 'building', 'landcover', 'landuse', 'amenity', 'har
 generic_keys = {'access','addr:housename','addr:housenumber','addr:interpolation','admin_level','advertising','aerialway','aeroway','amenity','area','barrier',
    'bicycle','brand','bridge','bridleway','booth','boundary','building','capital','construction','covered','culvert','cutting','denomination','designation','disused','disused:shop','ele',
    'embankment','emergency','entrance','foot','flood_prone','generation:source','geological','golf','harbour','highway','historic','horse','hours','intermittent','junction','landcover','landuse','layer','leisure','lcn_ref','lock','locked',
-   'man_made','marker','military','motor_car','name','natural','ncn_milepost','office','oneway','operator','opening_hours:covid19','pitch','place','playground','poi','population','power','power_source','public_transport','school','seamark:type',
-   'railway','railway:historic','ref','religion','rescue_equipment','route','service','shop','sport','surface','toll','tourism','tower:type', 'tracktype','tunnel','water','waterway',
+   'man_made','marker','military','motor_car','name','natural','ncn_milepost','office','oneway','operator','opening_hours:covid19','pitch','place','playground','poi','population','power','power_source','public_transport',
+   'railway','railway:historic','ref','religion','rescue_equipment','route',
+   'school','seamark:type','seamark:rescue_station:category','service','shop','sport','surface',
+   'toll','tourism','tower:type', 'tracktype','tunnel','water','waterway',
    'wetland','width','wood','type'}
 
 function add_z_order(keyvalues)
@@ -7704,6 +7706,28 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["commercial"] == "office"            )) then
       keyvalues["landuse"] = "unnamedcommercial"
       keyvalues["office"]  = "nonspecific"
+   end
+
+-- ----------------------------------------------------------------------------
+-- Sometimes lifeboards are mapped in the see separately to the 
+-- lifeboat station, and sometimes they're tagged _on_ the lifeboat station.
+-- If the latter, show the lifeboat station.
+-- Also detect lifeboats and coastguards tagged only as seamarks.
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["seamark:rescue_station:category"] == "lifeboat_on_mooring" ) and
+       ( keyvalues["amenity"]                         == nil                   )) then
+      keyvalues["amenity"]  = "lifeboat"
+   end
+
+   if (( keyvalues["seamark:type"] == "coastguard_station" ) and
+       ( keyvalues["amenity"]      == nil                  )) then
+      keyvalues["amenity"]  = "coast_guard"
+   end
+
+   if ((  keyvalues["amenity"]   == "lifeboat"          ) and
+       (( keyvalues["emergency"] == "lifeboat_station" )  or
+        ( keyvalues["emergency"] == "lifeboat_base"    ))) then
+      keyvalues["amenity"]  = nil
    end
 
 -- ----------------------------------------------------------------------------
