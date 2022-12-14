@@ -2082,7 +2082,7 @@ function filter_tags_generic(keyvalues, nokeys)
         ( keyvalues["farmland"] == "heath"           )  or
         ( keyvalues["farmland"] == "paddock"         )  or
         ( keyvalues["farmland"] == "meadow"          )  or
-        ( keyvalues["farmland"] == "meadow+heath"    )  or
+        ( keyvalues["farmland"] == "pasture+heath"   )  or
         ( keyvalues["farmland"] == "turf_production" )  or
         ( keyvalues["farmland"] == "grassland"       )  or
         ( keyvalues["farmland"] == "wetland"         )  or

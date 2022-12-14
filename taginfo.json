@@ -796,7 +796,7 @@
     { "key": "farmland", "value": "heath", "description": "Render grassy farmland as mid-way between meadow and farmland" },
     { "key": "farmland", "value": "paddock", "description": "Render grassy farmland as mid-way between meadow and farmland" },
     { "key": "farmland", "value": "meadow", "description": "Render grassy farmland as mid-way between meadow and farmland" },
-    { "key": "farmland", "value": "meadow+heath", "description": "Render grassy farmland as mid-way between meadow and farmland" },
+    { "key": "farmland", "value": "pasture+heath", "description": "Render grassy farmland as mid-way between meadow and farmland" },
     { "key": "farmland", "value": "turf_production", "description": "Render grassy farmland as mid-way between meadow and farmland" },
     { "key": "farmland", "value": "grassland", "description": "Render grassy farmland as mid-way between meadow and farmland" },
     { "key": "farmland", "value": "wetland", "description": "Render grassy farmland as mid-way between meadow and farmland" },
