@@ -787,7 +787,6 @@
     { "key": "emergency", "value": "lifeguard", "description": "Shown as government office" },
     { "key": "emergency", "value": "lifeguard_tower", "description": "Shown as government office" },
     { "key": "emergency", "value": "mountain_rescue", "description": "Shown as mountain rescue office" },
-    { "key": "emergency", "value": "mountain_rescue_box", "description": "Shown as mountain rescue box" },
     { "key": "emergency", "value": "rescue_box", "description": "Shown as mountain rescue box" },
     { "key": "emergency", "value": "phone", "description": "Shown as emergency phone" },
     { "key": "emergency", "value": "rescue_equipment", "description": "Shown as life ring" },

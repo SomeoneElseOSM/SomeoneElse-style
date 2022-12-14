@@ -7793,7 +7793,6 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
    if (( keyvalues["amenity"]   == "mountain_rescue_box"       ) or
-       ( keyvalues["emergency"] == "mountain_rescue_box"       ) or
        ( keyvalues["emergency"] == "rescue_box"                )) then
       keyvalues["amenity"]  = "mountain_rescue_box"
 
