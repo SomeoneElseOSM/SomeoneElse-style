@@ -5111,9 +5111,7 @@ function filter_tags_generic(keyvalues, nokeys)
         ( keyvalues["crossing"] == "signals"                 )  or
         ( keyvalues["crossing"] == "pegasus"                 )  or
         ( keyvalues["crossing"] == "pedestrian_signals"      )  or
-        ( keyvalues["crossing"] == "traffic_signals; island" )  or
         ( keyvalues["crossing"] == "light_controlled"        )  or
-        ( keyvalues["crossing"] == "pelican;island"          )  or
         ( keyvalues["crossing"] == "light controlled"        )  or
         ( keyvalues["crossing"] == "traffic_signals;pelican" )) and
        (  keyvalues["highway"]  == nil                        )) then
@@ -7623,8 +7621,6 @@ function filter_tags_generic(keyvalues, nokeys)
 
    if ((   keyvalues["emergency"]        == "life_ring"          ) or
        (   keyvalues["waterway"]         == "life_ring"          ) or
-       (   keyvalues["emergency"]        == "lifebuoy"           ) or
-       (   keyvalues["emergency"]        == "life_belt"          ) or
        (   keyvalues["waterway"]         == "life_belt"          ) or
        ((  keyvalues["emergency"]        == "rescue_equipment"  )  and
         (( keyvalues["rescue_equipment"] == "lifering"         )   or
@@ -7735,9 +7731,8 @@ function filter_tags_generic(keyvalues, nokeys)
       keyvalues["amenity"]  = "coast_guard"
    end
 
-   if ((  keyvalues["amenity"]   == "lifeboat"          ) and
-       (( keyvalues["emergency"] == "lifeboat_station" )  or
-        ( keyvalues["emergency"] == "lifeboat_base"    ))) then
+   if (( keyvalues["amenity"]   == "lifeboat"         ) and
+       ( keyvalues["emergency"] == "lifeboat_station" )) then
       keyvalues["amenity"]  = nil
    end
 
@@ -7769,7 +7764,6 @@ function filter_tags_generic(keyvalues, nokeys)
        (  keyvalues["emergency"] == "fire_station"            ) or
        (  keyvalues["amenity"]   == "lifeboat_station"        ) or
        (  keyvalues["emergency"] == "lifeboat_station"        ) or
-       (  keyvalues["emergency"] == "lifeboat_base"           ) or
        (  keyvalues["emergency"] == "lifeguard_tower"         ) or
        (( keyvalues["emergency"] == "lifeguard"              )  and
         (( keyvalues["lifeguard"] == "base"                 )   or
@@ -7799,7 +7793,8 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
    if (( keyvalues["amenity"]   == "mountain_rescue_box"       ) or
-       ( keyvalues["emergency"] == "mountain_rescue_box"       )) then
+       ( keyvalues["emergency"] == "mountain_rescue_box"       ) or
+       ( keyvalues["emergency"] == "rescue_box"                )) then
       keyvalues["amenity"]  = "mountain_rescue_box"
 
       if ( keyvalues["name"] == nil ) then

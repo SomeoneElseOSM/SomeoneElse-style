@@ -3,6 +3,7 @@ This page describes changes made [here](https://github.com/SomeoneElseOSM/Someon
 
 ## As yet unreleased
 Synonyms for grassy farmland expanded to match grassy values at http://taginfo.geofabrik.de/europe/britain-and-ireland/keys/farmland#values .
+Added emergency=rescue_box, which has cropped up as a value by stealth.
 
 ## 12/12/2022
 Detect Quiet Lanes via "designation=quiet_lane;unclassified_highway" as well.
