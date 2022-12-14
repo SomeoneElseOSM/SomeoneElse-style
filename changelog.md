@@ -1,6 +1,9 @@
 # Changes made to this rendering
 This page describes changes made [here](https://github.com/SomeoneElseOSM/SomeoneElse-style), [here](https://github.com/SomeoneElseOSM/SomeoneElse-style-legend) and [here](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT), and visible [here](//map.atownsend.org.uk/maps/map/map.html).
 
+## As yet unreleased
+Synonyms for grassy farmland expanded to match grassy values at http://taginfo.geofabrik.de/europe/britain-and-ireland/keys/farmland#values .
+
 ## 12/12/2022
 Detect Quiet Lanes via "designation=quiet_lane;unclassified_highway" as well.
 Potentially detect bulk_purchase=only, even though it isn't widely used in UK/IE.
