@@ -1881,20 +1881,34 @@ function filter_tags_generic(keyvalues, nokeys)
 -- Pedants may claim that some of these aren't legally embassies, and they'd
 -- be correct, but I use the same icon for all of these currently.
 -- ----------------------------------------------------------------------------
-   if (( keyvalues["diplomatic"] == "embassy"            ) or
-       ( keyvalues["diplomatic"] == "consulate"          ) or
-       ( keyvalues["diplomatic"] == "consulate_general"  ) or
-       ( keyvalues["diplomatic"] == "honorary_consulate" ) or
-       ( keyvalues["diplomatic"] == "high_commission"    )) then
-      keyvalues["amenity"] = "embassy"
+   if (((  keyvalues["diplomatic"] == "embassy"            ) and
+        (( keyvalues["embassy"]    == nil                 )  or
+         ( keyvalues["embassy"]    == "yes"               )  or
+         ( keyvalues["embassy"]    == "high_commission"   )  or
+         ( keyvalues["embassy"]    == "branch_embassy"    )  or
+         ( keyvalues["embassy"]    == "nunciature"        )  or
+         ( keyvalues["embassy"]    == "delegation"        )  or
+         ( keyvalues["embassy"]    == "embassy"           ))) or
+       ( keyvalues["diplomatic"] == "consulate"             ) or
+       ( keyvalues["diplomatic"] == "consulate_general"     ) or
+       ( keyvalues["diplomatic"] == "honorary_consulate"    ) or
+       ( keyvalues["diplomatic"] == "high_commission"       )) then
+      keyvalues["amenity"]    = "embassy"
+      keyvalues["diplomatic"] = nil
+      keyvalues["office"]     = nil
    end
 
-   if (( keyvalues["diplomatic"] == "permanent_mission"     ) or
-       ( keyvalues["diplomatic"] == "ambassadors_residence" ) or
-       ( keyvalues["diplomatic"] == "trade_delegation"      )) then
+   if (((  keyvalues["diplomatic"] == "embassy"              )  and
+        (( keyvalues["embassy"]    == "residence"           )   or
+         ( keyvalues["embassy"]    == "mission"             ))) or
+       (   keyvalues["diplomatic"] == "permanent_mission"     ) or
+       (   keyvalues["diplomatic"] == "ambassadors_residence" ) or
+       (   keyvalues["diplomatic"] == "trade_delegation"      )) then
       if ( keyvalues["amenity"] == "embassy" ) then
          keyvalues["amenity"] = nil
       end
+
+      keyvalues["diplomatic"] = nil
       keyvalues["office"] = "yes"
    end
 
