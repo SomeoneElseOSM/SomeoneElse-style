@@ -1022,7 +1022,6 @@
     { "key": "highway", "value": "busway", "description": "Shown as service" },
     { "key": "highway", "value": "raceway", "description": "Shown as linear raceway" },
     { "key": "highway", "value": "services", "description": "Shown as commercial landuse" },
-    { "key": "highway", "value": "layby", "description": "Shown as parking" },
     { "key": "highway", "value": "rest_area", "description": "Shown as parking" },
     { "key": "highway", "value": "passing_place", "description": "Shown as turning circle" },
     { "key": "highway", "value": "turning_loop", "description": "Shown as turning circle" },
