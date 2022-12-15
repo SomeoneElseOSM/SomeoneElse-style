@@ -1064,12 +1064,7 @@ function filter_tags_generic(keyvalues, nokeys)
           ( keyvalues["sidewalk:right"] == "yes"      ) or
           ( keyvalues["sidewalk:both"] == "separate"  ) or 
           ( keyvalues["sidewalk:both"] == "yes"       ) or
-          ( keyvalues["footway"]  == "both"           ) or 
-          ( keyvalues["footway"]  == "left"           ) or 
-          ( keyvalues["footway"]  == "mapped"         ) or 
           ( keyvalues["footway"]  == "separate"       ) or 
-          ( keyvalues["footway"]  == "right"          ) or 
-          ( keyvalues["footway"]  == "shared"         ) or 
           ( keyvalues["footway"]  == "yes"            ) or
           ( keyvalues["shoulder"] == "both"           ) or
           ( keyvalues["shoulder"] == "left"           ) or 
@@ -1135,12 +1130,7 @@ function filter_tags_generic(keyvalues, nokeys)
           ( keyvalues["sidewalk:right"] == "yes"      ) or
           ( keyvalues["sidewalk:both"] == "separate"  ) or 
           ( keyvalues["sidewalk:both"] == "yes"       ) or
-          ( keyvalues["footway"]  == "both"           ) or 
-          ( keyvalues["footway"]  == "left"           ) or 
-          ( keyvalues["footway"]  == "mapped"         ) or 
           ( keyvalues["footway"]  == "separate"       ) or 
-          ( keyvalues["footway"]  == "right"          ) or 
-          ( keyvalues["footway"]  == "shared"         ) or 
           ( keyvalues["footway"]  == "yes"            ) or
           ( keyvalues["shoulder"] == "both"           ) or
           ( keyvalues["shoulder"] == "left"           ) or 
@@ -1212,12 +1202,7 @@ function filter_tags_generic(keyvalues, nokeys)
           ( keyvalues["sidewalk:right"] == "yes"      ) or
           ( keyvalues["sidewalk:both"] == "separate"  ) or 
           ( keyvalues["sidewalk:both"] == "yes"       ) or
-          ( keyvalues["footway"]  == "both"           ) or 
-          ( keyvalues["footway"]  == "left"           ) or 
-          ( keyvalues["footway"]  == "mapped"         ) or 
           ( keyvalues["footway"]  == "separate"       ) or 
-          ( keyvalues["footway"]  == "right"          ) or 
-          ( keyvalues["footway"]  == "shared"         ) or 
           ( keyvalues["footway"]  == "yes"            ) or
           ( keyvalues["shoulder"] == "both"           ) or
           ( keyvalues["shoulder"] == "left"           ) or 
@@ -1277,12 +1262,7 @@ function filter_tags_generic(keyvalues, nokeys)
           ( keyvalues["sidewalk:right"] == "yes"      ) or
           ( keyvalues["sidewalk:both"] == "separate"  ) or 
           ( keyvalues["sidewalk:both"] == "yes"       ) or
-          ( keyvalues["footway"]  == "both"           ) or 
-          ( keyvalues["footway"]  == "left"           ) or 
-          ( keyvalues["footway"]  == "mapped"         ) or 
           ( keyvalues["footway"]  == "separate"       ) or 
-          ( keyvalues["footway"]  == "right"          ) or 
-          ( keyvalues["footway"]  == "shared"         ) or 
           ( keyvalues["footway"]  == "yes"            ) or
           ( keyvalues["shoulder"] == "both"           ) or
           ( keyvalues["shoulder"] == "left"           ) or 
@@ -1332,12 +1312,7 @@ function filter_tags_generic(keyvalues, nokeys)
           ( keyvalues["sidewalk:right"] == "yes"      ) or
           ( keyvalues["sidewalk:both"] == "separate"  ) or 
           ( keyvalues["sidewalk:both"] == "yes"       ) or
-          ( keyvalues["footway"]  == "both"           ) or 
-          ( keyvalues["footway"]  == "left"           ) or 
-          ( keyvalues["footway"]  == "mapped"         ) or 
           ( keyvalues["footway"]  == "separate"       ) or 
-          ( keyvalues["footway"]  == "right"          ) or 
-          ( keyvalues["footway"]  == "shared"         ) or 
           ( keyvalues["footway"]  == "yes"            ) or
           ( keyvalues["shoulder"] == "both"           ) or
           ( keyvalues["shoulder"] == "left"           ) or 
