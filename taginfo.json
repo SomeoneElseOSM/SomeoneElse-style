@@ -961,7 +961,6 @@
     { "key": "healthcare", "value": "optometrist", "description": "Render as optician" },
     { "key": "healthcare", "value": "chiropodist", "description": "Render as nonspecific healthcare" },
     { "key": "healthcare", "value": "chiropractor", "description": "Render as nonspecific healthcare" },
-    { "key": "healthcare", "value": "chiropractor;physiotherapist", "description": "Render as nonspecific healthcare" },
     { "key": "healthcare", "value": "osteopath", "description": "Render as nonspecific healthcare" },
     { "key": "healthcare", "value": "physiotherapist", "description": "Render as nonspecific healthcare" },
     { "key": "healthcare", "value": "physiotherapy", "description": "Render as nonspecific healthcare" },
