@@ -1026,7 +1026,6 @@
     { "key": "highway", "value": "turning_loop", "description": "Shown as turning circle" },
     { "key": "highway", "value": "escape", "description": "Shown as access=destination service road" },
     { "key": "highway", "value": "milestone", "description": "Shown as milestone" },
-    { "key": "highway", "value": "waymarker", "description": "Shown as route marker" },
     { "key": "highway", "value": "trailhead", "description": "Shown as route marker" },
     { "key": "highway", "value": "street_lamp", "description": "Shown as street lamp (gas or electric, depending on other tags)" },
     { "key": "highway", "value": "bus_stop", "description": "Shown as bus stop" },

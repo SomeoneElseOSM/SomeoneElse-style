@@ -5253,7 +5253,6 @@ function filter_tags_generic(keyvalues, nokeys)
    if (((  keyvalues["tourism"]     == "information"                       )   and
         (( keyvalues["information"] == "route_marker"                     )    or
          ( keyvalues["information"] == "trail_blaze"                      )))  or
-       (   keyvalues["highway"]     == "waymarker"                          )  or
        (   keyvalues["highway"]     == "trailhead"                          )) then
       keyvalues["tourism"] = "informationroutemarker"
    end
