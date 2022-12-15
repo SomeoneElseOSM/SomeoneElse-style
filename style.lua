@@ -264,16 +264,14 @@ function filter_tags_generic(keyvalues, nokeys)
 -- to track (which is what it probably will be).
 --
 -- "gallop" makes sense as a tag (it really isn't like anything else), but for
--- rendering change to "track".  "unsurfaced" makes less sense; change to
--- "track" also.
+-- rendering change to "track".  
 --
 -- "track" will be changed into something else lower down 
 -- (path, pathwide or track_graded).
 -- ----------------------------------------------------------------------------
-   if ((  keyvalues["highway"] == "gallop"      ) or
-       (  keyvalues["highway"] == "unsurfaced"  ) or
-       (( keyvalues["golf"]    == "track"      )  and
-        ( keyvalues["highway"] == nil         ))) then
+   if ((  keyvalues["highway"] == "gallop"      )  or
+       (( keyvalues["golf"]    == "track"      )   and
+        ( keyvalues["highway"] == nil          ))) then
       keyvalues["highway"] = "track"
    end
 
