@@ -7544,7 +7544,6 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["shop"]        == "physiotherapy"                ) or
        ( keyvalues["healthcare"]  == "psychotherapist"              ) or
        ( keyvalues["healthcare"]  == "therapy"                      ) or
-       ( keyvalues["healthcare"]  == "footcare"                     ) or
        ( keyvalues["healthcare"]  == "podiatrist"                   ) or
        ( keyvalues["healthcare"]  == "podiatrist;chiropodist"       ) or
        ( keyvalues["amenity"]     == "podiatrist"                   ) or

@@ -966,7 +966,6 @@
     { "key": "healthcare", "value": "physiotherapy", "description": "Render as nonspecific healthcare" },
     { "key": "healthcare", "value": "psychotherapist", "description": "Render as nonspecific healthcare" },
     { "key": "healthcare", "value": "therapy", "description": "Render as nonspecific healthcare" },
-    { "key": "healthcare", "value": "footcare", "description": "Render as nonspecific healthcare" },
     { "key": "healthcare", "value": "podiatrist", "description": "Render as nonspecific healthcare" },
     { "key": "healthcare", "value": "podiatrist;chiropodist", "description": "Render as nonspecific healthcare" },
     { "key": "healthcare", "value": "clinic", "description": "Render as nonspecific healthcare" },
