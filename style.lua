@@ -4953,7 +4953,6 @@ function filter_tags_generic(keyvalues, nokeys)
         ( keyvalues["generator:source"] == "wind"         )  or
         ( keyvalues["generator:method"] == "wind_turbine" )  or
         ( keyvalues["plant:source"]     == "wind"         )  or
-        ( keyvalues["generator:type"]   == "wind"         )  or
         ( keyvalues["generator:method"] == "wind"         ))) then
       keyvalues["man_made"] = nil
    end

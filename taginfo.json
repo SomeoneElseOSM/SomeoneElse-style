@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20221215T101400Z",
+  "data_updated": "20221215T230100Z",
   "project": {
     "name": "SomeoneElse-style rural pedestrian rendering",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -928,8 +928,6 @@
     { "key": "generator:method", "value": "photovoltaic", "description": "Detect solar panels" },
     { "key": "generator:source", "description": "Detect wind turbines" },
     { "key": "generator:source", "value": "wind", "description": "Detect wind turbines" },
-    { "key": "generator:type", "description": "Detect wind turbines" },
-    { "key": "generator:type", "value": "wind", "description": "Detect wind turbines" },
     { "key": "golf", "description": "Various golf items rendered" },
     { "key": "golf", "value": "track", "description": "Rendered as track" },
     { "key": "golf", "value": "path", "description": "Rendered as path" },
