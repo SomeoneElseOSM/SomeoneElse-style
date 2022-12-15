@@ -1009,7 +1009,6 @@
     { "key": "highway", "value": "service", "description": "Shown as service road or track, depending on surface" },
     { "key": "highway", "value": "service_link", "description": "Shown as service road or track, depending on surface" },
     { "key": "highway", "value": "road", "description": "Shown as road" },
-    { "key": "highway", "value": "byway", "description": "Shown as track" },
     { "key": "highway", "value": "gallop", "description": "Shown as track" },
     { "key": "highway", "value": "unsurfaced", "description": "Shown as track" },
     { "key": "highway", "value": "track", "description": "Shown as track" },
