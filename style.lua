@@ -1853,18 +1853,20 @@ function filter_tags_generic(keyvalues, nokeys)
 -- Pedants may claim that some of these aren't legally embassies, and they'd
 -- be correct, but I use the same icon for all of these currently.
 -- ----------------------------------------------------------------------------
-   if (((  keyvalues["diplomatic"] == "embassy"            ) and
-        (( keyvalues["embassy"]    == nil                 )  or
-         ( keyvalues["embassy"]    == "yes"               )  or
-         ( keyvalues["embassy"]    == "high_commission"   )  or
-         ( keyvalues["embassy"]    == "branch_embassy"    )  or
-         ( keyvalues["embassy"]    == "nunciature"        )  or
-         ( keyvalues["embassy"]    == "delegation"        )  or
+   if (((  keyvalues["diplomatic"] == "embassy"            )  and
+        (( keyvalues["embassy"]    == nil                 )   or
+         ( keyvalues["embassy"]    == "yes"               )   or
+         ( keyvalues["embassy"]    == "high_commission"   )   or
+         ( keyvalues["embassy"]    == "nunciature"        )   or
+         ( keyvalues["embassy"]    == "delegation"        )   or
          ( keyvalues["embassy"]    == "embassy"           ))) or
-       ( keyvalues["diplomatic"] == "consulate"             ) or
-       ( keyvalues["diplomatic"] == "consulate_general"     ) or
-       ( keyvalues["diplomatic"] == "honorary_consulate"    ) or
-       ( keyvalues["diplomatic"] == "high_commission"       )) then
+       ((  keyvalues["diplomatic"] == "consulate"          )  and
+        (( keyvalues["consulate"]  == nil                 )   or
+         ( keyvalues["consulate"]  == "consulate_general" )   or
+         ( keyvalues["consulate"]  == "yes"               ))) or
+       ( keyvalues["diplomatic"] == "embassy;consulate"     ) or
+       ( keyvalues["diplomatic"] == "embassy;mission"       ) or
+       ( keyvalues["diplomatic"] == "consulate;embassy"     )) then
       keyvalues["amenity"]    = "embassy"
       keyvalues["diplomatic"] = nil
       keyvalues["office"]     = nil
@@ -1872,15 +1874,28 @@ function filter_tags_generic(keyvalues, nokeys)
 
    if (((  keyvalues["diplomatic"] == "embassy"              )  and
         (( keyvalues["embassy"]    == "residence"           )   or
+         ( keyvalues["embassy"]    == "branch_embassy"      )   or
          ( keyvalues["embassy"]    == "mission"             ))) or
+       ((  keyvalues["diplomatic"] == "consulate"            )  and
+        (( keyvalues["consulate"]  == "consular_office"     )   or
+         ( keyvalues["consulate"]  == "residence"           )   or
+         ( keyvalues["consulate"]  == "consular_agency"     ))) or
        (   keyvalues["diplomatic"] == "permanent_mission"     ) or
-       (   keyvalues["diplomatic"] == "ambassadors_residence" ) or
-       (   keyvalues["diplomatic"] == "trade_delegation"      )) then
+       (   keyvalues["diplomatic"] == "trade_delegation"      ) or
+       (   keyvalues["diplomatic"] == "liaison"               ) or
+       (   keyvalues["diplomatic"] == "non_diplomatic"        ) or
+       (   keyvalues["diplomatic"] == "mission"               ) or
+       (   keyvalues["diplomatic"] == "trade_mission"         )) then
       if ( keyvalues["amenity"] == "embassy" ) then
          keyvalues["amenity"] = nil
       end
 
       keyvalues["diplomatic"] = nil
+
+-- ----------------------------------------------------------------------------
+-- "office" is set to something that will definitely display here, just in case
+-- it was set to some value that would not.
+-- ----------------------------------------------------------------------------
       keyvalues["office"] = "yes"
    end
 
@@ -7864,9 +7879,12 @@ function filter_tags_generic(keyvalues, nokeys)
 
 -- ----------------------------------------------------------------------------
 -- Other nonspecific offices.  
+-- If any of the "diplomatic" ones should be shown as embassies, the "office"
+-- tag will have been removed above.
 -- ----------------------------------------------------------------------------
    if (( keyvalues["office"]     == "it"                      ) or
        ( keyvalues["office"]     == "ngo"                     ) or
+       ( keyvalues["office"]     == "diplomatic"              ) or
        ( keyvalues["office"]     == "educational_institution" ) or
        ( keyvalues["office"]     == "educational"             ) or
        ( keyvalues["office"]     == "university"              ) or
