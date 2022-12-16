@@ -4988,8 +4988,6 @@ function filter_tags_generic(keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
    if (( keyvalues["amenity"]   == "mounting_block"       ) or
        ( keyvalues["historic"]  == "mounting_block"       ) or
-       ( keyvalues["horse"]     == "mounting_block"       ) or
-       ( keyvalues["horse"]     == "mounting block"       ) or
        ( keyvalues["amenity"]   == "mounting_step"        ) or
        ( keyvalues["amenity"]   == "mounting_steps"       ) or
        ( keyvalues["amenity"]   == "horse_dismount_block" )) then

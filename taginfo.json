@@ -1156,8 +1156,6 @@
     { "key": "horse", "value": "designated", "description": "Horse access yes" },
     { "key": "horse", "value": "no", "description": "Horse access no" },
     { "key": "horse", "value": "private", "description": "Horse access no" },
-    { "key": "horse", "value": "mounting_block", "description": "Horse mounting block" },
-    { "key": "horse", "value": "mounting block", "description": "Horse mounting block" },
     { "key": "iata", "description": "Split large and small airports" },
     { "key": "indoor", "description": "Assume indoor defibrillators are only accessible by customers" },
     { "key": "indoor", "value": "yes", "description": "Assume indoor defibrillators are only accessible by customers" },
