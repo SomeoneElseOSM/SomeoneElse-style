@@ -4,8 +4,10 @@ This page describes changes made [here](https://github.com/SomeoneElseOSM/Someon
 ## As yet unreleased
 Synonyms for grassy farmland expanded to match grassy values at http://taginfo.geofabrik.de/europe/britain-and-ireland/keys/farmland#values .
 Added emergency=rescue_box, which has cropped up as a value by stealth.
-Embassy is now being used for non-embassies, so process sub-tags of that and render non-embassies as offices.
+Under the diplomatic key, embassy is now being used for non-embassies, so process sub-tags of that and render non-embassies as offices.
 Likewise, consulate.
+Removed some formerly low-use synonyms that are no longer in use from the style.
+Update taginfo.json with recent changes and with values used for tags up to "l".
 
 ## 12/12/2022
 Detect Quiet Lanes via "designation=quiet_lane;unclassified_highway" as well.

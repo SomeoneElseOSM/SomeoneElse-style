@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20221215T002500Z",
+  "data_updated": "20221215T115500Z",
   "project": {
     "name": "SomeoneElse-style rural pedestrian rendering",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -1086,7 +1086,6 @@
     { "key": "historic", "value": "locomotive", "description": "Shown as nonspecific historic item" },
     { "key": "historic", "value": "manor", "description": "Shown as nonspecific historic item" },
     { "key": "historic", "value": "mansion", "description": "Shown as nonspecific historic item" },
-    { "key": "historic", "value": "mansion;castle", "description": "Shown as nonspecific historic item" },
     { "key": "historic", "value": "marker", "description": "Shown as information plaque" },
     { "key": "historic", "value": "market_cross", "description": "Shown as nonspecific historic item" },
     { "key": "historic", "value": "maypole", "description": "Shown as nonspecific historic item" },
@@ -1111,7 +1110,7 @@
     { "key": "historic", "value": "pillar", "description": "Shown as nonspecific historic item" },
     { "key": "historic", "value": "pinfold", "description": "Shown as nonspecific historic item" },
     { "key": "historic", "value": "plaque", "description": "Shown as nonspecific historic item" },
-    { "key": "historic", "value": "police_box", "description": "Shown as nonspecific historic item" },
+    { "key": "historic", "value": "police_call_box", "description": "Shown as nonspecific historic item" },
     { "key": "historic", "value": "priory", "description": "Shown as nonspecific historic item" },
     { "key": "historic", "value": "prison", "description": "Shown as nonspecific historic item" },
     { "key": "historic", "value": "protected_building", "description": "Shown as nonspecific historic item" },

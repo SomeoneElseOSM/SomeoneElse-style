@@ -4645,12 +4645,11 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["historic"] == "manor"             ) or
        ( keyvalues["historic"] == "country_mansion"   ) or
        ( keyvalues["historic"] == "mansion"           ) or
-       ( keyvalues["historic"] == "mansion;castle"    ) or
        ( keyvalues["historic"] == "hall"              ) or
        ( keyvalues["historic"] == "stately_home"      ) or
        ( keyvalues["historic"] == "tower_house"       ) or
        ( keyvalues["historic"] == "almshouse"         ) or
-       ( keyvalues["historic"] == "police_box"        ) or
+       ( keyvalues["historic"] == "police_call_box"   ) or
        ( keyvalues["historic"] == "bakery"            ) or
        ( keyvalues["historic"] == "battlefield"       ) or
        ( keyvalues["historic"] == "monastery"         ) or
