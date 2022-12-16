@@ -1987,7 +1987,6 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["landuse"]      == "religious"                ) or
        ( keyvalues["leisure"]      == "racetrack"                ) or
        ( keyvalues["landuse"]      == "aquaculture"              ) or
-       ( keyvalues["landuse"]      == "fish_farm"                ) or
        ( keyvalues["landuse"]      == "fishfarm"                 ) or
        ( keyvalues["seamark:type"] == "marine_farm"              )) then
       keyvalues["landuse"] = "commercial"

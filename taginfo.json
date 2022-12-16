@@ -1239,7 +1239,6 @@
     { "key": "landuse", "value": "farmland", "description": "All sorts of landuse" },
     { "key": "landuse", "value": "farmyard", "description": "All sorts of landuse" },
     { "key": "landuse", "value": "field", "description": "All sorts of landuse" },
-    { "key": "landuse", "value": "fish_farm", "description": "All sorts of landuse" },
     { "key": "landuse", "value": "fishfarm", "description": "All sorts of landuse" },
     { "key": "landuse", "value": "flowerbed", "description": "All sorts of landuse" },
     { "key": "landuse", "value": "forest", "description": "All sorts of landuse" },
