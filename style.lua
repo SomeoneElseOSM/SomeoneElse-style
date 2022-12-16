@@ -1588,7 +1588,6 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["amenity"]    == "fuel_depot"             ) or
        ( keyvalues["amenity"]    == "scrapyard"              ) or 
        ( keyvalues["industrial"] == "scrap_yard"             ) or 
-       ( keyvalues["industrial"] == "scrapyard"              ) or 
        ( keyvalues["industrial"] == "yard"                   ) or 
        ( keyvalues["industrial"] == "engineering"            ) or
        ( keyvalues["industrial"] == "machine_shop"           ) or
