@@ -4629,7 +4629,6 @@ function filter_tags_generic(keyvalues, nokeys)
    if (( keyvalues["historic"] == "monument"          ) or
        ( keyvalues["historic"] == "ruins"             ) or
        ( keyvalues["historic"] == "fort"              ) or
-       ( keyvalues["historic"] == "ringfort"          ) or
        ( keyvalues["historic"] == "earthworks"        ) or
        ( keyvalues["historic"] == "motte"             ) or
        ( keyvalues["historic"] == "barrow"            ) or
