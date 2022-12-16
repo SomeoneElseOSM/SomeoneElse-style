@@ -1171,7 +1171,6 @@
     { "key": "industrial", "value": "sawmill", "description": "Shown as named industrial landuse" },
     { "key": "industrial", "value": "scrap_yard", "description": "Shown as named industrial landuse" },
     { "key": "industrial", "value": "warehouse", "description": "Shown as named industrial landuse" },
-    { "key": "industrial", "value": "waste_transfer_station", "description": "Shown as named industrial landuse" },
     { "key": "industrial", "value": "yard", "description": "Shown as named industrial landuse" },
     { "key": "industrial", "value": "yes", "description": "Shown as named industrial landuse" },
     { "key": "informal", "description": "Informal as opposed to deliberately created paths" },
