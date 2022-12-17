@@ -8,7 +8,7 @@ Under the diplomatic key, embassy is now being used for non-embassies, so proces
 Likewise, consulate.
 Removed some formerly low-use synonyms that are no longer in use from the style.
 Update taginfo.json with recent changes and with values used for tags up to "l".
-Show amenity=biergarten as green.
+Show amenity=biergarten and outdoor_seating=garden as green.
 
 ## 12/12/2022
 Detect Quiet Lanes via "designation=quiet_lane;unclassified_highway" as well.
