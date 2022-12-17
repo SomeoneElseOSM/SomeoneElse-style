@@ -8314,7 +8314,6 @@ function filter_tags_generic(keyvalues, nokeys)
    if (( keyvalues["man_made"] == "phone_mast"           ) or
        ( keyvalues["man_made"] == "radio_mast"           ) or
        ( keyvalues["man_made"] == "communications_mast"  ) or
-       ( keyvalues["man_made"] == "communication_mast"   ) or
        ( keyvalues["man_made"] == "tower"                ) or
        ( keyvalues["man_made"] == "communications_tower" ) or
        ( keyvalues["man_made"] == "transmitter"          ) or
