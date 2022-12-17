@@ -4248,9 +4248,9 @@ function filter_tags_generic(keyvalues, nokeys)
 -- Beer gardens etc.
 -- ----------------------------------------------------------------------------
    if (( keyvalues["amenity"] == "beer_garden" ) or
-       ( keyvalues["landuse"] == "beer_garden" ) or
        ( keyvalues["leisure"] == "beer_garden" )) then
       keyvalues["leisure"] = "garden"
+      keyvalues["garden"] = "beer_garden"
    end
 
 

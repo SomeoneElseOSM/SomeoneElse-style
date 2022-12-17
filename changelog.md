@@ -7,7 +7,7 @@ Added emergency=rescue_box, which has cropped up as a value by stealth.
 Under the diplomatic key, embassy is now being used for non-embassies, so process sub-tags of that and render non-embassies as offices.
 Likewise, consulate.
 Removed some formerly low-use synonyms that are no longer in use from the style.
-Update taginfo.json with recent changes and with values used for tags up to "l".
+Update taginfo.json with recent changes and with values used for tags up to "man_made".
 Show amenity=biergarten and outdoor_seating=garden as green.
 
 ## 12/12/2022
