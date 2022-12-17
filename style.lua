@@ -1948,7 +1948,8 @@ function filter_tags_generic(keyvalues, nokeys)
    if (((  keyvalues["shop"]       ~= nil                 )  or
         (( keyvalues["amenity"]    ~= nil                )   and
          ( keyvalues["amenity"]    ~= "holy_well"        )   and
-         ( keyvalues["amenity"]    ~= "holy_spring"      ))  or
+         ( keyvalues["amenity"]    ~= "holy_spring"      )   and
+         ( keyvalues["amenity"]    ~= "biergarten"       ))  or
         (  keyvalues["tourism"]    == "hotel"             )  or
         (  keyvalues["tourism"]    == "guest_house"       )  or
         (  keyvalues["tourism"]    == "attraction"        )  or
@@ -3701,12 +3702,15 @@ function filter_tags_generic(keyvalues, nokeys)
 
 
 -- ----------------------------------------------------------------------------
--- Render unnamed amenity=biergarten as gardens, which is all they likely are.
+-- Render biergartens as gardens, which is all they likely are.
+-- Remove the symbol from unnamed ones - they're likely just pub beer gardens.
 -- ----------------------------------------------------------------------------
-   if ((  keyvalues["amenity"] == "biergarten"   )  and
-       (( keyvalues["name"]    == nil           )   or
-        ( keyvalues["name"]    == "Beer Garden" ))) then
-      keyvalues["amenity"] = nil
+   if (  keyvalues["amenity"] == "biergarten" ) then
+      if (( keyvalues["name"] == nil           )   or
+          ( keyvalues["name"] == "Beer Garden" )) then
+         keyvalues["amenity"] = nil
+      end
+
       keyvalues["leisure"] = "garden"
       keyvalues["garden"]  = "beer_garden"
    end

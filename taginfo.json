@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20221215T164300Z",
+  "data_updated": "20221215T164400Z",
   "project": {
     "name": "SomeoneElse-style rural pedestrian rendering",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -100,7 +100,7 @@
     { "key": "amenity", "value": "disused_pub", "description": "Synonym for lifecycle tag on pubs" },
     { "key": "amenity", "value": "former_pub", "description": "Synonym for lifecycle tag on pubs" },
     { "key": "amenity", "value": "old_pub", "description": "Synonym for lifecycle tag on pubs" },
-    { "key": "amenity", "value": "biergarten", "description": "If named, shown as biergarten; if not, shown as regular but beer garden" },
+    { "key": "amenity", "value": "biergarten", "description": "Shown as green.  If named, shown with biergarten icon; if not, without." },
     { "key": "amenity", "value": "beer_garden", "description": "Shown as garden" },
     { "key": "amenity", "value": "building_society", "description": "Synonym for bank" },
     { "key": "amenity", "value": "credit_union", "description": "Synonym for bank" },
