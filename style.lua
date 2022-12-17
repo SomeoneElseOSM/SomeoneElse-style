@@ -4980,8 +4980,7 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["building"]   == "ventilation_shaft" ) or
        ( keyvalues["building"]   == "vent_shaft"        ) or
        ( keyvalues["man_made"]   == "vent_shaft"        ) or
-       ( keyvalues["tower:type"] == "vent"              ) or
-       ( keyvalues["man_made"]   == "tunnel_vent"       )) then
+       ( keyvalues["tower:type"] == "vent"              )) then
       keyvalues["man_made"] = "ventilation_shaft"
    end
 

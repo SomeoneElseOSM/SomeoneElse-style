@@ -1407,7 +1407,6 @@
     { "key": "man_made", "value": "tower", "description": "Shown as an appropriate sort of tower" },
     { "key": "man_made", "value": "transmitter", "description": "Most man-made items are rendered" },
     { "key": "man_made", "value": "trickling_filter", "description": "Most man-made items are rendered" },
-    { "key": "man_made", "value": "tunnel_vent", "description": "Shown as vent shaft" },
     { "key": "man_made", "value": "vent_shaft", "description": "Shown as vent shaft" },
     { "key": "man_made", "value": "village_sign", "description": "Shown as sign" },
     { "key": "man_made", "value": "waste_treatment", "description": "Most man-made items are rendered" },
