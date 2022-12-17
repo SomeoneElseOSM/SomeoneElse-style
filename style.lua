@@ -4506,7 +4506,6 @@ function filter_tags_generic(keyvalues, nokeys)
        (  keyvalues["man_made"]   == "waste_treatment"  ) or
        (  keyvalues["man_made"]   == "lighthouse"       ) or
        (  keyvalues["man_made"]   == "telescope"        ) or
-       (  keyvalues["man_made"]   == "radio_telescope"  ) or
        (  keyvalues["man_made"]   == "street_cabinet"   ) or
        (  keyvalues["man_made"]   == "aeroplane"        ) or
        (  keyvalues["man_made"]   == "helicopter"       ) or
@@ -7890,7 +7889,6 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["amenity"]    == "college"                 ) or
        ( keyvalues["man_made"]   == "observatory"             ) or
        ( keyvalues["man_made"]   == "telescope"               ) or
-       ( keyvalues["man_made"]   == "radio_telescope"         ) or
        ( keyvalues["amenity"]    == "laboratory"              ) or
        ( keyvalues["healthcare"] == "laboratory"              ) or
        ( keyvalues["amenity"]    == "medical_laboratory"      ) or

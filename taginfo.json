@@ -1390,7 +1390,6 @@
     { "key": "man_made", "value": "pole", "description": "Most man-made items are rendered" },
     { "key": "man_made", "value": "pumping_station", "description": "Most man-made items are rendered" },
     { "key": "man_made", "value": "radio_mast", "description": "Most man-made items are rendered" },
-    { "key": "man_made", "value": "radio_telescope", "description": "Most man-made items are rendered" },
     { "key": "man_made", "value": "reservoir", "description": "Shown as water" },
     { "key": "man_made", "value": "reservoir_covered", "description": "Most man-made items are rendered" },
     { "key": "man_made", "value": "sewage_works", "description": "Synonym for wastewater_plant" },
