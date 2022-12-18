@@ -9,6 +9,7 @@ Likewise, consulate.
 Removed some formerly low-use synonyms that are no longer in use from the style.
 Update taginfo.json with recent changes and with values used for tags up to "man_made".
 Show amenity=biergarten and outdoor_seating=garden as green.
+Someone changed "lawnmower" to "lawn_mower" in the data ages ago, but oddly left "lawnmowers", so render "shop=lawn_mower".
 
 ## 12/12/2022
 Detect Quiet Lanes via "designation=quiet_lane;unclassified_highway" as well.
