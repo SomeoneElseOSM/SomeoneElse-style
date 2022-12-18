@@ -2444,7 +2444,6 @@ function filter_tags_generic(keyvalues, nokeys)
    if ((  keyvalues["amenity"]               == "pub"        ) and
        (( keyvalues["opening_hours:covid19"] == "off"       ) or
         ( keyvalues["opening_hours:covid19"] == "closed"    ) or
-        ( keyvalues["opening_hours:covid19"] == "Mu-Su off" ) or
         ( keyvalues["access:covid19"]        == "no"        ))) then
       keyvalues["amenity"] = "pub_cddddddd"
       keyvalues["real_ale"] = nil
@@ -6406,15 +6405,12 @@ function filter_tags_generic(keyvalues, nokeys)
 -- Also letting_agent
 -- ----------------------------------------------------------------------------
    if (( keyvalues["office"]  == "estate_agent"      ) or
-       ( keyvalues["office"]  == "estate_agents"     ) or
-       ( keyvalues["shop"]    == "estate_agents"     ) or
        ( keyvalues["amenity"] == "estate_agent"      ) or
        ( keyvalues["shop"]    == "letting_agent"     ) or
        ( keyvalues["shop"]    == "lettings_agent"    ) or
        ( keyvalues["shop"]    == "council_house"     ) or
        ( keyvalues["office"]  == "letting_agent"     ) or
-       ( keyvalues["shop"]    == "estate_agency"     ) or
-       ( keyvalues["office"]  == "property_services" )) then
+       ( keyvalues["shop"]    == "estate_agency"     )) then
       keyvalues["shop"] = "estate_agent"
    end
 
@@ -7353,7 +7349,6 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["shop"]    == "key_cutting;shoe_repair"            ) or
        ( keyvalues["shop"]    == "shoe_repair;keycutting"             ) or
        ( keyvalues["shop"]    == "shoe_repair;key_cutting"            ) or
-       ( keyvalues["shop"]    == "Cobbler:Key_Cutting"                ) or
        ( keyvalues["shop"]    == "locksmith;dry_cleaning;shoe_repair" ) or
        ( keyvalues["craft"]   == "key_cutter"                         ) or
        ( keyvalues["craft"]   == "shoe_repair"                        ) or
@@ -7612,12 +7607,11 @@ function filter_tags_generic(keyvalues, nokeys)
       end
    end
 
-   if ((   keyvalues["emergency"]        == "life_ring"          ) or
-       (   keyvalues["waterway"]         == "life_ring"          ) or
-       (   keyvalues["waterway"]         == "life_belt"          ) or
-       ((  keyvalues["emergency"]        == "rescue_equipment"  )  and
-        (( keyvalues["rescue_equipment"] == "lifering"         )   or
-         ( keyvalues["rescue_equipment"] == "lifebuoy"         )))) then
+   if ((  keyvalues["emergency"]        == "life_ring"         ) or
+       (  keyvalues["waterway"]         == "life_ring"         ) or
+       (  keyvalues["waterway"]         == "life_belt"         ) or
+       (( keyvalues["emergency"]        == "rescue_equipment" )  and
+        ( keyvalues["rescue_equipment"] == "lifering"         ))) then
       keyvalues["amenity"] = "life_ring"
    end
 
@@ -7669,7 +7663,6 @@ function filter_tags_generic(keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
    if ((   keyvalues["man_made"]   == "telephone_exchange"  )  or
        (   keyvalues["amenity"]    == "telephone_exchange"  )  or
-       (   keyvalues["office"]     == "telephone_exchange"  )  or
        ((  keyvalues["building"]   == "telephone_exchange" )   and
         (( keyvalues["amenity"]    == nil                 )    and
          ( keyvalues["man_made"]   == nil                 )    and
@@ -7880,7 +7873,6 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["office"]     == "ngo"                     ) or
        ( keyvalues["office"]     == "diplomatic"              ) or
        ( keyvalues["office"]     == "educational_institution" ) or
-       ( keyvalues["office"]     == "educational"             ) or
        ( keyvalues["office"]     == "university"              ) or
        ( keyvalues["office"]     == "charity"                 ) or
        ( keyvalues["office"]     == "marriage_guidance"       ) or
