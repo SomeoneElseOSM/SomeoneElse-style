@@ -5878,7 +5878,6 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["shop"] == "clothing"     ) or
        ( keyvalues["shop"] == "hat"          ) or
        ( keyvalues["shop"] == "hats"         ) or
-       ( keyvalues["shop"] == "underwear"    ) or
        ( keyvalues["shop"] == "wigs"         )) then
       keyvalues["shop"] = "clothes"
    end
@@ -6755,7 +6754,6 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["shop"]         == "tanning"           ) or
        ( keyvalues["shop"]         == "tan"               ) or
        ( keyvalues["shop"]         == "suntan"            ) or
-       ( keyvalues["shop"]         == "tanning_salon"     ) or
        ( keyvalues["leisure"]      == "tanning_salon"     ) or
        ( keyvalues["shop"]         == "health_and_beauty" ) or
        ( keyvalues["shop"]         == "beautician"        )) then
@@ -6911,7 +6909,6 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["shop"]   == "tile"                        ) or
        ( keyvalues["shop"]   == "ceramics"                    ) or
        ( keyvalues["shop"]   == "windows"                     ) or
-       ( keyvalues["shop"]   == "window"                      ) or
        ( keyvalues["craft"]  == "window_construction"         ) or
        ( keyvalues["shop"]   == "frame"                       ) or
        ( keyvalues["shop"]   == "framing"                     ) or
@@ -7022,7 +7019,6 @@ function filter_tags_generic(keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
    if (( keyvalues["shop"]    == "cake"            ) or
        ( keyvalues["shop"]    == "cakes"           ) or
-       ( keyvalues["shop"]    == "specialist_food" ) or
        ( keyvalues["shop"]    == "chocolate"       ) or
        ( keyvalues["shop"]    == "milk"            ) or
        ( keyvalues["shop"]    == "cheese"          ) or
@@ -7312,7 +7308,6 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["shop"]    == "key_cutting"                        ) or
        ( keyvalues["shop"]    == "keys_shoerepair"                    ) or
        ( keyvalues["shop"]    == "key_cutting;shoe_repair"            ) or
-       ( keyvalues["shop"]    == "shoe_repair;keycutting"             ) or
        ( keyvalues["shop"]    == "shoe_repair;key_cutting"            ) or
        ( keyvalues["shop"]    == "locksmith;dry_cleaning;shoe_repair" ) or
        ( keyvalues["craft"]   == "key_cutter"                         ) or
