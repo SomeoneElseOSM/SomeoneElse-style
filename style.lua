@@ -6625,32 +6625,33 @@ function filter_tags_generic(keyvalues, nokeys)
 -- Render shop=hardware stores etc. as shop=doityourself
 -- Add unnamedcommercial landuse to give non-building areas a background.
 -- ----------------------------------------------------------------------------
-   if (( keyvalues["shop"]   == "hardware"             ) or
-       ( keyvalues["shop"]   == "tool_hire"            ) or
-       ( keyvalues["shop"]   == "equipment_hire"       ) or
-       ( keyvalues["shop"]   == "diy"                  ) or
-       ( keyvalues["shop"]   == "tools"                ) or
-       ( keyvalues["shop"]   == "hardware_rental"      ) or
-       ( keyvalues["shop"]   == "builders_merchant"    ) or
-       ( keyvalues["shop"]   == "builders_merchants"   ) or
-       ( keyvalues["shop"]   == "timber"               ) or
-       ( keyvalues["shop"]   == "fencing"              ) or
-       ( keyvalues["shop"]   == "plumbers_merchant"    ) or
-       ( keyvalues["shop"]   == "building_supplies"    ) or
-       ( keyvalues["shop"]   == "industrial_supplies"  ) or
-       ( keyvalues["office"] == "industrial_supplies"  ) or
-       ( keyvalues["shop"]   == "plant_hire"           ) or
-       ( keyvalues["shop"]   == "plant_hire;tool_hire" ) or
-       ( keyvalues["shop"]   == "signs"                ) or
-       ( keyvalues["shop"]   == "sign"                 ) or
-       ( keyvalues["shop"]   == "signwriter"           ) or
-       ( keyvalues["craft"]  == "signmaker"            ) or
-       ( keyvalues["craft"]  == "roofer"               ) or
-       ( keyvalues["shop"]   == "roofing"              ) or
-       ( keyvalues["craft"]  == "floorer"              ) or
-       ( keyvalues["shop"]   == "building_materials"   )) then
+   if (( keyvalues["shop"]    == "hardware"             ) or
+       ( keyvalues["shop"]    == "tool_hire"            ) or
+       ( keyvalues["shop"]    == "equipment_hire"       ) or
+       ( keyvalues["shop"]    == "diy"                  ) or
+       ( keyvalues["shop"]    == "tools"                ) or
+       ( keyvalues["shop"]    == "hardware_rental"      ) or
+       ( keyvalues["shop"]    == "builders_merchant"    ) or
+       ( keyvalues["shop"]    == "builders_merchants"   ) or
+       ( keyvalues["shop"]    == "timber"               ) or
+       ( keyvalues["shop"]    == "fencing"              ) or
+       ( keyvalues["shop"]    == "plumbers_merchant"    ) or
+       ( keyvalues["shop"]    == "building_supplies"    ) or
+       ( keyvalues["shop"]    == "industrial_supplies"  ) or
+       ( keyvalues["office"]  == "industrial_supplies"  ) or
+       ( keyvalues["shop"]    == "plant_hire"           ) or
+       ( keyvalues["amenity"] == "plant_hire;tool_hire" ) or
+       ( keyvalues["shop"]    == "signs"                ) or
+       ( keyvalues["shop"]    == "sign"                 ) or
+       ( keyvalues["shop"]    == "signwriter"           ) or
+       ( keyvalues["craft"]   == "signmaker"            ) or
+       ( keyvalues["craft"]   == "roofer"               ) or
+       ( keyvalues["shop"]    == "roofing"              ) or
+       ( keyvalues["craft"]   == "floorer"              ) or
+       ( keyvalues["shop"]    == "building_materials"   )) then
       keyvalues["landuse"] = "unnamedcommercial"
       keyvalues["shop"]    = "doityourself"
+      keyvalues["amenity"] = nil
    end
 
 -- ----------------------------------------------------------------------------
@@ -6749,7 +6750,6 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["shop"]         == "toiletries"        ) or
        ( keyvalues["shop"]         == "beauty_products"   ) or
        ( keyvalues["shop"]         == "beauty_treatment"  ) or
-       ( keyvalues["shop"]         == "perfume"           ) or
        ( keyvalues["shop"]         == "perfumery"         ) or
        ( keyvalues["shop"]         == "cosmetics"         ) or
        ( keyvalues["shop"]         == "tanning"           ) or
