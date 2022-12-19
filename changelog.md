@@ -8,9 +8,9 @@ Under the diplomatic key, embassy is now being used for non-embassies, so proces
 Likewise, consulate.
 Someone changed "lawnmower" to "lawn_mower" in the data ages ago, but oddly left "lawnmowers", so render "shop=lawn_mower".
 "plant_hire;tool_hire" was always amenity not shop; fixed.
-Removed some formerly low-use synonyms that are no longer in use from the style.
-Update taginfo.json with all recent changes from style.lua.
 Show amenity=biergarten, amenity=beer_garden and outdoor_seating=garden as green.
+Update taginfo.json with all recent changes from style.lua.
+Removed some formerly low-use synonyms that are no longer in use from the style.
 
 ## 12/12/2022
 Detect Quiet Lanes via "designation=quiet_lane;unclassified_highway" as well.

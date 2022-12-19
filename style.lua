@@ -4754,8 +4754,7 @@ function filter_tags_generic(keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
    if ((( keyvalues["hazard"]  == "plant"                    )  or
         ( keyvalues["hazard"]  == "toxic_plant"              )) and
-       (( keyvalues["species"] == "giant_hogweed"            )  or
-        ( keyvalues["species"] == "Heracleum mantegazzianum" )  or
+       (( keyvalues["species"] == "Heracleum mantegazzianum" )  or
         ( keyvalues["taxon"]   == "Heracleum mantegazzianum" ))) then
       keyvalues["historic"] = "nonspecific"
       keyvalues["name"] = "Hogweed"
@@ -5155,7 +5154,6 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["tourism"]   == "holiday_park"            ) or
        ( keyvalues["tourism"]   == "spa_resort"              ) or
        ( keyvalues["tourism"]   == "accommodation"           ) or
-       ( keyvalues["tourism"]   == "holiday_accommodation"   ) or
        ( keyvalues["tourism"]   == "holiday_lets"            ) or
        ( keyvalues["tourism"]   == "holiday_let"             ) or
        ( keyvalues["tourism"]   == "Holiday Lodges"          ) or
@@ -5167,12 +5165,12 @@ function filter_tags_generic(keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
 -- Render alternative taggings of camp_site etc.
 -- ----------------------------------------------------------------------------
-   if ( keyvalues["tourism"] == "camping"  ) then
+   if (( keyvalues["tourism"] == "camping"                ) or
+       ( keyvalues["tourism"] == "camp_site;caravan_site" )) then
       keyvalues["tourism"] = "camp_site"
    end
 
-   if (( keyvalues["tourism"] == "caravan_site;camp_site"    ) or
-       ( keyvalues["tourism"] == "caravan_site;camping_site" )) then
+   if ( keyvalues["tourism"] == "caravan_site;camp_site" ) then
       keyvalues["tourism"] = "caravan_site"
    end
 
@@ -5668,8 +5666,7 @@ function filter_tags_generic(keyvalues, nokeys)
    if ((  keyvalues["historic"]      == "memorial"     ) and
        (( keyvalues["memorial"]      == "plaque"      )  or
         ( keyvalues["memorial"]      == "blue_plaque" )  or
-        ( keyvalues["memorial:type"] == "plaque"      )  or
-        ( keyvalues["memorial:type"] == "blue_plaque" ))) then
+        ( keyvalues["memorial:type"] == "plaque"      ))) then
       keyvalues["historic"] = "memorialplaque"
    end
 
@@ -5704,11 +5701,7 @@ function filter_tags_generic(keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
    if (( keyvalues["marker"]   == "stone" ) or
        ( keyvalues["natural"]  == "stone" )) then
-      if ( keyvalues["stone_type"]   == "ogham_stone" ) then
-         keyvalues["historic"] = "oghamstone"
-      else
-         keyvalues["historic"] = "naturalstone"
-      end
+      keyvalues["historic"] = "naturalstone"
 
       if ( keyvalues["inscription"] ~= nil ) then
           if ( keyvalues["name"] == nil ) then
@@ -5720,14 +5713,10 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
    if ( keyvalues["historic"]   == "stone" ) then
-      if ( keyvalues["stone_type"]   == "ogham_stone" ) then
-         keyvalues["historic"] = "oghamstone"
+      if ( keyvalues["historic:stone"]   == "standing_stone" ) then
+         keyvalues["historic"] = "historicstandingstone"
       else
-         if ( keyvalues["historic:stone"]   == "standing_stone" ) then
-            keyvalues["historic"] = "historicstandingstone"
-         else
-            keyvalues["historic"] = "historicstone"
-         end
+         keyvalues["historic"] = "historicstone"
       end
    end
 
@@ -5737,11 +5726,7 @@ function filter_tags_generic(keyvalues, nokeys)
          ( keyvalues["site_type"]           == "megalith"            )   or
          ( keyvalues["archaeological_site"] == "megalith"            )   or
          ( keyvalues["Canmore_Site_Type"]   == "Standing Stone"      )))) then
-      if ( keyvalues["stone_type"] == "ogham_stone" ) then
-         keyvalues["historic"] = "oghamstone"
-      else
-         keyvalues["historic"] = "historicstandingstone"
-      end
+      keyvalues["historic"] = "historicstandingstone"
 
       keyvalues["tourism"] = nil
    end
