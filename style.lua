@@ -1058,7 +1058,7 @@ function filter_tags_generic(keyvalues, nokeys)
           ( keyvalues["sidewalk:left"] == "separate"  ) or 
           ( keyvalues["sidewalk:left"] == "yes"       ) or
           ( keyvalues["sidewalk:right"] == "separate" ) or 
-          ( keyvalues["sidewalk:right"] == "yes"      ) or`
+          ( keyvalues["sidewalk:right"] == "yes"      ) or
           ( keyvalues["sidewalk:both"] == "separate"  ) or 
           ( keyvalues["sidewalk:both"] == "yes"       ) or
           ( keyvalues["footway"]  == "separate"       ) or 
