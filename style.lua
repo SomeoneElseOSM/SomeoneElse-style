@@ -7107,6 +7107,14 @@ function filter_tags_generic(keyvalues, nokeys)
    if (( keyvalues["shop"]    == "pets"                    ) or
        ( keyvalues["shop"]    == "pet;garden"              ) or
        ( keyvalues["shop"]    == "pet;florist"             ) or
+       ((  keyvalues["shop"]     == "agrarian"                        )  and
+        (( keyvalues["agrarian"] == "feed"                           )  or
+         ( keyvalues["agrarian"] == "yes"                            )  or
+         ( keyvalues["agrarian"] == "feed;fertilizer;seed;pesticide" )  or
+         ( keyvalues["agrarian"] == "feed;seed"                      )  or
+         ( keyvalues["agrarian"] == "feed;pesticide;seed"            )  or
+         ( keyvalues["agrarian"] == "feed;tools"                     )  or
+         ( keyvalues["agrarian"] == "feed;tools;fuel;firewood"       ))) or
        ( keyvalues["shop"]    == "aquatics"                ) or
        ( keyvalues["shop"]    == "aquarium"                ) or
        ( keyvalues["shop"]    == "pet_supplies"            ) or
@@ -7241,6 +7249,15 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["shop"]    == "commercial_vehicles"          ) or
        ( keyvalues["shop"]    == "commercial_vehicle"           ) or
        ( keyvalues["shop"]    == "agricultural_vehicles"        ) or
+       ((  keyvalues["shop"]    == "agrarian"                                           ) and
+        (( keyvalues["agrarian"] == "agricultural_machinery"                           )  or
+         ( keyvalues["agrarian"] == "machine_parts;agricultural_machinery;tools"       )  or
+         ( keyvalues["agrarian"] == "agricultural_machinery;machine_parts;tools"       )  or
+         ( keyvalues["agrarian"] == "agricultural_machinery;feed"                      )  or
+         ( keyvalues["agrarian"] == "agricultural_machinery;machine_parts;tools;signs" )  or
+         ( keyvalues["agrarian"] == "agricultural_machinery;machine_parts"             )  or
+         ( keyvalues["agrarian"] == "agricultural_machinery;seed"                      )  or
+         ( keyvalues["agrarian"] == "machine_parts;agricultural_machinery"             ))) or
        ( keyvalues["shop"]    == "tractor"                      ) or
        ( keyvalues["shop"]    == "tractors"                     ) or
        ( keyvalues["shop"]    == "tractor_repair"               ) or
