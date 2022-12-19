@@ -11,6 +11,7 @@ Someone changed "lawnmower" to "lawn_mower" in the data ages ago, but oddly left
 Show amenity=biergarten, amenity=beer_garden and outdoor_seating=garden as green.
 Update taginfo.json with all recent changes from style.lua.
 Removed some formerly low-use synonyms that are no longer in use from the style.
+Show "hazard_prone=yes" where "hazard_type=flood" as flood prone.
 
 ## 12/12/2022
 Detect Quiet Lanes via "designation=quiet_lane;unclassified_highway" as well.
