@@ -1472,7 +1472,7 @@
     { "key": "military", "value": "barracks", "description": "Shown as military barracks" },
     { "key": "military", "value": "bunker", "description": "Shown as building" },
     { "key": "military", "value": "checkpoint", "description": "Shown as military landuse" },
-    { "key": "military", "value": "danger_area", "description": "Remove unlikely 'military' use on woodland" },
+    { "key": "military", "value": "danger_area", "description": "Shown as a different colour to normal military landuse" },
     { "key": "military", "value": "depot", "description": "Shown as military landuse" },
     { "key": "military", "value": "naval_base", "description": "Shown as military landuse" },
     { "key": "military", "value": "office", "description": "Shown as military landuse" },
