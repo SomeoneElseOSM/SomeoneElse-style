@@ -2276,14 +2276,6 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
--- Handle mistagged pubs
--- ----------------------------------------------------------------------------
-   if ( keyvalues["tourism"]  == "pub;hotel" ) then
-      keyvalues["amenity"] = "pub"
-      keyvalues["tourism"] = nil
-   end
-
--- ----------------------------------------------------------------------------
 -- Things that are both hotels, B&Bs etc. and pubs should render as pubs, 
 -- because I'm far more likely to be looking for the latter than the former.
 -- This is done by removing the tourism tag for them.

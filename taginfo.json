@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20221219T205700Z",
+  "data_updated": "20221219T210300Z",
   "project": {
     "name": "SomeoneElse-style rural pedestrian rendering",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -2415,7 +2415,6 @@
     { "key": "tourism", "value": "information", "description": "Many tourism tags handled" },
     { "key": "tourism", "value": "motel", "description": "Many tourism tags handled" },
     { "key": "tourism", "value": "museum", "description": "Many tourism tags handled" },
-    { "key": "tourism", "value": "pub;hotel", "description": "Many tourism tags handled" },
     { "key": "tourism", "value": "resort", "description": "Many tourism tags handled" },
     { "key": "tourism", "value": "self_catering", "description": "Many tourism tags handled" },
     { "key": "tourism", "value": "sign", "description": "Many tourism tags handled" },
