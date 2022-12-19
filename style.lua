@@ -1941,6 +1941,32 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Beer gardens etc.
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["amenity"] == "beer_garden" ) or
+       ( keyvalues["leisure"] == "beer_garden" )) then
+      keyvalues["amenity"] = nil
+      keyvalues["leisure"] = "garden"
+      keyvalues["garden"] = "beer_garden"
+   end
+
+
+-- ----------------------------------------------------------------------------
+-- Render biergartens as gardens, which is all they likely are.
+-- Remove the symbol from unnamed ones - they're likely just pub beer gardens.
+-- ----------------------------------------------------------------------------
+   if (  keyvalues["amenity"] == "biergarten" ) then
+      if (( keyvalues["name"] == nil           )   or
+          ( keyvalues["name"] == "Beer Garden" )) then
+         keyvalues["amenity"] = nil
+      end
+
+      keyvalues["leisure"] = "garden"
+      keyvalues["garden"]  = "beer_garden"
+   end
+
+
+-- ----------------------------------------------------------------------------
 -- Shops etc. with icons already - just add "unnamedcommercial" landuse.
 -- The exception is where landuse is set to something we want to keep.
 -- ----------------------------------------------------------------------------
@@ -3701,21 +3727,6 @@ function filter_tags_generic(keyvalues, nokeys)
 
 
 -- ----------------------------------------------------------------------------
--- Render biergartens as gardens, which is all they likely are.
--- Remove the symbol from unnamed ones - they're likely just pub beer gardens.
--- ----------------------------------------------------------------------------
-   if (  keyvalues["amenity"] == "biergarten" ) then
-      if (( keyvalues["name"] == nil           )   or
-          ( keyvalues["name"] == "Beer Garden" )) then
-         keyvalues["amenity"] = nil
-      end
-
-      keyvalues["leisure"] = "garden"
-      keyvalues["garden"]  = "beer_garden"
-   end
-
-
--- ----------------------------------------------------------------------------
 -- Restaurants with accommodation
 -- ----------------------------------------------------------------------------
    if (( keyvalues["amenity"]       == "restaurant" )  and
@@ -4240,16 +4251,6 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["leisure"] == nil        )) then
       keyvalues["leisure"] = "garden"
    end
-
--- ----------------------------------------------------------------------------
--- Beer gardens etc.
--- ----------------------------------------------------------------------------
-   if (( keyvalues["amenity"] == "beer_garden" ) or
-       ( keyvalues["leisure"] == "beer_garden" )) then
-      keyvalues["leisure"] = "garden"
-      keyvalues["garden"] = "beer_garden"
-   end
-
 
 -- ----------------------------------------------------------------------------
 -- Playground stuff
