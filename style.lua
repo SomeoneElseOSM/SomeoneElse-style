@@ -289,8 +289,7 @@ function filter_tags_generic(keyvalues, nokeys)
 
    if ((( keyvalues["highway"] == "motorway_junction"  ) and
         ( keyvalues["name:signed"] == "no"            ) or
-        ( keyvalues["unsigned"]    == "yes"           ) or
-        ( keyvalues["unsigned"]    == "true"          ))) then
+        ( keyvalues["unsigned"]    == "yes"           ))) then
       keyvalues["name"] = nil
       keyvalues["name:signed"] = nil
    end
@@ -335,8 +334,7 @@ function filter_tags_generic(keyvalues, nokeys)
          end
       else
          if (( keyvalues["name:signed"] == "no"   ) or
-             ( keyvalues["unsigned"]    == "yes"  ) or
-             ( keyvalues["unsigned"]    == "true" )) then
+             ( keyvalues["unsigned"]    == "yes"  )) then
             keyvalues["name"] = "(" .. keyvalues["name"]
             keyvalues["name:signed"] = nil
 
@@ -8119,9 +8117,8 @@ function filter_tags_generic(keyvalues, nokeys)
       keyvalues["tourism"] = nil
    end
 
-   if (( keyvalues["man_made"]   == "tower"          ) and
-       (( keyvalues["tower:type"] == "illumination" )  or
-        ( keyvalues["tower:type"] == "lighting"     ))) then
+   if (( keyvalues["man_made"]   == "tower"    ) and
+       ( keyvalues["tower:type"] == "lighting" )) then
       keyvalues["man_made"] = "illuminationtower"
       keyvalues["tourism"] = nil
    end
@@ -8697,8 +8694,7 @@ function filter_tags_relation_member (keyvalues, keyvaluemembers, roles, memberc
           ( keyvalues["highway"] == "ldpnhn" )) then
          if ((  keyvalues["name"]        ~= nil     ) and
              (( keyvalues["name:signed"] == "no"   )  or
-              ( keyvalues["unsigned"]    == "yes"  )  or
-              ( keyvalues["unsigned"]    == "true" ))) then
+              ( keyvalues["unsigned"]    == "yes"  ))) then
             keyvalues["name"] = nil
             keyvalues["name:signed"] = nil
             keyvalues["highway"] = nil
@@ -8706,8 +8702,7 @@ function filter_tags_relation_member (keyvalues, keyvaluemembers, roles, memberc
 
          if ((  keyvalues["ref"]        ~= nil     ) and
              (( keyvalues["ref:signed"] == "no"   )  or
-              ( keyvalues["unsigned"]   == "yes"  )  or
-              ( keyvalues["unsigned"]   == "true" ))) then
+              ( keyvalues["unsigned"]   == "yes"  ))) then
             keyvalues["ref"] = nil
             keyvalues["ref:signed"] = nil
             keyvalues["highway"] = nil
