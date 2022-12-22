@@ -5630,6 +5630,14 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Don't show "standing benches" as benches.
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["amenity"] == "bench"          ) and
+       ( keyvalues["bench"]   == "stand_up_bench" )) then
+      keyvalues["amenity"] = nil
+   end
+
+-- ----------------------------------------------------------------------------
 -- Render historic=wayside_cross and wayside_shrine as historic=memorialcross
 -- ----------------------------------------------------------------------------
    if ((   keyvalues["historic"]   == "wayside_cross"    ) or
