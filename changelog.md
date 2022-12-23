@@ -3,7 +3,7 @@ This page describes changes made [here](https://github.com/SomeoneElseOSM/Someon
 
 ## As yet unreleased
 Update taginfo.json with all missing values from amenity-points.mss.
-Update taginfo.json with all missing values from landcover.mss and water.mss.
+Update taginfo.json with all missing values from landcover.mss, water.mss and water-features.mss.
 
 ## 23/12/2022
 Synonyms for grassy farmland expanded to match grassy values at http://taginfo.geofabrik.de/europe/britain-and-ireland/keys/farmland#values .
