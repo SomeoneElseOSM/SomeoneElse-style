@@ -3897,9 +3897,14 @@ function filter_tags_generic(keyvalues, nokeys)
       keyvalues["amenity"] = "doctors"
    end
 
-   if (( keyvalues["healthcare"] == "dentist" ) and
-       ( keyvalues["amenity"]    == nil       )) then
+   if (((   keyvalues["healthcare"]            == "dentist"    )  or
+        ((  keyvalues["healthcare:speciality"] == "dentistry" )   and
+         (( keyvalues["healthcare"]            == "yes"      )    or
+          ( keyvalues["healthcare"]            == "centre"   )    or
+          ( keyvalues["healthcare"]            == "clinic"   )))) and
+       (   keyvalues["amenity"]    == nil                       )) then
       keyvalues["amenity"] = "dentist"
+      keyvalues["healthcare"] = nil
    end
 
    if (( keyvalues["healthcare"] == "hospital" ) and

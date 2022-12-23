@@ -14,6 +14,7 @@ Removed some formerly low-use synonyms that are no longer in use from the style.
 Show "hazard_prone=yes" where "hazard_type=flood" as flood prone.
 Add "shop=agrarian" and various agrarian values as either feed or agricultural machinery shops.
 Don't show stand-up benches as benches.
+Detect dentists that are also clinics etc.
 
 ## 12/12/2022
 Detect Quiet Lanes via "designation=quiet_lane;unclassified_highway" as well.
