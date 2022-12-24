@@ -2,7 +2,7 @@
 This page describes changes made [here](https://github.com/SomeoneElseOSM/SomeoneElse-style), [here](https://github.com/SomeoneElseOSM/SomeoneElse-style-legend) and [here](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT), and visible [here](//map.atownsend.org.uk/maps/map/map.html).
 
 ## As yet unreleased
-Update taginfo.json with all missing values from amenity-points.mss, landcover.mss, water.mss, water-features.mss, roads.mss
+Update taginfo.json with all missing values from amenity-points.mss, landcover.mss, water.mss, water-features.mss, roads.mss, power.mss, citywalls.mss, placenames.mss
 
 ## 23/12/2022
 Synonyms for grassy farmland expanded to match grassy values at http://taginfo.geofabrik.de/europe/britain-and-ireland/keys/farmland#values .
