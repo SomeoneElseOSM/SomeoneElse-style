@@ -263,15 +263,11 @@ function filter_tags_generic(keyvalues, nokeys)
 -- isn't otherwise rendered (and really should no longer be used), so change 
 -- to track (which is what it probably will be).
 --
--- "gallop" makes sense as a tag (it really isn't like anything else), but for
--- rendering change to "track".  
---
 -- "track" will be changed into something else lower down 
 -- (path, pathwide or track_graded).
 -- ----------------------------------------------------------------------------
-   if ((  keyvalues["highway"] == "gallop"      )  or
-       (( keyvalues["golf"]    == "track"      )   and
-        ( keyvalues["highway"] == nil          ))) then
+   if (( keyvalues["golf"]    == "track"      )   and
+       ( keyvalues["highway"] == nil          )) then
       keyvalues["highway"] = "track"
    end
 
@@ -8411,6 +8407,7 @@ function filter_tags_generic(keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
    if ((( keyvalues["highway"] == "track"          )  or
         ( keyvalues["highway"] == "track_graded"   )  or
+        ( keyvalues["highway"] == "gallop"         )  or
         ( keyvalues["highway"] == "residential"    )  or
         ( keyvalues["highway"] == "unclassified"   )  or
         ( keyvalues["highway"] == "tertiary"       )) and
@@ -8599,6 +8596,18 @@ function filter_tags_way (keyvalues, nokeys)
         ( keyvalues["amenity"]  == "bicycle_parking"  ))  and
        ( keyvalues["building"] == nil                  )) then
       keyvalues["building"] = "roof"
+   end
+
+-- ----------------------------------------------------------------------------
+-- A "leisure=track" can be either a linear or an area feature
+-- https://wiki.openstreetmap.org/wiki/Tag%3Aleisure%3Dtrack
+-- If on an area, the way will go into planet_osm_polygon and the highway=track
+--  won't be rendered but the leisure=track will be (as an area).
+-- ----------------------------------------------------------------------------
+   if ((  keyvalues["leisure"]  == "track"         )  and
+       (( keyvalues["sport"]    == "equestrian"   )   or
+        ( keyvalues["sport"]    == "horse_racing" ))) then
+      keyvalues["highway"] = "gallop"
    end
 
 -- ----------------------------------------------------------------------------
