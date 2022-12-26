@@ -4,6 +4,8 @@ This page describes changes made [here](https://github.com/SomeoneElseOSM/Someon
 ## As yet unreleased
 Update taginfo.json with all missing values from amenity-points.mss, landcover.mss, water.mss, water-features.mss, roads.mss, power.mss, citywalls.mss, placenames.mss
 Show linear equestrian tracks (typically gallops etc.) as black on green, with the name offset.
+Show linear motor leisure=tracks as raceways.
+Show other linear leisure=tracks as generic paths.
 
 ## 23/12/2022
 Synonyms for grassy farmland expanded to match grassy values at http://taginfo.geofabrik.de/europe/britain-and-ireland/keys/farmland#values .

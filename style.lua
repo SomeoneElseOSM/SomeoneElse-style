@@ -8401,6 +8401,7 @@ function filter_tags_generic(keyvalues, nokeys)
 -- tend to be OK.  Other options tend not to occur.
 -- ----------------------------------------------------------------------------
    if ((( keyvalues["highway"] == "track"          )  or
+        ( keyvalues["highway"] == "leisuretrack"   )  or
         ( keyvalues["highway"] == "gallop"         )  or
         ( keyvalues["highway"] == "residential"    )  or
         ( keyvalues["highway"] == "unclassified"   )  or
@@ -8595,13 +8596,35 @@ function filter_tags_way (keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
 -- A "leisure=track" can be either a linear or an area feature
 -- https://wiki.openstreetmap.org/wiki/Tag%3Aleisure%3Dtrack
--- If on an area, the way will go into planet_osm_polygon and the highway=track
---  won't be rendered but the leisure=track will be (as an area).
+-- Assign a highway tag (gallop or leisuretrack) so that linear features can
+-- be explicitly rendered.
+-- "sport" is often (but not always) used to separate different types of
+-- leisure tracks.
+--
+-- If on an area, the way will go into planet_osm_polygon and the highway
+-- feature won't be rendered (because both leisuretrack and gallop are only 
+-- processed as linear features) but the leisure=track will be (as an area).
+--
+-- Additionally force anything that is "oneway" to not be an area feature
 -- ----------------------------------------------------------------------------
-   if ((  keyvalues["leisure"]  == "track"         )  and
-       (( keyvalues["sport"]    == "equestrian"   )   or
-        ( keyvalues["sport"]    == "horse_racing" ))) then
-      keyvalues["highway"] = "gallop"
+   if ( keyvalues["leisure"]  == "track" ) then
+      if (( keyvalues["sport"]    == "equestrian"   )  or
+          ( keyvalues["sport"]    == "horse_racing" )) then
+         keyvalues["highway"] = "gallop"
+      else
+         if ((( keyvalues["sport"]    == "motor"   )  or
+              ( keyvalues["sport"]    == "karting" )) and
+             (( keyvalues["area"]     == nil       )  or
+              ( keyvalues["area"]     == "no"      ))) then
+            keyvalues["highway"] = "raceway"
+         else
+            keyvalues["highway"] = "leisuretrack"
+         end
+      end
+
+      if ( keyvalues["oneway"] == "yes" ) then
+         keyvalues["area"] = "no"
+      end
    end
 
 -- ----------------------------------------------------------------------------
