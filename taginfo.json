@@ -1065,6 +1065,7 @@
     { "key": "healthcare", "value": "podiatrist;chiropodist", "description": "Render as nonspecific healthcare" },
     { "key": "healthcare", "value": "psychotherapist", "description": "Render as nonspecific healthcare" },
     { "key": "healthcare", "value": "rehabilitation", "description": "Render as nonspecific healthcare" },
+    { "key": "healthcare", "value": "sample_collection", "description": "Render as clinic" },
     { "key": "healthcare", "value": "sports_massage_therapist", "description": "Render as nonspecific healthcare" },
     { "key": "healthcare", "value": "tattoo_removal", "description": "Render as nonspecific healthcare" },
     { "key": "healthcare", "value": "therapy", "description": "Render as nonspecific healthcare" },

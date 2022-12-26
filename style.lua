@@ -3910,6 +3910,7 @@ function filter_tags_generic(keyvalues, nokeys)
 -- that something else.
 -- ----------------------------------------------------------------------------
    if ((( keyvalues["healthcare"]            == "vaccination_centre" )  or
+        ( keyvalues["healthcare"]            == "sample_collection"  )  or
         ( keyvalues["healthcare:speciality"] == "vaccination"        )) and
        (  keyvalues["amenity"]               == nil                   ) and
        (  keyvalues["leisure"]               == nil                   ) and
