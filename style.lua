@@ -7967,6 +7967,10 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["amenity"]  == "dancing_school"       ) or
        ( keyvalues["leisure"]  == "club"                 ) or
        ( keyvalues["leisure"]  == "dance"                ) or
+       (( keyvalues["leisure"]        == nil            )  and
+        ( keyvalues["amenity"]        == nil            )  and
+        ( keyvalues["shop"]           == nil            )  and
+        ( keyvalues["dance:teaching"] == "yes"          )) or
        ( keyvalues["leisure"]  == "climbing"             ) or
        ( keyvalues["leisure"]  == "high_ropes_course"    ) or
        ( keyvalues["leisure"]  == "bowling_alley"        ) or

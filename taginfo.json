@@ -801,6 +801,8 @@
     { "key": "cycleway", "value": "separate", "description": "If present, show the road as having a sidewalk or equivalent" },
     { "key": "cycleway", "value": "sidewalk", "description": "If present, show the road as having a sidewalk or equivalent" },
     { "key": "cycleway", "value": "sidepath", "description": "If present, show the road as having a sidewalk or equivalent" },
+    { "key": "dance:teaching", "description": "Detect dance places" },
+    { "key": "dance:teaching", "value": "yes", "description": "Detect dance places" },
     { "key": "demolished:amenity", "description": "Detect former telephone boxes" },
     { "key": "demolished:amenity", "value": "telephone", "description": "Detect former telephone boxes" },
     { "key": "denomination", "description": "Don't use a cross for Jehovahs Witness buildings" },
