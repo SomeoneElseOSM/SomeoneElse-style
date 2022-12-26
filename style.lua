@@ -175,10 +175,7 @@ function filter_tags_generic(keyvalues, nokeys)
 -- anything other than rendering, but they do allow designations to be 
 -- displayed without any stylesheet changes.
 -- ----------------------------------------------------------------------------
-
-   if ( keyvalues["highway"] ~= "track_graded" ) then
-      keyvalues["tracktype"] = nil
-   end
+   keyvalues["tracktype"] = nil
 
 -- ----------------------------------------------------------------------------
 -- Before processing footways, turn certain corridors into footways
@@ -264,7 +261,7 @@ function filter_tags_generic(keyvalues, nokeys)
 -- to track (which is what it probably will be).
 --
 -- "track" will be changed into something else lower down 
--- (path, pathwide or track_graded).
+-- (path, or pathwide).
 -- ----------------------------------------------------------------------------
    if (( keyvalues["golf"]    == "track"      )   and
        ( keyvalues["highway"] == nil          )) then
@@ -643,8 +640,6 @@ function filter_tags_generic(keyvalues, nokeys)
 --   wide restricted byway		rbywide
 --
 -- prow_ref is appended in brackets if present.
--- "track_graded" is a means of getting to the renderer without going through
--- this code again.
 -- ----------------------------------------------------------------------------
    if ((  keyvalues["highway"] == "unclassified"  ) and
        (( keyvalues["surface"] == "unpaved"      )  or 
@@ -8406,7 +8401,6 @@ function filter_tags_generic(keyvalues, nokeys)
 -- tend to be OK.  Other options tend not to occur.
 -- ----------------------------------------------------------------------------
    if ((( keyvalues["highway"] == "track"          )  or
-        ( keyvalues["highway"] == "track_graded"   )  or
         ( keyvalues["highway"] == "gallop"         )  or
         ( keyvalues["highway"] == "residential"    )  or
         ( keyvalues["highway"] == "unclassified"   )  or
