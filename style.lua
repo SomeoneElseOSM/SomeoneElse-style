@@ -7674,8 +7674,9 @@ function filter_tags_generic(keyvalues, nokeys)
        (  keyvalues["office"]    == "administrative"          ) or
        (  keyvalues["office"]    == "register"                ) or
        (  keyvalues["amenity"]   == "register_office"         ) or
-       (  keyvalues["office"]    == "drainage_board"          ) or
        (  keyvalues["office"]    == "council"                 ) or
+       (  keyvalues["office"]    == "drainage_board"          ) or
+       (  keyvalues["office"]    == "forestry"                ) or
        (  keyvalues["amenity"]   == "courthouse"              ) or
        (  keyvalues["office"]    == "justice"                 ) or
        (  keyvalues["amenity"]   == "townhall"                ) or

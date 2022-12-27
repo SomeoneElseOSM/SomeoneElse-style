@@ -8,6 +8,7 @@ Show linear motor leisure=tracks as raceways.
 Show other linear leisure=tracks as generic paths.
 Use dance_teaching=yes as a synonym for dance places.
 Show healthcare=sample_collection as clinic.
+Added office=forestry to the list of government offices.
 
 ## 23/12/2022
 Synonyms for grassy farmland expanded to match grassy values at http://taginfo.geofabrik.de/europe/britain-and-ireland/keys/farmland#values .
