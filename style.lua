@@ -1405,9 +1405,11 @@ function filter_tags_generic(keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
 -- Alleged petrol stations that only do fuel:electricity are probably 
 -- actually charging stations.
--- The combination of "fuel, electricity, no diesel" is as good as we can make 
--- it without guessing based on brand.  "fuel, electricity, some sort of 
--- petrol, no diesel" is not a thing in the UK/IE data currently.
+--
+-- The combination of "amenity=fuel, electricity, no diesel" is as good as
+-- we can make  it without guessing based on brand.  "fuel, electricity,
+-- some sort of petrol, no diesel" is not a thing in the UK/IE data currently.
+-- Similarly, electric waterway=fuel are charging stations.
 --
 -- Show vending machines that sell petrol as vending machines.
 -- One UK/IE example, on an airfield, and "UL91" finds it.
@@ -1424,6 +1426,12 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["fuel:electricity"] == "yes"  )  and
        ( keyvalues["fuel:diesel"]      == nil    )) then
       keyvalues["amenity"] = "charging_station"
+   end
+
+   if (( keyvalues["waterway"]         == "fuel" ) and
+       ( keyvalues["fuel:electricity"] == "yes"  )) then
+      keyvalues["amenity"] = "charging_station"
+      keyvalues["waterway"] = nil
    end
 
    if (( keyvalues["amenity"] == "vending_machine" ) and
