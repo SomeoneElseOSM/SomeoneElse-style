@@ -1456,9 +1456,17 @@ function filter_tags_generic(keyvalues, nokeys)
       keyvalues["amenity"] = "fuel_e"
    end
 
-   if (( keyvalues["amenity"]  == "fuel" ) and
-       ( keyvalues["fuel:LH2"] == "yes"  )) then
+   if ((  keyvalues["amenity"]  == "fuel"  ) and
+       (( keyvalues["fuel:H2"]  == "yes"  )  or
+        ( keyvalues["fuel:LH2"] == "yes"  ))) then
       keyvalues["amenity"] = "fuel_h"
+   end
+
+   if ((  keyvalues["amenity"]  == "fuel"  ) and
+       (( keyvalues["LPG"]      == "yes"  )  or
+        ( keyvalues["fuel"]     == "lpg"  )  or
+        ( keyvalues["fuel:lpg"] == "yes"  ))) then
+      keyvalues["amenity"] = "fuel_l"
    end
 
 -- ----------------------------------------------------------------------------
@@ -6049,6 +6057,7 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["amenity"]   == "fuel"             ) or
        ( keyvalues["amenity"]   == "fuel_e"           ) or
        ( keyvalues["amenity"]   == "fuel_h"           ) or
+       ( keyvalues["amenity"]   == "fuel_l"           ) or
        ( keyvalues["amenity"]   == "fuel_w"           ) or
        ( keyvalues["amenity"]   == "charging_station" ) or
        ( keyvalues["amenity"]   == "bicycle_rental"   ) or
