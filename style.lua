@@ -1408,11 +1408,20 @@ function filter_tags_generic(keyvalues, nokeys)
 -- The combination of "fuel, electricity, no diesel" is as good as we can make 
 -- it without guessing based on brand.  "fuel, electricity, some sort of 
 -- petrol, no diesel" is not a thing in the UK/IE data currently.
+--
+-- Once we've got those out of the way, detect amenity=fuel that also sell
+-- electricity.
 -- ----------------------------------------------------------------------------
    if (( keyvalues["amenity"]          == "fuel" ) and
        ( keyvalues["fuel:electricity"] == "yes"  )  and
        ( keyvalues["fuel:diesel"]      == nil    )) then
       keyvalues["amenity"] = "charging_station"
+   end
+
+   if (( keyvalues["amenity"]          == "fuel" ) and
+       ( keyvalues["fuel:electricity"] == "yes"  )  and
+       ( keyvalues["fuel:diesel"]      == "yes"  )) then
+      keyvalues["amenity"] = "fuel_e"
    end
 
 -- ----------------------------------------------------------------------------
@@ -6001,6 +6010,7 @@ function filter_tags_generic(keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
    if (( keyvalues["amenity"]   == "atm"              ) or
        ( keyvalues["amenity"]   == "fuel"             ) or
+       ( keyvalues["amenity"]   == "fuel_e"           ) or
        ( keyvalues["amenity"]   == "charging_station" ) or
        ( keyvalues["amenity"]   == "bicycle_rental"   ) or
        ( keyvalues["amenity"]   == "scooter_rental"   ) or

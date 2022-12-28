@@ -5,6 +5,7 @@ This page describes changes made [here](https://github.com/SomeoneElseOSM/Someon
 Update taginfo.json with all missing values from all remaining .mss files: buildings.mss, amenity-symbols.mss, stations.mss, ferry-routes.mss, aerialways.mss, admin.mss, addressing.mss.
 Changed update_render.sh and make_gis3_live.sh so that styling changes as well as database changes are held off until gis3 is made live.
 Detect electric charging stations mistagged as amenity=fuel.
+Show amenity=fuel that also provide electric charging with "+/-" to the side of the normal fuel icon.
 
 ## 27/12/2022
 Update taginfo.json with all missing values from amenity-points.mss, landcover.mss, water.mss, water-features.mss, roads.mss, power.mss, citywalls.mss, placenames.mss
