@@ -8,6 +8,7 @@ Detect electric charging stations mistagged as amenity=fuel.
 Show amenity=fuel that also provide electric charging with "+/-" to the side of the normal fuel icon.
 Show vending machines that sell petrol as amenity=fuel.
 Show aeroway=fuel as amenity=fuel.
+Show waterway=fuel as a maritime version of amenity=fuel.
 
 ## 27/12/2022
 Update taginfo.json with all missing values from amenity-points.mss, landcover.mss, water.mss, water-features.mss, roads.mss, power.mss, citywalls.mss, placenames.mss

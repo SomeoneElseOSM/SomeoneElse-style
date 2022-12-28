@@ -1415,6 +1415,8 @@ function filter_tags_generic(keyvalues, nokeys)
 -- Show aeroway=fuel as amenity=fuel.  All so far in UK/IE are 
 -- general aviation.
 --
+-- Show waterway=fuel with a "fuel pump on a boat" icon.
+--
 -- Once we've got those out of the way, detect amenity=fuel that also sell
 -- electricity.
 -- ----------------------------------------------------------------------------
@@ -1433,6 +1435,11 @@ function filter_tags_generic(keyvalues, nokeys)
    if ( keyvalues["aeroway"] == "fuel" ) then
       keyvalues["aeroway"] = nil
       keyvalues["amenity"] = "fuel"
+   end
+
+   if ( keyvalues["waterway"] == "fuel" ) then
+      keyvalues["amenity"] = "fuel_w"
+      keyvalues["waterway"] = nil
    end
 
    if (( keyvalues["amenity"]          == "fuel" ) and
@@ -6028,6 +6035,7 @@ function filter_tags_generic(keyvalues, nokeys)
    if (( keyvalues["amenity"]   == "atm"              ) or
        ( keyvalues["amenity"]   == "fuel"             ) or
        ( keyvalues["amenity"]   == "fuel_e"           ) or
+       ( keyvalues["amenity"]   == "fuel_w"           ) or
        ( keyvalues["amenity"]   == "charging_station" ) or
        ( keyvalues["amenity"]   == "bicycle_rental"   ) or
        ( keyvalues["amenity"]   == "scooter_rental"   ) or

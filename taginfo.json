@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20221228T185500Z",
+  "data_updated": "20221228T194700Z",
   "project": {
     "name": "SomeoneElse-style rural pedestrian rendering",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -2760,6 +2760,7 @@
     { "key": "waterway", "value": "floating_barrier", "description": "Many water features shown" },
     { "key": "waterway", "value": "flow_control", "description": "Many water features shown" },
     { "key": "waterway", "value": "former_canal", "description": "Many water features shown" },
+    { "key": "waterway", "value": "fuel", "description": "Maritime version of amenity=fuel" },
     { "key": "waterway", "value": "historic_canal", "description": "Many water features shown" },
     { "key": "waterway", "value": "leat", "description": "Many water features shown" },
     { "key": "waterway", "value": "life_belt", "description": "Many water features shown" },
