@@ -1412,6 +1412,9 @@ function filter_tags_generic(keyvalues, nokeys)
 -- Show vending machines that sell petrol as vending machines.
 -- One UK/IE example, on an airfield, and "UL91" finds it.
 --
+-- Show aeroway=fuel as amenity=fuel.  All so far in UK/IE are 
+-- general aviation.
+--
 -- Once we've got those out of the way, detect amenity=fuel that also sell
 -- electricity.
 -- ----------------------------------------------------------------------------
@@ -1424,6 +1427,11 @@ function filter_tags_generic(keyvalues, nokeys)
    if (( keyvalues["amenity"] == "vending_machine" ) and
        ( keyvalues["vending"] == "fuel"            )  and
        ( keyvalues["fuel"]    == "UL91"            )) then
+      keyvalues["amenity"] = "fuel"
+   end
+
+   if ( keyvalues["aeroway"] == "fuel" ) then
+      keyvalues["aeroway"] = nil
       keyvalues["amenity"] = "fuel"
    end
 
