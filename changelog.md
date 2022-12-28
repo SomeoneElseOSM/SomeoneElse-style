@@ -9,6 +9,7 @@ Show amenity=fuel that also provide electric charging with "+/-" to the side of 
 Show vending machines that sell petrol as amenity=fuel.
 Show aeroway=fuel as amenity=fuel.
 Show waterway=fuel as a maritime version of amenity=fuel.
+Show hydrogen fuel stations as such.
 
 ## 27/12/2022
 Update taginfo.json with all missing values from amenity-points.mss, landcover.mss, water.mss, water-features.mss, roads.mss, power.mss, citywalls.mss, placenames.mss

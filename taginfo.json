@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20221228T194700Z",
+  "data_updated": "20221228T211500Z",
   "project": {
     "name": "SomeoneElse-style rural pedestrian rendering",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -995,6 +995,8 @@
     { "key": "former_name", "description": "Used on vacant shops only when current name is nil" },
     { "key": "fuel", "description": "Detect vending machines that sell petrol" },
     { "key": "fuel", "value": "UL91", "description": "Detect vending machines that sell petrol" },
+    { "key": "fuel:LH2", "description": "Detect hydrogen fuel stations" },
+    { "key": "fuel:LH2", "value": "yes", "description": "Detect hydrogen fuel stations" },
     { "key": "fuel:diesel", "description": "Detect mistagged charging stations and fuel places that also do electric charging" },
     { "key": "fuel:diesel", "value": "yes", "description": "Detect fuel places that also do electric charging" },
     { "key": "fuel:electricity", "description": "Detect mistagged charging stations and fuel places that also do electric charging" },
