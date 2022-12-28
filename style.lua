@@ -1409,6 +1409,9 @@ function filter_tags_generic(keyvalues, nokeys)
 -- it without guessing based on brand.  "fuel, electricity, some sort of 
 -- petrol, no diesel" is not a thing in the UK/IE data currently.
 --
+-- Show vending machines that sell petrol as vending machines.
+-- One UK/IE example, on an airfield, and "UL91" finds it.
+--
 -- Once we've got those out of the way, detect amenity=fuel that also sell
 -- electricity.
 -- ----------------------------------------------------------------------------
@@ -1416,6 +1419,12 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["fuel:electricity"] == "yes"  )  and
        ( keyvalues["fuel:diesel"]      == nil    )) then
       keyvalues["amenity"] = "charging_station"
+   end
+
+   if (( keyvalues["amenity"] == "vending_machine" ) and
+       ( keyvalues["vending"] == "fuel"            )  and
+       ( keyvalues["fuel"]    == "UL91"            )) then
+      keyvalues["amenity"] = "fuel"
    end
 
    if (( keyvalues["amenity"]          == "fuel" ) and
