@@ -1415,7 +1415,6 @@ function filter_tags_generic(keyvalues, nokeys)
       keyvalues["amenity"] = "charging_station"
    end
 
-
 -- ----------------------------------------------------------------------------
 -- Bridge structures - display as building=roof.
 -- Also farmyard "bunker silos" and canopies, and natural arches.
