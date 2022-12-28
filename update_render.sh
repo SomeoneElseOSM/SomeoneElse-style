@@ -13,6 +13,7 @@
 # On Debian 11 or above and Ubuntu 21.04 and above,
 # "local_renderd_user" will probably be "_renderd"
 #
+# Expected values for "local_database" are "gis" and "=gis3".
 # If the data is loaded into gis it'll go live immediately after script completion.
 # If the data is loaded into gis3 it can be tested and then taken live with make_gis3_live.sh
 #
@@ -224,18 +225,39 @@ sudo -u ${local_filesystem_user} git pull
 cd /home/${local_filesystem_user}/src/openstreetmap-carto-AJT
 pwd
 sudo -u ${local_filesystem_user} git pull
-#
+# -----------------------------------------------------------------------------
 # We create 3 XML files:
 #
 # The normal mapnik.xml, which uses database gis.
-# An identical mapnik3.xml, but which uses database gis3.
+# This is the main live tile layer and database.
 #
-# Also, a "novispaths" mapnik.xml, based on the very simple layers at
+# An identical mapnik3.xml, but which uses database gis3.
+# Used for testing after database reload by setting "local_database" above to gis3, 
+# and can then be made live later with "make_gis3_live.sh".
+# There is normally no "gis2"; that is temporarily used by "make_gis3_live.sh".
+#
+# Also, a "novispaths" mapnik.xml, tile layer ajt5, which uses database gis, 
+# which is based on the very simple layers at
 # https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT/tree/master/novispaths
 # This is a separate tile layer so that it can be used as an overlay.
 #
-carto project.mml > mapnik.xml
-sed "s/\[gis\]/[gis3]/" mapnik.xml > mapnik3.xml
+# For completeness, the tile layers / databases used are:
+# gis   ajt   Main live database and tile layer
+# gis2  n/a   Temporary only
+# gis3  ajt3  For testing
+# gis4  ajt4  https://github.com/SomeoneElseOSM/floodedmap
+# gis   ajt5  No Vis Paths
+# gis6  ajt6  https://github.com/SomeoneElseOSM/Boundary_Scripts
+# -----------------------------------------------------------------------------
+carto project.mml > mapnik.xml.new
+sed "s/\[gis\]/[gis3]/" mapnik.xml.new > mapnik3.xml
+#
+if [ "local_database" = "gis" ]
+then
+    mv mapnik.xml mapnik.xml.old
+    mv mapnik.xml.new mapnik.xml
+fi
+#
 cd novispaths
 carto project.mml > mapnik.xml
 cd ..
@@ -325,11 +347,12 @@ then
 else
     wget $file_url4 -O ${file_prefix4}_${file_extension4}.osm.pbf
 fi
-#
-# Optionally stop rendering to free up memory
-# A restart on renderd is also an option to reduce memory use.
-#
-#/etc/init.d/renderd stop
+# -----------------------------------------------------------------------------
+# Optionally stop rendering altogether (both renderd and apache2) 
+# er to free up memory
+# Alternatively, just restart renderd to reduce memory use.
+# -----------------------------------------------------------------------------
+/etc/init.d/renderd restart
 #/etc/init.d/apache2 stop
 #
 # In File1,

@@ -83,6 +83,11 @@ sudo -u ${local_postgres_user} psql -c "ALTER DATABASE gis rename to gis2;"
 sudo -u ${local_postgres_user} psql -c "ALTER DATABASE gis3 rename to gis;"
 sudo -u ${local_postgres_user} psql -c "ALTER DATABASE gis2 rename to gis3;"
 #
+# Move the mapnik.xml.new created by "update_render.sh" to live
+#
+sudo mv /home/${local_filesystem_user}/src/openstreetmap-carto-AJT/mapnik.xml     /home/${local_filesystem_user}/src/openstreetmap-carto-AJT/mapnik.xml.old
+sudo mv /home/${local_filesystem_user}/src/openstreetmap-carto-AJT/mapnik.xml.new /home/${local_filesystem_user}/src/openstreetmap-carto-AJT/mapnik.xml
+#
 # Rename the pyosmium directories
 #
 sudo mv /var/cache/renderd/pyosmium.gis      /var/cache/renderd/pyosmium.gis2
