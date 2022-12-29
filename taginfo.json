@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20221228T220900Z",
+  "data_updated": "20221229T131200Z",
   "project": {
     "name": "SomeoneElse-style rural pedestrian rendering",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -10,6 +10,8 @@
     "contact_email": "SomeoneElse-style-taginfo@atownsend.org.uk"
   },
   "tags": [
+    { "key": "LPG", "description": "Detect non-standard tagging of LPG fuel stations" },
+    { "key": "LPG", "value": "yes", "description": "Detect non-standard tagging of LPG fuel stations" },
     { "key": "abandoned", "description": "Obscure tagging used to say if a canal has been abandoned" },
     { "key": "abandoned", "value": "waterway=canal", "description": "Obscure tagging used to say if a canal has been abandoned" },
     { "key": "abandoned:amenity", "description": "Obscure tagging used for former pubs and telephones" },
@@ -1000,8 +1002,6 @@
     { "key": "fuel:H2", "value": "yes", "description": "Detect hydrogen fuel stations" },
     { "key": "fuel:LH2", "description": "Detect hydrogen fuel stations" },
     { "key": "fuel:LH2", "value": "yes", "description": "Detect hydrogen fuel stations" },
-    { "key": "fuel:LPG", "description": "Detect LPG fuel stations" },
-    { "key": "fuel:LPG", "value": "yes", "description": "Detect LPG fuel stations" },
     { "key": "fuel:diesel", "description": "Detect mistagged charging stations and fuel places that also do electric charging" },
     { "key": "fuel:diesel", "value": "yes", "description": "Detect fuel places that also do electric charging" },
     { "key": "fuel:electricity", "description": "Detect mistagged charging stations and fuel places that also do electric charging" },
