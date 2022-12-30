@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20221229T204700Z",
+  "data_updated": "20221230T141700Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -1035,6 +1035,8 @@
     { "key": "golf", "value": "driving_range", "description": "Rendered as pitch" },
     { "key": "golf", "value": "practice", "description": "Rendered as garden" },
     { "key": "golf", "value": "ball_washer", "description": "Rendered as golf ball washer" },
+    { "key": "government", "description": "Detect non-station police offices" },
+    { "key": "government", "value": "police", "description": "Detect non-station police offices" },
     { "key": "guest_house", "description": "Show Bed and Breakfast places as such" },
     { "key": "guest_house", "value": "bed_and_breakfast", "description": "Show Bed and Breakfast places as such" },
     { "key": "guide_type", "description": "Show intermediary guideposts as route markers" },
@@ -1752,6 +1754,7 @@
     { "key": "office", "value": "political_party", "description": "Most offices shown as black dots" },
     { "key": "office", "value": "politician", "description": "Most offices shown as black dots" },
     { "key": "office", "value": "printer", "description": "Most offices shown as black dots" },
+    { "key": "office", "value": "property_maintenance", "description": "Most offices shown as black dots" },
     { "key": "office", "value": "quango", "description": "Most offices shown as black dots" },
     { "key": "office", "value": "recruitment", "description": "Most offices shown as black dots" },
     { "key": "office", "value": "recruitment_agency", "description": "Most offices shown as black dots" },
