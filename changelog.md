@@ -12,6 +12,7 @@ Show waterway=fuel as a maritime version of amenity=fuel.
 Show hydrogen fuel stations as such.
 Show amenity=fuel selling LPG as such.  Unfortunately the data isn't yet there to distinguish "LPG only" and "LPG as well".
 Added government=police and office=property_maintenance.
+Added man_made=standing_stone and man_made=stone.
 
 ## 27/12/2022
 Update taginfo.json with all missing values from amenity-points.mss, landcover.mss, water.mss, water-features.mss, roads.mss, power.mss, citywalls.mss, placenames.mss
