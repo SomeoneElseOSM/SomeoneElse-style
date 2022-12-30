@@ -9,7 +9,7 @@ generic_keys = {'access','addr:housename','addr:housenumber','addr:interpolation
    'man_made','marker','military','motor_car','name','natural','ncn_milepost','office','oneway','operator','opening_hours:covid19','pitch','place','playground','poi','population','power','power_source','public_transport',
    'railway','railway:historic','ref','religion','rescue_equipment','route',
    'school','seamark:type','seamark:rescue_station:category','service','shop','sport','surface',
-   'toll','tourism','tower:type', 'tracktype','tunnel','water','waterway',
+   'toll','tourism','tower:type', 'tracktype','training','tunnel','water','waterway',
    'wetland','width','wood','type'}
 
 function add_z_order(keyvalues)
@@ -7449,6 +7449,10 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["shop"]    == "energy"                  ) or
        ( keyvalues["shop"]    == "coal_merchant"           ) or
        ( keyvalues["amenity"] == "training"                ) or
+       ((  keyvalues["amenity"]  == nil                   )  and
+        (( keyvalues["training"] == "dance"              )   or
+         ( keyvalues["training"] == "language"           )   or
+         ( keyvalues["training"] == "performing_arts"    ))) or
        ( keyvalues["amenity"] == "tutoring_centre"         ) or
        ( keyvalues["office"]  == "tutoring"                ) or
        ( keyvalues["shop"]    == "ironing"                 ) or
