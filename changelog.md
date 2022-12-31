@@ -14,6 +14,7 @@ Show amenity=fuel selling LPG as such.  Unfortunately the data isn't yet there t
 Added government=police and office=property_maintenance.
 Added man_made=standing_stone and man_made=stone.
 Detect "training" without "amenity", "shop" or "leisure".
+Detect social_facility without amenity or office.
 
 ## 27/12/2022
 Update taginfo.json with all missing values from amenity-points.mss, landcover.mss, water.mss, water-features.mss, roads.mss, power.mss, citywalls.mss, placenames.mss

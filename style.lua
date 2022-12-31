@@ -7558,6 +7558,15 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["healthcare"]  == "clinic"                       ) or
        ( keyvalues["shop"]        == "clinic"                       ) or
        ( keyvalues["amenity"]     == "social_facility"              ) or
+       ((  keyvalues["amenity"]         == nil                     )  and
+        (( keyvalues["social_facility"] == "group_home"           )   or
+         ( keyvalues["social_facility"] == "nursing_home"         )   or
+         ( keyvalues["social_facility"] == "assisted_living"      )   or
+         ( keyvalues["social_facility"] == "care_home"            )   or
+         ( keyvalues["social_facility"] == "shelter"              )   or
+         ( keyvalues["social_facility"] == "day_care"             )   or
+         ( keyvalues["social_facility"] == "day_centre"           )   or
+         ( keyvalues["social_facility"] == "residential_home"     ))) or
        ( keyvalues["amenity"]     == "nursing_home"                 ) or
        ( keyvalues["residential"] == "nursing_home"                 ) or
        ( keyvalues["building"]    == "nursing_home"                 ) or
@@ -7892,6 +7901,9 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["office"]     == "educational_institution" ) or
        ( keyvalues["office"]     == "university"              ) or
        ( keyvalues["office"]     == "charity"                 ) or
+       ((  keyvalues["office"]          == nil               )  and
+        (( keyvalues["social_facility"] == "outreach"       )  or
+         ( keyvalues["social_facility"] == "food_bank"      ))) or
        ( keyvalues["office"]     == "marriage_guidance"       ) or
        ( keyvalues["amenity"]    == "education_centre"        ) or
        ( keyvalues["amenity"]    == "college"                 ) or
