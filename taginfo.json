@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20221231T003900Z",
+  "data_updated": "20221231T161000Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -522,8 +522,6 @@
     { "key": "capital", "description": "Find capital cities and towns" },
     { "key": "capital", "value": "yes", "description": "Find capital cities and towns" },
     { "key": "canal_bridge_ref", "description": "Used as an obscure synonym for bridge_ref" },
-    { "key": "Canmore_Site_Type", "description": "Used to identify standing stones" },
-    { "key": "Canmore_Site_Type", "value": "Standing Stone", "description": "Used to identify standing stones" },
     { "key": "club", "description": "Many values shown as unnamed commercial landuse and nonspecific leisure" },
     { "key": "club", "value": "air_cadets", "description": "Shown as unnamed commercial landuse and nonspecific leisure" },
     { "key": "club", "value": "automobile", "description": "Shown as unnamed commercial landuse and nonspecific leisure" },
