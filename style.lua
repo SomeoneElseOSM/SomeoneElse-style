@@ -2495,7 +2495,7 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
--- The misspelling "accomodation" is quite common.
+-- The misspelling "accomodation" (with one "m") is quite common.
 -- ----------------------------------------------------------------------------
    if (( keyvalues["accommodation"] == nil )  and
        ( keyvalues["accomodation"]  ~= nil )) then
@@ -4034,7 +4034,6 @@ function filter_tags_generic(keyvalues, nokeys)
       keyvalues["amenity"] = "public_bookcase"
    end
 
-
 -- ----------------------------------------------------------------------------
 -- Left luggage
 -- ----------------------------------------------------------------------------
@@ -4043,7 +4042,6 @@ function filter_tags_generic(keyvalues, nokeys)
       keyvalues["amenity"] = "left_luggage"
       keyvalues["shop"]    = nil
    end
-
 
 -- ----------------------------------------------------------------------------
 -- Parcel lockers
@@ -4067,7 +4065,6 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["vending"] == "excrement_bags"  )) then
       keyvalues["amenity"]  = "vending_excrement"
    end
-
 
 -- ----------------------------------------------------------------------------
 -- If a farm shop doesn't have a name but does have named produce, map across
@@ -4101,7 +4098,6 @@ function filter_tags_generic(keyvalues, nokeys)
       keyvalues["name"] = "(" .. keyvalues["vending"] .. ")"
    end
 
-
 -- ----------------------------------------------------------------------------
 -- Render amenity=piano as musical_instrument
 -- ----------------------------------------------------------------------------
@@ -4112,7 +4108,6 @@ function filter_tags_generic(keyvalues, nokeys)
             keyvalues["name"] = "Piano"
       end
    end
-
 
 -- ----------------------------------------------------------------------------
 -- Motorcycle parking
