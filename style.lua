@@ -5753,9 +5753,9 @@ function filter_tags_generic(keyvalues, nokeys)
 -- Stones that are not boundary stones.
 -- Note that "marker=boundary_stone" are handled elsewhere.
 -- ----------------------------------------------------------------------------
-   if (( keyvalues["marker"]   == "stone"           ) or
-       ( keyvalues["natural"]  == "stone"           ) or
-       ( keyvalues["man_made"] == "stone"           ) or
+   if (( keyvalues["marker"]   == "stone"          ) or
+       ( keyvalues["natural"]  == "stone"          ) or
+       ( keyvalues["man_made"] == "stone"          ) or
        ( keyvalues["man_made"] == "standing_stone" )) then
       keyvalues["historic"] = "naturalstone"
 
