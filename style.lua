@@ -1996,7 +1996,6 @@ function filter_tags_generic(keyvalues, nokeys)
       keyvalues["garden"] = "beer_garden"
    end
 
-
 -- ----------------------------------------------------------------------------
 -- Render biergartens as gardens, which is all they likely are.
 -- Remove the symbol from unnamed ones - they're likely just pub beer gardens.
@@ -2077,6 +2076,9 @@ function filter_tags_generic(keyvalues, nokeys)
       keyvalues["landuse"] = "retail"
    end
 
+-- ----------------------------------------------------------------------------
+-- Scout camps etc.
+-- ----------------------------------------------------------------------------
    if (( keyvalues["amenity"]   == "scout_camp"     ) or
        ( keyvalues["landuse"]   == "scout_camp"     ) or	
        ( keyvalues["leisure"]   == "fishing"        ) or
