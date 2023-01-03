@@ -4444,14 +4444,12 @@ function filter_tags_generic(keyvalues, nokeys)
       keyvalues["man_made"] = nil
    end
 
-
 -- ----------------------------------------------------------------------------
 -- Apparently there are a few "waterway=brook" in the UK.  Render as stream.
 -- ----------------------------------------------------------------------------
    if ( keyvalues["waterway"] == "brook" ) then
       keyvalues["waterway"] = "stream"
    end
-
 
 -- ----------------------------------------------------------------------------
 -- Display "waterway=mill_pond" as dock.
@@ -4754,6 +4752,9 @@ function filter_tags_generic(keyvalues, nokeys)
       keyvalues["historic"] = "nonspecific"
    end
 
+-- ----------------------------------------------------------------------------
+-- Historic markers
+-- ----------------------------------------------------------------------------
    if (( keyvalues["historic"] == "marker"          ) or
        ( keyvalues["historic"] == "plaque"          ) or
        ( keyvalues["historic"] == "memorial_plaque" ) or
