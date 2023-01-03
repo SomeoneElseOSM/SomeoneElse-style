@@ -4117,7 +4117,6 @@ function filter_tags_generic(keyvalues, nokeys)
       keyvalues["amenity"] = "motorcycle_parking"
    end
 
-
 -- ----------------------------------------------------------------------------
 -- Render amenity=layby as parking.
 -- highway=rest_area is used a lot in the UK for laybies, so map that over too.
@@ -4127,7 +4126,6 @@ function filter_tags_generic(keyvalues, nokeys)
       keyvalues["amenity"] = "parking"
    end
 
-
 -- ----------------------------------------------------------------------------
 -- Lose any "access=permissive" on parking; it should not be greyed out as it
 -- is "somewhere we can park".
@@ -4136,7 +4134,6 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["access"]  == "permissive" )) then
       keyvalues["access"] = nil
    end
-
 
 -- ----------------------------------------------------------------------------
 -- Render for-pay parking areas differently.
@@ -4153,7 +4150,6 @@ function filter_tags_generic(keyvalues, nokeys)
       keyvalues["amenity"] = "parking_pay"
    end
 
-
 -- ----------------------------------------------------------------------------
 -- Render for-pay bicycle_parking areas differently.
 -- ----------------------------------------------------------------------------
@@ -4169,7 +4165,6 @@ function filter_tags_generic(keyvalues, nokeys)
       keyvalues["amenity"] = "bicycle_parking_pay"
    end
 
-
 -- ----------------------------------------------------------------------------
 -- Render for-pay motorcycle_parking areas differently.
 -- ----------------------------------------------------------------------------
@@ -4184,7 +4179,6 @@ function filter_tags_generic(keyvalues, nokeys)
         ( keyvalues["fee"]     ~= "0"               ))) then
       keyvalues["amenity"] = "motorcycle_parking_pay"
    end
-
 
 -- ----------------------------------------------------------------------------
 -- Render for-pay toilets differently.
@@ -4223,7 +4217,6 @@ function filter_tags_generic(keyvalues, nokeys)
       end
    end
 
-
 -- ----------------------------------------------------------------------------
 -- Render parking spaces as parking.  Most in the UK are not part of larger
 -- parking areas, and most do not have an access tag, but many should have.
@@ -4235,7 +4228,6 @@ function filter_tags_generic(keyvalues, nokeys)
          keyvalues["access"] = "no"
       end
    end
-
 
 -- ----------------------------------------------------------------------------
 -- Render amenity=leisure_centre as leisure=sports_centre
