@@ -5530,6 +5530,9 @@ function filter_tags_generic(keyvalues, nokeys)
       keyvalues["barrier"] = "kissing_gate"
    end
 
+-- ----------------------------------------------------------------------------
+-- gates
+-- ----------------------------------------------------------------------------
    if (( keyvalues["barrier"]   == "gate"                  )  or
        ( keyvalues["barrier"]   == "swing_gate"            )  or
        ( keyvalues["barrier"]   == "footgate"              )  or
@@ -5557,6 +5560,9 @@ function filter_tags_generic(keyvalues, nokeys)
       end
    end
 
+-- ----------------------------------------------------------------------------
+-- lift gates
+-- ----------------------------------------------------------------------------
    if (( keyvalues["barrier"] == "border_control"   ) or
        ( keyvalues["barrier"] == "ticket_barrier"   ) or
        ( keyvalues["barrier"] == "ticket"           ) or
