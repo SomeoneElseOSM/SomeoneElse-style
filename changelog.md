@@ -1,7 +1,7 @@
 # Changes made to this rendering
 This page describes changes made [here](https://github.com/SomeoneElseOSM/SomeoneElse-style), [here](https://github.com/SomeoneElseOSM/SomeoneElse-style-legend) and [here](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT), and visible [here](//map.atownsend.org.uk/maps/map/map.html).
 
-## As yet unreleased
+## 04/01/2023
 Update taginfo.json with all missing values from all remaining .mss files: buildings.mss, amenity-symbols.mss, stations.mss, ferry-routes.mss, aerialways.mss, admin.mss, addressing.mss.
 Changed update_render.sh and make_gis3_live.sh so that styling changes as well as database changes are held off until gis3 is made live.
 Detect electric charging stations mistagged as amenity=fuel or waterway=fuel.
