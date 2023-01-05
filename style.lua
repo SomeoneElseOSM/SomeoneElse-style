@@ -5579,7 +5579,7 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
--- render barrier=bar as barrier=horse_stile (Norfolk)
+-- render various cycle barrier synonyms
 -- ----------------------------------------------------------------------------
    if (( keyvalues["barrier"]   == "chicane"               )  or
        ( keyvalues["barrier"]   == "squeeze"               )  or
@@ -5740,6 +5740,9 @@ function filter_tags_generic(keyvalues, nokeys)
       keyvalues["historic"] = "memorialstone"
    end
 
+-- ----------------------------------------------------------------------------
+-- Ogham stones mapped without other tags
+-- ----------------------------------------------------------------------------
    if ( keyvalues["historic"]   == "ogham_stone" ) then
       keyvalues["historic"] = "oghamstone"
    end
@@ -5790,23 +5793,35 @@ function filter_tags_generic(keyvalues, nokeys)
       keyvalues["historic"] = "massrock"
    end
 
+-- ----------------------------------------------------------------------------
+-- Memorial plates
+-- ----------------------------------------------------------------------------
    if ((  keyvalues["historic"]      == "memorial"  ) and
        (( keyvalues["memorial"]      == "plate"    )  or
         ( keyvalues["memorial:type"] == "plate"    ))) then
       keyvalues["historic"] = "memorialplate"
    end
 
+-- ----------------------------------------------------------------------------
+-- Memorial benches
+-- ----------------------------------------------------------------------------
    if (( keyvalues["historic"]   == "memorial"    ) and
        ( keyvalues["memorial"]   == "bench"       )) then
       keyvalues["historic"] = "memorialbench"
    end
 
+-- ----------------------------------------------------------------------------
+-- Memorial graves and graveyards
+-- ----------------------------------------------------------------------------
    if ((  keyvalues["historic"]   == "memorial"     ) and
        (( keyvalues["memorial"]   == "grave"       )  or
         ( keyvalues["memorial"]   == "graveyard"   ))) then
       keyvalues["historic"] = "memorialgrave"
    end
 
+-- ----------------------------------------------------------------------------
+-- Memorial obelisks
+-- ----------------------------------------------------------------------------
    if ((   keyvalues["man_made"]      == "obelisk"     ) or
        (   keyvalues["landmark"]      == "obelisk"     ) or
        ((  keyvalues["historic"]      == "memorial"   ) and
@@ -5881,6 +5896,9 @@ function filter_tags_generic(keyvalues, nokeys)
       keyvalues["shop"] = "discount"
    end
 
+-- ----------------------------------------------------------------------------
+-- shoe shops
+-- ----------------------------------------------------------------------------
    if (( keyvalues["shop"] == "shoes"        ) or
        ( keyvalues["shop"] == "shoe"         ) or
        ( keyvalues["shop"] == "footwear"     )) then
@@ -5922,7 +5940,6 @@ function filter_tags_generic(keyvalues, nokeys)
 
 -- ----------------------------------------------------------------------------
 -- "electrical" consolidation
--- "security" is less of a fit here.
 -- ----------------------------------------------------------------------------
    if (( keyvalues["shop"]    == "radiotechnics"           ) or
        ( keyvalues["shop"]    == "appliance"               ) or
@@ -5973,6 +5990,9 @@ function filter_tags_generic(keyvalues, nokeys)
       keyvalues["shop"] = "department_store"
    end
 
+-- ----------------------------------------------------------------------------
+-- "catalogue shop" consolidation.
+-- ----------------------------------------------------------------------------
    if ( keyvalues["shop"] == "outpost"  ) then
       keyvalues["shop"] = "catalogue"
    end
@@ -6453,7 +6473,6 @@ function filter_tags_generic(keyvalues, nokeys)
       keyvalues["shop"]    = "garden_centre"
    end
 
-
 -- ----------------------------------------------------------------------------
 -- "fast_food" consolidation of lesser used tags.  
 -- Also render fish and chips etc. with a unique icon.
@@ -6645,6 +6664,9 @@ function filter_tags_generic(keyvalues, nokeys)
       keyvalues["amenity"] = "fast_food_sandwich"
    end
 
+-- ----------------------------------------------------------------------------
+-- Sundials
+-- ----------------------------------------------------------------------------
    if (( keyvalues["amenity"] == "clock"   )  and
        ( keyvalues["display"] == "sundial" )) then
       keyvalues["amenity"] = "sundial"
@@ -6702,6 +6724,9 @@ function filter_tags_generic(keyvalues, nokeys)
       keyvalues["shop"] = "deli"
    end
 
+-- ----------------------------------------------------------------------------
+-- Other money shops
+-- ----------------------------------------------------------------------------
    if (( keyvalues["shop"]    == "money_transfer"      ) or
        ( keyvalues["shop"]    == "finance"             ) or
        ( keyvalues["office"]  == "finance"             ) or
@@ -6748,7 +6773,7 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
--- Various things best rendered as clothes shops
+-- Various not-really-clothes things best rendered as clothes shops
 -- ----------------------------------------------------------------------------
    if (( keyvalues["shop"]    == "tailor"                  ) or
        ( keyvalues["craft"]   == "tailor"                  ) or
@@ -6757,7 +6782,7 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
--- Currently handle beauty salons etc. as just generic.  Also "chemist"
+-- Currently handle beauty salons etc. as just generic beauty.  Also "chemist"
 -- Mostly these have names that describe the business, so less need for a
 -- specific icon.
 -- ----------------------------------------------------------------------------
@@ -6884,10 +6909,16 @@ function filter_tags_generic(keyvalues, nokeys)
       keyvalues["shop"] = "farm"
    end
 
+-- ----------------------------------------------------------------------------
+-- Show pastry shops as bakeries
+-- ----------------------------------------------------------------------------
    if ( keyvalues["shop"] == "pastry" ) then
       keyvalues["shop"] = "bakery"
    end
 
+-- ----------------------------------------------------------------------------
+-- Fresh fish shops
+-- ----------------------------------------------------------------------------
    if ( keyvalues["shop"] == "fish" ) then
       keyvalues["shop"] = "seafood"
    end
@@ -7344,8 +7375,6 @@ function filter_tags_generic(keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
 -- Timpson and similar shops.
 -- Timpson is brand:wikidata=Q7807658, but all of those are name=Timpson.
--- Currently there is no special icon (obviously for actual Timpson shops
--- there is no need).
 -- ----------------------------------------------------------------------------
    if (( keyvalues["shop"]    == "shoe_repair"                        ) or
        ( keyvalues["shop"]    == "keys"                               ) or
@@ -7719,7 +7748,7 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
--- Sometimes lifeboards are mapped in the see separately to the 
+-- Sometimes lifeboats are mapped in the see separately to the 
 -- lifeboat station, and sometimes they're tagged _on_ the lifeboat station.
 -- If the latter, show the lifeboat station.
 -- Also detect lifeboats and coastguards tagged only as seamarks.
@@ -7782,6 +7811,9 @@ function filter_tags_generic(keyvalues, nokeys)
       keyvalues["tourism"]  = nil
    end
 
+-- ----------------------------------------------------------------------------
+-- Ambulance stations
+-- ----------------------------------------------------------------------------
    if (( keyvalues["amenity"]   == "ambulance_station"       ) or
        ( keyvalues["emergency"] == "ambulance_station"       )) then
       keyvalues["landuse"] = "unnamedcommercial"
