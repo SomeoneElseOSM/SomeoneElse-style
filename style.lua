@@ -8277,6 +8277,9 @@ function filter_tags_generic(keyvalues, nokeys)
       keyvalues["tourism"] = nil
    end
 
+-- ----------------------------------------------------------------------------
+-- Clock towers
+-- ----------------------------------------------------------------------------
    if (((  keyvalues["man_made"]   == "tower"        )  and
         (( keyvalues["tower:type"] == "clock"       )   or
          ( keyvalues["building"]   == "clock_tower" )   or
@@ -8297,6 +8300,9 @@ function filter_tags_generic(keyvalues, nokeys)
       keyvalues["tourism"] = nil
    end
 
+-- ----------------------------------------------------------------------------
+-- Aircraft control towers
+-- ----------------------------------------------------------------------------
    if (((  keyvalues["man_made"]   == "tower"             )   and
         (( keyvalues["tower:type"] == "aircraft_control" )    or
          ( keyvalues["service"]    == "aircraft_control" )))  or
@@ -8382,7 +8388,7 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["amenity"]  == nil         )) then
       keyvalues["amenity"] = "drinking_water"
    end
-   
+
 -- ----------------------------------------------------------------------------
 -- man_made=maypole
 -- ----------------------------------------------------------------------------
