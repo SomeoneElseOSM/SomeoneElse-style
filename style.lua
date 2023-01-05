@@ -8425,7 +8425,6 @@ function filter_tags_generic(keyvalues, nokeys)
       keyvalues["amenity"] = nil
    end
 
-
 -- ----------------------------------------------------------------------------
 -- A special case to check before the "vacant shops" check below - potentially
 -- remove disused:amenity=graveyard
@@ -8534,11 +8533,17 @@ function filter_tags_generic(keyvalues, nokeys)
       keyvalues["highway"] = nil
    end
 
+-- ----------------------------------------------------------------------------
+-- Show traffic islands as kerbs
+-- ----------------------------------------------------------------------------
    if (( keyvalues["area:highway"] == "traffic_island" )  or
        ( keyvalues["landuse"]      == "traffic_island" )) then
       keyvalues["barrier"] = "kerb"
    end
 
+-- ----------------------------------------------------------------------------
+-- addr:unit
+-- ----------------------------------------------------------------------------
    if ( keyvalues["addr:unit"] ~= nil ) then
       if ( keyvalues["addr:housenumber"] ~= nil ) then
          keyvalues["addr:housenumber"] = keyvalues["addr:unit"] .. ", " .. keyvalues["addr:housenumber"]
