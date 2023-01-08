@@ -669,7 +669,9 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["designation"] == "unclassified_highway;byway_open_to_all_traffic" ) or 
        ( keyvalues["designation"] == "adopted_highway;public_footpath"                ) or 
        ( keyvalues["designation"] == "tertiary_highway"                               ) or 
-       ( keyvalues["designation"] == "public_road"                                    )) then
+       ( keyvalues["designation"] == "public_road"                                    ) or
+       ( keyvalues["designation"] == "quiet_lane;unclassified_highway"                ) or
+       ( keyvalues["designation"] == "unclassified_highway;quiet_lane"                )) then
       if (( keyvalues["highway"] == "steps"         ) or 
 	  ( keyvalues["highway"] == "intpathnarrow" ) or
 	  ( keyvalues["highway"] == "pathnarrow"    )) then
@@ -736,7 +738,8 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["designation"] == "unknown_byway"                           ) or 
        ( keyvalues["designation"] == "public_way"                              ) or 
        ( keyvalues["designation"] == "tertiary_highway;restricted_byway"       ) or 
-       ( keyvalues["designation"] == "orpa"                                    )) then
+       ( keyvalues["designation"] == "orpa"                                    ) or
+       ( keyvalues["designation"] == "restricted_byway;quiet_lane"             )) then
       if (( keyvalues["highway"] == "steps"         ) or 
 	  ( keyvalues["highway"] == "intpathnarrow" ) or
 	  ( keyvalues["highway"] == "pathnarrow"    )) then
@@ -1026,7 +1029,8 @@ function filter_tags_generic(keyvalues, nokeys)
         ( keyvalues["highway"]     == "unclassified"                      )  or
         ( keyvalues["highway"]     == "residential"                       )) and
        (( keyvalues["designation"] == "quiet_lane"                        )  or
-        ( keyvalues["designation"] == "quiet_lane;unclassified_highway"   ))) then
+        ( keyvalues["designation"] == "quiet_lane;unclassified_highway"   )  or
+        ( keyvalues["designation"] == "unclassified_highway;quiet_lane"   ))) then
       keyvalues["highway"] = "living_street"
    end
 
@@ -1411,7 +1415,7 @@ function filter_tags_generic(keyvalues, nokeys)
 -- some sort of petrol, no diesel" is not a thing in the UK/IE data currently.
 -- Similarly, electric waterway=fuel are charging stations.
 --
--- Show vending machines that sell petrol as vending machines.
+-- Show vending machines that sell petrol as fuel.
 -- One UK/IE example, on an airfield, and "UL91" finds it.
 --
 -- Show aeroway=fuel as amenity=fuel.  All so far in UK/IE are 
@@ -1420,7 +1424,7 @@ function filter_tags_generic(keyvalues, nokeys)
 -- Show waterway=fuel with a "fuel pump on a boat" icon.
 --
 -- Once we've got those out of the way, detect amenity=fuel that also sell
--- electricity.
+-- electricity, hydrogen and LPG.
 -- ----------------------------------------------------------------------------
    if (( keyvalues["amenity"]          == "fuel" ) and
        ( keyvalues["fuel:electricity"] == "yes"  )  and
@@ -2061,7 +2065,6 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["seamark:type"] == "marine_farm"              )) then
       keyvalues["landuse"] = "commercial"
    end
-
 
 -- ----------------------------------------------------------------------------
 -- Shop groups - just treat as retail landuse.
@@ -8400,7 +8403,7 @@ function filter_tags_generic(keyvalues, nokeys)
       keyvalues["man_made"] = "maypole"
       keyvalues["tourism"] = nil
    end
-   
+
 -- ----------------------------------------------------------------------------
 -- highway=streetlamp
 -- ----------------------------------------------------------------------------
