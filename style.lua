@@ -2099,10 +2099,12 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
--- Show skate parks etc. (that aren't skate shops) as pitches.
+-- Show skate parks etc. (that aren't skate shops, or some other leisure 
+-- already) as pitches.
 -- ----------------------------------------------------------------------------
-   if (( keyvalues["sport"] == "skateboard" ) and
-       ( keyvalues["shop"]  == nil          )) then
+   if (( keyvalues["sport"]    == "skateboard" ) and
+       ( keyvalues["shop"]     == nil          ) and
+       ( keyvalues["leisure"]  == nil          )) then
       keyvalues["leisure"] = "pitch"
    end
 
