@@ -1,6 +1,11 @@
 # Changes made to this rendering
 This page describes changes made [here](https://github.com/SomeoneElseOSM/SomeoneElse-style), [here](https://github.com/SomeoneElseOSM/SomeoneElse-style-legend) and [here](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT), and visible [here](//map.atownsend.org.uk/maps/map/map.html).
 
+## AS yet unreleased
+Added more quiet lane combinations in the "designation" tag where that is processed, both to turn quiet lane roads into living streets, and to use the correct colouring for the other designation (byway etc.).
+Tidied up comments a bit so that everything that matches the "mkgmap" equivalent of the code can be found easily.
+Added support for "emergency_service=air" to detect more coastguard infrastructure.
+
 ## 04/01/2023
 Update taginfo.json with all missing values from all remaining .mss files: buildings.mss, amenity-symbols.mss, stations.mss, ferry-routes.mss, aerialways.mss, admin.mss, addressing.mss.
 Changed update_render.sh and make_gis3_live.sh so that styling changes as well as database changes are held off until gis3 is made live.

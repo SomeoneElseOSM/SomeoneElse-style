@@ -4112,7 +4112,8 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
--- Motorcycle parking
+-- Motorcycle parking - if "motorcycle" has been used as a subtag,
+-- set main tag.  Rendering (with fee or not) is handled below.
 -- ----------------------------------------------------------------------------
    if (( keyvalues["amenity"] == "parking"    )  and
        ( keyvalues["parking"] == "motorcycle" )) then
