@@ -8276,6 +8276,12 @@ function filter_tags_generic(keyvalues, nokeys)
       keyvalues["aeroway"] = nil
    end
 
+   if (( keyvalues["aeroway"] == "taxiway"  ) and
+       ( keyvalues["surface"] == "grass"    )) then
+      keyvalues["highway"] = "track"
+      keyvalues["aeroway"] = nil
+   end
+
 
 -- ----------------------------------------------------------------------------
 -- Render airport parking positions as gates.

@@ -7,6 +7,7 @@ Tidied up comments a bit so that everything that matches the "mkgmap" equivalent
 Added support for "emergency_service=air" to detect more coastguard infrastructure.
 If a skate park has a leisure tag already, don't reset it.
 Render icons for some sports pitches - especially useful where they are just mapped as a node (e.g. Table Tennis).
+Show grass taxiways as tracks.
 
 ## 04/01/2023
 Update taginfo.json with all missing values from all remaining .mss files: buildings.mss, amenity-symbols.mss, stations.mss, ferry-routes.mss, aerialways.mss, admin.mss, addressing.mss.
