@@ -375,13 +375,25 @@ function filter_tags_generic(keyvalues, nokeys)
    end
  
 -- ----------------------------------------------------------------------------
--- Rationalise the various trail_visibility values
--- Also treat "overgrown=yes" as intermittent.  A discussion on talk-gb was
+-- Rationalise the various trail_visibility values into 3 sets
+-- (no value)    Implied good trail visibility.
+--               
+-- intermediate  Less trail visibility.  Shown with wider gaps in dotted line
+-- bad           Even less trail visibility.  Shown with wider gaps or not shown
+--               (depending on designation).
+--
+-- "trail_visibility=unknown" is treated as "good" since it's been mapped 
+-- from aerial imagery.  It's not explicitly referenced below.
+--
+-- "trail_visibility=low" is treated as "intermediate" based on looking at 
+-- the use in OSM.
+--
+-- Also treat "overgrown=yes" as "intermediate".  A discussion on talk-gb was
 -- largely inconclusive, but "overgrown" is the "most renderable" way to deal
 -- with things like this.  A later suggestion "foot:physical=no" is also 
 -- included.
--- "informal=yes" is less common in the UK but tends to crop up where land
--- managers worry about "official" paths (e.g. the US).
+--
+-- "informal=yes" was less common in the UK (but is becoming more so).
 -- ----------------------------------------------------------------------------
    if (( keyvalues["trail_visibility"] == "no"       )  or
        ( keyvalues["trail_visibility"] == "none"     )  or
@@ -394,8 +406,10 @@ function filter_tags_generic(keyvalues, nokeys)
       keyvalues["trail_visibility"] = "bad"
    end
 
-   if ((  keyvalues["trail_visibility"] == "intermittent"  ) or
-       (  keyvalues["trail_visibility"] == "intermediate"  ) or
+   if ((  keyvalues["trail_visibility"] == "intermediate"  ) or
+       (  keyvalues["trail_visibility"] == "intermittent"  ) or
+       (  keyvalues["trail_visibility"] == "medium"        ) or
+       (  keyvalues["trail_visibility"] == "low"           ) or
        (  keyvalues["overgrown"]        == "yes"           ) or
        (  keyvalues["obstacle"]         == "vegetation"    ) or
        (( keyvalues["trail_visibility"] == nil            )  and
