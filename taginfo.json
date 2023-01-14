@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20230114T115600Z",
+  "data_updated": "20230114T130200Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -1589,6 +1589,7 @@
     { "key": "memorial", "value": "mercat_cross", "description": "Rendered as memorial cross" },
     { "key": "memorial", "value": "obelisk", "description": "Rendered as memorial obelisk" },
     { "key": "memorial", "value": "pavement plaque", "description": "Rendered as memorial pavement plaque" },
+    { "key": "memorial", "value": "pavement_plaque", "description": "Rendered as memorial pavement plaque" },
     { "key": "memorial", "value": "plaque", "description": "Rendered as memorial plaque" },
     { "key": "memorial", "value": "plate", "description": "Rendered as memorial plate" },
     { "key": "memorial", "value": "sculpture", "description": "Rendered as memorial sculpture" },

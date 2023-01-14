@@ -9,6 +9,7 @@ If a skate park has a leisure tag already, don't reset it.
 Render icons for some sports pitches - especially useful where they are just mapped as a node (e.g. Table Tennis).
 Show grass taxiways as tracks.
 Treat "trail_visibility=medium" as "intermediate" and improve taginfo documentation on other "trail_visbility" synonyms.
+Add "memorial=pavement_plaque" support to match the more common (in UK/IE) "memorial=pavement plaque".
 
 ## 04/01/2023
 Update taginfo.json with all missing values from all remaining .mss files: buildings.mss, amenity-symbols.mss, stations.mss, ferry-routes.mss, aerialways.mss, admin.mss, addressing.mss.

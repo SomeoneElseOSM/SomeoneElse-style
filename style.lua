@@ -5792,8 +5792,9 @@ function filter_tags_generic(keyvalues, nokeys)
       keyvalues["historic"] = "memorialplaque"
    end
 
-   if (( keyvalues["historic"]   == "memorial"        ) and
-       ( keyvalues["memorial"]   == "pavement plaque" )) then
+   if ((  keyvalues["historic"]   == "memorial"         ) and
+       (( keyvalues["memorial"]   == "pavement plaque" )  or
+        ( keyvalues["memorial"]   == "pavement_plaque" ))) then
       keyvalues["historic"] = "memorialpavementplaque"
    end
 
