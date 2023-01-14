@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20230114T130200Z",
+  "data_updated": "20230114T235400Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -772,7 +772,6 @@
     { "key": "cuisine", "value": "kebab;burger", "description": "Shown as fast food place that servers kebabs or similar food" },
     { "key": "cuisine", "value": "kebab;fish_and_chips", "description": "Shown as fast food place that servers kebabs or similar food" },
     { "key": "cuisine", "value": "turkish", "description": "Shown as fast food place that servers kebabs or similar food" },
-    { "key": "cuisine", "value": "pastie", "description": "Shown as fast food place that servers pies or similar" },
     { "key": "cuisine", "value": "pasties", "description": "Shown as fast food place that servers pies or similar" },
     { "key": "cuisine", "value": "pasty", "description": "Shown as fast food place that servers pies or similar" },
     { "key": "cuisine", "value": "cornish_pasty", "description": "Shown as fast food place that servers pies or similar" },

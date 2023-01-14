@@ -6723,8 +6723,7 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
    if ((  keyvalues["amenity"] == "fast_food"      )  and
-       (( keyvalues["cuisine"] == "pastie"        )   or
-        ( keyvalues["cuisine"] == "pasties"       )   or
+       (( keyvalues["cuisine"] == "pasties"       )   or
         ( keyvalues["cuisine"] == "pasty"         )   or
         ( keyvalues["cuisine"] == "cornish_pasty" )   or
         ( keyvalues["cuisine"] == "pie"           )   or
