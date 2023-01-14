@@ -1,6 +1,22 @@
 #!/bin/bash
 # -----------------------------------------------------------------------------
 # make_gis3_live.sh
+#
+# Copyright (C) 2018-2023  Andy Townsend
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <https://www.gnu.org/licenses/>.
+# -----------------------------------------------------------------------------
 # Designed to be used after update_render.sh has loaded some new data into
 # gis3, while gis is still live, and the tiles based on gis3 have been tested.
 # -----------------------------------------------------------------------------
