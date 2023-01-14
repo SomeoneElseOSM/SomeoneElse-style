@@ -4292,6 +4292,8 @@ function filter_tags_generic(keyvalues, nokeys)
 
 -- ----------------------------------------------------------------------------
 -- Playground stuff
+-- The "leisure=nil" check here is because there are some unusual combinations
+-- of "playground" tags on otherwise-rendered "leisure" things.
 -- ----------------------------------------------------------------------------
    if ((  keyvalues["leisure"]    == nil            )  and
        (( keyvalues["playground"] == "swing"       )   or
@@ -4309,29 +4311,79 @@ function filter_tags_generic(keyvalues, nokeys)
       keyvalues["amenity"] = "playground_climbingframe"
    end
 
-   if (( keyvalues["leisure"]    == nil             )  and
+   if (( keyvalues["leisure"]    == nil     )  and
        ( keyvalues["playground"] == "slide" )) then
       keyvalues["amenity"] = "playground_slide"
    end
 
-   if (( keyvalues["leisure"]    == nil             )  and
+   if (( keyvalues["leisure"]    == nil       )  and
        ( keyvalues["playground"] == "springy" )) then
       keyvalues["amenity"] = "playground_springy"
    end
 
-   if (( keyvalues["leisure"]    == nil             )  and
+   if (( keyvalues["leisure"]    == nil       )  and
        ( keyvalues["playground"] == "zipwire" )) then
       keyvalues["amenity"] = "playground_zipwire"
    end
 
-   if (( keyvalues["leisure"]    == nil             )  and
+   if (( keyvalues["leisure"]    == nil      )  and
        ( keyvalues["playground"] == "seesaw" )) then
       keyvalues["amenity"] = "playground_seesaw"
    end
 
-   if (( keyvalues["leisure"]    == nil             )  and
+   if (( keyvalues["leisure"]    == nil          )  and
        ( keyvalues["playground"] == "roundabout" )) then
       keyvalues["amenity"] = "playground_roundabout"
+   end
+
+-- ----------------------------------------------------------------------------
+-- Various leisure=pitch icons
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["leisure"] == "pitch"        )  and
+       ( keyvalues["sport"]   == "table_tennis" )) then
+      keyvalues["amenity"] = "pitch_tabletennis"
+   end
+
+   if (( keyvalues["leisure"] == "pitch"  )  and
+       ( keyvalues["sport"]   == "soccer" )) then
+      keyvalues["amenity"] = "pitch_soccer"
+   end
+
+   if (( keyvalues["leisure"] == "pitch"      )  and
+       ( keyvalues["sport"]   == "basketball" )) then
+      keyvalues["amenity"] = "pitch_basketball"
+   end
+
+   if (( keyvalues["leisure"] == "pitch"   )  and
+       ( keyvalues["sport"]   == "cricket" )) then
+      keyvalues["amenity"] = "pitch_cricket"
+   end
+
+   if (( keyvalues["leisure"] == "pitch"      )  and
+       ( keyvalues["sport"]   == "skateboard" )) then
+      keyvalues["amenity"] = "pitch_skateboard"
+   end
+
+   if (( keyvalues["leisure"] == "pitch"    )  and
+       ( keyvalues["sport"]   == "climbing" )) then
+      keyvalues["amenity"] = "pitch_climbing"
+   end
+
+   if ((  keyvalues["leisure"] == "pitch"         )  and
+       (( keyvalues["sport"]   == "rugby_union"  )   or
+        ( keyvalues["sport"]   == "rugby_league" )   or
+        ( keyvalues["sport"]   == "rugby"        ))) then
+      keyvalues["amenity"] = "pitch_rugby"
+   end
+
+   if (( keyvalues["leisure"] == "pitch" )  and
+       ( keyvalues["sport"]   == "chess" )) then
+      keyvalues["amenity"] = "pitch_chess"
+   end
+
+   if (( keyvalues["leisure"] == "pitch"  )  and
+       ( keyvalues["sport"]   == "tennis" )) then
+      keyvalues["amenity"] = "pitch_tennis"
    end
 
 -- ----------------------------------------------------------------------------
