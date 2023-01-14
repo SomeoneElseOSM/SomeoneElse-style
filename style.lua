@@ -2357,8 +2357,12 @@ function filter_tags_generic(keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
    if (( keyvalues["amenity"]   == "pub"   ) and
        ( keyvalues["tourism"]   ~= nil     )) then
-      if (( keyvalues["tourism"]   == "hotel"       ) or
-          ( keyvalues["tourism"]   == "guest_house" )) then
+      if (( keyvalues["tourism"]   == "hotel"             ) or
+          ( keyvalues["tourism"]   == "guest_house"       ) or
+          ( keyvalues["tourism"]   == "bed_and_breakfast" ) or
+          ( keyvalues["tourism"]   == "chalet"            ) or
+          ( keyvalues["tourism"]   == "hostel"            ) or
+          ( keyvalues["tourism"]   == "motel"             )) then
          keyvalues["accommodation"] = "yes"
       end
 
