@@ -5702,16 +5702,17 @@ function filter_tags_generic(keyvalues, nokeys)
 -- Deliberately only use this for outdoor features that would not otherwise
 -- display, so not cliffs etc.
 -- ----------------------------------------------------------------------------
-   if (( keyvalues["sport"]    == "climbing"      ) and
-       ( keyvalues["natural"]  ~= "peak"          ) and
-       ( keyvalues["natural"]  ~= "cliff"         ) and
-       ( keyvalues["leisure"]  ~= "sports_centre" ) and
-       ( keyvalues["leisure"]  ~= "climbing_wall" ) and
-       ( keyvalues["shop"]     ~= "sports"        ) and
-       ( keyvalues["tourism"]  ~= "attraction"    ) and
-       ( keyvalues["building"] == nil             ) and
-       ( keyvalues["man_made"] ~= "tower"         ) and
-       ( keyvalues["barrier"]  ~= "wall"          )) then
+   if (( keyvalues["sport"]    == "climbing"       ) and
+       ( keyvalues["natural"]  ~= "peak"           ) and
+       ( keyvalues["natural"]  ~= "cliff"          ) and
+       ( keyvalues["leisure"]  ~= "sports_centre"  ) and
+       ( keyvalues["leisure"]  ~= "climbing_wall"  ) and
+       ( keyvalues["shop"]     ~= "sports"         ) and
+       ( keyvalues["tourism"]  ~= "attraction"     ) and
+       ( keyvalues["building"] == nil              ) and
+       ( keyvalues["man_made"] ~= "tower"          ) and
+       ( keyvalues["barrier"]  ~= "wall"           ) and
+       ( keyvalues["amenity"]  ~= "pitch_climbing" )) then
       keyvalues["natural"] = "climbing"
    end
 
