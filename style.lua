@@ -4754,14 +4754,11 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["historic"] == "ruins"             ) or
        ( keyvalues["historic"] == "fort"              ) or
        ( keyvalues["historic"] == "earthworks"        ) or
-       ( keyvalues["historic"] == "motte"             ) or
        ( keyvalues["historic"] == "barrow"            ) or
        ( keyvalues["historic"] == "tumulus"           ) or
        ( keyvalues["historic"] == "tomb"              ) or
        ( keyvalues["historic"] == "fortification"     ) or
        ( keyvalues["historic"] == "camp"              ) or
-       ( keyvalues["historic"] == "menhir"            ) or
-       ( keyvalues["historic"] == "stone_circle"      ) or
        ( keyvalues["historic"] == "castle"            ) or
        ( keyvalues["historic"] == "mill"              ) or
        ( keyvalues["historic"] == "mound"             ) or
@@ -6010,7 +6007,6 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["shop"] == "vintage"      ) or
        ( keyvalues["shop"] == "bridal"       ) or
        ( keyvalues["shop"] == "wedding"      ) or
-       ( keyvalues["shop"] == "lingerie"     ) or
        ( keyvalues["shop"] == "baby_goods"   ) or
        ( keyvalues["shop"] == "baby"         ) or
        ( keyvalues["shop"] == "dance"        ) or
@@ -6851,7 +6847,6 @@ function filter_tags_generic(keyvalues, nokeys)
    if (( keyvalues["shop"]   == "golf"              ) or
        ( keyvalues["shop"]   == "scuba_diving"      ) or
        ( keyvalues["shop"]   == "water_sports"      ) or
-       ( keyvalues["shop"]   == "watersports"       ) or
        ( keyvalues["shop"]   == "fishing"           ) or
        ( keyvalues["shop"]   == "fishing_tackle"    ) or
        ( keyvalues["shop"]   == "angling"           ) or
@@ -7174,7 +7169,6 @@ function filter_tags_generic(keyvalues, nokeys)
 -- Various single food item and other food shops
 -- ----------------------------------------------------------------------------
    if (( keyvalues["shop"]    == "cake"            ) or
-       ( keyvalues["shop"]    == "cakes"           ) or
        ( keyvalues["shop"]    == "chocolate"       ) or
        ( keyvalues["shop"]    == "milk"            ) or
        ( keyvalues["shop"]    == "cheese"          ) or
