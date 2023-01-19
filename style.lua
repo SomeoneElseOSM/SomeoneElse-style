@@ -2275,7 +2275,6 @@ function filter_tags_generic(keyvalues, nokeys)
   if ((( keyvalues["landuse"]   == "forest"     )  and
        ( keyvalues["leaf_type"] ~= nil          )) or
       (  keyvalues["natural"]   == "forest"      ) or
-      (  keyvalues["landuse"]   == "wood"        ) or
       (  keyvalues["landcover"] == "trees"       ) or
       (( keyvalues["natural"]   == "tree_group" )  and
        ( keyvalues["landuse"]   == nil          )  and

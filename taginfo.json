@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20230118T132700Z",
+  "data_updated": "20230119T224600Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -1377,7 +1377,6 @@
     { "key": "landuse", "value": "traffic_island", "description": "All sorts of landuse" },
     { "key": "landuse", "value": "village_green", "description": "All sorts of landuse" },
     { "key": "landuse", "value": "vineyard", "description": "Shown as vineyard" },
-    { "key": "landuse", "value": "wood", "description": "All sorts of landuse" },
     { "key": "layer", "description": "Invalid layer info either changed to something plausible or removed" },
     { "key": "lcn_ref", "description": "Local cycle network ref" },
     { "key": "leaf_type", "description": "Different sorts of trees" },
