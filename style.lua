@@ -949,7 +949,6 @@ function filter_tags_generic(keyvalues, nokeys)
       keyvalues["highway"] = "rbynarrow"
    end
 
-
 -- ----------------------------------------------------------------------------
 -- Try and detect genuinely closed public footpaths, bridleways (not just those
 -- closed to motor traffic etc.).  Examples with "access=no/private" are
@@ -4544,7 +4543,8 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
--- Display "waterway=mill_pond" as dock.
+-- Handle "waterway=mill_pond" as water.
+-- "dock" is displayed with a water fill.
 -- ----------------------------------------------------------------------------
    if ( keyvalues["waterway"] == "mill_pond" ) then
       keyvalues["waterway"] = "dock"
