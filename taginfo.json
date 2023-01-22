@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20230119T224600Z",
+  "data_updated": "20230122T111400Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -1252,8 +1252,6 @@
     { "key": "historic:name", "description": "Name of derelict canals" },
     { "key": "historic:railway", "description": "Detect historic railway stations" },
     { "key": "historic:railway", "value": "station", "description": "Detect historic railway stations" },
-    { "key": "historic:stone", "description": "Potentially used to identify standing and Ogham stones" },
-    { "key": "historic:stone", "value": "standing_stone", "description": "Potentially used to identify standing and Ogham stones" },
     { "key": "historic:waterway", "description": "Detect derelict canals" },
     { "key": "historic:waterway", "value": "canal", "description": "Detect derelict canals" },
     { "key": "horse", "description": "Horse access permission" },

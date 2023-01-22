@@ -4588,9 +4588,9 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
--- Display pipelines as waterways
---
--- There is explicit bridge handling for waterways.
+-- Pipelines
+-- We display pipelines as waterways, because 
+-- there is explicit bridge handling for waterways.
 -- ----------------------------------------------------------------------------
    if ( keyvalues["man_made"] == "pipeline" ) then
       keyvalues["man_made"] = nil
@@ -5859,11 +5859,7 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
    if ( keyvalues["historic"]   == "stone" ) then
-      if ( keyvalues["historic:stone"]   == "standing_stone" ) then
-         keyvalues["historic"] = "historicstandingstone"
-      else
-         keyvalues["historic"] = "historicstone"
-      end
+      keyvalues["historic"] = "historicstone"
    end
 
    if ((   keyvalues["historic"]            == "standing_stone"        ) or
