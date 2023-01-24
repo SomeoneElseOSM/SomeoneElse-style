@@ -6948,8 +6948,7 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
--- gift and other tat shops are rendered generically
--- Difficult to do an icon for and often the name describes the business.
+-- gift and other tat shops
 -- ----------------------------------------------------------------------------
    if (( keyvalues["shop"]   == "souvenir"            ) or
        ( keyvalues["shop"]   == "souvenirs"           ) or
