@@ -7071,7 +7071,7 @@ function filter_tags_generic(keyvalues, nokeys)
 
 -- ----------------------------------------------------------------------------
 -- Other "homeware-like" shops.  These, e.g. chandlery, that are a bit of a
--- stretch get the shopnonspecific icon.
+-- stretch get the furniture icon.
 -- Add unnamedcommercial landuse to give non-building areas a background.
 -- ----------------------------------------------------------------------------
    if (( keyvalues["shop"]   == "upholsterer"                 ) or
@@ -7492,7 +7492,7 @@ function filter_tags_generic(keyvalues, nokeys)
 
 -- ----------------------------------------------------------------------------
 -- Other shops that don't have a specific icon are handled here. including
--- variations (for example "shoes" is more popular by far than "shoe").
+-- variations.
 --
 -- Shops are in this list either because they tend to have a characteristic
 -- name (e.g. the various card shops), they're difficult to do an icon for
