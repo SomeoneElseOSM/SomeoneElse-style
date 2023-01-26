@@ -7136,7 +7136,6 @@ function filter_tags_generic(keyvalues, nokeys)
       keyvalues["shop"] = "coffee"
    end
 
-
 -- ----------------------------------------------------------------------------
 -- Copyshops
 -- ----------------------------------------------------------------------------
@@ -7351,7 +7350,7 @@ function filter_tags_generic(keyvalues, nokeys)
 -- Shopmobility
 -- Note that "shop=mobility" is something that _sells_ mobility aids, and is
 -- handled as shop=nonspecific for now.
--- We handle some specific cases of shop=mobility here; the reset below.
+-- We handle some specific cases of shop=mobility here; the rest below.
 -- ----------------------------------------------------------------------------
    if ((   keyvalues["amenity"]  == "mobility"                 ) or
        (   keyvalues["amenity"]  == "mobility_equipment_hire"  ) or
