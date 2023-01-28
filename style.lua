@@ -7996,7 +7996,11 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["amenity"]     == "monastery"               ) or
        ( keyvalues["amenity"]     == "convent"                 ) or
        ( keyvalues["amenity"]     == "music_school"            ) or
-       ( keyvalues["amenity"]     == "cooking_school"          )) then
+       ( keyvalues["amenity"]     == "cooking_school"          ) or
+       ( keyvalues["craft"]       == "electrician"             ) or
+       ( keyvalues["craft"]       == "electrician;plumber"     ) or
+       ( keyvalues["office"]      == "electrician"             ) or
+       ( keyvalues["shop"]        == "electrician"             )) then
       keyvalues["landuse"] = "unnamedcommercial"
       keyvalues["office"] = "nonspecific"
    end

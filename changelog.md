@@ -1,6 +1,9 @@
 # Changes made to this rendering
 This page describes changes made [here](https://github.com/SomeoneElseOSM/SomeoneElse-style), [here](https://github.com/SomeoneElseOSM/SomeoneElse-style-legend) and [here](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT), and visible [here](//map.atownsend.org.uk/maps/map/map.html).
 
+## As yet unreleased
+Support various keys with an "electrician" value as offices.
+
 ## 14/01/2023
 Added more quiet lane combinations in the "designation" tag where that is processed, both to turn quiet lane roads into living streets, and to use the correct colouring for the other designation (byway etc.).
 Tidied up comments a bit so that everything that matches the "mkgmap" equivalent of the code can be found easily.
