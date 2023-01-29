@@ -7585,7 +7585,6 @@ function filter_tags_generic(keyvalues, nokeys)
       keyvalues["shop"]    = "funeral_directors"
    end
 
-
 -- ----------------------------------------------------------------------------
 -- Shops that we don't know the type of.  Things such as "hire" are here 
 -- because we don't know "hire of what".
