@@ -7380,7 +7380,8 @@ function filter_tags_generic(keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
    if (( keyvalues["shop"]    == "motorcycle_repair"            ) or
        ( keyvalues["shop"]    == "motorcycle_parts"             ) or
-       ( keyvalues["amenity"] == "motorcycle_rental"            )) then
+       ( keyvalues["amenity"] == "motorcycle_rental"            ) or
+       ( keyvalues["shop"]    == "atv"                          )) then
       keyvalues["shop"] = "motorcycle"
    end
 
