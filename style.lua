@@ -299,8 +299,9 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
    if ((( keyvalues["highway"] == "motorway_junction"  ) and
-        ( keyvalues["name:signed"] == "no"            ) or
-        ( keyvalues["unsigned"]    == "yes"           ))) then
+        ( keyvalues["name:signed"] == "no"            )  or
+        ( keyvalues["unsigned"]    == "yes"           )  or
+        ( keyvalues["unsigned"]    == "name"          ))) then
       keyvalues["name"] = nil
       keyvalues["name:signed"] = nil
    end
@@ -332,11 +333,13 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["highway"] == "path"              ) or
        ( keyvalues["highway"] == "intpathnarrow"     )) then
       if ( keyvalues["name"] == nil   ) then
-         if (( keyvalues["ref"]        ~= nil  ) and
-             ( keyvalues["ref:signed"] == "no" )) then
+         if ((  keyvalues["ref"]        ~= nil    )  and
+             (( keyvalues["ref:signed"] == "no"  )   or
+              ( keyvalues["unsigned"]   == "ref" ))) then
             keyvalues["name"]       = "(" .. keyvalues["ref"] .. ")"
             keyvalues["ref"]        = nil
             keyvalues["ref:signed"] = nil
+            keyvalues["unsigned"]   = nil
 	 else
             if ( keyvalues["official_ref"] ~= nil  ) then
                keyvalues["name"]         = "(" .. keyvalues["official_ref"] .. ")"
@@ -345,17 +348,20 @@ function filter_tags_generic(keyvalues, nokeys)
          end
       else
          if (( keyvalues["name:signed"] == "no"   ) or
-             ( keyvalues["unsigned"]    == "yes"  )) then
+             ( keyvalues["unsigned"]    == "yes"  ) or
+             ( keyvalues["unsigned"]    == "name" )) then
             keyvalues["name"] = "(" .. keyvalues["name"]
             keyvalues["name:signed"] = nil
 
-            if ( keyvalues["ref:signed"] == "no" ) then
+            if (( keyvalues["ref:signed"] == "no"  ) or
+                ( keyvalues["unsigned"]   == "ref" )) then
                if ( keyvalues["ref"] ~= nil ) then
                   keyvalues["name"]       = keyvalues["name"] .. ", " .. keyvalues["ref"]
                end
 
                keyvalues["ref"]        = nil
                keyvalues["ref:signed"] = nil
+               keyvalues["unsigned"]   = nil
             else
                if ( keyvalues["official_ref"] ~= nil  ) then
                   keyvalues["name"]         = keyvalues["name"] .. ", " .. keyvalues["official_ref"]
@@ -365,11 +371,13 @@ function filter_tags_generic(keyvalues, nokeys)
 
             keyvalues["name"] = keyvalues["name"] .. ")"
          else
-            if (( keyvalues["ref"]        ~= nil  ) and
-                ( keyvalues["ref:signed"] == "no" )) then
+            if ((  keyvalues["ref"]        ~= nil    ) and
+                (( keyvalues["ref:signed"] == "no"  ) or
+                 ( keyvalues["unsigned"]   == "ref" ))) then
                keyvalues["name"]       = keyvalues["name"] .. " (" .. keyvalues["ref"] .. ")"
                keyvalues["ref"]        = nil
                keyvalues["ref:signed"] = nil
+               keyvalues["unsigned"]   = nil
             else
                if ( keyvalues["official_ref"] ~= nil  ) then
                   keyvalues["name"]         = keyvalues["name"] .. " (" .. keyvalues["official_ref"] .. ")"
@@ -8971,7 +8979,8 @@ function filter_tags_relation_member (keyvalues, keyvaluemembers, roles, memberc
           ( keyvalues["highway"] == "ldpnhn" )) then
          if ((  keyvalues["name"]        ~= nil     ) and
              (( keyvalues["name:signed"] == "no"   )  or
-              ( keyvalues["unsigned"]    == "yes"  ))) then
+              ( keyvalues["unsigned"]    == "yes"  )  or
+              ( keyvalues["unsigned"]    == "name" ))) then
             keyvalues["name"] = nil
             keyvalues["name:signed"] = nil
             keyvalues["highway"] = nil
@@ -8982,6 +8991,7 @@ function filter_tags_relation_member (keyvalues, keyvaluemembers, roles, memberc
               ( keyvalues["unsigned"]   == "yes"  ))) then
             keyvalues["ref"] = nil
             keyvalues["ref:signed"] = nil
+            keyvalues["unsigned"] = nil
             keyvalues["highway"] = nil
          end
       end
