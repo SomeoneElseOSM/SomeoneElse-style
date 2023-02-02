@@ -5000,8 +5000,10 @@ function filter_tags_generic(keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
 -- Suppress Underground railway platforms
 -- ----------------------------------------------------------------------------
-   if (( keyvalues["railway"]  == "platform"    ) and
-       ( keyvalues["location"] == "underground" )) then
+   if ((  keyvalues["railway"]     == "platform"     ) and
+       (( keyvalues["location"]    == "underground" )  or
+        ( keyvalues["underground"] == "yes"         )  or
+        (( tonumber(keyvalues["layer"]) or 0 ) <  0 ))) then
       keyvalues["railway"] = nil
    end
 
