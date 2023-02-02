@@ -2131,9 +2131,11 @@ function filter_tags_generic(keyvalues, nokeys)
 -- leisure=dog_park is used a few times.  Map to pitch to differentiate from
 -- underlying park.
 -- Also "court" often means "pitch" (tennis, basketball).
+-- "cricket_nets" is an oddity.  See https://lists.openstreetmap.org/pipermail/tagging/2023-January/thread.html#66908 .
 -- ----------------------------------------------------------------------------
-   if (( keyvalues["leisure"] == "dog_park" ) or
-       ( keyvalues["leisure"] == "court"    )) then
+   if (( keyvalues["leisure"] == "dog_park"     ) or
+       ( keyvalues["leisure"] == "court"        ) or
+       ( keyvalues["sport"]   == "cricket_nets" )) then
       keyvalues["leisure"] = "pitch"
    end
 
@@ -4396,8 +4398,9 @@ function filter_tags_generic(keyvalues, nokeys)
       keyvalues["amenity"] = "pitch_basketball"
    end
 
-   if (( keyvalues["leisure"] == "pitch"   )  and
-       ( keyvalues["sport"]   == "cricket" )) then
+   if ((  keyvalues["leisure"] == "pitch"         )  and
+       (( keyvalues["sport"]   == "cricket"      )   or
+        ( keyvalues["sport"]   == "cricket_nets" ))) then
       keyvalues["amenity"] = "pitch_cricket"
    end
 

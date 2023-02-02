@@ -2584,6 +2584,7 @@
     { "key": "sport", "value": "chess", "description": "Show icon on sports pitches" },
     { "key": "sport", "value": "climbing", "description": "Show icon on sports pitches.  Also used to classify and clarify many other tags" },
     { "key": "sport", "value": "cricket", "description": "Show icon on sports pitches" },
+    { "key": "sport", "value": "cricket_nets", "description": "Shown as pitch, also icon on sports pitches" },
     { "key": "sport", "value": "equestrian", "description": "Detect linear equestrian gallops" },
     { "key": "sport", "value": "golf", "description": "Used to classify and clarify many other tags" },
     { "key": "sport", "value": "horse_racing", "description": "Detect linear equestrian gallops" },
