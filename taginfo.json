@@ -2727,7 +2727,6 @@
     { "key": "tunnel", "value": "passage", "description": "Detect tunnels" },
     { "key": "tunnel", "value": "ventilation_shaft", "description": "Detect tunnels" },
     { "key": "tunnel", "value": "yes", "description": "Detect tunnels" },
-    { "key": "tunnel_name", "description": "Used in place of name on tunnels" },
     { "key": "tunnel:name", "description": "Used in place of name on tunnels" },
     { "key": "type", "description": "Used in relation type filtering" },
     { "key": "type", "value": "route", "description": "Used in relation type filtering" },
