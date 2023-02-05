@@ -8,6 +8,7 @@ Handle "unsigned=name" and "unsigned=ref" as equivalents of "name:signed=no" and
 Don't render underground railway station platforms as if they are not underground, if they are tagged as "underground=yes" or "layer=negative".  The latter isn't supposed to be only relative, but effectively does describe overground/underground.
 Include "sport=cricket_nets" among cricket pitches.
 Include "leisure=practice_pitch" among sports pitches.
+Show "shop=winery" and "tourism=wine_cellar" as alcohol shops.
 
 ## 14/01/2023
 Added more quiet lane combinations in the "designation" tag where that is processed, both to turn quiet lane roads into living streets, and to use the correct colouring for the other designation (byway etc.).
