@@ -5549,7 +5549,8 @@ function filter_tags_generic(keyvalues, nokeys)
         ( keyvalues["barrier"]    == "embankment"    )  or
         ( keyvalues["man_made"]   == "dyke"          )  or
         ( keyvalues["man_made"]   == "levee"         )  or
-        ( keyvalues["embankment"] == "yes"           )) and
+        ( keyvalues["embankment"] == "yes"           )  or
+        ( keyvalues["barrier"]    == "berm"          )) and
        (( keyvalues["highway"]    == nil             )  or
         ( keyvalues["highway"]    == "badpathwide"   )  or
         ( keyvalues["highway"]    == "badpathnarrow" )) and

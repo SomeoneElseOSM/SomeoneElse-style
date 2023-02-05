@@ -9,6 +9,7 @@ Don't render underground railway station platforms as if they are not undergroun
 Include "sport=cricket_nets" among cricket pitches.
 Include "leisure=practice_pitch" among sports pitches.
 Show "shop=winery" and "tourism=wine_cellar" as alcohol shops.
+Include "barrier=berm" among the list of "non-highway embankments".
 
 ## 14/01/2023
 Added more quiet lane combinations in the "designation" tag where that is processed, both to turn quiet lane roads into living streets, and to use the correct colouring for the other designation (byway etc.).
