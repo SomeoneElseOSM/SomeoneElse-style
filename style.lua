@@ -2133,9 +2133,10 @@ function filter_tags_generic(keyvalues, nokeys)
 -- Also "court" often means "pitch" (tennis, basketball).
 -- "cricket_nets" is an oddity.  See https://lists.openstreetmap.org/pipermail/tagging/2023-January/thread.html#66908 .
 -- ----------------------------------------------------------------------------
-   if (( keyvalues["leisure"] == "dog_park"     ) or
-       ( keyvalues["leisure"] == "court"        ) or
-       ( keyvalues["sport"]   == "cricket_nets" )) then
+   if (( keyvalues["leisure"] == "dog_park"       ) or
+       ( keyvalues["leisure"] == "court"          ) or
+       ( keyvalues["sport"]   == "cricket_nets"   ) or
+       ( keyvalues["leisure"] == "practice_pitch" )) then
       keyvalues["leisure"] = "pitch"
    end
 
