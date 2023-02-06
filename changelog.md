@@ -1,7 +1,7 @@
 # Changes made to this rendering
 This page describes changes made [here](https://github.com/SomeoneElseOSM/SomeoneElse-style), [here](https://github.com/SomeoneElseOSM/SomeoneElse-style-legend) and [here](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT), and visible [here](//map.atownsend.org.uk/maps/map/map.html).
 
-## As yet unreleased
+## 06/02/2023
 Support various keys with an "electrician" value as offices.
 Show "shop=atv" as motorcycle shops.
 Handle "unsigned=name" and "unsigned=ref" as equivalents of "name:signed=no" and "ref:signed=no" respectively.
