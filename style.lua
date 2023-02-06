@@ -8599,14 +8599,11 @@ function filter_tags_generic(keyvalues, nokeys)
          keyvalues["former_name"] = nil
       end
 
-      if (( keyvalues["name"] == nil ) and
-          ( keyvalues["ref"]  == nil )) then
+      if ( keyvalues["name"] == nil ) then
          keyvalues["ref"] = "(vacant)"
       else
-         if ( keyvalues["ref"] == nil ) then
-            keyvalues["ref"] = "(vacant: " .. keyvalues["name"] .. ")"
-            keyvalues["name"] = nil
-	    end
+         keyvalues["ref"] = "(vacant: " .. keyvalues["name"] .. ")"
+         keyvalues["name"] = nil
       end
    end
 
