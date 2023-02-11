@@ -1942,8 +1942,7 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["shop"]    == "vehicle_inspection" )  or
        ( keyvalues["shop"]    == "mechanic"           )  or
        ( keyvalues["shop"]    == "car_repair;car"     )  or
-       ( keyvalues["shop"]    == "car_repair;tyres"   )  or
-       ( keyvalues["shop"]    == "auto_repair"        )) then
+       ( keyvalues["shop"]    == "car_repair;tyres"   )) then
       keyvalues["shop"] = "car_repair"
    end
 

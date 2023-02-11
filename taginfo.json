@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20230206T120300Z",
+  "data_updated": "20230211T134100Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -1985,7 +1985,6 @@
     { "key": "shop", "value": "auction", "description": "Various shops shown" },
     { "key": "shop", "value": "auction_house", "description": "Various shops shown" },
     { "key": "shop", "value": "audio_video", "description": "Various shops shown" },
-    { "key": "shop", "value": "auto_repair", "description": "Various shops shown" },
     { "key": "shop", "value": "automotive", "description": "Various shops shown" },
     { "key": "shop", "value": "baby", "description": "Various shops shown" },
     { "key": "shop", "value": "baby_goods", "description": "Various shops shown" },
@@ -2673,7 +2672,7 @@
     { "key": "tourism", "value": "viewpoint", "description": "Many tourism tags handled" },
     { "key": "tourism", "value": "village_sign", "description": "Many tourism tags handled" },
     { "key": "tourism", "value": "wilderness_hut", "description": "Many tourism tags handled" },
-    { "key": "tourisn", "value": "wine_cellar", "description": "Shown as shop=alcohol" },
+    { "key": "tourism", "value": "wine_cellar", "description": "Shown as shop=alcohol" },
     { "key": "tourism", "value": "yes", "description": "Many tourism tags handled" },
     { "key": "tourism", "value": "zoo", "description": "Many tourism tags handled" },
     { "key": "tower:construction", "description": "Classify various towers" },
