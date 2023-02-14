@@ -1765,11 +1765,13 @@ function filter_tags_generic(keyvalues, nokeys)
 -- Boundary stones.  If they're already tagged as tourism=attraction, remove
 -- that tag.
 -- Note that "marker=stone" (for "non boundary stones") are handled elsewhere.
+-- For March Stones see https://en.wikipedia.org/wiki/March_Stones_of_Aberdeen
 -- ----------------------------------------------------------------------------
-   if (( keyvalues["historic"] == "boundary_stone"  )  or
-       ( keyvalues["historic"] == "boundary_marker" )  or
-       ( keyvalues["marker"]   == "boundary_stone"  )  or
-       ( keyvalues["boundary"] == "marker"          )) then
+   if (( keyvalues["historic"]    == "boundary_stone"  )  or
+       ( keyvalues["historic"]    == "boundary_marker" )  or
+       ( keyvalues["marker"]      == "boundary_stone"  )  or
+       ( keyvalues["boundary"]    == "marker"          )  or
+       ( keyvalues["designation"] == "March Stone"     )) then
       keyvalues["man_made"] = "boundary_stone"
       keyvalues["tourism"]  = nil
    end
@@ -7765,6 +7767,8 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
    if ((  keyvalues["emergency"]        == "life_ring"         ) or
+       (  keyvalues["emergency"]        == "lifevest"          ) or
+       (  keyvalues["emergency"]        == "flotation device"  ) or
        (  keyvalues["waterway"]         == "life_ring"         ) or
        (  keyvalues["waterway"]         == "life_belt"         ) or
        (( keyvalues["emergency"]        == "rescue_equipment" )  and

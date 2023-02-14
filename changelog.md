@@ -3,6 +3,8 @@ This page describes changes made [here](https://github.com/SomeoneElseOSM/Someon
 
 ## As yet unreleased
 Removed shop=auto_repair, which is no longer in the data.
+Added lifevest and "flotation device" as synonyms for life_ring.
+Add "designation=March Stone" as a synonym for boundary stones.
 
 ## 06/02/2023
 Support various keys with an "electrician" value as offices.
