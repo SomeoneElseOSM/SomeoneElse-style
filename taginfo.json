@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20230214T003300Z",
+  "data_updated": "20230214T074700Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -641,6 +641,7 @@
     { "key": "craft", "value": "key_cutter;shoe_repair", "description": "Shown as shoe repair etc. shop" },
     { "key": "craft", "value": "locksmith", "description": "Shown as locksmith shop" },
     { "key": "craft", "value": "optician", "description": "Shown as optician shop" },
+    { "key": "craft", "value": "photographer", "description": "Shown as photo shop" },
     { "key": "craft", "value": "plumber", "description": "Shown as furniture shop" },
     { "key": "craft", "value": "pottery", "description": "Shown as art shop" },
     { "key": "craft", "value": "printer", "description": "Shown as nonspecific office" },
@@ -1753,7 +1754,6 @@
     { "key": "office", "value": "ngo", "description": "Most offices shown as black dots" },
     { "key": "office", "value": "optician", "description": "Most offices shown as black dots" },
     { "key": "office", "value": "parcel", "description": "Most offices shown as black dots" },
-    { "key": "office", "value": "photo_studio", "description": "Most offices shown as black dots" },
     { "key": "office", "value": "photography", "description": "Most offices shown as black dots" },
     { "key": "office", "value": "police", "description": "Most offices shown as black dots" },
     { "key": "office", "value": "political", "description": "Most offices shown as black dots" },

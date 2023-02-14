@@ -7040,11 +7040,11 @@ function filter_tags_generic(keyvalues, nokeys)
 
    if (( keyvalues["shop"]    == "camera"             ) or
        ( keyvalues["shop"]    == "photo_studio"       ) or
-       ( keyvalues["office"]  == "photo_studio"       ) or
        ( keyvalues["shop"]    == "photography"        ) or
        ( keyvalues["office"]  == "photography"        ) or
        ( keyvalues["shop"]    == "photographic"       ) or
-       ( keyvalues["shop"]    == "photographer"       )) then
+       ( keyvalues["shop"]    == "photographer"       ) or
+       ( keyvalues["craft"]   == "photographer"       )) then
       keyvalues["shop"] = "photo"
    end
 
