@@ -6,6 +6,7 @@ Removed shop=auto_repair, which is no longer in the data.
 Added lifevest and "flotation device" as synonyms for life_ring.
 Add "designation=March Stone" as a synonym for boundary stones.
 Replace office=photo_studio with craft=photographer.
+Added holiday_accommodation as a synonym.
 
 ## 06/02/2023
 Support various keys with an "electrician" value as offices.
