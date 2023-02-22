@@ -8285,6 +8285,15 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Treat heliports as aerodromes.
+-- Done before the "disused" logic below and the "large/small" logic 
+-- further down.
+-- ----------------------------------------------------------------------------
+   if ( keyvalues["aeroway"] == "heliport" ) then
+      keyvalues["aeroway"] = "aerodrome"
+   end
+
+-- ----------------------------------------------------------------------------
 -- Disused aerodromes etc. - handle disused=yes.
 -- ----------------------------------------------------------------------------
    if (( keyvalues["aeroway"]        == "aerodrome" ) and

@@ -67,6 +67,7 @@
     { "key": "aeroway", "value": "fuel", "description": "Show as amenity=fuel" },
     { "key": "aeroway", "value": "gate", "description": "Aircraft parking gates" },
     { "key": "aeroway", "value": "helipad", "description": "Helipads" },
+    { "key": "aeroway", "value": "heliport", "description": "Shown in the same way as aerodromes" },
     { "key": "aeroway", "value": "parking_position", "description": "Synonym for aeroway=gate" },
     { "key": "aeroway", "value": "runway", "description": "Runways: depending on other tags (surface etc.) shown as normal or grass" },
     { "key": "aeroway", "value": "taxiway", "description": "Aerodrome taxiways" },
