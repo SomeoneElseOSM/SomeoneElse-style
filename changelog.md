@@ -8,6 +8,7 @@ Add "designation=March Stone" as a synonym for boundary stones.
 Replace office=photo_studio with craft=photographer.
 Added holiday_accommodation as a synonym.
 Show heliports in the same way as aerodromes.
+Show names for small aerodromes (and heliports) from zoom 14.
 
 ## 06/02/2023
 Support various keys with an "electrician" value as offices.
