@@ -5333,6 +5333,28 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Chalets
+--
+-- Depending on other tags, these will be treated as singlechalet (z17)
+-- or as chalet (z16).  Processing here is simpler than for Garmin as we don't
+-- have to worry where on the search menu something will appear.
+--
+-- We assume that tourism=chalet with no building tag could be either a
+-- self-contained chalet park or just one chalet.  Leave tagging as is.
+--
+-- We assume that tourism=chalet with a building tag is a 
+-- self-contained chalet or chalet within a resort.  Change to "singlechalet".
+-- ----------------------------------------------------------------------------
+   if ( keyvalues["tourism"] == "chalet" ) then
+      keyvalues["leisure"] = nil
+
+      if (( keyvalues["name"]     == nil ) or
+          ( keyvalues["building"] ~= nil )) then
+         keyvalues["tourism"] = "singlechalet"
+      end
+   end
+
+-- ----------------------------------------------------------------------------
 -- Trailheads appear in odd combinations, not all of which make sense.
 --
 -- If someone's tagged a trailhead as a locality; likely it's not really one
