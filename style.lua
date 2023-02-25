@@ -5333,6 +5333,42 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Trailheads appear in odd combinations, not all of which make sense.
+--
+-- If someone's tagged a trailhead as a locality; likely it's not really one
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["highway"] == "trailhead" ) and
+       ( keyvalues["place"]   == "locality"  )) then
+      keyvalues["place"] = nil
+   end
+
+-- ----------------------------------------------------------------------------
+-- If a trailhead also has a tourism tag, go with whatever tourism tag that is,
+-- rather than sending it through as "informationroutemarker" below.
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["highway"] == "trailhead" ) and
+       ( keyvalues["tourism"] ~= nil         )) then
+      keyvalues["highway"] = nil
+   end
+
+-- ----------------------------------------------------------------------------
+-- If a trailhead has no name but an operator, use that
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["highway"]  == "trailhead" ) and
+       ( keyvalues["name"]     == nil         ) and
+       ( keyvalues["operator"] ~= nil         )) then
+      keyvalues["name"] = keyvalues["operator"]
+   end
+
+-- ----------------------------------------------------------------------------
+-- If a trailhead still has no name, remove it
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["highway"]  == "trailhead" ) and
+       ( keyvalues["name"]     == nil         )) then
+      keyvalues["highway"] = nil
+   end
+
+-- ----------------------------------------------------------------------------
 -- Render amenity=information as tourism
 -- ----------------------------------------------------------------------------
    if ( keyvalues["amenity"] == "information"  ) then

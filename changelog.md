@@ -9,6 +9,7 @@ Replace office=photo_studio with craft=photographer.
 Added holiday_accommodation as a synonym.
 Show heliports in the same way as aerodromes.
 Show names for small aerodromes (and heliports) from zoom 14.
+Filter out some trailheads if the other tags on the same object are more plauisble.
 
 ## 06/02/2023
 Support various keys with an "electrician" value as offices.
