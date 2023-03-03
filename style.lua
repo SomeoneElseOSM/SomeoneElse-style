@@ -5266,12 +5266,11 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
--- highway=passing_place and turning_loop to turning_circle
+-- highway=passing_place to turning_circle
 -- Not really the same thing, but a "widening of the road" should be good 
--- enough.  "turning_loop" seems only to be used on nodes locally.
+-- enough.  
 -- ----------------------------------------------------------------------------
-   if (( keyvalues["highway"]   == "passing_place" )  or
-       ( keyvalues["highway"]   == "turning_loop"  )) then
+   if ( keyvalues["highway"] == "passing_place" ) then
       keyvalues["highway"] = "turning_circle"
    end
 
@@ -8812,6 +8811,14 @@ function filter_tags_node (keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- highway=turning_loop on nodes to turning_circle
+-- "turning_loop" is mostly used on nodes, with one way in UK/IE data.
+-- ----------------------------------------------------------------------------
+   if ( keyvalues["highway"] == "turning_loop" ) then
+      keyvalues["highway"] = "turning_circle"
+   end
+
+-- ----------------------------------------------------------------------------
 -- End of AJT node-only additions.
 -- ----------------------------------------------------------------------------
 
@@ -8953,6 +8960,15 @@ function filter_tags_way (keyvalues, nokeys)
       if ( keyvalues["oneway"] == "yes" ) then
          keyvalues["area"] = "no"
       end
+   end
+
+-- ----------------------------------------------------------------------------
+-- highway=turning_loop on ways to service road
+-- "turning_loop" is mostly used on nodes, with one way in UK/IE data.
+-- ----------------------------------------------------------------------------
+   if ( keyvalues["highway"] == "turning_loop" ) then
+      keyvalues["highway"] = "service"
+      keyvalues["service"] = "driveway"
    end
 
 -- ----------------------------------------------------------------------------

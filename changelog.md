@@ -1,7 +1,7 @@
 # Changes made to this rendering
 This page describes changes made [here](https://github.com/SomeoneElseOSM/SomeoneElse-style), [here](https://github.com/SomeoneElseOSM/SomeoneElse-style-legend) and [here](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT), and visible [here](//map.atownsend.org.uk/maps/map/map.html).
 
-## As yet unreleased
+## 04/03/2023
 Removed shop=auto_repair, which is no longer in the data.
 Added lifevest and "flotation device" as synonyms for life_ring.
 Add "designation=March Stone" as a synonym for boundary stones.
@@ -11,6 +11,7 @@ Show heliports in the same way as aerodromes.
 Show names for small aerodromes (and heliports) from zoom 14.
 Filter out some trailheads if the other tags on the same object are more plauisble.
 Try and guess whether chalets are parks or just single chalets, based on other tags.
+Show turning loops that are ways as service roads, in addition to the nodes that are shown as turning circles.
 
 ## 06/02/2023
 Support various keys with an "electrician" value as offices.
