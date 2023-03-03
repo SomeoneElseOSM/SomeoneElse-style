@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20230216T232700Z",
+  "data_updated": "20230303T222500Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -1150,6 +1150,7 @@
     { "key": "highway", "value": "trailhead", "description": "Shown as route marker" },
     { "key": "highway", "value": "trunk", "description": "Shown as trunk" },
     { "key": "highway", "value": "trunk_link", "description": "Shown as trunk" },
+    { "key": "highway", "value": "turning_circle", "description": "Shown as turning circle" },
     { "key": "highway", "value": "turning_loop", "description": "Shown as turning circle" },
     { "key": "highway", "value": "unclassified", "description": "Shown as unclassified" },
     { "key": "highway", "value": "unclassified_link", "description": "Shown as unclassified" },
