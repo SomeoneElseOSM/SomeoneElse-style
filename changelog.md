@@ -9,6 +9,7 @@ Added an icon for natural=shrub, based on natural=tree.
 Changed climbing boulder to have some "sport" green on it.  
 Handle natural=rock on ways as per natural=bare_rock; Handle natural=rock on nodes as grey boulder.
 Added a background pattern for natural=shingle (with more dots than beach).
+Show mud, beach, shingle, bare_rock and scree from z10, consistently with sand.
 
 ## 04/03/2023
 Removed shop=auto_repair, which is no longer in the data.
