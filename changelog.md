@@ -4,6 +4,7 @@ This page describes changes made [here](https://github.com/SomeoneElseOSM/Someon
 ## As yet unreleased
 Show highway=emergency_bay as "private parking".
 Removed holiday_accommodation as a synonym as it is no longer in the data.
+Added a background patter for natural=bare_rock.
 
 ## 04/03/2023
 Removed shop=auto_repair, which is no longer in the data.
