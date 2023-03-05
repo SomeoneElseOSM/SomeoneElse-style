@@ -2657,7 +2657,6 @@
     { "key": "tourism", "value": "gallery", "description": "Many tourism tags handled" },
     { "key": "tourism", "value": "guest_house", "description": "Many tourism tags handled" },
     { "key": "tourism", "value": "guesthouse", "description": "Many tourism tags handled" },
-    { "key": "tourism", "value": "holiday_accommodation", "description": "Many tourism tags handled" },
     { "key": "tourism", "value": "holiday_cottage", "description": "Many tourism tags handled" },
     { "key": "tourism", "value": "holiday_let", "description": "Many tourism tags handled" },
     { "key": "tourism", "value": "holiday_lets", "description": "Many tourism tags handled" },
