@@ -1,6 +1,9 @@
 # Changes made to this rendering
 This page describes changes made [here](https://github.com/SomeoneElseOSM/SomeoneElse-style), [here](https://github.com/SomeoneElseOSM/SomeoneElse-style-legend) and [here](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT), and visible [here](//map.atownsend.org.uk/maps/map/map.html).
 
+## As yet unreleased
+Show highway=emergency_bay as "private parking".
+
 ## 04/03/2023
 Removed shop=auto_repair, which is no longer in the data.
 Added lifevest and "flotation device" as synonyms for life_ring.

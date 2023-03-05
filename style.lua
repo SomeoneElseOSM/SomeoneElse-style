@@ -4284,8 +4284,14 @@ function filter_tags_generic(keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
 -- Render parking spaces as parking.  Most in the UK are not part of larger
 -- parking areas, and most do not have an access tag, but many should have.
+--
+-- This does not work where e.g. Supermarket car parks have been mapped:
+-- https://github.com/SomeoneElseOSM/SomeoneElse-style/issues/14
+--
+-- Also map emergency bays (used in place of hard shoulders) in the same way.
 -- ----------------------------------------------------------------------------
-   if ( keyvalues["amenity"] == "parking_space" ) then
+   if (( keyvalues["amenity"] == "parking_space" ) or
+       ( keyvalues["highway"] == "emergency_bay" )) then
       keyvalues["amenity"] = "parking"
 
       if ( keyvalues["access"] == nil  ) then
