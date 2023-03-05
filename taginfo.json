@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20230305T232500Z",
+  "data_updated": "20230305T235500Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -1665,6 +1665,7 @@
     { "key": "natural", "value": "grassland", "description": "Various natural features rendered" },
     { "key": "natural", "value": "heath", "description": "Various natural features rendered" },
     { "key": "natural", "value": "lake", "description": "Various natural features rendered" },
+    { "key": "natural", "value": "mud", "description": "Shown as a brown beach with fewer stones" },
     { "key": "natural", "value": "peak", "description": "Various natural features rendered" },
     { "key": "natural", "value": "rock", "description": "Ways are shown as natural=bare_rock, nodes as boulders" },
     { "key": "natural", "value": "saddle", "description": "Various natural features rendered" },
