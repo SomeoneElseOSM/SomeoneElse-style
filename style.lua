@@ -1743,6 +1743,18 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Handle shoals, either as mud or reef
+-- ----------------------------------------------------------------------------
+   if ( keyvalues["natural"] == "shoal" ) then
+      if ( keyvalues["surface"] == "mud" ) then
+         keyvalues["natural"] = "mud"
+         keyvalues["surface"] = nil
+      else
+         keyvalues["natural"] = "reef"
+      end
+   end
+
+-- ----------------------------------------------------------------------------
 -- Handle various sorts of milestones.
 -- ----------------------------------------------------------------------------
    if (( keyvalues["historic"] == "milestone" )  or

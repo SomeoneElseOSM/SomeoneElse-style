@@ -12,6 +12,7 @@ Added a background pattern for natural=shingle (with more dots than beach).
 Show mud, beach, shingle, bare_rock and scree from z10, consistently with sand.
 Add natural=reef, as rocks on a transparent background.
 Add natural=ridge to the list of tags treated as non-highway and highway embankments.
+Handle natural=shoal as either mud or reef.
 
 ## 04/03/2023
 Removed shop=auto_repair, which is no longer in the data.
