@@ -5627,7 +5627,8 @@ function filter_tags_generic(keyvalues, nokeys)
         ( keyvalues["man_made"]   == "dyke"          )  or
         ( keyvalues["man_made"]   == "levee"         )  or
         ( keyvalues["embankment"] == "yes"           )  or
-        ( keyvalues["barrier"]    == "berm"          )) and
+        ( keyvalues["barrier"]    == "berm"          )  or
+        ( keyvalues["natural"]    == "ridge"         )) and
        (( keyvalues["highway"]    == nil             )  or
         ( keyvalues["highway"]    == "badpathwide"   )  or
         ( keyvalues["highway"]    == "badpathnarrow" )) and
@@ -5645,7 +5646,8 @@ function filter_tags_generic(keyvalues, nokeys)
    if (((  keyvalues["barrier"]    == "flood_bank"     )  or
         (  keyvalues["man_made"]   == "dyke"           )  or
         (  keyvalues["man_made"]   == "levee"          )  or
-        (  keyvalues["embankment"] == "yes"            )) and
+        (  keyvalues["embankment"] == "yes"            )  or
+        (  keyvalues["natural"]    == "ridge"          )) and
        ((( keyvalues["highway"]    ~= nil             )   and
          ( keyvalues["highway"]    ~= "badpathwide"   )   and
          ( keyvalues["highway"]    ~= "badpathnarrow" )) or
