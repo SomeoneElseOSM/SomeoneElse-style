@@ -1,6 +1,9 @@
 # Changes made to this rendering
 This page describes changes made [here](https://github.com/SomeoneElseOSM/SomeoneElse-style), [here](https://github.com/SomeoneElseOSM/SomeoneElse-style-legend) and [here](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT), and visible [here](//map.atownsend.org.uk/maps/map/map.html).
 
+## As yet unreleased
+If an amenity=bicycle_parking is mapped as a closed way, but as covered=no, don't show it with a roof.
+
 ## 06/03/2023
 Show highway=emergency_bay as "private parking".
 Removed holiday_accommodation as a synonym as it is no longer in the data.

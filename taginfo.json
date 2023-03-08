@@ -614,6 +614,7 @@
     { "key": "covered", "value": "roof", "description": "Handle various synonyms for 'yes'" },
     { "key": "covered", "value": "portico", "description": "Handle various synonyms for 'yes'" },
     { "key": "covered", "value": "booth", "description": "Used when deciding how to show telephone boxes and former telephone boxes (e.g. red or not red)" },
+    { "key": "covered", "value": "no", "description": "Used when deciding whether to show a bicycle parking area with a roof" },
     { "key": "craft", "description": "Most common crafts rendered as either shop-style or office-style icons" },
     { "key": "craft", "value": "bakery", "description": "Shown as industrial landuse" },
     { "key": "craft", "value": "boatbuilder", "description": "Shown as furniture shop" },

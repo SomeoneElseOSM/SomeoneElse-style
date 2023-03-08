@@ -8943,7 +8943,8 @@ function filter_tags_way (keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
    if ((( keyvalues["amenity"]  == "shelter"          )   or
         ( keyvalues["amenity"]  == "bicycle_parking"  ))  and
-       ( keyvalues["building"] == nil                  )) then
+       ( keyvalues["building"] == nil                  )  and
+       ( keyvalues["covered"]  ~= "no"                 )) then
       keyvalues["building"] = "roof"
    end
 
