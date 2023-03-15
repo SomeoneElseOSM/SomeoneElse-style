@@ -5,6 +5,7 @@ This page describes changes made [here](https://github.com/SomeoneElseOSM/Someon
 If an amenity=bicycle_parking is mapped as a closed way, but as covered=no, don't show it with a roof.
 Show natural=hill like natural=peak, but from a higher zoom level.
 Show natural=hedge as barrier=hedge.
+Treat natural=earth_bank as a type of embankment.
 
 ## 06/03/2023
 Show highway=emergency_bay as "private parking".
