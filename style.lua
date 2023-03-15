@@ -5687,6 +5687,13 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Assume "natural=hedge" should be "barrier=hedge".
+-- ----------------------------------------------------------------------------
+   if ( keyvalues["natural"] == "hedge" ) then
+      keyvalues["barrier"] = "hedge"
+   end
+
+-- ----------------------------------------------------------------------------
 -- map "fences that are really hedges" as fences.
 -- ----------------------------------------------------------------------------
    if (( keyvalues["barrier"]    == "fence" ) and
