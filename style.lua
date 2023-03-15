@@ -2012,6 +2012,16 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Things that are both localities and peaks or hills 
+-- should render as the latter.
+-- ----------------------------------------------------------------------------
+   if ((  keyvalues["place"]   == "locality"     )  and
+       (( keyvalues["natural"] == "peak"        )  or
+        ( keyvalues["natural"] == "hill"        ))) then
+      keyvalues["place"] = nil
+   end
+
+-- ----------------------------------------------------------------------------
 -- Things that are both viewpoints or attractions and monuments or memorials 
 -- should render as the latter.
 -- Also handle some other combinations.
@@ -5555,16 +5565,18 @@ function filter_tags_generic(keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
 -- Things that are both peaks and memorials should render as the latter.
 -- ----------------------------------------------------------------------------
-   if (( keyvalues["natural"]   == "peak"     ) and
-       ( keyvalues["historic"]  == "memorial" )) then
+   if ((( keyvalues["natural"]   == "hill"     )  or
+        ( keyvalues["natural"]   == "peak"     )) and
+       (  keyvalues["historic"]  == "memorial"  )) then
       keyvalues["natural"] = nil
    end
 
 -- ----------------------------------------------------------------------------
 -- Things that are both peaks and cairns should render as the former.
 -- ----------------------------------------------------------------------------
-   if (( keyvalues["natural"]   == "peak"     ) and
-       ( keyvalues["man_made"]  == "cairn" )) then
+   if ((( keyvalues["natural"]   == "hill"     )  or
+        ( keyvalues["natural"]   == "peak"     )) and
+       (  keyvalues["man_made"]  == "cairn"     )) then
       keyvalues["man_made"] = nil
    end
 
@@ -5577,6 +5589,7 @@ function filter_tags_generic(keyvalues, nokeys)
         ( keyvalues["historic"] == "beacon"        )) and
        (  keyvalues["airmark"]  == nil              ) and
        (  keyvalues["aeroway"]  == nil              ) and
+       (  keyvalues["natural"]  ~= "hill"           ) and
        (  keyvalues["natural"]  ~= "peak"           )) then
       keyvalues["historic"] = "nonspecific"
    end
@@ -5841,6 +5854,7 @@ function filter_tags_generic(keyvalues, nokeys)
 -- display, so not cliffs etc.
 -- ----------------------------------------------------------------------------
    if (( keyvalues["sport"]    == "climbing"       ) and
+       ( keyvalues["natural"]  ~= "hill"           ) and
        ( keyvalues["natural"]  ~= "peak"           ) and
        ( keyvalues["natural"]  ~= "cliff"          ) and
        ( keyvalues["leisure"]  ~= "sports_centre"  ) and
