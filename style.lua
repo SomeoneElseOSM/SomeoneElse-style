@@ -2288,13 +2288,17 @@ function filter_tags_generic(keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
 -- Attempt to do something sensible with trees
 --
--- There are a few 10s of landuse=wood and natural=forest; treat them the same
+-- There are a few 10s of natural=woodland and natural=forest; treat them the same
 -- as other woodland.  If we have landuse=forest on its own without
 -- leaf_type, then we don't change it - we'll handle that separately in the
 -- mss file.
 -- ----------------------------------------------------------------------------
   if ( keyvalues["landuse"] == "forestry" ) then
       keyvalues["landuse"] = "forest"
+  end
+
+  if ( keyvalues["natural"] == "woodland" ) then
+      keyvalues["natural"] = "wood"
   end
 
 -- ----------------------------------------------------------------------------
