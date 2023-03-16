@@ -1665,6 +1665,7 @@
     { "key": "natural", "value": "forest", "description": "Various natural features rendered" },
     { "key": "natural", "value": "glacier", "description": "Various natural features rendered" },
     { "key": "natural", "value": "grassland", "description": "Various natural features rendered" },
+    { "key": "natural", "value": "headland", "description": "Shown as a synonym of natural=cape" },
     { "key": "natural", "value": "heath", "description": "Various natural features rendered" },
     { "key": "natural", "value": "hedge", "description": "Shown as a green line, like barrier=hedge" },
     { "key": "natural", "value": "hill", "description": "Like peak, but shown from higher zoom" },

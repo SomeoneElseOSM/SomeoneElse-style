@@ -1738,7 +1738,8 @@ function filter_tags_generic(keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
 -- Handle natural=cape
 -- ----------------------------------------------------------------------------
-   if ( keyvalues["natural"] == "cape" ) then
+   if (( keyvalues["natural"] == "cape"     ) or
+       ( keyvalues["natural"] == "headland" )) then
       keyvalues["place"] = "locality"
    end
 
