@@ -7,7 +7,7 @@ Show natural=hill like natural=peak, but from a higher zoom level.
 Show natural=hedge as barrier=hedge.
 Treat natural=earth_bank as a type of embankment.
 Treat natural=woodland as synonym of natural=wood.
-Treat natural=headland as synonym of natural=cape.
+Treat natural=headland and natural=peninsula as a synonym of natural=cape.
 
 ## 06/03/2023
 Show highway=emergency_bay as "private parking".
