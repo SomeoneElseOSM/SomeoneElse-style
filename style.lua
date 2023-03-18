@@ -2204,6 +2204,14 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Render tidal scree with more blue
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["natural"]   == "scree" ) and
+       ( keyvalues["tidal"]     == "yes"   )) then
+      keyvalues["natural"] = "tidal_scree"
+   end
+
+-- ----------------------------------------------------------------------------
 -- Change natural=rocks on non-nodes to natural=bare_rock
 -- ----------------------------------------------------------------------------
    if ( keyvalues["natural"]   == "rocks" ) then
