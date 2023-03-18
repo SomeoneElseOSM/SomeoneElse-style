@@ -1768,6 +1768,14 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Render tidal mud with more blue
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["natural"]   == "mud" ) and
+       ( keyvalues["tidal"]     == "yes" )) then
+      keyvalues["natural"] = "tidal_mud"
+   end
+
+-- ----------------------------------------------------------------------------
 -- Handle various sorts of milestones.
 -- ----------------------------------------------------------------------------
    if (( keyvalues["historic"] == "milestone" )  or
