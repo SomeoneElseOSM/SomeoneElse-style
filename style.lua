@@ -5637,7 +5637,6 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["military"] == "naval_base"                         ) or
        ( keyvalues["military"] == "depot"                              ) or
        ( keyvalues["military"] == "registration_and_enlistment_office" ) or
-       ( keyvalues["military"] == "ta centre"                          ) or
        ( keyvalues["military"] == "checkpoint"                         ) or
        ( keyvalues["hazard"]   == "shooting_range"                     ) or
        ( keyvalues["sport"]    == "shooting_range"                     )) then
@@ -7758,7 +7757,6 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["shop"]    == "junk"            ) or
        ( keyvalues["shop"]    == "general"         ) or
        ( keyvalues["shop"]    == "general_store"   ) or
-       ( keyvalues["shop"]    == "unknown"         ) or
        ( keyvalues["shop"]    == "retail"          ) or
        ( keyvalues["shop"]    == "trade"           ) or
        ( keyvalues["shop"]    == "misc"            ) or
@@ -8255,7 +8253,6 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["leisure"]  == "indoor_play"          ) or
        ( keyvalues["leisure"]  == "soft_play"            ) or
        ( keyvalues["amenity"]  == "youth_club"           ) or
-       ( keyvalues["amenity"]  == "youth_centre"         ) or
        ( keyvalues["amenity"]  == "social_club"          ) or
        ( keyvalues["leisure"]  == "social_club"          ) or
        ( keyvalues["amenity"]  == "working_mens_club"    ) or
@@ -8715,7 +8712,6 @@ function filter_tags_generic(keyvalues, nokeys)
        (   keyvalues["office"]          == "vacant"     ) or
        (   keyvalues["office"]          == "disused"    ) or
        (   keyvalues["shop"]            == "disused"    ) or
-       (   keyvalues["shop"]            == "empty"      ) or
        (   keyvalues["shop"]            == "closed"     ) or
        (   keyvalues["shop"]            == "abandoned"  ) or
        ((  keyvalues["shop"]            ~= nil         )  and
