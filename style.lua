@@ -1047,6 +1047,17 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Treat natural=grass as landuse=grass 
+-- if there is no other more appropriate tag
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["natural"]  == "grass"  ) and
+       (( keyvalues["landuse"] == nil     )  and
+        ( keyvalues["leisure"] == nil     )  and
+        ( keyvalues["aeroway"] == nil     ))) then
+      keyvalues["landuse"] = "grass"
+   end
+
+-- ----------------------------------------------------------------------------
 -- Render various synonyms for leisure=common.
 -- ----------------------------------------------------------------------------
    if (( keyvalues["landuse"]          == "common"   ) or
