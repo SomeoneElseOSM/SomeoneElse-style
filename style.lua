@@ -4431,6 +4431,14 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Render tidal sand with more blue
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["natural"]   == "sand" ) and
+       ( keyvalues["tidal"]     == "yes"       )) then
+      keyvalues["natural"] = "tidal_sand"
+   end
+
+-- ----------------------------------------------------------------------------
 -- Golf (and sandpits)
 -- ----------------------------------------------------------------------------
    if ((( keyvalues["golf"]       == "bunker"  )  or
