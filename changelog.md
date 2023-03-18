@@ -6,8 +6,9 @@ If an amenity=bicycle_parking is mapped as a closed way, but as covered=no, don'
 Show natural=hill like natural=peak, but from a higher zoom level.
 Show natural=hedge as barrier=hedge.
 Treat natural=earth_bank as a type of embankment.
-Treat natural=woodland as synonym of natural=wood.
-Treat natural=headland and natural=peninsula as a synonym of natural=cape.
+Treat natural=woodland as a synonym of natural=wood.
+Treat natural=headland and natural=peninsula as synonyms of natural=cape.
+Treat natural=dune as a synonym of natural=sand.
 
 ## 06/03/2023
 Show highway=emergency_bay as "private parking".
