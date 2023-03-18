@@ -2219,6 +2219,14 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Render tidal rocks with more blue
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["natural"]   == "bare_rock" ) and
+       ( keyvalues["tidal"]     == "yes"       )) then
+      keyvalues["natural"] = "tidal_rock"
+   end
+
+-- ----------------------------------------------------------------------------
 -- Boulders - are they climbing boulders or not?
 -- If yes, let them get detected as "climbing pitches" ("amenity=pitch_climbing") 
 -- or non-pitch climbing features ("natural=climbing")
