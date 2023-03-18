@@ -1693,6 +1693,7 @@
     { "key": "natural", "value": "sinkhole", "description": "Various natural features rendered" },
     { "key": "natural", "value": "spring", "description": "Various natural features rendered" },
     { "key": "natural", "value": "stone", "description": "Various natural features rendered" },
+    { "key": "natural", "value": "tidal_beach", "description": "Shown as a dark blue on yellow pattern, with a name" },
     { "key": "natural", "value": "tree", "description": "Shown as a dark green splodge" },
     { "key": "natural", "value": "tree_group", "description": "Various natural features rendered" },
     { "key": "natural", "value": "tree_row", "description": "Various natural features rendered" },
