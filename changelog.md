@@ -10,6 +10,7 @@ Treat natural=woodland as a synonym of natural=wood.
 Treat natural=headland and natural=peninsula as synonyms of natural=cape.
 Treat natural=dune as a synonym of natural=sand.
 Treat natural=boulder as natural=rock, if not sport=climbing or climbing=boulder.
+Show natural=bare_rock as natural=rock on nodes.
 
 ## 06/03/2023
 Show highway=emergency_bay as "private parking".

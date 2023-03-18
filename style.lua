@@ -8886,6 +8886,14 @@ function filter_tags_node (keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- natural=bare_rock on nodes to natural=rock
+-- So that an icon is displayed
+-- ----------------------------------------------------------------------------
+   if ( keyvalues["natural"] == "bare_rock" ) then
+      keyvalues["natural"] = "rock"
+   end
+
+-- ----------------------------------------------------------------------------
 -- End of AJT node-only additions.
 -- ----------------------------------------------------------------------------
 
