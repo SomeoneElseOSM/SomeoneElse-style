@@ -2166,6 +2166,18 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Boulders - are they climbing boulders or not?
+-- If yes, let them get detected as "climbing pitches" ("amenity=pitch_climbing") 
+-- or non-pitch climbing features ("natural=climbing")
+-- ----------------------------------------------------------------------------
+   if ( keyvalues["natural"] == "boulder" ) then
+      if (( keyvalues["sport"]    ~= "climbing" ) and
+          ( keyvalues["climbing"] ~= "boulder"  )) then
+         keyvalues["natural"] = "rock"
+      end
+   end
+
+-- ----------------------------------------------------------------------------
 -- leisure=dog_park is used a few times.  Map to pitch to differentiate from
 -- underlying park.
 -- Also "court" often means "pitch" (tennis, basketball).
@@ -5874,18 +5886,19 @@ function filter_tags_generic(keyvalues, nokeys)
 -- Deliberately only use this for outdoor features that would not otherwise
 -- display, so not cliffs etc.
 -- ----------------------------------------------------------------------------
-   if (( keyvalues["sport"]    == "climbing"       ) and
-       ( keyvalues["natural"]  ~= "hill"           ) and
-       ( keyvalues["natural"]  ~= "peak"           ) and
-       ( keyvalues["natural"]  ~= "cliff"          ) and
-       ( keyvalues["leisure"]  ~= "sports_centre"  ) and
-       ( keyvalues["leisure"]  ~= "climbing_wall"  ) and
-       ( keyvalues["shop"]     ~= "sports"         ) and
-       ( keyvalues["tourism"]  ~= "attraction"     ) and
-       ( keyvalues["building"] == nil              ) and
-       ( keyvalues["man_made"] ~= "tower"          ) and
-       ( keyvalues["barrier"]  ~= "wall"           ) and
-       ( keyvalues["amenity"]  ~= "pitch_climbing" )) then
+   if ((( keyvalues["sport"]    == "climbing"      )  or
+        ( keyvalues["climbing"] == "boulder"       )) and
+       (  keyvalues["natural"]  ~= "hill"           ) and
+       (  keyvalues["natural"]  ~= "peak"           ) and
+       (  keyvalues["natural"]  ~= "cliff"          ) and
+       (  keyvalues["leisure"]  ~= "sports_centre"  ) and
+       (  keyvalues["leisure"]  ~= "climbing_wall"  ) and
+       (  keyvalues["shop"]     ~= "sports"         ) and
+       (  keyvalues["tourism"]  ~= "attraction"     ) and
+       (  keyvalues["building"] == nil              ) and
+       (  keyvalues["man_made"] ~= "tower"          ) and
+       (  keyvalues["barrier"]  ~= "wall"           ) and
+       (  keyvalues["amenity"]  ~= "pitch_climbing" )) then
       keyvalues["natural"] = "climbing"
    end
 

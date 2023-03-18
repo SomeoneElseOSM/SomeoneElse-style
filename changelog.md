@@ -9,6 +9,7 @@ Treat natural=earth_bank as a type of embankment.
 Treat natural=woodland as a synonym of natural=wood.
 Treat natural=headland and natural=peninsula as synonyms of natural=cape.
 Treat natural=dune as a synonym of natural=sand.
+Treat natural=boulder as natural=rock, if not sport=climbing or climbing=boulder.
 
 ## 06/03/2023
 Show highway=emergency_bay as "private parking".
