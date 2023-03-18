@@ -2166,6 +2166,25 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Remove tourism=attraction from rock features that are rendered as rock(s)
+-- ----------------------------------------------------------------------------
+   if ((  keyvalues["tourism"]   == "attraction"     ) and
+       (( keyvalues["natural"]   == "bare_rock"     ) or
+        ( keyvalues["natural"]   == "boulder"       ) or
+        ( keyvalues["natural"]   == "rock"          ) or
+        ( keyvalues["natural"]   == "rocks"         ) or
+        ( keyvalues["climbing"]  == "boulder"       ))) then
+      keyvalues["tourism"] = nil
+   end
+
+-- ----------------------------------------------------------------------------
+-- Change natural=rocks on non-nodes to natural=bare_rock
+-- ----------------------------------------------------------------------------
+   if ( keyvalues["natural"]   == "rocks" ) then
+      keyvalues["natural"] = "bare_rock"
+   end
+
+-- ----------------------------------------------------------------------------
 -- Boulders - are they climbing boulders or not?
 -- If yes, let them get detected as "climbing pitches" ("amenity=pitch_climbing") 
 -- or non-pitch climbing features ("natural=climbing")
@@ -8882,10 +8901,11 @@ function filter_tags_node (keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
--- natural=bare_rock on nodes to natural=rock
--- So that an icon is displayed
+-- Change natural=bare_rock and natural=rocks on nodes to natural=rock
+-- So that an icon (the all-black, non-climbing boulder one) is displayed
 -- ----------------------------------------------------------------------------
-   if ( keyvalues["natural"] == "bare_rock" ) then
+   if (( keyvalues["natural"] == "bare_rock" ) or
+       ( keyvalues["natural"] == "rocks"     )) then
       keyvalues["natural"] = "rock"
    end
 

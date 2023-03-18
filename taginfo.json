@@ -1677,6 +1677,7 @@
     { "key": "natural", "value": "peninsula", "description": "Shown as a synonym of natural=cape" },
     { "key": "natural", "value": "reef", "description": "Shown as bare_rock pattern on a transparent background" },
     { "key": "natural", "value": "rock", "description": "Ways are shown as natural=bare_rock, nodes as boulders" },
+    { "key": "natural", "value": "rocks", "description": "Ways are shown as natural=bare_rock, nodes as boulders" },
     { "key": "natural", "value": "saddle", "description": "Various natural features rendered" },
     { "key": "natural", "value": "sand", "description": "Various natural features rendered" },
     { "key": "natural", "value": "scree", "description": "Shown as an uneven dark-on-light grey background pattern, with a name" },

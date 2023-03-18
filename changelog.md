@@ -12,6 +12,7 @@ Treat natural=dune as a synonym of natural=sand.
 Treat natural=boulder as natural=rock, if not sport=climbing or climbing=boulder.
 Show natural=bare_rock as natural=rock on nodes.
 Removed "shop=unknown", "shop=travel_agent", "shop=empty", "military=ta centre", "amenity=youth_centre", no longer in the data.
+Show natural=rocks as natural=rock on nodes, and natural=bare_rock on non-nodes.
 
 ## 06/03/2023
 Show highway=emergency_bay as "private parking".
