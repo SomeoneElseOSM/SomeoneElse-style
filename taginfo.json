@@ -1674,6 +1674,7 @@
     { "key": "natural", "value": "hedge", "description": "Shown as a green line, like barrier=hedge" },
     { "key": "natural", "value": "hill", "description": "Like peak, but shown from higher zoom" },
     { "key": "natural", "value": "lake", "description": "Various natural features rendered" },
+    { "key": "natural", "value": "meadow", "description": "Treated as a synonym for landuse=meadow" },
     { "key": "natural", "value": "mud", "description": "Shown as a brown beach with fewer stones" },
     { "key": "natural", "value": "peak", "description": "Various natural features rendered" },
     { "key": "natural", "value": "peninsula", "description": "Shown as a synonym of natural=cape" },

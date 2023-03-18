@@ -2101,6 +2101,13 @@ function filter_tags_generic(keyvalues, nokeys)
       keyvalues["garden"]  = "beer_garden"
    end
 
+-- ----------------------------------------------------------------------------
+-- Treat natural=meadow as a synonym for landuse=meadow, if no other landuse
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["natural"] == "meadow" ) and
+       ( keyvalues["landuse"] == nil      )) then
+      keyvalues["landuse"] = "meadow"
+   end
 
 -- ----------------------------------------------------------------------------
 -- Shops etc. with icons already - just add "unnamedcommercial" landuse.
@@ -2136,7 +2143,7 @@ function filter_tags_generic(keyvalues, nokeys)
 --
 -- highway=rest_area is translated lower down to amenity=parking.
 -- ----------------------------------------------------------------------------
-   if (  keyvalues["highway"]      == "services"                  ) then
+   if (  keyvalues["highway"] == "services" ) then
       keyvalues["highway"] = nil
       keyvalues["landuse"] = "commercial"
    end

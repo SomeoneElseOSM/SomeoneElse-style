@@ -15,6 +15,7 @@ Removed "shop=unknown", "shop=travel_agent", "shop=empty", "military=ta centre",
 Show natural=rocks as natural=rock on nodes, and natural=bare_rock on non-nodes.
 Show natural=grass as landuse=grass if some other tag does not apply.
 Show natural=arete like natural=ridge; as an embankment or an embanked highway.
+Treat natural=meadow as a synonym for landuse=meadow, if no other landuse.
 
 ## 06/03/2023
 Show highway=emergency_bay as "private parking".
