@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20230319T022700Z",
+  "data_updated": "20230319T110200Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -1702,6 +1702,7 @@
     { "key": "natural", "value": "sinkhole", "description": "Various natural features rendered" },
     { "key": "natural", "value": "spring", "description": "Various natural features rendered" },
     { "key": "natural", "value": "stone", "description": "Various natural features rendered" },
+    { "key": "natural", "value": "stones", "description": "Ways are shown as natural=bare_rock, nodes as boulders" },
     { "key": "natural", "value": "tidal_beach", "description": "Shown as a dark blue on yellow pattern, with a name" },
     { "key": "natural", "value": "tree", "description": "Shown as a dark green splodge" },
     { "key": "natural", "value": "tree_group", "description": "Various natural features rendered" },

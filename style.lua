@@ -2213,6 +2213,7 @@ function filter_tags_generic(keyvalues, nokeys)
         ( keyvalues["natural"]   == "boulder"       ) or
         ( keyvalues["natural"]   == "rock"          ) or
         ( keyvalues["natural"]   == "rocks"         ) or
+        ( keyvalues["natural"]   == "stones"        ) or
         ( keyvalues["climbing"]  == "boulder"       ))) then
       keyvalues["tourism"] = nil
    end
@@ -2244,7 +2245,8 @@ function filter_tags_generic(keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
 -- Change natural=rocks on non-nodes to natural=bare_rock
 -- ----------------------------------------------------------------------------
-   if ( keyvalues["natural"]   == "rocks" ) then
+   if (( keyvalues["natural"]   == "rocks"  ) or
+       ( keyvalues["natural"]   == "stones" )) then
       keyvalues["natural"] = "bare_rock"
    end
 
@@ -8997,7 +8999,8 @@ function filter_tags_node (keyvalues, nokeys)
 -- So that an icon (the all-black, non-climbing boulder one) is displayed
 -- ----------------------------------------------------------------------------
    if (( keyvalues["natural"] == "bare_rock" ) or
-       ( keyvalues["natural"] == "rocks"     )) then
+       ( keyvalues["natural"] == "rocks"     ) or
+       ( keyvalues["natural"] == "stones"    )) then
       keyvalues["natural"] = "rock"
    end
 
