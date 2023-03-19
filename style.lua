@@ -9027,6 +9027,16 @@ function filter_tags_way (keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- If a highway has tidal=yes but not yet a ford or bridge tag, add ford=yes
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["tidal"]   == "yes" ) and
+       ( keyvalues["highway"] ~= nil   ) and
+       ( keyvalues["ford"]    == nil   ) and
+       ( keyvalues["bridge"]  == nil   )) then
+      keyvalues["ford"] = "yes"
+   end
+
+-- ----------------------------------------------------------------------------
 -- "barrier=gate" on a way is a dark line; on bridleways it looks 
 -- "sufficiently different" to mark fords out.
 -- ----------------------------------------------------------------------------

@@ -19,6 +19,7 @@ Treat natural=meadow as a synonym for landuse=meadow, if no other landuse.
 Show tidal beaches with blue dots instead of grey.
 Render tidal scree, rocks, mud, shingle and sand with more blue.
 Consolidate some "ford" values into "yes".
+If a highway has tidal=yes but not yet a ford or bridge tag, add ford=yes.
 
 ## 06/03/2023
 Show highway=emergency_bay as "private parking".
