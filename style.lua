@@ -8911,7 +8911,16 @@ function filter_tags_node (keyvalues, nokeys)
 
 -- ----------------------------------------------------------------------------
 -- AJT node-only additions.
+--
+-- Consolidate some "ford" values into "yes".
+-- This is here rather than in "generic" because "generic" is called after this
 -- ----------------------------------------------------------------------------
+   if (( keyvalues["ford"] == "tidal"        ) or 
+       ( keyvalues["ford"] == "ford"         ) or 
+       ( keyvalues["ford"] == "intermittent" )) then
+      keyvalues["ford"] = "yes"
+   end
+
    if ( keyvalues["ford"] == "yes" ) then
       keyvalues["highway"] = "ford"
       keyvalues["ford"]    = nil
@@ -9008,6 +9017,16 @@ function filter_tags_way (keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
 -- AJT way-only additions.
 --
+-- Consolidate some "ford" values into "yes".
+-- This is here rather than in "generic" because "generic" is called after this
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["ford"] == "tidal"        ) or 
+       ( keyvalues["ford"] == "ford"         ) or 
+       ( keyvalues["ford"] == "intermittent" )) then
+      keyvalues["ford"] = "yes"
+   end
+
+-- ----------------------------------------------------------------------------
 -- "barrier=gate" on a way is a dark line; on bridleways it looks 
 -- "sufficiently different" to mark fords out.
 -- ----------------------------------------------------------------------------

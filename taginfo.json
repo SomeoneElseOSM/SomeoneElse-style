@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20230318T100400Z",
+  "data_updated": "20230319T001500Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -999,6 +999,9 @@
     { "key": "footway", "value": "yes", "description": "Obscure synonym for sidewalk" },
     { "key": "ford", "description": "Fords on nodes (rendered as icon) and ways (rendered as long ford)" },
     { "key": "ford", "value": "yes", "description": "Fords on nodes (rendered as icon) and ways (rendered as long ford)" },
+    { "key": "ford", "value": "tidal", "description": "Treated as ford=yes" },
+    { "key": "ford", "value": "ford", "description": "Treated as ford=yes" },
+    { "key": "ford", "value": "intermittent", "description": "Treated as ford=yes" },
     { "key": "ford", "value": "stepping_stones", "description": "On nodes, rendered as icon, on ways rendered as long ford" },
     { "key": "former_amenity", "description": "Handle disused version of tag" },
     { "key": "former_amenity", "value": "former_pub", "description": "Handle disused version of tag" },
