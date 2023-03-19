@@ -389,6 +389,13 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Show natural=bracken as scrub
+-- ----------------------------------------------------------------------------
+   if ( keyvalues["natural"]  == "bracken" ) then
+      keyvalues["natural"] = "scrub"
+   end
+ 
+-- ----------------------------------------------------------------------------
 -- Render old names on farmland etc.
 -- ----------------------------------------------------------------------------
    if ((( keyvalues["landuse"]  == "farmland"       )  or
@@ -1058,12 +1065,16 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
--- Treat natural=garden as leisure=garden
--- if there is no other more appropriate tag
+-- Treat natural=garden and natural=plants as leisure=garden
+-- if there is no other more appropriate tag.
+-- The "barrier" check is to avoid linear barriers with this tag as well 
+-- becoming area ones unexpectedly
 -- ----------------------------------------------------------------------------
-   if ((  keyvalues["natural"] == "garden"  ) and
+   if ((( keyvalues["natural"] == "garden" )   or
+        ( keyvalues["natural"] == "plants" ))  and
        (( keyvalues["landuse"] == nil      )   and
-        ( keyvalues["leisure"] == nil      ))) then
+        ( keyvalues["leisure"] == nil      )   and
+        ( keyvalues["barrier"] == nil      ))) then
       keyvalues["leisure"] = "garden"
    end
 
@@ -5759,6 +5770,15 @@ function filter_tags_generic(keyvalues, nokeys)
         ( keyvalues["theatre"] == "concert_hall" )) or
        (  keyvalues["amenity"] == "music_venue"   )) then
       keyvalues["amenity"] = "concert_hall"
+   end
+
+-- ----------------------------------------------------------------------------
+-- Show natural=embankment as man_made=embankment.
+-- Where it is used in UK/IE (which is rarely) it seems to be for single-sided
+-- ones.
+-- ----------------------------------------------------------------------------
+   if ( keyvalues["natural"] == "embankment"   ) then
+      keyvalues["man_made"] = "embankment"
    end
 
 -- ----------------------------------------------------------------------------
