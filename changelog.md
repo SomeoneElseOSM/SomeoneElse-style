@@ -22,7 +22,7 @@ Consolidate some "ford" values into "yes".
 If a highway has tidal=yes but not yet a ford or bridge tag, add ford=yes.
 Added more bridge=yes synonyms.
 Treat natural=garden and natural=plants as synonyms for leisure=garden, if no other appropriate tag.
-Treat natural=dunes as another synonym of natural=sand.
+Treat natural=dunes and natural=sand_dunes as further synonyms of natural=sand.
 Show natural=stones as natural=rock on nodes, and natural=bare_rock on non-nodes.
 Show natural=embankment as man_made=embankment.
 Show natural=bracken as scrub.

@@ -4455,8 +4455,9 @@ function filter_tags_generic(keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
 -- Sand dunes
 -- ----------------------------------------------------------------------------
-   if (( keyvalues["natural"] == "dune"  ) or
-       ( keyvalues["natural"] == "dunes" )) then
+   if (( keyvalues["natural"] == "dune"       ) or
+       ( keyvalues["natural"] == "dunes"      ) or
+       ( keyvalues["natural"] == "sand_dunes" )) then
       keyvalues["natural"] = "sand"
    end
 
