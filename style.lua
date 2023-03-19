@@ -2229,6 +2229,7 @@ function filter_tags_generic(keyvalues, nokeys)
         ( keyvalues["natural"]   == "rock"          ) or
         ( keyvalues["natural"]   == "rocks"         ) or
         ( keyvalues["natural"]   == "stones"        ) or
+        ( keyvalues["natural"]   == "erratic"       ) or
         ( keyvalues["climbing"]  == "boulder"       ))) then
       keyvalues["tourism"] = nil
    end
@@ -2278,7 +2279,8 @@ function filter_tags_generic(keyvalues, nokeys)
 -- If yes, let them get detected as "climbing pitches" ("amenity=pitch_climbing") 
 -- or non-pitch climbing features ("natural=climbing")
 -- ----------------------------------------------------------------------------
-   if ( keyvalues["natural"] == "boulder" ) then
+   if (( keyvalues["natural"] == "boulder" ) or
+       ( keyvalues["natural"] == "erratic" )) then
       if (( keyvalues["sport"]    ~= "climbing" ) and
           ( keyvalues["climbing"] ~= "boulder"  )) then
          keyvalues["natural"] = "rock"

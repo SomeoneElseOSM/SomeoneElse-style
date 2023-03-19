@@ -1673,6 +1673,7 @@
     { "key": "natural", "value": "dunes", "description": "Rendered as natural=sand" },
     { "key": "natural", "value": "earth_bank", "description": "Shown as a type of embankment" },
     { "key": "natural", "value": "embankment", "description": "Treated as a synonym for man_made=embankment" },
+    { "key": "natural", "value": "erratic", "description": "Shown as natural=rock, if not sport=climbing or climbing=boulder" },
     { "key": "natural", "value": "fell", "description": "Various natural features rendered" },
     { "key": "natural", "value": "floodplain", "description": "Various natural features rendered" },
     { "key": "natural", "value": "flower_bed", "description": "Synonym for leisure=garden, if no other appropriate tag." },
