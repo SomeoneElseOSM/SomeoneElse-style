@@ -396,6 +396,13 @@ function filter_tags_generic(keyvalues, nokeys)
    end
  
 -- ----------------------------------------------------------------------------
+-- Show natural=col as natural=saddle
+-- ----------------------------------------------------------------------------
+   if ( keyvalues["natural"]  == "col" ) then
+      keyvalues["natural"] = "saddle"
+   end
+ 
+-- ----------------------------------------------------------------------------
 -- Render old names on farmland etc.
 -- ----------------------------------------------------------------------------
    if ((( keyvalues["landuse"]  == "farmland"       )  or

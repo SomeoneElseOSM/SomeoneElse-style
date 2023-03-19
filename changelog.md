@@ -28,6 +28,7 @@ Show natural=embankment as man_made=embankment.
 Show natural=bracken as scrub.
 Handle natural=sound and natural=point as place=locality if no other place tag.
 Handle "natural=pond" as water.
+Show natural=col as natural=saddle.
 
 ## 06/03/2023
 Show highway=emergency_bay as "private parking".
