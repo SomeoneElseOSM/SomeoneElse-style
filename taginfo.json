@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20230319T013700Z",
+  "data_updated": "20230319T022700Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -1669,10 +1669,12 @@
     { "key": "natural", "value": "cave_entrance", "description": "Various natural features rendered" },
     { "key": "natural", "value": "cliff", "description": "Various natural features rendered" },
     { "key": "natural", "value": "dune", "description": "Rendered as natural=sand" },
+    { "key": "natural", "value": "dunes", "description": "Rendered as natural=sand" },
     { "key": "natural", "value": "earth_bank", "description": "Shown as a type of embankment" },
     { "key": "natural", "value": "fell", "description": "Various natural features rendered" },
     { "key": "natural", "value": "floodplain", "description": "Various natural features rendered" },
     { "key": "natural", "value": "forest", "description": "Various natural features rendered" },
+    { "key": "natural", "value": "garden", "description": "Synonym for leisure=garden, if no other appropriate tag." },
     { "key": "natural", "value": "glacier", "description": "Various natural features rendered" },
     { "key": "natural", "value": "grass", "description": "natural=grass is shown as landuse=grass if some other tag does not apply" },
     { "key": "natural", "value": "grassland", "description": "Various natural features rendered" },
