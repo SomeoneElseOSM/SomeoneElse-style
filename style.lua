@@ -1070,11 +1070,12 @@ function filter_tags_generic(keyvalues, nokeys)
 -- The "barrier" check is to avoid linear barriers with this tag as well 
 -- becoming area ones unexpectedly
 -- ----------------------------------------------------------------------------
-   if ((( keyvalues["natural"] == "garden" )   or
-        ( keyvalues["natural"] == "plants" ))  and
-       (( keyvalues["landuse"] == nil      )   and
-        ( keyvalues["leisure"] == nil      )   and
-        ( keyvalues["barrier"] == nil      ))) then
+   if ((( keyvalues["natural"] == "garden"     )   or
+        ( keyvalues["natural"] == "plants"     )   or
+        ( keyvalues["natural"] == "flower_bed" ))  and
+       (( keyvalues["landuse"] == nil          )   and
+        ( keyvalues["leisure"] == nil          )   and
+        ( keyvalues["barrier"] == nil          ))) then
       keyvalues["leisure"] = "garden"
    end
 

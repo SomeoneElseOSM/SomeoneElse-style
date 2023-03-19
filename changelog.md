@@ -21,7 +21,7 @@ Render tidal scree, rocks, mud, shingle and sand with more blue.
 Consolidate some "ford" values into "yes".
 If a highway has tidal=yes but not yet a ford or bridge tag, add ford=yes.
 Added more bridge=yes synonyms.
-Treat natural=garden and natural=plants as synonyms for leisure=garden, if no other appropriate tag.
+Treat natural=garden, natural=plants and natural=flower_bed as synonyms for leisure=garden, if no other appropriate tag.
 Treat natural=dunes and natural=sand_dunes as further synonyms of natural=sand.
 Show natural=stones as natural=rock on nodes, and natural=bare_rock on non-nodes.
 Show natural=embankment as man_made=embankment.

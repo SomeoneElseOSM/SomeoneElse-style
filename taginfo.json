@@ -1675,6 +1675,7 @@
     { "key": "natural", "value": "embankment", "description": "Treated as a synonym for man_made=embankment" },
     { "key": "natural", "value": "fell", "description": "Various natural features rendered" },
     { "key": "natural", "value": "floodplain", "description": "Various natural features rendered" },
+    { "key": "natural", "value": "flower_bed", "description": "Synonym for leisure=garden, if no other appropriate tag." },
     { "key": "natural", "value": "forest", "description": "Treated as a synonym for natural=wood" },
     { "key": "natural", "value": "garden", "description": "Synonym for leisure=garden, if no other appropriate tag." },
     { "key": "natural", "value": "glacier", "description": "Various natural features rendered" },
