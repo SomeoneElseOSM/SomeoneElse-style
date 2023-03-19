@@ -21,6 +21,7 @@ Render tidal scree, rocks, mud, shingle and sand with more blue.
 Consolidate some "ford" values into "yes".
 If a highway has tidal=yes but not yet a ford or bridge tag, add ford=yes.
 Added more bridge=yes synonyms.
+Treat natural=garden as a synonym for leisure=garden, if no other appropriate tag.
 
 ## 06/03/2023
 Show highway=emergency_bay as "private parking".
