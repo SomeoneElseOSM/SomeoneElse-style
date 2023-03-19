@@ -4739,6 +4739,13 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Handle "natural=pond" as water.
+-- ----------------------------------------------------------------------------
+   if ( keyvalues["natural"] == "pond" ) then
+      keyvalues["natural"] = "water"
+   end
+
+-- ----------------------------------------------------------------------------
 -- Handle "waterway=mill_pond" as water.
 -- "dock" is displayed with a water fill.
 -- ----------------------------------------------------------------------------
