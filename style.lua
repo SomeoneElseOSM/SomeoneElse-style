@@ -6165,7 +6165,13 @@ function filter_tags_generic(keyvalues, nokeys)
         (( keyvalues["site_type"]           == "standing_stone"      )   or
          ( keyvalues["site_type"]           == "megalith"            )   or
          ( keyvalues["archaeological_site"] == "megalith"            )))) then
-      keyvalues["historic"] = "historicstandingstone"
+      if (( keyvalues["megalith_type"] == "stone_circle" ) or
+          ( keyvalues["megalith_type"] == "ring_cairn"   ) or
+          ( keyvalues["megalith_type"] == "henge"        )) then
+         keyvalues["historic"] = "historicstonecircle"
+      else
+         keyvalues["historic"] = "historicstandingstone"
+      end
 
       keyvalues["tourism"] = nil
    end
