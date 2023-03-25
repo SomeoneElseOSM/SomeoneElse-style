@@ -6188,7 +6188,13 @@ function filter_tags_generic(keyvalues, nokeys)
              ( keyvalues["megalith_type"] == "portal_tomb"     )) then
             keyvalues["historic"] = "historicmegalithtomb"
          else
-            keyvalues["historic"] = "historicstandingstone"
+         if (( keyvalues["megalith_type"] == "alignment"  ) or
+             ( keyvalues["megalith_type"] == "stone_row"  ) or
+             ( keyvalues["megalith_type"] == "stone_line" )) then
+               keyvalues["historic"] = "historicstonerow"
+            else
+               keyvalues["historic"] = "historicstandingstone"
+            end
          end
       end
 
