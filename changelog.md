@@ -5,6 +5,7 @@ This page describes changes made [here](https://github.com/SomeoneElseOSM/Someon
 Show stone circles with a unique icon, different to the default megalith icon of a single standing stone.
 Show megalithic tombs and stone rows with icons unique to them as well.
 Show archaeological sites that are fortifications or tumuli with icons unique to them.
+Show ringforts with icons unique to them.
 
 ## 19/03/2023
 If an amenity=bicycle_parking is mapped as a closed way, but as covered=no, don't show it with a roof.

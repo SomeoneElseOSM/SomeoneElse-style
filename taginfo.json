@@ -1017,6 +1017,8 @@
     { "key": "former:amenity", "description": "Handle disused version of tag" },
     { "key": "former:amenity", "value": "pub", "description": "Handle disused version of tag" },
     { "key": "former_name", "description": "Used on vacant shops only when current name is nil" },
+    { "key": "fortification_type", "description": "Show different fortification types differently" },
+    { "key": "fortification_type", "value": "ringfort", "description": "Show ringforts with a unique icon" },
     { "key": "fuel", "description": "Detect vending machines that sell petrol" },
     { "key": "fuel", "value": "UL91", "description": "Detect vending machines that sell petrol" },
     { "key": "fuel", "value": "lpg", "description": "Detect LPG fuel stations" },

@@ -6183,7 +6183,15 @@ function filter_tags_generic(keyvalues, nokeys)
 
       if (( keyvalues["archaeological_site"] == "fortification" ) or 
           ( keyvalues["site_type"]           == "fortification" )) then
-         keyvalues["historic"] = "historicfortification"
+-- ----------------------------------------------------------------------------
+-- Is the fortification a ringfort?
+-- There are 9k of them in Ireland
+-- ----------------------------------------------------------------------------
+         if ( keyvalues["fortification_type"] == "ringfort" ) then
+            keyvalues["historic"] = "historicringfort"
+         else
+            keyvalues["historic"] = "historicfortification"
+         end
       else
 -- ----------------------------------------------------------------------------
 -- Not a fortification.  Check for tumulus
