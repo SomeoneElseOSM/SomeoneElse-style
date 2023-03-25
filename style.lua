@@ -6190,7 +6190,20 @@ function filter_tags_generic(keyvalues, nokeys)
          if ( keyvalues["fortification_type"] == "ringfort" ) then
             keyvalues["historic"] = "historicringfort"
          else
-            keyvalues["historic"] = "historicfortification"
+-- ----------------------------------------------------------------------------
+-- Is the fortification a hill fort?
+-- Confusingly, some of these are mapped as fortification_type and some as
+-- archaeological_site.
+-- ----------------------------------------------------------------------------
+         if (( keyvalues["fortification_type"] == "hill_fort" ) or
+             ( keyvalues["fortification_type"] == "hillfort"  )) then
+               keyvalues["historic"] = "historichillfort"
+            else
+-- ----------------------------------------------------------------------------
+-- Show as a generic fortification
+-- ----------------------------------------------------------------------------
+               keyvalues["historic"] = "historicfortification"
+            end
          end
       else
 -- ----------------------------------------------------------------------------
@@ -6240,28 +6253,40 @@ function filter_tags_generic(keyvalues, nokeys)
                          ( keyvalues["megalith_type"] == "stone_row"  ) or
                          ( keyvalues["megalith_type"] == "stone_line" )) then
                            keyvalues["historic"] = "historicstonerow"
-                     else  -- other megalith, show as one stone
+                     else
 -- ----------------------------------------------------------------------------
 -- We have a megalith or standing stone, but megalith_type says it is not a 
 -- dolmen etc., stone circle or stone row.  
 -- Just use the normal standing stone icon.
 -- ----------------------------------------------------------------------------
                         keyvalues["historic"] = "historicstandingstone"
-                     end
-                  end
-               end
+                     end  -- if alignment
+                  end  -- if dolmen
+               end  -- if stone circle
+            else
+-- ----------------------------------------------------------------------------
+-- Not a fortification, tumulus, megalith or standing stone.
+-- Check for hill fort
+-- ----------------------------------------------------------------------------
+               if (( keyvalues["archaeological_site"] == "hill_fort" ) or
+                   ( keyvalues["site_type"]           == "hill_fort" ) or
+                   ( keyvalues["archaeological_site"] == "hillfort"  ) or
+                   ( keyvalues["site_type"]           == "hillfort"  )) then
+                     keyvalues["historic"] = "historichillfort"
 -- ----------------------------------------------------------------------------
 -- There's no code an an "else" here, just this comment:
---          else
+--             else
 --
--- If set, archaeological_site is not fortification, tumulus or 
--- megalith / standing stone.  Most will not have archaeological_site set.
+-- If set, archaeological_site is not fortification, tumulus, 
+-- megalith / standing stone or hill fort.  Most will not have 
+-- archaeological_site set.
 -- The standard icon for historic=archaeological_site will be used in the .mss
 -- ----------------------------------------------------------------------------
-            end
-         end
-      end
-   end
+               end  -- if hill fort
+            end  -- if megalith
+         end  -- if tumulus
+      end  -- if fortification
+   end  -- if archaeological site
 
    if ( keyvalues["historic"]   == "rune_stone" ) then
       keyvalues["historic"] = "runestone"
