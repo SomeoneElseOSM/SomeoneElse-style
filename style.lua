@@ -5027,25 +5027,6 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
--- If something is tagged as both an archaeological site and a place, lose the
--- place tag.
--- ----------------------------------------------------------------------------
-   if (( keyvalues["historic"] == "archaeological_site" )  and
-       ( keyvalues["place"]    ~= nil                   )) then
-      keyvalues["place"] = nil
-   end
-
-   if (( keyvalues["historic"] == "archaeological_site" )  and
-       ( keyvalues["landuse"]  == nil                   )) then
-      if ( keyvalues["megalith_type"] == "standing_stone" ) then
-         keyvalues["historic"] = "historicstandingstone"
-      end
-
-      keyvalues["landuse"] = "historic"
-      keyvalues["tourism"] = nil
-   end
-
--- ----------------------------------------------------------------------------
 -- historic=icon shouldn't supersede amenity or tourism tags.
 -- ----------------------------------------------------------------------------
    if (( keyvalues["historic"] == "icon" ) and
@@ -6156,49 +6137,122 @@ function filter_tags_generic(keyvalues, nokeys)
       end
    end
 
+-- ----------------------------------------------------------------------------
+-- stones and standing stones
+-- The latter is intended to look proper ancient history; 
+-- the former more recent,
+-- See also historic=archaeological_site, especially megalith, below
+-- ----------------------------------------------------------------------------
    if ( keyvalues["historic"]   == "stone" ) then
       keyvalues["historic"] = "historicstone"
    end
 
-   if ((   keyvalues["historic"]            == "standing_stone"        ) or
-       ((  keyvalues["historic"]            == "archaeological_site"  )  and
-        (( keyvalues["site_type"]           == "standing_stone"      )   or
-         ( keyvalues["site_type"]           == "megalith"            )   or
-         ( keyvalues["archaeological_site"] == "megalith"            )))) then
-      if (( keyvalues["megalith_type"] == "stone_circle" ) or
-          ( keyvalues["megalith_type"] == "ring_cairn"   ) or
-          ( keyvalues["megalith_type"] == "henge"        )) then
-         keyvalues["historic"] = "historicstonecircle"
+   if ( keyvalues["historic"]   == "standing_stone" ) then
+      keyvalues["historic"] = "historicstandingstone"
+   end
+
+-- ----------------------------------------------------------------------------
+-- archaeological sites
+--
+-- The subtag of archaeological_site was traditionally site_type, but after
+-- some tagfiddling to and fro is now archaeological_site and site_type
+-- The latter will likely be tagfiddled away at some point; I handle both.
+--
+-- If something is tagged as both an archaeological site and a place or a 
+-- tourist attraction, lose the other tag.
+-- Add historic landuse if there isn't already something 
+-- that would set an area fill such as landuse or natural.
+--
+-- Then handle different types of archaeological sites.
+-- fortification
+-- tumulus
+--
+-- megalith / standing stone
+-- The default icon for a megalith / standing stone is one standing stone.
+-- Stone circles are shown as such 
+-- Some groups of stones are shown with two stones.
+-- ----------------------------------------------------------------------------
+   if ( keyvalues["historic"] == "archaeological_site" ) then
+      keyvalues["place"] = nil
+      keyvalues["tourism"] = nil
+
+      if (( keyvalues["landuse"] == nil ) and
+          ( keyvalues["natural"] == nil )) then
+         keyvalues["landuse"] = "historic"
+      end
+
+      if (( keyvalues["archaeological_site"] == "fortification" ) or 
+          ( keyvalues["site_type"]           == "fortification" )) then
+         keyvalues["historic"] = "historicfortification"
       else
-         if (( keyvalues["megalith_type"] == "dolmen"          ) or
-             ( keyvalues["megalith_type"] == "long_barrow"     ) or
-             ( keyvalues["megalith_type"] == "passage_grave"   ) or
-             ( keyvalues["megalith_type"] == "court_tomb"      ) or
-             ( keyvalues["megalith_type"] == "cist"            ) or
-             ( keyvalues["megalith_type"] == "wedge_tomb"      ) or
-             ( keyvalues["megalith_type"] == "tholos"          ) or
-             ( keyvalues["megalith_type"] == "chamber"         ) or
-             ( keyvalues["megalith_type"] == "cairn"           ) or
-             ( keyvalues["megalith_type"] == "round_barrow"    ) or
-             ( keyvalues["megalith_type"] == "gallery_grave"   ) or
-             ( keyvalues["megalith_type"] == "passage_tomb"    ) or
-             ( keyvalues["megalith_type"] == "tomb"            ) or
-             ( keyvalues["megalith_type"] == "chambered_cairn" ) or
-             ( keyvalues["megalith_type"] == "chamber_cairn"   ) or
-             ( keyvalues["megalith_type"] == "portal_tomb"     )) then
-            keyvalues["historic"] = "historicmegalithtomb"
+-- ----------------------------------------------------------------------------
+-- Not a fortification.  Check for tumulus
+-- ----------------------------------------------------------------------------
+         if (( keyvalues["archaeological_site"] == "tumulus" ) or 
+             ( keyvalues["site_type"]           == "tumulus" )) then
+            keyvalues["historic"] = "historictumulus"
          else
-         if (( keyvalues["megalith_type"] == "alignment"  ) or
-             ( keyvalues["megalith_type"] == "stone_row"  ) or
-             ( keyvalues["megalith_type"] == "stone_line" )) then
-               keyvalues["historic"] = "historicstonerow"
-            else
-               keyvalues["historic"] = "historicstandingstone"
+-- ----------------------------------------------------------------------------
+-- Not a fortification or tumulus.  Check for megalith or standing stone.
+-- ----------------------------------------------------------------------------
+            if (( keyvalues["archaeological_site"] == "megalith"       ) or 
+                ( keyvalues["site_type"]           == "megalith"       ) or
+                ( keyvalues["archaeological_site"] == "standing_stone" ) or 
+                ( keyvalues["site_type"]           == "standing_stone" )) then
+               if (( keyvalues["megalith_type"] == "stone_circle" ) or
+                   ( keyvalues["megalith_type"] == "ring_cairn"   ) or
+                   ( keyvalues["megalith_type"] == "henge"        )) then
+                  keyvalues["historic"] = "historicstonecircle"
+               else
+-- ----------------------------------------------------------------------------
+-- We have a megalith or standing stone. Check megalith_type for dolmen etc.
+-- ----------------------------------------------------------------------------
+                  if (( keyvalues["megalith_type"] == "dolmen"          ) or
+                      ( keyvalues["megalith_type"] == "long_barrow"     ) or
+                      ( keyvalues["megalith_type"] == "passage_grave"   ) or
+                      ( keyvalues["megalith_type"] == "court_tomb"      ) or
+                      ( keyvalues["megalith_type"] == "cist"            ) or
+                      ( keyvalues["megalith_type"] == "wedge_tomb"      ) or
+                      ( keyvalues["megalith_type"] == "tholos"          ) or
+                      ( keyvalues["megalith_type"] == "chamber"         ) or
+                      ( keyvalues["megalith_type"] == "cairn"           ) or
+                      ( keyvalues["megalith_type"] == "round_barrow"    ) or
+                      ( keyvalues["megalith_type"] == "gallery_grave"   ) or
+                      ( keyvalues["megalith_type"] == "passage_tomb"    ) or
+                      ( keyvalues["megalith_type"] == "tomb"            ) or
+                      ( keyvalues["megalith_type"] == "chambered_cairn" ) or
+                      ( keyvalues["megalith_type"] == "chamber_cairn"   ) or
+                      ( keyvalues["megalith_type"] == "portal_tomb"     )) then
+                     keyvalues["historic"] = "historicmegalithtomb"
+                  else
+-- ----------------------------------------------------------------------------
+-- We have a megalith or standing stone. Check megalith_type for stone_row
+-- ----------------------------------------------------------------------------
+                     if (( keyvalues["megalith_type"] == "alignment"  ) or
+                         ( keyvalues["megalith_type"] == "stone_row"  ) or
+                         ( keyvalues["megalith_type"] == "stone_line" )) then
+                           keyvalues["historic"] = "historicstonerow"
+                     else  -- other megalith, show as one stone
+-- ----------------------------------------------------------------------------
+-- We have a megalith or standing stone, but megalith_type says it is not a 
+-- dolmen etc., stone circle or stone row.  
+-- Just use the normal standing stone icon.
+-- ----------------------------------------------------------------------------
+                        keyvalues["historic"] = "historicstandingstone"
+                     end
+                  end
+               end
+-- ----------------------------------------------------------------------------
+-- There's no code an an "else" here, just this comment:
+--          else
+--
+-- If set, archaeological_site is not fortification, tumulus or 
+-- megalith / standing stone.  Most will not have archaeological_site set.
+-- The standard icon for historic=archaeological_site will be used in the .mss
+-- ----------------------------------------------------------------------------
             end
          end
       end
-
-      keyvalues["tourism"] = nil
    end
 
    if ( keyvalues["historic"]   == "rune_stone" ) then
