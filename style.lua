@@ -6170,7 +6170,26 @@ function filter_tags_generic(keyvalues, nokeys)
           ( keyvalues["megalith_type"] == "henge"        )) then
          keyvalues["historic"] = "historicstonecircle"
       else
-         keyvalues["historic"] = "historicstandingstone"
+         if (( keyvalues["megalith_type"] == "dolmen"          ) or
+             ( keyvalues["megalith_type"] == "long_barrow"     ) or
+             ( keyvalues["megalith_type"] == "passage_grave"   ) or
+             ( keyvalues["megalith_type"] == "court_tomb"      ) or
+             ( keyvalues["megalith_type"] == "cist"            ) or
+             ( keyvalues["megalith_type"] == "wedge_tomb"      ) or
+             ( keyvalues["megalith_type"] == "tholos"          ) or
+             ( keyvalues["megalith_type"] == "chamber"         ) or
+             ( keyvalues["megalith_type"] == "cairn"           ) or
+             ( keyvalues["megalith_type"] == "round_barrow"    ) or
+             ( keyvalues["megalith_type"] == "gallery_grave"   ) or
+             ( keyvalues["megalith_type"] == "passage_tomb"    ) or
+             ( keyvalues["megalith_type"] == "tomb"            ) or
+             ( keyvalues["megalith_type"] == "chambered_cairn" ) or
+             ( keyvalues["megalith_type"] == "chamber_cairn"   ) or
+             ( keyvalues["megalith_type"] == "portal_tomb"     )) then
+            keyvalues["historic"] = "historicmegalithtomb"
+         else
+            keyvalues["historic"] = "historicstandingstone"
+         end
       end
 
       keyvalues["tourism"] = nil
