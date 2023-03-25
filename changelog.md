@@ -1,7 +1,7 @@
 # Changes made to this rendering
 This page describes changes made [here](https://github.com/SomeoneElseOSM/SomeoneElse-style), [here](https://github.com/SomeoneElseOSM/SomeoneElse-style-legend) and [here](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT), and visible [here](//map.atownsend.org.uk/maps/map/map.html).
 
-## As yet unreleased
+## 25/03/2023
 Show stone circles with a unique icon, different to the default megalith icon of a single standing stone.
 Show megalithic tombs and stone rows with icons unique to them as well.
 Show archaeological sites that are fortifications or tumuli with icons unique to them.
