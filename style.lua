@@ -4908,7 +4908,9 @@ function filter_tags_generic(keyvalues, nokeys)
        (( keyvalues["historic"] == "yes"        )  or
         ( keyvalues["historic"] == "mine"       )  or
         ( keyvalues["historic"] == "mineshaft"  )  or
-        ( keyvalues["historic"] == "mine_shaft" ))) then
+        ( keyvalues["historic"] == "mine_shaft" )  or
+        ( keyvalues["historic"] == "mine_adit"  )  or
+        ( keyvalues["historic"] == "mine_level" ))) then
       keyvalues["historic"] = "nonspecific"
       keyvalues["man_made"] = nil
       keyvalues["tourism"]  = nil
@@ -4947,7 +4949,6 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["historic"] == "ship"               ) or
        ( keyvalues["historic"] == "tank"               ) or
        ( keyvalues["historic"] == "house"              ) or
-       ( keyvalues["historic"] == "mine_shaft"         ) or
        ( keyvalues["historic"] == "lime_kiln"          ) or
        ( keyvalues["historic"] == "limekiln"           ) or
        ( keyvalues["historic"] == "kiln"               ) or
@@ -5006,7 +5007,9 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["historic"] == "stocks"            ) or
        ( keyvalues["historic"] == "folly"             ) or
        ( keyvalues["historic"] == "drinking_fountain" ) or
+       ( keyvalues["historic"] == "mine_shaft"        ) or
        ( keyvalues["historic"] == "mine_adit"         ) or
+       ( keyvalues["historic"] == "mine_level"        ) or
        ( keyvalues["historic"] == "mine"              ) or
        ( keyvalues["historic"] == "sawmill"           ) or
        ( keyvalues["historic"] == "well"              ) or
