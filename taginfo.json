@@ -1026,6 +1026,7 @@
     { "key": "fortification_type", "value": "hillfort", "description": "Show hill forts with a unique icon" },
     { "key": "fortification_type", "value": "motte", "description": "Show mottes with a unique icon" },
     { "key": "fortification_type", "value": "castle", "description": "Show castle with a unique icon" },
+    { "key": "fortification_type", "value": "promontory_fort", "description": "Show promontory fort with a unique icon" },
     { "key": "fuel", "description": "Detect vending machines that sell petrol" },
     { "key": "fuel", "value": "UL91", "description": "Detect vending machines that sell petrol" },
     { "key": "fuel", "value": "lpg", "description": "Detect LPG fuel stations" },

@@ -6215,9 +6215,16 @@ function filter_tags_generic(keyvalues, nokeys)
                      keyvalues["historic"] = "historicarchcastle"
                   else
 -- ----------------------------------------------------------------------------
+-- Is the fortification a promontory fort?
+-- ----------------------------------------------------------------------------
+                     if ( keyvalues["fortification_type"] == "promontory_fort" ) then
+                        keyvalues["historic"] = "historicpromontoryfort"
+                     else
+-- ----------------------------------------------------------------------------
 -- Show as a generic fortification
 -- ----------------------------------------------------------------------------
-                     keyvalues["historic"] = "historicfortification"
+                        keyvalues["historic"] = "historicfortification"
+                     end  -- promontory fort
                   end  -- castle
                end  -- motte
             end  -- hill_fort
