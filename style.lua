@@ -4900,7 +4900,8 @@ function filter_tags_generic(keyvalues, nokeys)
 
 -- ----------------------------------------------------------------------------
 -- Mineshafts
--- First make sure that we treat historic ones as historic
+-- First make sure that we treat historic ones also tagged as man_made 
+-- as historic
 -- ----------------------------------------------------------------------------
    if ((( keyvalues["man_made"] == "mine"       )  or
         ( keyvalues["man_made"] == "mineshaft"  )  or
@@ -4911,17 +4912,27 @@ function filter_tags_generic(keyvalues, nokeys)
         ( keyvalues["historic"] == "mine_shaft" )  or
         ( keyvalues["historic"] == "mine_adit"  )  or
         ( keyvalues["historic"] == "mine_level" ))) then
-      keyvalues["historic"] = "nonspecific"
+      keyvalues["historic"] = "mineshaft"
       keyvalues["man_made"] = nil
       keyvalues["tourism"]  = nil
    end
 
 -- ----------------------------------------------------------------------------
--- Then other spellings of mineshaft
+-- Then other spellings of man_made=mineshaft
 -- ----------------------------------------------------------------------------
    if (( keyvalues["man_made"] == "mine"       )  or
        ( keyvalues["man_made"] == "mine_shaft" )) then
       keyvalues["man_made"] = "mineshaft"
+   end
+
+-- ----------------------------------------------------------------------------
+-- and the historic equivalents
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["historic"] == "mine_shaft"        ) or
+       ( keyvalues["historic"] == "mine_adit"         ) or
+       ( keyvalues["historic"] == "mine_level"        ) or
+       ( keyvalues["historic"] == "mine"              )) then
+      keyvalues["historic"] = "mineshaft"
    end
 
 -- ----------------------------------------------------------------------------
@@ -5007,10 +5018,6 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["historic"] == "stocks"            ) or
        ( keyvalues["historic"] == "folly"             ) or
        ( keyvalues["historic"] == "drinking_fountain" ) or
-       ( keyvalues["historic"] == "mine_shaft"        ) or
-       ( keyvalues["historic"] == "mine_adit"         ) or
-       ( keyvalues["historic"] == "mine_level"        ) or
-       ( keyvalues["historic"] == "mine"              ) or
        ( keyvalues["historic"] == "sawmill"           ) or
        ( keyvalues["historic"] == "well"              ) or
        ( keyvalues["historic"] == "cannon"            )) then
