@@ -6305,15 +6305,22 @@ function filter_tags_generic(keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
                   if ( keyvalues["archaeological_site"] == "castle" ) then
                      keyvalues["historic"] = "historicarchcastle"
+                  else
+-- ----------------------------------------------------------------------------
+-- Is the archaeological site a crannog?
+-- ----------------------------------------------------------------------------
+                     if ( keyvalues["archaeological_site"] == "crannog" ) then
+                        keyvalues["historic"] = "historiccrannog"
 -- ----------------------------------------------------------------------------
 -- There's no code an an "else" here, just this comment:
---                else
+--                   else
 --
 -- If set, archaeological_site is not fortification, tumulus, 
 -- megalith / standing stone, hill fort or castle.  Most will not have 
 -- archaeological_site set.
 -- The standard icon for historic=archaeological_site will be used in the .mss
 -- ----------------------------------------------------------------------------
+                     end  -- crannog
                   end  -- if castle
                end  -- if hill fort
             end  -- if megalith
