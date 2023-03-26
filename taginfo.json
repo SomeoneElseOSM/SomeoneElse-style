@@ -1238,6 +1238,7 @@
     { "key": "historic", "value": "mill", "description": "Shown as nonspecific historic item" },
     { "key": "historic", "value": "mine", "description": "Shown as nonspecific historic item" },
     { "key": "historic", "value": "mine_adit", "description": "Shown as nonspecific historic item" },
+    { "key": "historic", "value": "mine_level", "description": "Shown as nonspecific historic item" },
     { "key": "historic", "value": "mine_shaft", "description": "Shown as nonspecific historic item" },
     { "key": "historic", "value": "mineshaft", "description": "Shown as nonspecific historic item" },
     { "key": "historic", "value": "monastery", "description": "Shown as nonspecific historic item" },
