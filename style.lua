@@ -4933,7 +4933,25 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["historic"] == "mine_level"        ) or
        ( keyvalues["historic"] == "mine"              )) then
       keyvalues["historic"] = "mineshaft"
+
+      if ( keyvalues["landuse"] == nil ) then
+         keyvalues["landuse"] = "historic"
+      end
    end
+
+-- ----------------------------------------------------------------------------
+-- Castles go through as "historic=castle"
+-- Note that archaeological sites that are castles are handled elsewhere.
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["historic"] == "castle" ) or
+       ( keyvalues["historic"] == "fort"   )) then
+      keyvalues["historic"] = "castle"
+
+      if ( keyvalues["landuse"] == nil ) then
+         keyvalues["landuse"] = "historic"
+      end
+   end
+
 
 -- ----------------------------------------------------------------------------
 -- Add a building tag to historic items that are likely buildings so that
@@ -4976,14 +4994,12 @@ function filter_tags_generic(keyvalues, nokeys)
    
    if (( keyvalues["historic"] == "monument"          ) or
        ( keyvalues["historic"] == "ruins"             ) or
-       ( keyvalues["historic"] == "fort"              ) or
        ( keyvalues["historic"] == "earthworks"        ) or
        ( keyvalues["historic"] == "barrow"            ) or
        ( keyvalues["historic"] == "tumulus"           ) or
        ( keyvalues["historic"] == "tomb"              ) or
        ( keyvalues["historic"] == "fortification"     ) or
        ( keyvalues["historic"] == "camp"              ) or
-       ( keyvalues["historic"] == "castle"            ) or
        ( keyvalues["historic"] == "mill"              ) or
        ( keyvalues["historic"] == "mound"             ) or
        ( keyvalues["historic"] == "manor"             ) or

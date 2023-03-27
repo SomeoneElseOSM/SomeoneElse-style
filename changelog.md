@@ -5,6 +5,7 @@ This page describes changes made [here](https://github.com/SomeoneElseOSM/Someon
 Show archaeological mottes, castles, promontory forts and crannogs with icons unique to them.
 Changed "mine_shaft" to not assume building on closed ways.
 Added icon for historic mine features, including also "historic=mine_level".
+Added icon for historic=castle.
 
 ## 25/03/2023
 Show stone circles with a unique icon, different to the default megalith icon of a single standing stone.
