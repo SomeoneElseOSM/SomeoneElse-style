@@ -1705,11 +1705,15 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
    if (( keyvalues["man_made"]   == "petroleum_well"         ) or 
+       ( keyvalues["industrial"] == "gas"                    ) or
+       ( keyvalues["industrial"] == "oil"                    ) or
+       ( keyvalues["industrial"] == "concrete_plant"         ) or
        ( keyvalues["industrial"] == "warehouse"              ) or
        ( keyvalues["industrial"] == "brewery"                ) or 
        ( keyvalues["industrial"] == "distillery"             ) or 
        ( keyvalues["craft"]      == "distillery"             ) or
        ( keyvalues["craft"]      == "bakery"                 ) or
+       ( keyvalues["industrial"] == "bakery"                 ) or
        ( keyvalues["craft"]      == "sawmill"                ) or
        ( keyvalues["industrial"] == "sawmill"                ) or
        ( keyvalues["industrial"] == "factory"                ) or 
@@ -1718,6 +1722,7 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["landuse"]    == "depot"                  ) or
        ( keyvalues["amenity"]    == "depot"                  ) or
        ( keyvalues["amenity"]    == "bus_depot"              ) or
+       ( keyvalues["industrial"] == "bus_depot"              ) or
        ( keyvalues["amenity"]    == "fuel_depot"             ) or
        ( keyvalues["amenity"]    == "scrapyard"              ) or 
        ( keyvalues["industrial"] == "scrap_yard"             ) or 
@@ -4920,8 +4925,9 @@ function filter_tags_generic(keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
 -- Then other spellings of man_made=mineshaft
 -- ----------------------------------------------------------------------------
-   if (( keyvalues["man_made"] == "mine"       )  or
-       ( keyvalues["man_made"] == "mine_shaft" )) then
+   if (( keyvalues["man_made"]   == "mine"       )  or
+       ( keyvalues["industrial"] == "mine"       )  or
+       ( keyvalues["man_made"]   == "mine_shaft" )) then
       keyvalues["man_made"] = "mineshaft"
    end
 
@@ -6527,6 +6533,15 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["trade"]   == "electrical"              ) or
        ( keyvalues["name"]    == "City Electrical Factors" )) then
       keyvalues["shop"] = "electrical"
+   end
+
+-- ----------------------------------------------------------------------------
+-- Show industrial=distributor as offices.
+-- This sounds odd, but matches how this is used UK/IE
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["industrial"] == "distributor" ) and
+       ( keyvalues["office"]     == nil           )) then
+      keyvalues["office"] = "yes"
    end
 
 -- ----------------------------------------------------------------------------
