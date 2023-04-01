@@ -7980,7 +7980,6 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["shop"]    == "cobblers"                           ) or
        ( keyvalues["shop"]    == "cobbler"                            ) or
        ( keyvalues["shop"]    == "key_cutting"                        ) or
-       ( keyvalues["shop"]    == "keys_shoerepair"                    ) or
        ( keyvalues["shop"]    == "key_cutting;shoe_repair"            ) or
        ( keyvalues["shop"]    == "shoe_repair;key_cutting"            ) or
        ( keyvalues["shop"]    == "locksmith;dry_cleaning;shoe_repair" ) or
