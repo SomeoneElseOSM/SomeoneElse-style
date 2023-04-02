@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20230401T112200Z",
+  "data_updated": "20230402T011800Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -2802,10 +2802,13 @@
     { "key": "tower:type", "value": "observation", "description": "Classify various towers" },
     { "key": "tower:type", "value": "radar", "description": "Classify various towers" },
     { "key": "tower:type", "value": "round", "description": "Classify various towers" },
+    { "key": "tower:type", "value": "round_tower", "description": "Classify various historic towers" },
+    { "key": "tower:type", "value": "shot_tower", "description": "Classify various historic towers" },
     { "key": "tower:type", "value": "spire", "description": "Classify various towers" },
     { "key": "tower:type", "value": "square", "description": "Classify various towers" },
     { "key": "tower:type", "value": "steeple", "description": "Classify various towers" },
     { "key": "tower:type", "value": "vent", "description": "Classify various towers" },
+    { "key": "tower:type", "value": "watchtower", "description": "Classify various historic towers" },
     { "key": "tower:type", "value": "weather_radar", "description": "Classify various towers" },
     { "key": "tpuk_ref", "description": "Render as bracketed name on trig points" },
     { "key": "tracktype", "description": "Don't render different tracktypes differently; that is used for PRoW type" },

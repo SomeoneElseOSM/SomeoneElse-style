@@ -4989,6 +4989,37 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Towers go through as various historic towers
+-- ----------------------------------------------------------------------------
+   if ( keyvalues["historic"] == "tower" ) then
+      keyvalues["man_made"] = nil
+
+      if (( keyvalues["tower:type"] == "round_tower" ) or
+          ( keyvalues["tower:type"] == "shot_tower"  )) then
+         keyvalues["historic"] = "historicroundtower"
+      else
+         if ( keyvalues["tower:type"] == "defensive" ) then
+            keyvalues["historic"] = "historicdefensivetower"
+         else
+            if (( keyvalues["tower:type"] == "observation" ) or
+                ( keyvalues["tower:type"] == "watchtower"  )) then
+               keyvalues["historic"] = "historicobservationtower"
+            else
+               if ( keyvalues["tower:type"] == "bell_tower" ) then
+                  keyvalues["historic"] = "historicchurchtower"
+               else
+                  keyvalues["historic"] = "historicsquaretower"
+               end  -- bell_tower
+            end  -- observation
+         end  -- defensive
+      end  -- round_tower
+
+      if ( keyvalues["landuse"] == nil ) then
+         keyvalues["landuse"] = "historic"
+      end
+   end
+
+-- ----------------------------------------------------------------------------
 -- Add a building tag to historic items that are likely buildings so that
 -- buildings.mss can process it.  Some shouldn't assume buildings (e.g. "fort"
 -- below).  Some use "roof" (which I use for "nearly a building" elsewhere).
@@ -5047,7 +5078,6 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["historic"] == "monastic_grange"   ) or
        ( keyvalues["historic"] == "abbey"             ) or
        ( keyvalues["historic"] == "priory"            ) or
-       ( keyvalues["historic"] == "tower"             ) or
        ( keyvalues["historic"] == "dovecote"          ) or
        ( keyvalues["historic"] == "toll_house"        ) or
        ( keyvalues["historic"] == "city_gate"         ) or

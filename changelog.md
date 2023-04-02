@@ -8,6 +8,7 @@ Added icon for historic mine features, including also "historic=mine_level".
 Added icon for historic=castle.
 Some more "industrial" values are treated as industrial landuse or "offices".
 Added icon for historic=manor and other large houses.
+Added various icons for historic towers.
 
 ## 25/03/2023
 Show stone circles with a unique icon, different to the default megalith icon of a single standing stone.
