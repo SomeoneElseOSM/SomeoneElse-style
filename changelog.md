@@ -9,6 +9,7 @@ Added icon for historic=castle.
 Some more "industrial" values are treated as industrial landuse or "offices".
 Added icon for historic=manor and other large houses.
 Added various icons for historic towers.
+If a "fort" has "fortification_type=hill_fort" etc., assume it is an archaeological site.
 
 ## 25/03/2023
 Show stone circles with a unique icon, different to the default megalith icon of a single standing stone.
