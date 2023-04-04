@@ -1,7 +1,7 @@
 # Changes made to this rendering
 This page describes changes made [here](https://github.com/SomeoneElseOSM/SomeoneElse-style), [here](https://github.com/SomeoneElseOSM/SomeoneElse-style-legend) and [here](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT), and visible [here](//map.atownsend.org.uk/maps/map/map.html).
 
-## As yet unreleased
+## 04/04/2023
 Show archaeological mottes, castles, promontory forts and crannogs with icons unique to them.
 Changed "mine_shaft" to not assume building on closed ways.
 Added icon for historic mine features, including also "historic=mine_level".
