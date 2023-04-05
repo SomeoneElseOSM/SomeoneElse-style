@@ -4673,6 +4673,20 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Show preserved railway tunnels as tunnels.
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["railway"] == "preserved" ) and
+       ( keyvalues["tunnel"]  == "yes"       )) then
+      keyvalues["railway"] = "rail"
+   end
+
+   if ((( keyvalues["railway"] == "miniature"    ) or
+        ( keyvalues["railway"] == "narrow_gauge" )) and
+       (  keyvalues["tunnel"]  == "yes"           )) then
+      keyvalues["railway"] = "light_rail"
+   end
+
+-- ----------------------------------------------------------------------------
 -- Goods Conveyors - render as miniature railway.
 -- ----------------------------------------------------------------------------
    if ( keyvalues["man_made"] == "goods_conveyor" ) then
