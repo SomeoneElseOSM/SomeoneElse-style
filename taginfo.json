@@ -1318,7 +1318,7 @@
     { "key": "industrial", "value": "gas", "description": "Shown as named industrial landuse" },
     { "key": "industrial", "value": "haulage", "description": "Shown as named industrial landuse" },
     { "key": "industrial", "value": "machine_shop", "description": "Shown as named industrial landuse" },
-    { "key": "industrial", "value": "machine", "description": "Shown as named industrial landuse" },
+    { "key": "industrial", "value": "machinery", "description": "Shown as named industrial landuse" },
     { "key": "industrial", "value": "metal_finishing", "description": "Shown as named industrial landuse" },
     { "key": "industrial", "value": "mobile_equipment", "description": "Shown as named industrial landuse" },
     { "key": "industrial", "value": "oil", "description": "Shown as named industrial landuse" },
