@@ -3492,8 +3492,36 @@ function filter_tags_generic(keyvalues, nokeys)
          else
             if (( keyvalues["accommodation"] ~= nil  ) and
                 ( keyvalues["accommodation"] ~= "no" )) then
-               keyvalues["amenity"] = "pub_ynydddy"
-	    else
+               if ( keyvalues["wheelchair"] == "yes" ) then
+	          if ( keyvalues["beer_garden"] == "yes" ) then
+                     keyvalues["amenity"] = "pub_ynydddyyg"
+                  else
+ 		     if ( keyvalues["outdoor_seating"] == "yes" ) then
+                        keyvalues["amenity"] = "pub_ynydddyyo"
+                     else
+                        keyvalues["amenity"] = "pub_ynydddyyd"
+                     end
+                  end
+	       else  -- wheelchair ~yes
+	          if ( keyvalues["wheelchair"] == "limited" ) then
+                     keyvalues["amenity"] = "pub_ynydddyl"
+	          else
+	             if ( keyvalues["wheelchair"] == "no" ) then
+                        keyvalues["amenity"] = "pub_ynydddyn"
+		     else
+	                if ( keyvalues["beer_garden"] == "yes" ) then
+                           keyvalues["amenity"] = "pub_ynydddydg"
+                        else
+ 		           if ( keyvalues["outdoor_seating"] == "yes" ) then
+                              keyvalues["amenity"] = "pub_ynydddydo"
+                           else
+                              keyvalues["amenity"] = "pub_ynydddydd"
+                           end
+                        end
+	             end
+	          end
+	       end  -- wheelchair
+	    else  -- accommodation
                if ( keyvalues["wheelchair"] == "yes" ) then
 	          if ( keyvalues["beer_garden"] == "yes" ) then
                      keyvalues["amenity"] = "pub_ynydddnyg"
@@ -3523,7 +3551,7 @@ function filter_tags_generic(keyvalues, nokeys)
 	             end
 	          end
 	       end
-	    end
+	    end  -- accommodation
          end
       else
          if ( keyvalues["noncarpeted"] == "yes"  ) then
