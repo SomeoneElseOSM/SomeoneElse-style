@@ -5032,6 +5032,16 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Similarly, catch "historic" "ringfort"s
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["historic"]           == "fortification" ) and
+       ( keyvalues["fortification_type"] == "ringfort"      )) then
+      keyvalues["historic"]            = "archaeological_site"
+      keyvalues["archaeological_site"] = "fortification"
+      keyvalues["fortification_type"]  = "ringfort"
+   end
+
+-- ----------------------------------------------------------------------------
 -- Castles go through as "historic=castle"
 -- Note that archaeological sites that are castles are handled elsewhere.
 -- ----------------------------------------------------------------------------
