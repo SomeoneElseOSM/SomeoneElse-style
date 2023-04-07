@@ -6,6 +6,7 @@ Ensure that tunnels on preserved, miniature and narrow_gauge railways are shown.
 Process beer garden / outdoor _seating or wheelchair tags on non real ale pubs with accommodation.
 Assume that prehistoric "historic forts" are archaeological, not historic.
 Added a couple of designations in use in Northern Ireland (carriageway, PROW).
+Added icon for historic=monastery and other similar places.
 
 ## 04/04/2023
 Show archaeological mottes, castles, promontory forts and crannogs with icons unique to them.

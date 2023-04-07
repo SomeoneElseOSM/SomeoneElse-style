@@ -5053,6 +5053,19 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Monasteries go through as "historic=monastery"
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["historic"] == "monastery" ) or
+       ( keyvalues["historic"] == "abbey"     ) or
+       ( keyvalues["historic"] == "priory"    )) then
+      keyvalues["historic"] = "monastery"
+
+      if ( keyvalues["landuse"] == nil ) then
+         keyvalues["landuse"] = "historic"
+      end
+   end
+
+-- ----------------------------------------------------------------------------
 -- Towers go through as various historic towers
 -- ----------------------------------------------------------------------------
    if ( keyvalues["historic"] == "tower" ) then
@@ -5138,10 +5151,7 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["historic"] == "police_call_box"   ) or
        ( keyvalues["historic"] == "bakery"            ) or
        ( keyvalues["historic"] == "battlefield"       ) or
-       ( keyvalues["historic"] == "monastery"         ) or
        ( keyvalues["historic"] == "monastic_grange"   ) or
-       ( keyvalues["historic"] == "abbey"             ) or
-       ( keyvalues["historic"] == "priory"            ) or
        ( keyvalues["historic"] == "dovecote"          ) or
        ( keyvalues["historic"] == "toll_house"        ) or
        ( keyvalues["historic"] == "city_gate"         ) or
