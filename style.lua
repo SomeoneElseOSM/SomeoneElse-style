@@ -5068,8 +5068,11 @@ function filter_tags_generic(keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
 -- City gates go through as "historic=city_gate"
 -- Note that historic=gate are generally much smaller and are not included here.
+--
+-- "historic=battlefield"
 -- ----------------------------------------------------------------------------
-   if ( keyvalues["historic"] == "city_gate" ) then
+   if (( keyvalues["historic"] == "city_gate"   ) or
+       ( keyvalues["historic"] == "battlefield" )) then
       if ( keyvalues["landuse"] == nil ) then
          keyvalues["landuse"] = "historic"
       end
@@ -5160,7 +5163,6 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["historic"] == "almshouse"         ) or
        ( keyvalues["historic"] == "police_call_box"   ) or
        ( keyvalues["historic"] == "bakery"            ) or
-       ( keyvalues["historic"] == "battlefield"       ) or
        ( keyvalues["historic"] == "monastic_grange"   ) or
        ( keyvalues["historic"] == "dovecote"          ) or
        ( keyvalues["historic"] == "toll_house"        ) or
