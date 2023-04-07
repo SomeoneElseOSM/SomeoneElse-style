@@ -5003,15 +5003,17 @@ function filter_tags_generic(keyvalues, nokeys)
 
 -- ----------------------------------------------------------------------------
 -- Before we assume that a "historic=fort" is some sort of castle (big walls,
--- moat, that sort of thing) check that it's not some sort of hill fort (banks 
--- and ditches, people running around painted blue).  If it is, set 
--- "historic=archaeological_site" so it gets picked up as one below.
+-- moat, that sort of thing) check that it's not prehistoric or some sort of 
+-- hill fort (banks and ditches, people running around painted blue).  If it 
+-- is, set "historic=archaeological_site" so it gets picked up as one below.
 -- ----------------------------------------------------------------------------
-   if ((  keyvalues["historic"]           == "fort"       ) and
-       (( keyvalues["fortification_type"] == "hill_fort" )  or
-        ( keyvalues["fortification_type"] == "hillfort"  ))) then
+   if ((  keyvalues["historic"]              == "fort"          ) and
+       (( keyvalues["fortification_type"]    == "hill_fort"    )  or
+        ( keyvalues["fortification_type"]    == "hillfort"     )  or
+        ( keyvalues["historic:civilization"] == "prehistoric"  ))) then
       keyvalues["historic"]            = "archaeological_site"
       keyvalues["archaeological_site"] = "fortification"
+      keyvalues["fortification_type"]  = "hill_fort"
    end
 
 -- ----------------------------------------------------------------------------
