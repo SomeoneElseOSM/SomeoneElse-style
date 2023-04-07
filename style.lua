@@ -2147,6 +2147,14 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Springs - lose a historic tag, if set.
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["natural"] == "spring" ) and
+       ( keyvalues["historic"] ~= nil     )) then
+      keyvalues["historic"] = nil
+   end
+
+-- ----------------------------------------------------------------------------
 -- Beer gardens etc.
 -- ----------------------------------------------------------------------------
    if (( keyvalues["amenity"] == "beer_garden" ) or
@@ -5070,11 +5078,12 @@ function filter_tags_generic(keyvalues, nokeys)
 -- Note that historic=gate are generally much smaller and are not included here.
 --
 -- Also:
--- "historic=battlefield", "historic=stocks"
+-- "historic=battlefield", "historic=stocks", "historic=well"
 -- ----------------------------------------------------------------------------
    if (( keyvalues["historic"] == "city_gate"   ) or
        ( keyvalues["historic"] == "battlefield" ) or
-       ( keyvalues["historic"] == "stocks"      )) then
+       ( keyvalues["historic"] == "stocks"      ) or
+       ( keyvalues["historic"] == "well"        )) then
       if ( keyvalues["landuse"] == nil ) then
          keyvalues["landuse"] = "historic"
       end
@@ -5181,7 +5190,6 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["historic"] == "folly"             ) or
        ( keyvalues["historic"] == "drinking_fountain" ) or
        ( keyvalues["historic"] == "sawmill"           ) or
-       ( keyvalues["historic"] == "well"              ) or
        ( keyvalues["historic"] == "cannon"            )) then
       keyvalues["historic"] = "nonspecific"
       keyvalues["tourism"] = nil

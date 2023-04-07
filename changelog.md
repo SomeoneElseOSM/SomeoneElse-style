@@ -7,7 +7,7 @@ Process beer garden / outdoor _seating or wheelchair tags on non real ale pubs w
 Assume that prehistoric "historic forts" are archaeological, not historic.
 Added a couple of designations in use in Northern Ireland (carriageway, PROW).
 Added icon for historic=monastery and other similar places.
-Added icons for historic=city_gate, historic=battlefield and historic=stocks.
+Added icons for historic=city_gate, historic=battlefield, historic=stocks and historic=well.
 
 ## 04/04/2023
 Show archaeological mottes, castles, promontory forts and crannogs with icons unique to them.
