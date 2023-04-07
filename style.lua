@@ -752,7 +752,8 @@ function filter_tags_generic(keyvalues, nokeys)
 
    if (( keyvalues["designation"] == "byway_open_to_all_traffic" ) or
        ( keyvalues["designation"] == "public_byway"              ) or 
-       ( keyvalues["designation"] == "byway"                     )) then
+       ( keyvalues["designation"] == "byway"                     ) or
+       ( keyvalues["designation"] == "carriageway"               )) then
       if (( keyvalues["highway"] == "steps"         ) or 
 	  ( keyvalues["highway"] == "intpathnarrow" ) or
 	  ( keyvalues["highway"] == "pathnarrow"    )) then
@@ -871,12 +872,18 @@ function filter_tags_generic(keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
 -- When a value is changed we get called again.  That's why there's a check
 -- for "footwaysteps" below "before the only place that it can be set".
+--
+-- Rights of way for people on foot are designated as:
+-- England and Wales: public_footpath
+-- Scotland: core_path (ish - more general acess rights exist)
+-- Northern Ireland: public_footpath or PROW (actually "footpath" in law)
 -- ----------------------------------------------------------------------------
    if (( keyvalues["designation"] == "public_footpath"                        ) or
        ( keyvalues["designation"] == "core_path"                              ) or 
        ( keyvalues["designation"] == "public_footway"                         ) or 
        ( keyvalues["designation"] == "public_footpath;permissive_bridleway"   ) or 
-       ( keyvalues["designation"] == "public_footpath;public_cycleway"        )) then
+       ( keyvalues["designation"] == "public_footpath;public_cycleway"        ) or
+       ( keyvalues["designation"] == "PROW"                                   )) then
       if (( keyvalues["highway"] == "intpathnarrow" ) or
           ( keyvalues["highway"] == "pathnarrow"    )) then
          if (( keyvalues["trail_visibility"] == "bad"          )  or
