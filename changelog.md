@@ -11,6 +11,7 @@ Added icons for historic=city_gate, historic=battlefield, historic=stocks, histo
 Catch "historic" "ringfort"s as archaeological.
 Show historic graveyards that aren't tagged as regular graveyards with "graveyard" landuse (like "disused" ones).
 Show non-historic monasteries and convents with a unique icon.
+Show "historic=ruins; ruins=building" as per other ruined nonspecific buildings.
 
 ## 04/04/2023
 Show archaeological mottes, castles, promontory forts and crannogs with icons unique to them.

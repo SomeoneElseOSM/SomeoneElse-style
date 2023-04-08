@@ -5191,7 +5191,10 @@ function filter_tags_generic(keyvalues, nokeys)
       keyvalues["tourism"] = nil
    end
 
-   if ( keyvalues["historic"] == "wreck" ) then
+   if ((  keyvalues["historic"] == "wreck"     ) or
+       (( keyvalues["historic"] == "ruins"    )  and
+        ( keyvalues["ruins"]    == "building" )  and
+        ( keyvalues["barrier"]  == nil        ))) then
       keyvalues["building"] = "roof"
       keyvalues["historic"] = "nonspecific"
    end
