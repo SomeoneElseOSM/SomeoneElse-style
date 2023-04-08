@@ -5084,28 +5084,30 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
--- City gates go through as "historic=city_gate"
--- Note that historic=gate are generally much smaller and are not included here.
---
--- Also:
--- "historic=battlefield", "historic=stocks", "historic=well"
--- ----------------------------------------------------------------------------
-   if (( keyvalues["historic"] == "city_gate"   ) or
-       ( keyvalues["historic"] == "battlefield" ) or
-       ( keyvalues["historic"] == "stocks"      ) or
-       ( keyvalues["historic"] == "well"        )) then
-      if ( keyvalues["landuse"] == nil ) then
-         keyvalues["landuse"] = "historic"
-      end
-   end
-
--- ----------------------------------------------------------------------------
 -- Crosses go through as "historic=cross"
 -- ----------------------------------------------------------------------------
    if (( keyvalues["historic"] == "cross"        ) or
        ( keyvalues["historic"] == "market_cross" )) then
       keyvalues["historic"] = "cross"
 
+      if ( keyvalues["landuse"] == nil ) then
+         keyvalues["landuse"] = "historic"
+      end
+   end
+
+-- ----------------------------------------------------------------------------
+-- City gates go through as "historic=city_gate"
+-- Note that historic=gate are generally much smaller and are not included here.
+--
+-- Also:
+-- "historic=battlefield", "historic=stocks", "historic=well", 
+-- "historic=dovecote"
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["historic"] == "city_gate"   ) or
+       ( keyvalues["historic"] == "battlefield" ) or
+       ( keyvalues["historic"] == "stocks"      ) or
+       ( keyvalues["historic"] == "well"        ) or
+       ( keyvalues["historic"] == "dovecote"    )) then
       if ( keyvalues["landuse"] == nil ) then
          keyvalues["landuse"] = "historic"
       end
@@ -5197,7 +5199,6 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["historic"] == "police_call_box"   ) or
        ( keyvalues["historic"] == "bakery"            ) or
        ( keyvalues["historic"] == "monastic_grange"   ) or
-       ( keyvalues["historic"] == "dovecote"          ) or
        ( keyvalues["historic"] == "toll_house"        ) or
        ( keyvalues["historic"] == "gate"              ) or
        ( keyvalues["historic"] == "pinfold"           ) or
