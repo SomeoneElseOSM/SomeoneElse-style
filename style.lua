@@ -5114,6 +5114,19 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- historic=grave_yard goes through as historic=nonspecific, with fill for 
+-- amenity=grave_yard if no landuse fill already.
+-- ----------------------------------------------------------------------------
+   if ( keyvalues["historic"] == "grave_yard" ) then
+      keyvalues["historic"] = "nonspecific"
+
+      if (( keyvalues["amenity"] == nil ) and
+          ( keyvalues["landuse"] == nil )) then
+         keyvalues["amenity"] = "grave_yard"
+      end
+   end
+
+-- ----------------------------------------------------------------------------
 -- Towers go through as various historic towers
 -- ----------------------------------------------------------------------------
    if ( keyvalues["historic"] == "tower" ) then
@@ -5206,7 +5219,6 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["historic"] == "theatre"           ) or
        ( keyvalues["historic"] == "shelter"           ) or
        ( keyvalues["historic"] == "grave"             ) or
-       ( keyvalues["historic"] == "grave_yard"        ) or
        ( keyvalues["historic"] == "statue"            ) or
        ( keyvalues["historic"] == "folly"             ) or
        ( keyvalues["historic"] == "drinking_fountain" ) or
