@@ -5100,6 +5100,18 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Crosses go through as "historic=cross"
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["historic"] == "cross"        ) or
+       ( keyvalues["historic"] == "market_cross" )) then
+      keyvalues["historic"] = "cross"
+
+      if ( keyvalues["landuse"] == nil ) then
+         keyvalues["landuse"] = "historic"
+      end
+   end
+
+-- ----------------------------------------------------------------------------
 -- Towers go through as various historic towers
 -- ----------------------------------------------------------------------------
    if ( keyvalues["historic"] == "tower" ) then
@@ -5195,8 +5207,6 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["historic"] == "grave"             ) or
        ( keyvalues["historic"] == "grave_yard"        ) or
        ( keyvalues["historic"] == "statue"            ) or
-       ( keyvalues["historic"] == "cross"             ) or
-       ( keyvalues["historic"] == "market_cross"      ) or
        ( keyvalues["historic"] == "folly"             ) or
        ( keyvalues["historic"] == "drinking_fountain" ) or
        ( keyvalues["historic"] == "sawmill"           ) or
