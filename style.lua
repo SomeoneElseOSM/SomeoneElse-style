@@ -6611,7 +6611,6 @@ function filter_tags_generic(keyvalues, nokeys)
 -- Render "eco" shops with their own icons
 -- ----------------------------------------------------------------------------
    if ((   keyvalues["shop"]               == "zero_waste"          ) or
-       (   keyvalues["shop"]               == "eco-grocer"          ) or
        (   keyvalues["shop"]               == "eco_refill"          ) or
        (   keyvalues["shop"]               == "refill"              ) or
        ((( keyvalues["shop"]               == "convenience"        )  or
