@@ -1,7 +1,7 @@
 # Changes made to this rendering
 This page describes changes made [here](https://github.com/SomeoneElseOSM/SomeoneElse-style), [here](https://github.com/SomeoneElseOSM/SomeoneElse-style-legend) and [here](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT), and visible [here](//map.atownsend.org.uk/maps/map/map.html).
 
-## As yet unreleased
+## 08/04/2023
 Ensure that tunnels on preserved, miniature and narrow_gauge railways are shown.
 Process beer garden / outdoor _seating or wheelchair tags on non real ale pubs with accommodation.
 Assume that prehistoric "historic forts" are archaeological, not historic.
