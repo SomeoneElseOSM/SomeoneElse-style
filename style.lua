@@ -8607,6 +8607,19 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Current monasteries et al go through as "amenity=monastery"
+-- Note that historic=gate are generally much smaller and are not included here.
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["amenity"] == "monastery" ) or
+       ( keyvalues["amenity"] == "convent"   )) then
+      keyvalues["amenity"] = "monastery"
+
+      if ( keyvalues["landuse"] == nil ) then
+         keyvalues["landuse"] = "unnamedcommercial"
+      end
+   end
+
+-- ----------------------------------------------------------------------------
 -- Non-government (commercial) offices that you might visit for a service.
 -- "communication" below seems to be used for marketing / commercial PR.
 -- Add unnamedcommercial landuse to give non-building areas a background.
@@ -8675,8 +8688,6 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["office"]      == "serviced_offices"        ) or
        ( keyvalues["amenity"]     == "studio"                  ) or
        ( keyvalues["amenity"]     == "prison"                  ) or
-       ( keyvalues["amenity"]     == "monastery"               ) or
-       ( keyvalues["amenity"]     == "convent"                 ) or
        ( keyvalues["amenity"]     == "music_school"            ) or
        ( keyvalues["amenity"]     == "cooking_school"          ) or
        ( keyvalues["craft"]       == "electrician"             ) or
