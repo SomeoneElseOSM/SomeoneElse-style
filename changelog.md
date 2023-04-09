@@ -3,6 +3,7 @@ This page describes changes made [here](https://github.com/SomeoneElseOSM/Someon
 
 ## As yet unreleased
 Removed "shop=eco-grocer"; no longer in the data.
+Show historic churches and chapels with a unique icon.
 
 ## 08/04/2023
 Ensure that tunnels on preserved, miniature and narrow_gauge railways are shown.

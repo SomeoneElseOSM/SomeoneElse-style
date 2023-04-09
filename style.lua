@@ -5096,6 +5096,24 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Historic churches go through as "historic=church", 
+-- if they're not also an amenity or something else.
+-- ----------------------------------------------------------------------------
+   if ((( keyvalues["historic"] == "church"         )  or
+        ( keyvalues["historic"] == "wayside_chapel" )  or
+        ( keyvalues["historic"] == "chapel"         )) and
+       (  keyvalues["amenity"]  == nil               ) and
+       (  keyvalues["shop"]     == nil               )) then
+      keyvalues["historic"] = "church"
+      keyvalues["building"] = "yes"
+      keyvalues["tourism"] = nil
+
+      if ( keyvalues["landuse"] == nil ) then
+         keyvalues["landuse"] = "historic"
+      end
+   end
+
+-- ----------------------------------------------------------------------------
 -- City gates go through as "historic=city_gate"
 -- Note that historic=gate are generally much smaller and are not included here.
 --
@@ -5172,9 +5190,6 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["historic"] == "protected_building" ) or
        ( keyvalues["historic"] == "watermill"          ) or
        ( keyvalues["historic"] == "windmill"           ) or
-       ( keyvalues["historic"] == "church"             ) or
-       ( keyvalues["historic"] == "wayside_chapel"     ) or
-       ( keyvalues["historic"] == "chapel"             ) or
        ( keyvalues["historic"] == "gate_house"         ) or
        ( keyvalues["historic"] == "aircraft"           ) or
        ( keyvalues["historic"] == "locomotive"         ) or
