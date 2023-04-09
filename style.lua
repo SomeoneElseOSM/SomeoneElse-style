@@ -5214,6 +5214,15 @@ function filter_tags_generic(keyvalues, nokeys)
       keyvalues["historic"] = "nonspecific"
    end
    
+   if ((  keyvalues["historic"] == "ruins"           )  and
+       (( keyvalues["ruins"]    == "church"         )  or
+        ( keyvalues["ruins"]    == "wayside_chapel" )  or
+        ( keyvalues["ruins"]    == "chapel"         )) and
+       (  keyvalues["amenity"]  == nil               )) then
+      keyvalues["building"] = "roof"
+      keyvalues["historic"] = "church"
+   end
+   
    if (( keyvalues["historic"] == "monument"          ) or
        ( keyvalues["historic"] == "ruins"             ) or
        ( keyvalues["historic"] == "earthworks"        ) or
