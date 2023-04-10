@@ -5100,10 +5100,15 @@ function filter_tags_generic(keyvalues, nokeys)
 
 -- ----------------------------------------------------------------------------
 -- Monasteries go through as "historic=monastery"
+-- "historic=ruins;ruins=monastery" are handled the same way.
 -- ----------------------------------------------------------------------------
-   if (( keyvalues["historic"] == "monastery" ) or
-       ( keyvalues["historic"] == "abbey"     ) or
-       ( keyvalues["historic"] == "priory"    )) then
+   if ((   keyvalues["historic"] == "monastery" ) or
+       (   keyvalues["historic"] == "abbey"     ) or
+       (   keyvalues["historic"] == "priory"    ) or
+       ((  keyvalues["historic"] == "ruins"    )  and
+        (( keyvalues["ruins"] == "monastery"  )  or
+         ( keyvalues["ruins"] == "abbey"      )  or
+         ( keyvalues["ruins"] == "priory"     )))) then
       keyvalues["historic"] = "monastery"
 
       if ( keyvalues["landuse"] == nil ) then
