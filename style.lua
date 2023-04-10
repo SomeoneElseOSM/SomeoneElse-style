@@ -4957,13 +4957,14 @@ function filter_tags_generic(keyvalues, nokeys)
 -- "not a folly but falling down".  That doesn't match what mappers do but 
 -- render both as half-dark.
 -- ----------------------------------------------------------------------------
-   if (((  keyvalues["building"]        ~= nil         )   and
-        (( keyvalues["ruins"]           == "yes"      )    or
-         ( keyvalues["ruins"]           == "house"    )))  or
-       (   keyvalues["ruins:building"]  == "yes"        )  or
-       (   keyvalues["building:ruins"]  == "yes"        )  or
-       (   keyvalues["ruined:building"] == "yes"        )  or
-       (   keyvalues["building"]        == "collapsed"  )) then
+   if (((  keyvalues["building"]        ~= nil          )   and
+        (( keyvalues["ruins"]           == "yes"       )    or
+         ( keyvalues["ruins"]           == "house"     )    or
+         ( keyvalues["ruins"]           == "farmhouse" )))  or
+       (   keyvalues["ruins:building"]  == "yes"         )  or
+       (   keyvalues["building:ruins"]  == "yes"         )  or
+       (   keyvalues["ruined:building"] == "yes"         )  or
+       (   keyvalues["building"]        == "collapsed"   )) then
       keyvalues["building"] = "ruins"
    end
    

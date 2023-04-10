@@ -2049,6 +2049,7 @@
     { "key": "ruins", "value": "castle", "description": "Detect ruined castles" },
     { "key": "ruins", "value": "chapel", "description": "Detect ruined churches" },
     { "key": "ruins", "value": "church", "description": "Detect ruined churches" },
+    { "key": "ruins", "value": "farmhouse", "description": "Detect ruined houses" },
     { "key": "ruins", "value": "fort", "description": "Detect ruined castles" },
     { "key": "ruins", "value": "house", "description": "Detect ruined houses" },
     { "key": "ruins", "value": "monastery", "description": "Detect historic monasteries" },

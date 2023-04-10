@@ -6,7 +6,7 @@ Removed "shop=eco-grocer"; no longer in the data.
 Show historic churches and chapels with a unique icon as a building.
 Show ruined historic churches and chapels with a unique icon as a ruined building.
 Show ruined castles in the same way as "archaeological" castles.
-Ensure that "ruins=house" houses are shown as such.
+Ensure that "ruins=house" and "ruins=farmhouse" houses are shown as such.
 Ensure that "ruins=tower" towers are shown as some sort of tower.
 Show military bunkers with a unique icon.
 Show historic military bunkers (including ruined ones) with a unique icon.
