@@ -90,7 +90,7 @@ Replace office=photo_studio with craft=photographer.
 Added holiday_accommodation as a synonym.
 Show heliports in the same way as aerodromes.
 Show names for small aerodromes (and heliports) from zoom 14.
-Filter out some trailheads if the other tags on the same object are more plauisble.
+Filter out some trailheads if the other tags on the same object are more plausible.
 Try and guess whether chalets are parks or just single chalets, based on other tags.
 Show turning loops that are ways as service roads, in addition to the nodes that are shown as turning circles.
 
