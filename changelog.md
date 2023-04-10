@@ -9,6 +9,7 @@ Show ruined castles in the same way as "archaeological" castles.
 Ensure that "ruins=house" houses are shown as such.
 Ensure that "ruins=tower" towers are shown as some sort of tower.
 Show military bunkers with a unique icon.
+Show historic military bunkers with a unique icon.
 
 ## 08/04/2023
 Ensure that tunnels on preserved, miniature and narrow_gauge railways are shown.

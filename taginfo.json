@@ -1196,6 +1196,7 @@
     { "key": "historic", "value": "boundary_marker", "description": "Shown as boundary stone" },
     { "key": "historic", "value": "boundary_stone", "description": "Shown as boundary stone" },
     { "key": "historic", "value": "building", "description": "Shown as nonspecific historic item" },
+    { "key": "historic", "value": "bunker", "description": "Shown as historic military bunker" },
     { "key": "historic", "value": "cairn", "description": "Shown as cairn" },
     { "key": "historic", "value": "camp", "description": "Shown as nonspecific historic item" },
     { "key": "historic", "value": "canal", "description": "Shown as derelict canal" },

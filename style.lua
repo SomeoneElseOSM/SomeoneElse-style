@@ -2187,6 +2187,19 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- "historic=bunker"
+-- This is set here to prevent unnamedcommercial being set just below.
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["historic"] == "bunker" ) and
+       ( keyvalues["military"] == nil      )) then
+      keyvalues["tourism"] = nil
+
+      if ( keyvalues["landuse"] == nil ) then
+         keyvalues["landuse"] = "historic"
+      end
+   end
+
+-- ----------------------------------------------------------------------------
 -- Shops etc. with icons already - just add "unnamedcommercial" landuse.
 -- The exception is where landuse is set to something we want to keep.
 -- ----------------------------------------------------------------------------
@@ -2211,7 +2224,9 @@ function filter_tags_generic(keyvalues, nokeys)
        (   keyvalues["landuse"]    ~= "village_green"      ) and
        (   keyvalues["landuse"]    ~= "cemetery"           ) and
        (   keyvalues["leisure"]    ~= "garden"             )) then
-      keyvalues["landuse"] = "unnamedcommercial"
+      if ( keyvalues["landuse"] == nil ) then
+         keyvalues["landuse"] = "unnamedcommercial"
+      end
    end
 
 -- ----------------------------------------------------------------------------
