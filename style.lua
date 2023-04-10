@@ -2187,12 +2187,15 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
--- "historic=bunker"
+-- "historic=bunker" and "historic=ruins;ruins=bunker"
 -- This is set here to prevent unnamedcommercial being set just below.
 -- ----------------------------------------------------------------------------
-   if (( keyvalues["historic"] == "bunker" ) and
-       ( keyvalues["military"] == nil      )) then
-      keyvalues["tourism"] = nil
+   if (((  keyvalues["historic"] == "bunker"  ) or
+        (( keyvalues["historic"] == "ruins"  ) and
+         ( keyvalues["ruins"]    == "bunker" ))) and
+       (  keyvalues["military"] == nil         )) then
+      keyvalues["historic"] = "bunker"
+      keyvalues["tourism"]  = nil
 
       if ( keyvalues["landuse"] == nil ) then
          keyvalues["landuse"] = "historic"
