@@ -4896,6 +4896,17 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Display military bunkers
+-- ----------------------------------------------------------------------------
+   if ( keyvalues["military"] == "bunker" ) then
+      keyvalues["man_made"] = "militarybunker"
+
+      if ( keyvalues["building"] == nil ) then
+         keyvalues["building"] = "yes"
+      end
+   end
+
+-- ----------------------------------------------------------------------------
 -- Supermarkets as normal buildings
 -- In the version of OSM-carto that I use this with, Supermarkets would 
 -- otherwise display as pink, which does not show up over pink retail landuse.
@@ -4918,9 +4929,7 @@ function filter_tags_generic(keyvalues, nokeys)
        (  keyvalues["man_made"]   == "telescope"        ) or
        (  keyvalues["man_made"]   == "street_cabinet"   ) or
        (  keyvalues["man_made"]   == "aeroplane"        ) or
-       (  keyvalues["man_made"]   == "helicopter"       ) or
-       (( keyvalues["military"]   == "bunker"          )  and
-        ( keyvalues["building"]   == nil               ))) then
+       (  keyvalues["man_made"]   == "helicopter"       )) then
       keyvalues["building"] = "yes"
    end
 
