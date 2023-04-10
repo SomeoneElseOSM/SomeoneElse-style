@@ -5147,8 +5147,11 @@ function filter_tags_generic(keyvalues, nokeys)
 
 -- ----------------------------------------------------------------------------
 -- Towers go through as various historic towers
+-- We also send ruined towers through here.
 -- ----------------------------------------------------------------------------
-   if ( keyvalues["historic"] == "tower" ) then
+   if ((  keyvalues["historic"] == "tower"  ) or
+       (( keyvalues["historic"] == "ruins" )  and
+        ( keyvalues["ruins"]    == "tower" ))) then
       keyvalues["man_made"] = nil
 
       if (( keyvalues["tower:type"] == "round_tower" ) or

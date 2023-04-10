@@ -2048,6 +2048,7 @@
     { "key": "ruins", "value": "church", "description": "Detect ruined churches" },
     { "key": "ruins", "value": "fort", "description": "Detect ruined castles" },
     { "key": "ruins", "value": "house", "description": "Detect ruined houses" },
+    { "key": "ruins", "value": "tower", "description": "Detect ruined towers" },
     { "key": "ruins", "value": "wayside_chapel", "description": "Detect ruined churches" },
     { "key": "ruins", "value": "yes", "description": "Detect ruins" },
     { "key": "ruins:building", "description": "Detect ruins" },
