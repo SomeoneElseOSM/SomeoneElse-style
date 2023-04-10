@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20230408T154300Z",
+  "data_updated": "20230410T121600Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -2043,6 +2043,11 @@
     { "key": "ruined:building", "value": "yes", "description": "Detect ruins" },
     { "key": "ruins", "description": "Detect ruins" },
     { "key": "ruins", "value": "building", "description": "Detect ruined buildings" },
+    { "key": "ruins", "value": "castle", "description": "Detect ruined castles" },
+    { "key": "ruins", "value": "chapel", "description": "Detect ruined churches" },
+    { "key": "ruins", "value": "church", "description": "Detect ruined churches" },
+    { "key": "ruins", "value": "fort", "description": "Detect ruined castles" },
+    { "key": "ruins", "value": "wayside_chapel", "description": "Detect ruined churches" },
     { "key": "ruins", "value": "yes", "description": "Detect ruins" },
     { "key": "ruins:building", "description": "Detect ruins" },
     { "key": "ruins:building", "value": "yes", "description": "Detect ruins" },

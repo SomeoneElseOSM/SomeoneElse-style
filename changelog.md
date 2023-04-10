@@ -5,6 +5,7 @@ This page describes changes made [here](https://github.com/SomeoneElseOSM/Someon
 Removed "shop=eco-grocer"; no longer in the data.
 Show historic churches and chapels with a unique icon as a building.
 Show ruined historic churches and chapels with a unique icon as a ruined building.
+Show ruined castles in the same way as "archaeological" castles.
 
 ## 08/04/2023
 Ensure that tunnels on preserved, miniature and narrow_gauge railways are shown.
