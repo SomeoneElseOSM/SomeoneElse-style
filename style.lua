@@ -7494,7 +7494,6 @@ function filter_tags_generic(keyvalues, nokeys)
    if ((  keyvalues["amenity"] == "fast_food"             )  and
        (( keyvalues["cuisine"] == "sandwich"             )   or
         ( keyvalues["cuisine"] == "sandwich;bakery"      )   or
-        ( keyvalues["cuisine"] == "sandwiches"           )   or
         ( keyvalues["cuisine"] == "sandwich;coffee_shop" ))) then
       keyvalues["amenity"] = "fast_food_sandwich"
    end
@@ -7514,7 +7513,6 @@ function filter_tags_generic(keyvalues, nokeys)
    if (( keyvalues["shop"]    == "hardware"             ) or
        ( keyvalues["shop"]    == "tool_hire"            ) or
        ( keyvalues["shop"]    == "equipment_hire"       ) or
-       ( keyvalues["shop"]    == "diy"                  ) or
        ( keyvalues["shop"]    == "tools"                ) or
        ( keyvalues["shop"]    == "hardware_rental"      ) or
        ( keyvalues["shop"]    == "builders_merchant"    ) or
