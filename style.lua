@@ -22,7 +22,7 @@ polygon_keys = { 'boundary', 'building', 'landcover', 'landuse', 'amenity', 'har
       'wetland', 'water', 'aeroway' }
 
 generic_keys = {'access','addr:housename','addr:housenumber','addr:interpolation','admin_level','advertising','aerialway','aeroway','amenity','area','barrier',
-   'bicycle','brand','bridge','bridleway','booth','boundary','building','capital','construction','covered','culvert','cutting','denomination','designation','disused','disused:shop','ele',
+   'bicycle','brand','bridge','bridleway','booth','boundary','building','capital','construction','covered','culvert','cutting','denomination','designation','disused','disused:man_made','disused:shop','ele',
    'embankment','emergency','entrance','foot','flood_prone','generation:source','geological','golf','government','harbour','hazard_prone','hazard_type','highway','historic','horse','hours','intermittent','junction','landcover','landuse','layer','leisure','lcn_ref','lock','locked',
    'man_made','marker','military','motor_car','name','natural','ncn_milepost','office','oneway','operator','opening_hours:covid19','pitch','place','playground','poi','population','power','power_source','public_transport',
    'railway','railway:historic','ref','religion','rescue_equipment','route',
@@ -5008,17 +5008,23 @@ function filter_tags_generic(keyvalues, nokeys)
 -- First make sure that we treat historic ones also tagged as man_made 
 -- as historic
 -- ----------------------------------------------------------------------------
-   if ((( keyvalues["man_made"] == "mine"       )  or
-        ( keyvalues["man_made"] == "mineshaft"  )  or
-        ( keyvalues["man_made"] == "mine_shaft" )) and
-       (( keyvalues["historic"] == "yes"        )  or
-        ( keyvalues["historic"] == "mine"       )  or
-        ( keyvalues["historic"] == "mineshaft"  )  or
-        ( keyvalues["historic"] == "mine_shaft" )  or
-        ( keyvalues["historic"] == "mine_adit"  )  or
-        ( keyvalues["historic"] == "mine_level" ))) then
+   if (((( keyvalues["disused:man_made"] == "mine"       )  or
+         ( keyvalues["disused:man_made"] == "mineshaft"  )  or
+         ( keyvalues["disused:man_made"] == "mine_shaft" )) and
+        (  keyvalues["man_made"]         == nil           )) or
+       ((( keyvalues["man_made"] == "mine"               )  or
+         ( keyvalues["man_made"] == "mineshaft"          )  or
+         ( keyvalues["man_made"] == "mine_shaft"         )) and
+        (( keyvalues["historic"] == "yes"                )  or
+         ( keyvalues["historic"] == "mine"               )  or
+         ( keyvalues["historic"] == "mineshaft"          )  or
+         ( keyvalues["historic"] == "mine_shaft"         )  or
+         ( keyvalues["historic"] == "mine_adit"          )  or
+         ( keyvalues["historic"] == "mine_level"         )  or
+         ( keyvalues["disused"]  == "yes"                )))) then
       keyvalues["historic"] = "mineshaft"
       keyvalues["man_made"] = nil
+      keyvalues["disused:man_made"] = nil
       keyvalues["tourism"]  = nil
    end
 

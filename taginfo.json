@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20230415T023000Z",
+  "data_updated": "20230419T001600Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -911,6 +911,10 @@
     { "key": "disused:building", "description": "If no other building tag, show as ruins" },
     { "key": "disused:landuse", "description": "Disused quarries are still shown as quarries" },
     { "key": "disused:landuse", "value": "quarry", "description": "Disused quarries are still shown as quarries" },
+    { "key": "disused:man_made", "description": "Disused mines are shown as historic mines" },
+    { "key": "disused:man_made", "value": "mine", "description": "Disused mines are shown as historic mines" },
+    { "key": "disused:man_made", "value": "mineshaft", "description": "Disused mines are shown as historic mines" },
+    { "key": "disused:man_made", "value": "mine_shaft", "description": "Disused mines are shown as historic mines" },
     { "key": "disused:pub", "description": "Former pubs are shown as closed pubs if no other tag applies" },
     { "key": "disused:pub", "value": "yes", "description": "Former pubs are shown as closed pubs if no other tag applies" },
     { "key": "disused:railway", "description": "Former railway stations shown as nonspecific historical objects" },
