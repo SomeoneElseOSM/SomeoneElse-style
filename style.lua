@@ -22,7 +22,7 @@ polygon_keys = { 'boundary', 'building', 'landcover', 'landuse', 'amenity', 'har
       'wetland', 'water', 'aeroway' }
 
 generic_keys = {'access','addr:housename','addr:housenumber','addr:interpolation','admin_level','advertising','aerialway','aeroway','amenity','area','barrier',
-   'bicycle','brand','bridge','bridleway','booth','boundary','building','capital','construction','covered','culvert','cutting','denomination','designation','disused','disused:man_made','disused:shop','ele',
+   'bicycle','brand','bridge','bridleway','booth','boundary','building','capital','construction','covered','culvert','cutting','denomination','designation','disused','disused:man_made','disused:military','disused:shop','ele',
    'embankment','emergency','entrance','foot','flood_prone','generation:source','geological','golf','government','harbour','hazard_prone','hazard_type','highway','historic','horse','hours','intermittent','junction','landcover','landuse','layer','leisure','lcn_ref','lock','locked',
    'man_made','marker','military','motor_car','name','natural','ncn_milepost','office','oneway','operator','opening_hours:covid19','pitch','place','playground','poi','population','power','power_source','public_transport',
    'railway','railway:historic','ref','religion','rescue_equipment','route',
@@ -2190,11 +2190,19 @@ function filter_tags_generic(keyvalues, nokeys)
 -- "historic=bunker" and "historic=ruins;ruins=bunker"
 -- This is set here to prevent unnamedcommercial being set just below.
 -- ----------------------------------------------------------------------------
-   if (((  keyvalues["historic"] == "bunker"  ) or
-        (( keyvalues["historic"] == "ruins"  ) and
-         ( keyvalues["ruins"]    == "bunker" ))) and
-       (  keyvalues["military"] == nil         )) then
+   if ((((  keyvalues["historic"] == "bunker"         ) or
+         (( keyvalues["historic"] == "ruins"         ) and
+          ( keyvalues["ruins"]    == "bunker"        ))) and
+        (   keyvalues["military"] == nil               )) or
+       ((   keyvalues["disused:military"] == "bunker"  )  and
+        (   keyvalues["military"]         == nil       )) or
+       ((   keyvalues["military"]         == "bunker"  )  and
+        (   keyvalues["disused"]          == "yes"     ))) then
       keyvalues["historic"] = "bunker"
+      keyvalues["disused"] = nil
+      keyvalues["disused:military"] = nil
+      keyvalues["military"] = nil
+      keyvalues["ruins"] = nil
       keyvalues["tourism"]  = nil
 
       if ( keyvalues["landuse"] == nil ) then

@@ -915,6 +915,8 @@
     { "key": "disused:man_made", "value": "mine", "description": "Disused mines are shown as historic mines" },
     { "key": "disused:man_made", "value": "mineshaft", "description": "Disused mines are shown as historic mines" },
     { "key": "disused:man_made", "value": "mine_shaft", "description": "Disused mines are shown as historic mines" },
+    { "key": "disused:military", "description": "Disused military bunkers are shown as historic ones" },
+    { "key": "disused:military", "value": "bunker", "description": "Disused military bunkers are shown as historic ones" },
     { "key": "disused:pub", "description": "Former pubs are shown as closed pubs if no other tag applies" },
     { "key": "disused:pub", "value": "yes", "description": "Former pubs are shown as closed pubs if no other tag applies" },
     { "key": "disused:railway", "description": "Former railway stations shown as nonspecific historical objects" },
