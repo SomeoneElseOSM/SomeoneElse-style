@@ -4,6 +4,7 @@ This page describes changes made [here](https://github.com/SomeoneElseOSM/Someon
 ## As yet unreleased
 Show disused:man_made=mineshaft etc. as historic mines.
 Show disused:military=bunker etc. as historic bunkers.
+Removed shop=healthfood; no longer in the data.
 
 ## 10/04/2023
 Removed "shop=eco-grocer"; no longer in the data.

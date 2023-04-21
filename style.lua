@@ -7963,7 +7963,6 @@ function filter_tags_generic(keyvalues, nokeys)
 -- health_food etc., and also "non-medical medical" and "woo" shops.
 -- ----------------------------------------------------------------------------
    if (( keyvalues["shop"]       == "health_food"             ) or
-       ( keyvalues["shop"]       == "healthfood"              ) or
        ( keyvalues["shop"]       == "health"                  ) or
        ( keyvalues["shop"]       == "organic"                 ) or
        ( keyvalues["shop"]       == "supplements"             ) or
