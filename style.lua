@@ -883,7 +883,8 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["designation"] == "public_footway"                         ) or 
        ( keyvalues["designation"] == "public_footpath;permissive_bridleway"   ) or 
        ( keyvalues["designation"] == "public_footpath;public_cycleway"        ) or
-       ( keyvalues["designation"] == "PROW"                                   )) then
+       ( keyvalues["designation"] == "PROW"                                   ) or
+       ( keyvalues["designation"] == "access_land"                            )) then
       if (( keyvalues["highway"] == "intpathnarrow" ) or
           ( keyvalues["highway"] == "pathnarrow"    )) then
          if (( keyvalues["trail_visibility"] == "bad"          )  or

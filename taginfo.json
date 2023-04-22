@@ -834,7 +834,7 @@
     { "key": "designation", "value": "Marine Conservation Zone", "description": "Shown as nature reserve" },
     { "key": "designation", "value": "Nature Reserve", "description": "Shown as nature reserve" },
     { "key": "designation", "value": "PROW", "description": "Shown as public footpath (NI)" },
-    { "key": "designation", "value": "access_land", "description": "Shown as nature reserve" },
+    { "key": "designation", "value": "access_land", "description": "Areas shown as nature reserves, highways shown as public_footpath" },
     { "key": "designation", "value": "adopted", "description": "Shown as public highway" },
     { "key": "designation", "value": "adopted_highway", "description": "Shown as public highway" },
     { "key": "designation", "value": "adopted_highway;public_footpath", "description": "Shown as public highway" },
