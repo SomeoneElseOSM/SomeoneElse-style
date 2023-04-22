@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20230421T232600Z",
+  "data_updated": "20230422T161700Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -256,6 +256,7 @@
     { "key": "amenity", "value": "phone", "description": "Synonym for telephone" },
     { "key": "amenity", "value": "physiotherapist", "description": "Synonym for shop=healthnonspecific" },
     { "key": "amenity", "value": "piano", "description": "Public and public-ish pianos shown as public musical instruments" },
+    { "key": "amenity", "value": "pinfold", "description": "Shown as historic pinfold" },
     { "key": "amenity", "value": "place_of_worship", "description": "Shown with appropriate icon for religion" },
     { "key": "amenity", "value": "plant_hire;tool_hire", "description": "Shown as DIY-type shop" },
     { "key": "amenity", "value": "playground_structure", "description": "Small piece of playground equipment" },
@@ -1257,7 +1258,7 @@
     { "key": "historic", "value": "ogham_stone", "description": "Shown as ogham stone" },
     { "key": "historic", "value": "palace", "description": "Shown as big house" },
     { "key": "historic", "value": "pillar", "description": "Shown as nonspecific historic item" },
-    { "key": "historic", "value": "pinfold", "description": "Shown as nonspecific historic item" },
+    { "key": "historic", "value": "pinfold", "description": "Shown as historic pinfold" },
     { "key": "historic", "value": "plaque", "description": "Shown as nonspecific historic item" },
     { "key": "historic", "value": "police_call_box", "description": "Shown as nonspecific historic item" },
     { "key": "historic", "value": "priory", "description": "Shown as unique icon" },

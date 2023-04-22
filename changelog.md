@@ -7,6 +7,7 @@ Show disused:military=bunker etc. as historic bunkers.
 Removed shop=healthfood; no longer in the data.
 Show highways with designation=access_land as public_footpath.
 Show smaller aerodromes (gliding clubs etc.) with leisure brown text, not transport blue. 
+Show historic=pinfold with a unique icon.
 
 ## 10/04/2023
 Removed "shop=eco-grocer"; no longer in the data.

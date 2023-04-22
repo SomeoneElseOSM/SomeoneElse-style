@@ -5163,6 +5163,18 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Historic pinfolds go through as "historic=pinfold", 
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["historic"] == "pinfold" )  or
+       ( keyvalues["amenity"] == "pinfold"  )) then
+      keyvalues["historic"] = "pinfold"
+
+      if ( keyvalues["landuse"] == nil ) then
+         keyvalues["landuse"] = "historic"
+      end
+   end
+
+-- ----------------------------------------------------------------------------
 -- City gates go through as "historic=city_gate"
 -- Note that historic=gate are generally much smaller and are not included here.
 --
@@ -5300,7 +5312,6 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["historic"] == "monastic_grange"   ) or
        ( keyvalues["historic"] == "toll_house"        ) or
        ( keyvalues["historic"] == "gate"              ) or
-       ( keyvalues["historic"] == "pinfold"           ) or
        ( keyvalues["historic"] == "prison"            ) or
        ( keyvalues["historic"] == "theatre"           ) or
        ( keyvalues["historic"] == "shelter"           ) or
