@@ -1058,6 +1058,16 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- "Nature reserve" doesn't say anything about what's inside; but one UK OSMer 
+-- changed "landuse" to "surface" (changeset 98859964).  This undoes that.
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["leisure"] == "nature_reserve" ) and
+       ( keyvalues["surface"] == "grass"          )) then
+      keyvalues["landuse"] = "grass"
+      keyvalues["surface"] = nil
+   end
+
+-- ----------------------------------------------------------------------------
 -- Treat landcover=grass as landuse=grass
 -- Also landuse=college_court, flowerbed
 -- ----------------------------------------------------------------------------
