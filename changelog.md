@@ -8,6 +8,7 @@ Removed shop=healthfood; no longer in the data.
 Show highways with designation=access_land as public_footpath.
 Show smaller aerodromes (gliding clubs etc.) with leisure brown text, not transport blue. 
 Show historic=pinfold with a unique icon.
+Show hedges as linear features if tagged on a different area feature; as area fatures if on their own on an area, and as linear features if on their own on a line.
 
 ## 10/04/2023
 Removed "shop=eco-grocer"; no longer in the data.

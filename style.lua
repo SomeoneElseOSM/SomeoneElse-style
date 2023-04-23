@@ -6163,6 +6163,25 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- At this point let's try and handle hedge tags on other area features as
+-- linear hedges.
+-- "hedge" can be either a linear or an area feature in this style.
+-- "hedgeline" can only be a linear feature in this style.
+-- ----------------------------------------------------------------------------
+   if ((  keyvalues["barrier"]    == "hedge"             ) and
+       (( keyvalues["landuse"]    ~= nil                )  or
+        ( keyvalues["natural"]    ~= nil                )  or
+        ( keyvalues["leisure"]    ~= nil                )  or
+        ( keyvalues["amenity"]    ~= nil                )  or
+        ( keyvalues["historic"]   ~= nil                )  or
+        ( keyvalues["landcover"]  ~= nil                )  or
+        ( keyvalues["tourism"]    ~= nil                )  or
+        ( keyvalues["man_made"]   == "wastewater_plant" )  or
+        ( keyvalues["surface"]    ~= nil                ))) then
+      keyvalues["barrier"] = "hedgeline"
+   end
+
+-- ----------------------------------------------------------------------------
 -- map "alleged shrubberies" as hedge areas.
 -- ----------------------------------------------------------------------------
    if (( keyvalues["natural"] == "shrubbery" ) and
@@ -6299,7 +6318,7 @@ function filter_tags_generic(keyvalues, nokeys)
 -- just display as hedge.
 -- ----------------------------------------------------------------------------
    if ( keyvalues["natural"]   == "tree_row" ) then
-      keyvalues["barrier"] = "hedge"
+      keyvalues["barrier"] = "hedgeline"
    end
 
 -- ----------------------------------------------------------------------------
