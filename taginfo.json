@@ -2317,7 +2317,6 @@
     { "key": "shop", "value": "flooring", "description": "Various shops shown" },
     { "key": "shop", "value": "floors", "description": "Various shops shown" },
     { "key": "shop", "value": "florist", "description": "Various shops shown" },
-    { "key": "shop", "value": "flower", "description": "Various shops shown" },
     { "key": "shop", "value": "food", "description": "Various shops shown" },
     { "key": "shop", "value": "footwear", "description": "Various shops shown" },
     { "key": "shop", "value": "forecourt", "description": "Various shops shown" },

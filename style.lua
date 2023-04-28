@@ -6888,10 +6888,6 @@ function filter_tags_generic(keyvalues, nokeys)
       keyvalues["shop"] = "catalogue"
    end
 
-   if ( keyvalues["shop"] == "flower"  ) then
-      keyvalues["shop"] = "florist"
-   end
-
 -- ----------------------------------------------------------------------------
 -- man_made=flagpole
 -- Non-MOD ones are passed straight through to be rendered.  MOD ones are

@@ -1,6 +1,9 @@
 # Changes made to this rendering
 This page describes changes made [here](https://github.com/SomeoneElseOSM/SomeoneElse-style), [here](https://github.com/SomeoneElseOSM/SomeoneElse-style-legend) and [here](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT), and visible [here](//map.atownsend.org.uk/maps/map/map.html).
 
+## As yet unreleased
+Removed shop=flower; no longer in the data.
+
 ## 23/04/2023
 Show disused:man_made=mineshaft etc. as historic mines.
 Show disused:military=bunker etc. as historic bunkers.
