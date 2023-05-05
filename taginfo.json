@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20230429T120900Z",
+  "data_updated": "20230505T145400Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -252,6 +252,7 @@
     { "key": "amenity", "value": "old_pub", "description": "Synonym for lifecycle tag on pubs" },
     { "key": "amenity", "value": "optician", "description": "Synonym for shop=optician" },
     { "key": "amenity", "value": "optometrist", "description": "Synonym for shop=optician" },
+    { "key": "amenity", "value": "outdoor_education_centre", "description": "Shown in green as 'leisure' amenity" },
     { "key": "amenity", "value": "parcel_box", "description": "Used to detect parcel lockers, dog poo bag machines" },
     { "key": "amenity", "value": "parcel_locker", "description": "Rendered with icon, name incorporates brand" },
     { "key": "amenity", "value": "parcel_pickup", "description": "Used to detect parcel lockers" },

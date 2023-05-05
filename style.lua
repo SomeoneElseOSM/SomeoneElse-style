@@ -8898,6 +8898,7 @@ function filter_tags_generic(keyvalues, nokeys)
    if (( keyvalues["amenity"]  == "events_venue"         ) or
        ( keyvalues["amenity"]  == "conference_centre"    ) or
        ( keyvalues["amenity"]  == "exhibition_centre"    ) or
+       ( keyvalues["amenity"]  == "outdoor_education_centre" ) or
        ( keyvalues["amenity"]  == "function_room"        ) or
        ( keyvalues["amenity"]  == "arts_centre"          ) or
        ( keyvalues["amenity"]  == "community_hall"       ) or
