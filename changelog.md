@@ -5,6 +5,8 @@ This page describes changes made [here](https://github.com/SomeoneElseOSM/Someon
 Removed shop=flower; no longer in the data.
 Suggested by https://community.openstreetmap.org/t/tagging-for-outdoor-education-centres/98422 , 
 Add support for "amenityoutdoor_education_centre".  Low usage currently.".
+Support healthcare=doctor as a synonym for amenity=doctors.
+Similarly support other "healthcare" synonyms, and some others (e.g. "midwife").
 
 ## 23/04/2023
 Show disused:man_made=mineshaft etc. as historic mines.

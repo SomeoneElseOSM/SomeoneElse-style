@@ -4270,9 +4270,13 @@ function filter_tags_generic(keyvalues, nokeys)
 -- Various mistagging, comma and semicolon healthcare
 -- Note that health centres currently appear as "health nonspecific".
 -- ----------------------------------------------------------------------------
-   if (( keyvalues["amenity"] == "doctors; pharmacy"       ) or
-       ( keyvalues["amenity"] == "surgery"                 ) or
-       ( keyvalues["amenity"] == "doctor"                  )) then
+   if ((   keyvalues["amenity"]    == "doctors; pharmacy"       ) or
+       (   keyvalues["amenity"]    == "surgery"                 ) or
+       (   keyvalues["amenity"]    == "doctor"                  ) or
+       ((( keyvalues["healthcare"] == "doctor"                )   or
+         ( keyvalues["healthcare"] == "doctor;pharmacy"       )   or
+         ( keyvalues["healthcare"] == "general_practitioner"  ))  and
+        (  keyvalues["amenity"]    == nil                      ))) then
       keyvalues["amenity"] = "doctors"
    end
 
@@ -8435,6 +8439,7 @@ function filter_tags_generic(keyvalues, nokeys)
 -- seperately.
 -- ----------------------------------------------------------------------------
    if (( keyvalues["shop"]        == "hearing_aids"                 ) or
+       ( keyvalues["healthcare"]  == "hearing_care"                 ) or
        ( keyvalues["shop"]        == "medical_supply"               ) or
        ( keyvalues["office"]      == "medical_supply"               ) or
        ( keyvalues["shop"]        == "mobility"                     ) or
@@ -8444,10 +8449,14 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["healthcare"]  == "chiropodist"                  ) or
        ( keyvalues["amenity"]     == "chiropractor"                 ) or
        ( keyvalues["healthcare"]  == "chiropractor"                 ) or
+       ( keyvalues["healthcare"]  == "department"                   ) or
+       ( keyvalues["healthcare"]  == "diagnostics"                  ) or
+       ( keyvalues["healthcare"]  == "dialysis"                     ) or
        ( keyvalues["healthcare"]  == "osteopath"                    ) or
        ( keyvalues["shop"]        == "osteopath"                    ) or
        ( keyvalues["amenity"]     == "physiotherapist"              ) or
        ( keyvalues["healthcare"]  == "physiotherapist"              ) or
+       ( keyvalues["healthcare"]  == "physiotherapist;podiatrist"   ) or
        ( keyvalues["shop"]        == "physiotherapist"              ) or
        ( keyvalues["healthcare"]  == "physiotherapy"                ) or
        ( keyvalues["shop"]        == "physiotherapy"                ) or
@@ -8456,9 +8465,11 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["healthcare"]  == "podiatrist"                   ) or
        ( keyvalues["healthcare"]  == "podiatrist;chiropodist"       ) or
        ( keyvalues["amenity"]     == "podiatrist"                   ) or
+       ( keyvalues["healthcare"]  == "podiatry"                     ) or
        ( keyvalues["amenity"]     == "healthcare"                   ) or
        ( keyvalues["amenity"]     == "clinic"                       ) or
        ( keyvalues["healthcare"]  == "clinic"                       ) or
+       ( keyvalues["healthcare"]  == "clinic;doctor"                ) or
        ( keyvalues["shop"]        == "clinic"                       ) or
        ( keyvalues["amenity"]     == "social_facility"              ) or
        ((  keyvalues["amenity"]         == nil                     )  and
@@ -8471,6 +8482,7 @@ function filter_tags_generic(keyvalues, nokeys)
          ( keyvalues["social_facility"] == "day_centre"           )   or
          ( keyvalues["social_facility"] == "residential_home"     ))) or
        ( keyvalues["amenity"]     == "nursing_home"                 ) or
+       ( keyvalues["healthcare"]  == "nursing_home"                 ) or
        ( keyvalues["residential"] == "nursing_home"                 ) or
        ( keyvalues["building"]    == "nursing_home"                 ) or
        ( keyvalues["amenity"]     == "care_home"                    ) or
@@ -8488,6 +8500,7 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["amenity"]     == "nursery"                      ) or
        ( keyvalues["amenity"]     == "nursery_school"               ) or
        ( keyvalues["amenity"]     == "health_centre"                ) or
+       ( keyvalues["healthcare"]  == "health_centre"                ) or
        ( keyvalues["building"]    == "health_centre"                ) or
        ( keyvalues["amenity"]     == "medical_centre"               ) or
        ( keyvalues["building"]    == "medical_centre"               ) or
@@ -8508,7 +8521,10 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["healthcare"]  == "massage"                      ) or
        ( keyvalues["healthcare"]  == "rehabilitation"               ) or
        ( keyvalues["healthcare"]  == "drug_rehabilitation"          ) or
+       ( keyvalues["healthcare"]  == "medical_imaging"              ) or
+       ( keyvalues["healthcare"]  == "midwife"                      ) or
        ( keyvalues["healthcare"]  == "occupational_therapist"       ) or
+       ( keyvalues["healthcare"]  == "speech_therapist"             ) or
        ( keyvalues["healthcare"]  == "tattoo_removal"               ) or
        ( keyvalues["healthcare"]  == "trichologist"                 ) or
        ( keyvalues["healthcare"]  == "ocular_prosthetics"           ) or
