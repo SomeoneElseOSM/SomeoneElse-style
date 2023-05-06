@@ -332,7 +332,6 @@
     { "key": "amenity", "value": "working_mens_club", "description": "Shown as leisure=nonspecific" },
     { "key": "amenity", "value": "youth_club", "description": "Shown as leisure=nonspecific" },
     { "key": "amenity:disused", "description": "Explicitly render disused pubs; handle disused telephones" },
-    { "key": "amenity:old", "description": "Handle disused telephones" },
     { "key": "animal", "description": "Used to infer more detail about other tags" },
     { "key": "animal", "value": "horse_walker", "description": "Show horse walkers as a roof" },
     { "key": "animal", "value": "cow", "description": "Detect meadows as agricultural" },

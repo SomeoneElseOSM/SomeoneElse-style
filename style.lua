@@ -1991,7 +1991,6 @@ function filter_tags_generic(keyvalues, nokeys)
                                   ( keyvalues["was:amenity"]        == "telephone"        )  or
                                   ( keyvalues["old:amenity"]        == "telephone"        )  or
                                   ( keyvalues["amenity"]            == "former_telephone" )  or
-                                  ( keyvalues["amenity:old"]        == "telephone"        )  or
                                   ( keyvalues["historic"]           == "telephone"        )) then
                                  keyvalues["amenity"]         = "boothdisused"
                                  keyvalues["disused:amenity"] = nil
