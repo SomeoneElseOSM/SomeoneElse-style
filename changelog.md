@@ -9,6 +9,7 @@ Support healthcare=doctor as a synonym for amenity=doctors.
 Similarly support other "healthcare" synonyms, and some others (e.g. "midwife").
 Removed amenity=doctor; no longer in the data.
 Removed amenity=micro_scooter_rental; no longer in the data.
+Removed amenity=scooter_hire; no longer in the data.
 
 ## 23/04/2023
 Show disused:man_made=mineshaft etc. as historic mines.

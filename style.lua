@@ -6918,7 +6918,6 @@ function filter_tags_generic(keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
    if ((  keyvalues["amenity"]                == "escooter_rental"        ) or
        (  keyvalues["amenity"]                == "scooter_parking"        ) or
-       (  keyvalues["amenity"]                == "scooter_hire"           ) or
        (  keyvalues["amenity"]                == "kick-scooter_rental"    ) or
        (  keyvalues["amenity"]                == "small_electric_vehicle" ) or
        (( keyvalues["amenity"]                == "parking"               )  and
