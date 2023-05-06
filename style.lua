@@ -4272,7 +4272,6 @@ function filter_tags_generic(keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
    if ((   keyvalues["amenity"]    == "doctors; pharmacy"       ) or
        (   keyvalues["amenity"]    == "surgery"                 ) or
-       (   keyvalues["amenity"]    == "doctor"                  ) or
        ((( keyvalues["healthcare"] == "doctor"                )   or
          ( keyvalues["healthcare"] == "doctor;pharmacy"       )   or
          ( keyvalues["healthcare"] == "general_practitioner"  ))  and
