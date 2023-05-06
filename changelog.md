@@ -13,6 +13,8 @@ Removed amenity=scooter_hire; no longer in the data.
 Removed amenity:old; no longer in the data.
 Corrected spelling of "K4 Post Office" (no underscores).
 Added values for "booth" to taginfo,json.
+Removed "Gala Bingo Hall"; no longer in the data.
+Added "name" values that are explicitly handled to taginfo,json.
 
 ## 23/04/2023
 Show disused:man_made=mineshaft etc. as historic mines.

@@ -9011,7 +9011,6 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["gambling"] == "bingo"                ) or
        ( keyvalues["name"]     == "Bingo Hall"           ) or
        ( keyvalues["name"]     == "Gala Bingo"           ) or
-       ( keyvalues["name"]     == "Gala Bingo Hall"      ) or
        ( keyvalues["name"]     == "Mecca Bingo"          ) or
        ( keyvalues["name"]     == "Castle Bingo"         ) or
        ( keyvalues["leisure"]  == "escape_game"          ) or
