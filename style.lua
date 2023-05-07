@@ -8342,7 +8342,6 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["shop"]    == "pyrotechnics"            ) or
        ( keyvalues["shop"]    == "hunting"                 ) or
        ( keyvalues["shop"]    == "military_surplus"        ) or
-       ( keyvalues["shop"]    == "army_surplus"            ) or
        ( keyvalues["shop"]    == "fireworks"               ) or
        ( keyvalues["shop"]    == "auction"                 ) or
        ( keyvalues["shop"]    == "auction_house"           ) or

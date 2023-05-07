@@ -15,6 +15,7 @@ Corrected spelling of "K4 Post Office" (no underscores).
 Added values for "booth" to taginfo,json.
 Removed "Gala Bingo Hall"; no longer in the data.
 Added "name" values that are explicitly handled to taginfo,json.
+Removed "shop=army_surplus"; no longer in the data.
 
 ## 23/04/2023
 Show disused:man_made=mineshaft etc. as historic mines.
