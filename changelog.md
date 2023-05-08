@@ -1,7 +1,7 @@
 # Changes made to this rendering
 This page describes changes made [here](https://github.com/SomeoneElseOSM/SomeoneElse-style), [here](https://github.com/SomeoneElseOSM/SomeoneElse-style-legend) and [here](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT), and visible [here](//map.atownsend.org.uk/maps/map/map.html).
 
-## As yet unreleased
+## 08/04/2023
 Removed shop=flower; no longer in the data.
 Suggested by https://community.openstreetmap.org/t/tagging-for-outdoor-education-centres/98422 , 
 Add support for "amenityoutdoor_education_centre".  Low usage currently.".
@@ -19,6 +19,7 @@ Removed "shop=army_surplus"; no longer in the data.
 Added operator values that are explicitly handled to taginfo.
 Assume prehistoric hillforts are archaeological but not necessarily hillforts.
 Assume other early forts are archaeological.
+Made the three "wood" patterns larger, and less regular.
 
 ## 23/04/2023
 Show disused:man_made=mineshaft etc. as historic mines.
