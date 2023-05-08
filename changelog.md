@@ -1,7 +1,7 @@
 # Changes made to this rendering
 This page describes changes made [here](https://github.com/SomeoneElseOSM/SomeoneElse-style), [here](https://github.com/SomeoneElseOSM/SomeoneElse-style-legend) and [here](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT), and visible [here](//map.atownsend.org.uk/maps/map/map.html).
 
-## 08/04/2023
+## 08/05/2023
 Removed shop=flower; no longer in the data.
 Suggested by https://community.openstreetmap.org/t/tagging-for-outdoor-education-centres/98422 , 
 Add support for "amenityoutdoor_education_centre".  Low usage currently.".
