@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20230507T225700Z",
+  "data_updated": "20230508T081800Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -1049,6 +1049,7 @@
     { "key": "former:amenity", "value": "pub", "description": "Handle disused version of tag" },
     { "key": "former_name", "description": "Used on vacant shops only when current name is nil" },
     { "key": "fortification_type", "description": "Show different fortification types differently" },
+    { "key": "fortification_type", "value": "broch", "description": "Treat brochs as archaeological" },
     { "key": "fortification_type", "value": "ringfort", "description": "Show ringforts with a unique icon" },
     { "key": "fortification_type", "value": "hill_fort", "description": "Show hill forts with a unique icon" },
     { "key": "fortification_type", "value": "hillfort", "description": "Show hill forts with a unique icon" },
@@ -1329,6 +1330,8 @@
     { "key": "historic:amenity", "value": "telephone", "description": "Former telephone boxes" },
     { "key": "historic:civilization", "description": "Used to detect forts that are archeological rather than historic." },
     { "key": "historic:civilization", "value": "prehistoric", "description": "Used to detect forts that are archeological rather than historic" },
+    { "key": "historic:civilization", "value": "iron_age", "description": "Used to detect forts that are archeological rather than historic" },
+    { "key": "historic:civilization", "value": "ancient_roman", "description": "Used to detect forts that are archeological rather than historic" },
     { "key": "historic:name", "description": "Name of derelict canals" },
     { "key": "historic:railway", "description": "Detect historic railway stations" },
     { "key": "historic:railway", "value": "station", "description": "Detect historic railway stations" },

@@ -5079,8 +5079,7 @@ function filter_tags_generic(keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
    if ((  keyvalues["historic"]              == "fort"          ) and
        (( keyvalues["fortification_type"]    == "hill_fort"    )  or
-        ( keyvalues["fortification_type"]    == "hillfort"     )  or
-        ( keyvalues["historic:civilization"] == "prehistoric"  ))) then
+        ( keyvalues["fortification_type"]    == "hillfort"     ))) then
       keyvalues["historic"]            = "archaeological_site"
       keyvalues["archaeological_site"] = "fortification"
       keyvalues["fortification_type"]  = "hill_fort"
@@ -5094,6 +5093,18 @@ function filter_tags_generic(keyvalues, nokeys)
       keyvalues["historic"]            = "archaeological_site"
       keyvalues["archaeological_site"] = "fortification"
       keyvalues["fortification_type"]  = "ringfort"
+   end
+
+-- ----------------------------------------------------------------------------
+-- Catch other archaeological fortifications.
+-- ----------------------------------------------------------------------------
+   if ((  keyvalues["historic"]              == "fort"           ) and
+       (( keyvalues["fortification_type"]    == "broch"         )  or
+        ( keyvalues["historic:civilization"] == "prehistoric"   )  or
+        ( keyvalues["historic:civilization"] == "iron_age"      )  or
+        ( keyvalues["historic:civilization"] == "ancient_roman" ))) then
+      keyvalues["historic"]            = "archaeological_site"
+      keyvalues["archaeological_site"] = "fortification"
    end
 
 -- ----------------------------------------------------------------------------

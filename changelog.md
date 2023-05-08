@@ -17,6 +17,8 @@ Removed "Gala Bingo Hall"; no longer in the data.
 Added "name" values that are explicitly handled to taginfo,json.
 Removed "shop=army_surplus"; no longer in the data.
 Added operator values that are explicitly handled to taginfo.
+Assume prehistoric hillforts are archaeological but not necessarily hillforts.
+Assume other early forts are archaeological.
 
 ## 23/04/2023
 Show disused:man_made=mineshaft etc. as historic mines.
