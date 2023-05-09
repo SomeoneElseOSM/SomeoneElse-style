@@ -5315,7 +5315,29 @@ function filter_tags_generic(keyvalues, nokeys)
        (  keyvalues["amenity"]  == nil               )) then
       keyvalues["historic"] = "historicarchcastle"
    end
-   
+
+-- ----------------------------------------------------------------------------
+-- "historic=industrial" has been used as a modifier for all sorts.  
+-- We're not interested in most of these but do display a historic dot for 
+-- some.
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["historic"] == "industrial" ) and
+       ( keyvalues["building"] == nil          ) and
+       ( keyvalues["man_made"] == nil          ) and
+       ( keyvalues["waterway"] == nil          ) and
+       ( keyvalues["name"]     ~= nil          )) then
+      keyvalues["historic"] = "nonspecific"
+      keyvalues["tourism"] = nil
+
+      if ( keyvalues["landuse"] == nil ) then
+         keyvalues["landuse"] = "historic"
+      end
+   end
+
+-- ----------------------------------------------------------------------------
+-- The catch-all for most "sensible" historic values that are displayed with
+-- a historic dot regardless of whether they have a name.
+-- ----------------------------------------------------------------------------   
    if (( keyvalues["historic"] == "monument"          ) or
        ( keyvalues["historic"] == "ruins"             ) or
        ( keyvalues["historic"] == "barrow"            ) or
