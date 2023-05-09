@@ -1,6 +1,9 @@
 # Changes made to this rendering
 This page describes changes made [here](https://github.com/SomeoneElseOSM/SomeoneElse-style), [here](https://github.com/SomeoneElseOSM/SomeoneElse-style-legend) and [here](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT), and visible [here](//map.atownsend.org.uk/maps/map/map.html).
 
+## As yet unreleased.
+Added report_tag_usage_changes.sh script that can run from cron and detect changes to tags/values used by a project at taginfo.
+
 ## 08/05/2023
 Removed shop=flower; no longer in the data.
 Suggested by https://community.openstreetmap.org/t/tagging-for-outdoor-education-centres/98422 , 
