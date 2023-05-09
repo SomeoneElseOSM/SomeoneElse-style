@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20230508T081800Z",
+  "data_updated": "20230509T231300Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -1265,6 +1265,7 @@
     { "key": "historic", "value": "house", "description": "Shown as nonspecific historic item" },
     { "key": "historic", "value": "icon", "description": "Shown as nonspecific historic item" },
     { "key": "historic", "value": "inclined_plane", "description": "Shown as dismantled railway" },
+    { "key": "historic", "value": "industrial", "description": "Shown as nonspecific historic item" },
     { "key": "historic", "value": "kiln", "description": "Shown as nonspecific historic item" },
     { "key": "historic", "value": "leat", "description": "Shown as derelict canal" },
     { "key": "historic", "value": "lime_kiln", "description": "Shown as nonspecific historic item" },
@@ -1299,6 +1300,7 @@
     { "key": "historic", "value": "priory", "description": "Shown as unique icon" },
     { "key": "historic", "value": "prison", "description": "Shown as nonspecific historic item" },
     { "key": "historic", "value": "protected_building", "description": "Shown as nonspecific historic item" },
+    { "key": "historic", "value": "quarry", "description": "Shown as historic quarry" },
     { "key": "historic", "value": "roundhouse", "description": "Shown as nonspecific historic item" },
     { "key": "historic", "value": "ruins", "description": "Shown as nonspecific historic item or value set by 'ruins'" },
     { "key": "historic", "value": "rune_stone", "description": "Shown as rune stone" },

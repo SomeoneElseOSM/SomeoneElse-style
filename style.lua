@@ -9190,11 +9190,16 @@ function filter_tags_generic(keyvalues, nokeys)
 
 
 -- ----------------------------------------------------------------------------
--- If a quarry is disused, it's still likely a hole in the ground, so render it
+-- If a quarry is disused or historic, it's still likely a hole in the ground, 
+-- so render it as something.
 -- ----------------------------------------------------------------------------
-   if (( keyvalues["disused:landuse"] == "quarry" ) and
-       ( keyvalues["landuse"]         == nil      )) then
-      keyvalues["landuse"] = "quarry"
+   if ((( keyvalues["disused:landuse"] == "quarry" )  and
+        ( keyvalues["landuse"]         == nil      )) or
+       (( keyvalues["historic"]        == "quarry" )  and
+        ( keyvalues["landuse"]         == nil      )) or
+       (( keyvalues["landuse"]         == "quarry" )  and
+        ( keyvalues["disused"]         == "yes"    ))) then
+      keyvalues["landuse"] = "historicquarry"
    end
 
 -- ----------------------------------------------------------------------------
