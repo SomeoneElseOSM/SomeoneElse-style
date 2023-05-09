@@ -5336,7 +5336,6 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["historic"] == "prison"            ) or
        ( keyvalues["historic"] == "theatre"           ) or
        ( keyvalues["historic"] == "shelter"           ) or
-       ( keyvalues["historic"] == "grave"             ) or
        ( keyvalues["historic"] == "statue"            ) or
        ( keyvalues["historic"] == "folly"             ) or
        ( keyvalues["historic"] == "drinking_fountain" ) or
@@ -6712,11 +6711,12 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
--- Memorial graves and graveyards
+-- Historic graves, and memorial graves and graveyards
 -- ----------------------------------------------------------------------------
-   if ((  keyvalues["historic"]   == "memorial"     ) and
-       (( keyvalues["memorial"]   == "grave"       )  or
-        ( keyvalues["memorial"]   == "graveyard"   ))) then
+   if ((   keyvalues["historic"]   == "grave"         ) or
+       ((  keyvalues["historic"]   == "memorial"     )  and
+        (( keyvalues["memorial"]   == "grave"       )   or
+         ( keyvalues["memorial"]   == "graveyard"   )))) then
       keyvalues["historic"] = "memorialgrave"
    end
 

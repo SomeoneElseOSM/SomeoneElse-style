@@ -4,6 +4,7 @@ This page describes changes made [here](https://github.com/SomeoneElseOSM/Someon
 ## As yet unreleased.
 Added report_tag_usage_changes.sh script that can run from cron and detect changes to tags/values used by a project at taginfo.
 Treat historic=earthworks as archaeological.
+Handle historic graves in the same way as memorial graves.
 
 ## 08/05/2023
 Removed shop=flower; no longer in the data.
