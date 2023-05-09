@@ -5318,7 +5318,6 @@ function filter_tags_generic(keyvalues, nokeys)
    
    if (( keyvalues["historic"] == "monument"          ) or
        ( keyvalues["historic"] == "ruins"             ) or
-       ( keyvalues["historic"] == "earthworks"        ) or
        ( keyvalues["historic"] == "barrow"            ) or
        ( keyvalues["historic"] == "tumulus"           ) or
        ( keyvalues["historic"] == "tomb"              ) or
@@ -6500,6 +6499,13 @@ function filter_tags_generic(keyvalues, nokeys)
 
    if ( keyvalues["historic"]   == "standing_stone" ) then
       keyvalues["historic"] = "historicstandingstone"
+   end
+
+-- ----------------------------------------------------------------------------
+-- Show earthworks as archaeological rather than historic.
+-- ----------------------------------------------------------------------------
+   if ( keyvalues["historic"] == "earthworks"        ) then
+      keyvalues["historic"] = "archaeological_site"
    end
 
 -- ----------------------------------------------------------------------------
