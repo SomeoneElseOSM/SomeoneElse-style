@@ -2679,6 +2679,11 @@ function filter_tags_generic(keyvalues, nokeys)
       keyvalues["old_amenity"] = nil
    end
 
+   if ( keyvalues["historic"] == "pub" ) then
+      keyvalues["disused:amenity"] = "pub"
+      keyvalues["historic"] = nil
+   end
+
    if ((  keyvalues["amenity"]           == "closed_pub"      )   or
        (  keyvalues["amenity"]           == "dead_pub"        )   or
        (  keyvalues["amenity"]           == "disused_pub"     )   or
