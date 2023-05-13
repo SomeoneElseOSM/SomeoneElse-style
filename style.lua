@@ -4809,21 +4809,31 @@ function filter_tags_generic(keyvalues, nokeys)
 -- Historic canal
 -- A former canal can, like an abandoned railway, still be a major
 -- physical feature.
+--
+-- Also treat historic=moat in the same way, unless it has an area=yes tag.
+-- Most closed ways for historic=moat appear to be linear ways, not areas.
 -- ----------------------------------------------------------------------------
-   if (( keyvalues["historic"]           == "canal"           ) or
-       ( keyvalues["historic:waterway"]  == "canal"           ) or
-       ( keyvalues["historic"]           == "leat"            ) or
-       ( keyvalues["disused:waterway"]   == "canal"           ) or
-       ( keyvalues["disused"]            == "canal"           ) or
-       ( keyvalues["abandoned:waterway"] == "canal"           ) or
-       ( keyvalues["waterway"]           == "disused_canal"   ) or
-       ( keyvalues["waterway"]           == "historic_canal"  ) or
-       ( keyvalues["waterway"]           == "abandoned_canal" ) or
-       ( keyvalues["waterway"]           == "former_canal"    ) or
-       ( keyvalues["waterway:historic"]  == "canal"           ) or
-       ( keyvalues["waterway:abandoned"] == "canal"           ) or
-       ( keyvalues["abandoned"]          == "waterway=canal"  )) then
+   if ((  keyvalues["historic"]           == "canal"           ) or
+       (  keyvalues["historic:waterway"]  == "canal"           ) or
+       (  keyvalues["historic"]           == "leat"            ) or
+       (  keyvalues["disused:waterway"]   == "canal"           ) or
+       (  keyvalues["disused"]            == "canal"           ) or
+       (  keyvalues["abandoned:waterway"] == "canal"           ) or
+       (  keyvalues["waterway"]           == "disused_canal"   ) or
+       (  keyvalues["waterway"]           == "historic_canal"  ) or
+       (  keyvalues["waterway"]           == "abandoned_canal" ) or
+       (  keyvalues["waterway"]           == "former_canal"    ) or
+       (  keyvalues["waterway:historic"]  == "canal"           ) or
+       (  keyvalues["waterway:abandoned"] == "canal"           ) or
+       (  keyvalues["abandoned"]          == "waterway=canal"  ) or
+       (( keyvalues["historic"]           == "moat"           )  and
+        ( keyvalues["natural"]            == nil              )  and
+        ( keyvalues["man_made"]           == nil              )  and
+        ( keyvalues["waterway"]           == nil              )  and
+        ( keyvalues["area"]               ~= "yes"            ))) then
       keyvalues["waterway"] = "derelict_canal"
+      keyvalues["historic"] = nil
+      keyvalues["area"]     = "no"
    end
 
 -- ----------------------------------------------------------------------------
