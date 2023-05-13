@@ -9,7 +9,8 @@ Add certain named historic=industrial objects with historic dot and landuse.
 Show disused and historic quarries.
 Show historic pubs as former pubs.
 Removed shop=locksmiths and shop=fireplaces; no longer in the data.
-Show historic=moat as waterway=derelict_canal.
+Show "historic=moat" as "waterway=derelict_canal".
+Show "historic=bridge site" as a generic historic site.
 
 ## 13/05/2023
 Humanitarian tiles added as an extra layer.

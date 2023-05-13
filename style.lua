@@ -5377,7 +5377,8 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["historic"] == "folly"             ) or
        ( keyvalues["historic"] == "drinking_fountain" ) or
        ( keyvalues["historic"] == "sawmill"           ) or
-       ( keyvalues["historic"] == "cannon"            )) then
+       ( keyvalues["historic"] == "cannon"            ) or
+       ( keyvalues["historic"] == "bridge site"       )) then
       keyvalues["historic"] = "nonspecific"
       keyvalues["tourism"] = nil
 
