@@ -8,6 +8,8 @@ Handle historic graves in the same way as memorial graves.
 Add certain named historic=industrial objects with historic dot and landuse.
 Show disused and historic quarries.
 Show historic pubs as former pubs.
+Humanitarian tiles added as an extra layer.
+Update OS OpenMap Local tiles to October 2022.
 
 ## 08/05/2023
 Removed shop=flower; no longer in the data.
