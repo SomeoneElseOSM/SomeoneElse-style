@@ -7881,7 +7881,6 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["shop"]   == "furnishings"                 ) or
        ( keyvalues["shop"]   == "furnishing"                  ) or
        ( keyvalues["shop"]   == "fireplace"                   ) or
-       ( keyvalues["shop"]   == "fireplaces"                  ) or
        ( keyvalues["shop"]   == "lighting"                    ) or
        ( keyvalues["shop"]   == "blinds"                      ) or
        ( keyvalues["shop"]   == "window_blind"                ) or
@@ -8244,8 +8243,7 @@ function filter_tags_generic(keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
 -- Locksmith
 -- ----------------------------------------------------------------------------
-   if (( keyvalues["craft"]   == "locksmith"               ) or
-       ( keyvalues["shop"]    == "locksmiths"              )) then
+   if ( keyvalues["craft"] == "locksmith" ) then
       keyvalues["shop"] = "locksmith"
    end
 
