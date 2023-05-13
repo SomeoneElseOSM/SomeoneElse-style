@@ -5352,35 +5352,44 @@ function filter_tags_generic(keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
 -- The catch-all for most "sensible" historic values that are displayed with
 -- a historic dot regardless of whether they have a name.
+--
+-- disused:landuse=cemetery goes through here rather than as 
+-- historic=grave_yard above because the notes suggest that these are not 
+-- visible as graveyards any more, so no graveyard fill.
 -- ----------------------------------------------------------------------------   
-   if (( keyvalues["historic"] == "monument"          ) or
-       ( keyvalues["historic"] == "ruins"             ) or
-       ( keyvalues["historic"] == "barrow"            ) or
-       ( keyvalues["historic"] == "tumulus"           ) or
-       ( keyvalues["historic"] == "tomb"              ) or
-       ( keyvalues["historic"] == "fortification"     ) or
-       ( keyvalues["historic"] == "camp"              ) or
-       ( keyvalues["historic"] == "mill"              ) or
-       ( keyvalues["historic"] == "mound"             ) or
-       ( keyvalues["historic"] == "hall"              ) or
-       ( keyvalues["historic"] == "tower_house"       ) or
-       ( keyvalues["historic"] == "almshouse"         ) or
-       ( keyvalues["historic"] == "police_call_box"   ) or
-       ( keyvalues["historic"] == "bakery"            ) or
-       ( keyvalues["historic"] == "monastic_grange"   ) or
-       ( keyvalues["historic"] == "toll_house"        ) or
-       ( keyvalues["historic"] == "gate"              ) or
-       ( keyvalues["historic"] == "prison"            ) or
-       ( keyvalues["historic"] == "theatre"           ) or
-       ( keyvalues["historic"] == "shelter"           ) or
-       ( keyvalues["historic"] == "statue"            ) or
-       ( keyvalues["historic"] == "folly"             ) or
-       ( keyvalues["historic"] == "drinking_fountain" ) or
-       ( keyvalues["historic"] == "sawmill"           ) or
-       ( keyvalues["historic"] == "cannon"            ) or
-       ( keyvalues["historic"] == "bridge site"       )) then
+   if ((  keyvalues["historic"] == "monument"          ) or
+       (  keyvalues["historic"] == "ruins"             ) or
+       (  keyvalues["historic"] == "barrow"            ) or
+       (  keyvalues["historic"] == "tumulus"           ) or
+       (  keyvalues["historic"] == "tomb"              ) or
+       (  keyvalues["historic"] == "fortification"     ) or
+       (  keyvalues["historic"] == "camp"              ) or
+       (  keyvalues["historic"] == "mill"              ) or
+       (  keyvalues["historic"] == "mound"             ) or
+       (  keyvalues["historic"] == "hall"              ) or
+       (  keyvalues["historic"] == "tower_house"       ) or
+       (  keyvalues["historic"] == "almshouse"         ) or
+       (  keyvalues["historic"] == "police_call_box"   ) or
+       (  keyvalues["historic"] == "bakery"            ) or
+       (  keyvalues["historic"] == "monastic_grange"   ) or
+       (  keyvalues["historic"] == "toll_house"        ) or
+       (  keyvalues["historic"] == "gate"              ) or
+       (  keyvalues["historic"] == "prison"            ) or
+       (  keyvalues["historic"] == "theatre"           ) or
+       (  keyvalues["historic"] == "shelter"           ) or
+       (  keyvalues["historic"] == "statue"            ) or
+       (  keyvalues["historic"] == "folly"             ) or
+       (  keyvalues["historic"] == "drinking_fountain" ) or
+       (  keyvalues["historic"] == "sawmill"           ) or
+       (  keyvalues["historic"] == "cannon"            ) or
+       (  keyvalues["historic"] == "bridge site"       ) or
+       (( keyvalues["disused:landuse"] == "cemetery"  )  and
+        ( keyvalues["landuse"]         == nil         )  and
+        ( keyvalues["leisure"]         == nil         )  and
+        ( keyvalues["amenity"]         == nil         ))) then
       keyvalues["historic"] = "nonspecific"
       keyvalues["tourism"] = nil
+      keyvalues["disused:landuse"] = nil
 
       if ( keyvalues["landuse"] == nil ) then
          keyvalues["landuse"] = "historic"

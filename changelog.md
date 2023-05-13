@@ -11,6 +11,7 @@ Show historic pubs as former pubs.
 Removed shop=locksmiths and shop=fireplaces; no longer in the data.
 Show "historic=moat" as "waterway=derelict_canal".
 Show "historic=bridge site" as a generic historic site.
+Show "disused:landuse=cemetery" as a generic historic item if there are no other tags.
 
 ## 13/05/2023
 Humanitarian tiles added as an extra layer.
