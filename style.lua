@@ -5318,6 +5318,10 @@ function filter_tags_generic(keyvalues, nokeys)
       keyvalues["building"] = "roof"
    end
 
+   if ( keyvalues["historic"] == "aircraft_wreck" ) then
+      keyvalues["building"] = "roof"
+   end
+
 -- ----------------------------------------------------------------------------
 -- Ruined buildings do not have their own icon
 -- ----------------------------------------------------------------------------
