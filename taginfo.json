@@ -1331,7 +1331,7 @@
     { "key": "historic", "value": "wayside_shrine", "description": "Shown as nonspecific historic item" },
     { "key": "historic", "value": "well", "description": "Shown as historic version of water_well icon" },
     { "key": "historic", "value": "windmill", "description": "Shown as nonspecific historic item" },
-    { "key": "historic", "value": "wreck", "description": "Shown as nonspecific historic item" },
+    { "key": "historic", "value": "wreck", "description": "Shown as a historic wreck" },
     { "key": "historic", "value": "yes", "description": "Used to detect historic mines" },
     { "key": "historic:amenity", "description": "Former telephone boxes" },
     { "key": "historic:amenity", "value": "telephone", "description": "Former telephone boxes" },

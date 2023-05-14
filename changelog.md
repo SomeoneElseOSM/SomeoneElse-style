@@ -13,6 +13,7 @@ Show "historic=moat" as "waterway=derelict_canal".
 Show "historic=bridge site" as a generic historic site.
 Show "disused:landuse=cemetery" as a generic historic item if there are no other tags.
 Show "historic=cemetery" as a historic item if it is not a current cemetery.
+Show "historic=wreck" with a unique icon.
 
 ## 13/05/2023
 Humanitarian tiles added as an extra layer.

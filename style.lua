@@ -5311,10 +5311,19 @@ function filter_tags_generic(keyvalues, nokeys)
       keyvalues["tourism"] = nil
    end
 
-   if ((  keyvalues["historic"] == "wreck"     ) or
-       (( keyvalues["historic"] == "ruins"    )  and
-        ( keyvalues["ruins"]    == "building" )  and
-        ( keyvalues["barrier"]  == nil        ))) then
+-- ----------------------------------------------------------------------------
+-- historic=wreck is usually on nodes and has its own icon
+-- ----------------------------------------------------------------------------
+   if ( keyvalues["historic"] == "wreck" ) then
+      keyvalues["building"] = "roof"
+   end
+
+-- ----------------------------------------------------------------------------
+-- Ruined buildings do not have their own icon
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["historic"] == "ruins"    )  and
+       ( keyvalues["ruins"]    == "building" )  and
+       ( keyvalues["barrier"]  == nil        )) then
       keyvalues["building"] = "roof"
       keyvalues["historic"] = "nonspecific"
    end
