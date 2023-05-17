@@ -2022,7 +2022,6 @@ function filter_tags_generic(keyvalues, nokeys)
 -- Mappings to shop=car
 -- ----------------------------------------------------------------------------
    if (( keyvalues["shop"]    == "car;car_repair"  )  or
-       ( keyvalues["shop"]    == "cars"            )  or
        ( keyvalues["shop"]    == "car_showroom"    )  or
        ( keyvalues["shop"]    == "vehicle"         )) then
       keyvalues["shop"] = "car"
@@ -6864,7 +6863,6 @@ function filter_tags_generic(keyvalues, nokeys)
 -- shoe shops
 -- ----------------------------------------------------------------------------
    if (( keyvalues["shop"] == "shoes"        ) or
-       ( keyvalues["shop"] == "shoe"         ) or
        ( keyvalues["shop"] == "footwear"     )) then
       keyvalues["shop"] = "shoes"
    end
@@ -7837,7 +7835,6 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["shop"]   == "tourist"             ) or
        ( keyvalues["shop"]   == "tourism"             ) or
        ( keyvalues["shop"]   == "bag"                 ) or
-       ( keyvalues["shop"]   == "bags"                ) or
        ( keyvalues["shop"]   == "balloon"             ) or
        ( keyvalues["shop"]   == "accessories"         ) or
        ( keyvalues["shop"]   == "beach"               ) or
@@ -7866,10 +7863,6 @@ function filter_tags_generic(keyvalues, nokeys)
    if (( keyvalues["shop"]    == "sweets"          ) or
        ( keyvalues["shop"]    == "sweet"           )) then
       keyvalues["shop"] = "confectionery"
-   end
-
-   if ( keyvalues["shop"] == "farm_shop" ) then
-      keyvalues["shop"] = "farm"
    end
 
 -- ----------------------------------------------------------------------------
@@ -7927,7 +7920,6 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["shop"]   == "interiors"                   ) or
        ( keyvalues["shop"]   == "stoves"                      ) or
        ( keyvalues["shop"]   == "stove"                       ) or
-       ( keyvalues["shop"]   == "lamps"                       ) or
        ( keyvalues["shop"]   == "tiles"                       ) or
        ( keyvalues["shop"]   == "tile"                        ) or
        ( keyvalues["shop"]   == "ceramics"                    ) or
@@ -7984,7 +7976,6 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["craft"]  == "carpenter"                   ) or
        ( keyvalues["craft"]  == "decorator"                   ) or
        ( keyvalues["shop"]   == "bed"                         ) or
-       ( keyvalues["shop"]   == "beds"                        ) or
        ( keyvalues["shop"]   == "mattress"                    ) or
        ( keyvalues["shop"]   == "waterbed"                    ) or
        ( keyvalues["shop"]   == "glass"                       ) or
@@ -8049,7 +8040,7 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["shop"]    == "eggs"            ) or
        ( keyvalues["shop"]    == "catering"        ) or
        ( keyvalues["shop"]    == "fishmonger"      ) or
-       ( keyvalues["shop"]    == "spice"           ) or
+       ( keyvalues["shop"]    == "spices"           ) or
        ( keyvalues["shop"]    == "nuts"            )) then
       keyvalues["shop"] = "shopnonspecific"
    end
@@ -8058,11 +8049,9 @@ function filter_tags_generic(keyvalues, nokeys)
 -- fabric and wool etc.
 -- ----------------------------------------------------------------------------
    if (( keyvalues["shop"]   == "fabric"               ) or
-       ( keyvalues["shop"]   == "fabrics"              ) or
        ( keyvalues["shop"]   == "linen"                ) or
        ( keyvalues["shop"]   == "linens"               ) or
        ( keyvalues["shop"]   == "haberdashery"         ) or
-       ( keyvalues["shop"]   == "haberdasher"          ) or
        ( keyvalues["shop"]   == "sewing"               ) or
        ( keyvalues["shop"]   == "needlecraft"          ) or
        ( keyvalues["shop"]   == "embroidery"           ) or
@@ -8139,7 +8128,6 @@ function filter_tags_generic(keyvalues, nokeys)
 -- toys and games etc.
 -- ----------------------------------------------------------------------------
    if (( keyvalues["shop"]   == "model"          ) or
-       ( keyvalues["shop"]   == "models"         ) or
        ( keyvalues["shop"]   == "games"          ) or
        ( keyvalues["shop"]   == "computer_games" ) or
        ( keyvalues["shop"]   == "video_games"    ) or
@@ -8152,7 +8140,6 @@ function filter_tags_generic(keyvalues, nokeys)
 -- Art etc.
 -- ----------------------------------------------------------------------------
    if (( keyvalues["shop"]   == "craft"          ) or
-       ( keyvalues["shop"]   == "crafts"         ) or
        ( keyvalues["shop"]   == "art_supplies"   ) or
        ( keyvalues["shop"]   == "pottery"        ) or
        ( keyvalues["craft"]  == "pottery"        )) then
@@ -8165,8 +8152,7 @@ function filter_tags_generic(keyvalues, nokeys)
 -- dog grooming).
 -- Add unnamedcommercial landuse to give non-building areas a background.
 -- ----------------------------------------------------------------------------
-   if (( keyvalues["shop"]    == "pets"                    ) or
-       ( keyvalues["shop"]    == "pet;garden"              ) or
+   if (( keyvalues["shop"]    == "pet;garden"              ) or
        ( keyvalues["shop"]    == "pet;florist"             ) or
        ((  keyvalues["shop"]     == "agrarian"                        )  and
         (( keyvalues["agrarian"] == "feed"                           )  or
@@ -8389,7 +8375,6 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["shop"]    == "watch_repair"            ) or
        ( keyvalues["shop"]    == "cleaning"                ) or
        ( keyvalues["shop"]    == "collector"               ) or
-       ( keyvalues["shop"]    == "collectables"            ) or
        ( keyvalues["shop"]    == "coins"                   ) or
        ( keyvalues["shop"]    == "video"                   ) or
        ( keyvalues["shop"]    == "audio_video"             ) or
@@ -8479,7 +8464,6 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["shop"]    == "general_store"   ) or
        ( keyvalues["shop"]    == "retail"          ) or
        ( keyvalues["shop"]    == "trade"           ) or
-       ( keyvalues["shop"]    == "misc"            ) or
        ( keyvalues["shop"]    == "cash_and_carry"  ) or
        ( keyvalues["shop"]    == "fixme"           ) or
        ( keyvalues["shop"]    == "wholesale"       ) or
@@ -8495,7 +8479,6 @@ function filter_tags_generic(keyvalues, nokeys)
    if (( keyvalues["amenity"]     == "optician"                     ) or
        ( keyvalues["craft"]       == "optician"                     ) or
        ( keyvalues["office"]      == "optician"                     ) or
-       ( keyvalues["shop"]        == "opticians"                    ) or
        ( keyvalues["shop"]        == "optometrist"                  ) or
        ( keyvalues["amenity"]     == "optometrist"                  ) or
        ( keyvalues["healthcare"]  == "optometrist"                  )) then
@@ -9460,7 +9443,6 @@ function filter_tags_generic(keyvalues, nokeys)
        (   keyvalues["office"]          == "vacant"     ) or
        (   keyvalues["office"]          == "disused"    ) or
        (   keyvalues["shop"]            == "disused"    ) or
-       (   keyvalues["shop"]            == "closed"     ) or
        (   keyvalues["shop"]            == "abandoned"  ) or
        ((  keyvalues["shop"]            ~= nil         )  and
         (  keyvalues["opening_hours"]   == "closed"    ))) then

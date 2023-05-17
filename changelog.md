@@ -15,6 +15,8 @@ Show "disused:landuse=cemetery" as a generic historic item if there are no other
 Show "historic=cemetery" as a historic item if it is not a current cemetery.
 Show "historic=wreck" with a unique icon.
 Show "historic=aircraft_wreck" with a unique icon.
+Removed "shop=bags", "shop=beds", "shop=cars", "shop=closed", "shop=collectables", "shop=crafts", "shop=fabrics", "shop=farm_shop", "shop=haberdasher", "shop=lamps", "shop=misc", "shop=models", "shop=opticians", "shop=pets", no longer in the data.
+Changed "shop=spice" to "shop=spices", following some mechanical tag changes.
 
 ## 13/05/2023
 Humanitarian tiles added as an extra layer.
