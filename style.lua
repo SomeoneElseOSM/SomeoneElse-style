@@ -300,6 +300,7 @@ function filter_tags_generic(keyvalues, nokeys)
 
    if ((( keyvalues["highway"] == "motorway_junction"  ) and
         ( keyvalues["name:signed"] == "no"            )  or
+        ( keyvalues["name:absent"] == "yes"           )  or
         ( keyvalues["unsigned"]    == "yes"           )  or
         ( keyvalues["unsigned"]    == "name"          ))) then
       keyvalues["name"] = nil
@@ -348,6 +349,7 @@ function filter_tags_generic(keyvalues, nokeys)
          end
       else
          if (( keyvalues["name:signed"] == "no"   ) or
+             ( keyvalues["name:absent"] == "yes"  ) or
              ( keyvalues["unsigned"]    == "yes"  ) or
              ( keyvalues["unsigned"]    == "name" )) then
             keyvalues["name"] = "(" .. keyvalues["name"]
@@ -9925,6 +9927,7 @@ function filter_tags_relation_member (keyvalues, keyvaluemembers, roles, memberc
           ( keyvalues["highway"] == "ldpnhn" )) then
          if ((  keyvalues["name"]        ~= nil     ) and
              (( keyvalues["name:signed"] == "no"   )  or
+              ( keyvalues["name:absent"] == "yes"  )  or
               ( keyvalues["unsigned"]    == "yes"  )  or
               ( keyvalues["unsigned"]    == "name" ))) then
             keyvalues["name"] = nil

@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20230518T161300Z",
+  "data_updated": "20230518T235600Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -1777,6 +1777,8 @@
     { "key": "name", "value": "Scout hut", "description": "description" },
     { "key": "name", "value": "Shop Mobility", "description": "description" },
     { "key": "name", "value": "Shopmobility", "description": "description" },
+    { "key": "name:absent", "description": "Show unsigned names in brackets" },
+    { "key": "name:absent", "value": "yes", "description": "Show unsigned names in brackets" },
     { "key": "name:cy", "description": "Default name in Welsh-speaking Wales" },
     { "key": "name:en", "description": "Default name in England, anglophone Wales, anglophone Scotland; also used in place of name if blank" },
     { "key": "name:gd", "description": "Used as name in Scots Gaelic-speaking Scotland" },
