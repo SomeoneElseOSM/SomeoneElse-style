@@ -18,6 +18,7 @@ Show "historic=aircraft_wreck" with a unique icon.
 Removed "shop=bags", "shop=beds", "shop=cars", "shop=closed", "shop=collectables", "shop=crafts", "shop=fabrics", "shop=farm_shop", "shop=haberdasher", "shop=lamps", "shop=misc", "shop=models", "shop=opticians", "shop=pets", no longer in the data.
 Changed "shop=spice" to "shop=spices", following some mechanical tag changes.
 Treat "name:absent=yes" as "name:signed=no".
+Suppress footway / cycleway name on "is_sidepath:of" and related keys.
 
 ## 13/05/2023
 Humanitarian tiles added as an extra layer.

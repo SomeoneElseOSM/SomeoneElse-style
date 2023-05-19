@@ -1634,11 +1634,15 @@ function filter_tags_generic(keyvalues, nokeys)
 
 -- ----------------------------------------------------------------------------
 -- Remove name from footway=sidewalk (we expect it to be rendered via the
--- road that this is a sidewalk for), or "is_sidepath=yes".
+-- road that this is a sidewalk for), or "is_sidepath=yes" etc.
 -- ----------------------------------------------------------------------------
-   if ((( keyvalues["footway"]     == "sidewalk" )  or
-        ( keyvalues["is_sidepath"] == "yes"      )) and
-       (  keyvalues["name"]    ~= nil             )) then
+   if ((( keyvalues["footway"]             == "sidewalk" )  or
+        ( keyvalues["cycleway"]            == "sidewalk" )  or
+        ( keyvalues["is_sidepath"]         == "yes"      )  or
+        ( keyvalues["is_sidepath:of"]      ~= nil        )  or
+        ( keyvalues["is_sidepath:of:name"] ~= nil        )  or
+        ( keyvalues["is_sidepath:of:ref"]  ~= nil        )) and
+       (  keyvalues["name"]                ~= nil         )) then
       keyvalues["name"] = nil
    end
 
