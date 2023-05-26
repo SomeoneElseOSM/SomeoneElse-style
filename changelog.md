@@ -19,6 +19,7 @@ Removed "shop=bags", "shop=beds", "shop=cars", "shop=closed", "shop=collectables
 Changed "shop=spice" to "shop=spices", following some mechanical tag changes.
 Treat "name:absent=yes" as "name:signed=no".
 Suppress footway / cycleway name on "is_sidepath:of" and related keys.
+Update OS OpenMap Local layer to April 2023.
 
 ## 13/05/2023
 Humanitarian tiles added as an extra layer.
