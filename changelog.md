@@ -1,6 +1,9 @@
 # Changes made to this rendering
 This page describes changes made [here](https://github.com/SomeoneElseOSM/SomeoneElse-style), [here](https://github.com/SomeoneElseOSM/SomeoneElse-style-legend) and [here](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT), and visible [here](//map.atownsend.org.uk/maps/map/map.html).
 
+## 27/05/2023
+Update OS OpenMap Local layer to April 2023.
+
 ## As yet unreleased.
 Added report_tag_usage_changes.sh script that can run from cron and detect changes to tags/values used by a project at taginfo.
 Treat historic=earthworks as archaeological.
@@ -19,7 +22,6 @@ Removed "shop=bags", "shop=beds", "shop=cars", "shop=closed", "shop=collectables
 Changed "shop=spice" to "shop=spices", following some mechanical tag changes.
 Treat "name:absent=yes" as "name:signed=no".
 Suppress footway / cycleway name on "is_sidepath:of" and related keys.
-Update OS OpenMap Local layer to April 2023.
 
 ## 13/05/2023
 Humanitarian tiles added as an extra layer.
