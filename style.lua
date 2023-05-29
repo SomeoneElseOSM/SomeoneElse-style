@@ -1777,7 +1777,13 @@ function filter_tags_generic(keyvalues, nokeys)
       keyvalues["landuse"] = "industrial"
    end
 
-   if ( keyvalues["man_made"]   == "reservoir_covered" ) then
+-- ----------------------------------------------------------------------------
+-- Sometimes covered reservoirs are "basically buildings", sometimes they have
+-- e.g. landuse=grass set.  If the latter, don't show them as buildings.
+-- The name will still appear via landuse.
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["man_made"]   == "reservoir_covered" ) and
+       ( keyvalues["landuse"]    == nil                 )) then
       keyvalues["building"] = "roof"
       keyvalues["landuse"]  = "industrialbuilding"
    end
@@ -4984,10 +4990,18 @@ function filter_tags_generic(keyvalues, nokeys)
        (  keyvalues["man_made"]   == "filtration_bed"   ) or
        (  keyvalues["man_made"]   == "waste_treatment"  ) or
        (  keyvalues["man_made"]   == "lighthouse"       ) or
-       (  keyvalues["man_made"]   == "telescope"        ) or
        (  keyvalues["man_made"]   == "street_cabinet"   ) or
        (  keyvalues["man_made"]   == "aeroplane"        ) or
        (  keyvalues["man_made"]   == "helicopter"       )) then
+      keyvalues["building"] = "yes"
+   end
+
+-- ----------------------------------------------------------------------------
+-- Only show telescopes as buildings if they don't already have a landuse set.
+-- Some large radio telescopes aren't large buildings.
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["man_made"] == "telescope" ) and
+       ( keyvalues["landuse"]  == nil         )) then
       keyvalues["building"] = "yes"
    end
 
