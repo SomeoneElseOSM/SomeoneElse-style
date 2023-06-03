@@ -9832,6 +9832,16 @@ function filter_tags_way (keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Where amenity=watering_place has been used on a way and there's no
+-- "natural" tag already, apply "natural=water".
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["amenity"] == "watering_place" ) and
+       ( keyvalues["natural"] == nil              )) then
+      keyvalues["amenity"] = nil
+      keyvalues["natural"] = "water"
+   end
+
+-- ----------------------------------------------------------------------------
 -- End of AJT way-only additions.
 -- ----------------------------------------------------------------------------
 

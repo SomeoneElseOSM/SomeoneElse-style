@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20230519T235500Z",
+  "data_updated": "20230603T002700Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -329,6 +329,7 @@
     { "key": "amenity", "value": "village_hall", "description": "Synonym for office=nonspecific" },
     { "key": "amenity", "value": "waste_basket", "description": "Removed from bus stops" },
     { "key": "amenity", "value": "waste_transfer_station", "description": "Synonym for indstrial landuse" },
+    { "key": "amenity", "value": "watering_place", "description": "Ways shown as water, nodes as a blue dot" },
     { "key": "amenity", "value": "working_mens_club", "description": "Shown as leisure=nonspecific" },
     { "key": "amenity", "value": "youth_club", "description": "Shown as leisure=nonspecific" },
     { "key": "amenity:disused", "description": "Explicitly render disused pubs; handle disused telephones" },
