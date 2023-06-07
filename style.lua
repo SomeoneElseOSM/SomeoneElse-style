@@ -8564,7 +8564,6 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["residential"] == "care_home"                    ) or
        ( keyvalues["amenity"]     == "retirement_home"              ) or
        ( keyvalues["amenity"]     == "residential_home"             ) or
-       ( keyvalues["building"]    == "residential_home"             ) or
        ( keyvalues["residential"] == "residential_home"             ) or
        ( keyvalues["amenity"]     == "sheltered_housing"            ) or
        ( keyvalues["residential"] == "sheltered_housing"            ) or

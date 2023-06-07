@@ -524,7 +524,6 @@
     { "key": "building", "value": "nursing_home", "description": "Shown as nonspecified health" },
     { "key": "building", "value": "office", "description": "Shown as office" },
     { "key": "building", "value": "preschool", "description": "Shown as nonspecified health" },
-    { "key": "building", "value": "residential_home", "description": "Shown as nonspecified health" },
     { "key": "building", "value": "roof", "description": "Shown as roof; a lighter colour building" },
     { "key": "building", "value": "ruins", "description": "Shown as roof; a lighter colour building" },
     { "key": "building", "value": "scout_hut", "description": "Shown as commercial landuse" },
