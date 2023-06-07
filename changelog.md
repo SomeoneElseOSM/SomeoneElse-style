@@ -4,6 +4,7 @@ This page describes changes made [here](https://github.com/SomeoneElseOSM/Someon
 ## As yet unreleased
 Show amenity=watering_place on ways as water, on nodes as a blue dot.
 Removed "building=residential_home" as a synonym for "amenity=residential_home"; no longer in the data.
+Removed "shop=bureau_de_change"; no longer in the data.
 
 ## 29/05/2023
 Added report_tag_usage_changes.sh script that can run from cron and detect changes to tags/values used by a project at taginfo.

@@ -2235,7 +2235,6 @@
     { "key": "shop", "value": "builders_merchants", "description": "Various shops shown" },
     { "key": "shop", "value": "building_materials", "description": "Various shops shown" },
     { "key": "shop", "value": "building_supplies", "description": "Various shops shown" },
-    { "key": "shop", "value": "bureau_de_change", "description": "Various shops shown" },
     { "key": "shop", "value": "butcher", "description": "Various shops shown" },
     { "key": "shop", "value": "butcher;greengrocer", "description": "Various shops shown" },
     { "key": "shop", "value": "cafe", "description": "Various shops shown" },
