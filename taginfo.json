@@ -2795,6 +2795,7 @@
     { "key": "sport", "value": "rugby;football", "description": "Show 'rugby' icon on sports pitches" },
     { "key": "sport", "value": "shooting_range", "description": "Used to classify and clarify many other tags" },
     { "key": "sport", "value": "soccer", "description": "Show icon on sports pitches" },
+    { "key": "sport", "value": "soccer;archery", "description": "Show 'soccer' icon on sports pitches" },
     { "key": "sport", "value": "soccer;basketball", "description": "Show 'soccer' icon on sports pitches" },
     { "key": "sport", "value": "soccer;football", "description": "Show 'soccer' icon on sports pitches" },
     { "key": "sport", "value": "soccer;rugby", "description": "Show 'soccer' icon on sports pitches" },

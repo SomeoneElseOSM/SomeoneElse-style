@@ -4709,7 +4709,8 @@ function filter_tags_generic(keyvalues, nokeys)
         ( keyvalues["sport"]   == "soccer;rugby"              )   or
         ( keyvalues["sport"]   == "soccer;hockey"             )   or
         ( keyvalues["sport"]   == "soccer;gaelic_games"       )   or
-        ( keyvalues["sport"]   == "soccer;gaelic_games;rugby" ))) then
+        ( keyvalues["sport"]   == "soccer;gaelic_games;rugby" )   or
+        ( keyvalues["sport"]   == "soccer;archery"            ))) then
       keyvalues["amenity"] = "pitch_soccer"
    end
 
