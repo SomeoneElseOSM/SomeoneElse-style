@@ -2368,8 +2368,9 @@ function filter_tags_generic(keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
    if (( keyvalues["natural"] == "boulder" ) or
        ( keyvalues["natural"] == "erratic" )) then
-      if (( keyvalues["sport"]    ~= "climbing" ) and
-          ( keyvalues["climbing"] ~= "boulder"  )) then
+      if (( keyvalues["sport"]    ~= "climbing"            ) and
+          ( keyvalues["sport"]    ~= "climbing;bouldering" ) and
+          ( keyvalues["climbing"] ~= "boulder"             )) then
          keyvalues["natural"] = "rock"
       end
    end
@@ -2380,10 +2381,11 @@ function filter_tags_generic(keyvalues, nokeys)
 -- Also "court" often means "pitch" (tennis, basketball).
 -- "cricket_nets" is an oddity.  See https://lists.openstreetmap.org/pipermail/tagging/2023-January/thread.html#66908 .
 -- ----------------------------------------------------------------------------
-   if (( keyvalues["leisure"] == "dog_park"       ) or
-       ( keyvalues["leisure"] == "court"          ) or
-       ( keyvalues["sport"]   == "cricket_nets"   ) or
-       ( keyvalues["leisure"] == "practice_pitch" )) then
+   if (( keyvalues["leisure"] == "dog_park"           ) or
+       ( keyvalues["leisure"] == "court"              ) or
+       ( keyvalues["sport"]   == "cricket_nets"       ) or
+       ( keyvalues["sport"]   == "cricket_nets;multi" ) or
+       ( keyvalues["leisure"] == "practice_pitch"     )) then
       keyvalues["leisure"] = "pitch"
    end
 
@@ -2391,9 +2393,10 @@ function filter_tags_generic(keyvalues, nokeys)
 -- Show skate parks etc. (that aren't skate shops, or some other leisure 
 -- already) as pitches.
 -- ----------------------------------------------------------------------------
-   if (( keyvalues["sport"]    == "skateboard" ) and
-       ( keyvalues["shop"]     == nil          ) and
-       ( keyvalues["leisure"]  == nil          )) then
+   if ((( keyvalues["sport"]    == "skateboard"     )  or
+        ( keyvalues["sport"]    == "skateboard;bmx" )) and
+       (  keyvalues["shop"]     == nil               ) and
+       (  keyvalues["leisure"]  == nil               )) then
       keyvalues["leisure"] = "pitch"
    end
 
@@ -4699,36 +4702,53 @@ function filter_tags_generic(keyvalues, nokeys)
       keyvalues["amenity"] = "pitch_tabletennis"
    end
 
-   if (( keyvalues["leisure"] == "pitch"  )  and
-       ( keyvalues["sport"]   == "soccer" )) then
+   if ((  keyvalues["leisure"] == "pitch"                      )  and
+       (( keyvalues["sport"]   == "soccer"                    )   or
+        ( keyvalues["sport"]   == "soccer;basketball"         )   or
+        ( keyvalues["sport"]   == "soccer;football"           )   or
+        ( keyvalues["sport"]   == "soccer;rugby"              )   or
+        ( keyvalues["sport"]   == "soccer;hockey"             )   or
+        ( keyvalues["sport"]   == "soccer;gaelic_games"       )   or
+        ( keyvalues["sport"]   == "soccer;gaelic_games;rugby" ))) then
       keyvalues["amenity"] = "pitch_soccer"
    end
 
-   if (( keyvalues["leisure"] == "pitch"      )  and
-       ( keyvalues["sport"]   == "basketball" )) then
+   if (( keyvalues["leisure"] == "pitch"                    )  and
+       (( keyvalues["sport"]  == "basketball"              )   or
+        ( keyvalues["sport"]  == "basketball;soccer"       )   or
+        ( keyvalues["sport"]  == "basketball;football"     )   or
+        ( keyvalues["sport"]  == "basketball;multi"        )   or
+        ( keyvalues["sport"]  == "basketball;netball"      )   or
+        ( keyvalues["sport"]  == "multi;basketball;soccer" ))) then
       keyvalues["amenity"] = "pitch_basketball"
    end
 
-   if ((  keyvalues["leisure"] == "pitch"         )  and
-       (( keyvalues["sport"]   == "cricket"      )   or
-        ( keyvalues["sport"]   == "cricket_nets" ))) then
+   if ((  keyvalues["leisure"] == "pitch"               )  and
+       (( keyvalues["sport"]   == "cricket"            )   or
+        ( keyvalues["sport"]   == "cricket_nets"       )   or
+        ( keyvalues["sport"]   == "cricket_nets;multi" ))) then
       keyvalues["amenity"] = "pitch_cricket"
    end
 
-   if (( keyvalues["leisure"] == "pitch"      )  and
-       ( keyvalues["sport"]   == "skateboard" )) then
+   if (( keyvalues["leisure"] == "pitch"           )  and
+       (( keyvalues["sport"]  == "skateboard"     )   or
+        ( keyvalues["sport"]  == "skateboard;bmx" ))) then
       keyvalues["amenity"] = "pitch_skateboard"
    end
 
-   if (( keyvalues["leisure"] == "pitch"    )  and
-       ( keyvalues["sport"]   == "climbing" )) then
+   if ((  keyvalues["leisure"] == "pitch"                )  and
+       (( keyvalues["sport"]   == "climbing"            )   or
+        ( keyvalues["sport"]   == "climbing;bouldering" ))) then
       keyvalues["amenity"] = "pitch_climbing"
    end
 
-   if ((  keyvalues["leisure"] == "pitch"         )  and
-       (( keyvalues["sport"]   == "rugby_union"  )   or
-        ( keyvalues["sport"]   == "rugby_league" )   or
-        ( keyvalues["sport"]   == "rugby"        ))) then
+   if ((  keyvalues["leisure"] == "pitch"               )  and
+       (( keyvalues["sport"]   == "rugby_union"        )   or
+        ( keyvalues["sport"]   == "rugby_league"       )   or
+        ( keyvalues["sport"]   == "rugby"              )   or
+        ( keyvalues["sport"]   == "rugby;soccer"       )   or
+        ( keyvalues["sport"]   == "rugby_union;soccer" )   or
+        ( keyvalues["sport"]   == "rugby;football"     ))) then
       keyvalues["amenity"] = "pitch_rugby"
    end
 
@@ -4737,8 +4757,10 @@ function filter_tags_generic(keyvalues, nokeys)
       keyvalues["amenity"] = "pitch_chess"
    end
 
-   if (( keyvalues["leisure"] == "pitch"  )  and
-       ( keyvalues["sport"]   == "tennis" )) then
+   if ((  keyvalues["leisure"] == "pitch"           )  and
+       (( keyvalues["sport"]   == "tennis"         )   or
+        ( keyvalues["sport"]   == "tennis;netball" )   or
+        ( keyvalues["sport"]   == "tennis;multi"   ))) then
       keyvalues["amenity"] = "pitch_tennis"
    end
 
@@ -6443,8 +6465,9 @@ function filter_tags_generic(keyvalues, nokeys)
 -- Deliberately only use this for outdoor features that would not otherwise
 -- display, so not cliffs etc.
 -- ----------------------------------------------------------------------------
-   if ((( keyvalues["sport"]    == "climbing"      )  or
-        ( keyvalues["climbing"] == "boulder"       )) and
+   if ((( keyvalues["sport"]    == "climbing"            )  or
+        ( keyvalues["sport"]    == "climbing;bouldering" )  or
+        ( keyvalues["climbing"] == "boulder"             )) and
        (  keyvalues["natural"]  ~= "hill"           ) and
        (  keyvalues["natural"]  ~= "peak"           ) and
        (  keyvalues["natural"]  ~= "cliff"          ) and
@@ -9123,7 +9146,8 @@ function filter_tags_generic(keyvalues, nokeys)
        (( keyvalues["building"] == "yes"                )  and
         ( keyvalues["amenity"]  == nil                  )  and
         ( keyvalues["sport"]    ~= nil                  )) or
-       (( keyvalues["sport"]    == "yoga"               )  and
+       ((( keyvalues["sport"]   == "yoga"              )   or
+         ( keyvalues["sport"]   == "yoga;pilates"      ))  and
         ( keyvalues["shop"]     == nil                  )  and
         ( keyvalues["amenity"]  == nil                  ))) then
       keyvalues["landuse"] = "unnamedcommercial"
@@ -9798,10 +9822,11 @@ function filter_tags_way (keyvalues, nokeys)
           ( keyvalues["sport"]    == "horse_racing" )) then
          keyvalues["highway"] = "gallop"
       else
-         if ((( keyvalues["sport"]    == "motor"   )  or
-              ( keyvalues["sport"]    == "karting" )) and
-             (( keyvalues["area"]     == nil       )  or
-              ( keyvalues["area"]     == "no"      ))) then
+         if ((( keyvalues["sport"]    == "motor"         )  or
+              ( keyvalues["sport"]    == "karting"       )  or
+              ( keyvalues["sport"]    == "motor;karting" )) and
+             (( keyvalues["area"]     == nil              )  or
+              ( keyvalues["area"]     == "no"             ))) then
             keyvalues["highway"] = "raceway"
          else
             keyvalues["highway"] = "leisuretrack"
