@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20230612T221500Z",
+  "data_updated": "20230616T224400Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -943,6 +943,7 @@
     { "key": "disused:railway", "description": "Former railway stations shown as nonspecific historical objects" },
     { "key": "disused:railway", "value": "station", "description": "Former railway stations shown as nonspecific historical objects" },
     { "key": "disused:shop", "description": "Show former feature in brackets, or '(vacant)'" },
+    { "key": "disused:tourism", "description": "Used to decide whether a board should be shown" },
     { "key": "disused:waterway", "description": "Disused canals are shown as derelict canals" },
     { "key": "disused:waterway", "value": "canal", "description": "Disused canals are shown as derelict canals" },
     { "key": "ele", "description": "Detect big peaks (ele > 914 munros) and prominent peaks, and show them more prominently" },
@@ -2143,6 +2144,7 @@
     { "key": "ruins", "value": "yes", "description": "Detect ruins" },
     { "key": "ruins:building", "description": "Detect ruins" },
     { "key": "ruins:building", "value": "yes", "description": "Detect ruins" },
+    { "key": "ruins:tourism", "description": "Used to decide whether a board should be shown" },
     { "key": "sac_scale", "description": "Suppress some unfeasible walking paths wth no explicit PRoW" },
     { "key": "sac_scale", "value": "demanding_alpine_hiking", "description": "Suppress some unfeasible walking paths wth no explicit PRoW" },
     { "key": "sac_scale", "value": "difficult_alpine_hiking", "description": "Suppress some unfeasible walking paths wth no explicit PRoW" },

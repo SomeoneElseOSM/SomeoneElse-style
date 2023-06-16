@@ -6,6 +6,7 @@ Show amenity=watering_place on ways as water, on nodes as a blue dot.
 Removed "building=residential_home" as a synonym for "amenity=residential_home"; no longer in the data.
 Removed "shop=bureau_de_change"; no longer in the data.
 Added some semicolon-separated sports: climbing;bouldering, cricket_nets;multi, skateboard;bmx, soccer;basketball, soccer;football, soccer;rugby, soccer;hockey, soccer;gaelic_games, soccer;gaelic_games;rugby, basketball;soccer, basketball;football, basketball;multi, basketball;netball, multi;basketball;soccer, rugby;soccer, rugby_union;soccer, rugby;football, tennis;netball, tennis;multi, yoga;pilates, motor;karting, soccer;archery.
+Show information boards without a tourism tag.
 
 ## 29/05/2023
 Added report_tag_usage_changes.sh script that can run from cron and detect changes to tags/values used by a project at taginfo.

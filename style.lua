@@ -23,7 +23,9 @@ polygon_keys = { 'boundary', 'building', 'landcover', 'landuse', 'amenity', 'har
 
 generic_keys = {'access','addr:housename','addr:housenumber','addr:interpolation','admin_level','advertising','aerialway','aeroway','amenity','area','barrier',
    'bicycle','brand','bridge','bridleway','booth','boundary','building','capital','construction','covered','culvert','cutting','denomination','designation','disused','disused:man_made','disused:military','disused:shop','ele',
-   'embankment','emergency','entrance','foot','flood_prone','generation:source','geological','golf','government','harbour','hazard_prone','hazard_type','highway','historic','horse','hours','intermittent','junction','landcover','landuse','layer','leisure','lcn_ref','lock','locked',
+   'embankment','emergency','entrance','foot','flood_prone','generation:source','geological','golf','government',
+   'harbour','hazard_prone','hazard_type','highway','historic','horse','hours','information','intermittent',
+   'junction','landcover','landuse','layer','leisure','lcn_ref','lock','locked',
    'man_made','marker','military','motor_car','name','natural','ncn_milepost','office','oneway','operator','opening_hours:covid19','pitch','place','playground','poi','population','power','power_source','public_transport',
    'railway','railway:historic','ref','religion','rescue_equipment','route',
    'school','seamark:type','seamark:rescue_station:category','service','shop','sport','surface',
@@ -6010,7 +6012,17 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
--- Various types of information
+-- Some information boards don't have a "tourism" tag
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["information"]     == "board" ) and
+       ( keyvalues["disused:tourism"] == nil     ) and
+       ( keyvalues["ruins:tourism"]   == nil     ) and
+       ( keyvalues["historic"]        == nil     )) then
+      keyvalues["tourism"] = "informationboard"
+   end
+
+-- ----------------------------------------------------------------------------
+-- Information boards
 -- ----------------------------------------------------------------------------
    if ((   keyvalues["amenity"]     == "notice_board"                       )  or
        (   keyvalues["tourism"]     == "village_sign"                       )  or
