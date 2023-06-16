@@ -6047,7 +6047,15 @@ function filter_tags_generic(keyvalues, nokeys)
          ( keyvalues["information"] == "former_telephone_box"             )    or
          ( keyvalues["information"] == "leaflets"                         )    or
          ( keyvalues["information"] == "departure times and destinations" )    or
-         ( keyvalues["information"] == "board;map"                        )))) then
+         ( keyvalues["information"] == "board;map"                        )    or
+         ( keyvalues["information"] == "information_board"                )    or
+         ( keyvalues["information"] == "interpretive_board"               )    or
+         ( keyvalues["information"] == "leaflet_board"                    )    or
+         ( keyvalues["information"] == "orientation_map"                  )    or
+         ( keyvalues["information"] == "citymap"                          )    or
+         ( keyvalues["information"] == "estate_map"                       )    or
+         ( keyvalues["information"] == "hospital map"                     )    or
+         ( keyvalues["information"] == "map and posters"                  )))) then
       keyvalues["tourism"] = "informationboard"
    end
 

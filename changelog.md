@@ -8,6 +8,7 @@ Removed "shop=bureau_de_change"; no longer in the data.
 Added some semicolon-separated sports: climbing;bouldering, cricket_nets;multi, skateboard;bmx, soccer;basketball, soccer;football, soccer;rugby, soccer;hockey, soccer;gaelic_games, soccer;gaelic_games;rugby, basketball;soccer, basketball;football, basketball;multi, basketball;netball, multi;basketball;soccer, rugby;soccer, rugby_union;soccer, rugby;football, tennis;netball, tennis;multi, yoga;pilates, motor;karting, soccer;archery.
 Show information boards without a tourism tag.
 Consolidated PNFS operator tags.
+Added support for various "information=board" and "information=map" variations.
 
 ## 29/05/2023
 Added report_tag_usage_changes.sh script that can run from cron and detect changes to tags/values used by a project at taginfo.
