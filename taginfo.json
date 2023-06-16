@@ -2274,6 +2274,7 @@
     { "key": "shop", "value": "cash_and_carry", "description": "Various shops shown" },
     { "key": "shop", "value": "catalogue", "description": "Various shops shown" },
     { "key": "shop", "value": "catering", "description": "Various shops shown" },
+    { "key": "shop", "value": "catering_supplies", "description": "Various shops shown" },
     { "key": "shop", "value": "ceramics", "description": "Various shops shown" },
     { "key": "shop", "value": "chair", "description": "Various shops shown" },
     { "key": "shop", "value": "chandler", "description": "Various shops shown" },
