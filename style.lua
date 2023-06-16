@@ -8511,6 +8511,23 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Specific handling for incompletely tagged "Howdens".
+-- Unfortunately there are a few of these.
+-- ----------------------------------------------------------------------------
+   if ((( keyvalues["name"]     == "Howdens"             )  or
+        ( keyvalues["name"]     == "Howdens Joinery"     )  or
+        ( keyvalues["name"]     == "Howdens Joinery Co"  )  or
+        ( keyvalues["name"]     == "Howdens Joinery Co." )  or
+        ( keyvalues["name"]     == "Howdens Joinery Ltd" )) and
+       (  keyvalues["shop"]     == nil                    ) and
+       (  keyvalues["craft"]    == nil                    ) and
+       (  keyvalues["highway"]  == nil                    ) and
+       (  keyvalues["landuse"]  == nil                    ) and
+       (  keyvalues["man_made"] == nil                    )) then
+      keyvalues["shop"] = "trade"
+   end
+
+-- ----------------------------------------------------------------------------
 -- Shops that we don't know the type of.  Things such as "hire" are here 
 -- because we don't know "hire of what".
 -- "wood" is here because it's used for different sorts of shops.

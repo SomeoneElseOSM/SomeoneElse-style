@@ -10,6 +10,7 @@ Show information boards without a tourism tag.
 Consolidated PNFS operator tags.
 Added support for various "information=board" and "information=map" variations.
 Added support for shop=catering_supplies.
+Handle various incompletely tagged Howden's Joinery.
 
 ## 29/05/2023
 Added report_tag_usage_changes.sh script that can run from cron and detect changes to tags/values used by a project at taginfo.
