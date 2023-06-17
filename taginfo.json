@@ -1422,7 +1422,7 @@
     { "key": "information", "value": "notice_board", "description": "Shown as information board" },
     { "key": "information", "value": "noticeboard", "description": "Shown as information board" },
     { "key": "information", "value": "office", "description": "Shown as information office" },
-    { "key": "information", "value": "orientation_board", "description": "Shown as information board" },
+    { "key": "information", "value": "orientation_map", "description": "Shown as information board" },
     { "key": "information", "value": "plaque", "description": "Shown as information plaque" },
     { "key": "information", "value": "route_marker", "description": "Shown as information route marker" },
     { "key": "information", "value": "sign", "description": "Shown as civilian or military information sign" },
