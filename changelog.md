@@ -1,7 +1,7 @@
 # Changes made to this rendering
 This page describes changes made [here](https://github.com/SomeoneElseOSM/SomeoneElse-style), [here](https://github.com/SomeoneElseOSM/SomeoneElse-style-legend) and [here](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT), and visible [here](//map.atownsend.org.uk/maps/map/map.html).
 
-## As yet unreleased
+## 17/06/2023
 Show amenity=watering_place on ways as water, on nodes as a blue dot.
 Removed "building=residential_home" as a synonym for "amenity=residential_home"; no longer in the data.
 Removed "shop=bureau_de_change"; no longer in the data.
