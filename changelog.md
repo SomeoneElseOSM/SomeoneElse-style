@@ -4,6 +4,7 @@ This page describes changes made [here](https://github.com/SomeoneElseOSM/Someon
 ## As yet unreleased
 Added more historic and memorial crosses, including historic=high_cross.
 Added man_made=cross.
+Added leisure=bandstand - show as a roof with a green musical icon.
 
 ## 17/06/2023
 Show amenity=watering_place on ways as water, on nodes as a blue dot.

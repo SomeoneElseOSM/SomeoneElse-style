@@ -1592,6 +1592,7 @@ function filter_tags_generic(keyvalues, nokeys)
        (  keyvalues["building"]         == "canopy"        ) or
        (  keyvalues["building"]         == "car_port"      ) or
        (  keyvalues["leisure"]          == "bleachers"     ) or
+       (  keyvalues["leisure"]          == "bandstand"     ) or
        (( keyvalues["disused:building"] ~= nil            )  and
         ( keyvalues["building"]         == nil            )) or
        (  keyvalues["building:type"] == "canopy"           )) then
