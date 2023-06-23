@@ -1,6 +1,10 @@
 # Changes made to this rendering
 This page describes changes made [here](https://github.com/SomeoneElseOSM/SomeoneElse-style), [here](https://github.com/SomeoneElseOSM/SomeoneElse-style-legend) and [here](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT), and visible [here](//map.atownsend.org.uk/maps/map/map.html).
 
+## As yet unreleased
+Added more historic and memorial crosses, including historic=high_cross.
+Added man_made=cross.
+
 ## 17/06/2023
 Show amenity=watering_place on ways as water, on nodes as a blue dot.
 Removed "building=residential_home" as a synonym for "amenity=residential_home"; no longer in the data.

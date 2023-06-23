@@ -5214,10 +5214,26 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
--- Crosses go through as "historic=cross"
+-- Non-historic crosses go through as "man_made=cross".  
+-- See also memorial crosses below.
 -- ----------------------------------------------------------------------------
-   if (( keyvalues["historic"] == "cross"        ) or
-       ( keyvalues["historic"] == "market_cross" )) then
+   if (( keyvalues["man_made"] == "cross"         ) or
+       ( keyvalues["man_made"] == "summit_cross"  ) or
+       ( keyvalues["man_made"] == "wayside_cross" )) then
+      keyvalues["man_made"] = "cross"
+   end
+
+-- ----------------------------------------------------------------------------
+-- Various historic crosses go through as "historic=cross".  
+-- See also memorial crosses below.
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["historic"] == "wayside_cross"    ) or
+       ( keyvalues["historic"] == "high_cross"       ) or
+       ( keyvalues["historic"] == "cross"            ) or
+       ( keyvalues["historic"] == "market_cross"     ) or
+       ( keyvalues["historic"] == "tau_cross"        ) or
+       ( keyvalues["historic"] == "churchyard cross" ) or
+       ( keyvalues["historic"] == "celtic_cross"     )) then
       keyvalues["historic"] = "cross"
 
       if ( keyvalues["landuse"] == nil ) then
@@ -6543,13 +6559,14 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
--- Render historic=wayside_cross and wayside_shrine as historic=memorialcross
+-- "wayside_shrine" and various memorial crosses.
 -- ----------------------------------------------------------------------------
-   if ((   keyvalues["historic"]   == "wayside_cross"    ) or
-       (   keyvalues["historic"]   == "wayside_shrine"   ) or
+   if ((   keyvalues["historic"]   == "wayside_shrine"   ) or
        ((  keyvalues["historic"]   == "memorial"        )  and
-        (( keyvalues["memorial"]   == "cross"          )   or
-         ( keyvalues["memorial"]   == "mercat_cross"   )))) then
+        (( keyvalues["memorial"]   == "mercat_cross"   )   or
+         ( keyvalues["memorial"]   == "cross"          )   or
+         ( keyvalues["memorial"]   == "celtic_cross"   )   or
+         ( keyvalues["memorial"]   == "cross;stone"    )))) then
       keyvalues["historic"] = "memorialcross"
    end
 
