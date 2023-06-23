@@ -4894,7 +4894,6 @@ function filter_tags_generic(keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
    if ((   keyvalues["waterway"] == "leat"        )  or
        (   keyvalues["waterway"] == "spillway"    )  or
-       (   keyvalues["waterway"] == "aqueduct"    )  or
        (   keyvalues["waterway"] == "fish_pass"   )  or
        ((  keyvalues["waterway"] == "canal"      )   and
         (( keyvalues["usage"]    == "headrace"  )    or

@@ -3030,7 +3030,6 @@
     { "key": "water", "value": "waterfall", "description": "Show waterfalls" },
     { "key": "waterway", "description": "Many water features shown" },
     { "key": "waterway", "value": "abandoned_canal", "description": "Many water features shown" },
-    { "key": "waterway", "value": "aqueduct", "description": "Many water features shown" },
     { "key": "waterway", "value": "brook", "description": "Many water features shown" },
     { "key": "waterway", "value": "canal", "description": "Many water features shown" },
     { "key": "waterway", "value": "derelict_canal", "description": "Many water features shown" },
