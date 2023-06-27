@@ -1240,7 +1240,7 @@
     { "key": "historic", "value": "blue_plaque", "description": "Shown as information plaque" },
     { "key": "historic", "value": "boundary_marker", "description": "Shown as boundary stone" },
     { "key": "historic", "value": "boundary_stone", "description": "Shown as boundary stone" },
-    { "key": "historic", "value": "bridge site", "description": "Shown as nonspecific historic item" },
+    { "key": "historic", "value": "bridge_site", "description": "Shown as nonspecific historic item" },
     { "key": "historic", "value": "building", "description": "Shown as nonspecific historic item" },
     { "key": "historic", "value": "bunker", "description": "Shown as historic military bunker" },
     { "key": "historic", "value": "cairn", "description": "Shown as cairn" },

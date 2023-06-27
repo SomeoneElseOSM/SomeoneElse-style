@@ -5459,7 +5459,7 @@ function filter_tags_generic(keyvalues, nokeys)
        (  keyvalues["historic"] == "drinking_fountain" ) or
        (  keyvalues["historic"] == "sawmill"           ) or
        (  keyvalues["historic"] == "cannon"            ) or
-       (  keyvalues["historic"] == "bridge site"       ) or
+       (  keyvalues["historic"] == "bridge_site"       ) or
        (( keyvalues["disused:landuse"] == "cemetery"  )  and
         ( keyvalues["landuse"]         == nil         )  and
         ( keyvalues["leisure"]         == nil         )  and
