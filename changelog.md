@@ -6,6 +6,7 @@ Added more historic and memorial crosses, including historic=high_cross.
 Added man_made=cross.
 Added leisure=bandstand - show as a roof with a green musical icon.
 Removed waterway=aqueduct; no longer in the data.
+Update taginfo to reflect that shop=gun is back in the data again.
 
 ## 17/06/2023
 Show amenity=watering_place on ways as water, on nodes as a blue dot.
