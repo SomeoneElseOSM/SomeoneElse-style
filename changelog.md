@@ -9,6 +9,7 @@ Removed waterway=aqueduct; no longer in the data.
 Update taginfo to reflect that shop=gun is back in the data again.
 "historic=bridge site" has been changed in the data to "historic=bridge_site".
 If a tourist attraction is also a sports centre, show as a sports centre.
+If 'visibility' is set and 'trail_visibility' is not; use the former.
 
 ## 17/06/2023
 Show amenity=watering_place on ways as water, on nodes as a blue dot.

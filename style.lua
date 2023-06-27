@@ -417,7 +417,15 @@ function filter_tags_generic(keyvalues, nokeys)
       keyvalues["name"] = "(" .. keyvalues["old_name"] .. ")"
       keyvalues["old_name"] = nil
    end
- 
+
+-- ----------------------------------------------------------------------------
+-- If "visibility" is set but "trail_visibility" is not, use "visibility".
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["visibility"]       ~= nil ) and
+       ( keyvalues["trail_visibility"] == nil )) then
+      keyvalues["trail_visibility"] = keyvalues["visibility"]
+   end
+
 -- ----------------------------------------------------------------------------
 -- Rationalise the various trail_visibility values into 3 sets
 -- (no value)    Implied good trail visibility.
@@ -439,24 +447,25 @@ function filter_tags_generic(keyvalues, nokeys)
 --
 -- "informal=yes" was less common in the UK (but is becoming more so).
 -- ----------------------------------------------------------------------------
-   if (( keyvalues["trail_visibility"] == "no"       )  or
-       ( keyvalues["trail_visibility"] == "none"     )  or
-       ( keyvalues["trail_visibility"] == "nil"      )  or
-       ( keyvalues["trail_visibility"] == "horrible" )  or
-       ( keyvalues["trail_visibility"] == "very_bad" )  or
-       ( keyvalues["trail_visibility"] == "bad"      )  or
-       ( keyvalues["trail_visibility"] == "poor"     )  or
-       ( keyvalues["foot:physical"]    == "no"       )) then
+   if (( keyvalues["trail_visibility"] == "no"         )  or
+       ( keyvalues["trail_visibility"] == "none"       )  or
+       ( keyvalues["trail_visibility"] == "nil"        )  or
+       ( keyvalues["trail_visibility"] == "horrible"   )  or
+       ( keyvalues["trail_visibility"] == "very_bad"   )  or
+       ( keyvalues["trail_visibility"] == "bad"        )  or
+       ( keyvalues["trail_visibility"] == "poor"       )  or
+       ( keyvalues["foot:physical"]    == "no"         )) then
       keyvalues["trail_visibility"] = "bad"
    end
 
-   if ((  keyvalues["trail_visibility"] == "intermediate"  ) or
-       (  keyvalues["trail_visibility"] == "intermittent"  ) or
-       (  keyvalues["trail_visibility"] == "medium"        ) or
-       (  keyvalues["trail_visibility"] == "low"           ) or
-       (  keyvalues["overgrown"]        == "yes"           ) or
-       (  keyvalues["obstacle"]         == "vegetation"    ) or
-       (( keyvalues["trail_visibility"] == nil            )  and
+   if ((  keyvalues["trail_visibility"] == "intermediate"  )  or
+       (  keyvalues["trail_visibility"] == "intermittent"  )  or
+       (  keyvalues["trail_visibility"] == "indistinct"    )  or
+       (  keyvalues["trail_visibility"] == "medium"        )  or
+       (  keyvalues["trail_visibility"] == "low"           )  or
+       (  keyvalues["overgrown"]        == "yes"           )  or
+       (  keyvalues["obstacle"]         == "vegetation"    )  or
+       (( keyvalues["trail_visibility"] == nil            )   and
         ( keyvalues["informal"]         == "yes"          ))) then
       keyvalues["trail_visibility"] = "intermediate"
    end
