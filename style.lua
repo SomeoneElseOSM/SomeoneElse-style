@@ -2592,6 +2592,40 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Consolidate some unusual wheelchair tags
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["wheelchair"] == "1"                )  or
+       ( keyvalues["wheelchair"] == "2"                )  or
+       ( keyvalues["wheelchair"] == "3"                )  or
+       ( keyvalues["wheelchair"] == "5"                )  or
+       ( keyvalues["wheelchair"] == "bell"             )  or
+       ( keyvalues["wheelchair"] == "customers"        )  or
+       ( keyvalues["wheelchair"] == "designated"       )  or
+       ( keyvalues["wheelchair"] == "destination"      )  or
+       ( keyvalues["wheelchair"] == "friendly"         )  or
+       ( keyvalues["wheelchair"] == "full"             )  or
+       ( keyvalues["wheelchair"] == "number of rooms"  )  or
+       ( keyvalues["wheelchair"] == "official"         )  or
+       ( keyvalues["wheelchair"] == "on request"       )  or
+       ( keyvalues["wheelchair"] == "only"             )  or
+       ( keyvalues["wheelchair"] == "permissive"       )  or
+       ( keyvalues["wheelchair"] == "ramp"             )  or
+       ( keyvalues["wheelchair"] == "unisex"           )) then
+      keyvalues["wheelchair"] = "yes"
+   end
+
+   if (( keyvalues["wheelchair"] == "difficult"                    )  or
+       ( keyvalues["wheelchair"] == "limited (No automatic door)"  )  or
+       ( keyvalues["wheelchair"] == "limited, notice required"     )  or
+       ( keyvalues["wheelchair"] == "restricted"                   )) then
+      keyvalues["wheelchair"] = "limited"
+   end
+
+   if ( keyvalues["wheelchair"] == "impractical" ) then
+      keyvalues["wheelchair"] = "limited"
+   end
+
+-- ----------------------------------------------------------------------------
 -- Remove "real_ale" tag on industrial and craft breweries that aren't also
 -- a pub, bar, restaurant, cafe etc. or hotel.
 -- ----------------------------------------------------------------------------
