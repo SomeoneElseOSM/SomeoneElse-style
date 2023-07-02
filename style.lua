@@ -1877,7 +1877,8 @@ function filter_tags_generic(keyvalues, nokeys)
    if (( keyvalues["historic"] == "milestone" )  or
        ( keyvalues["historic"] == "milepost"  )  or
        ( keyvalues["waterway"] == "milestone" )  or
-       ( keyvalues["railway"]  == "milestone" )) then
+       ( keyvalues["railway"]  == "milestone" )  or
+       ( keyvalues["man_made"] == "mile_post" )) then
       keyvalues["highway"] = "milestone"
    end
 
@@ -6139,10 +6140,11 @@ function filter_tags_generic(keyvalues, nokeys)
       keyvalues["name"] = keyvalues["board:title"]
    end
 
-   if ((  keyvalues["tourism"]     == "information"                       )  and
-       (( keyvalues["information"] == "guidepost"                        )   or
-        ( keyvalues["information"] == "fingerpost"                       )   or
-        ( keyvalues["information"] == "marker"                           ))) then
+   if (((  keyvalues["tourism"]     == "information"                       )  and
+        (( keyvalues["information"] == "guidepost"                        )   or
+         ( keyvalues["information"] == "fingerpost"                       )   or
+         ( keyvalues["information"] == "marker"                           ))) or
+       (   keyvalues["man_made"]    == "signpost"                           )) then
       if ( keyvalues["guide_type"] == "intermediary" ) then
          keyvalues["tourism"] = "informationroutemarker"
       else
@@ -9719,23 +9721,29 @@ function filter_tags_node (keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
 -- Map non-linear unknown (and some known) barriers to bollard
 -- ----------------------------------------------------------------------------
-   if (( keyvalues["barrier"] == "yes"            ) or
-       ( keyvalues["barrier"] == "barrier"        ) or
-       ( keyvalues["barrier"] == "tank_trap"      ) or
-       ( keyvalues["barrier"] == "dragons_teeth"  ) or
-       ( keyvalues["barrier"] == "bollards"       ) or
-       ( keyvalues["barrier"] == "bus_trap"       ) or
-       ( keyvalues["barrier"] == "car_trap"       ) or
-       ( keyvalues["barrier"] == "rising_bollard" ) or
-       ( keyvalues["barrier"] == "steps"          ) or
-       ( keyvalues["barrier"] == "step"           ) or
-       ( keyvalues["barrier"] == "post"           ) or
-       ( keyvalues["barrier"] == "stone"          ) or
-       ( keyvalues["barrier"] == "hoarding"       ) or
-       ( keyvalues["barrier"] == "sump_buster"    ) or
-       ( keyvalues["barrier"] == "gate_pier"      ) or
-       ( keyvalues["barrier"] == "gate_post"      ) or
-       ( keyvalues["barrier"] == "pole"           )) then
+   if (( keyvalues["barrier"]  == "yes"            ) or
+       ( keyvalues["barrier"]  == "barrier"        ) or
+       ( keyvalues["barrier"]  == "tank_trap"      ) or
+       ( keyvalues["barrier"]  == "dragons_teeth"  ) or
+       ( keyvalues["barrier"]  == "bollards"       ) or
+       ( keyvalues["barrier"]  == "bus_trap"       ) or
+       ( keyvalues["barrier"]  == "car_trap"       ) or
+       ( keyvalues["barrier"]  == "rising_bollard" ) or
+       ( keyvalues["barrier"]  == "steps"          ) or
+       ( keyvalues["barrier"]  == "step"           ) or
+       ( keyvalues["barrier"]  == "post"           ) or
+       ( keyvalues["man_made"] == "post"           ) or
+       ( keyvalues["man_made"] == "marker_post"    ) or
+       ( keyvalues["man_made"] == "boundary_post"  ) or
+       ( keyvalues["man_made"] == "concrete_post"  ) or
+       ( keyvalues["barrier"]  == "stone"          ) or
+       ( keyvalues["barrier"]  == "hoarding"       ) or
+       ( keyvalues["barrier"]  == "sump_buster"    ) or
+       ( keyvalues["barrier"]  == "gate_pier"      ) or
+       ( keyvalues["barrier"]  == "gate_post"      ) or
+       ( keyvalues["man_made"] == "gate_post"      ) or
+       ( keyvalues["man_made"] == "gatepost"       ) or
+       ( keyvalues["barrier"]  == "pole"           )) then
       keyvalues["barrier"] = "bollard"
    end
 

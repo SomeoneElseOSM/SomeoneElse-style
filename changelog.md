@@ -3,6 +3,7 @@ This page describes changes made [here](https://github.com/SomeoneElseOSM/Someon
 
 ## As yet unreleased
 Interpreted various less frequently used wheelchair values as one of the three common ones.
+Added some "post" synonyms.
 
 ## 01/07/2023
 Added more historic and memorial crosses, including historic=high_cross.
