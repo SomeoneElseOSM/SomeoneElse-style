@@ -52,5 +52,8 @@ else
     local_project=$1
     mv /home/${local_filesystem_user}/data/${local_project}_tags_first_page.justnow /home/${local_filesystem_user}/data/${local_project}_tags_first_page.previously
     wget  -O /home/${local_filesystem_user}/data/${local_project}_tags_first_page.justnow "https://taginfo.openstreetmap.org/api/4/project/tags?project=${local_project}&page=1&rp=${tag_count}&sortname=count_all&sortorder=asc&format=json_pretty" 2> /dev/null
-    diff /home/${local_filesystem_user}/data/${local_project}_tags_first_page.previously /home/${local_filesystem_user}/data/${local_project}_tags_first_page.justnow
+    grep -v data_until /home/${local_filesystem_user}/data/${local_project}_tags_first_page.previously > $$.previously
+    grep -v data_until /home/${local_filesystem_user}/data/${local_project}_tags_first_page.justnow > $$.justnow
+    diff $$.previously $$.justnow
+    rm $$.previously $$.justnow
 fi
