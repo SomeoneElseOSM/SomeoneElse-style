@@ -6701,8 +6701,8 @@ function filter_tags_generic(keyvalues, nokeys)
 -- archaeological sites
 --
 -- The subtag of archaeological_site was traditionally site_type, but after
--- some tagfiddling to and fro is now archaeological_site and site_type
--- The latter will likely be tagfiddled away at some point; I handle both.
+-- some tagfiddling to and fro was then both archaeological_site and site_type
+-- and then (July 2023) just archaeological_site; I handle both.
 --
 -- If something is tagged as both an archaeological site and a place or a 
 -- tourist attraction, lose the other tag.
