@@ -2040,7 +2040,19 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["shop"]       == nil  ) and
        ( keyvalues["playground"] == nil  )) then
       keyvalues["office"] = "yes"
-      keyvalues["buesiness"] = nil
+      keyvalues["business"] = nil
+   end
+
+-- ----------------------------------------------------------------------------
+-- Remove generic offices if shop is set.
+-- ----------------------------------------------------------------------------
+   if ((  keyvalues["shop"]   ~= nil        )  and
+       (  keyvalues["shop"]   ~= "no"       )  and
+       (  keyvalues["shop"]   ~= "vacant"   )  and
+       (( keyvalues["office"] == "company" )   or
+        ( keyvalues["office"] == "vacant"  )   or
+        ( keyvalues["office"] == "yes"     ))) then
+      keyvalues["office"] = nil
    end
 
 -- ----------------------------------------------------------------------------
@@ -8836,6 +8848,7 @@ function filter_tags_generic(keyvalues, nokeys)
    if (( keyvalues["office"]     == "company"           ) or
        ( keyvalues["shop"]       == "office"            ) or
        ( keyvalues["amenity"]    == "office"            ) or
+       ( keyvalues["office"]     == "private"           ) or
        ( keyvalues["office"]     == "research"          ) or
        ( keyvalues["office"]     == "yes"               ) or
        ( keyvalues["commercial"] == "office"            )) then
@@ -9001,6 +9014,7 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["office"]      == "parcel"                  ) or
        ( keyvalues["office"]      == "therapist"               ) or
        ( keyvalues["office"]      == "surveyor"                ) or
+       ( keyvalues["office"]      == "geodesist"               ) or
        ( keyvalues["office"]      == "marketing"               ) or
        ( keyvalues["office"]      == "graphic_design"          ) or
        ( keyvalues["office"]      == "interior_design"         ) or
@@ -9040,6 +9054,7 @@ function filter_tags_generic(keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
    if (( keyvalues["office"]     == "it"                      ) or
        ( keyvalues["office"]     == "ngo"                     ) or
+       ( keyvalues["office"]     == "organization"            ) or
        ( keyvalues["office"]     == "diplomatic"              ) or
        ( keyvalues["office"]     == "educational_institution" ) or
        ( keyvalues["office"]     == "university"              ) or

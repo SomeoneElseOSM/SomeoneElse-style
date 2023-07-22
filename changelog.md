@@ -6,6 +6,10 @@ Handle office=advertising_agency in the same way as office=advertising.
 Handle office=religion in the same way as office=charity.
 Handle office=engineer in the same way as office=engineering.
 Handle office=construction_company in the same way as office=consulting.
+Handle office=geodesist in the same way as office=engineering.
+Handle office=private in the same way as office=yes.
+Handle office=organization in the same way as office=ngo.
+If something has a shop tag and a generic office tag, remove the office tag.
 
 ## 12/07/2023
 Interpreted various less frequently used wheelchair values as one of the three common ones.
