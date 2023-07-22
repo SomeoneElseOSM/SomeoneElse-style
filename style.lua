@@ -8959,8 +8959,10 @@ function filter_tags_generic(keyvalues, nokeys)
    if (( keyvalues["office"]      == "it"                      ) or
        ( keyvalues["office"]      == "computer"                ) or
        ( keyvalues["office"]      == "consulting"              ) or
+       ( keyvalues["office"]      == "construction_company"    ) or
        ( keyvalues["office"]      == "courier"                 ) or
        ( keyvalues["office"]      == "advertising"             ) or
+       ( keyvalues["office"]      == "advertising_agency"      ) or
        ( keyvalues["amenity"]     == "post_depot"              ) or
        ( keyvalues["office"]      == "lawyer"                  ) or
        ( keyvalues["shop"]        == "lawyer"                  ) or
@@ -9009,6 +9011,7 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["shop"]        == "design"                  ) or
        ( keyvalues["office"]      == "communication"           ) or
        ( keyvalues["office"]      == "security"                ) or
+       ( keyvalues["office"]      == "engineer"                ) or
        ( keyvalues["office"]      == "engineering"             ) or
        ( keyvalues["craft"]       == "hvac"                    ) or
        ( keyvalues["office"]      == "hvac"                    ) or
@@ -9044,6 +9047,7 @@ function filter_tags_generic(keyvalues, nokeys)
        ((  keyvalues["office"]          == nil               )  and
         (( keyvalues["social_facility"] == "outreach"       )  or
          ( keyvalues["social_facility"] == "food_bank"      ))) or
+       ( keyvalues["office"]     == "religion"                ) or
        ( keyvalues["office"]     == "marriage_guidance"       ) or
        ( keyvalues["amenity"]    == "education_centre"        ) or
        ( keyvalues["amenity"]    == "college"                 ) or
