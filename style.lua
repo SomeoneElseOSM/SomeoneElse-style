@@ -9696,6 +9696,37 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- name and addr:housename
+-- If a building that isn't something else has a name but no addr:housename,
+-- use that there.
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["building"]       ~= nil  ) and
+       ( keyvalues["building"]       ~= "no" ) and
+       ( keyvalues["addr:housename"] == nil  ) and
+       ( keyvalues["name"]           ~= nil  ) and
+       ( keyvalues["aeroway"]        == nil  ) and
+       ( keyvalues["amenity"]        == nil  ) and
+       ( keyvalues["barrier"]        == nil  ) and
+       ( keyvalues["craft"]          == nil  ) and
+       ( keyvalues["emergency"]      == nil  ) and
+       ( keyvalues["highway"]        == nil  ) and
+       ( keyvalues["historic"]       == nil  ) and
+       ( keyvalues["landuse"]        == nil  ) and
+       ( keyvalues["leisure"]        == nil  ) and
+       ( keyvalues["man_made"]       == nil  ) and
+       ( keyvalues["natural"]        == nil  ) and
+       ( keyvalues["office"]         == nil  ) and
+       ( keyvalues["place"]          == nil  ) and
+       ( keyvalues["railway"]        == nil  ) and
+       ( keyvalues["shop"]           == nil  ) and
+       ( keyvalues["sport"]          == nil  ) and
+       ( keyvalues["tourism"]        == nil  ) and
+       ( keyvalues["waterway"]       == nil  )) then
+      keyvalues["addr:housename"] = keyvalues["name"]
+      keyvalues["name"] = nil
+   end
+
+-- ----------------------------------------------------------------------------
 -- addr:unit
 -- ----------------------------------------------------------------------------
    if ( keyvalues["addr:unit"] ~= nil ) then

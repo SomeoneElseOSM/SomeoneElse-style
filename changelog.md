@@ -10,6 +10,7 @@ Handle office=geodesist in the same way as office=engineering.
 Handle office=private in the same way as office=yes.
 Handle office=organization in the same way as office=ngo.
 If something has a shop tag and a generic office tag, remove the office tag.
+If a building that isn't something else has a name but no addr:housename, use name in place of addr:housename.
 
 ## 12/07/2023
 Interpreted various less frequently used wheelchair values as one of the three common ones.
