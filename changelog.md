@@ -12,6 +12,13 @@ Handle office=organization in the same way as office=ngo.
 If something has a shop tag and a generic office tag, remove the office tag.
 If a building that isn't something else has a name but no addr:housename, use name in place of addr:housename.
 Suppressed tourism tag on more historic items to prevent inconsistent rendering.
+Handle historic=grinding_mill in the same way as historic=mill.
+Handle historic=round_tower in the same way as tower:type=round_tower.
+Handle historic=jail in the same way as historic=prison.
+Handle historic=pillory in the same way as historic=stocks.
+Handle historic=cathedral in the same way as historic=abbey.
+If a historic=abbey etc. is active place of worship, show it as that.
+Handle historic=oratory in the same way as nonspecific historical item.
 
 ## 12/07/2023
 Interpreted various less frequently used wheelchair values as one of the three common ones.
