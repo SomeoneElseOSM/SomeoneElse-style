@@ -2201,6 +2201,7 @@ function filter_tags_generic(keyvalues, nokeys)
         ( keyvalues["historic"]  == "oratory"             )  or
         ( keyvalues["historic"]  == "palace"              )  or
         ( keyvalues["historic"]  == "pillory"             )  or
+        ( keyvalues["historic"]  == "place_of_worship"    )  or
         ( keyvalues["historic"]  == "police_call_box"     )  or
         ( keyvalues["historic"]  == "prison"              )  or
         ( keyvalues["historic"]  == "roundhouse"          )  or
@@ -5376,11 +5377,12 @@ function filter_tags_generic(keyvalues, nokeys)
 -- Historic churches go through as "historic=church", 
 -- if they're not also an amenity or something else.
 -- ----------------------------------------------------------------------------
-   if ((( keyvalues["historic"] == "church"         )  or
-        ( keyvalues["historic"] == "wayside_chapel" )  or
-        ( keyvalues["historic"] == "chapel"         )) and
-       (  keyvalues["amenity"]  == nil               ) and
-       (  keyvalues["shop"]     == nil               )) then
+   if ((( keyvalues["historic"] == "church"           )  or
+        ( keyvalues["historic"] == "place_of_worship" )  or
+        ( keyvalues["historic"] == "wayside_chapel"   )  or
+        ( keyvalues["historic"] == "chapel"           )) and
+       (  keyvalues["amenity"]  == nil                 ) and
+       (  keyvalues["shop"]     == nil                 )) then
       keyvalues["historic"] = "church"
       keyvalues["building"] = "yes"
       keyvalues["tourism"] = nil
@@ -5529,11 +5531,12 @@ function filter_tags_generic(keyvalues, nokeys)
       keyvalues["historic"] = "nonspecific"
    end
    
-   if ((  keyvalues["historic"] == "ruins"           )  and
-       (( keyvalues["ruins"]    == "church"         )  or
-        ( keyvalues["ruins"]    == "wayside_chapel" )  or
-        ( keyvalues["ruins"]    == "chapel"         )) and
-       (  keyvalues["amenity"]  == nil               )) then
+   if ((  keyvalues["historic"] == "ruins"             )  and
+       (( keyvalues["ruins"]    == "church"           )  or
+        ( keyvalues["ruins"]    == "place_of_worship" )  or
+        ( keyvalues["ruins"]    == "wayside_chapel"   )  or
+        ( keyvalues["ruins"]    == "chapel"           )) and
+       (  keyvalues["amenity"]  == nil                 )) then
       keyvalues["building"] = "roof"
       keyvalues["historic"] = "church"
    end
