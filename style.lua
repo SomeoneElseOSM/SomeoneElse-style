@@ -2153,13 +2153,76 @@ function filter_tags_generic(keyvalues, nokeys)
 -- should render as the latter.
 -- Also handle some other combinations.
 -- ----------------------------------------------------------------------------
-   if ((( keyvalues["tourism"]   == "viewpoint"     )  or
-        ( keyvalues["tourism"]   == "attraction"    )) and
-       (( keyvalues["historic"]  == "memorial"      )  or
-        ( keyvalues["historic"]  == "monument"      )  or
-        ( keyvalues["natural"]   == "tree"          )  or
-        ( keyvalues["leisure"]   == "park"          )  or
-        ( keyvalues["leisure"]   == "sports_centre" ))) then
+   if ((( keyvalues["tourism"]   == "viewpoint"           )  or
+        ( keyvalues["tourism"]   == "attraction"          )) and
+       (( keyvalues["historic"]  == "abbey"               )  or
+        ( keyvalues["historic"]  == "aircraft"            )  or
+        ( keyvalues["historic"]  == "almshouse"           ) or
+        ( keyvalues["historic"]  == "archaeological_site" )  or
+        ( keyvalues["historic"]  == "bakery"              ) or
+        ( keyvalues["historic"]  == "barrow"              ) or
+        ( keyvalues["historic"]  == "battlefield"         )  or
+        ( keyvalues["historic"]  == "boundary_stone"      )  or
+        ( keyvalues["historic"]  == "building"            )  or
+        ( keyvalues["historic"]  == "bridge_site"         ) or
+        ( keyvalues["historic"]  == "bunker"              )  or
+        ( keyvalues["historic"]  == "camp"                ) or
+        ( keyvalues["historic"]  == "cannon"              )  or
+        ( keyvalues["historic"]  == "castle"              )  or
+        ( keyvalues["historic"]  == "chapel"              )  or
+        ( keyvalues["historic"]  == "church"              )  or
+        ( keyvalues["historic"]  == "city_gate"           )  or
+        ( keyvalues["historic"]  == "citywalls"           )  or
+        ( keyvalues["historic"]  == "country_mansion"     )  or
+        ( keyvalues["historic"]  == "cross"               )  or
+        ( keyvalues["historic"]  == "drinking_fountain"   ) or
+        ( keyvalues["historic"]  == "folly"               )  or
+        ( keyvalues["historic"]  == "fort"                )  or
+        ( keyvalues["historic"]  == "fortification"       ) or
+        ( keyvalues["historic"]  == "gate"                ) or
+        ( keyvalues["historic"]  == "hall"                ) or
+        ( keyvalues["historic"]  == "high_cross"          )  or
+        ( keyvalues["historic"]  == "house"               )  or
+        ( keyvalues["historic"]  == "locomotive"          )  or
+        ( keyvalues["historic"]  == "locomotive"          )  or
+        ( keyvalues["historic"]  == "manor"               )  or
+        ( keyvalues["historic"]  == "mansion"             )  or
+        ( keyvalues["historic"]  == "maypole"             )  or
+        ( keyvalues["historic"]  == "memorial"            )  or
+        ( keyvalues["historic"]  == "milestone"           )  or
+        ( keyvalues["historic"]  == "mill"                )  or
+        ( keyvalues["historic"]  == "mine"                )  or
+        ( keyvalues["historic"]  == "monastery"           )  or
+        ( keyvalues["historic"]  == "monastic_grange"     ) or
+        ( keyvalues["historic"]  == "monument"            )  or
+        ( keyvalues["historic"]  == "mound"               ) or
+        ( keyvalues["historic"]  == "palace"              )  or
+        ( keyvalues["historic"]  == "police_call_box"     ) or
+        ( keyvalues["historic"]  == "prison"              )  or
+        ( keyvalues["historic"]  == "roundhouse"          )  or
+        ( keyvalues["historic"]  == "ruins"               ) or
+        ( keyvalues["historic"]  == "sawmill"             ) or
+        ( keyvalues["historic"]  == "shelter"             ) or
+        ( keyvalues["historic"]  == "ship"                )  or
+        ( keyvalues["historic"]  == "standing_stone"      )  or
+        ( keyvalues["historic"]  == "statue"              ) or
+        ( keyvalues["historic"]  == "stocks"              )  or
+        ( keyvalues["historic"]  == "stone"               )  or
+        ( keyvalues["historic"]  == "tank"                )  or
+        ( keyvalues["historic"]  == "theatre"             ) or
+        ( keyvalues["historic"]  == "tomb"                )  or
+        ( keyvalues["historic"]  == "tower"               )  or
+        ( keyvalues["historic"]  == "tower_house"         ) or
+        ( keyvalues["historic"]  == "tumulus"             ) or
+        ( keyvalues["historic"]  == "wayside_cross"       )  or
+        ( keyvalues["historic"]  == "wayside_shrine"      )  or
+        ( keyvalues["historic"]  == "well"                )  or
+        ( keyvalues["historic"]  == "windmill"            )  or
+        ( keyvalues["historic"]  == "wreck"               )  or
+        ( keyvalues["historic"]  == "yes"                 )  or
+        ( keyvalues["natural"]   == "tree"                )  or
+        ( keyvalues["leisure"]   == "park"                )  or
+        ( keyvalues["leisure"]   == "sports_centre"       ))) then
       keyvalues["tourism"] = nil
    end
 
@@ -5491,32 +5554,33 @@ function filter_tags_generic(keyvalues, nokeys)
 -- historic=grave_yard above because the notes suggest that these are not 
 -- visible as graveyards any more, so no graveyard fill.
 -- ----------------------------------------------------------------------------   
-   if ((  keyvalues["historic"] == "monument"          ) or
-       (  keyvalues["historic"] == "ruins"             ) or
-       (  keyvalues["historic"] == "barrow"            ) or
-       (  keyvalues["historic"] == "tumulus"           ) or
-       (  keyvalues["historic"] == "tomb"              ) or
-       (  keyvalues["historic"] == "fortification"     ) or
-       (  keyvalues["historic"] == "camp"              ) or
-       (  keyvalues["historic"] == "mill"              ) or
-       (  keyvalues["historic"] == "mound"             ) or
-       (  keyvalues["historic"] == "hall"              ) or
-       (  keyvalues["historic"] == "tower_house"       ) or
+   if (
        (  keyvalues["historic"] == "almshouse"         ) or
-       (  keyvalues["historic"] == "police_call_box"   ) or
        (  keyvalues["historic"] == "bakery"            ) or
-       (  keyvalues["historic"] == "monastic_grange"   ) or
-       (  keyvalues["historic"] == "toll_house"        ) or
+       (  keyvalues["historic"] == "barrow"            ) or
+       (  keyvalues["historic"] == "bridge_site"       ) or
+       (  keyvalues["historic"] == "camp"              ) or
+       (  keyvalues["historic"] == "cannon"            ) or
+       (  keyvalues["historic"] == "drinking_fountain" ) or
+       (  keyvalues["historic"] == "folly"             ) or
+       (  keyvalues["historic"] == "fortification"     ) or
        (  keyvalues["historic"] == "gate"              ) or
+       (  keyvalues["historic"] == "hall"              ) or
+       (  keyvalues["historic"] == "mill"              ) or
+       (  keyvalues["historic"] == "monastic_grange"   ) or
+       (  keyvalues["historic"] == "monument"          ) or
+       (  keyvalues["historic"] == "mound"             ) or
+       (  keyvalues["historic"] == "police_call_box"   ) or
        (  keyvalues["historic"] == "prison"            ) or
-       (  keyvalues["historic"] == "theatre"           ) or
+       (  keyvalues["historic"] == "ruins"             ) or
+       (  keyvalues["historic"] == "sawmill"           ) or
        (  keyvalues["historic"] == "shelter"           ) or
        (  keyvalues["historic"] == "statue"            ) or
-       (  keyvalues["historic"] == "folly"             ) or
-       (  keyvalues["historic"] == "drinking_fountain" ) or
-       (  keyvalues["historic"] == "sawmill"           ) or
-       (  keyvalues["historic"] == "cannon"            ) or
-       (  keyvalues["historic"] == "bridge_site"       ) or
+       (  keyvalues["historic"] == "theatre"           ) or
+       (  keyvalues["historic"] == "toll_house"        ) or
+       (  keyvalues["historic"] == "tomb"              ) or
+       (  keyvalues["historic"] == "tower_house"       ) or
+       (  keyvalues["historic"] == "tumulus"           ) or
        (( keyvalues["disused:landuse"] == "cemetery"  )  and
         ( keyvalues["landuse"]         == nil         )  and
         ( keyvalues["leisure"]         == nil         )  and
