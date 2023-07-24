@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20230723T164000Z",
+  "data_updated": "20230724T104900Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -1269,7 +1269,7 @@
     { "key": "historic", "value": "gate_house", "description": "Shown as nonspecific historic item" },
     { "key": "historic", "value": "grave", "description": "Shown as nonspecific historic item" },
     { "key": "historic", "value": "grave_yard", "description": "Shown as nonspecific historic item over graveyard landuse" },
-    { "key": "historic", "value": "ginding_mill", "description": "Shown as nonspecific historic item" },
+    { "key": "historic", "value": "grinding_mill", "description": "Shown as nonspecific historic item" },
     { "key": "historic", "value": "hall", "description": "Shown as nonspecific historic item" },
     { "key": "historic", "value": "heritage_building", "description": "Shown as nonspecific historic item" },
     { "key": "historic", "value": "high_cross", "description": "Shown as historic cross" },
@@ -1309,7 +1309,7 @@
     { "key": "historic", "value": "palace", "description": "Shown as big house" },
     { "key": "historic", "value": "pillar", "description": "Shown as nonspecific historic item" },
     { "key": "historic", "value": "pillory", "description": "Shown as historic stocks" },
-    { "key": "historic", "value": "place_of_worchip", "description": "Shown as historic church" },
+    { "key": "historic", "value": "place_of_worship", "description": "Shown as historic church" },
     { "key": "historic", "value": "pinfold", "description": "Shown as historic pinfold" },
     { "key": "historic", "value": "plaque", "description": "Shown as nonspecific historic item" },
     { "key": "historic", "value": "police_call_box", "description": "Shown as nonspecific historic item" },
