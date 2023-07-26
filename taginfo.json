@@ -226,6 +226,7 @@
     { "key": "amenity", "value": "lifeboat", "description": "Lifeboats" },
     { "key": "amenity", "value": "lifeboat_station", "description": "Synonym for office=nonspecific" },
     { "key": "amenity", "value": "lottery", "description": "Rendered as gambling shop" },
+    { "key": "amenity", "value": "lounger", "description": "Loungers are shown as benches" },
     { "key": "amenity", "value": "luggage_locker", "description": "Synonym for left_luggage" },
     { "key": "amenity", "value": "market", "description": "Synonym for retail landuse" },
     { "key": "amenity", "value": "marketplace", "description": "Synonym for retail landuse" },

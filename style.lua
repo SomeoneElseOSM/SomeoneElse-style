@@ -6697,6 +6697,13 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Do show loungers as benches.
+-- ----------------------------------------------------------------------------
+   if ( keyvalues["amenity"] == "lounger" ) then
+      keyvalues["amenity"] = "bench"
+   end
+
+-- ----------------------------------------------------------------------------
 -- Don't show "standing benches" as benches.
 -- ----------------------------------------------------------------------------
    if (( keyvalues["amenity"] == "bench"          ) and
