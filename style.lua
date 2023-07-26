@@ -10016,6 +10016,7 @@ function filter_tags_way (keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
    if (( keyvalues["barrier"] == "yes"             ) or
        ( keyvalues["barrier"] == "barrier"         ) or
+       ( keyvalues["barrier"] == "bollard"         ) or
        ( keyvalues["barrier"] == "steps"           ) or
        ( keyvalues["barrier"] == "step"            ) or
        ( keyvalues["barrier"] == "hoarding"        ) or
