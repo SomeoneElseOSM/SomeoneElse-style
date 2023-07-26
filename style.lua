@@ -485,7 +485,8 @@ function filter_tags_generic(keyvalues, nokeys)
 -- The "bridge" check (on trail_visibility, not sac_scale) is because if 
 -- there's really a bridge there, surely you can see it?
 -- ----------------------------------------------------------------------------
-   if (( keyvalues["designation"]      == nil   ) and
+   if (( keyvalues["highway"]          ~= nil   ) and
+       ( keyvalues["designation"]      == nil   ) and
        ( keyvalues["trail_visibility"] == "bad" )) then
       if ((( tonumber(keyvalues["width"]) or 0 ) >=  2 ) or
           ( keyvalues["width"] == "2 m"                ) or

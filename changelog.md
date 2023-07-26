@@ -20,6 +20,7 @@ Handle historic=cathedral in the same way as historic=abbey.
 If a historic=abbey etc. is active place of worship, show it as that.
 Handle historic=oratory in the same way as nonspecific historical item.
 Handle historic=place_of_worship in the same way as historic=church.
+Ensure that the "no vis paths" layer only considers highways.
 
 ## 12/07/2023
 Interpreted various less frequently used wheelchair values as one of the three common ones.
