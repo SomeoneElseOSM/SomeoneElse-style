@@ -26,7 +26,7 @@ generic_keys = {'access','addr:housename','addr:housenumber','addr:interpolation
    'embankment','emergency','entrance','foot','flood_prone','generation:source','geological','golf','government',
    'harbour','hazard_prone','hazard_type','highway','historic','horse','hours','information','intermittent',
    'junction','landcover','landuse','layer','leisure','lcn_ref','lock','locked',
-   'man_made','marker','military','motor_car','name','natural','ncn_milepost','office','oneway','operator','opening_hours:covid19','pitch','place','playground','poi','population','power','power_source','public_transport',
+   'man_made','marker','military','motor_car','name','natural','ncn_milepost','office','oneway','operator','opening_hours:covid19','pipeline','pitch','place','playground','poi','population','power','power_source','public_transport',
    'railway','railway:historic','ref','religion','rescue_equipment','route',
    'school','seamark:type','seamark:rescue_station:category','service','shop','sport','surface',
    'toll','tourism','tower:type', 'tracktype','training','tunnel','water','waterway',
@@ -1888,7 +1888,9 @@ function filter_tags_generic(keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
    if (( keyvalues["marker"]   == "aerial"          ) or
        ( keyvalues["marker"]   == "pipeline"        ) or
-       ( keyvalues["man_made"] == "pipeline_marker" )) then
+       ( keyvalues["marker"]   == "post"            ) or
+       ( keyvalues["man_made"] == "pipeline_marker" ) or
+       ( keyvalues["pipeline"] == "marker"          )) then
       keyvalues["man_made"] = "markeraerial"
    end
 
