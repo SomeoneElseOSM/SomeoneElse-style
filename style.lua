@@ -2142,10 +2142,14 @@ function filter_tags_generic(keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
 -- Things that are both localities and peaks or hills 
 -- should render as the latter.
+-- Also, some other combinations (most amenities, some man_made, etc.)
 -- ----------------------------------------------------------------------------
-   if ((  keyvalues["place"]   == "locality"     )  and
-       (( keyvalues["natural"] == "peak"        )  or
-        ( keyvalues["natural"] == "hill"        ))) then
+   if ((  keyvalues["place"]    == "locality"      ) and
+       (( keyvalues["natural"]  == "peak"         )  or
+        ( keyvalues["natural"]  == "hill"         )  or
+        ( keyvalues["amenity"]  ~= nil            )  or
+        ( keyvalues["man_made"] ~= nil            )  or
+        ( keyvalues["historic"] ~= nil            ))) then
       keyvalues["place"] = nil
    end
 

@@ -23,6 +23,7 @@ Handle historic=place_of_worship in the same way as historic=church.
 Ensure that the "no vis paths" layer only considers highways.
 Show loungers as benches.
 Show linear bollards as fences (the least worst option; any arrangement of dots or dashes would look like a path or a railway line).
+Suppress place=locality with some other tags (amenity, man_made, historic).
 
 ## 12/07/2023
 Interpreted various less frequently used wheelchair values as one of the three common ones.
