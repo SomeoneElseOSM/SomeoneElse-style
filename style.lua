@@ -8440,7 +8440,6 @@ function filter_tags_generic(keyvalues, nokeys)
        (  keyvalues["shop"]    == "license_plates"               )  or
        (  keyvalues["shop"]    == "car_audio"                    )  or
        (  keyvalues["shop"]    == "motor"                        )  or
-       (  keyvalues["shop"]    == "motoring"                     )  or
        (  keyvalues["shop"]    == "motor_spares"                 )  or
        (  keyvalues["shop"]    == "motor_accessories"            )  or
        (  keyvalues["shop"]    == "car_parts;car_repair"         )  or

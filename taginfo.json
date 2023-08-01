@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20230726T215700Z",
+  "data_updated": "20230801T084600Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -351,7 +351,7 @@
     { "key": "archaeological_site", "value": "standing_stone", "description": "Detect standing stones and ogham stones" },
     { "key": "archaeological_site", "value": "hill_fort", "description": "Show hill forts with a unique icon" },
     { "key": "archaeological_site", "value": "hillfort", "description": "Show hill forts with a unique icon" },
-    { "key": "archaeological_site", "value": "castle", "description": "Show castle with a unique icon" },
+    { "key": "archaeological_site", "value": "castle", "description": "Not an expected value in OSM data.  Show castle with a unique icon" },
     { "key": "archaeological_site", "value": "crannog", "description": "Show crannog with a unique icon" },
     { "key": "area", "description": "Drop some highway areas" },
     { "key": "area:highway", "description": "Show traffic islands as kerbs" },
@@ -2581,7 +2581,6 @@
     { "key": "shop", "value": "motorcycle_parts", "description": "Various shops shown" },
     { "key": "shop", "value": "motorcycle_repair", "description": "Various shops shown" },
     { "key": "shop", "value": "motorhome", "description": "Various shops shown" },
-    { "key": "shop", "value": "motoring", "description": "Various shops shown" },
     { "key": "shop", "value": "music", "description": "Various shops shown" },
     { "key": "shop", "value": "music;video", "description": "Various shops shown" },
     { "key": "shop", "value": "musical_instrument", "description": "Various shops shown" },

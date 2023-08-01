@@ -25,6 +25,7 @@ Show loungers as benches.
 Show linear bollards as fences (the least worst option; any arrangement of dots or dashes would look like a path or a railway line).
 Suppress place=locality with some other tags (amenity, man_made, historic).
 Show pipeline=marker and marker=post as marker=pipeline.
+Remove support for shop-motoring - it was actually a very old mistagging.
 
 ## 12/07/2023
 Interpreted various less frequently used wheelchair values as one of the three common ones.
