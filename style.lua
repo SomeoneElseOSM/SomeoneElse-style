@@ -2506,9 +2506,24 @@ function filter_tags_generic(keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
    if (( keyvalues["leisure"]      == "wildlife_hide" ) or
        ( keyvalues["amenity"]      == "wildlife_hide" ) or
-       ( keyvalues["man_made"      == "wildlife_hide" ) or
+       ( keyvalues["man_made"]     == "wildlife_hide" ) or
        ( keyvalues["amenity"]      == "bird_hide"     )) then
-      keyvalues["leisure"] = "bird_hide"
+      keyvalues["leisure"]  = "bird_hide"
+      keyvalues["amenity"]  = nil
+      keyvalues["man_made"] = nil
+   end
+
+   if ((( keyvalues["amenity"]       == "hunting_stand" )   and
+        ( keyvalues["hunting_stand"] == "grouse_butt"   ))  or
+       ( keyvalues["man_made"]       == "grouse_butt"    )) then
+      keyvalues["leisure"] = "grouse_butt"
+      keyvalues["amenity"] = nil
+      keyvalues["man_made"] = nil
+   end
+
+   if ( keyvalues["amenity"] == "hunting_stand" ) then
+      keyvalues["leisure"] = "hunting_stand"
+      keyvalues["amenity"] = nil
    end
 
 -- ----------------------------------------------------------------------------
