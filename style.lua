@@ -2502,9 +2502,12 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
--- Map leisure=wildlife_hide to bird_hide.  Many times it will be
+-- Map leisure=wildlife_hide to bird_hide etc.  Many times it will be.
 -- ----------------------------------------------------------------------------
-   if (keyvalues["leisure"] == "wildlife_hide") then
+   if (( keyvalues["leisure"]      == "wildlife_hide" ) or
+       ( keyvalues["amenity"]      == "wildlife_hide" ) or
+       ( keyvalues["man_made"      == "wildlife_hide" ) or
+       ( keyvalues["amenity"]      == "bird_hide"     )) then
       keyvalues["leisure"] = "bird_hide"
    end
 

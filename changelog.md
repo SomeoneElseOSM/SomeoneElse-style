@@ -4,6 +4,7 @@ This page describes changes made [here](https://github.com/SomeoneElseOSM/Someon
 ## As yet unreleased
 Handle amenity=youth_centre in the same way as amenity=youth_club.
 If "boundary=forest" is set and "landuse" is not, handle as per "landuse=forest".
+Added  couple more synonyms for "leisure=bird_hide".
 
 ## 03/08/2023
 Handle office=advertising_agency in the same way as office=advertising.
