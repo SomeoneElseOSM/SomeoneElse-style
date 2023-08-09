@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20230801T084600Z",
+  "data_updated": "20230809T132300Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -332,7 +332,8 @@
     { "key": "amenity", "value": "waste_transfer_station", "description": "Synonym for indstrial landuse" },
     { "key": "amenity", "value": "watering_place", "description": "Ways shown as water, nodes as a blue dot" },
     { "key": "amenity", "value": "working_mens_club", "description": "Shown as leisure=nonspecific" },
-    { "key": "amenity", "value": "youth_club", "description": "Shown as leisure=nonspecific" },
+    { "key": "amenity", "value": "youth_centre", "description": "Shown as leisure=nonspecific" },
+    { "key": "amenity", "value": "youth_club", "description": "Not an expected value in OSM data.  Shown as leisure=nonspecific" },
     { "key": "amenity:disused", "description": "Explicitly render disused pubs; handle disused telephones" },
     { "key": "animal", "description": "Used to infer more detail about other tags" },
     { "key": "animal", "value": "horse_walker", "description": "Show horse walkers as a roof" },
