@@ -2603,11 +2603,21 @@ function filter_tags_generic(keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
 -- Attempt to do something sensible with trees
 --
+-- "boundary=forest" is the latest attempt to resolve the "landuse=forest is 
+-- used for different things" issue.  Unfortunately, it can also be used with 
+-- other landuse values.
+--
 -- There are a few 10s of natural=woodland and natural=forest; treat them the same
 -- as other woodland.  If we have landuse=forest on its own without
 -- leaf_type, then we don't change it - we'll handle that separately in the
 -- mss file.
 -- ----------------------------------------------------------------------------
+  if (( keyvalues["boundary"] == "forest" ) and
+      ( keyvalues["landuse"]  == nil      )) then
+      keyvalues["landuse"] = "forest"
+      keyvalues["boundary"] = nil
+  end
+
   if ( keyvalues["landuse"] == "forestry" ) then
       keyvalues["landuse"] = "forest"
   end
