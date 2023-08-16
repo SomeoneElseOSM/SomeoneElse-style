@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20230809T132300Z",
+  "data_updated": "20230816T145400Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -3093,6 +3093,7 @@
     { "key": "waterway", "value": "sluice_gate", "description": "Many water features shown" },
     { "key": "waterway", "value": "spillway", "description": "Many water features shown" },
     { "key": "waterway", "value": "stream", "description": "Many water features shown" },
+    { "key": "waterway", "value": "tidal_channel", "description": "Handled as per 'stream'" },
     { "key": "waterway", "value": "waterfall", "description": "Many water features shown" },
     { "key": "waterway", "value": "weir", "description": "Many water features shown" },
     { "key": "waterway:abandoned", "description": "Handle disused version of tag" },

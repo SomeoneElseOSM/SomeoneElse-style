@@ -7,6 +7,7 @@ If "boundary=forest" is set and "landuse" is not, handle as per "landuse=forest"
 Added a couple more synonyms for "leisure=bird_hide".
 Added an icon for grouse butts.
 Added an icon for hunting stands that are not grouse butts.
+Added "waterway=tidal_channel" as a synonym of "waterway=stream".
 
 ## 03/08/2023
 Handle office=advertising_agency in the same way as office=advertising.
