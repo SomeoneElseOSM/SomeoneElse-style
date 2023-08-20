@@ -2559,7 +2559,6 @@
     { "key": "shop", "value": "locksmith;dry_cleaning;shoe_repair", "description": "Not a current value in OSM data.  Shown as shoe_repair_etc" },
     { "key": "shop", "value": "lottery", "description": "Various shops shown" },
     { "key": "shop", "value": "luggage", "description": "Various shops shown" },
-    { "key": "shop", "value": "luggage_locker", "description": "Various shops shown" },
     { "key": "shop", "value": "luxury", "description": "Various shops shown" },
     { "key": "shop", "value": "magic", "description": "Various shops shown" },
     { "key": "shop", "value": "mall", "description": "Various shops shown" },

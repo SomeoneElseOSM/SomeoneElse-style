@@ -4539,8 +4539,7 @@ function filter_tags_generic(keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
 -- Left luggage
 -- ----------------------------------------------------------------------------
-   if (( keyvalues["amenity"] == "luggage_locker"  ) or
-       ( keyvalues["shop"]    == "luggage_locker"  )) then
+   if ( keyvalues["amenity"] == "luggage_locker"  ) then
       keyvalues["amenity"] = "left_luggage"
       keyvalues["shop"]    = nil
    end
