@@ -5538,7 +5538,6 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["historic"] == "tank"               ) or
        ( keyvalues["historic"] == "house"              ) or
        ( keyvalues["historic"] == "lime_kiln"          ) or
-       ( keyvalues["historic"] == "limekiln"           ) or
        ( keyvalues["historic"] == "kiln"               ) or
        ( keyvalues["historic"] == "trough"             )) then
       keyvalues["building"] = "yes"

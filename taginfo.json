@@ -1287,7 +1287,6 @@
     { "key": "historic", "value": "kiln", "description": "Shown as nonspecific historic item" },
     { "key": "historic", "value": "leat", "description": "Shown as derelict canal" },
     { "key": "historic", "value": "lime_kiln", "description": "Shown as nonspecific historic item" },
-    { "key": "historic", "value": "limekiln", "description": "Shown as nonspecific historic item" },
     { "key": "historic", "value": "locomotive", "description": "Shown as nonspecific historic item" },
     { "key": "historic", "value": "manor", "description": "Shown as big house" },
     { "key": "historic", "value": "mansion", "description": "Shown as big house" },
