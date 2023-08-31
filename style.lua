@@ -2786,6 +2786,21 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- If "leisure=music_venue" is set try and work out if something should take 
+-- precedence.
+-- We do this check here rather than at "concert_hall" further down because 
+-- "bar" and "pub" can be changed below based on other tags.
+-- ----------------------------------------------------------------------------
+   if ( keyvalues["leisure"] == "music_venue" ) then
+      if (( keyvalues["amenity"] == "bar" ) or
+          ( keyvalues["amenity"] == "pub" )) then
+         keyvalues["leisure"] = nil
+      else
+         keyvalues["amenity"] = "concert_hall"
+      end
+   end
+
+-- ----------------------------------------------------------------------------
 -- Things that are both hotels, B&Bs etc. and pubs should render as pubs, 
 -- because I'm far more likely to be looking for the latter than the former.
 -- This is done by removing the tourism tag for them.

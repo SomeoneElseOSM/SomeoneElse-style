@@ -1560,6 +1560,7 @@
     { "key": "leisure", "value": "inflatable_park", "description": "Leisure amenities shown in green" },
     { "key": "leisure", "value": "marina", "description": "Shown as marina" },
     { "key": "leisure", "value": "miniature_golf", "description": "Leisure amenities shown in green" },
+    { "key": "amenity", "value": "music_venue", "description": "Synonym for concert_hall" },
     { "key": "leisure", "value": "nature_reserve", "description": "Leisure amenities shown in green" },
     { "key": "leisure", "value": "outdoor_centre", "description": "Leisure amenities shown in green" },
     { "key": "leisure", "value": "outdoor_seating", "description": "Leisure amenities shown in green" },
