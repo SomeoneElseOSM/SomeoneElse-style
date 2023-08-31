@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20230820T133800Z",
+  "data_updated": "20230831T212200Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -2803,7 +2803,7 @@
     { "key": "sidewalk:right", "value": "separate", "description": "Render sidewalks on roads" },
     { "key": "sidewalk:right", "value": "yes", "description": "Render sidewalks on roads" },
     { "key": "site_type", "description": "Show different archaeological sites differently" },
-    { "key": "site_type", "value": "fortification", "description": "Show archaeological fortifications" },
+    { "key": "site_type", "value": "fortification", "description": "Not an expected value in OSM data.  Show archaeological fortifications" },
     { "key": "site_type", "value": "tumulus", "description": "Not an expected value in OSM data.  Show archaeological tumuli" },
     { "key": "site_type", "value": "megalith", "description": "Not an expected value in OSM data.  Detect standing stones and ogham stones" },
     { "key": "site_type", "value": "standing_stone", "description": "Not an expected value in OSM data.  Detect standing stones and ogham stones" },
