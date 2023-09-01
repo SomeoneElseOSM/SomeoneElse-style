@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20230831T212200Z",
+  "data_updated": "20230901T092300Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -1560,7 +1560,7 @@
     { "key": "leisure", "value": "inflatable_park", "description": "Leisure amenities shown in green" },
     { "key": "leisure", "value": "marina", "description": "Shown as marina" },
     { "key": "leisure", "value": "miniature_golf", "description": "Leisure amenities shown in green" },
-    { "key": "amenity", "value": "music_venue", "description": "Synonym for concert_hall" },
+    { "key": "leisure", "value": "music_venue", "description": "Synonym for concert_hall" },
     { "key": "leisure", "value": "nature_reserve", "description": "Leisure amenities shown in green" },
     { "key": "leisure", "value": "outdoor_centre", "description": "Leisure amenities shown in green" },
     { "key": "leisure", "value": "outdoor_seating", "description": "Leisure amenities shown in green" },
