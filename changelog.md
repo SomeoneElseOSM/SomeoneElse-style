@@ -5,6 +5,7 @@ This page describes changes made [here](https://github.com/SomeoneElseOSM/Someon
 Removed "shop=luggage_locker" as a synonym for left luggage; it was only ever an extreme outlier and it has now been removed from the data.
 Removed "historic=limekiln" as a synonym for "historic=lime_kiln"; no longer in the data.
 Render "leisure=music_venue" as a concert hall if "amenity" isn't set to something more relevant.
+Removed "megalith_type=passage_tomb" as a synonym for "megalith_type=passage_grave"; no longer in the data.
 
 ## 18/08/2023
 Handle amenity=youth_centre in the same way as amenity=youth_club.
