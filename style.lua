@@ -1865,6 +1865,35 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Detect wetland also tagged with "surface" tags.
+-- ----------------------------------------------------------------------------
+   if ( keyvalues["natural"] == "wetland" ) then
+      if (( keyvalues["surface"] == "mud"       ) or
+          ( keyvalues["surface"] == "mud, sand" )) then
+         keyvalues["natural"] = "mud"
+      end
+
+      if (( keyvalues["surface"] == "sand"      ) or
+          ( keyvalues["surface"] == "sand, mud" ) or
+          ( keyvalues["surface"] == "dirt/sand" )) then
+         keyvalues["natural"] = "sand"
+      end
+
+      if (( keyvalues["surface"] == "shingle"     ) or
+          ( keyvalues["surface"] == "gravel"      ) or
+          ( keyvalues["surface"] == "fine_gravel" ) or
+          ( keyvalues["surface"] == "pebblestone" )) then
+         keyvalues["natural"] = "shingle"
+      end
+
+      if (( keyvalues["surface"] == "rock"      ) or
+          ( keyvalues["surface"] == "bare_rock" ) or
+          ( keyvalues["surface"] == "concrete"  )) then
+         keyvalues["natural"] = "bare_rock"
+      end
+   end
+
+-- ----------------------------------------------------------------------------
 -- Render tidal mud with more blue
 -- ----------------------------------------------------------------------------
    if (( keyvalues["natural"]   == "mud" ) and
