@@ -7,6 +7,7 @@ Removed "historic=limekiln" as a synonym for "historic=lime_kiln"; no longer in 
 Render "leisure=music_venue" as a concert hall if "amenity" isn't set to something more relevant.
 Removed "megalith_type=passage_tomb" as a synonym for "megalith_type=passage_grave"; no longer in the data.
 If a sensible surface tag is set, render wetland as that rather than as vanilla wetland.
+If a wetland value suggests mud, render as mud rather than as vanilla wetland.
 
 ## 18/08/2023
 Handle amenity=youth_centre in the same way as amenity=youth_club.

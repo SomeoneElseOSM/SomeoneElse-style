@@ -1894,6 +1894,18 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Also, if "natural" is still "wetland", what "wetland" values should be 
+-- handled as some other tag?
+-- ----------------------------------------------------------------------------
+   if ( keyvalues["natural"] == "wetland" ) then
+      if (( keyvalues["wetland"] == "tidalflat" ) or
+          ( keyvalues["wetland"] == "mud"       )) then
+         keyvalues["natural"] = "mud"
+         keyvalues["tidal"] = "yes"
+      end
+   end
+
+-- ----------------------------------------------------------------------------
 -- Render tidal mud with more blue
 -- ----------------------------------------------------------------------------
    if (( keyvalues["natural"]   == "mud" ) and
