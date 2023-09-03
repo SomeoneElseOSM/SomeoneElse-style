@@ -1903,6 +1903,11 @@ function filter_tags_generic(keyvalues, nokeys)
          keyvalues["natural"] = "mud"
          keyvalues["tidal"] = "yes"
       end
+
+      if ( keyvalues["wetland"] == "wet_meadow" ) then
+         keyvalues["landuse"] = "wetmeadow"
+         keyvalues["natural"] = nil
+      end
    end
 
 -- ----------------------------------------------------------------------------

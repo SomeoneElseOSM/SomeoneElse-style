@@ -3113,6 +3113,7 @@
     { "key": "wetland", "description": "Show some mainly mud wetlands as mud" },
     { "key": "wetland", "value": "mud", "description": "Show some mainly mud wetlands as mud" },
     { "key": "wetland", "value": "tidalflat", "description": "Show some mainly mud wetlands as mud" },
+    { "key": "wetland", "value": "wet_meadow", "description": "Show wet meadow wetlands as such" },
     { "key": "wheelchair", "description": "Show the wheelchair-friendliness of pubs as a coloured underline at the left of the icon" },
     { "key": "wheelchair", "value": "limited", "description": "Show the wheelchair-friendliness of pubs as a coloured underline at the left of the icon" },
     { "key": "wheelchair", "value": "no", "description": "Show the wheelchair-friendliness of pubs as a coloured underline at the left of the icon" },
