@@ -9,6 +9,7 @@ Removed "megalith_type=passage_tomb" as a synonym for "megalith_type=passage_gra
 If a sensible surface tag is set, render wetland as that rather than as vanilla wetland.
 If a wetland value suggests mud, render as mud rather than as vanilla wetland.
 Show "wet meadow" wetlands as such.
+Change the wetland and intermittent wetland patterns to better represent the interlying data and fit in with the rest of the style.
 
 ## 18/08/2023
 Handle amenity=youth_centre in the same way as amenity=youth_club.
