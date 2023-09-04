@@ -1908,6 +1908,16 @@ function filter_tags_generic(keyvalues, nokeys)
          keyvalues["landuse"] = "wetmeadow"
          keyvalues["natural"] = nil
       end
+
+      if ( keyvalues["wetland"] == "saltmarsh" ) then
+         keyvalues["landuse"] = "saltmarsh"
+         keyvalues["natural"] = nil
+      end
+
+      if ( keyvalues["wetland"] == "reedbed" ) then
+         keyvalues["landuse"] = "reedbed"
+         keyvalues["natural"] = nil
+      end
    end
 
 -- ----------------------------------------------------------------------------

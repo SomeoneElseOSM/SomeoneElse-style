@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20230903T203000Z",
+  "data_updated": "20230905T001400Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -3112,6 +3112,8 @@
     { "key": "weather:radar", "description": "Include weather radar stations as radar towers" },
     { "key": "wetland", "description": "Show some mainly mud wetlands as mud" },
     { "key": "wetland", "value": "mud", "description": "Show some mainly mud wetlands as mud" },
+    { "key": "wetland", "value": "reedbed", "description": "Show reedbeds as wetlands with reeds" },
+    { "key": "wetland", "value": "saltmarsh", "description": "Show salt marshes with more green than other wetlands" },
     { "key": "wetland", "value": "tidalflat", "description": "Show some mainly mud wetlands as mud" },
     { "key": "wetland", "value": "wet_meadow", "description": "Show wet meadow wetlands as such" },
     { "key": "wheelchair", "description": "Show the wheelchair-friendliness of pubs as a coloured underline at the left of the icon" },
