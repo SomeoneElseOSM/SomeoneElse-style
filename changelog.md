@@ -3,6 +3,7 @@ This page describes changes made [here](https://github.com/SomeoneElseOSM/Someon
 
 ## As yet unreleased
 Show salt marsh and reedbed wetlands with unique icons.
+Move mud and tidal_mud from water_areas to water_areas_overlay, so that they appear over the top of natural=water.
 
 ## 04/09/2023
 Removed "shop=luggage_locker" as a synonym for left luggage; it was only ever an extreme outlier and it has now been removed from the data.
