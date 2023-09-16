@@ -1685,9 +1685,15 @@ function filter_tags_generic(keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
 -- Recycling bins and recycling centres.
 -- Recycling bins are only shown from z19.  Recycling centres are shown from
--- z16 and have a characteristic icon.  Any object without recycling_type
--- is assumed to be a bin.
+-- z16 and have a characteristic icon.  Any object without recycling_type, or
+-- with a different value, is assumed to be a bin, apart from one rogue
+-- "scrap_yard".
 -- ----------------------------------------------------------------------------
+   if (( keyvalues["amenity"] == "recycling"         ) and
+       ( keyvalues["recycling_type"] == "scrap_yard" )) then
+         keyvalues["amenity"] = "scrapyard"
+   end
+
    if ( keyvalues["amenity"] == "recycling" ) then
       if ( keyvalues["recycling_type"] == "centre" ) then
          keyvalues["amenity"] = "recyclingcentre"

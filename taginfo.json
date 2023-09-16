@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20230905T001400Z",
+  "data_updated": "20230916T163300Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -2151,6 +2151,7 @@
     { "key": "real_ale", "value": "yes", "description": "Detect pubs that serve real ale" },
     { "key": "recycling_type", "description": "Render recycling centres and containers differently" },
     { "key": "recycling_type", "value": "centre", "description": "Render recycling centres and containers differently" },
+    { "key": "recycling_type", "value": "scrap_yard", "description": "Render as regular scrapyard" },
     { "key": "ref", "description": "Assumed to be a signed ref" },
     { "key": "ref:signed", "description": "Show unsigned refs in brackets" },
     { "key": "ref:signed", "value": "no", "description": "Show unsigned refs in brackets" },

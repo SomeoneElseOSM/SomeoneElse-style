@@ -1,6 +1,9 @@
 # Changes made to this rendering
 This page describes changes made [here](https://github.com/SomeoneElseOSM/SomeoneElse-style), [here](https://github.com/SomeoneElseOSM/SomeoneElse-style-legend) and [here](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT), and visible [here](//map.atownsend.org.uk/maps/map/map.html).
 
+## As yet unreleased
+Show recycling_type=scrap_yard as per regular scrapyards.
+
 ## 06/09/2023
 Show salt marsh and reedbed wetlands with unique icons.
 Move mud and tidal_mud from water_areas to water_areas_overlay, so that they appear over the top of natural=water.
