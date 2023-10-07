@@ -4,6 +4,7 @@ This page describes changes made [here](https://github.com/SomeoneElseOSM/Someon
 ## As yet unreleased
 Show recycling_type=scrap_yard as per regular scrapyards.
 Show historic=martello_tower as uncrenellated historic tower.
+Show historic=railway_station as nonspecific historical objects, like e.g. "historic:railway=station".
 
 ## 06/09/2023
 Show salt marsh and reedbed wetlands with unique icons.

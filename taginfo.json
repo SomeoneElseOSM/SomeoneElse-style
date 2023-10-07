@@ -1324,6 +1324,7 @@
     { "key": "historic", "value": "protected_building", "description": "Shown as nonspecific historic item" },
     { "key": "historic", "value": "pub", "description": "Shown as former pub" },
     { "key": "historic", "value": "quarry", "description": "Shown as historic quarry" },
+    { "key": "historic", "value": "tailway_station", "description": "Former railway stations shown as nonspecific historical objects" },
     { "key": "historic", "value": "roundhouse", "description": "Shown as nonspecific historic item" },
     { "key": "historic", "value": "round_tower", "description": "Identify historic round towers" },
     { "key": "historic", "value": "ruins", "description": "Shown as nonspecific historic item or value set by 'ruins'" },
