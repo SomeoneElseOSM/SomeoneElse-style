@@ -3,6 +3,7 @@ This page describes changes made [here](https://github.com/SomeoneElseOSM/Someon
 
 ## As yet unreleased
 Show recycling_type=scrap_yard as per regular scrapyards.
+Show historic=martello_tower as uncrenellated historic tower.
 
 ## 06/09/2023
 Show salt marsh and reedbed wetlands with unique icons.
