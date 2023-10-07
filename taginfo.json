@@ -1292,6 +1292,8 @@
     { "key": "historic", "value": "mansion", "description": "Shown as big house" },
     { "key": "historic", "value": "marker", "description": "Shown as information plaque" },
     { "key": "historic", "value": "martello_tower", "description": "Shown as uncrenellated tower" },
+    { "key": "historic", "value": "martello_tower;bunker", "description": "Shown as uncrenellated tower" },
+    { "key": "historic", "value": "martello_tower;fort", "description": "Shown as uncrenellated tower" },
     { "key": "historic", "value": "market_cross", "description": "Shown as historic cross" },
     { "key": "historic", "value": "maypole", "description": "Shown as nonspecific historic item" },
     { "key": "historic", "value": "memorial", "description": "Shown as nonspecific historic item" },

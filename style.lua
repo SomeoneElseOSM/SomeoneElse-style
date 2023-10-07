@@ -2259,6 +2259,8 @@ function filter_tags_generic(keyvalues, nokeys)
         ( keyvalues["historic"]  == "manor"               )  or
         ( keyvalues["historic"]  == "mansion"             )  or
         ( keyvalues["historic"]  == "martello_tower"      )  or
+        ( keyvalues["historic"]  == "martello_tower;bunker" )  or
+        ( keyvalues["historic"]  == "martello_tower;fort"   )  or
         ( keyvalues["historic"]  == "maypole"             )  or
         ( keyvalues["historic"]  == "memorial"            )  or
         ( keyvalues["historic"]  == "milestone"           )  or
@@ -5438,7 +5440,10 @@ function filter_tags_generic(keyvalues, nokeys)
 -- Martello Towers go through as "historic=martello_tower"
 -- Some other structural tags that might otherwise get shown are removed.
 -- ----------------------------------------------------------------------------
-   if ( keyvalues["historic"] == "martello_tower" ) then
+   if (( keyvalues["historic"] == "martello_tower"        ) or
+       ( keyvalues["historic"] == "martello_tower;bunker" ) or
+       ( keyvalues["historic"] == "martello_tower;fort"   )) then
+      keyvalues["historic"] = "martello_tower"
       keyvalues["fortification_type"] = nil
       keyvalues["man_made"] = nil
       keyvalues["tower:type"] = nil
