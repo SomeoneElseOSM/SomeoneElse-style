@@ -171,6 +171,19 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Treat "closed:" as "disused:" in some cases too.
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["closed:amenity"]     ~= nil ) and
+       ( keyvalues["disused:amenity"] == nil )) then
+      keyvalues["disused:amenity"] = keyvalues["closed:amenity"]
+   end
+
+   if (( keyvalues["closed:shop"]     ~= nil ) and
+       ( keyvalues["disused:shop"] == nil )) then
+      keyvalues["disused:shop"] = keyvalues["closed:shop"]
+   end
+
+-- ----------------------------------------------------------------------------
 -- Designation processing
 --
 -- The "standard" stylesheet contains rules for different sorts of tracks 
