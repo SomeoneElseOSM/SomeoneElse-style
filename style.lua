@@ -2162,8 +2162,7 @@ function filter_tags_generic(keyvalues, nokeys)
          ( keyvalues["embassy"]    == "yes"               )   or
          ( keyvalues["embassy"]    == "high_commission"   )   or
          ( keyvalues["embassy"]    == "nunciature"        )   or
-         ( keyvalues["embassy"]    == "delegation"        )   or
-         ( keyvalues["embassy"]    == "embassy"           ))) or
+         ( keyvalues["embassy"]    == "delegation"        ))) or
        ((  keyvalues["diplomatic"] == "consulate"          )  and
         (( keyvalues["consulate"]  == nil                 )   or
          ( keyvalues["consulate"]  == "consulate_general" )   or

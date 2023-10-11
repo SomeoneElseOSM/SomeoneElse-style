@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20231011T101200Z",
+  "data_updated": "20231011T102000Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -961,7 +961,6 @@
     { "key": "embassy", "value": "branch_embassy", "description": "Shown as office rather than embassy" },
     { "key": "embassy", "value": "nunciature", "description": "Shown as embassy" },
     { "key": "embassy", "value": "delegation", "description": "Shown as embassy" },
-    { "key": "embassy", "value": "embassy", "description": "Shown as embassy" },
     { "key": "embassy", "value": "residence", "description": "Shown as office rather than embassy" },
     { "key": "embassy", "value": "mission", "description": "Shown as office rather than embassy" },
     { "key": "emergency", "description": "Various features shown" },
