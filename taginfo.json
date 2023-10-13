@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20231011T225500Z",
+  "data_updated": "20231013T013800Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -529,6 +529,7 @@
     { "key": "building", "value": "no", "description": "Used to help classify things as not buildings" },
     { "key": "building", "value": "nursing_home", "description": "Shown as nonspecified health" },
     { "key": "building", "value": "office", "description": "Shown as office" },
+    { "key": "building", "value": "pillbox", "description": "Shown as historic military bunker" },
     { "key": "building", "value": "preschool", "description": "Shown as nonspecified health" },
     { "key": "building", "value": "roof", "description": "Shown as roof; a lighter colour building" },
     { "key": "building", "value": "ruins", "description": "Shown as roof; a lighter colour building" },
@@ -1317,6 +1318,7 @@
     { "key": "historic", "value": "oratory", "description": "Shown as nonspecific historic item" },
     { "key": "historic", "value": "palace", "description": "Shown as big house" },
     { "key": "historic", "value": "pillar", "description": "Shown as nonspecific historic item" },
+    { "key": "historic", "value": "pillbox", "description": "Shown as historic military bunker" },
     { "key": "historic", "value": "pillory", "description": "Shown as historic stocks" },
     { "key": "historic", "value": "place_of_worship", "description": "Shown as historic church" },
     { "key": "historic", "value": "pinfold", "description": "Shown as historic pinfold" },

@@ -2387,10 +2387,14 @@ function filter_tags_generic(keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
 -- "historic=bunker" and "historic=ruins;ruins=bunker"
 -- This is set here to prevent unnamedcommercial being set just below.
+-- 3 selections make up our "historic" bunkers, "or"ed together.
+-- The first "or" includes "building=pillbox" because they are all historic.
 -- ----------------------------------------------------------------------------
-   if ((((  keyvalues["historic"] == "bunker"         ) or
-         (( keyvalues["historic"] == "ruins"         ) and
-          ( keyvalues["ruins"]    == "bunker"        ))) and
+   if ((((  keyvalues["historic"] == "bunker"         )   or
+         (( keyvalues["historic"] == "ruins"         )    and
+          ( keyvalues["ruins"]    == "bunker"        ))   or
+         (  keyvalues["historic"] == "pillbox"        )   or
+         (  keyvalues["building"] == "pillbox"        ))  and
         (   keyvalues["military"] == nil               )) or
        ((   keyvalues["disused:military"] == "bunker"  )  and
         (   keyvalues["military"]         == nil       )) or
