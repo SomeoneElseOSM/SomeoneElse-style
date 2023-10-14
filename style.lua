@@ -2389,6 +2389,7 @@ function filter_tags_generic(keyvalues, nokeys)
 -- This is set here to prevent unnamedcommercial being set just below.
 -- 3 selections make up our "historic" bunkers, "or"ed together.
 -- The first "or" includes "building=pillbox" because they are all historic.
+-- In the "disused" check we also include "building=bunker".
 -- ----------------------------------------------------------------------------
    if ((((  keyvalues["historic"] == "bunker"         )   or
          (( keyvalues["historic"] == "ruins"         )    and
@@ -5244,8 +5245,12 @@ function filter_tags_generic(keyvalues, nokeys)
 
 -- ----------------------------------------------------------------------------
 -- Display military bunkers
+-- Historic bunkers have been dealt with higher up.
 -- ----------------------------------------------------------------------------
-   if ( keyvalues["military"] == "bunker" ) then
+   if ((  keyvalues["military"] == "bunker"  ) or
+       (( keyvalues["building"] == "bunker" )  and
+        ( keyvalues["disused"]  == nil      )  and
+        ( keyvalues["historic"] == nil      ))) then
       keyvalues["man_made"] = "militarybunker"
 
       if ( keyvalues["building"] == nil ) then

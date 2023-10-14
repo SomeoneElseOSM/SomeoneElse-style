@@ -512,7 +512,7 @@
     { "key": "bridge:ref", "description": "Used in place of ref on bridges" },
     { "key": "building", "description": "Many building types processed to help infer other feature types" },
     { "key": "building", "value": "air_shaft", "description": "One of the ways of identifying ventilation shafts" },
-    { "key": "building", "value": "bunker", "description": "If disused, shown as historic military bunker" },
+    { "key": "building", "value": "bunker", "description": "Shown as historic or normal military bunker" },
     { "key": "building", "value": "canopy", "description": "Shown as roof; a lighter colour building" },
     { "key": "building", "value": "car_port", "description": "Shown as roof; a lighter colour building" },
     { "key": "building", "value": "chimney", "description": "Shown as a large or small chimney" },
