@@ -2398,7 +2398,8 @@ function filter_tags_generic(keyvalues, nokeys)
         (   keyvalues["military"] == nil               )) or
        ((   keyvalues["disused:military"] == "bunker"  )  and
         (   keyvalues["military"]         == nil       )) or
-       ((   keyvalues["military"]         == "bunker"  )  and
+       (((  keyvalues["military"]         == "bunker" )   or
+         (  keyvalues["building"]         == "bunker" ))  and
         (   keyvalues["disused"]          == "yes"     ))) then
       keyvalues["historic"] = "bunker"
       keyvalues["disused"] = nil

@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20231013T013800Z",
+  "data_updated": "20231014T140600Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -512,6 +512,7 @@
     { "key": "bridge:ref", "description": "Used in place of ref on bridges" },
     { "key": "building", "description": "Many building types processed to help infer other feature types" },
     { "key": "building", "value": "air_shaft", "description": "One of the ways of identifying ventilation shafts" },
+    { "key": "building", "value": "bunker", "description": "If disused, shown as historic military bunker" },
     { "key": "building", "value": "canopy", "description": "Shown as roof; a lighter colour building" },
     { "key": "building", "value": "car_port", "description": "Shown as roof; a lighter colour building" },
     { "key": "building", "value": "chimney", "description": "Shown as a large or small chimney" },

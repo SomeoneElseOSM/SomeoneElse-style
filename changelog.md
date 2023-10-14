@@ -5,6 +5,7 @@ This page describes changes made [here](https://github.com/SomeoneElseOSM/Someon
 Removed "embassy=embassy", which no longer appears in the data.
 Treat "closed:" pubs and shops as disused.
 Treat pillboxes as historic bunkers.
+Detect disused "building=bunker" as historic bunkers.
 
 ## 07/10/2023
 Show recycling_type=scrap_yard as per regular scrapyards.
