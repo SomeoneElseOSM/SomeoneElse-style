@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20231014T140600Z",
+  "data_updated": "20231021T134300Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -309,7 +309,6 @@
     { "key": "amenity", "value": "sorting_office", "description": "Synonym for office=nonspecific" },
     { "key": "amenity", "value": "spa", "description": "Rendered as nonspecific shop" },
     { "key": "amenity", "value": "storage", "description": "Synonym for shop=storage" },
-    { "key": "amenity", "value": "storage_rental", "description": "Synonym for shop=storage" },
     { "key": "amenity", "value": "stripclub", "description": "Shown as nonspecific shop" },
     { "key": "amenity", "value": "studio", "description": "Synonym for office=nonspecific" },
     { "key": "amenity", "value": "sundial", "description": "Shown as sundial" },
@@ -2013,6 +2012,7 @@
     { "key": "office", "value": "serviced_offices", "description": "Most offices shown as black dots" },
     { "key": "office", "value": "solicitor", "description": "Most offices shown as black dots" },
     { "key": "office", "value": "solicitors", "description": "Most offices shown as black dots" },
+    { "key": "office", "value": "storage_rental", "description": "Synonym for shop=storage" },
     { "key": "office", "value": "surveyor", "description": "Most offices shown as black dots" },
     { "key": "office", "value": "tax_advisor", "description": "Most offices shown as black dots" },
     { "key": "office", "value": "taxi", "description": "Most offices shown as black dots" },

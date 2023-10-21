@@ -8662,7 +8662,7 @@ function filter_tags_generic(keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
    if (( keyvalues["amenity"] == "storage"              ) or
        ( keyvalues["amenity"] == "self_storage"         ) or
-       ( keyvalues["amenity"] == "storage_rental"       ) or
+       ( keyvalues["office"]  == "storage_rental"       ) or
        ( keyvalues["shop"]    == "storage"              )) then
       keyvalues["shop"] = "storage_rental"
    end
