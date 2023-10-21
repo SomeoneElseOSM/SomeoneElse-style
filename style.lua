@@ -7332,12 +7332,19 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
--- "jewellery" consolidation.  "jewelry" is most popular in the database, 
--- but both are used.
+-- "jewellery" consolidation.  "jewelry" is in the database, until recently
+-- "jewellery" was too.  The style handles "jewellery", hence the change here.
 -- ----------------------------------------------------------------------------
-   if (( keyvalues["shop"] == "jewelry" ) or
-       ( keyvalues["shop"] == "watch"   ) or
-       ( keyvalues["shop"] == "watches" )) then
+   if (( keyvalues["shop"] == "jewelry"                 ) or
+       ( keyvalues["shop"] == "jewelry;pawnbroker"      ) or
+       ( keyvalues["shop"] == "yes;jewelry;e-cigarette" ) or
+       ( keyvalues["shop"] == "jewelry;sunglasses"      ) or
+       ( keyvalues["shop"] == "jeweller"                ) or
+       ( keyvalues["shop"] == "yes;jewelry"             ) or
+       ( keyvalues["shop"] == "jewelry, arts, crafts"   ) or
+       ( keyvalues["shop"] == "jewelry;fabric"          ) or
+       ( keyvalues["shop"] == "watch"                   ) or
+       ( keyvalues["shop"] == "watches"                 )) then
       keyvalues["shop"] = "jewellery"
    end
 

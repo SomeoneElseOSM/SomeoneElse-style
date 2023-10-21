@@ -8,6 +8,7 @@ Treat pillboxes as historic bunkers.
 Detect disused "building=bunker" as historic bunkers.
 Detect "building=bunker" without obvious other tags as military bunkers.
 Removed "amenity=storage_rental", which no longer appears in the data, and replaced it with "office" which has a few examples.
+Removed, "shop=jewellery", which no longer appears in the data, and added a number of semicolon-based versions as synonyms in the style.
 
 ## 07/10/2023
 Show recycling_type=scrap_yard as per regular scrapyards.
