@@ -8322,9 +8322,9 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["shop"]   == "frame"                       ) or
        ( keyvalues["shop"]   == "framing"                     ) or
        ( keyvalues["shop"]   == "picture_framing"             ) or
-       ( keyvalues["shop"]   == "picture_frames"              ) or
        ( keyvalues["shop"]   == "picture_framer"              ) or
        ( keyvalues["craft"]  == "framing"                     ) or
+       ( keyvalues["shop"]   == "frame;restoration"           ) or
        ( keyvalues["shop"]   == "bedding"                     ) or
        ( keyvalues["shop"]   == "cookware"                    ) or
        ( keyvalues["shop"]   == "glassware"                   ) or
