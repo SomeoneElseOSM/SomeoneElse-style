@@ -1884,6 +1884,20 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Convert "natural=saltmarsh" into something we can handle below
+-- ----------------------------------------------------------------------------
+   if ( keyvalues["natural"] == "saltmarsh" ) then
+      if ( keyvalues["wetland"] == "tidalflat" ) then
+         keyvalues["tidal"] = "yes"
+      else
+         keyvalues["tidal"] = "no"
+      end
+
+      keyvalues["natural"] = "wetland"
+      keyvalues["wetland"] = "saltmarsh"
+   end
+
+-- ----------------------------------------------------------------------------
 -- Detect wetland also tagged with "surface" tags.
 -- ----------------------------------------------------------------------------
    if ( keyvalues["natural"] == "wetland" ) then
@@ -1942,8 +1956,9 @@ function filter_tags_generic(keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
 -- Render tidal mud with more blue
 -- ----------------------------------------------------------------------------
-   if (( keyvalues["natural"]   == "mud" ) and
-       ( keyvalues["tidal"]     == "yes" )) then
+   if ((  keyvalues["natural"]   == "mud"        ) and
+       (( keyvalues["tidal"]     == "yes"       ) or
+        ( keyvalues["wetland"]   == "tidalflat" ))) then
       keyvalues["natural"] = "tidal_mud"
    end
 
@@ -2508,8 +2523,9 @@ function filter_tags_generic(keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
 -- Render tidal beaches with more blue
 -- ----------------------------------------------------------------------------
-   if (( keyvalues["natural"]   == "beach" ) and
-       ( keyvalues["tidal"]     == "yes"   )) then
+   if ((  keyvalues["natural"]   == "beach"      ) and
+       (( keyvalues["tidal"]     == "yes"       )  or
+        ( keyvalues["wetland"]   == "tidalflat" ))) then
       keyvalues["natural"] = "tidal_beach"
    end
 
@@ -2540,8 +2556,9 @@ function filter_tags_generic(keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
 -- Render tidal rocks with more blue
 -- ----------------------------------------------------------------------------
-   if (( keyvalues["natural"]   == "bare_rock" ) and
-       ( keyvalues["tidal"]     == "yes"       )) then
+   if ((  keyvalues["natural"]   == "bare_rock"  ) and
+       (( keyvalues["tidal"]     == "yes"       )  or
+        ( keyvalues["wetland"]   == "tidalflat" ))) then
       keyvalues["natural"] = "tidal_rock"
    end
 
@@ -4854,8 +4871,9 @@ function filter_tags_generic(keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
 -- Render tidal sand with more blue
 -- ----------------------------------------------------------------------------
-   if (( keyvalues["natural"]   == "sand" ) and
-       ( keyvalues["tidal"]     == "yes"       )) then
+   if ((  keyvalues["natural"]   == "sand"       ) and
+       (( keyvalues["tidal"]     == "yes"       )  or
+        ( keyvalues["wetland"]   == "tidalflat" ))) then
       keyvalues["natural"] = "tidal_sand"
    end
 

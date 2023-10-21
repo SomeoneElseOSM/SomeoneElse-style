@@ -1888,6 +1888,7 @@
     { "key": "natural", "value": "rock", "description": "Ways are shown as natural=bare_rock, nodes as boulders" },
     { "key": "natural", "value": "rocks", "description": "Ways are shown as natural=bare_rock, nodes as boulders" },
     { "key": "natural", "value": "saddle", "description": "Shown as a wide V at saddle point" },
+    { "key": "natural", "value": "saltmarsh", "description": "Show salt marshes with more green than other wetlands" },
     { "key": "natural", "value": "sand", "description": "Various natural features rendered" },
     { "key": "natural", "value": "sand_dunes", "description": "Rendered as natural=sand" },
     { "key": "natural", "value": "scree", "description": "Shown as an uneven dark-on-light grey background pattern, with a name" },
