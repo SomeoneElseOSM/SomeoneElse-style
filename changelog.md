@@ -11,6 +11,7 @@ Removed "amenity=storage_rental", which no longer appears in the data, and repla
 Removed "shop=jewellery", which no longer appears in the data, and added a number of semicolon-based versions as synonyms in the style.
 Removed "shop=picture_frames", which no longer appears in the data, and added "shop=frame;restoration", which does.
 Ensured that "wetland=tidalflat" implies "tidal=yes".  Added "natural=saltmarsh" and translate to more common tags.
+Show "historic=vehicle" as a nonspecific historic item.
 
 ## 07/10/2023
 Show recycling_type=scrap_yard as per regular scrapyards.

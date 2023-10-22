@@ -5673,6 +5673,7 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["historic"] == "roundhouse"         ) or
        ( keyvalues["historic"] == "ship"               ) or
        ( keyvalues["historic"] == "tank"               ) or
+       ( keyvalues["historic"] == "vehicle"            ) or
        ( keyvalues["historic"] == "house"              ) or
        ( keyvalues["historic"] == "lime_kiln"          ) or
        ( keyvalues["historic"] == "kiln"               ) or
