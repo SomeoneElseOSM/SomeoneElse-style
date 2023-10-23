@@ -1,9 +1,9 @@
 #!/bin/bash
 #
-# ------------------------------------------------------------------------------
+# -----------------------------------------------------------------------------
 # pyosmium_replag.sh
 # derived from /usr/share/doc/libapache2-mod-tile/examples/osmosis-db_replag
-# ------------------------------------------------------------------------------
+# -----------------------------------------------------------------------------
 #
 # Copyright (c) 2007 - 2020 by mod_tile contributors (see AUTHORS file)
 #
@@ -25,7 +25,7 @@ state1=`cat /var/cache/renderd/pyosmium.gis/sequence.state | cut -c1`
 state2=`cat /var/cache/renderd/pyosmium.gis/sequence.state | cut -c2-4`
 state3=`cat /var/cache/renderd/pyosmium.gis/sequence.state | cut -c5-7`
 #
-curl --silent --connect-timeout 10  --output state.$$ https://planet.openstreetmap.org/replication/minute/00${state1}/${state2}/${state3}.state.txt
+curl --silent --connect-timeout 10  --output state.$$ --location https://planet.openstreetmap.org/replication/minute/00${state1}/${state2}/${state3}.state.txt
 if [ ! -s state.$$ ]
 then
     echo Download of https://planet.openstreetmap.org/replication/minute/00${state1}/${state2}/${state3}.state.txt failed

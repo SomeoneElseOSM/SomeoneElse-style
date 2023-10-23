@@ -12,6 +12,7 @@ Removed "shop=jewellery", which no longer appears in the data, and added a numbe
 Removed "shop=picture_frames", which no longer appears in the data, and added "shop=frame;restoration", which does.
 Ensured that "wetland=tidalflat" implies "tidal=yes".  Added "natural=saltmarsh" and translate to more common tags.
 Show "historic=vehicle" as a nonspecific historic item.
+Updated pyosmium_replag.sh to ask curl to follow redirects.
 
 ## 07/10/2023
 Show recycling_type=scrap_yard as per regular scrapyards.
