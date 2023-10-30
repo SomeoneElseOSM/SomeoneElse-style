@@ -3,6 +3,8 @@ This page describes changes made [here](https://github.com/SomeoneElseOSM/Someon
 
 ## As yet unreleased
 Changed "jewelry, arts, crafts" to "jewelry;art;crafts" to match the data.
+Show "railway:miniature=station" as "tourist stations".
+Show "station=miniature" or "tourism=yes" as "tourist stations".
 
 ## 23/10/2023
 Removed "embassy=embassy", which no longer appears in the data.

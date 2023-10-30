@@ -6170,11 +6170,15 @@ function filter_tags_generic(keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
 -- "tourism" stations - show with brown text rather than blue.
 -- ----------------------------------------------------------------------------
-   if ((( keyvalues["railway"] == "station" ) or
-        ( keyvalues["railway"] == "halt"    )) and
-       (  keyvalues["usage"]   == "tourism"  )) then
+   if (((( keyvalues["railway"]           == "station"   )    or
+         ( keyvalues["railway"]           == "halt"      ))   and
+        (( keyvalues["usage"]             == "tourism"   )    or
+         ( keyvalues["station"]           == "miniature" )    or
+         ( keyvalues["tourism"]           == "yes"       )))  or
+       (   keyvalues["railway:miniature"] == "station"     )) then
       keyvalues["amenity"] = "tourismstation"
       keyvalues["railway"] = nil
+      keyvalues["railway:miniature"] = nil
    end
 
 -- ----------------------------------------------------------------------------
