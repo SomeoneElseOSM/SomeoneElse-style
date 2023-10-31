@@ -4753,6 +4753,24 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Scooter rental
+-- All legal scooter rental / scooter parking in UK are private; these are the
+-- the tags currently used.
+-- ----------------------------------------------------------------------------
+   if ((   keyvalues["amenity"]                == "escooter_rental"         ) or
+       (   keyvalues["amenity"]                == "scooter_parking"         ) or
+       (   keyvalues["amenity"]                == "kick-scooter_rental"     ) or
+       (   keyvalues["amenity"]                == "small_electric_vehicle"  ) or
+       ((  keyvalues["amenity"]                == "parking"                )  and
+        (( keyvalues["parking"]                == "e-scooter"             )   or
+         ( keyvalues["small_electric_vehicle"] == "designated"            ))) or
+       ((  keyvalues["amenity"]                == "bicycle_parking"        )  and
+        (  keyvalues["small_electric_vehicle"] == "designated"             ))) then
+      keyvalues["amenity"] = "scooter_rental"
+      keyvalues["access"] = nil
+   end
+
+-- ----------------------------------------------------------------------------
 -- Render for-pay parking areas differently.
 -- ----------------------------------------------------------------------------
    if ((  keyvalues["amenity"] == "parking"  ) and
@@ -7405,22 +7423,6 @@ function filter_tags_generic(keyvalues, nokeys)
       keyvalues["man_made"] = "windsock"
    end
    
--- ----------------------------------------------------------------------------
--- Scooter rental
--- All legal scooter rental / scooter parking in UK are private; these are the
--- the tags currently used.
--- ----------------------------------------------------------------------------
-   if ((  keyvalues["amenity"]                == "escooter_rental"        ) or
-       (  keyvalues["amenity"]                == "scooter_parking"        ) or
-       (  keyvalues["amenity"]                == "kick-scooter_rental"    ) or
-       (  keyvalues["amenity"]                == "small_electric_vehicle" ) or
-       (( keyvalues["amenity"]                == "parking"               )  and
-        ( keyvalues["parking"]                == "e-scooter"             )) or
-       (( keyvalues["amenity"]                == "bicycle_parking"       )  and
-        ( keyvalues["small_electric_vehicle"] == "designated"            ))) then
-      keyvalues["amenity"] = "scooter_rental"
-   end
-
 -- ----------------------------------------------------------------------------
 -- Before potentially using brand or operator as a bracketed suffix after the
 -- name, explicitly exclude some "non-brands" - "Independent", etc.

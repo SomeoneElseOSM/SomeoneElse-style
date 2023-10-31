@@ -5,6 +5,7 @@ This page describes changes made [here](https://github.com/SomeoneElseOSM/Someon
 Changed "jewelry, arts, crafts" to "jewelry;art;crafts" to match the data.
 Show "railway:miniature=station" as "tourist stations".
 Show "station=miniature" or "tourism=yes" as "tourist stations".
+Handle scooter rental places mapped as car parks(!).
 
 ## 23/10/2023
 Removed "embassy=embassy", which no longer appears in the data.
