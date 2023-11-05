@@ -1884,6 +1884,14 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Show sandy reefs as more sandy than rocky reefs
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["natural"] == "reef" ) and
+       ( keyvalues["reef"]    == "sand" )) then
+         keyvalues["natural"] = "reefsand"
+   end
+
+-- ----------------------------------------------------------------------------
 -- Convert "natural=saltmarsh" into something we can handle below
 -- ----------------------------------------------------------------------------
    if ( keyvalues["natural"] == "saltmarsh" ) then
