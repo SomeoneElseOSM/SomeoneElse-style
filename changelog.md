@@ -1,6 +1,9 @@
 # Changes made to this rendering
 This page describes changes made [here](https://github.com/SomeoneElseOSM/SomeoneElse-style), [here](https://github.com/SomeoneElseOSM/SomeoneElse-style-legend) and [here](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT), and visible [here](//map.atownsend.org.uk/maps/map/map.html).
 
+## As yet unreleased
+Updated list of "non-operators" used in operator and brand.
+
 ## 05/11/2023
 Changed "jewelry, arts, crafts" to "jewelry;art;crafts" to match the data.
 Show "railway:miniature=station" as "tourist stations".

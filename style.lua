@@ -7435,25 +7435,30 @@ function filter_tags_generic(keyvalues, nokeys)
 -- Before potentially using brand or operator as a bracketed suffix after the
 -- name, explicitly exclude some "non-brands" - "Independent", etc.
 -- ----------------------------------------------------------------------------
-   if (( keyvalues["brand"]   == "Independent"            ) or
-       ( keyvalues["brand"]   == "independent"            ) or
-       ( keyvalues["brand"]   == "Independant"            ) or
-       ( keyvalues["brand"]   == "independant"            ) or
-       ( keyvalues["brand"]   == "independant"            ) or
-       ( keyvalues["brand"]   == "Traditional Free House" )) then
+   if (( keyvalues["brand"]   == "Independant"            ) or
+       ( keyvalues["brand"]   == "Independent"            ) or
+       ( keyvalues["brand"]   == "Traditional Free House" ) or
+       ( keyvalues["brand"]   == "independent"            )) then
       keyvalues["brand"] = nil
    end
 
-   if (( keyvalues["operator"]   == "Independent"             ) or
-       ( keyvalues["operator"]   == "independent"             ) or
-       ( keyvalues["operator"]   == "Independant"             ) or
-       ( keyvalues["operator"]   == "independant"             ) or
+   if (( keyvalues["operator"]   == "(free_house)"            ) or
+       ( keyvalues["operator"]   == "Free Brewery"            ) or
        ( keyvalues["operator"]   == "Free House"              ) or
        ( keyvalues["operator"]   == "Free house"              ) or
+       ( keyvalues["operator"]   == "Free"                    ) or
+       ( keyvalues["operator"]   == "Freehold"                ) or
+       ( keyvalues["operator"]   == "Freehouse"               ) or
+       ( keyvalues["operator"]   == "Independant"             ) or
+       ( keyvalues["operator"]   == "Independant."            ) or
+       ( keyvalues["operator"]   == "Independent"             ) or
        ( keyvalues["operator"]   == "free house"              ) or
+       ( keyvalues["operator"]   == "free"                    ) or
        ( keyvalues["operator"]   == "free_house"              ) or
+       ( keyvalues["operator"]   == "freehouse"               ) or
+       ( keyvalues["operator"]   == "independant"             ) or
        ( keyvalues["operator"]   == "independent free house"  ) or
-       ( keyvalues["operator"]   == "(free_house)"            )) then
+       ( keyvalues["operator"]   == "independent"             )) then
       keyvalues["operator"] = nil
    end
 
