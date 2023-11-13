@@ -2532,6 +2532,14 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- There is at least one closed "natural=couloir" with "surface=scree".
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["natural"] ~= nil     ) and
+       ( keyvalues["surface"] == "scree" )) then
+      keyvalues["natural"] = "scree"
+   end
+
+-- ----------------------------------------------------------------------------
 -- Render tidal beaches with more blue
 -- ----------------------------------------------------------------------------
    if ((  keyvalues["natural"]   == "beach"      ) and

@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20231113T100600Z",
+  "data_updated": "20231113T104800Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -2929,6 +2929,7 @@
     { "key": "surface", "value": "rock", "description": "Show wetlands based on the surface that is set" },
     { "key": "surface", "value": "sand", "description": "Show wetlands based on the surface that is set" },
     { "key": "surface", "value": "sand, mud", "description": "Show wetlands based on the surface that is set" },
+    { "key": "surface", "value": "scree", "description": "Show scree if another natural feature is set" },
     { "key": "surface", "value": "shingle", "description": "Show wetlands based on the surface that is set" },
     { "key": "surface", "value": "unpaved", "description": "Show gravel residential an service roads as lower quality" },
     { "key": "taxon", "description": "Detect hogweed hazard" },
