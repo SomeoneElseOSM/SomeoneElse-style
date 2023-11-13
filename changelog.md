@@ -3,6 +3,7 @@ This page describes changes made [here](https://github.com/SomeoneElseOSM/Someon
 
 ## As yet unreleased
 Updated list of "non-operators" used in operator and brand.
+Don't replace a blank name with brand on closed pubs.
 
 ## 05/11/2023
 Changed "jewelry, arts, crafts" to "jewelry;art;crafts" to match the data.

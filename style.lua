@@ -7692,7 +7692,6 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["amenity"]   == "pub_ynddddnyo"    ) or
        ( keyvalues["amenity"]   == "pub_ynddddnyd"    ) or
        ( keyvalues["amenity"]   == "pub_cddddddd"     ) or
-       ( keyvalues["amenity"]   == "pub_nddddddd"     ) or
        ( keyvalues["amenity"]   == "pub_ydyyydd"      ) or
        ( keyvalues["amenity"]   == "pub_ydyynddyg"    ) or
        ( keyvalues["amenity"]   == "pub_ydyynddyo"    ) or
