@@ -8,6 +8,7 @@ When deciding whether a tertiary road should be rendered narrower, assume rounda
 If "surface=scree" is set on another natural feature, show the scree.
 Show military aerodromes with red text.
 Added larger icons at higher zooms for playground items, and for bench, tree and artwork.
+Show "protect_class=98" in the same way as nature reserves.
 
 ## 05/11/2023
 Changed "jewelry, arts, crafts" to "jewelry;art;crafts" to match the data.

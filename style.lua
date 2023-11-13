@@ -1071,12 +1071,17 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
--- Render Access land the same as nature reserve / national park currently is
+-- Render Access land the same as nature reserve / national park currently is.
+-- Also, certain protect classes and designations of protected areas.
+-- protect_class==1   "... strictly set aside to protect ... " (all sorts)
+-- protect_class==4   "Habitat/Species Management Area"
+-- protect_class==98  "intercontinental treaties..." (e.g. world heritage)
 -- ----------------------------------------------------------------------------
    if ((   keyvalues["designation"]   == "access_land"                ) or
        ((  keyvalues["boundary"]      == "protected_area"            )  and
         (( keyvalues["protect_class"] == "1"                        )   or
          ( keyvalues["protect_class"] == "4"                        )   or
+         ( keyvalues["protect_class"] == "98"                       )   or
          ( keyvalues["designation"]   == "national_nature_reserve"  )   or
          ( keyvalues["designation"]   == "local_nature_reserve"     )   or
          ( keyvalues["designation"]   == "Nature Reserve"           )   or
