@@ -9642,6 +9642,11 @@ function filter_tags_generic(keyvalues, nokeys)
       else
          keyvalues["name"] = keyvalues["name"] .. " (" .. keyvalues["iata"] .. ")"
       end
+   else
+      if (( keyvalues["aerodrome:type"] == "military"  ) or
+          ( keyvalues["military"]       ~= nil         )) then
+         keyvalues["aeroway"] = "military_aerodrome"
+      end
    end
 
 -- ----------------------------------------------------------------------------

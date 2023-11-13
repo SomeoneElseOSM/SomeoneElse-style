@@ -6,6 +6,7 @@ Updated list of "non-operators" used in operator and brand.
 Don't replace a blank name with brand on closed pubs.
 When deciding whether a tertiary road should be rendered narrower, assume roundabouts are oneway.
 If "surface=scree" is set on another natural feature, show the scree.
+Show military aerodromes with red text.
 
 ## 05/11/2023
 Changed "jewelry, arts, crafts" to "jewelry;art;crafts" to match the data.
