@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20231113T001100Z",
+  "data_updated": "20231113T100600Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -2052,10 +2052,9 @@
     { "key": "operator", "value": "Free House", "description": "excluded from operator processing" },
     { "key": "operator", "value": "Free house", "description": "excluded from operator processing" },
     { "key": "operator", "value": "Free", "description": "excluded from operator processing" },
-    { "key": "operator", "value": "Freeold", "description": "excluded from operator processing" },
+    { "key": "operator", "value": "Freehold", "description": "excluded from operator processing" },
     { "key": "operator", "value": "Freehouse", "description": "excluded from operator processing" },
     { "key": "operator", "value": "Independant", "description": "excluded from operator processing" },
-    { "key": "operator", "value": "Independant.", "description": "excluded from operator processing" },
     { "key": "operator", "value": "Independent", "description": "excluded from operator processing" },
     { "key": "operator", "value": "free house", "description": "excluded from operator processing" },
     { "key": "operator", "value": "free", "description": "excluded from operator processing" },

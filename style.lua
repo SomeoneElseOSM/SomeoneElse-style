@@ -1453,20 +1453,23 @@ function filter_tags_generic(keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
    if (( keyvalues["highway"]    == "tertiary_sidewalk"  )  and
        ( keyvalues["oneway"]     == nil                  )  and
+       ( keyvalues["junction"]   == nil                  )  and
        ((( tonumber(keyvalues["width"])    or 4 ) <=  3 ) or
         (( tonumber(keyvalues["maxwidth"]) or 4 ) <=  3 ))) then
       keyvalues["highway"] = "unclassified_sidewalk"
    end
 
-   if (( keyvalues["highway"]    == "tertiary_verge"  )  and
-       ( keyvalues["oneway"]     == nil               )  and
+   if (( keyvalues["highway"]    == "tertiary_verge"     )  and
+       ( keyvalues["oneway"]     == nil                  )  and
+       ( keyvalues["junction"]   == nil                  )  and
        ((( tonumber(keyvalues["width"])    or 4 ) <=  3 ) or
         (( tonumber(keyvalues["maxwidth"]) or 4 ) <=  3 ))) then
       keyvalues["highway"] = "unclassified_verge"
    end
 
-   if (( keyvalues["highway"]    == "tertiary"   )  and
-       ( keyvalues["oneway"]     == nil          )  and
+   if (( keyvalues["highway"]    == "tertiary"           )  and
+       ( keyvalues["oneway"]     == nil                  )  and
+       ( keyvalues["junction"]   == nil                  )  and
        ((( tonumber(keyvalues["width"])    or 4 ) <=  3 ) or
         (( tonumber(keyvalues["maxwidth"]) or 4 ) <=  3 ))) then
       keyvalues["highway"] = "unclassified"
@@ -7450,7 +7453,6 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["operator"]   == "Freehold"                ) or
        ( keyvalues["operator"]   == "Freehouse"               ) or
        ( keyvalues["operator"]   == "Independant"             ) or
-       ( keyvalues["operator"]   == "Independant."            ) or
        ( keyvalues["operator"]   == "Independent"             ) or
        ( keyvalues["operator"]   == "free house"              ) or
        ( keyvalues["operator"]   == "free"                    ) or
