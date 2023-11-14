@@ -1,7 +1,7 @@
 # Changes made to this rendering
 This page describes changes made [here](https://github.com/SomeoneElseOSM/SomeoneElse-style), [here](https://github.com/SomeoneElseOSM/SomeoneElse-style-legend) and [here](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT), and visible [here](//map.atownsend.org.uk/maps/map/map.html).
 
-## As yet unreleased
+## 14/11/2023
 Updated list of "non-operators" used in operator and brand.
 Don't replace a blank name with brand on closed pubs.
 When deciding whether a tertiary road should be rendered narrower, assume roundabouts are oneway.
