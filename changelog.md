@@ -3,6 +3,7 @@ This page describes changes made [here](https://github.com/SomeoneElseOSM/Someon
 
 ## As yet unreleased
 Various crafts that previously did not appear are now shown as at least a nonspecific office.
+Removed "fee=No", no longer in the data.
 
 ## 14/11/2023
 Updated list of "non-operators" used in operator and brand.

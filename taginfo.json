@@ -1033,7 +1033,6 @@
     { "key": "farmland", "value": "equestrian", "description": "Render grassy farmland as mid-way between meadow and farmland" },
     { "key": "fee", "description": "Render for-pay parking differently" },
     { "key": "fee", "value": "no", "description": "Rendered as free parking" },
-    { "key": "fee", "value": "No", "description": "Rendered as free parking" },
     { "key": "fee", "value": "none", "description": "Rendered as free parking" },
     { "key": "fee", "value": "None", "description": "Rendered as free parking" },
     { "key": "fee", "value": "Free", "description": "Rendered as free parking" },
