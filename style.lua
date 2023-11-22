@@ -7407,7 +7407,8 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["shop"]  == "watch"                   ) or
        ( keyvalues["shop"]  == "watches"                 ) or
        ( keyvalues["craft"] == "jeweller"                ) or
-       ( keyvalues["craft"] == "jewellery_repair"        )) then
+       ( keyvalues["craft"] == "jewellery_repair"        ) or
+       ( keyvalues["craft"] == "engraver"                )) then
       keyvalues["shop"]  = "jewellery"
       keyvalues["craft"] = nil
    end
@@ -9139,7 +9140,9 @@ function filter_tags_generic(keyvalues, nokeys)
         ( keyvalues["craft"]   == "cleaning"                )   or
         ( keyvalues["craft"]   == "clockmaker"              )   or
         ( keyvalues["craft"]   == "confectionery"           )   or
+        ( keyvalues["craft"]   == "dental_technician"       )   or
         ( keyvalues["craft"]   == "furniture"               )   or
+        ( keyvalues["craft"]   == "furniture_maker"         )   or
         ( keyvalues["craft"]   == "gardener"                )   or
         ( keyvalues["craft"]   == "handicraft"              )   or
         ( keyvalues["craft"]   == "metal_construction"      )   or
