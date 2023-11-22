@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20231122T235200Z",
+  "data_updated": "20231122T235300Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -660,6 +660,7 @@
     { "key": "covered", "value": "portico", "description": "Handle various synonyms for 'yes'" },
     { "key": "covered", "value": "booth", "description": "Used when deciding how to show telephone boxes and former telephone boxes (e.g. red or not red)" },
     { "key": "covered", "value": "no", "description": "Used when deciding whether to show a bicycle parking area with a roof" },
+    { "key": "covered", "value": "yes", "description": "Show covered waterways as tunnels" },
     { "key": "craft", "description": "Most common crafts rendered as either shop-style or office-style icons" },
     { "key": "craft", "value": "agricultural_engines", "description": "Shown as office" },
     { "key": "craft", "value": "artist", "description": "Shown as a synonym for 'art'" },

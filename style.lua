@@ -5265,9 +5265,10 @@ function filter_tags_generic(keyvalues, nokeys)
 -- There are currently no "location=overground" waterways that are not
 -- also "man_made=pipeline".
 -- ----------------------------------------------------------------------------
-   if (( keyvalues["waterway"] ~= nil           )  and
-       ( keyvalues["location"] == "underground" ) and
-       ( keyvalues["tunnel"]   == nil           )) then
+   if ((  keyvalues["waterway"] ~= nil            )  and
+       (( keyvalues["location"] == "underground" )   or
+        ( keyvalues["covered"]  == "yes"         ))  and
+       (  keyvalues["tunnel"]   == nil            )) then
       keyvalues["tunnel"] = "yes"
    end
 
