@@ -7396,17 +7396,20 @@ function filter_tags_generic(keyvalues, nokeys)
 -- "jewellery" consolidation.  "jewelry" is in the database, until recently
 -- "jewellery" was too.  The style handles "jewellery", hence the change here.
 -- ----------------------------------------------------------------------------
-   if (( keyvalues["shop"] == "jewelry"                 ) or
-       ( keyvalues["shop"] == "jewelry;pawnbroker"      ) or
-       ( keyvalues["shop"] == "yes;jewelry;e-cigarette" ) or
-       ( keyvalues["shop"] == "jewelry;sunglasses"      ) or
-       ( keyvalues["shop"] == "jeweller"                ) or
-       ( keyvalues["shop"] == "yes;jewelry"             ) or
-       ( keyvalues["shop"] == "jewelry;art;crafts"      ) or
-       ( keyvalues["shop"] == "jewelry;fabric"          ) or
-       ( keyvalues["shop"] == "watch"                   ) or
-       ( keyvalues["shop"] == "watches"                 )) then
-      keyvalues["shop"] = "jewellery"
+   if (( keyvalues["shop"]  == "jewelry"                 ) or
+       ( keyvalues["shop"]  == "jewelry;pawnbroker"      ) or
+       ( keyvalues["shop"]  == "yes;jewelry;e-cigarette" ) or
+       ( keyvalues["shop"]  == "jewelry;sunglasses"      ) or
+       ( keyvalues["shop"]  == "jeweller"                ) or
+       ( keyvalues["shop"]  == "yes;jewelry"             ) or
+       ( keyvalues["shop"]  == "jewelry;art;crafts"      ) or
+       ( keyvalues["shop"]  == "jewelry;fabric"          ) or
+       ( keyvalues["shop"]  == "watch"                   ) or
+       ( keyvalues["shop"]  == "watches"                 ) or
+       ( keyvalues["craft"] == "jeweller"                ) or
+       ( keyvalues["craft"] == "jewellery_repair"        )) then
+      keyvalues["shop"]  = "jewellery"
+      keyvalues["craft"] = nil
    end
 
 -- ----------------------------------------------------------------------------
@@ -8588,8 +8591,10 @@ function filter_tags_generic(keyvalues, nokeys)
    if (( keyvalues["shop"]   == "craft"          ) or
        ( keyvalues["shop"]   == "art_supplies"   ) or
        ( keyvalues["shop"]   == "pottery"        ) or
-       ( keyvalues["craft"]  == "pottery"        )) then
-      keyvalues["shop"] = "art"
+       ( keyvalues["craft"]  == "pottery"        ) or
+       ( keyvalues["craft"]  == "sculptor"       )) then
+      keyvalues["shop"]  = "art"
+      keyvalues["craft"] = nil
    end
 
 -- ----------------------------------------------------------------------------
@@ -9121,27 +9126,30 @@ function filter_tags_generic(keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
 -- Various crafts that should appear as at least a nonspecific office.
 -- ----------------------------------------------------------------------------
-   if ((  keyvalues["amenity"] == nil                     )  and
-       (  keyvalues["shop"]    == nil                     )  and
-       (  keyvalues["tourism"] == nil                     )  and
-       (( keyvalues["craft"]   == "agricultural_engines" )   or
-        ( keyvalues["craft"]   == "atelier"              )   or
-        ( keyvalues["craft"]   == "blacksmith"           )   or
-        ( keyvalues["craft"]   == "bookbinder"           )   or
-        ( keyvalues["craft"]   == "caterer"              )   or
-        ( keyvalues["craft"]   == "cleaning"             )   or
-        ( keyvalues["craft"]   == "clockmaker"           )   or
-        ( keyvalues["craft"]   == "confectionery"        )   or
-        ( keyvalues["craft"]   == "furniture"            )   or
-        ( keyvalues["craft"]   == "gardener"             )   or
-        ( keyvalues["craft"]   == "handicraft"           )   or
-        ( keyvalues["craft"]   == "metal_construction"   )   or
-        ( keyvalues["craft"]   == "painter"              )   or
-        ( keyvalues["craft"]   == "plasterer"            )   or
-        ( keyvalues["craft"]   == "saddler"              )   or
-        ( keyvalues["craft"]   == "scaffolder"           )   or
-        ( keyvalues["craft"]   == "tiler"                )   or
-        ( keyvalues["craft"]   == "watchmaker"           ))) then
+   if ((  keyvalues["amenity"] == nil                        )  and
+       (  keyvalues["shop"]    == nil                        )  and
+       (  keyvalues["tourism"] == nil                        )  and
+       (( keyvalues["craft"]   == "agricultural_engines"    )   or
+        ( keyvalues["craft"]   == "atelier"                 )   or
+        ( keyvalues["craft"]   == "blacksmith"              )   or
+        ( keyvalues["craft"]   == "beekeeper"               )   or
+        ( keyvalues["craft"]   == "bookbinder"              )   or
+        ( keyvalues["craft"]   == "carpet_layer"            )   or
+        ( keyvalues["craft"]   == "caterer"                 )   or
+        ( keyvalues["craft"]   == "cleaning"                )   or
+        ( keyvalues["craft"]   == "clockmaker"              )   or
+        ( keyvalues["craft"]   == "confectionery"           )   or
+        ( keyvalues["craft"]   == "furniture"               )   or
+        ( keyvalues["craft"]   == "gardener"                )   or
+        ( keyvalues["craft"]   == "handicraft"              )   or
+        ( keyvalues["craft"]   == "metal_construction"      )   or
+        ( keyvalues["craft"]   == "painter"                 )   or
+        ( keyvalues["craft"]   == "plasterer"               )   or
+        ( keyvalues["craft"]   == "photographic_laboratory" )   or
+        ( keyvalues["craft"]   == "saddler"                 )   or
+        ( keyvalues["craft"]   == "scaffolder"              )   or
+        ( keyvalues["craft"]   == "tiler"                   )   or
+        ( keyvalues["craft"]   == "watchmaker"              ))) then
       keyvalues["landuse"] = "unnamedcommercial"
       keyvalues["office"]  = "nonspecific"
       keyvalues["craft"]   = nil
