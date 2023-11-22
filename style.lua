@@ -8592,6 +8592,7 @@ function filter_tags_generic(keyvalues, nokeys)
    if (( keyvalues["shop"]   == "craft"          ) or
        ( keyvalues["shop"]   == "art_supplies"   ) or
        ( keyvalues["shop"]   == "pottery"        ) or
+       ( keyvalues["craft"]  == "artist"         ) or
        ( keyvalues["craft"]  == "pottery"        ) or
        ( keyvalues["craft"]  == "sculptor"       )) then
       keyvalues["shop"]  = "art"
@@ -9136,11 +9137,13 @@ function filter_tags_generic(keyvalues, nokeys)
         ( keyvalues["craft"]   == "beekeeper"               )   or
         ( keyvalues["craft"]   == "bookbinder"              )   or
         ( keyvalues["craft"]   == "carpet_layer"            )   or
+        ( keyvalues["craft"]   == "cabinet_maker"           )   or
         ( keyvalues["craft"]   == "caterer"                 )   or
         ( keyvalues["craft"]   == "cleaning"                )   or
         ( keyvalues["craft"]   == "clockmaker"              )   or
         ( keyvalues["craft"]   == "confectionery"           )   or
         ( keyvalues["craft"]   == "dental_technician"       )   or
+        ( keyvalues["craft"]   == "engineering"             )   or
         ( keyvalues["craft"]   == "furniture"               )   or
         ( keyvalues["craft"]   == "furniture_maker"         )   or
         ( keyvalues["craft"]   == "gardener"                )   or
@@ -9153,7 +9156,9 @@ function filter_tags_generic(keyvalues, nokeys)
         ( keyvalues["craft"]   == "plasterer"               )   or
         ( keyvalues["craft"]   == "photographic_laboratory" )   or
         ( keyvalues["craft"]   == "printmaker"              )   or
+        ( keyvalues["craft"]   == "print_shop"              )   or
         ( keyvalues["craft"]   == "saddler"                 )   or
+        ( keyvalues["craft"]   == "sailmaker"               )   or
         ( keyvalues["craft"]   == "scaffolder"              )   or
         ( keyvalues["craft"]   == "tiler"                   )   or
         ( keyvalues["craft"]   == "watchmaker"              ))) then
