@@ -8108,8 +8108,7 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["shop"]    == "roofing"              ) or
        ( keyvalues["craft"]   == "floorer"              ) or
        ( keyvalues["shop"]    == "building_materials"   ) or
-       ( keyvalues["craft"]   == "builder"              ) or
-       ( keyvalues["craft"]   == "joiner"               )) then
+       ( keyvalues["craft"]   == "builder"              )) then
       keyvalues["landuse"] = "unnamedcommercial"
       keyvalues["shop"]    = "doityourself"
       keyvalues["amenity"] = nil
@@ -8509,7 +8508,8 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["shop"]   == "wool"                 ) or
        ( keyvalues["shop"]   == "yarn"                 ) or
        ( keyvalues["shop"]   == "alteration"           ) or
-       ( keyvalues["shop"]   == "clothing_alterations" )) then
+       ( keyvalues["shop"]   == "clothing_alterations" ) or
+       ( keyvalues["craft"]  == "embroiderer"          )) then
       keyvalues["shop"] = "shopnonspecific"
    end
 
@@ -9145,10 +9145,14 @@ function filter_tags_generic(keyvalues, nokeys)
         ( keyvalues["craft"]   == "furniture_maker"         )   or
         ( keyvalues["craft"]   == "gardener"                )   or
         ( keyvalues["craft"]   == "handicraft"              )   or
+        ( keyvalues["craft"]   == "insulation"              )   or
+        ( keyvalues["craft"]   == "joiner"                  )   or
+        ( keyvalues["craft"]   == "joinery"                 )   or
         ( keyvalues["craft"]   == "metal_construction"      )   or
         ( keyvalues["craft"]   == "painter"                 )   or
         ( keyvalues["craft"]   == "plasterer"               )   or
         ( keyvalues["craft"]   == "photographic_laboratory" )   or
+        ( keyvalues["craft"]   == "printmaker"              )   or
         ( keyvalues["craft"]   == "saddler"                 )   or
         ( keyvalues["craft"]   == "scaffolder"              )   or
         ( keyvalues["craft"]   == "tiler"                   )   or
