@@ -9119,11 +9119,13 @@ function filter_tags_generic(keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
 -- Various "printer" offices
 -- ----------------------------------------------------------------------------
-   if (( keyvalues["shop"]       == "printers"          ) or
-       ( keyvalues["amenity"]    == "printer"           ) or
-       ( keyvalues["craft"]      == "printer"           ) or
-       ( keyvalues["office"]     == "printer"           ) or
-       ( keyvalues["office"]     == "design"            )) then
+   if (( keyvalues["shop"]    == "printers"          ) or
+       ( keyvalues["amenity"] == "printer"           ) or
+       ( keyvalues["craft"]   == "printer"           ) or
+       ( keyvalues["office"]  == "printer"           ) or
+       ( keyvalues["office"]  == "design"            ) or
+       ( keyvalues["craft"]   == "printmaker"        ) or
+       ( keyvalues["craft"]   == "print_shop"        )) then
       keyvalues["landuse"] = "unnamedcommercial"
       keyvalues["office"]  = "nonspecific"
    end
@@ -9158,8 +9160,6 @@ function filter_tags_generic(keyvalues, nokeys)
         ( keyvalues["craft"]   == "painter"                 )   or
         ( keyvalues["craft"]   == "plasterer"               )   or
         ( keyvalues["craft"]   == "photographic_laboratory" )   or
-        ( keyvalues["craft"]   == "printmaker"              )   or
-        ( keyvalues["craft"]   == "print_shop"              )   or
         ( keyvalues["craft"]   == "saddler"                 )   or
         ( keyvalues["craft"]   == "sailmaker"               )   or
         ( keyvalues["craft"]   == "scaffolder"              )   or
