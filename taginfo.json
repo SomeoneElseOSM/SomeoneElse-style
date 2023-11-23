@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20231122T235300Z",
+  "data_updated": "20231123T093900Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -326,6 +326,7 @@
     { "key": "amenity", "value": "undertaker", "description": "Synonym for shop=funeral_directors" },
     { "key": "amenity", "value": "university", "description": "Shown as university" },
     { "key": "amenity", "value": "van_rental", "description": "Synonym for shop=car_rental" },
+    { "key": "amenity", "value": "vehicle_inspection", "description": "Synonym for shop=car_repair" },
     { "key": "amenity", "value": "vending_machine", "description": "Used to detect parcel lockers" },
     { "key": "amenity", "value": "veterinary", "description": "Rendered as animal shop" },
     { "key": "amenity", "value": "village_hall", "description": "Synonym for office=nonspecific" },
@@ -2292,7 +2293,6 @@
     { "key": "shop", "value": "abandoned", "description": "Various shops shown" },
     { "key": "shop", "value": "accessories", "description": "Various shops shown" },
     { "key": "shop", "value": "accountant", "description": "Various shops shown" },
-    { "key": "shop", "value": "accountants", "description": "Various shops shown" },
     { "key": "shop", "value": "acupuncture", "description": "Various shops shown" },
     { "key": "shop", "value": "agrarian", "description": "Agricultural vehicle and feed shops shown" },
     { "key": "shop", "value": "agricultural_vehicles", "description": "Agricultural vehicle shops shown" },
@@ -2371,7 +2371,6 @@
     { "key": "shop", "value": "car_accessories", "description": "Various shops shown" },
     { "key": "shop", "value": "car_audio", "description": "Various shops shown" },
     { "key": "shop", "value": "car_bodyshop", "description": "Various shops shown" },
-    { "key": "shop", "value": "car_inspection", "description": "Various shops shown" },
     { "key": "shop", "value": "car_parts", "description": "Various shops shown" },
     { "key": "shop", "value": "car_parts;bicycle", "description": "Various shops shown" },
     { "key": "shop", "value": "car_parts;car_repair", "description": "Various shops shown" },

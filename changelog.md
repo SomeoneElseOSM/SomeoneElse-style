@@ -5,6 +5,8 @@ This page describes changes made [here](https://github.com/SomeoneElseOSM/Someon
 Various crafts that previously did not appear are now shown as at least a nonspecific office.
 Removed "fee=No", no longer in the data.
 Show covered waterways as tunnels.
+Removed "shop=car_inspection" (no longer in the data), added "amenity=vehicle_inspection".
+Removed "shop=accountants" (no longer in the data).
 
 ## 14/11/2023
 Updated list of "non-operators" used in operator and brand.

@@ -2187,13 +2187,15 @@ function filter_tags_generic(keyvalues, nokeys)
    if (( keyvalues["craft"]   == "car_repair"         )  or
        ( keyvalues["craft"]   == "coachbuilder"       )  or
        ( keyvalues["shop"]    == "car_service"        )  or
-       ( keyvalues["shop"]    == "car_inspection"     )  or
+       ( keyvalues["amenity"] == "vehicle_inspection" )  or
        ( keyvalues["shop"]    == "car_bodyshop"       )  or
        ( keyvalues["shop"]    == "vehicle_inspection" )  or
        ( keyvalues["shop"]    == "mechanic"           )  or
        ( keyvalues["shop"]    == "car_repair;car"     )  or
        ( keyvalues["shop"]    == "car_repair;tyres"   )) then
-      keyvalues["shop"] = "car_repair"
+      keyvalues["shop"]    = "car_repair"
+      keyvalues["amenity"] = nil
+      keyvalues["craft"]   = nil
    end
 
 -- ----------------------------------------------------------------------------
@@ -9347,7 +9349,6 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["shop"]        == "accountant"              ) or
        ( keyvalues["office"]      == "accountants"             ) or
        ( keyvalues["amenity"]     == "accountants"             ) or
-       ( keyvalues["shop"]        == "accountants"             ) or
        ( keyvalues["office"]      == "tax_advisor"             ) or
        ( keyvalues["amenity"]     == "tax_advisor"             ) or
        ( keyvalues["office"]      == "employment_agency"       ) or
