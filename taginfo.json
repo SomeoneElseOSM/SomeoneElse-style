@@ -2221,6 +2221,7 @@
     { "key": "reef", "value": "sand", "description": "Is a reef rocky or sandy" },
     { "key": "ref", "description": "Assumed to be a signed ref" },
     { "key": "ref", "value": "N/A", "description": "Don't show cycle route references of N/A" },
+    { "key": "ref", "value": "NB", "description": "Detect National Byway" },
     { "key": "ref:signed", "description": "Show unsigned refs in brackets" },
     { "key": "ref:signed", "value": "no", "description": "Show unsigned refs in brackets" },
     { "key": "religion", "description": "Don't use a cross for Jehovahs Witness buildings" },
