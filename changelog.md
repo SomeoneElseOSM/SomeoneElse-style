@@ -10,6 +10,7 @@ Removed "shop=accountants" (no longer in the data).
 Don't show cycle route references of "N/A"
 Append "(r)" to regional cycle routes, except the National Byway.
 Append "(loop)" to the name of NB loops.
+Removed "shop=pet;florist" and "shop=alarm", no longer in the data.
 
 ## 14/11/2023
 Updated list of "non-operators" used in operator and brand.

@@ -7359,7 +7359,6 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["shop"]    == "electrical_supplies"     ) or
        ( keyvalues["shop"]    == "electrical_repair"       ) or
        ( keyvalues["shop"]    == "tv_repair"               ) or
-       ( keyvalues["shop"]    == "alarm"                   ) or
        ( keyvalues["shop"]    == "gadget"                  ) or
        ( keyvalues["shop"]    == "appliances"              ) or
        ( keyvalues["shop"]    == "vacuum_cleaner"          ) or
@@ -8609,7 +8608,6 @@ function filter_tags_generic(keyvalues, nokeys)
 -- Add unnamedcommercial landuse to give non-building areas a background.
 -- ----------------------------------------------------------------------------
    if (( keyvalues["shop"]    == "pet;garden"              ) or
-       ( keyvalues["shop"]    == "pet;florist"             ) or
        ((  keyvalues["shop"]     == "agrarian"                        )  and
         (( keyvalues["agrarian"] == "feed"                           )  or
          ( keyvalues["agrarian"] == "yes"                            )  or

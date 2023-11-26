@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20231125T013600Z",
+  "data_updated": "20231125T100000Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -2298,7 +2298,6 @@
     { "key": "shop", "value": "acupuncture", "description": "Various shops shown" },
     { "key": "shop", "value": "agrarian", "description": "Agricultural vehicle and feed shops shown" },
     { "key": "shop", "value": "agricultural_vehicles", "description": "Agricultural vehicle shops shown" },
-    { "key": "shop", "value": "alarm", "description": "Various shops shown" },
     { "key": "shop", "value": "alcohol", "description": "Various shops shown" },
     { "key": "shop", "value": "alteration", "description": "Various shops shown" },
     { "key": "shop", "value": "alternative_health", "description": "Various shops shown" },
@@ -2694,7 +2693,6 @@
     { "key": "shop", "value": "perfumery", "description": "Various shops shown" },
     { "key": "shop", "value": "pet", "description": "Various shops shown" },
     { "key": "shop", "value": "pet;corn", "description": "Various shops shown" },
-    { "key": "shop", "value": "pet;florist", "description": "Various shops shown" },
     { "key": "shop", "value": "pet;garden", "description": "Various shops shown" },
     { "key": "shop", "value": "pet_care", "description": "Various shops shown" },
     { "key": "shop", "value": "pet_food", "description": "Various shops shown" },
