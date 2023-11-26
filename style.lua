@@ -10479,12 +10479,19 @@ function filter_tags_relation_member (keyvalues, keyvaluemembers, roles, memberc
             keyvalues["ref"] = nil
          end
 
+         if (( keyvalues["name"] ~= nil                 ) and
+             ( keyvalues["ref"]  == "NB"                ) and
+             ( string.match( keyvalues["name"], "Loop" ))) then
+            keyvalues["ref"] = keyvalues["ref"] .. " (loop)"
+         end
+
          if ( keyvalues["ref"] ~= nil ) then
             keyvalues["name"] = keyvalues["ref"]
          end
 
-         if (( keyvalues["network"] == "rcn" )  and
-             ( keyvalues["name"]    ~= "NB"  )) then
+         if (( keyvalues["network"] == "rcn"       )  and
+             ( keyvalues["name"]    ~= "NB"        )  and
+             ( keyvalues["name"]    ~= "NB (loop)" )) then
             if ( keyvalues["name"] == nil ) then
                keyvalues["name"] = "(r)"
             else
