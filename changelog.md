@@ -7,6 +7,7 @@ Removed "fee=No", no longer in the data.
 Show covered waterways as tunnels.
 Removed "shop=car_inspection" (no longer in the data), added "amenity=vehicle_inspection".
 Removed "shop=accountants" (no longer in the data).
+Don't show cycle route references of "N/A"
 
 ## 14/11/2023
 Updated list of "non-operators" used in operator and brand.

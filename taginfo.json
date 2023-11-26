@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20231123T093900Z",
+  "data_updated": "20231125T013600Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -2220,6 +2220,7 @@
     { "key": "reef", "description": "Is a reef rocky or sandy" },
     { "key": "reef", "value": "sand", "description": "Is a reef rocky or sandy" },
     { "key": "ref", "description": "Assumed to be a signed ref" },
+    { "key": "ref", "value": "N/A", "description": "Don't show cycle route references of N/A" },
     { "key": "ref:signed", "description": "Show unsigned refs in brackets" },
     { "key": "ref:signed", "value": "no", "description": "Show unsigned refs in brackets" },
     { "key": "religion", "description": "Don't use a cross for Jehovahs Witness buildings" },
