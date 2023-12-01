@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20231201T021500Z",
+  "data_updated": "20231201T133500Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -17,8 +17,8 @@
     { "key": "abandoned:amenity", "description": "Obscure tagging used for former pubs and telephones" },
     { "key": "abandoned:amenity", "value": "pub", "description": "Obscure tagging used for former pubs" },
     { "key": "abandoned:amenity", "value": "telephone", "description": "Obscure tagging used for former telephones" },
-    { "key": "abandoned:railway", "description": "Former railway stations" },
-    { "key": "abandoned:railway", "value": "station", "description": "Former railway stations" },
+    { "key": "abandoned:railway", "description": "Detect former railway stations" },
+    { "key": "abandoned:railway", "value": "station", "description": "Show former railway stations as historic items" },
     { "key": "abandoned:waterway", "description": "Former canals" },
     { "key": "abandoned:waterway", "value": "canal", "description": "Former canals" },
     { "key": "access", "description": "Many access values and tag combinations handled - for example 'no' on some amenities suppresses the amenity" },
