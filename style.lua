@@ -6209,6 +6209,19 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Show unspecified "public_transport=station" as "railway=halt"
+-- These are normally one of amenity=bus_station, railway=station or
+--  aerialway=station.  If they are none of these at least sow them as something.
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["public_transport"] == "station" ) and
+       ( keyvalues["amenity"]          == nil       ) and
+       ( keyvalues["railway"]          == nil       ) and
+       ( keyvalues["aerialway"]        == nil       )) then
+      keyvalues["railway"]          = "halt"
+      keyvalues["public_transport"] = nil
+   end
+
+-- ----------------------------------------------------------------------------
 -- "tourism" stations - show with brown text rather than blue.
 -- ----------------------------------------------------------------------------
    if (((( keyvalues["railway"]           == "station"   )    or
