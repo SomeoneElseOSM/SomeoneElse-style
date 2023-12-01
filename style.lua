@@ -9213,6 +9213,39 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- emergency=water_rescue is a poorly-designed key that makes it difficult to
+-- tell e.g. lifeboats from lifeboat stations.
+-- However, if we've got one of various buildings, it's a lifeboat station.
+-- ----------------------------------------------------------------------------
+   if (  keyvalues["emergency"] == "water_rescue" ) then
+      if (( keyvalues["building"]  == "boathouse"        ) or
+          ( keyvalues["building"]  == "commercial"       ) or
+          ( keyvalues["building"]  == "container"        ) or
+          ( keyvalues["building"]  == "house"            ) or
+          ( keyvalues["building"]  == "industrial"       ) or
+          ( keyvalues["building"]  == "lifeboat_station" ) or
+          ( keyvalues["building"]  == "no"               ) or
+          ( keyvalues["building"]  == "office"           ) or
+          ( keyvalues["building"]  == "public"           ) or
+          ( keyvalues["building"]  == "retail"           ) or
+          ( keyvalues["building"]  == "roof"             ) or
+          ( keyvalues["building"]  == "ruins"            ) or
+          ( keyvalues["building"]  == "service"          ) or
+          ( keyvalues["building"]  == "yes"              )) then
+         keyvalues["emergency"] = "lifeboat_station"
+      else
+         if (( keyvalues["building"]                         == "ship"                ) or
+             ( keyvalues["seamark:rescue_station:category"]  == "lifeboat_on_mooring" )) then
+            keyvalues["amenity"]   = "lifeboat"
+            keyvalues["emergency"] = nil
+         else
+            keyvalues["emergency"] = "lifeboat_station"
+         end
+      end
+   end
+
+-- ----------------------------------------------------------------------------
+-- Handling of objects not (yet) tagfiddled to "emergency=water_rescue":
 -- Sometimes lifeboats are mapped in the see separately to the 
 -- lifeboat station, and sometimes they're tagged _on_ the lifeboat station.
 -- If the latter, show the lifeboat station.
@@ -10543,6 +10576,16 @@ function filter_tags_relation_member (keyvalues, keyvaluemembers, roles, memberc
       boundary = 1
    elseif (type == "multipolygon") then
       polygon = 1
+   end
+
+-- ----------------------------------------------------------------------------
+-- emergency=water_rescue is a poorly-designed key that makes it difficult to
+-- tell e.g. lifeboats from lifeboat stations.
+-- However, if we've got a multipolygon relation, it's a lifeboat station.
+-- ----------------------------------------------------------------------------
+   if (( type                   == "multipolygon" ) and
+       ( keyvalues["emergency"] == "water_rescue" )) then
+      keyvalues["emergency"] = "lifeboat_station"
    end
 
    keyvalues, roads = add_z_order(keyvalues)
