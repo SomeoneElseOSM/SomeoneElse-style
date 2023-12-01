@@ -2187,7 +2187,7 @@
     { "key": "pub", "value": "yes", "description": "Detect hotels that are also pubs" },
     { "key": "public_transport", "description": "Render bus stop shelters as 'roof', display railway platforms mapped this way" },
     { "key": "public_transport", "value": "platform", "description": "Render bus stop shelters as 'roof', display railway platforms mapped this way" },
-    { "key": "public_transport", "value": "station", "description": "Detect public transport stations not obviously bus, railway or aerialway stations." },
+    { "key": "public_transport", "value": "station", "description": "Detect public transport stations that are not obviously bus, railway or aerialway stations." },
     { "key": "railway", "description": "Detect railway tags and some obscure synonyms for which railway has also been used" },
     { "key": "railway", "value": "abandoned", "description": "Shown as abandoned railway" },
     { "key": "railway", "value": "construction", "description": "Shows under construction railways" },
