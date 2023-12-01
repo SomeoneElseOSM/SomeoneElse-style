@@ -7891,7 +7891,6 @@ function filter_tags_generic(keyvalues, nokeys)
 -- Also render fish and chips etc. with a unique icon.
 -- ----------------------------------------------------------------------------
    if (( keyvalues["shop"] == "fast_food" ) or
-       ( keyvalues["shop"] == "take_away" ) or
        ( keyvalues["shop"] == "takeaway"  )) then
       keyvalues["amenity"] = "fast_food"
    end
