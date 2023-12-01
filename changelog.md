@@ -3,7 +3,7 @@ This page describes changes made [here](https://github.com/SomeoneElseOSM/Someon
 
 ## As yet unreleased.
 Following the tagfiddling prior to and as part of https://lists.openstreetmap.org/pipermail/talk-gb/2023-November/thread.html#30914 , try and distinguish lifeboats and lifeboat stations with other tags.  See also https://lists.openstreetmap.org/pipermail/talk-gb/2023-December/030932.html .
-Removed "shop=take_away"no longer in the data.
+Removed "shop=take_away", no longer in the data.
 
 ## 26/11/2023
 Various crafts that previously did not appear are now shown as at least a nonspecific office.
