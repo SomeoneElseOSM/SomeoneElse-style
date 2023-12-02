@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20231201T133500Z",
+  "data_updated": "20231202T120300Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -140,6 +140,7 @@
     { "key": "amenity", "value": "cattery", "description": "Rendered as animal shop, name incorporates brand" },
     { "key": "amenity", "value": "charging_station", "description": "Rendered with icon, name incorporates brand" },
     { "key": "amenity", "value": "childcare", "description": "Synonym for shop=healthnonspecific" },
+    { "key": "amenity", "value": "childrens_centre", "description": "Synonym for shop=healthnonspecific" },
     { "key": "amenity", "value": "chiropodist", "description": "Synonym for shop=healthnonspecific" },
     { "key": "amenity", "value": "chiropractor", "description": "Synonym for shop=healthnonspecific" },
     { "key": "amenity", "value": "church_hall", "description": "Shown as leisure=nonspecific" },
