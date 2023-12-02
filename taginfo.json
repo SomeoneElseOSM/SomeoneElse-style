@@ -183,6 +183,7 @@
     { "key": "amenity", "value": "electronics_repair", "description": "Synonym for shop=electronics" },
     { "key": "amenity", "value": "embassy", "description": "Synonym for diplomatic=embassy" },
     { "key": "amenity", "value": "escape_game", "description": "Shown as leisure=nonspecific" },
+    { "key": "amenity", "value": "escooter_parking", "description": "Synonym for 'amenity=scooter_rental'" },
     { "key": "amenity", "value": "estate_agent", "description": "Synonym for shop=estate_agent" },
     { "key": "amenity", "value": "events_venue", "description": "Shown as leisure=nonspecific" },
     { "key": "amenity", "value": "exhibition_centre", "description": "Shown as leisure=nonspecific" },
