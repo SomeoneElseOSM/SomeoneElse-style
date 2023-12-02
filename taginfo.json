@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20231202T120300Z",
+  "data_updated": "20231202T220400Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -218,6 +218,7 @@
     { "key": "amenity", "value": "job_centre", "description": "Synonym for office=nonspecific" },
     { "key": "amenity", "value": "jobcentre", "description": "Synonym for office=nonspecific" },
     { "key": "amenity", "value": "kennels", "description": "Rendered as animal shop, name incorporates brand" },
+    { "key": "amenity", "value": "kick-scooter_rental", "description": "Synonym for 'amenity=scooter_rental'" },
     { "key": "amenity", "value": "kindergarten", "description": "Synonym for office=nonspecific" },
     { "key": "amenity", "value": "laboratory", "description": "Synonym for office=nonspecific" },
     { "key": "amenity", "value": "lawyer", "description": "Synonym for office=nonspecific" },
@@ -289,6 +290,7 @@
     { "key": "amenity", "value": "restaurant", "description": "Restaurants: Roof shows accommodation available" },
     { "key": "amenity", "value": "retirement_home", "description": "Synonym for shop=healthnonspecific" },
     { "key": "amenity", "value": "school", "description": "Shown as school" },
+    { "key": "amenity", "value": "scooter_parking", "description": "Synonym for 'amenity=scooter_rental'" },
     { "key": "amenity", "value": "scooter_rental", "description": "Rendered with icon, name incorporates brand" },
     { "key": "amenity", "value": "scout_camp", "description": "Synonym for park" },
     { "key": "amenity", "value": "scout_hall", "description": "Shown as leisure=nonspecific" },
@@ -301,6 +303,7 @@
     { "key": "amenity", "value": "shop_mobility", "description": "Used to detect shopmobility" },
     { "key": "amenity", "value": "show_ground", "description": "Synonym for meadow" },
     { "key": "amenity", "value": "showground", "description": "Synonym for meadow" },
+    { "key": "amenity", "value": "small_electric_vehicle", "description": "Synonym for 'amenity=scooter_rental'" },
     { "key": "amenity", "value": "social_centre", "description": "Shown as leisure=nonspecific" },
     { "key": "amenity", "value": "social_club", "description": "Shown as leisure=nonspecific" },
     { "key": "amenity", "value": "social_facility", "description": "Synonym for shop=healthnonspecific" },
