@@ -246,6 +246,7 @@
     { "key": "amenity", "value": "motorcycle_parking", "description": "Shown as motorcycle parking" },
     { "key": "amenity", "value": "mountain_rescue", "description": "Shown with icon, generic name used if blank" },
     { "key": "amenity", "value": "mounting_block", "description": "Horse mounting blocks" },
+    { "key": "amenity", "value": "mounting_step", "description": "Horse mounting blocks" },
     { "key": "amenity", "value": "mounting_steps", "description": "Horse mounting blocks" },
     { "key": "amenity", "value": "music_school", "description": "Synonym for office=nonspecific" },
     { "key": "amenity", "value": "music_venue", "description": "Synonym for concert_hall" },
