@@ -368,6 +368,7 @@
     { "key": "archaeological_site", "value": "standing_stone", "description": "Detect standing stones and ogham stones" },
     { "key": "archaeological_site", "value": "tumulus", "description": "Show archaeological tumuli" },
     { "key": "area", "description": "Drop some highway areas" },
+    { "key": "area", "value": "yes", "description": "Detect and don't show area highways" },
     { "key": "area:highway", "description": "Show traffic islands as kerbs" },
     { "key": "area:highway", "value": "traffic_island", "description": "Shown as a kerb" },
     { "key": "barrier", "description": "Most barriers shown" },
