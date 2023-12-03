@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20231202T220400Z",
+  "data_updated": "20231203T115500Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -1196,7 +1196,6 @@
     { "key": "healthcare", "value": "clinic;doctor", "description": "Render as nonspecific healthcare" },
     { "key": "healthcare", "value": "cosmetic", "description": "Render as nonspecific healthcare" },
     { "key": "healthcare", "value": "cosmetic_surgery", "description": "Render as nonspecific healthcare" },
-    { "key": "healthcare", "value": "cosmetic_treatments", "description": "Render as nonspecific healthcare" },
     { "key": "healthcare", "value": "counselling", "description": "Render as nonspecific healthcare" },
     { "key": "healthcare", "value": "dentist", "description": "Render dentists with their own icon" },
     { "key": "healthcare", "value": "dentures", "description": "Render as nonspecific healthcare" },

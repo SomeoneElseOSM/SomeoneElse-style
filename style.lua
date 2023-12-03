@@ -9047,7 +9047,6 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["healthcare"]  == "hospice"                      ) or
        ( keyvalues["healthcare"]  == "cosmetic"                     ) or
        ( keyvalues["healthcare"]  == "cosmetic_surgery"             ) or
-       ( keyvalues["healthcare"]  == "cosmetic_treatments"          ) or
        ( keyvalues["healthcare"]  == "dentures"                     ) or
        ( keyvalues["shop"]        == "dentures"                     ) or
        ( keyvalues["shop"]        == "denture"                      ) or
