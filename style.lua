@@ -9316,6 +9316,7 @@ function filter_tags_generic(keyvalues, nokeys)
         ( keyvalues["building"]          ~= nil               )) or
        (  keyvalues["amenity"]    == "coast_guard"             ) or
        (  keyvalues["emergency"]  == "coast_guard"             ) or
+       (  keyvalues["emergency"]  == "ses_station"             ) or
        (  keyvalues["amenity"]    == "archive"                 )) then
       keyvalues["landuse"] = "unnamedcommercial"
       keyvalues["office"]  = "nonspecific"
