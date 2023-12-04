@@ -21,7 +21,7 @@ polygon_keys = { 'boundary', 'building', 'landcover', 'landuse', 'amenity', 'har
       'public_transport', 'seamark:type', 'shop', 'sport', 'tourism', 'waterway',
       'wetland', 'water', 'aeroway' }
 
-generic_keys = {'access','addr:housename','addr:housenumber','addr:interpolation','admin_level','advertising','aerialway','aeroway','amenity','area','barrier',
+generic_keys = {'access','addr:housename','addr:housenumber','addr:interpolation','admin_level','advertising','aerialway','aeroway','amenity','area','area:highway','barrier',
    'bicycle','brand','bridge','bridleway','booth','boundary','building','capital','construction','covered','culvert','cutting','denomination','designation','disused','disused:man_made','disused:military','disused:shop','ele',
    'embankment','emergency','entrance','foot','flood_prone','generation:source','geological','golf','government',
    'harbour','hazard_prone','hazard_type','highway','historic','horse','hours','information','intermittent',
