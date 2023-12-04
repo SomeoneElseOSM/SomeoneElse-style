@@ -2310,6 +2310,7 @@ function filter_tags_generic(keyvalues, nokeys)
         ( keyvalues["historic"]  == "memorial"            )  or
         ( keyvalues["historic"]  == "milestone"           )  or
         ( keyvalues["historic"]  == "mill"                )  or
+        ( keyvalues["historic"]  == "millstone"           )  or
         ( keyvalues["historic"]  == "mine"                )  or
         ( keyvalues["historic"]  == "monastery"           )  or
         ( keyvalues["historic"]  == "monastic_grange"     )  or
@@ -5803,6 +5804,7 @@ function filter_tags_generic(keyvalues, nokeys)
        (  keyvalues["historic"] == "hall"              ) or
        (  keyvalues["historic"] == "jail"              ) or
        (  keyvalues["historic"] == "mill"              ) or
+       (  keyvalues["historic"] == "millstone"         ) or
        (  keyvalues["historic"] == "monastic_grange"   ) or
        (  keyvalues["historic"] == "monument"          ) or
        (  keyvalues["historic"] == "mound"             ) or
