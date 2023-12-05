@@ -2606,11 +2606,9 @@ function filter_tags_generic(keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
 -- leisure=dog_park is used a few times.  Map to pitch to differentiate from
 -- underlying park.
--- Also "court" often means "pitch" (tennis, basketball).
 -- "cricket_nets" is an oddity.  See https://lists.openstreetmap.org/pipermail/tagging/2023-January/thread.html#66908 .
 -- ----------------------------------------------------------------------------
    if (( keyvalues["leisure"] == "dog_park"           ) or
-       ( keyvalues["leisure"] == "court"              ) or
        ( keyvalues["sport"]   == "cricket_nets"       ) or
        ( keyvalues["sport"]   == "cricket_nets;multi" ) or
        ( keyvalues["leisure"] == "practice_pitch"     )) then
@@ -7404,8 +7402,7 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["office"]  == "funeral_directors"   ) or
        ( keyvalues["amenity"] == "funeral"             ) or
        ( keyvalues["amenity"] == "funeral_directors"   ) or
-       ( keyvalues["amenity"] == "undertaker"          ) or
-       ( keyvalues["shop"]    == "undertaker"          )) then
+       ( keyvalues["amenity"] == "undertaker"          )) then
       keyvalues["shop"] = "funeral_directors"
    end
 
@@ -8452,7 +8449,6 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["shop"]   == "fitted_furniture"            ) or
        ( keyvalues["shop"]   == "upholstery"                  ) or
        ( keyvalues["shop"]   == "chandler"                    ) or
-       ( keyvalues["shop"]   == "chandlers"                   ) or
        ( keyvalues["shop"]   == "chandlery"                   ) or
        ( keyvalues["shop"]   == "ship_chandler"               ) or
        ( keyvalues["craft"]  == "boatbuilder"                 ) or
@@ -9388,7 +9384,6 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["shop"]        == "solicitor"               ) or
        ( keyvalues["amenity"]     == "solicitor"               ) or
        ( keyvalues["office"]      == "solicitors"              ) or
-       ( keyvalues["shop"]        == "solicitors"              ) or
        ( keyvalues["amenity"]     == "solicitors"              ) or
        ( keyvalues["office"]      == "accountant"              ) or
        ( keyvalues["shop"]        == "accountant"              ) or
