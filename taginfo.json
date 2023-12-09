@@ -453,7 +453,6 @@
     { "key": "barrier", "value": "stone", "description": "Nodes shown as bollard" },
     { "key": "barrier", "value": "sump_buster", "description": "Nodes shown as bollard" },
     { "key": "barrier", "value": "swing_gate", "description": "Shown as a gate or locked gate if locked" },
-    { "key": "barrier", "value": "swing_gate", "description": "Shown as gate" },
     { "key": "barrier", "value": "tank_trap", "description": "Shwn as bollard; ways as wall" },
     { "key": "barrier", "value": "ticket", "description": "Shown as a lift_gate" },
     { "key": "barrier", "value": "ticket_barrier", "description": "Shown as a lift_gate" },
