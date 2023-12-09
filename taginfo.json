@@ -426,6 +426,7 @@
     { "key": "barrier", "value": "mound", "description": "Shown as an embankment or an embanked highway" },
     { "key": "barrier", "value": "obstruction", "description": "Shown as wall" },
     { "key": "barrier", "value": "pengate", "description": "Shown as a gate or locked gate if locked" },
+    { "key": "barrier", "value": "pengates", "description": "Shown as a gate or locked gate if locked" },
     { "key": "barrier", "value": "pole", "description": "Nodes shown as bollard" },
     { "key": "barrier", "value": "post", "description": "Nodes shown as bollard" },
     { "key": "barrier", "value": "pull_apart_gate", "description": "Shown as a gate or locked gate if locked" },
