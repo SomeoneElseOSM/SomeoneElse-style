@@ -6307,7 +6307,6 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["tourism"]   == "holiday_lets"            ) or
        ( keyvalues["tourism"]   == "holiday_let"             ) or
        ( keyvalues["tourism"]   == "Holiday Lodges"          ) or
-       ( keyvalues["tourism"]   == "guesthouse"              ) or
        ( keyvalues["tourism"]   == "aparthotel"              )) then
       keyvalues["tourism"] = "guest_house"
    end

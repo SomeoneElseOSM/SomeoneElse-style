@@ -10,6 +10,7 @@ Add "area:highway" to generic_keys to show as kerbs.
 Removed "shop=undertaker", "shop=solicitors", "shop=chandlers", "leisure=court", no longer in the data.
 Update OS OpenMap Local data from April 2023 to October 2023.
 Added "craft" to the list of tags that causes "disused:amenity" to be removed.
+Removed "tourism=guesthouse", no longer in the data (it was a typo for "tourism=guest_house").
 
 ## 01/12/2023
 Following the tagfiddling prior to and as part of [this change](https://lists.openstreetmap.org/pipermail/talk-gb/2023-November/thread.html#30914), try and distinguish lifeboats and lifeboat stations with other tags.  See also [here](https://lists.openstreetmap.org/pipermail/talk-gb/2023-December/030932.html).
