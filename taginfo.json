@@ -461,6 +461,7 @@
     { "key": "barrier", "value": "turnstile", "description": "Shown as a kissing_gate" },
     { "key": "barrier", "value": "v_stile", "description": "Nodes shown as stile; ways as fence" },
     { "key": "barrier", "value": "wall", "description": "Shown as a thicker line; Castle walls shown as citywalls" },
+    { "key": "barrier", "value": "wicket_gate", "description": "Shown as a gate or locked gate if locked" },
     { "key": "barrier", "value": "wire_fence", "description": "Shown as a fence" },
     { "key": "barrier", "value": "wood_fence", "description": "Shown as a fence" },
     { "key": "barrier", "value": "yes", "description": "Unknown non-linear barriers shown as bollard; linear as fence" },
