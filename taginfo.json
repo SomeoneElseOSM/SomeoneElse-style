@@ -445,6 +445,7 @@
     { "key": "barrier", "value": "step", "description": "Nodes shown as bollard; ways as fence" },
     { "key": "barrier", "value": "step_over", "description": "Shown as a stile" },
     { "key": "barrier", "value": "stepping_stones", "description": "Shown as generic barrier" },
+    { "key": "barrier", "value": "step", "description": "Nodes shown as bollard; ways as fence" },
     { "key": "barrier", "value": "steps", "description": "Nodes shown as bollard; ways as fence" },
     { "key": "barrier", "value": "stile", "description": "Nodes shown with an icon; ways shown as fence" },
     { "key": "barrier", "value": "stile;gate", "description": "Shown as a stile" },
