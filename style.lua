@@ -3024,7 +3024,8 @@ function filter_tags_generic(keyvalues, nokeys)
         ( keyvalues["amenity"]           ~= nil     )  or
         ( keyvalues["leisure"]           ~= nil     )  or
         ( keyvalues["shop"]              ~= nil     )  or
-        ( keyvalues["office"]            ~= nil     ))) then
+        ( keyvalues["office"]            ~= nil     )  or
+        ( keyvalues["craft"]             ~= nil     ))) then
       keyvalues["disused:amenity"] = nil
    end
 
