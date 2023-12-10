@@ -525,6 +525,7 @@
     { "key": "bridge", "value": "trestle", "description": "One of many bridge types detected" },
     { "key": "bridge", "value": "undefined", "description": "One of many bridge types detected" },
     { "key": "bridge", "value": "viaduct", "description": "One of many bridge types detected" },
+    { "key": "bridge", "value": "yes", "description": "One of many bridge types detected" },
     { "key": "bridge_name", "description": "Used in place of name on bridges" },
     { "key": "bridge:name", "description": "Used in place of name on bridges" },
     { "key": "bridge_ref", "description": "Used in place of ref on bridges" },
