@@ -7468,6 +7468,7 @@ function filter_tags_generic(keyvalues, nokeys)
    if (( keyvalues["brand"]   == "Independant"            ) or
        ( keyvalues["brand"]   == "Independent"            ) or
        ( keyvalues["brand"]   == "Traditional Free House" ) or
+       ( keyvalues["brand"]   == "independant"            ) or
        ( keyvalues["brand"]   == "independent"            )) then
       keyvalues["brand"] = nil
    end
