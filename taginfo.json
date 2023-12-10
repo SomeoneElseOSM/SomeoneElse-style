@@ -509,7 +509,6 @@
     { "key": "bridge", "value": "boardwalk", "description": "One of many bridge types detected" },
     { "key": "bridge", "value": "building_passage", "description": "One of many bridge types detected" },
     { "key": "bridge", "value": "cantilever", "description": "One of many bridge types detected" },
-    { "key": "bridge", "value": "cantilever", "description": "One of many bridge types detected" },
     { "key": "bridge", "value": "chain", "description": "One of many bridge types detected" },
     { "key": "bridge", "value": "covered", "description": "One of many bridge types detected" },
     { "key": "bridge", "value": "foot", "description": "One of many bridge types detected" },
