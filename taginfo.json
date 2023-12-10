@@ -574,7 +574,6 @@
     { "key": "building", "value": "ventilation_shaft", "description": "One of the ways of identifying ventilation shafts" },
     { "key": "building", "value": "village_hall", "description": "Shown as commercial landuse" },
     { "key": "building", "value": "warehouse", "description": "Shown as industrial building" },
-    { "key": "building", "value": "warehouse", "description": "Shown as industrial building" },
     { "key": "building", "value": "windmill", "description": "Shown as windmill" },
     { "key": "building", "value": "works", "description": "Shown as industrial building" },
     { "key": "building", "value": "yes", "description": "Shown as regular building" },
