@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20231209T111100Z",
+  "data_updated": "20231210T130400Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -596,6 +596,7 @@
     { "key": "closed:shop", "description": "Handle closed version of tag as disused" },
     { "key": "club", "description": "Many values shown as unnamed commercial landuse and nonspecific leisure" },
     { "key": "club", "value": "air_cadets", "description": "Shown as unnamed commercial landuse and nonspecific leisure" },
+    { "key": "club", "value": "army_cadets", "description": "Shown as unnamed commercial landuse and nonspecific leisure" },
     { "key": "club", "value": "automobile", "description": "Shown as unnamed commercial landuse and nonspecific leisure" },
     { "key": "club", "value": "boat", "description": "Shown as unnamed commercial landuse and nonspecific leisure" },
     { "key": "club", "value": "bowling", "description": "Shown as unnamed commercial landuse and nonspecific leisure" },
