@@ -1989,7 +1989,7 @@
     { "key": "ncn_milepost", "value": "rowe", "description": "Render appropriate icon for ncn milepost artwork type" },
     { "key": "ncn_milepost", "value": "unknown", "description": "Not an expected value in OSM data.  If ncn milepost artwork type unknown, show a generic one" },
     { "key": "ncn_milepost", "value": "yes", "description": "Not an expected value in OSM data.  If ncn milepost artwork type unknown, show a generic one" },
-    { "key": "network", "description": "Detect and render walking, cycling and horse networks" },
+    { "key": "network", "description": "Detect and render walking, cycling and horse networks; also escooter operators" },
     { "key": "network", "value": "iwn", "description": "Detect walking, cycling and horse networks" },
     { "key": "network", "value": "lcn", "description": "Detect walking, cycling and horse networks" },
     { "key": "network", "value": "lwn", "description": "Detect walking, cycling and horse networks" },

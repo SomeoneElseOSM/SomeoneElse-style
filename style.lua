@@ -4782,6 +4782,7 @@ function filter_tags_generic(keyvalues, nokeys)
 -- Scooter rental
 -- All legal scooter rental / scooter parking in UK are private; these are the
 -- the tags currently used.
+-- "network" is a bit of a special case because normally it means "lwn" etc.
 -- ----------------------------------------------------------------------------
    if ((   keyvalues["amenity"]                == "escooter_rental"         ) or
        (   keyvalues["amenity"]                == "scooter_parking"         ) or
@@ -4794,6 +4795,13 @@ function filter_tags_generic(keyvalues, nokeys)
         (  keyvalues["small_electric_vehicle"] == "designated"             ))) then
       keyvalues["amenity"] = "scooter_rental"
       keyvalues["access"] = nil
+
+      if (( keyvalues["name"]     == nil  ) and
+          ( keyvalues["operator"] == nil  ) and
+          ( keyvalues["network"]  ~= nil  )) then
+         keyvalues["name"] = keyvalues["network"]
+         keyvalues["network"] = nil
+      end
    end
 
 -- ----------------------------------------------------------------------------
