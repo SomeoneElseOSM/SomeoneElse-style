@@ -7501,6 +7501,13 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Handle these as bicycle_rental:
+-- ----------------------------------------------------------------------------
+   if ( keyvalues["amenity"] == "bicycle_parking;bicycle_rental" ) then
+      keyvalues["amenity"] = "bicycle_rental"
+   end
+
+-- ----------------------------------------------------------------------------
 -- If no name use brand or operator on amenity=fuel, among others.  
 -- If there is brand or operator, use that with name.
 -- ----------------------------------------------------------------------------

@@ -13,6 +13,7 @@ Added "craft" to the list of tags that causes "disused:amenity" to be removed.
 Removed "tourism=guesthouse", no longer in the data (it was a typo for "tourism=guest_house").
 Added "brand=independant" as a brand to suppress.
 Detect escooter operators via the "network" tag if used.
+Detect "bicycle_parking;bicycle_rental" as "bicycle_rental".
 
 ## 01/12/2023
 Following the tagfiddling prior to and as part of [this change](https://lists.openstreetmap.org/pipermail/talk-gb/2023-November/thread.html#30914), try and distinguish lifeboats and lifeboat stations with other tags.  See also [here](https://lists.openstreetmap.org/pipermail/talk-gb/2023-December/030932.html).
