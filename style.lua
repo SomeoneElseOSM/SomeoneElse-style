@@ -7387,7 +7387,6 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["shop"]    == "sewing_machines"         ) or
        ( keyvalues["shop"]    == "domestic_appliances"     ) or
        ( keyvalues["shop"]    == "white_goods"             ) or
-       ( keyvalues["shop"]    == "electricial"             ) or
        ( keyvalues["shop"]    == "electricals"             ) or
        ( keyvalues["trade"]   == "electrical"              ) or
        ( keyvalues["name"]    == "City Electrical Factors" )) then
