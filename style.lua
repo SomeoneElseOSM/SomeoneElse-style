@@ -8338,6 +8338,7 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["shop"]    == "wine"            ) or
        ( keyvalues["shop"]    == "whisky"          ) or
        ( keyvalues["craft"]   == "winery"          ) or
+       ( keyvalues["shop"]    == "winery"          ) or
        ( keyvalues["tourism"] == "wine_cellar"     )) then
       keyvalues["shop"] = "alcohol"
    end

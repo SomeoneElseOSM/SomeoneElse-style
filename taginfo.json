@@ -766,6 +766,7 @@
     { "key": "craft", "value": "upholsterer", "description": "Shown as homeware shop" },
     { "key": "craft", "value": "watchmaker", "description": "Shown as office" },
     { "key": "craft", "value": "window_construction", "description": "Shown as homeware shop" },
+    { "key": "craft", "value": "winery", "description": "Shown as shop=alcohol" },
     { "key": "craft", "value": "yes", "description": "Shown as nonspecific shop" },
     { "key": "crossing", "description": "Some crossing types shown as 'highway=traffic_signals'" },
     { "key": "crossing", "value": "island;traffic_signals", "description": "Shown as 'highway=traffic_signals'" },
