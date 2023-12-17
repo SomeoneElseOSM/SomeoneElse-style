@@ -2257,6 +2257,8 @@ function filter_tags_generic(keyvalues, nokeys)
 -- Things that are both localities and peaks or hills 
 -- should render as the latter.
 -- Also, some other combinations (most amenities, some man_made, etc.)
+-- Note that "hill" is handled by the rendering code as similar to "peak" but
+-- only at higher zooms.  See 19/03/2023 in changelog.html .
 -- ----------------------------------------------------------------------------
    if ((  keyvalues["place"]    == "locality"      ) and
        (( keyvalues["natural"]  == "peak"         )  or
@@ -2359,6 +2361,14 @@ function filter_tags_generic(keyvalues, nokeys)
         ( keyvalues["amenity"] ~= nil          )  or
         ( keyvalues["leisure"] == "park"       ))) then
       keyvalues["tourism"] = nil
+   end
+
+-- ----------------------------------------------------------------------------
+-- Detect unusual taggings of hills
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["natural"] == "peak" ) and
+       ( keyvalues["peak"]    == "hill" )) then
+      keyvalues["natural"] = "hill"
    end
 
 -- ----------------------------------------------------------------------------

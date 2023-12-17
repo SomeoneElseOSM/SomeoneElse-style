@@ -2148,6 +2148,8 @@
     { "key": "parking", "value": "depot", "description": "Detect e.g. bus depots" },
     { "key": "parking", "value": "motorcycle", "description": "Detect motorcycle parking" },
     { "key": "parking", "value": "e-scooter", "description": "Detect e-scooter parking.  Rendered with icon, name incorporates brand" },
+    { "key": "peak", "description": "Detects hills tagged as peaks" },
+    { "key": "peak", "value": "hill", "description": "Like peak, but shown from higher zoom" },
     { "key": "pharmacy", "description": "Render some non-pharmacy shops with pharmacies as pharmacies" },
     { "key": "pharmacy", "value": "yes", "description": "Render some non-pharmacy shops with pharmacies as pharmacies" },
     { "key": "pipeline", "description": "Show aerial pipeline markers" },
