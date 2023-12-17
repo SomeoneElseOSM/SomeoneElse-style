@@ -7924,35 +7924,40 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
    if ((  keyvalues["amenity"] == "fast_food"                            )  and
-       (( keyvalues["cuisine"] == "burger"                              )   or
-        ( keyvalues["cuisine"] == "american"                            )   or
-        ( keyvalues["cuisine"] == "diner"                               )   or
-        ( keyvalues["cuisine"] == "burger;sandwich"                     )   or
-        ( keyvalues["cuisine"] == "burger;kebab;pizza"                  )   or
-        ( keyvalues["cuisine"] == "burger;fish_and_chips;kebab;pizza"   )   or
-        ( keyvalues["cuisine"] == "burger;fish_and_chips"               )   or
-        ( keyvalues["cuisine"] == "burger;indian;kebab;pizza"           )   or
-        ( keyvalues["cuisine"] == "burger;pizza"                        )   or
-        ( keyvalues["cuisine"] == "burger;kebab"                        )   or
+       (( keyvalues["cuisine"] == "american"                            )   or
+        ( keyvalues["cuisine"] == "argentinian"                         )   or
+        ( keyvalues["cuisine"] == "brazilian"                           )   or
+        ( keyvalues["cuisine"] == "burger"                              )   or
         ( keyvalues["cuisine"] == "burger;chicken"                      )   or
-        ( keyvalues["cuisine"] == "burger;chicken;kebab"                )   or
-        ( keyvalues["cuisine"] == "burger;chicken;pizza"                )   or
         ( keyvalues["cuisine"] == "burger;chicken;fish_and_chips;kebab" )   or
-        ( keyvalues["cuisine"] == "burger;pizza;kebab"                  )   or
         ( keyvalues["cuisine"] == "burger;chicken;indian;kebab;pizza"   )   or
-        ( keyvalues["cuisine"] == "burger;chicken;kebab;pizza"          ))) then
+        ( keyvalues["cuisine"] == "burger;chicken;kebab"                )   or
+        ( keyvalues["cuisine"] == "burger;chicken;kebab;pizza"          )   or
+        ( keyvalues["cuisine"] == "burger;chicken;pizza"                )   or
+        ( keyvalues["cuisine"] == "burger;fish_and_chips"               )   or
+        ( keyvalues["cuisine"] == "burger;fish_and_chips;kebab;pizza"   )   or
+        ( keyvalues["cuisine"] == "burger;indian;kebab;pizza"           )   or
+        ( keyvalues["cuisine"] == "burger;kebab"                        )   or
+        ( keyvalues["cuisine"] == "burger;kebab;pizza"                  )   or
+        ( keyvalues["cuisine"] == "burger;pizza"                        )   or
+        ( keyvalues["cuisine"] == "burger;pizza;kebab"                  )   or
+        ( keyvalues["cuisine"] == "burger;sandwich"                     )   or
+        ( keyvalues["cuisine"] == "diner"                               )   or
+        ( keyvalues["cuisine"] == "grill"                               )   or
+        ( keyvalues["cuisine"] == "steak_house"                         ))) then
       keyvalues["amenity"] = "fast_food_burger"
    end
 
    if ((  keyvalues["amenity"] == "fast_food"               )  and
        (( keyvalues["cuisine"] == "chicken"                )   or
-        ( keyvalues["cuisine"] == "chicken;portuguese"     )   or
-        ( keyvalues["cuisine"] == "chicken;pizza"          )   or
         ( keyvalues["cuisine"] == "chicken;burger;pizza"   )   or
-        ( keyvalues["cuisine"] == "chicken;kebab"          )   or
-        ( keyvalues["cuisine"] == "chicken;grill"          )   or
         ( keyvalues["cuisine"] == "chicken;fish_and_chips" )   or
-        ( keyvalues["cuisine"] == "fried_chicken"          ))) then
+        ( keyvalues["cuisine"] == "chicken;grill"          )   or
+        ( keyvalues["cuisine"] == "chicken;kebab"          )   or
+        ( keyvalues["cuisine"] == "chicken;pizza"          )   or
+        ( keyvalues["cuisine"] == "chicken;portuguese"     )   or
+        ( keyvalues["cuisine"] == "fried_chicken"          )   or
+        ( keyvalues["cuisine"] == "wings"                  ))) then
       keyvalues["amenity"] = "fast_food_chicken"
    end
 
@@ -8076,22 +8081,23 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
    if ((  keyvalues["amenity"] == "fast_food"                   )  and
-       (( keyvalues["cuisine"] == "pizza"                      )   or
-        ( keyvalues["cuisine"] == "italian"                    )   or
-        ( keyvalues["cuisine"] == "pasta"                      )   or
-        ( keyvalues["cuisine"] == "pizza;pasta"                )   or
-        ( keyvalues["cuisine"] == "pizza;italian"              )   or
+       (( keyvalues["cuisine"] == "italian"                    )   or
         ( keyvalues["cuisine"] == "italian;pizza"              )   or
-        ( keyvalues["cuisine"] == "pizza;kebab"                )   or
+        ( keyvalues["cuisine"] == "italian_pizza"              )   or
+        ( keyvalues["cuisine"] == "mediterranean"              )   or
+        ( keyvalues["cuisine"] == "pasta"                      )   or
+        ( keyvalues["cuisine"] == "pizza"                      )   or
         ( keyvalues["cuisine"] == "pizza;burger"               )   or
+        ( keyvalues["cuisine"] == "pizza;burger;kebab"         )   or
         ( keyvalues["cuisine"] == "pizza;chicken"              )   or
-        ( keyvalues["cuisine"] == "pizza;indian"               )   or
         ( keyvalues["cuisine"] == "pizza;fish_and_chips"       )   or
+        ( keyvalues["cuisine"] == "pizza;indian"               )   or
+        ( keyvalues["cuisine"] == "pizza;italian"              )   or
+        ( keyvalues["cuisine"] == "pizza;kebab"                )   or
         ( keyvalues["cuisine"] == "pizza;kebab;burger"         )   or
         ( keyvalues["cuisine"] == "pizza;kebab;burger;chicken" )   or
         ( keyvalues["cuisine"] == "pizza;kebab;chicken"        )   or
-        ( keyvalues["cuisine"] == "pizza;burger;kebab"         )   or
-        ( keyvalues["cuisine"] == "italian_pizza"              ))) then
+        ( keyvalues["cuisine"] == "pizza;pasta"                ))) then
       keyvalues["amenity"] = "fast_food_pizza"
    end
 
