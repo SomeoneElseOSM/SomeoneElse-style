@@ -951,6 +951,7 @@
     { "key": "designation", "value": "carriageway", "description": "Shown as byway open to all traffic (NI)" },
     { "key": "designation", "value": "common", "description": "Show as 'leisure=common'" },
     { "key": "designation", "value": "core_path", "description": "Shown in same way as public footpaths" },
+    { "key": "designation", "value": "footpath", "description": "Shown as public footpath" },
     { "key": "designation", "value": "local_nature_reserve", "description": "Shown as nature reserve" },
     { "key": "designation", "value": "national_nature_reserve", "description": "Shown as nature reserve" },
     { "key": "designation", "value": "national_park", "description": "Shown as national park" },

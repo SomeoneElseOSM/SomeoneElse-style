@@ -20,6 +20,7 @@ Following the tagfiddling prior to and as part of [this change](https://lists.op
 Removed "shop=take_away", no longer in the data.
 Added some missing fast food cuisines.
 Added "shop=winery" as a synonym for "craft=winery".
+Added "designation=footpath" as a synonym for "designation=public_footpath".
 
 ## 26/11/2023
 Various crafts that previously did not appear are now shown as at least a nonspecific office.

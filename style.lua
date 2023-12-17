@@ -907,6 +907,7 @@ function filter_tags_generic(keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
    if (( keyvalues["designation"] == "public_footpath"                        ) or
        ( keyvalues["designation"] == "core_path"                              ) or 
+       ( keyvalues["designation"] == "footpath"                               ) or 
        ( keyvalues["designation"] == "public_footway"                         ) or 
        ( keyvalues["designation"] == "public_footpath;permissive_bridleway"   ) or 
        ( keyvalues["designation"] == "public_footpath;public_cycleway"        ) or
