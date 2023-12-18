@@ -24,6 +24,7 @@ Added "designation=footpath" as a synonym for "designation=public_footpath".
 Removed "shop=electricial", no longer in the data.
 Detect "covered=roof" as a synonym for "building=roof".
 Detect hills tagged as peaks.
+Detect more "ford" values as fords.
 
 ## 26/11/2023
 Various crafts that previously did not appear are now shown as at least a nonspecific office.

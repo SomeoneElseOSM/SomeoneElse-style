@@ -10191,10 +10191,14 @@ function filter_tags_node (keyvalues, nokeys)
 --
 -- Consolidate some "ford" values into "yes".
 -- This is here rather than in "generic" because "generic" is called after this
+-- There is a similar section in way-only.
 -- ----------------------------------------------------------------------------
-   if (( keyvalues["ford"] == "tidal"        ) or 
-       ( keyvalues["ford"] == "ford"         ) or 
-       ( keyvalues["ford"] == "intermittent" )) then
+   if (( keyvalues["ford"] == "Tidal_Causeway" ) or
+       ( keyvalues["ford"] == "ford"           ) or 
+       ( keyvalues["ford"] == "intermittent"   ) or
+       ( keyvalues["ford"] == "seasonal"       ) or
+       ( keyvalues["ford"] == "stream"         ) or
+       ( keyvalues["ford"] == "tidal"          )) then
       keyvalues["ford"] = "yes"
    end
 
@@ -10303,10 +10307,14 @@ function filter_tags_way (keyvalues, nokeys)
 --
 -- Consolidate some "ford" values into "yes".
 -- This is here rather than in "generic" because "generic" is called after this
+-- There is a similar section in way-only.
 -- ----------------------------------------------------------------------------
-   if (( keyvalues["ford"] == "tidal"        ) or 
-       ( keyvalues["ford"] == "ford"         ) or 
-       ( keyvalues["ford"] == "intermittent" )) then
+   if (( keyvalues["ford"] == "Tidal_Causeway" ) or
+       ( keyvalues["ford"] == "ford"           ) or 
+       ( keyvalues["ford"] == "intermittent"   ) or
+       ( keyvalues["ford"] == "seasonal"       ) or
+       ( keyvalues["ford"] == "stream"         ) or
+       ( keyvalues["ford"] == "tidal"          )) then
       keyvalues["ford"] = "yes"
    end
 
