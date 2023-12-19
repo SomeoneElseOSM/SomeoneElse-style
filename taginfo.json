@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20231218T011600Z",
+  "data_updated": "20231219T212800Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -3005,6 +3005,7 @@
     { "key": "taxon", "description": "Detect hogweed hazard" },
     { "key": "taxon", "value": "Heracleum mantegazzianum", "description": "Detect hogweed hazard" },
     { "key": "telecom", "description": "Used when detecting telephone exchanges" },
+    { "key": "telecom", "value": "exchange", "description": "Used when detecting telephone exchanges" },
     { "key": "telephone_kiosk", "description": "Former telephone boxes" },
     { "key": "telephone_kiosk", "value": "K4", "description": "Former telephone boxes" },
     { "key": "telephone_kiosk", "value": "K6", "description": "Former telephone boxes" },

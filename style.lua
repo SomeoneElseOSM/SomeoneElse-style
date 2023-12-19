@@ -9223,7 +9223,7 @@ function filter_tags_generic(keyvalues, nokeys)
         (( keyvalues["amenity"]    == nil                 )    and
          ( keyvalues["man_made"]   == nil                 )    and
          ( keyvalues["office"]     == nil                 ))   or
-        (  keyvalues["telecom"]    ~= nil                  ))) then
+        (  keyvalues["telecom"]    == "exchange"           ))) then
       if ( keyvalues["name"] == nil ) then
          keyvalues["name"]  = "Telephone Exchange"
       end
