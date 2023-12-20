@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20231219T212800Z",
+  "data_updated": "20231220T012900Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -1171,6 +1171,7 @@
     { "key": "generator:method", "value": "photovoltaic", "description": "Detect solar panels" },
     { "key": "generator:source", "description": "Detect wind turbines" },
     { "key": "generator:source", "value": "wind", "description": "Detect wind turbines" },
+    { "key": "geological", "description": "Detect palaeontological sites" },
     { "key": "geological", "value": "palaeontological_site", "description": "Shown as palaeontological site" },
     { "key": "golf", "description": "Various golf items rendered" },
     { "key": "golf", "value": "track", "description": "Rendered as track" },
