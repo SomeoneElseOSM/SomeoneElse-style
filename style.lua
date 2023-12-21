@@ -6444,33 +6444,33 @@ function filter_tags_generic(keyvalues, nokeys)
        (   keyvalues["man_made"]    == "village_sign"                       )  or
        ((  keyvalues["tourism"]     == "information"                       )   and
         (( keyvalues["information"] == "board"                            )    or
-         ( keyvalues["information"] == "map"                              )    or
-         ( keyvalues["information"] == "history"                          )    or
-         ( keyvalues["information"] == "terminal"                         )    or
-         ( keyvalues["information"] == "nature"                           )    or
-         ( keyvalues["information"] == "noticeboard"                      )    or
-         ( keyvalues["information"] == "tactile_model"                    )    or
-         ( keyvalues["information"] == "map_board"                        )    or
-         ( keyvalues["information"] == "wildlife"                         )    or
-         ( keyvalues["information"] == "sitemap"                          )    or
-         ( keyvalues["information"] == "notice_board"                     )    or
-         ( keyvalues["information"] == "tactile_map"                      )    or
-         ( keyvalues["information"] == "electronic_board"                 )    or
-         ( keyvalues["information"] == "hikingmap"                        )    or
-         ( keyvalues["information"] == "interpretation"                   )    or
-         ( keyvalues["information"] == "map;board"                        )    or
-         ( keyvalues["information"] == "former_telephone_box"             )    or
-         ( keyvalues["information"] == "leaflets"                         )    or
-         ( keyvalues["information"] == "departure times and destinations" )    or
          ( keyvalues["information"] == "board;map"                        )    or
+         ( keyvalues["information"] == "citymap"                          )    or
+         ( keyvalues["information"] == "departure times and destinations" )    or
+         ( keyvalues["information"] == "electronic_board"                 )    or
+         ( keyvalues["information"] == "estate_map"                       )    or
+         ( keyvalues["information"] == "former_telephone_box"             )    or
+         ( keyvalues["information"] == "hikingmap"                        )    or
+         ( keyvalues["information"] == "history"                          )    or
+         ( keyvalues["information"] == "hospital map"                     )    or
          ( keyvalues["information"] == "information_board"                )    or
+         ( keyvalues["information"] == "interpretation"                   )    or
          ( keyvalues["information"] == "interpretive_board"               )    or
          ( keyvalues["information"] == "leaflet_board"                    )    or
+         ( keyvalues["information"] == "leaflets"                         )    or
+         ( keyvalues["information"] == "map and posters"                  )    or
+         ( keyvalues["information"] == "map"                              )    or
+         ( keyvalues["information"] == "map;board"                        )    or
+         ( keyvalues["information"] == "map_board"                        )    or
+         ( keyvalues["information"] == "nature"                           )    or
+         ( keyvalues["information"] == "notice_board"                     )    or
+         ( keyvalues["information"] == "noticeboard"                      )    or
          ( keyvalues["information"] == "orientation_map"                  )    or
-         ( keyvalues["information"] == "citymap"                          )    or
-         ( keyvalues["information"] == "estate_map"                       )    or
-         ( keyvalues["information"] == "hospital map"                     )    or
-         ( keyvalues["information"] == "map and posters"                  )))) then
+         ( keyvalues["information"] == "sitemap"                          )    or
+         ( keyvalues["information"] == "tactile_map"                      )    or
+         ( keyvalues["information"] == "tactile_model"                    )    or
+         ( keyvalues["information"] == "terminal"                         )    or
+         ( keyvalues["information"] == "wildlife"                         )))) then
       keyvalues["tourism"] = "informationboard"
    end
 
