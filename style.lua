@@ -3011,7 +3011,9 @@ function filter_tags_generic(keyvalues, nokeys)
       keyvalues["old_amenity"] = nil
    end
 
-   if ( keyvalues["historic"] == "pub" ) then
+   if (( keyvalues["historic"] == "pub" ) and
+       ( keyvalues["amenity"]  == nil   ) and
+       ( keyvalues["shop"]     == nil   )) then
       keyvalues["disused:amenity"] = "pub"
       keyvalues["historic"] = nil
    end
@@ -5559,18 +5561,18 @@ function filter_tags_generic(keyvalues, nokeys)
 
 -- ----------------------------------------------------------------------------
 -- Unless an active place of worship,
--- monasteries go through as "historic=monastery"
+-- monasteries etc. go through as "historic=monastery"
 -- "historic=ruins;ruins=monastery" are handled the same way.
 -- ----------------------------------------------------------------------------
-   if ((   keyvalues["historic"] == "monastery" ) or
-       (   keyvalues["historic"] == "abbey"     ) or
-       (   keyvalues["historic"] == "priory"    ) or
-       (   keyvalues["historic"] == "cathedral" ) or
-       ((  keyvalues["historic"] == "ruins"    )  and
-        (( keyvalues["ruins"] == "monastery"  )  or
-         ( keyvalues["ruins"] == "abbey"      )  or
-         ( keyvalues["ruins"] == "priory"     )  or
-         ( keyvalues["ruins"] == "cathedral"  )))) then
+   if ((   keyvalues["historic"] == "abbey"            ) or
+       (   keyvalues["historic"] == "cathedral"        ) or
+       (   keyvalues["historic"] == "monastery"        ) or
+       (   keyvalues["historic"] == "priory"           ) or
+       ((  keyvalues["historic"] == "ruins"            )  and
+        (( keyvalues["ruins"] == "abbey"              )  or
+         ( keyvalues["ruins"] == "cathedral"          )  or
+         ( keyvalues["ruins"] == "monastery"          )  or
+         ( keyvalues["ruins"] == "priory"             )))) then
       if ( keyvalues["amenity"] == "place_of_worship" ) then
          keyvalues["historic"] = nil
       else
@@ -5614,10 +5616,10 @@ function filter_tags_generic(keyvalues, nokeys)
 -- Historic churches go through as "historic=church", 
 -- if they're not also an amenity or something else.
 -- ----------------------------------------------------------------------------
-   if ((( keyvalues["historic"] == "church"           )  or
+   if ((( keyvalues["historic"] == "chapel"           )  or
+        ( keyvalues["historic"] == "church"           )  or
         ( keyvalues["historic"] == "place_of_worship" )  or
-        ( keyvalues["historic"] == "wayside_chapel"   )  or
-        ( keyvalues["historic"] == "chapel"           )) and
+        ( keyvalues["historic"] == "wayside_chapel"   )) and
        (  keyvalues["amenity"]  == nil                 ) and
        (  keyvalues["shop"]     == nil                 )) then
       keyvalues["historic"] = "church"

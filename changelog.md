@@ -3,6 +3,7 @@ This page describes changes made [here](https://github.com/SomeoneElseOSM/Someon
 
 ## As yet unreleased
 Detect telephone exchanges rather than other telecom equipment,
+Better handling of historic items - detect when still in use.
 
 ## 16/12/2023
 Detect public transport stations not obviously bus, railway or aerialway stations.
