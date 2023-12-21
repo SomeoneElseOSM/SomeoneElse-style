@@ -1773,52 +1773,52 @@ function filter_tags_generic(keyvalues, nokeys)
       end
    end
 
-   if (( keyvalues["man_made"]   == "petroleum_well"         ) or 
-       ( keyvalues["industrial"] == "gas"                    ) or
-       ( keyvalues["industrial"] == "oil"                    ) or
-       ( keyvalues["industrial"] == "concrete_plant"         ) or
-       ( keyvalues["industrial"] == "scaffolding"            ) or
-       ( keyvalues["industrial"] == "construction"           ) or
-       ( keyvalues["industrial"] == "mobile_equipment"       ) or
-       ( keyvalues["industrial"] == "woodworking"            ) or
-       ( keyvalues["industrial"] == "chemical"               ) or
-       ( keyvalues["industrial"] == "shop_fitters"           ) or
-       ( keyvalues["industrial"] == "waste_handling"         ) or
-       ( keyvalues["industrial"] == "metal_finishing"        ) or
-       ( keyvalues["industrial"] == "automotive_industry"    ) or
-       ( keyvalues["industrial"] == "warehouse"              ) or
-       ( keyvalues["industrial"] == "brewery"                ) or 
-       ( keyvalues["industrial"] == "distillery"             ) or 
-       ( keyvalues["craft"]      == "distillery"             ) or
-       ( keyvalues["craft"]      == "bakery"                 ) or
-       ( keyvalues["industrial"] == "bakery"                 ) or
-       ( keyvalues["industrial"] == "furniture"              ) or
-       ( keyvalues["craft"]      == "sawmill"                ) or
-       ( keyvalues["industrial"] == "sawmill"                ) or
-       ( keyvalues["industrial"] == "factory"                ) or 
-       ( keyvalues["industrial"] == "yes"                    ) or 
-       ( keyvalues["industrial"] == "depot"                  ) or 
-       ( keyvalues["landuse"]    == "depot"                  ) or
+   if (( keyvalues["amenity"]    == "bus_depot"              ) or
        ( keyvalues["amenity"]    == "depot"                  ) or
-       ( keyvalues["amenity"]    == "bus_depot"              ) or
-       ( keyvalues["industrial"] == "bus_depot"              ) or
        ( keyvalues["amenity"]    == "fuel_depot"             ) or
        ( keyvalues["amenity"]    == "scrapyard"              ) or 
-       ( keyvalues["industrial"] == "scrap_yard"             ) or 
+       ( keyvalues["craft"]      == "bakery"                 ) or
+       ( keyvalues["craft"]      == "distillery"             ) or
+       ( keyvalues["craft"]      == "sawmill"                ) or
        ( keyvalues["industrial"] == "auto_wrecker"           ) or 
-       ( keyvalues["industrial"] == "yard"                   ) or 
-       ( keyvalues["industrial"] == "engineering"            ) or
-       ( keyvalues["industrial"] == "machinery"              ) or
-       ( keyvalues["industrial"] == "machine_shop"           ) or
+       ( keyvalues["industrial"] == "automotive_industry"    ) or
+       ( keyvalues["industrial"] == "bakery"                 ) or
+       ( keyvalues["industrial"] == "brewery"                ) or 
+       ( keyvalues["industrial"] == "bus_depot"              ) or
+       ( keyvalues["industrial"] == "chemical"               ) or
+       ( keyvalues["industrial"] == "concrete_plant"         ) or
+       ( keyvalues["industrial"] == "construction"           ) or
+       ( keyvalues["industrial"] == "depot"                  ) or 
+       ( keyvalues["industrial"] == "distillery"             ) or 
        ( keyvalues["industrial"] == "electrical"             ) or
-       ( keyvalues["industrial"] == "packaging"              ) or
+       ( keyvalues["industrial"] == "engineering"            ) or
+       ( keyvalues["industrial"] == "factory"                ) or 
+       ( keyvalues["industrial"] == "furniture"              ) or
+       ( keyvalues["industrial"] == "gas"                    ) or
        ( keyvalues["industrial"] == "haulage"                ) or
-       ( keyvalues["power"]      == "plant"                  ) or
+       ( keyvalues["industrial"] == "machine_shop"           ) or
+       ( keyvalues["industrial"] == "machinery"              ) or
+       ( keyvalues["industrial"] == "metal_finishing"        ) or
+       ( keyvalues["industrial"] == "mobile_equipment"       ) or
+       ( keyvalues["industrial"] == "oil"                    ) or
+       ( keyvalues["industrial"] == "packaging"              ) or
+       ( keyvalues["industrial"] == "sawmill"                ) or
+       ( keyvalues["industrial"] == "scaffolding"            ) or
+       ( keyvalues["industrial"] == "scrap_yard"             ) or 
+       ( keyvalues["industrial"] == "shop_fitters"           ) or
+       ( keyvalues["industrial"] == "warehouse"              ) or
+       ( keyvalues["industrial"] == "waste_handling"         ) or
+       ( keyvalues["industrial"] == "woodworking"            ) or
+       ( keyvalues["industrial"] == "yard"                   ) or 
+       ( keyvalues["industrial"] == "yes"                    ) or 
+       ( keyvalues["landuse"]    == "depot"                  ) or
        ( keyvalues["man_made"]   == "gas_station"            ) or
        ( keyvalues["man_made"]   == "gas_works"              ) or
-       ( keyvalues["man_made"]   == "water_treatment"        ) or
+       ( keyvalues["man_made"]   == "petroleum_well"         ) or 
        ( keyvalues["man_made"]   == "pumping_station"        ) or
-       ( keyvalues["man_made"]   == "water_works"            )) then
+       ( keyvalues["man_made"]   == "water_treatment"        ) or
+       ( keyvalues["man_made"]   == "water_works"            ) or
+       ( keyvalues["power"]      == "plant"                  )) then
       keyvalues["landuse"] = "industrial"
    end
 
