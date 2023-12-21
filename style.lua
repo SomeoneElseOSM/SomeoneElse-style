@@ -5603,7 +5603,6 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["historic"] == "cross"            ) or
        ( keyvalues["historic"] == "market_cross"     ) or
        ( keyvalues["historic"] == "tau_cross"        ) or
-       ( keyvalues["historic"] == "churchyard cross" ) or
        ( keyvalues["historic"] == "celtic_cross"     )) then
       keyvalues["historic"] = "cross"
 
