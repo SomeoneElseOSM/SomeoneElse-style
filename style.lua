@@ -2013,11 +2013,20 @@ function filter_tags_generic(keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
    if (( keyvalues["historic"]    == "boundary_stone"  )  or
        ( keyvalues["historic"]    == "boundary_marker" )  or
+       ( keyvalues["man_made"]    == "boundary_marker" )  or
        ( keyvalues["marker"]      == "boundary_stone"  )  or
        ( keyvalues["boundary"]    == "marker"          )  or
        ( keyvalues["designation"] == "March Stone"     )) then
       keyvalues["man_made"] = "boundary_stone"
       keyvalues["tourism"]  = nil
+
+      if ( keyvalues["inscription"] ~= nil ) then
+          if ( keyvalues["name"] == nil ) then
+              keyvalues["name"] = keyvalues["inscription"]
+          else
+              keyvalues["name"] = keyvalues["name"] .. " " .. keyvalues["inscription"]
+          end
+      end
    end
 
 -- ----------------------------------------------------------------------------

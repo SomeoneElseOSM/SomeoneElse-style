@@ -1535,6 +1535,7 @@
     { "key": "information", "value": "trail_blaze", "description": "Shown as information route marker" },
     { "key": "information", "value": "visitor_centre", "description": "Shown as information office" },
     { "key": "information", "value": "wildlife", "description": "Shown as information board" },
+    { "key": "inscription", "description": "Appended to names of historic and boundary stones" },
     { "key": "intermittent", "description": "Intermittent waterways and wetland" },
     { "key": "intermittent", "value": "yes", "description": "Intermittent waterways and wetland" },
     { "key": "is_sidepath", "description": "Suppress names on roadside footpaths" },

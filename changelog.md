@@ -10,6 +10,7 @@ Detect "leisure=trailhead" as a synonym of "highway=trailhead".
 As well as "amenity=leisure_centre", detect "leisure=leisure_centre" as "leisure=sports_centre".
 Detect "leisure=dojo" as a synonym for "amenity=dojo".
 Detect "landuse=playground" as a synonym for "leisure=playground".
+Append "inscription" to names of boundary stones as well as historic ones.
 
 ## 16/12/2023
 Detect public transport stations not obviously bus, railway or aerialway stations.
