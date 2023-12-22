@@ -9765,9 +9765,17 @@ function filter_tags_generic(keyvalues, nokeys)
 -- Treat heliports as aerodromes.
 -- Done before the "disused" logic below and the "large/small" logic 
 -- further down.
+--
+-- Heliports are similar to airports, except an icao code (present on many
+-- more airports) can also determine that a heliport is "public".
 -- ----------------------------------------------------------------------------
    if ( keyvalues["aeroway"] == "heliport" ) then
       keyvalues["aeroway"] = "aerodrome"
+
+      if (( keyvalues["iata"]  == nil )  and
+          ( keyvalues["icao"]  ~= nil )) then
+         keyvalues["iata"] = keyvalues["icao"]
+      end
    end
 
 -- ----------------------------------------------------------------------------

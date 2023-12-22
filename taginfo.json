@@ -1455,6 +1455,7 @@
     { "key": "hunting_stand", "description": "Detect grouse butts" },
     { "key": "hunting_stand", "value": "grouse_butt", "description": "Detect grouse butts" },
     { "key": "iata", "description": "Split large and small airports" },
+    { "key": "icao", "description": "Split large/small and public/private heliports, if 'iata' not present" },
     { "key": "indoor", "description": "Assume indoor defibrillators are only accessible by customers" },
     { "key": "indoor", "value": "yes", "description": "Assume indoor defibrillators are only accessible by customers" },
     { "key": "industrial", "description": "Subdivisions of industrial areas" },
