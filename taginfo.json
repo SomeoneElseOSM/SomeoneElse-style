@@ -1678,6 +1678,7 @@
     { "key": "leisure", "value": "video_arcade", "description": "Leisure amenities shown in green" },
     { "key": "leisure", "value": "water_park", "description": "Leisure amenities shown in green" },
     { "key": "leisure", "value": "wildlife_hide", "description": "Leisure amenities shown in green" },
+    { "key": "leisure", "value": "yoga", "description": "Leisure amenities shown in green" },
     { "key": "level", "description": "Show certain corridors as paths" },
     { "key": "level", "value": "0", "description": "Decide whether to show a corridor as a path" },
     { "key": "lifeguard", "description": "Used by one possible tagging of lifeguard towers" },
