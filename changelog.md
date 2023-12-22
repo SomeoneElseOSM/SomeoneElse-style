@@ -8,6 +8,7 @@ Removed "historic=churchyard cross", no longer in the data.
 Detect "leisure=yoga" as generic leisure.
 Detect "leisure=trailhead" as a synonym of "highway=trailhead".
 As well as "amenity=leisure_centre", detect "leisure=leisure_centre" as "leisure=sports_centre".
+Detect "leisure=dojo" as a synonym for "amenity=dojo".
 
 ## 16/12/2023
 Detect public transport stations not obviously bus, railway or aerialway stations.
