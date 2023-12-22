@@ -1589,6 +1589,7 @@
     { "key": "landuse", "value": "military", "description": "All sorts of landuse" },
     { "key": "landuse", "value": "paddock", "description": "All sorts of landuse" },
     { "key": "landuse", "value": "plant_nursery", "description": "All sorts of landuse" },
+    { "key": "landuse", "value": "playground", "description": "Shown as playground" },
     { "key": "landuse", "value": "orchard", "description": "All sorts of landuse" },
     { "key": "landuse", "value": "quarry", "description": "All sorts of landuse" },
     { "key": "landuse", "value": "railway", "description": "All sorts of landuse" },

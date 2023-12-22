@@ -4995,9 +4995,18 @@ function filter_tags_generic(keyvalues, nokeys)
 
 -- ----------------------------------------------------------------------------
 -- Playground stuff
+--
 -- The "leisure=nil" check here is because there are some unusual combinations
 -- of "playground" tags on otherwise-rendered "leisure" things.
+--
+-- "landuse=playground" is a rare synonym of "leisure=playground".
+-- "leisure=playground".is handled in the rendering code.
 -- ----------------------------------------------------------------------------
+   if (( keyvalues["landuse"] == "playground" ) and
+       ( keyvalues["leisure"] == nil          )) then
+      keyvalues["leisure"] = "playground"
+   end
+
    if ((  keyvalues["leisure"]    == nil            )  and
        (( keyvalues["playground"] == "swing"       )   or
         ( keyvalues["playground"] == "basketswing" ))) then
