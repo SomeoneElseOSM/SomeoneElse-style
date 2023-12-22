@@ -1061,6 +1061,7 @@
     { "key": "emergency", "value": "rescue_equipment", "description": "Shown as life ring" },
     { "key": "emergency", "value": "ses_station", "description": "Synonym for 'emergency=coast_goard'.  Shown as government office" },
     { "key": "emergency", "value": "water_rescue", "description": "Unhelpful tag; other tags used to see what object actually is" },
+    { "key": "emergency", "value": "water_rescue_station", "description": "Yet another tag used for coastguard huts etc." },
     { "key": "emergency_service", "description": "Detect coast guard offices not labelled any other way" },
     { "key": "emergency_service", "value": "air", "description": "Detect coast guard offices not labelled any other way" },
     { "key": "entrance", "description": "Show main entrances" },

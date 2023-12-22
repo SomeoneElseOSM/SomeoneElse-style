@@ -13,6 +13,7 @@ Detect "landuse=playground" as a synonym for "leisure=playground".
 Append "inscription" to names of boundary stones as well as historic ones.
 "icao" tag is used to split large/small and public/private heliports, if "iata" not present.
 Detect "historic=baths", "historic=naval_mine", "historic=residence", "historic=smithy" and "historic=sound_mirror" as generic historic items.
+Detect "emergency=water_rescue_station" as coastguard-adjacent facilities.
 
 ## 16/12/2023
 Detect public transport stations not obviously bus, railway or aerialway stations.
