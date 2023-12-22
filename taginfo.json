@@ -1642,6 +1642,7 @@
     { "key": "leisure", "value": "indoor_golf", "description": "Leisure amenities shown in green" },
     { "key": "leisure", "value": "indoor_play", "description": "Leisure amenities shown in green" },
     { "key": "leisure", "value": "inflatable_park", "description": "Leisure amenities shown in green" },
+    { "key": "leisure", "value": "leisure_centre", "description": "Synonym for sports_centre" },
     { "key": "leisure", "value": "marina", "description": "Shown as marina" },
     { "key": "leisure", "value": "miniature_golf", "description": "Leisure amenities shown in green" },
     { "key": "leisure", "value": "music_venue", "description": "Synonym for concert_hall" },

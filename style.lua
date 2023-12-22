@@ -4918,9 +4918,11 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
--- Render amenity=leisure_centre as leisure=sports_centre
+-- Render amenity=leisure_centre and leisure=leisure_centre 
+-- as leisure=sports_centre
 -- ----------------------------------------------------------------------------
-   if ( keyvalues["amenity"] == "leisure_centre" ) then
+   if (( keyvalues["amenity"] == "leisure_centre" ) or
+       ( keyvalues["leisure"] == "leisure_centre" )) then
       keyvalues["leisure"] = "sports_centre"
    end
 
