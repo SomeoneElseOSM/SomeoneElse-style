@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20231222T015500Z",
+  "data_updated": "20231222T140700Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -1321,6 +1321,7 @@
     { "key": "historic", "value": "archaeological_site", "description": "Depending on subtag shown as e.g. a type of stone, or just archaeological site" },
     { "key": "historic", "value": "bakery", "description": "Shown as nonspecific historic item" },
     { "key": "historic", "value": "barrow", "description": "Shown as nonspecific historic item" },
+    { "key": "historic", "value": "baths", "description": "Shown as nonspecific historic item" },
     { "key": "historic", "value": "battlefield", "description": "Shown as unique icon" },
     { "key": "historic", "value": "beacon", "description": "Shown as nonspecific historic item" },
     { "key": "historic", "value": "blue_plaque", "description": "Shown as information plaque" },
@@ -1392,6 +1393,7 @@
     { "key": "historic", "value": "monument", "description": "Shown as nonspecific historic item" },
     { "key": "historic", "value": "mound", "description": "Shown as nonspecific historic item" },
     { "key": "historic", "value": "mounting_block", "description": "Shown as mouting block" },
+    { "key": "historic", "value": "naval_mine", "description": "Shown as nonspecific historic item" },
     { "key": "historic", "value": "ogham_stone", "description": "Shown as ogham stone" },
     { "key": "historic", "value": "oratory", "description": "Shown as nonspecific historic item" },
     { "key": "historic", "value": "palace", "description": "Shown as big house" },
@@ -1406,6 +1408,7 @@
     { "key": "historic", "value": "prison", "description": "Shown as nonspecific historic item" },
     { "key": "historic", "value": "protected_building", "description": "Shown as nonspecific historic item" },
     { "key": "historic", "value": "pub", "description": "Shown as former pub" },
+    { "key": "historic", "value": "residence", "description": "Shown as nonspecific historic item" },
     { "key": "historic", "value": "quarry", "description": "Shown as historic quarry" },
     { "key": "historic", "value": "railway_station", "description": "Former railway stations shown as nonspecific historical objects" },
     { "key": "historic", "value": "roundhouse", "description": "Shown as nonspecific historic item" },

@@ -2291,6 +2291,7 @@ function filter_tags_generic(keyvalues, nokeys)
         ( keyvalues["historic"]  == "archaeological_site" )  or
         ( keyvalues["historic"]  == "bakery"              )  or
         ( keyvalues["historic"]  == "barrow"              )  or
+        ( keyvalues["historic"]  == "baths"               )  or
         ( keyvalues["historic"]  == "battlefield"         )  or
         ( keyvalues["historic"]  == "boundary_stone"      )  or
         ( keyvalues["historic"]  == "building"            )  or
@@ -2338,11 +2339,14 @@ function filter_tags_generic(keyvalues, nokeys)
         ( keyvalues["historic"]  == "place_of_worship"    )  or
         ( keyvalues["historic"]  == "police_call_box"     )  or
         ( keyvalues["historic"]  == "prison"              )  or
+        ( keyvalues["historic"]  == "residence"           )  or
         ( keyvalues["historic"]  == "roundhouse"          )  or
         ( keyvalues["historic"]  == "ruins"               )  or
         ( keyvalues["historic"]  == "sawmill"             )  or
         ( keyvalues["historic"]  == "shelter"             )  or
         ( keyvalues["historic"]  == "ship"                )  or
+        ( keyvalues["historic"]  == "smithy"              )  or
+        ( keyvalues["historic"]  == "sound_mirror"        )  or
         ( keyvalues["historic"]  == "standing_stone"      )  or
         ( keyvalues["historic"]  == "statue"              )  or
         ( keyvalues["historic"]  == "stocks"              )  or
