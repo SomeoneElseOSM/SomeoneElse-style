@@ -1419,6 +1419,7 @@
     { "key": "historic", "value": "stately_home", "description": "Shown as big house" },
     { "key": "historic", "value": "statue", "description": "Shown as nonspecific historic item" },
     { "key": "historic", "value": "stocks", "description": "Shown with unique icon" },
+    { "key": "historic", "value": "stone", "description": "Shown with unique icon" },
     { "key": "historic", "value": "tank", "description": "Shown as nonspecific historic item" },
     { "key": "historic", "value": "tau_cross", "description": "Shown as historic cross" },
     { "key": "historic", "value": "telephone", "description": "Shown as nonspecific historic item" },
