@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20231221T212600Z",
+  "data_updated": "20231222T015500Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -1603,6 +1603,7 @@
     { "key": "landuse", "value": "village_green", "description": "All sorts of landuse" },
     { "key": "landuse", "value": "vineyard", "description": "Shown as vineyard" },
     { "key": "layer", "description": "Invalid layer info either changed to something plausible or removed; underground railway platforms suppressed" },
+    { "key": "layer", "value": "0", "description": "Decide whether to show a corridor as a path" },
     { "key": "lcn_ref", "description": "Local cycle network ref" },
     { "key": "leaf_type", "description": "Different sorts of trees" },
     { "key": "leaf_type", "value": "broadleaved", "description": "Broadleaved trees" },
@@ -1678,6 +1679,7 @@
     { "key": "leisure", "value": "water_park", "description": "Leisure amenities shown in green" },
     { "key": "leisure", "value": "wildlife_hide", "description": "Leisure amenities shown in green" },
     { "key": "level", "description": "Show certain corridors as paths" },
+    { "key": "level", "value": "0", "description": "Decide whether to show a corridor as a path" },
     { "key": "lifeguard", "description": "Used by one possible tagging of lifeguard towers" },
     { "key": "lifeguard", "value": "base", "description": "Used by one possible tagging of lifeguard towers" },
     { "key": "lifeguard", "value": "tower", "description": "Used by one possible tagging of lifeguard towers" },
