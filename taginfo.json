@@ -1279,6 +1279,7 @@
     { "key": "highway", "value": "milestone", "description": "Shown as milestone" },
     { "key": "highway", "value": "mini_roundabout", "description": "Shown as mini roundabout" },
     { "key": "highway", "value": "motorway", "description": "Shown as motorway" },
+    { "key": "highway", "value": "motorway_junction", "description": "Signed ones only are shown; SABRE made" },
     { "key": "highway", "value": "motorway_link", "description": "Shown as motorway" },
     { "key": "highway", "value": "passing_place", "description": "Shown as turning circle" },
     { "key": "highway", "value": "path", "description": "Shown as path" },
