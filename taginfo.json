@@ -1673,6 +1673,7 @@
     { "key": "leisure", "value": "swimming_pool", "description": "Leisure amenities shown in green" },
     { "key": "leisure", "value": "tanning_salon", "description": "Leisure amenities shown in green" },
     { "key": "leisure", "value": "track", "description": "Shown areas in dark sports green, show linear equestian tracks in black on green." },
+    { "key": "leisure", "value": "trailhead", "description": "Synonym for 'highway=trailhead'.  Shown as route marker" },
     { "key": "leisure", "value": "trampoline", "description": "Leisure amenities shown in green" },
     { "key": "leisure", "value": "trampoline_park", "description": "Leisure amenities shown in green" },
     { "key": "leisure", "value": "video_arcade", "description": "Leisure amenities shown in green" },

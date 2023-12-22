@@ -6374,6 +6374,15 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- "leisure=trailhead" is an occasional mistagging for "highway=trailhead"
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["leisure"] == "trailhead" ) and
+       ( keyvalues["highway"] == nil         )) then
+      keyvalues["highway"] = "trailhead"
+      keyvalues["leisure"] = nil
+   end
+
+-- ----------------------------------------------------------------------------
 -- Trailheads appear in odd combinations, not all of which make sense.
 --
 -- If someone's tagged a trailhead as a locality; likely it's not really one

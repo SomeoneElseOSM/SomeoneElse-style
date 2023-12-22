@@ -6,6 +6,7 @@ Detect telephone exchanges rather than other telecom equipment,
 Better handling of historic items - detect when still in use.
 Removed "historic=churchyard cross", no longer in the data.
 Detect "leisure=yoga" as generic leisure.
+Delete "leisure=trailhead" as a synonym of "highway=trailhead".
 
 ## 16/12/2023
 Detect public transport stations not obviously bus, railway or aerialway stations.
