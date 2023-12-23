@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20231223T102400Z",
+  "data_updated": "20231223T150600Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -2187,6 +2187,7 @@
     { "key": "place", "value": "isolated_dwelling", "description": "Shown as isolated_dwelling" },
     { "key": "place", "value": "farm", "description": "Shown as farm" },
     { "key": "place", "value": "island", "description": "Names passed though to the rendering layer for islands" },
+    { "key": "place", "value": "islet", "description": "Names passed though to the rendering layer for islets" },
     { "key": "place_of_worship", "description": "Convert some places of worship to holy wells or mass rocks depending on other tags" },
     { "key": "place_of_worship", "value": "holy_well", "description": "Show holy wells with their own target" },
     { "key": "place_of_worship", "value": "mass_rock", "description": "Show mass rocks with their own target" },

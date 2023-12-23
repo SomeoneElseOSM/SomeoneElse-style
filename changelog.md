@@ -1,7 +1,7 @@
 # Changes made to this rendering
 This page describes changes made [here](https://github.com/SomeoneElseOSM/SomeoneElse-style), [here](https://github.com/SomeoneElseOSM/SomeoneElse-style-legend) and [here](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT), and visible [here](//map.atownsend.org.uk/maps/map/map.html).
 
-## As yet unreleased
+## 23/12/2023
 Detect telephone exchanges rather than other telecom equipment,
 Better handling of historic items - detect when still in use.
 Removed "historic=churchyard cross", no longer in the data.
@@ -14,6 +14,7 @@ Append "inscription" to names of boundary stones as well as historic ones.
 "icao" tag is used to split large/small and public/private heliports, if "iata" not present.
 Detect "historic=baths", "historic=naval_mine", "historic=residence", "historic=smithy" and "historic=sound_mirror" as generic historic items.
 Detect "emergency=water_rescue_station" as coastguard-adjacent facilities.
+Show larger islands at lower zoom levels based on size.  Also show islets in the same way as islands.
 
 ## 16/12/2023
 Detect public transport stations not obviously bus, railway or aerialway stations.

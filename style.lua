@@ -1866,6 +1866,15 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Handle place=islet as place=island
+-- Nodes are shown from zoom 20, ways from that or higher zooms if they have
+-- a larger way_area.
+-- ----------------------------------------------------------------------------
+   if ( keyvalues["place"] == "islet" ) then
+      keyvalues["place"] = "island"
+   end
+
+-- ----------------------------------------------------------------------------
 -- Handle place=quarter
 -- ----------------------------------------------------------------------------
    if ( keyvalues["place"] == "quarter" ) then
@@ -10332,7 +10341,15 @@ end
 
 function filter_basic_tags_rel (keyvalues, nokeys)
 
+-- ----------------------------------------------------------------------------
+-- AJT relation-only additions.
+-- ----------------------------------------------------------------------------
+
+-- ----------------------------------------------------------------------------
+-- End of AJT relation-only additions.
+-- ----------------------------------------------------------------------------
    filter, keyvalues = filter_tags_generic(keyvalues, nokeys)
+
    if filter == 1 then
       return filter, keyvalues
    end
