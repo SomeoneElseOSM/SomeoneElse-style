@@ -1658,7 +1658,7 @@
     { "key": "leisure", "value": "music_venue", "description": "Synonym for concert_hall" },
     { "key": "leisure", "value": "nature_reserve", "description": "Leisure amenities shown in green" },
     { "key": "leisure", "value": "outdoor_centre", "description": "Leisure amenities shown in green" },
-    { "key": "leisure", "value": "outdoor_seating", "description": "Leisure amenities shown in green" },
+    { "key": "leisure", "value": "outdoor_seating", "description": "If grass, shown as beer gardens" },
     { "key": "leisure", "value": "park", "description": "Leisure amenities shown in green" },
     { "key": "leisure", "value": "picnic_table", "description": "Shown as picnic table" },
     { "key": "leisure", "value": "pitch", "description": "Leisure amenities shown in green" },
