@@ -7142,12 +7142,16 @@ function filter_tags_generic(keyvalues, nokeys)
             keyvalues["historic"] = "historicringfort"
          else
 -- ----------------------------------------------------------------------------
--- Is the fortification a hill fort?
+-- Is the fortification a hill fort (either spelling)?
 -- Confusingly, some of these are mapped as fortification_type and some as
 -- archaeological_site.
+-- Also look for "hilltop_enclosure" here - see e.g. 
+-- https://www.openstreetmap.org/changeset/145424438 and
+-- comments in https://www.openstreetmap.org/changeset/145424213 .
 -- ----------------------------------------------------------------------------
-            if (( keyvalues["fortification_type"] == "hill_fort" ) or
-                ( keyvalues["fortification_type"] == "hillfort"  )) then
+            if (( keyvalues["fortification_type"] == "hill_fort"          ) or
+                ( keyvalues["fortification_type"] == "hillfort"           ) or
+                ( keyvalues["fortification_type"] == "hilltop_enclosure"  )) then
                keyvalues["historic"] = "historichillfort"
             else
 -- ----------------------------------------------------------------------------
@@ -7240,12 +7244,14 @@ function filter_tags_generic(keyvalues, nokeys)
             else
 -- ----------------------------------------------------------------------------
 -- Not a fortification, tumulus, megalith or standing stone.
--- Check for hill fort
+-- Check for hill fort (either spelling) or "hilltop_enclosure"
+-- (see https://www.openstreetmap.org/changeset/145424213 )
 -- ----------------------------------------------------------------------------
-               if (( keyvalues["archaeological_site"] == "hill_fort" ) or
-                   ( keyvalues["site_type"]           == "hill_fort" ) or
-                   ( keyvalues["archaeological_site"] == "hillfort"  ) or
-                   ( keyvalues["site_type"]           == "hillfort"  )) then
+               if (( keyvalues["archaeological_site"] == "hill_fort"         ) or
+                   ( keyvalues["site_type"]           == "hill_fort"         ) or
+                   ( keyvalues["archaeological_site"] == "hillfort"          ) or
+                   ( keyvalues["site_type"]           == "hillfort"          ) or
+                   ( keyvalues["archaeological_site"] == "hilltop_enclosure" )) then
                   keyvalues["historic"] = "historichillfort"
                else
 -- ----------------------------------------------------------------------------
@@ -7261,15 +7267,20 @@ function filter_tags_generic(keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
                      if ( keyvalues["archaeological_site"] == "crannog" ) then
                         keyvalues["historic"] = "historiccrannog"
+                     else
+                        if (( keyvalues["archaeological_site"] == "settlement" ) and
+                            ( keyvalues["fortification_type"]  == "ringfort"   )) then
+                           keyvalues["historic"] = "historicringfort"
 -- ----------------------------------------------------------------------------
 -- There's no code an an "else" here, just this comment:
---                   else
+--                      else
 --
 -- If set, archaeological_site is not fortification, tumulus, 
--- megalith / standing stone, hill fort or castle.  Most will not have 
--- archaeological_site set.
+-- megalith / standing stone, hill fort, castle or settlement that is also 
+-- a ringfort.  Most will not have archaeological_site set.
 -- The standard icon for historic=archaeological_site will be used in the .mss
 -- ----------------------------------------------------------------------------
+                        end -- settlement that is also ringfort
                      end  -- crannog
                   end  -- if castle
                end  -- if hill fort
