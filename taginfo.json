@@ -1714,6 +1714,7 @@
     { "key": "man_made", "value": "air_shaft", "description": "Shown as vent shaft" },
     { "key": "man_made", "value": "antenna", "description": "Most man-made items are rendered" },
     { "key": "man_made", "value": "beacon", "description": "Most man-made items are rendered" },
+    { "key": "man_made", "value": "boundary_marker", "description": "Shown as stone" },
     { "key": "man_made", "value": "boundary_stone", "description": "Shown as stone" },
     { "key": "man_made", "value": "breakwater", "description": "Shown as black line" },
     { "key": "man_made", "value": "bridge", "description": "Show bridge structures in lighter colour" },
