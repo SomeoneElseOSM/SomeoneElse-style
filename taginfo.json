@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20231223T024700Z",
+  "data_updated": "20231223T102400Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -1280,7 +1280,7 @@
     { "key": "highway", "value": "milestone", "description": "Shown as milestone" },
     { "key": "highway", "value": "mini_roundabout", "description": "Shown as mini roundabout" },
     { "key": "highway", "value": "motorway", "description": "Shown as motorway" },
-    { "key": "highway", "value": "motorway_junction", "description": "Signed ones only are shown; SABRE made" },
+    { "key": "highway", "value": "motorway_junction", "description": "Signed ones only are shown" },
     { "key": "highway", "value": "motorway_link", "description": "Shown as motorway" },
     { "key": "highway", "value": "passing_place", "description": "Shown as turning circle" },
     { "key": "highway", "value": "path", "description": "Shown as path" },
@@ -1420,6 +1420,8 @@
     { "key": "historic", "value": "sawmill", "description": "Shown as nonspecific historic item" },
     { "key": "historic", "value": "shelter", "description": "Shown as nonspecific historic item" },
     { "key": "historic", "value": "ship", "description": "Shown as nonspecific historic item" },
+    { "key": "historic", "value": "smithy", "description": "Shown as nonspecific historic item" },
+    { "key": "historic", "value": "sound_mirror", "description": "Shown as nonspecific historic item" },
     { "key": "historic", "value": "standing_stone", "description": "Shown as nonspecific historic item" },
     { "key": "historic", "value": "stately_home", "description": "Shown as big house" },
     { "key": "historic", "value": "statue", "description": "Shown as nonspecific historic item" },
