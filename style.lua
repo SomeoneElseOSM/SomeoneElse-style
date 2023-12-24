@@ -5369,6 +5369,7 @@ function filter_tags_generic(keyvalues, nokeys)
         ( keyvalues["disused"]  == nil      )  and
         ( keyvalues["historic"] == nil      ))) then
       keyvalues["man_made"] = "militarybunker"
+      keyvalues["military"] = nil
 
       if ( keyvalues["building"] == nil ) then
          keyvalues["building"] = "yes"

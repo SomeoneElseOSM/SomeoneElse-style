@@ -16,6 +16,7 @@ Detect "historic=baths", "historic=naval_mine", "historic=residence", "historic=
 Detect "emergency=water_rescue_station" as coastguard-adjacent facilities.
 Show larger islands at lower zoom levels based on size.  Also show islets in the same way as islands.
 Show hilltop enclosures as hill forts.
+Fixed bug where some military bunker names appeared twice.
 
 ## 16/12/2023
 Detect public transport stations not obviously bus, railway or aerialway stations.
