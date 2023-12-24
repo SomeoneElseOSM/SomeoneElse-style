@@ -4922,6 +4922,42 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Render for-pay shower differently.
+-- Also use different icons for male and female, if these are separate.
+-- ----------------------------------------------------------------------------
+   if ( keyvalues["amenity"] == "shower" ) then
+      if (( keyvalues["fee"]     ~= nil       )  and
+          ( keyvalues["fee"]     ~= "no"      )  and
+          ( keyvalues["fee"]     ~= "none"    )  and
+          ( keyvalues["fee"]     ~= "None"    )  and
+          ( keyvalues["fee"]     ~= "Free"    )  and
+          ( keyvalues["fee"]     ~= "free"    )  and
+          ( keyvalues["fee"]     ~= "0"       )) then
+         if (( keyvalues["male"]   == "yes" ) and
+             ( keyvalues["female"] ~= "yes" )) then
+            keyvalues["amenity"] = "shower_pay_m"
+         else
+            if (( keyvalues["female"] == "yes"       ) and
+                ( keyvalues["male"]   ~= "yes"       )) then
+               keyvalues["amenity"] = "shower_pay_w"
+            else
+               keyvalues["amenity"] = "shower_pay"
+            end
+         end
+      else
+         if (( keyvalues["male"]   == "yes" ) and
+             ( keyvalues["female"] ~= "yes" )) then
+            keyvalues["amenity"] = "shower_free_m"
+         else
+            if (( keyvalues["female"] == "yes"       ) and
+                ( keyvalues["male"]   ~= "yes"       )) then
+               keyvalues["amenity"] = "shower_free_w"
+            end
+         end
+      end
+   end
+
+-- ----------------------------------------------------------------------------
 -- Render parking spaces as parking.  Most in the UK are not part of larger
 -- parking areas, and most do not have an access tag, but many should have.
 --

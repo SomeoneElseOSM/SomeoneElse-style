@@ -309,6 +309,7 @@
     { "key": "amenity", "value": "shop_mobility", "description": "Used to detect shopmobility" },
     { "key": "amenity", "value": "show_ground", "description": "Synonym for meadow" },
     { "key": "amenity", "value": "show_grounds", "description": "Synonym for meadow" },
+    { "key": "amenity", "value": "shower", "description": "Show according to gender, if set; show differently if non-free" },
     { "key": "amenity", "value": "showground", "description": "Synonym for meadow" },
     { "key": "amenity", "value": "small_electric_vehicle", "description": "Synonym for 'amenity=scooter_rental'.  Rendered with icon, name incorporates brand" },
     { "key": "amenity", "value": "social_centre", "description": "Shown as leisure=nonspecific" },
