@@ -2641,7 +2641,6 @@
     { "key": "shop", "value": "hunting", "description": "Various shops shown" },
     { "key": "shop", "value": "ice_cream", "description": "Shown as fast food place that servers ice cream" },
     { "key": "shop", "value": "industrial_supplies", "description": "Various shops shown" },
-    { "key": "shop", "value": "ink_cartridge", "description": "Various shops shown" },
     { "key": "shop", "value": "insurance", "description": "Various shops shown" },
     { "key": "shop", "value": "interior", "description": "Various shops shown" },
     { "key": "shop", "value": "interior_decoration", "description": "Various shops shown" },

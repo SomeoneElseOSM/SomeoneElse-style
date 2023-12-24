@@ -8611,8 +8611,7 @@ function filter_tags_generic(keyvalues, nokeys)
 -- Difficult to do an icon for.
 -- ----------------------------------------------------------------------------
    if (( keyvalues["shop"]    == "printer_cartridges" ) or
-       ( keyvalues["shop"]    == "printer_ink"        ) or
-       ( keyvalues["shop"]    == "ink_cartridge"      )) then
+       ( keyvalues["shop"]    == "printer_ink"        )) then
       keyvalues["shop"] = "shopnonspecific"
    end
 
