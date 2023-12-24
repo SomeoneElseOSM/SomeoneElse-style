@@ -6,7 +6,7 @@ Show hilltop enclosures as hill forts.
 Fixed bug where some military bunker names appeared twice.
 Show showers (free and for-pay).
 Removed "shop=ink_cartridge", no longer in the data.
-Increased width of rivers drawn only as lines at high zooms.
+Increased width of rivers and other waterways drawn only as lines at high zooms.
 
 ## 23/12/2023
 Detect telephone exchanges rather than other telecom equipment,
