@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20231224T115600Z",
+  "data_updated": "20231225T235200Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -1335,6 +1335,7 @@
     { "key": "historic", "value": "boundary_stone", "description": "Shown as boundary stone" },
     { "key": "historic", "value": "bridge_site", "description": "Shown as nonspecific historic item" },
     { "key": "historic", "value": "building", "description": "Shown as nonspecific historic item" },
+    { "key": "historic", "value": "bullaun_stone", "description": "Shown as other historic stones" },
     { "key": "historic", "value": "bunker", "description": "Shown as historic military bunker" },
     { "key": "historic", "value": "cairn", "description": "Shown as cairn" },
     { "key": "historic", "value": "camp", "description": "Shown as nonspecific historic item" },

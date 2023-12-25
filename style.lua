@@ -2302,6 +2302,7 @@ function filter_tags_generic(keyvalues, nokeys)
         ( keyvalues["historic"]  == "barrow"              )  or
         ( keyvalues["historic"]  == "baths"               )  or
         ( keyvalues["historic"]  == "battlefield"         )  or
+        ( keyvalues["historic"]  == "bullaun_stone"       )  or
         ( keyvalues["historic"]  == "boundary_stone"      )  or
         ( keyvalues["historic"]  == "building"            )  or
         ( keyvalues["historic"]  == "bridge_site"         )  or
@@ -7130,7 +7131,8 @@ function filter_tags_generic(keyvalues, nokeys)
 -- the former more recent,
 -- See also historic=archaeological_site, especially megalith, below
 -- ----------------------------------------------------------------------------
-   if ( keyvalues["historic"]   == "stone" ) then
+   if (( keyvalues["historic"] == "stone"         ) or
+       ( keyvalues["historic"] == "bullaun_stone" )) then
       keyvalues["historic"] = "historicstone"
    end
 
