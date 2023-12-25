@@ -2342,6 +2342,7 @@ function filter_tags_generic(keyvalues, nokeys)
         ( keyvalues["historic"]  == "monastic_grange"     )  or
         ( keyvalues["historic"]  == "monument"            )  or
         ( keyvalues["historic"]  == "mound"               )  or
+	( keyvalues["historic"]  == "naval_mine"          )  or
         ( keyvalues["historic"]  == "oratory"             )  or
         ( keyvalues["historic"]  == "palace"              )  or
         ( keyvalues["historic"]  == "pillory"             )  or
@@ -5797,7 +5798,9 @@ function filter_tags_generic(keyvalues, nokeys)
 -- "historic=monument" is here rather than under e.g. obelisk because it's 
 -- used for all sorts of features.
 -- ----------------------------------------------------------------------------
-   if (( keyvalues["historic"] == "building"           ) or
+   if (( keyvalues["historic"] == "baths"              ) or
+       ( keyvalues["historic"] == "building"           ) or
+       ( keyvalues["historic"] == "residence"          ) or
        ( keyvalues["historic"] == "heritage_building"  ) or
        ( keyvalues["historic"] == "protected_building" ) or
        ( keyvalues["historic"] == "watermill"          ) or
@@ -5807,6 +5810,9 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["historic"] == "locomotive"         ) or
        ( keyvalues["historic"] == "roundhouse"         ) or
        ( keyvalues["historic"] == "ship"               ) or
+       ( keyvalues["historic"] == "smithy"             ) or
+       ( keyvalues["historic"] == "sound_mirror"       ) or
+       ( keyvalues["historic"] == "standing_stone"     ) or
        ( keyvalues["historic"] == "tank"               ) or
        ( keyvalues["historic"] == "vehicle"            ) or
        ( keyvalues["historic"] == "house"              ) or
@@ -5882,8 +5888,7 @@ function filter_tags_generic(keyvalues, nokeys)
 -- historic=grave_yard above because the notes suggest that these are not 
 -- visible as graveyards any more, so no graveyard fill.
 -- ----------------------------------------------------------------------------   
-   if (
-       (  keyvalues["historic"] == "almshouse"         ) or
+   if ((  keyvalues["historic"] == "almshouse"         ) or
        (  keyvalues["historic"] == "bakery"            ) or
        (  keyvalues["historic"] == "barrow"            ) or
        (  keyvalues["historic"] == "bridge_site"       ) or
@@ -5901,6 +5906,7 @@ function filter_tags_generic(keyvalues, nokeys)
        (  keyvalues["historic"] == "monastic_grange"   ) or
        (  keyvalues["historic"] == "monument"          ) or
        (  keyvalues["historic"] == "mound"             ) or
+       (  keyvalues["historic"] == "naval_mine"        ) or
        (  keyvalues["historic"] == "oratory"           ) or
        (  keyvalues["historic"] == "police_call_box"   ) or
        (  keyvalues["historic"] == "prison"            ) or
