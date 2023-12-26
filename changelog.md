@@ -12,7 +12,8 @@ Show "historic=bullaun_stone" as other historic stones.
 Show "historic=anchor" as nonspecific historical items.
 Show "historic=clochan" as other secular historic buildings.
 Show "historic=tramway" as abandoned railways.
-Show "historic=deserted_medieval_village" as nonspecific historical items.
+Show "historic=deserted_medieval_village" and "historic=ice_house" as nonspecific historical items.
+Show "historic=rath" as a synonym for ringforts.
 
 ## 23/12/2023
 Detect telephone exchanges rather than other telecom equipment,

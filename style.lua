@@ -2328,6 +2328,7 @@ function filter_tags_generic(keyvalues, nokeys)
         ( keyvalues["historic"]  == "hall"                      )  or
         ( keyvalues["historic"]  == "high_cross"                )  or
         ( keyvalues["historic"]  == "house"                     )  or
+        ( keyvalues["historic"]  == "ice_house"                 )  or
         ( keyvalues["historic"]  == "jail"                      )  or
         ( keyvalues["historic"]  == "locomotive"                )  or
         ( keyvalues["historic"]  == "locomotive"                )  or
@@ -5577,8 +5578,9 @@ function filter_tags_generic(keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
 -- Similarly, catch "historic" "ringfort"s
 -- ----------------------------------------------------------------------------
-   if (( keyvalues["historic"]           == "fortification" ) and
-       ( keyvalues["fortification_type"] == "ringfort"      )) then
+   if ((( keyvalues["historic"]           == "fortification" )   and
+        ( keyvalues["fortification_type"] == "ringfort"      ))  or
+       (  keyvalues["historic"]           == "rath"           )) then
       keyvalues["historic"]            = "archaeological_site"
       keyvalues["archaeological_site"] = "fortification"
       keyvalues["fortification_type"]  = "ringfort"
@@ -5810,28 +5812,29 @@ function filter_tags_generic(keyvalues, nokeys)
 -- "historic=monument" is here rather than under e.g. obelisk because it's 
 -- used for all sorts of features.
 -- ----------------------------------------------------------------------------
-   if (( keyvalues["historic"] == "baths"              ) or
+   if (( keyvalues["historic"] == "aircraft"           ) or
+       ( keyvalues["historic"] == "baths"              ) or
        ( keyvalues["historic"] == "building"           ) or
-       ( keyvalues["historic"] == "residence"          ) or
        ( keyvalues["historic"] == "chlochan"           ) or
-       ( keyvalues["historic"] == "heritage_building"  ) or
-       ( keyvalues["historic"] == "protected_building" ) or
-       ( keyvalues["historic"] == "watermill"          ) or
-       ( keyvalues["historic"] == "windmill"           ) or
        ( keyvalues["historic"] == "gate_house"         ) or
-       ( keyvalues["historic"] == "aircraft"           ) or
+       ( keyvalues["historic"] == "heritage_building"  ) or
+       ( keyvalues["historic"] == "house"              ) or
+       ( keyvalues["historic"] == "ice_house"          ) or
+       ( keyvalues["historic"] == "kiln"               ) or
+       ( keyvalues["historic"] == "lime_kiln"          ) or
        ( keyvalues["historic"] == "locomotive"         ) or
+       ( keyvalues["historic"] == "protected_building" ) or
+       ( keyvalues["historic"] == "residence"          ) or
        ( keyvalues["historic"] == "roundhouse"         ) or
        ( keyvalues["historic"] == "ship"               ) or
        ( keyvalues["historic"] == "smithy"             ) or
        ( keyvalues["historic"] == "sound_mirror"       ) or
        ( keyvalues["historic"] == "standing_stone"     ) or
        ( keyvalues["historic"] == "tank"               ) or
+       ( keyvalues["historic"] == "trough"             ) or
        ( keyvalues["historic"] == "vehicle"            ) or
-       ( keyvalues["historic"] == "house"              ) or
-       ( keyvalues["historic"] == "lime_kiln"          ) or
-       ( keyvalues["historic"] == "kiln"               ) or
-       ( keyvalues["historic"] == "trough"             )) then
+       ( keyvalues["historic"] == "watermill"          ) or
+       ( keyvalues["historic"] == "windmill"           )) then
       keyvalues["building"] = "yes"
       keyvalues["historic"] = "nonspecific"
       keyvalues["tourism"] = nil
