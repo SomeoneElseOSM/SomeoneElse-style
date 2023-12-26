@@ -2297,6 +2297,7 @@ function filter_tags_generic(keyvalues, nokeys)
        (( keyvalues["historic"]  == "abbey"               )  or
         ( keyvalues["historic"]  == "aircraft"            )  or
         ( keyvalues["historic"]  == "almshouse"           )  or
+        ( keyvalues["historic"]  == "anchor"              )  or
         ( keyvalues["historic"]  == "archaeological_site" )  or
         ( keyvalues["historic"]  == "bakery"              )  or
         ( keyvalues["historic"]  == "barrow"              )  or
@@ -2314,6 +2315,7 @@ function filter_tags_generic(keyvalues, nokeys)
         ( keyvalues["historic"]  == "church"              )  or
         ( keyvalues["historic"]  == "city_gate"           )  or
         ( keyvalues["historic"]  == "citywalls"           )  or
+        ( keyvalues["historic"]  == "chlochan"            )  or
         ( keyvalues["historic"]  == "country_mansion"     )  or
         ( keyvalues["historic"]  == "cross"               )  or
         ( keyvalues["historic"]  == "drinking_fountain"   )  or
@@ -5183,9 +5185,17 @@ function filter_tags_generic(keyvalues, nokeys)
 -- Handle razed railways and old inclined_planes as dismantled.
 -- dismantled, abandoned are now handled separately to disused in roads.mss
 -- ----------------------------------------------------------------------------
-   if (( keyvalues["railway:historic"] == "rail"           ) or
-       ( keyvalues["railway"]          == "razed"          ) or
-       ( keyvalues["historic"]         == "inclined_plane" )) then
+   if ((( keyvalues["railway:historic"] == "rail"           )  or
+        ( keyvalues["historic"]         == "inclined_plane" )  or
+        ( keyvalues["historic"]         == "tramway"        )) and
+       (  keyvalues["building"]         == nil               ) and
+       (  keyvalues["highway"]          == nil               ) and
+       (  keyvalues["railway"]          == nil               ) and
+       (  keyvalues["waterway"]         == nil               )) then
+      keyvalues["railway"] = "abandoned"
+   end
+
+   if ( keyvalues["railway"] == "razed" ) then
       keyvalues["railway"] = "dismantled"
    end
 
@@ -5802,6 +5812,7 @@ function filter_tags_generic(keyvalues, nokeys)
    if (( keyvalues["historic"] == "baths"              ) or
        ( keyvalues["historic"] == "building"           ) or
        ( keyvalues["historic"] == "residence"          ) or
+       ( keyvalues["historic"] == "chlochan"           ) or
        ( keyvalues["historic"] == "heritage_building"  ) or
        ( keyvalues["historic"] == "protected_building" ) or
        ( keyvalues["historic"] == "watermill"          ) or
@@ -5890,6 +5901,7 @@ function filter_tags_generic(keyvalues, nokeys)
 -- visible as graveyards any more, so no graveyard fill.
 -- ----------------------------------------------------------------------------   
    if ((  keyvalues["historic"] == "almshouse"         ) or
+       (  keyvalues["historic"] == "anchor"            ) or
        (  keyvalues["historic"] == "bakery"            ) or
        (  keyvalues["historic"] == "barrow"            ) or
        (  keyvalues["historic"] == "bridge_site"       ) or
