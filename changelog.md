@@ -11,7 +11,8 @@ Fixed bug where some historic items were not shown.
 Show "historic=bullaun_stone" as other historic stones.
 Show "historic=anchor" as nonspecific historical items.
 Show "historic=clochan" as other secular historic buildings.
-Show "historic=tramway" as an abandoned railway.
+Show "historic=tramway" as abandoned railways.
+Show "historic=deserted_medieval_village" as nonspecific historical items.
 
 ## 23/12/2023
 Detect telephone exchanges rather than other telecom equipment,
