@@ -5865,6 +5865,7 @@ function filter_tags_generic(keyvalues, nokeys)
    if (( keyvalues["historic"] == "aircraft"           ) or
        ( keyvalues["historic"] == "kiln"               ) or
        ( keyvalues["historic"] == "ship"               ) or
+       ( keyvalues["historic"] == "tank"               ) or
        ( keyvalues["historic"] == "watermill"          ) or
        ( keyvalues["historic"] == "windmill"           )) then
       keyvalues["building"] = "yes"
@@ -5891,7 +5892,6 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["historic"] == "smithy"             ) or
        ( keyvalues["historic"] == "sound_mirror"       ) or
        ( keyvalues["historic"] == "standing_stone"     ) or
-       ( keyvalues["historic"] == "tank"               ) or
        ( keyvalues["historic"] == "trough"             ) or
        ( keyvalues["historic"] == "vehicle"            )) then
       keyvalues["building"] = "yes"

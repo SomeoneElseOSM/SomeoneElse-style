@@ -24,6 +24,7 @@ Show "historic=aircraft" as an aircraft, and "historic=aircraft_wreck" as more o
 Show "historic=windmill", "historic=watermill" "historic=mill" with appropriate historic icons.
 Show "historic=water_pump" as a historic, hand-operated water pump.
 Better detect some of the hodge-podge tagging on operational and former windmills.
+Show "historic=tank" as a miltary tank.
 
 ## 23/12/2023
 Detect telephone exchanges rather than other telecom equipment,
