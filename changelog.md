@@ -22,6 +22,7 @@ Show "historic=kiln" and "historic=lime_kiln" with a characteristic kiln shape.
 Show "historic=ship" as a ship.
 Show "historic=aircraft" as an aircraft, and "historic=aircraft_wreck" as more obviously not an aircraft any more.
 Show "historic=windmill", "historic=watermill" "historic=mill" with appropriate historic icons.
+Show "historic=water_pump" as a historic, hand-operated water pump.
 
 ## 23/12/2023
 Detect telephone exchanges rather than other telecom equipment,

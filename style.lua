@@ -2372,6 +2372,7 @@ function filter_tags_generic(keyvalues, nokeys)
         ( keyvalues["historic"]  == "tower"                     )  or
         ( keyvalues["historic"]  == "tower_house"               )  or
         ( keyvalues["historic"]  == "tumulus"                   )  or
+        ( keyvalues["historic"]  == "water_pump"                )  or
         ( keyvalues["historic"]  == "wayside_cross"             )  or
         ( keyvalues["historic"]  == "wayside_shrine"            )  or
         ( keyvalues["historic"]  == "well"                      )  or

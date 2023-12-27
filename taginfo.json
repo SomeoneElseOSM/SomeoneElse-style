@@ -1449,6 +1449,7 @@
     { "key": "historic", "value": "trough", "description": "Shown as nonspecific historic item" },
     { "key": "historic", "value": "tumulus", "description": "Shown as nonspecific historic item" },
     { "key": "historic", "value": "vehicle", "description": "Shown as nonspecific historic item" },
+    { "key": "historic", "value": "water_pump", "description": "Shown as historic hand-operated water pump" },
     { "key": "historic", "value": "watermill", "description": "Shown as historic watermill" },
     { "key": "historic", "value": "wayside_chapel", "description": "Shown as historic church" },
     { "key": "historic", "value": "wayside_cross", "description": "Shown as historic cross" },
