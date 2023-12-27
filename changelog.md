@@ -18,6 +18,7 @@ Show "historic=monument" like a memorial obelisk, but without the the memorial '
 Show "historic=tomb" like a memorial grave, but without the the memorial 'M'.
 Show "historic=folly" like a falling-down castle.
 Show "historic=cannon" as a cannon.
+Show "historic=kiln" and "historic=lime_kiln" with a characteristic kiln shape.
 
 ## 23/12/2023
 Detect telephone exchanges rather than other telecom equipment,

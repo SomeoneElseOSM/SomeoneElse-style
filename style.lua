@@ -5803,6 +5803,14 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Both kilns and lime kilns are shown with the same distinctive bottle kiln
+-- shape.
+-- ----------------------------------------------------------------------------
+   if ( keyvalues["historic"] == "lime_kiln" ) then
+      keyvalues["historic"] = "kiln"
+   end
+
+-- ----------------------------------------------------------------------------
 -- Add a building tag to historic items that are likely buildings so that
 -- buildings.mss can process it.  Some shouldn't assume buildings (e.g. "fort"
 -- below).  Some use "roof" (which I use for "nearly a building" elsewhere).
@@ -5817,8 +5825,6 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["historic"] == "heritage_building"  ) or
        ( keyvalues["historic"] == "house"              ) or
        ( keyvalues["historic"] == "ice_house"          ) or
-       ( keyvalues["historic"] == "kiln"               ) or
-       ( keyvalues["historic"] == "lime_kiln"          ) or
        ( keyvalues["historic"] == "locomotive"         ) or
        ( keyvalues["historic"] == "protected_building" ) or
        ( keyvalues["historic"] == "residence"          ) or
