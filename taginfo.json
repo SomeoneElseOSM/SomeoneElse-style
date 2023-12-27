@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20231227T015000Z",
+  "data_updated": "20231227T113100Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -1358,7 +1358,7 @@
     { "key": "historic", "value": "dovecote", "description": "Shown with unique icon" },
     { "key": "historic", "value": "drinking_fountain", "description": "Shown as nonspecific historic item" },
     { "key": "historic", "value": "earthworks", "description": "Shown as nonspecific historic item" },
-    { "key": "historic", "value": "folly", "description": "Shown as nonspecific historic item" },
+    { "key": "historic", "value": "folly", "description": "Shown as falling-down castle" },
     { "key": "historic", "value": "fort", "description": "Shown as nonspecific historic item" },
     { "key": "historic", "value": "fortification", "description": "Shown as nonspecific historic item, unless fortification_type suggests otherwise" },
     { "key": "historic", "value": "gate", "description": "Shown as nonspecific historic item" },

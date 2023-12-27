@@ -5910,7 +5910,6 @@ function filter_tags_generic(keyvalues, nokeys)
        (  keyvalues["historic"] == "cannon"                    ) or
        (  keyvalues["historic"] == "deserted_medieval_village" ) or
        (  keyvalues["historic"] == "drinking_fountain"         ) or
-       (  keyvalues["historic"] == "folly"                     ) or
        (  keyvalues["historic"] == "fortification"             ) or
        (  keyvalues["historic"] == "gate"                      ) or
        (  keyvalues["historic"] == "grinding_mill"             ) or
