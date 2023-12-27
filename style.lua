@@ -1667,6 +1667,15 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- We can assume that any allegedly non-historic ice_houses are actually 
+-- historic.  Any coexisting historic keys will just be stuff like "building".
+-- ----------------------------------------------------------------------------
+   if ( keyvalues["man_made"] == "ice_house" ) then
+      keyvalues["historic"] = "ice_house"
+      keyvalues["man_made"] = nil
+   end
+
+-- ----------------------------------------------------------------------------
 -- Tunnel values - render as "yes" if appropriate.
 -- ----------------------------------------------------------------------------
    if (( keyvalues["tunnel"] == "culvert"             ) or
@@ -5863,6 +5872,7 @@ function filter_tags_generic(keyvalues, nokeys)
 -- Note that "historic=mill" does not have a building tag added.
 -- ----------------------------------------------------------------------------
    if (( keyvalues["historic"] == "aircraft"           ) or
+       ( keyvalues["historic"] == "ice_house"          ) or
        ( keyvalues["historic"] == "kiln"               ) or
        ( keyvalues["historic"] == "ship"               ) or
        ( keyvalues["historic"] == "tank"               ) or
@@ -5884,7 +5894,6 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["historic"] == "gate_house"         ) or
        ( keyvalues["historic"] == "heritage_building"  ) or
        ( keyvalues["historic"] == "house"              ) or
-       ( keyvalues["historic"] == "ice_house"          ) or
        ( keyvalues["historic"] == "locomotive"         ) or
        ( keyvalues["historic"] == "protected_building" ) or
        ( keyvalues["historic"] == "residence"          ) or
