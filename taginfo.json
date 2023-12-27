@@ -1402,7 +1402,7 @@
     { "key": "historic", "value": "moat", "description": "If not area, shown as derelict canal" },
     { "key": "historic", "value": "monastery", "description": "Shown as unique icon" },
     { "key": "historic", "value": "monastic_grange", "description": "Shown as nonspecific historic item" },
-    { "key": "historic", "value": "monument", "description": "Shown as nonspecific historic item" },
+    { "key": "historic", "value": "monument", "description": "Shown like an obelisk, without the memorial 'M'" },
     { "key": "historic", "value": "mound", "description": "Shown as nonspecific historic item" },
     { "key": "historic", "value": "mounting_block", "description": "Shown as mouting block" },
     { "key": "historic", "value": "naval_mine", "description": "Shown as nonspecific historic item" },

@@ -5808,9 +5808,6 @@ function filter_tags_generic(keyvalues, nokeys)
 -- below).  Some use "roof" (which I use for "nearly a building" elsewhere).
 -- It's sent through as "nonspecific".
 -- "stone" has a building tag added because some are mapped as closed ways.
---
--- "historic=monument" is here rather than under e.g. obelisk because it's 
--- used for all sorts of features.
 -- ----------------------------------------------------------------------------
    if (( keyvalues["historic"] == "aircraft"           ) or
        ( keyvalues["historic"] == "baths"              ) or
@@ -5922,7 +5919,6 @@ function filter_tags_generic(keyvalues, nokeys)
        (  keyvalues["historic"] == "mill"                      ) or
        (  keyvalues["historic"] == "millstone"                 ) or
        (  keyvalues["historic"] == "monastic_grange"           ) or
-       (  keyvalues["historic"] == "monument"                  ) or
        (  keyvalues["historic"] == "mound"                     ) or
        (  keyvalues["historic"] == "naval_mine"                ) or
        (  keyvalues["historic"] == "oratory"                   ) or
