@@ -5907,7 +5907,6 @@ function filter_tags_generic(keyvalues, nokeys)
        (  keyvalues["historic"] == "barrow"                    ) or
        (  keyvalues["historic"] == "bridge_site"               ) or
        (  keyvalues["historic"] == "camp"                      ) or
-       (  keyvalues["historic"] == "cannon"                    ) or
        (  keyvalues["historic"] == "deserted_medieval_village" ) or
        (  keyvalues["historic"] == "drinking_fountain"         ) or
        (  keyvalues["historic"] == "fortification"             ) or
