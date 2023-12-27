@@ -15,6 +15,7 @@ Show "historic=tramway" as abandoned railways.
 Show "historic=deserted_medieval_village" and "historic=ice_house" as nonspecific historical items.
 Show "historic=rath" as a synonym for ringforts.
 Show "historic=monument" like a memorial obelisk, but without the the memorial 'M'.
+Show "historic=tomb" like a memorial grave, but without the the memorial 'M'.
 
 ## 23/12/2023
 Detect telephone exchanges rather than other telecom equipment,

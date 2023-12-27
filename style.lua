@@ -5930,7 +5930,6 @@ function filter_tags_generic(keyvalues, nokeys)
        (  keyvalues["historic"] == "statue"                    ) or
        (  keyvalues["historic"] == "theatre"                   ) or
        (  keyvalues["historic"] == "toll_house"                ) or
-       (  keyvalues["historic"] == "tomb"                      ) or
        (  keyvalues["historic"] == "tower_house"               ) or
        (  keyvalues["historic"] == "tumulus"                   ) or
        (( keyvalues["disused:landuse"] == "cemetery"          )  and
