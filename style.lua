@@ -5838,10 +5838,13 @@ function filter_tags_generic(keyvalues, nokeys)
 
 -- ----------------------------------------------------------------------------
 -- Add a building tag to specific historic items that are likely buildings 
+-- Note that "historic=mill" does not have a building tag added.
 -- ----------------------------------------------------------------------------
    if (( keyvalues["historic"] == "aircraft"           ) or
        ( keyvalues["historic"] == "kiln"               ) or
-       ( keyvalues["historic"] == "ship"               )) then
+       ( keyvalues["historic"] == "ship"               ) or
+       ( keyvalues["historic"] == "watermill"          ) or
+       ( keyvalues["historic"] == "windmill"           )) then
       keyvalues["building"] = "yes"
    end
 
@@ -5868,9 +5871,7 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["historic"] == "standing_stone"     ) or
        ( keyvalues["historic"] == "tank"               ) or
        ( keyvalues["historic"] == "trough"             ) or
-       ( keyvalues["historic"] == "vehicle"            ) or
-       ( keyvalues["historic"] == "watermill"          ) or
-       ( keyvalues["historic"] == "windmill"           )) then
+       ( keyvalues["historic"] == "vehicle"            )) then
       keyvalues["building"] = "yes"
       keyvalues["historic"] = "nonspecific"
       keyvalues["tourism"] = nil
@@ -5953,7 +5954,6 @@ function filter_tags_generic(keyvalues, nokeys)
        (  keyvalues["historic"] == "grinding_mill"             ) or
        (  keyvalues["historic"] == "hall"                      ) or
        (  keyvalues["historic"] == "jail"                      ) or
-       (  keyvalues["historic"] == "mill"                      ) or
        (  keyvalues["historic"] == "millstone"                 ) or
        (  keyvalues["historic"] == "monastic_grange"           ) or
        (  keyvalues["historic"] == "mound"                     ) or
