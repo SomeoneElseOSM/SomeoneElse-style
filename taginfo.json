@@ -1321,7 +1321,7 @@
     { "key": "historic", "description": "Various historic items rendered.  Often another OSM tag is removed." },
     { "key": "historic", "value": "abbey", "description": "Shown as unique icon" },
     { "key": "historic", "value": "air_shaft", "description": "Shown as ventilation shaft" },
-    { "key": "historic", "value": "aircraft", "description": "Shown as building and as nonspecific historic item" },
+    { "key": "historic", "value": "aircraft", "description": "Shown as building and as historic aircraft" },
     { "key": "historic", "value": "aircraft_wreck", "description": "Shown as roof and as a historic aircraft wreck" },
     { "key": "historic", "value": "almshouse", "description": "Shown as nonspecific historic item" },
     { "key": "historic", "value": "anchor", "description": "Shown as nonspecific historic item" },

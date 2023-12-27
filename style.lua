@@ -5811,10 +5811,37 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- For aircraft without names, try and construct something
+-- First use aircraft:model and/or ref.  If still no name, inscription.
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["historic"] == "aircraft" ) and
+       ( keyvalues["name"]     == nil        )) then
+      if ( keyvalues["aircraft:model"] ~= nil ) then
+         keyvalues["name"] = keyvalues["aircraft:model"]
+      end
+
+      if ( keyvalues["ref"] ~= nil ) then
+         if ( keyvalues["name"] == nil ) then
+            keyvalues["name"] = keyvalues["ref"]
+         else
+            keyvalues["name"] = keyvalues["name"] .. " " .. keyvalues["ref"]
+         end
+      end
+
+      if (( keyvalues["name"]        == nil        ) and
+          ( keyvalues["inscription"] ~= nil        )) then
+         keyvalues["name"] = keyvalues["inscription"]
+      end
+   end
+
+
+
+-- ----------------------------------------------------------------------------
 -- Add a building tag to specific historic items that are likely buildings 
 -- ----------------------------------------------------------------------------
-   if (( keyvalues["historic"] == "kiln"           ) or
-       ( keyvalues["historic"] == "ship"           )) then
+   if (( keyvalues["historic"] == "aircraft"           ) or
+       ( keyvalues["historic"] == "kiln"               ) or
+       ( keyvalues["historic"] == "ship"               )) then
       keyvalues["building"] = "yes"
    end
 
@@ -5825,8 +5852,7 @@ function filter_tags_generic(keyvalues, nokeys)
 -- elsewhere).  It's sent through as "nonspecific".
 -- "stone" has a building tag added because some are mapped as closed ways.
 -- ----------------------------------------------------------------------------
-   if (( keyvalues["historic"] == "aircraft"           ) or
-       ( keyvalues["historic"] == "baths"              ) or
+   if (( keyvalues["historic"] == "baths"              ) or
        ( keyvalues["historic"] == "building"           ) or
        ( keyvalues["historic"] == "chlochan"           ) or
        ( keyvalues["historic"] == "gate_house"         ) or
