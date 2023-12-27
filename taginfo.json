@@ -1429,7 +1429,7 @@
     { "key": "historic", "value": "rune_stone", "description": "Shown as rune stone" },
     { "key": "historic", "value": "sawmill", "description": "Shown as nonspecific historic item" },
     { "key": "historic", "value": "shelter", "description": "Shown as nonspecific historic item" },
-    { "key": "historic", "value": "ship", "description": "Shown as nonspecific historic item" },
+    { "key": "historic", "value": "ship", "description": "Shown as historic ship" },
     { "key": "historic", "value": "smithy", "description": "Shown as nonspecific historic item" },
     { "key": "historic", "value": "sound_mirror", "description": "Shown as nonspecific historic item" },
     { "key": "historic", "value": "standing_stone", "description": "Shown as nonspecific historic item" },
