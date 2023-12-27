@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20231227T113100Z",
+  "data_updated": "20231227T204900Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -549,7 +549,7 @@
     { "key": "building", "value": "community_centre", "description": "Shown as nonspecified leisure" },
     { "key": "building", "value": "container", "description": "Tell lifeboats from lifeboat stations" },
     { "key": "building", "value": "depot", "description": "Shown as industrial building" },
-    { "key": "building", "value": "former_windmill", "description": "Shown as windmill" },
+    { "key": "building", "value": "former_windmill", "description": "Shown as historic windmill" },
     { "key": "building", "value": "health_centre", "description": "Shown as nonspecified health" },
     { "key": "building", "value": "house", "description": "Tell lifeboats from lifeboat stations" },
     { "key": "building", "value": "industrial", "description": "Shown as industrial building" },
@@ -1367,6 +1367,7 @@
     { "key": "historic", "value": "grave_yard", "description": "Shown as nonspecific historic item over graveyard landuse" },
     { "key": "historic", "value": "grinding_mill", "description": "Shown as nonspecific historic item" },
     { "key": "historic", "value": "hall", "description": "Shown as nonspecific historic item" },
+    { "key": "historic", "value": "heritage", "description": "Detect former windmills" },
     { "key": "historic", "value": "heritage_building", "description": "Shown as nonspecific historic item" },
     { "key": "historic", "value": "high_cross", "description": "Shown as historic cross" },
     { "key": "historic", "value": "rath", "description": "Show ringforts with a unique icon" },
@@ -1423,6 +1424,7 @@
     { "key": "historic", "value": "residence", "description": "Shown as nonspecific historic item" },
     { "key": "historic", "value": "quarry", "description": "Shown as historic quarry" },
     { "key": "historic", "value": "railway_station", "description": "Former railway stations shown as nonspecific historical objects" },
+    { "key": "historic", "value": "restoration", "description": "Detect former windmills" },
     { "key": "historic", "value": "roundhouse", "description": "Shown as nonspecific historic item" },
     { "key": "historic", "value": "round_tower", "description": "Identify historic round towers" },
     { "key": "historic", "value": "ruins", "description": "Shown as nonspecific historic item or value set by 'ruins'" },
@@ -3280,6 +3282,8 @@
     { "key": "wheelchair", "value": "restricted", "description": "Handled as wheelchair=limited" },
     { "key": "wheelchair", "value": "impractical", "description": "Handled as wheelchair=no" },
     { "key": "width", "description": "Depending on context, go down a road class. Also changes path to track and vice versa." },
+    { "key": "windmill:disused", "description": "Detect disused windmills" },
+    { "key": "windmill:disused", "value": "yes", "description": "Detect disused windmills" },
     { "key": "zero_waste", "description": "Detect 'eco' shops and supermarkets" },
     { "key": "zero_waste", "value": "only", "description": "Detect 'eco' shops and supermarkets" },
     { "key": "zero_waste", "value": "yes", "description": "Detect 'eco' shops and supermarkets" }

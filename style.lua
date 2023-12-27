@@ -1637,12 +1637,33 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
--- Render windmill buildings and former windmills as windmills.
+-- Ensure that allegedly operational windmills are treated as such and not as
+-- "historic".
+-- ----------------------------------------------------------------------------
+   if ( keyvalues["man_made"] == "windmill") then
+      if (( keyvalues["disused"]           == "yes"  ) or
+          ( keyvalues["windmill:disused"]  == "yes"  )) then
+         keyvalues["historic"] = "windmill"
+         keyvalues["man_made"] = nil
+      else
+         keyvalues["historic"] = nil
+      end
+   end
+
+-- ----------------------------------------------------------------------------
+-- Render (windmill buildings and former windmills) that are not something 
+-- else as historic windmills.
 -- ----------------------------------------------------------------------------
    if ((( keyvalues["building"] == "windmill"        )  or
         ( keyvalues["building"] == "former_windmill" )) and
-       (  keyvalues["amenity"]  == nil                )) then
-      keyvalues["man_made"] = "windmill"
+       ((  keyvalues["amenity"]  == nil               ) and
+        (  keyvalues["man_made"] == nil               ) and
+        (( keyvalues["historic"] == nil              )  or
+         ( keyvalues["historic"] == "restoration"    )  or
+         ( keyvalues["historic"] == "heritage"       )  or
+         ( keyvalues["historic"] == "industrial"     )  or
+         ( keyvalues["historic"] == "tower"          )))) then
+      keyvalues["historic"] = "windmill"
    end
 
 -- ----------------------------------------------------------------------------
