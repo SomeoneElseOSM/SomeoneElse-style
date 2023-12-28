@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20231227T204900Z",
+  "data_updated": "20231228T151600Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -658,6 +658,7 @@
     { "key": "colour", "value": "gold", "description": "Show black, white, blue, green, grey and gold phone boxes as the correct colour rather than red" },
     { "key": "commercial", "description": "Obscure synonym for office" },
     { "key": "commercial", "value": "office", "description": "Obscure synonym for office" },
+    { "key": "company", "description": "'business' is used as an alternative to 'office' and by some people." },
     { "key": "construction", "description": "Roads under construction" },
     { "key": "construction", "value": "motorway", "description": "Roads under construction" },
     { "key": "construction", "value": "motorway_link", "description": "Roads under construction" },
