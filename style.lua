@@ -1077,16 +1077,20 @@ function filter_tags_generic(keyvalues, nokeys)
 -- protect_class==1   "... strictly set aside to protect ... " (all sorts)
 -- protect_class==4   "Habitat/Species Management Area"
 -- protect_class==98  "intercontinental treaties..." (e.g. world heritage)
+--
+-- There are a few instances of "leisure" being set to something else already
+-- ("common", "park", "golf_course", "dog_park").  We leave that if so.
 -- ----------------------------------------------------------------------------
-   if ((   keyvalues["designation"]   == "access_land"                ) or
-       ((  keyvalues["boundary"]      == "protected_area"            )  and
-        (( keyvalues["protect_class"] == "1"                        )   or
-         ( keyvalues["protect_class"] == "4"                        )   or
-         ( keyvalues["protect_class"] == "98"                       )   or
-         ( keyvalues["designation"]   == "national_nature_reserve"  )   or
-         ( keyvalues["designation"]   == "local_nature_reserve"     )   or
-         ( keyvalues["designation"]   == "Nature Reserve"           )   or
-         ( keyvalues["designation"]   == "Marine Conservation Zone" )))) then
+   if (((   keyvalues["designation"]   == "access_land"                )  or
+        ((  keyvalues["boundary"]      == "protected_area"            )   and
+         (( keyvalues["protect_class"] == "1"                        )    or
+          ( keyvalues["protect_class"] == "4"                        )    or
+          ( keyvalues["protect_class"] == "98"                       )    or
+          ( keyvalues["designation"]   == "national_nature_reserve"  )    or
+          ( keyvalues["designation"]   == "local_nature_reserve"     )    or
+          ( keyvalues["designation"]   == "Nature Reserve"           )    or
+          ( keyvalues["designation"]   == "Marine Conservation Zone" )))) and
+       (    keyvalues["leisure"]       == nil                           )) then
       keyvalues["leisure"] = "nature_reserve"
    end
 
