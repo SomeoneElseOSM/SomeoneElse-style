@@ -2197,16 +2197,23 @@ function filter_tags_generic(keyvalues, nokeys)
    end
    
 -- ----------------------------------------------------------------------------
--- "business" is used as an alternative to "office" and "industrial" by some
--- people.  Wherever someone has used a more frequently-used tag we defer to
--- that.
+-- "business" and "company" are used as an alternative to "office" and 
+-- "industrial" by some people.  Wherever someone has used a more 
+-- frequently-used tag we defer to that.
 -- ----------------------------------------------------------------------------
    if (( keyvalues["business"]   ~= nil  ) and
        ( keyvalues["office"]     == nil  ) and
-       ( keyvalues["shop"]       == nil  ) and
-       ( keyvalues["playground"] == nil  )) then
+       ( keyvalues["shop"]       == nil  )) then
       keyvalues["office"] = "yes"
       keyvalues["business"] = nil
+   end
+
+   if (( keyvalues["company"]   ~= nil  ) and
+       ( keyvalues["man_made"]  == nil  ) and
+       ( keyvalues["office"]    == nil  ) and
+       ( keyvalues["shop"]      == nil  )) then
+      keyvalues["office"] = "yes"
+      keyvalues["company"] = nil
    end
 
 -- ----------------------------------------------------------------------------

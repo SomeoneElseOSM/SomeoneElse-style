@@ -28,6 +28,7 @@ Show "historic=tank" as a miltary tank.
 Show "historic=ice_house" (and "man_made=ice_house") with a characteristic icon.
 When processing access land etc., don't remove existing leisure tags.
 If a building is defined as a place, display building tags not place tags.
+"company" is used as an alternative to "office" by some people.
 
 ## 23/12/2023
 Detect telephone exchanges rather than other telecom equipment,
@@ -349,7 +350,7 @@ Include "sport=cricket_nets" among cricket pitches.
 Include "leisure=practice_pitch" among sports pitches.
 Show "shop=winery" and "tourism=wine_cellar" as alcohol shops.
 Include "barrier=berm" among the list of "non-highway embankments".
-"business" is used as an alternative to "office" and by some people.
+"business" is used as an alternative to "office" by some people.
 If a shop is vacant, don't include any "ref" in the name.
 
 ## 14/01/2023
