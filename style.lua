@@ -10336,6 +10336,9 @@ function filter_tags_generic(keyvalues, nokeys)
 -- name and addr:housename
 -- If a building that isn't something else has a name but no addr:housename,
 -- use that there.
+--
+-- There are some odd combinations of "place" and "building" - we remove 
+-- "place" in those cases
 -- ----------------------------------------------------------------------------
    if (( keyvalues["building"]       ~= nil  ) and
        ( keyvalues["building"]       ~= "no" ) and
@@ -10353,14 +10356,14 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["man_made"]       == nil  ) and
        ( keyvalues["natural"]        == nil  ) and
        ( keyvalues["office"]         == nil  ) and
-       ( keyvalues["place"]          == nil  ) and
        ( keyvalues["railway"]        == nil  ) and
        ( keyvalues["shop"]           == nil  ) and
        ( keyvalues["sport"]          == nil  ) and
        ( keyvalues["tourism"]        == nil  ) and
        ( keyvalues["waterway"]       == nil  )) then
       keyvalues["addr:housename"] = keyvalues["name"]
-      keyvalues["name"] = nil
+      keyvalues["name"]  = nil
+      keyvalues["place"] = nil
    end
 
 -- ----------------------------------------------------------------------------

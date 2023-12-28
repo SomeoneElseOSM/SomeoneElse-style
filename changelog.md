@@ -27,6 +27,7 @@ Better detect some of the hodge-podge tagging on operational and former windmill
 Show "historic=tank" as a miltary tank.
 Show "historic=ice_house" (and "man_made=ice_house") with a characteristic icon.
 When processing access land etc., don't remove existing leisure tags.
+If a building is defined as a place, display building tags not place tags.
 
 ## 23/12/2023
 Detect telephone exchanges rather than other telecom equipment,
