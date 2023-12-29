@@ -1677,11 +1677,13 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
--- Render ruined mills that are not something else as historic mills.
+-- Render ruined mills and mines that are not something else as historic.
 -- ----------------------------------------------------------------------------
-   if (( keyvalues["historic"] == "ruins"    ) and
-       ( keyvalues["ruins"]    == "mill" )) then
-      keyvalues["historic"] = "mill"
+   if (( keyvalues["historic"]  == "ruins"      ) and
+       (( keyvalues["ruins"]    == "lime_kiln" )  or
+        ( keyvalues["ruins"]    == "mill"      )  or
+        ( keyvalues["ruins"]    == "mine"      ))) then
+      keyvalues["historic"] = keyvalues["ruins"]
       keyvalues["ruins"] = "yes"
    end
 
@@ -5526,8 +5528,10 @@ function filter_tags_generic(keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
    if (((  keyvalues["building"]        ~= nil               )   and
         (( keyvalues["ruins"]           == "yes"            )    or
+         ( keyvalues["ruins"]           == "barn"           )    or
          ( keyvalues["ruins"]           == "blackhouse"     )    or
          ( keyvalues["ruins"]           == "house"          )    or
+         ( keyvalues["ruins"]           == "hut"            )    or
          ( keyvalues["ruins"]           == "farm_auxiliary" )    or
          ( keyvalues["ruins"]           == "farmhouse"      )))  or
        (   keyvalues["ruins:building"]  == "yes"              )  or
