@@ -7,6 +7,7 @@ Use "ruins=yes" more often to detect that historical buildings are fuins.
 Detect "ruins=windmill" as a ruined windmill.
 Detect "ruins=blackhouse" as a ruined house.
 Detect "ruins=farm_auxiliary" as a ruined building.
+Detect "ruins=mill" as a ruined mill.
 
 ## 28/12/2023
 Show hilltop enclosures as hill forts.

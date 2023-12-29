@@ -2336,6 +2336,7 @@
     { "key": "ruins", "value": "farmhouse", "description": "Detect ruined houses" },
     { "key": "ruins", "value": "fort", "description": "Detect ruined castles" },
     { "key": "ruins", "value": "house", "description": "Detect ruined houses" },
+    { "key": "ruins", "value": "mill", "description": "Detect ruined mills" },
     { "key": "ruins", "value": "monastery", "description": "Detect historic monasteries" },
     { "key": "ruins", "value": "place_of_worship", "description": "Detect ruined churches" },
     { "key": "ruins", "value": "priory", "description": "Detect historic monasteries" },

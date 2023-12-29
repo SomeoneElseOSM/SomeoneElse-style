@@ -1677,6 +1677,15 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Render ruined mills that are not something else as historic mills.
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["historic"] == "ruins"    ) and
+       ( keyvalues["ruins"]    == "mill" )) then
+      keyvalues["historic"] = "mill"
+      keyvalues["ruins"] = "yes"
+   end
+
+-- ----------------------------------------------------------------------------
 -- We can assume that any allegedly non-historic ice_houses are actually 
 -- historic.  Any coexisting historic keys will just be stuff like "building".
 -- ----------------------------------------------------------------------------
