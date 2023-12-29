@@ -2,6 +2,11 @@
 This page describes changes made [here](https://github.com/SomeoneElseOSM/SomeoneElse-style), [here](https://github.com/SomeoneElseOSM/SomeoneElse-style-legend) and [here](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT), and visible [here](//map.atownsend.org.uk/maps/map/map.html).
 
 ## As yet unreleased
+Added "ruins=donjon" to the list of ruined castle tags.
+Use "ruins=yes" more often to detect that historical buildings are fuins.
+Detect "ruins=windmill" as a ruined windmill.
+Detect "ruins=blackhouse" as a ruined house.
+Detect "ruins=farm_auxiliary" as a ruined building.
 
 ## 28/12/2023
 Show hilltop enclosures as hill forts.

@@ -1658,15 +1658,21 @@ function filter_tags_generic(keyvalues, nokeys)
 -- Render (windmill buildings and former windmills) that are not something 
 -- else as historic windmills.
 -- ----------------------------------------------------------------------------
-   if ((( keyvalues["building"] == "windmill"        )  or
-        ( keyvalues["building"] == "former_windmill" )) and
-       ((  keyvalues["amenity"]  == nil               ) and
-        (  keyvalues["man_made"] == nil               ) and
-        (( keyvalues["historic"] == nil              )  or
-         ( keyvalues["historic"] == "restoration"    )  or
-         ( keyvalues["historic"] == "heritage"       )  or
-         ( keyvalues["historic"] == "industrial"     )  or
-         ( keyvalues["historic"] == "tower"          )))) then
+   if (( keyvalues["historic"] == "ruins"    ) and
+       ( keyvalues["ruins"]    == "windmill" )) then
+      keyvalues["historic"] = "windmill"
+      keyvalues["ruins"] = "yes"
+   end
+
+   if (((   keyvalues["building"] == "windmill"        )  or
+        (   keyvalues["building"] == "former_windmill" )) and
+       ((   keyvalues["amenity"]  == nil                ) and
+        (   keyvalues["man_made"] == nil                ) and
+        ((  keyvalues["historic"] == nil               )  or
+         (  keyvalues["historic"] == "restoration"     )  or
+         (  keyvalues["historic"] == "heritage"        )  or
+         (  keyvalues["historic"] == "industrial"      )  or
+         (  keyvalues["historic"] == "tower"           )))) then
       keyvalues["historic"] = "windmill"
    end
 
@@ -5509,14 +5515,16 @@ function filter_tags_generic(keyvalues, nokeys)
 -- "not a folly but falling down".  That doesn't match what mappers do but 
 -- render both as half-dark.
 -- ----------------------------------------------------------------------------
-   if (((  keyvalues["building"]        ~= nil          )   and
-        (( keyvalues["ruins"]           == "yes"       )    or
-         ( keyvalues["ruins"]           == "house"     )    or
-         ( keyvalues["ruins"]           == "farmhouse" )))  or
-       (   keyvalues["ruins:building"]  == "yes"         )  or
-       (   keyvalues["building:ruins"]  == "yes"         )  or
-       (   keyvalues["ruined:building"] == "yes"         )  or
-       (   keyvalues["building"]        == "collapsed"   )) then
+   if (((  keyvalues["building"]        ~= nil               )   and
+        (( keyvalues["ruins"]           == "yes"            )    or
+         ( keyvalues["ruins"]           == "blackhouse"     )    or
+         ( keyvalues["ruins"]           == "house"          )    or
+         ( keyvalues["ruins"]           == "farm_auxiliary" )    or
+         ( keyvalues["ruins"]           == "farmhouse"      )))  or
+       (   keyvalues["ruins:building"]  == "yes"              )  or
+       (   keyvalues["building:ruins"]  == "yes"              )  or
+       (   keyvalues["ruined:building"] == "yes"              )  or
+       (   keyvalues["building"]        == "collapsed"        )) then
       keyvalues["building"] = "ruins"
    end
    
@@ -5876,8 +5884,6 @@ function filter_tags_generic(keyvalues, nokeys)
       end
    end
 
-
-
 -- ----------------------------------------------------------------------------
 -- Add a building tag to specific historic items that are likely buildings 
 -- Note that "historic=mill" does not have a building tag added.
@@ -5889,7 +5895,11 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["historic"] == "tank"               ) or
        ( keyvalues["historic"] == "watermill"          ) or
        ( keyvalues["historic"] == "windmill"           )) then
-      keyvalues["building"] = "yes"
+      if ( keyvalues["ruins"] == "yes" ) then
+         keyvalues["building"] = "roof"
+      else
+         keyvalues["building"] = "yes"
+      end
    end
 
 -- ----------------------------------------------------------------------------
@@ -5914,7 +5924,12 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["historic"] == "standing_stone"     ) or
        ( keyvalues["historic"] == "trough"             ) or
        ( keyvalues["historic"] == "vehicle"            )) then
-      keyvalues["building"] = "yes"
+      if ( keyvalues["ruins"] == "yes" ) then
+         keyvalues["building"] = "roof"
+      else
+         keyvalues["building"] = "yes"
+      end
+
       keyvalues["historic"] = "nonspecific"
       keyvalues["tourism"] = nil
    end
@@ -5952,7 +5967,8 @@ function filter_tags_generic(keyvalues, nokeys)
 
    if ((  keyvalues["historic"] == "ruins"           )  and
        (( keyvalues["ruins"]    == "castle"         )  or
-        ( keyvalues["ruins"]    == "fort"           )) and
+        ( keyvalues["ruins"]    == "fort"           )  or
+        ( keyvalues["ruins"]    == "donjon"         )) and
        (  keyvalues["amenity"]  == nil               )) then
       keyvalues["historic"] = "historicarchcastle"
    end
