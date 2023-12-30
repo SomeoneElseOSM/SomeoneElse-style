@@ -10893,6 +10893,12 @@ function filter_tags_relation_member (keyvalues, keyvaluemembers, roles, memberc
           ( keyvalues["network"] ~= "rcn" ) and
           ( keyvalues["network"] ~= "lcn" )) then
          keyvalues["highway"] = "ldpmtb"
+
+         if ( keyvalues["name"] == nil ) then
+            keyvalues["name"] = "(m)"
+         else
+            keyvalues["name"] = keyvalues["name"] .. " (m)"
+         end
       end
 
       if (( keyvalues["network"] == "nhn"         ) or
