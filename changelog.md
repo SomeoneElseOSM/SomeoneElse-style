@@ -5,11 +5,17 @@ This page describes changes made [here](https://github.com/SomeoneElseOSM/Someon
 Added "ruins=donjon" to the list of ruined castle tags.
 Use "ruins=yes" more often to detect that historical buildings are fuins.
 Detect "ruins=windmill" as a ruined windmill.
-Detect "ruins=barn", "ruins=blackhouse", and "ruins=hut" as ruined buildings
+Detect "ruins=barn", "ruins=barrack", "ruins=blackhouse", and "ruins=hut" as ruined buildings
 Detect "ruins=farm_auxiliary" as a ruined building.
 Detect "ruins=mill" as a ruined mill.
 Detect "ruins=mine" as a ruined mine.
 Detect "ruins=lime_kiln" as a ruined lime kiln.
+Detect "ruins=manor" as a ruined manor.
+Detect "ruins=well" as a ruined well.
+Detect "ruins=watermill" as a ruined watermill.
+Detect "historic=village" as nonspecific historical items.
+Detect "ruins=village" as a ruined village.
+Show "historic=village_pump" as a historic, hand-operated water pump.
 
 ## 28/12/2023
 Show hilltop enclosures as hill forts.

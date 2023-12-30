@@ -1677,12 +1677,16 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
--- Render ruined mills and mines that are not something else as historic.
+-- Render ruined mills and mines etc. that are not something else as historic.
 -- ----------------------------------------------------------------------------
    if (( keyvalues["historic"]  == "ruins"      ) and
        (( keyvalues["ruins"]    == "lime_kiln" )  or
+        ( keyvalues["ruins"]    == "manor"     )  or
         ( keyvalues["ruins"]    == "mill"      )  or
-        ( keyvalues["ruins"]    == "mine"      ))) then
+        ( keyvalues["ruins"]    == "mine"      )  or
+        ( keyvalues["ruins"]    == "village"   )  or
+        ( keyvalues["ruins"]    == "watermill" )  or
+        ( keyvalues["ruins"]    == "well"      ))) then
       keyvalues["historic"] = keyvalues["ruins"]
       keyvalues["ruins"] = "yes"
    end
@@ -2430,6 +2434,8 @@ function filter_tags_generic(keyvalues, nokeys)
         ( keyvalues["historic"]  == "tower"                     )  or
         ( keyvalues["historic"]  == "tower_house"               )  or
         ( keyvalues["historic"]  == "tumulus"                   )  or
+        ( keyvalues["historic"]  == "village"                   )  or
+        ( keyvalues["historic"]  == "village_pump"              )  or
         ( keyvalues["historic"]  == "water_pump"                )  or
         ( keyvalues["historic"]  == "wayside_cross"             )  or
         ( keyvalues["historic"]  == "wayside_shrine"            )  or
@@ -5529,6 +5535,7 @@ function filter_tags_generic(keyvalues, nokeys)
    if (((  keyvalues["building"]        ~= nil               )   and
         (( keyvalues["ruins"]           == "yes"            )    or
          ( keyvalues["ruins"]           == "barn"           )    or
+         ( keyvalues["ruins"]           == "barrack"        )    or
          ( keyvalues["ruins"]           == "blackhouse"     )    or
          ( keyvalues["ruins"]           == "house"          )    or
          ( keyvalues["ruins"]           == "hut"            )    or
@@ -5874,6 +5881,13 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Show village_pump as water_pump
+-- ----------------------------------------------------------------------------
+   if ( keyvalues["historic"]  == "village_pump" ) then
+      keyvalues["historic"] = "water_pump"
+   end
+
+-- ----------------------------------------------------------------------------
 -- For aircraft without names, try and construct something
 -- First use aircraft:model and/or ref.  If still no name, inscription.
 -- ----------------------------------------------------------------------------
@@ -6040,6 +6054,7 @@ function filter_tags_generic(keyvalues, nokeys)
        (  keyvalues["historic"] == "toll_house"                ) or
        (  keyvalues["historic"] == "tower_house"               ) or
        (  keyvalues["historic"] == "tumulus"                   ) or
+        ( keyvalues["historic"] == "village"                   ) or
        (( keyvalues["disused:landuse"] == "cemetery"          )  and
         ( keyvalues["landuse"]         == nil                 )  and
         ( keyvalues["leisure"]         == nil                 )  and
