@@ -2614,36 +2614,6 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
--- Shops etc. with icons already - just add "unnamedcommercial" landuse.
--- The exception is where landuse is set to something we want to keep.
--- ----------------------------------------------------------------------------
-   if (((  keyvalues["shop"]       ~= nil                 )  or
-        (( keyvalues["amenity"]    ~= nil                )   and
-         ( keyvalues["amenity"]    ~= "holy_well"        )   and
-         ( keyvalues["amenity"]    ~= "holy_spring"      )   and
-         ( keyvalues["amenity"]    ~= "biergarten"       ))  or
-        (  keyvalues["tourism"]    == "hotel"             )  or
-        (  keyvalues["tourism"]    == "guest_house"       )  or
-        (  keyvalues["tourism"]    == "attraction"        )  or
-        (  keyvalues["tourism"]    == "viewpoint"         )  or
-        (  keyvalues["tourism"]    == "museum"            )  or
-        (  keyvalues["tourism"]    == "hostel"            )  or
-        (  keyvalues["tourism"]    == "gallery"           )  or
-        (  keyvalues["tourism"]    == "apartment"         )  or
-        (  keyvalues["tourism"]    == "bed_and_breakfast" )  or
-        (  keyvalues["tourism"]    == "zoo"               )  or
-        (  keyvalues["tourism"]    == "motel"             )  or
-        (  keyvalues["tourism"]    == "theme_park"        )) and
-       (   keyvalues["landuse"]    ~= "meadow"             ) and
-       (   keyvalues["landuse"]    ~= "village_green"      ) and
-       (   keyvalues["landuse"]    ~= "cemetery"           ) and
-       (   keyvalues["leisure"]    ~= "garden"             )) then
-      if ( keyvalues["landuse"] == nil ) then
-         keyvalues["landuse"] = "unnamedcommercial"
-      end
-   end
-
--- ----------------------------------------------------------------------------
 -- highway=services is translated to commercial landuse - any overlaid parking
 -- can then be seen.
 --
@@ -5608,15 +5578,26 @@ function filter_tags_generic(keyvalues, nokeys)
    end
    
 -- ----------------------------------------------------------------------------
--- Map man_made=monument to historic=monument (handled below) if no better tag
--- exists.
--- Also handle geoglyphs in this way.
+-- Map man_made=monument to historic=monument (handled below).
 -- ----------------------------------------------------------------------------
-   if ((( keyvalues["man_made"] == "monument" )  and
-        ( keyvalues["tourism"]  == nil        )) or
-       (  keyvalues["man_made"] == "geoglyph"  )) then
+   if (( keyvalues["man_made"] == "monument" )  and
+       ( keyvalues["tourism"]  == nil        )) then
       keyvalues["historic"] = "monument"
       keyvalues["man_made"] = nil
+   end
+
+-- ----------------------------------------------------------------------------
+-- Map man_made=geoglyph to natural=bare_rock if another natural tag such as 
+-- scree is not already set
+-- ----------------------------------------------------------------------------
+   if ((  keyvalues["man_made"] == "geoglyph"  ) and
+       (  keyvalues["leisure"]  == nil         )) then
+      if (  keyvalues["natural"]  == nil ) then
+         keyvalues["natural"]  = "bare_rock"
+      end
+
+      keyvalues["man_made"] = nil
+      keyvalues["tourism"]  = nil
    end
    
 -- ----------------------------------------------------------------------------
@@ -10496,6 +10477,33 @@ function filter_tags_generic(keyvalues, nokeys)
          keyvalues["addr:housenumber"] = keyvalues["addr:unit"] .. ", " .. keyvalues["addr:housenumber"]
       else
          keyvalues["addr:housenumber"] = keyvalues["addr:unit"]
+      end
+   end
+
+-- ----------------------------------------------------------------------------
+-- Shops etc. with icons already - just add "unnamedcommercial" landuse.
+-- The exception is where landuse is set to something we want to keep.
+-- ----------------------------------------------------------------------------
+   if (((  keyvalues["shop"]       ~= nil                 )  or
+        (( keyvalues["amenity"]    ~= nil                )   and
+         ( keyvalues["amenity"]    ~= "holy_well"        )   and
+         ( keyvalues["amenity"]    ~= "holy_spring"      )   and
+         ( keyvalues["amenity"]    ~= "biergarten"       ))  or
+        (  keyvalues["tourism"]    == "hotel"             )  or
+        (  keyvalues["tourism"]    == "guest_house"       )  or
+        (  keyvalues["tourism"]    == "attraction"        )  or
+        (  keyvalues["tourism"]    == "viewpoint"         )  or
+        (  keyvalues["tourism"]    == "museum"            )  or
+        (  keyvalues["tourism"]    == "hostel"            )  or
+        (  keyvalues["tourism"]    == "gallery"           )  or
+        (  keyvalues["tourism"]    == "apartment"         )  or
+        (  keyvalues["tourism"]    == "bed_and_breakfast" )  or
+        (  keyvalues["tourism"]    == "zoo"               )  or
+        (  keyvalues["tourism"]    == "motel"             )  or
+        (  keyvalues["tourism"]    == "theme_park"        )) and
+       (   keyvalues["leisure"]    ~= "garden"             )) then
+      if ( keyvalues["landuse"] == nil ) then
+         keyvalues["landuse"] = "unnamedcommercial"
       end
    end
 

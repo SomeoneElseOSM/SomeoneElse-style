@@ -25,6 +25,8 @@ Append "(m)" to mountain bike route names.
 Detect "historic=battery" and "defensive_works=battery" as nonspecific historical items.
 Detect more ruined buildings without a "ruins" tag.
 Use "castle_type to detect things "troll tagged" as castles that are not castles.
+Better handle geoglyphs - now that named "bare rock" appears, use that.
+Only add "unnamed commercial" landuse at the very end of the processing.
 
 ## 28/12/2023
 Show hilltop enclosures as hill forts.
