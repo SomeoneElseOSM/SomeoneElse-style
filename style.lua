@@ -2001,8 +2001,16 @@ function filter_tags_generic(keyvalues, nokeys)
 
 -- ----------------------------------------------------------------------------
 -- Detect wetland also tagged with "surface" tags.
+-- The wetland types that we're interested in below are:
+-- (nil), tidalflat, mud, wet_meadow, saltmarsh, reedbed
+-- Of these, for (nil) and tidalflat, the surface should take precedence.
+-- For others, we fall through to 'if "natural" is still "wetland"' nelow, and
+-- if "wetland" doesn't match one of those, it'll go through as 
+-- "generic wetland", which is an overlay for whatever's underneath.
 -- ----------------------------------------------------------------------------
-   if ( keyvalues["natural"] == "wetland" ) then
+   if ((  keyvalues["natural"] == "wetland"    ) and
+       (( keyvalues["wetland"] == nil         ) or
+        ( keyvalues["wetland"] == "tidalflat" ))) then
       if (( keyvalues["surface"] == "mud"       ) or
           ( keyvalues["surface"] == "mud, sand" )) then
          keyvalues["natural"] = "mud"
