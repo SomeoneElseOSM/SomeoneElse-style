@@ -1701,6 +1701,19 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Sound mirrors
+-- ----------------------------------------------------------------------------
+   if ( keyvalues["man_made"] == "sound mirror" ) then
+
+      if ( keyvalues["historic"] == "ruins" ) then
+         keyvalues["ruins"] = "yes"
+      end
+
+      keyvalues["historic"] = "sound_mirror"
+      keyvalues["man_made"] = nil
+   end
+
+-- ----------------------------------------------------------------------------
 -- Tunnel values - render as "yes" if appropriate.
 -- ----------------------------------------------------------------------------
    if (( keyvalues["tunnel"] == "culvert"             ) or
@@ -2543,7 +2556,8 @@ function filter_tags_generic(keyvalues, nokeys)
         (   keyvalues["military"]         == nil       )) or
        (((  keyvalues["military"]         == "bunker" )   or
          (  keyvalues["building"]         == "bunker" ))  and
-        (   keyvalues["disused"]          == "yes"     ))) then
+        ((  keyvalues["disused"]          == "yes"    )   or
+         (  keyvalues["historic"]         == "ruins"  )))) then
       keyvalues["historic"] = "bunker"
       keyvalues["disused"] = nil
       keyvalues["disused:military"] = nil

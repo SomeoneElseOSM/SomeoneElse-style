@@ -1797,6 +1797,7 @@
     { "key": "man_made", "value": "signpost", "description": "Handled as information=guidepost" },
     { "key": "man_made", "value": "silo", "description": "Most man-made items are rendered" },
     { "key": "man_made", "value": "sluice_gate", "description": "Shown as sluice gate" },
+    { "key": "man_made", "value": "sound mirror", "description": "Shown as nonspecific historic item" },
     { "key": "man_made", "value": "spillway", "description": "Most man-made items are rendered" },
     { "key": "man_made", "value": "spoil_heap", "description": "Shown as landfill" },
     { "key": "man_made", "value": "standing_stone", "description": "Detect standing stones and ogham stones" },
