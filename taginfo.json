@@ -2349,6 +2349,7 @@
     { "key": "ruins", "value": "monastery", "description": "Detect historic monasteries" },
     { "key": "ruins", "value": "place_of_worship", "description": "Detect ruined churches" },
     { "key": "ruins", "value": "priory", "description": "Detect historic monasteries" },
+    { "key": "ruins", "value": "round_tower", "description": "Detect ruined round towers" },
     { "key": "ruins", "value": "tower", "description": "Detect ruined towers" },
     { "key": "ruins", "value": "village", "description": "Detect ruined villages" },
     { "key": "ruins", "value": "watermill", "description": "Detect ruined watermills" },

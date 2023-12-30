@@ -1678,17 +1678,21 @@ function filter_tags_generic(keyvalues, nokeys)
 
 -- ----------------------------------------------------------------------------
 -- Render ruined mills and mines etc. that are not something else as historic.
+-- Items in this list are assumed to be not operational, so the "man_made" 
+-- tag is cleared.
 -- ----------------------------------------------------------------------------
-   if (( keyvalues["historic"]  == "ruins"      ) and
-       (( keyvalues["ruins"]    == "lime_kiln" )  or
-        ( keyvalues["ruins"]    == "manor"     )  or
-        ( keyvalues["ruins"]    == "mill"      )  or
-        ( keyvalues["ruins"]    == "mine"      )  or
-        ( keyvalues["ruins"]    == "village"   )  or
-        ( keyvalues["ruins"]    == "watermill" )  or
-        ( keyvalues["ruins"]    == "well"      ))) then
+   if (( keyvalues["historic"]  == "ruins"        ) and
+       (( keyvalues["ruins"]    == "lime_kiln"   )  or
+        ( keyvalues["ruins"]    == "manor"       )  or
+        ( keyvalues["ruins"]    == "mill"        )  or
+        ( keyvalues["ruins"]    == "mine"        )  or
+        ( keyvalues["ruins"]    == "round_tower" )  or
+        ( keyvalues["ruins"]    == "village"     )  or
+        ( keyvalues["ruins"]    == "watermill"   )  or
+        ( keyvalues["ruins"]    == "well"        ))) then
       keyvalues["historic"] = keyvalues["ruins"]
       keyvalues["ruins"] = "yes"
+      keyvalues["man_made"] = nil
    end
 
 -- ----------------------------------------------------------------------------
