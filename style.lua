@@ -2000,6 +2000,22 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Detect wetland not tagged with "natural=wetland".
+-- Other combinations include
+-- natural=water, natural=scrub, landuse=meadow, leisure=nature_reserve,
+-- leisure=park, and no natural, landuse or leisure tags.
+-- In many cases we don't set natural=wetland, but in some we do.
+-- ----------------------------------------------------------------------------
+   if ((  keyvalues["wetland"] == "wet_meadow"  ) and
+       (( keyvalues["natural"] == nil          )  or
+        ( keyvalues["natural"] == "grassland"  )) and
+       (  keyvalues["leisure"] == nil           )  and
+       (( keyvalues["landuse"] == nil          )  or
+        ( keyvalues["landuse"] == "meadow"     ))) then
+      keyvalues["natural"] = "wetland"
+   end
+
+-- ----------------------------------------------------------------------------
 -- Detect wetland also tagged with "surface" tags.
 -- The wetland types that we're interested in below are:
 -- (nil), tidalflat, mud, wet_meadow, saltmarsh, reedbed

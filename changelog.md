@@ -20,6 +20,7 @@ Detect "ruins=grave_yard" as a ruined graveyard.
 Detect "man_made=sound mirror" as a nonspecific historical item.
 Detect "ruins=round_tower" as a ruined round tower.
 If a saltmarsh has surface=mud, render as saltmarsh.
+Detect wetland=wet_meadow where natural!=wetland.
 
 ## 28/12/2023
 Show hilltop enclosures as hill forts.
