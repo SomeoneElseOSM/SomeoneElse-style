@@ -21,6 +21,8 @@ Detect "man_made=sound mirror" as a nonspecific historical item.
 Detect "ruins=round_tower" as a ruined round tower.
 If a saltmarsh has surface=mud, render as saltmarsh.
 Detect wetland=wet_meadow where natural!=wetland.
+Append "(m)" to mountain bike route names.
+Detect "historic=battery" and "defensive_works=battery" as nonspecific historical items.
 
 ## 28/12/2023
 Show hilltop enclosures as hill forts.
@@ -79,7 +81,6 @@ Removed "tourism=guesthouse", no longer in the data (it was a typo for "tourism=
 Added "brand=independant" as a brand to suppress.
 Detect escooter operators via the "network" tag if used.
 Detect "bicycle_parking;bicycle_rental" as "bicycle_rental".
-Append "(m)" to mountain bike route names.
 
 ## 01/12/2023
 Following the tagfiddling prior to and as part of [this change](https://lists.openstreetmap.org/pipermail/talk-gb/2023-November/thread.html#30914), try and distinguish lifeboats and lifeboat stations with other tags.  See also [here](https://lists.openstreetmap.org/pipermail/talk-gb/2023-December/030932.html).

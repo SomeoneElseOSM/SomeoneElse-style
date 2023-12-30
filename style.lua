@@ -1718,6 +1718,20 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Specific defensive_works not mapped as something else
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["defensive_works"] == "battery" ) and
+       ( keyvalues["barrier"]         == nil       ) and
+       ( keyvalues["building"]        == nil       ) and
+       ( keyvalues["historic"]        == nil       ) and
+       ( keyvalues["landuse"]         == nil       ) and
+       ( keyvalues["man_made"]        == nil       ) and
+       ( keyvalues["place"]           == nil       )) then
+      keyvalues["historic"] = "battery"
+      keyvalues["defensive_works"] = nil
+   end
+
+-- ----------------------------------------------------------------------------
 -- Tunnel values - render as "yes" if appropriate.
 -- ----------------------------------------------------------------------------
    if (( keyvalues["tunnel"] == "culvert"             ) or
@@ -2406,6 +2420,7 @@ function filter_tags_generic(keyvalues, nokeys)
         ( keyvalues["historic"]  == "barrow"                    )  or
         ( keyvalues["historic"]  == "baths"                     )  or
         ( keyvalues["historic"]  == "battlefield"               )  or
+        ( keyvalues["historic"]  == "battery"                   )  or
         ( keyvalues["historic"]  == "bullaun_stone"             )  or
         ( keyvalues["historic"]  == "boundary_stone"            )  or
         ( keyvalues["historic"]  == "building"                  )  or
@@ -6074,6 +6089,7 @@ function filter_tags_generic(keyvalues, nokeys)
        (  keyvalues["historic"] == "anchor"                    ) or
        (  keyvalues["historic"] == "bakery"                    ) or
        (  keyvalues["historic"] == "barrow"                    ) or
+       (  keyvalues["historic"] == "battery"                   ) or
        (  keyvalues["historic"] == "bridge_site"               ) or
        (  keyvalues["historic"] == "camp"                      ) or
        (  keyvalues["historic"] == "deserted_medieval_village" ) or
