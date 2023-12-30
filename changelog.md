@@ -16,6 +16,7 @@ Detect "ruins=watermill" as a ruined watermill.
 Detect "historic=village" as nonspecific historical items.
 Detect "ruins=village" as a ruined village.
 Show "historic=village_pump" as a historic, hand-operated water pump.
+Detect "ruins=grave_yard" as a ruined graveyard.
 
 ## 28/12/2023
 Show hilltop enclosures as hill forts.

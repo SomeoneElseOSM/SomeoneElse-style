@@ -2339,6 +2339,7 @@
     { "key": "ruins", "value": "farm_auxiliary", "description": "Detect ruined buildings" },
     { "key": "ruins", "value": "farmhouse", "description": "Detect ruined houses" },
     { "key": "ruins", "value": "fort", "description": "Detect ruined castles" },
+    { "key": "ruins", "value": "grave_yard", "description": "Detect ruined graveyards" },
     { "key": "ruins", "value": "house", "description": "Detect ruined houses" },
     { "key": "ruins", "value": "hut", "description": "Detect ruined buildings" },
     { "key": "ruins", "value": "lime_kiln", "description": "Detect ruined lime kilns" },

@@ -5823,9 +5823,11 @@ function filter_tags_generic(keyvalues, nokeys)
 -- historic=grave_yard goes through as historic=nonspecific, with fill for 
 -- amenity=grave_yard if no landuse fill already.
 -- ----------------------------------------------------------------------------
-   if ((( keyvalues["historic"]        == "grave_yard" )  or
-        ( keyvalues["historic"]        == "cemetery"   )  or
-        ( keyvalues["disused:amenity"] == "grave_yard" )) and
+   if (((  keyvalues["historic"]        == "grave_yard"  )  or
+        (  keyvalues["historic"]        == "cemetery"    )  or
+        (  keyvalues["disused:amenity"] == "grave_yard"  )  or
+        (( keyvalues["historic"]        == "ruins"      )   and
+         ( keyvalues["ruins"]           == "grave_yard" ))) and
        (  keyvalues["amenity"]         == nil           ) and
        (  keyvalues["landuse"]         ~= "cemetery"    )) then
       keyvalues["historic"] = "nonspecific"
