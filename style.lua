@@ -5730,7 +5730,16 @@ function filter_tags_generic(keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
 -- Castles go through as "historic=castle"
 -- Note that archaeological sites that are castles are handled elsewhere.
+-- First, remove non-castle castles that have been tagfiddled into the data.
 -- ----------------------------------------------------------------------------
+   if ((  keyvalues["historic"]    == "castle"       ) and
+       (( keyvalues["castle_type"] == "stately"     )  or
+        ( keyvalues["castle_type"] == "manor"       )  or
+        ( keyvalues["castle_type"] == "palace"      )  or
+        ( keyvalues["castle_type"] == "manor_house" ))) then
+      keyvalues["historic"] = "manor"
+   end
+
    if (( keyvalues["historic"] == "castle" ) or
        ( keyvalues["historic"] == "fort"   )) then
       keyvalues["historic"] = "castle"

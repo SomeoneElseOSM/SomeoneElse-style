@@ -24,6 +24,7 @@ Detect wetland=wet_meadow where natural!=wetland.
 Append "(m)" to mountain bike route names.
 Detect "historic=battery" and "defensive_works=battery" as nonspecific historical items.
 Detect more ruined buildings without a "ruins" tag.
+Use "castle_type to detect things "troll tagged" as castles that are not castles.
 
 ## 28/12/2023
 Show hilltop enclosures as hill forts.
