@@ -7250,6 +7250,17 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Get rid of landuse=conservation if we can.  It's a bit of a special case;
+-- it has a label like grass but no green fill.
+-- ----------------------------------------------------------------------------
+   if ((  keyvalues["landuse"]  == "conservation"  ) and
+       (( keyvalues["historic"] ~= nil            )  or
+        ( keyvalues["leisure"]  ~= nil            )  or
+        ( keyvalues["natural"]  ~= nil            ))) then
+      keyvalues["landuse"] = nil
+   end
+
+-- ----------------------------------------------------------------------------
 -- "wayside_shrine" and various memorial crosses.
 -- ----------------------------------------------------------------------------
    if ((   keyvalues["historic"]   == "wayside_shrine"   ) or
@@ -10066,6 +10077,20 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["disused"]        == "yes"       )) then
       keyvalues["aeroway"] = nil
       keyvalues["disused:aeroway"] = "taxiway"
+   end
+
+-- ----------------------------------------------------------------------------
+-- Change commercial landuse from aerodromes so that no name is displayed 
+-- from that.
+-- ----------------------------------------------------------------------------
+   if ( keyvalues["aeroway"] == "aerodrome" ) then
+      if ( keyvalues["landuse"] == "commercial" ) then
+         keyvalues["landuse"] = "unnamedcommercial"
+      end
+
+      if ( keyvalues["landuse"] == "grass" ) then
+         keyvalues["landuse"] = "unnamedgrass"
+      end
    end
 
 -- ----------------------------------------------------------------------------

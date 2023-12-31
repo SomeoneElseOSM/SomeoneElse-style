@@ -27,7 +27,9 @@ Detect more ruined buildings without a "ruins" tag.
 Use "castle_type to detect things "troll tagged" as castles that are not castles.
 Better handle geoglyphs - now that named "bare rock" appears, use that.
 Only add "unnamed commercial" landuse at the very end of the processing.
-Treat water towers as buildings
+Treat water towers as buildings.
+Don't show a label on commercial or grass landuse if an underlying aerodrome will have a name shown.
+Remove landuse=conservation if we can.
 
 ## 28/12/2023
 Show hilltop enclosures as hill forts.
