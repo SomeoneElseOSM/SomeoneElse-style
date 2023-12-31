@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20231230T153300Z",
+  "data_updated": "20231231T134400Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -598,7 +598,7 @@
     { "key": "castle_type", "value": "manor", "description": "Shown as manor house" },
     { "key": "castle_type", "value": "manor_house", "description": "Shown as manor house" },
     { "key": "castle_type", "value": "palace", "description": "Shown as manor house" },
-    { "key": "castle_type", "value": "stateley", "description": "Shown as manor house" },
+    { "key": "castle_type", "value": "stately", "description": "Shown as manor house" },
     { "key": "climbing", "description": "Identify climbing boulders" },
     { "key": "climbing", "value": "boulder", "description": "Identify climbing boulders" },
     { "key": "closed:amenity", "description": "Handle closed version of tag as disused" },

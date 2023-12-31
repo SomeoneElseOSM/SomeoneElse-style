@@ -5746,7 +5746,7 @@ function filter_tags_generic(keyvalues, nokeys)
    if (( keyvalues["historic"] == "manor"           ) or
        ( keyvalues["historic"] == "mansion"         ) or
        ( keyvalues["historic"] == "country_mansion" ) or
-       ( keyvalues["historic"] == "stateley_home"   ) or
+       ( keyvalues["historic"] == "stately_home"    ) or
        ( keyvalues["historic"] == "palace"          )) then
       keyvalues["historic"] = "manor"
 

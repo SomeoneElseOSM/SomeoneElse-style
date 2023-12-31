@@ -30,6 +30,7 @@ Only add "unnamed commercial" landuse at the very end of the processing.
 Treat water towers as buildings.
 Don't show a label on commercial or grass landuse if an underlying aerodrome will have a name shown.
 Remove landuse=conservation if we can.
+Fixed typo in "stately" in a couple of places including taginfo.
 
 ## 28/12/2023
 Show hilltop enclosures as hill forts.
