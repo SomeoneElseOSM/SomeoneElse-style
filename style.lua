@@ -1939,6 +1939,15 @@ function filter_tags_generic(keyvalues, nokeys)
       end
    end
 
+   if ( keyvalues["man_made"]   == "water_tower" ) then
+      if ( keyvalues["building"] == "no" ) then
+         keyvalues["landuse"] = "industrial"
+      else
+         keyvalues["building"] = "yes"
+         keyvalues["landuse"] = "industrialbuilding"
+      end
+   end
+
    if ( keyvalues["parking"]   == "depot" ) then
       keyvalues["parking"] = nil
       keyvalues["landuse"] = "industrial"
