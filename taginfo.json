@@ -1784,7 +1784,7 @@
     { "key": "man_made", "value": "lake", "description": "Shown as water" },
     { "key": "man_made", "value": "levee", "description": "Used to detect embankments, which may have highways on them or not" },
     { "key": "man_made", "value": "lighthouse", "description": "Most man-made items are rendered" },
-    { "key": "man_made", "value": "marker_post", "description": "Handled as barrier=marker_post" },
+    { "key": "man_made", "value": "marker_post", "description": "Handled as barrier=bollard" },
     { "key": "man_made", "value": "mast", "description": "Most man-made items are rendered" },
     { "key": "man_made", "value": "maypole", "description": "Shown as maypole" },
     { "key": "man_made", "value": "mile_post", "description": "Handled as barrier=milepost" },
