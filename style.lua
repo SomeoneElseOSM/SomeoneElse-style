@@ -5134,7 +5134,7 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
    if ( keyvalues["golf"] == "pin" ) then
-      keyvalues["leisure"] = "nonspecific"
+      keyvalues["leisure"] = "leisurenonspecific"
       keyvalues["name"] = keyvalues["ref"]
    end
 
@@ -5215,6 +5215,8 @@ function filter_tags_generic(keyvalues, nokeys)
 
 -- ----------------------------------------------------------------------------
 -- Various leisure=pitch icons
+-- Note that these are also listed at the end in 
+-- "Shops etc. with icons already".
 -- ----------------------------------------------------------------------------
    if (( keyvalues["leisure"] == "pitch"        )  and
        ( keyvalues["sport"]   == "table_tennis" )) then
@@ -9841,7 +9843,7 @@ function filter_tags_generic(keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
    if (( keyvalues["amenity"] == "swimming_pool" ) and
        ( keyvalues["access"]  ~= "no"            )) then
-      keyvalues["leisure"] = "nonspecific"
+      keyvalues["leisure"] = "leisurenonspecific"
    end
 
 -- ----------------------------------------------------------------------------
@@ -9864,13 +9866,14 @@ function filter_tags_generic(keyvalues, nokeys)
       if ( keyvalues["sport"]   == "golf"  ) then
          keyvalues["leisure"] = "golf_course"
       else
-         keyvalues["leisure"] = "nonspecific"
+         keyvalues["leisure"] = "leisurenonspecific"
       end
    end
 
 -- ----------------------------------------------------------------------------
--- Other nonspecific leisure.  Add an icon and label via "nonspecific".
--- Add unnamedcommercial landuse to give non-building areas a background.
+-- Other nonspecific leisure.  We add an icon and label via "leisurenonspecific".
+-- In most cases we also add unnamedcommercial landuse 
+-- to give non-building areas a background.
 -- ----------------------------------------------------------------------------
    if (( keyvalues["amenity"]  == "arts_centre"              ) or
        ( keyvalues["amenity"]  == "bingo"                    ) or
@@ -10018,8 +10021,11 @@ function filter_tags_generic(keyvalues, nokeys)
        (( keyvalues["building"] == "yes"                    )  and
         ( keyvalues["amenity"]  == nil                      )  and
         ( keyvalues["sport"]    ~= nil                      ))) then
-      keyvalues["landuse"] = "unnamedcommercial"
-      keyvalues["leisure"] = "nonspecific"
+      if ( keyvalues["landuse"] == nil ) then
+         keyvalues["landuse"] = "unnamedcommercial"
+      end
+
+      keyvalues["leisure"] = "leisurenonspecific"
       keyvalues["disused:amenity"] = nil
    end
 
@@ -10080,16 +10086,75 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- If a quarry is disused or historic, it's still likely a hole in the ground, 
+-- so render it as something.
+-- ----------------------------------------------------------------------------
+   if ((( keyvalues["disused:landuse"] == "quarry" )  and
+        ( keyvalues["landuse"]         == nil      )) or
+       (( keyvalues["historic"]        == "quarry" )  and
+        ( keyvalues["landuse"]         == nil      )) or
+       (( keyvalues["landuse"]         == "quarry" )  and
+        ( keyvalues["disused"]         == "yes"    ))) then
+      keyvalues["landuse"] = "historicquarry"
+   end
+
+-- ----------------------------------------------------------------------------
 -- Change commercial landuse from aerodromes so that no name is displayed 
 -- from that.
+-- There's a similar issue with e.g. leisure=fishing / landuse=grass, which has
+-- already been rewritten to "park" by now.
+-- Some combinations are incompatible so we "just need to pick one".
 -- ----------------------------------------------------------------------------
-   if ( keyvalues["aeroway"] == "aerodrome" ) then
+   if (( keyvalues["aeroway"] == "aerodrome"      ) or
+       ( keyvalues["leisure"] == "common"         ) or
+       ( keyvalues["leisure"] == "garden"         ) or
+       ( keyvalues["leisure"] == "nature_reserve" ) or
+       ( keyvalues["leisure"] == "park"           ) or
+       ( keyvalues["leisure"] == "pitch"          ) or
+       ( keyvalues["leisure"] == "sports_centre"  ) or
+       ( keyvalues["leisure"] == "track"          )) then
+      if ( keyvalues["landuse"] == "allotments" ) then
+         keyvalues["landuse"] = "unnamedallotments"
+      end
+
       if ( keyvalues["landuse"] == "commercial" ) then
          keyvalues["landuse"] = "unnamedcommercial"
       end
 
+      if ( keyvalues["landuse"] == "farmland" ) then
+         keyvalues["landuse"] = "unnamedfarmland"
+      end
+
+      if ( keyvalues["landuse"] == "farmgrass" ) then
+         keyvalues["landuse"] = "unnamedfarmgrass"
+      end
+
+      if ( keyvalues["landuse"] == "farmyard" ) then
+         keyvalues["landuse"] = "unnamedfarmyard"
+      end
+
+      if ( keyvalues["landuse"] == "forest" ) then
+         keyvalues["landuse"] = "unnamedforest"
+      end
+
       if ( keyvalues["landuse"] == "grass" ) then
          keyvalues["landuse"] = "unnamedgrass"
+      end
+
+      if ( keyvalues["landuse"] == "meadow" ) then
+         keyvalues["landuse"] = "unnamedmeadow"
+      end
+
+      if ( keyvalues["landuse"] == "orchard" ) then
+         keyvalues["landuse"] = "unnamedorchard"
+      end
+
+      if ( keyvalues["landuse"] == "quarry" ) then
+         keyvalues["landuse"] = "unnamedquarry"
+      end
+
+      if ( keyvalues["landuse"] == "historicquarry" ) then
+         keyvalues["landuse"] = "unnamedhistoricquarry"
       end
    end
 
@@ -10148,19 +10213,6 @@ function filter_tags_generic(keyvalues, nokeys)
       end
    end
 
-
--- ----------------------------------------------------------------------------
--- If a quarry is disused or historic, it's still likely a hole in the ground, 
--- so render it as something.
--- ----------------------------------------------------------------------------
-   if ((( keyvalues["disused:landuse"] == "quarry" )  and
-        ( keyvalues["landuse"]         == nil      )) or
-       (( keyvalues["historic"]        == "quarry" )  and
-        ( keyvalues["landuse"]         == nil      )) or
-       (( keyvalues["landuse"]         == "quarry" )  and
-        ( keyvalues["disused"]         == "yes"    ))) then
-      keyvalues["landuse"] = "historicquarry"
-   end
 
 -- ----------------------------------------------------------------------------
 -- Masts etc.  Consolidate various sorts of masts and towers into the "mast"
@@ -10518,24 +10570,33 @@ function filter_tags_generic(keyvalues, nokeys)
 -- Shops etc. with icons already - just add "unnamedcommercial" landuse.
 -- The exception is where landuse is set to something we want to keep.
 -- ----------------------------------------------------------------------------
-   if (((  keyvalues["shop"]       ~= nil                 )  or
-        (( keyvalues["amenity"]    ~= nil                )   and
-         ( keyvalues["amenity"]    ~= "holy_well"        )   and
-         ( keyvalues["amenity"]    ~= "holy_spring"      )   and
-         ( keyvalues["amenity"]    ~= "biergarten"       ))  or
-        (  keyvalues["tourism"]    == "hotel"             )  or
-        (  keyvalues["tourism"]    == "guest_house"       )  or
-        (  keyvalues["tourism"]    == "attraction"        )  or
-        (  keyvalues["tourism"]    == "viewpoint"         )  or
-        (  keyvalues["tourism"]    == "museum"            )  or
-        (  keyvalues["tourism"]    == "hostel"            )  or
-        (  keyvalues["tourism"]    == "gallery"           )  or
-        (  keyvalues["tourism"]    == "apartment"         )  or
-        (  keyvalues["tourism"]    == "bed_and_breakfast" )  or
-        (  keyvalues["tourism"]    == "zoo"               )  or
-        (  keyvalues["tourism"]    == "motel"             )  or
-        (  keyvalues["tourism"]    == "theme_park"        )) and
-       (   keyvalues["leisure"]    ~= "garden"             )) then
+   if (((  keyvalues["shop"]       ~= nil                  )  or
+        (( keyvalues["amenity"]    ~= nil                 )   and
+         ( keyvalues["amenity"]    ~= "holy_well"         )   and
+         ( keyvalues["amenity"]    ~= "holy_spring"       )   and
+         ( keyvalues["amenity"]    ~= "biergarten"        )   and
+         ( keyvalues["amenity"]    ~= "pitch_basketball"  )   and
+         ( keyvalues["amenity"]    ~= "pitch_chess"       )   and
+         ( keyvalues["amenity"]    ~= "pitch_cricket"     )   and
+         ( keyvalues["amenity"]    ~= "pitch_climbing"    )   and
+         ( keyvalues["amenity"]    ~= "pitch_rubgy"       )   and
+         ( keyvalues["amenity"]    ~= "pitch_skateboard"  )   and
+         ( keyvalues["amenity"]    ~= "pitch_soccer"      )   and
+         ( keyvalues["amenity"]    ~= "pitch_gabletennis" )   and
+         ( keyvalues["amenity"]    ~= "pitch_tennis"      ))  or
+        (  keyvalues["tourism"]    == "hotel"              )  or
+        (  keyvalues["tourism"]    == "guest_house"        )  or
+        (  keyvalues["tourism"]    == "attraction"         )  or
+        (  keyvalues["tourism"]    == "viewpoint"          )  or
+        (  keyvalues["tourism"]    == "museum"             )  or
+        (  keyvalues["tourism"]    == "hostel"             )  or
+        (  keyvalues["tourism"]    == "gallery"            )  or
+        (  keyvalues["tourism"]    == "apartment"          )  or
+        (  keyvalues["tourism"]    == "bed_and_breakfast"  )  or
+        (  keyvalues["tourism"]    == "zoo"                )  or
+        (  keyvalues["tourism"]    == "motel"              )  or
+        (  keyvalues["tourism"]    == "theme_park"         )) and
+       (   keyvalues["leisure"]    ~= "garden"              )) then
       if ( keyvalues["landuse"] == nil ) then
          keyvalues["landuse"] = "unnamedcommercial"
       end
