@@ -34,6 +34,7 @@ Fixed typo in "stately" in a couple of places including taginfo.
 Removed various duplicate landuse / leisure labels.
 Increased the materials detected as noncarpeted pub floors.
 Look for grass on horse_riding.
+Removed "shop=printer_cartridges", no longer in the data.
 
 ## 28/12/2023
 Show hilltop enclosures as hill forts.

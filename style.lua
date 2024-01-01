@@ -8845,11 +8845,10 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
--- Various photo, camera, copy and print shops
+-- This category used to be larger, but the values have been consolidated.
 -- Difficult to do an icon for.
 -- ----------------------------------------------------------------------------
-   if (( keyvalues["shop"]    == "printer_cartridges" ) or
-       ( keyvalues["shop"]    == "printer_ink"        )) then
+   if ( keyvalues["shop"]    == "printer_ink" ) then
       keyvalues["shop"] = "shopnonspecific"
    end
 

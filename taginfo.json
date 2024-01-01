@@ -2825,7 +2825,6 @@
     { "key": "shop", "value": "pound", "description": "Various shops shown" },
     { "key": "shop", "value": "print", "description": "Various shops shown" },
     { "key": "shop", "value": "printer", "description": "Various shops shown" },
-    { "key": "shop", "value": "printer_cartridges", "description": "Various shops shown" },
     { "key": "shop", "value": "printer_ink", "description": "Various shops shown" },
     { "key": "shop", "value": "printers", "description": "Various shops shown" },
     { "key": "shop", "value": "printing", "description": "Various shops shown" },
