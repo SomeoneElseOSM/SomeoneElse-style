@@ -9892,6 +9892,27 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Try and catch grass on horse_riding
+-- ----------------------------------------------------------------------------
+   if ( keyvalues["leisure"] == "horse_riding" ) then
+      keyvalues["leisure"] = "leisurenonspecific"
+
+      if (( keyvalues["surface"] == "grass" ) and
+          ( keyvalues["landuse"] == nil     )) then
+         keyvalues["landuse"] = "unnamedgrass"
+      end
+   end
+
+-- ----------------------------------------------------------------------------
+-- If we have any named leisure=outdoor_seating left, 
+-- change it to "leisurenonspecific", but don't set landuse.
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["leisure"] == "outdoor_seating" ) and
+       ( keyvalues["name"]    ~= nil               )) then
+      keyvalues["leisure"] = "leisurenonspecific"
+   end
+
+-- ----------------------------------------------------------------------------
 -- Other nonspecific leisure.  We add an icon and label via "leisurenonspecific".
 -- In most cases we also add unnamedcommercial landuse 
 -- to give non-building areas a background.
