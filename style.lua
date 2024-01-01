@@ -3233,16 +3233,25 @@ function filter_tags_generic(keyvalues, nokeys)
 -- Wheelchair	      y, l, n or d
 -- Beer Garden	      g (beer garden), o (outside seating), d (don't know)
 -- ----------------------------------------------------------------------------
-   if (( keyvalues["description:floor"] ~= nil                ) or
-       ( keyvalues["floor:material"]    == "tiles"            ) or
-       ( keyvalues["floor:material"]    == "stone"            ) or
-       ( keyvalues["floor:material"]    == "lino"             ) or
-       ( keyvalues["floor:material"]    == "slate"            ) or
-       ( keyvalues["floor:material"]    == "brick"            ) or
-       ( keyvalues["floor:material"]    == "rough_wood"       ) or
-       ( keyvalues["floor:material"]    == "rough wood"       ) or
-       ( keyvalues["floor:material"]    == "concrete"         ) or
-       ( keyvalues["floor:material"]    == "lino;tiles;stone" )) then
+   if (( keyvalues["description:floor"] ~= nil                  ) or
+       ( keyvalues["floor:material"]    == "brick"              ) or
+       ( keyvalues["floor:material"]    == "concrete"           ) or
+       ( keyvalues["floor:material"]    == "lino"               ) or
+       ( keyvalues["floor:material"]    == "lino;carpet"        ) or
+       ( keyvalues["floor:material"]    == "lino;rough_wood"    ) or
+       ( keyvalues["floor:material"]    == "lino;tiles;stone"   ) or
+       ( keyvalues["floor:material"]    == "rough wood"         ) or
+       ( keyvalues["floor:material"]    == "rough_wood"         ) or
+       ( keyvalues["floor:material"]    == "rough_wood;stone"   ) or
+       ( keyvalues["floor:material"]    == "rough_wood;tiles"   ) or
+       ( keyvalues["floor:material"]    == "slate"              ) or
+       ( keyvalues["floor:material"]    == "slate;carpet"       ) or
+       ( keyvalues["floor:material"]    == "stone"              ) or
+       ( keyvalues["floor:material"]    == "stone;carpet"       ) or
+       ( keyvalues["floor:material"]    == "stone;rough_carpet" ) or
+       ( keyvalues["floor:material"]    == "stone;rough_wood"   ) or
+       ( keyvalues["floor:material"]    == "tiles"              ) or
+       ( keyvalues["floor:material"]    == "tiles;rough_wood"   )) then
       keyvalues["noncarpeted"] = "yes"
    end
 
@@ -5120,22 +5129,34 @@ function filter_tags_generic(keyvalues, nokeys)
 
    if ( keyvalues["golf"] == "tee" ) then
       keyvalues["leisure"] = "garden"
-      keyvalues["name"] = keyvalues["ref"]
+
+      if ( keyvalues["name"] == nil ) then
+         keyvalues["name"] = keyvalues["ref"]
+      end
    end
 
    if ( keyvalues["golf"] == "green" ) then
       keyvalues["leisure"] = "golfgreen"
-      keyvalues["name"] = keyvalues["ref"]
+
+      if ( keyvalues["name"] == nil ) then
+         keyvalues["name"] = keyvalues["ref"]
+      end
    end
 
    if ( keyvalues["golf"] == "fairway" ) then
       keyvalues["leisure"] = "garden"
-      keyvalues["name"] = keyvalues["ref"]
+
+      if ( keyvalues["name"] == nil ) then
+         keyvalues["name"] = keyvalues["ref"]
+      end
    end
 
    if ( keyvalues["golf"] == "pin" ) then
       keyvalues["leisure"] = "leisurenonspecific"
-      keyvalues["name"] = keyvalues["ref"]
+
+      if ( keyvalues["name"] == nil ) then
+         keyvalues["name"] = keyvalues["ref"]
+      end
    end
 
    if (( keyvalues["golf"]    == "rough" ) and
