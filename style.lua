@@ -5244,14 +5244,26 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
    if ((  keyvalues["leisure"] == "pitch"                      )  and
-       (( keyvalues["sport"]   == "soccer"                    )   or
+       (( keyvalues["sport"]   == "association_football"      )   or
+        ( keyvalues["sport"]   == "football"                  )   or
+        ( keyvalues["sport"]   == "multi;soccer;basketball"   )   or
+        ( keyvalues["sport"]   == "football;basketball"       )   or
+        ( keyvalues["sport"]   == "football;rugby"            )   or
+        ( keyvalues["sport"]   == "football;soccer"           )   or
+        ( keyvalues["sport"]   == "soccer"                    )   or
+        ( keyvalues["sport"]   == "soccer;archery"            )   or
+        ( keyvalues["sport"]   == "soccer;athletics"          )   or
         ( keyvalues["sport"]   == "soccer;basketball"         )   or
+        ( keyvalues["sport"]   == "soccer;cricket"            )   or
+        ( keyvalues["sport"]   == "soccer;field_hockey"       )   or
         ( keyvalues["sport"]   == "soccer;football"           )   or
-        ( keyvalues["sport"]   == "soccer;rugby"              )   or
-        ( keyvalues["sport"]   == "soccer;hockey"             )   or
         ( keyvalues["sport"]   == "soccer;gaelic_games"       )   or
         ( keyvalues["sport"]   == "soccer;gaelic_games;rugby" )   or
-        ( keyvalues["sport"]   == "soccer;archery"            ))) then
+        ( keyvalues["sport"]   == "soccer;hockey"             )   or
+        ( keyvalues["sport"]   == "soccer;multi"              )   or
+        ( keyvalues["sport"]   == "soccer;rugby"              )   or
+        ( keyvalues["sport"]   == "soccer;rugby_union"        )   or
+        ( keyvalues["sport"]   == "soccer;tennis"             ))) then
       keyvalues["amenity"] = "pitch_soccer"
    end
 
@@ -5261,14 +5273,18 @@ function filter_tags_generic(keyvalues, nokeys)
         ( keyvalues["sport"]  == "basketball;football"     )   or
         ( keyvalues["sport"]  == "basketball;multi"        )   or
         ( keyvalues["sport"]  == "basketball;netball"      )   or
+        ( keyvalues["sport"]  == "basketball;tennis"       )   or
+        ( keyvalues["sport"]  == "multi;basketball"        )   or
         ( keyvalues["sport"]  == "multi;basketball;soccer" ))) then
       keyvalues["amenity"] = "pitch_basketball"
    end
 
-   if ((  keyvalues["leisure"] == "pitch"               )  and
-       (( keyvalues["sport"]   == "cricket"            )   or
-        ( keyvalues["sport"]   == "cricket_nets"       )   or
-        ( keyvalues["sport"]   == "cricket_nets;multi" ))) then
+   if ((  keyvalues["leisure"] == "pitch"                )  and
+       (( keyvalues["sport"]   == "cricket"             )   or
+        ( keyvalues["sport"]   == "cricket_rugby_union" )   or
+        ( keyvalues["sport"]   == "cricket;soccer"      )   or
+        ( keyvalues["sport"]   == "cricket_nets"        )   or
+        ( keyvalues["sport"]   == "cricket_nets;multi"  ))) then
       keyvalues["amenity"] = "pitch_cricket"
    end
 
@@ -5284,13 +5300,16 @@ function filter_tags_generic(keyvalues, nokeys)
       keyvalues["amenity"] = "pitch_climbing"
    end
 
-   if ((  keyvalues["leisure"] == "pitch"               )  and
-       (( keyvalues["sport"]   == "rugby_union"        )   or
-        ( keyvalues["sport"]   == "rugby_league"       )   or
-        ( keyvalues["sport"]   == "rugby"              )   or
-        ( keyvalues["sport"]   == "rugby;soccer"       )   or
-        ( keyvalues["sport"]   == "rugby_union;soccer" )   or
-        ( keyvalues["sport"]   == "rugby;football"     ))) then
+   if ((  keyvalues["leisure"] == "pitch"                )  and
+       (( keyvalues["sport"]   == "rugby"               )   or
+        ( keyvalues["sport"]   == "rugby;cricket"       )   or
+        ( keyvalues["sport"]   == "rugby;football"      )   or
+        ( keyvalues["sport"]   == "rugby;rubgy_union"   )   or
+        ( keyvalues["sport"]   == "rugby;soccer"        )   or
+        ( keyvalues["sport"]   == "rugby_league"        )   or
+        ( keyvalues["sport"]   == "rugby_union"         )   or
+        ( keyvalues["sport"]   == "rugby_union;cricket" )   or
+        ( keyvalues["sport"]   == "rugby_union;soccer"  ))) then
       keyvalues["amenity"] = "pitch_rugby"
    end
 
@@ -5299,10 +5318,15 @@ function filter_tags_generic(keyvalues, nokeys)
       keyvalues["amenity"] = "pitch_chess"
    end
 
-   if ((  keyvalues["leisure"] == "pitch"           )  and
-       (( keyvalues["sport"]   == "tennis"         )   or
-        ( keyvalues["sport"]   == "tennis;netball" )   or
-        ( keyvalues["sport"]   == "tennis;multi"   ))) then
+   if ((  keyvalues["leisure"] == "pitch"              )  and
+       (( keyvalues["sport"]   == "tennis"            )   or
+        ( keyvalues["sport"]   == "tennis;basketball" )   or
+        ( keyvalues["sport"]   == "tennis;bowls"      )   or
+        ( keyvalues["sport"]   == "tennis;hockey"     )   or
+        ( keyvalues["sport"]   == "tennis;multi"      )   or
+        ( keyvalues["sport"]   == "tennis;netball"    )   or
+        ( keyvalues["sport"]   == "tennis;soccer"     )   or
+        ( keyvalues["sport"]   == "tennis;squash"     ))) then
       keyvalues["amenity"] = "pitch_tennis"
    end
 
