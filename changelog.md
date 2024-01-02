@@ -4,7 +4,7 @@ This page describes changes made [here](https://github.com/SomeoneElseOSM/Someon
 ## As yet unreleased
 Removed "floor:material=rough wood", no longer in the data.
 Add "football" as a synonym for "soccer" and detect more combinations for that, and other sports.
-Add icons for "boules", "bowls", "equestrian", "gaelic_games" and "polo" sports pitches.
+Add icons for "athletics", "boules", "bowls", "equestrian", "gaelic_games" and "polo" sports pitches.
 
 ## 01/01/2024
 Added "ruins=donjon" to the list of ruined castle tags.
