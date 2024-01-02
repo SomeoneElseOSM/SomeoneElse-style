@@ -5331,10 +5331,11 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
    if ((  keyvalues["leisure"] == "pitch"             )  and
-       (( keyvalues["sport"]   == "athletics"        ) or
-        ( keyvalues["sport"]   == "athletics;soccer" ) or
-        ( keyvalues["sport"]   == "long_jump"        ) or
-        ( keyvalues["sport"]   == "running"          ))) then
+       (( keyvalues["sport"]   == "athletics"        )   or
+        ( keyvalues["sport"]   == "athletics;soccer" )   or
+        ( keyvalues["sport"]   == "long_jump"        )   or
+        ( keyvalues["sport"]   == "running"          )   or
+        ( keyvalues["sport"]   == "shot-put"         ))) then
       keyvalues["amenity"] = "pitch_athletics"
    end
 
