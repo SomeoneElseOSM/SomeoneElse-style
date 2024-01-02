@@ -5330,6 +5330,16 @@ function filter_tags_generic(keyvalues, nokeys)
       keyvalues["amenity"] = "pitch_tennis"
    end
 
+   if (( keyvalues["leisure"] == "pitch" )  and
+       ( keyvalues["sport"]   == "equestrian" )) then
+      keyvalues["amenity"] = "pitch_equestrian"
+   end
+
+   if (( keyvalues["leisure"] == "pitch" )  and
+       ( keyvalues["sport"]   == "polo" )) then
+      keyvalues["amenity"] = "pitch_polo"
+   end
+
 -- ----------------------------------------------------------------------------
 -- Handle razed railways and old inclined_planes as dismantled.
 -- dismantled, abandoned are now handled separately to disused in roads.mss
@@ -10643,10 +10653,12 @@ function filter_tags_generic(keyvalues, nokeys)
          ( keyvalues["amenity"]    ~= "pitch_chess"       )   and
          ( keyvalues["amenity"]    ~= "pitch_cricket"     )   and
          ( keyvalues["amenity"]    ~= "pitch_climbing"    )   and
+         ( keyvalues["amenity"]    ~= "pitch_equestrian"  )   and
+         ( keyvalues["amenity"]    ~= "pitch_polo"        )   and
          ( keyvalues["amenity"]    ~= "pitch_rubgy"       )   and
          ( keyvalues["amenity"]    ~= "pitch_skateboard"  )   and
          ( keyvalues["amenity"]    ~= "pitch_soccer"      )   and
-         ( keyvalues["amenity"]    ~= "pitch_gabletennis" )   and
+         ( keyvalues["amenity"]    ~= "pitch_tabletennis" )   and
          ( keyvalues["amenity"]    ~= "pitch_tennis"      ))  or
         (  keyvalues["tourism"]    == "hotel"              )  or
         (  keyvalues["tourism"]    == "guest_house"        )  or

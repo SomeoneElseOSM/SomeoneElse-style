@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20240102T121400Z",
+  "data_updated": "20240102T184700Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -3011,7 +3011,7 @@
     { "key": "sport", "value": "cricket;soccer", "description": "Show 'cricket' icon on sports pitches" },
     { "key": "sport", "value": "cricket_nets", "description": "Shown as pitch, also show 'cricket' icon on sports pitches" },
     { "key": "sport", "value": "cricket_nets;multi", "description": "Shown as pitch, also show 'cricket' icon on sports pitches" },
-    { "key": "sport", "value": "equestrian", "description": "Detect linear equestrian gallops" },
+    { "key": "sport", "value": "equestrian", "description": "Detect linear equestrian gallops;show 'horse' icon on sports pitches" },
     { "key": "sport", "value": "football", "description": "Show 'soccer' icon on sports pitches" },
     { "key": "sport", "value": "football;basketball", "description": "Show 'soccer' icon on sports pitches" },
     { "key": "sport", "value": "football;rugby", "description": "Show 'soccer' icon on sports pitches" },
@@ -3023,7 +3023,8 @@
     { "key": "sport", "value": "motor", "description": "Tell leisure=track from highway=raceway" },
     { "key": "sport", "value": "motor;karting", "description": "Tell leisure=track from highway=raceway" },
     { "key": "sport", "value": "multi;soccer;basketball", "description": "Show 'soccer' icon on sports pitches" },
-    { "key": "sport", "value": "rugby", "description": "Show icon on sports pitches" },
+    { "key": "sport", "value": "polo", "description": "Show 'polo' icon on sports pitches" },
+    { "key": "sport", "value": "rugby", "description": "Show 'rugby' icon on sports pitches" },
     { "key": "sport", "value": "rugby;cricket", "description": "Show 'rugby' icon on sports pitches" },
     { "key": "sport", "value": "rugby;football", "description": "Show 'rugby' icon on sports pitches" },
     { "key": "sport", "value": "rugby;rugby_union", "description": "Show 'rugby' icon on sports pitches" },
