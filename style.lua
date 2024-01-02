@@ -5335,6 +5335,17 @@ function filter_tags_generic(keyvalues, nokeys)
       keyvalues["amenity"] = "pitch_equestrian"
    end
 
+   if ((  keyvalues["leisure"] == "pitch"         )  and
+       (( keyvalues["sport"]   == "bowls"        )   or
+        ( keyvalues["sport"]   == "bowls;tennis" ))) then
+      keyvalues["amenity"] = "pitch_bowls"
+   end
+
+   if (( keyvalues["leisure"] == "pitch" )  and
+       ( keyvalues["sport"]   == "boules" )) then
+      keyvalues["amenity"] = "pitch_boules"
+   end
+
    if (( keyvalues["leisure"] == "pitch" )  and
        ( keyvalues["sport"]   == "polo" )) then
       keyvalues["amenity"] = "pitch_polo"
@@ -10654,6 +10665,8 @@ function filter_tags_generic(keyvalues, nokeys)
          ( keyvalues["amenity"]    ~= "pitch_cricket"     )   and
          ( keyvalues["amenity"]    ~= "pitch_climbing"    )   and
          ( keyvalues["amenity"]    ~= "pitch_equestrian"  )   and
+         ( keyvalues["amenity"]    ~= "pitch_bowls"       )   and
+         ( keyvalues["amenity"]    ~= "pitch_boules"      )   and
          ( keyvalues["amenity"]    ~= "pitch_polo"        )   and
          ( keyvalues["amenity"]    ~= "pitch_rubgy"       )   and
          ( keyvalues["amenity"]    ~= "pitch_skateboard"  )   and
