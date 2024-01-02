@@ -4,7 +4,9 @@ This page describes changes made [here](https://github.com/SomeoneElseOSM/Someon
 ## As yet unreleased
 Removed "floor:material=rough wood", no longer in the data.
 Add "football" as a synonym for "soccer" and detect more combinations for that, and other sports.
-Add icons for "athletics", "boules", "bowls", "cycling", "equestrian", "gaelic_games", "hockey", "multi", "netball" and "polo" sports pitches.
+Add icons for "athletics", "boules", "bowls", "cycling", "equestrian", "gaelic_games", "hockey", "multi", "netball", "polo" and "shooting" sports pitches.
+Don't display a name from both "leisure=pitch" and e.g. "sport=shooting".  
+Display military hatching on both "sport=shooting" and "sport=shooting_range".
 
 ## 01/01/2024
 Added "ruins=donjon" to the list of ruined castle tags.
