@@ -3240,7 +3240,6 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["floor:material"]    == "lino;carpet"        ) or
        ( keyvalues["floor:material"]    == "lino;rough_wood"    ) or
        ( keyvalues["floor:material"]    == "lino;tiles;stone"   ) or
-       ( keyvalues["floor:material"]    == "rough wood"         ) or
        ( keyvalues["floor:material"]    == "rough_wood"         ) or
        ( keyvalues["floor:material"]    == "rough_wood;stone"   ) or
        ( keyvalues["floor:material"]    == "rough_wood;tiles"   ) or

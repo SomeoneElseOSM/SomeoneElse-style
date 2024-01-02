@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20240101T120700Z",
+  "data_updated": "20240102T121400Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -1115,7 +1115,6 @@
     { "key": "floor:material", "value": "lino", "description": "Detect noncarpeted pub floors" },
     { "key": "floor:material", "value": "lino;carpet", "description": "Detect noncarpeted pub floors" },
     { "key": "floor:material", "value": "lino;tiles;stone", "description": "Detect noncarpeted pub floors" },
-    { "key": "floor:material", "value": "rough wood", "description": "Detect noncarpeted pub floors" },
     { "key": "floor:material", "value": "rough_wood", "description": "Detect noncarpeted pub floors" },
     { "key": "floor:material", "value": "rough_wood;stone", "description": "Detect noncarpeted pub floors" },
     { "key": "floor:material", "value": "rough_wood;tiles", "description": "Detect noncarpeted pub floors" },
