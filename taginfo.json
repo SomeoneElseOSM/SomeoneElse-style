@@ -3032,6 +3032,7 @@
     { "key": "sport", "value": "model_aerodrome", "description": "Used to classify and clarify many other tags" },
     { "key": "sport", "value": "motor", "description": "Tell leisure=track from highway=raceway" },
     { "key": "sport", "value": "motor;karting", "description": "Tell leisure=track from highway=raceway" },
+    { "key": "sport", "value": "multi", "description": "Show 'multi' icon on sports pitches" },
     { "key": "sport", "value": "multi;basketball", "description": "Show 'basketball' icon on sports pitches" },
     { "key": "sport", "value": "multi;basketball;soccer", "description": "Show 'basketball' icon on sports pitches" },
     { "key": "sport", "value": "multi;soccer;basketball", "description": "Show 'soccer' icon on sports pitches" },
