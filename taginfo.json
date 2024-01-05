@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20240105T055200Z",
+  "data_updated": "20240105T213800Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -3035,9 +3035,9 @@
     { "key": "sport", "value": "gaelic_games;soccer", "description": "Show 'gaelic_games' icon on sports pitches" },
     { "key": "sport", "value": "golf", "description": "Used to classify and clarify many other tags" },
     { "key": "sport", "value": "field_hockey", "description": "Show 'hockey' icon on sports pitches" },
-    { "key": "sport", "value": "hockey", "description": "Show 'hockey' icon on sports pitches" },
     { "key": "sport", "value": "field_hockey;soccer", "description": "Show 'hockey' icon on sports pitches" },
-    { "key": "sport", "value": "hockey;hockey", "description": "Show 'hockey' icon on sports pitches" },
+    { "key": "sport", "value": "hockey", "description": "Show 'hockey' icon on sports pitches" },
+    { "key": "sport", "value": "hockey;soccer", "description": "Show 'hockey' icon on sports pitches" },
     { "key": "sport", "value": "horse_racing", "description": "Detect linear equestrian gallops" },
     { "key": "sport", "value": "laser_tag", "description": "Used to classify and clarify many other tags" },
     { "key": "sport", "value": "long_jump", "description": "Show 'athletics' icon on sports pitches" },
