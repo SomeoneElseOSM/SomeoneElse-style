@@ -4,7 +4,7 @@ This page describes changes made [here](https://github.com/SomeoneElseOSM/Someon
 ## As yet unreleased
 Removed "floor:material=rough wood", no longer in the data.
 Add "football" as a synonym for "soccer" and detect more combinations for that, and other sports.
-Add icons for "athletics", "boules", "bowls", "cycling", "equestrian", "gaelic_games", "hockey", "multi", "netball", "polo" and "shooting" sports pitches.
+Add icons for "athletics", "boules", "bowls", "croquet", "cycling", "equestrian", "gaelic_games", "hockey", "multi", "netball", "polo" and "shooting" sports pitches.
 Don't display a name from both "leisure=pitch" and e.g. "sport=shooting".  
 Display military hatching on both "sport=shooting" and "sport=shooting_range".
 Sorted the sport legends entry in rough order of popularity in UK/IE and added new icons for sports with pitches down to "boules".

@@ -3019,6 +3019,7 @@
     { "key": "sport", "value": "cricket;soccer", "description": "Show 'cricket' icon on sports pitches" },
     { "key": "sport", "value": "cricket_nets", "description": "Shown as pitch, also show 'cricket' icon on sports pitches" },
     { "key": "sport", "value": "cricket_nets;multi", "description": "Shown as pitch, also show 'cricket' icon on sports pitches" },
+    { "key": "sport", "value": "croquet", "description": "Show 'croquet' icon on sports pitches" },
     { "key": "sport", "value": "cycling", "description": "Show 'cycling' icon on sports pitches" },
     { "key": "sport", "value": "bmx", "description": "Show 'cycling' icon on sports pitches" },
     { "key": "sport", "value": "cycling;bmx", "description": "Show 'cycling' icon on sports pitches" },
