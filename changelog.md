@@ -8,6 +8,7 @@ Add icons for "athletics", "boules", "bowls", "cycling", "equestrian", "gaelic_g
 Don't display a name from both "leisure=pitch" and e.g. "sport=shooting".  
 Display military hatching on both "sport=shooting" and "sport=shooting_range".
 Sorted the sport legends entry in rough order of popularity in UK/IE and added new icons for sports with pitches down to "boules".
+Display a "ref" from zoom 19 for aerial pipeline markers.
 
 ## 01/01/2024
 Added "ruins=donjon" to the list of ruined castle tags.
