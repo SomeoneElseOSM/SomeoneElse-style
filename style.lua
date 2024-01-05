@@ -5404,6 +5404,12 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
    if (( keyvalues["leisure"] == "pitch" )  and
+       ( keyvalues["sport"]   == "netball" )) then
+      keyvalues["amenity"] = "pitch_netball"
+      keyvalues["leisure"] = "unnamedpitch"
+   end
+
+   if (( keyvalues["leisure"] == "pitch" )  and
        ( keyvalues["sport"]   == "polo" )) then
       keyvalues["amenity"] = "pitch_polo"
       keyvalues["leisure"] = "unnamedpitch"
