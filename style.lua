@@ -5576,11 +5576,15 @@ function filter_tags_generic(keyvalues, nokeys)
 
 -- ----------------------------------------------------------------------------
 -- Apparently there are a few "waterway=brook" in the UK.  Render as stream.
--- Likewise 
+-- Likewise "tidal_channel" as stream and "drainage_channel" as ditch.
 -- ----------------------------------------------------------------------------
    if (( keyvalues["waterway"] == "brook"         ) or
        ( keyvalues["waterway"] == "tidal_channel" )) then
       keyvalues["waterway"] = "stream"
+   end
+
+   if ( keyvalues["waterway"] == "drainage_channel" ) then
+      keyvalues["waterway"] = "ditch"
    end
 
 -- ----------------------------------------------------------------------------

@@ -3312,6 +3312,7 @@
     { "key": "waterway", "value": "ditch", "description": "Many water features shown" },
     { "key": "waterway", "value": "dock", "description": "Many water features shown" },
     { "key": "waterway", "value": "drain", "description": "Many water features shown" },
+    { "key": "waterway", "value": "drainage_channel", "description": "Handled as per 'ditch'" },
     { "key": "waterway", "value": "fish_pass", "description": "Many water features shown" },
     { "key": "waterway", "value": "floating_barrier", "description": "Many water features shown" },
     { "key": "waterway", "value": "flow_control", "description": "Many water features shown" },

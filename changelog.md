@@ -10,6 +10,7 @@ Display military hatching on both "sport=shooting" and "sport=shooting_range".
 Sorted the sport legends entry in rough order of popularity in UK/IE and added new icons for sports with pitches down to "boules".
 Display a "ref" from zoom 19 for aerial pipeline markers.
 Removed "craft=glazier", no longer in the data.
+Display "waterway=drainage_channel" as "waterway=ditch".
 
 ## 01/01/2024
 Added "ruins=donjon" to the list of ruined castle tags.
