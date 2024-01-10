@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20240105T213800Z",
+  "data_updated": "20240110T214300Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -364,8 +364,8 @@
     { "key": "archaeological_site", "value": "castle", "description": "Not an expected value in OSM data.  Show castle with a unique icon" },
     { "key": "archaeological_site", "value": "crannog", "description": "Show crannog with a unique icon" },
     { "key": "archaeological_site", "value": "fortification", "description": "Show archaeological fortifications" },
-    { "key": "archaeological_site", "value": "hill_fort", "description": "Show hill forts with a unique icon" },
-    { "key": "archaeological_site", "value": "hillfort", "description": "Show hill forts with a unique icon" },
+    { "key": "archaeological_site", "value": "hill_fort", "description": "Not an expected value in OSM data.  Show hill forts with a unique icon" },
+    { "key": "archaeological_site", "value": "hillfort", "description": "Not an expected value in OSM data.  Show hill forts with a unique icon" },
     { "key": "archaeological_site", "value": "hilltop_enclosure", "description": "Show hilltop enclosures as hill forts" },
     { "key": "archaeological_site", "value": "megalith", "description": "Detect standing stones and ogham stones" },
     { "key": "archaeological_site", "value": "standing_stone", "description": "Detect standing stones and ogham stones" },
@@ -736,7 +736,6 @@
     { "key": "craft", "value": "furniture", "description": "Shown as office" },
     { "key": "craft", "value": "furniture_maker", "description": "Shown as office" },
     { "key": "craft", "value": "gardener", "description": "Shown as office" },
-    { "key": "craft", "value": "glazier", "description": "Shown as furniture shop" },
     { "key": "craft", "value": "glaziery", "description": "Shown as furniture shop" },
     { "key": "craft", "value": "gunsmith", "description": "Shown as nonspecific shop" },
     { "key": "craft", "value": "handicraft", "description": "Shown as office" },

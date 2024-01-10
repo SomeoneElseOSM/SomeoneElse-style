@@ -8912,7 +8912,6 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["shop"]   == "glaziery"                    ) or
        ( keyvalues["craft"]  == "glaziery"                    ) or
        ( keyvalues["shop"]   == "glazier"                     ) or
-       ( keyvalues["craft"]  == "glazier"                     ) or
        ( keyvalues["shop"]   == "glazing"                     ) or
        ( keyvalues["shop"]   == "stone"                       ) or
        ( keyvalues["shop"]   == "brewing"                     ) or
