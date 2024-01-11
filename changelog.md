@@ -11,6 +11,7 @@ Sorted the sport legends entry in rough order of popularity in UK/IE and added n
 Display a "ref" from zoom 19 for aerial pipeline markers.
 Removed "craft=glazier", no longer in the data.
 Display "waterway=drainage_channel" as "waterway=ditch".
+Added support for "vending=bottle_return" with a unique icon based on other "vending" ones.
 
 ## 01/01/2024
 Added "ruins=donjon" to the list of ruined castle tags.

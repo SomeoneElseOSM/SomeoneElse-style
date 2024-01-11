@@ -4855,11 +4855,19 @@ function filter_tags_generic(keyvalues, nokeys)
 
 -- ----------------------------------------------------------------------------
 -- Excrement bags
--- Other vending machines have their own icon
 -- ----------------------------------------------------------------------------
    if (( keyvalues["amenity"] == "vending_machine" ) and
        ( keyvalues["vending"] == "excrement_bags"  )) then
       keyvalues["amenity"]  = "vending_excrement"
+   end
+
+-- ----------------------------------------------------------------------------
+-- Reverse vending machines
+-- Other vending machines have their own icon
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["amenity"] == "vending_machine" ) and
+       ( keyvalues["vending"] == "bottle_return"   )) then
+      keyvalues["amenity"]  = "bottle_return"
    end
 
 -- ----------------------------------------------------------------------------

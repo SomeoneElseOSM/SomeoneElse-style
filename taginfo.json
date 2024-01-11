@@ -3257,6 +3257,7 @@
     { "key": "usage", "value": "spillway", "description": "Canal leats and spillways" },
     { "key": "usage", "value": "tourism", "description": "Canal leats and spillways; tourist railway stations" },
     { "key": "vending", "description": "Parcel lockers, roadside stands, excrement bags" },
+    { "key": "vending", "value": "bottle_return", "description": "Reverse Vending" },
     { "key": "vending", "value": "cheese", "description": "Roadside stands" },
     { "key": "vending", "value": "eggs", "description": "Roadside stands" },
     { "key": "vending", "value": "excrement_bags", "description": "Excrement bags" },
