@@ -6001,9 +6001,11 @@ function filter_tags_generic(keyvalues, nokeys)
 
 -- ----------------------------------------------------------------------------
 -- Historic pinfolds go through as "historic=pinfold", 
+-- Some have recently been added as "historic=pound".
 -- ----------------------------------------------------------------------------
    if (( keyvalues["historic"] == "pinfold" )  or
-       ( keyvalues["amenity"] == "pinfold"  )) then
+       ( keyvalues["amenity"]  == "pinfold" )  or
+       ( keyvalues["historic"] == "pound"   )) then
       keyvalues["historic"] = "pinfold"
 
       if ( keyvalues["landuse"] == nil ) then
