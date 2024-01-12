@@ -1,7 +1,7 @@
 # Changes made to this rendering
 This page describes changes made [here](https://github.com/SomeoneElseOSM/SomeoneElse-style), [here](https://github.com/SomeoneElseOSM/SomeoneElse-style-legend) and [here](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT), and visible [here](//map.atownsend.org.uk/maps/map/map.html).
 
-## As yet unreleased
+## 12/01/2024
 Removed "floor:material=rough wood", no longer in the data.
 Add "football" as a synonym for "soccer" and detect more combinations for that, and other sports.
 Add icons for "athletics", "boules", "bowls", "croquet", "cycling", "equestrian", "gaelic_games", "hockey", "multi", "netball", "polo" and "shooting" sports pitches.
@@ -12,7 +12,7 @@ Display a "ref" from zoom 19 for aerial pipeline markers.
 Removed "craft=glazier", no longer in the data.
 Display "waterway=drainage_channel" as "waterway=ditch".
 Added support for "vending=bottle_return" with a unique icon based on other "vending" ones.
-Show "historic=pound" as a synonym for "historic=pinfold".
+Show "historic=pound" as a synonym for "historic=pinfold".  Many pinfolds have been [retagged](https://www.openstreetmap.org/changeset/146161946) as pounds.
 
 ## 01/01/2024
 Added "ruins=donjon" to the list of ruined castle tags.
