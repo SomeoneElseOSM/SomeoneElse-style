@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20240111T155800Z",
+  "data_updated": "20240113T115700Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -2542,7 +2542,7 @@
     { "key": "shop", "value": "cookware", "description": "Various shops shown" },
     { "key": "shop", "value": "copyshop", "description": "Various shops shown" },
     { "key": "shop", "value": "cosmetics", "description": "Various shops shown" },
-    { "key": "shop", "value": "council_house", "description": "Various shops shown" },
+    { "key": "shop", "value": "council_house", "description": "Not a current value in OSM data.  Various shops shown" },
     { "key": "shop", "value": "country_store", "description": "Various shops shown" },
     { "key": "shop", "value": "craft", "description": "Shown as a synonym for 'art'" },
     { "key": "shop", "value": "curtain", "description": "Various shops shown" },
