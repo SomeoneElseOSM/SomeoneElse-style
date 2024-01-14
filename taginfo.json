@@ -2379,6 +2379,8 @@
     { "key": "ruins", "value": "yes", "description": "Detect ruins" },
     { "key": "ruins:building", "description": "Detect ruins" },
     { "key": "ruins:building", "value": "yes", "description": "Detect ruins" },
+    { "key": "ruins:man_made", "description": "Detect ruins" },
+    { "key": "ruins:man_made", "value": "kiln", "description": "Detect ruined kilns" },
     { "key": "ruins:tourism", "description": "Used to decide whether a board should be shown" },
     { "key": "sac_scale", "description": "Suppress some unfeasible walking paths wth no explicit PRoW" },
     { "key": "sac_scale", "value": "demanding_alpine_hiking", "description": "Suppress some unfeasible walking paths wth no explicit PRoW" },

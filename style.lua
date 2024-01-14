@@ -6118,8 +6118,10 @@ function filter_tags_generic(keyvalues, nokeys)
 -- Both kilns and lime kilns are shown with the same distinctive bottle kiln
 -- shape.
 -- ----------------------------------------------------------------------------
-   if ( keyvalues["historic"] == "lime_kiln" ) then
-      keyvalues["historic"] = "kiln"
+   if (( keyvalues["historic"]       == "lime_kiln" ) or
+       ( keyvalues["ruins:man_made"] == "kiln"      )) then
+      keyvalues["historic"]       = "kiln"
+      keyvalues["ruins:man_made"] = nil
    end
 
 -- ----------------------------------------------------------------------------
