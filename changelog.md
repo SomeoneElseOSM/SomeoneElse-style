@@ -4,6 +4,7 @@ This page describes changes made [here](https://github.com/SomeoneElseOSM/Someon
 ## As yet unreleased.
 Show non-historic watermills.
 Detect former kilns tagged as "ruins:man_made".
+If a "ref" is set for an international walking network, use that instead of "name".
 
 ## 12/01/2024
 Removed "floor:material=rough wood", no longer in the data.

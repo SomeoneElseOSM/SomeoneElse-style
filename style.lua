@@ -11181,8 +11181,18 @@ function filter_tags_relation_member (keyvalues, keyvaluemembers, roles, memberc
 --
 -- MTB routes are processed only if they are not also another type of cycle
 -- route (including LCN, which isn't actually shown in this rendering).
+--
+-- Processing routes,
+-- Walking networks first.
+-- We use "ref" rather than "name" on IWNs but not others.
+-- We use "colour" as "name" if "colour" is set and "name" is not.
 -- ----------------------------------------------------------------------------
    if (type == "route") then
+      if (( keyvalues["network"] == "iwn" ) and
+          ( keyvalues["ref"]     ~= nil   )) then
+         keyvalues["name"] = keyvalues["ref"]
+      end
+
       if ((( keyvalues["network"] == "iwn"         ) or
            ( keyvalues["network"] == "nwn"         ) or
            ( keyvalues["network"] == "rwn"         ) or
@@ -11197,8 +11207,14 @@ function filter_tags_relation_member (keyvalues, keyvaluemembers, roles, memberc
          end
 
          keyvalues["highway"] = "ldpnwn"
-      end
+      end  -- walking
 
+-- ----------------------------------------------------------------------------
+-- Cycle networks
+-- We exclude some obviously silly refs.
+-- We use "ref" rather than "name".
+-- We handle loops on the National Byway and append (r) on other RCNs.
+-- ----------------------------------------------------------------------------
       if (((  keyvalues["network"] == "ncn"           )  or
            (  keyvalues["network"] == "rcn"           )) and
           ((  keyvalues["state"]   == nil             )  or
@@ -11230,8 +11246,12 @@ function filter_tags_relation_member (keyvalues, keyvaluemembers, roles, memberc
                keyvalues["name"] = keyvalues["name"] .. " (r)"
             end
          end
-      end
+      end -- cycle
 
+-- ----------------------------------------------------------------------------
+-- MTB networks
+-- We append (r) here.
+-- ----------------------------------------------------------------------------
       if (( keyvalues["route"]   == "mtb" ) and
           ( keyvalues["network"] ~= "ncn" ) and
           ( keyvalues["network"] ~= "rcn" ) and
@@ -11243,14 +11263,20 @@ function filter_tags_relation_member (keyvalues, keyvaluemembers, roles, memberc
          else
             keyvalues["name"] = keyvalues["name"] .. " (m)"
          end
-      end
+      end -- MTB
 
+-- ----------------------------------------------------------------------------
+-- Horse networks
+-- ----------------------------------------------------------------------------
       if (( keyvalues["network"] == "nhn"         ) or
           ( keyvalues["network"] == "rhn"         )  or
           ( keyvalues["network"] == "ncn;nhn;nwn" )) then
          keyvalues["highway"] = "ldpnhn"
       end
 
+-- ----------------------------------------------------------------------------
+-- Check for signage - remove unsigned networks
+-- ----------------------------------------------------------------------------
       if (( keyvalues["highway"] == "ldpnwn" ) or
           ( keyvalues["highway"] == "ldpncn" ) or
           ( keyvalues["highway"] == "ldpmtb" ) or
@@ -11263,7 +11289,7 @@ function filter_tags_relation_member (keyvalues, keyvaluemembers, roles, memberc
             keyvalues["name"] = nil
             keyvalues["name:signed"] = nil
             keyvalues["highway"] = nil
-         end
+         end -- no name
 
          if ((  keyvalues["ref"]        ~= nil     ) and
              (( keyvalues["ref:signed"] == "no"   )  or
@@ -11272,9 +11298,9 @@ function filter_tags_relation_member (keyvalues, keyvaluemembers, roles, memberc
             keyvalues["ref:signed"] = nil
             keyvalues["unsigned"] = nil
             keyvalues["highway"] = nil
-         end
-      end
-   end
+         end -- no ref
+      end -- check for signage
+   end -- route
 
    if (type == "boundary") then
       boundary = 1
