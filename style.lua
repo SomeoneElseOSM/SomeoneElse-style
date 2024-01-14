@@ -1644,24 +1644,48 @@ function filter_tags_generic(keyvalues, nokeys)
 -- Ensure that allegedly operational windmills are treated as such and not as
 -- "historic".
 -- ----------------------------------------------------------------------------
-   if ( keyvalues["man_made"] == "windmill") then
+   if (( keyvalues["man_made"] == "watermill") or
+       ( keyvalues["man_made"] == "windmill" )) then
       if (( keyvalues["disused"]           == "yes"  ) or
+          ( keyvalues["watermill:disused"] == "yes"  ) or
           ( keyvalues["windmill:disused"]  == "yes"  )) then
-         keyvalues["historic"] = "windmill"
+         keyvalues["historic"] = keyvalues["man_made"]
          keyvalues["man_made"] = nil
       else
          keyvalues["historic"] = nil
       end
    end
 
+   if ((( keyvalues["disused:man_made"] == "watermill")  or
+        ( keyvalues["disused:man_made"] == "windmill" )) and
+       (  keyvalues["amenity"]          == nil         ) and
+       (  keyvalues["man_made"]         == nil         ) and
+       (  keyvalues["shop"]             == nil         )) then
+      keyvalues["historic"] = keyvalues["disused:man_made"]
+      keyvalues["disused:man_made"] = nil
+   end
+
 -- ----------------------------------------------------------------------------
 -- Render (windmill buildings and former windmills) that are not something 
 -- else as historic windmills.
 -- ----------------------------------------------------------------------------
-   if (( keyvalues["historic"] == "ruins"    ) and
-       ( keyvalues["ruins"]    == "windmill" )) then
-      keyvalues["historic"] = "windmill"
+   if ((  keyvalues["historic"] == "ruins"      ) and
+       (( keyvalues["ruins"]    == "watermill" )  or
+        ( keyvalues["ruins"]    == "windmill"  ))) then
+      keyvalues["historic"] = keyvalues["ruins"]
       keyvalues["ruins"] = "yes"
+   end
+
+   if (((   keyvalues["building"] == "watermill"        )  or
+        (   keyvalues["building"] == "former_watermill" )) and
+       ((   keyvalues["amenity"]  == nil                 ) and
+        (   keyvalues["man_made"] == nil                 ) and
+        ((  keyvalues["historic"] == nil                )  or
+         (  keyvalues["historic"] == "restoration"      )  or
+         (  keyvalues["historic"] == "heritage"         )  or
+         (  keyvalues["historic"] == "industrial"       )  or
+         (  keyvalues["historic"] == "tower"            )))) then
+      keyvalues["historic"] = "watermill"
    end
 
    if (((   keyvalues["building"] == "windmill"        )  or
@@ -1688,7 +1712,6 @@ function filter_tags_generic(keyvalues, nokeys)
         ( keyvalues["ruins"]    == "mine"        )  or
         ( keyvalues["ruins"]    == "round_tower" )  or
         ( keyvalues["ruins"]    == "village"     )  or
-        ( keyvalues["ruins"]    == "watermill"   )  or
         ( keyvalues["ruins"]    == "well"        ))) then
       keyvalues["historic"] = keyvalues["ruins"]
       keyvalues["ruins"] = "yes"
@@ -2505,6 +2528,7 @@ function filter_tags_generic(keyvalues, nokeys)
         ( keyvalues["historic"]  == "wayside_cross"             )  or
         ( keyvalues["historic"]  == "wayside_shrine"            )  or
         ( keyvalues["historic"]  == "well"                      )  or
+        ( keyvalues["historic"]  == "watermill"                 )  or
         ( keyvalues["historic"]  == "windmill"                  )  or
         ( keyvalues["historic"]  == "wreck"                     )  or
         ( keyvalues["historic"]  == "yes"                       )  or

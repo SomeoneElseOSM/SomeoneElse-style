@@ -2,6 +2,7 @@
 This page describes changes made [here](https://github.com/SomeoneElseOSM/SomeoneElse-style), [here](https://github.com/SomeoneElseOSM/SomeoneElse-style-legend) and [here](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT), and visible [here](//map.atownsend.org.uk/maps/map/map.html).
 
 ## As yet unreleased.
+Show non-historic watermills.
 
 ## 12/01/2024
 Removed "floor:material=rough wood", no longer in the data.
