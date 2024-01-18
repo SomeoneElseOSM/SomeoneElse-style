@@ -5,6 +5,7 @@ This page describes changes made [here](https://github.com/SomeoneElseOSM/Someon
 Show non-historic watermills.
 Detect former kilns tagged as "ruins:man_made".
 If a "ref" is set for an international walking network, use that instead of "name".
+Fix bug whereby rugby pitches weren't shown in green.
 
 ## 12/01/2024
 Removed "floor:material=rough wood", no longer in the data.

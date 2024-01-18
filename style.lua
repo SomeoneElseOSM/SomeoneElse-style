@@ -10793,7 +10793,7 @@ function filter_tags_generic(keyvalues, nokeys)
          ( keyvalues["amenity"]    ~= "pitch_netball"     )   and
          ( keyvalues["amenity"]    ~= "pitch_polo"        )   and
          ( keyvalues["amenity"]    ~= "pitch_shooting"    )   and
-         ( keyvalues["amenity"]    ~= "pitch_rubgy"       )   and
+         ( keyvalues["amenity"]    ~= "pitch_rugby"       )   and
          ( keyvalues["amenity"]    ~= "pitch_skateboard"  )   and
          ( keyvalues["amenity"]    ~= "pitch_soccer"      )   and
          ( keyvalues["amenity"]    ~= "pitch_tabletennis" )   and
