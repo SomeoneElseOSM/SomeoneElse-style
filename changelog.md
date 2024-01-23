@@ -8,6 +8,7 @@ If a "ref" is set for an international walking network, use that instead of "nam
 Fix bug whereby rugby pitches weren't shown in green.
 Removed "natural=lake" from styling and taginfo after removing it from UK/IE data.
 Show larger lakes at lower zoom levels based on size.  Changed "smallest lake" display level from zoom 15 to zoom 16.
+Show area battlefield names at lower zoom levels based on size.  Smallest area battlefield shows from zoom 16, as before.
 
 ## 12/01/2024
 Removed "floor:material=rough wood", no longer in the data.
