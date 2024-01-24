@@ -7788,6 +7788,18 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Other memorials go straight through, even though there are some area ones.
+-- We don't add "landuse=historic", even if no other landuse or natural tags
+-- are set, because sometimes these overlay other landuse, such as cemetaries.
+-- ----------------------------------------------------------------------------
+--   if ( keyvalues["historic"] == "memorial" ) then
+--      if (( keyvalues["landuse"] == nil ) and
+--          ( keyvalues["natural"] == nil )) then
+--         keyvalues["landuse"] = "historic"
+--      end
+--   end
+   
+-- ----------------------------------------------------------------------------
 -- Render shop=newsagent as shop=convenience
 -- It's near enough in meaning I think.  Likewise kiosk (bit of a stretch,
 -- but nearer than anything else)
