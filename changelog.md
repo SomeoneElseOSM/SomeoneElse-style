@@ -3,6 +3,7 @@ This page describes changes made [here](https://github.com/SomeoneElseOSM/Someon
 
 ## As yet unreleased
 If something is a historic quarry, mineshaft or castle, or falls into the historic "nonspecific catch-all", and is tagged with something natural, show it as that natural thing.
+If something is a historic tomb, and is tagged with landuse or natural, show it as that.
 
 ## 23/01/2024
 Show non-historic watermills.

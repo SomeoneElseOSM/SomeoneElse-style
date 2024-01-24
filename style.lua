@@ -6266,6 +6266,16 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Tombs go straight through unless we need to set landuse.
+-- ----------------------------------------------------------------------------
+   if ( keyvalues["historic"] == "tomb" ) then
+      if (( keyvalues["landuse"] == nil ) and
+          ( keyvalues["natural"] == nil )) then
+         keyvalues["landuse"] = "historic"
+      end
+   end
+   
+-- ----------------------------------------------------------------------------
 -- The catch-all for most "sensible" historic values that are displayed with
 -- a historic dot regardless of whether they have a name.
 --
