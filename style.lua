@@ -10291,6 +10291,8 @@ function filter_tags_generic(keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
 -- If a quarry is disused or historic, it's still likely a hole in the ground, 
 -- so render it as something.
+-- However, if there's a natural tag, that should take precendence, and 
+-- landuse is cleared.
 -- ----------------------------------------------------------------------------
    if ((( keyvalues["disused:landuse"] == "quarry" )  and
         ( keyvalues["landuse"]         == nil      )) or
@@ -10298,7 +10300,11 @@ function filter_tags_generic(keyvalues, nokeys)
         ( keyvalues["landuse"]         == nil      )) or
        (( keyvalues["landuse"]         == "quarry" )  and
         ( keyvalues["disused"]         == "yes"    ))) then
-      keyvalues["landuse"] = "historicquarry"
+      if ( keyvalues["natural"] == nil ) then
+         keyvalues["landuse"] = "historicquarry"
+      else
+         keyvalues["landuse"] = nil
+      end
    end
 
 -- ----------------------------------------------------------------------------
