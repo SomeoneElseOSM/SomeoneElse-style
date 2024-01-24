@@ -5855,7 +5855,8 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["historic"] == "mine"              )) then
       keyvalues["historic"] = "mineshaft"
 
-      if ( keyvalues["landuse"] == nil ) then
+      if (( keyvalues["landuse"] == nil ) and
+          ( keyvalues["natural"] == nil )) then
          keyvalues["landuse"] = "historic"
       end
    end
