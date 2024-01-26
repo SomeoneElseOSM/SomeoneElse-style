@@ -7601,9 +7601,10 @@ function filter_tags_generic(keyvalues, nokeys)
       keyvalues["place"] = nil
       keyvalues["tourism"] = nil
 
-      if (( keyvalues["landuse"] == nil ) and
-          ( keyvalues["leisure"] == nil ) and
-          ( keyvalues["natural"] == nil )) then
+      if (( keyvalues["landuse"]               == nil      ) and
+          ( keyvalues["leisure"]               == nil      ) and
+          ( keyvalues["natural"]               == nil      )  and
+          ( keyvalues["historic:civilization"] ~= "modern" )) then
          keyvalues["landuse"] = "historic"
       end
 

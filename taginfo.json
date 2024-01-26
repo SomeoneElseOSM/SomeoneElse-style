@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20240114T013200Z",
+  "data_updated": "20240126T015400Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -1488,6 +1488,7 @@
     { "key": "historic:civilization", "value": "prehistoric", "description": "Used to detect forts that are archeological rather than historic" },
     { "key": "historic:civilization", "value": "iron_age", "description": "Used to detect forts that are archeological rather than historic" },
     { "key": "historic:civilization", "value": "ancient_roman", "description": "Used to detect forts that are archeological rather than historic" },
+    { "key": "historic:civilization", "value": "modern", "description": "Suppress landuse=historic display on 'modern' archaeological sites" },
     { "key": "historic:name", "description": "Name of derelict canals" },
     { "key": "historic:railway", "description": "Detect historic railway stations" },
     { "key": "historic:railway", "value": "station", "description": "Detect historic railway stations" },

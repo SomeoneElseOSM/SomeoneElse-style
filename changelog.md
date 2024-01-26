@@ -5,6 +5,7 @@ This page describes changes made [here](https://github.com/SomeoneElseOSM/Someon
 If something is a historic quarry, mineshaft or castle, or falls into the historic "nonspecific catch-all", and is tagged with something leisure or natural, show it as that other thing.
 If something is a historic tomb, and is tagged with landuse, leisure or natural, show it as the latter.
 Show some "area" historic objects at a lower zoom level if large enough.
+Suppress landuse=historic display on 'modern' archaeological sites.
 
 ## 23/01/2024
 Show non-historic watermills.
