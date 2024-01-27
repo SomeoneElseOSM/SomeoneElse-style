@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20240126T015400Z",
+  "data_updated": "20240127T210700Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -3144,6 +3144,8 @@
     { "key": "theatre", "value": "concert_hall", "description": "Detect concert halls" },
     { "key": "tidal", "description": "Detect tidal beaches" },
     { "key": "tidal", "value": "yes", "description": "Detect tidal beaches" },
+    { "key": "tomb", "description": "Detect tumuli mapped as tombs" },
+    { "key": "tomb", "value": "tumulus", "description": "Detect tumuli mapped as tombs" },
     { "key": "tourism", "description": "All tourism tags" },
     { "key": "tourism", "value": "Holiday Lodges", "description": "Many tourism tags handled" },
     { "key": "tourism", "value": "accommodation", "description": "Many tourism tags handled" },

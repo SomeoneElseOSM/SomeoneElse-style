@@ -6285,13 +6285,21 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
--- Tombs go straight through unless we need to set landuse.
+-- Some tumuli are tagged as tombs, so dig those out first.
+-- They are then picked up below.
+--
+-- Tombs that remain go straight through unless we need to set landuse.
 -- ----------------------------------------------------------------------------
    if ( keyvalues["historic"] == "tomb" ) then
-      if (( keyvalues["landuse"] == nil ) and
-          ( keyvalues["leisure"] == nil ) and
-          ( keyvalues["natural"] == nil )) then
-         keyvalues["landuse"] = "historic"
+      if ( keyvalues["tomb"] == "tumulus" ) then
+         keyvalues["historic"]            = "archaeological_site"
+         keyvalues["archaeological_site"] = "tumulus"
+      else
+         if (( keyvalues["landuse"] == nil ) and
+             ( keyvalues["leisure"] == nil ) and
+             ( keyvalues["natural"] == nil )) then
+            keyvalues["landuse"] = "historic"
+         end
       end
    end
    
@@ -6331,8 +6339,7 @@ function filter_tags_generic(keyvalues, nokeys)
        (  keyvalues["historic"] == "theatre"                   ) or
        (  keyvalues["historic"] == "toll_house"                ) or
        (  keyvalues["historic"] == "tower_house"               ) or
-       (  keyvalues["historic"] == "tumulus"                   ) or
-        ( keyvalues["historic"] == "village"                   ) or
+       (  keyvalues["historic"] == "village"                   ) or
        (( keyvalues["disused:landuse"] == "cemetery"          )  and
         ( keyvalues["landuse"]         == nil                 )  and
         ( keyvalues["leisure"]         == nil                 )  and
@@ -7662,8 +7669,10 @@ function filter_tags_generic(keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
 -- Not a fortification.  Check for tumulus
 -- ----------------------------------------------------------------------------
-         if (( keyvalues["archaeological_site"] == "tumulus" ) or 
-             ( keyvalues["site_type"]           == "tumulus" )) then
+         if ((  keyvalues["archaeological_site"] == "tumulus"  ) or 
+             (  keyvalues["site_type"]           == "tumulus"  ) or
+             (( keyvalues["archaeological_site"] == "tomb"    )  and
+              ( keyvalues["tomb"]                == "tumulus" ))) then
             keyvalues["historic"] = "historictumulus"
          else
 -- ----------------------------------------------------------------------------

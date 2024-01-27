@@ -1,6 +1,9 @@
 # Changes made to this rendering
 This page describes changes made [here](https://github.com/SomeoneElseOSM/SomeoneElse-style), [here](https://github.com/SomeoneElseOSM/SomeoneElse-style-legend) and [here](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT), and visible [here](//map.atownsend.org.uk/maps/map/map.html).
 
+## As yet unreleased
+Detect tumuli mapped as tombs.
+
 ## 27/02/2024
 If something is a historic quarry, mineshaft or castle, or falls into the historic "nonspecific catch-all", and is tagged with something leisure or natural, show it as that other thing.
 If something is a historic tomb, and is tagged with landuse, leisure or natural, show it as the latter.
