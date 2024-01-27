@@ -2438,7 +2438,7 @@ function filter_tags_generic(keyvalues, nokeys)
 
 -- ----------------------------------------------------------------------------
 -- Things that are both viewpoints or attractions and monuments or memorials 
--- should render as the latter.
+-- should render as the latter.  Some are handled further down too.
 -- Also handle some other combinations.
 -- ----------------------------------------------------------------------------
    if ((( keyvalues["tourism"]   == "viewpoint"                 )  or
@@ -2466,7 +2466,6 @@ function filter_tags_generic(keyvalues, nokeys)
         ( keyvalues["historic"]  == "city_gate"                 )  or
         ( keyvalues["historic"]  == "citywalls"                 )  or
         ( keyvalues["historic"]  == "chlochan"                  )  or
-        ( keyvalues["historic"]  == "country_mansion"           )  or
         ( keyvalues["historic"]  == "cross"                     )  or
         ( keyvalues["historic"]  == "deserted_medieval_village" )  or
         ( keyvalues["historic"]  == "drinking_fountain"         )  or
@@ -2482,8 +2481,6 @@ function filter_tags_generic(keyvalues, nokeys)
         ( keyvalues["historic"]  == "jail"                      )  or
         ( keyvalues["historic"]  == "locomotive"                )  or
         ( keyvalues["historic"]  == "locomotive"                )  or
-        ( keyvalues["historic"]  == "manor"                     )  or
-        ( keyvalues["historic"]  == "mansion"                   )  or
         ( keyvalues["historic"]  == "martello_tower"            )  or
         ( keyvalues["historic"]  == "martello_tower;bunker"     )  or
         ( keyvalues["historic"]  == "martello_tower;fort"       )  or
@@ -2499,7 +2496,6 @@ function filter_tags_generic(keyvalues, nokeys)
         ( keyvalues["historic"]  == "mound"                     )  or
 	( keyvalues["historic"]  == "naval_mine"                )  or
         ( keyvalues["historic"]  == "oratory"                   )  or
-        ( keyvalues["historic"]  == "palace"                    )  or
         ( keyvalues["historic"]  == "pillory"                   )  or
         ( keyvalues["historic"]  == "place_of_worship"          )  or
         ( keyvalues["historic"]  == "police_call_box"           )  or
@@ -5930,11 +5926,13 @@ function filter_tags_generic(keyvalues, nokeys)
 -- Note that archaeological sites that are manors are handled elsewhere.
 -- ----------------------------------------------------------------------------
    if (( keyvalues["historic"] == "manor"           ) or
+       ( keyvalues["historic"] == "lodge"           ) or
        ( keyvalues["historic"] == "mansion"         ) or
        ( keyvalues["historic"] == "country_mansion" ) or
        ( keyvalues["historic"] == "stately_home"    ) or
        ( keyvalues["historic"] == "palace"          )) then
       keyvalues["historic"] = "manor"
+      keyvalues["tourism"] = nil
 
       if (( keyvalues["landuse"] == nil ) and
           ( keyvalues["leisure"] == nil ) and
@@ -10375,6 +10373,7 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["historic"] == "historicringfort"      ) or
        ( keyvalues["historic"] == "manor"                 ) or
        ( keyvalues["historic"] == "memorial"              ) or
+       ( keyvalues["historic"] == "memorialobelisk"       ) or
        ( keyvalues["historic"] == "nonspecific"           ) or
        ( keyvalues["leisure"]  == "common"                ) or
        ( keyvalues["leisure"]  == "garden"                ) or
@@ -10423,11 +10422,11 @@ function filter_tags_generic(keyvalues, nokeys)
          keyvalues["landuse"] = "unnamedorchard"
       end
 
-      if ( keyvalues["landuse"] == "quarry" ) then
+      if ( keyvalues["landuse"]  == "quarry" ) then
          keyvalues["landuse"] = "unnamedquarry"
       end
 
-      if ( keyvalues["landuse"] == "historicquarry" ) then
+      if ( keyvalues["landuse"]  == "historicquarry" ) then
          keyvalues["landuse"] = "unnamedhistoricquarry"
       end
 
