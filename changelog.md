@@ -6,6 +6,7 @@ If something is a historic quarry, mineshaft or castle, or falls into the histor
 If something is a historic tomb, and is tagged with landuse, leisure or natural, show it as the latter.
 Show some "area" historic objects at a lower zoom level if large enough.
 Suppress landuse=historic display on 'modern' archaeological sites.
+Suppress duplicate name display on some historic / landuse combinations.
 
 ## 23/01/2024
 Show non-historic watermills.

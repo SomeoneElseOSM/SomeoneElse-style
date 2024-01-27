@@ -10365,16 +10365,30 @@ function filter_tags_generic(keyvalues, nokeys)
 -- already been rewritten to "park" by now.
 -- Some combinations are incompatible so we "just need to pick one".
 -- ----------------------------------------------------------------------------
-   if (( keyvalues["aeroway"] == "aerodrome"      ) or
-       ( keyvalues["leisure"] == "common"         ) or
-       ( keyvalues["leisure"] == "garden"         ) or
-       ( keyvalues["leisure"] == "nature_reserve" ) or
-       ( keyvalues["leisure"] == "park"           ) or
-       ( keyvalues["leisure"] == "pitch"          ) or
-       ( keyvalues["leisure"] == "sports_centre"  ) or
-       ( keyvalues["leisure"] == "track"          )) then
+   if (( keyvalues["aeroway"]  == "aerodrome"             ) or
+       ( keyvalues["historic"] == "archaeological_site"   ) or
+       ( keyvalues["historic"] == "castle"                ) or
+       ( keyvalues["historic"] == "church"                ) or
+       ( keyvalues["historic"] == "historicfortification" ) or
+       ( keyvalues["historic"] == "historichillfort"      ) or
+       ( keyvalues["historic"] == "historicmegalithtomb"  ) or
+       ( keyvalues["historic"] == "historicringfort"      ) or
+       ( keyvalues["historic"] == "manor"                 ) or
+       ( keyvalues["historic"] == "memorial"              ) or
+       ( keyvalues["historic"] == "nonspecific"           ) or
+       ( keyvalues["leisure"]  == "common"                ) or
+       ( keyvalues["leisure"]  == "garden"                ) or
+       ( keyvalues["leisure"]  == "nature_reserve"        ) or
+       ( keyvalues["leisure"]  == "park"                  ) or
+       ( keyvalues["leisure"]  == "pitch"                 ) or
+       ( keyvalues["leisure"]  == "sports_centre"         ) or
+       ( keyvalues["leisure"]  == "track"                 )) then
       if ( keyvalues["landuse"] == "allotments" ) then
          keyvalues["landuse"] = "unnamedallotments"
+      end
+
+      if ( keyvalues["landuse"] == "cemetery" ) then
+         keyvalues["landuse"] = "unnamedcemetery"
       end
 
       if ( keyvalues["landuse"] == "commercial" ) then
@@ -10415,6 +10429,10 @@ function filter_tags_generic(keyvalues, nokeys)
 
       if ( keyvalues["landuse"] == "historicquarry" ) then
          keyvalues["landuse"] = "unnamedhistoricquarry"
+      end
+
+      if ( keyvalues["landuse"] == "residential" ) then
+         keyvalues["landuse"] = "unnamedresidential"
       end
    end
 
