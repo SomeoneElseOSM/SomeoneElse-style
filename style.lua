@@ -6094,7 +6094,7 @@ function filter_tags_generic(keyvalues, nokeys)
 
       if (( keyvalues["landuse"] == nil ) and
           ( keyvalues["leisure"] == nil )) then
-         keyvalues["amenity"] = "grave_yard"
+         keyvalues["landuse"] = "cemetery"
       end
    end
 
@@ -10672,13 +10672,23 @@ function filter_tags_generic(keyvalues, nokeys)
 
 -- ----------------------------------------------------------------------------
 -- A special case to check before the "vacant shops" check below - potentially
--- remove disused:amenity=graveyard
+-- remove disused:amenity=grave_yard
 -- ----------------------------------------------------------------------------
    if (( keyvalues["disused:amenity"] == "grave_yard" ) and
        ( keyvalues["landuse"]         == "cemetery"   )) then
       keyvalues["disused:amenity"] = nil
    end
-   
+
+-- ----------------------------------------------------------------------------
+-- Let's send amenity=grave_yard and landuse=cemetery through as
+-- landuse=cemetery.
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["amenity"] == "grave_yard" ) or
+       ( keyvalues["landuse"] == "grave_yard" )) then
+      keyvalues["amenity"] = nil
+      keyvalues["landuse"] = "cemetery"
+   end
+
 
 -- ----------------------------------------------------------------------------
 -- Names for vacant shops
