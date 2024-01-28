@@ -10386,6 +10386,9 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["historic"] == "historichillfort"      ) or
        ( keyvalues["historic"] == "historicmegalithtomb"  ) or
        ( keyvalues["historic"] == "historicringfort"      ) or
+       ( keyvalues["historic"] == "historicstandingstone" ) or
+       ( keyvalues["historic"] == "historicstonecircle"   ) or
+       ( keyvalues["historic"] == "historictumulus"       ) or
        ( keyvalues["historic"] == "manor"                 ) or
        ( keyvalues["historic"] == "memorial"              ) or
        ( keyvalues["historic"] == "memorialobelisk"       ) or
