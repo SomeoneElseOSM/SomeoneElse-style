@@ -3,7 +3,7 @@ This page describes changes made [here](https://github.com/SomeoneElseOSM/Someon
 
 ## As yet unreleased
 Detect tumuli mapped as tombs.
-Suppress duplicate name display on some historic / landuse combinations on buildings.
+Suppress duplicate name display on some historic / landuse combinations on buildings and some other features.
 
 ## 27/02/2024
 If something is a historic quarry, mineshaft or castle, or falls into the historic "nonspecific catch-all", and is tagged with something leisure or natural, show it as that other thing.

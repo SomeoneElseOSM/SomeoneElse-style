@@ -10386,6 +10386,7 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["historic"] == "manor"                 ) or
        ( keyvalues["historic"] == "memorial"              ) or
        ( keyvalues["historic"] == "memorialobelisk"       ) or
+       ( keyvalues["historic"] == "mineshaft"             ) or
        ( keyvalues["historic"] == "nonspecific"           ) or
        ( keyvalues["leisure"]  == "common"                ) or
        ( keyvalues["leisure"]  == "garden"                ) or
@@ -10406,6 +10407,12 @@ function filter_tags_generic(keyvalues, nokeys)
          keyvalues["landuse"] = "unnamedcommercial"
       end
 
+      if (( keyvalues["landuse"] == "construction" )  or
+          ( keyvalues["landuse"] == "brownfield"   )  or
+          ( keyvalues["landuse"] == "greenfield"   )) then
+         keyvalues["landuse"] = "unnamedconstruction"
+      end
+
       if ( keyvalues["landuse"] == "farmland" ) then
          keyvalues["landuse"] = "unnamedfarmland"
       end
@@ -10424,6 +10431,14 @@ function filter_tags_generic(keyvalues, nokeys)
 
       if ( keyvalues["landuse"] == "grass" ) then
          keyvalues["landuse"] = "unnamedgrass"
+      end
+
+      if ( keyvalues["landuse"] == "industrial" ) then
+         keyvalues["landuse"] = "unnamedindustrial"
+      end
+
+      if ( keyvalues["landuse"] == "landfill" ) then
+         keyvalues["landuse"] = "unnamedlandfill"
       end
 
       if ( keyvalues["landuse"] == "meadow" ) then
