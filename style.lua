@@ -2526,6 +2526,7 @@ function filter_tags_generic(keyvalues, nokeys)
         ( keyvalues["historic"]  == "well"                      )  or
         ( keyvalues["historic"]  == "watermill"                 )  or
         ( keyvalues["historic"]  == "windmill"                  )  or
+        ( keyvalues["historic"]  == "workhouse"                 )  or
         ( keyvalues["historic"]  == "wreck"                     )  or
         ( keyvalues["historic"]  == "yes"                       )  or
         ( keyvalues["natural"]   == "tree"                      )  or
@@ -6343,6 +6344,7 @@ function filter_tags_generic(keyvalues, nokeys)
        (  keyvalues["historic"] == "toll_house"                ) or
        (  keyvalues["historic"] == "tower_house"               ) or
        (  keyvalues["historic"] == "village"                   ) or
+       (  keyvalues["historic"] == "workhouse"                 ) or
        (( keyvalues["disused:landuse"] == "cemetery"          )  and
         ( keyvalues["landuse"]         == nil                 )  and
         ( keyvalues["leisure"]         == nil                 )  and
@@ -10377,6 +10379,7 @@ function filter_tags_generic(keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
    if (( keyvalues["aeroway"]  == "aerodrome"             ) or
        ( keyvalues["historic"] == "archaeological_site"   ) or
+       ( keyvalues["historic"] == "battlefield"           ) or
        ( keyvalues["historic"] == "castle"                ) or
        ( keyvalues["historic"] == "church"                ) or
        ( keyvalues["historic"] == "historicfortification" ) or
@@ -10386,6 +10389,7 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["historic"] == "manor"                 ) or
        ( keyvalues["historic"] == "memorial"              ) or
        ( keyvalues["historic"] == "memorialobelisk"       ) or
+       ( keyvalues["historic"] == "monastery"             ) or
        ( keyvalues["historic"] == "mineshaft"             ) or
        ( keyvalues["historic"] == "nonspecific"           ) or
        ( keyvalues["leisure"]  == "common"                ) or

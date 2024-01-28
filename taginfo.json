@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20240127T210700Z",
+  "data_updated": "20240128T114200Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -1480,6 +1480,7 @@
     { "key": "historic", "value": "wayside_shrine", "description": "Shown as nonspecific historic item" },
     { "key": "historic", "value": "well", "description": "Shown as historic version of water_well icon" },
     { "key": "historic", "value": "windmill", "description": "Shown as historic windmill" },
+    { "key": "historic", "value": "workhouse", "description": "Shown as nonspecific historic item" },
     { "key": "historic", "value": "wreck", "description": "Shown as building and as a historic wreck" },
     { "key": "historic", "value": "yes", "description": "Used to detect historic mines" },
     { "key": "historic:amenity", "description": "Former telephone boxes" },
