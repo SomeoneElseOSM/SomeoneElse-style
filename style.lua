@@ -10399,6 +10399,22 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["historic"] == "monastery"             ) or
        ( keyvalues["historic"] == "mineshaft"             ) or
        ( keyvalues["historic"] == "nonspecific"           )) then
+      if ( keyvalues["natural"] == "wood" ) then
+         keyvalues["natural"] = "unnamedwood"
+      end
+
+      if ( keyvalues["natural"] == "broadleaved" ) then
+         keyvalues["natural"] = "unnamedbroadleaved"
+      end
+
+      if ( keyvalues["natural"] == "mixedleaved" ) then
+         keyvalues["natural"] = "unnamedmixedleaved"
+      end
+
+      if ( keyvalues["natural"] == "needleleaved" ) then
+         keyvalues["natural"] = "unnamedneedleleaved"
+      end
+
       if ( keyvalues["natural"] == "heath" ) then
          keyvalues["natural"] = "unnamedheath"
       end
