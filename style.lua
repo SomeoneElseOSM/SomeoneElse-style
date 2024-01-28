@@ -6199,6 +6199,8 @@ function filter_tags_generic(keyvalues, nokeys)
 -- (e.g. "fort" below).  Some use "roof" (which I use for "nearly a building" 
 -- elsewhere).  It's sent through as "nonspecific".
 -- "stone" has a building tag added because some are mapped as closed ways.
+-- "landuse" is cleared because it might have been set for some building types
+--  above.
 -- ----------------------------------------------------------------------------
    if (( keyvalues["historic"] == "baths"              ) or
        ( keyvalues["historic"] == "building"           ) or
@@ -6222,7 +6224,8 @@ function filter_tags_generic(keyvalues, nokeys)
       end
 
       keyvalues["historic"] = "nonspecific"
-      keyvalues["tourism"] = nil
+      keyvalues["landuse"]  = nil
+      keyvalues["tourism"]  = nil
    end
 
 -- ----------------------------------------------------------------------------
