@@ -1482,7 +1482,7 @@
     { "key": "historic", "value": "windmill", "description": "Shown as historic windmill" },
     { "key": "historic", "value": "workhouse", "description": "Shown as nonspecific historic item" },
     { "key": "historic", "value": "wreck", "description": "Shown as building and as a historic wreck" },
-    { "key": "historic", "value": "yes", "description": "Used to detect historic mines" },
+    { "key": "historic", "value": "yes", "description": "Used to detect historic mines and quarries" },
     { "key": "historic:amenity", "description": "Former telephone boxes" },
     { "key": "historic:amenity", "value": "telephone", "description": "Former telephone boxes" },
     { "key": "historic:civilization", "description": "Used to detect forts that are archeological rather than historic." },

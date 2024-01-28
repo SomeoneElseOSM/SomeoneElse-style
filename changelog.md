@@ -6,6 +6,7 @@ Detect tumuli mapped as tombs.
 Suppress duplicate name display on some historic / landuse combinations on buildings and some other features.
 Added support for "historic=workhouse" as a nonspecific historic item.
 Treat "status=abandoned" as a synonym for "disused=yes".
+Detect historic quarries that have "historic=yes" set.
 
 ## 27/02/2024
 If something is a historic quarry, mineshaft or castle, or falls into the historic "nonspecific catch-all", and is tagged with something leisure or natural, show it as that other thing.

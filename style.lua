@@ -10364,12 +10364,13 @@ function filter_tags_generic(keyvalues, nokeys)
 -- However, if there's a natural tag, that should take precendence, and 
 -- landuse is cleared.
 -- ----------------------------------------------------------------------------
-   if ((( keyvalues["disused:landuse"] == "quarry" )  and
-        ( keyvalues["landuse"]         == nil      )) or
-       (( keyvalues["historic"]        == "quarry" )  and
-        ( keyvalues["landuse"]         == nil      )) or
-       (( keyvalues["landuse"]         == "quarry" )  and
-        ( keyvalues["disused"]         == "yes"    ))) then
+   if (((  keyvalues["disused:landuse"] == "quarry"  )  and
+        (  keyvalues["landuse"]         == nil       )) or
+       ((  keyvalues["historic"]        == "quarry"  )  and
+        (  keyvalues["landuse"]         == nil       )) or
+       ((  keyvalues["landuse"]         == "quarry"  )  and
+        (( keyvalues["disused"]         == "yes"    )   or
+         ( keyvalues["historic"]        == "yes"    )))) then
       if ( keyvalues["natural"] == nil ) then
          keyvalues["landuse"] = "historicquarry"
       else
