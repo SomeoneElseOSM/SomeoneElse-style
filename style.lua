@@ -10379,6 +10379,32 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Where both historic and natural might carry a name, we need to change some
+-- natural tags to unnamed versions
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["historic"] == "archaeological_site"   ) or
+       ( keyvalues["historic"] == "battlefield"           ) or
+       ( keyvalues["historic"] == "castle"                ) or
+       ( keyvalues["historic"] == "church"                ) or
+       ( keyvalues["historic"] == "historicfortification" ) or
+       ( keyvalues["historic"] == "historichillfort"      ) or
+       ( keyvalues["historic"] == "historicmegalithtomb"  ) or
+       ( keyvalues["historic"] == "historicringfort"      ) or
+       ( keyvalues["historic"] == "historicstandingstone" ) or
+       ( keyvalues["historic"] == "historicstonecircle"   ) or
+       ( keyvalues["historic"] == "historictumulus"       ) or
+       ( keyvalues["historic"] == "manor"                 ) or
+       ( keyvalues["historic"] == "memorial"              ) or
+       ( keyvalues["historic"] == "memorialobelisk"       ) or
+       ( keyvalues["historic"] == "monastery"             ) or
+       ( keyvalues["historic"] == "mineshaft"             ) or
+       ( keyvalues["historic"] == "nonspecific"           )) then
+      if ( keyvalues["natural"] == "heath" ) then
+         keyvalues["natural"] = "unnamedheath"
+      end
+   end
+
+-- ----------------------------------------------------------------------------
 -- Change commercial landuse from aerodromes so that no name is displayed 
 -- from that.
 -- There's a similar issue with e.g. leisure=fishing / landuse=grass, which has
