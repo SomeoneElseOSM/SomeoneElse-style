@@ -184,6 +184,13 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Treat "status=abandoned" as "disused=yes"
+-- ----------------------------------------------------------------------------
+   if ( keyvalues["status"] == "abandoned" ) then
+      keyvalues["disused"] = "yes"
+   end
+
+-- ----------------------------------------------------------------------------
 -- Designation processing
 --
 -- The "standard" stylesheet contains rules for different sorts of tracks 
