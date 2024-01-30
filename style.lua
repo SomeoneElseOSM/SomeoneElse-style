@@ -7043,6 +7043,74 @@ function filter_tags_generic(keyvalues, nokeys)
          keyvalues["tourism"] = "informationroutemarker"
       else
          keyvalues["tourism"] = "informationmarker"
+
+         if ( keyvalues["name"] ~= nil ) then
+            keyvalues["ele"] = keyvalues["name"]
+         end
+
+         if ( keyvalues["direction_north"] ~= nil ) then
+            if ( keyvalues["ele"] == nil ) then
+               keyvalues["ele"] = "N: " .. keyvalues["direction_north"]
+            else
+               keyvalues["ele"] = keyvalues["ele"] .. ", N: " .. keyvalues["direction_north"]
+            end
+         end
+
+         if ( keyvalues["direction_northeast"] ~= nil ) then
+            if ( keyvalues["ele"] == nil ) then
+               keyvalues["ele"] = "NE: " .. keyvalues["direction_northeast"]
+            else
+               keyvalues["ele"] = keyvalues["ele"] .. ", NE: " .. keyvalues["direction_northeast"]
+            end
+         end
+
+         if ( keyvalues["direction_east"] ~= nil ) then
+            if ( keyvalues["ele"] == nil ) then
+               keyvalues["ele"] = "E: " .. keyvalues["direction_east"]
+            else
+               keyvalues["ele"] = keyvalues["ele"] .. ", E: " .. keyvalues["direction_east"]
+            end
+         end
+
+         if ( keyvalues["direction_southeast"] ~= nil ) then
+            if ( keyvalues["ele"] == nil ) then
+               keyvalues["ele"] = "SE: " .. keyvalues["direction_southeast"]
+            else
+               keyvalues["ele"] = keyvalues["ele"] .. ", SE: " .. keyvalues["direction_southeast"]
+            end
+         end
+
+         if ( keyvalues["direction_south"] ~= nil ) then
+            if ( keyvalues["ele"] == nil ) then
+               keyvalues["ele"] = "S: " .. keyvalues["direction_south"]
+            else
+               keyvalues["ele"] = keyvalues["ele"] .. ", S: " .. keyvalues["direction_south"]
+            end
+         end
+
+         if ( keyvalues["direction_southwest"] ~= nil ) then
+            if ( keyvalues["ele"] == nil ) then
+               keyvalues["ele"] = "SW: " .. keyvalues["direction_southwest"]
+            else
+               keyvalues["ele"] = keyvalues["ele"] .. ", SW: " .. keyvalues["direction_southwest"]
+            end
+         end
+
+         if ( keyvalues["direction_west"] ~= nil ) then
+            if ( keyvalues["ele"] == nil ) then
+               keyvalues["ele"] = "W: " .. keyvalues["direction_west"]
+            else
+               keyvalues["ele"] = keyvalues["ele"] .. ", W: " .. keyvalues["direction_west"]
+            end
+         end
+
+         if ( keyvalues["direction_northwest"] ~= nil ) then
+            if ( keyvalues["ele"] == nil ) then
+               keyvalues["ele"] = "NW: " .. keyvalues["direction_northwest"]
+            else
+               keyvalues["ele"] = keyvalues["ele"] .. ", NW: " .. keyvalues["direction_northwest"]
+            end
+         end
       end
    end
 
