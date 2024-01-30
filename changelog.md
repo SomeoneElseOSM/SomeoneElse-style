@@ -10,7 +10,7 @@ Detect historic quarries that have "historic=yes" set.
 Suppress duplicate name display on some historic / natural combinations.
 Use various "segregated" tags as an indicator of "sidewalk".
 
-## 27/02/2024
+## 27/01/2024
 If something is a historic quarry, mineshaft or castle, or falls into the historic "nonspecific catch-all", and is tagged with something leisure or natural, show it as that other thing.
 If something is a historic tomb, and is tagged with landuse, leisure or natural, show it as the latter.
 Show some "area" historic objects at a lower zoom level if large enough.
