@@ -1,7 +1,7 @@
 # Changes made to this rendering
 This page describes changes made [here](https://github.com/SomeoneElseOSM/SomeoneElse-style), [here](https://github.com/SomeoneElseOSM/SomeoneElse-style-legend) and [here](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT), and visible [here](//map.atownsend.org.uk/maps/map/map.html).
 
-## As yet unreleased
+## 30/01/2024
 Detect tumuli mapped as tombs.
 Suppress duplicate name display on some historic / landuse combinations on buildings and some other features.
 Added support for "historic=workhouse" as a nonspecific historic item.
