@@ -1,6 +1,9 @@
 # Changes made to this rendering
 This page describes changes made [here](https://github.com/SomeoneElseOSM/SomeoneElse-style), [here](https://github.com/SomeoneElseOSM/SomeoneElse-style-legend) and [here](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT), and visible [here](//map.atownsend.org.uk/maps/map/map.html).
 
+## As yet unreleased
+Nudge the text on artwork names down slightly at high zooms to avoid it being obscured.
+
 ## 30/01/2024
 Detect tumuli mapped as tombs.
 Suppress duplicate name display on some historic / landuse combinations on buildings and some other features.
@@ -10,9 +13,6 @@ Detect historic quarries that have "historic=yes" set.
 Suppress duplicate name display on some historic / natural combinations.
 Use various "segregated" tags as an indicator of "sidewalk".
 At high zooms show directions on guideposts.
-
-## As yet unreleased
-Nudge the text on artwork names down slightly at high zooms to avoid it being obscured.
 
 ## 27/01/2024
 If something is a historic quarry, mineshaft or castle, or falls into the historic "nonspecific catch-all", and is tagged with something leisure or natural, show it as that other thing.
