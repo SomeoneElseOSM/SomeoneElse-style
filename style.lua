@@ -8689,7 +8689,6 @@ function filter_tags_generic(keyvalues, nokeys)
         ( keyvalues["cuisine"] == "ice_cream;cake;sandwich"         )   or
         ( keyvalues["cuisine"] == "ice_cream;coffee_shop"           )   or
         ( keyvalues["cuisine"] == "ice_cream;coffee;waffle"         )   or
-        ( keyvalues["cuisine"] == "ice_cream;coffee;waffles;crepes" )   or
         ( keyvalues["cuisine"] == "ice_cream;donut"                 )   or
         ( keyvalues["cuisine"] == "ice_cream;pizza"                 )   or
         ( keyvalues["cuisine"] == "ice_cream;sandwich"              )   or

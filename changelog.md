@@ -3,6 +3,7 @@ This page describes changes made [here](https://github.com/SomeoneElseOSM/Someon
 
 ## As yet unreleased
 Nudge the text on artwork names down slightly at high zooms to avoid it being obscured.
+Removed "cuisine=ice_cream;coffee;waffles;crepes", no longer in the data.
 
 ## 30/01/2024
 Detect tumuli mapped as tombs.

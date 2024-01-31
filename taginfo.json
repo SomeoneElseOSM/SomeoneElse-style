@@ -859,7 +859,6 @@
     { "key": "cuisine", "value": "ice_cream;cake;coffee", "description": "Shown as fast food place that servers ice cream" },
     { "key": "cuisine", "value": "ice_cream;cake;sandwich", "description": "Shown as fast food place that servers ice cream" },
     { "key": "cuisine", "value": "ice_cream;coffee;waffle", "description": "Shown as fast food place that servers ice cream" },
-    { "key": "cuisine", "value": "ice_cream;coffee;waffles;crepes", "description": "Shown as fast food place that servers ice cream" },
     { "key": "cuisine", "value": "ice_cream;coffee_shop", "description": "Shown as fast food place that servers ice cream" },
     { "key": "cuisine", "value": "ice_cream;donut", "description": "Shown as fast food place that servers ice cream" },
     { "key": "cuisine", "value": "ice_cream;pizza", "description": "Shown as fast food place that servers ice cream" },
