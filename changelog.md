@@ -1,7 +1,7 @@
 # Changes made to this rendering
 This page describes changes made [here](https://github.com/SomeoneElseOSM/SomeoneElse-style), [here](https://github.com/SomeoneElseOSM/SomeoneElse-style-legend) and [here](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT), and visible [here](//map.atownsend.org.uk/maps/map/map.html).
 
-## As yet unreleased
+## 06/02/2024
 Nudge the text on artwork names down slightly at high zooms to avoid it being obscured.
 Removed "cuisine=ice_cream;coffee;waffles;crepes", no longer in the data.
 Moved some more historic items into the "show at lower zoom if they are larger" section.
@@ -87,7 +87,7 @@ Show hilltop enclosures as hill forts.
 Fixed bug where some military bunker names appeared twice.
 Show showers (free and for-pay).
 Removed "shop=ink_cartridge", no longer in the data.
-Increased width of rivers and other waterways drawn only as lines at high zooms.  See [diary entry](https://www.openstreetmap.org/user/SomeoneElse/diary/403118).
+Increased width of rivers and other waterways drawn only as lines at high zooms.  See this [diary entry](https://www.openstreetmap.org/user/SomeoneElse/diary/403118).
 Fixed bug where some historic items were not shown.
 Show "historic=bullaun_stone" as other historic stones.
 Show "historic=anchor" as nonspecific historical items.
@@ -125,7 +125,7 @@ Append "inscription" to names of boundary stones as well as historic ones.
 Detect "historic=baths", "historic=naval_mine", "historic=residence", "historic=smithy" and "historic=sound_mirror" as generic historic items.
 Detect "emergency=water_rescue_station" as coastguard-adjacent facilities.
 Show larger islands at lower zoom levels based on size.  Also show islets in the same way as islands.
-See [diary entry](https://www.openstreetmap.org/user/SomeoneElse/diary/403118) for more details.
+See this [diary entry](https://www.openstreetmap.org/user/SomeoneElse/diary/403118) for more details.
 
 ## 16/12/2023
 Detect public transport stations not obviously bus, railway or aerialway stations.
@@ -160,7 +160,7 @@ Removed "shop=car_inspection" (no longer in the data), added "amenity=vehicle_in
 Removed "shop=accountants" (no longer in the data).
 Don't show cycle route references of "N/A"
 Append "(r)" to regional cycle routes, except the National Byway.
-Append "(loop)" to the name of NB loops.  See [diary entry](https://www.openstreetmap.org/user/SomeoneElse/diary/403118).
+Append "(loop)" to the name of NB loops.  See this [diary entry](https://www.openstreetmap.org/user/SomeoneElse/diary/403118).
 Removed "shop=pet;florist" and "shop=alarm", no longer in the data.
 
 ## 14/11/2023
@@ -202,7 +202,7 @@ Show salt marsh and reedbed wetlands with unique icons.
 Move mud and tidal_mud from water_areas to water_areas_overlay, so that they appear over the top of natural=water.
 Show mud and tidal wetland from zoom 10
 Add name for more "natural" features from z13 or z15.
-See [diary entry](https://www.openstreetmap.org/user/SomeoneElse/diary/403118) for more details.
+See this [diary entry](https://www.openstreetmap.org/user/SomeoneElse/diary/403118) for more details.
 
 ## 04/09/2023
 Removed "shop=luggage_locker" as a synonym for left luggage; it was only ever an extreme outlier and it has now been removed from the data.
@@ -328,7 +328,7 @@ Removed shop=healthfood; no longer in the data.
 Show highways with designation=access_land as public_footpath.
 Show smaller aerodromes (gliding clubs etc.) with leisure brown text, not transport blue. 
 Show historic=pinfold with a unique icon.
-Show hedges as linear features if tagged on a different area feature; as area fatures if on their own on an area, and as linear features if on their own on a line.  See [diary entry](https://www.openstreetmap.org/user/SomeoneElse/diary/401631).
+Show hedges as linear features if tagged on a different area feature; as area fatures if on their own on an area, and as linear features if on their own on a line.  See this [diary entry](https://www.openstreetmap.org/user/SomeoneElse/diary/401631).
 Treat surface=grass on nature_reserves as landuse=grass.
 
 ## 10/04/2023
@@ -398,7 +398,7 @@ Show natural=bracken as scrub.
 Handle natural=sound and natural=point as place=locality if no other place tag.
 Handle "natural=pond" as water.
 Show natural=col as natural=saddle.
-See [diary entry](https://www.openstreetmap.org/user/SomeoneElse/diary/401361) for more details.
+See this [diary entry](https://www.openstreetmap.org/user/SomeoneElse/diary/401361) for more details.
 
 ## 06/03/2023
 Show highway=emergency_bay as "private parking".
