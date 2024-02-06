@@ -6,6 +6,7 @@ Nudge the text on artwork names down slightly at high zooms to avoid it being ob
 Removed "cuisine=ice_cream;coffee;waffles;crepes", no longer in the data.
 Moved some more historic items into the "show at lower zoom if they are larger" section.
 Changed to historic size thresholds to show some medium sized items earlier.
+Removed "emergency_service=air", no longer in the data.
 
 ## 30/01/2024
 Detect tumuli mapped as tombs.
