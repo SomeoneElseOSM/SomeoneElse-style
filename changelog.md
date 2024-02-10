@@ -1,6 +1,9 @@
 # Changes made to this rendering
 This page describes changes made [here](https://github.com/SomeoneElseOSM/SomeoneElse-style), [here](https://github.com/SomeoneElseOSM/SomeoneElse-style-legend) and [here](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT), and visible [here](//map.atownsend.org.uk/maps/map/map.html).
 
+## As yet unreleased
+Include "tower:type = ventilation_shaft" in the list of things that get shown as ventilation shafts.
+
 ## 06/02/2024
 Nudge the text on artwork names down slightly at high zooms to avoid it being obscured.
 Removed "cuisine=ice_cream;coffee;waffles;crepes", no longer in the data.
