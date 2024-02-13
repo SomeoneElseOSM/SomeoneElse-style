@@ -10842,9 +10842,42 @@ function filter_tags_generic(keyvalues, nokeys)
 -- are displayed.
 -- ----------------------------------------------------------------------------
    if ( keyvalues["highway"] == "bus_stop" ) then
-      if (( keyvalues["name"]             ~= nil ) and
-          ( keyvalues["naptan:Indicator"] ~= nil )) then
-         keyvalues["name"] = keyvalues["name"] .. " " .. keyvalues["naptan:Indicator"]
+      if ( keyvalues["name"] == nil ) then
+         if ( keyvalues["ref"] == nil ) then
+            if ( keyvalues["naptan:Indicator"] ~= nil ) then
+               keyvalues["name"] = keyvalues["naptan:Indicator"]
+            end
+         else -- ref not nil
+            if ( keyvalues["naptan:Indicator"] == nil ) then
+               keyvalues["name"] = keyvalues["ref"]
+            else
+               keyvalues["name"] = keyvalues["ref"] .. " " .. keyvalues["naptan:Indicator"]
+            end
+         end
+      else -- name not nil
+         if ( keyvalues["ref"] == nil ) then
+            if ( keyvalues["naptan:Indicator"] ~= nil ) then
+               keyvalues["name"] = keyvalues["name"] .. " " .. keyvalues["naptan:Indicator"]
+            end
+         else -- neither name nor ref nil
+            if ( keyvalues["naptan:Indicator"] == nil ) then
+               keyvalues["name"] = keyvalues["name"] .. " " .. keyvalues["ref"]
+            else -- naptan:Indicator not nil
+               keyvalues["name"] = keyvalues["name"] .. " " .. keyvalues["ref"] .. " " .. keyvalues["naptan:Indicator"]
+            end
+         end
+      end
+
+      if ( keyvalues["name"] == nil ) then
+         if ( keyvalues["website"] ~= nil ) then
+            keyvalues["ele"] = keyvalues["website"]
+         end
+      else -- name not nil
+         if ( keyvalues["website"] == nil ) then
+            keyvalues["ele"] = keyvalues["name"]
+         else -- website not nil
+            keyvalues["ele"] = keyvalues["name"] .. " " .. keyvalues["website"]
+         end
       end
    end
 

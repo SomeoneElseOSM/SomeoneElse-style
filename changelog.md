@@ -3,6 +3,7 @@ This page describes changes made [here](https://github.com/SomeoneElseOSM/Someon
 
 ## As yet unreleased
 Include "tower:type = ventilation_shaft" in the list of things that get shown as ventilation shafts.
+On bus stops, show whichever of "name", "ref", "naptan:Indicator" is available.  If available show "website" as well from zoom 21 upwards.
 
 ## 06/02/2024
 Nudge the text on artwork names down slightly at high zooms to avoid it being obscured.
