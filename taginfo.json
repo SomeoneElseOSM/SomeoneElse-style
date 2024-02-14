@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20240214T010700Z",
+  "data_updated": "20240214T142200Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -960,7 +960,7 @@
     { "key": "departures_board", "value": "timetable", "description": "Some sort of fixed timetable" },
     { "key": "departures_board", "value": "schedule", "description": "Some sort of fixed timetable" },
     { "key": "departures_board", "value": "separate", "description": "Some sort of fixed timetable" },
-    { "key": "departures_board", "value": "paper_timetable", "description": "Some sort of fixed timetable" },
+    { "key": "departures_board", "value": "paper timetable", "description": "Some sort of fixed timetable" },
     { "key": "designation", "description": "Legal PRoW or similar status.  Also used to suppress non-PRoWs in certain circumstances." },
     { "key": "designation", "value": "March Stone", "description": "Aberdeen boundary stone" },
     { "key": "designation", "value": "Marine Conservation Zone", "description": "Shown as nature reserve" },
