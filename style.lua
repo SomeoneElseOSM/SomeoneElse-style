@@ -10819,8 +10819,6 @@ function filter_tags_generic(keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
    if ((  keyvalues["man_made"] == "maypole"   ) or
        (  keyvalues["man_made"] == "may_pole"  ) or
-       (( keyvalues["man_made"] == "pole"     )  and
-        ( keyvalues["pole"]      == "maypole" )) or
        (  keyvalues["historic"] == "maypole"   )) then
       keyvalues["man_made"] = "maypole"
       keyvalues["tourism"] = nil
