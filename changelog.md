@@ -1,12 +1,13 @@
 # Changes made to this rendering
 This page describes changes made [here](https://github.com/SomeoneElseOSM/SomeoneElse-style), [here](https://github.com/SomeoneElseOSM/SomeoneElse-style-legend) and [here](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT), and visible [here](//map.atownsend.org.uk/maps/map/map.html).
 
-## As yet unreleased
+## 18/02/2024
 Include "tower:type = ventilation_shaft" in the list of things that get shown as ventilation shafts.
 On bus stops, show whichever of "name", "ref", "naptan:Indicator" is available.  If available show "website" as well from zoom 21 upwards.
 Removed "pole=maypole", no longer in the data.
 Show whether a bus stop has a real-time departures board, a timetable or no flag or pole at all by using a different icon.  Also show whether the departures board has speech output.
 Show larger icons for bus stops at higher zooms.
+Removed "man_made=telephone_kiosk" and "telephone_kiosk=K4", no longer in the data.
 
 ## 06/02/2024
 Nudge the text on artwork names down slightly at high zooms to avoid it being obscured.

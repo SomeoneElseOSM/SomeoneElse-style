@@ -2225,9 +2225,7 @@ function filter_tags_generic(keyvalues, nokeys)
        (  keyvalues["booth"]           == "K4 Post Office"  )  or
        (  keyvalues["booth"]           == "K6"              )  or
        (  keyvalues["booth"]           == "K8"              )  or
-       (  keyvalues["telephone_kiosk"] == "K4"              )  or
        (  keyvalues["telephone_kiosk"] == "K6"              )  or
-       (  keyvalues["man_made"]        == "telephone_kiosk" )  or
        (  keyvalues["man_made"]        == "telephone_box"   )  or
        (  keyvalues["building"]        == "telephone_kiosk" )  or
        (  keyvalues["building"]        == "telephone_box"   )  or

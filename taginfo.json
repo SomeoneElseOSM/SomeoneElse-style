@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20240218T000100Z",
+  "data_updated": "20240218T094800Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -1854,7 +1854,6 @@
     { "key": "man_made", "value": "tank", "description": "Most man-made items are rendered" },
     { "key": "man_made", "value": "telephone_box", "description": "Used to identify former phoneboxes" },
     { "key": "man_made", "value": "telephone_exchange", "description": "If unnamed, 'Telephone Exchange' is used" },
-    { "key": "man_made", "value": "telephone_kiosk", "description": "Used to identify former phoneboxes" },
     { "key": "man_made", "value": "telescope", "description": "Most man-made items are rendered" },
     { "key": "man_made", "value": "tower", "description": "Shown as an appropriate sort of tower" },
     { "key": "man_made", "value": "transmitter", "description": "Most man-made items are rendered" },
@@ -3176,7 +3175,6 @@
     { "key": "telecom", "description": "Used when detecting telephone exchanges" },
     { "key": "telecom", "value": "exchange", "description": "Used when detecting telephone exchanges" },
     { "key": "telephone_kiosk", "description": "Former telephone boxes" },
-    { "key": "telephone_kiosk", "value": "K4", "description": "Former telephone boxes" },
     { "key": "telephone_kiosk", "value": "K6", "description": "Former telephone boxes" },
     { "key": "theatre", "description": "Detect concert halls" },
     { "key": "theatre", "value": "concert_hall", "description": "Detect concert halls" },
