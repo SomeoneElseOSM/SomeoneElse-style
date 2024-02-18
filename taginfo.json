@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20240217T111500Z",
+  "data_updated": "20240218T000100Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -2227,6 +2227,10 @@
     { "key": "parking", "value": "depot", "description": "Detect e.g. bus depots" },
     { "key": "parking", "value": "motorcycle", "description": "Detect motorcycle parking" },
     { "key": "parking", "value": "e-scooter", "description": "Detect e-scooter parking.  Rendered with icon, name incorporates brand" },
+    { "key": "passenger_information_display", "description": "What sort of departures board does a bus stop have?" },
+    { "key": "passenger_information_display", "value": "realtime", "description": "Some sort of realtime display" },
+    { "key": "passenger_information_display", "value": "timetable", "description": "Some sort of timetable" },
+    { "key": "passenger_information_display", "value": "yes", "description": "Some sort of timetable" },
     { "key": "peak", "description": "Detects hills tagged as peaks" },
     { "key": "peak", "value": "hill", "description": "Like peak, but shown from higher zoom" },
     { "key": "pharmacy", "description": "Render some non-pharmacy shops with pharmacies as pharmacies" },

@@ -10890,21 +10890,24 @@ function filter_tags_generic(keyvalues, nokeys)
 -- Based on the other tags that are set, 
 -- let's use different symbols for bus stops
 -- ----------------------------------------------------------------------------
-      if (( keyvalues["departures_board"] == "realtime"                     ) or
-          ( keyvalues["departures_board"] == "timetable; realtime"          ) or
-          ( keyvalues["departures_board"] == "realtime;timetable"           ) or
-          ( keyvalues["departures_board"] == "timetable;realtime"           ) or
-          ( keyvalues["departures_board"] == "realtime_multiline"           ) or
-          ( keyvalues["departures_board"] == "realtime; timetable"          ) or
-          ( keyvalues["departures_board"] == "realtime,timetable"           ) or
-          ( keyvalues["departures_board"] == "multiline"                    ) or
-          ( keyvalues["departures_board"] == "realtime_multiline;timetable" )) then
+      if (( keyvalues["departures_board"]              == "realtime"                     ) or
+          ( keyvalues["departures_board"]              == "timetable; realtime"          ) or
+          ( keyvalues["departures_board"]              == "realtime;timetable"           ) or
+          ( keyvalues["departures_board"]              == "timetable;realtime"           ) or
+          ( keyvalues["departures_board"]              == "realtime_multiline"           ) or
+          ( keyvalues["departures_board"]              == "realtime; timetable"          ) or
+          ( keyvalues["departures_board"]              == "realtime,timetable"           ) or
+          ( keyvalues["departures_board"]              == "multiline"                    ) or
+          ( keyvalues["departures_board"]              == "realtime_multiline;timetable" ) or
+          ( keyvalues["passenger_information_display"] == "realtime"                     )) then
          keyvalues["highway"] = "bus_stop_realtime"
       else
-         if (( keyvalues["departures_board"] == "timetable"       ) or
-             ( keyvalues["departures_board"] == "schedule"        ) or
-             ( keyvalues["departures_board"] == "separate"        ) or
-             ( keyvalues["departures_board"] == "paper_timetable" )) then
+         if (( keyvalues["departures_board"]              == "timetable"        ) or
+             ( keyvalues["departures_board"]              == "schedule"         ) or
+             ( keyvalues["departures_board"]              == "separate"         ) or
+             ( keyvalues["departures_board"]              == "paper_timetable"  ) or
+             ( keyvalues["passenger_information_display"] == "timetable"        ) or
+             ( keyvalues["passenger_information_display"] == "yes"              )) then
             keyvalues["highway"] = "bus_stop_timetable"
          else
             if (( keyvalues["flag"]               == "no" ) or
