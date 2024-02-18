@@ -4,8 +4,9 @@ This page describes changes made [here](https://github.com/SomeoneElseOSM/Someon
 ## As yet unreleased
 Include "tower:type = ventilation_shaft" in the list of things that get shown as ventilation shafts.
 On bus stops, show whichever of "name", "ref", "naptan:Indicator" is available.  If available show "website" as well from zoom 21 upwards.
-Show whether a bus stop has a real-time departures board, a timetable or no flag or pole at all by using a different icon.  Also show whether the departures board has speech output.
 Removed "pole=maypole", no longer in the data.
+Show whether a bus stop has a real-time departures board, a timetable or no flag or pole at all by using a different icon.  Also show whether the departures board has speech output.
+Show larger icons for bus stops at higher zooms.
 
 ## 06/02/2024
 Nudge the text on artwork names down slightly at high zooms to avoid it being obscured.
