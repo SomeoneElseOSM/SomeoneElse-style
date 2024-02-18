@@ -3253,6 +3253,7 @@
     { "key": "tower:type", "value": "square", "description": "Classify various towers" },
     { "key": "tower:type", "value": "steeple", "description": "Classify various towers" },
     { "key": "tower:type", "value": "vent", "description": "Classify various towers" },
+    { "key": "tower:type", "value": "ventilation_shaft", "description": "Classify various towers" },
     { "key": "tower:type", "value": "watchtower", "description": "Classify various historic towers" },
     { "key": "tower:type", "value": "weather_radar", "description": "Classify various towers" },
     { "key": "tpuk_ref", "description": "Render as bracketed name on trig points" },
