@@ -10908,7 +10908,7 @@ function filter_tags_generic(keyvalues, nokeys)
          if (( keyvalues["departures_board"]              == "timetable"        ) or
              ( keyvalues["departures_board"]              == "schedule"         ) or
              ( keyvalues["departures_board"]              == "separate"         ) or
-             ( keyvalues["departures_board"]              == "paper_timetable"  ) or
+             ( keyvalues["departures_board"]              == "paper timetable"  ) or
              ( keyvalues["passenger_information_display"] == "timetable"        ) or
              ( keyvalues["passenger_information_display"] == "yes"              )) then
             if (( keyvalues["departures_board:speech_output"]              == "yes" ) or
