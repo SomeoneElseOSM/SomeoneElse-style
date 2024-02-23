@@ -961,6 +961,7 @@
     { "key": "departures_board", "value": "schedule", "description": "Some sort of fixed timetable" },
     { "key": "departures_board", "value": "separate", "description": "Some sort of fixed timetable" },
     { "key": "departures_board", "value": "paper timetable", "description": "Some sort of fixed timetable" },
+    { "key": "departures_board", "value": "yes", "description": "At timetable" },
     { "key": "departures_board:speech_output", "description": "Is there a button you can press to hear bus times" },
     { "key": "departures_board:speech_output", "value": "yes", "description": "There is speech output of bus times" },
     { "key": "designation", "description": "Legal PRoW or similar status.  Also used to suppress non-PRoWs in certain circumstances." },
