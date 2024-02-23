@@ -8914,8 +8914,7 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["shop"]         == "tan"               ) or
        ( keyvalues["shop"]         == "suntan"            ) or
        ( keyvalues["leisure"]      == "tanning_salon"     ) or
-       ( keyvalues["shop"]         == "health_and_beauty" ) or
-       ( keyvalues["shop"]         == "beautician"        )) then
+       ( keyvalues["shop"]         == "health_and_beauty" )) then
       keyvalues["shop"] = "beauty"
    end
 

@@ -3,6 +3,7 @@ This page describes changes made [here](https://github.com/SomeoneElseOSM/Someon
 
 ## As yet unreleased
 Fixed spelling of "paper timetable" (sic) in the lua code.  Taginfo was correct already.
+Removed "shop=beautician", no longer in the data.
 
 ## 18/02/2024
 Include "tower:type = ventilation_shaft" in the list of things that get shown as ventilation shafts.
