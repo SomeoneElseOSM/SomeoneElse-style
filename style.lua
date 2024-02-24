@@ -6654,7 +6654,7 @@ function filter_tags_generic(keyvalues, nokeys)
 
 -- ----------------------------------------------------------------------------
 -- Railway ventilation shaft nodes.
--- Nodes of these are rendered as a stubby black tower
+-- These are rendered as a stubby black tower.
 -- ----------------------------------------------------------------------------
    if (( keyvalues["building"]   == "air_shaft"         ) or
        ( keyvalues["man_made"]   == "air_shaft"         ) or
@@ -6664,11 +6664,16 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["tunnel"]     == "ventilation_shaft" ) or
        ( keyvalues["tunnel"]     == "ventilation shaft" ) or
        ( keyvalues["building"]   == "ventilation_shaft" ) or
+       ( keyvalues["man_made"]   == "ventilation_shaft" ) or
        ( keyvalues["building"]   == "vent_shaft"        ) or
        ( keyvalues["man_made"]   == "vent_shaft"        ) or
        ( keyvalues["tower:type"] == "vent"              ) or
        ( keyvalues["tower:type"] == "ventilation_shaft" )) then
       keyvalues["man_made"] = "ventilation_shaft"
+
+      if ( keyvalues["building"] == nil ) then
+         keyvalues["building"] = "roof"
+      end
    end
 
 -- ----------------------------------------------------------------------------
