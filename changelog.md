@@ -6,6 +6,7 @@ Fixed spelling of "paper timetable" (sic) in the lua code.  Taginfo was correct 
 Removed "shop=beautician", no longer in the data.
 Added "departures_board=yes" as "implying at least a timetable".
 Use a larger icon for ventilation shafts at high zoom levels.
+Display stiles with dog gates with a different icon.
 
 ## 18/02/2024
 Include "tower:type = ventilation_shaft" in the list of things that get shown as ventilation shafts.

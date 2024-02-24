@@ -1070,6 +1070,8 @@
     { "key": "disused:tourism", "description": "Used to decide whether a board should be shown" },
     { "key": "disused:waterway", "description": "Disused canals are shown as derelict canals" },
     { "key": "disused:waterway", "value": "canal", "description": "Disused canals are shown as derelict canals" },
+    { "key": "dog_gate", "description": "Show stiles with dog gates with a different icon" },
+    { "key": "dog_gate", "value": "yes", "description": "Show stiles with dog gates with a different icon" },
     { "key": "ele", "description": "Detect big peaks (ele > 914 munros) and prominent peaks, and show them more prominently" },
     { "key": "embankment", "description": "Used to detect invalid layer values and also levees (standalone or on other features)" },
     { "key": "embankment", "value": "yes", "description": "Used to detect invalid layer values and also levees (standalone or on other features)" },

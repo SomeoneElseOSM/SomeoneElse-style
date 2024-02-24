@@ -7469,6 +7469,14 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Has this stile got a dog gate?
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["barrier"]  == "stile" ) and
+       ( keyvalues["dog_gate"] == "yes"   )) then
+      keyvalues["barrier"] = "dog_gate_stile"
+   end
+
+-- ----------------------------------------------------------------------------
 -- remove barrier=entrance as it's not really a barrier.
 -- ----------------------------------------------------------------------------
    if ( keyvalues["barrier"]   == "entrance" ) then
