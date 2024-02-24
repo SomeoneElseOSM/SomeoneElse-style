@@ -953,7 +953,6 @@
     { "key": "departures_board", "value": "realtime;timetable", "description": "Some sort of realtime display" },
     { "key": "departures_board", "value": "timetable;realtime", "description": "Some sort of realtime display" },
     { "key": "departures_board", "value": "realtime_multiline", "description": "Some sort of realtime display" },
-    { "key": "departures_board", "value": "realtime; timetable", "description": "Some sort of realtime display" },
     { "key": "departures_board", "value": "realtime,timetable", "description": "Some sort of realtime display" },
     { "key": "departures_board", "value": "multiline", "description": "Some sort of realtime display" },
     { "key": "departures_board", "value": "realtime_multiline;timetable", "description": "Some sort of realtime display" },

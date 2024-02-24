@@ -10903,7 +10903,6 @@ function filter_tags_generic(keyvalues, nokeys)
           ( keyvalues["departures_board"]              == "realtime;timetable"           ) or
           ( keyvalues["departures_board"]              == "timetable;realtime"           ) or
           ( keyvalues["departures_board"]              == "realtime_multiline"           ) or
-          ( keyvalues["departures_board"]              == "realtime; timetable"          ) or
           ( keyvalues["departures_board"]              == "realtime,timetable"           ) or
           ( keyvalues["departures_board"]              == "multiline"                    ) or
           ( keyvalues["departures_board"]              == "realtime_multiline;timetable" ) or
