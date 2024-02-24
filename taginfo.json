@@ -2610,6 +2610,7 @@
     { "key": "shop", "value": "domestic_appliances", "description": "Various shops shown" },
     { "key": "shop", "value": "dry_cleaning", "description": "Various shops shown" },
     { "key": "shop", "value": "dry_cleaning;laundry", "description": "Various shops shown" },
+    { "key": "shop", "value": "duty_free", "description": "Various shops shown" },
     { "key": "shop", "value": "e-cigarette", "description": "Various shops shown" },
     { "key": "shop", "value": "eco_refill", "description": "Shown as a grocer with an E" },
     { "key": "shop", "value": "eggs", "description": "Various shops shown" },

@@ -8993,7 +8993,8 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["shop"]   == "party"               ) or
        ( keyvalues["shop"]   == "party_goods"         ) or
        ( keyvalues["shop"]   == "christmas"           ) or
-       ( keyvalues["shop"]   == "fashion_accessories" )) then
+       ( keyvalues["shop"]   == "fashion_accessories" ) or
+       ( keyvalues["shop"]   == "duty_free"           )) then
       keyvalues["shop"] = "gift"
    end
 
