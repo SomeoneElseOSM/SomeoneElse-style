@@ -8,6 +8,7 @@ Added "departures_board=yes" as "implying at least a timetable".
 Use a larger icon for ventilation shafts at high zoom levels.
 Display stiles with dog gates with a different icon.
 Show duty free shops not tagged as something else as "gift".
+Show "leisure=garden" and "leisure=nature_reserve" that are also "tourism=attraction" as the former.
 
 ## 18/02/2024
 Include "tower:type = ventilation_shaft" in the list of things that get shown as ventilation shafts.
