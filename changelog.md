@@ -13,6 +13,7 @@ Removed "departures_board=realtime; timetable", no longer in the data.
 Show ventilation shafts mapped as areas in the same way as roofs if not already mapped as buildings.
 Detect more subtags that indicate that farmland or meadows should be treated as "farm grass".
 Detect "farm shop honesty boxes" and show with produce if known.
+Detect more taggings of "farm shop honesty boxes".
 
 ## 18/02/2024
 Include "tower:type = ventilation_shaft" in the list of things that get shown as ventilation shafts.

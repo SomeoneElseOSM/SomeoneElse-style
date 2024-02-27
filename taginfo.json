@@ -2735,6 +2735,7 @@
     { "key": "shop", "value": "home_improvement", "description": "Various shops shown" },
     { "key": "shop", "value": "homeware", "description": "Various shops shown" },
     { "key": "shop", "value": "homewares", "description": "Various shops shown" },
+    { "key": "shop", "value": "honey", "description": "Various shops shown" },
     { "key": "shop", "value": "household", "description": "Various shops shown" },
     { "key": "shop", "value": "houseware", "description": "Various shops shown" },
     { "key": "shop", "value": "hunting", "description": "Various shops shown" },

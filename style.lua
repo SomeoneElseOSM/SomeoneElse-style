@@ -4950,6 +4950,13 @@ function filter_tags_generic(keyvalues, nokeys)
       keyvalues["shop"]    = nil
    end
 
+   if ((  keyvalues["shop"] == "eggs"  ) and
+       (  keyvalues["name"] == nil     )) then
+      keyvalues["amenity"] = "vending_machine"
+      keyvalues["vending"] = keyvalues["shop"]
+      keyvalues["shop"]    = nil
+   end
+
 -- ----------------------------------------------------------------------------
 -- Some vending machines get the thing sold as the label.
 -- "farm shop honesty box" might have been assigned higher up.
@@ -9206,6 +9213,7 @@ function filter_tags_generic(keyvalues, nokeys)
 
 -- ----------------------------------------------------------------------------
 -- Various single food item and other food shops
+-- Unnamed egg honesty boxes have been dealt with above.
 -- ----------------------------------------------------------------------------
    if (( keyvalues["shop"]    == "cake"            ) or
        ( keyvalues["shop"]    == "chocolate"       ) or
@@ -9215,6 +9223,7 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["shop"]    == "wine;cheese"     ) or
        ( keyvalues["shop"]    == "dairy"           ) or
        ( keyvalues["shop"]    == "eggs"            ) or
+       ( keyvalues["shop"]    == "honey"           ) or
        ( keyvalues["shop"]    == "catering"        ) or
        ( keyvalues["shop"]    == "fishmonger"      ) or
        ( keyvalues["shop"]    == "spices"           ) or
