@@ -4932,30 +4932,42 @@ function filter_tags_generic(keyvalues, nokeys)
 -- to vending machine, and also the produce into "vending" for consideration 
 -- below.
 -- ----------------------------------------------------------------------------
-   if ((  keyvalues["shop"]    == "farm" ) and
-       (  keyvalues["name"]    == nil    ) and
-       (  keyvalues["produce"] ~= nil    )) then
+   if ((  keyvalues["shop"]                == "farm"  ) and
+       (  keyvalues["name"]                == nil     ) and
+       (( keyvalues["produce"]             ~= nil    )  or
+        ( keyvalues["payment:honesty_box"] == "yes"  ))) then
       keyvalues["amenity"] = "vending_machine"
+
+      if ( keyvalues["produce"] == nil )  then
+         if ( keyvalues["food:eggs"] == "yes" )  then
+            keyvalues["produce"] = "eggs"
+         else
+            keyvalues["produce"] = "farm shop honesty box"
+         end
+      end
+
       keyvalues["vending"] = keyvalues["produce"]
       keyvalues["shop"]    = nil
    end
 
 -- ----------------------------------------------------------------------------
 -- Some vending machines get the thing sold as the label.
+-- "farm shop honesty box" might have been assigned higher up.
 -- ----------------------------------------------------------------------------
-   if ((  keyvalues["amenity"] == "vending_machine"  ) and
-       (  keyvalues["name"]    == nil                ) and
-       (( keyvalues["vending"] == "milk"            )  or
-        ( keyvalues["vending"] == "eggs"            )  or
-        ( keyvalues["vending"] == "potatoes"        )  or
-        ( keyvalues["vending"] == "honey"           )  or
-        ( keyvalues["vending"] == "cheese"          )  or
-        ( keyvalues["vending"] == "vegetables"      )  or
-        ( keyvalues["vending"] == "fruit"           )  or
-        ( keyvalues["vending"] == "food"            )  or
-        ( keyvalues["vending"] == "photos"          )  or
-        ( keyvalues["vending"] == "maps"            )  or
-        ( keyvalues["vending"] == "newspapers"      ))) then
+   if ((  keyvalues["amenity"] == "vending_machine"        ) and
+       (  keyvalues["name"]    == nil                      ) and
+       (( keyvalues["vending"] == "milk"                  )  or
+        ( keyvalues["vending"] == "eggs"                  )  or
+        ( keyvalues["vending"] == "potatoes"              )  or
+        ( keyvalues["vending"] == "honey"                 )  or
+        ( keyvalues["vending"] == "cheese"                )  or
+        ( keyvalues["vending"] == "vegetables"            )  or
+        ( keyvalues["vending"] == "fruit"                 )  or
+        ( keyvalues["vending"] == "food"                  )  or
+        ( keyvalues["vending"] == "photos"                )  or
+        ( keyvalues["vending"] == "maps"                  )  or
+        ( keyvalues["vending"] == "newspapers"            )  or
+        ( keyvalues["vending"] == "farm shop honesty box" ))) then
       keyvalues["name"] = "(" .. keyvalues["vending"] .. ")"
    end
 

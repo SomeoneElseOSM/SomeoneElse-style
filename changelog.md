@@ -11,7 +11,8 @@ Show duty free shops not tagged as something else as "gift".
 Show "leisure=garden" and "leisure=nature_reserve" that are also "tourism=attraction" as the former.
 Removed "departures_board=realtime; timetable", no longer in the data.
 Show ventilation shafts mapped as areas in the same way as roofs if not already mapped as buildings.
-Detect more subtags that indicate that farmland or meadows should be treated as 'farm grass'.
+Detect more subtags that indicate that farmland or meadows should be treated as "farm grass".
+Detect "farm shop honesty boxes" and show with produce if known.
 
 ## 18/02/2024
 Include "tower:type = ventilation_shaft" in the list of things that get shown as ventilation shafts.
