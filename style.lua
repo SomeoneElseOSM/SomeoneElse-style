@@ -2905,23 +2905,30 @@ function filter_tags_generic(keyvalues, nokeys)
         ( keyvalues["animal"]   == "cow"             )  or
         ( keyvalues["animal"]   == "cattle"          )  or
         ( keyvalues["animal"]   == "chicken"         )  or
-        ( keyvalues["animal"]   == "horse"           ))) then
+        ( keyvalues["animal"]   == "horse"           )  or
+        ( keyvalues["meadow"]   == "agricultural"    )  or
+        ( keyvalues["meadow"]   == "paddock"         )  or
+        ( keyvalues["meadow"]   == "pasture"         ))) then
       keyvalues["landuse"] = "farmgrass"
    end
 
-   if ((  keyvalues["landuse"] == "meadow"        ) and
-       (( keyvalues["meadow"]  == "agricultural" )  or
-        ( keyvalues["meadow"]  == "paddock"      )  or
-        ( keyvalues["meadow"]  == "pasture"      )  or
-        ( keyvalues["meadow"]  == "agriculture"  )  or
-        ( keyvalues["meadow"]  == "hay"          )  or
-        ( keyvalues["meadow"]  == "managed"      )  or
-        ( keyvalues["meadow"]  == "cut"          )  or
-        ( keyvalues["animal"]  == "pig"          )  or
-        ( keyvalues["animal"]  == "sheep"        )  or
-        ( keyvalues["animal"]  == "cattle"       )  or
-        ( keyvalues["animal"]  == "chicken"      )  or
-        ( keyvalues["animal"]  == "horse"        ))) then
+   if ((  keyvalues["landuse"]  == "meadow"        ) and
+       (( keyvalues["meadow"]   == "agricultural" )  or
+        ( keyvalues["meadow"]   == "paddock"      )  or
+        ( keyvalues["meadow"]   == "padd"         )  or
+        ( keyvalues["meadow"]   == "pasture"      )  or
+        ( keyvalues["meadow"]   == "agriculture"  )  or
+        ( keyvalues["meadow"]   == "hay"          )  or
+        ( keyvalues["meadow"]   == "managed"      )  or
+        ( keyvalues["meadow"]   == "cut"          )  or
+        ( keyvalues["animal"]   == "pig"          )  or
+        ( keyvalues["animal"]   == "sheep"        )  or
+        ( keyvalues["animal"]   == "cattle"       )  or
+        ( keyvalues["animal"]   == "chicken"      )  or
+        ( keyvalues["animal"]   == "horse"        )  or
+        ( keyvalues["farmland"] == "field"        )  or
+        ( keyvalues["farmland"] == "pasture"      )  or
+        ( keyvalues["farmland"] == "crofts"       ))) then
       keyvalues["landuse"] = "farmgrass"
    end
 

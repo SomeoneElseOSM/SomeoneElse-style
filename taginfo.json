@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20240224T133000Z",
+  "data_updated": "20240226T233700Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -1107,6 +1107,8 @@
     { "key": "entrance", "value": "main", "description": "Show main entrances" },
     { "key": "est_width", "description": "Estimated road width, used to adjust road categories" },
     { "key": "farmland", "description": "Render grassy farmland as mid-way between meadow and farmland" },
+    { "key": "farmland", "value": "crofts", "description": "Render grassy farmland as mid-way between meadow and farmland" },
+    { "key": "farmland", "value": "field", "description": "Render grassy farmland as mid-way between meadow and farmland" },
     { "key": "farmland", "value": "pasture", "description": "Render grassy farmland as mid-way between meadow and farmland" },
     { "key": "farmland", "value": "heath", "description": "Render grassy farmland as mid-way between meadow and farmland" },
     { "key": "farmland", "value": "paddock", "description": "Render grassy farmland as mid-way between meadow and farmland" },
@@ -1890,6 +1892,7 @@
     { "key": "maxwidth", "description": "Depending on context, go down a road class. Also changes path to track and vice versa." },
     { "key": "meadow", "description": "Show agricultural meadows as 'farm grass'" },
     { "key": "meadow", "value": "agricultural", "description": "Show agricultural meadows as 'farm grass'" },
+    { "key": "meadow", "value": "padd", "description": "Likely a misspelling of 'paddock' but surprisingly popular.  Show agricultural meadows as 'farm grass'" },
     { "key": "meadow", "value": "paddock", "description": "Show agricultural meadows as 'farm grass'" },
     { "key": "meadow", "value": "pasture", "description": "Show agricultural meadows as 'farm grass'" },
     { "key": "meadow", "value": "agriculture", "description": "Show agricultural meadows as 'farm grass'" },
