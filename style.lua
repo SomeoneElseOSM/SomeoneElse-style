@@ -5512,6 +5512,18 @@ function filter_tags_generic(keyvalues, nokeys)
       keyvalues["leisure"] = "unnamedpitch"
    end
 
+   if ((  keyvalues["leisure"] == "pitch"                                             )  and
+       (( keyvalues["sport"]   == "baseball"                                         ) or
+        ( keyvalues["sport"]   == "baseball;soccer"                                  ) or
+        ( keyvalues["sport"]   == "baseball;softball"                                ) or
+        ( keyvalues["sport"]   == "baseball;cricket"                                 ) or
+        ( keyvalues["sport"]   == "multi;baseball"                                   ) or
+        ( keyvalues["sport"]   == "baseball;lacrosse;multi"                          ) or
+        ( keyvalues["sport"]   == "baseball;american_football;ice_hockey;basketball" ))) then
+      keyvalues["amenity"] = "pitch_baseball"
+      keyvalues["leisure"] = "unnamedpitch"
+   end
+
 -- ----------------------------------------------------------------------------
 -- Handle razed railways and old inclined_planes as dismantled.
 -- dismantled, abandoned are now handled separately to disused in roads.mss
@@ -11147,6 +11159,7 @@ function filter_tags_generic(keyvalues, nokeys)
          ( keyvalues["amenity"]    ~= "holy_well"         )   and
          ( keyvalues["amenity"]    ~= "holy_spring"       )   and
          ( keyvalues["amenity"]    ~= "biergarten"        )   and
+         ( keyvalues["amenity"]    ~= "pitch_baseball"    )   and
          ( keyvalues["amenity"]    ~= "pitch_basketball"  )   and
          ( keyvalues["amenity"]    ~= "pitch_chess"       )   and
          ( keyvalues["amenity"]    ~= "pitch_cricket"     )   and
