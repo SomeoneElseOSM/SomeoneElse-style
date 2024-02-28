@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20240228T005800Z",
+  "data_updated": "20240228T204400Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -1894,7 +1894,6 @@
     { "key": "maxwidth", "description": "Depending on context, go down a road class. Also changes path to track and vice versa." },
     { "key": "meadow", "description": "Show agricultural meadows as 'farm grass'" },
     { "key": "meadow", "value": "agricultural", "description": "Show agricultural meadows as 'farm grass'" },
-    { "key": "meadow", "value": "padd", "description": "Likely a misspelling of 'paddock' but surprisingly popular.  Show agricultural meadows as 'farm grass'" },
     { "key": "meadow", "value": "paddock", "description": "Show agricultural meadows as 'farm grass'" },
     { "key": "meadow", "value": "pasture", "description": "Show agricultural meadows as 'farm grass'" },
     { "key": "meadow", "value": "agriculture", "description": "Show agricultural meadows as 'farm grass'" },
@@ -2636,6 +2635,7 @@
     { "key": "shop", "value": "equestrian", "description": "Various shops shown" },
     { "key": "shop", "value": "equipment_hire", "description": "Various shops shown" },
     { "key": "shop", "value": "erotic", "description": "Various shops shown" },
+    { "key": "shop", "value": "esoteric", "description": "Various shops shown" },
     { "key": "shop", "value": "estate_agent", "description": "Various shops shown" },
     { "key": "shop", "value": "fabric", "description": "Various shops shown" },
     { "key": "shop", "value": "factory_outlet", "description": "Various shops shown" },

@@ -2915,7 +2915,6 @@ function filter_tags_generic(keyvalues, nokeys)
    if ((  keyvalues["landuse"]  == "meadow"        ) and
        (( keyvalues["meadow"]   == "agricultural" )  or
         ( keyvalues["meadow"]   == "paddock"      )  or
-        ( keyvalues["meadow"]   == "padd"         )  or
         ( keyvalues["meadow"]   == "pasture"      )  or
         ( keyvalues["meadow"]   == "agriculture"  )  or
         ( keyvalues["meadow"]   == "hay"          )  or
@@ -9294,7 +9293,8 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["shop"]       == "acupuncture"             ) or
        ( keyvalues["healthcare"] == "acupuncture"             ) or
        ( keyvalues["shop"]       == "aromatherapy"            ) or
-       ( keyvalues["shop"]       == "meditation"              )) then
+       ( keyvalues["shop"]       == "meditation"              ) or
+       ( keyvalues["shop"]       == "esoteric"                )) then
       keyvalues["shop"] = "shopnonspecific"
    end
 
