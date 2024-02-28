@@ -2922,6 +2922,7 @@ function filter_tags_generic(keyvalues, nokeys)
         ( keyvalues["meadow"]   == "cut"          )  or
         ( keyvalues["animal"]   == "pig"          )  or
         ( keyvalues["animal"]   == "sheep"        )  or
+        ( keyvalues["animal"]   == "cow"          )  or
         ( keyvalues["animal"]   == "cattle"       )  or
         ( keyvalues["animal"]   == "chicken"      )  or
         ( keyvalues["animal"]   == "horse"        )  or
