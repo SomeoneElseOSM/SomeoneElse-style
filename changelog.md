@@ -3,6 +3,7 @@ This page describes changes made [here](https://github.com/SomeoneElseOSM/Someon
 
 ## As yet unreleased
 Render shop=esoteric in the same list as other "woo" shops such as "new_age" etc.
+Treat NaPTAN customary stops with no departures as "pole not present" ones.  This isn't assured, but you can't assume there is a pole at a customary stop.
 
 ## 28/02/2024
 Fixed spelling of "paper timetable" (sic) in the lua code.  Taginfo was correct already.

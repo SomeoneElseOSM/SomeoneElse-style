@@ -10974,9 +10974,10 @@ function filter_tags_generic(keyvalues, nokeys)
                keyvalues["highway"] = "bus_stop_timetable"
             end
          else
-            if (( keyvalues["flag"]               == "no" ) or
-                ( keyvalues["pole"]               == "no" ) or
-                ( keyvalues["physically_present"] == "no" )) then
+            if (( keyvalues["flag"]               == "no"  ) or
+                ( keyvalues["pole"]               == "no"  ) or
+                ( keyvalues["physically_present"] == "no"  ) or
+                ( keyvalues["naptan:BusStopType"] == "CUS" )) then
                keyvalues["highway"] = "bus_stop_nothing"
             else
                keyvalues["highway"] = "bus_stop_pole"

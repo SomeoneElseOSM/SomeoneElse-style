@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20240228T204400Z",
+  "data_updated": "20240302T190000Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -2009,6 +2009,8 @@
     { "key": "name:right", "description": "Show name:left / name:right on roads if set" },
     { "key": "name:signed", "description": "Show unsigned names in brackets" },
     { "key": "name:signed", "value": "no", "description": "Show unsigned names in brackets" },
+    { "key": "naptan:BusStopType", "description": "According to NaPTAN, is this only a customary stop?" },
+    { "key": "naptan:BusStopType", "value": "CUS", "description": "Bus stop probably not signed on the ground but buses do stop." },
     { "key": "naptan:Indicator", "description": "Shown on bus stops" },
     { "key": "natural", "description": "All sorts of natural features.  Where multiple top=level tags exist, drop one or more." },
     { "key": "natural", "value": "arch", "description": "Various natural features rendered" },
