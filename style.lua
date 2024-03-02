@@ -1540,8 +1540,7 @@ function filter_tags_generic(keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
 -- Bridge types - only some types (including "yes") are selected in project.mml
 -- ----------------------------------------------------------------------------
-   if (
-       ( keyvalues["bridge"] == "aqueduct"           ) or
+   if (( keyvalues["bridge"] == "aqueduct"           ) or
        ( keyvalues["bridge"] == "bailey"             ) or
        ( keyvalues["bridge"] == "boardwalk"          ) or
        ( keyvalues["bridge"] == "building_passage"   ) or
