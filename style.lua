@@ -2178,6 +2178,7 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["marker"]   == "pipeline"        ) or
        ( keyvalues["marker"]   == "post"            ) or
        ( keyvalues["man_made"] == "pipeline_marker" ) or
+       ( keyvalues["man_made"] == "marker"          ) or
        ( keyvalues["pipeline"] == "marker"          )) then
       keyvalues["man_made"] = "markeraerial"
    end

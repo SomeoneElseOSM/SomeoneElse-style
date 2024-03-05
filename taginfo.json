@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20240302T190000Z",
+  "data_updated": "20240305T013900Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -1820,6 +1820,7 @@
     { "key": "man_made", "value": "lake", "description": "Shown as water" },
     { "key": "man_made", "value": "levee", "description": "Used to detect embankments, which may have highways on them or not" },
     { "key": "man_made", "value": "lighthouse", "description": "Most man-made items are rendered" },
+    { "key": "man_made", "value": "marker", "description": "Shown as aerial pipeline marker" },
     { "key": "man_made", "value": "marker_post", "description": "Handled as barrier=bollard" },
     { "key": "man_made", "value": "mast", "description": "Most man-made items are rendered" },
     { "key": "man_made", "value": "maypole", "description": "Shown as maypole" },
