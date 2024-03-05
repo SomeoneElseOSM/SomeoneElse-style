@@ -2720,6 +2720,14 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Some people tag beach resorts as beaches - remove "beach_resort" there.
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["leisure"] == "beach_resort" ) and
+       ( keyvalues["natural"] == "beach"        )) then
+      keyvalues["leisure"] = nil
+   end
+
+-- ----------------------------------------------------------------------------
 -- Remove tourism=attraction from rock features that are rendered as rock(s)
 -- ----------------------------------------------------------------------------
    if ((  keyvalues["tourism"]   == "attraction"     ) and
