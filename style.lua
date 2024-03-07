@@ -3388,9 +3388,9 @@ function filter_tags_generic(keyvalues, nokeys)
             else -- no microbrewery
 	       if ( keyvalues["pub"] == "micropub" ) then
                   keyvalues["amenity"] = "pub_yyyynyd"
-                                                                  -- accommodation unchecked
-                                                                  -- no wheelchair appended
-                                                                  -- no beer garden appended
+                                              -- accommodation unchecked (no examples yet)
+                  append_wheelchair(keyvalues)
+                  append_beer_garden(keyvalues)
                else
                   keyvalues["amenity"] = "pub_yyyynn"
                   append_accommodation(keyvalues)
