@@ -3360,414 +3360,120 @@ function filter_tags_generic(keyvalues, nokeys)
           ( keyvalues["food"] ~= "no" )) then
          if ( keyvalues["noncarpeted"] == "yes"  ) then
             if ( keyvalues["microbrewery"] == "yes"  ) then
+                                                -- micropub unchecked
                if (( keyvalues["accommodation"] ~= nil  ) and
                    ( keyvalues["accommodation"] ~= "no" )) then
+                  keyvalues["amenity"] = "pub_yyyyydy"
+                  append_wheelchair(keyvalues)
+                                                -- no beer garden appended
+	       else -- no accommodation
 		  if ( keyvalues["wheelchair"] == "yes" ) then
-                     keyvalues["amenity"] = "pub_yyyyydyy"
-                  else
-                     if ( keyvalues["wheelchair"] == "limited" ) then
-                        keyvalues["amenity"] = "pub_yyyyydyl"
-                     else
-                        if ( keyvalues["wheelchair"] == "no" ) then
-                           keyvalues["amenity"] = "pub_yyyyydyn"
-                        else
-                           keyvalues["amenity"] = "pub_yyyyydyd"
-                        end
-                     end
-                  end
-	       else
-		  if ( keyvalues["wheelchair"] == "yes" ) then
-		     if ( keyvalues["beer_garden"] == "yes" ) then
-                        keyvalues["amenity"] = "pub_yyyyydnyg"
-                     else
-                        if ( keyvalues["outdoor_seating"] == "yes" ) then
-                           keyvalues["amenity"] = "pub_yyyyydnyo"
-                        else
-                           keyvalues["amenity"] = "pub_yyyyydnyd"
-                        end
-                     end
+                     keyvalues["amenity"] = "pub_yyyyydny"
+                     append_beer_garden(keyvalues)
                   else
 		     if ( keyvalues["wheelchair"] == "limited" ) then
-		        if ( keyvalues["beer_garden"] == "yes" ) then
-                           keyvalues["amenity"] = "pub_yyyyydnlg"
-                        else
-                           if ( keyvalues["outdoor_seating"] == "yes" ) then
-                              keyvalues["amenity"] = "pub_yyyyydnlo"
-                           else
-                              keyvalues["amenity"] = "pub_yyyyydnld"
-                           end
-                        end
+                        keyvalues["amenity"] = "pub_yyyyydnl"
+                        append_beer_garden(keyvalues)
                      else
                         if ( keyvalues["wheelchair"] == "no" ) then
                            keyvalues["amenity"] = "pub_yyyyydnn"
+                                                                  -- no beer garden appended
                         else
-		           if ( keyvalues["beer_garden"] == "yes" ) then
-                              keyvalues["amenity"] = "pub_yyyyydndg"
-                           else
-                              if ( keyvalues["outdoor_seating"] == "yes" ) then
-                                 keyvalues["amenity"] = "pub_yyyyydndo"
-                              else
-                                 keyvalues["amenity"] = "pub_yyyyydndd"
-                              end
-                           end
+                           keyvalues["amenity"] = "pub_yyyyydnd"
+                           append_beer_garden(keyvalues)
                         end
                      end
                   end
-	       end
-            else
+	       end -- accommodation
+            else -- no mocrobrewery
 	       if ( keyvalues["pub"] == "micropub" ) then
                   keyvalues["amenity"] = "pub_yyyynyd"
+                                                                  -- accommodation unchecked
+                                                                  -- no wheelchair appended
+                                                                  -- no beer garden appended
                else
-                  if (( keyvalues["accommodation"] ~= nil  ) and
-                      ( keyvalues["accommodation"] ~= "no" )) then
-		     if ( keyvalues["beer_garden"] == "yes" ) then
-		        if ( keyvalues["wheelchair"] == "yes" ) then
-                           keyvalues["amenity"] = "pub_yyyynnyyg"
-		        else
-		           if ( keyvalues["wheelchair"] == "limited" ) then
-                              keyvalues["amenity"] = "pub_yyyynnylg"
-			   else
-			      if ( keyvalues["wheelchair"] == "no" ) then
-                                 keyvalues["amenity"] = "pub_yyyynnyng"
-			      else
-                                 keyvalues["amenity"] = "pub_yyyynnydg"
-			      end
-			   end
-		        end
-		     else
-		        if ( keyvalues["outdoor_seating"] == "yes" ) then
-		           if ( keyvalues["wheelchair"] == "yes" ) then
-                              keyvalues["amenity"] = "pub_yyyynnyyo"
-		           else
-		              if ( keyvalues["wheelchair"] == "limited" ) then
-                                 keyvalues["amenity"] = "pub_yyyynnylo"
-			      else
-			         if ( keyvalues["wheelchair"] == "no" ) then
-                                    keyvalues["amenity"] = "pub_yyyynnyno"
-			         else
-                                    keyvalues["amenity"] = "pub_yyyynnydo"
-			         end
-			      end
-		           end
-			else
-		           if ( keyvalues["wheelchair"] == "yes" ) then
-                              keyvalues["amenity"] = "pub_yyyynnyyd"
-		           else
-		              if ( keyvalues["wheelchair"] == "limited" ) then
-                                 keyvalues["amenity"] = "pub_yyyynnyld"
-			      else
-			         if ( keyvalues["wheelchair"] == "no" ) then
-                                    keyvalues["amenity"] = "pub_yyyynnynd"
-			         else
-                                    keyvalues["amenity"] = "pub_yyyynnydd"
-			         end
-			      end
-			   end
-			end
-		     end
-		  else
-		     if ( keyvalues["beer_garden"] == "yes" ) then
-		        if ( keyvalues["wheelchair"] == "yes" ) then
-                           keyvalues["amenity"] = "pub_yyyynnnyg"
-		        else
-		           if ( keyvalues["wheelchair"] == "limited" ) then
-                              keyvalues["amenity"] = "pub_yyyynnnlg"
-			   else
-			      if ( keyvalues["wheelchair"] == "no" ) then
-                                 keyvalues["amenity"] = "pub_yyyynnnng"
-			      else
-                                 keyvalues["amenity"] = "pub_yyyynnndg"
-			      end
-			   end
-		        end
-		     else
-		        if ( keyvalues["outdoor_seating"] == "yes" ) then
-		           if ( keyvalues["wheelchair"] == "yes" ) then
-                              keyvalues["amenity"] = "pub_yyyynnnyo"
-		           else
-		              if ( keyvalues["wheelchair"] == "limited" ) then
-                                 keyvalues["amenity"] = "pub_yyyynnnlo"
-			      else
-			         if ( keyvalues["wheelchair"] == "no" ) then
-                                    keyvalues["amenity"] = "pub_yyyynnnno"
-			         else
-                                    keyvalues["amenity"] = "pub_yyyynnndo"
-			         end
-			      end
-		           end
-			else
-		           if ( keyvalues["wheelchair"] == "yes" ) then
-                              keyvalues["amenity"] = "pub_yyyynnnyd"
-		           else
-		              if ( keyvalues["wheelchair"] == "limited" ) then
-                                 keyvalues["amenity"] = "pub_yyyynnnld"
-			      else
-			         if ( keyvalues["wheelchair"] == "no" ) then
-                                    keyvalues["amenity"] = "pub_yyyynnnnd"
-			         else
-                                    keyvalues["amenity"] = "pub_yyyynnndd"
-			         end
-			      end
-			   end
-			end
-		     end
-		  end
+                  keyvalues["amenity"] = "pub_yyyynn"
+                  append_accommodation(keyvalues)
+                  append_wheelchair(keyvalues)
+                  append_beer_garden(keyvalues)
                end
-	    end
-         else
+	    end -- microbrewery
+         else -- not noncarpeted
             if ( keyvalues["microbrewery"] == "yes"  ) then
                if (( keyvalues["accommodation"] ~= nil  ) and
                    ( keyvalues["accommodation"] ~= "no" )) then
 		  if ( keyvalues["wheelchair"] == "yes" ) then
                      keyvalues["amenity"] = "pub_yyydydyy"
+                                                                  -- no beer garden appended
 		  else
 		     if ( keyvalues["wheelchair"] == "limited" ) then
                         keyvalues["amenity"] = "pub_yyydydyl"
+                                                                  -- no beer garden appended
 		     else
 		        if ( keyvalues["wheelchair"] == "no" ) then
                            keyvalues["amenity"] = "pub_yyydydyn"
+                                                                  -- no beer garden appended
 			else
-		           if ( keyvalues["beer_garden"] == "yes" ) then
-                              keyvalues["amenity"] = "pub_yyydydydg"
-                           else
-		              if ( keyvalues["outdoor_seating"] == "yes" ) then
-                                 keyvalues["amenity"] = "pub_yyydydydo"
-                              else
-                                 keyvalues["amenity"] = "pub_yyydydydd"
-                              end
-                           end
+                           keyvalues["amenity"] = "pub_yyydydyd"
+                           append_beer_garden(keyvalues)
 			end
 		     end
 		  end
 	       else
 		  if ( keyvalues["wheelchair"] == "yes" ) then
                      keyvalues["amenity"] = "pub_yyydydny"
+                                                                  -- no beer garden appended
                   else
 		     if ( keyvalues["wheelchair"] == "limited" ) then
-		        if ( keyvalues["beer_garden"] == "yes" ) then
-                           keyvalues["amenity"] = "pub_yyydydnlg"
-                        else
-		           if ( keyvalues["outdoor_seating"] == "yes" ) then
-                              keyvalues["amenity"] = "pub_yyydydnlo"
-                           else
-                              keyvalues["amenity"] = "pub_yyydydnld"
-                           end
-                        end
+                        keyvalues["amenity"] = "pub_yyydydnl"
+                        append_beer_garden(keyvalues)
                      else
 		        if ( keyvalues["wheelchair"] == "no" ) then
                            keyvalues["amenity"] = "pub_yyydydnn"
+                                                                  -- no beer garden appended
                         else
-		           if ( keyvalues["beer_garden"] == "yes" ) then
-                              keyvalues["amenity"] = "pub_yyydydndg"
-                           else
-		              if ( keyvalues["outdoor_seating"] == "yes" ) then
-                                 keyvalues["amenity"] = "pub_yyydydndo"
-                              else
-                                 keyvalues["amenity"] = "pub_yyydydndd"
-                              end
-                           end
+                           keyvalues["amenity"] = "pub_yyydydnd"
+                           append_beer_garden(keyvalues)
                         end
                      end
                   end
 	       end
 	    else
 	       if ( keyvalues["pub"] == "micropub" ) then
-                  if ( keyvalues["beer_garden"] == "yes" ) then
-		     if ( keyvalues["wheelchair"] == "yes" ) then
-                        keyvalues["amenity"] = "pub_yyydnydyg"
-		     else
-		        if ( keyvalues["wheelchair"] == "limited" ) then
-                           keyvalues["amenity"] = "pub_yyydnydlg"
-		        else
-			   if ( keyvalues["wheelchair"] == "no" ) then
-                              keyvalues["amenity"] = "pub_yyydnydng"
-			   else
-                              keyvalues["amenity"] = "pub_yyydnyddg"
-			   end
-			end
-		     end
-	          else
-		     if ( keyvalues["outdoor_seating"] == "yes" ) then
-		        if ( keyvalues["wheelchair"] == "yes" ) then
-                           keyvalues["amenity"] = "pub_yyydnydyo"
-		        else
-		           if ( keyvalues["wheelchair"] == "limited" ) then
-                              keyvalues["amenity"] = "pub_yyydnydlo"
-		           else
-		              if ( keyvalues["wheelchair"] == "no" ) then
-                                 keyvalues["amenity"] = "pub_yyydnydno"
-		              else
-                                 keyvalues["amenity"] = "pub_yyydnyddo"
-			      end
-			   end
-		        end
-		     else
-	                if ( keyvalues["wheelchair"] == "yes" ) then
-                           keyvalues["amenity"] = "pub_yyydnydyd"
-	                else
-                           if ( keyvalues["wheelchair"] == "limited" ) then
-                              keyvalues["amenity"] = "pub_yyydnydld"
-	                   else
-			      if ( keyvalues["wheelchair"] == "no" ) then
-                                 keyvalues["amenity"] = "pub_yyydnydnd"
-			      else
-                                 keyvalues["amenity"] = "pub_yyydnyddd"
-			      end
-			   end
-			end
-		     end
-		  end
+                  keyvalues["amenity"] = "pub_yyydnyd"
+                  append_wheelchair(keyvalues)
+                  append_beer_garden(keyvalues)
                else
-                  if (( keyvalues["accommodation"] ~= nil  ) and
-                      ( keyvalues["accommodation"] ~= "no" )) then
-		     if ( keyvalues["beer_garden"] == "yes" ) then
-		        if ( keyvalues["wheelchair"] == "yes" ) then
-                           keyvalues["amenity"] = "pub_yyydnnyyg"
-		        else
-		           if ( keyvalues["wheelchair"] == "limited" ) then
-                              keyvalues["amenity"] = "pub_yyydnnylg"
-			   else
-			      if ( keyvalues["wheelchair"] == "no" ) then
-                                 keyvalues["amenity"] = "pub_yyydnnyng"
-			      else
-                                 keyvalues["amenity"] = "pub_yyydnnydg"
-			      end
-			   end
-		        end
-		     else
-		        if ( keyvalues["outdoor_seating"] == "yes" ) then
-		           if ( keyvalues["wheelchair"] == "yes" ) then
-                              keyvalues["amenity"] = "pub_yyydnnyyo"
-		           else
-		              if ( keyvalues["wheelchair"] == "limited" ) then
-                                 keyvalues["amenity"] = "pub_yyydnnylo"
-			      else
-			         if ( keyvalues["wheelchair"] == "no" ) then
-                                    keyvalues["amenity"] = "pub_yyydnnyno"
-			         else
-                                    keyvalues["amenity"] = "pub_yyydnnydo"
-			         end
-			      end
-		           end
-			else
-		           if ( keyvalues["wheelchair"] == "yes" ) then
-                              keyvalues["amenity"] = "pub_yyydnnyyd"
-		           else
-		              if ( keyvalues["wheelchair"] == "limited" ) then
-                                 keyvalues["amenity"] = "pub_yyydnnyld"
-			      else
-			         if ( keyvalues["wheelchair"] == "no" ) then
-                                    keyvalues["amenity"] = "pub_yyydnnynd"
-			         else
-                                    keyvalues["amenity"] = "pub_yyydnnydd"
-			         end
-			      end
-			   end
-			end
-		     end
-		  else
-		     if ( keyvalues["beer_garden"] == "yes" ) then
-		        if ( keyvalues["wheelchair"] == "yes" ) then
-                           keyvalues["amenity"] = "pub_yyydnnnyg"
-		        else
-		           if ( keyvalues["wheelchair"] == "limited" ) then
-                              keyvalues["amenity"] = "pub_yyydnnnlg"
-			   else
-			      if ( keyvalues["wheelchair"] == "no" ) then
-                                 keyvalues["amenity"] = "pub_yyydnnnng"
-			      else
-                                 keyvalues["amenity"] = "pub_yyydnnndg"
-			      end
-			   end
-		        end
-		     else
-		        if ( keyvalues["outdoor_seating"] == "yes" ) then
-		           if ( keyvalues["wheelchair"] == "yes" ) then
-                              keyvalues["amenity"] = "pub_yyydnnnyo"
-		           else
-		              if ( keyvalues["wheelchair"] == "limited" ) then
-                                 keyvalues["amenity"] = "pub_yyydnnnlo"
-			      else
-			         if ( keyvalues["wheelchair"] == "no" ) then
-                                    keyvalues["amenity"] = "pub_yyydnnnno"
-			         else
-                                    keyvalues["amenity"] = "pub_yyydnnndo"
-			         end
-			      end
-		           end
-			else
-		           if ( keyvalues["wheelchair"] == "yes" ) then
-                              keyvalues["amenity"] = "pub_yyydnnnyd"
-		           else
-		              if ( keyvalues["wheelchair"] == "limited" ) then
-                                 keyvalues["amenity"] = "pub_yyydnnnld"
-			      else
-			         if ( keyvalues["wheelchair"] == "no" ) then
-                                    keyvalues["amenity"] = "pub_yyydnnnnd"
-			         else
-                                    keyvalues["amenity"] = "pub_yyydnnndd"
-			         end
-			      end
-			   end
-			end
-		     end
-		  end
+                  keyvalues["amenity"] = "pub_yyydnn"
+                  append_accommodation(keyvalues)
+                  append_wheelchair(keyvalues)
+                  append_beer_garden(keyvalues)
                end
 	    end
-         end
-      else
+         end -- noncarpeted
+      else -- no food
          if ( keyvalues["noncarpeted"] == "yes"  ) then
             if ( keyvalues["microbrewery"] == "yes"  ) then
                if (( keyvalues["accommodation"] ~= nil  ) and
                    ( keyvalues["accommodation"] ~= "no" )) then
-	          if ( keyvalues["wheelchair"] == "yes" ) then
-                     keyvalues["amenity"] = "pub_yydyydyy"
-     		  else
-	             if ( keyvalues["wheelchair"] == "limited" ) then
-                        keyvalues["amenity"] = "pub_yydyydyl"
-		     else
-		        if ( keyvalues["wheelchair"] == "no" ) then
-                           keyvalues["amenity"] = "pub_yydyydyn"
-		        else
-                           keyvalues["amenity"] = "pub_yydyydyd"
-		        end
-		     end
-	          end
+                  keyvalues["amenity"] = "pub_yydyydy"
+                  append_wheelchair(keyvalues)
+                                                                  -- no beer garden appended
 	       else
 	          if ( keyvalues["wheelchair"] == "yes" ) then
                      keyvalues["amenity"] = "pub_yydyydny"
+                                                                  -- no beer garden appended
      		  else
 	             if ( keyvalues["wheelchair"] == "limited" ) then
-		        if ( keyvalues["beer_garden"] == "yes" ) then
-                           keyvalues["amenity"] = "pub_yydyydnlg"
-                        else
-		           if ( keyvalues["outdoor_seating"] == "yes" ) then
-                              keyvalues["amenity"] = "pub_yydyydnlo"
-                           else
-                              keyvalues["amenity"] = "pub_yydyydnld"
-                           end
-                        end
+                        keyvalues["amenity"] = "pub_yydyydnl"
+                        append_beer_garden(keyvalues)
 		     else
 		        if ( keyvalues["wheelchair"] == "no" ) then
-		           if ( keyvalues["beer_garden"] == "yes" ) then
-                              keyvalues["amenity"] = "pub_yydyydnng"
-                           else
-		              if ( keyvalues["outdoor_seating"] == "yes" ) then
-                                 keyvalues["amenity"] = "pub_yydyydnno"
-                              else
-                                 keyvalues["amenity"] = "pub_yydyydnnd"
-                              end
-                           end
+                           keyvalues["amenity"] = "pub_yydyydnn"
+                           append_beer_garden(keyvalues)
 		        else
-		           if ( keyvalues["beer_garden"] == "yes" ) then
-                              keyvalues["amenity"] = "pub_yydyydndg"
-                           else
-		              if ( keyvalues["outdoor_seating"] == "yes" ) then
-                                 keyvalues["amenity"] = "pub_yydyydndo"
-                              else
-                                 keyvalues["amenity"] = "pub_yydyydndd"
-                              end
-                           end
+                           keyvalues["amenity"] = "pub_yydyydnd"
+                           append_beer_garden(keyvalues)
 		        end
 		     end
 	          end
@@ -3776,370 +3482,107 @@ function filter_tags_generic(keyvalues, nokeys)
 	       if ( keyvalues["pub"] == "micropub" ) then
 		  if ( keyvalues["wheelchair"] == "yes" ) then
                      keyvalues["amenity"] = "pub_yydynydy"
+                                                                  -- no beer garden appended
 		  else
 		     if ( keyvalues["wheelchair"] == "limited" ) then
                         keyvalues["amenity"] = "pub_yydynydl"
+                                                                  -- no beer garden appended
 	             else
 			if ( keyvalues["wheelchair"] == "no" ) then
-		           if ( keyvalues["beer_garden"] == "yes" ) then
-                              keyvalues["amenity"] = "pub_yydynydng"
-                           else
-		              if ( keyvalues["outdoor_seating"] == "yes" ) then
-                                 keyvalues["amenity"] = "pub_yydynydno"
-                              else
-                                 keyvalues["amenity"] = "pub_yydynydnd"
-                              end
-                           end
+                           keyvalues["amenity"] = "pub_yydynydn"
+                           append_beer_garden(keyvalues)
 			else
                            keyvalues["amenity"] = "pub_yydynydd"
+                                                                  -- no beer garden appended
 			end
 	             end
 		  end
 	       else
-                  if (( keyvalues["accommodation"] ~= nil  ) and
-                      ( keyvalues["accommodation"] ~= "no" )) then
-		     if ( keyvalues["beer_garden"] == "yes" ) then
-		        if ( keyvalues["wheelchair"] == "yes" ) then
-                           keyvalues["amenity"] = "pub_yydynnyyg"
-		        else
-		           if ( keyvalues["wheelchair"] == "limited" ) then
-                              keyvalues["amenity"] = "pub_yydynnylg"
-			   else
-			      if ( keyvalues["wheelchair"] == "no" ) then
-                                 keyvalues["amenity"] = "pub_yydynnyng"
-			      else
-                                 keyvalues["amenity"] = "pub_yydynnydg"
-			      end
-			   end
-		        end
-		     else
-		        if ( keyvalues["outdoor_seating"] == "yes" ) then
-		           if ( keyvalues["wheelchair"] == "yes" ) then
-                              keyvalues["amenity"] = "pub_yydynnyyo"
-		           else
-		              if ( keyvalues["wheelchair"] == "limited" ) then
-                                 keyvalues["amenity"] = "pub_yydynnylo"
-			      else
-			         if ( keyvalues["wheelchair"] == "no" ) then
-                                    keyvalues["amenity"] = "pub_yydynnyno"
-			         else
-                                    keyvalues["amenity"] = "pub_yydynnydo"
-			         end
-			      end
-		           end
-			else
-		           if ( keyvalues["wheelchair"] == "yes" ) then
-                              keyvalues["amenity"] = "pub_yydynnyyd"
-		           else
-		              if ( keyvalues["wheelchair"] == "limited" ) then
-                                 keyvalues["amenity"] = "pub_yydynnyld"
-			      else
-			         if ( keyvalues["wheelchair"] == "no" ) then
-                                    keyvalues["amenity"] = "pub_yydynnynd"
-			         else
-                                    keyvalues["amenity"] = "pub_yydynnydd"
-			         end
-			      end
-			   end
-			end
-		     end
-		  else
-		     if ( keyvalues["beer_garden"] == "yes" ) then
-		        if ( keyvalues["wheelchair"] == "yes" ) then
-                           keyvalues["amenity"] = "pub_yydynnnyg"
-		        else
-		           if ( keyvalues["wheelchair"] == "limited" ) then
-                              keyvalues["amenity"] = "pub_yydynnnlg"
-			   else
-			      if ( keyvalues["wheelchair"] == "no" ) then
-                                 keyvalues["amenity"] = "pub_yydynnnng"
-			      else
-                                 keyvalues["amenity"] = "pub_yydynnndg"
-			      end
-			   end
-		        end
-		     else
-		        if ( keyvalues["outdoor_seating"] == "yes" ) then
-		           if ( keyvalues["wheelchair"] == "yes" ) then
-                              keyvalues["amenity"] = "pub_yydynnnyo"
-		           else
-		              if ( keyvalues["wheelchair"] == "limited" ) then
-                                 keyvalues["amenity"] = "pub_yydynnnlo"
-			      else
-			         if ( keyvalues["wheelchair"] == "no" ) then
-                                    keyvalues["amenity"] = "pub_yydynnnno"
-			         else
-                                    keyvalues["amenity"] = "pub_yydynnndo"
-			         end
-			      end
-		           end
-			else
-		           if ( keyvalues["wheelchair"] == "yes" ) then
-                              keyvalues["amenity"] = "pub_yydynnnyd"
-		           else
-		              if ( keyvalues["wheelchair"] == "limited" ) then
-                                 keyvalues["amenity"] = "pub_yydynnnld"
-			      else
-			         if ( keyvalues["wheelchair"] == "no" ) then
-                                    keyvalues["amenity"] = "pub_yydynnnnd"
-			         else
-                                    keyvalues["amenity"] = "pub_yydynnndd"
-			         end
-			      end
-			   end
-			end
-		     end
-		  end
+                  keyvalues["amenity"] = "pub_yydynn"
+                  append_accommodation(keyvalues)
+                  append_wheelchair(keyvalues)
+                  append_beer_garden(keyvalues)
 	       end
 	    end
          else
             if ( keyvalues["microbrewery"] == "yes"  ) then
-	       if ( keyvalues["beer_garden"] == "yes" ) then
-	          if ( keyvalues["wheelchair"] == "yes" ) then
-                     keyvalues["amenity"] = "pub_yyddyddyg"
-		  else
-		     if ( keyvalues["wheelchair"] == "limited" ) then
-                        keyvalues["amenity"] = "pub_yyddyddlg"
-		     else
-		        if ( keyvalues["wheelchair"] == "no" ) then
-                           keyvalues["amenity"] = "pub_yyddyddng"
-			else
-                           keyvalues["amenity"] = "pub_yyddydddg"
-			end
-		     end
-	          end
-	       else
-	          if ( keyvalues["outdoor_seating"] == "yes" ) then
-	             if ( keyvalues["wheelchair"] == "yes" ) then
-                        keyvalues["amenity"] = "pub_yyddyddyo"
-	             else
-	                if ( keyvalues["wheelchair"] == "limited" ) then
-                           keyvalues["amenity"] = "pub_yyddyddlo"
-	                else
-		           if ( keyvalues["wheelchair"] == "no" ) then
-                              keyvalues["amenity"] = "pub_yyddyddno"
-			   else
-                              keyvalues["amenity"] = "pub_yyddydddo"
-			   end
-			end
-		     end
-		  else
-		     if ( keyvalues["wheelchair"] == "yes" ) then
-                        keyvalues["amenity"] = "pub_yyddyddyd"
-		     else
-		        if ( keyvalues["wheelchair"] == "limited" ) then
-                           keyvalues["amenity"] = "pub_yyddyddld"
-		        else
-		           if ( keyvalues["wheelchair"] == "no" ) then
-                              keyvalues["amenity"] = "pub_yyddyddnd"
-		           else
-                              keyvalues["amenity"] = "pub_yyddydddd"
-			   end
-			end
-		     end
-		  end
-	       end
+               keyvalues["amenity"] = "pub_yyddydd"
+               append_wheelchair(keyvalues)
+               append_beer_garden(keyvalues)
 	    else
 	       if ( keyvalues["pub"] == "micropub" ) then
 		  if ( keyvalues["wheelchair"] == "yes" ) then
                      keyvalues["amenity"] = "pub_yyddnydy"
+                                                                  -- no beer garden appended
 		  else
 		     if ( keyvalues["wheelchair"] == "limited" ) then
                         keyvalues["amenity"] = "pub_yyddnydl"
+                                                                  -- no beer garden appended
 		     else
 			if ( keyvalues["wheelchair"] == "no" ) then
                            keyvalues["amenity"] = "pub_yyddnydn"
+                                                                  -- no beer garden appended
 			else
-		           if ( keyvalues["beer_garden"] == "yes" ) then
-                              keyvalues["amenity"] = "pub_yyddnyddg"
-                           else
-		              if ( keyvalues["outdoor_seating"] == "yes" ) then
-                                 keyvalues["amenity"] = "pub_yyddnyddo"
-                              else
-                                 keyvalues["amenity"] = "pub_yyddnyddd"
-                              end
-                           end
+                           keyvalues["amenity"] = "pub_yyddnydd"
+                           append_beer_garden(keyvalues)
 			end
 		     end
 		  end
                else
-                  if (( keyvalues["accommodation"] ~= nil  ) and
-                      ( keyvalues["accommodation"] ~= "no" )) then
-		     if ( keyvalues["beer_garden"] == "yes" ) then
-		        if ( keyvalues["wheelchair"] == "yes" ) then
-                           keyvalues["amenity"] = "pub_yyddnnyyg"
-		        else
-		           if ( keyvalues["wheelchair"] == "limited" ) then
-                              keyvalues["amenity"] = "pub_yyddnnylg"
-			   else
-			      if ( keyvalues["wheelchair"] == "no" ) then
-                                 keyvalues["amenity"] = "pub_yyddnnyng"
-			      else
-                                 keyvalues["amenity"] = "pub_yyddnnydg"
-			      end
-			   end
-		        end
-		     else
-		        if ( keyvalues["outdoor_seating"] == "yes" ) then
-		           if ( keyvalues["wheelchair"] == "yes" ) then
-                              keyvalues["amenity"] = "pub_yyddnnyyo"
-		           else
-		              if ( keyvalues["wheelchair"] == "limited" ) then
-                                 keyvalues["amenity"] = "pub_yyddnnylo"
-			      else
-			         if ( keyvalues["wheelchair"] == "no" ) then
-                                    keyvalues["amenity"] = "pub_yyddnnyno"
-			         else
-                                    keyvalues["amenity"] = "pub_yyddnnydo"
-			         end
-			      end
-		           end
-			else
-		           if ( keyvalues["wheelchair"] == "yes" ) then
-                              keyvalues["amenity"] = "pub_yyddnnyyd"
-		           else
-		              if ( keyvalues["wheelchair"] == "limited" ) then
-                                 keyvalues["amenity"] = "pub_yyddnnyld"
-			      else
-			         if ( keyvalues["wheelchair"] == "no" ) then
-                                    keyvalues["amenity"] = "pub_yyddnnynd"
-			         else
-                                    keyvalues["amenity"] = "pub_yyddnnydd"
-			         end
-			      end
-			   end
-			end
-		     end
-		  else
-		     if ( keyvalues["beer_garden"] == "yes" ) then
-		        if ( keyvalues["wheelchair"] == "yes" ) then
-                           keyvalues["amenity"] = "pub_yyddnnnyg"
-		        else
-		           if ( keyvalues["wheelchair"] == "limited" ) then
-                              keyvalues["amenity"] = "pub_yyddnnnlg"
-			   else
-			      if ( keyvalues["wheelchair"] == "no" ) then
-                                 keyvalues["amenity"] = "pub_yyddnnnng"
-			      else
-                                 keyvalues["amenity"] = "pub_yyddnnndg"
-			      end
-			   end
-		        end
-		     else
-		        if ( keyvalues["outdoor_seating"] == "yes" ) then
-		           if ( keyvalues["wheelchair"] == "yes" ) then
-                              keyvalues["amenity"] = "pub_yyddnnnyo"
-		           else
-		              if ( keyvalues["wheelchair"] == "limited" ) then
-                                 keyvalues["amenity"] = "pub_yyddnnnlo"
-			      else
-			         if ( keyvalues["wheelchair"] == "no" ) then
-                                    keyvalues["amenity"] = "pub_yyddnnnno"
-			         else
-                                    keyvalues["amenity"] = "pub_yyddnnndo"
-			         end
-			      end
-		           end
-			else
-		           if ( keyvalues["wheelchair"] == "yes" ) then
-                              keyvalues["amenity"] = "pub_yyddnnnyd"
-		           else
-		              if ( keyvalues["wheelchair"] == "limited" ) then
-                                 keyvalues["amenity"] = "pub_yyddnnnld"
-			      else
-			         if ( keyvalues["wheelchair"] == "no" ) then
-                                    keyvalues["amenity"] = "pub_yyddnnnnd"
-			         else
-                                    keyvalues["amenity"] = "pub_yyddnnndd"
-			         end
-			      end
-			   end
-			end
-		     end
-		  end
+                  keyvalues["amenity"] = "pub_yyddnn"
+                  append_accommodation(keyvalues)
+                  append_wheelchair(keyvalues)
+                  append_beer_garden(keyvalues)
                end
 	    end
          end
-      end
-   end
+      end -- food
+   end -- real_ale
 
    if (( keyvalues["real_ale"] == "no" ) and
        ( keyvalues["amenity"] == "pub" )) then
       if (( keyvalues["food"] ~= nil  ) and
           ( keyvalues["food"] ~= "no" )) then
          if ( keyvalues["noncarpeted"] == "yes"  ) then
-            if ( keyvalues["wheelchair"] == "yes" ) then
-               keyvalues["amenity"] = "pub_ynyydddy"
-	    else
-	       if ( keyvalues["wheelchair"] == "limited" ) then
-                  keyvalues["amenity"] = "pub_ynyydddl"
-	       else
-	          if ( keyvalues["wheelchair"] == "no" ) then
-                     keyvalues["amenity"] = "pub_ynyydddn"
-		  else
-                     keyvalues["amenity"] = "pub_ynyydddd"
-	          end
-	       end
-	    end
+            keyvalues["amenity"] = "pub_ynyyddd"
+                                                                  -- accommodation unchecked
+            append_wheelchair(keyvalues)
+                                                                  -- no beer garden appended
          else
             if (( keyvalues["accommodation"] ~= nil  ) and
                 ( keyvalues["accommodation"] ~= "no" )) then
                if ( keyvalues["wheelchair"] == "yes" ) then
-	          if ( keyvalues["beer_garden"] == "yes" ) then
-                     keyvalues["amenity"] = "pub_ynydddyyg"
-                  else
- 		     if ( keyvalues["outdoor_seating"] == "yes" ) then
-                        keyvalues["amenity"] = "pub_ynydddyyo"
-                     else
-                        keyvalues["amenity"] = "pub_ynydddyyd"
-                     end
-                  end
-	       else  -- wheelchair ~yes
+                  keyvalues["amenity"] = "pub_ynydddyy"
+                  append_beer_garden(keyvalues)
+	       else
 	          if ( keyvalues["wheelchair"] == "limited" ) then
                      keyvalues["amenity"] = "pub_ynydddyl"
+                                                                  -- no beer garden appended
 	          else
 	             if ( keyvalues["wheelchair"] == "no" ) then
                         keyvalues["amenity"] = "pub_ynydddyn"
+                                                                  -- no beer garden appended
 		     else
-	                if ( keyvalues["beer_garden"] == "yes" ) then
-                           keyvalues["amenity"] = "pub_ynydddydg"
-                        else
- 		           if ( keyvalues["outdoor_seating"] == "yes" ) then
-                              keyvalues["amenity"] = "pub_ynydddydo"
-                           else
-                              keyvalues["amenity"] = "pub_ynydddydd"
-                           end
-                        end
+                        keyvalues["amenity"] = "pub_ynydddyd"
+                        append_beer_garden(keyvalues)
 	             end
 	          end
-	       end  -- wheelchair
+	       end
 	    else  -- accommodation
                if ( keyvalues["wheelchair"] == "yes" ) then
-	          if ( keyvalues["beer_garden"] == "yes" ) then
-                     keyvalues["amenity"] = "pub_ynydddnyg"
-                  else
- 		     if ( keyvalues["outdoor_seating"] == "yes" ) then
-                        keyvalues["amenity"] = "pub_ynydddnyo"
-                     else
-                        keyvalues["amenity"] = "pub_ynydddnyd"
-                     end
-                  end
+                  keyvalues["amenity"] = "pub_ynydddny"
+                  append_beer_garden(keyvalues)
 	       else
 	          if ( keyvalues["wheelchair"] == "limited" ) then
                      keyvalues["amenity"] = "pub_ynydddnl"
+                                                                  -- no beer garden appended
 	          else
 	             if ( keyvalues["wheelchair"] == "no" ) then
                         keyvalues["amenity"] = "pub_ynydddnn"
+                                                                  -- no beer garden appended
 		     else
-	                if ( keyvalues["beer_garden"] == "yes" ) then
-                           keyvalues["amenity"] = "pub_ynydddndg"
-                        else
- 		           if ( keyvalues["outdoor_seating"] == "yes" ) then
-                              keyvalues["amenity"] = "pub_ynydddndo"
-                           else
-                              keyvalues["amenity"] = "pub_ynydddndd"
-                           end
-                        end
+                        keyvalues["amenity"] = "pub_ynydddnd"
+                        append_beer_garden(keyvalues)
 	             end
 	          end
 	       end
@@ -4149,108 +3592,24 @@ function filter_tags_generic(keyvalues, nokeys)
          if ( keyvalues["noncarpeted"] == "yes"  ) then
             if (( keyvalues["accommodation"] ~= nil  ) and
                 ( keyvalues["accommodation"] ~= "no" )) then
-               if ( keyvalues["wheelchair"] == "yes" ) then
-                  keyvalues["amenity"] = "pub_yndyddyy"
-	       else
-	          if ( keyvalues["wheelchair"] == "limited" ) then
-                     keyvalues["amenity"] = "pub_yndyddyl"
-	          else
-	             if ( keyvalues["wheelchair"] == "no" ) then
-                        keyvalues["amenity"] = "pub_yndyddyn"
-		     else
-                        keyvalues["amenity"] = "pub_yndyddyd"
-	             end
-	          end
-	       end
+               keyvalues["amenity"] = "pub_yndyddy"
+               append_wheelchair(keyvalues)
+                                                                  -- no beer garden appended
 	    else
-	       if ( keyvalues["beer_garden"] == "yes" ) then
-		  if ( keyvalues["wheelchair"] == "yes" ) then
-                     keyvalues["amenity"] = "pub_yndyddnyg"
-		  else
-		     if ( keyvalues["wheelchair"] == "limited" ) then
-                        keyvalues["amenity"] = "pub_yndyddnlg"
-		     else
-			if ( keyvalues["wheelchair"] == "no" ) then
-                           keyvalues["amenity"] = "pub_yndyddnng"
-			else
-                           keyvalues["amenity"] = "pub_yndyddndg"
-			end
-		     end
-		  end
-	       else
-		  if ( keyvalues["outdoor_seating"] == "yes" ) then
-		     if ( keyvalues["wheelchair"] == "yes" ) then
-                        keyvalues["amenity"] = "pub_yndyddnyo"
-		     else
-		        if ( keyvalues["wheelchair"] == "limited" ) then
-                           keyvalues["amenity"] = "pub_yndyddnlo"
-		        else
-		           if ( keyvalues["wheelchair"] == "no" ) then
-                              keyvalues["amenity"] = "pub_yndyddnno"
-			   else
-                              keyvalues["amenity"] = "pub_yndyddndo"
-			   end
-			end
-		     end
-		  else
-		     if ( keyvalues["wheelchair"] == "yes" ) then
-                        keyvalues["amenity"] = "pub_yndyddnyd"
-		     else
-		        if ( keyvalues["wheelchair"] == "limited" ) then
-                           keyvalues["amenity"] = "pub_yndyddnld"
-		        else
-		           if ( keyvalues["wheelchair"] == "no" ) then
-                              keyvalues["amenity"] = "pub_yndyddnnd"
-		           else
-                              keyvalues["amenity"] = "pub_yndyddndd"
-		           end
-		        end
-		     end
-		  end
-	       end
+               keyvalues["amenity"] = "pub_yndyddn"
+               append_wheelchair(keyvalues)
+               append_beer_garden(keyvalues)
 	    end
          else
             if (( keyvalues["accommodation"] ~= nil  ) and
                 ( keyvalues["accommodation"] ~= "no" )) then
                keyvalues["amenity"] = "pub_ynddddy"
+                                                                  -- no wheelchair appended
+                                                                  -- no beer garden appended
 	    else
-               if ( keyvalues["wheelchair"] == "yes" ) then
-	          if ( keyvalues["beer_garden"] == "yes" ) then
-                     keyvalues["amenity"] = "pub_ynddddnyg"
-                  else
-                     if ( keyvalues["outdoor_seating"] == "yes" ) then
-                        keyvalues["amenity"] = "pub_ynddddnyo"
-                     else
-                        keyvalues["amenity"] = "pub_ynddddnyd"
-                     end
-                  end
-	       else
-	          if ( keyvalues["wheelchair"] == "limited" ) then
-                     keyvalues["amenity"] = "pub_ynddddnl"
-	          else
-	             if ( keyvalues["wheelchair"] == "no" ) then
-	                if ( keyvalues["beer_garden"] == "yes" ) then
-                           keyvalues["amenity"] = "pub_ynddddnng"
-                        else
-                           if ( keyvalues["outdoor_seating"] == "yes" ) then
-                              keyvalues["amenity"] = "pub_ynddddnno"
-                           else
-                              keyvalues["amenity"] = "pub_ynddddnnd"
-                           end
-                        end
-		     else
-	                if ( keyvalues["beer_garden"] == "yes" ) then
-                           keyvalues["amenity"] = "pub_ynddddndg"
-                        else
-                           if ( keyvalues["outdoor_seating"] == "yes" ) then
-                              keyvalues["amenity"] = "pub_ynddddndo"
-                           else
-                              keyvalues["amenity"] = "pub_ynddddndd"
-                           end
-                        end
-	             end
-	          end
-	       end
+               keyvalues["amenity"] = "pub_ynddddn"
+               append_wheelchair(keyvalues)
+               append_beer_garden(keyvalues)
 	    end
          end
       end
@@ -4262,6 +3621,7 @@ function filter_tags_generic(keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
    if ( keyvalues["disused:amenity"] == "pub" ) then
       keyvalues["amenity"] = "pub_nddddddd"
+                                                 -- no other attributes checked
    end
 
 -- ----------------------------------------------------------------------------
@@ -4273,73 +3633,29 @@ function filter_tags_generic(keyvalues, nokeys)
          if ( keyvalues["noncarpeted"] == "yes"  ) then
             if ( keyvalues["microbrewery"] == "yes"  ) then
                keyvalues["amenity"] = "pub_ydyyydd"
+                                                                  -- no wheelchair appended
+                                                                  -- no beer garden appended
 	    else
-               if ( keyvalues["wheelchair"] == "yes" ) then
-                  if ( keyvalues["beer_garden"] == "yes" ) then
-                     keyvalues["amenity"] = "pub_ydyynddyg"
-                  else
-                     if ( keyvalues["outdoor_seating"] == "yes" ) then
-                        keyvalues["amenity"] = "pub_ydyynddyo"
-                     else
-                        keyvalues["amenity"] = "pub_ydyynddyd"
-                     end
-                  end
-       	       else
-                  if ( keyvalues["wheelchair"] == "limited" ) then
-                     if ( keyvalues["beer_garden"] == "yes" ) then
-                        keyvalues["amenity"] = "pub_ydyynddlg"
-                     else
-                        if ( keyvalues["outdoor_seating"] == "yes" ) then
-                           keyvalues["amenity"] = "pub_ydyynddlo"
-                        else
-                           keyvalues["amenity"] = "pub_ydyynddld"
-                        end
-                     end
-                  else
-                     if ( keyvalues["wheelchair"] == "no" ) then
-                        if ( keyvalues["beer_garden"] == "yes" ) then
-                           keyvalues["amenity"] = "pub_ydyynddng"
-                        else
-                           if ( keyvalues["outdoor_seating"] == "yes" ) then
-                              keyvalues["amenity"] = "pub_ydyynddno"
-                           else
-                              keyvalues["amenity"] = "pub_ydyynddnd"
-                           end
-                        end
-                     else
-                        if ( keyvalues["beer_garden"] == "yes" ) then
-                           keyvalues["amenity"] = "pub_ydyyndddg"
-                        else
-                           if ( keyvalues["outdoor_seating"] == "yes" ) then
-                              keyvalues["amenity"] = "pub_ydyyndddo"
-                           else
-                              keyvalues["amenity"] = "pub_ydyyndddd"
-                           end
-                        end
-                     end
-                  end
-               end
+               keyvalues["amenity"] = "pub_ydyyndd"
+               append_wheelchair(keyvalues)
+               append_beer_garden(keyvalues)
 	    end
          else
             if ( keyvalues["microbrewery"] == "yes"  ) then
                if ( keyvalues["wheelchair"] == "yes" ) then
                   keyvalues["amenity"] = "pub_ydydyddy"
+                                                                  -- no beer garden appended
        	       else
                   if ( keyvalues["wheelchair"] == "limited" ) then
                      keyvalues["amenity"] = "pub_ydydyddl"
+                                                                  -- no beer garden appended
                   else
                      if ( keyvalues["wheelchair"] == "no" ) then
                         keyvalues["amenity"] = "pub_ydydyddn"
+                                                                  -- no beer garden appended
                      else
-                        if ( keyvalues["beer_garden"] == "yes" ) then
-                           keyvalues["amenity"] = "pub_ydydydddg"
-                        else
-                           if ( keyvalues["outdoor_seating"] == "yes" ) then
-                              keyvalues["amenity"] = "pub_ydydydddo"
-                           else
-                              keyvalues["amenity"] = "pub_ydydydddd"
-                           end
-                        end
+                        keyvalues["amenity"] = "pub_ydydyddd"
+                        append_beer_garden(keyvalues)
                      end
                   end
                end
@@ -4347,112 +3663,26 @@ function filter_tags_generic(keyvalues, nokeys)
 	       if ( keyvalues["pub"] == "micropub" ) then
                   if ( keyvalues["wheelchair"] == "yes" ) then
                      keyvalues["amenity"] = "pub_ydydnydy"
+                                                                  -- no beer garden appended
            	  else
                      if ( keyvalues["wheelchair"] == "limited" ) then
                         keyvalues["amenity"] = "pub_ydydnydl"
+                                                                  -- no beer garden appended
                      else
                         if ( keyvalues["wheelchair"] == "no" ) then
                            keyvalues["amenity"] = "pub_ydydnydn"
+                                                                  -- no beer garden appended
 	                else
-                           if ( keyvalues["beer_garden"] == "yes" ) then
-                              keyvalues["amenity"] = "pub_ydydnyddg"
-                           else
-                              if ( keyvalues["outdoor_seating"] == "yes" ) then
-                                 keyvalues["amenity"] = "pub_ydydnyddo"
-                              else
-                                 keyvalues["amenity"] = "pub_ydydnyddd"
-                              end
-                           end
+                           keyvalues["amenity"] = "pub_ydydnydd"
+                           append_beer_garden(keyvalues)
                         end
                      end
 	          end
 	       else
-                  if (( keyvalues["accommodation"] ~= nil  ) and
-                      ( keyvalues["accommodation"] ~= "no" )) then
-                     if ( keyvalues["wheelchair"] == "yes" ) then
-	                if ( keyvalues["beer_garden"] == "yes" ) then
-                           keyvalues["amenity"] = "pub_ydydnnyyg"
-                        else
-                           if ( keyvalues["outdoor_seating"] == "yes" ) then
-                              keyvalues["amenity"] = "pub_ydydnnyyo"
-                           else
-                              keyvalues["amenity"] = "pub_ydydnnyyd"
-                           end
-                        end
-	             else
-	                if ( keyvalues["wheelchair"] == "limited" ) then
-                           keyvalues["amenity"] = "pub_ydydnnyl"
-	                else
-	                   if ( keyvalues["wheelchair"] == "no" ) then
-	                      if ( keyvalues["beer_garden"] == "yes" ) then
-                                 keyvalues["amenity"] = "pub_ydydnnyng"
-                              else
-                                 if ( keyvalues["outdoor_seating"] == "yes" ) then
-                                    keyvalues["amenity"] = "pub_ydydnnyno"
-                                 else
-                                    keyvalues["amenity"] = "pub_ydydnnynd"
-                                 end
-                              end
-		           else
-	                      if ( keyvalues["beer_garden"] == "yes" ) then
-                                 keyvalues["amenity"] = "pub_ydydnnydg"
-                              else
-                                 if ( keyvalues["outdoor_seating"] == "yes" ) then
-                                    keyvalues["amenity"] = "pub_ydydnnydo"
-                                 else
-                                    keyvalues["amenity"] = "pub_ydydnnydd"
-                                 end
-                              end
-	                   end
-	                end
-	             end
-		  else
-                     if ( keyvalues["wheelchair"] == "yes" ) then
-	                if ( keyvalues["beer_garden"] == "yes" ) then
-                           keyvalues["amenity"] = "pub_ydydnnnyg"
-                        else
-                           if ( keyvalues["outdoor_seating"] == "yes" ) then
-                              keyvalues["amenity"] = "pub_ydydnnnyo"
-                           else
-                              keyvalues["amenity"] = "pub_ydydnnnyd"
-                           end
-                        end
-	             else
-	                if ( keyvalues["wheelchair"] == "limited" ) then
-	                   if ( keyvalues["beer_garden"] == "yes" ) then
-                              keyvalues["amenity"] = "pub_ydydnnnlg"
-                           else
-	                      if ( keyvalues["outdoor_seating"] == "yes" ) then
-                                 keyvalues["amenity"] = "pub_ydydnnnlo"
-                              else
-                                 keyvalues["amenity"] = "pub_ydydnnnld"
-                              end
-                           end
-	                else
-	                   if ( keyvalues["wheelchair"] == "no" ) then
-	                      if ( keyvalues["beer_garden"] == "yes" ) then
-                                 keyvalues["amenity"] = "pub_ydydnnnng"
-                              else
-	                         if ( keyvalues["outdoor_seating"] == "yes" ) then
-                                    keyvalues["amenity"] = "pub_ydydnnnno"
-                                 else
-                                    keyvalues["amenity"] = "pub_ydydnnnnd"
-                                 end
-                              end
-		           else
-	                      if ( keyvalues["beer_garden"] == "yes" ) then
-                                 keyvalues["amenity"] = "pub_ydydnnndg"
-                              else
-	                         if ( keyvalues["outdoor_seating"] == "yes" ) then
-                                    keyvalues["amenity"] = "pub_ydydnnndo"
-                                 else
-                                    keyvalues["amenity"] = "pub_ydydnnndd"
-                                 end
-                              end
-	                   end
-	                end
-	             end
-		  end
+                  keyvalues["amenity"] = "pub_ydydnn"
+                  append_accommodation(keyvalues)
+                  append_wheelchair(keyvalues)
+                  append_beer_garden(keyvalues)
 	       end
 	    end
          end
@@ -4462,22 +3692,21 @@ function filter_tags_generic(keyvalues, nokeys)
                if (( keyvalues["accommodation"] ~= nil  ) and
                    ( keyvalues["accommodation"] ~= "no" )) then
                   keyvalues["amenity"] = "pub_yddyydy"
+                                                                  -- no wheelchair appended
+                                                                  -- no beer garden appended
 	       else
-	          if ( keyvalues["beer_garden"] == "yes" ) then
-                     keyvalues["amenity"] = "pub_yddyydng"
-                  else
-	             if ( keyvalues["outdoor_seating"] == "yes" ) then
-                        keyvalues["amenity"] = "pub_yddyydno"
-                     else
-                        keyvalues["amenity"] = "pub_yddyydnd"
-                     end
-                  end
+                  keyvalues["amenity"] = "pub_yddyydn"
+                  append_beer_garden(keyvalues)
 	       end
 	    else
 	       if ( keyvalues["pub"] == "micropub" ) then
                   keyvalues["amenity"] = "pub_yddynyd"
+                                                                  -- no wheelchair appended
+                                                                  -- no beer garden appended
 	       else
                   keyvalues["amenity"] = "pub_yddynnd"
+                                                                  -- no wheelchair appended
+                                                                  -- no beer garden appended
 	       end
 	    end
 	 else
@@ -4485,139 +3714,23 @@ function filter_tags_generic(keyvalues, nokeys)
                if (( keyvalues["accommodation"] ~= nil  ) and
                    ( keyvalues["accommodation"] ~= "no" )) then
                   keyvalues["amenity"] = "pub_ydddydy"
+                                                                  -- no wheelchair appended
+                                                                  -- no beer garden appended
                else
-                  if ( keyvalues["wheelchair"] == "yes" ) then
-	             if ( keyvalues["beer_garden"] == "yes" ) then
-                        keyvalues["amenity"] = "pub_ydddydnyg"
-                     else
-	                if ( keyvalues["outdoor_seating"] == "yes" ) then
-                           keyvalues["amenity"] = "pub_ydddydnyo"
-                        else
-                           keyvalues["amenity"] = "pub_ydddydnyd"
-                        end
-                     end
-                  else
-                     if ( keyvalues["wheelchair"] == "limited" ) then
-                        keyvalues["amenity"] = "pub_ydddydnl"
-                     else
-                        if ( keyvalues["wheelchair"] == "no" ) then
-                           keyvalues["amenity"] = "pub_ydddydnn"
-                        else
-	                   if ( keyvalues["beer_garden"] == "yes" ) then
-                              keyvalues["amenity"] = "pub_ydddydndg"
-                           else
-	                      if ( keyvalues["outdoor_seating"] == "yes" ) then
-                                 keyvalues["amenity"] = "pub_ydddydndo"
-                              else
-                                 keyvalues["amenity"] = "pub_ydddydndd"
-                              end
-                           end
-                        end
-                     end
-                  end
+                  keyvalues["amenity"] = "pub_ydddydn"
+                  append_wheelchair(keyvalues)
+                  append_beer_garden(keyvalues)
                end
             else
 	       if ( keyvalues["pub"] == "micropub" ) then
-                  if ( keyvalues["wheelchair"] == "yes" ) then
-                     keyvalues["amenity"] = "pub_ydddnydy"
-                  else
-                     if ( keyvalues["wheelchair"] == "limited" ) then
-                        keyvalues["amenity"] = "pub_ydddnydl"
-                     else
-                        if ( keyvalues["wheelchair"] == "no" ) then
-                           keyvalues["amenity"] = "pub_ydddnydn"
-                        else
-                           keyvalues["amenity"] = "pub_ydddnydd"
-                        end
-                     end
-                  end
+                  keyvalues["amenity"] = "pub_ydddnyd"
+                  append_wheelchair(keyvalues)
+                                                                  -- no beer garden appended
                else
-                  if (( keyvalues["accommodation"] ~= nil  ) and
-                      ( keyvalues["accommodation"] ~= "no" )) then
-                     if ( keyvalues["wheelchair"] == "yes" ) then
-	                if ( keyvalues["beer_garden"] == "yes" ) then
-                           keyvalues["amenity"] = "pub_ydddnnyyg"
-                        else
-	                   if ( keyvalues["outdoor_seating"] == "yes" ) then
-                              keyvalues["amenity"] = "pub_ydddnnyyo"
-                           else
-                              keyvalues["amenity"] = "pub_ydddnnyyd"
-                           end
-                        end
-	             else
-	                if ( keyvalues["wheelchair"] == "limited" ) then
-	                   if ( keyvalues["beer_garden"] == "yes" ) then
-                              keyvalues["amenity"] = "pub_ydddnnylg"
-                           else
-	                      if ( keyvalues["outdoor_seating"] == "yes" ) then
-                                 keyvalues["amenity"] = "pub_ydddnnylo"
-                              else
-                                 keyvalues["amenity"] = "pub_ydddnnyld"
-                              end
-                           end
-	                else
-	                   if ( keyvalues["wheelchair"] == "no" ) then
-                              keyvalues["amenity"] = "pub_ydddnnyn"
-		           else
-	                      if ( keyvalues["beer_garden"] == "yes" ) then
-                                 keyvalues["amenity"] = "pub_ydddnnydg"
-                              else
-	                         if ( keyvalues["outdoor_seating"] == "yes" ) then
-                                    keyvalues["amenity"] = "pub_ydddnnydo"
-                                 else
-                                    keyvalues["amenity"] = "pub_ydddnnydd"
-                                 end
-                              end
-	                   end
-	                end
-	             end
-		  else
-		     if ( keyvalues["beer_garden"] == "yes" ) then
-		        if ( keyvalues["wheelchair"] == "yes" ) then
-                           keyvalues["amenity"] = "pub_ydddnnnyg"
-		        else
-		           if ( keyvalues["wheelchair"] == "limited" ) then
-                              keyvalues["amenity"] = "pub_ydddnnnlg"
-			   else
-			      if ( keyvalues["wheelchair"] == "no" ) then
-                                 keyvalues["amenity"] = "pub_ydddnnnng"
-			      else
-                                 keyvalues["amenity"] = "pub_ydddnnndg"
-			      end
-			   end
-		        end
-		     else
-		        if ( keyvalues["outdoor_seating"] == "yes" ) then
-		           if ( keyvalues["wheelchair"] == "yes" ) then
-                              keyvalues["amenity"] = "pub_ydddnnnyo"
-		           else
-		              if ( keyvalues["wheelchair"] == "limited" ) then
-                                 keyvalues["amenity"] = "pub_ydddnnnlo"
-			      else
-			         if ( keyvalues["wheelchair"] == "no" ) then
-                                    keyvalues["amenity"] = "pub_ydddnnnno"
-			         else
-                                    keyvalues["amenity"] = "pub_ydddnnndo"
-			         end
-			      end
-		           end
-			else
-		           if ( keyvalues["wheelchair"] == "yes" ) then
-                              keyvalues["amenity"] = "pub_ydddnnnyd"
-		           else
-		              if ( keyvalues["wheelchair"] == "limited" ) then
-                                 keyvalues["amenity"] = "pub_ydddnnnld"
-			      else
-			         if ( keyvalues["wheelchair"] == "no" ) then
-                                    keyvalues["amenity"] = "pub_ydddnnnnd"
-			         else
-                                    keyvalues["amenity"] = "pub_ydddnnndd"
-			         end
-			      end
-			   end
-			end
-		     end
-		  end
+                  keyvalues["amenity"] = "pub_ydddnn"
+                  append_accommodation(keyvalues)
+                  append_wheelchair(keyvalues)
+                  append_beer_garden(keyvalues)
                end
 	    end
          end
@@ -11215,6 +10328,45 @@ function filter_tags_generic(keyvalues, nokeys)
 
    return filter, keyvalues
 end
+
+function append_accommodation(keyvalues)
+   if (( keyvalues["accommodation"] ~= nil  ) and
+       ( keyvalues["accommodation"] ~= "no" )) then
+      keyvalues["amenity"] = keyvalues["amenity"] .. "y"
+   else
+      keyvalues["amenity"] = keyvalues["amenity"] .. "n"
+   end
+end
+
+function append_wheelchair(keyvalues)
+   if ( keyvalues["wheelchair"] == "yes" ) then
+      keyvalues["amenity"] = keyvalues["amenity"] .. "y"
+   else
+      if ( keyvalues["wheelchair"] == "limited" ) then
+         keyvalues["amenity"] = keyvalues["amenity"] .. "l"
+      else
+         if ( keyvalues["wheelchair"] == "no" ) then
+            keyvalues["amenity"] = keyvalues["amenity"] .. "n"
+         else
+            keyvalues["amenity"] = keyvalues["amenity"] .. "d"
+         end
+      end
+   end
+end
+
+
+function append_beer_garden(keyvalues)
+   if ( keyvalues["beer_garden"] == "yes" ) then
+      keyvalues["amenity"] = keyvalues["amenity"] .. "g"
+   else
+      if ( keyvalues["outdoor_seating"] == "yes" ) then
+         keyvalues["amenity"] = keyvalues["amenity"] .. "o"
+      else
+         keyvalues["amenity"] = keyvalues["amenity"] .. "d"
+      end
+   end
+end
+
 
 function filter_tags_node (keyvalues, nokeys)
 
