@@ -3404,15 +3404,15 @@ function filter_tags_generic(keyvalues, nokeys)
                    ( keyvalues["accommodation"] ~= "no" )) then
 		  if ( keyvalues["wheelchair"] == "yes" ) then
                      keyvalues["amenity"] = "pub_yyydydyy"
-                                                                  -- no beer garden appended
+                                              -- no beer garden appended (no examples yet)
 		  else
 		     if ( keyvalues["wheelchair"] == "limited" ) then
                         keyvalues["amenity"] = "pub_yyydydyl"
-                                                                  -- no beer garden appended
+                                              -- no beer garden appended (no examples yet)
 		     else
 		        if ( keyvalues["wheelchair"] == "no" ) then
                            keyvalues["amenity"] = "pub_yyydydyn"
-                                                                  -- no beer garden appended
+                                              -- no beer garden appended (no examples yet)
 			else
                            keyvalues["amenity"] = "pub_yyydydyd"
                            append_beer_garden(keyvalues)
@@ -3422,7 +3422,7 @@ function filter_tags_generic(keyvalues, nokeys)
 	       else
 		  if ( keyvalues["wheelchair"] == "yes" ) then
                      keyvalues["amenity"] = "pub_yyydydny"
-                                                                  -- no beer garden appended
+                                              -- no beer garden appended (no examples yet)
                   else
 		     if ( keyvalues["wheelchair"] == "limited" ) then
                         keyvalues["amenity"] = "pub_yyydydnl"
@@ -3430,7 +3430,7 @@ function filter_tags_generic(keyvalues, nokeys)
                      else
 		        if ( keyvalues["wheelchair"] == "no" ) then
                            keyvalues["amenity"] = "pub_yyydydnn"
-                                                                  -- no beer garden appended
+                                              -- no beer garden appended (no examples yet)
                         else
                            keyvalues["amenity"] = "pub_yyydydnd"
                            append_beer_garden(keyvalues)
@@ -3441,6 +3441,7 @@ function filter_tags_generic(keyvalues, nokeys)
 	    else
 	       if ( keyvalues["pub"] == "micropub" ) then
                   keyvalues["amenity"] = "pub_yyydnyd"
+                                              -- accommodation unchecked (no examples yet)
                   append_wheelchair(keyvalues)
                   append_beer_garden(keyvalues)
                else
@@ -3458,11 +3459,11 @@ function filter_tags_generic(keyvalues, nokeys)
                    ( keyvalues["accommodation"] ~= "no" )) then
                   keyvalues["amenity"] = "pub_yydyydy"
                   append_wheelchair(keyvalues)
-                                                                  -- no beer garden appended
+                                              -- no beer garden appended (no examples yet)
 	       else
 	          if ( keyvalues["wheelchair"] == "yes" ) then
                      keyvalues["amenity"] = "pub_yydyydny"
-                                                                  -- no beer garden appended
+                                              -- no beer garden appended (no examples yet)
      		  else
 	             if ( keyvalues["wheelchair"] == "limited" ) then
                         keyvalues["amenity"] = "pub_yydyydnl"
@@ -3482,7 +3483,7 @@ function filter_tags_generic(keyvalues, nokeys)
 	       if ( keyvalues["pub"] == "micropub" ) then
 		  if ( keyvalues["wheelchair"] == "yes" ) then
                      keyvalues["amenity"] = "pub_yydynydy"
-                                                                  -- no beer garden appended
+                                              -- no beer garden appended (no examples yet)
 		  else
 		     if ( keyvalues["wheelchair"] == "limited" ) then
                         keyvalues["amenity"] = "pub_yydynydl"
@@ -3493,7 +3494,7 @@ function filter_tags_generic(keyvalues, nokeys)
                            append_beer_garden(keyvalues)
 			else
                            keyvalues["amenity"] = "pub_yydynydd"
-                                                                  -- no beer garden appended
+                                              -- no beer garden appended (no examples yet)
 			end
 	             end
 		  end
@@ -3513,11 +3514,11 @@ function filter_tags_generic(keyvalues, nokeys)
 	       if ( keyvalues["pub"] == "micropub" ) then
 		  if ( keyvalues["wheelchair"] == "yes" ) then
                      keyvalues["amenity"] = "pub_yyddnydy"
-                                                                  -- no beer garden appended
+                                             -- no beer garden appended (no examples yet)
 		  else
 		     if ( keyvalues["wheelchair"] == "limited" ) then
                         keyvalues["amenity"] = "pub_yyddnydl"
-                                                                  -- no beer garden appended
+                                             -- no beer garden appended (no examples yet)
 		     else
 			if ( keyvalues["wheelchair"] == "no" ) then
                            keyvalues["amenity"] = "pub_yyddnydn"
@@ -3545,7 +3546,7 @@ function filter_tags_generic(keyvalues, nokeys)
           ( keyvalues["food"] ~= "no" )) then
          if ( keyvalues["noncarpeted"] == "yes"  ) then
             keyvalues["amenity"] = "pub_ynyyddd"
-                                                                  -- accommodation unchecked
+                                              -- accommodation unchecked (no examples yet)
             append_wheelchair(keyvalues)
                                                                   -- no beer garden appended
          else
@@ -3557,11 +3558,11 @@ function filter_tags_generic(keyvalues, nokeys)
 	       else
 	          if ( keyvalues["wheelchair"] == "limited" ) then
                      keyvalues["amenity"] = "pub_ynydddyl"
-                                                                  -- no beer garden appended
+                                              -- no beer garden appended (no examples yet)
 	          else
 	             if ( keyvalues["wheelchair"] == "no" ) then
                         keyvalues["amenity"] = "pub_ynydddyn"
-                                                                  -- no beer garden appended
+                                             -- no beer garden appended (no examples yet)
 		     else
                         keyvalues["amenity"] = "pub_ynydddyd"
                         append_beer_garden(keyvalues)
@@ -3575,11 +3576,11 @@ function filter_tags_generic(keyvalues, nokeys)
 	       else
 	          if ( keyvalues["wheelchair"] == "limited" ) then
                      keyvalues["amenity"] = "pub_ynydddnl"
-                                                                  -- no beer garden appended
+                                              -- no beer garden appended (no examples yet)
 	          else
 	             if ( keyvalues["wheelchair"] == "no" ) then
                         keyvalues["amenity"] = "pub_ynydddnn"
-                                                                  -- no beer garden appended
+                                              -- no beer garden appended (no examples yet)
 		     else
                         keyvalues["amenity"] = "pub_ynydddnd"
                         append_beer_garden(keyvalues)
@@ -3594,7 +3595,7 @@ function filter_tags_generic(keyvalues, nokeys)
                 ( keyvalues["accommodation"] ~= "no" )) then
                keyvalues["amenity"] = "pub_yndyddy"
                append_wheelchair(keyvalues)
-                                                                  -- no beer garden appended
+                                              -- no beer garden appended (no examples yet)
 	    else
                keyvalues["amenity"] = "pub_yndyddn"
                append_wheelchair(keyvalues)
@@ -3604,8 +3605,8 @@ function filter_tags_generic(keyvalues, nokeys)
             if (( keyvalues["accommodation"] ~= nil  ) and
                 ( keyvalues["accommodation"] ~= "no" )) then
                keyvalues["amenity"] = "pub_ynddddy"
-                                                                  -- no wheelchair appended
-                                                                  -- no beer garden appended
+                                              -- no wheelchair appended (no examples yet)
+                                              -- no beer garden appended (no examples yet)
 	    else
                keyvalues["amenity"] = "pub_ynddddn"
                append_wheelchair(keyvalues)
@@ -3633,8 +3634,8 @@ function filter_tags_generic(keyvalues, nokeys)
          if ( keyvalues["noncarpeted"] == "yes"  ) then
             if ( keyvalues["microbrewery"] == "yes"  ) then
                keyvalues["amenity"] = "pub_ydyyydd"
-                                                                  -- no wheelchair appended
-                                                                  -- no beer garden appended
+                                              -- no wheelchair appended (no examples yet)
+                                              -- no beer garden appended (no examples yet)
 	    else
                keyvalues["amenity"] = "pub_ydyyndd"
                append_wheelchair(keyvalues)
@@ -3644,15 +3645,15 @@ function filter_tags_generic(keyvalues, nokeys)
             if ( keyvalues["microbrewery"] == "yes"  ) then
                if ( keyvalues["wheelchair"] == "yes" ) then
                   keyvalues["amenity"] = "pub_ydydyddy"
-                                                                  -- no beer garden appended
+                                              -- no beer garden appended (no examples yet)
        	       else
                   if ( keyvalues["wheelchair"] == "limited" ) then
                      keyvalues["amenity"] = "pub_ydydyddl"
-                                                                  -- no beer garden appended
+                                              -- no beer garden appended (no examples yet)
                   else
                      if ( keyvalues["wheelchair"] == "no" ) then
                         keyvalues["amenity"] = "pub_ydydyddn"
-                                                                  -- no beer garden appended
+                                              -- no beer garden appended (no examples yet)
                      else
                         keyvalues["amenity"] = "pub_ydydyddd"
                         append_beer_garden(keyvalues)
@@ -3663,15 +3664,15 @@ function filter_tags_generic(keyvalues, nokeys)
 	       if ( keyvalues["pub"] == "micropub" ) then
                   if ( keyvalues["wheelchair"] == "yes" ) then
                      keyvalues["amenity"] = "pub_ydydnydy"
-                                                                  -- no beer garden appended
+                                              -- no beer garden appended (no examples yet)
            	  else
                      if ( keyvalues["wheelchair"] == "limited" ) then
                         keyvalues["amenity"] = "pub_ydydnydl"
-                                                                  -- no beer garden appended
+                                              -- no beer garden appended (no examples yet)
                      else
                         if ( keyvalues["wheelchair"] == "no" ) then
                            keyvalues["amenity"] = "pub_ydydnydn"
-                                                                  -- no beer garden appended
+                                              -- no beer garden appended (no examples yet)
 	                else
                            keyvalues["amenity"] = "pub_ydydnydd"
                            append_beer_garden(keyvalues)
@@ -3692,8 +3693,8 @@ function filter_tags_generic(keyvalues, nokeys)
                if (( keyvalues["accommodation"] ~= nil  ) and
                    ( keyvalues["accommodation"] ~= "no" )) then
                   keyvalues["amenity"] = "pub_yddyydy"
-                                                                  -- no wheelchair appended
-                                                                  -- no beer garden appended
+                                              -- no wheelchair appended (no examples yet)
+                                              -- no beer garden appended (no examples yet)
 	       else
                   keyvalues["amenity"] = "pub_yddyydn"
                   append_beer_garden(keyvalues)
@@ -3701,8 +3702,8 @@ function filter_tags_generic(keyvalues, nokeys)
 	    else
 	       if ( keyvalues["pub"] == "micropub" ) then
                   keyvalues["amenity"] = "pub_yddynyd"
-                                                                  -- no wheelchair appended
-                                                                  -- no beer garden appended
+                                              -- no wheelchair appended (no examples yet)
+                                              -- no beer garden appended (no examples yet)
 	       else
                   keyvalues["amenity"] = "pub_yddynnd"
                                                                   -- no wheelchair appended
@@ -3714,8 +3715,8 @@ function filter_tags_generic(keyvalues, nokeys)
                if (( keyvalues["accommodation"] ~= nil  ) and
                    ( keyvalues["accommodation"] ~= "no" )) then
                   keyvalues["amenity"] = "pub_ydddydy"
-                                                                  -- no wheelchair appended
-                                                                  -- no beer garden appended
+                                              -- no wheelchair appended (no examples yet)
+                                              -- no beer garden appended (no examples yet)
                else
                   keyvalues["amenity"] = "pub_ydddydn"
                   append_wheelchair(keyvalues)
@@ -3725,7 +3726,7 @@ function filter_tags_generic(keyvalues, nokeys)
 	       if ( keyvalues["pub"] == "micropub" ) then
                   keyvalues["amenity"] = "pub_ydddnyd"
                   append_wheelchair(keyvalues)
-                                                                  -- no beer garden appended
+                                            -- no beer garden appended (no examples yet)
                else
                   keyvalues["amenity"] = "pub_ydddnn"
                   append_accommodation(keyvalues)
