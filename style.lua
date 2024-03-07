@@ -3706,8 +3706,8 @@ function filter_tags_generic(keyvalues, nokeys)
                                               -- no beer garden appended (no examples yet)
 	       else
                   keyvalues["amenity"] = "pub_yddynnd"
-                                                                  -- no wheelchair appended
-                                                                  -- no beer garden appended
+                  append_wheelchair(keyvalues)
+                  append_beer_garden(keyvalues)
 	       end
 	    end
 	 else
