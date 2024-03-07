@@ -6,7 +6,7 @@ Render shop=esoteric in the same list as other "woo" shops such as "new_age" etc
 Treat NaPTAN customary stops with no departures as "pole not present" ones.  This isn't assured, but you can't assume there is a pole at a customary stop.
 Include "man_made=marker" in the list of pipeline markers.
 If something has been tagged as a beach resort and a beach, show as just a beach.
-Added wheelchair and beer garden checks for micropubs which serve food and have noncarpeted floors, and some other pubs with noncarpeted floors.
+Added wheelchair and beer garden checks for micropubs which serve food and have noncarpeted floors, and some other pubs with other combinations of tags.
 
 ## 28/02/2024
 Fixed spelling of "paper timetable" (sic) in the lua code.  Taginfo was correct already.
