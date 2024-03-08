@@ -3360,7 +3360,7 @@ function filter_tags_generic(keyvalues, nokeys)
           ( keyvalues["food"] ~= "no" )) then
          if ( keyvalues["noncarpeted"] == "yes"  ) then
             if ( keyvalues["microbrewery"] == "yes"  ) then
-                                                -- micropub unchecked
+                           -- pub_yyyyy micropub unchecked (no examples yet)
                if (( keyvalues["accommodation"] ~= nil  ) and
                    ( keyvalues["accommodation"] ~= "no" )) then
                   keyvalues["amenity"] = "pub_yyyyydy"
@@ -3487,7 +3487,7 @@ function filter_tags_generic(keyvalues, nokeys)
 		  else
 		     if ( keyvalues["wheelchair"] == "limited" ) then
                         keyvalues["amenity"] = "pub_yydynydl"
-                                                                  -- no beer garden appended
+                        append_beer_garden(keyvalues)
 	             else
 			if ( keyvalues["wheelchair"] == "no" ) then
                            keyvalues["amenity"] = "pub_yydynydn"
@@ -3507,9 +3507,31 @@ function filter_tags_generic(keyvalues, nokeys)
 	    end
          else
             if ( keyvalues["microbrewery"] == "yes"  ) then
-               keyvalues["amenity"] = "pub_yyddydd"
-               append_wheelchair(keyvalues)
-               append_beer_garden(keyvalues)
+	       if ( keyvalues["pub"] == "micropub" ) then
+                           -- accommodation unchecked (no examples yet)
+		  if ( keyvalues["wheelchair"] == "yes" ) then
+                     keyvalues["amenity"] = "pub_yyddyydy"
+                     append_beer_garden(keyvalues)
+                  else
+		     if ( keyvalues["wheelchair"] == "limited" ) then
+                        keyvalues["amenity"] = "pub_yyddyydl"
+                                             -- no beer garden appended (no examples yet)
+                     else
+		        if ( keyvalues["wheelchair"] == "no" ) then
+                           keyvalues["amenity"] = "pub_yyddyydn"
+                                             -- no beer garden appended (no examples yet)
+                        else
+                           keyvalues["amenity"] = "pub_yyddyydd"
+                                             -- no beer garden appended (no examples yet)
+                        end
+                     end
+                  end
+               else
+                           -- accommodation unchecked qqq
+                  keyvalues["amenity"] = "pub_yyddydd"
+                  append_wheelchair(keyvalues)
+                  append_beer_garden(keyvalues)
+               end
 	    else
 	       if ( keyvalues["pub"] == "micropub" ) then
 		  if ( keyvalues["wheelchair"] == "yes" ) then
@@ -7463,7 +7485,9 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["amenity"]   == "pub_yydyydnnd"    ) or
        ( keyvalues["amenity"]   == "pub_yydyydny"     ) or
        ( keyvalues["amenity"]   == "pub_yydynydd"     ) or
-       ( keyvalues["amenity"]   == "pub_yydynydl"     ) or
+       ( keyvalues["amenity"]   == "pub_yydynydlg"    ) or
+       ( keyvalues["amenity"]   == "pub_yydynydlo"    ) or
+       ( keyvalues["amenity"]   == "pub_yydynydld"    ) or
        ( keyvalues["amenity"]   == "pub_yydynydng"    ) or
        ( keyvalues["amenity"]   == "pub_yydynydno"    ) or
        ( keyvalues["amenity"]   == "pub_yydynydnd"    ) or
@@ -7501,9 +7525,15 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["amenity"]   == "pub_yyddyddnd"    ) or
        ( keyvalues["amenity"]   == "pub_yyddyddng"    ) or
        ( keyvalues["amenity"]   == "pub_yyddyddno"    ) or
-       ( keyvalues["amenity"]   == "pub_yyddyddyd"    ) or
        ( keyvalues["amenity"]   == "pub_yyddyddyg"    ) or
        ( keyvalues["amenity"]   == "pub_yyddyddyo"    ) or
+       ( keyvalues["amenity"]   == "pub_yyddyddyd"    ) or
+       ( keyvalues["amenity"]   == "pub_yyddyydyg"    ) or
+       ( keyvalues["amenity"]   == "pub_yyddyydyo"    ) or
+       ( keyvalues["amenity"]   == "pub_yyddyydyd"    ) or
+       ( keyvalues["amenity"]   == "pub_yyddyydl"     ) or
+       ( keyvalues["amenity"]   == "pub_yyddyydn"     ) or
+       ( keyvalues["amenity"]   == "pub_yyddyydd"     ) or
        ( keyvalues["amenity"]   == "pub_yyddnyddg"    ) or
        ( keyvalues["amenity"]   == "pub_yyddnyddo"    ) or
        ( keyvalues["amenity"]   == "pub_yyddnyddd"    ) or
