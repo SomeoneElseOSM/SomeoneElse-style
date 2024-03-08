@@ -3526,13 +3526,13 @@ function filter_tags_generic(keyvalues, nokeys)
                         end
                      end
                   end
-               else
+               else  -- not micropub
                            -- accommodation unchecked qqq
                   keyvalues["amenity"] = "pub_yyddydd"
                   append_wheelchair(keyvalues)
                   append_beer_garden(keyvalues)
-               end
-	    else
+               end  -- micropub
+	    else  -- not microbrewery
 	       if ( keyvalues["pub"] == "micropub" ) then
 		  if ( keyvalues["wheelchair"] == "yes" ) then
                      keyvalues["amenity"] = "pub_yyddnydy"
@@ -3557,7 +3557,7 @@ function filter_tags_generic(keyvalues, nokeys)
                   append_wheelchair(keyvalues)
                   append_beer_garden(keyvalues)
                end
-	    end
+	    end -- microbrewery
          end
       end -- food
    end -- real_ale
