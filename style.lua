@@ -3301,6 +3301,7 @@ function filter_tags_generic(keyvalues, nokeys)
    if (( keyvalues["description:floor"] ~= nil                  ) or
        ( keyvalues["floor:material"]    == "brick"              ) or
        ( keyvalues["floor:material"]    == "concrete"           ) or
+       ( keyvalues["floor:material"]    == "grubby carpet"      ) or
        ( keyvalues["floor:material"]    == "lino"               ) or
        ( keyvalues["floor:material"]    == "lino;carpet"        ) or
        ( keyvalues["floor:material"]    == "lino;rough_wood"    ) or
