@@ -7588,7 +7588,12 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["amenity"]   == "pub_ynyydddyg"    ) or
        ( keyvalues["amenity"]   == "pub_ynyydddyo"    ) or
        ( keyvalues["amenity"]   == "pub_ynyydddyd"    ) or
-       ( keyvalues["amenity"]   == "pub_ynydddy"      ) or
+       ( keyvalues["amenity"]   == "pub_ynydddyy"     ) or
+       ( keyvalues["amenity"]   == "pub_ynydddyl"     ) or
+       ( keyvalues["amenity"]   == "pub_ynydddyn"     ) or
+       ( keyvalues["amenity"]   == "pub_ynydddydg"    ) or
+       ( keyvalues["amenity"]   == "pub_ynydddydo"    ) or
+       ( keyvalues["amenity"]   == "pub_ynydddydd"    ) or
        ( keyvalues["amenity"]   == "pub_ynydddndg"    ) or
        ( keyvalues["amenity"]   == "pub_ynydddndo"    ) or
        ( keyvalues["amenity"]   == "pub_ynydddndd"    ) or
@@ -7678,8 +7683,18 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["amenity"]   == "pub_yddyydng"     ) or
        ( keyvalues["amenity"]   == "pub_yddyydno"     ) or
        ( keyvalues["amenity"]   == "pub_yddyydnd"     ) or
-       ( keyvalues["amenity"]   == "pub_yddynyd"      ) or
-       ( keyvalues["amenity"]   == "pub_yddynnd"      ) or
+       ( keyvalues["amenity"]   == "pub_yddynndyg"    ) or
+       ( keyvalues["amenity"]   == "pub_yddynndyo"    ) or
+       ( keyvalues["amenity"]   == "pub_yddynndyd"    ) or
+       ( keyvalues["amenity"]   == "pub_yddynndlg"    ) or
+       ( keyvalues["amenity"]   == "pub_yddynndlo"    ) or
+       ( keyvalues["amenity"]   == "pub_yddynndld"    ) or
+       ( keyvalues["amenity"]   == "pub_yddynndng"    ) or
+       ( keyvalues["amenity"]   == "pub_yddynndno"    ) or
+       ( keyvalues["amenity"]   == "pub_yddynndnd"    ) or
+       ( keyvalues["amenity"]   == "pub_yddynnddg"    ) or
+       ( keyvalues["amenity"]   == "pub_yddynnddo"    ) or
+       ( keyvalues["amenity"]   == "pub_yddynnddd"    ) or
        ( keyvalues["amenity"]   == "pub_ydddydy"      ) or
        ( keyvalues["amenity"]   == "pub_ydddydnd"     ) or
        ( keyvalues["amenity"]   == "pub_ydddydnl"     ) or
