@@ -1,6 +1,9 @@
 # Changes made to this rendering
 This page describes changes made [here](https://github.com/SomeoneElseOSM/SomeoneElse-style), [here](https://github.com/SomeoneElseOSM/SomeoneElse-style-legend) and [here](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT), and visible [here](//map.atownsend.org.uk/maps/map/map.html).
 
+## As yet unreleased
+Added accommodation, wheelchair and beer garden checks for a few more combinations, including microbreweries.
+
 ## 09/03/2024
 Render shop=esoteric in the same list as other "woo" shops such as "new_age" etc.
 Treat NaPTAN customary stops with no departures as "pole not present" ones.  This isn't assured, but you can't assume there is a pole at a customary stop.
