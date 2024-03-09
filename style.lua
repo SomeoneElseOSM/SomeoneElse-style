@@ -3347,6 +3347,20 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Does a pub really serve food?
+-- Below we check for "any food value but no".
+-- Here we exclude certain food values from counting towards displaying the "F"
+-- that says a pub serves food.  As far as I am concerned, sandwiches, pies,
+-- or even one of Michael Gove's scotch eggs would count as "food" but a packet
+-- of crisps would not.
+-- ----------------------------------------------------------------------------
+   if ((  keyvalues["amenity"] == "pub"         ) and
+       (( keyvalues["food"]    == "snacks"     ) or
+        ( keyvalues["food"]    == "bar_snacks" ))) then
+      keyvalues["food"] = "no"
+   end
+
+-- ----------------------------------------------------------------------------
 -- Main "real_ale icon selection" logic
 -- Note that there's no "if pub" here, so any non-pub establishment that serves
 -- real ale will get the icon (hotels, restaurants, cafes, etc.)

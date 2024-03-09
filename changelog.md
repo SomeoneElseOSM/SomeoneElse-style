@@ -8,6 +8,7 @@ Include "man_made=marker" in the list of pipeline markers.
 If something has been tagged as a beach resort and a beach, show as just a beach.
 Added wheelchair and beer garden checks for micropubs which serve food and have noncarpeted floors, and some other pubs with other combinations of tags.
 Added "grubby carpet" to the list of floor:material values that indicate a less-precious floor.
+Excluded some "food" values (such as "snacks") from indicating that "this pub serves food".
 
 ## 28/02/2024
 Fixed spelling of "paper timetable" (sic) in the lua code.  Taginfo was correct already.
