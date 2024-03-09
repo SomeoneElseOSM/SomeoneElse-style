@@ -3455,7 +3455,7 @@ function filter_tags_generic(keyvalues, nokeys)
       else -- no food
          if ( keyvalues["noncarpeted"] == "yes"  ) then
             if ( keyvalues["microbrewery"] == "yes"  ) then
--- micropub unchecked qqq
+                                              -- micropub unchecked (no examples yet)
                if (( keyvalues["accommodation"] ~= nil  ) and
                    ( keyvalues["accommodation"] ~= "no" )) then
                   keyvalues["amenity"] = "pub_yydyydy"
@@ -3543,7 +3543,7 @@ function filter_tags_generic(keyvalues, nokeys)
 -- qqq no check for beer garden yet
                            else
                               keyvalues["amenity"] = "pub_yyddynyd"
--- qqq no check for beer garden yet
+                              append_beer_garden(keyvalues)
                            end
                         end
                      end
@@ -3733,7 +3733,7 @@ function filter_tags_generic(keyvalues, nokeys)
       else -- food don't know
          if ( keyvalues["noncarpeted"] == "yes"  ) then
             if ( keyvalues["microbrewery"] == "yes"  ) then
--- qqq micropub unchecked
+                                              -- micropub unchecked (no examples yet)
                if (( keyvalues["accommodation"] ~= nil  ) and
                    ( keyvalues["accommodation"] ~= "no" )) then
                   keyvalues["amenity"] = "pub_yddyydy"
