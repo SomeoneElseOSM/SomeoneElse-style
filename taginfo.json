@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20240309T124600Z",
+  "data_updated": "20240311T020000Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -375,6 +375,8 @@
     { "key": "area", "value": "yes", "description": "Detect and don't show area highways" },
     { "key": "area:highway", "description": "Show traffic islands as kerbs" },
     { "key": "area:highway", "value": "traffic_island", "description": "Shown as a kerb" },
+    { "key": "attraction", "description": "Mazes are shown as nonspecific leisure items" },
+    { "key": "attraction", "value": "maze", "description": "Shown as nonspecific leisure item" },
     { "key": "barrier", "description": "Most barriers shown" },
     { "key": "barrier", "value": "a_frame", "description": "Shown as a cycle_barrier" },
     { "key": "barrier", "value": "bar", "description": "Shown as a horse_stile" },
@@ -1728,6 +1730,7 @@
     { "key": "leisure", "value": "inflatable_park", "description": "Leisure amenities shown in green" },
     { "key": "leisure", "value": "leisure_centre", "description": "Synonym for sports_centre" },
     { "key": "leisure", "value": "marina", "description": "Shown as marina" },
+    { "key": "leisure", "value": "maze", "description": "Shown as nonspecific leisure item" },
     { "key": "leisure", "value": "miniature_golf", "description": "Leisure amenities shown in green" },
     { "key": "leisure", "value": "music_venue", "description": "Synonym for concert_hall" },
     { "key": "leisure", "value": "nature_reserve", "description": "Leisure amenities shown in green" },

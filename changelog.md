@@ -3,6 +3,7 @@ This page describes changes made [here](https://github.com/SomeoneElseOSM/Someon
 
 ## As yet unreleased
 Added accommodation, wheelchair and beer garden checks for a few more combinations, including microbreweries.
+Show mazes as nonspecific leisure items.
 
 ## 09/03/2024
 Render shop=esoteric in the same list as other "woo" shops such as "new_age" etc.

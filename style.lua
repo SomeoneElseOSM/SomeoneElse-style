@@ -9164,6 +9164,16 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Mazes
+-- ----------------------------------------------------------------------------
+   if ((( keyvalues["leisure"]    == "maze" ) or
+        ( keyvalues["attraction"] == "maze" )) and
+       (  keyvalues["historic"]   == nil     )) then
+      keyvalues["leisure"] = "leisurenonspecific"
+      keyvalues["tourism"] = nil
+   end
+
+-- ----------------------------------------------------------------------------
 -- Other nonspecific leisure.  We add an icon and label via "leisurenonspecific".
 -- In most cases we also add unnamedcommercial landuse 
 -- to give non-building areas a background.
