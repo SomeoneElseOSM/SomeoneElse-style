@@ -7319,7 +7319,6 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["shop"]  == "jewelry;pawnbroker"      ) or
        ( keyvalues["shop"]  == "yes;jewelry;e-cigarette" ) or
        ( keyvalues["shop"]  == "jewelry;sunglasses"      ) or
-       ( keyvalues["shop"]  == "jeweller"                ) or
        ( keyvalues["shop"]  == "yes;jewelry"             ) or
        ( keyvalues["shop"]  == "jewelry;art;crafts"      ) or
        ( keyvalues["shop"]  == "jewelry;fabric"          ) or
