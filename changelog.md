@@ -5,6 +5,7 @@ This page describes changes made [here](https://github.com/SomeoneElseOSM/Someon
 Added accommodation, wheelchair and beer garden checks for a few more combinations, including microbreweries.
 Show mazes as nonspecific leisure items.
 Removed "shop=jeweller", no longer in the data.
+Show "bus_speech_output_name" and/or "bus_display_name" if non-blank and not contained within "name".
 
 ## 09/03/2024
 Render shop=esoteric in the same list as other "woo" shops such as "new_age" etc.

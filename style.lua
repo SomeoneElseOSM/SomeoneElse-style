@@ -9792,6 +9792,18 @@ function filter_tags_generic(keyvalues, nokeys)
 -- are displayed.
 -- ----------------------------------------------------------------------------
    if ( keyvalues["highway"] == "bus_stop" ) then
+      if ( keyvalues["name"] ~= nil ) then
+         if (( keyvalues["bus_speech_output_name"] ~= nil                                ) and
+             ( not string.match( keyvalues["name"], keyvalues["bus_speech_output_name"] ))) then
+            keyvalues["name"] = keyvalues["name"] .. " / " .. keyvalues["bus_speech_output_name"]
+         end
+
+         if (( keyvalues["bus_display_name"] ~= nil                                ) and
+             ( not string.match( keyvalues["name"], keyvalues["bus_display_name"] ))) then
+            keyvalues["name"] = keyvalues["name"] .. " / " .. keyvalues["bus_display_name"]
+         end
+      end
+
       if ( keyvalues["name"] == nil ) then
          if ( keyvalues["ref"] == nil ) then
             if ( keyvalues["naptan:Indicator"] ~= nil ) then

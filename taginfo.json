@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20240315T163100Z",
+  "data_updated": "20240316T015700Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -594,6 +594,8 @@
     { "key": "bulk_purchase", "description": "Detect 'eco' shops and supermarkets" },
     { "key": "bulk_purchase", "value": "only", "description": "Detect 'eco' shops and supermarkets" },
     { "key": "bulk_purchase", "value": "yes", "description": "Detect 'eco' shops and supermarkets" },
+    { "key": "bus_display_name", "description": "Appended to bus stop name if different" },
+    { "key": "bus_speech_output_name", "description": "Appended to bus stop name if different" },
     { "key": "business", "description": "'business' is used as an alternative to 'office' and by some people." },
     { "key": "canal_bridge_ref", "description": "Used as an obscure synonym for bridge_ref" },
     { "key": "capital", "description": "Find capital cities and towns" },
