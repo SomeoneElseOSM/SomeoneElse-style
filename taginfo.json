@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20240316T015700Z",
+  "data_updated": "20240318T024500Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -1054,6 +1054,8 @@
     { "key": "disused:amenity", "value": "pub", "description": "Show former pubs with their own icon" },
     { "key": "disused:amenity", "value": "telephone", "description": "Detect former telephone boxes" },
     { "key": "disused:building", "description": "If no other building tag, show as ruins" },
+    { "key": "disused:highway", "description": "Show disused bus stops that still have a pole that might otherwise mislead" },
+    { "key": "disused:highway", "value": "bus_stop", "description": "Show disused bus stops that still have a pole that might otherwise mislead" },
     { "key": "disused:landuse", "description": "Disused cemeteries and quarries" },
     { "key": "disused:landuse", "value": "cemetery", "description": "Shown as generic historic landuse" },
     { "key": "disused:landuse", "value": "quarry", "description": "Disused quarries are still shown as quarries" },
@@ -2258,7 +2260,8 @@
     { "key": "pharmacy", "description": "Render some non-pharmacy shops with pharmacies as pharmacies" },
     { "key": "pharmacy", "value": "yes", "description": "Render some non-pharmacy shops with pharmacies as pharmacies" },
     { "key": "physically_present", "description": "Does a bus stop have a flag or pole?" },
-    { "key": "physically_present", "value": "no", "description": "Bus stop not signed on the ground but buses do stop." },
+    { "key": "physically_present", "value": "no", "description": "Find bus stops not signed on the ground where buses do stop." },
+    { "key": "physically_present", "value": "yes", "description": "Find disused bus stops signed on the ground where buses do not stop." },
     { "key": "pipeline", "description": "Show aerial pipeline markers" },
     { "key": "pipeline", "value": "marker", "description": "Shown as aerial pipeline marker" },
     { "key": "pitch", "description": "Render lines on sports pitches" },

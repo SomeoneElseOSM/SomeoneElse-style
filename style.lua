@@ -22,7 +22,7 @@ polygon_keys = { 'boundary', 'building', 'landcover', 'landuse', 'amenity', 'har
       'wetland', 'water', 'aeroway' }
 
 generic_keys = {'access','addr:housename','addr:housenumber','addr:interpolation','admin_level','advertising','aerialway','aeroway','amenity','area','area:highway','barrier',
-   'bicycle','brand','bridge','bridleway','booth','boundary','building','capital','construction','covered','culvert','cutting','denomination','designation','disused','disused:man_made','disused:military','disused:shop','ele',
+   'bicycle','brand','bridge','bridleway','booth','boundary','building','capital','construction','covered','culvert','cutting','denomination','designation','disused','disused:highway','disused:man_made','disused:military','disused:shop','ele',
    'embankment','emergency','entrance','foot','flood_prone','generation:source','geological','golf','government',
    'harbour','hazard_prone','hazard_type','highway','historic','horse','hours','information','intermittent',
    'junction','landcover','landuse','layer','leisure','lcn_ref','lock','locked',
@@ -9776,6 +9776,19 @@ function filter_tags_generic(keyvalues, nokeys)
          keyvalues["highway"] = "streetlamp_gas"
       else
          keyvalues["highway"] = "streetlamp_electric"
+      end
+   end
+
+-- ----------------------------------------------------------------------------
+-- If a bus stop pole exists but it's known to be disused, indicate that
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["disused:highway"]    == "bus_stop" ) and
+       ( keyvalues["physically_present"] == "yes"      )) then
+      keyvalues["highway"] = "bus_stop_disused_pole"
+      keyvalues["disused:highway"] = nil
+
+      if ( keyvalues["name"] ~= nil ) then
+         keyvalues["ele"] = keyvalues["name"]
       end
    end
 
