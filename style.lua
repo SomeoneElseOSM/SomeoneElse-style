@@ -9801,6 +9801,17 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Many "naptan:Indicator" are "opp" or "adj", but some are "Stop XYZ" or
+-- various other bits and pieces.  See 
+-- https://taginfo.openstreetmap.org/keys/naptan%3AIndicator#values
+-- We remove overly long ones.
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["naptan:Indicator"] ~= nil           ) and
+       ( string.len( keyvalues["naptan:Indicator"]) > 3 )) then
+      keyvalues["naptan:Indicator"] = nil
+   end
+
+-- ----------------------------------------------------------------------------
 -- Concatenate a couple of names for bus stops so that the most useful ones
 -- are displayed.
 -- ----------------------------------------------------------------------------

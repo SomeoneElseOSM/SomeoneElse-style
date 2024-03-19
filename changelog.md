@@ -1,12 +1,15 @@
 # Changes made to this rendering
 This page describes changes made [here](https://github.com/SomeoneElseOSM/SomeoneElse-style), [here](https://github.com/SomeoneElseOSM/SomeoneElse-style-legend) and [here](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT), and visible [here](//map.atownsend.org.uk/maps/map/map.html).
 
+## As yet unreleased
+Show bus stops which exist but have no service with a unique icon.
+Suppress "naptan:Indicator" if more than 3 characters long.
+
 ## 16/03/2024
 Added accommodation, wheelchair and beer garden checks for a few more combinations, including microbreweries.
 Show mazes as nonspecific leisure items.
 Removed "shop=jeweller", no longer in the data.
 Show "bus_speech_output_name" and/or "bus_display_name" if non-blank and not contained within "name".
-Show bus stops which exist but have no service with a unique icon.
 
 ## 09/03/2024
 Render shop=esoteric in the same list as other "woo" shops such as "new_age" etc.
