@@ -10388,6 +10388,7 @@ function filter_tags_way (keyvalues, nokeys)
 
    if (( keyvalues["public_transport"] == "platform" ) and
        ( keyvalues["highway"]          ~= "platform" ) and
+       ( keyvalues["highway"]          ~= "bus_stop" ) and
        ( keyvalues["railway"]          ~= "platform" )) then
       keyvalues["highway"] = "platform"
    end
