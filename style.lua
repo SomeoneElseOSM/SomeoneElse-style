@@ -9805,10 +9805,17 @@ function filter_tags_generic(keyvalues, nokeys)
 -- various other bits and pieces.  See 
 -- https://taginfo.openstreetmap.org/keys/naptan%3AIndicator#values
 -- We remove overly long ones.
+-- Similarly, long "ref" values.
 -- ----------------------------------------------------------------------------
    if (( keyvalues["naptan:Indicator"] ~= nil           ) and
        ( string.len( keyvalues["naptan:Indicator"]) > 3 )) then
       keyvalues["naptan:Indicator"] = nil
+   end
+
+   if (( keyvalues["highway"] == "bus_stop" ) and
+       ( keyvalues["ref"]     ~= nil        ) and
+       ( string.len( keyvalues["ref"]) > 3  )) then
+      keyvalues["ref"] = nil
    end
 
 -- ----------------------------------------------------------------------------

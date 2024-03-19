@@ -3,7 +3,7 @@ This page describes changes made [here](https://github.com/SomeoneElseOSM/Someon
 
 ## As yet unreleased
 Show bus stops which exist but have no service with a unique icon.
-Suppress "naptan:Indicator" if more than 3 characters long.
+Suppress "naptan:Indicator" or "ref" on a bus stop if more than 3 characters long.
 
 ## 16/03/2024
 Added accommodation, wheelchair and beer garden checks for a few more combinations, including microbreweries.
