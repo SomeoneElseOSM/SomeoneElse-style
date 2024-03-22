@@ -8480,7 +8480,6 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["shop"]    == "internet_cafe"           ) or
        ( keyvalues["shop"]    == "recycling"               ) or
        ( keyvalues["shop"]    == "gun"                     ) or
-       ( keyvalues["shop"]    == "guns"                    ) or
        ( keyvalues["craft"]   == "gunsmith"                ) or
        ( keyvalues["shop"]    == "weapons"                 ) or
        ( keyvalues["shop"]    == "pyrotechnics"            ) or

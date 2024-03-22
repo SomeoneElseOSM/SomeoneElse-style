@@ -1,6 +1,9 @@
 # Changes made to this rendering
 This page describes changes made [here](https://github.com/SomeoneElseOSM/SomeoneElse-style), [here](https://github.com/SomeoneElseOSM/SomeoneElse-style-legend) and [here](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT), and visible [here](//map.atownsend.org.uk/maps/map/map.html).
 
+## As yet unreleased
+Removed "shop=guns", no longer in the data.
+
 ## 21/03/2024
 Show bus stops which exist but have no service with a unique icon.
 Suppress "naptan:Indicator" or "ref" on a bus stop if more than 3 characters long.

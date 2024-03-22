@@ -2727,7 +2727,6 @@
     { "key": "shop", "value": "grocer", "description": "Various shops shown" },
     { "key": "shop", "value": "grocery", "description": "Various shops shown" },
     { "key": "shop", "value": "gun", "description": "Shown as a generic shop" },
-    { "key": "shop", "value": "guns", "description": "Shown as a generic shop" },
     { "key": "shop", "value": "haberdashery", "description": "Various shops shown" },
     { "key": "shop", "value": "hairdresser", "description": "Various shops shown" },
     { "key": "shop", "value": "hairdresser;beauty", "description": "Various shops shown" },
