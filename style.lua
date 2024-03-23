@@ -4918,22 +4918,26 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
--- Display "location=overground" pipelines as bridges
+-- Display "location=overground" and "location=overhead" pipelines as bridges.
 -- ----------------------------------------------------------------------------
-   if (( keyvalues["man_made"] == "pipeline"   ) and
-       ( keyvalues["location"] == "overground" ) and
-       ( keyvalues["bridge"]   == nil          )) then
+   if ((  keyvalues["man_made"] == "pipeline"    ) and
+       (( keyvalues["location"] == "overground" )  or
+        ( keyvalues["location"] == "overhead"   )) and
+       (  keyvalues["bridge"]   == nil           )) then
       keyvalues["bridge"] = "yes"
    end
 
 -- ----------------------------------------------------------------------------
 -- Pipelines
--- We display pipelines as waterways, because 
--- there is explicit bridge handling for waterways.
+-- We display pipelines as waterways, because there is explicit bridge handling
+-- for waterways.
+-- Also note that some seamarks
 -- ----------------------------------------------------------------------------
-   if ( keyvalues["man_made"] == "pipeline" ) then
-      keyvalues["man_made"] = nil
-      keyvalues["waterway"] = "pipeline"
+   if (( keyvalues["man_made"]     == "pipeline"           ) or
+       ( keyvalues["seamark:type"] == "pipeline_submarine" )) then
+      keyvalues["man_made"]     = nil
+      keyvalues["seamark:type"] = nil
+      keyvalues["waterway"]     = "pipeline"
    end
 
 -- ----------------------------------------------------------------------------

@@ -3,7 +3,9 @@ This page describes changes made [here](https://github.com/SomeoneElseOSM/Someon
 
 ## As yet unreleased
 Removed "shop=guns", no longer in the data.
-Detect outfalls, sewage and otherwise
+Detect outfalls, sewage and otherwise.
+Show "location=overhead" pipelines in the same way as "location=overground" ones.
+Show "seamark_type=pipeline_submarine" in the same way as "man_made=pipeline".
 
 ## 21/03/2024
 Show bus stops which exist but have no service with a unique icon.
