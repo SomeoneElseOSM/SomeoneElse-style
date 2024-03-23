@@ -6,6 +6,7 @@ Removed "shop=guns", no longer in the data.
 Detect outfalls, sewage and otherwise.
 Show "location=overhead" pipelines in the same way as "location=overground" ones.
 Show "seamark_type=pipeline_submarine" in the same way as "man_made=pipeline".
+Removed "craft=joinery", no longer in the data.
 
 ## 21/03/2024
 Show bus stops which exist but have no service with a unique icon.

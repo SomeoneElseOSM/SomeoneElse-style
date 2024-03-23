@@ -8792,7 +8792,6 @@ function filter_tags_generic(keyvalues, nokeys)
         ( keyvalues["craft"]   == "handicraft"              )   or
         ( keyvalues["craft"]   == "insulation"              )   or
         ( keyvalues["craft"]   == "joiner"                  )   or
-        ( keyvalues["craft"]   == "joinery"                 )   or
         ( keyvalues["craft"]   == "metal_construction"      )   or
         ( keyvalues["craft"]   == "painter"                 )   or
         ( keyvalues["craft"]   == "plasterer"               )   or
