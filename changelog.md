@@ -3,6 +3,7 @@ This page describes changes made [here](https://github.com/SomeoneElseOSM/Someon
 
 ## As yet unreleased
 Removed "shop=guns", no longer in the data.
+Detect outfalls, sewage and otherwise
 
 ## 21/03/2024
 Show bus stops which exist but have no service with a unique icon.
