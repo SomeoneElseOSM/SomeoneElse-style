@@ -7,6 +7,8 @@ Detect outfalls, sewage and otherwise.
 Show "location=overhead" pipelines in the same way as "location=overground" ones.
 Show "seamark_type=pipeline_submarine" in the same way as "man_made=pipeline".
 Removed "craft=joinery", no longer in the data.
+Show inscriptions and directions on milestones at higher zooms.
+Show inscriptions on boundary markers and stones at higher zooms.
 
 ## 21/03/2024
 Show bus stops which exist but have no service with a unique icon.

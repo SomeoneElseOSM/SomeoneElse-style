@@ -2172,12 +2172,16 @@ function filter_tags_generic(keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
 -- Handle various sorts of milestones.
 -- ----------------------------------------------------------------------------
-   if (( keyvalues["historic"] == "milestone" )  or
+   if (( keyvalues["highway"]  == "milestone" )  or
+       ( keyvalues["historic"] == "milestone" )  or
        ( keyvalues["historic"] == "milepost"  )  or
        ( keyvalues["waterway"] == "milestone" )  or
        ( keyvalues["railway"]  == "milestone" )  or
        ( keyvalues["man_made"] == "mile_post" )) then
       keyvalues["highway"] = "milestone"
+
+      append_inscription(keyvalues)
+      append_directions(keyvalues)
    end
 
 -- ----------------------------------------------------------------------------
@@ -2207,13 +2211,7 @@ function filter_tags_generic(keyvalues, nokeys)
       keyvalues["man_made"] = "boundary_stone"
       keyvalues["tourism"]  = nil
 
-      if ( keyvalues["inscription"] ~= nil ) then
-          if ( keyvalues["name"] == nil ) then
-              keyvalues["name"] = keyvalues["inscription"]
-          else
-              keyvalues["name"] = keyvalues["name"] .. " " .. keyvalues["inscription"]
-          end
-      end
+      append_inscription(keyvalues)
    end
 
 -- ----------------------------------------------------------------------------
@@ -2520,7 +2518,6 @@ function filter_tags_generic(keyvalues, nokeys)
         ( keyvalues["historic"]  == "martello_tower;fort"       )  or
         ( keyvalues["historic"]  == "maypole"                   )  or
         ( keyvalues["historic"]  == "memorial"                  )  or
-        ( keyvalues["historic"]  == "milestone"                 )  or
         ( keyvalues["historic"]  == "mill"                      )  or
         ( keyvalues["historic"]  == "millstone"                 )  or
         ( keyvalues["historic"]  == "mine"                      )  or
@@ -6281,74 +6278,13 @@ function filter_tags_generic(keyvalues, nokeys)
          keyvalues["tourism"] = "informationroutemarker"
       else
          keyvalues["tourism"] = "informationmarker"
+         keyvalues["ele"] = nil
 
-         if ( keyvalues["name"] ~= nil ) then
-            keyvalues["ele"] = keyvalues["name"]
-         end
+	 if ( keyvalues["name"] ~= nil ) then
+	    keyvalues["ele"] = keyvalues["name"]
+	 end
 
-         if ( keyvalues["direction_north"] ~= nil ) then
-            if ( keyvalues["ele"] == nil ) then
-               keyvalues["ele"] = "N: " .. keyvalues["direction_north"]
-            else
-               keyvalues["ele"] = keyvalues["ele"] .. ", N: " .. keyvalues["direction_north"]
-            end
-         end
-
-         if ( keyvalues["direction_northeast"] ~= nil ) then
-            if ( keyvalues["ele"] == nil ) then
-               keyvalues["ele"] = "NE: " .. keyvalues["direction_northeast"]
-            else
-               keyvalues["ele"] = keyvalues["ele"] .. ", NE: " .. keyvalues["direction_northeast"]
-            end
-         end
-
-         if ( keyvalues["direction_east"] ~= nil ) then
-            if ( keyvalues["ele"] == nil ) then
-               keyvalues["ele"] = "E: " .. keyvalues["direction_east"]
-            else
-               keyvalues["ele"] = keyvalues["ele"] .. ", E: " .. keyvalues["direction_east"]
-            end
-         end
-
-         if ( keyvalues["direction_southeast"] ~= nil ) then
-            if ( keyvalues["ele"] == nil ) then
-               keyvalues["ele"] = "SE: " .. keyvalues["direction_southeast"]
-            else
-               keyvalues["ele"] = keyvalues["ele"] .. ", SE: " .. keyvalues["direction_southeast"]
-            end
-         end
-
-         if ( keyvalues["direction_south"] ~= nil ) then
-            if ( keyvalues["ele"] == nil ) then
-               keyvalues["ele"] = "S: " .. keyvalues["direction_south"]
-            else
-               keyvalues["ele"] = keyvalues["ele"] .. ", S: " .. keyvalues["direction_south"]
-            end
-         end
-
-         if ( keyvalues["direction_southwest"] ~= nil ) then
-            if ( keyvalues["ele"] == nil ) then
-               keyvalues["ele"] = "SW: " .. keyvalues["direction_southwest"]
-            else
-               keyvalues["ele"] = keyvalues["ele"] .. ", SW: " .. keyvalues["direction_southwest"]
-            end
-         end
-
-         if ( keyvalues["direction_west"] ~= nil ) then
-            if ( keyvalues["ele"] == nil ) then
-               keyvalues["ele"] = "W: " .. keyvalues["direction_west"]
-            else
-               keyvalues["ele"] = keyvalues["ele"] .. ", W: " .. keyvalues["direction_west"]
-            end
-         end
-
-         if ( keyvalues["direction_northwest"] ~= nil ) then
-            if ( keyvalues["ele"] == nil ) then
-               keyvalues["ele"] = "NW: " .. keyvalues["direction_northwest"]
-            else
-               keyvalues["ele"] = keyvalues["ele"] .. ", NW: " .. keyvalues["direction_northwest"]
-            end
-         end
+         append_directions(keyvalues)
       end
    end
 
@@ -6896,13 +6832,7 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["man_made"] == "standing_stone" )) then
       keyvalues["historic"] = "naturalstone"
 
-      if ( keyvalues["inscription"] ~= nil ) then
-          if ( keyvalues["name"] == nil ) then
-              keyvalues["name"] = keyvalues["inscription"]
-          else
-              keyvalues["name"] = keyvalues["name"] .. " " .. keyvalues["inscription"]
-          end
-      end
+      append_inscription(keyvalues)
    end
 
 -- ----------------------------------------------------------------------------
@@ -10190,6 +10120,94 @@ function append_beer_garden(keyvalues)
    end
 end
 
+-- ----------------------------------------------------------------------------
+-- Designed to set "ele" to a new value
+-- ----------------------------------------------------------------------------
+function append_inscription(keyvalues)
+   if ( keyvalues["name"] ~= nil ) then
+      keyvalues["ele"] = keyvalues["name"]
+   else
+      keyvalues["ele"] = nil
+   end
+
+   if ( keyvalues["inscription"] ~= nil ) then
+       if ( keyvalues["ele"] == nil ) then
+           keyvalues["ele"] = keyvalues["inscription"]
+       else
+           keyvalues["ele"] = keyvalues["ele"] .. " " .. keyvalues["inscription"]
+       end
+   end
+end
+
+-- ----------------------------------------------------------------------------
+-- Designed to append any directions to an "ele" that might already have
+-- "inscription" in it.
+-- ----------------------------------------------------------------------------
+function append_directions(keyvalues)
+   if ( keyvalues["direction_north"] ~= nil ) then
+      if ( keyvalues["ele"] == nil ) then
+         keyvalues["ele"] = "N: " .. keyvalues["direction_north"]
+      else
+         keyvalues["ele"] = keyvalues["ele"] .. ", N: " .. keyvalues["direction_north"]
+      end
+   end
+
+   if ( keyvalues["direction_northeast"] ~= nil ) then
+      if ( keyvalues["ele"] == nil ) then
+         keyvalues["ele"] = "NE: " .. keyvalues["direction_northeast"]
+      else
+         keyvalues["ele"] = keyvalues["ele"] .. ", NE: " .. keyvalues["direction_northeast"]
+      end
+   end
+
+   if ( keyvalues["direction_east"] ~= nil ) then
+      if ( keyvalues["ele"] == nil ) then
+         keyvalues["ele"] = "E: " .. keyvalues["direction_east"]
+      else
+         keyvalues["ele"] = keyvalues["ele"] .. ", E: " .. keyvalues["direction_east"]
+      end
+   end
+
+   if ( keyvalues["direction_southeast"] ~= nil ) then
+      if ( keyvalues["ele"] == nil ) then
+         keyvalues["ele"] = "SE: " .. keyvalues["direction_southeast"]
+      else
+         keyvalues["ele"] = keyvalues["ele"] .. ", SE: " .. keyvalues["direction_southeast"]
+      end
+   end
+
+   if ( keyvalues["direction_south"] ~= nil ) then
+      if ( keyvalues["ele"] == nil ) then
+         keyvalues["ele"] = "S: " .. keyvalues["direction_south"]
+      else
+         keyvalues["ele"] = keyvalues["ele"] .. ", S: " .. keyvalues["direction_south"]
+      end
+   end
+
+   if ( keyvalues["direction_southwest"] ~= nil ) then
+      if ( keyvalues["ele"] == nil ) then
+         keyvalues["ele"] = "SW: " .. keyvalues["direction_southwest"]
+      else
+         keyvalues["ele"] = keyvalues["ele"] .. ", SW: " .. keyvalues["direction_southwest"]
+      end
+   end
+
+   if ( keyvalues["direction_west"] ~= nil ) then
+      if ( keyvalues["ele"] == nil ) then
+         keyvalues["ele"] = "W: " .. keyvalues["direction_west"]
+      else
+         keyvalues["ele"] = keyvalues["ele"] .. ", W: " .. keyvalues["direction_west"]
+      end
+   end
+
+   if ( keyvalues["direction_northwest"] ~= nil ) then
+      if ( keyvalues["ele"] == nil ) then
+         keyvalues["ele"] = "NW: " .. keyvalues["direction_northwest"]
+      else
+         keyvalues["ele"] = keyvalues["ele"] .. ", NW: " .. keyvalues["direction_northwest"]
+      end
+   end
+end
 
 function filter_tags_node (keyvalues, nokeys)
 
