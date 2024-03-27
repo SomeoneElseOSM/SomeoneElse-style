@@ -435,9 +435,15 @@ else
 fi
 
 #
-# Note that "file2", if we need it, does not need processing.
-# With "osmium merge" there is no way to merge so that cy and gd files take precedence 
-# over the en one, but following the extracts above all should be mutually exclusive.
+# Note that "file2" through "file4", does not need splitting in this way; 
+# "name" is used here.
+# With "osmium merge" there is no way to merge so that cy and gd files 
+# take precedence over the en one.
+# See https://community.openstreetmap.org/t/osmium-merge-is-there-a-way-to-make-one-file-take-precedence/111017/2
+#
+# In most cases following the extracts above the data in each one is 
+# mutually exclusive.  The exceptions are things (like the island of
+# Great Britain) that are in both extracts.
 #
 if osmium merge ${file_prefix2}_${file_extension2}.osm.pbf ${file_prefix3}_${file_extension3}.osm.pbf ${file_prefix4}_${file_extension4}.osm.pbf englangpart_${file_extension1}_after.pbf welshlangpart_${file_extension1}_after.pbf scotsgdlangpart_${file_extension1}_after.pbf -O -o langs_${file_extension1}_merged.pbf
 then
