@@ -1,7 +1,7 @@
 # Changes made to this rendering
 This page describes changes made [here](https://github.com/SomeoneElseOSM/SomeoneElse-style), [here](https://github.com/SomeoneElseOSM/SomeoneElse-style-legend) and [here](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT), and visible [here](//map.atownsend.org.uk/maps/map/map.html).
 
-## As yet unreleased
+## 27/03/2024
 Removed "shop=guns", no longer in the data.
 Detect outfalls, sewage and otherwise.
 Show "location=overhead" pipelines in the same way as "location=overground" ones.
@@ -9,6 +9,7 @@ Show "seamark_type=pipeline_submarine" in the same way as "man_made=pipeline".
 Removed "craft=joinery", no longer in the data.
 Show inscriptions and directions on milestones at higher zooms.
 Show inscriptions on boundary markers and stones at higher zooms.
+Show island names up to and including the size of Ireland, but not Great Britain.
 
 ## 21/03/2024
 Show bus stops which exist but have no service with a unique icon.
