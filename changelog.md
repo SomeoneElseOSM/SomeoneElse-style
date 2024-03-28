@@ -3,6 +3,7 @@ This page describes changes made [here](https://github.com/SomeoneElseOSM/Someon
 
 ## As yet unreleased
 Show departure boards that exist on their own, not attached to bus stops etc.
+Show public transport information boards with a blue pole.
 
 ## 27/03/2024
 Removed "shop=guns", no longer in the data.

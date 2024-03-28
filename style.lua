@@ -6208,7 +6208,11 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["disused:tourism"] == nil     ) and
        ( keyvalues["ruins:tourism"]   == nil     ) and
        ( keyvalues["historic"]        == nil     )) then
-      keyvalues["tourism"] = "informationboard"
+      if ( keyvalues["board_type"] == "public_transport" ) then
+         keyvalues["tourism"] = "informationpublictransport"
+      else
+         keyvalues["tourism"] = "informationboard"
+      end
    end
 
 -- ----------------------------------------------------------------------------
@@ -6246,7 +6250,11 @@ function filter_tags_generic(keyvalues, nokeys)
          ( keyvalues["information"] == "tactile_model"                    )    or
          ( keyvalues["information"] == "terminal"                         )    or
          ( keyvalues["information"] == "wildlife"                         )))) then
-      keyvalues["tourism"] = "informationboard"
+      if ( keyvalues["board_type"] == "public_transport" ) then
+         keyvalues["tourism"] = "informationpublictransport"
+      else
+         keyvalues["tourism"] = "informationboard"
+      end
    end
 
    if ((  keyvalues["amenity"]     == "notice_board"       )  or
@@ -6261,11 +6269,12 @@ function filter_tags_generic(keyvalues, nokeys)
       end
    end
 
-   if ((( keyvalues["tourism"]     == "informationboard" )   or
-        ( keyvalues["tourism"]     == "informationsign"  )   or
-        ( keyvalues["tourism"]     == "militarysign"     ))  and
-       (  keyvalues["name"]        == nil                 )  and
-       (  keyvalues["board:title"] ~= nil                 )) then
+   if ((( keyvalues["tourism"]     == "informationboard"           )   or
+        ( keyvalues["tourism"]     == "informationpublictransport" )   or
+        ( keyvalues["tourism"]     == "informationsign"            )   or
+        ( keyvalues["tourism"]     == "militarysign"               ))  and
+       (  keyvalues["name"]        == nil                           )  and
+       (  keyvalues["board:title"] ~= nil                           )) then
       keyvalues["name"] = keyvalues["board:title"]
    end
 
