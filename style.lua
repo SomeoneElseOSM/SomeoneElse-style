@@ -22,11 +22,11 @@ polygon_keys = { 'boundary', 'building', 'landcover', 'landuse', 'amenity', 'har
       'wetland', 'water', 'aeroway' }
 
 generic_keys = {'access','addr:housename','addr:housenumber','addr:interpolation','admin_level','advertising','aerialway','aeroway','amenity','area','area:highway','barrier',
-   'bicycle','brand','bridge','bridleway','booth','boundary','building','capital','construction','covered','culvert','cutting','denomination','designation','disused','disused:highway','disused:man_made','disused:military','disused:shop','ele',
+   'bicycle','brand','bridge','bridleway','booth','boundary','building','capital','construction','covered','culvert','cutting','denomination','departures_board','designation','disused','disused:highway','disused:man_made','disused:military','disused:shop','ele',
    'embankment','emergency','entrance','foot','flood_prone','generation:source','geological','golf','government',
    'harbour','hazard_prone','hazard_type','highway','historic','horse','hours','information','intermittent',
    'junction','landcover','landuse','layer','leisure','lcn_ref','lock','locked',
-   'man_made','marker','military','motor_car','name','natural','ncn_milepost','office','oneway','operator','opening_hours:covid19','outlet','pipeline','pitch','place','playground','poi','population','power','power_source','public_transport',
+   'man_made','marker','military','motor_car','name','natural','ncn_milepost','office','oneway','operator','opening_hours:covid19','outlet','passenger_information_display','pipeline','pitch','place','playground','poi','population','power','power_source','public_transport',
    'railway','railway:historic','ref','religion','rescue_equipment','route',
    'school','seamark:type','seamark:rescue_station:category','service','shop','sport','surface',
    'toll','tourism','tower:type', 'tracktype','training','tunnel','water','waterway',
@@ -9718,6 +9718,25 @@ function filter_tags_generic(keyvalues, nokeys)
       else
          keyvalues["highway"] = "streetlamp_electric"
       end
+   end
+
+-- ----------------------------------------------------------------------------
+-- Departure boards not associated with bus stops etc.
+-- ----------------------------------------------------------------------------
+   if ((  keyvalues["highway"]                       == nil                             ) and
+       (  keyvalues["railway"]                       == nil                             ) and
+       (  keyvalues["public_transport"]              == nil                             ) and
+       (  keyvalues["building"]                      == nil                             ) and
+       (( keyvalues["departures_board"]              == "realtime"                     ) or
+        ( keyvalues["departures_board"]              == "timetable; realtime"          ) or
+        ( keyvalues["departures_board"]              == "realtime;timetable"           ) or
+        ( keyvalues["departures_board"]              == "timetable;realtime"           ) or
+        ( keyvalues["departures_board"]              == "realtime_multiline"           ) or
+        ( keyvalues["departures_board"]              == "realtime,timetable"           ) or
+        ( keyvalues["departures_board"]              == "multiline"                    ) or
+        ( keyvalues["departures_board"]              == "realtime_multiline;timetable" ) or
+        ( keyvalues["passenger_information_display"] == "realtime"                     ))) then
+         keyvalues["highway"] = "board_realtime"
    end
 
 -- ----------------------------------------------------------------------------
