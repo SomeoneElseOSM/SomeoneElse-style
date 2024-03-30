@@ -10399,11 +10399,17 @@ function filter_tags_way (keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
--- Treat a linear "door" as "gate"
+-- Treat a linear "door" and some other linear barriers as "gate"
+--
+-- A "lock_gate" mapped as a node gets its own "locks" layer in 
+-- water-features.mss (for historical reasons that no longer make sense).
+-- There's no explicit node or generic code for lock_gate.
 -- ----------------------------------------------------------------------------
-   if (( keyvalues["barrier"] == "door"       ) or
-       ( keyvalues["barrier"] == "swing_gate" )) then
-      keyvalues["barrier"] = "gate"
+   if (( keyvalues["barrier"]  == "door"       ) or
+       ( keyvalues["barrier"]  == "swing_gate" ) or
+       ( keyvalues["waterway"] == "lock_gate"  )) then
+      keyvalues["barrier"]  = "gate"
+      keyvalues["waterway"] = nil
    end
 
 -- ----------------------------------------------------------------------------
