@@ -10671,7 +10671,8 @@ function filter_tags_relation_member (keyvalues, keyvaluemembers, roles, memberc
 
 -- ----------------------------------------------------------------------------
 -- MTB networks
--- We append (r) here.
+-- As long as there is a name, we append (m) here.
+-- We don't show unnamed MTB "routes" as routes.
 -- ----------------------------------------------------------------------------
       if (( keyvalues["route"]   == "mtb" ) and
           ( keyvalues["network"] ~= "ncn" ) and
@@ -10680,7 +10681,7 @@ function filter_tags_relation_member (keyvalues, keyvaluemembers, roles, memberc
          keyvalues["highway"] = "ldpmtb"
 
          if ( keyvalues["name"] == nil ) then
-            keyvalues["name"] = "(m)"
+            keyvalues["highway"] = nil
          else
             keyvalues["name"] = keyvalues["name"] .. " (m)"
          end
