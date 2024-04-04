@@ -6,6 +6,8 @@ Show departure boards that exist on their own, not attached to bus stops etc.
 Show public transport information boards with a blue pole.
 Show linear lock gates with a a thick black line, like other linear gates.
 Don't show unnamed MTB "routes" as routes.
+Removed "shop=takeaway" and "shop=offlicence", no longer in the data.
+Removed "amenity=shopmobility" from list of expected tags, no longer in the data.
 
 ## 27/03/2024
 Removed "shop=guns", no longer in the data.

@@ -7466,8 +7466,7 @@ function filter_tags_generic(keyvalues, nokeys)
 -- "fast_food" consolidation of lesser used tags.  
 -- Also render fish and chips etc. with a unique icon.
 -- ----------------------------------------------------------------------------
-   if (( keyvalues["shop"] == "fast_food" ) or
-       ( keyvalues["shop"] == "takeaway"  )) then
+   if ( keyvalues["shop"] == "fast_food" ) then
       keyvalues["amenity"] = "fast_food"
    end
 
@@ -7881,7 +7880,6 @@ function filter_tags_generic(keyvalues, nokeys)
    if (( keyvalues["shop"]    == "beer"            ) or
        ( keyvalues["shop"]    == "off_licence"     ) or
        ( keyvalues["shop"]    == "off_license"     ) or
-       ( keyvalues["shop"]    == "offlicence"      ) or
        ( keyvalues["shop"]    == "wine"            ) or
        ( keyvalues["shop"]    == "whisky"          ) or
        ( keyvalues["craft"]   == "winery"          ) or

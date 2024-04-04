@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20240323T102300Z",
+  "data_updated": "20240404T144600Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -305,7 +305,6 @@
     { "key": "amenity", "value": "self_storage", "description": "Synonym for shop=storage" },
     { "key": "amenity", "value": "shelter", "description": "Various shelters shown as a roof" },
     { "key": "amenity", "value": "sheltered_housing", "description": "Synonym for shop=healthnonspecific" },
-    { "key": "amenity", "value": "shopmobility", "description": "Used to detect shopmobility" },
     { "key": "amenity", "value": "shop_mobility", "description": "Used to detect shopmobility" },
     { "key": "amenity", "value": "show_ground", "description": "Synonym for meadow" },
     { "key": "amenity", "value": "show_grounds", "description": "Synonym for meadow" },
@@ -2849,7 +2848,6 @@
     { "key": "shop", "value": "off_license", "description": "Various shops shown" },
     { "key": "shop", "value": "office", "description": "Various shops shown" },
     { "key": "shop", "value": "office_supplies", "description": "Various shops shown" },
-    { "key": "shop", "value": "offlicence", "description": "Various shops shown" },
     { "key": "shop", "value": "optician", "description": "Various shops shown" },
     { "key": "shop", "value": "optometrist", "description": "Various shops shown" },
     { "key": "shop", "value": "organic", "description": "Various shops shown" },
@@ -2955,7 +2953,6 @@
     { "key": "shop", "value": "sweets", "description": "Various shops shown" },
     { "key": "shop", "value": "swimming_pool", "description": "Various shops shown" },
     { "key": "shop", "value": "tailor", "description": "Various shops shown" },
-    { "key": "shop", "value": "takeaway", "description": "Various shops shown" },
     { "key": "shop", "value": "tan", "description": "Various shops shown" },
     { "key": "shop", "value": "tanning", "description": "Various shops shown" },
     { "key": "shop", "value": "tattoo", "description": "Various shops shown" },
