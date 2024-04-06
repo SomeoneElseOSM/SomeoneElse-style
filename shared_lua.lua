@@ -92,4 +92,24 @@ function fix_corridors( passed_highway, passed_layer, passed_level )
     end
 
     return returned_highway
+end -- fix_corridors()
+
+-- ----------------------------------------------------------------------------
+-- "Different names on each side of the street" and
+-- "name:en" is set by "name" is not.
+-- ----------------------------------------------------------------------------
+function set_name_left_right_en( passed_name, passed_name_left, passed_name_right, passed_name_en )
+    local returned_name = passed_name
+
+    if (( passed_name_left  ~= nil ) and
+        ( passed_name_right ~= nil )) then
+       returned_name = passed_name_left .. " / " .. passed_name_right
+    end
+
+    if (( returned_name  == nil ) and
+        ( passed_name_en ~= nil )) then
+       passed_name = passed_name_en
+    end
+
+    return returned_name
 end

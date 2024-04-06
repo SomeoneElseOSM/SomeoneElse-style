@@ -195,20 +195,11 @@ function filter_tags_generic(keyvalues, nokeys)
    keyvalues["highway"] = fix_corridors( keyvalues["highway"], keyvalues["layer"], keyvalues["level"] )
 
 -- ----------------------------------------------------------------------------
--- Different names on each side of the street
+-- If there are different names on each side of the street, we create one name
+-- containing both.
+-- If "name" does not exist but "name:en" does, use that.
 -- ----------------------------------------------------------------------------
-   if (( keyvalues["name:left"]  ~= nil ) and
-       ( keyvalues["name:right"] ~= nil )) then
-      keyvalues["name"] = keyvalues["name:left"] .. " / " .. keyvalues["name:right"]
-   end
-
--- ----------------------------------------------------------------------------
--- If name does not exist but name:en does, use it.
--- ----------------------------------------------------------------------------
-   if (( keyvalues["name"]    == nil ) and
-       ( keyvalues["name:en"] ~= nil )) then
-      keyvalues["name"] = keyvalues["name:en"]
-   end
+   keyvalues["name"] = set_name_left_right_en( keyvalues["name"], keyvalues["name:left"], keyvalues["name:right"], keyvalues["name:en"] )
 
 -- ----------------------------------------------------------------------------
 -- If lcn_ref exists (for example as a location in a local cycling network),
