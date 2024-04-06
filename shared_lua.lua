@@ -70,6 +70,26 @@ function fix_invalid_layer_values( passed_layer, passed_bridge, passed_embankmen
    end
 
    return returned_layer
+end -- fix_invalid_layer_values()
+
+
+-- ----------------------------------------------------------------------------
+-- Before processing footways, turn certain corridors into footways
+--
+-- Note that https://wiki.openstreetmap.org/wiki/Key:indoor defines
+-- indoor=corridor as a closed way.  highway=corridor is not documented there
+-- but is used for corridors.  We'll only process layer or level 0 (or nil)
+-- ----------------------------------------------------------------------------
+function fix_corridors( passed_highway, passed_layer, passed_level )
+    local returned_highway = passed_highway
+
+    if ((  passed_highway == "corridor"   ) and
+        (( passed_level   == nil         )  or
+         ( passed_level   == "0"         )) and
+        (( passed_layer   == nil         )  or
+         ( passed_layer   == "0"         ))) then
+       returned_highway = "path"
+    end
+
+    return returned_highway
 end
-
-

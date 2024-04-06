@@ -192,13 +192,7 @@ function filter_tags_generic(keyvalues, nokeys)
 -- indoor=corridor as a closed way.  highway=corridor is not documented there
 -- but is used for corridors.  We'll only process layer or level 0 (or nil)
 -- ----------------------------------------------------------------------------
-   if ((  keyvalues["highway"] == "corridor"   ) and
-       (( keyvalues["level"]   == nil         )  or
-        ( keyvalues["level"]   == "0"         )) and
-       (( keyvalues["layer"]   == nil         )  or
-        ( keyvalues["layer"]   == "0"         ))) then
-      keyvalues["highway"] = "path"
-   end
+   keyvalues["highway"] = fix_corridors( keyvalues["highway"], keyvalues["layer"], keyvalues["level"] )
 
 -- ----------------------------------------------------------------------------
 -- Different names on each side of the street
