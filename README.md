@@ -13,9 +13,11 @@ The projects are:
 * [mod_tile](https://github.com/SomeoneElseOSM/mod_tile) - a fork of mod_tile modified to show zoom levels up to 24.
 * [database_qa_scripts](https://github.com/SomeoneElseOSM/database_qa_scripts) - various QA scripts associated with both server health (database size etc.) and data quality (such as broken multipolygons).
 
-Related is:
+Related are:
 
 * [mkgmap_style_ajt](https://github.com/SomeoneElseOSM/mkgmap_style_ajt) - similar to "SomeoneElse-style", but for Garmin devices.
+* [SomeoneElse-vector-extract](https://github.com/SomeoneElseOSM/SomeoneElse-vector-extract) - similar to "SomeoneElse-style", but extracting data into a .mbtiles file.
+* [SomeoneElse-vector-web-display](https://github.com/SomeoneElseOSM/SomeoneElse-vector-web-display) - similar to "openstreetmap-carto-AJT", but reading data from a .mbtiles file for display in a web page.
 
 The map style is designed for "England and Wales-based rural pedestrians".  The example map area also covers Ireland and Scotland.
 
@@ -44,7 +46,7 @@ The "heavy lifting" of converting complicated tagging combinations (for example,
 
 ## Update scripts
 
-There's a script that gets the latest extract for an area [here](https://github.com/SomeoneElseOSM/SomeoneElse-style/blob/master/update_render.sh).  That gets two areas - by default Great Britain (which has extra name processing performed on it) and Ireland and Northern Ireland (which doesn't). The "extra name processing" involves using "name:cy" in place of "name" in part of Wales, and "name:gd" in place of "name" in part of Scotland.  The file splitting, name tag changing and file recombining is done with "osmosis".
+There's a script that gets the latest extract for an area [here](https://github.com/SomeoneElseOSM/SomeoneElse-style/blob/master/update_render.sh).  That gets four areas - by default Great Britain (which has extra name processing performed on it) and Ireland and Northern Ireland, the Isle of Man and the Channel Islands (which don't). The "extra name processing" involves using "name:cy" in place of "name" in part of Wales, and "name:gd" in place of "name" in part of Scotland.  The file splitting, name tag changing and file recombining is done with "osmium".
 
 There is also [this script](https://github.com/SomeoneElseOSM/SomeoneElse-style/blob/master/update_carto.sh) that just reloads carto, not the database - useful if the lua preprocessing does not need to be run.
 

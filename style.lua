@@ -16,6 +16,13 @@
 -- You should have received a copy of the GNU General Public License
 -- along with this program.  If not, see <https://www.gnu.org/licenses/>.
 -- ----------------------------------------------------------------------------
+-- Code common to several projects is in "shared_lua.lua".
+-- That file is in this repository, but needs to be available on the standard
+-- lua path when this script is invoked.  The "update_render.sh" script does 
+-- this by:
+-- cp /home/${local_filesystem_user}/src/SomeoneElse-style/shared_lua.lua -
+--      /usr/local/share/lua/5.3/
+-- ----------------------------------------------------------------------------
 require "shared_lua"
 
 polygon_keys = { 'boundary', 'building', 'landcover', 'landuse', 'amenity', 'harbour', 'historic', 'leisure', 
