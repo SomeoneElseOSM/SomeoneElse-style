@@ -16,6 +16,8 @@
 -- You should have received a copy of the GNU General Public License
 -- along with this program.  If not, see <https://www.gnu.org/licenses/>.
 -- ----------------------------------------------------------------------------
+require "shared_lua"
+
 polygon_keys = { 'boundary', 'building', 'landcover', 'landuse', 'amenity', 'harbour', 'historic', 'leisure', 
       'man_made', 'military', 'natural', 'office', 'place', 'power',
       'public_transport', 'seamark:type', 'shop', 'sport', 'tourism', 'waterway',
@@ -94,48 +96,7 @@ function filter_tags_generic(keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
 -- Invalid layer values - change them to something plausible.
 -- ----------------------------------------------------------------------------
-   if ( keyvalues["layer"] == "-0.5" ) then
-      keyvalues["layer"] = "-1"
-   end
-
-   if ( keyvalues["layer"] == "covered" ) then
-      keyvalues["layer"] = "0"
-   end
-
-   if ((( keyvalues["bridge"]     == "yes" )   or
-        ( keyvalues["embankment"] == "yes" ))  and
-       (( keyvalues["layer"]      == "-3"  )   or
-        ( keyvalues["layer"]      == "-2"  )   or
-        ( keyvalues["layer"]      == "-1"  ))) then
-      keyvalues["layer"] = "0"
-   end
-
-   if (( keyvalues["layer"] == "01"       ) or
-       ( keyvalues["layer"] == "+1"       ) or
-       ( keyvalues["layer"] == "yes"      ) or
-       ( keyvalues["layer"] == "0.5"      ) or
-       ( keyvalues["layer"] == "0-1"      ) or
-       ( keyvalues["layer"] == "0;1"      ) or
-       ( keyvalues["layer"] == "0;2"      ) or
-       ( keyvalues["layer"] == "0;1;2"    ) or
-       ( keyvalues["layer"] == "pipeline" )) then
-      keyvalues["layer"] = "1"
-   end
-   
-   if ( keyvalues["layer"] == "2;4" ) then
-      keyvalues["layer"] = "2"
-   end
-
-   if (( keyvalues["layer"] == "6"  )  or
-       ( keyvalues["layer"] == "7"  )  or
-       ( keyvalues["layer"] == "8"  )  or
-       ( keyvalues["layer"] == "9"  )  or
-       ( keyvalues["layer"] == "10" )  or
-       ( keyvalues["layer"] == "15" )  or
-       ( keyvalues["layer"] == "16" )) then
-      keyvalues["layer"] = "5"
-   end
-
+   keyvalues["layer"] = fix_invalid_layer_values( keyvalues["layer"], keyvalues["bridge"], keyvalues["embankment"] )
 
 -- ----------------------------------------------------------------------------
 -- Treat "was:" as "disused:"
@@ -10107,6 +10068,7 @@ function filter_tags_generic(keyvalues, nokeys)
 
    return filter, keyvalues
 end
+
 
 function append_accommodation(keyvalues)
    if (( keyvalues["accommodation"] ~= nil  ) and

@@ -368,6 +368,7 @@ fi
 # Alternatively, just restart renderd to reduce memory use.
 # -----------------------------------------------------------------------------
 /etc/init.d/renderd restart
+echo ${file_prefix1} ${file_prefix2} ${file_prefix3} ${file_prefix4}
 #/etc/init.d/apache2 stop
 #
 # In File1,
@@ -435,7 +436,7 @@ else
 fi
 
 #
-# Note that "file2" through "file4", does not need splitting in this way; 
+# Note that "file2" through "file4" do not need splitting in this way; 
 # "name" is used here.
 # With "osmium merge" there is no way to merge so that cy and gd files 
 # take precedence over the en one.
@@ -455,6 +456,8 @@ fi
 
 #
 # Run osm2pgsql
+#
+cp /home/${local_filesystem_user}/src/SomeoneElse-style/shared_lua.lua /usr/local/share/lua/5.3/
 #
 if sudo -u ${local_renderd_user} osm2pgsql --create --slim -d ${local_database} -C 2500 --number-processes 2 -S /home/${local_filesystem_user}/src/openstreetmap-carto-AJT/openstreetmap-carto.style --multi-geometry --tag-transform-script /home/${local_filesystem_user}/src/SomeoneElse-style/style.lua langs_${file_extension1}_merged.pbf
 then
