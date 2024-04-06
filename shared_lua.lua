@@ -174,3 +174,21 @@ function process_golf_tracks( passed_highway, passed_golf )
 
     return returned_highway
 end -- process_golf_tracks()
+
+-- ----------------------------------------------------------------------------
+-- "Sabristas" sometimes add dubious names to motorway junctions.  Don't show
+-- them if they're not signed.
+-- ----------------------------------------------------------------------------
+function suppress_unsigned_motorway_junctions( passed_name, passed_nameCsigned, passed_nameCabsent, passed_unsigned )
+    local returned_name = passed_name
+
+    if ((( passed_highway == "motorway_junction"  ) and
+         ( passed_nameCsigned == "no"            )  or
+         ( passed_nameCabsent == "yes"           )  or
+         ( passed_unsigned    == "yes"           )  or
+         ( passed_unsigned    == "name"          ))) then
+       returned_name = nil
+    end
+
+    return returned_name
+end -- suppress_unsigned_motorway_junctions()

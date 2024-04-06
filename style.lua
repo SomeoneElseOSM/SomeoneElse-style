@@ -222,14 +222,11 @@ function filter_tags_generic(keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
    keyvalues["highway"] = process_golf_tracks( keyvalues["highway"], keyvalues["golf"] )
 
-   if ((( keyvalues["highway"] == "motorway_junction"  ) and
-        ( keyvalues["name:signed"] == "no"            )  or
-        ( keyvalues["name:absent"] == "yes"           )  or
-        ( keyvalues["unsigned"]    == "yes"           )  or
-        ( keyvalues["unsigned"]    == "name"          ))) then
-      keyvalues["name"] = nil
-      keyvalues["name:signed"] = nil
-   end
+-- ----------------------------------------------------------------------------
+-- "Sabristas" sometimes add dubious names to motorway junctions.  Don't show
+-- them if they're not signed.
+-- ----------------------------------------------------------------------------
+   keyvalues["name"] = suppress_unsigned_motorway_junctions( keyvalues["name"], keyvalues["name:signed"], keyvalues["name:absent"], keyvalues["unsigned"] )
 
 -- ----------------------------------------------------------------------------
 -- Move unsigned road refs to the name, in brackets.
