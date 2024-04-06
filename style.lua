@@ -218,31 +218,9 @@ function filter_tags_generic(keyvalues, nokeys)
    keyvalues["official_ref"] = set_official_ref( keyvalues["official_ref"], keyvalues["highway_authority_ref"], keyvalues["highway_ref"], keyvalues["admin_ref"], keyvalues["admin:ref"], keyvalues["loc_ref"], keyvalues["ref"] )
 
 -- ----------------------------------------------------------------------------
--- Consolidate some rare highway types into track
---
--- The "bywayness" of something should be handled by designation now.  byway
--- isn't otherwise rendered (and really should no longer be used), so change 
--- to track (which is what it probably will be).
---
--- "track" will be changed into something else lower down 
--- (path, or pathwide).
+-- Consolidate some rare highway types into ones we can display.
 -- ----------------------------------------------------------------------------
-   if (( keyvalues["golf"]    == "track"      )   and
-       ( keyvalues["highway"] == nil          )) then
-      keyvalues["highway"] = "track"
-   end
-
-   if ((  keyvalues["golf"]    == "path"       ) and
-       (( keyvalues["highway"] == nil         )  or
-        ( keyvalues["highway"] == "service"   ))) then
-      keyvalues["highway"] = "pathnarrow"
-   end
-
-   if ((  keyvalues["golf"]    == "cartpath"   ) and
-       (( keyvalues["highway"] == nil         )  or
-        ( keyvalues["highway"] == "service"   ))) then
-      keyvalues["highway"] = "pathwide"
-   end
+   keyvalues["highway"] = process_golf_tracks( keyvalues["highway"], keyvalues["golf"] )
 
    if ((( keyvalues["highway"] == "motorway_junction"  ) and
         ( keyvalues["name:signed"] == "no"            )  or

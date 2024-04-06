@@ -120,31 +120,57 @@ end -- set_name_left_right_en
 function set_official_ref( passed_official_ref, passed_highway_authority_ref, passed_highway_ref, passed_admin_ref, passed_adminCref, passed_loc_ref, passed_ref )
     local returned_official_ref = passed_official_ref
 
-   if (( passed_official_ref          == nil ) and
-       ( passed_highway_authority_ref ~= nil )) then
-      returned_official_ref          = passed_highway_authority_ref
-   end
+    if (( passed_official_ref          == nil ) and
+        ( passed_highway_authority_ref ~= nil )) then
+       returned_official_ref          = passed_highway_authority_ref
+    end
 
-   if (( returned_official_ref == nil ) and
-       ( passed_highway_ref    ~= nil )) then
-      returned_official_ref = passed_highway_ref
-   end
+    if (( returned_official_ref == nil ) and
+        ( passed_highway_ref    ~= nil )) then
+       returned_official_ref = passed_highway_ref
+    end
 
-   if (( returned_official_ref == nil ) and
-       ( passed_admin_ref      ~= nil )) then
-      returned_official_ref = passed_admin_ref
-   end
+    if (( returned_official_ref == nil ) and
+        ( passed_admin_ref      ~= nil )) then
+       returned_official_ref = passed_admin_ref
+    end
 
-   if (( returned_official_ref == nil ) and
-       ( passed_adminCref      ~= nil )) then
-      returned_official_ref = passed_adminCref
-   end
+    if (( returned_official_ref == nil ) and
+        ( passed_adminCref      ~= nil )) then
+       returned_official_ref = passed_adminCref
+    end
 
-   if (( returned_official_ref == nil        ) and
-       ( passed_loc_ref        ~= nil        ) and
-       ( passed_loc_ref        ~= passed_ref )) then
-      returned_official_ref = passed_loc_ref
-   end
+    if (( returned_official_ref == nil        ) and
+        ( passed_loc_ref        ~= nil        ) and
+        ( passed_loc_ref        ~= passed_ref )) then
+       returned_official_ref = passed_loc_ref
+    end
 
     return returned_official_ref
 end -- set_official_ref()
+
+-- ----------------------------------------------------------------------------
+-- Consolidate some rare highway types into ones we can display.
+-- ----------------------------------------------------------------------------
+function process_golf_tracks( passed_highway, passed_golf )
+    local returned_highway = passed_highway
+
+    if (( passed_golf    == "track"      )   and
+        ( passed_highway == nil          )) then
+       returned_highway = "track"
+    end
+
+    if ((  passed_golf      == "path"       ) and
+        (( returned_highway == nil         )  or
+         ( returned_highway == "service"   ))) then
+       returned_highway = "path"
+    end
+
+    if ((  passed_golf      == "cartpath"   ) and
+        (( returned_highway == nil         )  or
+         ( returned_highway == "service"   ))) then
+       returned_highway = "track"
+    end
+
+    return returned_highway
+end -- process_golf_tracks()
