@@ -98,18 +98,53 @@ end -- fix_corridors()
 -- "Different names on each side of the street" and
 -- "name:en" is set by "name" is not.
 -- ----------------------------------------------------------------------------
-function set_name_left_right_en( passed_name, passed_name_left, passed_name_right, passed_name_en )
+function set_name_left_right_en( passed_name, passed_nameCleft, passed_nameCright, passed_nameCen )
     local returned_name = passed_name
 
-    if (( passed_name_left  ~= nil ) and
-        ( passed_name_right ~= nil )) then
-       returned_name = passed_name_left .. " / " .. passed_name_right
+    if (( passed_nameCleft  ~= nil ) and
+        ( passed_nameCright ~= nil )) then
+       returned_name = passed_nameCleft .. " / " .. passed_nameCright
     end
 
     if (( returned_name  == nil ) and
-        ( passed_name_en ~= nil )) then
-       passed_name = passed_name_en
+        ( passed_nameCen ~= nil )) then
+       passed_name = passed_nameCen
     end
 
     return returned_name
-end
+end -- set_name_left_right_en
+
+-- ----------------------------------------------------------------------------
+-- Move refs to consider as "official" to official_ref
+-- ----------------------------------------------------------------------------
+function set_official_ref( passed_official_ref, passed_highway_authority_ref, passed_highway_ref, passed_admin_ref, passed_adminCref, passed_loc_ref, passed_ref )
+    local returned_official_ref = passed_official_ref
+
+   if (( passed_official_ref          == nil ) and
+       ( passed_highway_authority_ref ~= nil )) then
+      returned_official_ref          = passed_highway_authority_ref
+   end
+
+   if (( returned_official_ref == nil ) and
+       ( passed_highway_ref    ~= nil )) then
+      returned_official_ref = passed_highway_ref
+   end
+
+   if (( returned_official_ref == nil ) and
+       ( passed_admin_ref      ~= nil )) then
+      returned_official_ref = passed_admin_ref
+   end
+
+   if (( returned_official_ref == nil ) and
+       ( passed_adminCref      ~= nil )) then
+      returned_official_ref = passed_adminCref
+   end
+
+   if (( returned_official_ref == nil        ) and
+       ( passed_loc_ref        ~= nil        ) and
+       ( passed_loc_ref        ~= passed_ref )) then
+      returned_official_ref = passed_loc_ref
+   end
+
+    return returned_official_ref
+end -- set_official_ref()
