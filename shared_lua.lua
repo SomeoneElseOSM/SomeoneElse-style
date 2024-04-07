@@ -179,7 +179,7 @@ end -- process_golf_tracks()
 -- "Sabristas" sometimes add dubious names to motorway junctions.  Don't show
 -- them if they're not signed.
 -- ----------------------------------------------------------------------------
-function suppress_unsigned_motorway_junctions( passed_name, passed_nameCsigned, passed_nameCabsent, passed_unsigned )
+function suppress_unsigned_motorway_junctions( passed_name, passed_highway, passed_nameCsigned, passed_nameCabsent, passed_unsigned )
     local returned_name = passed_name
 
     if ((( passed_highway == "motorway_junction"  ) and

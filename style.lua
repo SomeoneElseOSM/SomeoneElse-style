@@ -226,7 +226,7 @@ function filter_tags_generic(keyvalues, nokeys)
 -- "Sabristas" sometimes add dubious names to motorway junctions.  Don't show
 -- them if they're not signed.
 -- ----------------------------------------------------------------------------
-   keyvalues["name"] = suppress_unsigned_motorway_junctions( keyvalues["name"], keyvalues["name:signed"], keyvalues["name:absent"], keyvalues["unsigned"] )
+   keyvalues["name"] = suppress_unsigned_motorway_junctions( keyvalues["name"], keyvalues["highway"], keyvalues["name:signed"], keyvalues["name:absent"], keyvalues["unsigned"] )
 
 -- ----------------------------------------------------------------------------
 -- Move unsigned road refs to the name, in brackets.
