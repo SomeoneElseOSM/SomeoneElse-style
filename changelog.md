@@ -2,6 +2,7 @@
 This page describes changes made [here](https://github.com/SomeoneElseOSM/SomeoneElse-style), [here](https://github.com/SomeoneElseOSM/SomeoneElse-style-legend) and [here](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT), and visible [here](//map.atownsend.org.uk/maps/map/map.html).
 
 ## As yet unreleased
+Changed the brand check to not append brand if it's contained within the name.
 
 ## 06/04/2024
 Show departure boards that exist on their own, not attached to bus stops etc.

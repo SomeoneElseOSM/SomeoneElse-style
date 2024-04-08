@@ -7312,13 +7312,13 @@ function filter_tags_generic(keyvalues, nokeys)
             end
          end
       else
-         if (( keyvalues["brand"] ~= nil                )  and
-             ( keyvalues["brand"] ~= keyvalues["name"]  )) then
+         if (( keyvalues["brand"] ~= nil                                )  and
+             ( not string.match( keyvalues["name"], keyvalues["brand"] ))) then
             keyvalues["name"] = keyvalues["name"] .. " (" .. keyvalues["brand"] .. ")"
             keyvalues["brand"] = nil
 	 else
-            if (( keyvalues["operator"] ~= nil                )  and
-                ( keyvalues["operator"] ~= keyvalues["name"]  )) then
+            if (( keyvalues["operator"] ~= nil                                )  and
+                ( not string.match( keyvalues["name"], keyvalues["operator"] ))) then
                keyvalues["name"] = keyvalues["name"] .. " (" .. keyvalues["operator"] .. ")"
                keyvalues["operator"] = nil
             end
