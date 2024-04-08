@@ -192,3 +192,93 @@ function suppress_unsigned_motorway_junctions( passed_name, passed_highway, pass
 
     return returned_name
 end -- suppress_unsigned_motorway_junctions()
+
+-- ----------------------------------------------------------------------------
+-- Move unsigned road refs to the name, in brackets.
+-- ----------------------------------------------------------------------------
+function suppress_unsigned_road_refs( passed_name, passed_highway, passed_nameCsigned, passed_nameCabsent, passed_official_ref, passed_ref, passed_refCsigned, passed_unsigned )
+    local returned_name = passed_name
+
+    if (( passed_highway == "motorway"          ) or
+        ( passed_highway == "motorway_link"     ) or
+        ( passed_highway == "trunk"             ) or
+        ( passed_highway == "trunk_link"        ) or
+        ( passed_highway == "primary"           ) or
+        ( passed_highway == "primary_link"      ) or
+        ( passed_highway == "secondary"         ) or
+        ( passed_highway == "secondary_link"    ) or
+        ( passed_highway == "tertiary"          ) or
+        ( passed_highway == "tertiary_link"     ) or
+        ( passed_highway == "unclassified"      ) or
+        ( passed_highway == "unclassified_link" ) or
+        ( passed_highway == "residential"       ) or
+        ( passed_highway == "residential_link"  ) or
+        ( passed_highway == "service"           ) or
+        ( passed_highway == "road"              ) or
+        ( passed_highway == "track"             ) or
+        ( passed_highway == "cycleway"          ) or
+        ( passed_highway == "bridleway"         ) or
+        ( passed_highway == "footway"           ) or
+        ( passed_highway == "intfootwaynarrow"  ) or
+        ( passed_highway == "path"              ) or
+        ( passed_highway == "intpathnarrow"     )) then
+       if ( returned_name == nil   ) then
+          if ((  passed_ref        ~= nil    )  and
+              (( passed_refCsigned == "no"  )   or
+               ( passed_unsigned   == "ref" ))) then
+             returned_name       = "(" .. passed_ref .. ")"
+             passed_ref        = nil
+             passed_refCsigned = nil
+             passed_unsigned   = nil
+ 	 else
+             if ( passed_official_ref ~= nil  ) then
+                returned_name         = "(" .. passed_official_ref .. ")"
+                passed_official_ref = nil
+             end
+          end
+       else
+          if (( returned_nameCsigned == "no"   ) or
+              ( returned_nameCabsent == "yes"  ) or
+              ( passed_unsigned    == "yes"  ) or
+              ( passed_unsigned    == "name" )) then
+             returned_name = "(" .. returned_name
+             returned_nameCsigned = nil
+
+             if (( passed_refCsigned == "no"  ) or
+                 ( passed_unsigned   == "ref" )) then
+                if ( passed_ref ~= nil ) then
+                   returned_name       = returned_name .. ", " .. passed_ref
+                end
+
+                passed_ref        = nil
+                passed_refCsigned = nil
+                passed_unsigned   = nil
+             else
+                if ( passed_official_ref ~= nil  ) then
+                   returned_name         = returned_name .. ", " .. passed_official_ref
+                   passed_official_ref = nil
+                end
+             end
+
+             returned_name = returned_name .. ")"
+          else
+             if ((  passed_ref        ~= nil    ) and
+                 (( passed_refCsigned == "no"  ) or
+                  ( passed_unsigned   == "ref" ))) then
+                returned_name       = returned_name .. " (" .. passed_ref .. ")"
+                passed_ref        = nil
+                passed_refCsigned = nil
+                passed_unsigned   = nil
+             else
+                if ( passed_official_ref ~= nil  ) then
+                   returned_name         = returned_name .. " (" .. passed_official_ref .. ")"
+                   passed_official_ref = nil
+                end
+             end
+          end
+       end
+    end
+
+    return returned_name
+end -- suppress_unsigned_road_refs()
+
