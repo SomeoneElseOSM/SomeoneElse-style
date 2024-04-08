@@ -187,7 +187,7 @@ function suppress_unsigned_motorway_junctions( passed_name, passed_highway, pass
          ( passed_nameCabsent == "yes"           )  or
          ( passed_unsigned    == "yes"           )  or
          ( passed_unsigned    == "name"          ))) then
-       returned_name = nil
+       returned_name = ""
     end
 
     return returned_name
