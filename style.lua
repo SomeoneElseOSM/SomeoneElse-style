@@ -1847,29 +1847,11 @@ function filter_tags_generic(keyvalues, nokeys)
 -- Handle place=islet as place=island
 -- Nodes are shown from zoom 20, ways from that or higher zooms if they have
 -- a larger way_area.
--- ----------------------------------------------------------------------------
-   if ( keyvalues["place"] == "islet" ) then
-      keyvalues["place"] = "island"
-   end
-
--- ----------------------------------------------------------------------------
+--
 -- Handle place=quarter
--- ----------------------------------------------------------------------------
-   if ( keyvalues["place"] == "quarter" ) then
-      keyvalues["place"] = "neighbourhood"
-   end
-
--- ----------------------------------------------------------------------------
 -- Handle natural=cape etc. as place=locality if no other place tag.
 -- ----------------------------------------------------------------------------
-   if ((( keyvalues["natural"] == "cape"      ) or
-        ( keyvalues["natural"] == "headland"  ) or
-        ( keyvalues["natural"] == "peninsula" ) or
-        ( keyvalues["natural"] == "sound"     ) or
-        ( keyvalues["natural"] == "point"     )) and
-       (  keyvalues["place"]   == nil          )) then
-      keyvalues["place"] = "locality"
-   end
+   keyvalues["place"] = consolidate_place( keyvalues["place"], keyvalues["natural"] )
 
 -- ----------------------------------------------------------------------------
 -- Handle shoals, either as mud or reef

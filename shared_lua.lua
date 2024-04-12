@@ -282,3 +282,34 @@ function suppress_unsigned_road_refs( passed_name, passed_highway, passed_nameCs
     return returned_name
 end -- suppress_unsigned_road_refs()
 
+function consolidate_place( passed_place, passed_natural )
+    local returned_place = passed_place
+
+-- ----------------------------------------------------------------------------
+-- Handle place=islet as place=island
+-- ----------------------------------------------------------------------------
+    if ( returned_place == "islet" ) then
+       returned_place = "island"
+    end
+
+-- ----------------------------------------------------------------------------
+-- Handle place=quarter
+-- ----------------------------------------------------------------------------
+    if ( returned_place == "quarter" ) then
+       returned_place = "neighbourhood"
+    end
+
+-- ----------------------------------------------------------------------------
+-- Handle natural=cape etc. as place=locality if no other place tag.
+-- ----------------------------------------------------------------------------
+    if ((( passed_natural == "cape"      ) or
+         ( passed_natural == "headland"  ) or
+         ( passed_natural == "peninsula" ) or
+         ( passed_natural == "sound"     ) or
+         ( passed_natural == "point"     )) and
+        (  returned_place == nil          )) then
+       returned_place = "locality"
+    end
+
+    return returned_place
+end -- consolidate_place()
