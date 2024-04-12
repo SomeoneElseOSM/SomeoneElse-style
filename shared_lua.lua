@@ -307,7 +307,8 @@ function consolidate_place( passed_place, passed_natural )
          ( passed_natural == "peninsula" ) or
          ( passed_natural == "sound"     ) or
          ( passed_natural == "point"     )) and
-        (  returned_place == nil          )) then
+        (( returned_place == nil         ) or
+         ( returned_place == ""          ))) then
        returned_place = "locality"
     end
 
