@@ -9048,7 +9048,7 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["leisure"]  == "social_club"              ) or
        ( keyvalues["leisure"]  == "soft_play"                ) or
        ( keyvalues["leisure"]  == "summer_camp"              ) or
-       ( keyvalues["leisure"]  == "trampoline"               ) or
+       ( keyvalues["playground"]  == "trampoline"            ) or
        ( keyvalues["leisure"]  == "trampoline_park"          ) or
        ( keyvalues["leisure"]  == "water_park"               ) or
        ( keyvalues["leisure"]  == "yoga"                     ) or
