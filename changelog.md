@@ -3,7 +3,7 @@ This page describes changes made [here](https://github.com/SomeoneElseOSM/Someon
 
 ## As yet unreleased
 Changed the brand check to not append brand if it's contained within the name.
-Changed "leisure=trampoline" to "playground=trampoline; no longer in the data.
+Added "playground=trampoline" to complement "leisure=trampoline"; most of the latter are no longer in the data but new ones are still being added.
 
 ## 06/04/2024
 Show departure boards that exist on their own, not attached to bus stops etc.
