@@ -188,9 +188,8 @@ file_prefix2=ireland-and-northern-ireland
 #file_prefix2=isle-of-man
 file_page2=http://download.geofabrik.de/europe/${file_prefix2}.html
 file_url2=http://download.geofabrik.de/europe/${file_prefix2}-latest.osm.pbf
-#file_prefix2=devon
 #file_prefix2=east-yorkshire-with-hull
-#file_prefix2=west-sussex
+#file_prefix2=rutland
 #file_page2=http://download.geofabrik.de/europe/great-britain/england/${file_prefix2}.html
 #file_url2=http://download.geofabrik.de/europe/great-britain/england/${file_prefix2}-latest.osm.pbf
 #
@@ -200,6 +199,10 @@ file_url2=http://download.geofabrik.de/europe/${file_prefix2}-latest.osm.pbf
 file_prefix3=isle-of-man
 file_page3=http://download.geofabrik.de/europe/${file_prefix3}.html
 file_url3=http://download.geofabrik.de/europe/${file_prefix3}-latest.osm.pbf
+#file_prefix3=rutland
+#file_prefix3=south-yorkshire
+#file_page3=http://download.geofabrik.de/europe/great-britain/england/${file_prefix3}.html
+#file_url3=http://download.geofabrik.de/europe/great-britain/england/${file_prefix3}-latest.osm.pbf
 #
 # What's the fourth file that we are interested in?
 # Note that if this is commented out, also change the "merge" below to not use it.
@@ -207,6 +210,10 @@ file_url3=http://download.geofabrik.de/europe/${file_prefix3}-latest.osm.pbf
 file_prefix4=guernsey-jersey
 file_page4=http://download.geofabrik.de/europe/${file_prefix4}.html
 file_url4=http://download.geofabrik.de/europe/${file_prefix4}-latest.osm.pbf
+#file_prefix4=rutland
+#file_prefix4=west-yorkshire
+#file_page4=http://download.geofabrik.de/europe/great-britain/england/${file_prefix4}.html
+#file_url4=http://download.geofabrik.de/europe/great-britain/england/${file_prefix4}-latest.osm.pbf
 #
 # Remove some entries including the openstreetmap-tiles-update-expire one
 # from the crontab.  Note that this matches a comment on the crontab line.
@@ -457,6 +464,7 @@ fi
 #
 # Run osm2pgsql
 #
+mkdir -p /usr/local/share/lua/5.3/
 cp /home/${local_filesystem_user}/src/SomeoneElse-style/shared_lua.lua /usr/local/share/lua/5.3/
 #
 if sudo -u ${local_renderd_user} osm2pgsql --create --slim -d ${local_database} -C 2500 --number-processes 2 -S /home/${local_filesystem_user}/src/openstreetmap-carto-AJT/openstreetmap-carto.style --multi-geometry --tag-transform-script /home/${local_filesystem_user}/src/SomeoneElse-style/style.lua langs_${file_extension1}_merged.pbf
