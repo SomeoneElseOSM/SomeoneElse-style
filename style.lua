@@ -2320,7 +2320,6 @@ function filter_tags_generic(keyvalues, nokeys)
         ( keyvalues["historic"]  == "locomotive"                )  or
         ( keyvalues["historic"]  == "martello_tower"            )  or
         ( keyvalues["historic"]  == "martello_tower;bunker"     )  or
-        ( keyvalues["historic"]  == "martello_tower;fort"       )  or
         ( keyvalues["historic"]  == "maypole"                   )  or
         ( keyvalues["historic"]  == "memorial"                  )  or
         ( keyvalues["historic"]  == "mill"                      )  or
