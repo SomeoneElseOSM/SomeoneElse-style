@@ -1028,7 +1028,6 @@ function filter_tags_generic(keyvalues, nokeys)
           ( keyvalues["shoulder"] == "right"           ) or 
           ( keyvalues["shoulder"] == "yes"             ) or
           ( keyvalues["hard_shoulder"] == "yes"        ) or
-          ( keyvalues["hardshoulder"]  == "yes"        ) or
           ( keyvalues["cycleway"] == "track"           ) or
           ( keyvalues["cycleway"] == "opposite_track"  ) or
           ( keyvalues["cycleway"] == "yes"             ) or
@@ -1096,7 +1095,6 @@ function filter_tags_generic(keyvalues, nokeys)
           ( keyvalues["shoulder"] == "right"           ) or 
           ( keyvalues["shoulder"] == "yes"             ) or
           ( keyvalues["hard_shoulder"] == "yes"        ) or
-          ( keyvalues["hardshoulder"]  == "yes"        ) or
           ( keyvalues["cycleway"] == "track"           ) or
           ( keyvalues["cycleway"] == "opposite_track"  ) or
           ( keyvalues["cycleway"] == "yes"             ) or

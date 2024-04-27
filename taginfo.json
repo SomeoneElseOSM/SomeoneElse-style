@@ -1255,6 +1255,8 @@
     { "key": "guide_type", "value": "intermediary", "description": "Show intermediary guideposts as route markers" },
     { "key": "harbour", "description": "Harbour landuse" },
     { "key": "harbour", "value": "yes", "description": "Harbour landuse" },
+    { "key": "hard_shoulder", "description": "Roads with shoulders are shown as having somewhere to walk" },
+    { "key": "hard_shoulder", "value": "yes", "description": "Roads with shoulders are shown as having somewhere to walk" },
     { "key": "hazard", "description": "A couple of specific hazards - hogweed and shooting ranges" },
     { "key": "hazard", "value": "plant", "description": "Detect hogweed" },
     { "key": "hazard", "value": "shooting_range", "description": "Detect shooting ranges" },
