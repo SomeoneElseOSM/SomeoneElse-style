@@ -6,6 +6,7 @@ Changed the brand check to not append brand if it's contained within the name.
 Added "playground=trampoline" to complement "leisure=trampoline"; most of the latter are no longer in the data but new ones are still being added.
 Removed "historic=martello_tower;fort", no longer in the data.
 Added "waterway=rapids" to the list of detected linear waterway features.
+Show "waterway=cave_of_debouchement" as a "wet sinkhole".
 
 ## 06/04/2024
 Show departure boards that exist on their own, not attached to bus stops etc.

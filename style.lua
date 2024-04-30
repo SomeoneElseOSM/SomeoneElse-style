@@ -2418,6 +2418,14 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Inverse springs - where water seeps below ground
+-- We already show "dry" sinkholes; show these in the same way.
+-- ----------------------------------------------------------------------------
+   if ( keyvalues["waterway"] == "cave_of_debouchement" ) then
+      keyvalues["natural"] = "sinkhole"
+   end
+
+-- ----------------------------------------------------------------------------
 -- Beer gardens etc.
 -- ----------------------------------------------------------------------------
    if (( keyvalues["amenity"] == "beer_garden" ) or

@@ -3390,6 +3390,7 @@
     { "key": "waterway", "value": "abandoned_canal", "description": "Many water features shown" },
     { "key": "waterway", "value": "brook", "description": "Many water features shown" },
     { "key": "waterway", "value": "canal", "description": "Many water features shown" },
+    { "key": "waterway", "value": "cave_of_debouchement", "description": "Many water features shown" },
     { "key": "waterway", "value": "derelict_canal", "description": "Many water features shown" },
     { "key": "waterway", "value": "disused_canal", "description": "Many water features shown" },
     { "key": "waterway", "value": "ditch", "description": "Many water features shown" },
