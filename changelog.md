@@ -7,6 +7,7 @@ Added "playground=trampoline" to complement "leisure=trampoline"; most of the la
 Removed "historic=martello_tower;fort", no longer in the data.
 Added "waterway=rapids" to the list of detected linear waterway features.
 Show "waterway=cave_of_debouchement" as a "wet sinkhole".
+Remove "crossing=traffic_signals;pelican", no longer in the data.
 
 ## 06/04/2024
 Show departure boards that exist on their own, not attached to bus stops etc.

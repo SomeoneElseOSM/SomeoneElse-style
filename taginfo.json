@@ -792,7 +792,6 @@
     { "key": "crossing", "value": "traffic_lights", "description": "Shown as 'highway=traffic_signals'" },
     { "key": "crossing", "value": "traffic_signals", "description": "Shown as 'highway=traffic_signals'" },
     { "key": "crossing", "value": "traffic_signals;island", "description": "Shown as 'highway=traffic_signals'" },
-    { "key": "crossing", "value": "traffic_signals;pelican", "description": "Shown as 'highway=traffic_signals'" },
     { "key": "cuisine", "description": "Many fast food cuisines used to determine fast food icon" },
     { "key": "cuisine", "value": "afghan", "description": "Shown as fast food place that servers indian or similar food" },
     { "key": "cuisine", "value": "american", "description": "Shown as fast food place that servers burgers" },

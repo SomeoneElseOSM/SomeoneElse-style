@@ -5859,8 +5859,7 @@ function filter_tags_generic(keyvalues, nokeys)
         ( keyvalues["crossing"] == "pegasus"                 )  or
         ( keyvalues["crossing"] == "pedestrian_signals"      )  or
         ( keyvalues["crossing"] == "light_controlled"        )  or
-        ( keyvalues["crossing"] == "light controlled"        )  or
-        ( keyvalues["crossing"] == "traffic_signals;pelican" )) and
+        ( keyvalues["crossing"] == "light controlled"        )) and
        (  keyvalues["highway"]  == nil                        )) then
       keyvalues["highway"] = "traffic_signals"
       keyvalues["crossing"] = nil
