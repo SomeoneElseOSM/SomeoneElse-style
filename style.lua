@@ -2380,6 +2380,16 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- There's a bit of "tagging for the renderer" going on with some large museums
+-- ----------------------------------------------------------------------------
+   if ((  keyvalues["tourism"] == "museum"          ) and 
+       (( keyvalues["leisure"] == "garden"         )  or
+        ( keyvalues["leisure"] == "nature_reserve" )  or
+        ( keyvalues["leisure"] == "park"           ))) then
+      keyvalues["leisure"] = nil
+   end
+
+-- ----------------------------------------------------------------------------
 -- Detect unusual taggings of hills
 -- ----------------------------------------------------------------------------
    if (( keyvalues["natural"] == "peak" ) and
@@ -9090,6 +9100,14 @@ function filter_tags_generic(keyvalues, nokeys)
 
       keyvalues["leisure"] = "leisurenonspecific"
       keyvalues["disused:amenity"] = nil
+   end
+
+-- ----------------------------------------------------------------------------
+-- Some museum / leisure combinations are likely more "leisury" than "museumy"
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["tourism"] == "museum"             ) and 
+       ( keyvalues["leisure"] == "leisurenonspecific" )) then
+      keyvalues["tourism"] = nil
    end
 
 -- ----------------------------------------------------------------------------

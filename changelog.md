@@ -8,6 +8,8 @@ Removed "historic=martello_tower;fort", no longer in the data.
 Added "waterway=rapids" to the list of detected linear waterway features.
 Show "waterway=cave_of_debouchement" as a "wet sinkhole".
 Remove "crossing=traffic_signals;pelican", no longer in the data.
+Show larger museums etc. at lower zoom levels.
+Where museums have some other tag (e.g. "park"), decide which tag to use to show them.
 
 ## 06/04/2024
 Show departure boards that exist on their own, not attached to bus stops etc.
