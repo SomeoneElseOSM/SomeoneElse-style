@@ -1,7 +1,7 @@
 # Changes made to this rendering
 This page describes changes made [here](https://github.com/SomeoneElseOSM/SomeoneElse-style), [here](https://github.com/SomeoneElseOSM/SomeoneElse-style-legend) and [here](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT), and visible [here](//map.atownsend.org.uk/maps/map/map.html).
 
-## As yet unreleased
+## 12/05/2024
 Changed the brand check to not append brand if it's contained within the name.
 Added "playground=trampoline" to complement "leisure=trampoline"; most of the latter are no longer in the data but new ones are still being added.
 Removed "historic=martello_tower;fort", no longer in the data.
