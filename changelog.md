@@ -1,6 +1,9 @@
 # Changes made to this rendering
 This page describes changes made [here](https://github.com/SomeoneElseOSM/SomeoneElse-style), [here](https://github.com/SomeoneElseOSM/SomeoneElse-style-legend) and [here](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT), and visible [here](//map.atownsend.org.uk/maps/map/map.html).
 
+## 13/05/2024
+Rearranged long lines in the changelog for improved display on mobile for those with relatively narrow phones and larger text settings for legibility.
+
 ## 12/05/2024
 Changed the brand check to not append brand if it's contained within the name.
 Added "playground=trampoline" to complement "leisure=trampoline"; most of the latter are no longer in the data but new ones are still being added.
