@@ -374,8 +374,7 @@ OSMUK cadastral parcels added as an extra layer.
 
 ## 08/05/2023
 Removed shop=flower; no longer in the data.
-Suggested by https://community.openstreetmap.org/t/tagging-for-outdoor-education-centres/98422 , 
-Add support for "amenityoutdoor_education_centre".  Low usage currently.".
+Suggested by [this forum post](https://community.openstreetmap.org/t/tagging-for-outdoor-education-centres/98422), add support for "amenityoutdoor_education_centre".  Low usage currently.
 Support healthcare=doctor as a synonym for amenity=doctors.
 Similarly support other "healthcare" synonyms, and some others (e.g. "midwife").
 Removed amenity=doctor; no longer in the data.
@@ -544,7 +543,7 @@ Show healthcare=sample_collection as clinic.
 Added office=forestry to the list of government offices.
 
 ## 23/12/2022
-Synonyms for grassy farmland expanded to match grassy values at http://taginfo.geofabrik.de/europe/britain-and-ireland/keys/farmland#values .
+Synonyms for grassy farmland expanded to match grassy values in [taginfo](https://taginfo.geofabrik.de/europe/britain-and-ireland/keys/farmland#values).
 Added emergency=rescue_box, which has cropped up as a value by stealth.
 Under the diplomatic key, embassy is now being used for non-embassies, so process sub-tags of that and render non-embassies as offices.
 Likewise, consulate.
@@ -580,17 +579,17 @@ Send living_street through to the database with that tag, not "residential".  Re
 Render Quiet Lanes on tertiary, unclassified and residential as living_street.
 
 ## 01/12/2022
-The automatic permalinks at https://map.atownsend.org.uk now support layers as well as zoom levels and location.  See https://github.com/SomeoneElseOSM/SomeoneElse-map/tree/leaflet-hash-plus-1 .  See also this [diary entry](https://www.openstreetmap.org/user/SomeoneElse/diary/400496).
+The automatic permalinks at [map.atownsend.org.uk](https://map.atownsend.org.uk) now support layers as well as zoom levels and location.  See this [diary entry](https://www.openstreetmap.org/user/SomeoneElse/diary/400496).
 
 ## 28/11/2022
-Update https://map.atownsend.org.uk to use https://github.com/mlevans/leaflet-hash .
+Update [map.atownsend.org.uk](https://map.atownsend.org.uk) to use "[leaflet-hash](https://github.com/mlevans/leaflet-hash)".
 
 ## 27/11/2022
 Render "tower:type=chimney" and "building=chimney" as "chimney" or "bigchimney", depending on height.
 Render office=medical_supply as shop=medical_supply.
 Added railway:historic to the style, for compatibility with mkgmap style.
 If it has no other tags, ensure that military bunkers appear as buildings.
-Updated (in SomeoneElse-style) update_render.sh, update_carto.sh and (in SomeoneElse-style-legend) update_generated_legend.sh to link to https://stackoverflow.com/a/73836045/8145448 .
+Updated (in SomeoneElse-style) update_render.sh, update_carto.sh and (in SomeoneElse-style-legend) update_generated_legend.sh to link comments to [stackoverflow](https://stackoverflow.com/a/73836045/8145448).
 
 ## 13/11/2022
 Show reservoir_covered as building=roof, so that they don't blend in with a wider industrial area.
@@ -766,7 +765,7 @@ Handle club=sport via noncommercial leisure rather than landuse.
 If there's no other information with a club=yes, assume it is "leisure".
 
 ## 21/11/2021
-Change start node of legend from 9100000000 to 29100000000 as OSM has now caught up: https://www.openstreetmap.org/node/9100000000 .
+Change start node of legend from 9100000000 to 29100000000 as OSM has now caught up: [node 9100000000 in OSM](https://www.openstreetmap.org/node/9100000000).
 Don't show long distance path relations without name or colour.
 If something is tagged as both an archaelogical site and a place, lose the place tag.
 Don't display building names for amenities if the building tag is empty, or if a name for an amenity is already displayed.
