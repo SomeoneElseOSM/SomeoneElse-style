@@ -1148,7 +1148,7 @@ When checking if a pub is also a hotel, also check for B&Bs etc. (and render as 
 Render MTB trails like cycle routes but with the dots and text closer together.
 Added icon for various alcohol shops, mobile phone and confectionery shops.
 Moved "shop=party" to "gift" and consolidated "spa" as "beauty".
-Added "motor_accessories" as "car_parts", "petfood" as "pet", "guns" as "shopnonspecific", "ship_chandler","chandlers","kitchen;bathroom_furnishing" as "furniture", "tan","nail_salon" as "beauty", "locksmiths" as "shopnonspecific" and "christmas" as "gift".
+Added "motor_accessories" as "car_parts", "petfood" as "pet", "guns" as "shopnonspecific", "ship_chandler", "chandlers", "kitchen;bathroom_furnishing" as "furniture", "tan", "nail_salon" as "beauty", "locksmiths" as "shopnonspecific" and "christmas" as "gift".
 Added boat_rental as nonspecific leisure.
 
 ## 28/05/2018 release
