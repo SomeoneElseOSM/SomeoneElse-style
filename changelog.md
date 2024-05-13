@@ -74,7 +74,7 @@ Removed "man_made=telephone_kiosk" and "telephone_kiosk=K4", no longer in the da
 
 ## 06/02/2024
 Nudge the text on artwork names down slightly at high zooms to avoid it being obscured.
-Removed "cuisine=ice_cream;coffee;waffles;crepes", no longer in the data.
+Removed "cuisine" check for "ice_cream;coffee;waffles;crepes" as it is no longer in the data.
 Moved some more historic items into the "show at lower zoom if they are larger" section.
 Changed to historic size thresholds to show some medium sized items earlier.
 Removed "emergency_service=air", no longer in the data.
@@ -558,7 +558,7 @@ Don't show stand-up benches as benches.
 Detect dentists that are also clinics etc.
 
 ## 12/12/2022
-Detect Quiet Lanes via "designation=quiet_lane;unclassified_highway" as well.
+Detect Quiet Lanes via a "designation" of "quiet_lane;unclassified_highway" as well as just "quiet_lane".
 Potentially detect bulk_purchase=only, even though it isn't widely used in UK/IE.
 "archaeological_site=megalith" has appeared as a duplicate of "site_type=megalith", so adding support for that.
 Don't show motorway junction names if name:signed=no.
