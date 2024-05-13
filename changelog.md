@@ -1237,7 +1237,7 @@ Render building=canopy as building=roof.
 Change name of motorway junctions to black (to match the ref).
 Render ncn and rcn in a similar way to nwn, rwn and lwn, except use the ref as the label (unless National Byway, in which case the name is needed to inclde loop info).  Also nhn, and add to legend.
 Render highway=unsurfaced and gallop as pathwide (track).
-Render highway=waymarker as tourism=information;information=route_marker.
+Render "highway=waymarker" as "tourism=information" and "information=route_marker".
 Moved highway=road to a lower z_order.
 Render linear cycle barriers as fence.
 Removed catch-all for linear (but not area) barriers.
