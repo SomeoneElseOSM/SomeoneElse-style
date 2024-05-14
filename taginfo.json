@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20240502T095000Z",
+  "data_updated": "20240514T115800Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -2321,7 +2321,6 @@
     { "key": "protection_title", "description": "Detect commons" },
     { "key": "protection_title", "value": "common", "description": "Detect commons" },
     { "key": "prow_ref", "description": "Indicates an unsigned ref" },
-    { "key": "prow:ref", "description": "Indicates an unsigned ref" },
     { "key": "pub", "description": "Detect pubs that self-identify as micropubs" },
     { "key": "pub", "value": "micro", "description": "Detect pubs that self-identify as micropubs" },
     { "key": "pub", "value": "micropub", "description": "Detect pubs that self-identify as micropubs" },

@@ -534,15 +534,6 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
--- Consolidate various prow_ref variants
--- ----------------------------------------------------------------------------
-   if (( keyvalues["prow:ref"] ~= nil ) and
-       ( keyvalues["prow_ref"] == nil )) then
-      keyvalues["prow_ref"] = keyvalues["prow:ref"]
-      keyvalues["prow:ref"] = nil
-   end
-
--- ----------------------------------------------------------------------------
 -- Here we apply the track grade rendering to road designations:
 --   unpaved roads                      unpaved
 --   narrow unclassigned_county_road    ucrnarrow

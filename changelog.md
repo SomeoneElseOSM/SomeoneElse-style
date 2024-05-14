@@ -1,6 +1,9 @@
 # Changes made to this rendering
 This page describes changes made [here](https://github.com/SomeoneElseOSM/SomeoneElse-style), [here](https://github.com/SomeoneElseOSM/SomeoneElse-style-legend) and [here](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT), and visible [here](//map.atownsend.org.uk/maps/map/map.html).
 
+## As yet unreleased
+Removed "[prow:ref](https://taginfo.openstreetmap.org/keys/prow%3Aref#overview)", no longer in the data.
+
 ## 13/05/2024
 Rearranged long lines in the changelog for improved display on mobile for those with relatively narrow phones and larger text settings for legibility.
 
