@@ -5,6 +5,7 @@ This page describes changes made [here](https://github.com/SomeoneElseOSM/Someon
 Removed "[prow:ref](https://taginfo.openstreetmap.org/keys/prow%3Aref#overview)", no longer in the data.
 Detect "[amenity=social_facility](https://taginfo.openstreetmap.org/tags/amenity=social_facility#overview); [social_facility=shopmobility](https://taginfo.openstreetmap.org/tags/social_facility=shopmobility#overview)" as shopmobility.
 Delect "[shop=mobility_hire](https://taginfo.openstreetmap.org/tags/shop=mobility_hire#overview)" as shopmobility if the name also matches.
+Use various "[produce](https://taginfo.openstreetmap.org/keys/produce#overview)" values to detect grassy farmland.
 
 ## 13/05/2024
 Rearranged long lines in the changelog for improved display on mobile for those with relatively narrow phones and larger text settings for legibility.
