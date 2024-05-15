@@ -1947,7 +1947,7 @@
     { "key": "memorial", "value": "pavement plaque", "description": "Rendered as memorial pavement plaque" },
     { "key": "memorial", "value": "pavement_plaque", "description": "Rendered as memorial pavement plaque" },
     { "key": "memorial", "value": "plaque", "description": "Rendered as memorial plaque" },
-    { "key": "memorial", "value": "plate", "description": "Rendered as memorial plate" },
+    { "key": "memorial", "value": "plate", "description": "Not a current value in OSM data.  Rendered as memorial plate" },
     { "key": "memorial", "value": "sculpture", "description": "Rendered as memorial sculpture" },
     { "key": "memorial", "value": "statue", "description": "Rendered as memorial statue" },
     { "key": "memorial", "value": "stone", "description": "Rendered as memorial stone" },
