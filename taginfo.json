@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20240514T115800Z",
+  "data_updated": "20240515T233700Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -2816,6 +2816,7 @@
     { "key": "shop", "value": "minicab", "description": "Various shops shown" },
     { "key": "shop", "value": "mobile_phone", "description": "Various shops shown" },
     { "key": "shop", "value": "mobility", "description": "Various shops shown" },
+    { "key": "shop", "value": "mobility_hire", "description": "Various shops shown" },
     { "key": "shop", "value": "model", "description": "Various shops shown" },
     { "key": "shop", "value": "money", "description": "Various shops shown" },
     { "key": "shop", "value": "money_lender", "description": "Various shops shown" },
@@ -3058,6 +3059,7 @@
     { "key": "social_facility", "value": "residential_home", "description": "Detect social_facility without amenity or office" },
     { "key": "social_facility", "value": "outreach", "description": "Detect social_facility without amenity or office" },
     { "key": "social_facility", "value": "food_bank", "description": "Detect social_facility without amenity or office" },
+    { "key": "social_facility", "value": "shopmobility", "description": "Detect shopmobility" },
     { "key": "species", "description": "Detect hogweed hazard" },
     { "key": "species", "value": "Heracleum mantegazzianum", "description": "Detect hogweed hazard" },
     { "key": "sport", "description": "Used to classify and clarify many other tags" },

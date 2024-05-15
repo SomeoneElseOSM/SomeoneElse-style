@@ -8063,12 +8063,15 @@ function filter_tags_generic(keyvalues, nokeys)
        (   keyvalues["amenity"]  == "mobility_equipment_hire"  ) or
        (   keyvalues["amenity"]  == "mobility_aids_hire"       ) or
        (   keyvalues["amenity"]  == "shop_mobility"            ) or
+       ((  keyvalues["amenity"]  == "social_facility"         )  and
+        (  keyvalues["social_facility"] == "shopmobility"     )) or
        ((( keyvalues["shop"]     == "yes"                    )   or
          ( keyvalues["shop"]     == "mobility"               )   or
+         ( keyvalues["shop"]     == "mobility_hire"          )   or
          ( keyvalues["building"] == "yes"                    )   or
          ( keyvalues["building"] == "unit"                   ))  and
         (( keyvalues["name"]     == "Shopmobility"           )   or
-         (  keyvalues["name"]    == "Shop Mobility"          )))) then
+         ( keyvalues["name"]     == "Shop Mobility"          )))) then
       keyvalues["landuse"] = "unnamedcommercial"
       keyvalues["amenity"] = "shopmobility"
    end
