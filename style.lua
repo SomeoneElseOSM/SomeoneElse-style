@@ -2716,7 +2716,7 @@ function filter_tags_generic(keyvalues, nokeys)
         ( keyvalues["farmland"] == "heath"                      )  or
         ( keyvalues["farmland"] == "paddock"                    )  or
         ( keyvalues["farmland"] == "meadow"                     )  or
-        ( keyvalues["farmland"] == "pasture+heath"              )  or
+        ( keyvalues["farmland"] == "pasture;heath"              )  or
         ( keyvalues["farmland"] == "turf_production"            )  or
         ( keyvalues["farmland"] == "grassland"                  )  or
         ( keyvalues["farmland"] == "wetland"                    )  or
@@ -2726,8 +2726,7 @@ function filter_tags_generic(keyvalues, nokeys)
         ( keyvalues["farmland"] == "grass"                      )  or
         ( keyvalues["farmland"] == "crofts"                     )  or
         ( keyvalues["farmland"] == "scrub"                      )  or
-        ( keyvalues["farmland"] == "pasture+wetland"            )  or
-        ( keyvalues["farmland"] == "dairy"                      )  or
+        ( keyvalues["farmland"] == "pasture;wetland"            )  or
         ( keyvalues["farmland"] == "equestrian"                 )  or
         ( keyvalues["animal"]   == "cow"                        )  or
         ( keyvalues["animal"]   == "cattle"                     )  or
