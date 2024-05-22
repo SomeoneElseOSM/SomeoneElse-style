@@ -1,5 +1,5 @@
 # Changes made to this rendering
-This page describes changes made [here](https://github.com/SomeoneElseOSM/SomeoneElse-style), [here](https://github.com/SomeoneElseOSM/SomeoneElse-style-legend) and [here](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT), and visible [here](//map.atownsend.org.uk/maps/map/map.html).
+This page describes changes made in these projects: [SomeoneElse-style](https://github.com/SomeoneElseOSM/SomeoneElse-style), [SomeoneElse-style-legend](https://github.com/SomeoneElseOSM/SomeoneElse-style-legend) and [openstreetmap-carto-AJT](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT), and visible [on this site](//map.atownsend.org.uk/maps/map/map.html).
 
 ## As yet unreleased
 Removed "[prow:ref](https://taginfo.openstreetmap.org/keys/prow%3Aref#overview)", no longer in the data.
@@ -14,13 +14,13 @@ Rearranged long lines in the changelog for improved display on mobile for those 
 
 ## 12/05/2024
 Changed the brand check to not append brand if it's contained within the name.
-Added "playground=trampoline" to complement "leisure=trampoline"; most of the latter are no longer in the data but new ones are still being added.
-Removed "historic=martello_tower;fort", no longer in the data.
-Added "waterway=rapids" to the list of detected linear waterway features.
-Show "waterway=cave_of_debouchement" as a "wet sinkhole".
-Remove "crossing=traffic_signals;pelican", no longer in the data.
+Added "[playground=trampoline](https://taginfo.openstreetmap.org/tags/playground=trampoline#overview)" to complement "[leisure=trampoline](https://taginfo.openstreetmap.org/tags/leisure=trampoline#overview)"; most of the latter are no longer in the data but new ones are still being added.
+Removed "[historic=martello_tower;fort](https://taginfo.openstreetmap.org/tags/historic=martello_tower;fort#overview)", no longer in the data.
+Added "[waterway=rapids](https://taginfo.openstreetmap.org/tags/waterway=rapids#overview)" to the list of detected linear waterway features.
+Show "[waterway=cave_of_debouchement](https://taginfo.openstreetmap.org/tags/waterway=cave_of_debouchement#overview)" as a "wet sinkhole".
+Remove "[crossing=traffic_signals;pelican](https://taginfo.openstreetmap.org/tags/crossing=traffic_signals;pelican#overview)", no longer in the data.
 Show larger museums etc. at lower zoom levels.
-Where museums have some other tag (e.g. "park"), decide which tag to use to show them.
+Where museums have some other tag (e.g. "[park](https://taginfo.openstreetmap.org/tags/leisure=park#overview)"), decide which tag to use to show them.
 
 ## 06/04/2024
 Show departure boards that exist on their own, not attached to bus stops etc.
