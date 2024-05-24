@@ -16,7 +16,7 @@ The projects are:
 Related are:
 
 * [mkgmap_style_ajt](https://github.com/SomeoneElseOSM/mkgmap_style_ajt) - similar to "SomeoneElse-style", but for Garmin devices.
-* [SomeoneElse-vector-extract](https://github.com/SomeoneElseOSM/SomeoneElse-vector-extract) - similar to "SomeoneElse-style", but extracting data into a .mbtiles file.
+* [SomeoneElse-vector-extract](https://github.com/SomeoneElseOSM/SomeoneElse-vector-extract) - similar to "SomeoneElse-style", but extracting data into a .mbtiles file.  Some lua code from "SomeoneElse-style" is shared with "SomeoneElse-vector-extract".
 * [SomeoneElse-vector-web-display](https://github.com/SomeoneElseOSM/SomeoneElse-vector-web-display) - similar to "openstreetmap-carto-AJT", but reading data from a .mbtiles file for display in a web page.
 
 The map style is designed for "England and Wales-based rural pedestrians".  The example map area also covers Ireland and Scotland.
