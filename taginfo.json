@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20240520T233200Z",
+  "data_updated": "20240525T005200Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -1230,7 +1230,8 @@
     { "key": "generator:method", "value": "photovoltaic", "description": "Detect solar panels" },
     { "key": "generator:source", "description": "Detect wind turbines" },
     { "key": "generator:source", "value": "wind", "description": "Detect wind turbines" },
-    { "key": "geological", "description": "Detect palaeontological sites" },
+    { "key": "geological", "description": "Detect palaeontological sites and glacial erratics" },
+    { "key": "geological", "value": "glacial_erratic", "description": "Shown as natural=rock, if not sport=climbing or climbing=boulder" },
     { "key": "geological", "value": "palaeontological_site", "description": "Shown as palaeontological site" },
     { "key": "golf", "description": "Various golf items rendered" },
     { "key": "golf", "value": "ball_washer", "description": "Rendered as golf ball washer" },
@@ -2038,7 +2039,6 @@
     { "key": "natural", "value": "dunes", "description": "Rendered as natural=sand" },
     { "key": "natural", "value": "earth_bank", "description": "Shown as a type of embankment" },
     { "key": "natural", "value": "embankment", "description": "Treated as a synonym for man_made=embankment" },
-    { "key": "natural", "value": "erratic", "description": "Shown as natural=rock, if not sport=climbing or climbing=boulder" },
     { "key": "natural", "value": "fell", "description": "Various natural features rendered" },
     { "key": "natural", "value": "floodplain", "description": "Various natural features rendered" },
     { "key": "natural", "value": "flower_bed", "description": "Synonym for leisure=garden, if no other appropriate tag." },

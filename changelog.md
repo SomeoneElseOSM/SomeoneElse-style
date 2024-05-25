@@ -8,6 +8,7 @@ Delect "[shop=mobility_hire](https://taginfo.openstreetmap.org/tags/shop=mobilit
 Use various "[produce](https://taginfo.openstreetmap.org/keys/produce#overview)" values to detect grassy farmland.
 Removed "[farmland=dairy](https://taginfo.openstreetmap.org/tags/farmland=dairy#overview)", no longer in the data.
 Changed "[farmland=pasture+heath](https://taginfo.openstreetmap.org/tags/farmland=pasture+heath#overview)" and "[farmland=pasture+wetland](https://taginfo.openstreetmap.org/tags/farmland=pasture+wetland#overview)" to their semicolon equivalents, which objects with these tags these have been changed to.
+"[natural=erratic](https://taginfo.openstreetmap.org/tags/natural=erratic#overview)" has been changed to "[geological=glacial_erratic](https://taginfo.openstreetmap.org/tags/geological=glacial_erratic#overview)" in the data.
 
 ## 13/05/2024
 Rearranged long lines in the changelog for improved display on mobile for those with relatively narrow phones and larger text settings for legibility.
