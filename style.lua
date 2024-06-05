@@ -2427,6 +2427,16 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Boatyards
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["waterway"]   == "boatyard" ) or
+       ( keyvalues["industrial"] == "boatyard" )) then
+      keyvalues["amenity"] = "boatyard"
+      keyvalues["waterway"] = nil
+      keyvalues["industrial"] = nil
+   end
+
+-- ----------------------------------------------------------------------------
 -- Beer gardens etc.
 -- ----------------------------------------------------------------------------
    if (( keyvalues["amenity"] == "beer_garden" ) or

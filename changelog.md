@@ -9,6 +9,7 @@ Use various "[produce](https://taginfo.openstreetmap.org/keys/produce#overview)"
 Removed "[farmland=dairy](https://taginfo.openstreetmap.org/tags/farmland=dairy#overview)", no longer in the data.
 Changed "[farmland=pasture+heath](https://taginfo.openstreetmap.org/tags/farmland=pasture+heath#overview)" and "[farmland=pasture+wetland](https://taginfo.openstreetmap.org/tags/farmland=pasture+wetland#overview)" to their semicolon equivalents, which objects with these tags these have been changed to.
 "[natural=erratic](https://taginfo.openstreetmap.org/tags/natural=erratic#overview)" has been changed to "[geological=glacial_erratic](https://taginfo.openstreetmap.org/tags/geological=glacial_erratic#overview)" in the data.
+Show "[waterway=boatyard](https://taginfo.openstreetmap.org/tags/waterway=boatyard#overview)" and "[industrial=boatyard](https://taginfo.openstreetmap.org/tags/industrial=boatyard#overview)" as boatyards.
 
 ## 04/06/2024
 Updated the OSM OpenMap Local layer to the new OpenStreetMap-hosted April 2024 tiles.
