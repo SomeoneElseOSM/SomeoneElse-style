@@ -11,6 +11,7 @@ Changed "[farmland=pasture+heath](https://taginfo.openstreetmap.org/tags/farmlan
 "[natural=erratic](https://taginfo.openstreetmap.org/tags/natural=erratic#overview)" has been changed to "[geological=glacial_erratic](https://taginfo.openstreetmap.org/tags/geological=glacial_erratic#overview)" in the data.
 Show "[waterway=boatyard](https://taginfo.openstreetmap.org/tags/waterway=boatyard#overview)" and "[industrial=boatyard](https://taginfo.openstreetmap.org/tags/industrial=boatyard#overview)" as boatyards.
 Add more noncarpeted "[floor:material](https://taginfo.openstreetmap.org/keys/floor%3Amaterial#overview)" values.
+Detect more tags that can be interpreted as drinking water and non-drinking water.
 
 ## 04/06/2024
 Updated the OSM OpenMap Local layer to the new OpenStreetMap-hosted April 2024 tiles.
