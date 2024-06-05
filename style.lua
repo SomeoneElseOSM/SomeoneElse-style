@@ -3143,13 +3143,18 @@ function filter_tags_generic(keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
    if (( keyvalues["description:floor"] ~= nil                  ) or
        ( keyvalues["floor:material"]    == "brick"              ) or
+       ( keyvalues["floor:material"]    == "brick;concrete"     ) or
        ( keyvalues["floor:material"]    == "concrete"           ) or
        ( keyvalues["floor:material"]    == "grubby carpet"      ) or
        ( keyvalues["floor:material"]    == "lino"               ) or
        ( keyvalues["floor:material"]    == "lino;carpet"        ) or
        ( keyvalues["floor:material"]    == "lino;rough_wood"    ) or
        ( keyvalues["floor:material"]    == "lino;tiles;stone"   ) or
+       ( keyvalues["floor:material"]    == "paving_stones"      ) or
+       ( keyvalues["floor:material"]    == "rough_carpet"       ) or
        ( keyvalues["floor:material"]    == "rough_wood"         ) or
+       ( keyvalues["floor:material"]    == "rough_wood;carpet"  ) or
+       ( keyvalues["floor:material"]    == "rough_wood;lino"    ) or
        ( keyvalues["floor:material"]    == "rough_wood;stone"   ) or
        ( keyvalues["floor:material"]    == "rough_wood;tiles"   ) or
        ( keyvalues["floor:material"]    == "slate"              ) or
