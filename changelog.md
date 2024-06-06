@@ -1,7 +1,7 @@
 # Changes made to this rendering
 This page describes changes made in these projects: [SomeoneElse-style](https://github.com/SomeoneElseOSM/SomeoneElse-style), [SomeoneElse-style-legend](https://github.com/SomeoneElseOSM/SomeoneElse-style-legend) and [openstreetmap-carto-AJT](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT), and visible [on this site](//map.atownsend.org.uk/maps/map/map.html).
 
-## As yet unreleased
+## 06/06/2024
 Removed "[prow:ref](https://taginfo.openstreetmap.org/keys/prow%3Aref#overview)", no longer in the data.
 Detect "[amenity=social_facility](https://taginfo.openstreetmap.org/tags/amenity=social_facility#overview); [social_facility=shopmobility](https://taginfo.openstreetmap.org/tags/social_facility=shopmobility#overview)" as shopmobility.
 Delect "[shop=mobility_hire](https://taginfo.openstreetmap.org/tags/shop=mobility_hire#overview)" as shopmobility if the name also matches.
