@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20240605T225200Z",
+  "data_updated": "20240611T115900Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -123,7 +123,6 @@
     { "key": "amenity", "value": "bingo", "description": "Shown as leisure=nonspecific" },
     { "key": "amenity", "value": "bird_hide", "description": "Leisure amenities shown in green" },
     { "key": "amenity", "value": "boat_rental", "description": "Shown as leisure=nonspecific" },
-    { "key": "amenity", "value": "book_exchange", "description": "Synonym for public_bookcase" },
     { "key": "amenity", "value": "brothel", "description": "Shown as leisure=nonspecific" },
     { "key": "amenity", "value": "building_society", "description": "Synonym for bank" },
     { "key": "amenity", "value": "bureau_de_change", "description": "Rendered as nonspecific shop" },

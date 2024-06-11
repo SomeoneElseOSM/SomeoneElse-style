@@ -2078,7 +2078,6 @@ function filter_tags_generic(keyvalues, nokeys)
              keyvalues["emergency"] = nil
          else
             if (( keyvalues["amenity"] == "public_bookcase" )  or
-                ( keyvalues["amenity"] == "book_exchange"   )  or
                 ( keyvalues["amenity"] == "library"         )) then
                keyvalues["amenity"] = "boothlibrary"
                keyvalues["disused:amenity"] = nil
@@ -3907,14 +3906,6 @@ function filter_tags_generic(keyvalues, nokeys)
             end
           end
       end
-   end
-
--- ----------------------------------------------------------------------------
--- Public bookcases are displayed as a small L, except for those in phone
--- boxes
--- ----------------------------------------------------------------------------
-   if ( keyvalues["amenity"] == "book_exchange" ) then
-      keyvalues["amenity"] = "public_bookcase"
    end
 
 -- ----------------------------------------------------------------------------
