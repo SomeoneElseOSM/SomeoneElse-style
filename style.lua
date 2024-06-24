@@ -9602,12 +9602,18 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
--- If a bus stop pole exists but it's known to be disused, indicate that
+-- If a bus stop pole exists but it's known to be disused, indicate that.
+--
+-- We also show bus stands as disused bus stops - they are somewhere where you
+-- might expect to be able to get on a bus, but cannot.
 -- ----------------------------------------------------------------------------
-   if (( keyvalues["disused:highway"]    == "bus_stop" ) and
-       ( keyvalues["physically_present"] == "yes"      )) then
+   if ((( keyvalues["disused:highway"]    == "bus_stop"  )  and
+        ( keyvalues["physically_present"] == "yes"       )) or
+       (  keyvalues["highway"]            == "bus_stand"  ) or
+       (  keyvalues["amenity"]            == "bus_stand"  )) then
       keyvalues["highway"] = "bus_stop_disused_pole"
       keyvalues["disused:highway"] = nil
+      keyvalues["amenity"] = nil
 
       if ( keyvalues["name"] ~= nil ) then
          keyvalues["ele"] = keyvalues["name"]

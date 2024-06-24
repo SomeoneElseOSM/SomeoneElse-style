@@ -3,6 +3,7 @@ This page describes changes made in these projects: [SomeoneElse-style](https://
 
 ## As yet unreleased
 Removed "[amenity=book_exchange](https://taginfo.openstreetmap.org/tags/amenity=book_exchange#overview)", no longer in the data.
+Show [bus stands](https://taginfo.openstreetmap.org/tags/highway=bus_stand#overview) as [disused bus stops](https://taginfo.openstreetmap.org/tags/disused:highway=bus_stop#overview) (since you cannot get a bus there).
 
 ## 06/06/2024
 Removed "[prow:ref](https://taginfo.openstreetmap.org/keys/prow%3Aref#overview)", no longer in the data.

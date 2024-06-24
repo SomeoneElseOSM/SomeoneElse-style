@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20240612T162000Z",
+  "data_updated": "20240624T174300Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -128,6 +128,7 @@
     { "key": "amenity", "value": "bureau_de_change", "description": "Rendered as nonspecific shop" },
     { "key": "amenity", "value": "bus_depot", "description": "Synonym for indstrial landuse" },
     { "key": "amenity", "value": "bus_station", "description": "Shown as blue bus station" },
+    { "key": "amenity", "value": "bus_stand", "description": "Shown as disused bus stop" },
     { "key": "amenity", "value": "bus_stop", "description": "Shown as blue bus stop" },
     { "key": "amenity", "value": "cafe", "description": "Cafes: Undeline shows wheelchair tags, roof shows accommodation available" },
     { "key": "amenity", "value": "car_boot_sale", "description": "Synonym for meadow" },
@@ -1336,6 +1337,7 @@
     { "key": "highway", "description": "All sorts of highways" },
     { "key": "highway", "value": "bridleway", "description": "Shown as bridleway" },
     { "key": "highway", "value": "bus_guideway", "description": "Shown as bus guideway" },
+    { "key": "highway", "value": "bus_stand", "description": "Shown as disused bus stop" },
     { "key": "highway", "value": "bus_stop", "description": "Shown as bus stop" },
     { "key": "highway", "value": "busway", "description": "Shown as service" },
     { "key": "highway", "value": "construction", "description": "Shown under-construction highways" },
