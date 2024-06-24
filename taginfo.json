@@ -1096,6 +1096,7 @@
     { "key": "emergency", "value": "coast_guard", "description": "Shown as government office" },
     { "key": "emergency", "value": "defibrillator", "description": "Show defibrillators with their own icon" },
     { "key": "emergency", "value": "fire_extinguisher", "description": "Show fire extinguishers" },
+    { "key": "emergency", "value": "fire_hydrant", "description": "Show fire hydrants" },
     { "key": "emergency", "value": "fire_station", "description": "Show fire stations with their own icon" },
     { "key": "emergency", "value": "flotation device", "description": "Shown as life ring" },
     { "key": "emergency", "value": "life_ring", "description": "Shown as life ring" },

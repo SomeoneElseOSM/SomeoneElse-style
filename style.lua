@@ -8499,6 +8499,10 @@ function filter_tags_generic(keyvalues, nokeys)
       keyvalues["amenity"] = "fire_extinguisher"
    end
 
+   if ( keyvalues["emergency"] == "fire_hydrant" ) then
+      keyvalues["amenity"] = "fire_hydrant"
+   end
+
 -- ----------------------------------------------------------------------------
 -- Craft cider
 -- Also remove tourism tag (we want to display brewery in preference to
