@@ -6,6 +6,7 @@ Removed "[amenity=book_exchange](https://taginfo.openstreetmap.org/tags/amenity=
 Show [bus stands](https://taginfo.openstreetmap.org/tags/highway=bus_stand#overview) as [disused bus stops](https://taginfo.openstreetmap.org/tags/disused:highway=bus_stop#overview) (since you cannot get a bus there).
 Show [fire hydrants](https://taginfo.openstreetmap.org/tags/emergency=fire_hydrant#overview) from zoom level 22.
 Also fix the display of [mountain rescue supplies](https://taginfo.openstreetmap.org/tags/emergency=rescue_box#overview) in the legend.
+Show more characteristic icons for [various sorts](https://map.atownsend.org.uk/maps/map/map.html#18/-24.99494/135.18162) of self-catering accommodation.
 
 ## 06/06/2024
 Removed "[prow:ref](https://taginfo.openstreetmap.org/keys/prow%3Aref#overview)", no longer in the data.

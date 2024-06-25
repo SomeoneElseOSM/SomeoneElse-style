@@ -5913,25 +5913,60 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- "self_catering" is increasingly common and a series of different icons are
+-- used for them, based on values for whether it is:
+--
+-- self catering       yes or no
+-- multiple occupancy  yes, no, or don't know
+-- urban setting       urban, rural, or don't know
+-- cheap               yes (like a hostel) or no (like a hotel)
+--
+-- The resulting values such as "tourism_guest_yyyy" are passed through to be 
+-- rendered.
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["tourism"]   == "self_catering"           ) or
+       ( keyvalues["tourism"]   == "accommodation"           ) or
+       ( keyvalues["tourism"]   == "holiday_let"             )) then
+      keyvalues["tourism"] = "tourism_guest_yddd"
+   end
+
+   if ( keyvalues["tourism"]   == "apartment"               ) then
+      keyvalues["tourism"] = "tourism_guest_ynyn"
+   end
+
+   if (( keyvalues["tourism"]   == "holiday_cottage"         ) or
+       ( keyvalues["tourism"]   == "cottage"                 )) then
+      keyvalues["tourism"] = "tourism_guest_ynnn"
+   end
+
+   if (( keyvalues["tourism"]   == "holiday_village"         ) or
+       ( keyvalues["tourism"]   == "holiday_park"            ) or
+       ( keyvalues["tourism"]   == "holiday_lets"            )) then
+      keyvalues["tourism"] = "tourism_guest_dynd"
+   end
+
+   if ( keyvalues["tourism"]   == "spa_resort"              ) then
+      keyvalues["tourism"] = "tourism_guest_nynn"
+   end
+
+   if ( keyvalues["tourism"]   == "Holiday Lodges"          ) then
+      keyvalues["tourism"] = "tourism_guest_yynd"
+   end
+
+   if (( keyvalues["tourism"]   == "aparthotel"              ) or
+       ( keyvalues["tourism"]   == "apartments"              )) then
+      keyvalues["tourism"] = "tourism_guest_yyyn"
+   end
+
+-- ----------------------------------------------------------------------------
 -- tourism=bed_and_breakfast was removed by the "style police" in
 -- https://github.com/gravitystorm/openstreetmap-carto/pull/695
 -- That now has its own icon.
--- Also "self_catering" et al (used occasionally) as guest_house.
+-- Self-catering is handled above.
+-- That just leaves "tourism=guest_house":
 -- ----------------------------------------------------------------------------
-   if (( keyvalues["tourism"]   == "self_catering"           ) or
-       ( keyvalues["tourism"]   == "apartment"               ) or
-       ( keyvalues["tourism"]   == "apartments"              ) or
-       ( keyvalues["tourism"]   == "holiday_cottage"         ) or
-       ( keyvalues["tourism"]   == "cottage"                 ) or
-       ( keyvalues["tourism"]   == "holiday_village"         ) or
-       ( keyvalues["tourism"]   == "holiday_park"            ) or
-       ( keyvalues["tourism"]   == "spa_resort"              ) or
-       ( keyvalues["tourism"]   == "accommodation"           ) or
-       ( keyvalues["tourism"]   == "holiday_lets"            ) or
-       ( keyvalues["tourism"]   == "holiday_let"             ) or
-       ( keyvalues["tourism"]   == "Holiday Lodges"          ) or
-       ( keyvalues["tourism"]   == "aparthotel"              )) then
-      keyvalues["tourism"] = "guest_house"
+   if ( keyvalues["tourism"]   == "guest_house"          ) then
+      keyvalues["tourism"] = "tourism_guest_nydn"
    end
 
 -- ----------------------------------------------------------------------------
