@@ -1,6 +1,9 @@
 # Changes made to this rendering
 This page describes changes made in these projects: [SomeoneElse-style](https://github.com/SomeoneElseOSM/SomeoneElse-style), [SomeoneElse-style-legend](https://github.com/SomeoneElseOSM/SomeoneElse-style-legend) and [openstreetmap-carto-AJT](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT), and visible [on this site](//map.atownsend.org.uk/maps/map/map.html).
 
+## As yet unreleased
+Show [tourism=camp_pitch](https://taginfo.openstreetmap.org/tags/tourism=camp_pitch#overview) at high zoom levels.
+
 ## 25/06/2024
 Removed "[amenity=book_exchange](https://taginfo.openstreetmap.org/tags/amenity=book_exchange#overview)", no longer in the data.
 Show [bus stands](https://taginfo.openstreetmap.org/tags/highway=bus_stand#overview) as [disused bus stops](https://taginfo.openstreetmap.org/tags/disused:highway=bus_stop#overview) (since you cannot get a bus there).
