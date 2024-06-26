@@ -3,7 +3,7 @@ This page describes changes made in these projects: [SomeoneElse-style](https://
 
 ## As yet unreleased
 Show [tourism=camp_pitch](https://taginfo.openstreetmap.org/tags/tourism=camp_pitch#overview) at high zoom levels.
-Added icon for [tourism=golf_course](https://taginfo.openstreetmap.org/tags/leisure=golf_course#overview).
+Added icons for [leisure=golf_course](https://taginfo.openstreetmap.org/tags/leisure=golf_course#overview) and [leisure=sports_centre](https://taginfo.openstreetmap.org/tags/leisure=sports_centre#overview).
 
 ## 25/06/2024
 Removed "[amenity=book_exchange](https://taginfo.openstreetmap.org/tags/amenity=book_exchange#overview)", no longer in the data.
