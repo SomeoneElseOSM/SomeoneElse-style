@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20240626T001800Z",
+  "data_updated": "20240627T115000Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -254,7 +254,7 @@
     { "key": "amenity", "value": "music_school", "description": "Synonym for office=nonspecific" },
     { "key": "amenity", "value": "music_venue", "description": "Synonym for concert_hall" },
     { "key": "amenity", "value": "musical_instrument", "description": "Shown from zoom 21" },
-    { "key": "amenity", "value": "nightclub", "description": "Synonym for bar" },
+    { "key": "amenity", "value": "nightclub", "description": "Shown with a bar-like icon" },
     { "key": "amenity", "value": "notice_board", "description": "Synonym for tourism" },
     { "key": "amenity", "value": "nursery", "description": "Synonym for shop=healthnonspecific" },
     { "key": "amenity", "value": "nursery_school", "description": "Synonym for shop=healthnonspecific" },

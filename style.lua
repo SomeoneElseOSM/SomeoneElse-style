@@ -6292,14 +6292,12 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
--- Nightclubs wouldn't ordinarily be rendered - render them as bar
+-- Nightclubs now have their own icon - do not change to bar.
 -- ----------------------------------------------------------------------------
-   if ( keyvalues["amenity"]   == "nightclub"   ) then
-      keyvalues["amenity"] = "bar"
-   end
 
 -- ----------------------------------------------------------------------------
--- Render concert hall theatres as concert halls with the nightclub icon
+-- Render concert hall theatres as concert halls with the
+-- old OSM Carto "nightclub" icon
 -- ----------------------------------------------------------------------------
    if ((( keyvalues["amenity"] == "theatre"      )  and
         ( keyvalues["theatre"] == "concert_hall" )) or
