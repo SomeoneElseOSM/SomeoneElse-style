@@ -8052,7 +8052,17 @@ function filter_tags_generic(keyvalues, nokeys)
 -- Add unnamedcommercial landuse to give non-building areas a background.
 -- ----------------------------------------------------------------------------
    if (( keyvalues["shop"]    == "pet;garden"              ) or
-       ((  keyvalues["shop"]     == "agrarian"                        )  and
+       ( keyvalues["shop"]    == "aquatics"                ) or
+       ( keyvalues["shop"]    == "aquarium"                ) or
+       ( keyvalues["shop"]    == "pet;corn"                )) then
+      keyvalues["landuse"] = "unnamedcommercial"
+      keyvalues["shop"] = "pet"
+   end
+
+-- ----------------------------------------------------------------------------
+-- Pet and animal food
+-- ----------------------------------------------------------------------------
+   if (((  keyvalues["shop"]     == "agrarian"                        )  and
         (( keyvalues["agrarian"] == "feed"                           )  or
          ( keyvalues["agrarian"] == "yes"                            )  or
          ( keyvalues["agrarian"] == "feed;fertilizer;seed;pesticide" )  or
@@ -8060,27 +8070,48 @@ function filter_tags_generic(keyvalues, nokeys)
          ( keyvalues["agrarian"] == "feed;pesticide;seed"            )  or
          ( keyvalues["agrarian"] == "feed;tools"                     )  or
          ( keyvalues["agrarian"] == "feed;tools;fuel;firewood"       ))) or
-       ( keyvalues["shop"]    == "aquatics"                ) or
-       ( keyvalues["shop"]    == "aquarium"                ) or
        ( keyvalues["shop"]    == "pet_supplies"            ) or
        ( keyvalues["shop"]    == "pet_care"                ) or
        ( keyvalues["shop"]    == "pet_food"                ) or
        ( keyvalues["shop"]    == "petfood"                 ) or
-       ( keyvalues["shop"]    == "pet_grooming"            ) or
+       ( keyvalues["shop"]    == "animal_feed"             )) then
+      keyvalues["landuse"] = "unnamedcommercial"
+      keyvalues["shop"] = "pet_food"
+   end
+
+-- ----------------------------------------------------------------------------
+-- Pet grooming
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["shop"]    == "pet_grooming"            ) or
        ( keyvalues["shop"]    == "dog_grooming"            ) or
-       ( keyvalues["shop"]    == "pet;corn"                ) or
-       ( keyvalues["shop"]    == "animal_feed"             ) or
        ( keyvalues["amenity"] == "dog_grooming"            ) or
        ( keyvalues["craft"]   == "dog_grooming"            ) or
-       ( keyvalues["animal"]  == "wellness"                ) or
-       ( keyvalues["amenity"] == "veterinary"              ) or
-       ( keyvalues["amenity"] == "animal_boarding"         ) or
+       ( keyvalues["animal"]  == "wellness"                )) then
+      keyvalues["landuse"] = "unnamedcommercial"
+      keyvalues["shop"] = "pet_grooming"
+   end
+
+-- ----------------------------------------------------------------------------
+-- amenity=veterinary goes through as is
+-- ----------------------------------------------------------------------------
+
+-- ----------------------------------------------------------------------------
+-- Animal boarding
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["amenity"] == "animal_boarding"         ) or
        ( keyvalues["amenity"] == "cattery"                 ) or
-       ( keyvalues["amenity"] == "kennels"                 ) or
-       ( keyvalues["amenity"] == "animal_shelter"          ) or
+       ( keyvalues["amenity"] == "kennels"                 )) then
+      keyvalues["landuse"] = "unnamedcommercial"
+      keyvalues["amenity"] = "animal_boarding"
+   end
+
+-- ----------------------------------------------------------------------------
+-- Animal shelters
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["amenity"] == "animal_shelter"          ) or
        ( keyvalues["animal"]  == "shelter"                 )) then
       keyvalues["landuse"] = "unnamedcommercial"
-      keyvalues["shop"] = "pet"
+      keyvalues["amenity"] = "animal_shelter"
    end
 
 -- ----------------------------------------------------------------------------

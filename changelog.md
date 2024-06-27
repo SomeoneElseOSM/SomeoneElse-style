@@ -7,6 +7,7 @@ Added icons for [leisure=golf_course](https://taginfo.openstreetmap.org/tags/lei
 Added an icon for [amenity=car_rental](https://taginfo.openstreetmap.org/tags/amenity=car_rental#overview) and van rental.
 Added an icon for [amenity=nightclub](https://taginfo.openstreetmap.org/tags/amenity=nightclub#overview).
 Added an icon for [amenity=waste_disposal](https://taginfo.openstreetmap.org/tags/amenity=waste_disposal#overview).
+Create new icons for [shop=pet_food](https://taginfo.openstreetmap.org/tags/shop=pet_food#overview), [shop=pet_grooming](https://taginfo.openstreetmap.org/tags/shop=pet_grooming#overview), [amenity=veterinary](https://taginfo.openstreetmap.org/tags/amenity=veterinary#overview), [amenity=animal_boarding](https://taginfo.openstreetmap.org/tags/amenity=animal_boarding#overview) and [amenity=animal_shelter](https://taginfo.openstreetmap.org/tags/amenity=animal_shelter#overview).
 
 ## 25/06/2024
 Removed "[amenity=book_exchange](https://taginfo.openstreetmap.org/tags/amenity=book_exchange#overview)", no longer in the data.
