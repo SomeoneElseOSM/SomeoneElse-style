@@ -8183,15 +8183,23 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
--- Nonspecific car and related shops.
+-- car and van rental.
 -- Add unnamedcommercial landuse to give non-building areas a background.
 -- ----------------------------------------------------------------------------
    if (( keyvalues["amenity"] == "car_rental"                   ) or
        ( keyvalues["amenity"] == "van_rental"                   ) or
        ( keyvalues["amenity"] == "car_rental;bicycle_rental"    ) or
        ( keyvalues["shop"]    == "car_rental"                   ) or
-       ( keyvalues["shop"]    == "van_rental"                   ) or
-       ( keyvalues["shop"]    == "caravan"                      ) or
+       ( keyvalues["shop"]    == "van_rental"                   )) then
+      keyvalues["landuse"] = "unnamedcommercial"
+      keyvalues["amenity"]    = "car_rental"
+   end
+
+-- ----------------------------------------------------------------------------
+-- Nonspecific car and related shops.
+-- Add unnamedcommercial landuse to give non-building areas a background.
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["shop"]    == "caravan"                      ) or
        ( keyvalues["shop"]    == "motorhome"                    ) or
        ( keyvalues["shop"]    == "boat"                         ) or
        ( keyvalues["shop"]    == "truck"                        ) or
