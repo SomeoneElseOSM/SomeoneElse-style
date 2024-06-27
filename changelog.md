@@ -6,6 +6,7 @@ Show [tourism=camp_pitch](https://taginfo.openstreetmap.org/tags/tourism=camp_pi
 Added icons for [leisure=golf_course](https://taginfo.openstreetmap.org/tags/leisure=golf_course#overview) and [leisure=sports_centre](https://taginfo.openstreetmap.org/tags/leisure=sports_centre#overview).
 Added an icon for [amenity=car_rental](https://taginfo.openstreetmap.org/tags/amenity=car_rental#overview) and van rental.
 Added an icon for [amenity=nightclub](https://taginfo.openstreetmap.org/tags/amenity=nightclub#overview).
+Added an icon for [amenity=waste_disposal](https://taginfo.openstreetmap.org/tags/amenity=waste_disposal#overview).
 
 ## 25/06/2024
 Removed "[amenity=book_exchange](https://taginfo.openstreetmap.org/tags/amenity=book_exchange#overview)", no longer in the data.
