@@ -18,6 +18,7 @@ Detect [building=entrance](https://taginfo.openstreetmap.org/tags/building=entra
 Process [timetable](https://taginfo.openstreetmap.org/keys/timetable#values) as a synonym for [departures_board](https://taginfo.openstreetmap.org/keys/departures_board#values).
 Remove "tourism=attraction" from several more "natural" combinations.
 Show [leisure=schoolyard](https://taginfo.openstreetmap.org/tags/leisure=schoolyard#overview) in very light grey.
+Added icon for [leisure=bleachers](https://taginfo.openstreetmap.org/tags/leisure=bleachers#overview) and fixed display of bandstand names.
 
 ## 25/06/2024
 Removed "[amenity=book_exchange](https://taginfo.openstreetmap.org/tags/amenity=book_exchange#overview)", no longer in the data.
