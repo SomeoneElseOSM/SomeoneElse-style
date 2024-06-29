@@ -16,6 +16,7 @@ Show unique icons for [tourism=zoo](https://taginfo.openstreetmap.org/tags/touri
 Added icon for canoe put-ins and made slipway icon more consistent with other icons in the style.
 Detect [building=entrance](https://taginfo.openstreetmap.org/tags/building=entrance#overview) and some variations along with other entrances.
 Process [timetable](https://taginfo.openstreetmap.org/keys/timetable#values) as a synonym for [departures_board](https://taginfo.openstreetmap.org/keys/departures_board#values).
+Remove "tourism=attraction" from several more "natural" combinations.
 
 ## 25/06/2024
 Removed "[amenity=book_exchange](https://taginfo.openstreetmap.org/tags/amenity=book_exchange#overview)", no longer in the data.

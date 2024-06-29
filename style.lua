@@ -2388,7 +2388,17 @@ function filter_tags_generic(keyvalues, nokeys)
         ( keyvalues["historic"]  == "workhouse"                 )  or
         ( keyvalues["historic"]  == "wreck"                     )  or
         ( keyvalues["historic"]  == "yes"                       )  or
+        ( keyvalues["natural"]   == "beach"                     )  or
+        ( keyvalues["natural"]   == "cave_entrance"             )  or
+        ( keyvalues["natural"]   == "cliff"                     )  or
+        ( keyvalues["natural"]   == "grassland"                 )  or
+        ( keyvalues["natural"]   == "heath"                     )  or
+        ( keyvalues["natural"]   == "sand"                      )  or
+        ( keyvalues["natural"]   == "scrub"                     )  or
+        ( keyvalues["natural"]   == "spring"                    )  or
         ( keyvalues["natural"]   == "tree"                      )  or
+        ( keyvalues["natural"]   == "water"                     )  or
+        ( keyvalues["natural"]   == "wood"                      )  or
         ( keyvalues["leisure"]   == "garden"                    )  or
         ( keyvalues["leisure"]   == "nature_reserve"            )  or
         ( keyvalues["leisure"]   == "park"                      )  or
