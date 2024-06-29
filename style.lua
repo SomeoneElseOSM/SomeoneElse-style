@@ -31,7 +31,7 @@ polygon_keys = { 'boundary', 'building', 'landcover', 'landuse', 'amenity', 'har
       'wetland', 'water', 'aeroway' }
 
 generic_keys = {'access','addr:housename','addr:housenumber','addr:interpolation','admin_level','advertising','aerialway','aeroway','amenity','area','area:highway','barrier',
-   'bicycle','brand','bridge','bridleway','booth','boundary','building','capital','construction','covered','culvert','cutting','denomination','departures_board','designation','disused','disused:highway','disused:man_made','disused:military','disused:shop','ele',
+   'bicycle','brand','bridge','bridleway','booth','boundary','building', 'canoe', 'capital','construction','covered','culvert','cutting','denomination','departures_board','designation','disused','disused:highway','disused:man_made','disused:military','disused:shop','ele',
    'embankment','emergency','entrance','foot','flood_prone','generation:source','geological','golf','government',
    'harbour','hazard_prone','hazard_type','highway','historic','horse','hours','information','intermittent',
    'junction','landcover','landuse','layer','leisure','lcn_ref','lock','locked',
@@ -39,7 +39,7 @@ generic_keys = {'access','addr:housename','addr:housenumber','addr:interpolation
    'railway','railway:historic','ref','religion','rescue_equipment','route',
    'school','seamark:type','seamark:rescue_station:category','service','shop','sport','surface',
    'toll','tourism','tower:type', 'tracktype','training','tunnel','water','waterway',
-   'wetland','width','wood','type', 'zoo' }
+   'wetland', 'whitewater', 'width','wood','type', 'zoo' }
 
 function add_z_order(keyvalues)
    z_order = 0
@@ -4635,10 +4635,22 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
--- Slipways - render as miniature railway
+-- Slipways - render ways as miniature railway in addition to slipway icon
 -- ----------------------------------------------------------------------------
    if ( keyvalues["leisure"] == "slipway" ) then
       keyvalues["railway"] = "miniature"
+   end
+
+-- ----------------------------------------------------------------------------
+-- Other waterway access points
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["waterway"]   == "access_point"  ) or
+       ( keyvalues["whitewater"] == "put_in"        ) or
+       ( keyvalues["whitewater"] == "put_in;egress" ) or
+       ( keyvalues["canoe"]      == "put_in"        )) then
+      keyvalues["amenity"] = "waterway_access_point"
+      keyvalues["leisure"] = nil
+      keyvalues["sport"] = nil
    end
 
 -- ----------------------------------------------------------------------------
