@@ -1769,6 +1769,7 @@
     { "key": "leisure", "value": "resort", "description": "Leisure amenities shown in green" },
     { "key": "leisure", "value": "sailing_club", "description": "Leisure amenities shown in green" },
     { "key": "leisure", "value": "sauna", "description": "Leisure amenities shown in green" },
+    { "key": "leisure", "value": "schoolyard", "description": "Shown in light grey" },
     { "key": "leisure", "value": "showground", "description": "Leisure amenities shown in green" },
     { "key": "leisure", "value": "slipway", "description": "Leisure amenities shown in green" },
     { "key": "leisure", "value": "social_club", "description": "Leisure amenities shown in green" },
