@@ -11,6 +11,7 @@ Create new icons for [shop=pet_food](https://taginfo.openstreetmap.org/tags/shop
 Added "utilities" list to list of amenities considered for drinking water.
 Rearranged the legend so that items better fit categories.
 Don't show brand or operator if name brand or operator starts with name (vice versa already happens).
+Change font usage on museum, zoo, aquarium to match cinema etc.
 
 ## 25/06/2024
 Removed "[amenity=book_exchange](https://taginfo.openstreetmap.org/tags/amenity=book_exchange#overview)", no longer in the data.
