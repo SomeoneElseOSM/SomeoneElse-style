@@ -9623,13 +9623,21 @@ function filter_tags_generic(keyvalues, nokeys)
 -- Drinking water and water that's not OK for drinking
 -- "amenity=drinking_water" is shown as "tap_drinking.p.20.png"
 -- "amenity=nondrinking_water" is shown as "tap_nondrinking.p.20.png"
+--
+-- First, catch any mistagged fountains:
 -- ----------------------------------------------------------------------------
+   if (( keyvalues["amenity"]        == "fountain" ) and
+       ( keyvalues["drinking_water"] == "yes"      )) then
+      keyvalues["amenity"] = "drinking_water"
+   end
+
    if (((( keyvalues["man_made"] == "water_tap"   )   or
          ( keyvalues["waterway"] == "water_point" ))  and
         (  keyvalues["amenity"]  == nil            )) or
        (   keyvalues["amenity"]  == "water_point"   ) or
        (   keyvalues["amenity"]  == "dish_washing"  ) or
-       (   keyvalues["amenity"]  == "washing_area"  )) then
+       (   keyvalues["amenity"]  == "washing_area"  ) or
+       (   keyvalues["amenity"]  == "utilities"     )) then
       if ( keyvalues["drinking_water"] == "yes" ) then
          keyvalues["amenity"] = "drinking_water"
       else

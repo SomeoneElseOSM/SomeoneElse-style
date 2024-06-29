@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20240627T115000Z",
+  "data_updated": "20240629T105000Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -336,6 +336,7 @@
     { "key": "amenity", "value": "tutoring_centre", "description": "Shown as nonspecific shop" },
     { "key": "amenity", "value": "undertaker", "description": "Synonym for shop=funeral_directors" },
     { "key": "amenity", "value": "university", "description": "Shown as university" },
+    { "key": "amenity", "value": "utilities", "description": "Shown as drinking or nondrinking water" },
     { "key": "amenity", "value": "van_rental", "description": "Synonym for shop=car_rental" },
     { "key": "amenity", "value": "vehicle_inspection", "description": "Synonym for shop=car_repair" },
     { "key": "amenity", "value": "vending_machine", "description": "Used to detect parcel lockers" },
