@@ -9475,21 +9475,22 @@ function filter_tags_generic(keyvalues, nokeys)
 -- Aerodrome size.
 -- Large public airports should have an airport icon.  Others should not.
 -- ----------------------------------------------------------------------------
-   if (( keyvalues["aeroway"]        == "aerodrome" ) and
-       ( keyvalues["iata"]           ~= nil         ) and
-       ( keyvalues["aerodrome:type"] ~= "military"  ) and
-       ( keyvalues["military"]       == nil         )) then
-      keyvalues["aeroway"] = "large_aerodrome"
+   if ( keyvalues["aeroway"] == "aerodrome" ) then
+      if (( keyvalues["iata"]           ~= nil         ) and
+          ( keyvalues["aerodrome:type"] ~= "military"  ) and
+          ( keyvalues["military"]       == nil         )) then
+         keyvalues["aeroway"] = "large_aerodrome"
 
-      if ( keyvalues["name"] == nil ) then
-         keyvalues["name"] = keyvalues["iata"]
+         if ( keyvalues["name"] == nil ) then
+            keyvalues["name"] = keyvalues["iata"]
+         else
+            keyvalues["name"] = keyvalues["name"] .. " (" .. keyvalues["iata"] .. ")"
+         end
       else
-         keyvalues["name"] = keyvalues["name"] .. " (" .. keyvalues["iata"] .. ")"
-      end
-   else
-      if (( keyvalues["aerodrome:type"] == "military"  ) or
-          ( keyvalues["military"]       ~= nil         )) then
-         keyvalues["aeroway"] = "military_aerodrome"
+         if (( keyvalues["aerodrome:type"] == "military"  ) or
+             ( keyvalues["military"]       ~= nil         )) then
+            keyvalues["aeroway"] = "military_aerodrome"
+         end
       end
    end
 
