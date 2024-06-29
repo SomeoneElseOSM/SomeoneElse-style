@@ -9840,6 +9840,19 @@ function filter_tags_generic(keyvalues, nokeys)
       end
 
 -- ----------------------------------------------------------------------------
+-- Can we set a "departures_board" value based on a "timetable" value?
+-- ----------------------------------------------------------------------------
+      if (( keyvalues["departures_board"] == nil         ) and
+          ( keyvalues["timetable"]        == "real_time" )) then
+         keyvalues["departures_board"] = "realtime"
+      end
+
+      if (( keyvalues["departures_board"] == nil         ) and
+          ( keyvalues["timetable"]        == "yes" )) then
+         keyvalues["departures_board"] = "timetable"
+      end
+
+-- ----------------------------------------------------------------------------
 -- Based on the other tags that are set, 
 -- let's use different symbols for bus stops
 -- ----------------------------------------------------------------------------

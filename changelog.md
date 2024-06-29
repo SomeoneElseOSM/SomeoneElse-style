@@ -15,6 +15,7 @@ Change font usage on museum, zoo, aquarium to match cinema etc.
 Show unique icons for [tourism=zoo](https://taginfo.openstreetmap.org/tags/tourism=zoo#overview), [tourism=aquarium](https://taginfo.openstreetmap.org/tags/tourism=aquarium#overview) and [zoo=aviary](https://taginfo.openstreetmap.org/tags/zoo=aviary#overview).  Also show [zoo enclosures](https://taginfo.openstreetmap.org/tags/zoo=enclosure#overview) and [animal attractions](https://taginfo.openstreetmap.org/tags/attraction=animal#overview).
 Added icon for canoe put-ins and made slipway icon more consistent with other icons in the style.
 Detect [building=entrance](https://taginfo.openstreetmap.org/tags/building=entrance#overview) and some variations along with other entrances.
+Process [timetable](https://taginfo.openstreetmap.org/keys/timetable#values) as a synonym for [departures_board](https://taginfo.openstreetmap.org/keys/departures_board#values).
 
 ## 25/06/2024
 Removed "[amenity=book_exchange](https://taginfo.openstreetmap.org/tags/amenity=book_exchange#overview)", no longer in the data.
