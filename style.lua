@@ -918,6 +918,16 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Show grass schoolyards as green
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["leisure"] == "schoolyard" ) and
+       ( keyvalues["surface"] == "grass"      )) then
+      keyvalues["landuse"] = "grass"
+      keyvalues["leisure"] = nil
+      keyvalues["surface"] = nil
+   end
+
+-- ----------------------------------------------------------------------------
 -- "Nature reserve" doesn't say anything about what's inside; but one UK OSMer 
 -- changed "landuse" to "surface" (changeset 98859964).  This undoes that.
 -- ----------------------------------------------------------------------------
