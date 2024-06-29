@@ -10039,7 +10039,6 @@ function filter_tags_generic(keyvalues, nokeys)
         (  keyvalues["tourism"]    == "gallery"            )  or
         (  keyvalues["tourism"]    == "apartment"          )  or
         (  keyvalues["tourism"]    == "bed_and_breakfast"  )  or
-        (  keyvalues["tourism"]    == "zoo"                )  or
         (  keyvalues["tourism"]    == "motel"              )  or
         (  keyvalues["tourism"]    == "theme_park"         )) and
        (   keyvalues["leisure"]    ~= "garden"              )) then
