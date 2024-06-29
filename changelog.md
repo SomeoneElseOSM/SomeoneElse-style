@@ -12,7 +12,7 @@ Added "utilities" list to list of amenities considered for drinking water.
 Rearranged the legend so that items better fit categories.
 Don't show brand or operator if name brand or operator starts with name (vice versa already happens).
 Change font usage on museum, zoo, aquarium to match cinema etc.
-Show unique icons for [tourism=zoo](https://taginfo.openstreetmap.org/tags/tourism=zoo#overview) and [tourism=aquarium](https://taginfo.openstreetmap.org/tags/tourism=aquarium#overview).
+Show unique icons for [tourism=zoo](https://taginfo.openstreetmap.org/tags/tourism=zoo#overview), [tourism=aquarium](https://taginfo.openstreetmap.org/tags/tourism=aquarium#overview) and [zoo=aviary](https://taginfo.openstreetmap.org/tags/zoo=aviary#overview).
 
 ## 25/06/2024
 Removed "[amenity=book_exchange](https://taginfo.openstreetmap.org/tags/amenity=book_exchange#overview)", no longer in the data.

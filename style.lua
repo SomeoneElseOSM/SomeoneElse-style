@@ -39,7 +39,7 @@ generic_keys = {'access','addr:housename','addr:housenumber','addr:interpolation
    'railway','railway:historic','ref','religion','rescue_equipment','route',
    'school','seamark:type','seamark:rescue_station:category','service','shop','sport','surface',
    'toll','tourism','tower:type', 'tracktype','training','tunnel','water','waterway',
-   'wetland','width','wood','type'}
+   'wetland','width','wood','type', 'zoo' }
 
 function add_z_order(keyvalues)
    z_order = 0
@@ -1455,6 +1455,16 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Aviaries in UK / IE seem to be always within a zoo or larger attraction, 
+-- and not "zoos" in their own right.
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["zoo"]     == "aviary" )  and
+       ( keyvalues["amenity"] == nil      )) then
+      keyvalues["amenity"] = "zooaviary"
+      keyvalues["tourism"] = nil
+   end
+
+-- ----------------------------------------------------------------------------
 -- Bridge structures - display as building=roof.
 -- Also farmyard "bunker silos" and canopies, and natural arches.
 -- Also railway traversers and more.
@@ -1475,7 +1485,8 @@ function filter_tags_generic(keyvalues, nokeys)
        (( keyvalues["covered"]          == "roof"         )  and
         ( keyvalues["building"]         == nil            )  and
         ( keyvalues["highway"]          == nil            )  and
-        ( keyvalues["tourism"]          == nil            ))) then
+        ( keyvalues["tourism"]          == nil            )) or
+       (  keyvalues["amenity"]          == "zooaviary"     )) then
       keyvalues["building"]      = "roof"
       keyvalues["building:type"] = nil
    end

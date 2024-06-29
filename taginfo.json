@@ -3494,6 +3494,8 @@
     { "key": "windmill:disused", "value": "yes", "description": "Detect disused windmills" },
     { "key": "zero_waste", "description": "Detect 'eco' shops and supermarkets" },
     { "key": "zero_waste", "value": "only", "description": "Detect 'eco' shops and supermarkets" },
-    { "key": "zero_waste", "value": "yes", "description": "Detect 'eco' shops and supermarkets" }
+    { "key": "zero_waste", "value": "yes", "description": "Detect 'eco' shops and supermarkets" },
+    { "key": "zoo", "description": "Detect aviaries" },
+    { "key": "zoo", "value": "aviary", "description": "Show aviaries within a zoo" }
   ]
 }
