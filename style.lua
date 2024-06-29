@@ -1462,6 +1462,29 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["amenity"] == nil      )) then
       keyvalues["amenity"] = "zooaviary"
       keyvalues["tourism"] = nil
+      keyvalues["zoo"] = nil
+   end
+
+-- ----------------------------------------------------------------------------
+-- Some zoos are mistagged with extra "animal=attraction" or "zoo=enclosure" 
+-- tags, so remove those.
+-- ----------------------------------------------------------------------------
+   if ((( keyvalues["attraction"] == "animal"    )  or
+        ( keyvalues["zoo"]        == "enclosure" )) and
+       (  keyvalues["tourism"] == "zoo"           )) then
+      keyvalues["attraction"] = nil
+      keyvalues["zoo"] = nil
+   end
+
+-- ----------------------------------------------------------------------------
+-- Retag any remaining animal attractions or zoo enclosures for rendering.
+-- Unlike aviaries, these aren't assumed to have a roof
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["attraction"] == "animal"    )  or
+       ( keyvalues["zoo"]        == "enclosure" )) then
+      keyvalues["amenity"] = "zooenclosure"
+      keyvalues["attraction"] = nil
+      keyvalues["zoo"] = nil
    end
 
 -- ----------------------------------------------------------------------------

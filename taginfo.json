@@ -379,7 +379,8 @@
     { "key": "area", "value": "yes", "description": "Detect and don't show area highways" },
     { "key": "area:highway", "description": "Show traffic islands as kerbs" },
     { "key": "area:highway", "value": "traffic_island", "description": "Shown as a kerb" },
-    { "key": "attraction", "description": "Mazes are shown as nonspecific leisure items" },
+    { "key": "attraction", "description": "Mazes and zoo enclosures" },
+    { "key": "attraction", "value": "animal", "description": "Shown as zoo enclosure" },
     { "key": "attraction", "value": "maze", "description": "Shown as nonspecific leisure item" },
     { "key": "barrier", "description": "Most barriers shown" },
     { "key": "barrier", "value": "a_frame", "description": "Shown as a cycle_barrier" },
@@ -3495,7 +3496,8 @@
     { "key": "zero_waste", "description": "Detect 'eco' shops and supermarkets" },
     { "key": "zero_waste", "value": "only", "description": "Detect 'eco' shops and supermarkets" },
     { "key": "zero_waste", "value": "yes", "description": "Detect 'eco' shops and supermarkets" },
-    { "key": "zoo", "description": "Detect aviaries" },
+    { "key": "zoo", "description": "Detect aviaries and zoo enclosures" },
+    { "key": "zoo", "value": "enclosure", "description": "Show enclosures within a zoo" },
     { "key": "zoo", "value": "aviary", "description": "Show aviaries within a zoo" }
   ]
 }
