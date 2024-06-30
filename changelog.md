@@ -26,6 +26,7 @@ Show [bus stands](https://taginfo.openstreetmap.org/tags/highway=bus_stand#overv
 Show [fire hydrants](https://taginfo.openstreetmap.org/tags/emergency=fire_hydrant#overview) from zoom level 22.
 Also fix the display of [mountain rescue supplies](https://taginfo.openstreetmap.org/tags/emergency=rescue_box#overview) in the legend.
 Show more characteristic icons for [various sorts](https://map.atownsend.org.uk/maps/map/map.html#18/-24.99494/135.18162) of self-catering accommodation.
+Fixed text placement so that sports club names appear in a more sensible position.
 
 ## 06/06/2024
 Removed "[prow:ref](https://taginfo.openstreetmap.org/keys/prow%3Aref#overview)", no longer in the data.
