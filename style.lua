@@ -1502,24 +1502,25 @@ function filter_tags_generic(keyvalues, nokeys)
 -- Also farmyard "bunker silos" and canopies, and natural arches.
 -- Also railway traversers and more.
 -- ----------------------------------------------------------------------------
-   if ((  keyvalues["man_made"]         == "bridge"        ) or
-       (  keyvalues["natural"]          == "arch"          ) or
-       (  keyvalues["man_made"]         == "bunker_silo"   ) or
-       (  keyvalues["amenity"]          == "feeding_place" ) or
-       (  keyvalues["railway"]          == "traverser"     ) or
-       (  keyvalues["animal"]           == "horse_walker"  ) or
-       (  keyvalues["building"]         == "canopy"        ) or
-       (  keyvalues["building"]         == "car_port"      ) or
-       (  keyvalues["leisure"]          == "bleachers"     ) or
-       (  keyvalues["leisure"]          == "bandstand"     ) or
-       (( keyvalues["disused:building"] ~= nil            )  and
-        ( keyvalues["building"]         == nil            )) or
-       (  keyvalues["building:type"]    == "canopy"        ) or
-       (( keyvalues["covered"]          == "roof"         )  and
-        ( keyvalues["building"]         == nil            )  and
-        ( keyvalues["highway"]          == nil            )  and
-        ( keyvalues["tourism"]          == nil            )) or
-       (  keyvalues["amenity"]          == "zooaviary"     )) then
+   if ((   keyvalues["man_made"]         == "bridge"          ) or
+       (   keyvalues["natural"]          == "arch"            ) or
+       (   keyvalues["man_made"]         == "bunker_silo"     ) or
+       (   keyvalues["amenity"]          == "feeding_place"   ) or
+       (   keyvalues["railway"]          == "traverser"       ) or
+       (   keyvalues["building"]         == "canopy"          ) or
+       (   keyvalues["building"]         == "car_port"        ) or
+       ((( keyvalues["disused:building"] ~= nil             )   or
+         ( keyvalues["amenity"]          == "parcel_locker" )   or
+         ( keyvalues["amenity"]          == "zooaviary"     )   or
+         ( keyvalues["animal"]           == "horse_walker"  )   or
+         ( keyvalues["leisure"]          == "bleachers"     )   or
+         ( keyvalues["leisure"]          == "bandstand"     )) and
+        (  keyvalues["building"]         == nil              )) or
+       (   keyvalues["building:type"]    == "canopy"          ) or
+       ((  keyvalues["covered"]          == "roof"           )  and
+        (  keyvalues["building"]         == nil              )  and
+        (  keyvalues["highway"]          == nil              )  and
+        (  keyvalues["tourism"]          == nil              ))) then
       keyvalues["building"]      = "roof"
       keyvalues["building:type"] = nil
    end
