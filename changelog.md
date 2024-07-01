@@ -1,7 +1,7 @@
 # Changes made to this rendering
 This page describes changes made in these projects: [SomeoneElse-style](https://github.com/SomeoneElseOSM/SomeoneElse-style), [SomeoneElse-style-legend](https://github.com/SomeoneElseOSM/SomeoneElse-style-legend) and [openstreetmap-carto-AJT](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT), and visible [on this site](//map.atownsend.org.uk/maps/map/map.html).
 
-## As yet unreleased
+## 01/07/2024
 Show [tourism=camp_pitch](https://taginfo.openstreetmap.org/tags/tourism=camp_pitch#overview) at high zoom levels.
 Added icons for [leisure=golf_course](https://taginfo.openstreetmap.org/tags/leisure=golf_course#overview) and [leisure=sports_centre](https://taginfo.openstreetmap.org/tags/leisure=sports_centre#overview).
 Added an icon for [amenity=car_rental](https://taginfo.openstreetmap.org/tags/amenity=car_rental#overview) and van rental.
