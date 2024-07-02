@@ -2529,18 +2529,19 @@ function filter_tags_generic(keyvalues, nokeys)
 -- The first "or" includes "building=pillbox" because they are all historic.
 -- In the "disused" check we also include "building=bunker".
 -- ----------------------------------------------------------------------------
-   if ((((  keyvalues["historic"] == "bunker"         )   or
-         (( keyvalues["historic"] == "ruins"         )    and
-          ( keyvalues["ruins"]    == "bunker"        ))   or
-         (  keyvalues["historic"] == "pillbox"        )   or
-         (  keyvalues["building"] == "pillbox"        ))  and
-        (   keyvalues["military"] == nil               )) or
-       ((   keyvalues["disused:military"] == "bunker"  )  and
-        (   keyvalues["military"]         == nil       )) or
-       (((  keyvalues["military"]         == "bunker" )   or
-         (  keyvalues["building"]         == "bunker" ))  and
-        ((  keyvalues["disused"]          == "yes"    )   or
-         (  keyvalues["historic"]         == "ruins"  )))) then
+   if ((((  keyvalues["historic"] == "bunker"                      )   or
+         (( keyvalues["historic"] == "ruins"                      )    and
+          ( keyvalues["ruins"]    == "bunker"                     ))   or
+         (  keyvalues["historic"] == "pillbox"                     )   or
+         (  keyvalues["building"] == "pillbox"                     ))  and
+        (   keyvalues["military"] == nil                            )) or
+       ((   keyvalues["disused:military"] == "bunker"               )  and
+        (   keyvalues["military"]         == nil                    )) or
+       (((  keyvalues["military"]         == "bunker"              )   or
+         (  keyvalues["building"]         == "bunker"              ))  and
+        ((  keyvalues["disused"]          == "yes"                 )   or
+         (( keyvalues["historic"]         ~= nil                  )   and
+          ( keyvalues["historic"]         ~= "no"                 ))))) then
       keyvalues["historic"] = "bunker"
       keyvalues["disused"] = nil
       keyvalues["disused:military"] = nil

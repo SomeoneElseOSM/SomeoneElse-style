@@ -5,6 +5,7 @@ This page describes changes made in these projects: [SomeoneElse-style](https://
 Remove specific instructions for text and point placement for amenity layers, and from house names and numbers.
 A parcel locker is treated as "almost a building" if it has no building tag.
 Other "near buildings", such as bandstands and zoo aviaries, are handled in the same way.
+Detect more historic bunkers.
 
 ## 01/07/2024
 Show [tourism=camp_pitch](https://taginfo.openstreetmap.org/tags/tourism=camp_pitch#overview) at high zoom levels.
