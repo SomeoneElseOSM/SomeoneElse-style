@@ -202,17 +202,6 @@ function filter_tags_generic(keyvalues, nokeys)
    keyvalues["name"] = set_name_left_right_en( keyvalues["name"], keyvalues["name:left"], keyvalues["name:right"], keyvalues["name:en"] )
 
 -- ----------------------------------------------------------------------------
--- If lcn_ref exists (for example as a location in a local cycling network),
--- render it via a "man_made" tag if there's no other tags on that node.
--- ----------------------------------------------------------------------------
-   if (( keyvalues["lcn_ref"] ~= nil ) and
-       ( keyvalues["ref"]     == nil )) then
-      keyvalues["man_made"] = "lcn_ref"
-      keyvalues["ref"]     = keyvalues["lcn_ref"]
-      keyvalues["lcn_ref"] = nil
-   end
-
--- ----------------------------------------------------------------------------
 -- Move refs to consider as "official" to official_ref
 -- ----------------------------------------------------------------------------
    keyvalues["official_ref"] = set_official_ref( keyvalues["official_ref"], keyvalues["highway_authority_ref"], keyvalues["highway_ref"], keyvalues["admin_ref"], keyvalues["admin:ref"], keyvalues["loc_ref"], keyvalues["ref"] )
@@ -10359,6 +10348,17 @@ function filter_tags_node (keyvalues, nokeys)
        ( keyvalues["natural"] == "rocks"     ) or
        ( keyvalues["natural"] == "stones"    )) then
       keyvalues["natural"] = "rock"
+   end
+
+-- ----------------------------------------------------------------------------
+-- If lcn_ref exists (for example as a location in a local cycling network),
+-- render it via a "man_made" tag if there's no other tags on that node.
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["lcn_ref"] ~= nil ) and
+       ( keyvalues["ref"]     == nil )) then
+      keyvalues["man_made"] = "lcn_ref"
+      keyvalues["ref"]     = keyvalues["lcn_ref"]
+      keyvalues["lcn_ref"] = nil
    end
 
 -- ----------------------------------------------------------------------------
