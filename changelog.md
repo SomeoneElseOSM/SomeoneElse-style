@@ -7,6 +7,7 @@ A parcel locker is treated as "almost a building" if it has no building tag.
 Other "near buildings", such as bandstands and zoo aviaries, are handled in the same way.
 Detect more historic bunkers.
 Only show [man_made=lcn_ref](https://taginfo.openstreetmap.org/keys/lcn_ref#overview) on nodes.
+No longer show [protect_class=2](https://taginfo.openstreetmap.org/tags/protect_class=2#overview) as national parks or [protect_class=98](https://taginfo.openstreetmap.org/tags/protect_class=98#overview) as nature reserves.
 
 ## 01/07/2024
 Show [tourism=camp_pitch](https://taginfo.openstreetmap.org/tags/tourism=camp_pitch#overview) at high zoom levels.
