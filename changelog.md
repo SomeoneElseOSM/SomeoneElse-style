@@ -10,6 +10,9 @@ Only show [man_made=lcn_ref](https://taginfo.openstreetmap.org/keys/lcn_ref#over
 No longer show [protect_class=2](https://taginfo.openstreetmap.org/tags/protect_class=2#overview) as national parks or [protect_class=98](https://taginfo.openstreetmap.org/tags/protect_class=98#overview) as nature reserves.
 Instead, show [protect_class=2](https://taginfo.openstreetmap.org/tags/protect_class=2#overview) as nature reserves, if not tagged as something else too..
 
+## 15/07/2024
+Made the "controls" button toggle the controls rather than just turning them on.
+
 ## 01/07/2024
 Show [tourism=camp_pitch](https://taginfo.openstreetmap.org/tags/tourism=camp_pitch#overview) at high zoom levels.
 Added icons for [leisure=golf_course](https://taginfo.openstreetmap.org/tags/leisure=golf_course#overview) and [leisure=sports_centre](https://taginfo.openstreetmap.org/tags/leisure=sports_centre#overview).
