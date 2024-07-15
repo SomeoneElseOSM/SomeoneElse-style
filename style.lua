@@ -882,6 +882,7 @@ function filter_tags_generic(keyvalues, nokeys)
         (  keyvalues["designation"]   == "area_of_outstanding_natural_beauty" )  or
         (  keyvalues["designation"]   == "national_scenic_area"               ))) then
       keyvalues["boundary"] = "national_park"
+      keyvalues["protect_class"] = nil
    end
 
 -- ----------------------------------------------------------------------------
@@ -899,6 +900,7 @@ function filter_tags_generic(keyvalues, nokeys)
    if (((   keyvalues["designation"]   == "access_land"                )  or
         ((  keyvalues["boundary"]      == "protected_area"            )   and
          (( keyvalues["protect_class"] == "1"                        )    or
+          ( keyvalues["protect_class"] == "2"                        )    or
           ( keyvalues["protect_class"] == "4"                        )    or
           ( keyvalues["designation"]   == "national_nature_reserve"  )    or
           ( keyvalues["designation"]   == "local_nature_reserve"     )    or
