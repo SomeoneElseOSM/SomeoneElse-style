@@ -12,6 +12,7 @@ Instead, show [protect_class=2](https://taginfo.openstreetmap.org/tags/protect_c
 
 ## 15/07/2024
 Made the "controls" button toggle the controls rather than just turning them on.
+Added a scale control to the controls toggled on and off.
 
 ## 01/07/2024
 Show [tourism=camp_pitch](https://taginfo.openstreetmap.org/tags/tourism=camp_pitch#overview) at high zoom levels.
