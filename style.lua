@@ -886,8 +886,21 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
--- Render Access land the same as nature reserve / national park currently is.
--- Also, certain protect classes and designations of protected areas.
+-- Access land is shown with a high-zoom yellow border (to contrast with the 
+-- high-zoom green border of nature reserves) and with a low-opacity 
+-- yellow fill at all zoom levels (to contrast with the low-opacity green fill
+-- at low zoom levels of nature reserves.
+-- ----------------------------------------------------------------------------
+   if ((  keyvalues["designation"]   == "access_land"     )  and
+       (( keyvalues["boundary"]      == nil              )   or
+        ( keyvalues["boundary"]      == "protected_area" ))  and
+       (  keyvalues["highway"]       == nil               )) then
+      keyvalues["boundary"] = "access_land"
+   end
+
+-- ----------------------------------------------------------------------------
+-- Render certain protect classes and designations of protected areas as 
+-- nature_reserve:
 -- protect_class==1   "... strictly set aside to protect ... " (all sorts)
 -- protect_class==4   "Habitat/Species Management Area"
 --
@@ -897,16 +910,15 @@ function filter_tags_generic(keyvalues, nokeys)
 -- This selection does not currently include:
 -- protect_class==98  "intercontinental treaties..." (e.g. world heritage)
 -- ----------------------------------------------------------------------------
-   if (((   keyvalues["designation"]   == "access_land"                )  or
-        ((  keyvalues["boundary"]      == "protected_area"            )   and
-         (( keyvalues["protect_class"] == "1"                        )    or
-          ( keyvalues["protect_class"] == "2"                        )    or
-          ( keyvalues["protect_class"] == "4"                        )    or
-          ( keyvalues["designation"]   == "national_nature_reserve"  )    or
-          ( keyvalues["designation"]   == "local_nature_reserve"     )    or
-          ( keyvalues["designation"]   == "Nature Reserve"           )    or
-          ( keyvalues["designation"]   == "Marine Conservation Zone" )))) and
-       (    keyvalues["leisure"]       == nil                           )) then
+   if (((  keyvalues["boundary"]      == "protected_area"            )   and
+        (( keyvalues["protect_class"] == "1"                        )    or
+         ( keyvalues["protect_class"] == "2"                        )    or
+         ( keyvalues["protect_class"] == "4"                        )    or
+         ( keyvalues["designation"]   == "national_nature_reserve"  )    or
+         ( keyvalues["designation"]   == "local_nature_reserve"     )    or
+         ( keyvalues["designation"]   == "Nature Reserve"           )    or
+         ( keyvalues["designation"]   == "Marine Conservation Zone" ))) and
+       (   keyvalues["leisure"]       == nil                          )) then
       keyvalues["leisure"] = "nature_reserve"
    end
 
