@@ -10,6 +10,7 @@ Only show [man_made=lcn_ref](https://taginfo.openstreetmap.org/keys/lcn_ref#over
 No longer show [protect_class=2](https://taginfo.openstreetmap.org/tags/protect_class=2#overview) as national parks or [protect_class=98](https://taginfo.openstreetmap.org/tags/protect_class=98#overview) as nature reserves.  This means that names of very large nature reserves no longer appear in the same was as national parks.
 Instead, show [protect_class=2](https://taginfo.openstreetmap.org/tags/protect_class=2#overview) as nature reserves, if not tagged as something else too..
 Access land is shown with a high-zoom yellow border (to contrast with the high-zoom green border of nature reserves) and with a low-opacity yellow fill at all zoom levels (to contrast with the low-opacity green fill at low zoom levels of nature reserves.  Names of access land are not shown (if there is a name, some other feature will likely bear it).  
+A number of issues where unsigned names weren't properly handled were fixed.
 
 ## 15/07/2024
 Made the "controls" button toggle the controls rather than just turning them on.

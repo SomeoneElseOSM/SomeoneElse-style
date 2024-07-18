@@ -79,6 +79,10 @@ function add_z_order(keyvalues)
 end
 
 function filter_tags_generic(keyvalues, nokeys)
+-- ----------------------------------------------------------------------------
+-- local table for parameter passing
+-- ----------------------------------------------------------------------------
+   local t = {}
    filter = 0
    tagcount = 0
 
@@ -220,11 +224,16 @@ function filter_tags_generic(keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
 -- Move unsigned road refs to the name, in brackets.
 -- ----------------------------------------------------------------------------
-    keyvalues["name"] = suppress_unsigned_road_refs( keyvalues["name"], keyvalues["highway"], keyvalues["name:signed"], keyvalues["name:absent"], keyvalues["official_ref"], keyvalues["ref"], keyvalues["ref:signed"], keyvalues["unsigned"] )
-    keyvalues["name:signed"] = nil
-    keyvalues["ref:signed"] = nil
-    keyvalues["official_ref"] = nil
-    keyvalues["unsigned"] = nil
+    t = { keyvalues["name"], keyvalues["highway"], keyvalues["name:signed"], keyvalues["name:absent"], keyvalues["official_ref"], keyvalues["ref"], keyvalues["ref:signed"], keyvalues["unsigned"] }
+    suppress_unsigned_road_refs( t )
+    keyvalues["name"] = t[1]
+    keyvalues["highway"] = t[2]
+    keyvalues["name:signed"] = t[3]
+    keyvalues["name:absent"] = t[4]
+    keyvalues["official_ref"] = t[5]
+    keyvalues["ref"] = t[6]
+    keyvalues["ref:signed"] = t[7]
+    keyvalues["unsigned"] = t[8]
 
 -- ----------------------------------------------------------------------------
 -- Show natural=bracken as scrub

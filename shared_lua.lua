@@ -196,8 +196,15 @@ end -- suppress_unsigned_motorway_junctions()
 -- ----------------------------------------------------------------------------
 -- Move unsigned road refs to the name, in brackets.
 -- ----------------------------------------------------------------------------
-function suppress_unsigned_road_refs( passed_name, passed_highway, passed_nameCsigned, passed_nameCabsent, passed_official_ref, passed_ref, passed_refCsigned, passed_unsigned )
-    local returned_name = passed_name
+function suppress_unsigned_road_refs( t )
+    local passed_name = t[1]
+    local passed_highway = t[2]
+    local passed_nameCsigned = t[3]
+    local passed_nameCabsent = t[4]
+    local passed_official_ref = t[5]
+    local passed_ref = t[6]
+    local passed_refCsigned = t[7]
+    local passed_unsigned = t[8]
 
     if (( passed_highway == "motorway"          ) or
         ( passed_highway == "motorway_link"     ) or
@@ -222,32 +229,33 @@ function suppress_unsigned_road_refs( passed_name, passed_highway, passed_nameCs
         ( passed_highway == "intfootwaynarrow"  ) or
         ( passed_highway == "path"              ) or
         ( passed_highway == "intpathnarrow"     )) then
-       if ( returned_name == nil   ) then
+       if (( passed_name == nil   ) or
+           ( passed_name == ""    )) then
           if ((  passed_ref        ~= nil    )  and
               (( passed_refCsigned == "no"  )   or
                ( passed_unsigned   == "ref" ))) then
-             returned_name       = "(" .. passed_ref .. ")"
+             passed_name       = "(" .. passed_ref .. ")"
              passed_ref        = nil
              passed_refCsigned = nil
              passed_unsigned   = nil
  	 else
              if ( passed_official_ref ~= nil  ) then
-                returned_name         = "(" .. passed_official_ref .. ")"
+                passed_name         = "(" .. passed_official_ref .. ")"
                 passed_official_ref = nil
              end
           end
        else
-          if (( returned_nameCsigned == "no"   ) or
-              ( returned_nameCabsent == "yes"  ) or
+          if (( passed_nameCsigned == "no"   ) or
+              ( passed_nameCabsent == "yes"  ) or
               ( passed_unsigned    == "yes"  ) or
               ( passed_unsigned    == "name" )) then
-             returned_name = "(" .. returned_name
-             returned_nameCsigned = nil
+             passed_name = "(" .. passed_name
+             passed_nameCsigned = nil
 
              if (( passed_refCsigned == "no"  ) or
                  ( passed_unsigned   == "ref" )) then
                 if ( passed_ref ~= nil ) then
-                   returned_name       = returned_name .. ", " .. passed_ref
+                   passed_name       = passed_name .. ", " .. passed_ref
                 end
 
                 passed_ref        = nil
@@ -255,23 +263,23 @@ function suppress_unsigned_road_refs( passed_name, passed_highway, passed_nameCs
                 passed_unsigned   = nil
              else
                 if ( passed_official_ref ~= nil  ) then
-                   returned_name         = returned_name .. ", " .. passed_official_ref
+                   passed_name         = passed_name .. ", " .. passed_official_ref
                    passed_official_ref = nil
                 end
              end
 
-             returned_name = returned_name .. ")"
+             passed_name = passed_name .. ")"
           else
              if ((  passed_ref        ~= nil    ) and
                  (( passed_refCsigned == "no"  ) or
                   ( passed_unsigned   == "ref" ))) then
-                returned_name       = returned_name .. " (" .. passed_ref .. ")"
+                passed_name       = passed_name .. " (" .. passed_ref .. ")"
                 passed_ref        = nil
                 passed_refCsigned = nil
                 passed_unsigned   = nil
              else
                 if ( passed_official_ref ~= nil  ) then
-                   returned_name         = returned_name .. " (" .. passed_official_ref .. ")"
+                   passed_name         = passed_name .. " (" .. passed_official_ref .. ")"
                    passed_official_ref = nil
                 end
              end
@@ -279,7 +287,15 @@ function suppress_unsigned_road_refs( passed_name, passed_highway, passed_nameCs
        end
     end
 
-    return returned_name
+    t[1] = passed_name
+    t[2] = passed_highway
+    t[3] = passed_nameCsigned
+    t[4] = passed_nameCabsent
+    t[5] = passed_official_ref
+    t[6] = passed_ref
+    t[7] = passed_refCsigned
+    t[8] = passed_unsigned
+
 end -- suppress_unsigned_road_refs()
 
 function consolidate_place( passed_place, passed_natural )
