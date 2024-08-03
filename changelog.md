@@ -1,7 +1,7 @@
 # Changes made to this rendering
 This page describes changes made in these projects: [SomeoneElse-style](https://github.com/SomeoneElseOSM/SomeoneElse-style), [SomeoneElse-style-legend](https://github.com/SomeoneElseOSM/SomeoneElse-style-legend) and [openstreetmap-carto-AJT](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT), and visible [on this site](//map.atownsend.org.uk/maps/map/map.html).
 
-## As yet unreleased
+## 03/08/2024
 Remove specific instructions for text and point placement for amenity layers, and from house names and numbers.
 A parcel locker is treated as "almost a building" if it has no building tag.
 Other "near buildings", such as bandstands and zoo aviaries, are handled in the same way.
