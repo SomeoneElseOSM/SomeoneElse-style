@@ -11,6 +11,7 @@ No longer show [protect_class=2](https://taginfo.openstreetmap.org/tags/protect_
 Instead, show [protect_class=2](https://taginfo.openstreetmap.org/tags/protect_class=2#overview) as nature reserves, if not tagged as something else too..
 Access land is shown with a high-zoom yellow border (to contrast with the high-zoom green border of nature reserves) and with a low-opacity yellow fill at all zoom levels (to contrast with the low-opacity green fill at low zoom levels of nature reserves.  Names of access land are not shown (if there is a name, some other feature will likely bear it).  
 A number of issues where unsigned names weren't properly handled were fixed.
+Removed "[shop=electric_bicycle](https://taginfo.openstreetmap.org/tags/shop=electric_bicycle#overview)", no longer in the data.
 
 ## 15/07/2024
 Made the "controls" button toggle the controls rather than just turning them on.
