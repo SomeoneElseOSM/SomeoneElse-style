@@ -1,6 +1,9 @@
 # Changes made to this rendering
 This page describes changes made in these projects: [SomeoneElse-style](https://github.com/SomeoneElseOSM/SomeoneElse-style), [SomeoneElse-style-legend](https://github.com/SomeoneElseOSM/SomeoneElse-style-legend) and [openstreetmap-carto-AJT](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT), and visible [on this site](//map.atownsend.org.uk/maps/map/map.html).
 
+## As yet unreleased
+Don't show [entrance=main](https://taginfo.openstreetmap.org/tags/entrance=main#overview) et al where combined with other rendered keys.
+
 ## 03/08/2024
 Remove specific instructions for text and point placement for amenity layers, and from house names and numbers.
 A parcel locker is treated as "almost a building" if it has no building tag.

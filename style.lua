@@ -6618,13 +6618,21 @@ function filter_tags_generic(keyvalues, nokeys)
 -- Render main entrances
 -- Note that "railway=train_station_entrance" isn't shown as a subway entrance.
 -- ----------------------------------------------------------------------------
-   if (( keyvalues["entrance"]         == "main"                   ) or
-       ( keyvalues["building"]         == "entrance"               ) or
-       ( keyvalues["entrance"]         == "entrance"               ) or
-       ( keyvalues["public_transport"] == "entrance"               ) or
-       ( keyvalues["railway"]          == "entrance"               ) or
-       ( keyvalues["railway"]          == "train_station_entrance" ) or
-       ( keyvalues["school"]           == "entrance"               )) then
+   if ((( keyvalues["entrance"]         == "main"                   )  or
+        ( keyvalues["building"]         == "entrance"               )  or
+        ( keyvalues["entrance"]         == "entrance"               )  or
+        ( keyvalues["public_transport"] == "entrance"               )  or
+        ( keyvalues["railway"]          == "entrance"               )  or
+        ( keyvalues["railway"]          == "train_station_entrance" )  or
+        ( keyvalues["school"]           == "entrance"               )) and
+       (  keyvalues["amenity"]          == nil                       ) and
+       (  keyvalues["barrier"]          == nil                       ) and
+       (  keyvalues["building"]         == nil                       ) and
+       (  keyvalues["craft"]            == nil                       ) and
+       (  keyvalues["highway"]          == nil                       ) and
+       (  keyvalues["office"]           == nil                       ) and
+       (  keyvalues["shop"]             == nil                       ) and
+       (  keyvalues["tourism"]          == nil                       )) then
       keyvalues["amenity"] = "entrancemain"
    end
 
