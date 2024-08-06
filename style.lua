@@ -2857,6 +2857,25 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- As well as agricultural meadows, we show a couple of other subtags of meadow
+-- slightly differently.
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["landuse"]  == "meadow"       ) and
+       ( keyvalues["meadow"]   == "transitional" )) then
+      keyvalues["landuse"] = "meadowtransitional"
+   end
+
+   if (( keyvalues["landuse"]  == "meadow"       ) and
+       ( keyvalues["meadow"]   == "wildflower" )) then
+      keyvalues["landuse"] = "meadowwildflower"
+   end
+
+   if (( keyvalues["landuse"]  == "meadow"       ) and
+       ( keyvalues["meadow"]   == "perpetual" )) then
+      keyvalues["landuse"] = "meadowperpetual"
+   end
+
+-- ----------------------------------------------------------------------------
 -- Change landuse=greenhouse_horticulture to farmyard.
 -- ----------------------------------------------------------------------------
    if (keyvalues["landuse"]   == "greenhouse_horticulture") then
@@ -9496,6 +9515,18 @@ function filter_tags_generic(keyvalues, nokeys)
 
       if ( keyvalues["landuse"] == "meadow" ) then
          keyvalues["landuse"] = "unnamedmeadow"
+      end
+
+      if ( keyvalues["landuse"] == "meadowwildflower" ) then
+         keyvalues["landuse"] = "unnamedmeadowwildflower"
+      end
+
+      if ( keyvalues["landuse"] == "meadowperpetual" ) then
+         keyvalues["landuse"] = "unnamedmeadowperpetual"
+      end
+
+      if ( keyvalues["landuse"] == "meadowtransitional" ) then
+         keyvalues["landuse"] = "unnamedmeadowtransitional"
       end
 
       if ( keyvalues["landuse"] == "orchard" ) then
