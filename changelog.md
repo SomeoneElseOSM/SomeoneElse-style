@@ -3,6 +3,7 @@ This page describes changes made in these projects: [SomeoneElse-style](https://
 
 ## As yet unreleased
 Don't show [entrance=main](https://taginfo.openstreetmap.org/tags/entrance=main#overview) et al where combined with other rendered keys.
+Show linear benches as well as point and area ones.
 
 ## 03/08/2024
 Remove specific instructions for text and point placement for amenity layers, and from house names and numbers.
