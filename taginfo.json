@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20240807T105700Z",
+  "data_updated": "20240813T002800Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -2561,6 +2561,7 @@
     { "key": "shop", "value": "blinds", "description": "Various shops shown" },
     { "key": "shop", "value": "boat", "description": "Various shops shown" },
     { "key": "shop", "value": "boat_rental", "description": "Various shops shown" },
+    { "key": "shop", "value": "boat_repair", "description": "Various shops shown" },
     { "key": "shop", "value": "bookmaker", "description": "Various shops shown" },
     { "key": "shop", "value": "books", "description": "Various shops shown" },
     { "key": "shop", "value": "boutique", "description": "Various shops shown" },
@@ -2843,6 +2844,7 @@
     { "key": "shop", "value": "magic", "description": "Various shops shown" },
     { "key": "shop", "value": "mall", "description": "Synonym for retail landuse" },
     { "key": "shop", "value": "maps", "description": "Various shops shown" },
+    { "key": "shop", "value": "marine", "description": "Various shops shown" },
     { "key": "shop", "value": "market", "description": "Synonym for retail landuse" },
     { "key": "shop", "value": "massage", "description": "Various shops shown" },
     { "key": "shop", "value": "mattress", "description": "Various shops shown" },

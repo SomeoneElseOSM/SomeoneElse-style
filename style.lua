@@ -7952,8 +7952,8 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
--- Other "homeware-like" shops.  These, e.g. chandlery, that are a bit of a
--- stretch get the furniture icon.
+-- Other "homeware-like" shops.  These get the furniture icon.
+-- Some are a bit of a stretch.
 -- Add unnamedcommercial landuse to give non-building areas a background.
 -- ----------------------------------------------------------------------------
    if (( keyvalues["shop"]   == "upholsterer"                 ) or
@@ -7997,10 +7997,6 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["shop"]   == "swimming_pool"               ) or
        ( keyvalues["shop"]   == "fitted_furniture"            ) or
        ( keyvalues["shop"]   == "upholstery"                  ) or
-       ( keyvalues["shop"]   == "chandler"                    ) or
-       ( keyvalues["shop"]   == "chandlery"                   ) or
-       ( keyvalues["shop"]   == "ship_chandler"               ) or
-       ( keyvalues["craft"]  == "boatbuilder"                 ) or
        ( keyvalues["shop"]   == "saddlery"                    )) then
       keyvalues["landuse"] = "unnamedcommercial"
       keyvalues["shop"] = "furniture"
@@ -8368,7 +8364,13 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["shop"]    == "truck_repair"                 ) or
        ( keyvalues["industrial"] == "truck_repair"              ) or
        ( keyvalues["shop"]    == "forklift_repair"              ) or
-       ( keyvalues["amenity"] == "driving_school"               )) then
+       ( keyvalues["amenity"] == "driving_school"               ) or
+       ( keyvalues["shop"]    == "chandler"                     ) or
+       ( keyvalues["shop"]    == "chandlery"                    ) or
+       ( keyvalues["shop"]    == "ship_chandler"                ) or
+       ( keyvalues["craft"]   == "boatbuilder"                  ) or
+       ( keyvalues["shop"]    == "marine"                       ) or
+       ( keyvalues["shop"]    == "boat_repair"                  )) then
       keyvalues["landuse"] = "unnamedcommercial"
       keyvalues["shop"]    = "shopnonspecific"
    end
