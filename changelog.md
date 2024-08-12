@@ -4,7 +4,8 @@ This page describes changes made in these projects: [SomeoneElse-style](https://
 ## As yet unreleased
 Don't show [entrance=main](https://taginfo.openstreetmap.org/tags/entrance=main#overview) et al where combined with other rendered keys.
 Show linear benches as well as point and area ones.
-Show some non-agrcultural meadow types.
+Changed the scrub pattern to be less regular.
+Show some non-agrcultural meadow types - wildflower (with a representation of a flower), perpetual (with a darker repeating pattern) and transitional (with the scrub pattern).
 
 ## 03/08/2024
 Remove specific instructions for text and point placement for amenity layers, and from house names and numbers.
