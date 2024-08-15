@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20240813T002800Z",
+  "data_updated": "20240815T011600Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -2273,6 +2273,8 @@
     { "key": "parking", "value": "depot", "description": "Detect e.g. bus depots" },
     { "key": "parking", "value": "motorcycle", "description": "Detect motorcycle parking" },
     { "key": "parking", "value": "e-scooter", "description": "Detect e-scooter parking.  Rendered with icon, name incorporates brand" },
+    { "key": "parking_space", "description": "Show disabled parking spaces" },
+    { "key": "parking_space", "value": "disabled", "description": "Show disabled parking spaces" },
     { "key": "passenger_information_display", "description": "What sort of departures board does a bus stop have?" },
     { "key": "passenger_information_display", "value": "realtime", "description": "Some sort of realtime display" },
     { "key": "passenger_information_display", "value": "timetable", "description": "Some sort of timetable" },
