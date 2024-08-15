@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20240815T011600Z",
+  "data_updated": "20240815T232500Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -3449,6 +3449,7 @@
     { "key": "waterway", "value": "fish_pass", "description": "Many water features shown" },
     { "key": "waterway", "value": "floating_barrier", "description": "Many water features shown" },
     { "key": "waterway", "value": "flow_control", "description": "Many water features shown" },
+    { "key": "waterway", "value": "flowline", "description": "Many water features shown" },
     { "key": "waterway", "value": "former_canal", "description": "Many water features shown" },
     { "key": "waterway", "value": "fuel", "description": "Maritime version of amenity=fuel" },
     { "key": "waterway", "value": "historic_canal", "description": "Many water features shown" },

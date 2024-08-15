@@ -4814,6 +4814,7 @@ function filter_tags_generic(keyvalues, nokeys)
 -- Likewise "tidal_channel" as stream and "drainage_channel" as ditch.
 -- ----------------------------------------------------------------------------
    if (( keyvalues["waterway"] == "brook"         ) or
+       ( keyvalues["waterway"] == "flowline"      ) or
        ( keyvalues["waterway"] == "tidal_channel" )) then
       keyvalues["waterway"] = "stream"
    end
