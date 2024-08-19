@@ -1,7 +1,7 @@
 # Changes made to this rendering
 This page describes changes made in these projects: [SomeoneElse-style](https://github.com/SomeoneElseOSM/SomeoneElse-style), [SomeoneElse-style-legend](https://github.com/SomeoneElseOSM/SomeoneElse-style-legend) and [openstreetmap-carto-AJT](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT), and visible [on this site](//map.atownsend.org.uk/maps/map/map.html).
 
-## As yet unreleased
+## 19/08/2024
 Don't show [entrance=main](https://taginfo.openstreetmap.org/tags/entrance=main#overview) et al where combined with other rendered keys.
 Show linear benches as well as point and area ones.
 Changed the scrub pattern to be less regular.
