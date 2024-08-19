@@ -85,8 +85,10 @@ function fix_corridors( passed_highway, passed_layer, passed_level )
 
     if ((  passed_highway == "corridor"   ) and
         (( passed_level   == nil         )  or
+         ( passed_level   == ""          )  or
          ( passed_level   == "0"         )) and
         (( passed_layer   == nil         )  or
+         ( passed_layer   == ""          )  or
          ( passed_layer   == "0"         ))) then
        returned_highway = "path"
     end
