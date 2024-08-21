@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20240817T180600Z",
+  "data_updated": "20240821T224100Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -1374,6 +1374,7 @@
     { "key": "highway", "value": "residential_link", "description": "Not an expected value in OSM data.  Shown as residential" },
     { "key": "highway", "value": "rest_area", "description": "Shown as parking" },
     { "key": "highway", "value": "road", "description": "Shown as road" },
+    { "key": "highway", "value": "scramble", "description": "Shown as demanding_alpine_hiking path in separate overlay" },
     { "key": "highway", "value": "secondary", "description": "Shown as secondary" },
     { "key": "highway", "value": "secondary_link", "description": "Shown as secondary" },
     { "key": "highway", "value": "service", "description": "Shown as service road or track, depending on surface" },
@@ -2484,6 +2485,8 @@
     { "key": "sac_scale", "description": "Suppress some unfeasible walking paths wth no explicit PRoW" },
     { "key": "sac_scale", "value": "demanding_alpine_hiking", "description": "Suppress some unfeasible walking paths wth no explicit PRoW" },
     { "key": "sac_scale", "value": "difficult_alpine_hiking", "description": "Suppress some unfeasible walking paths wth no explicit PRoW" },
+    { "key": "scramble", "description": "Shown as intermediate trail" },
+    { "key": "scramble", "value": "yes", "description": "Shown as intermediate trail" },
     { "key": "seamark:rescue_station:category", "description": "Lifeboats" },
     { "key": "seamark:rescue_station:category", "value": "lifeboat_on_mooring", "description": "Lifeboats" },
     { "key": "seamark:type", "description": "Coast guards and marine farms" },

@@ -1,6 +1,9 @@
 # Changes made to this rendering
 This page describes changes made in these projects: [SomeoneElse-style](https://github.com/SomeoneElseOSM/SomeoneElse-style), [SomeoneElse-style-legend](https://github.com/SomeoneElseOSM/SomeoneElse-style-legend) and [openstreetmap-carto-AJT](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT), and visible [on this site](//map.atownsend.org.uk/maps/map/map.html).
 
+## As yet unreleased
+Show [highway=scramble](https://taginfo.openstreetmap.org/tags/highway=scramble#overview) and [scramble=yes](https://taginfo.openstreetmap.org/tags/scramble=yes#overview) as "bad" (not shown by default but in "no vis" layer) and "intermediate" respectively.
+
 ## 19/08/2024
 Don't show [entrance=main](https://taginfo.openstreetmap.org/tags/entrance=main#overview) et al where combined with other rendered keys.
 Show linear benches as well as point and area ones.

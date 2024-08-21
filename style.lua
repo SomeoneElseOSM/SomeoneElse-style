@@ -322,6 +322,31 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- highway=scramble is used very occasionally
+--
+-- If sac_scale is unset, set it to "demanding_alpine_hiking" here so that
+-- e.g. "badpathnarrow" is set lower down.  
+-- If it is already set, use the already-set value.
+--
+-- Somewhat related, if "scramble=yes" is set and "trail_visibility" isn't,
+-- set "trail_visibility==intermediate" so that e.g. "badpathnarrow" is set.
+-- ----------------------------------------------------------------------------
+   if ( keyvalues["highway"] == "scramble"  ) then
+      keyvalues["highway"] = "path"
+
+      if ( keyvalues["sac_scale"] == nil  ) then
+         keyvalues["sac_scale"] = "demanding_alpine_hiking"
+      end
+   end
+
+   if (( keyvalues["highway"]          ~= nil   ) and
+       ( keyvalues["scramble"]         == "yes" ) and
+       ( keyvalues["sac_scale"]        == nil   ) and
+       ( keyvalues["trail_visibility"] == nil   )) then
+      keyvalues["trail_visibility"] = "intermediate"
+   end
+
+-- ----------------------------------------------------------------------------
 -- Suppress non-designated very low-visibility paths
 -- Various low-visibility trail_visibility values have been set to "bad" above
 -- to suppress from normal display.
