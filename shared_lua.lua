@@ -104,12 +104,16 @@ function set_name_left_right_en( passed_name, passed_nameCleft, passed_nameCrigh
     local returned_name = passed_name
 
     if (( passed_nameCleft  ~= nil ) and
-        ( passed_nameCright ~= nil )) then
+        ( passed_nameCleft  ~= ""  ) and
+        ( passed_nameCright ~= nil ) and
+        ( passed_nameCright ~= ""  )) then
        returned_name = passed_nameCleft .. " / " .. passed_nameCright
     end
 
-    if (( returned_name  == nil ) and
-        ( passed_nameCen ~= nil )) then
+    if ((( returned_name  == nil )  or
+         ( returned_name  == ""  )) and
+        (  passed_nameCen ~= nil  ) and
+        (  passed_nameCen ~= ""   )) then
        passed_name = passed_nameCen
     end
 
@@ -122,29 +126,35 @@ end -- set_name_left_right_en
 function set_official_ref( passed_official_ref, passed_highway_authority_ref, passed_highway_ref, passed_admin_ref, passed_adminCref, passed_loc_ref, passed_ref )
     local returned_official_ref = passed_official_ref
 
-    if (( passed_official_ref          == nil ) and
-        ( passed_highway_authority_ref ~= nil )) then
+    if ((( returned_official_ref        == nil )   or
+         ( returned_official_ref        == ""  ))  and
+        (  passed_highway_authority_ref ~= nil  )) then
        returned_official_ref          = passed_highway_authority_ref
     end
 
-    if (( returned_official_ref == nil ) and
-        ( passed_highway_ref    ~= nil )) then
+    if ((( returned_official_ref == nil )   or
+         ( returned_official_ref == ""  ))  and
+        (  passed_highway_ref    ~= nil  )) then
        returned_official_ref = passed_highway_ref
     end
 
-    if (( returned_official_ref == nil ) and
-        ( passed_admin_ref      ~= nil )) then
+    if ((( returned_official_ref == nil )   or
+         ( returned_official_ref == ""  ))  and
+        (  passed_admin_ref      ~= nil  )) then
        returned_official_ref = passed_admin_ref
     end
 
-    if (( returned_official_ref == nil ) and
-        ( passed_adminCref      ~= nil )) then
+    if ((( returned_official_ref == nil )   or
+         ( returned_official_ref == ""  ))  and
+        ( passed_adminCref      ~= nil   )) then
        returned_official_ref = passed_adminCref
     end
 
-    if (( returned_official_ref == nil        ) and
-        ( passed_loc_ref        ~= nil        ) and
-        ( passed_loc_ref        ~= passed_ref )) then
+    if ((( returned_official_ref == nil       )   or
+         ( returned_official_ref == ""        ))  and
+        (  passed_loc_ref        ~= nil        )  and
+        (  passed_loc_ref        ~= ""         )  and
+        (  passed_loc_ref        ~= passed_ref )) then
        returned_official_ref = passed_loc_ref
     end
 
@@ -157,19 +167,22 @@ end -- set_official_ref()
 function process_golf_tracks( passed_highway, passed_golf )
     local returned_highway = passed_highway
 
-    if (( passed_golf    == "track"      )   and
-        ( passed_highway == nil          )) then
+    if ((  passed_golf    == "track"       )  and
+        (( passed_highway == nil          )   or
+         ( passed_highway == ""           ))) then
        returned_highway = "track"
     end
 
     if ((  passed_golf      == "path"       ) and
         (( returned_highway == nil         )  or
+         ( returned_highway == ""          )  or
          ( returned_highway == "service"   ))) then
        returned_highway = "path"
     end
 
     if ((  passed_golf      == "cartpath"   ) and
         (( returned_highway == nil         )  or
+         ( returned_highway == ""          )  or
          ( returned_highway == "service"   ))) then
        returned_highway = "track"
     end
@@ -233,7 +246,8 @@ function suppress_unsigned_road_refs( t )
         ( passed_highway == "intpathnarrow"     )) then
        if (( passed_name == nil   ) or
            ( passed_name == ""    )) then
-          if ((  passed_ref        ~= nil    )  and
+          if (( passed_ref        ~= nil    )  and
+              ( passed_ref        ~= ""     )  and
               (( passed_refCsigned == "no"  )   or
                ( passed_unsigned   == "ref" ))) then
              passed_name       = "(" .. passed_ref .. ")"
@@ -241,7 +255,8 @@ function suppress_unsigned_road_refs( t )
              passed_refCsigned = nil
              passed_unsigned   = nil
  	 else
-             if ( passed_official_ref ~= nil  ) then
+             if (( passed_official_ref ~= nil  )  and
+                 ( passed_official_ref ~= ""   )) then
                 passed_name         = "(" .. passed_official_ref .. ")"
                 passed_official_ref = nil
              end
@@ -256,7 +271,8 @@ function suppress_unsigned_road_refs( t )
 
              if (( passed_refCsigned == "no"  ) or
                  ( passed_unsigned   == "ref" )) then
-                if ( passed_ref ~= nil ) then
+                if (( passed_ref ~= nil )  and
+                    ( passed_ref ~= ""  )) then
                    passed_name       = passed_name .. ", " .. passed_ref
                 end
 
@@ -264,7 +280,8 @@ function suppress_unsigned_road_refs( t )
                 passed_refCsigned = nil
                 passed_unsigned   = nil
              else
-                if ( passed_official_ref ~= nil  ) then
+                if (( passed_official_ref ~= nil ) and
+                    ( passed_official_ref ~= ""  )) then
                    passed_name         = passed_name .. ", " .. passed_official_ref
                    passed_official_ref = nil
                 end
@@ -273,6 +290,7 @@ function suppress_unsigned_road_refs( t )
              passed_name = passed_name .. ")"
           else
              if ((  passed_ref        ~= nil    ) and
+                 (  passed_ref        ~= ""     ) and
                  (( passed_refCsigned == "no"  ) or
                   ( passed_unsigned   == "ref" ))) then
                 passed_name       = passed_name .. " (" .. passed_ref .. ")"
@@ -280,7 +298,8 @@ function suppress_unsigned_road_refs( t )
                 passed_refCsigned = nil
                 passed_unsigned   = nil
              else
-                if ( passed_official_ref ~= nil  ) then
+                if (( passed_official_ref ~= nil ) and
+                    ( passed_official_ref ~= ""  )) then
                    passed_name         = passed_name .. " (" .. passed_official_ref .. ")"
                    passed_official_ref = nil
                 end
