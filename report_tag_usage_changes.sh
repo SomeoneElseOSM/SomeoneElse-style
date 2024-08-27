@@ -42,7 +42,7 @@
 # Any output will be emailed.
 # -----------------------------------------------------------------------------
 local_filesystem_user=ajtown
-tag_count=20
+tag_count=30
 #
 if [ $# -eq 0 ]
 then
