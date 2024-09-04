@@ -1437,6 +1437,33 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Tunnel values - render as "yes" if appropriate.
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["tunnel"] == "culvert"             ) or
+       ( keyvalues["tunnel"] == "covered"             ) or
+       ( keyvalues["tunnel"] == "avalanche_protector" ) or
+       ( keyvalues["tunnel"] == "passage"             ) or
+       ( keyvalues["tunnel"] == "1"                   ) or
+       ( keyvalues["tunnel"] == "cave"                ) or
+       ( keyvalues["tunnel"] == "flooded"             ) or
+       ( keyvalues["tunnel"] == "building_passage"    )) then
+      keyvalues["tunnel"] = "yes"
+   end
+
+-- ----------------------------------------------------------------------------
+-- Covered values - render as "yes" if appropriate.
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["covered"] == "arcade"           ) or
+       ( keyvalues["covered"] == "covered"          ) or
+       ( keyvalues["covered"] == "colonnade"        ) or
+       ( keyvalues["covered"] == "building_passage" ) or
+       ( keyvalues["covered"] == "building_arcade"  ) or
+       ( keyvalues["covered"] == "roof"             ) or
+       ( keyvalues["covered"] == "portico"          )) then
+      keyvalues["covered"] = "yes"
+   end
+
+-- ----------------------------------------------------------------------------
 -- Alleged petrol stations that only do fuel:electricity are probably 
 -- actually charging stations.
 --
@@ -1676,32 +1703,6 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["place"]           == nil       )) then
       keyvalues["historic"] = "battery"
       keyvalues["defensive_works"] = nil
-   end
-
--- ----------------------------------------------------------------------------
--- Tunnel values - render as "yes" if appropriate.
--- ----------------------------------------------------------------------------
-   if (( keyvalues["tunnel"] == "culvert"             ) or
-       ( keyvalues["tunnel"] == "covered"             ) or
-       ( keyvalues["tunnel"] == "avalanche_protector" ) or
-       ( keyvalues["tunnel"] == "passage"             ) or
-       ( keyvalues["tunnel"] == "1"                   ) or
-       ( keyvalues["tunnel"] == "cave"                ) or
-       ( keyvalues["tunnel"] == "flooded"             )) then
-      keyvalues["tunnel"] = "yes"
-   end
-
--- ----------------------------------------------------------------------------
--- Covered values - render as "yes" if appropriate.
--- ----------------------------------------------------------------------------
-   if (( keyvalues["covered"] == "arcade"           ) or
-       ( keyvalues["covered"] == "covered"          ) or
-       ( keyvalues["covered"] == "colonnade"        ) or
-       ( keyvalues["covered"] == "building_passage" ) or
-       ( keyvalues["covered"] == "building_arcade"  ) or
-       ( keyvalues["covered"] == "roof"             ) or
-       ( keyvalues["covered"] == "portico"          )) then
-      keyvalues["covered"] = "yes"
    end
 
 -- ----------------------------------------------------------------------------
