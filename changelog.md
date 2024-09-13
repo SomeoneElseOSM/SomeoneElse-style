@@ -7,6 +7,7 @@ Use a width for minor service roads that varies with zoom between 16 and 19, lik
 Removed "[fee=free](https://taginfo.openstreetmap.org/tags/fee=free#overview)", no longer in the data.
 When "natural=wood" and "leisure=nature_reserve" occur together, only display the text via "nature_reserve".  There's relatively little difference between the two currently, which hasn't resulted in duplicate text noticeably being displayed, but this makes things more consistent.
 Don't use a colour for "[military=danger_area](https://taginfo.openstreetmap.org/tags/military=danger_area#overview)", just rely on the military hatching.  This avoids using a colour close to "historic landuse".  Text is still shown from zoom 12, unlike 15 for other military.
+The size of the tree patterns used for broadleaved, needleleaved and mixed woods was enlarged from 56x64 to 64x64.  This "thins out" the trees a bit (and looks a bit nicer), but also supports a future vector version of this style better.
 
 ## 27/08/2024
 Show [highway=scramble](https://taginfo.openstreetmap.org/tags/highway=scramble#overview) and [scramble=yes](https://taginfo.openstreetmap.org/tags/scramble=yes#overview) as "bad" (not shown by default but in "no vis" layer) and "intermediate" respectively.
