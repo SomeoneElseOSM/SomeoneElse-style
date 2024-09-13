@@ -9452,7 +9452,8 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["historic"] == "memorialobelisk"       ) or
        ( keyvalues["historic"] == "monastery"             ) or
        ( keyvalues["historic"] == "mineshaft"             ) or
-       ( keyvalues["historic"] == "nonspecific"           )) then
+       ( keyvalues["historic"] == "nonspecific"           ) or
+       ( keyvalues["leisure"]  == "nature_reserve"        )) then
       if ( keyvalues["natural"] == "wood" ) then
          keyvalues["natural"] = "unnamedwood"
       end
