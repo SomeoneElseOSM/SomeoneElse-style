@@ -4,6 +4,7 @@ This page describes changes made in these projects: [SomeoneElse-style](https://
 ## As yet unreleased
 Removed [waterway=life_belt](https://taginfo.openstreetmap.org/tags/waterway=life_belt#overview) and [waterway=life_ring](https://taginfo.openstreetmap.org/tags/waterway=life_ring#overview), no longer in the data.
 Use a width for minor service roads that varies with zoom between 16 and 19, like other service roads.
+Removed "[fee=free](https://taginfo.openstreetmap.org/tags/fee=free#overview)", no longer in the data.
 
 ## 27/08/2024
 Show [highway=scramble](https://taginfo.openstreetmap.org/tags/highway=scramble#overview) and [scramble=yes](https://taginfo.openstreetmap.org/tags/scramble=yes#overview) as "bad" (not shown by default but in "no vis" layer) and "intermediate" respectively.

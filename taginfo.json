@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20240827T161300Z",
+  "data_updated": "20240913T114900Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -1145,7 +1145,6 @@
     { "key": "fee", "value": "0", "description": "Rendered as free parking" },
     { "key": "fee", "value": "Free", "description": "Rendered as free parking" },
     { "key": "fee", "value": "None", "description": "Rendered as free parking" },
-    { "key": "fee", "value": "free", "description": "Rendered as free parking" },
     { "key": "fee", "value": "no", "description": "Rendered as free parking" },
     { "key": "fee", "value": "none", "description": "Rendered as free parking" },
     { "key": "female", "description": "Render gendered toilets" },
