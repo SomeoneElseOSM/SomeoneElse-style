@@ -9365,13 +9365,35 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
--- Special case for Jehovahs Witnesses - don't use the normal Christian
+-- A special case to check before the "vacant shops" check at the end - 
+-- potentially remove disused:amenity=grave_yard
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["disused:amenity"] == "grave_yard" ) and
+       ( keyvalues["landuse"]         == "cemetery"   )) then
+      keyvalues["disused:amenity"] = nil
+   end
+
+-- ----------------------------------------------------------------------------
+-- Cemeteries are separated by religion here.
+-- "unnamed" is potentially set lower down.  All 6 are selected in project.mml.
+--
+-- There is a special case for Jehovahs Witnesses - don't use the normal Christian
 -- symbol (a cross)
 -- ----------------------------------------------------------------------------
-   if (( keyvalues["amenity"]      == "place_of_worship" ) and
-       ( keyvalues["religion"]     == "christian"        ) and
-       ( keyvalues["denomination"] == "jehovahs_witness" )) then
-      keyvalues["religion"] = nil
+   if ( keyvalues["landuse"] == "cemetery" ) then
+      if ( keyvalues["religion"] == "christian" ) then
+         if ( keyvalues["denomination"] == "jehovahs_witness" ) then
+            keyvalues["landuse"] = "othercemetery"
+         else
+            keyvalues["landuse"] = "christiancemetery"
+         end
+      else
+         if ( keyvalues["religion"] == "jewish" ) then
+            keyvalues["landuse"] = "jewishcemetery"
+         else
+            keyvalues["landuse"] = "othercemetery"
+         end
+      end
    end
 
 -- ----------------------------------------------------------------------------
@@ -9511,8 +9533,16 @@ function filter_tags_generic(keyvalues, nokeys)
          keyvalues["landuse"] = "unnamedallotments"
       end
 
-      if ( keyvalues["landuse"] == "cemetery" ) then
-         keyvalues["landuse"] = "unnamedcemetery"
+      if ( keyvalues["landuse"] == "christiancemetery" ) then
+         keyvalues["landuse"] = "unnamedchristiancemetery"
+      end
+
+      if ( keyvalues["landuse"] == "jewishcemetery" ) then
+         keyvalues["landuse"] = "unnamedjewishcemetery"
+      end
+
+      if ( keyvalues["landuse"] == "othercemetery" ) then
+         keyvalues["landuse"] = "unnamedothercemetery"
       end
 
       if ( keyvalues["landuse"] == "commercial" ) then
@@ -10012,15 +10042,6 @@ function filter_tags_generic(keyvalues, nokeys)
             end
          end
       end
-   end
-
--- ----------------------------------------------------------------------------
--- A special case to check before the "vacant shops" check below - potentially
--- remove disused:amenity=grave_yard
--- ----------------------------------------------------------------------------
-   if (( keyvalues["disused:amenity"] == "grave_yard" ) and
-       ( keyvalues["landuse"]         == "cemetery"   )) then
-      keyvalues["disused:amenity"] = nil
    end
 
 -- ----------------------------------------------------------------------------
