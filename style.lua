@@ -9097,7 +9097,6 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["office"]     == "religion"                ) or
        ( keyvalues["office"]     == "marriage_guidance"       ) or
        ( keyvalues["amenity"]    == "education_centre"        ) or
-       ( keyvalues["amenity"]    == "college"                 ) or
        ( keyvalues["man_made"]   == "observatory"             ) or
        ( keyvalues["man_made"]   == "telescope"               ) or
        ( keyvalues["amenity"]    == "laboratory"              ) or
