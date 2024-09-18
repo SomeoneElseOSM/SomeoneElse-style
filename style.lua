@@ -4184,7 +4184,6 @@ function filter_tags_generic(keyvalues, nokeys)
         ( keyvalues["fee"]     ~= "no"      )  and
         ( keyvalues["fee"]     ~= "none"    )  and
         ( keyvalues["fee"]     ~= "None"    )  and
-        ( keyvalues["fee"]     ~= "Free"    )  and
         ( keyvalues["fee"]     ~= "0"       ))) then
       keyvalues["amenity"] = "parking_pay"
    end
@@ -4197,7 +4196,6 @@ function filter_tags_generic(keyvalues, nokeys)
         ( keyvalues["fee"]     ~= "no"              )  and
         ( keyvalues["fee"]     ~= "none"            )  and
         ( keyvalues["fee"]     ~= "None"            )  and
-        ( keyvalues["fee"]     ~= "Free"            )  and
         ( keyvalues["fee"]     ~= "0"               ))) then
       keyvalues["amenity"] = "bicycle_parking_pay"
    end
@@ -4210,7 +4208,6 @@ function filter_tags_generic(keyvalues, nokeys)
         ( keyvalues["fee"]     ~= "no"              )  and
         ( keyvalues["fee"]     ~= "none"            )  and
         ( keyvalues["fee"]     ~= "None"            )  and
-        ( keyvalues["fee"]     ~= "Free"            )  and
         ( keyvalues["fee"]     ~= "0"               ))) then
       keyvalues["amenity"] = "motorcycle_parking_pay"
    end
@@ -4224,7 +4221,6 @@ function filter_tags_generic(keyvalues, nokeys)
           ( keyvalues["fee"]     ~= "no"      )  and
           ( keyvalues["fee"]     ~= "none"    )  and
           ( keyvalues["fee"]     ~= "None"    )  and
-          ( keyvalues["fee"]     ~= "Free"    )  and
           ( keyvalues["fee"]     ~= "0"       )) then
          if (( keyvalues["male"]   == "yes" ) and
              ( keyvalues["female"] ~= "yes" )) then
@@ -4259,7 +4255,6 @@ function filter_tags_generic(keyvalues, nokeys)
           ( keyvalues["fee"]     ~= "no"      )  and
           ( keyvalues["fee"]     ~= "none"    )  and
           ( keyvalues["fee"]     ~= "None"    )  and
-          ( keyvalues["fee"]     ~= "Free"    )  and
           ( keyvalues["fee"]     ~= "0"       )) then
          if (( keyvalues["male"]   == "yes" ) and
              ( keyvalues["female"] ~= "yes" )) then
@@ -4300,7 +4295,6 @@ function filter_tags_generic(keyvalues, nokeys)
            ( keyvalues["fee"]     ~= "no"      )  and
            ( keyvalues["fee"]     ~= "none"    )  and
            ( keyvalues["fee"]     ~= "None"    )  and
-           ( keyvalues["fee"]     ~= "Free"    )  and
            ( keyvalues["fee"]     ~= "0"       )) then
          if ( keyvalues["parking_space"] == "disabled" ) then
             keyvalues["amenity"] = "parking_paydisabled"

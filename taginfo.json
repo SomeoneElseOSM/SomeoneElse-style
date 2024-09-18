@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20240913T114900Z",
+  "data_updated": "20240918T191000Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -3501,7 +3501,7 @@
     { "key": "wheelchair", "value": "official", "description": "Handled as wheelchair=yes" },
     { "key": "wheelchair", "value": "on request", "description": "Handled as wheelchair=yes" },
     { "key": "wheelchair", "value": "only", "description": "Handled as wheelchair=yes" },
-    { "key": "wheelchair", "value": "permissive", "description": "Handled as wheelchair=yes" },
+    { "key": "wheelchair", "value": "permissive", "description": "Not a current value in OSM data. Handled as wheelchair=yes" },
     { "key": "wheelchair", "value": "ramp", "description": "Handled as wheelchair=yes" },
     { "key": "wheelchair", "value": "unisex", "description": "Handled as wheelchair=yes" },
     { "key": "wheelchair", "value": "difficult", "description": "Handled as wheelchair=limited" },
