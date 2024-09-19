@@ -9488,6 +9488,10 @@ function filter_tags_generic(keyvalues, nokeys)
       if ( keyvalues["natural"] == "heath" ) then
          keyvalues["natural"] = "unnamedheath"
       end
+
+      if ( keyvalues["natural"] == "scrub" ) then
+         keyvalues["natural"] = "unnamedscrub"
+      end
    end
 
 -- ----------------------------------------------------------------------------
