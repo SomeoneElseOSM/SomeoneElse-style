@@ -1554,10 +1554,10 @@ function filter_tags_generic(keyvalues, nokeys)
 
 -- ----------------------------------------------------------------------------
 -- Retag any remaining animal attractions or zoo enclosures for rendering.
--- Unlike aviaries, these aren't assumed to have a roof
 -- ----------------------------------------------------------------------------
-   if (( keyvalues["attraction"] == "animal"    )  or
-       ( keyvalues["zoo"]        == "enclosure" )) then
+   if ((( keyvalues["attraction"] == "animal"    )  or
+        ( keyvalues["zoo"]        == "enclosure" )) and
+       (  keyvalues["amenity"]    == nil          )) then
       keyvalues["amenity"] = "zooenclosure"
       keyvalues["attraction"] = nil
       keyvalues["zoo"] = nil
