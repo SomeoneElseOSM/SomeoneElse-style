@@ -4182,8 +4182,6 @@ function filter_tags_generic(keyvalues, nokeys)
    if ((  keyvalues["amenity"] == "parking"  ) and
        (( keyvalues["fee"]     ~= nil       )  and
         ( keyvalues["fee"]     ~= "no"      )  and
-        ( keyvalues["fee"]     ~= "none"    )  and
-        ( keyvalues["fee"]     ~= "None"    )  and
         ( keyvalues["fee"]     ~= "0"       ))) then
       keyvalues["amenity"] = "parking_pay"
    end
@@ -4194,8 +4192,6 @@ function filter_tags_generic(keyvalues, nokeys)
    if ((  keyvalues["amenity"] == "bicycle_parking"  ) and
        (( keyvalues["fee"]     ~= nil               )  and
         ( keyvalues["fee"]     ~= "no"              )  and
-        ( keyvalues["fee"]     ~= "none"            )  and
-        ( keyvalues["fee"]     ~= "None"            )  and
         ( keyvalues["fee"]     ~= "0"               ))) then
       keyvalues["amenity"] = "bicycle_parking_pay"
    end
@@ -4206,8 +4202,6 @@ function filter_tags_generic(keyvalues, nokeys)
    if ((  keyvalues["amenity"] == "motorcycle_parking"  ) and
        (( keyvalues["fee"]     ~= nil               )  and
         ( keyvalues["fee"]     ~= "no"              )  and
-        ( keyvalues["fee"]     ~= "none"            )  and
-        ( keyvalues["fee"]     ~= "None"            )  and
         ( keyvalues["fee"]     ~= "0"               ))) then
       keyvalues["amenity"] = "motorcycle_parking_pay"
    end
@@ -4219,8 +4213,6 @@ function filter_tags_generic(keyvalues, nokeys)
    if ( keyvalues["amenity"] == "toilets" ) then
       if (( keyvalues["fee"]     ~= nil       )  and
           ( keyvalues["fee"]     ~= "no"      )  and
-          ( keyvalues["fee"]     ~= "none"    )  and
-          ( keyvalues["fee"]     ~= "None"    )  and
           ( keyvalues["fee"]     ~= "0"       )) then
          if (( keyvalues["male"]   == "yes" ) and
              ( keyvalues["female"] ~= "yes" )) then
@@ -4253,8 +4245,6 @@ function filter_tags_generic(keyvalues, nokeys)
    if ( keyvalues["amenity"] == "shower" ) then
       if (( keyvalues["fee"]     ~= nil       )  and
           ( keyvalues["fee"]     ~= "no"      )  and
-          ( keyvalues["fee"]     ~= "none"    )  and
-          ( keyvalues["fee"]     ~= "None"    )  and
           ( keyvalues["fee"]     ~= "0"       )) then
          if (( keyvalues["male"]   == "yes" ) and
              ( keyvalues["female"] ~= "yes" )) then
@@ -4293,8 +4283,6 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["highway"] == "emergency_bay" )) then
        if (( keyvalues["fee"]     ~= nil       )  and
            ( keyvalues["fee"]     ~= "no"      )  and
-           ( keyvalues["fee"]     ~= "none"    )  and
-           ( keyvalues["fee"]     ~= "None"    )  and
            ( keyvalues["fee"]     ~= "0"       )) then
          if ( keyvalues["parking_space"] == "disabled" ) then
             keyvalues["amenity"] = "parking_paydisabled"

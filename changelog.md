@@ -11,6 +11,7 @@ The size of the tree patterns used for broadleaved, needleleaved and mixed woods
 Removed amenity=college from the "office" logic.  Office dot is no longer shown, but the text is still similar.
 Increase the zoom level at which reefs are shown from 10 to 13.
 Don't change "zoo enclosures" for rendering if another amenity tag is already said.
+Removed various rare "fee=no" synonyms, no longer in the data.
 
 ## 27/08/2024
 Show [highway=scramble](https://taginfo.openstreetmap.org/tags/highway=scramble#overview) and [scramble=yes](https://taginfo.openstreetmap.org/tags/scramble=yes#overview) as "bad" (not shown by default but in "no vis" layer) and "intermediate" respectively.

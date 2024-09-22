@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20240918T191000Z",
+  "data_updated": "20240922T111500Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -1143,10 +1143,7 @@
     { "key": "farmland", "value": "equestrian", "description": "Render grassy farmland as mid-way between meadow and farmland" },
     { "key": "fee", "description": "Render for-pay parking differently" },
     { "key": "fee", "value": "0", "description": "Rendered as free parking" },
-    { "key": "fee", "value": "Free", "description": "Rendered as free parking" },
-    { "key": "fee", "value": "None", "description": "Rendered as free parking" },
     { "key": "fee", "value": "no", "description": "Rendered as free parking" },
-    { "key": "fee", "value": "none", "description": "Rendered as free parking" },
     { "key": "female", "description": "Render gendered toilets" },
     { "key": "female", "value": "yes", "description": "Render gendered toilets" },
     { "key": "fence_type", "description": "Detect obscure synonyms for hedges" },
