@@ -12,6 +12,7 @@ Removed amenity=college from the "office" logic.  Office dot is no longer shown,
 Increase the zoom level at which reefs are shown from 10 to 13.
 Don't change "zoo enclosures" for rendering if another amenity tag is already said.
 Removed various rare "fee=no" synonyms, no longer in the data.
+Removed "[waterway=pipeline](https://taginfo.openstreetmap.org/tags/waterway=pipeline#overview)", largely superceded by [man_made=pipeline](https://taginfo.openstreetmap.org/tags/man_made=pipeline#overview).
 
 ## 27/08/2024
 Show [highway=scramble](https://taginfo.openstreetmap.org/tags/highway=scramble#overview) and [scramble=yes](https://taginfo.openstreetmap.org/tags/scramble=yes#overview) as "bad" (not shown by default but in "no vis" layer) and "intermediate" respectively.
