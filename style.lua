@@ -5776,9 +5776,11 @@ function filter_tags_generic(keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
 -- Handle intermittent water areas.
 -- ----------------------------------------------------------------------------
-   if (( keyvalues["natural"]      == "water"  ) and
-       ( keyvalues["intermittent"] == "yes"  )) then
+   if ((( keyvalues["natural"]      == "water"  )  or
+        ( keyvalues["landuse"]      == "basin"  )) and
+       (  keyvalues["intermittent"] == "yes"     )) then
       keyvalues["natural"] = "intermittentwater"
+      keyvalues["landuse"] = nil
    end
 
 -- ----------------------------------------------------------------------------
