@@ -4812,6 +4812,13 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Any remaining extant canals will be linear features, even closed loops.
+-- ----------------------------------------------------------------------------
+   if ( keyvalues["waterway"] == "canal" ) then
+      keyvalues["area"]     = "no"
+   end
+
+-- ----------------------------------------------------------------------------
 -- Apparently there are a few "waterway=brook" in the UK.  Render as stream.
 -- Likewise "tidal_channel" as stream and "drainage_channel" as ditch.
 -- ----------------------------------------------------------------------------

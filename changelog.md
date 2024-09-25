@@ -3,6 +3,7 @@ This page describes changes made in these projects: [SomeoneElse-style](https://
 
 ## As yet unreleased
 Handle [intermittent](https://taginfo.openstreetmap.org/keys/intermittent#overview) tag on [landuse=basin](https://taginfo.openstreetmap.org/tags/landuse=basin#overview).
+Treat all [waterway=canal](https://taginfo.openstreetmap.org/tags/waterway=canal#overview) as linear features.
 
 ## 23/09/2024
 Removed [waterway=life_belt](https://taginfo.openstreetmap.org/tags/waterway=life_belt#overview) and [waterway=life_ring](https://taginfo.openstreetmap.org/tags/waterway=life_ring#overview), no longer in the data.
