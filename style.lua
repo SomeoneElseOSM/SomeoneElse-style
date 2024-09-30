@@ -2115,7 +2115,6 @@ function filter_tags_generic(keyvalues, nokeys)
        (  keyvalues["booth"]           == "K8"              )  or
        (  keyvalues["telephone_kiosk"] == "K6"              )  or
        (  keyvalues["man_made"]        == "telephone_box"   )  or
-       (  keyvalues["building"]        == "telephone_kiosk" )  or
        (  keyvalues["building"]        == "telephone_box"   )  or
        (  keyvalues["historic"]        == "telephone"       )  or
        (  keyvalues["disused:amenity"] == "telephone"       )  or
