@@ -9123,7 +9123,7 @@ function filter_tags_generic(keyvalues, nokeys)
 
 -- ----------------------------------------------------------------------------
 -- Render outdoor swimming areas with blue names (if named)
--- leisure=pool is eithr a turkish bath, a hot spring or a private 
+-- leisure=pool is either a turkish bath, a hot spring or a private 
 -- swimming pool.
 -- leisure=swimming is either a mistagged swimming area or a 
 -- mistagged swimming pool

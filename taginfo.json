@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20241001T005000Z",
+  "data_updated": "20241004T021200Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -489,6 +489,8 @@
     { "key": "bench", "value": "stand_up_bench", "description": "Don't show stand-up benches as benches" },
     { "key": "bicycle", "description": "Bicycle access; used with other tags to infer net access representation" },
     { "key": "board:title", "description": "Used as mames on information boards and signs" },
+    { "key": "board_type", "description": "Determine type of information boards and signs" },
+    { "key": "board_type", "value": "public_transport", "description": "Determine type of information boards and signs" },
     { "key": "booth", "description": "Used when deciding how to show telephone boxes and former telephone boxes (e.g. red or not red)" },
     { "key": "booth", "value": "K2", "description": "Detect telephone boxes" },
     { "key": "booth", "value": "K4 Post Office", "description": "Detect telephone boxes" },
@@ -3244,6 +3246,7 @@
     { "key": "surface", "value": "scree", "description": "Show scree if another natural feature is set" },
     { "key": "surface", "value": "shingle", "description": "Show wetlands based on the surface that is set" },
     { "key": "surface", "value": "unpaved", "description": "Show gravel residential an service roads as lower quality" },
+    { "key": "sustrans_ref", "description": "USed as ref on sustrans mileposts" },
     { "key": "taxon", "description": "Detect hogweed hazard" },
     { "key": "taxon", "value": "Heracleum mantegazzianum", "description": "Detect hogweed hazard" },
     { "key": "telecom", "description": "Used when detecting telephone exchanges" },
