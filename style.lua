@@ -5767,6 +5767,7 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["man_made"]   == "lagoon"                ) or
        ( keyvalues["man_made"]   == "lake"                  ) or
        ( keyvalues["man_made"]   == "reservoir"             ) or
+       ( keyvalues["landuse"]    == "reservoir"             ) or
        ( keyvalues["basin"]      == "wastewater"            )) then
       keyvalues["natural"] = "water"
    end
