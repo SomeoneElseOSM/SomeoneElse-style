@@ -5836,6 +5836,9 @@ function filter_tags_generic(keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
 -- Map wind turbines to, er, wind turbines and make sure that they don't also
 -- appear as towers.
+--
+-- The "man_made=power" assignment is just so that a name can be easily 
+-- displayed in amenity-points.mss.
 -- ----------------------------------------------------------------------------
    if (( keyvalues["man_made"]   == "wind_turbine" ) or
        ( keyvalues["man_made"]   == "windpump"     )) then
@@ -5851,6 +5854,11 @@ function filter_tags_generic(keyvalues, nokeys)
         ( keyvalues["plant:source"]     == "wind"         )  or
         ( keyvalues["generator:method"] == "wind"         ))) then
       keyvalues["man_made"] = nil
+   end
+
+   if ((  keyvalues["man_made"] == nil         ) and
+       ( keyvalues["power"]     == "generator" )) then
+      keyvalues["man_made"] = "power"
    end
 
 -- ----------------------------------------------------------------------------
