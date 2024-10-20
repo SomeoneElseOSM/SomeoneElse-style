@@ -10242,7 +10242,7 @@ function filter_tags_generic(keyvalues, nokeys)
          ( keyvalues["amenity"]    ~= "pitch_tabletennis" )   and
          ( keyvalues["amenity"]    ~= "pitch_tennis"      ))  or
         (  keyvalues["tourism"]    == "hotel"              )  or
-        (  keyvalues["tourism"]    == "guest_house"        )  or
+        (  keyvalues["tourism"]    == "tourism_guest_nydn" )  or
         (  keyvalues["tourism"]    == "attraction"         )  or
         (  keyvalues["tourism"]    == "viewpoint"          )  or
         (  keyvalues["tourism"]    == "museum"             )  or
