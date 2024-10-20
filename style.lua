@@ -7782,8 +7782,9 @@ function filter_tags_generic(keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
 -- e-cigarette
 -- ----------------------------------------------------------------------------
-   if (( keyvalues["shop"]   == "vaping"               ) or
-       ( keyvalues["shop"]   == "vape_shop"            )) then
+   if (( keyvalues["shop"]   == "vaping"                   ) or
+       ( keyvalues["shop"]   == "vape_shop"                ) or
+       ( keyvalues["shop"]   == "e-cigarette;mobile_phone" )) then
       keyvalues["shop"] = "e-cigarette"
    end
 
@@ -7889,6 +7890,8 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["shop"]   == "tourist"             ) or
        ( keyvalues["shop"]   == "tourism"             ) or
        ( keyvalues["shop"]   == "bag"                 ) or
+       ( keyvalues["shop"]   == "handbag"             ) or
+       ( keyvalues["shop"]   == "handbags"            ) or
        ( keyvalues["shop"]   == "balloon"             ) or
        ( keyvalues["shop"]   == "accessories"         ) or
        ( keyvalues["shop"]   == "beach"               ) or
@@ -7897,7 +7900,10 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["shop"]   == "party_goods"         ) or
        ( keyvalues["shop"]   == "christmas"           ) or
        ( keyvalues["shop"]   == "fashion_accessories" ) or
-       ( keyvalues["shop"]   == "duty_free"           )) then
+       ( keyvalues["shop"]   == "duty_free"           ) or
+       ( keyvalues["shop"]   == "crystals"            ) or
+       ( keyvalues["shop"]   == "printing_stamps"     ) or
+       ( keyvalues["shop"]   == "armour"              )) then
       keyvalues["shop"] = "gift"
    end
 
