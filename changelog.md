@@ -10,6 +10,7 @@ Removed "building=telephone_kiosk", no longer in the data.
 Show ref as well as name on camp pitches.
 Changed the text for military signs to military red.
 Added more low-use shops as gift shops where that is appropriate.
+Treat mobile_phone_repair as another phone shop synonym.
 
 ## 23/09/2024
 Removed [waterway=life_belt](https://taginfo.openstreetmap.org/tags/waterway=life_belt#overview) and [waterway=life_ring](https://taginfo.openstreetmap.org/tags/waterway=life_ring#overview), no longer in the data.

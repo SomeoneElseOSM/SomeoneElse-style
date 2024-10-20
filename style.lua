@@ -7871,9 +7871,10 @@ function filter_tags_generic(keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
 -- mobile_phone shops 
 -- ----------------------------------------------------------------------------
-   if (( keyvalues["shop"]   == "phone"        ) or
-       ( keyvalues["shop"]   == "phone_repair" ) or
-       ( keyvalues["shop"]   == "telephone"    )) then
+   if (( keyvalues["shop"]   == "phone"               ) or
+       ( keyvalues["shop"]   == "phone_repair"        ) or
+       ( keyvalues["shop"]   == "telephone"           ) or
+       ( keyvalues["shop"]   == "mobile_phone_repair" )) then
       keyvalues["shop"] = "mobile_phone"
    end
 
