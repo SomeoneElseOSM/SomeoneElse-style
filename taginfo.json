@@ -3419,6 +3419,8 @@
     { "key": "verge", "value": "right", "description": "Render grass verges on roads as 'green sidewalks'" },
     { "key": "verge", "value": "separate", "description": "Render grass verges on roads as 'green sidewalks'" },
     { "key": "verge", "value": "yes", "description": "Render grass verges on roads as 'green sidewalks'" },
+    { "key": "volcano:status", "description": "Detect extinct volcanos" },
+    { "key": "volcano:status", "value": "extinct", "description": "Detect extinct volcanos" },
     { "key": "visibility", "description": "If set and 'trail_visibility' is not; use 'visibility'" },
     { "key": "was:aeroway", "description": "Handle disused version of tag" },
     { "key": "was:aeroway", "value": "aerodrome", "description": "Handle disused version of tag (actual action depends on value)" },

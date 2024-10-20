@@ -13,6 +13,7 @@ Added more low-use shops as gift shops where that is appropriate.
 Treat mobile_phone_repair as another phone shop synonym.
 Show photo booths as such, however mapped.
 Changed text colour for opticians from shop purple to healthcare pink.
+Show extinct volcanos such as Rockall as peaks rather than volcanos.
 
 ## 23/09/2024
 Removed [waterway=life_belt](https://taginfo.openstreetmap.org/tags/waterway=life_belt#overview) and [waterway=life_ring](https://taginfo.openstreetmap.org/tags/waterway=life_ring#overview), no longer in the data.

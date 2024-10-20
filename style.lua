@@ -2331,6 +2331,15 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Don't show extinct volcanos as volcanos, just as peaks.
+-- That's still iffy in some cases (e.g. Rockall), but better than nothing.
+-- ----------------------------------------------------------------------------
+   if ((  keyvalues["natural"]        == "volcano" ) and
+       (  keyvalues["volcano:status"] == "extinct" )) then
+      keyvalues["natural"] = "peak"
+   end
+
+-- ----------------------------------------------------------------------------
 -- Things that are both localities and peaks or hills 
 -- should render as the latter.
 -- Also, some other combinations (most amenities, some man_made, etc.)
