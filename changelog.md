@@ -7,6 +7,7 @@ Treat all [waterway=canal](https://taginfo.openstreetmap.org/tags/waterway=canal
 Changed some text from green to brown (sand) or grey (rock).
 Make the golf icon larger.
 Removed "building=telephone_kiosk", no longer in the data.
+Show ref as well as name on camp pitches.
 
 ## 23/09/2024
 Removed [waterway=life_belt](https://taginfo.openstreetmap.org/tags/waterway=life_belt#overview) and [waterway=life_ring](https://taginfo.openstreetmap.org/tags/waterway=life_ring#overview), no longer in the data.

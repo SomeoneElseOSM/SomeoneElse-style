@@ -6116,6 +6116,21 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Camp pitches - consolidate name and ref into the name.
+-- ----------------------------------------------------------------------------
+   if ( keyvalues["tourism"] == "camp_pitch"  ) then
+      if ( keyvalues["name"] == nil ) then
+         if ( keyvalues["ref"] ~= nil ) then
+            keyvalues["name"] = keyvalues["ref"]
+         end
+      else
+         if ( keyvalues["ref"] ~= nil ) then
+            keyvalues["name"] = keyvalues["name"] .. " " .. keyvalues["ref"]
+         end
+      end
+   end
+
+-- ----------------------------------------------------------------------------
 -- Chalets
 --
 -- Depending on other tags, these will be treated as singlechalet (z17)
