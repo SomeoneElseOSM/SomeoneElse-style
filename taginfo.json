@@ -272,6 +272,7 @@
     { "key": "amenity", "value": "parking_space", "description": "Show as small private parking area" },
     { "key": "amenity", "value": "pharmacy", "description": "Pharmacies: If tagged on supermarket, removed.  Underline shows wheelchair tags" },
     { "key": "amenity", "value": "phone", "description": "Synonym for telephone" },
+    { "key": "amenity", "value": "photo_booth", "description": "Shown as photo booths" },
     { "key": "amenity", "value": "physiotherapist", "description": "Synonym for shop=healthnonspecific" },
     { "key": "amenity", "value": "piano", "description": "Public and public-ish pianos shown as public musical instruments" },
     { "key": "amenity", "value": "pinfold", "description": "Shown as historic pinfold" },

@@ -4030,6 +4030,14 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Show photo booths as vending machines
+-- ----------------------------------------------------------------------------
+   if (keyvalues["amenity"] == "photo_booth" )  then
+      keyvalues["amenity"] = "vending_machine"
+      keyvalues["vending"] = "photos"
+   end
+
+-- ----------------------------------------------------------------------------
 -- Parcel lockers
 -- ----------------------------------------------------------------------------
    if (((  keyvalues["amenity"]         == "vending_machine"                )  and
