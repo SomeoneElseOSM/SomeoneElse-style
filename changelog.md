@@ -1,7 +1,7 @@
 # Changes made to this rendering
 This page describes changes made in these projects: [SomeoneElse-style](https://github.com/SomeoneElseOSM/SomeoneElse-style), [SomeoneElse-style-legend](https://github.com/SomeoneElseOSM/SomeoneElse-style-legend) and [openstreetmap-carto-AJT](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT), and visible [on this site](//map.atownsend.org.uk/maps/map/map.html).
 
-## As yet unreleased
+## 21/10/2024
 Handle [intermittent](https://taginfo.openstreetmap.org/keys/intermittent#overview) tag on [landuse=basin](https://taginfo.openstreetmap.org/tags/landuse=basin#overview).
 Treat all [waterway=canal](https://taginfo.openstreetmap.org/tags/waterway=canal#overview) as linear features.
 Changed some text from green to brown (sand) or grey (rock).
