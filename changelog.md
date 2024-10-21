@@ -16,6 +16,7 @@ Changed text colour for opticians from shop purple to healthcare pink.
 Show extinct volcanos such as Rockall as peaks rather than volcanos.
 Display names for power generators that were previously missing them.
 Show both icons and names of masts from 16, not 17 and 15 as previously.  Note that this does not affect big masts, which are shown earlier.
+Fixed bug where pubs with attributes "ynddddnl" (no real ale, carpet, limited wheelchair access) weren't displayed.
 
 ## 23/09/2024
 Removed [waterway=life_belt](https://taginfo.openstreetmap.org/tags/waterway=life_belt#overview) and [waterway=life_ring](https://taginfo.openstreetmap.org/tags/waterway=life_ring#overview), no longer in the data.
