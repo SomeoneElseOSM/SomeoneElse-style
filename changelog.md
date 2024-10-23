@@ -1,6 +1,9 @@
 # Changes made to this rendering
 This page describes changes made in these projects: [SomeoneElse-style](https://github.com/SomeoneElseOSM/SomeoneElse-style), [SomeoneElse-style-legend](https://github.com/SomeoneElseOSM/SomeoneElse-style-legend) and [openstreetmap-carto-AJT](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT), and visible [on this site](//map.atownsend.org.uk/maps/map/map.html).
 
+## 22/10/2024
+Fixed bug where some cemeteries weren't shown.
+
 ## 21/10/2024
 Handle [intermittent](https://taginfo.openstreetmap.org/keys/intermittent#overview) tag on [landuse=basin](https://taginfo.openstreetmap.org/tags/landuse=basin#overview).
 Treat all [waterway=canal](https://taginfo.openstreetmap.org/tags/waterway=canal#overview) as linear features.
