@@ -1,6 +1,9 @@
 # Changes made to this rendering
 This page describes changes made in these projects: [SomeoneElse-style](https://github.com/SomeoneElseOSM/SomeoneElse-style), [SomeoneElse-style-legend](https://github.com/SomeoneElseOSM/SomeoneElse-style-legend) and [openstreetmap-carto-AJT](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT), and visible [on this site](//map.atownsend.org.uk/maps/map/map.html).
 
+## As yet unreleased
+Move the cemetery religion assignment to the correct place in the lua, removing the need for the 22/10/2024 change below.
+
 ## 22/10/2024
 Fixed bug where some cemeteries weren't shown.
 
