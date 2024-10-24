@@ -8557,7 +8557,8 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["office"]  == "tutoring"                ) or
        ( keyvalues["shop"]    == "ironing"                 ) or
        ( keyvalues["amenity"] == "stripclub"               ) or
-       ( keyvalues["amenity"] == "courier"                 )) then
+       ( keyvalues["amenity"] == "courier"                 ) or
+       ( keyvalues["shop"]    == "safety_equipment"        )) then
       keyvalues["landuse"] = "unnamedcommercial"
       keyvalues["shop"] = "shopnonspecific"
    end
