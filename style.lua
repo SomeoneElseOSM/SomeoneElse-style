@@ -8541,6 +8541,7 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["shop"]    == "fireworks"               ) or
        ( keyvalues["shop"]    == "auction"                 ) or
        ( keyvalues["shop"]    == "auction_house"           ) or
+       ( keyvalues["shop"]    == "auctioneer"              ) or
        ( keyvalues["office"]  == "auctioneer"              ) or
        ( keyvalues["shop"]    == "religion"                ) or
        ( keyvalues["shop"]    == "gas"                     ) or

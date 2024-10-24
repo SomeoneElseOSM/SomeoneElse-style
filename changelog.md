@@ -3,6 +3,7 @@ This page describes changes made in these projects: [SomeoneElse-style](https://
 
 ## As yet unreleased
 Move the cemetery religion assignment to the correct place in the lua, removing the need for the 22/10/2024 change below.
+Added shop=auctioneer as a synonym of office=auctioneer.
 
 ## 22/10/2024
 Fixed bug where some cemeteries weren't shown.
