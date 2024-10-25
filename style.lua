@@ -6726,12 +6726,11 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
--- natural=tree_row was added to the standard style file after my version.
--- I'm not convinced that it makes sense to distinguish from hedge, so I'll
--- just display as hedge.
+-- Assign barrier=tree_row for natural=tree_row so that "area" tree_rows are
+-- shown as tree rows in the "area barriers" layer.
 -- ----------------------------------------------------------------------------
    if ( keyvalues["natural"]   == "tree_row" ) then
-      keyvalues["barrier"] = "hedgeline"
+      keyvalues["barrier"] = "tree_row"
    end
 
 -- ----------------------------------------------------------------------------
