@@ -6726,8 +6726,8 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
--- Assign barrier=tree_row for natural=tree_row so that "area" tree_rows are
--- shown as tree rows in the "area barriers" layer.
+-- Assign barrier=tree_row for natural=tree_row so that on raster 
+-- "area" tree_rows are shown as tree rows in the "area barriers" layer.
 -- ----------------------------------------------------------------------------
    if ( keyvalues["natural"]   == "tree_row" ) then
       keyvalues["barrier"] = "tree_row"
