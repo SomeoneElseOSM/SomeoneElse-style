@@ -8372,7 +8372,11 @@ function filter_tags_generic(keyvalues, nokeys)
 -- Tattoo
 -- ----------------------------------------------------------------------------
    if (( keyvalues["shop"]    == "piercing"                ) or
-       ( keyvalues["shop"]    == "tattoo;piercing"         )) then
+       ( keyvalues["shop"]    == "tattoo;piercing"         ) or
+       ( keyvalues["shop"]    == "piercing;tattoo"         ) or
+       ( keyvalues["shop"]    == "body_piercing"           ) or
+       ( keyvalues["shop"]    == "yes;piercing"            ) or
+       ( keyvalues["shop"]    == "piercings"               )) then
       keyvalues["shop"] = "tattoo"
    end
 
