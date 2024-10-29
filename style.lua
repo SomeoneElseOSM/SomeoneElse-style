@@ -8022,7 +8022,8 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["shop"]   == "glassware"                   ) or
        ( keyvalues["shop"]   == "cookery"                     ) or
        ( keyvalues["shop"]   == "catering_supplies"           ) or
-       ( keyvalues["craft"]  == "upholsterer"                 )) then
+       ( keyvalues["craft"]  == "upholsterer"                 ) or
+       ( keyvalues["shop"]   == "doors"                       )) then
       keyvalues["landuse"] = "unnamedcommercial"
       keyvalues["shop"] = "homeware"
    end

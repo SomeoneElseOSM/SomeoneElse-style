@@ -2678,6 +2678,7 @@
     { "key": "shop", "value": "doityourself", "description": "Various shops shown" },
     { "key": "shop", "value": "doityourself;garden_centre", "description": "Various shops shown" },
     { "key": "shop", "value": "domestic_appliances", "description": "Various shops shown" },
+    { "key": "shop", "value": "doors", "description": "Shown as a homeware shop" },
     { "key": "shop", "value": "dry_cleaning", "description": "Various shops shown" },
     { "key": "shop", "value": "dry_cleaning;laundry", "description": "Various shops shown" },
     { "key": "shop", "value": "duty_free", "description": "Various shops shown" },
