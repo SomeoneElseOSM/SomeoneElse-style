@@ -2782,6 +2782,7 @@
     { "key": "shop", "value": "haberdashery", "description": "Various shops shown" },
     { "key": "shop", "value": "hairdresser", "description": "Various shops shown" },
     { "key": "shop", "value": "hairdresser;beauty", "description": "Various shops shown" },
+    { "key": "shop", "value": "hairdresser_supply", "description": "Various shops shown" },
     { "key": "shop", "value": "handbag", "description": "Shown as gift shop" },
     { "key": "shop", "value": "handbags", "description": "Shown as gift shop" },
     { "key": "shop", "value": "hardware", "description": "Various shops shown" },

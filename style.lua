@@ -8606,30 +8606,31 @@ function filter_tags_generic(keyvalues, nokeys)
 -- Shops that we don't know the type of.  Things such as "hire" are here 
 -- because we don't know "hire of what".
 -- "wood" is here because it's used for different sorts of shops.
--- An remaining "agrarian" shops also go through here.
+-- Any remaining "agrarian" shops also go through here.
 -- ----------------------------------------------------------------------------
-   if (( keyvalues["shop"]    == "yes"             ) or
-       ( keyvalues["craft"]   == "yes"             ) or
-       ( keyvalues["shop"]    == "other"           ) or
-       ( keyvalues["shop"]    == "hire"            ) or
-       ( keyvalues["shop"]    == "rental"          ) or
-       ( keyvalues["office"]  == "rental"          ) or
-       ( keyvalues["amenity"] == "rental"          ) or
-       ( keyvalues["shop"]    == "second_hand"     ) or
-       ( keyvalues["shop"]    == "junk"            ) or
-       ( keyvalues["shop"]    == "general"         ) or
-       ( keyvalues["shop"]    == "general_store"   ) or
-       ( keyvalues["shop"]    == "retail"          ) or
-       ( keyvalues["shop"]    == "trade"           ) or
-       ( keyvalues["shop"]    == "cash_and_carry"  ) or
-       ( keyvalues["shop"]    == "fixme"           ) or
-       ( keyvalues["shop"]    == "wholesale"       ) or
-       ( keyvalues["shop"]    == "wood"            ) or
-       ( keyvalues["shop"]    == "childrens"       ) or
-       ( keyvalues["shop"]    == "factory_outlet"  ) or
-       ( keyvalues["shop"]    == "specialist"      ) or
-       ( keyvalues["shop"]    == "specialist_shop" ) or
-       ( keyvalues["shop"]    == "agrarian"        )) then
+   if (( keyvalues["shop"]    == "yes"                ) or
+       ( keyvalues["craft"]   == "yes"                ) or
+       ( keyvalues["shop"]    == "other"              ) or
+       ( keyvalues["shop"]    == "hire"               ) or
+       ( keyvalues["shop"]    == "rental"             ) or
+       ( keyvalues["office"]  == "rental"             ) or
+       ( keyvalues["amenity"] == "rental"             ) or
+       ( keyvalues["shop"]    == "second_hand"        ) or
+       ( keyvalues["shop"]    == "junk"               ) or
+       ( keyvalues["shop"]    == "general"            ) or
+       ( keyvalues["shop"]    == "general_store"      ) or
+       ( keyvalues["shop"]    == "retail"             ) or
+       ( keyvalues["shop"]    == "trade"              ) or
+       ( keyvalues["shop"]    == "cash_and_carry"     ) or
+       ( keyvalues["shop"]    == "fixme"              ) or
+       ( keyvalues["shop"]    == "wholesale"          ) or
+       ( keyvalues["shop"]    == "wood"               ) or
+       ( keyvalues["shop"]    == "childrens"          ) or
+       ( keyvalues["shop"]    == "factory_outlet"     ) or
+       ( keyvalues["shop"]    == "specialist"         ) or
+       ( keyvalues["shop"]    == "specialist_shop"    ) or
+       ( keyvalues["shop"]    == "agrarian"           ) or
+       ( keyvalues["shop"]    == "hairdresser_supply" )) then
       keyvalues["landuse"] = "unnamedcommercial"
       keyvalues["shop"]    = "shopnonspecific"
    end

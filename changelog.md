@@ -8,6 +8,7 @@ If a tree_row is an area feature, show the outline as a tree row rather than as 
 Show agrarian shops that we don't know the type of as nonspecific.
 Added shop=doors to the list of homeware shops shown.
 Added various piercing variations to shop=tattoo.
+Show hairdresser_supply shops as nonspecific.
 
 ## 22/10/2024
 Fixed bug where some cemeteries weren't shown.
