@@ -5,6 +5,7 @@ This page describes changes made in these projects: [SomeoneElse-style](https://
 Move the cemetery religion assignment to the correct place in the lua, removing the need for the 22/10/2024 change below.
 Added shop=auctioneer as a synonym of office=auctioneer.
 If a tree_row is an area feature, show the outline as a tree row rather than as a hedge.  Linear tree rows are unaffected.
+Show agrarian shops that we don't know the type of as nonspecific.
 
 ## 22/10/2024
 Fixed bug where some cemeteries weren't shown.

@@ -8601,6 +8601,7 @@ function filter_tags_generic(keyvalues, nokeys)
 -- Shops that we don't know the type of.  Things such as "hire" are here 
 -- because we don't know "hire of what".
 -- "wood" is here because it's used for different sorts of shops.
+-- An remaining "agrarian" shops also go through here.
 -- ----------------------------------------------------------------------------
    if (( keyvalues["shop"]    == "yes"             ) or
        ( keyvalues["craft"]   == "yes"             ) or
@@ -8622,7 +8623,8 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["shop"]    == "childrens"       ) or
        ( keyvalues["shop"]    == "factory_outlet"  ) or
        ( keyvalues["shop"]    == "specialist"      ) or
-       ( keyvalues["shop"]    == "specialist_shop" )) then
+       ( keyvalues["shop"]    == "specialist_shop" ) or
+       ( keyvalues["shop"]    == "agrarian"        )) then
       keyvalues["landuse"] = "unnamedcommercial"
       keyvalues["shop"]    = "shopnonspecific"
    end
