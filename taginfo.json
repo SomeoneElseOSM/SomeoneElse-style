@@ -2659,6 +2659,8 @@
     { "key": "shop", "value": "council_house", "description": "Not a current value in OSM data.  Various shops shown" },
     { "key": "shop", "value": "country_store", "description": "Various shops shown" },
     { "key": "shop", "value": "craft", "description": "Shown as a synonym for 'art'" },
+    { "key": "shop", "value": "crystal", "description": "Shown as gift shop" },
+    { "key": "shop", "value": "crystal_glass", "description": "Shown as gift shop" },
     { "key": "shop", "value": "crystals", "description": "Shown as gift shop" },
     { "key": "shop", "value": "curtain", "description": "Various shops shown" },
     { "key": "shop", "value": "dairy", "description": "Various shops shown" },
