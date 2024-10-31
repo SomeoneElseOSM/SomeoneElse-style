@@ -11,6 +11,7 @@ Added various piercing variations to shop=tattoo.
 Show hairdresser_supply shops as nonspecific.
 Show various other "crystal" values as gift shops.
 Removed "castle_type=manor_house", no longer in the data.
+Added more shops from the "long tail", mostly as nonspecific shops, health places, offices or garden centres.
 
 ## 22/10/2024
 Fixed bug where some cemeteries weren't shown.

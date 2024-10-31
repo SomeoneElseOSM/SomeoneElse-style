@@ -7502,12 +7502,14 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["shop"]    == "lawnmowers"                 ) or
        ( keyvalues["shop"]    == "garden_furniture"           ) or
        ( keyvalues["shop"]    == "garden_machinery"           ) or
+       ( keyvalues["shop"]    == "groundskeeping"             ) or
        ( keyvalues["shop"]    == "gardening"                  ) or
        ( keyvalues["shop"]    == "garden_equipment"           ) or
        ( keyvalues["shop"]    == "garden_tools"               ) or
        ( keyvalues["shop"]    == "garden"                     ) or
        ( keyvalues["shop"]    == "doityourself;garden_centre" ) or
-       ( keyvalues["shop"]    == "garden_machines"            )) then
+       ( keyvalues["shop"]    == "garden_machines"            ) or
+       ( keyvalues["shop"]    == "garden_centre;interior_decoration;pet;toys" )) then
       keyvalues["landuse"] = "unnamedcommercial"
       keyvalues["shop"]    = "garden_centre"
    end
@@ -7919,6 +7921,7 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["shop"]   == "balloon"             ) or
        ( keyvalues["shop"]   == "accessories"         ) or
        ( keyvalues["shop"]   == "beach"               ) or
+       ( keyvalues["shop"]   == "surf"                ) or
        ( keyvalues["shop"]   == "magic"               ) or
        ( keyvalues["shop"]   == "party"               ) or
        ( keyvalues["shop"]   == "party_goods"         ) or
@@ -8134,6 +8137,7 @@ function filter_tags_generic(keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
    if (( keyvalues["shop"]   == "fabric"               ) or
        ( keyvalues["shop"]   == "linen"                ) or
+       ( keyvalues["shop"]   == "household_linen"      ) or
        ( keyvalues["shop"]   == "linens"               ) or
        ( keyvalues["shop"]   == "haberdashery"         ) or
        ( keyvalues["shop"]   == "sewing"               ) or
@@ -8175,6 +8179,7 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["shop"]       == "herbal_medicine"         ) or
        ( keyvalues["shop"]       == "chinese_medicine"        ) or
        ( keyvalues["shop"]       == "new_age"                 ) or
+       ( keyvalues["shop"]       == "psychic"                 ) or
        ( keyvalues["shop"]       == "alternative_health"      ) or
        ( keyvalues["healthcare"] == "alternative"             ) or
        ( keyvalues["shop"]       == "acupuncture"             ) or
@@ -8631,7 +8636,10 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["shop"]    == "specialist"         ) or
        ( keyvalues["shop"]    == "specialist_shop"    ) or
        ( keyvalues["shop"]    == "agrarian"           ) or
-       ( keyvalues["shop"]    == "hairdresser_supply" )) then
+       ( keyvalues["shop"]    == "brewing_supplies"   ) or
+       ( keyvalues["shop"]    == "hairdresser_supply" ) or
+       ( keyvalues["shop"]    == "repair"             ) or
+       ( keyvalues["shop"]    == "telecommunication"  )) then
       keyvalues["landuse"] = "unnamedcommercial"
       keyvalues["shop"]    = "shopnonspecific"
    end
@@ -8658,6 +8666,8 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["shop"]        == "medical_supply"               ) or
        ( keyvalues["office"]      == "medical_supply"               ) or
        ( keyvalues["shop"]        == "mobility"                     ) or
+       ( keyvalues["shop"]        == "mobility_scooter"             ) or
+       ( keyvalues["shop"]        == "mobility_aids"                ) or
        ( keyvalues["shop"]        == "disability"                   ) or
        ( keyvalues["shop"]        == "chiropodist"                  ) or
        ( keyvalues["amenity"]     == "chiropodist"                  ) or
@@ -9109,6 +9119,7 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["office"]      == "engineering"             ) or
        ( keyvalues["craft"]       == "hvac"                    ) or
        ( keyvalues["office"]      == "hvac"                    ) or
+       ( keyvalues["shop"]        == "hvac"                    ) or
        ( keyvalues["shop"]        == "heating"                 ) or
        ( keyvalues["office"]      == "laundry"                 ) or
        ( keyvalues["amenity"]     == "coworking_space"         ) or
