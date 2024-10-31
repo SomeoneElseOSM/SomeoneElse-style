@@ -119,8 +119,8 @@ file_url1=http://download.geofabrik.de/europe/${file_prefix1}-latest.osm.pbf
 #file_prefix1=england
 #file_prefix1=scotland
 #file_prefix1=wales
-#file_page1=http://download.geofabrik.de/europe/great-britain/${file_prefix1}.html
-#file_url1=http://download.geofabrik.de/europe/great-britain/${file_prefix1}-latest.osm.pbf
+#file_page1=http://download.geofabrik.de/europe/united-kingdom/${file_prefix1}.html
+#file_url1=http://download.geofabrik.de/europe/united-kingdom/${file_prefix1}-latest.osm.pbf
 #
 #file_prefix1=bedfordshire
 #file_prefix1=berkshire
@@ -169,8 +169,8 @@ file_url1=http://download.geofabrik.de/europe/${file_prefix1}-latest.osm.pbf
 #file_prefix1=west-yorkshire
 #file_prefix1=wiltshire
 #file_prefix1=worcestershire
-#file_page1=http://download.geofabrik.de/europe/great-britain/england/${file_prefix1}.html
-#file_url1=http://download.geofabrik.de/europe/great-britain/england/${file_prefix1}-latest.osm.pbf
+#file_page1=http://download.geofabrik.de/europe/united-kingdom/england/${file_prefix1}.html
+#file_url1=http://download.geofabrik.de/europe/united-kingdom/england/${file_prefix1}-latest.osm.pbf
 #
 #file_prefix1=new-york
 #file_prefix1=oregon
@@ -190,8 +190,8 @@ file_page2=http://download.geofabrik.de/europe/${file_prefix2}.html
 file_url2=http://download.geofabrik.de/europe/${file_prefix2}-latest.osm.pbf
 #file_prefix2=east-yorkshire-with-hull
 #file_prefix2=rutland
-#file_page2=http://download.geofabrik.de/europe/great-britain/england/${file_prefix2}.html
-#file_url2=http://download.geofabrik.de/europe/great-britain/england/${file_prefix2}-latest.osm.pbf
+#file_page2=http://download.geofabrik.de/europe/united-kingdom/england/${file_prefix2}.html
+#file_url2=http://download.geofabrik.de/europe/united-kingdom/england/${file_prefix2}-latest.osm.pbf
 #
 # What's the third file that we are interested in?
 # Note that if this is commented out, also change the "merge" below to not use it.
@@ -201,8 +201,8 @@ file_page3=http://download.geofabrik.de/europe/${file_prefix3}.html
 file_url3=http://download.geofabrik.de/europe/${file_prefix3}-latest.osm.pbf
 #file_prefix3=rutland
 #file_prefix3=south-yorkshire
-#file_page3=http://download.geofabrik.de/europe/great-britain/england/${file_prefix3}.html
-#file_url3=http://download.geofabrik.de/europe/great-britain/england/${file_prefix3}-latest.osm.pbf
+#file_page3=http://download.geofabrik.de/europe/united-kingdom/england/${file_prefix3}.html
+#file_url3=http://download.geofabrik.de/europe/united-kingdom/england/${file_prefix3}-latest.osm.pbf
 #
 # What's the fourth file that we are interested in?
 # Note that if this is commented out, also change the "merge" below to not use it.
@@ -212,8 +212,8 @@ file_page4=http://download.geofabrik.de/europe/${file_prefix4}.html
 file_url4=http://download.geofabrik.de/europe/${file_prefix4}-latest.osm.pbf
 #file_prefix4=rutland
 #file_prefix4=west-yorkshire
-#file_page4=http://download.geofabrik.de/europe/great-britain/england/${file_prefix4}.html
-#file_url4=http://download.geofabrik.de/europe/great-britain/england/${file_prefix4}-latest.osm.pbf
+#file_page4=http://download.geofabrik.de/europe/united-kingdom/england/${file_prefix4}.html
+#file_url4=http://download.geofabrik.de/europe/united-kingdom/england/${file_prefix4}-latest.osm.pbf
 #
 # Remove some entries including the openstreetmap-tiles-update-expire one
 # from the crontab.  Note that this matches a comment on the crontab line.
