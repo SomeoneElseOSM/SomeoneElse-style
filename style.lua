@@ -9797,7 +9797,7 @@ function filter_tags_generic(keyvalues, nokeys)
 
    if (( keyvalues["aeroway"] == "taxiway"  ) and
        ( keyvalues["surface"] == "grass"    )) then
-      keyvalues["highway"] = "track"
+      keyvalues["highway"] = "pathwide"
       keyvalues["aeroway"] = nil
    end
 
