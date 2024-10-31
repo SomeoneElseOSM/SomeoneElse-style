@@ -10,6 +10,7 @@ Added shop=doors to the list of homeware shops shown.
 Added various piercing variations to shop=tattoo.
 Show hairdresser_supply shops as nonspecific.
 Show various other "crystal" values as gift shops.
+Removed "castle_type=manor_house", no longer in the data.
 
 ## 22/10/2024
 Fixed bug where some cemeteries weren't shown.
