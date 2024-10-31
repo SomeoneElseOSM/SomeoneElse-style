@@ -7471,14 +7471,14 @@ function filter_tags_generic(keyvalues, nokeys)
          end
       else
          if (( keyvalues["brand"] ~= nil                                ) and
-             ( not string.match( keyvalues["name"], keyvalues["brand"] )) and
-             ( not string.match( keyvalues["brand"], keyvalues["name"] ))) then
+             ( not string.find( keyvalues["name"], keyvalues["brand"], 1, true )) and
+             ( not string.find( keyvalues["brand"], keyvalues["name"], 1, true ))) then
             keyvalues["name"] = keyvalues["name"] .. " (" .. keyvalues["brand"] .. ")"
             keyvalues["brand"] = nil
 	 else
             if (( keyvalues["operator"] ~= nil                                ) and
-                ( not string.match( keyvalues["name"], keyvalues["operator"] )) and
-                ( not string.match( keyvalues["operator"], keyvalues["name"] ))) then
+                ( not string.find( keyvalues["name"], keyvalues["operator"], 1, true )) and
+                ( not string.find( keyvalues["operator"], keyvalues["name"], 1, true ))) then
                keyvalues["name"] = keyvalues["name"] .. " (" .. keyvalues["operator"] .. ")"
                keyvalues["operator"] = nil
             end
@@ -10078,12 +10078,12 @@ function filter_tags_generic(keyvalues, nokeys)
    if ( keyvalues["highway"] == "bus_stop" ) then
       if ( keyvalues["name"] ~= nil ) then
          if (( keyvalues["bus_speech_output_name"] ~= nil                                ) and
-             ( not string.match( keyvalues["name"], keyvalues["bus_speech_output_name"] ))) then
+             ( not string.find( keyvalues["name"], keyvalues["bus_speech_output_name"], 1, true ))) then
             keyvalues["name"] = keyvalues["name"] .. " / " .. keyvalues["bus_speech_output_name"]
          end
 
          if (( keyvalues["bus_display_name"] ~= nil                                ) and
-             ( not string.match( keyvalues["name"], keyvalues["bus_display_name"] ))) then
+             ( not string.find( keyvalues["name"], keyvalues["bus_display_name"], 1, true ))) then
             keyvalues["name"] = keyvalues["name"] .. " / " .. keyvalues["bus_display_name"]
          end
       end
