@@ -5793,8 +5793,13 @@ function filter_tags_generic(keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
 -- Suppress "name" on riverbanks mapped as "natural=water"
 -- ----------------------------------------------------------------------------
-   if (( keyvalues["natural"]   == "water"  ) and
-       ( keyvalues["water"]     == "river"  )) then
+   if ((  keyvalues["natural"]   == "water"   ) and
+       (( keyvalues["water"]     == "river"  )  or
+        ( keyvalues["water"]     == "canal"  )  or
+        ( keyvalues["water"]     == "stream" )  or
+        ( keyvalues["water"]     == "ditch"  )  or
+        ( keyvalues["water"]     == "lock"   )  or
+        ( keyvalues["water"]     == "drain"  ))) then
       keyvalues["name"] = nil
    end
 
