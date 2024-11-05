@@ -8312,7 +8312,6 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["shop"]    == "pet_supplies"            ) or
        ( keyvalues["shop"]    == "pet_care"                ) or
        ( keyvalues["shop"]    == "pet_food"                ) or
-       ( keyvalues["shop"]    == "petfood"                 ) or
        ( keyvalues["shop"]    == "animal_feed"             )) then
       keyvalues["landuse"] = "unnamedcommercial"
       keyvalues["shop"] = "pet_food"

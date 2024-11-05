@@ -15,6 +15,7 @@ Added more shops from the "long tail", mostly as nonspecific shops, health place
 Show grass aeroway=taxiway as "pathwide" (which "track" gets changed to) rather than brown.
 Fix the appending of brands and operators to names so that it handles odd characters in names, brands and operators.
 Remove the name from the area component of linear water bodies to add to river (such as canal, stream, etc.)
+Removed "shop=petfood", no longer in the data.
 
 ## 22/10/2024
 Fixed bug where some cemeteries weren't shown.
