@@ -1,6 +1,9 @@
 # Changes made to this rendering
 This page describes changes made in these projects: [SomeoneElse-style](https://github.com/SomeoneElseOSM/SomeoneElse-style), [SomeoneElse-style-legend](https://github.com/SomeoneElseOSM/SomeoneElse-style-legend) and [openstreetmap-carto-AJT](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT), and visible [on this site](//map.atownsend.org.uk/maps/map/map.html).
 
+## 11/11/2024
+Added [experimental vector maps](https://map.atownsend.org.uk/vector/index.html#13.33/53.73709/-2.01785) and updated the "about" page to acknowledge their existance and say "raster" or "vector" as appropriate.
+
 ## 06/11/2024
 Move the cemetery religion assignment to the correct place in the lua, removing the need for the 22/10/2024 change below.
 Added shop=auctioneer as a synonym of office=auctioneer.
