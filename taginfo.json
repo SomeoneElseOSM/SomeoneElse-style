@@ -543,7 +543,7 @@
     { "key": "bridge", "value": "yes", "description": "One of many bridge types detected" },
     { "key": "bridge:name", "description": "Used in place of name on bridges" },
     { "key": "bridge:ref", "description": "Used in place of ref on bridges" },
-    { "key": "bridge_name", "description": "Used in place of name on bridges" },
+    { "key": "bridge_name", "description": "Not a current value in OSM data.  Used in place of name on bridges" },
     { "key": "bridge_ref", "description": "Used in place of ref on bridges" },
     { "key": "building", "description": "Many building types processed to help infer other feature types" },
     { "key": "building", "value": "air_shaft", "description": "One of the ways of identifying ventilation shafts" },
