@@ -107,20 +107,20 @@ fi
 # What's the first file that we are interested in?
 #
 #file_prefix1=europe
-#file_page1=http://download.geofabrik.de/${file_prefix1}.html
-#file_url1=http://download.geofabrik.de/${file_prefix1}-latest.osm.pbf
+#file_page1=https://download.geofabrik.de/${file_prefix1}.html
+#file_url1=https://download.geofabrik.de/${file_prefix1}-latest.osm.pbf
 #
 #file_prefix1=britain-and-ireland
-file_prefix1=great-britain
+file_prefix1=united-kingdom
 #file_prefix1=ireland-and-northern-ireland
-file_page1=http://download.geofabrik.de/europe/${file_prefix1}.html
-file_url1=http://download.geofabrik.de/europe/${file_prefix1}-latest.osm.pbf
+file_page1=https://download.geofabrik.de/europe/${file_prefix1}.html
+file_url1=https://download.geofabrik.de/europe/${file_prefix1}-latest.osm.pbf
 #
 #file_prefix1=england
 #file_prefix1=scotland
 #file_prefix1=wales
-#file_page1=http://download.geofabrik.de/europe/united-kingdom/${file_prefix1}.html
-#file_url1=http://download.geofabrik.de/europe/united-kingdom/${file_prefix1}-latest.osm.pbf
+#file_page1=https://download.geofabrik.de/europe/united-kingdom/${file_prefix1}.html
+#file_url1=https://download.geofabrik.de/europe/united-kingdom/${file_prefix1}-latest.osm.pbf
 #
 #file_prefix1=bedfordshire
 #file_prefix1=berkshire
@@ -169,51 +169,51 @@ file_url1=http://download.geofabrik.de/europe/${file_prefix1}-latest.osm.pbf
 #file_prefix1=west-yorkshire
 #file_prefix1=wiltshire
 #file_prefix1=worcestershire
-#file_page1=http://download.geofabrik.de/europe/united-kingdom/england/${file_prefix1}.html
-#file_url1=http://download.geofabrik.de/europe/united-kingdom/england/${file_prefix1}-latest.osm.pbf
+#file_page1=https://download.geofabrik.de/europe/united-kingdom/england/${file_prefix1}.html
+#file_url1=https://download.geofabrik.de/europe/united-kingdom/england/${file_prefix1}-latest.osm.pbf
 #
 #file_prefix1=new-york
 #file_prefix1=oregon
-#file_page1=http://download.geofabrik.de/north-america/us/${file_prefix1}.html
-#file_url1=http://download.geofabrik.de/north-america/us/${file_prefix1}-latest.osm.pbf
+#file_page1=https://download.geofabrik.de/north-america/us/${file_prefix1}.html
+#file_url1=https://download.geofabrik.de/north-america/us/${file_prefix1}-latest.osm.pbf
 #
 #file_prefix1=argentina
-#file_page1=http://download.geofabrik.de/south-america/${file_prefix1}.html
-#file_url1=http://download.geofabrik.de/south-america/${file_prefix1}-latest.osm.pbf
+#file_page1=https://download.geofabrik.de/south-america/${file_prefix1}.html
+#file_url1=https://download.geofabrik.de/south-america/${file_prefix1}-latest.osm.pbf
 #
 # What's the second file that we are interested in?
 # Note that if this is commented out, also change the "merge" below to not use it.
 #
 file_prefix2=ireland-and-northern-ireland
 #file_prefix2=isle-of-man
-file_page2=http://download.geofabrik.de/europe/${file_prefix2}.html
-file_url2=http://download.geofabrik.de/europe/${file_prefix2}-latest.osm.pbf
+file_page2=https://download.geofabrik.de/europe/${file_prefix2}.html
+file_url2=https://download.geofabrik.de/europe/${file_prefix2}-latest.osm.pbf
 #file_prefix2=east-yorkshire-with-hull
 #file_prefix2=rutland
-#file_page2=http://download.geofabrik.de/europe/united-kingdom/england/${file_prefix2}.html
-#file_url2=http://download.geofabrik.de/europe/united-kingdom/england/${file_prefix2}-latest.osm.pbf
+#file_page2=https://download.geofabrik.de/europe/united-kingdom/england/${file_prefix2}.html
+#file_url2=https://download.geofabrik.de/europe/united-kingdom/england/${file_prefix2}-latest.osm.pbf
 #
 # What's the third file that we are interested in?
 # Note that if this is commented out, also change the "merge" below to not use it.
 #
 file_prefix3=isle-of-man
-file_page3=http://download.geofabrik.de/europe/${file_prefix3}.html
-file_url3=http://download.geofabrik.de/europe/${file_prefix3}-latest.osm.pbf
+file_page3=https://download.geofabrik.de/europe/${file_prefix3}.html
+file_url3=https://download.geofabrik.de/europe/${file_prefix3}-latest.osm.pbf
 #file_prefix3=rutland
 #file_prefix3=south-yorkshire
-#file_page3=http://download.geofabrik.de/europe/united-kingdom/england/${file_prefix3}.html
-#file_url3=http://download.geofabrik.de/europe/united-kingdom/england/${file_prefix3}-latest.osm.pbf
+#file_page3=https://download.geofabrik.de/europe/united-kingdom/england/${file_prefix3}.html
+#file_url3=https://download.geofabrik.de/europe/united-kingdom/england/${file_prefix3}-latest.osm.pbf
 #
 # What's the fourth file that we are interested in?
 # Note that if this is commented out, also change the "merge" below to not use it.
 #
 file_prefix4=guernsey-jersey
-file_page4=http://download.geofabrik.de/europe/${file_prefix4}.html
-file_url4=http://download.geofabrik.de/europe/${file_prefix4}-latest.osm.pbf
+file_page4=https://download.geofabrik.de/europe/${file_prefix4}.html
+file_url4=https://download.geofabrik.de/europe/${file_prefix4}-latest.osm.pbf
 #file_prefix4=rutland
 #file_prefix4=west-yorkshire
-#file_page4=http://download.geofabrik.de/europe/united-kingdom/england/${file_prefix4}.html
-#file_url4=http://download.geofabrik.de/europe/united-kingdom/england/${file_prefix4}-latest.osm.pbf
+#file_page4=https://download.geofabrik.de/europe/united-kingdom/england/${file_prefix4}.html
+#file_url4=https://download.geofabrik.de/europe/united-kingdom/england/${file_prefix4}-latest.osm.pbf
 #
 # Remove some entries including the openstreetmap-tiles-update-expire one
 # from the crontab.  Note that this matches a comment on the crontab line.
@@ -526,8 +526,9 @@ mkdir /var/cache/renderd/pyosmium.${local_database}
 chown ${local_renderd_user} /var/cache/renderd/pyosmium.${local_database}
 sudo -u ${local_renderd_user} pyosmium-get-changes -D ${file_extension1} -f /var/cache/renderd/pyosmium.${local_database}/sequence.state -v
 #
-pandoc /home/${local_filesystem_user}/src/SomeoneElse-style/changelog.md > /var/www/html/maps/map/changelog.html
-pandoc /home/${local_filesystem_user}/src/SomeoneElse-map/about.md > /var/www/html/maps/map/about.html
+pandoc -s -f markdown -t html --metadata-file /home/${local_filesystem_user}/src/SomeoneElse-map/metadata.yaml --metadata-title="Changelog" /home/${local_filesystem_user}/src/SomeoneElse-style/changelog.md > /var/www/html/maps/map/changelog.html
+#
+pandoc -s -f markdown -t html --metadata-file /home/${local_filesystem_user}/src/SomeoneElse-map/metadata.yaml --metadata-title="About this map" /home/${local_filesystem_user}/src/SomeoneElse-map/about.md > /var/www/html/maps/map/about.html
 #
 /etc/init.d/renderd restart
 /etc/init.d/apache2 restart
