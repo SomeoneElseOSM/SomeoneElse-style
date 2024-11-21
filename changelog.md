@@ -10,19 +10,19 @@ Added [experimental vector maps](https://map.atownsend.org.uk/vector/index.html#
 
 ## 06/11/2024
 Move the cemetery religion assignment to the correct place in the lua, removing the need for the 22/10/2024 change below.
-Added shop=auctioneer as a synonym of office=auctioneer.
+Added `shop=auctioneer` as a synonym of `office=auctioneer`.
 If a tree_row is an area feature, show the outline as a tree row rather than as a hedge.  Linear tree rows are unaffected.
 Show agrarian shops that we don't know the type of as nonspecific.
-Added shop=doors to the list of homeware shops shown.
-Added various piercing variations to shop=tattoo.
+Added `shop=doors` to the list of homeware shops shown.
+Added various piercing variations to `shop=tattoo`.
 Show hairdresser_supply shops as nonspecific.
 Show various other "crystal" values as gift shops.
-Removed "castle_type=manor_house", no longer in the data.
+Removed `castle_type=manor_house`, no longer in the data.
 Added more shops from the "long tail", mostly as nonspecific shops, health places, offices or garden centres.
-Show grass aeroway=taxiway as "pathwide" (which "track" gets changed to) rather than brown.
+Show grass `aeroway=taxiway` as "pathwide" (which "track" gets changed to) rather than brown.
 Fix the appending of brands and operators to names so that it handles odd characters in names, brands and operators.
 Remove the name from the area component of linear water bodies to add to river (such as canal, stream, etc.)
-Removed "shop=petfood", no longer in the data.
+Removed `shop=petfood`, no longer in the data.
 
 ## 22/10/2024
 Fixed bug where some cemeteries weren't shown.
@@ -32,7 +32,7 @@ Handle [intermittent](https://taginfo.openstreetmap.org/keys/intermittent#overvi
 Treat all [waterway=canal](https://taginfo.openstreetmap.org/tags/waterway=canal#overview) as linear features.
 Changed some text from green to brown (sand) or grey (rock).
 Make the golf icon larger.
-Removed "building=telephone_kiosk", no longer in the data.
+Removed `building=telephone_kiosk`, no longer in the data.
 Show ref as well as name on camp pitches.
 Changed the text for military signs to military red.
 Added more low-use shops as gift shops where that is appropriate.
@@ -48,13 +48,13 @@ Fixed bug where pubs with attributes "ynddddnl" (no real ale, carpet, limited wh
 Removed [waterway=life_belt](https://taginfo.openstreetmap.org/tags/waterway=life_belt#overview) and [waterway=life_ring](https://taginfo.openstreetmap.org/tags/waterway=life_ring#overview), no longer in the data.
 Use a width for minor service roads that varies with zoom between 16 and 19, like other service roads.
 Removed "[fee=free](https://taginfo.openstreetmap.org/tags/fee=free#overview)", no longer in the data.  Also "Free".
-When "natural=wood" and "leisure=nature_reserve" occur together, only display the text via "nature_reserve".  There's relatively little difference between the two currently, which hasn't resulted in duplicate text noticeably being displayed, but this makes things more consistent.
+When `natural=wood` and `leisure=nature_reserve` occur together, only display the text via "nature_reserve".  There's relatively little difference between the two currently, which hasn't resulted in duplicate text noticeably being displayed, but this makes things more consistent.
 Don't use a colour for "[military=danger_area](https://taginfo.openstreetmap.org/tags/military=danger_area#overview)", just rely on the military hatching.  This avoids using a colour close to "historic landuse".  Text is still shown from zoom 12, unlike 15 for other military.
 The size of the tree patterns used for broadleaved, needleleaved and mixed woods was enlarged from 56x64 to 64x64.  This "thins out" the trees a bit (and looks a bit nicer), but also supports a future vector version of this style better.
-Removed amenity=college from the "office" logic.  Office dot is no longer shown, but the text is still similar.
+Removed `amenity=college` from the "office" logic.  Office dot is no longer shown, but the text is still similar.
 Increase the zoom level at which reefs are shown from 10 to 13.
 Don't change "zoo enclosures" for rendering if another amenity tag is already said.
-Removed various rare "fee=no" synonyms, no longer in the data.
+Removed various rare `fee=no` synonyms, no longer in the data.
 Removed "[waterway=pipeline](https://taginfo.openstreetmap.org/tags/waterway=pipeline#overview)", largely superceded by [man_made=pipeline](https://taginfo.openstreetmap.org/tags/man_made=pipeline#overview).
 
 ## 27/08/2024
@@ -146,15 +146,15 @@ Show departure boards that exist on their own, not attached to bus stops etc.
 Show public transport information boards with a blue pole.
 Show linear lock gates with a a thick black line, like other linear gates.
 Don't show unnamed MTB "routes" as routes.
-Removed "shop=takeaway" and "shop=offlicence", no longer in the data.
-Removed "amenity=shopmobility" from list of expected tags, no longer in the data.
+Removed `shop=takeaway` and `shop=offlicence`, no longer in the data.
+Removed `amenity=shopmobility` from list of expected tags, no longer in the data.
 
 ## 27/03/2024
-Removed "shop=guns", no longer in the data.
+Removed `shop=guns`, no longer in the data.
 Detect outfalls, sewage and otherwise.
-Show "location=overhead" pipelines in the same way as "location=overground" ones.
-Show "seamark_type=pipeline_submarine" in the same way as "man_made=pipeline".
-Removed "craft=joinery", no longer in the data.
+Show `location=overhead` pipelines in the same way as `location=overground` ones.
+Show `seamark_type=pipeline_submarine` in the same way as `man_made=pipeline`.
+Removed `craft=joinery`, no longer in the data.
 Show inscriptions and directions on milestones at higher zooms.
 Show inscriptions on boundary markers and stones at higher zooms.
 Show island names up to and including the size of Ireland, but not Great Britain.
@@ -167,13 +167,13 @@ Where a platform is also a bus stop, show it as a bus stop first.
 ## 16/03/2024
 Added accommodation, wheelchair and beer garden checks for a few more combinations, including microbreweries.
 Show mazes as nonspecific leisure items.
-Removed "shop=jeweller", no longer in the data.
-Show "bus_speech_output_name" and/or "bus_display_name" if non-blank and not contained within "name".
+Removed `shop=jeweller`, no longer in the data.
+Show `bus_speech_output_name` and/or `bus_display_name` if non-blank and not contained within `name`.
 
 ## 09/03/2024
-Render shop=esoteric in the same list as other "woo" shops such as "new_age" etc.
+Render `shop=esoteric` in the same list as other "woo" shops such as "new_age" etc.
 Treat NaPTAN customary stops with no departures as "pole not present" ones.  This isn't assured, but you can't assume there is a pole at a customary stop.
-Include "man_made=marker" in the list of pipeline markers.
+Include `man_made=marker` in the list of pipeline markers.
 If something has been tagged as a beach resort and a beach, show as just a beach.
 Added wheelchair and beer garden checks for micropubs which serve food and have noncarpeted floors, and some other pubs with other combinations of tags.
 Added "grubby carpet" to the list of floor:material values that indicate a less-precious floor.
@@ -181,13 +181,13 @@ Excluded some "food" values (such as "snacks") from indicating that "this pub se
 
 ## 28/02/2024
 Fixed spelling of "paper timetable" (sic) in the lua code.  Taginfo was correct already.
-Removed "shop=beautician", no longer in the data.
-Added "departures_board=yes" as "implying at least a timetable".
+Removed `shop=beautician`, no longer in the data.
+Added `departures_board=yes` as "implying at least a timetable".
 Use a larger icon for ventilation shafts at high zoom levels.
 Display stiles with dog gates with a different icon.
 Show duty free shops not tagged as something else as "gift".
-Show "leisure=garden" and "leisure=nature_reserve" that are also "tourism=attraction" as the former.
-Removed "departures_board=realtime; timetable", no longer in the data.
+Show `leisure=garden` and `leisure=nature_reserve` that are also `tourism=attraction` as the former.
+Removed `departures_board=realtime; timetable`, no longer in the data.
 Show ventilation shafts mapped as areas in the same way as roofs if not already mapped as buildings.
 Detect more subtags that indicate that farmland or meadows should be treated as "farm grass".
 Detect "farm shop honesty boxes" and show with produce if known.
@@ -195,26 +195,26 @@ Detect more taggings of "farm shop honesty boxes".
 Add icons for "baseball" sports pitches.
 
 ## 18/02/2024
-Include "tower:type = ventilation_shaft" in the list of things that get shown as ventilation shafts.
+Include `tower:type=ventilation_shaft` in the list of things that get shown as ventilation shafts.
 On bus stops, show whichever of "name", "ref", "naptan:Indicator" is available.  If available show "website" as well from zoom 21 upwards.
-Removed "pole=maypole", no longer in the data.
+Removed `pole=maypole`, no longer in the data.
 Show whether a bus stop has a real-time departures board, a timetable or no flag or pole at all by using a different icon.  Also show whether the departures board has speech output.
 Show larger icons for bus stops at higher zooms.
-Removed "man_made=telephone_kiosk" and "telephone_kiosk=K4", no longer in the data.
+Removed `man_made=telephone_kiosk` and `telephone_kiosk=K4`, no longer in the data.
 
 ## 06/02/2024
 Nudge the text on artwork names down slightly at high zooms to avoid it being obscured.
 Removed "cuisine" check for "ice_cream;coffee;waffles;crepes" as it is no longer in the data.
 Moved some more historic items into the "show at lower zoom if they are larger" section.
 Changed to historic size thresholds to show some medium sized items earlier.
-Removed "emergency_service=air", no longer in the data.
+Removed `emergency_service=air`, no longer in the data.
 
 ## 30/01/2024
 Detect tumuli mapped as tombs.
 Suppress duplicate name display on some historic / landuse combinations on buildings and some other features.
-Added support for "historic=workhouse" as a nonspecific historic item.
-Treat "status=abandoned" as a synonym for "disused=yes".
-Detect historic quarries that have "historic=yes" set.
+Added support for `historic=workhouse` as a nonspecific historic item.
+Treat `status=abandoned` as a synonym for `disused=yes`.
+Detect historic quarries that have `historic=yes` set.
 Suppress duplicate name display on some historic / natural combinations.
 Use various "segregated" tags as an indicator of "sidewalk".
 At high zooms show directions on guideposts.
@@ -223,7 +223,7 @@ At high zooms show directions on guideposts.
 If something is a historic quarry, mineshaft or castle, or falls into the historic "nonspecific catch-all", and is tagged with something leisure or natural, show it as that other thing.
 If something is a historic tomb, and is tagged with landuse, leisure or natural, show it as the latter.
 Show some "area" historic objects at a lower zoom level if large enough.
-Suppress landuse=historic display on 'modern' archaeological sites.
+Suppress `landuse=historic` display on 'modern' archaeological sites.
 Suppress duplicate name display on some historic / landuse combinations.
 
 ## 23/01/2024
@@ -231,57 +231,57 @@ Show non-historic watermills.
 Detect former kilns tagged as "ruins:man_made".
 If a "ref" is set for an international walking network, use that instead of "name".
 Fix bug whereby rugby pitches weren't shown in green.
-Removed "natural=lake" from styling and taginfo after removing it from UK/IE data.
+Removed `natural=lake` from styling and taginfo after removing it from UK/IE data.
 Show larger lakes at lower zoom levels based on size.  Changed "smallest lake" display level from zoom 15 to zoom 16.
 Show area battlefield names at lower zoom levels based on size.  Smallest area battlefield shows from zoom 16, as before.
 
 ## 12/01/2024
-Removed "floor:material=rough wood", no longer in the data.
+Removed `floor:material=rough wood`, no longer in the data.
 Add "football" as a synonym for "soccer" and detect more combinations for that, and other sports.
 Add icons for "athletics", "boules", "bowls", "croquet", "cycling", "equestrian", "gaelic_games", "hockey", "multi", "netball", "polo" and "shooting" sports pitches.
-Don't display a name from both "leisure=pitch" and e.g. "sport=shooting".  
-Display military hatching on both "sport=shooting" and "sport=shooting_range".
+Don't display a name from both `leisure=pitch` and e.g. `sport=shooting`.  
+Display "danger" hatching on both `sport=shooting` and `sport=shooting_range`.
 Sorted the sport legends entry in rough order of popularity in UK/IE and added new icons for sports with pitches down to "boules".
 Display a "ref" from zoom 19 for aerial pipeline markers.
-Removed "craft=glazier", no longer in the data.
-Display "waterway=drainage_channel" as "waterway=ditch".
-Added support for "vending=bottle_return" with a unique icon based on other "vending" ones.
-Show "historic=pound" as a synonym for "historic=pinfold".  Many pinfolds have been [retagged](https://www.openstreetmap.org/changeset/146161946) as pounds.
+Removed `craft=glazier`, no longer in the data.
+Display `waterway=drainage_channel` as `waterway=ditch`.
+Added support for `vending=bottle_return` with a unique icon based on other "vending" ones.
+Show `historic=pound` as a synonym for `historic=pinfold`.  Many pinfolds have been [retagged](https://www.openstreetmap.org/changeset/146161946) as pounds.
 
 ## 01/01/2024
-Added "ruins=donjon" to the list of ruined castle tags.
-Use "ruins=yes" more often to detect that historical buildings are fuins.
-Detect "ruins=windmill" as a ruined windmill.
-Detect "ruins=barn", "ruins=barrack", "ruins=blackhouse", and "ruins=hut" as ruined buildings
-Detect "ruins=farm_auxiliary" as a ruined building.
-Detect "ruins=mill" as a ruined mill.
-Detect "ruins=mine" as a ruined mine.
-Detect "ruins=lime_kiln" as a ruined lime kiln.
-Detect "ruins=manor" as a ruined manor.
-Detect "ruins=well" as a ruined well.
-Detect "ruins=watermill" as a ruined watermill.
-Detect "historic=village" as nonspecific historical items.
-Detect "ruins=village" as a ruined village.
-Show "historic=village_pump" as a historic, hand-operated water pump.
-Detect "ruins=grave_yard" as a ruined graveyard.
-Detect "man_made=sound mirror" as a nonspecific historical item.
-Detect "ruins=round_tower" as a ruined round tower.
+Added `ruins=donjon` to the list of ruined castle tags.
+Use `ruins=yes` more often to detect that historical buildings are fuins.
+Detect `ruins=windmill` as a ruined windmill.
+Detect `ruins=barn`, `ruins=barrack`, `ruins=blackhouse`, and `ruins=hut` as ruined buildings
+Detect `ruins=farm_auxiliary` as a ruined building.
+Detect `ruins=mill` as a ruined mill.
+Detect `ruins=mine` as a ruined mine.
+Detect `ruins=lime_kiln` as a ruined lime kiln.
+Detect `ruins=manor` as a ruined manor.
+Detect `ruins=well` as a ruined well.
+Detect `ruins=watermill` as a ruined watermill.
+Detect `historic=village` as nonspecific historical items.
+Detect `ruins=village` as a ruined village.
+Show `historic=village_pump` as a historic, hand-operated water pump.
+Detect `ruins=grave_yard` as a ruined graveyard.
+Detect `man_made=sound mirror` as a nonspecific historical item.
+Detect `ruins=round_tower` as a ruined round tower.
 If a saltmarsh has surface=mud, render as saltmarsh.
-Detect wetland=wet_meadow where natural!=wetland.
+Detect `wetland=wet_meadow` where `natural!=wetland`.
 Append "(m)" to mountain bike route names.
-Detect "historic=battery" and "defensive_works=battery" as nonspecific historical items.
+Detect `historic=battery` and `defensive_works=battery` as nonspecific historical items.
 Detect more ruined buildings without a "ruins" tag.
 Use "castle_type to detect things "troll tagged" as castles that are not castles.
 Better handle geoglyphs - now that named "bare rock" appears, use that.
 Only add "unnamed commercial" landuse at the very end of the processing.
 Treat water towers as buildings.
 Don't show a label on commercial or grass landuse if an underlying aerodrome will have a name shown.
-Remove landuse=conservation if we can.
+Remove `landuse=conservation` if we can.
 Fixed typo in "stately" in a couple of places including taginfo.
 Removed various duplicate landuse / leisure labels.
 Increased the materials detected as noncarpeted pub floors.
 Look for grass on horse_riding.
-Removed "shop=printer_cartridges", no longer in the data.
+Removed `shop=printer_cartridges`, no longer in the data.
 
 ## 28/12/2023
 Show hilltop enclosures as hill forts.
@@ -416,7 +416,7 @@ Show "wet meadow" wetlands as such.
 Change the wetland and intermittent wetland patterns to better represent the data and fit in with the rest of the style.
 
 ## 18/08/2023
-Handle amenity=youth_centre in the same way as amenity=youth_club.
+Handle `amenity=youth_centre` in the same way as `amenity=youth_club`.
 If "boundary=forest" is set and "landuse" is not, handle as per "landuse=forest".
 Added a couple more synonyms for "leisure=bird_hide".
 Added an icon for grouse butts.
@@ -458,20 +458,20 @@ Added more historic and memorial crosses, including historic=high_cross.
 Added man_made=cross.
 Added leisure=bandstand - show as a roof with a green musical icon.
 Removed waterway=aqueduct; no longer in the data.
-Update taginfo to reflect that shop=gun is back in the data again.
+Update taginfo to reflect that `shop=gun` is back in the data again.
 "historic=bridge site" has been changed in the data to "historic=bridge_site".
 If a tourist attraction is also a sports centre, show as a sports centre.
 If 'visibility' is set and 'trail_visibility' is not; use the former.
 
 ## 17/06/2023
-Show amenity=watering_place on ways as water, on nodes as a blue dot.
+Show `amenity=watering_place` on ways as water, on nodes as a blue dot.
 Removed "building=residential_home" as a synonym for "amenity=residential_home"; no longer in the data.
 Removed "shop=bureau_de_change"; no longer in the data.
 Added some semicolon-separated sports: climbing;bouldering, cricket_nets;multi, skateboard;bmx, soccer;basketball, soccer;football, soccer;rugby, soccer;hockey, soccer;gaelic_games, soccer;gaelic_games;rugby, basketball;soccer, basketball;football, basketball;multi, basketball;netball, multi;basketball;soccer, rugby;soccer, rugby_union;soccer, rugby;football, tennis;netball, tennis;multi, yoga;pilates, motor;karting, soccer;archery.
 Show information boards without a tourism tag.
 Consolidated PNFS operator tags.
 Added support for various "information=board" and "information=map" variations.
-Added support for shop=catering_supplies.
+Added support for `shop=catering_supplies`.
 Handle various incompletely tagged Howden's Joinery.
 
 ## 29/05/2023
@@ -481,7 +481,7 @@ Handle historic graves in the same way as memorial graves.
 Add certain named historic=industrial objects with historic dot and landuse.
 Show disused and historic quarries.
 Show historic pubs as former pubs.
-Removed shop=locksmiths and shop=fireplaces; no longer in the data.
+Removed `shop=locksmiths` and `shop=fireplaces`; no longer in the data.
 Show "historic=moat" as "waterway=derelict_canal".
 Show "historic=bridge site" as a generic historic site.
 Show "disused:landuse=cemetery" as a generic historic item if there are no other tags.
@@ -503,14 +503,14 @@ Updated OS OpenMap Local tiles to October 2022.
 OSMUK cadastral parcels added as an extra layer.
 
 ## 08/05/2023
-Removed shop=flower; no longer in the data.
+Removed `shop=flower`; no longer in the data.
 Suggested by [this forum post](https://community.openstreetmap.org/t/tagging-for-outdoor-education-centres/98422), add support for "amenityoutdoor_education_centre".  Low usage currently.
-Support healthcare=doctor as a synonym for amenity=doctors.
+Support healthcare=doctor as a synonym for `amenity=doctors`.
 Similarly support other "healthcare" synonyms, and some others (e.g. "midwife").
-Removed amenity=doctor; no longer in the data.
-Removed amenity=micro_scooter_rental; no longer in the data.
-Removed amenity=scooter_hire; no longer in the data.
-Removed amenity:old; no longer in the data.
+Removed `amenity=doctor`; no longer in the data.
+Removed `amenity=micro_scooter_rental`; no longer in the data.
+Removed `amenity=scooter_hire`; no longer in the data.
+Removed `amenity:old`; no longer in the data.
 Corrected spelling of "K4 Post Office" (no underscores).
 Added values for "booth" to taginfo,json.
 Removed "Gala Bingo Hall"; no longer in the data.
@@ -524,7 +524,7 @@ Made the three "wood" patterns larger, and less regular.
 ## 23/04/2023
 Show disused:man_made=mineshaft etc. as historic mines.
 Show disused:military=bunker etc. as historic bunkers.
-Removed shop=healthfood; no longer in the data.
+Removed `shop=healthfood`; no longer in the data.
 Show highways with designation=access_land as public_footpath.
 Show smaller aerodromes (gliding clubs etc.) with leisure brown text, not transport blue. 
 Show historic=pinfold with a unique icon.
@@ -571,7 +571,7 @@ Show archaeological sites that are fortifications or tumuli with icons unique to
 Show ringforts and hillforts with icons unique to them.
 
 ## 19/03/2023
-If an amenity=bicycle_parking is mapped as a closed way, but as covered=no, don't show it with a roof.
+If an `amenity=bicycle_parking` is mapped as a closed way, but as covered=no, don't show it with a roof.
 Show natural=hill like natural=peak, but from a higher zoom level.
 Show natural=hedge as barrier=hedge.
 Treat natural=earth_bank as a type of embankment.
@@ -614,7 +614,7 @@ Add natural=ridge to the list of tags treated as non-highway and highway embankm
 Handle natural=shoal as either mud or reef.
 
 ## 04/03/2023
-Removed shop=auto_repair, which is no longer in the data.
+Removed `shop=auto_repair`, which is no longer in the data.
 Added lifevest and "flotation device" as synonyms for life_ring.
 Add "designation=March Stone" as a synonym for boundary stones.
 Replace office=photo_studio with craft=photographer.
@@ -651,13 +651,13 @@ Detect pubs that are also e.g. motels as having accommodation.
 ## 04/01/2023
 Update taginfo.json with all missing values from all remaining .mss files: buildings.mss, amenity-symbols.mss, stations.mss, ferry-routes.mss, aerialways.mss, admin.mss, addressing.mss.
 Changed update_render.sh and make_gis3_live.sh so that styling changes as well as database changes are held off until gis3 is made live.
-Detect electric charging stations mistagged as amenity=fuel or waterway=fuel.
-Show amenity=fuel that also provide electric charging with "+/-" to the side of the normal fuel icon.
-Show vending machines that sell petrol as amenity=fuel.
-Show aeroway=fuel as amenity=fuel.
-Show waterway=fuel as a maritime version of amenity=fuel.
+Detect electric charging stations mistagged as `amenity=fuel` or waterway=fuel.
+Show `amenity=fuel` that also provide electric charging with "+/-" to the side of the normal fuel icon.
+Show vending machines that sell petrol as `amenity=fuel`.
+Show aeroway=fuel as `amenity=fuel`.
+Show waterway=fuel as a maritime version of `amenity=fuel`.
 Show hydrogen fuel stations as such.
-Show amenity=fuel selling LPG as such.  Unfortunately the data isn't yet there to distinguish "LPG only" and "LPG as well".
+Show `amenity=fuel` selling LPG as such.  Unfortunately the data isn't yet there to distinguish "LPG only" and "LPG as well".
 Added government=police and office=property_maintenance.
 Added man_made=standing_stone and man_made=stone.
 Detect "training" without "amenity", "shop" or "leisure".
@@ -679,7 +679,7 @@ Under the diplomatic key, embassy is now being used for non-embassies, so proces
 Likewise, consulate.
 Someone changed "lawnmower" to "lawn_mower" in the data ages ago, but oddly left "lawnmowers", so render "shop=lawn_mower".
 "plant_hire;tool_hire" was always amenity not shop; fixed.
-Show amenity=biergarten, amenity=beer_garden and outdoor_seating=garden as green.
+Show `amenity=biergarten`, `amenity=beer_garden` and `outdoor_seating=garden` as green.
 Update taginfo.json with all recent changes from style.lua.
 Removed some formerly low-use synonyms that are no longer in use from the style.
 Show "hazard_prone=yes" where "hazard_type=flood" as flood prone.
@@ -716,7 +716,7 @@ Update [map.atownsend.org.uk](https://map.atownsend.org.uk) to use "[leaflet-has
 
 ## 27/11/2022
 Render "tower:type=chimney" and "building=chimney" as "chimney" or "bigchimney", depending on height.
-Render office=medical_supply as shop=medical_supply.
+Render office=medical_supply as `shop=medical_supply`.
 Added railway:historic to the style, for compatibility with mkgmap style.
 If it has no other tags, ensure that military bunkers appear as buildings.
 Updated (in SomeoneElse-style) update_render.sh, update_carto.sh and (in SomeoneElse-style-legend) update_generated_legend.sh to link comments to [stackoverflow](https://stackoverflow.com/a/73836045/8145448).
@@ -776,8 +776,8 @@ Paths suppressed for bad visibility or over-demanding sac_scale now get their ow
 ## 03/06/2022
 Added craft=floorer to the same list as "roofer" etc.
 Exclude "independent" and "free house" etc. from brand and operator.
-Render amenity=waste_transfer_station as industrial.
-Render amenity=food_court in the same way as marketplace - as a name, with no icon.
+Render `amenity=waste_transfer_station` as industrial.
+Render `amenity=food_court` in the same way as marketplace - as a name, with no icon.
 Render historic railway stations in the same way as other historic items.
 Prevent highway=raceway from appearing in the polygon table.
 Render entrance=main at higher zoom levels (from 18).
@@ -797,7 +797,7 @@ Render shops with "opening_hours=closed" as vacant shops.
 Now that regional cycle networks are shown, the "name" logic needs to include the name (rather than the ref) in cases where there is no ref.
 Show waterway=floating_barrier in the same way as other waterway barriers.
 Catch various other ways of detecting locked gates.
-Add shop=plant_centre as a garden centre synonym.
+Add `shop=plant_centre` as a garden centre synonym.
 Use "is_sidepath" as another tag to suppress names on cycleways etc.
 Added pipeline marks to legend.
 In "update_render.sh", remove the "pubs" file before sorting the input file into it.
@@ -902,17 +902,17 @@ Don't display building names for amenities if the building tag is empty, or if a
 
 ## 10/10/2021
 Rearrange legend to split the "shops" line.
-Render shop=seafood as its own icon.
-Include amenity=scooter_rental in the list of objects for which operator is counted as name.
+Render `shop=seafood` as its own icon.
+Include `amenity=scooter_rental` in the list of objects for which operator is counted as name.
 Don't include disused:amenity=grave_yard as "vacant" if still landuse=cemetery.
-Render shop=copyshop and shop=coffee etc. with their own icons.
+Render `shop=copyshop` and `shop=coffee` etc. with their own icons.
 
 ## 12/09/2021
-Render shop=pastry as shop=bakery.
-Render shop=optician, shop=shoes, shop=electronics, shop=stationery, shop=catalogue, shop=musical_instrument with their own icons.
-Render shop=locksmith and shop=shoe_repair with their own icons.
-Render shop=storage_rental with its own icon.
-Render shop=health_food with its own icon, and also zero-waste health food shops.
+Render `shop=pastry` as `shop=bakery`.
+Render `shop=optician`, `shop=shoes`, `shop=electronics`, `shop=stationery`, `shop=catalogue`, `shop=musical_instrument` with their own icons.
+Render `shop=locksmith` and `shop=shoe_repair` with their own icons.
+Render `shop=storage_rental` with its own icon.
+Render `shop=health_food` with its own icon, and also zero-waste health food shops.
 Add an icon for various "soft" homeware shops ("hard" homeware shops still get the furniture icon).
 
 ## 02/09/2021
@@ -931,7 +931,7 @@ Render castle walls as city walls.
 ## 31/05/2021
 Fix a bug where narrow "designation=public_bridleway; trail_visibility=intermittent" paths were omitted.
 Fix a bug where narrow paths without designations with trail_visibility=intermittent" paths were omitted.
-Added support for motorcycle_parking (including if mapped as a modifier for amenity=parking).
+Added support for motorcycle_parking (including if mapped as a modifier for `amenity=parking`).
 Treat zero waste shops as other grocers.
 Added a few more combinations of ice_cream fast_food.
 
@@ -1015,7 +1015,7 @@ If something is tagged both as a supermarket and a pharmacy, remove the tag for 
 ## 11/04/2020
 Render golf=cartpath as path rather than highway=service if that tag is set.
 Render variously tagged showgrounds as meadows.
-Render shop=meditation as "woo".
+Render `shop=meditation` as "woo".
 Render woodland with an unexpected landuse tag as woodland.
 Render various synonyms for leisure=common.
 
@@ -1032,10 +1032,10 @@ Render the names of telescopes and radio telescopes.
 Render various other sorts of ruined buildings as building=ruins.
 Render named building nodes.
 Render natural arches in the same way as bridges - the same as building=roof.  Names (even for nodes) are also displayed.
-Render highway=rest_area as amenity=parking.
-Render railway=traverser as building=roof.  It's not ideal, but it is better than nothing.
+Render `highway=rest_area` as `amenity=parking`.
+Render `railway=traverser` as `building=roof`.  It's not ideal, but it is better than nothing.
 Also render animal=horse_walker as building=roof.
-Treat animal=shelter as amenity=animal_shelter, as that is how it is used.
+Treat animal=shelter as `amenity=animal_shelter`, as that is how it is used.
 Look at more tags to suggest farmgrass, such as animals kept there.
 
 ## 17/01/2020 release
@@ -1100,7 +1100,7 @@ Treat "was:" as "disused:".
 Render climbing boulders etc. from zoom 17.
 
 ## 15/07/2019 release
-Render amenity=feeding_place as a roof, if not already a building.
+Render `amenity=feeding_place` as a roof, if not already a building.
 Likewise for bus shelters.
 Don't use the "shelter" icon on animal field shelters (it's already removed for bus shelters).
 Include "support=tower" in those clocks rendered as clock towers.
@@ -1111,7 +1111,7 @@ Render fountains.
 Append "air quality" to name of air quality monitoring stations.
 
 ## 23/03/2019 release
-Render shop=embroidery as a shop.
+Render `shop=embroidery` as a shop.
 Add "artwork" to the list of former telephone box uses.
 Append "sewage" to name of wastewater plants.
 Render man_made=footwear_decontamination
@@ -1236,7 +1236,7 @@ Added many more "edge case" designations, including ones with semicolons where s
 
 ## 08/08/2018 release
 Made ferry routes less prominent from zoom 11.
-Suppress "historic" for amenity=pub.
+Suppress "historic" for `amenity=pub`.
 Added IATA code to large aerodromes.
 Render man_made=spillway areas as water.
 Render brand on offices.
@@ -1260,7 +1260,7 @@ ref to create the name if set.
 
 ## 28/06/2018 release
 Fixed a [bug](https://github.com/SomeoneElseOSM/SomeoneElse-style/issues/4) where gendered hairdressers (or other features, actually) could render as male or female toilets.
-Added icon for shop=art, shop=computer and related shops.
+Added icon for `shop=art`, `shop=computer` and related shops.
 Resolved a layer calculation issue to fix [this problem](https://github.com/SomeoneElseOSM/SomeoneElse-style/issues/5).
 
 ## 12/06/2018 release
@@ -1305,7 +1305,7 @@ Render disused shops with an "old_name".
 More detail about church spires and towers and other towers; better icons.
 Split recycling centres and bins.
 Added office=research_institute to list of rendered offices.
-Added icon for shop=deli.
+Added icon for `shop=deli`.
 
 ## 04/03/2018 release
 Treated "fence_type=hedge" as "hedge".
@@ -1329,9 +1329,9 @@ Made meadow significantly less green.
 Removed access=permissive rendering on selected roads and footpaths.
 Changed destination colour and added to tracks etc.
 Made "booth telephone" icon telephone larger.
-Added amenity=bbq.
+Added `amenity=bbq`.
 Added support for intermittent rivers and streams.
-Added icon for amenity=charging_station.
+Added icon for `amenity=charging_station`.
 Added icon advertising columns.
 
 ## 17/01/2018 release
@@ -1357,7 +1357,7 @@ Render sustrans mileposts as indigo "information" icons with an icon based on th
 Extended the range of what counts as a "ventilation shaft".
 Ensure that "agricultural" etc. are changed to "private" before "private is checked against "designation".
 Remove names from footpaths explicitly tagged as sidewalks (the name will be on the road).
-Render amenity=archive as a government office.
+Render `amenity=archive` as a government office.
 Treat embankment=yes as man_made=levee/bridge=levee and tidied up or added embankment rendering on roads.
 Made non-designation steps a lot narrower to make them less "in your face" on the map.
 Made designation steps a little bit narrower also.
@@ -1375,7 +1375,7 @@ Added linear barriers to legend.
 Long fords on tertiary and below are now rendered with a water-coloured casing.
 
 ## 16/12/2017 release
-Added specific icons for shop=bookmaker and shop=furniture.
+Added specific icons for `shop=bookmaker` and `shop=furniture`.
 Map man_made=monument to historic=monument (handled below) if no better tag exists.
 Added icons for barriers door, toll_booth.
 Treat linear unknown barriers as "fence" and point ones as "bollard".
@@ -1401,7 +1401,7 @@ Added support for more shop tags.
 Apply changes from parent repository from [pull 814](https://github.com/gravitystorm/openstreetmap-carto/pull/814) and then reapply changes from [here](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT/commits/master/water.mss) .
 Changed motorway junction refs to black, as these are used on other roads too.
 Differentiate between railway=disused/abandoned/dismantled etc.
-Added specific icons for shop=beauty and shop=gift.
+Added specific icons for `shop=beauty` and `shop=gift`.
 
 ## 03/12/2017 release
 Added support for more shop tags.
@@ -1417,7 +1417,7 @@ Added bus_guideway to legend.
 ## 28/11/2017 release
 Added support for more historic tags.
 More tweaks to historic rendering,  Added a slight background.
-Use brand and/or operator on amenity=fuel.
+Use brand and/or operator on `amenity=fuel`.
 Move craft=bakery to "industrial" (shop=bakery has its own shop icon).
 Added more shop renderings, including different ways of tagging empty shops.
 
@@ -1461,13 +1461,13 @@ Updated legend with existing and new leisure values.
 Added public_bath to nonspecific leisure.
 Added support for names on barriers.
 Various legend updates including cars, education, rail and aeroway.
-Added shop=milk and amenity=van_rental.
+Added `shop=milk` and `amenity=van_rental`.
 Remove man_made=tower from wind turbines.
 Added healthcare=therapy, various tutoring places.
 Treat access=permit as access=private.
 If a street has different names on each side, render it.
 Render natural=fell as natural=heath ("generic upland").
-Added shop=milk and amenity=van_rental.
+Added `shop=milk` and `amenity=van_rental`.
 
 ## 22/09/2017 release
 Changed survey point et al names to black.
@@ -1531,7 +1531,7 @@ Car washes now have their own icon
 Added craft=roofer to the "house fixing" group icon.
 
 ## 08/08/2017 release
-Added support for shop=tourism, office=advertising, shop=fuel.
+Added support for `shop=tourism`, office=advertising, `shop=fuel`.
 Added support for waterway=aqueduct.
 Show parking spaces as private parking areas (which actually mirrors usage in UK).
 Added support for a couple of variations of pet grooming.

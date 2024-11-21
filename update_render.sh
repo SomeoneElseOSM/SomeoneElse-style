@@ -526,9 +526,9 @@ mkdir /var/cache/renderd/pyosmium.${local_database}
 chown ${local_renderd_user} /var/cache/renderd/pyosmium.${local_database}
 sudo -u ${local_renderd_user} pyosmium-get-changes -D ${file_extension1} -f /var/cache/renderd/pyosmium.${local_database}/sequence.state -v
 #
-pandoc -s -f markdown -t html --metadata-file /home/${local_filesystem_user}/src/SomeoneElse-map/metadata.yaml --metadata title="Changelog" /home/${local_filesystem_user}/src/SomeoneElse-style/changelog.md > /var/www/html/maps/map/changelog.html
+pandoc -s -f markdown -t html --metadata-file /home/${local_filesystem_user}/src/SomeoneElse-map/metadata.yaml --metadata title="Changelog" -H /home/${local_filesystem_user}/src/SomeoneElse-map/raster_header.html /home/${local_filesystem_user}/src/SomeoneElse-style/changelog.md > /var/www/html/maps/map/changelog.html
 #
-pandoc -s -f markdown -t html --metadata-file /home/${local_filesystem_user}/src/SomeoneElse-map/metadata.yaml --metadata title="About this map" /home/${local_filesystem_user}/src/SomeoneElse-map/about.md > /var/www/html/maps/map/about.html
+pandoc -s -f markdown -t html --metadata-file /home/${local_filesystem_user}/src/SomeoneElse-map/metadata.yaml --metadata title="About this map" -H /home/${local_filesystem_user}/src/SomeoneElse-map/raster_header.html /home/${local_filesystem_user}/src/SomeoneElse-map/about.md > /var/www/html/maps/map/about.html
 #
 /etc/init.d/renderd restart
 /etc/init.d/apache2 restart
