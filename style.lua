@@ -2357,6 +2357,15 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Various tags are used for milk churn stands
+-- They're shown with a red "historic" icon.
+-- ----------------------------------------------------------------------------
+   if ((  keyvalues["man_made"] == "milk_churn_stand" ) or
+       (  keyvalues["memorial"] == "milk_churn_stand" )) then
+      keyvalues["historic"] = "milk_churn_stand"
+   end
+
+-- ----------------------------------------------------------------------------
 -- Things that are both viewpoints or attractions and monuments or memorials 
 -- should render as the latter.  Some are handled further down too.
 -- Also handle some other combinations.

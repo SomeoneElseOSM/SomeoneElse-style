@@ -5,6 +5,7 @@ This page describes changes made in these projects: [SomeoneElse-style](https://
 Changed font family of internal web pages to Arial.
 Readability changes to documents on the hosting website; links added.
 Things that are both peaks and survey points should render as the former.
+Added [man_made=milk_churn_stand](https://taginfo.openstreetmap.org/tags/man_made=milk_churn_stand#overview) as a separate icon.
 
 ## 11/11/2024
 Added [experimental vector maps](https://map.atownsend.org.uk/vector/index.html#13.33/53.73709/-2.01785) and updated the "about" page to acknowledge their existance and say "raster" or "vector" as appropriate.
