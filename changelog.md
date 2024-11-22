@@ -3,7 +3,8 @@ This page describes changes made in these projects: [SomeoneElse-style](https://
 
 ## As yet unreleased
 Changed font family of internal web pages to Arial.
-Readability changes to documents on the hosting website.
+Readability changes to documents on the hosting website; links added.
+Things that are both peaks and survey points should render as the former.
 
 ## 11/11/2024
 Added [experimental vector maps](https://map.atownsend.org.uk/vector/index.html#13.33/53.73709/-2.01785) and updated the "about" page to acknowledge their existance and say "raster" or "vector" as appropriate.

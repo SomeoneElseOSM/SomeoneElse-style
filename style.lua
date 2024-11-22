@@ -6425,9 +6425,10 @@ function filter_tags_generic(keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
 -- Things that are both peaks and cairns should render as the former.
 -- ----------------------------------------------------------------------------
-   if ((( keyvalues["natural"]   == "hill"     )  or
-        ( keyvalues["natural"]   == "peak"     )) and
-       (  keyvalues["man_made"]  == "cairn"     )) then
+   if ((( keyvalues["natural"]   == "hill"         )  or
+        ( keyvalues["natural"]   == "peak"         )) and
+       (( keyvalues["man_made"]  == "cairn"        )  or
+        ( keyvalues["man_made"]  == "survey_point" ))) then
       keyvalues["man_made"] = nil
    end
 
