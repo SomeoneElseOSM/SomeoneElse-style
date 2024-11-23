@@ -77,9 +77,15 @@ TAGLIST0=~/src/SomeoneElse-style/taginfo.json
 grep '"key"' ${TAGLIST0} | sed 's/"description":.*//' > ~/temp/taglist0.txt
 #
 # ----------------------------------------------------------------------------
-# and then compare with sve01
+# and then compare with sve01 (vector)
 # ----------------------------------------------------------------------------
-TAGLIST1=~/src/SomeoneElse-vector-extract/resources/taginfo_sve01.json
+#TAGLIST1=~/src/SomeoneElse-vector-extract/resources/taginfo_sve01.json
+#
+# ----------------------------------------------------------------------------
+# ... or with ajt03 (mkgmap)
+# ----------------------------------------------------------------------------
+TAGLIST1=~/src/mkgmap_style_ajt/taginfo_ajt03.json
+#
 grep '"key"' ${TAGLIST1} | sed 's/"description":.*//' > ~/temp/taglist1.txt
 #
 diff ~/temp/taglist0.txt ~/temp/taglist1.txt | wc
