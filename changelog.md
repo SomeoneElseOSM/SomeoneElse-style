@@ -2,7 +2,7 @@
 This page describes changes made in these projects: [SomeoneElse-style](https://github.com/SomeoneElseOSM/SomeoneElse-style), [SomeoneElse-style-legend](https://github.com/SomeoneElseOSM/SomeoneElse-style-legend) and [openstreetmap-carto-AJT](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT), and visible [on this site](//map.atownsend.org.uk/maps/map/map.html).
 
 ## As yet unreleased
-Show locked linear gates as gates.
+Show locked linear gates and linear lift gates as gates.
 
 ## 22/11/2024
 Changed font family of internal web pages to Arial.
