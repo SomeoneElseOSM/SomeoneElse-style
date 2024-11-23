@@ -3,6 +3,8 @@ This page describes changes made in these projects: [SomeoneElse-style](https://
 
 ## As yet unreleased
 Show locked linear gates and linear lift gates as gates.
+Re-added display of [man_made=pipeline](https://taginfo.openstreetmap.org/tags/man_made=pipeline#overview) which had been accidentally removed.
+Also show utility aerial pipeline markers.
 
 ## 22/11/2024
 Changed font family of internal web pages to Arial.
