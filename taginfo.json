@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20241122T012100Z",
+  "data_updated": "20241123T121700Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -51,7 +51,7 @@
     { "key": "admin_ref", "description": "Indicates an unsigned ref" },
     { "key": "admin:ref", "description": "Indicates an unsigned ref" },
     { "key": "advertising", "description": "Advertising columns" },
-    { "key": "advertising", "value": "column", "description": "Advertising columns" },
+    { "key": "advertising", "value": "column", "description": "Advertising columns are shown with a unique icon" },
     { "key": "aerialway", "description": "Different sorts of aerialways" },
     { "key": "aerialway", "value": "cable_car", "description": "Different sorts of aerialways" },
     { "key": "aerialway", "value": "chair_lift", "description": "Different sorts of aerialways" },

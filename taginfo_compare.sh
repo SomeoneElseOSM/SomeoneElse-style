@@ -83,4 +83,4 @@ TAGLIST1=~/src/SomeoneElse-vector-extract/resources/taginfo_sve01.json
 grep '"key"' ${TAGLIST1} | sed 's/"description":.*//' > ~/temp/taglist1.txt
 #
 diff ~/temp/taglist0.txt ~/temp/taglist1.txt | wc
-diff ~/temp/taglist0.txt ~/temp/taglist1.txt | head
+diff ~/temp/taglist0.txt ~/temp/taglist1.txt | more
