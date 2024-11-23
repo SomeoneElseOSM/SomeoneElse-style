@@ -1205,6 +1205,8 @@
     { "key": "ford", "value": "stream", "description": "Treated as ford=yes" },
     { "key": "ford", "value": "tidal", "description": "Treated as ford=yes" },
     { "key": "ford", "value": "yes", "description": "Fords on nodes (rendered as icon) and ways (rendered as long ford)" },
+    { "key": "former:amenity", "description": "Detect former pubs" },
+    { "key": "former:amenity", "value": "pub", "description": "Extracted as disused pub with old name" },
     { "key": "former_amenity", "description": "Handle disused version of tag" },
     { "key": "former_amenity", "value": "former_pub", "description": "Handle disused version of tag" },
     { "key": "former_amenity", "value": "old_pub", "description": "Handle disused version of tag" },
