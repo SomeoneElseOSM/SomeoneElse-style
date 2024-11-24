@@ -9526,6 +9526,9 @@ function filter_tags_generic(keyvalues, nokeys)
        (( keyvalues["building"] == "yes"                    )  and
         ( keyvalues["amenity"]  == nil                      )  and
         ( keyvalues["leisure"]  == nil                      )  and
+        ( keyvalues["disused:leisure"] == nil               )  and
+        ( keyvalues["office"]   == nil                      )  and
+        ( keyvalues["shop"]     == nil                      )  and
         ( keyvalues["sport"]    ~= nil                      ))) then
       if ( keyvalues["landuse"] == nil ) then
          keyvalues["landuse"] = "unnamedcommercial"
