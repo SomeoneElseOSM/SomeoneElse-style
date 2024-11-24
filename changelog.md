@@ -16,6 +16,7 @@ Added `shop=window_construction` as a synonym for `craft=window_construction`.
 Use `sport` to detect bowling alleys and places for skiing that are not tagged as that but are not tagged as anything else.
 Increase the checkes on which buildings with a sport tag can appear as a leisure facility.
 Use `theatre:type` to detect concert halls.
+Use more verge tags to detect verges.
 
 ## 22/11/2024
 Changed font family of internal web pages to Arial.

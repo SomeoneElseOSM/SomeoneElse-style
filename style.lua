@@ -1088,11 +1088,17 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["highway"] == "unclassified_link" ) or
        ( keyvalues["highway"] == "residential"       ) or
        ( keyvalues["highway"] == "residential_link"  )) then
-      if (( keyvalues["verge"] == "both"           ) or 
-          ( keyvalues["verge"] == "left"           ) or 
-          ( keyvalues["verge"] == "separate"       ) or 
-          ( keyvalues["verge"] == "right"          ) or 
-          ( keyvalues["verge"] == "yes"            )) then
+      if (( keyvalues["verge"]       == "both"            ) or 
+          ( keyvalues["verge"]       == "left"            ) or 
+          ( keyvalues["verge"]       == "separate"        ) or 
+          ( keyvalues["verge"]       == "right"           ) or 
+          ( keyvalues["verge"]       == "yes"             ) or
+          ( keyvalues["verge:both"]  == "separate"        ) or
+          ( keyvalues["verge:both"]  == "yes"             ) or
+          ( keyvalues["verge:left"]  == "separate"        ) or
+          ( keyvalues["verge:left"]  == "yes"             ) or
+          ( keyvalues["verge:right"] == "separate"        ) or
+          ( keyvalues["verge:right"] == "yes"             )) then
           keyvalues["highway"] = "unclassified_verge"
       end
    end
@@ -1153,11 +1159,17 @@ function filter_tags_generic(keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
    if (( keyvalues["highway"] == "living_street"      ) or 
        ( keyvalues["highway"] == "living_street_link" )) then
-      if (( keyvalues["verge"] == "both"           ) or 
-          ( keyvalues["verge"] == "left"           ) or 
-          ( keyvalues["verge"] == "separate"       ) or 
-          ( keyvalues["verge"] == "right"          ) or 
-          ( keyvalues["verge"] == "yes"            )) then
+      if (( keyvalues["verge"]       == "both"           ) or 
+          ( keyvalues["verge"]       == "left"           ) or 
+          ( keyvalues["verge"]       == "separate"       ) or 
+          ( keyvalues["verge"]       == "right"          ) or 
+          ( keyvalues["verge"]       == "yes"            ) or
+          ( keyvalues["verge:both"]  == "separate"       ) or
+          ( keyvalues["verge:both"]  == "yes"            ) or
+          ( keyvalues["verge:left"]  == "separate"       ) or
+          ( keyvalues["verge:left"]  == "yes"            ) or
+          ( keyvalues["verge:right"] == "separate"       ) or
+          ( keyvalues["verge:right"] == "yes"            )) then
           keyvalues["highway"] = "living_street_verge"
       end
    end
@@ -1225,11 +1237,17 @@ function filter_tags_generic(keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
    if (( keyvalues["highway"] == "tertiary"      ) or 
        ( keyvalues["highway"] == "tertiary_link" )) then
-      if (( keyvalues["verge"] == "both"           ) or 
-          ( keyvalues["verge"] == "left"           ) or 
-          ( keyvalues["verge"] == "separate"       ) or 
-          ( keyvalues["verge"] == "right"          ) or 
-          ( keyvalues["verge"] == "yes"            )) then
+      if (( keyvalues["verge"]       == "both"           ) or 
+          ( keyvalues["verge"]       == "left"           ) or 
+          ( keyvalues["verge"]       == "separate"       ) or 
+          ( keyvalues["verge"]       == "right"          ) or 
+          ( keyvalues["verge"]       == "yes"            ) or
+          ( keyvalues["verge:both"]  == "separate"       ) or
+          ( keyvalues["verge:both"]  == "yes"            ) or
+          ( keyvalues["verge:left"]  == "separate"       ) or
+          ( keyvalues["verge:left"]  == "yes"            ) or
+          ( keyvalues["verge:right"] == "separate"       ) or
+          ( keyvalues["verge:right"] == "yes"            )) then
           keyvalues["highway"] = "tertiary_verge"
       end
    end
@@ -1287,11 +1305,17 @@ function filter_tags_generic(keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
    if (( keyvalues["highway"] == "secondary"      ) or 
        ( keyvalues["highway"] == "secondary_link" )) then
-      if (( keyvalues["verge"] == "both"           ) or 
-          ( keyvalues["verge"] == "left"           ) or 
-          ( keyvalues["verge"] == "separate"       ) or 
-          ( keyvalues["verge"] == "right"          ) or 
-          ( keyvalues["verge"] == "yes"            )) then
+      if (( keyvalues["verge"]       == "both"           ) or 
+          ( keyvalues["verge"]       == "left"           ) or 
+          ( keyvalues["verge"]       == "separate"       ) or 
+          ( keyvalues["verge"]       == "right"          ) or 
+          ( keyvalues["verge"]       == "yes"            ) or
+          ( keyvalues["verge:both"]  == "separate"       ) or
+          ( keyvalues["verge:both"]  == "yes"            ) or
+          ( keyvalues["verge:left"]  == "separate"       ) or
+          ( keyvalues["verge:left"]  == "yes"            ) or
+          ( keyvalues["verge:right"] == "separate"       ) or
+          ( keyvalues["verge:right"] == "yes"            )) then
           keyvalues["highway"] = "secondary_verge"
       end
    end
@@ -1339,11 +1363,17 @@ function filter_tags_generic(keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
    if (( keyvalues["highway"] == "primary"      ) or 
        ( keyvalues["highway"] == "primary_link" )) then
-      if (( keyvalues["verge"] == "both"           ) or 
-          ( keyvalues["verge"] == "left"           ) or 
-          ( keyvalues["verge"] == "separate"       ) or 
-          ( keyvalues["verge"] == "right"          ) or 
-          ( keyvalues["verge"] == "yes"            )) then
+      if (( keyvalues["verge"]       == "both"           ) or 
+          ( keyvalues["verge"]       == "left"           ) or 
+          ( keyvalues["verge"]       == "separate"       ) or 
+          ( keyvalues["verge"]       == "right"          ) or 
+          ( keyvalues["verge"]       == "yes"            ) or
+          ( keyvalues["verge:both"]  == "separate"       ) or
+          ( keyvalues["verge:both"]  == "yes"            ) or
+          ( keyvalues["verge:left"]  == "separate"       ) or
+          ( keyvalues["verge:left"]  == "yes"            ) or
+          ( keyvalues["verge:right"] == "separate"       ) or
+          ( keyvalues["verge:right"] == "yes"            )) then
           keyvalues["highway"] = "primary_verge"
       end
    end
