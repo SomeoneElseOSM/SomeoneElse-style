@@ -8353,6 +8353,9 @@ function filter_tags_generic(keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
 -- amenity=veterinary goes through as is
 -- ----------------------------------------------------------------------------
+   if ( keyvalues["shop"] == "veterinary" ) then
+      keyvalues["amenity"] = "veterinary"
+   end
 
 -- ----------------------------------------------------------------------------
 -- Animal boarding
@@ -8549,6 +8552,7 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["shop"]    == "shoe_repair;key_cutting"            ) or
        ( keyvalues["shop"]    == "locksmith;dry_cleaning;shoe_repair" ) or
        ( keyvalues["craft"]   == "key_cutter"                         ) or
+       ( keyvalues["shop"]    == "key_cutter"                         ) or
        ( keyvalues["craft"]   == "shoe_repair"                        ) or
        ( keyvalues["craft"]   == "key_cutter;shoe_repair"             )) then
       keyvalues["landuse"] = "unnamedcommercial"
