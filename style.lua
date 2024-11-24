@@ -7809,8 +7809,10 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["shop"]    == "financial_services"  ) or
        ( keyvalues["office"]  == "financial_services"  ) or
        ( keyvalues["office"]  == "financial_advisor"   ) or
+       ( keyvalues["shop"]    == "financial_advisor"   ) or
        ( keyvalues["shop"]    == "financial_advisors"  ) or
        ( keyvalues["amenity"] == "financial_advice"    ) or
+       ( keyvalues["shop"]    == "financial_advice"    ) or
        ( keyvalues["amenity"] == "bureau_de_change"    ) or
        ( keyvalues["shop"] == "gold_buyer"             )) then
       keyvalues["shop"] = "shopnonspecific"

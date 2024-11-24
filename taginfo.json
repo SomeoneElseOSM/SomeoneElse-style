@@ -2752,6 +2752,8 @@
     { "key": "shop", "value": "fencing", "description": "Various shops shown" },
     { "key": "shop", "value": "finance", "description": "Various shops shown" },
     { "key": "shop", "value": "financial", "description": "Various shops shown" },
+    { "key": "shop", "value": "financial_advice", "description": "Rendered as nonspecific shop" },
+    { "key": "shop", "value": "financial_advisor", "description": "Various shops shown" },
     { "key": "shop", "value": "financial_advisors", "description": "Various shops shown" },
     { "key": "shop", "value": "financial_services", "description": "Various shops shown" },
     { "key": "shop", "value": "fireplace", "description": "Various shops shown" },
