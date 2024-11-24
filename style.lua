@@ -7852,7 +7852,8 @@ function filter_tags_generic(keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
    if (( keyvalues["shop"]    == "tailor"                  ) or
        ( keyvalues["craft"]   == "tailor"                  ) or
-       ( keyvalues["craft"]   == "dressmaker"              )) then
+       ( keyvalues["craft"]   == "dressmaker"              ) or
+       ( keyvalues["shop"]    == "dressmaker"              )) then
       keyvalues["shop"] = "clothes"
    end
 

@@ -7,6 +7,7 @@ Re-added display of [man_made=pipeline](https://taginfo.openstreetmap.org/tags/m
 Also show utility aerial pipeline markers.
 Added `office=office` to the list of "nonspecific offices" that are handled.
 Added `shop=carpenter` as a synonym for `craft=carpenter`.
+Added `shop=dressmaker` as a synonym for `craft=dressmaker`.
 
 ## 22/11/2024
 Changed font family of internal web pages to Arial.
