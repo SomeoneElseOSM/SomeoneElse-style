@@ -7919,6 +7919,7 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["shop"]    == "lottery"             ) or
        ( keyvalues["amenity"] == "lottery"             ) or
        ( keyvalues["shop"]    == "amusements"          ) or
+       ( keyvalues["shop"]    == "amusement"           ) or
        ( keyvalues["amenity"] == "amusements"          ) or
        ( keyvalues["amenity"] == "amusement"           ) or
        ( keyvalues["leisure"] == "amusement_arcade"    ) or
@@ -8111,6 +8112,7 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["shop"]   == "plumbing_supplies"           ) or
        ( keyvalues["craft"]  == "plumber"                     ) or
        ( keyvalues["craft"]  == "carpenter"                   ) or
+       ( keyvalues["shop"]   == "carpenter"                   ) or
        ( keyvalues["craft"]  == "decorator"                   ) or
        ( keyvalues["shop"]   == "bed"                         ) or
        ( keyvalues["shop"]   == "mattress"                    ) or
