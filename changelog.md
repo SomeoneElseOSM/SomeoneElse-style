@@ -13,7 +13,7 @@ Added `shop=financial_advisor` as a synonym for `office=financial_advisor`.
 Added `shop=veterinary` as a synonym for `amenity=veterinary`.
 Added `shop=key_cutter` as a synonym for `craft=key_cutter`.
 Added `shop=window_construction` as a synonym for `craft=window_construction`.
-Use `sport` to detect bowling alleys that are not tagged as that but are not tagged as anything else.
+Use `sport` to detect bowling alleys and places for skiing that are not tagged as that but are not tagged as anything else.
 
 ## 22/11/2024
 Changed font family of internal web pages to Arial.

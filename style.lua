@@ -2389,6 +2389,17 @@ function filter_tags_generic(keyvalues, nokeys)
       keyvalues["leisure"] = "bowling_alley"
    end
 
+   if (( keyvalues["sport"]           == "skiing" ) and
+       ( keyvalues["leisure"]         == nil      ) and
+       ( keyvalues["disused:leisure"] == nil      ) and
+       ( keyvalues["amenity"]         == nil      ) and
+       ( keyvalues["shop"]            == nil      ) and
+       ( keyvalues["office"]          == nil      ) and
+       ( keyvalues["club"]            == nil      ) and
+       ( keyvalues["name"]            ~= nil      )) then
+      keyvalues["leisure"] = "pitch"
+   end
+
 -- ----------------------------------------------------------------------------
 -- Things that are both viewpoints or attractions and monuments or memorials 
 -- should render as the latter.  Some are handled further down too.

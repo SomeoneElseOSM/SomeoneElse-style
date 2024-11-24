@@ -3300,6 +3300,7 @@
     { "key": "sport", "value": "shot-put", "description": "Show 'athletics' icon on sports pitches" },
     { "key": "sport", "value": "skateboard", "description": "Show icon on sports pitches.  Also used to classify and clarify other tags" },
     { "key": "sport", "value": "skateboard;bmx", "description": "Show icon on sports pitches.  Also used to classify and clarify other tags" },
+    { "key": "sport", "value": "skiing", "description": "Detect places for skiing" },
     { "key": "sport", "value": "soccer", "description": "Show 'soccer' icon on sports pitches" },
     { "key": "sport", "value": "soccer;archery", "description": "Show 'soccer' icon on sports pitches" },
     { "key": "sport", "value": "soccer;athletics", "description": "Show 'soccer' icon on sports pitches" },
