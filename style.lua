@@ -2366,9 +2366,27 @@ function filter_tags_generic(keyvalues, nokeys)
 -- Various tags are used for milk churn stands
 -- They're shown with a red "historic" icon.
 -- ----------------------------------------------------------------------------
-   if ((  keyvalues["man_made"] == "milk_churn_stand" ) or
-       (  keyvalues["memorial"] == "milk_churn_stand" )) then
+   if (( keyvalues["man_made"] == "milk_churn_stand" ) or
+       ( keyvalues["memorial"] == "milk_churn_stand" )) then
       keyvalues["historic"] = "milk_churn_stand"
+   end
+
+-- ----------------------------------------------------------------------------
+-- Detect some sport facilities that have been only partially tagged.
+-- For example, something with a name that is "sport=10pin" but isn't anything
+-- else must be a bowling alley.
+-- ----------------------------------------------------------------------------
+   if ((( keyvalues["sport"]           == "10pin"   )  or
+        ( keyvalues["sport"]           == "9pin"    )  or
+        ( keyvalues["sport"]           == "bowling" )) and
+       (  keyvalues["leisure"]         == nil        ) and
+       (  keyvalues["disused:leisure"] == nil        ) and
+       (  keyvalues["amenity"]         == nil        ) and
+       (  keyvalues["shop"]            == nil        ) and
+       (  keyvalues["office"]          == nil        ) and
+       (  keyvalues["club"]            == nil        ) and
+       (  keyvalues["name"]            ~= nil        )) then
+      keyvalues["leisure"] = "bowling_alley"
    end
 
 -- ----------------------------------------------------------------------------

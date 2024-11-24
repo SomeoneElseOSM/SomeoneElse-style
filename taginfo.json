@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20241123T122000Z",
+  "data_updated": "20241124T110300Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -3215,6 +3215,8 @@
     { "key": "species", "description": "Detect hogweed hazard" },
     { "key": "species", "value": "Heracleum mantegazzianum", "description": "Detect hogweed hazard" },
     { "key": "sport", "description": "Used to classify and clarify many other tags" },
+    { "key": "sport", "value": "10pin", "description": "Detect bowling alleys" },
+    { "key": "sport", "value": "9pin", "description": "Detect bowling alleys" },
     { "key": "sport", "value": "association_football", "description": "Show 'soccer' icon on sports pitches" },
     { "key": "sport", "value": "athletics", "description": "Show 'athletics' icon on sports pitches" },
     { "key": "sport", "value": "athletics;soccer", "description": "Show 'athletics' icon on sports pitches" },
@@ -3237,6 +3239,7 @@
     { "key": "sport", "value": "bmx;mtb", "description": "Show 'cycling' icon on sports pitches" },
     { "key": "sport", "value": "bmx;mtb", "description": "Show 'cycling' icon on sports pitches" },
     { "key": "sport", "value": "boules", "description": "Show 'boules' icon on sports pitches" },
+    { "key": "sport", "value": "bowling", "description": "Detect bowling alleys" },
     { "key": "sport", "value": "bowls", "description": "Show 'bowls' icon on sports pitches" },
     { "key": "sport", "value": "chess", "description": "Show icon on sports pitches" },
     { "key": "sport", "value": "climbing", "description": "Show icon on sports pitches.  Also used to classify and clarify many other tags" },
