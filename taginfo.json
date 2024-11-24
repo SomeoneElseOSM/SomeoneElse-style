@@ -3368,6 +3368,8 @@
     { "key": "telephone_kiosk", "value": "K6", "description": "Former telephone boxes" },
     { "key": "theatre", "description": "Detect concert halls" },
     { "key": "theatre", "value": "concert_hall", "description": "Detect concert halls" },
+    { "key": "theatre:type", "description": "Detect concert halls" },
+    { "key": "theatre:type", "value": "concert_hall", "description": "Detect concert halls" },
     { "key": "tidal", "description": "Detect tidal beaches" },
     { "key": "tidal", "value": "yes", "description": "Detect tidal beaches" },
     { "key": "timetable", "description": "Uncommon synonym for departures_board" },
