@@ -12,6 +12,7 @@ Added `shop=financial_advice` as a synonym for `amenity=financial_advice`.
 Added `shop=financial_advisor` as a synonym for `office=financial_advisor`.
 Added `shop=veterinary` as a synonym for `amenity=veterinary`.
 Added `shop=key_cutter` as a synonym for `craft=key_cutter`.
+Added `shop=window_construction` as a synonym for `craft=window_construction`.
 
 ## 22/11/2024
 Changed font family of internal web pages to Arial.

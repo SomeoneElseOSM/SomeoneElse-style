@@ -3155,6 +3155,7 @@
     { "key": "shop", "value": "wholesale", "description": "Various shops shown" },
     { "key": "shop", "value": "wigs", "description": "Various shops shown" },
     { "key": "shop", "value": "window_blind", "description": "Various shops shown" },
+    { "key": "shop", "value": "window_construction", "description": "Shown as homeware shop" },
     { "key": "shop", "value": "windows", "description": "Various shops shown" },
     { "key": "shop", "value": "wine", "description": "Various shops shown" },
     { "key": "shop", "value": "wine;cheese", "description": "Various shops shown" },
