@@ -18,6 +18,9 @@ Increase the checks on which buildings with a sport tag can appear as a leisure 
 Use `theatre:type` to detect concert halls.
 Use more verge tags to detect verges.
 
+## 27/11/2024
+Add more links to the web pages, vector about, vector changelogs, etc. - and links between them.
+
 ## 22/11/2024
 Changed font family of internal web pages to Arial.
 Readability changes to documents on the hosting website; links added.
