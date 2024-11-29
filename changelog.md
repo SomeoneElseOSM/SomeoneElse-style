@@ -17,6 +17,7 @@ Use `sport` to detect bowling alleys and places for skiing that are not tagged a
 Increase the checks on which buildings with a sport tag can appear as a leisure facility.
 Use `theatre:type` to detect concert halls.
 Use more verge tags to detect verges.
+Treat `government=customs` as a government office.
 
 ## 27/11/2024
 Add more links to the web pages, vector about, vector changelogs, etc. - and links between them.

@@ -9144,6 +9144,7 @@ function filter_tags_generic(keyvalues, nokeys)
        (  keyvalues["office"]     == "government"               ) or
        (  keyvalues["office"]     == "police"                   ) or
        (  keyvalues["government"] == "police"                   ) or
+       (  keyvalues["government"] == "customs"                  ) or
        (  keyvalues["amenity"]    == "public_building"          ) or
        (  keyvalues["office"]     == "administrative"           ) or
        (  keyvalues["office"]     == "register"                 ) or
