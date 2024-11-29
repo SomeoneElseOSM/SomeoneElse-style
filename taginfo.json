@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20241124T110300Z",
+  "data_updated": "20241129T025500Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -1264,7 +1264,8 @@
     { "key": "golf", "value": "rough", "description": "Rendered as scrub" },
     { "key": "golf", "value": "tee", "description": "Rendered as garden" },
     { "key": "golf", "value": "track", "description": "Rendered as track" },
-    { "key": "government", "description": "Detect non-station police offices" },
+    { "key": "government", "description": "Detect government and non-station police offices" },
+    { "key": "government", "value": "customs", "description": "Detect government offices" },
     { "key": "government", "value": "police", "description": "Detect non-station police offices" },
     { "key": "guest_house", "description": "Show Bed and Breakfast places as such" },
     { "key": "guest_house", "value": "bed_and_breakfast", "description": "Show Bed and Breakfast places as such" },
