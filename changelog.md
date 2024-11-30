@@ -18,6 +18,7 @@ Increase the checks on which buildings with a sport tag can appear as a leisure 
 Use `theatre:type` to detect concert halls.
 Use more verge tags to detect verges.
 Treat `government=customs` as a government office.
+If a `tourism=attraction` is also a `highway`, show as `highway`.
 
 ## 27/11/2024
 Add more links to the web pages, vector about, vector changelogs, etc. - and links between them.

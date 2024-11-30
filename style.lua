@@ -2542,6 +2542,7 @@ function filter_tags_generic(keyvalues, nokeys)
    if ((  keyvalues["tourism"] == "attraction"  ) and
        (( keyvalues["shop"]    ~= nil          )  or
         ( keyvalues["amenity"] ~= nil          )  or
+        ( keyvalues["tourism"] ~= nil          )  or
         ( keyvalues["leisure"] == "park"       ))) then
       keyvalues["tourism"] = nil
    end
