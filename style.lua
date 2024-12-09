@@ -2019,13 +2019,11 @@ function filter_tags_generic(keyvalues, nokeys)
    if ((  keyvalues["natural"] == "wetland"    ) and
        (( keyvalues["wetland"] == nil         ) or
         ( keyvalues["wetland"] == "tidalflat" ))) then
-      if (( keyvalues["surface"] == "mud"       ) or
-          ( keyvalues["surface"] == "mud, sand" )) then
+      if ( keyvalues["surface"] == "mud" ) then
          keyvalues["natural"] = "mud"
       end
 
       if (( keyvalues["surface"] == "sand"      ) or
-          ( keyvalues["surface"] == "sand, mud" ) or
           ( keyvalues["surface"] == "dirt/sand" )) then
          keyvalues["natural"] = "sand"
       end

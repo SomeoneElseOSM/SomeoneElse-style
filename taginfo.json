@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20241129T025500Z",
+  "data_updated": "20241209T103800Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -3352,11 +3352,9 @@
     { "key": "surface", "value": "grass", "description": "Show grass beer gardens in green" },
     { "key": "surface", "value": "gravel", "description": "Show gravel residential an service roads as lower quality; show wetlands based on the surface that is set" },
     { "key": "surface", "value": "mud", "description": "Show wetlands based on the surface that is set" },
-    { "key": "surface", "value": "mud, sand", "description": "Show wetlands based on the surface that is set" },
     { "key": "surface", "value": "pebblestone", "description": "Show wetlands based on the surface that is set" },
     { "key": "surface", "value": "rock", "description": "Show wetlands based on the surface that is set" },
     { "key": "surface", "value": "sand", "description": "Show wetlands based on the surface that is set" },
-    { "key": "surface", "value": "sand, mud", "description": "Show wetlands based on the surface that is set" },
     { "key": "surface", "value": "scree", "description": "Show scree if another natural feature is set" },
     { "key": "surface", "value": "shingle", "description": "Show wetlands based on the surface that is set" },
     { "key": "surface", "value": "unpaved", "description": "Show gravel residential an service roads as lower quality" },
