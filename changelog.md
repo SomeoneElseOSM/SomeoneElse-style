@@ -1,6 +1,9 @@
 # Changes made to this rendering
 This page describes changes made in these projects: [SomeoneElse-style](https://github.com/SomeoneElseOSM/SomeoneElse-style), [SomeoneElse-style-legend](https://github.com/SomeoneElseOSM/SomeoneElse-style-legend) and [openstreetmap-carto-AJT](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT), and visible [on this site](//map.atownsend.org.uk/maps/map/map.html).
 
+## As yet unreleased
+Added an icon for dog parks (some are unnamed).
+
 ## 09/12/2024
 Show locked linear gates and linear lift gates as gates.
 Re-added display of [man_made=pipeline](https://taginfo.openstreetmap.org/tags/man_made=pipeline#overview) which had been accidentally removed.

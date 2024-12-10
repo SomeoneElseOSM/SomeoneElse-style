@@ -2812,12 +2812,10 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
--- leisure=dog_park is used a few times.  Map to pitch to differentiate from
--- underlying park.
+-- Some things are rendered line pitch to differentiate from any underlying park.
 -- "cricket_nets" is an oddity.  See https://lists.openstreetmap.org/pipermail/tagging/2023-January/thread.html#66908 .
 -- ----------------------------------------------------------------------------
-   if (( keyvalues["leisure"] == "dog_park"           ) or
-       ( keyvalues["sport"]   == "cricket_nets"       ) or
+   if (( keyvalues["sport"]   == "cricket_nets"       ) or
        ( keyvalues["sport"]   == "cricket_nets;multi" ) or
        ( keyvalues["leisure"] == "practice_pitch"     )) then
       keyvalues["leisure"] = "pitch"
