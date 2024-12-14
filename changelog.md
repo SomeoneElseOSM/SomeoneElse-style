@@ -4,6 +4,7 @@ This page describes changes made in these projects: [SomeoneElse-style](https://
 ## As yet unreleased
 Added an icon for dog parks (some are unnamed).
 Handle railway turntables as circular polygons  with named railway landuse inside.
+Show a couple more historic railway features as "named historic dots".
 
 ## 09/12/2024
 Show locked linear gates and linear lift gates as gates.
@@ -1605,4 +1606,3 @@ Change fonts use to "Noto" to work with non-latin characters.
 ## First map.atownsend.org.uk release - 19/02/2017
 Added different but similar icons for different types of pubs.
 Added support for vacant shops.
-

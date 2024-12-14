@@ -6549,11 +6549,14 @@ function filter_tags_generic(keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
 -- Render historic railway stations.
 -- ----------------------------------------------------------------------------
-   if ((( keyvalues["abandoned:railway"] == "station"         )  or
-        ( keyvalues["disused:railway"]   == "station"         )  or
-        ( keyvalues["historic:railway"]  == "station"         )  or
-        ( keyvalues["historic"]          == "railway_station" )) and
-       (  keyvalues["tourism"]           ~= "information"      )) then
+   if ((( keyvalues["abandoned:railway"] == "station"             )  or
+        ( keyvalues["disused:railway"]   == "station"             )  or
+        ( keyvalues["historic:railway"]  == "station"             )  or
+        ( keyvalues["historic"]          == "railway_station"     )  or
+        ( keyvalues["railway"]           == "dismantled_colliery" )  or
+        ( keyvalues["railway"]           == "colliery_site"       )) and
+       (  keyvalues["tourism"]           ~= "information"          ) and
+       (  keyvalues["name"]              ~= nil                    )) then
       keyvalues["historic"] = "nonspecific"
    end
 
