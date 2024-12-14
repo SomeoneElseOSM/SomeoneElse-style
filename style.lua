@@ -4742,6 +4742,26 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Railway turntables.
+-- We ignore these if they're also mapped as buildings.
+-- We force "area=no" on all to handle them as linear features
+-- On whatever's left, we add landuse=railway to allow name display, if not 
+-- already set.
+-- ----------------------------------------------------------------------------
+   if ( keyvalues["railway"] == "turntable" ) then
+      if (( keyvalues["building"] ~= nil  )  and
+          ( keyvalues["building"] ~= "no" )) then
+         keyvalues["railway"] = nil
+      else
+         keyvalues["area"] = "yes"
+
+         if ( keyvalues["landuse"] == nil ) then
+            keyvalues["landuse"] = "railway"
+         end
+      end
+   end
+
+-- ----------------------------------------------------------------------------
 -- Handle razed railways and old inclined_planes as dismantled.
 -- dismantled, abandoned are now handled separately to disused in roads.mss
 -- ----------------------------------------------------------------------------

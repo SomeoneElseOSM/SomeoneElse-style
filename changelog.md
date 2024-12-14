@@ -3,6 +3,7 @@ This page describes changes made in these projects: [SomeoneElse-style](https://
 
 ## As yet unreleased
 Added an icon for dog parks (some are unnamed).
+Handle railway turntables as circular polygons  with named railway landuse inside.
 
 ## 09/12/2024
 Show locked linear gates and linear lift gates as gates.
