@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20241209T103800Z",
+  "data_updated": "20241214T193000Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -2387,6 +2387,7 @@
     { "key": "railway", "value": "abandoned", "description": "Shown as abandoned railway" },
     { "key": "railway", "value": "colliery_site", "description": "Detect historic railway sites" },
     { "key": "railway", "value": "construction", "description": "Shows under construction railways" },
+    { "key": "railway", "value": "crane", "description": "Shown as miniature railway" },
     { "key": "railway", "value": "crossing", "description": "Shown as level crossing" },
     { "key": "railway", "value": "dismantled", "description": "Shown as dismantled railway" },
     { "key": "railway", "value": "dismantled_colliery", "description": "Detect historic railway sites" },

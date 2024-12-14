@@ -5,6 +5,7 @@ This page describes changes made in these projects: [SomeoneElse-style](https://
 Added an icon for dog parks (some are unnamed).
 Handle railway turntables as circular polygons  with named railway landuse inside.
 Show a couple more historic railway features as "named historic dots".
+Show `railway=crane` (which are all linear) as miniature railways in their own right.
 
 ## 09/12/2024
 Show locked linear gates and linear lift gates as gates.

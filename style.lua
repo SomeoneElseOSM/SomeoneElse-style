@@ -4744,7 +4744,7 @@ function filter_tags_generic(keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
 -- Railway turntables.
 -- We ignore these if they're also mapped as buildings.
--- We force "area=no" on all to handle them as linear features
+-- We force "area=no" on all to handle them as area features
 -- On whatever's left, we add landuse=railway to allow name display, if not 
 -- already set.
 -- ----------------------------------------------------------------------------
@@ -4812,8 +4812,10 @@ function filter_tags_generic(keyvalues, nokeys)
 
 -- ----------------------------------------------------------------------------
 -- Goods Conveyors - render as miniature railway.
+-- Also "railway=crane" which are all linear structures.
 -- ----------------------------------------------------------------------------
-   if ( keyvalues["man_made"] == "goods_conveyor" ) then
+   if (( keyvalues["man_made"] == "goods_conveyor" ) or
+       ( keyvalues["railway"]  == "crane"          )) then
       keyvalues["railway"] = "miniature"
    end
 
