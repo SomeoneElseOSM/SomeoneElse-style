@@ -2417,6 +2417,7 @@
     { "key": "railway", "value": "traverser", "description": "Show railway traversers as roofs" },
     { "key": "railway", "value": "turntable", "description": "Show railway turntables as circles with named railway landuse inside" },
     { "key": "railway", "value": "ventilation_shaft", "description": "Shown as ventilation shafts" },
+    { "key": "railway", "value": "wash", "description": "Shown as roof" },
     { "key": "railway", "value": "water_crane", "description": "Shown as water cranes" },
     { "key": "railway:historic", "description": "Detect abandoned railways" },
     { "key": "railway:historic", "value": "rail", "description": "Detect abandoned railways" },

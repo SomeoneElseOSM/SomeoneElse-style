@@ -1606,6 +1606,7 @@ function filter_tags_generic(keyvalues, nokeys)
        (   keyvalues["man_made"]         == "bunker_silo"     ) or
        (   keyvalues["amenity"]          == "feeding_place"   ) or
        (   keyvalues["railway"]          == "traverser"       ) or
+       (   keyvalues["railway"]          == "wash"            ) or
        (   keyvalues["building"]         == "canopy"          ) or
        (   keyvalues["building"]         == "car_port"        ) or
        ((( keyvalues["disused:building"] ~= nil             )   or
