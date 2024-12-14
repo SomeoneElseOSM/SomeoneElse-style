@@ -30,8 +30,11 @@ polygon_keys = { 'boundary', 'building', 'landcover', 'landuse', 'amenity', 'har
       'public_transport', 'seamark:type', 'shop', 'sport', 'tourism', 'waterway',
       'wetland', 'water', 'aeroway' }
 
-generic_keys = {'access','addr:housename','addr:housenumber','addr:interpolation','admin_level','advertising','aerialway','aeroway','amenity','area','area:highway','barrier',
-   'bicycle','brand','bridge','bridleway','booth','boundary','building', 'canoe', 'capital','construction','covered','culvert','cutting','denomination','departures_board','designation','disused','disused:highway','disused:man_made','disused:military','disused:shop','ele',
+generic_keys = {'access','addr:housename','addr:housenumber','addr:interpolation','admin_level','advertising','aerialway',
+   'aeroway','amenity','area','area:highway','barrier',
+   'bicycle','brand','bridge','bridleway','booth','boundary','building', 'canoe', 'capital','construction','covered',
+   'culvert','cutting','denomination','departures_board','designation','disused','disused:highway','disused:man_made',
+   'disused:military','disused:railway','disused:shop','ele',
    'embankment','emergency','entrance','foot','flood_prone','generation:source','geological','golf','government',
    'harbour','hazard_prone','hazard_type','highway','historic','horse','hours','information','intermittent',
    'junction','landcover','landuse','layer','leisure','lcn_ref','lock','locked',
@@ -5478,6 +5481,16 @@ function filter_tags_generic(keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
    if ( keyvalues["historic"]  == "village_pump" ) then
       keyvalues["historic"] = "water_pump"
+   end
+
+-- ----------------------------------------------------------------------------
+-- Send railway=water_crane through as "historic"
+-- ----------------------------------------------------------------------------
+   if ((( keyvalues["railway"]          == "water_crane" ) or
+        ( keyvalues["disused:railway"]  == "water_crane" )) and
+       (( keyvalues["historic"]         == nil           )  or
+        ( keyvalues["historic"]         == "yes"         ))) then
+      keyvalues["historic"] = "water_crane"
    end
 
 -- ----------------------------------------------------------------------------
