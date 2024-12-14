@@ -9626,8 +9626,9 @@ function filter_tags_generic(keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
 -- Emergency phones
 -- ----------------------------------------------------------------------------
-   if (( keyvalues["emergency"] == "phone" ) and
-       ( keyvalues["amenity"]   == nil     )) then
+   if ((( keyvalues["emergency"] == "phone" ) or
+        ( keyvalues["railway"]   == "phone" )) and
+       (  keyvalues["amenity"]   == nil      )) then
       keyvalues["amenity"] = "emergency_phone"
    end
 

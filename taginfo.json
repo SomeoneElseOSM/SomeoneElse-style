@@ -2402,6 +2402,7 @@
     { "key": "railway", "value": "miniature", "description": "Shown as miniature" },
     { "key": "railway", "value": "monorail", "description": "Shown as monorail" },
     { "key": "railway", "value": "narrow_gauge", "description": "Shown as narrow gauge railway" },
+    { "key": "railway", "value": "phone", "description": "Shown as emergency phone" },
     { "key": "railway", "value": "platform", "description": "Shown as railway platform" },
     { "key": "railway", "value": "preserved", "description": "Shows preserved railways" },
     { "key": "railway", "value": "proposed", "description": "Shows proposed railways" },
