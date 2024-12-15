@@ -4748,7 +4748,7 @@ function filter_tags_generic(keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
 -- Railway turntables.
 -- We ignore these if they're also mapped as buildings.
--- We force "area=no" on all to handle them as area features
+-- We force "area=yes" on all to handle them as area features
 -- On whatever's left, we add landuse=railway to allow name display, if not 
 -- already set.
 -- ----------------------------------------------------------------------------
