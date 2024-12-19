@@ -9,6 +9,7 @@ Show `railway=crane` (which are all linear) as miniature railways in their own r
 Show `railway=water_crane` with a unique icon.
 Show `railway=wash` as a roof if not a building already.
 Show `railway=phone` as `emergency=phone`.
+If an `aeroway=taxiway` has not been explicitly declared as an area, assume it is linear.
 
 ## 09/12/2024
 Show locked linear gates and linear lift gates as gates.

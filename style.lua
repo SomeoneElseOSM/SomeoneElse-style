@@ -10943,6 +10943,25 @@ function filter_tags_way (keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- With vector processing we need to explicitly decide whether a feature should
+-- be treated as an area or not.  With raster we generally speaking don't -
+-- "aeroway" is defined above as a polygon key so osm2pgsql will treat one as
+-- an area if it it is closed, and not otherwise.
+--
+-- If something is a runway and is a closed way we can assume that what has
+-- been mapped is the outline of the area of the linear runway (because
+-- although "circular runways" are a concept -
+-- https://en.wikipedia.org/wiki/Endless_runway - they are not not a thing
+-- right now.  However, closed circular taxiways are very much a thing, and
+-- so we must check the "area" tag there.  Unless area=yes is explicitly set,
+-- we assume that a taxiway is linear.
+-- ----------------------------------------------------------------------------
+    if (( keyvalues["aeroway"] == "taxiway"  ) and
+        ( keyvalues["area"]    ~= "yes"      )) then
+        keyvalues["area"] = "no"
+    end
+
+-- ----------------------------------------------------------------------------
 -- highway=turning_loop on ways to service road
 -- "turning_loop" is mostly used on nodes, with one way in UK/IE data.
 -- ----------------------------------------------------------------------------
