@@ -24,53 +24,50 @@
 -- cp /home/${local_filesystem_user}/src/SomeoneElse-style/shared_lua.lua -
 --      /usr/local/share/lua/5.3/
 -- ----------------------------------------------------------------------------
-function fix_invalid_layer_values( passed_layer, passed_bridge, passed_embankment )
-   local returned_layer = passed_layer
-
-   if ( passed_layer == "-0.5" ) then
-      returned_layer = "-1"
+function fix_invalid_layer_values_t( passedt )
+   if ( passedt.layer == "-0.5" ) then
+      passedt.layer = "-1"
    end
 
-   if ( passed_layer == "covered" ) then
-      returned_layer = "0"
+   if ( passedt.layer == "covered" ) then
+      passedt.layer = "0"
    end
 
-   if ((( passed_bridge     == "yes" )   or
-        ( passed_embankment == "yes" ))  and
-       (( passed_layer      == "-3"  )   or
-        ( passed_layer      == "-2"  )   or
-        ( passed_layer      == "-1"  ))) then
-      returned_layer = "0"
+   if ((( passedt.bridge     == "yes" )   or
+        ( passedt.embankment == "yes" ))  and
+       (( passedt.layer      == "-3"  )   or
+        ( passedt.layer      == "-2"  )   or
+        ( passedt.layer      == "-1"  ))) then
+      passedt.layer = "0"
    end
 
-   if (( passed_layer == "01"       ) or
-       ( passed_layer == "+1"       ) or
-       ( passed_layer == "yes"      ) or
-       ( passed_layer == "0.5"      ) or
-       ( passed_layer == "0-1"      ) or
-       ( passed_layer == "0;1"      ) or
-       ( passed_layer == "0;2"      ) or
-       ( passed_layer == "0;1;2"    ) or
-       ( passed_layer == "pipeline" )) then
-      returned_layer = "1"
+   if (( passedt.layer == "01"       ) or
+       ( passedt.layer == "+1"       ) or
+       ( passedt.layer == "yes"      ) or
+       ( passedt.layer == "0.5"      ) or
+       ( passedt.layer == "0-1"      ) or
+       ( passedt.layer == "0;1"      ) or
+       ( passedt.layer == "0;2"      ) or
+       ( passedt.layer == "0;1;2"    ) or
+       ( passedt.layer == "pipeline" )) then
+      passedt.layer = "1"
    end
    
-   if ( passed_layer == "2;4" ) then
-      returned_layer = "2"
+   if ( passedt.layer == "2;4" ) then
+      passedt.layer = "2"
    end
 
-   if (( passed_layer == "6"  )  or
-       ( passed_layer == "7"  )  or
-       ( passed_layer == "8"  )  or
-       ( passed_layer == "9"  )  or
-       ( passed_layer == "10" )  or
-       ( passed_layer == "15" )  or
-       ( passed_layer == "16" )) then
-      returned_layer = "5"
+   if (( passedt.layer == "6"  )  or
+       ( passedt.layer == "7"  )  or
+       ( passedt.layer == "8"  )  or
+       ( passedt.layer == "9"  )  or
+       ( passedt.layer == "10" )  or
+       ( passedt.layer == "15" )  or
+       ( passedt.layer == "16" )) then
+      passedt.layer = "5"
    end
 
-   return returned_layer
-end -- fix_invalid_layer_values()
+end -- fix_invalid_layer_values_t()
 
 
 -- ----------------------------------------------------------------------------

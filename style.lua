@@ -110,7 +110,8 @@ function filter_tags_generic(keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
 -- Invalid layer values - change them to something plausible.
 -- ----------------------------------------------------------------------------
-   keyvalues["layer"] = fix_invalid_layer_values( keyvalues["layer"], keyvalues["bridge"], keyvalues["embankment"] )
+-- qqq   keyvalues["layer"] = fix_invalid_layer_values( keyvalues["layer"], keyvalues["bridge"], keyvalues["embankment"] )
+   fix_invalid_layer_values_t( keyvalues )
 
 -- ----------------------------------------------------------------------------
 -- Treat "was:" as "disused:"
