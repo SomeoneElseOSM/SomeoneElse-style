@@ -146,86 +146,74 @@ end -- treat_was_as_disused_t( passedt )
 -- indoor=corridor as a closed way.  highway=corridor is not documented there
 -- but is used for corridors.  We'll only process layer or level 0 (or nil)
 -- ----------------------------------------------------------------------------
-function fix_corridors( passed_highway, passed_layer, passed_level )
-    local returned_highway = passed_highway
-
-    if ((  passed_highway == "corridor"   ) and
-        (( passed_level   == nil         )  or
-         ( passed_level   == ""          )  or
-         ( passed_level   == "0"         )) and
-        (( passed_layer   == nil         )  or
-         ( passed_layer   == ""          )  or
-         ( passed_layer   == "0"         ))) then
-       returned_highway = "path"
+function fix_corridors_t( passedt )
+    if ((  passedt.highway == "corridor"   ) and
+        (( passedt.level   == nil         )  or
+         ( passedt.level   == ""          )  or
+         ( passedt.level   == "0"         )) and
+        (( passedt.layer   == nil         )  or
+         ( passedt.layer   == ""          )  or
+         ( passedt.layer   == "0"         ))) then
+       passedt.highway = "path"
     end
-
-    return returned_highway
-end -- fix_corridors()
+end -- fix_corridors_t()
 
 -- ----------------------------------------------------------------------------
 -- "Different names on each side of the street" and
 -- "name:en" is set by "name" is not.
 -- ----------------------------------------------------------------------------
-function set_name_left_right_en( passed_name, passed_nameCleft, passed_nameCright, passed_nameCen )
-    local returned_name = passed_name
-
-    if (( passed_nameCleft  ~= nil ) and
-        ( passed_nameCleft  ~= ""  ) and
-        ( passed_nameCright ~= nil ) and
-        ( passed_nameCright ~= ""  )) then
-       returned_name = passed_nameCleft .. " / " .. passed_nameCright
+function set_name_left_right_en_t( passedt )
+    if (( passedt["name:left"]  ~= nil ) and
+        ( passedt["name:left"]  ~= ""  ) and
+        ( passedt["name:right"] ~= nil ) and
+        ( passedt["name:right"] ~= ""  )) then
+       passedt.name = passedt["name:left"] .. " / " .. passedt["name:right"]
     end
 
-    if ((( returned_name  == nil )  or
-         ( returned_name  == ""  )) and
-        (  passed_nameCen ~= nil  ) and
-        (  passed_nameCen ~= ""   )) then
-       passed_name = passed_nameCen
+    if ((( passedt["name"]  == nil )  or
+         ( passedt["name"]  == ""  )) and
+        (  passedt["name:en"] ~= nil  ) and
+        (  passedt["name:en"] ~= ""   )) then
+       passedt.name = passedt["name:en"]
     end
-
-    return returned_name
-end -- set_name_left_right_en
+end -- set_name_left_right_en_t
 
 -- ----------------------------------------------------------------------------
 -- Move refs to consider as "official" to official_ref
 -- ----------------------------------------------------------------------------
-function set_official_ref( passed_official_ref, passed_highway_authority_ref, passed_highway_ref, passed_admin_ref, passed_adminCref, passed_loc_ref, passed_ref )
-    local returned_official_ref = passed_official_ref
-
-    if ((( returned_official_ref        == nil )   or
-         ( returned_official_ref        == ""  ))  and
-        (  passed_highway_authority_ref ~= nil  )) then
-       returned_official_ref          = passed_highway_authority_ref
+function set_official_ref_t( passedt )
+    if ((( passedt.official_ref        == nil )   or
+         ( passedt.official_ref        == ""  ))  and
+        (  passedt.highway_authority_ref ~= nil  )) then
+       passedt.official_ref          = passedt.highway_authority_ref
     end
 
-    if ((( returned_official_ref == nil )   or
-         ( returned_official_ref == ""  ))  and
-        (  passed_highway_ref    ~= nil  )) then
-       returned_official_ref = passed_highway_ref
+    if ((( passedt.official_ref == nil )   or
+         ( passedt.official_ref == ""  ))  and
+        (  passedt.highway_ref  ~= nil  )) then
+       passedt.official_ref = passedt.highway_ref
     end
 
-    if ((( returned_official_ref == nil )   or
-         ( returned_official_ref == ""  ))  and
-        (  passed_admin_ref      ~= nil  )) then
-       returned_official_ref = passed_admin_ref
+    if ((( passedt.official_ref == nil )   or
+         ( passedt.official_ref == ""  ))  and
+        (  passedt.admin_ref    ~= nil  )) then
+       passedt.official_ref = passedt.admin_ref
     end
 
-    if ((( returned_official_ref == nil )   or
-         ( returned_official_ref == ""  ))  and
-        ( passed_adminCref      ~= nil   )) then
-       returned_official_ref = passed_adminCref
+    if ((( passedt.official_ref == nil )   or
+         ( passedt.official_ref == ""  ))  and
+        ( passedt["admin:ref"]     ~= nil   )) then
+       passedt.official_ref = passedt["admin:ref"]
     end
 
-    if ((( returned_official_ref == nil       )   or
-         ( returned_official_ref == ""        ))  and
-        (  passed_loc_ref        ~= nil        )  and
-        (  passed_loc_ref        ~= ""         )  and
-        (  passed_loc_ref        ~= passed_ref )) then
-       returned_official_ref = passed_loc_ref
+    if ((( passedt.official_ref == nil       )   or
+         ( passedt.official_ref == ""        ))  and
+        (  passedt.loc_ref      ~= nil        )  and
+        (  passedt.loc_ref      ~= ""         )  and
+        (  passedt.loc_ref      ~= passedt.ref )) then
+       passedt.official_ref = passedt.loc_ref
     end
-
-    return returned_official_ref
-end -- set_official_ref()
+end -- set_official_ref_t()
 
 -- ----------------------------------------------------------------------------
 -- Consolidate some rare highway types into ones we can display.

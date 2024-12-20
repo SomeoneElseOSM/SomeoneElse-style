@@ -151,19 +151,19 @@ function filter_tags_generic(keyvalues, nokeys)
 -- indoor=corridor as a closed way.  highway=corridor is not documented there
 -- but is used for corridors.  We'll only process layer or level 0 (or nil)
 -- ----------------------------------------------------------------------------
-   keyvalues["highway"] = fix_corridors( keyvalues["highway"], keyvalues["layer"], keyvalues["level"] )
+   fix_corridors_t( keyvalues )
 
 -- ----------------------------------------------------------------------------
 -- If there are different names on each side of the street, we create one name
 -- containing both.
 -- If "name" does not exist but "name:en" does, use that.
 -- ----------------------------------------------------------------------------
-   keyvalues["name"] = set_name_left_right_en( keyvalues["name"], keyvalues["name:left"], keyvalues["name:right"], keyvalues["name:en"] )
+   set_name_left_right_en_t( keyvalues )
 
 -- ----------------------------------------------------------------------------
 -- Move refs to consider as "official" to official_ref
 -- ----------------------------------------------------------------------------
-   keyvalues["official_ref"] = set_official_ref( keyvalues["official_ref"], keyvalues["highway_authority_ref"], keyvalues["highway_ref"], keyvalues["admin_ref"], keyvalues["admin:ref"], keyvalues["loc_ref"], keyvalues["ref"] )
+   set_official_ref_t( keyvalues )
 
 -- ----------------------------------------------------------------------------
 -- Consolidate some rare highway types into ones we can display.
