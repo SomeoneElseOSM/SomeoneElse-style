@@ -4971,11 +4971,27 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
--- Display intermittent stream as "intstream"
+-- Display intermittent streams as "intstream"
 -- ----------------------------------------------------------------------------
    if (( keyvalues["waterway"]     == "stream"  )  and
        ( keyvalues["intermittent"] == "yes"     )) then
       keyvalues["waterway"] = "intstream"
+   end
+
+-- ----------------------------------------------------------------------------
+-- Display intermittent drains as "intdrain"
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["waterway"]     == "drain"  )  and
+       ( keyvalues["intermittent"] == "yes"     )) then
+      keyvalues["waterway"] = "intdrain"
+   end
+
+-- ----------------------------------------------------------------------------
+-- Display intermittent ditch as "intditch"
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["waterway"]     == "ditch"  )  and
+       ( keyvalues["intermittent"] == "yes"     )) then
+      keyvalues["waterway"] = "intditch"
    end
 
 -- ----------------------------------------------------------------------------
