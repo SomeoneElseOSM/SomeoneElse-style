@@ -70,6 +70,75 @@ function fix_invalid_layer_values_t( passedt )
 end -- fix_invalid_layer_values_t()
 
 
+function treat_was_as_disused_t( passedt )
+   if ((  passedt["was:amenity"]     ~= nil  ) and
+       (  passedt["was:amenity"]     ~= ""   ) and
+       (( passedt["disused:amenity"] == nil )  or
+        ( passedt["disused:amenity"] == ""  ))) then
+      passedt["disused:amenity"] = passedt["was:amenity"]
+   end
+
+   if ((  passedt["was:waterway"]     ~= nil  ) and
+       (  passedt["was:waterway"]     ~= ""   ) and
+       (( passedt["disused:waterway"] == nil )  or
+        ( passedt["disused:waterway"] == ""  ))) then
+      passedt["disused:waterway"] = passedt["was:waterway"]
+   end
+
+   if ((  passedt["was:railway"]     ~= nil  ) and
+       (  passedt["was:railway"]     ~= ""   ) and
+       (( passedt["disused:railway"] == nil )  or
+        ( passedt["disused:railway"] == ""  ))) then
+      passedt["disused:railway"] = passedt["was:railway"]
+   end
+
+   if ((  passedt["was:aeroway"]     ~= nil  ) and
+       (  passedt["was:aeroway"]     ~= ""   ) and
+       (( passedt["disused:aeroway"] == nil )  or
+        ( passedt["disused:aeroway"] == ""  ))) then
+      passedt["disused:aeroway"] = passedt["was:aeroway"]
+   end
+
+   if ((  passedt["was:landuse"]     ~= nil  ) and
+       (  passedt["was:landuse"]     ~= ""   ) and
+       (( passedt["disused:landuse"] == nil )  or
+        ( passedt["disused:landuse"] == ""  ))) then
+      passedt["disused:landuse"] = passedt["was:landuse"]
+   end
+
+   if ((  passedt["was:shop"]     ~= nil  ) and
+       (  passedt["was:shop"]     ~= ""   ) and
+       (( passedt["disused:shop"] == nil )  or
+        ( passedt["disused:shop"] == ""  ))) then
+      passedt["disused:shop"] = passedt["was:shop"]
+   end
+
+-- ----------------------------------------------------------------------------
+-- Treat "closed:" as "disused:" in some cases too.
+-- ----------------------------------------------------------------------------
+   if ((  passedt["closed:amenity"]  ~= nil  ) and
+       (  passedt["closed:amenity"]  ~= ""   ) and
+       (( passedt["disused:amenity"] == nil )  or
+        ( passedt["disused:amenity"] == ""  ))) then
+      passedt["disused:amenity"] = passedt["closed:amenity"]
+   end
+
+   if ((  passedt["closed:shop"]  ~= nil  ) and
+       (  passedt["closed:shop"]  ~= ""   ) and
+       (( passedt["disused:shop"] == nil )  or
+        ( passedt["disused:shop"] == ""  ))) then
+      passedt["disused:shop"] = passedt["closed:shop"]
+   end
+
+-- ----------------------------------------------------------------------------
+-- Treat "status=abandoned" as "disused=yes"
+-- ----------------------------------------------------------------------------
+   if ( passedt.status == "abandoned" ) then
+      passedt.disused = "yes"
+   end
+
+end -- treat_was_as_disused_t( passedt )
+
 -- ----------------------------------------------------------------------------
 -- Before processing footways, turn certain corridors into footways
 --
