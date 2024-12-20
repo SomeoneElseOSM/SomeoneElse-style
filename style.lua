@@ -168,27 +168,18 @@ function filter_tags_generic(keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
 -- Consolidate some rare highway types into ones we can display.
 -- ----------------------------------------------------------------------------
-   keyvalues["highway"] = process_golf_tracks( keyvalues["highway"], keyvalues["golf"] )
+   process_golf_tracks_t( keyvalues )
 
 -- ----------------------------------------------------------------------------
 -- "Sabristas" sometimes add dubious names to motorway junctions.  Don't show
 -- them if they're not signed.
 -- ----------------------------------------------------------------------------
-   keyvalues["name"] = suppress_unsigned_motorway_junctions( keyvalues["name"], keyvalues["highway"], keyvalues["name:signed"], keyvalues["name:absent"], keyvalues["unsigned"] )
+   suppress_unsigned_motorway_junctions_t( keyvalues )
 
 -- ----------------------------------------------------------------------------
 -- Move unsigned road refs to the name, in brackets.
 -- ----------------------------------------------------------------------------
-    t = { keyvalues["name"], keyvalues["highway"], keyvalues["name:signed"], keyvalues["name:absent"], keyvalues["official_ref"], keyvalues["ref"], keyvalues["ref:signed"], keyvalues["unsigned"] }
-    suppress_unsigned_road_refs( t )
-    keyvalues["name"] = t[1]
-    keyvalues["highway"] = t[2]
-    keyvalues["name:signed"] = t[3]
-    keyvalues["name:absent"] = t[4]
-    keyvalues["official_ref"] = t[5]
-    keyvalues["ref"] = t[6]
-    keyvalues["ref:signed"] = t[7]
-    keyvalues["unsigned"] = t[8]
+    suppress_unsigned_road_refs_t( keyvalues )
 
 -- ----------------------------------------------------------------------------
 -- Show natural=bracken as scrub
@@ -1911,7 +1902,7 @@ function filter_tags_generic(keyvalues, nokeys)
 -- Handle place=quarter
 -- Handle natural=cape etc. as place=locality if no other place tag.
 -- ----------------------------------------------------------------------------
-   keyvalues["place"] = consolidate_place( keyvalues["place"], keyvalues["natural"] )
+   consolidate_place_t( keyvalues )
 
 -- ----------------------------------------------------------------------------
 -- Handle shoals, either as mud or reef

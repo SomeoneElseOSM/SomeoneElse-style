@@ -218,190 +218,161 @@ end -- set_official_ref_t()
 -- ----------------------------------------------------------------------------
 -- Consolidate some rare highway types into ones we can display.
 -- ----------------------------------------------------------------------------
-function process_golf_tracks( passed_highway, passed_golf )
-    local returned_highway = passed_highway
-
-    if ((  passed_golf    == "track"       )  and
-        (( passed_highway == nil          )   or
-         ( passed_highway == ""           ))) then
-       returned_highway = "track"
+function process_golf_tracks_t( passedt )
+    if ((  passedt.golf    == "track"       )  and
+        (( passedt.highway == nil          )   or
+         ( passedt.highway == ""           ))) then
+       passedt.highway = "track"
     end
 
-    if ((  passed_golf      == "path"       ) and
-        (( returned_highway == nil         )  or
-         ( returned_highway == ""          )  or
-         ( returned_highway == "service"   ))) then
-       returned_highway = "path"
+    if ((  passedt.golf      == "path"       ) and
+        (( passedt.highway == nil         )  or
+         ( passedt.highway == ""          )  or
+         ( passedt.highway == "service"   ))) then
+       passedt.highway = "path"
     end
 
-    if ((  passed_golf      == "cartpath"   ) and
-        (( returned_highway == nil         )  or
-         ( returned_highway == ""          )  or
-         ( returned_highway == "service"   ))) then
-       returned_highway = "track"
+    if ((  passedt.golf      == "cartpath"   ) and
+        (( passedt.highway == nil         )  or
+         ( passedt.highway == ""          )  or
+         ( passedt.highway == "service"   ))) then
+       passedt.highway = "track"
     end
+end -- process_golf_tracks_t()
 
-    return returned_highway
-end -- process_golf_tracks()
 
 -- ----------------------------------------------------------------------------
 -- "Sabristas" sometimes add dubious names to motorway junctions.  Don't show
 -- them if they're not signed.
 -- ----------------------------------------------------------------------------
-function suppress_unsigned_motorway_junctions( passed_name, passed_highway, passed_nameCsigned, passed_nameCabsent, passed_unsigned )
-    local returned_name = passed_name
-
-    if ((( passed_highway == "motorway_junction"  ) and
-         ( passed_nameCsigned == "no"            )  or
-         ( passed_nameCabsent == "yes"           )  or
-         ( passed_unsigned    == "yes"           )  or
-         ( passed_unsigned    == "name"          ))) then
-       returned_name = ""
+function suppress_unsigned_motorway_junctions_t( passedt )
+    if ((( passedt.highway    == "motorway_junction"  ) and
+         ( passedt["name:signed"] == "no"            )  or
+         ( passedt["name:absent"] == "yes"           )  or
+         ( passedt.unsigned       == "yes"           )  or
+         ( passedt.unsigned       == "name"          ))) then
+       passedt.name = ""
     end
-
-    return returned_name
-end -- suppress_unsigned_motorway_junctions()
+end -- suppress_unsigned_motorway_junctions_t()
 
 -- ----------------------------------------------------------------------------
 -- Move unsigned road refs to the name, in brackets.
 -- ----------------------------------------------------------------------------
-function suppress_unsigned_road_refs( t )
-    local passed_name = t[1]
-    local passed_highway = t[2]
-    local passed_nameCsigned = t[3]
-    local passed_nameCabsent = t[4]
-    local passed_official_ref = t[5]
-    local passed_ref = t[6]
-    local passed_refCsigned = t[7]
-    local passed_unsigned = t[8]
-
-    if (( passed_highway == "motorway"          ) or
-        ( passed_highway == "motorway_link"     ) or
-        ( passed_highway == "trunk"             ) or
-        ( passed_highway == "trunk_link"        ) or
-        ( passed_highway == "primary"           ) or
-        ( passed_highway == "primary_link"      ) or
-        ( passed_highway == "secondary"         ) or
-        ( passed_highway == "secondary_link"    ) or
-        ( passed_highway == "tertiary"          ) or
-        ( passed_highway == "tertiary_link"     ) or
-        ( passed_highway == "unclassified"      ) or
-        ( passed_highway == "unclassified_link" ) or
-        ( passed_highway == "residential"       ) or
-        ( passed_highway == "residential_link"  ) or
-        ( passed_highway == "service"           ) or
-        ( passed_highway == "road"              ) or
-        ( passed_highway == "track"             ) or
-        ( passed_highway == "cycleway"          ) or
-        ( passed_highway == "bridleway"         ) or
-        ( passed_highway == "footway"           ) or
-        ( passed_highway == "intfootwaynarrow"  ) or
-        ( passed_highway == "path"              ) or
-        ( passed_highway == "intpathnarrow"     )) then
-       if (( passed_name == nil   ) or
-           ( passed_name == ""    )) then
-          if (( passed_ref        ~= nil    )  and
-              ( passed_ref        ~= ""     )  and
-              (( passed_refCsigned == "no"  )   or
-               ( passed_unsigned   == "ref" ))) then
-             passed_name       = "(" .. passed_ref .. ")"
-             passed_ref        = nil
-             passed_refCsigned = nil
-             passed_unsigned   = nil
+function suppress_unsigned_road_refs_t( passedt )
+    if (( passedt.highway == "motorway"          ) or
+        ( passedt.highway == "motorway_link"     ) or
+        ( passedt.highway == "trunk"             ) or
+        ( passedt.highway == "trunk_link"        ) or
+        ( passedt.highway == "primary"           ) or
+        ( passedt.highway == "primary_link"      ) or
+        ( passedt.highway == "secondary"         ) or
+        ( passedt.highway == "secondary_link"    ) or
+        ( passedt.highway == "tertiary"          ) or
+        ( passedt.highway == "tertiary_link"     ) or
+        ( passedt.highway == "unclassified"      ) or
+        ( passedt.highway == "unclassified_link" ) or
+        ( passedt.highway == "residential"       ) or
+        ( passedt.highway == "residential_link"  ) or
+        ( passedt.highway == "service"           ) or
+        ( passedt.highway == "road"              ) or
+        ( passedt.highway == "track"             ) or
+        ( passedt.highway == "cycleway"          ) or
+        ( passedt.highway == "bridleway"         ) or
+        ( passedt.highway == "footway"           ) or
+        ( passedt.highway == "intfootwaynarrow"  ) or
+        ( passedt.highway == "path"              ) or
+        ( passedt.highway == "intpathnarrow"     )) then
+       if (( passedt.name == nil   ) or
+           ( passedt.name == ""    )) then
+          if (( passedt.ref        ~= nil    )  and
+              ( passedt.ref        ~= ""     )  and
+              (( passedt["ref:signed"] == "no"  )   or
+               ( passedt.unsigned   == "ref" ))) then
+             passedt.name       = "(" .. passedt.ref .. ")"
+             passedt.ref        = nil
+             passedt["ref:signed"] = nil
+             passedt.unsigned   = nil
  	 else
-             if (( passed_official_ref ~= nil  )  and
-                 ( passed_official_ref ~= ""   )) then
-                passed_name         = "(" .. passed_official_ref .. ")"
-                passed_official_ref = nil
+             if (( passedt.official_ref ~= nil  )  and
+                 ( passedt.official_ref ~= ""   )) then
+                passedt.name         = "(" .. passedt.official_ref .. ")"
+                passedt.official_ref = nil
              end
           end
        else
-          if (( passed_nameCsigned == "no"   ) or
-              ( passed_nameCabsent == "yes"  ) or
-              ( passed_unsigned    == "yes"  ) or
-              ( passed_unsigned    == "name" )) then
-             passed_name = "(" .. passed_name
-             passed_nameCsigned = nil
+          if (( passedt["name:signed"] == "no"   ) or
+              ( passedt["name:absent"] == "yes"  ) or
+              ( passedt.unsigned       == "yes"  ) or
+              ( passedt.unsigned       == "name" )) then
+             passedt.name = "(" .. passedt.name
+             passedt["name:signed"] = nil
 
-             if (( passed_refCsigned == "no"  ) or
-                 ( passed_unsigned   == "ref" )) then
-                if (( passed_ref ~= nil )  and
-                    ( passed_ref ~= ""  )) then
-                   passed_name       = passed_name .. ", " .. passed_ref
+             if (( passedt["ref:signed"] == "no"  ) or
+                 ( passedt.unsigned      == "ref" )) then
+                if (( passedt.ref ~= nil )  and
+                    ( passedt.ref ~= ""  )) then
+                   passedt.name       = passedt.name .. ", " .. passedt.ref
                 end
 
-                passed_ref        = nil
-                passed_refCsigned = nil
-                passed_unsigned   = nil
+                passedt.ref           = nil
+                passedt["ref:signed"] = nil
+                passedt.unsigned      = nil
              else
-                if (( passed_official_ref ~= nil ) and
-                    ( passed_official_ref ~= ""  )) then
-                   passed_name         = passed_name .. ", " .. passed_official_ref
-                   passed_official_ref = nil
+                if (( passedt.official_ref ~= nil ) and
+                    ( passedt.official_ref ~= ""  )) then
+                   passedt.name         = passedt.name .. ", " .. passedt.official_ref
+                   passedt.official_ref = nil
                 end
              end
 
-             passed_name = passed_name .. ")"
+             passedt.name = passedt.name .. ")"
           else
-             if ((  passed_ref        ~= nil    ) and
-                 (  passed_ref        ~= ""     ) and
-                 (( passed_refCsigned == "no"  ) or
-                  ( passed_unsigned   == "ref" ))) then
-                passed_name       = passed_name .. " (" .. passed_ref .. ")"
-                passed_ref        = nil
-                passed_refCsigned = nil
-                passed_unsigned   = nil
+             if ((  passedt.ref           ~= nil    ) and
+                 (  passedt.ref           ~= ""     ) and
+                 (( passedt["ref:signed"] == "no"  ) or
+                  ( passedt.unsigned      == "ref" ))) then
+                passedt.name       = passedt.name .. " (" .. passedt.ref .. ")"
+                passedt.ref        = nil
+                passedt["ref:signed"] = nil
+                passedt.unsigned   = nil
              else
-                if (( passed_official_ref ~= nil ) and
-                    ( passed_official_ref ~= ""  )) then
-                   passed_name         = passed_name .. " (" .. passed_official_ref .. ")"
-                   passed_official_ref = nil
+                if (( passedt.official_ref ~= nil ) and
+                    ( passedt.official_ref ~= ""  )) then
+                   passedt.name         = passedt.name .. " (" .. passedt.official_ref .. ")"
+                   passedt.official_ref = nil
                 end
              end
           end
        end
     end
+end -- suppress_unsigned_road_refs_t()
 
-    t[1] = passed_name
-    t[2] = passed_highway
-    t[3] = passed_nameCsigned
-    t[4] = passed_nameCabsent
-    t[5] = passed_official_ref
-    t[6] = passed_ref
-    t[7] = passed_refCsigned
-    t[8] = passed_unsigned
 
-end -- suppress_unsigned_road_refs()
-
-function consolidate_place( passed_place, passed_natural )
-    local returned_place = passed_place
-
+function consolidate_place_t( passedt )
 -- ----------------------------------------------------------------------------
 -- Handle place=islet as place=island
 -- ----------------------------------------------------------------------------
-    if ( returned_place == "islet" ) then
-       returned_place = "island"
+    if ( passedt.place == "islet" ) then
+       passedt.place = "island"
     end
 
 -- ----------------------------------------------------------------------------
 -- Handle place=quarter
 -- ----------------------------------------------------------------------------
-    if ( returned_place == "quarter" ) then
-       returned_place = "neighbourhood"
+    if ( passedt.place == "quarter" ) then
+       passedt.place = "neighbourhood"
     end
 
 -- ----------------------------------------------------------------------------
 -- Handle natural=cape etc. as place=locality if no other place tag.
 -- ----------------------------------------------------------------------------
-    if ((( passed_natural == "cape"      ) or
-         ( passed_natural == "headland"  ) or
-         ( passed_natural == "peninsula" ) or
-         ( passed_natural == "sound"     ) or
-         ( passed_natural == "point"     )) and
-        (( returned_place == nil         ) or
-         ( returned_place == ""          ))) then
-       returned_place = "locality"
+    if ((( passedt.natural == "cape"      ) or
+         ( passedt.natural == "headland"  ) or
+         ( passedt.natural == "peninsula" ) or
+         ( passedt.natural == "sound"     ) or
+         ( passedt.natural == "point"     )) and
+        (( passedt.place == nil         ) or
+         ( passedt.place == ""          ))) then
+       passedt.place = "locality"
     end
-
-    return returned_place
-end -- consolidate_place()
+end -- consolidate_place_t()
