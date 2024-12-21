@@ -1377,12 +1377,16 @@ function consolidate_lua_03_t( passedt )
    end
 
 -- ----------------------------------------------------------------------------
--- Bridge structures - display as building=roof.
+-- Bridge structures - display as building=bridge_area.
+-- Other "almost buildings - display as building=roof.
 -- Also farmyard "bunker silos" and canopies, and natural arches.
 -- Also railway traversers and more.
 -- ----------------------------------------------------------------------------
-   if ((    passedt.man_made         == "bridge"          ) or
-       (    passedt.natural          == "arch"            ) or
+   if ( passedt.man_made == "bridge" ) then
+      passedt.building = "bridge_area"
+   end
+
+   if ((    passedt.natural          == "arch"            ) or
        (    passedt.man_made         == "bunker_silo"     ) or
        (    passedt.amenity          == "feeding_place"   ) or
        (    passedt.railway          == "traverser"       ) or
