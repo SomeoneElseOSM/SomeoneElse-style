@@ -6,6 +6,7 @@ Most generic lua processing is now shared between raster and vector.
 Send `man_made=bridge` through to the rendering code as `building=bridge_area` to allow the vector code to display it better (no display change in raster).
 Removed a check on `layer=covered`; no longer in the data.
 Fixed a regression where admin boundaries could be seen on the main layer on raster (never released, but minutely updates would have gone through that code).
+Change the "vector" button on the raster map so that it browses the vector map at the location that the raster map was showing.
 
 ## 19/12/2024
 Added an icon for dog parks (some are unnamed).
