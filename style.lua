@@ -529,6 +529,19 @@ function filter_tags_generic(keyvalues, nokeys)
 -- Consolidate more values for extraction / display
 -- ----------------------------------------------------------------------------
    consolidate_lua_03_t( keyvalues )
+
+-- ----------------------------------------------------------------------------
+-- Remove admin boundaries from the map
+-- I do this because I'm simply not interested in admin boundaries and I'm 
+-- lucky enough to live in a place where I don't have to be.
+-- ----------------------------------------------------------------------------
+   if (keyvalues["boundary"] == "administrative") then
+      keyvalues["boundary"] = nil
+   end
+
+-- ----------------------------------------------------------------------------
+-- Consolidate more values for extraction / display
+-- ----------------------------------------------------------------------------
    consolidate_lua_04_t( keyvalues )
 -- ----------------------------------------------------------------------------
 -- End of AJT generic additions.
