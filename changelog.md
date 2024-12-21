@@ -4,6 +4,7 @@ This page describes changes made in these projects: [SomeoneElse-style](https://
 ## As yet unreleased
 Most generic lua processing is now shared between raster and vector.
 Send `man_made=bridge` through to the rendering code as `building=bridge_area` to allow the vector code to display it better (no display change in raster).
+Removed a check on `layer=covered`; no longer in the data.
 
 ## 19/12/2024
 Added an icon for dog parks (some are unnamed).

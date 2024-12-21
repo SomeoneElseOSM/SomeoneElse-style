@@ -29,10 +29,6 @@ function fix_invalid_layer_values_t( passedt )
       passedt.layer = "-1"
    end
 
-   if ( passedt.layer == "covered" ) then
-      passedt.layer = "0"
-   end
-
    if ((( passedt.bridge     == "yes" )   or
         ( passedt.embankment == "yes" ))  and
        (( passedt.layer      == "-3"  )   or
