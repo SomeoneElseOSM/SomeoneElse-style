@@ -6079,18 +6079,19 @@ function consolidate_lua_03_t( passedt )
 -- Railway ventilation shaft nodes.
 -- These are rendered as a stubby black tower.
 -- ----------------------------------------------------------------------------
-   if (( passedt.building   == "air_shaft"         ) or
-       ( passedt.man_made   == "air_shaft"         ) or
-       ( passedt.tunnel     == "air_shaft"         ) or
-       ( passedt.historic   == "air_shaft"         ) or
-       ( passedt.railway    == "ventilation_shaft" ) or
-       ( passedt.tunnel     == "ventilation_shaft" ) or
-       ( passedt.tunnel     == "ventilation shaft" ) or
-       ( passedt.building   == "ventilation_shaft" ) or
-       ( passedt.man_made   == "ventilation_shaft" ) or
-       ( passedt.building   == "vent_shaft"        ) or
-       ( passedt.man_made   == "vent_shaft"        ) or
+   if (( passedt.building   == "air_shaft"            ) or
+       ( passedt.man_made   == "air_shaft"            ) or
+       ( passedt.tunnel     == "air_shaft"            ) or
+       ( passedt.historic   == "air_shaft"            ) or
+       ( passedt.railway    == "ventilation_shaft"    ) or
+       ( passedt.tunnel     == "ventilation_shaft"    ) or
+       ( passedt.tunnel     == "ventilation shaft"    ) or
+       ( passedt.building   == "ventilation_shaft"    ) or
+       ( passedt.man_made   == "ventilation_shaft"    ) or
+       ( passedt.building   == "vent_shaft"           ) or
+       ( passedt.man_made   == "vent_shaft"           ) or
        ( passedt["tower:type"] == "vent"              ) or
+       ( passedt["tower:type"] == "ventilation"       ) or
        ( passedt["tower:type"] == "ventilation_shaft" )) then
       passedt.man_made = "ventilation_shaft"
 
