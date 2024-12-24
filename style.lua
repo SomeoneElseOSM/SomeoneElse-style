@@ -31,7 +31,7 @@ polygon_keys = { 'boundary', 'building', 'landcover', 'landuse', 'amenity', 'har
       'wetland', 'water', 'aeroway' }
 
 generic_keys = {'access','addr:housename','addr:housenumber','addr:interpolation','admin_level','advertising','aerialway',
-   'aeroway','amenity','area','area:highway','barrier',
+   'aeroway','amenity','animal','area','area:highway','barrier',
    'bicycle','brand','bridge','bridleway','booth','boundary','building', 'canoe', 'capital','construction','covered',
    'culvert','cutting','denomination','departures_board','designation','disused','disused:highway','disused:man_made',
    'disused:military','disused:railway','disused:shop','ele',

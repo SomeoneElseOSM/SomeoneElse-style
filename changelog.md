@@ -8,6 +8,7 @@ Removed a check on `layer=covered`; no longer in the data.
 Fixed a regression where admin boundaries could be seen on the main layer on raster (never released, but minutely updates would have gone through that code).
 Change the "vector" button on the raster map so that it browses the vector map at the location that the raster map was showing.
 Detect `tower:type=ventilation` as a ventilation shaft.
+Add `animal` to the list of keys so that horse walkers with no other keys are not missed.
 
 ## 19/12/2024
 Added an icon for dog parks (some are unnamed).
