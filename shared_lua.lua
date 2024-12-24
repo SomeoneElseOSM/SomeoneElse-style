@@ -4147,15 +4147,6 @@ function consolidate_lua_03_t( passedt )
    end
 
 -- ----------------------------------------------------------------------------
--- Lose any "access=permissive" on parking; it should not be greyed out as it
--- is "somewhere we can park".
--- ----------------------------------------------------------------------------
-   if (( passedt.amenity == "parking"    ) and
-       ( passedt.access  == "permissive" )) then
-      passedt.access = nil
-   end
-
--- ----------------------------------------------------------------------------
 -- Scooter rental
 -- All legal scooter rental / scooter parking in UK are private; these are the
 -- the tags currently used.
@@ -4352,7 +4343,9 @@ function consolidate_lua_03_t( passedt )
         ( passedt.amenity == "bicycle_parking_pay"        ) or
         ( passedt.amenity == "motorcycle_parking"         ) or
         ( passedt.amenity == "motorcycle_parking_pay"     )) then
-        if (( passedt.access == "yes"        ) or
+        if (( passedt.access == nil          ) or
+            ( passedt.access == ""           ) or
+            ( passedt.access == "yes"        ) or
             ( passedt.access == "permissive" ) or
             ( passedt.access == "public"     ) or
             ( passedt.access == "foot"       ) or
