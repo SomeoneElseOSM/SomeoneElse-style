@@ -4318,6 +4318,53 @@ function consolidate_lua_03_t( passedt )
    end
 
 -- ----------------------------------------------------------------------------
+-- The code below here doesn't look at "access" directly although:
+--
+-- * The raster rendering cartocss code still uses "access" and has set that
+--   based on "foot" above.
+-- * The "access" value is written through to the vector tiles for certain
+--   objects (for example, parking areas) so that the vector rendering code
+--   can show them differently.
+--
+-- For the second of those reasons, tidy up "access" values on the following objects:
+-- * bicycle_rental
+-- * scooter_rental
+-- * bicycle_parking and bicycle_parking_pay
+-- * motorcycle_parking and motorcycle_parking_pay
+-- 
+-- that are not one of "no" or "yes" as follows:
+-- * yes, permissive, public, foot, fee, boat -> yes
+-- * everything else -> no
+-- 
+-- We don't worry about "designation" here because we've removed that above.
+-- "official" is a bit odd; "access=official" on parking seems to usually mean 
+-- "no".
+-- Some of the less-used access values such as "construction" are a bit 
+-- random, so fail safe to "no".
+-- ----------------------------------------------------------------------------
+    if (( passedt.amenity == "parking"                    ) or
+        ( passedt.amenity == "parking_pay"                ) or
+        ( passedt.amenity == "parking_freedisabled"       ) or
+        ( passedt.amenity == "parking_paydisabled"        ) or
+        ( passedt.amenity == "bicycle_rental"             ) or
+        ( passedt.amenity == "scooter_rental"             ) or
+        ( passedt.amenity == "bicycle_parking"            ) or
+        ( passedt.amenity == "bicycle_parking_pay"        ) or
+        ( passedt.amenity == "motorcycle_parking"         ) or
+        ( passedt.amenity == "motorcycle_parking_pay"     )) then
+        if (( passedt.access == "yes"        ) or
+            ( passedt.access == "permissive" ) or
+            ( passedt.access == "public"     ) or
+            ( passedt.access == "foot"       ) or
+            ( passedt.access == "fee"        ) or
+            ( passedt.access == "boat"       )) then
+            passedt.access = "yes"
+        else
+            passedt.access = "no"
+        end
+    end
+
+-- ----------------------------------------------------------------------------
 -- Render amenity=leisure_centre and leisure=leisure_centre 
 -- as leisure=sports_centre
 -- ----------------------------------------------------------------------------
