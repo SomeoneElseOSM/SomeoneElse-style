@@ -1413,13 +1413,18 @@ function consolidate_lua_03_t( passedt )
 
 -- ----------------------------------------------------------------------------
 -- Ensure that allegedly operational windmills are treated as such and not as
--- "historic".
+-- "historic", and that actual historic ones are treated as historic.
+-- "museum" is a bit of a special case many watermills and windmills are
+-- historic (but not tagged as such), somewhat operational, and also museums.
+-- We treat them as historic mills.
 -- ----------------------------------------------------------------------------
    if (( passedt.man_made == "watermill") or
        ( passedt.man_made == "windmill" )) then
-      if (( passedt.disused              == "yes"  ) or
-          ( passedt["watermill:disused"] == "yes"  ) or
-          ( passedt["windmill:disused"]  == "yes"  )) then
+      if (( passedt.disused              == "yes"      ) or
+          ( passedt["watermill:disused"] == "yes"      ) or
+          ( passedt["windmill:disused"]  == "yes"      ) or
+          ( passedt.tourism              == "museum"   ) or
+          ( passedt.historic             == "building" )) then
          passedt.historic = passedt.man_made
          passedt.man_made = nil
       else
@@ -1458,6 +1463,7 @@ function consolidate_lua_03_t( passedt )
          (  passedt.man_made == ""                 )) and
         ((  passedt.historic == nil                )  or
          (  passedt.historic == ""                 )  or
+         (  passedt.historic == "building"        )  or
          (  passedt.historic == "restoration"      )  or
          (  passedt.historic == "heritage"         )  or
          (  passedt.historic == "industrial"       )  or
@@ -1473,11 +1479,48 @@ function consolidate_lua_03_t( passedt )
          (  passedt.man_made == ""                )) and
         ((  passedt.historic == nil               )  or
          (  passedt.historic == ""                )  or
+         (  passedt.historic == "building"        )  or
          (  passedt.historic == "restoration"     )  or
          (  passedt.historic == "heritage"        )  or
          (  passedt.historic == "industrial"      )  or
          (  passedt.historic == "tower"           )))) then
       passedt.historic = "windmill"
+   end
+
+-- ----------------------------------------------------------------------------
+-- Some things that are historic watermills and windmills have other tags that
+-- should take priority over the watermill / windmill tags.  Those that don't
+-- are listed here.  "museum" is here because many mills and former mills are
+-- museums and we want to see them as mills.
+-- ----------------------------------------------------------------------------
+   if (( passedt.man_made  == "watermill"        )  or
+       ( passedt.man_made  == "windmill"         )) then
+      if ((  passedt.tourism   ~= nil                 ) and
+          (  passedt.tourism   ~= ""                  ) and
+          (  passedt.tourism   ~= "attraction"        ) and
+          (  passedt.tourism   ~= "information"       ) and
+          (  passedt.tourism   ~= "museum"            ) and
+          (  passedt.tourism   ~= "viewpoint"         ) and
+          (  passedt.tourism   ~= "yes"               )) then
+         passedt.man_made = nil
+      else
+         passedt.tourism = nil
+      end
+   end
+
+   if (( passedt.historic  == "watermill"        )  or
+       ( passedt.historic  == "windmill"         )) then
+      if ((  passedt.tourism   ~= nil                 ) and
+          (  passedt.tourism   ~= ""                  ) and
+          (  passedt.tourism   ~= "attraction"        ) and
+          (  passedt.tourism   ~= "information"       ) and
+          (  passedt.tourism   ~= "museum"            ) and
+          (  passedt.tourism   ~= "viewpoint"         ) and
+          (  passedt.tourism   ~= "yes"               )) then
+         passedt.historic = nil
+      else
+         passedt.tourism = nil
+      end
    end
 
 -- ----------------------------------------------------------------------------
@@ -5588,13 +5631,14 @@ function consolidate_lua_03_t( passedt )
 -- ----------------------------------------------------------------------------
 -- Add a building tag to specific historic items that are likely buildings 
 -- Note that "historic=mill" does not have a building tag added.
+-- Nor does "historic=watermill" - in some cases the whole site is tagged as
+-- that.
 -- ----------------------------------------------------------------------------
    if (( passedt.historic == "aircraft"           ) or
        ( passedt.historic == "ice_house"          ) or
        ( passedt.historic == "kiln"               ) or
        ( passedt.historic == "ship"               ) or
        ( passedt.historic == "tank"               ) or
-       ( passedt.historic == "watermill"          ) or
        ( passedt.historic == "windmill"           )) then
       if ( passedt.ruins == "yes" ) then
          passedt.building = "roof"

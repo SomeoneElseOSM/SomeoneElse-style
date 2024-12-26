@@ -1,6 +1,10 @@
 # Changes made to this rendering
 This page describes changes made in these projects: [SomeoneElse-style](https://github.com/SomeoneElseOSM/SomeoneElse-style), [SomeoneElse-style-legend](https://github.com/SomeoneElseOSM/SomeoneElse-style-legend) and [openstreetmap-carto-AJT](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT), and visible [on this site](//map.atownsend.org.uk/maps/map/map.html).
 
+## As yet unreleased
+Ensure that tourist accommodation in historic watermills and windmills is correctly shown as tourist accommodation.
+If a watermill or windmill is a museum or a historic building, assume that it is also a historic mill.
+
 ## 26/12/2024
 Most generic lua processing is now shared between raster and vector.
 Send `man_made=bridge` through to the rendering code as `building=bridge_area` to allow the vector code to display it better (no display change in raster).
