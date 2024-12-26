@@ -1290,9 +1290,10 @@ function consolidate_lua_03_t( passedt )
 -- Once we've got those out of the way, detect amenity=fuel that also sell
 -- electricity, hydrogen and LPG.
 -- ----------------------------------------------------------------------------
-   if (( passedt.amenity          == "fuel" ) and
-       ( passedt["fuel:electricity"] == "yes"  )  and
-       ( passedt["fuel:diesel"]      == nil    )) then
+   if ((  passedt.amenity          == "fuel"     )  and
+       (  passedt["fuel:electricity"] == "yes"   )  and
+       (( passedt["fuel:diesel"]      == nil    )   or
+        ( passedt["fuel:diesel"]      == ""     ))) then
       passedt.amenity = "charging_station"
    end
 
