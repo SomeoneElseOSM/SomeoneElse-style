@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20241226T222200Z",
+  "data_updated": "20241227T093400Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -3436,7 +3436,7 @@
     { "key": "tourism", "value": "yes", "description": "Many tourism tags handled" },
     { "key": "tourism", "value": "zoo", "description": "Many tourism tags handled" },
     { "key": "tower", "description": "Classify various towers" },
-    { "key": "tower", "value": "aircraft_control", "description": "Classify various towers" },
+    { "key": "tower", "value": "round", "description": "Classify various towers" },
     { "key": "tower:construction", "description": "Classify various towers" },
     { "key": "tower:construction", "value": "dish", "description": "Classify various towers" },
     { "key": "tower:construction", "value": "dome", "description": "Classify various towers" },
