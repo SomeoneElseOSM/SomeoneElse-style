@@ -10374,36 +10374,41 @@ function consolidate_lua_04_t( passedt )
       passedt.tourism = nil
    end
 
-   if (( passedt.man_made   == "tower"                ) and
-       ( passedt["tower:type"] == "firefighter_training" )) then
+   if ((  passedt.man_made      == "tower"                 ) and
+       (( passedt["tower:type"] == "hose"                 ) or
+        ( passedt["tower:type"] == "firefighter_training" ))) then
       passedt.man_made = "squaretower"
       passedt.building = "yes"
       passedt.tourism = nil
    end
 
-   if ((((  passedt.man_made    == "tower"             )  and
-         (( passedt["tower:type"]  == "church"           )   or
-          ( passedt["tower:type"]  == "square"           )   or
-          ( passedt["tower:type"]  == "campanile"        )   or
-          ( passedt["tower:type"]  == "bell_tower"       ))) or
-        (   passedt.man_made    == "campanile"          )) and
-       (((  passedt.amenity     == nil                 )   or
-         (  passedt.amenity     == ""                  ))  or
-        (   passedt.amenity     ~= "place_of_worship"   ))) then
+   if (((  passedt.man_made         == "tower"           )  or
+        (  passedt.building         == "tower"           )  or
+        (  passedt["building:part"] == "yes"             )) and
+       ((  passedt["tower:type"]    == "church"          )   or
+        (  passedt["tower:type"]    == "square"          )   or
+        (  passedt["tower:type"]    == "campanile"       )   or
+        (  passedt["tower:type"]    == "bell_tower"      )   or
+        (  passedt.man_made         == "campanile"       ))  and
+       ((  passedt.amenity          == nil                )  or
+        (  passedt.amenity          == ""                 )  or
+        (  passedt.amenity          ~= "place_of_worship" ))) then
       passedt.man_made = "churchtower"
+      passedt.building = "yes"
       passedt.tourism = nil
    end
 
-   if (((  passedt.man_made      == "tower"            ) or
-        (  passedt.building      == "tower"            ) or
+   if (((  passedt.man_made         == "tower"            )  or
+        (  passedt.building         == "tower"            )  or
         (  passedt["building:part"] == "yes"              )) and
-        ((  passedt["tower:type"]   == "spire"            )  or
-         (  passedt["tower:type"]   == "steeple"          )  or
-         (  passedt["tower:type"]   == "minaret"          )  or
-         (  passedt["tower:type"]   == "round"            )) and
-       ((  passedt.amenity       == nil                 )  or
-        (  passedt.amenity       == ""                  )  or
-        (  passedt.amenity       ~= "place_of_worship"  ))) then
+       ((  passedt["tower:type"]    == "spire"            )  or
+        (  passedt["tower:type"]    == "steeple"          )  or
+        (  passedt["tower:type"]    == "minaret"          )  or
+        (  passedt["tower:type"]    == "round"            )  or
+        (  passedt["tower"]         == "round"            )) and
+       ((  passedt.amenity          == nil                )  or
+        (  passedt.amenity          == ""                 )  or
+        (  passedt.amenity          ~= "place_of_worship" ))) then
       passedt.man_made = "churchspire"
       passedt.building = "yes"
       passedt.tourism = nil
