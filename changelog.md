@@ -1,7 +1,7 @@
 # Changes made to this rendering
 This page describes changes made in these projects: [SomeoneElse-style](https://github.com/SomeoneElseOSM/SomeoneElse-style), [SomeoneElse-style-legend](https://github.com/SomeoneElseOSM/SomeoneElse-style-legend) and [openstreetmap-carto-AJT](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT), and visible [on this site](//map.atownsend.org.uk/maps/map/map.html).
 
-## As yet unreleased
+## 27/12/2024 (shared vector code only)
 Ensure that tourist accommodation in historic watermills and windmills is correctly shown as tourist accommodation.
 If a watermill or windmill is a museum or a historic building, assume that it is also a historic mill.
 Use `tower` in addition to `tower:type` to classify various towers.
