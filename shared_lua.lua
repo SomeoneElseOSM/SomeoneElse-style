@@ -10892,7 +10892,6 @@ function consolidate_lua_04_t( passedt )
          ( passedt.amenity    ~= "pitch_tennis"      ))  or
         (  passedt.tourism    == "hotel"              )  or
         (  passedt.tourism    == "guest_house"        )  or
-        (  passedt.tourism    == "attraction"         )  or
         (  passedt.tourism    == "viewpoint"          )  or
         (  passedt.tourism    == "museum"             )  or
         (  passedt.tourism    == "hostel"             )  or
