@@ -6137,9 +6137,10 @@ function consolidate_lua_03_t( passedt )
       passedt.man_made = nil
    end
 
-   if ((( passedt.man_made == nil        )  or
-        ( passedt.man_made == ""         )) and
-       (  passedt.power    == "generator" )) then
+   if ((( passedt.man_made == nil         )  or
+        ( passedt.man_made == ""          )) and
+       (( passedt.power    == "generator" )  or
+        ( passedt.power    == "plant"     ))) then
       if (( passedt.power_source        == "wind"         )  or
           ( passedt["generator:source"] == "wind"         )  or
           ( passedt["generator:method"] == "wind_turbine" )  or
@@ -6147,7 +6148,14 @@ function consolidate_lua_03_t( passedt )
           ( passedt["generator:method"] == "wind"         )) then
          passedt.man_made = "power_wind"
       else
-         passedt.man_made = "power"
+          if (( passedt["generator:source"] == "tidal"        )  or
+              ( passedt["generator:source"] == "wave"         )  or
+              ( passedt["plant:source"]     == "tidal"        )  or
+              ( passedt["plant:source"]     == "wave"         )) then
+             passedt.man_made = "power_water"
+         else
+             passedt.man_made = "power"
+         end
       end
    end
 
