@@ -6792,8 +6792,11 @@ function consolidate_lua_03_t( passedt )
        ( passedt.military == "registration_and_enlistment_office" ) or
        ( passedt.military == "checkpoint"                         ) or
        ( passedt.hazard   == "shooting_range"                     ) or
+       ( passedt.hazard   == "shooting"                           ) or
        ( passedt.sport    == "shooting"                           ) or
-       ( passedt.sport    == "shooting_range"                     )) then
+       ( passedt.sport    == "shooting_range"                     ) or
+       ( passedt.leisure  == "shooting_ground"                    ) or
+       ( passedt.leisure  == "shooting_range"                     )) then
       passedt.landuse = "military"
    end
 

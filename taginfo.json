@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20241227T093400Z",
+  "data_updated": "20241229T192901Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -1283,6 +1283,7 @@
     { "key": "hard_shoulder", "value": "yes", "description": "Roads with shoulders are shown as having somewhere to walk" },
     { "key": "hazard", "description": "A couple of specific hazards - hogweed and shooting ranges" },
     { "key": "hazard", "value": "plant", "description": "Detect hogweed" },
+    { "key": "hazard", "value": "shooting", "description": "Detect shooting ranges" },
     { "key": "hazard", "value": "shooting_range", "description": "Detect shooting ranges" },
     { "key": "hazard", "value": "toxic_plant", "description": "Detect hogweed" },
     { "key": "hazard_prone", "description": "Show flood-prone areas as very intermittent water" },
@@ -1781,6 +1782,8 @@
     { "key": "leisure", "value": "sailing_club", "description": "Leisure amenities shown in green" },
     { "key": "leisure", "value": "sauna", "description": "Leisure amenities shown in green" },
     { "key": "leisure", "value": "schoolyard", "description": "Shown in light grey" },
+    { "key": "leisure", "value": "shooting_ground", "description": "Detect shooting ranges" },
+    { "key": "leisure", "value": "shooting_range", "description": "Detect shooting ranges" },
     { "key": "leisure", "value": "showground", "description": "Leisure amenities shown in green" },
     { "key": "leisure", "value": "slipway", "description": "Leisure amenities shown in green" },
     { "key": "leisure", "value": "social_club", "description": "Leisure amenities shown in green" },
