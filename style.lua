@@ -540,6 +540,13 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Slipways - render ways as miniature railway in addition to slipway icon
+-- ----------------------------------------------------------------------------
+   if ( keyvalues["leisure"] == "slipway" ) then
+      keyvalues["railway"] = "miniature"
+   end
+
+-- ----------------------------------------------------------------------------
 -- Consolidate more values for extraction / display
 -- ----------------------------------------------------------------------------
    consolidate_lua_04_t( keyvalues )

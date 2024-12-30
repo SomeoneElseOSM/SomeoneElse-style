@@ -4855,13 +4855,6 @@ function consolidate_lua_03_t( passedt )
    end
 
 -- ----------------------------------------------------------------------------
--- Slipways - render ways as miniature railway in addition to slipway icon
--- ----------------------------------------------------------------------------
-   if ( passedt.leisure == "slipway" ) then
-      passedt.railway = "miniature"
-   end
-
--- ----------------------------------------------------------------------------
 -- Other waterway access points
 -- ----------------------------------------------------------------------------
    if (( passedt.waterway   == "access_point"  ) or
