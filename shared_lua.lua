@@ -9581,7 +9581,6 @@ function consolidate_lua_04_t( passedt )
        ( passedt.office      == "coworking_space"         ) or
        ( passedt.office      == "serviced_offices"        ) or
        ( passedt.amenity     == "studio"                  ) or
-       ( passedt.amenity     == "prison"                  ) or
        ( passedt.amenity     == "music_school"            ) or
        ( passedt.amenity     == "cooking_school"          ) or
        ( passedt.craft       == "electrician"             ) or

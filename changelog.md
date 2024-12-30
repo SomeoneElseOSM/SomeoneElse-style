@@ -6,6 +6,7 @@ Change the colour of the fill used for grass runways from the regular runway fil
 Removed `tourism=attraction` from the list of things that get `unnamedcommercial` landuse.
 Detect marine water-based power stations (wave power etc.) and exclude from regular "industrial" power stations.
 Support a couple more synynyms for civilian shooting ranges.
+Don't add `office=nonspecific` to `amenity=prison`.
 
 ## 27/12/2024 (shared vector code only)
 Ensure that tourist accommodation in historic watermills and windmills is correctly shown as tourist accommodation.
