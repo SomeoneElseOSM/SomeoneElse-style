@@ -547,6 +547,22 @@ function filter_tags_generic(keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Sluice gates - various alternative keys for these four may have been
+-- consolidated in the shared lua.  Here we send through as man_made, and also
+-- display as building=roof.
+-- Also waterfall (the dot or line is generic enough to work there too).
+-- The change of waterway to weir ensures line features appear too.
+-- ----------------------------------------------------------------------------
+   if ((  keyvalues["waterway"]     == "sluice_gate"      ) or
+       (  keyvalues["waterway"]     == "waterfall"        ) or
+       (  keyvalues["waterway"]     == "weir"             ) or
+       (  keyvalues["waterway"]     == "floating_barrier" )) then
+      keyvalues["man_made"] = "sluice_gate"
+      keyvalues["building"] = "roof"
+      keyvalues["waterway"] = "weir"
+   end
+
+-- ----------------------------------------------------------------------------
 -- Consolidate more values for extraction / display
 -- ----------------------------------------------------------------------------
    consolidate_lua_04_t( keyvalues )

@@ -4867,22 +4867,27 @@ function consolidate_lua_03_t( passedt )
    end
 
 -- ----------------------------------------------------------------------------
--- Sluice gates - send through as man_made, also display as building=roof.
--- Also waterfall (the dot or line is generic enough to work there too)
--- The change of waterway to weir ensures line features appear too.
+-- In this shared lua, we just consolidate any alternative values for
+-- sluice_gate, waterfall, weir, floating_barrier.
+--
+-- On raster, these are further consolidated into a set of tags that will
+-- display as a point, line or (multi)polygon.
+--
+-- On vector, we output something appropriate into either "land1" (points
+-- and areas) or "waterway" (lines, which may be parallel or perpendicular
+-- to the actual waterway).
 -- ----------------------------------------------------------------------------
    if ((  passedt.waterway     == "sluice_gate"      ) or
        (  passedt.waterway     == "sluice"           ) or
        (( passedt.waterway     == "flow_control"    )  and
-        ( passedt.flow_control == "sluice_gate"     )) or
-       (  passedt.waterway     == "waterfall"        ) or
+        ( passedt.flow_control == "sluice_gate"     ))) then
+      passedt.waterway = "sluice_gate"
+   end
+
+   if ((  passedt.waterway     == "waterfall"        ) or
        (  passedt.natural      == "waterfall"        ) or
-       (  passedt.water        == "waterfall"        ) or
-       (  passedt.waterway     == "weir"             ) or
-       (  passedt.waterway     == "floating_barrier" )) then
-      passedt.man_made = "sluice_gate"
-      passedt.building = "roof"
-      passedt.waterway = "weir"
+       (  passedt.water        == "waterfall"        )) then
+      passedt.waterway = "waterfall"
    end
 
 -- ----------------------------------------------------------------------------
