@@ -9954,6 +9954,40 @@ function consolidate_lua_04_t( passedt )
    end
 
 -- ----------------------------------------------------------------------------
+-- If something has been mapped as both "area:aeroway" and "aeroway", then let
+-- the latter take precedence.
+-- ----------------------------------------------------------------------------
+   if (( passedt.aeroway         ~= nil ) and
+       ( passedt.aeroway         ~= ""  ) and
+       ( passedt["area:aeroway"] ~= nil ) and
+       ( passedt["area:aeroway"] ~= ""  )) then
+      passedt["disused:aeroway"] = nil
+   end
+
+-- ----------------------------------------------------------------------------
+-- A note about "area:aeroway".  This is sometimes used for area aeroway
+-- features.  Sometimes "surface=grass" is also tagged; sometimes
+-- "surface=paved", sometimes neither.
+--
+-- In the case of grass, grass "area:aeroway"s appear to always be mapped over
+-- existing grass areas, and paved "area:aeroway"s appear to be mapped among
+-- well-mapped landuse areas (e.g. areas of grass).
+--
+-- There's therefore no need to explicitly show either grass or non-grass
+-- "area:aeroway".
+-- ----------------------------------------------------------------------------
+   if ((  passedt["area:aeroway"] ~= nil )  and
+       (  passedt["area:aeroway"] ~= ""  )) then
+-- ----------------------------------------------------------------------------
+-- We do however remove "landuse=runway" since that isn't a value we look for
+-- and does not tell us anything that we do not know.
+-- ----------------------------------------------------------------------------
+      if ( passedt.landuse == "runway" ) then
+         passedt.landuse = nil
+      end
+   end
+
+-- ----------------------------------------------------------------------------
 -- Treat heliports as aerodromes.
 -- Done before the "disused" logic below and the "large/small" logic 
 -- further down.

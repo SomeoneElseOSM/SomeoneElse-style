@@ -5,9 +5,10 @@ This page describes changes made in these projects: [SomeoneElse-style](https://
 Change the colour of the fill used for grass runways from the regular runway fill to "grass" (#b6fdb6).
 Removed `tourism=attraction` from the list of things that get `unnamedcommercial` landuse.
 Detect marine water-based power stations (wave power etc.) and exclude from regular "industrial" power stations.
-Support a couple more synynyms for civilian shooting ranges.
+Support a couple more synonyms for civilian shooting ranges.
 Don't add `office=nonspecific` to `amenity=prison`.
 Move the sluice gate / waterfall / weir / floating barrier consolidation from the shared lua to the raster-only code.
+Remove `area:aeroway` if `aeroway` is set.
 
 ## 27/12/2024 (shared vector code only)
 Ensure that tourist accommodation in historic watermills and windmills is correctly shown as tourist accommodation.

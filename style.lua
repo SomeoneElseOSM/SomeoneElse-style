@@ -25,13 +25,13 @@
 -- ----------------------------------------------------------------------------
 require "shared_lua"
 
-polygon_keys = { 'boundary', 'building', 'landcover', 'landuse', 'amenity', 'harbour', 'historic', 'leisure', 
+polygon_keys = { 'area:aeroway', 'boundary', 'building', 'landcover', 'landuse', 'amenity', 'harbour', 'historic', 'leisure', 
       'man_made', 'military', 'natural', 'office', 'place', 'power',
       'public_transport', 'seamark:type', 'shop', 'sport', 'tourism', 'waterway',
       'wetland', 'water', 'aeroway' }
 
 generic_keys = {'access','addr:housename','addr:housenumber','addr:interpolation','admin_level','advertising','aerialway',
-   'aeroway','amenity','animal','area','area:highway','barrier',
+   'aeroway','amenity','animal','area','area:aeroway', 'area:highway','barrier',
    'bicycle','brand','bridge','bridleway','booth','boundary','building', 'canoe', 'capital','construction','covered',
    'culvert','cutting','denomination','departures_board','designation','disused','disused:highway','disused:man_made',
    'disused:military','disused:railway','disused:shop','ele',
