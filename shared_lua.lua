@@ -7870,8 +7870,12 @@ function consolidate_lua_04_t( passedt )
 -- ----------------------------------------------------------------------------
    if (( passedt.landuse == "plant_nursery"              ) or
        ( passedt.shop    == "plant_nursery"              ) or
-       ( passedt.shop    == "plant_centre"               ) or
-       ( passedt.shop    == "nursery"                    ) or
+       ( passedt.shop    == "plant_centre"               )) then
+      passedt.landuse = "unnamedorchard"
+      passedt.shop    = "garden_centre"
+   end
+
+   if (( passedt.shop    == "nursery"                    ) or
        ( passedt.shop    == "lawn_mower"                 ) or
        ( passedt.shop    == "lawnmowers"                 ) or
        ( passedt.shop    == "garden_furniture"           ) or

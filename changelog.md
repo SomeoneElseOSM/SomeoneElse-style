@@ -9,6 +9,7 @@ Support a couple more synonyms for civilian shooting ranges.
 Don't add `office=nonspecific` to `amenity=prison`.
 Move the sluice gate / waterfall / weir / floating barrier consolidation from the shared lua to the raster-only code.
 Remove `area:aeroway` if `aeroway` is set.
+(raster and vector) Show an `orchard` fill for plant nurseries.
 
 ## 27/12/2024 (shared vector code only)
 Ensure that tourist accommodation in historic watermills and windmills is correctly shown as tourist accommodation.
