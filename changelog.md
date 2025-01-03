@@ -11,6 +11,7 @@ Move the sluice gate / waterfall / weir / floating barrier consolidation from th
 Remove `area:aeroway` if `aeroway` is set.
 (raster and vector) Show an `orchard` fill for plant nurseries.
 (raster and vector) Append directions for `informationroutemarker` (mostly `route_marker`) as well as `informationmarker` (mostly `guidepost`).
+Fixed bug whereby `disused:aeroway` was cleared in error.
 
 ## 27/12/2024 (shared vector code only)
 Ensure that tourist accommodation in historic watermills and windmills is correctly shown as tourist accommodation.

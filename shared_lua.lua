@@ -9974,7 +9974,7 @@ function consolidate_lua_04_t( passedt )
        ( passedt.aeroway         ~= ""  ) and
        ( passedt["area:aeroway"] ~= nil ) and
        ( passedt["area:aeroway"] ~= ""  )) then
-      passedt["disused:aeroway"] = nil
+      passedt["area:aeroway"] = nil
    end
 
 -- ----------------------------------------------------------------------------
