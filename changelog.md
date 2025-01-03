@@ -10,6 +10,7 @@ Don't add `office=nonspecific` to `amenity=prison`.
 Move the sluice gate / waterfall / weir / floating barrier consolidation from the shared lua to the raster-only code.
 Remove `area:aeroway` if `aeroway` is set.
 (raster and vector) Show an `orchard` fill for plant nurseries.
+(raster and vector) Append directions for `informationroutemarker` (mostly `route_marker`) as well as `informationmarker` (mostly `guidepost`).
 
 ## 27/12/2024 (shared vector code only)
 Ensure that tourist accommodation in historic watermills and windmills is correctly shown as tourist accommodation.

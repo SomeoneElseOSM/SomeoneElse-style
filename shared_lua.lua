@@ -6648,15 +6648,16 @@ function consolidate_lua_03_t( passedt )
          passedt.tourism = "informationroutemarker"
       else
          passedt.tourism = "informationmarker"
-         passedt.ele = nil
-
-	 if (( passedt.name ~= nil ) and
-             ( passedt.name ~= ""  )) then
-	    passedt.ele = passedt.name
-	 end
-
-         append_directions_t( passedt )
       end
+
+      passedt.ele = nil
+
+      if (( passedt.name ~= nil ) and
+          ( passedt.name ~= ""  )) then
+         passedt.ele = passedt.name
+      end
+
+      append_directions_t( passedt )
    end
 
    if (((  passedt.tourism     == "information"                       )   and
@@ -6664,6 +6665,14 @@ function consolidate_lua_03_t( passedt )
          ( passedt.information == "trail_blaze"                      )))  or
        (   passedt.highway     == "trailhead"                          )) then
       passedt.tourism = "informationroutemarker"
+      passedt.ele = nil
+
+      if (( passedt.name ~= nil ) and
+          ( passedt.name ~= ""  )) then
+         passedt.ele = passedt.name
+      end
+
+      append_directions_t( passedt )
    end
 
    if ((  passedt.tourism     == "information"                       )  and
