@@ -1,7 +1,7 @@
 # Changes made to this rendering
 This page describes changes made in these projects: [SomeoneElse-style](https://github.com/SomeoneElseOSM/SomeoneElse-style), [SomeoneElse-style-legend](https://github.com/SomeoneElseOSM/SomeoneElse-style-legend) and [openstreetmap-carto-AJT](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT), and visible [on this site](//map.atownsend.org.uk/maps/map/map.html).
 
-## As yet unreleased (raster only)
+## 05/01/2024 (shared code; raster release and previous vector releases)
 Change the colour of the fill used for grass runways from the regular runway fill to "grass" (#b6fdb6).
 Removed `tourism=attraction` from the list of things that get `unnamedcommercial` landuse.
 Detect marine water-based power stations (wave power etc.) and exclude from regular "industrial" power stations.
@@ -12,6 +12,7 @@ Remove `area:aeroway` if `aeroway` is set.
 (raster and vector) Show an `orchard` fill for plant nurseries.
 (raster and vector) Append directions for `informationroutemarker` (mostly `route_marker`) as well as `informationmarker` (mostly `guidepost`).
 Fixed bug whereby `disused:aeroway` was cleared in error.
+Move the "treat parking spaces as private parking" logic from the shared lua to the raster-only code and set `parking_space`, because the vector code now interprets `parking_space` directly.
 
 ## 27/12/2024 (shared vector code only)
 Ensure that tourist accommodation in historic watermills and windmills is correctly shown as tourist accommodation.

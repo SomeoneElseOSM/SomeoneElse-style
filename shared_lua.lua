@@ -4326,6 +4326,10 @@ function consolidate_lua_03_t( passedt )
 -- https://github.com/SomeoneElseOSM/SomeoneElse-style/issues/14
 --
 -- Also map emergency bays (used in place of hard shoulders) in the same way.
+-- Although we treat parking spaces as "types of parking", we ensure that
+-- "parking_space" is always set to something so that raster- or
+-- vector-specific rendering code can adjust it further.(raster will want to
+-- set it "no").
 -- ----------------------------------------------------------------------------
    if (( passedt.amenity == "parking_space" ) or
        ( passedt.highway == "emergency_bay" )) then
@@ -4337,18 +4341,15 @@ function consolidate_lua_03_t( passedt )
             passedt.amenity = "parking_paydisabled"
          else
             passedt.amenity = "parking_pay"
+            passedt.parking_space = "parking_pay"
          end
       else
          if ( passedt.parking_space == "disabled" ) then
             passedt.amenity = "parking_freedisabled"
          else
             passedt.amenity = "parking"
+            passedt.parking_space = "parking"
          end
-      end
-
-      if (( passedt.access == nil  ) or
-          ( passedt.access == ""   )) then
-         passedt.access = "no"
       end
    end
 

@@ -531,6 +531,17 @@ function filter_tags_generic(keyvalues, nokeys)
    consolidate_lua_03_t( keyvalues )
 
 -- ----------------------------------------------------------------------------
+-- We set 'access = "no"' here on all parking spaces and highway emergency
+-- bays, for raster rendering purposes.
+-- It's not done in the shared code in case other consumers of the schema want
+-- to do something else.
+-- ----------------------------------------------------------------------------
+      if (( keyvalues["parking_space"] ~= nil  ) and
+          ( keyvalues["parking_space"] ~= ""   )) then
+         keyvalues["access"] = "no"
+      end
+
+-- ----------------------------------------------------------------------------
 -- Remove admin boundaries from the map
 -- I do this because I'm simply not interested in admin boundaries and I'm 
 -- lucky enough to live in a place where I don't have to be.
