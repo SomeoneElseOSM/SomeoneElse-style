@@ -353,13 +353,6 @@ function consolidate_lua_01_t( passedt )
    end
 
 -- ----------------------------------------------------------------------------
--- Show natural=col as natural=saddle
--- ----------------------------------------------------------------------------
-   if ( passedt.natural  == "col" ) then
-      passedt.natural = "saddle"
-   end
- 
--- ----------------------------------------------------------------------------
 -- Render old names on farmland etc.
 -- ----------------------------------------------------------------------------
    if ((( passedt.landuse  == "farmland"       )  or

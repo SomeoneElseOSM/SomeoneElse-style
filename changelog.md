@@ -1,6 +1,9 @@
 # Changes made to this rendering
 This page describes changes made in these projects: [SomeoneElse-style](https://github.com/SomeoneElseOSM/SomeoneElse-style), [SomeoneElse-style-legend](https://github.com/SomeoneElseOSM/SomeoneElse-style-legend) and [openstreetmap-carto-AJT](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT), and visible [on this site](//map.atownsend.org.uk/maps/map/map.html).
 
+## As yet unreleased (raster, vector)
+(raster, vector) Removed `natural=col`, no longer in the data.
+
 ## 05/01/2024 (shared code; raster release and previous vector releases)
 Change the colour of the fill used for grass runways from the regular runway fill to "grass" (#b6fdb6).
 Removed `tourism=attraction` from the list of things that get `unnamedcommercial` landuse.

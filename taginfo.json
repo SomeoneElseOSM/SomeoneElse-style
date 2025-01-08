@@ -2079,7 +2079,6 @@
     { "key": "natural", "value": "cape", "description": "Shown as a place=locality" },
     { "key": "natural", "value": "cave_entrance", "description": "Various natural features rendered" },
     { "key": "natural", "value": "cliff", "description": "Various natural features rendered" },
-    { "key": "natural", "value": "col", "description": "Shown as a wide V at saddle point" },
     { "key": "natural", "value": "desert", "description": "Various natural features rendered" },
     { "key": "natural", "value": "dune", "description": "Rendered as natural=sand" },
     { "key": "natural", "value": "dunes", "description": "Rendered as natural=sand" },
