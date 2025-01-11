@@ -1157,6 +1157,28 @@ function consolidate_lua_03_t( passedt )
 
 -- ----------------------------------------------------------------------------
 -- Raster only:
+-- If a road isn't oneway, junction, doesn't have "lanes" or any width set, 
+-- and does have "passing_places", assuming it's narrow.
+-- ----------------------------------------------------------------------------
+   if ((  passedt.highway        == "tertiary_sidewalk" )  and
+       (( passedt.oneway         == nil                )   or
+        ( passedt.oneway         == ""                 ))  and
+       (( passedt.junction       == nil                )   or
+        ( passedt.junction       == ""                 ))  and
+       (( passedt.lanes          == nil                )   or
+        ( passedt.lanes          == ""                 ))  and
+       (( passedt.maxwidth       == nil                )   or
+        ( passedt.maxwidth       == ""                 ))  and
+       (( passedt.width          == nil                )   or
+        ( passedt.width          == ""                 ))  and
+       (  passedt.passing_places ~= nil                 )   and
+       (  passedt.passing_places ~= "no"                )   and
+       (  passedt.passing_places ~= "unknown"           )) then
+      passedt.highway = "unclassified_sidewalk"
+   end
+
+-- ----------------------------------------------------------------------------
+-- Raster only:
 -- Render narrow tertiary roads with a verge as unclassified.
 -- On vector, "highway" will only ever be "tertiary" and "edge" will be set.
 -- ----------------------------------------------------------------------------
@@ -1171,6 +1193,28 @@ function consolidate_lua_03_t( passedt )
    end
 
 -- ----------------------------------------------------------------------------
+-- Raster only:
+-- If a road isn't oneway, junction, doesn't have "lanes" or any width set, 
+-- and does have "passing_places", assuming it's narrow.
+-- ----------------------------------------------------------------------------
+   if ((  passedt.highway        == "tertiary_verge"    )  and
+       (( passedt.oneway         == nil                )   or
+        ( passedt.oneway         == ""                 ))  and
+       (( passedt.junction       == nil                )   or
+        ( passedt.junction       == ""                 ))  and
+       (( passedt.lanes          == nil                )   or
+        ( passedt.lanes          == ""                 ))  and
+       (( passedt.maxwidth       == nil                )   or
+        ( passedt.maxwidth       == ""                 ))  and
+       (( passedt.width          == nil                )   or
+        ( passedt.width          == ""                 ))  and
+       (  passedt.passing_places ~= nil                 )   and
+       (  passedt.passing_places ~= "no"                )   and
+       (  passedt.passing_places ~= "unknown"           )) then
+      passedt.highway = "unclassified_verge"
+   end
+
+-- ----------------------------------------------------------------------------
 -- Both raster and vector:
 -- Render narrow tertiary roads as unclassified
 -- ----------------------------------------------------------------------------
@@ -1181,6 +1225,28 @@ function consolidate_lua_03_t( passedt )
         ( passedt.junction   == ""         ))  and
        ((( tonumber(passedt.width)    or 4 ) <=  3 ) or
         (( tonumber(passedt.maxwidth) or 4 ) <=  3 ))) then
+      passedt.highway = "unclassified"
+   end
+
+-- ----------------------------------------------------------------------------
+-- Raster and vector:
+-- If a road isn't oneway, junction, doesn't have "lanes" or any width set, 
+-- and does have "passing_places", assuming it's narrow.
+-- ----------------------------------------------------------------------------
+   if ((  passedt.highway        == "tertiary"          )  and
+       (( passedt.oneway         == nil                )   or
+        ( passedt.oneway         == ""                 ))  and
+       (( passedt.junction       == nil                )   or
+        ( passedt.junction       == ""                 ))  and
+       (( passedt.lanes          == nil                )   or
+        ( passedt.lanes          == ""                 ))  and
+       (( passedt.maxwidth       == nil                )   or
+        ( passedt.maxwidth       == ""                 ))  and
+       (( passedt.width          == nil                )   or
+        ( passedt.width          == ""                 ))  and
+       (  passedt.passing_places ~= nil                 )   and
+       (  passedt.passing_places ~= "no"                )   and
+       (  passedt.passing_places ~= "unknown"           )) then
       passedt.highway = "unclassified"
    end
 
