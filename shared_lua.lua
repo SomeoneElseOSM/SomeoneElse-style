@@ -1172,6 +1172,7 @@ function consolidate_lua_03_t( passedt )
        (( passedt.width          == nil                )   or
         ( passedt.width          == ""                 ))  and
        (  passedt.passing_places ~= nil                 )   and
+       (  passedt.passing_places ~= ""                  )   and
        (  passedt.passing_places ~= "no"                )   and
        (  passedt.passing_places ~= "unknown"           )) then
       passedt.highway = "unclassified_sidewalk"
@@ -1209,6 +1210,7 @@ function consolidate_lua_03_t( passedt )
        (( passedt.width          == nil                )   or
         ( passedt.width          == ""                 ))  and
        (  passedt.passing_places ~= nil                 )   and
+       (  passedt.passing_places ~= ""                  )   and
        (  passedt.passing_places ~= "no"                )   and
        (  passedt.passing_places ~= "unknown"           )) then
       passedt.highway = "unclassified_verge"
@@ -1245,6 +1247,7 @@ function consolidate_lua_03_t( passedt )
        (( passedt.width          == nil                )   or
         ( passedt.width          == ""                 ))  and
        (  passedt.passing_places ~= nil                 )   and
+       (  passedt.passing_places ~= ""                  )   and
        (  passedt.passing_places ~= "no"                )   and
        (  passedt.passing_places ~= "unknown"           )) then
       passedt.highway = "unclassified"

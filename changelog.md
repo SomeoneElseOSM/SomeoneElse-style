@@ -5,6 +5,7 @@ This page describes changes made in these projects: [SomeoneElse-style](https://
 (raster, vector) Removed `natural=col`, no longer in the data.
 (raster) added rendering for turning circles on tertiary, unclassified, living_street and service with sidewalk, verge or ford.
 (raster, vector) if a tertiary road has `passing_places` and isn't oneway, junction, doesn't have "lanes" or any width set, assume that it's narrow.
+(vector) tertiary roads were incorrectly being processed as if they had passing places.
 
 ## 05/01/2024 (shared code; raster release and previous vector releases)
 Change the colour of the fill used for grass runways from the regular runway fill to "grass" (#b6fdb6).
