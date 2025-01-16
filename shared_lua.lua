@@ -6923,7 +6923,7 @@ function consolidate_lua_03_t( passedt )
 
 -- ----------------------------------------------------------------------------
 -- Re the "bridge" check below, we've already changed valid ones to "yes"
--- above.
+-- above.  This sets "bridge=levee" for roads on embankments.
 -- ----------------------------------------------------------------------------
    if (((  passedt.barrier    == "flood_bank"     )  or
         (  passedt.man_made   == "dyke"           )  or
