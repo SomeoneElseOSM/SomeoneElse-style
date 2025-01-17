@@ -2,7 +2,7 @@
 # -----------------------------------------------------------------------------
 # update_carto.sh
 #
-# Copyright (C) 2018-2024  Andy Townsend
+# Copyright (C) 2018-2025  Andy Townsend
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
