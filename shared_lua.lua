@@ -688,9 +688,20 @@ function consolidate_lua_01_t( passedt )
 --
 -- prow_ref is appended in brackets if present.
 -- ----------------------------------------------------------------------------
-   if ((  passedt.highway == "unclassified"  ) and
-       (( passedt.surface == "unpaved"      )  or 
-        ( passedt.surface == "gravel"       ))) then
+   if ((  passedt.highway == "unclassified"   ) and
+       (( passedt.surface == "dirt"          )  or
+        ( passedt.surface == "dirt/sand"     )  or
+        ( passedt.surface == "earth"         )  or
+        ( passedt.surface == "fine_gravel"   )  or
+        ( passedt.surface == "grass"         )  or
+        ( passedt.surface == "grass;sand"    )  or
+        ( passedt.surface == "gravel"        )  or
+        ( passedt.surface == "ground"        )  or
+        ( passedt.surface == "mud"           )  or
+        ( passedt.surface == "pebblestone"   )  or
+        ( passedt.surface == "sand"          )  or
+        ( passedt.surface == "unpaved"       )  or 
+        ( passedt.surface == "unpaved/paved" ))) then
       passedt.highway = "unpaved"
    end
 
