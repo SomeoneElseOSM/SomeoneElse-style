@@ -1281,7 +1281,36 @@ function consolidate_lua_03_t( passedt )
    end
 
 -- ----------------------------------------------------------------------------
--- Bridge types - only some types (including "yes") are selected
+-- Bridge types
+--
+-- A "low water crossing" on a waterway is unlikely to be a waterway over a
+-- bridge in any normal bridge sense, so remove it.  Leave any tunnel tags on
+-- the way or ford tags on nodes.
+-- ----------------------------------------------------------------------------
+   if (( passedt.bridge   == "low_water_crossing" ) and
+       ( passedt.waterway ~= nil                  ) and
+       ( passedt.waterway ~= ""                   )) then
+      passedt.bridge = "no"
+   end
+
+-- ----------------------------------------------------------------------------
+-- Something that is allegedly both a bridge and a tunnel on a waterway is 
+-- unlikely to be both of those things.
+-- ----------------------------------------------------------------------------
+   if (( passedt.bridge   ~= nil  ) and
+       ( passedt.bridge   ~= ""   ) and
+       ( passedt.bridge   ~= "no" ) and
+       ( passedt.tunnel   ~= nil  ) and
+       ( passedt.tunnel   ~= ""   ) and
+       ( passedt.waterway ~= nil  ) and
+       ( passedt.waterway ~= ""   )) then
+      passedt.bridge = "no"
+   end
+
+-- ----------------------------------------------------------------------------
+-- Next, convert many bridge types to "yes" and ignore the others.
+-- Later "bridge=levee" will be used on highways to mean "this is on an
+-- embankment"
 -- ----------------------------------------------------------------------------
    if (( passedt.bridge == "aqueduct"           ) or
        ( passedt.bridge == "bailey"             ) or
