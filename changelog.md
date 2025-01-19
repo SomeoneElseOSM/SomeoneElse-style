@@ -1,7 +1,7 @@
 # Changes made to this rendering
 This page describes changes made in these projects: [SomeoneElse-style](https://github.com/SomeoneElseOSM/SomeoneElse-style), [SomeoneElse-style-legend](https://github.com/SomeoneElseOSM/SomeoneElse-style-legend) and [openstreetmap-carto-AJT](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT), and visible [on this site](//map.atownsend.org.uk/maps/map/map.html).
 
-## As yet unreleased (raster, vector)
+## 18/01/2025
 (raster, vector) Removed `natural=col`, no longer in the data.
 (vector) added rendering for turning circles on tertiary, unclassified, living_street and service with sidewalk, verge or ford.
 (raster, vector) if a tertiary road has `passing_places` and isn't oneway, junction, doesn't have "lanes" or any width set, assume that it's narrow.
