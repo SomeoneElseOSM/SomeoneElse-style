@@ -4963,6 +4963,7 @@ function consolidate_lua_03_t( passedt )
    if (( passedt.waterway   == "access_point"  ) or
        ( passedt.whitewater == "put_in"        ) or
        ( passedt.whitewater == "put_in;egress" ) or
+       ( passedt.whitewater == "put_in_out"    ) or
        ( passedt.canoe      == "put_in"        )) then
       passedt.amenity = "waterway_access_point"
       passedt.leisure = nil
