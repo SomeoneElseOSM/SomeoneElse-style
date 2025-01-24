@@ -3,6 +3,7 @@ This page describes changes made in these projects: [SomeoneElse-style](https://
 
 ## 23/01/2025
 Added `whitewater=put_in_out` as a variety of waterway access point.
+Extract `emergency=access_point` and `highway=emergency_access_point` and display as a pink dot with the `ref` shown.
 
 ## 18/01/2025
 (raster, vector) Removed `natural=col`, no longer in the data.

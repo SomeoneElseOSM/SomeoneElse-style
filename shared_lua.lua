@@ -9346,6 +9346,25 @@ function consolidate_lua_04_t( passedt )
    end
 
 -- ----------------------------------------------------------------------------
+-- Consolidate various emergency access points.
+-- A ref ot "(E)" is set if no ref exists.
+-- ----------------------------------------------------------------------------
+   if ((( passedt.emergency == "access_point"           )  or
+        ( passedt.highway   == "emergency_access_point" )) and
+       (( passedt.barrier == nil                        )  or
+        ( passedt.barrier == ""                         )) and
+       (( passedt.tourism == nil                        )  or
+        ( passedt.tourism == ""                         ))) then
+      passedt.amenity = "emergency_access_point"
+      passedt.name = passedt.ref
+
+      if (( passedt.name ~= nil ) and
+          ( passedt.name ~= ""  )) then
+         passedt.name = "(E)"
+      end
+   end
+
+-- ----------------------------------------------------------------------------
 -- Craft cider
 -- Also remove tourism tag (we want to display brewery in preference to
 -- attraction or museum).
