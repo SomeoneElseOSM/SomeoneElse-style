@@ -2028,6 +2028,12 @@ function consolidate_lua_03_t( passedt )
          passedt.landuse = "reedbed"
          passedt.natural = nil
       end
+
+      if (( passedt.wetland == "swamp"      ) or
+          ( passedt.wetland == "bog"        ) or
+          ( passedt.wetland == "string_bog" )) then
+         passedt.natural = passedt.wetland
+      end
    end
 
 -- ----------------------------------------------------------------------------
