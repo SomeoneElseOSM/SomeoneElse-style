@@ -9238,8 +9238,8 @@ function consolidate_lua_04_t( passedt )
        ( passedt.healthcare  == "department"                   ) or
        ( passedt.healthcare  == "diagnostics"                  ) or
        ( passedt.healthcare  == "dialysis"                     ) or
-       ( passedt.healthcare  == "osteopath"                    ) or
        ( passedt.shop        == "osteopath"                    ) or
+       ( passedt.office      == "osteopath"                    ) or
        ( passedt.amenity     == "physiotherapist"              ) or
        ( passedt.healthcare  == "physiotherapist"              ) or
        ( passedt.healthcare  == "physiotherapist;podiatrist"   ) or
