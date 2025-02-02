@@ -242,6 +242,7 @@ sudo -u ${local_filesystem_user} git pull
 #
 cd /home/${local_filesystem_user}/src/SomeoneElse-style-legend
 pwd
+sudo -u ${local_filesystem_user} git checkout generated_legend_pubs.osm
 sudo -u ${local_filesystem_user} git pull
 #
 cd /home/${local_filesystem_user}/src/openstreetmap-carto-AJT
