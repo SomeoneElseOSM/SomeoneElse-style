@@ -10270,6 +10270,18 @@ function consolidate_lua_04_t( passedt )
          passedt.natural = "unnamedwetland"
       end
 
+      if ( passedt.natural == "swamp" ) then
+         passedt.natural = "unnamedswamp"
+      end
+
+      if ( passedt.natural == "bog" ) then
+         passedt.natural = "unnamedbog"
+      end
+
+      if ( passedt.natural == "string_bog" ) then
+         passedt.natural = "unnamedstring_bog"
+      end
+
       if ( passedt.natural == "grassland" ) then
          passedt.natural = "unnamedgrassland"
       end
