@@ -10254,6 +10254,10 @@ function consolidate_lua_04_t( passedt )
          passedt.natural = "unnamedbeach"
       end
 
+      if ( passedt.natural == "tidal_beach" ) then
+         passedt.natural = "unnamedtidal_beach"
+      end
+
       if ( passedt.natural == "sand" ) then
          passedt.natural = "unnamedsand"
       end
