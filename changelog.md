@@ -6,6 +6,7 @@ This page describes changes made in these projects: [SomeoneElse-style](https://
 (raster) Added some `unnamed` examples such as `unnamedwetland` to the raster tag selection and display.
 (raster, vector) Added some more values (e.g. `swamp`) to the named/unnamed split and added display code to raster, and extract and display code to vector.
 (raster, vector) Added `amenity=lost_property` and `amenity=lost_property_office` as offices.
+(raster) Display `ref` on PNFS guideposts.
 
 ## 02/02/2025
 Extract (raster, vector) and display (raster) `wetland=swamp`, `wetland=bog` and `wetland=string_bog` to be passed through as individual `natural` values.
