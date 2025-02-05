@@ -9605,7 +9605,9 @@ function consolidate_lua_04_t( passedt )
        (  passedt.amenity    == "coast_guard"              ) or
        (  passedt.emergency  == "coast_guard"              ) or
        (  passedt.emergency  == "ses_station"              ) or
-       (  passedt.amenity    == "archive"                  )) then
+       (  passedt.amenity    == "archive"                  ) or
+       (  passedt.amenity    == "lost_property"            ) or
+       (  passedt.amenity    == "lost_property_office"     )) then
       passedt.landuse = "unnamedcommercial"
       passedt.office  = "nonspecific"
       passedt.government  = nil

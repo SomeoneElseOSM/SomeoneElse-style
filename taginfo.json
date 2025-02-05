@@ -240,6 +240,8 @@
     { "key": "amenity", "value": "library", "description": "Libraries: If in an old phone box, display as such" },
     { "key": "amenity", "value": "lifeboat", "description": "Lifeboats" },
     { "key": "amenity", "value": "lifeboat_station", "description": "Synonym for office=nonspecific" },
+    { "key": "amenity", "value": "lost_property", "description": "Rendered as an office" },
+    { "key": "amenity", "value": "lost_property_office", "description": "Rendered as an office" },
     { "key": "amenity", "value": "lottery", "description": "Rendered as gambling shop" },
     { "key": "amenity", "value": "lounger", "description": "Loungers are shown as benches" },
     { "key": "amenity", "value": "luggage_locker", "description": "Synonym for left_luggage" },
