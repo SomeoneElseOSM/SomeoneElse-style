@@ -1267,17 +1267,17 @@ function consolidate_lua_03_t( passedt )
 -- ----------------------------------------------------------------------------
 -- Render bus guideways as "a sort of railway" rather than in their own
 -- highway layer.
+--
+-- Also render bus-only service roads tagged as "highway=busway" similarly.
+-- "busway" was previously used mostly on bus lanes in bus stations etc.,
+-- but now (in UK/IE at least) is used for longer bus service roads, so
+-- it makes sense to include busways with bus_guideways rather than
+-- service roads now.
 -- ----------------------------------------------------------------------------
-   if (passedt.highway == "bus_guideway") then
+   if (( passedt.highway == "bus_guideway" ) or
+       ( passedt.highway == "busway"       )) then
       passedt.highway = nil
       passedt.railway = "bus_guideway"
-   end
-
--- ----------------------------------------------------------------------------
--- Render bus-only service roads tagged as "highway=busway" as service roads.
--- ----------------------------------------------------------------------------
-   if ( passedt.highway == "busway" ) then
-      passedt.highway = "service"
    end
 
 -- ----------------------------------------------------------------------------
