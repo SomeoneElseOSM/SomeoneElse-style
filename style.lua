@@ -594,7 +594,7 @@ function filter_tags_node (keyvalues, nokeys)
 -- This is here rather than in "generic" because "generic" is called after this
 -- There is a similar section in way-only.
 -- ----------------------------------------------------------------------------
-   if (( keyvalues["ford"] == "Tidal_Causeway" ) or
+   if (( keyvalues["ford"] == "tidal_causeway" ) or
        ( keyvalues["ford"] == "ford"           ) or 
        ( keyvalues["ford"] == "intermittent"   ) or
        ( keyvalues["ford"] == "seasonal"       ) or
@@ -729,7 +729,7 @@ function filter_tags_way (keyvalues, nokeys)
 -- This is here rather than in "generic" because "generic" is called after this
 -- There is a similar section in way-only.
 -- ----------------------------------------------------------------------------
-   if (( keyvalues["ford"] == "Tidal_Causeway" ) or
+   if (( keyvalues["ford"] == "tidal_causeway" ) or
        ( keyvalues["ford"] == "ford"           ) or 
        ( keyvalues["ford"] == "intermittent"   ) or
        ( keyvalues["ford"] == "seasonal"       ) or

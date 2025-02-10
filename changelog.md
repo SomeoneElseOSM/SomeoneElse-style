@@ -8,6 +8,7 @@ This page describes changes made in these projects: [SomeoneElse-style](https://
 (raster, vector) Added `amenity=lost_property` and `amenity=lost_property_office` as offices.
 (raster) Display `ref` on PNFS guideposts.
 (raster, vector) Show `highway=busway` as `highway=bus_guideway` rather than `service`.
+(raster) `ford=Tidal_Causeway` has been renamed to the more normal `ford=tidal_causeway`.
 
 ## 02/02/2025
 Extract (raster, vector) and display (raster) `wetland=swamp`, `wetland=bog` and `wetland=string_bog` to be passed through as individual `natural` values.
