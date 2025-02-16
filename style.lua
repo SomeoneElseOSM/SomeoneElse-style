@@ -26,7 +26,7 @@
 require "shared_lua"
 
 polygon_keys = { 'area:aeroway', 'boundary', 'building', 'landcover', 'landuse', 'amenity', 'harbour', 'historic', 'leisure', 
-      'man_made', 'military', 'natural', 'office', 'place', 'power',
+      'man_made', 'military', 'natural', 'office', 'place', 'police', 'power',
       'public_transport', 'seamark:type', 'shop', 'sport', 'tourism', 'waterway',
       'wetland', 'water', 'aeroway' }
 
@@ -38,7 +38,9 @@ generic_keys = {'access','addr:housename','addr:housenumber','addr:interpolation
    'embankment','emergency','entrance','foot','flood_prone','generation:source','geological','golf','government',
    'harbour','hazard_prone','hazard_type','highway','historic','horse','hours','information','intermittent',
    'junction','landcover','landuse','layer','leisure','lcn_ref','lock','locked',
-   'man_made','marker','military','motor_car','name','natural','ncn_milepost','office','oneway','operator','opening_hours:covid19','outlet','passenger_information_display','pipeline','pitch','place','playground','poi','population','power','power_source','public_transport',
+   'man_made','marker','military','motor_car','name','natural','ncn_milepost','office','oneway','operator',
+   'opening_hours:covid19','outlet','passenger_information_display','pipeline','pitch','place','playground',
+   'poi','population','police', 'power','power_source','public_transport',
    'railway','railway:historic','ref','religion','rescue_equipment','route',
    'school','seamark:type','seamark:rescue_station:category','service','shop','sport','surface',
    'toll','tourism','tower:type', 'tracktype','training','tunnel','water','waterway',

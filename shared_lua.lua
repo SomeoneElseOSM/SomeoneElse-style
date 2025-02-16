@@ -7120,6 +7120,7 @@ function consolidate_lua_03_t( passedt )
        ( passedt.barrier    == "security_control" ) or
        ( passedt.barrier    == "checkpoint"       ) or
        ( passedt.industrial == "checkpoint"       ) or
+       ( passedt.police     == "checkpoint"       ) or
        ( passedt.barrier    == "gatehouse"        )) then
       passedt.barrier = "lift_gate"
    end
@@ -9577,6 +9578,15 @@ function consolidate_lua_04_t( passedt )
        (  passedt.name       == "Job Centre Plus"          ) or
        (  passedt.office     == "government"               ) or
        (  passedt.office     == "police"                   ) or
+       (  passedt.police     == "offices"                  ) or
+       (  passedt.police     == "car_pound"                ) or
+       (  passedt.police     == "detention"                ) or
+       (  passedt.police     == "range"                    ) or
+       (  passedt.police     == "training_area"            ) or
+       (  passedt.police     == "traffic_police"           ) or
+       (  passedt.police     == "storage"                  ) or
+       (  passedt.police     == "dog_unit"                 ) or
+       (  passedt.police     == "horse"                    ) or
        (  passedt.government == "customs"                  ) or
        (  passedt.government == "police"                   ) or
        (  passedt.amenity    == "public_building"          ) or

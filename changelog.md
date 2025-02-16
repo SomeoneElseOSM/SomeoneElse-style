@@ -9,6 +9,7 @@ This page describes changes made in these projects: [SomeoneElse-style](https://
 (raster) Display `ref` on PNFS guideposts.
 (raster, vector) Show `highway=busway` as `highway=bus_guideway` rather than `service`.
 (raster) `ford=Tidal_Causeway` has been renamed to the more normal `ford=tidal_causeway`.
+(raster, vector) Handle `police=checkpoint` as other checkpoints.  Added `police=offices` as other government offices.  Also `police=car_pound`, `police=detention`, `police=range`, `police=training_area`, `police=traffic_police`, `police=storage`, `police=dog_unit`, `police=horse`.
 
 ## 02/02/2025
 Extract (raster, vector) and display (raster) `wetland=swamp`, `wetland=bog` and `wetland=string_bog` to be passed through as individual `natural` values.
