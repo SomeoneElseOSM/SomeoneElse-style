@@ -1487,6 +1487,7 @@ function consolidate_lua_03_t( passedt )
 
    if ((    passedt.natural          == "arch"            ) or
        (    passedt.man_made         == "bunker_silo"     ) or
+       (    passedt.man_made         == "crane"           ) or
        (    passedt.amenity          == "feeding_place"   ) or
        (    passedt.railway          == "traverser"       ) or
        (    passedt.railway          == "wash"            ) or
