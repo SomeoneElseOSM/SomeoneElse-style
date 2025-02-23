@@ -6713,7 +6713,6 @@ function consolidate_lua_03_t( passedt )
          ( passedt.information == "map_board"                        )    or
          ( passedt.information == "nature"                           )    or
          ( passedt.information == "notice_board"                     )    or
-         ( passedt.information == "noticeboard"                      )    or
          ( passedt.information == "orientation_map"                  )    or
          ( passedt.information == "sitemap"                          )    or
          ( passedt.information == "tactile_map"                      )    or
