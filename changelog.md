@@ -3,6 +3,7 @@ This page describes changes made in these projects: [SomeoneElse-style](https://
 
 ## As yet unreleased
 Extract (vector) and display (raster)  linear `man_made=crane` as `railway=miniature`.
+(raster) Display `place=sea` at zoom level 8.
 
 ## Vector 23/02/2025, Raster as yet unreleased
 Extract (vector) and display (raster)  node and polygon `man_made=crane`.
