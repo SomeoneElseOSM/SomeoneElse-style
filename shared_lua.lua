@@ -4958,8 +4958,15 @@ function consolidate_lua_03_t( passedt )
 -- ----------------------------------------------------------------------------
 -- Goods Conveyors - render as miniature railway.
 -- Also "railway=crane" which are all linear structures.
+--
+-- Point, linear and polygon "man_made=crane" exist.  The point and polygon 
+-- ones are handled with an icon (both raster and vector), 
+-- and the polygon ones also get "roof" added above.
+-- Linear "man_made=crane" are shown 
+-- via the "railway=miniature" tag added here.
 -- ----------------------------------------------------------------------------
    if (( passedt.man_made == "goods_conveyor" ) or
+       ( passedt.man_made == "crane"          ) or
        ( passedt.railway  == "crane"          )) then
       passedt.railway = "miniature"
    end
