@@ -10360,8 +10360,7 @@ function consolidate_lua_04_t( passedt )
       end
 
       if (( passedt.landuse == "construction" )  or
-          ( passedt.landuse == "brownfield"   )  or
-          ( passedt.landuse == "greenfield"   )) then
+          ( passedt.landuse == "brownfield"   )) then
          passedt.landuse = "unnamedconstruction"
       end
 
@@ -10369,7 +10368,8 @@ function consolidate_lua_04_t( passedt )
          passedt.landuse = "unnamedfarmland"
       end
 
-      if ( passedt.landuse == "farmgrass" ) then
+      if (( passedt.landuse == "farmgrass"  )  or
+          ( passedt.landuse == "greenfield" )) then
          passedt.landuse = "unnamedfarmgrass"
       end
 
