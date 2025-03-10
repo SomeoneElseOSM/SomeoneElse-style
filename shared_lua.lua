@@ -6459,7 +6459,6 @@ function consolidate_lua_03_t( passedt )
         ( passedt.crossing == "signals"                 )  or
         ( passedt.crossing == "pegasus"                 )  or
         ( passedt.crossing == "pedestrian_signals"      )  or
-        ( passedt.crossing == "light_controlled"        )  or
         ( passedt.crossing == "light controlled"        )) and
        (( passedt.highway  == nil                       )  or
         ( passedt.highway  == ""                        ))) then

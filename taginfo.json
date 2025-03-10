@@ -803,7 +803,6 @@
     { "key": "crossing", "description": "Some crossing types shown as 'highway=traffic_signals'" },
     { "key": "crossing", "value": "island;traffic_signals", "description": "Shown as 'highway=traffic_signals'" },
     { "key": "crossing", "value": "light controlled", "description": "Shown as 'highway=traffic_signals'" },
-    { "key": "crossing", "value": "light_controlled", "description": "Shown as 'highway=traffic_signals'" },
     { "key": "crossing", "value": "pedestrian_signals", "description": "Shown as 'highway=traffic_signals'" },
     { "key": "crossing", "value": "pegasus", "description": "Shown as 'highway=traffic_signals'" },
     { "key": "crossing", "value": "puffin", "description": "Shown as 'highway=traffic_signals'" },
