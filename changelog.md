@@ -5,6 +5,7 @@ This page describes changes made in these projects: [SomeoneElse-style](https://
 Extract (vector) and display (raster) linear `man_made=crane` as `railway=miniature`.
 (raster) Display `place=sea` at zoom level 8.
 (raster, vector) Treat `greenfield` as `farmgrass` rather than `construction`.
+(raster, vector) Removed `shop=loan_shark`.  No longer in the data.
 
 ## Vector 23/02/2025, Raster as yet unreleased
 Extract (vector) and display (raster)  node and polygon `man_made=crane`.

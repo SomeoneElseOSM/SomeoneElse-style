@@ -8261,7 +8261,6 @@ function consolidate_lua_04_t( passedt )
 -- ----------------------------------------------------------------------------
    if (( passedt.shop == "money"              ) or
        ( passedt.shop == "money_lender"       ) or
-       ( passedt.shop == "loan_shark"         ) or
        ( passedt.shop == "cash"               )) then
       passedt.shop = "pawnbroker"
    end

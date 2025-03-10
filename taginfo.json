@@ -2939,7 +2939,6 @@
     { "key": "shop", "value": "linen", "description": "Various shops shown" },
     { "key": "shop", "value": "linens", "description": "Various shops shown" },
     { "key": "shop", "value": "livestock", "description": "Like auction places, shown as nonspecific shop" },
-    { "key": "shop", "value": "loan_shark", "description": "Various shops shown" },
     { "key": "shop", "value": "locksmith", "description": "Various shops shown" },
     { "key": "shop", "value": "locksmith;dry_cleaning;shoe_repair", "description": "Not a current value in OSM data.  Shown as shoe_repair_etc" },
     { "key": "shop", "value": "lottery", "description": "Various shops shown" },
