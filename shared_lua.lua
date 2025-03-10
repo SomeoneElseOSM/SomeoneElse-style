@@ -7848,8 +7848,7 @@ function consolidate_lua_04_t( passedt )
 -- ----------------------------------------------------------------------------
 -- Windsocks
 -- ----------------------------------------------------------------------------
-   if (( passedt.aeroway  == "windsock" ) or
-       ( passedt.landmark == "windsock" )) then
+   if ( passedt.aeroway  == "windsock" ) then
       passedt.man_made = "windsock"
    end
    

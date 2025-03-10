@@ -7,6 +7,7 @@ Extract (vector) and display (raster) linear `man_made=crane` as `railway=miniat
 (raster, vector) Treat `greenfield` as `farmgrass` rather than `construction`.
 (raster, vector) Removed `shop=loan_shark`.  No longer in the data.
 (raster, vector) Removed `crossing=light_controlled`.  No longer in the data.
+(raster, vector) Removed `landmark=windsock`.  No longer in the data.
 
 ## Vector 23/02/2025, Raster as yet unreleased
 Extract (vector) and display (raster)  node and polygon `man_made=crane`.
