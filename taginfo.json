@@ -532,6 +532,8 @@
     { "key": "brand", "value": "Traditional Free House", "description": "Suppressed as not a real brand" },
     { "key": "brand", "value": "independant", "description": "Suppressed as not a real brand" },
     { "key": "brand", "value": "independent", "description": "Suppressed as not a real brand" },
+    { "key": "brand", "value": "Halfords Autocentre", "description": "Brand shortened to 'Halfords'" },
+    { "key": "brand", "value": "Halfords Garage Services", "description": "Brand shortened to 'Halfords'" },
     { "key": "brand", "value": "Tesco Bank", "description": "Brand shortened to 'Tesco'" },
     { "key": "brand", "value": "Tesco Extra", "description": "Brand shortened to 'Tesco'" },
     { "key": "brand", "value": "Tesco Express", "description": "Brand shortened to 'Tesco'" },

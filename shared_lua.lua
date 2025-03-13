@@ -7891,6 +7891,14 @@ function consolidate_lua_04_t( passedt )
       passedt.brand = "Tesco"
    end
 
+-- ----------------------------------------------------------------------------
+-- Next, Halfords.  Shorten the brand on everything.
+-- ----------------------------------------------------------------------------
+   if (( passedt.brand   == "Halfords Autocentre"      ) or
+       ( passedt.brand   == "Halfords Garage Services" )) then
+      passedt.brand = "Halfords"
+   end
+
    if (( passedt.operator   == "(free_house)"            ) or
        ( passedt.operator   == "Free Brewery"            ) or
        ( passedt.operator   == "Free House"              ) or
