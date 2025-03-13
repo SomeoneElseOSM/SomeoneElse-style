@@ -7909,6 +7909,14 @@ function consolidate_lua_04_t( passedt )
    end
 
 -- ----------------------------------------------------------------------------
+-- Next, Tesla.  Shorten the brand on everything.
+-- ----------------------------------------------------------------------------
+   if (( passedt.brand   == "Tesla Supercharger" ) or
+       ( passedt.brand   == "Tesla, Inc."        )) then
+      passedt.brand = "Tesla"
+   end
+
+-- ----------------------------------------------------------------------------
 -- Explicitly exclude some "non-operators" - "Independent", etc.
 -- ----------------------------------------------------------------------------
    if (( passedt.operator   == "(free_house)"            ) or
@@ -7937,6 +7945,15 @@ function consolidate_lua_04_t( passedt )
        ( passedt.operator ~= ""              ) and
        ( string.len( passedt.operator ) > 40 )) then
       passedt.operator = nil
+   end
+
+-- ----------------------------------------------------------------------------
+-- Next, Tesla.  Shorten the operator on everything.
+-- ----------------------------------------------------------------------------
+   if (( passedt.operator   == "Tesla Motors Inc." ) or
+       ( passedt.operator   == "Tesla Motors"      ) or
+       ( passedt.operator   == "Tesla, Inc."       )) then
+      passedt.operator = "Tesla"
    end
 
 -- ----------------------------------------------------------------------------
