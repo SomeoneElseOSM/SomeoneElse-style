@@ -3,6 +3,7 @@ This page describes changes made in these projects: [SomeoneElse-style](https://
 
 ## As yet unreleased
 (raster, vector) Shorten some brand names if another name exists.
+(raster, vector) Suppress overly long (> 40 characters) brands and operators.
 
 ## 13/03/2025
 Extract (vector) and display (raster) linear `man_made=crane` as `railway=miniature`.

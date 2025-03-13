@@ -7866,6 +7866,15 @@ function consolidate_lua_04_t( passedt )
    end
 
 -- ----------------------------------------------------------------------------
+-- There are some silly long brands in the database.  Remove them.
+-- ----------------------------------------------------------------------------
+   if (( passedt.brand ~= nil             ) and
+       ( passedt.brand ~= ""              ) and
+       ( string.len( passedt.brand ) > 40 )) then
+      passedt.brand = nil
+   end
+
+-- ----------------------------------------------------------------------------
 -- Consolidate some brands so that silly long names do not appear.
 -- If the thing has no "name", let the silly long name still appear.
 --
@@ -7899,6 +7908,9 @@ function consolidate_lua_04_t( passedt )
       passedt.brand = "Halfords"
    end
 
+-- ----------------------------------------------------------------------------
+-- Explicitly exclude some "non-operators" - "Independent", etc.
+-- ----------------------------------------------------------------------------
    if (( passedt.operator   == "(free_house)"            ) or
        ( passedt.operator   == "Free Brewery"            ) or
        ( passedt.operator   == "Free House"              ) or
@@ -7915,6 +7927,15 @@ function consolidate_lua_04_t( passedt )
        ( passedt.operator   == "independant"             ) or
        ( passedt.operator   == "independent free house"  ) or
        ( passedt.operator   == "independent"             )) then
+      passedt.operator = nil
+   end
+
+-- ----------------------------------------------------------------------------
+-- There are some silly long operators in the database.  Remove them.
+-- ----------------------------------------------------------------------------
+   if (( passedt.operator ~= nil             ) and
+       ( passedt.operator ~= ""              ) and
+       ( string.len( passedt.operator ) > 40 )) then
       passedt.operator = nil
    end
 
