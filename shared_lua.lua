@@ -7655,16 +7655,17 @@ function consolidate_lua_04_t( passedt )
 -- It's near enough in meaning I think.  Likewise kiosk (bit of a stretch,
 -- but nearer than anything else)
 -- ----------------------------------------------------------------------------
-   if (( passedt.shop   == "newsagent"             ) or
-       ( passedt.shop   == "kiosk"                 ) or
-       ( passedt.shop   == "forecourt"             ) or
-       ( passedt.shop   == "food"                  ) or
-       ( passedt.shop   == "grocery"               ) or
-       ( passedt.shop   == "grocer"                ) or
-       ( passedt.shop   == "frozen_food"           ) or
-       ( passedt.shop   == "convenience;alcohol"   ) or
-       ( passedt.shop   == "convenience;newsagent" ) or
-       ( passedt.shop   == "newsagent;alcohol"     )) then
+   if (( passedt.shop   == "newsagent"               ) or
+       ( passedt.shop   == "kiosk"                   ) or
+       ( passedt.shop   == "forecourt"               ) or
+       ( passedt.shop   == "food"                    ) or
+       ( passedt.shop   == "grocery"                 ) or
+       ( passedt.shop   == "grocer"                  ) or
+       ( passedt.shop   == "frozen_food"             ) or
+       ( passedt.shop   == "convenience;alcohol"     ) or
+       ( passedt.shop   == "convenience;e-cigarette" ) or
+       ( passedt.shop   == "convenience;newsagent  " ) or
+       ( passedt.shop   == "newsagent;alcohol"       )) then
       passedt.shop = "convenience"
    end
 
