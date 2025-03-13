@@ -8293,8 +8293,9 @@ function consolidate_lua_04_t( passedt )
 -- ----------------------------------------------------------------------------
 -- hairdresser;beauty
 -- ----------------------------------------------------------------------------
-   if (( passedt.shop == "hairdresser;beauty" ) or
-       ( passedt.shop == "barber"             )) then
+   if (( passedt.shop == "hairdresser;beauty"      ) or
+       ( passedt.shop == "barber"                  ) or
+       ( passedt.shop == "hairdresser;e-cigarette" )) then
       passedt.shop = "hairdresser"
    end
 
@@ -8315,9 +8316,13 @@ function consolidate_lua_04_t( passedt )
 -- ----------------------------------------------------------------------------
 -- e-cigarette
 -- ----------------------------------------------------------------------------
-   if (( passedt.shop   == "vaping"                   ) or
-       ( passedt.shop   == "vape_shop"                ) or
-       ( passedt.shop   == "e-cigarette;mobile_phone" )) then
+   if (( passedt.shop   == "vaping"                            ) or
+       ( passedt.shop   == "vape_shop"                         ) or
+       ( passedt.shop   == "e-cigarette;beverages"             ) or
+       ( passedt.shop   == "e-cigarette;computer;mobile_phone" ) or
+       ( passedt.shop   == "e-cigarette;confectionery;cbd"     ) or
+       ( passedt.shop   == "e-cigarette;convenience"           ) or
+       ( passedt.shop   == "e-cigarette;mobile_phone"          )) then
       passedt.shop = "e-cigarette"
    end
 
@@ -9077,6 +9082,7 @@ function consolidate_lua_04_t( passedt )
        ( passedt.shop    == "erotic"                  ) or
        ( passedt.shop    == "service"                 ) or
        ( passedt.shop    == "tobacco"                 ) or
+       ( passedt.shop    == "tobacco;e-cigarette"     ) or
        ( passedt.shop    == "tobacconist"             ) or
        ( passedt.shop    == "ticket"                  ) or
        ( passedt.shop    == "insurance"               ) or

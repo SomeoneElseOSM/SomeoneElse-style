@@ -8,6 +8,7 @@ Extract (vector) and display (raster) linear `man_made=crane` as `railway=miniat
 (raster, vector) Removed `shop=loan_shark`.  No longer in the data.
 (raster, vector) Removed `crossing=light_controlled`.  No longer in the data.
 (raster, vector) Removed `landmark=windsock`.  No longer in the data.
+(raster, vector) Added `shop=e-cigarette;convenience` as a synonym for `e-cigarette`, and various other similar synonyms.
 
 ## Vector 23/02/2025, Raster as yet unreleased
 Extract (vector) and display (raster)  node and polygon `man_made=crane`.
