@@ -7865,6 +7865,32 @@ function consolidate_lua_04_t( passedt )
       passedt.brand = nil
    end
 
+-- ----------------------------------------------------------------------------
+-- Consolidate some brands so that silly long names do not appear.
+-- If the thing has no "name", let the silly long name still appear.
+--
+-- First, Amazon's tentacles:
+-- ----------------------------------------------------------------------------
+   if ((  passedt.name    ~= nil                    ) and
+       (  passedt.name    ~= ""                     ) and
+       (( passedt.brand   == "Amazon Hub"            ) or
+        ( passedt.brand   == "Amazon Locker"         ) or
+        ( passedt.brand   == "Amazon Hub Locker"     ) or
+        ( passedt.brand   == "Amazon hub"            ) or
+        ( passedt.brand   == "Amazon Fresh"          ))) then
+      passedt.brand = "Amazon"
+   end
+
+-- ----------------------------------------------------------------------------
+-- Next, Tesco.
+-- Most have some sort of name, so shorten the brand on everything.
+-- ----------------------------------------------------------------------------
+   if (( passedt.brand   == "Tesco Extra"   ) or
+       ( passedt.brand   == "Tesco Express" ) or
+       ( passedt.brand   == "Tesco Bank"    )) then
+      passedt.brand = "Tesco"
+   end
+
    if (( passedt.operator   == "(free_house)"            ) or
        ( passedt.operator   == "Free Brewery"            ) or
        ( passedt.operator   == "Free House"              ) or
