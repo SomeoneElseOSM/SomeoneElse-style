@@ -8005,6 +8005,16 @@ function consolidate_lua_04_t( passedt )
    end
 
 -- ----------------------------------------------------------------------------
+-- Next, Tesco.  Shorten the operator in lots of cases
+-- ----------------------------------------------------------------------------
+   if (( passedt.operator   == "Tesco PLC"        ) or
+       ( passedt.operator   == "Tesco plc"        ) or
+       ( passedt.operator   == "Tesco Stores Ltd" ) or
+       ( passedt.operator   == "TESCO"            )) then
+      passedt.operator = "Tesco"
+   end
+
+-- ----------------------------------------------------------------------------
 -- Next, M&S.  Shorten the operator on everything.
 -- ----------------------------------------------------------------------------
    if (( passedt.operator   == "M&S Simply Food" ) or
