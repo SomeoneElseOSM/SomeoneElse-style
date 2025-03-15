@@ -7870,6 +7870,18 @@ function consolidate_lua_04_t( passedt )
          passedt.operator = nil
       end
    end
+
+   if ( passedt.name   == "Marks & Spencer Food Hall" ) then
+      passedt.name = "M&S Foodhall"
+
+      if ( passedt.brand   == "Marks & Spencer" ) then
+         passedt.brand = nil
+      end
+
+      if ( passedt.operator   == "Marks & Spencer" ) then
+         passedt.operator = nil
+      end
+   end
    
 -- ----------------------------------------------------------------------------
 -- Before potentially using brand or operator as a bracketed suffix after the
@@ -7935,6 +7947,14 @@ function consolidate_lua_04_t( passedt )
    end
 
 -- ----------------------------------------------------------------------------
+-- Next, M&S.  Shorten the brand on everything.
+-- ----------------------------------------------------------------------------
+   if (( passedt.brand   == "M&S Simply Food" ) or
+       ( passedt.brand   == "M&S Foodhall"    )) then
+      passedt.brand = "M&S"
+   end
+
+-- ----------------------------------------------------------------------------
 -- Explicitly exclude some "non-operators" - "Independent", etc.
 -- ----------------------------------------------------------------------------
    if (( passedt.operator   == "(free_house)"            ) or
@@ -7972,6 +7992,14 @@ function consolidate_lua_04_t( passedt )
        ( passedt.operator   == "Tesla Motors"      ) or
        ( passedt.operator   == "Tesla, Inc."       )) then
       passedt.operator = "Tesla"
+   end
+
+-- ----------------------------------------------------------------------------
+-- Next, M&S.  Shorten the operator on everything.
+-- ----------------------------------------------------------------------------
+   if (( passedt.operator   == "M&S Simply Food" ) or
+       ( passedt.operator   == "M&S Foodhall"    )) then
+      passedt.operator = "M&S"
    end
 
 -- ----------------------------------------------------------------------------
