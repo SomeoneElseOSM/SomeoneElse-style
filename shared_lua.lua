@@ -7852,6 +7852,24 @@ function consolidate_lua_04_t( passedt )
    if ( passedt.aeroway  == "windsock" ) then
       passedt.man_made = "windsock"
    end
+
+-- ----------------------------------------------------------------------------
+-- We're going to do some brand and operator tidying below, but first, tidy 
+-- some errant names.
+-- First, M&S.  The shorter of these is the more common by a country mile.
+-- Also remove a duplicate long brand name at this time.
+-- ----------------------------------------------------------------------------
+   if ( passedt.name   == "Marks & Spencer Simply Food" ) then
+      passedt.name = "M&S Simply Food"
+
+      if ( passedt.brand   == "Marks & Spencer" ) then
+         passedt.brand = nil
+      end
+
+      if ( passedt.operator   == "Marks & Spencer" ) then
+         passedt.operator = nil
+      end
+   end
    
 -- ----------------------------------------------------------------------------
 -- Before potentially using brand or operator as a bracketed suffix after the
