@@ -7883,6 +7883,16 @@ function consolidate_lua_04_t( passedt )
       end
    end
    
+   if ( passedt.name   == "O'Neills" ) then
+      if ( passedt.brand   == "O'Neill's" ) then
+         passedt.brand = nil
+      end
+
+      if ( passedt.operator   == "O'Neill's" ) then
+         passedt.operator = nil
+      end
+   end
+
 -- ----------------------------------------------------------------------------
 -- Before potentially using brand or operator as a bracketed suffix after the
 -- name, explicitly exclude some "non-brands" - "Independent", etc.
