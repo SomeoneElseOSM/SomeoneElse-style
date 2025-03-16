@@ -3,6 +3,7 @@ This page describes changes made in these projects: [SomeoneElse-style](https://
 
 ## As yet unreleased
 (raster, vector) More National Trail name consolidation, including South West Coast Path.
+(raster, vector) Also consolidate some some RWN section names.
 
 ## Raster as yet unreleased, Vector 16/03/2025
 (raster, vector) Shorten some brand names, usually if another name exists.

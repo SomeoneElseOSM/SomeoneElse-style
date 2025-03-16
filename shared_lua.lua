@@ -11270,7 +11270,6 @@ function consolidate_lua_04_t( passedt )
 end -- consolidate_lua_04_t( passedt )
 
 
-function fix_silly_nt_names_t( passedt )
 -- ----------------------------------------------------------------------------
 -- For the English/Welsh National trails:
 -- These have a known operator, and there are a limited number of them.
@@ -11280,6 +11279,7 @@ function fix_silly_nt_names_t( passedt )
 --   England  Coast Path: Folkestone to Ramsgate" get changed to just 
 --   "England Coast Path"
 -- ----------------------------------------------------------------------------
+function fix_silly_nt_names_t( passedt )
     if ((( passedt.operator == "National Trails" )  or 
          ( passedt.operator == "Natural England" )) and
         (  passedt.name     ~= nil                ) and
@@ -11381,6 +11381,53 @@ function fix_silly_nt_names_t( passedt )
        end
     end -- National Trails
 end -- fix_silly_nt_names_t( passedt )
+
+
+-- ----------------------------------------------------------------------------
+-- Some "regional" trails are also split into portions and given silly names
+-- such as "Trans-Pennine Trail (Warrington to Ashton-upon-Mersey)"
+-- We remove the silly part of the name.
+-- ----------------------------------------------------------------------------
+function fix_silly_rwn_names_t( passedt )
+    if ((  passedt.name     ~= nil                ) and
+        (  passedt.name     ~= ""                 )) then
+       if ( string.find( passedt.name, "Essex Way", 1, true ) == 1 ) then
+          passedt.name = "Essex Way"
+       end
+
+       if ( string.find( passedt.name, "Fen Rivers Way", 1, true ) == 1 ) then
+          passedt.name = "Fen Rivers Way"
+       end
+
+       if ( string.find( passedt.name, "Gritstone Trail", 1, true ) == 1 ) then
+          passedt.name = "Gritstone Trail"
+       end
+
+       if ( string.find( passedt.name, "John O'Groats Trail", 1, true ) == 1 ) then
+          passedt.name = "John O'Groats Trail"
+       end
+
+       if ( string.find( passedt.name, "Staffordshire Way", 1, true ) == 1 ) then
+          passedt.name = "Staffordshire Way"
+       end
+
+       if ( string.find( passedt.name, "Tameside Trail", 1, true ) == 1 ) then
+          passedt.name = "Tameside Trail"
+       end
+
+       if ( string.find( passedt.name, "Three Choirs Way", 1, true ) == 1 ) then
+          passedt.name = "Three Choirs Way"
+       end
+
+       if ( string.find( passedt.name, "Trans-Pennine Trail", 1, true ) == 1 ) then
+          passedt.name = "Trans-Pennine Trail"
+       end
+
+       if ( string.find( passedt.name, "Viking Way", 1, true ) == 1 ) then
+          passedt.name = "Viking Way"
+       end
+    end
+end -- fix_silly_rwn_names_t( passedt )
 
 
 function append_prow_ref_t( passedt )

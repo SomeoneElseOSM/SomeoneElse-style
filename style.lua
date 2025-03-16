@@ -1021,6 +1021,13 @@ function filter_tags_relation_member (keyvalues, keyvaluemembers, roles, memberc
 -- ----------------------------------------------------------------------------
          fix_silly_nt_names_t( keyvalues )
 
+-- ----------------------------------------------------------------------------
+-- Some "regional" trails are also split into portions and given silly names
+-- such as "Trans-Pennine Trail (Warrington to Ashton-upon-Mersey)".
+-- We remove the silly part of the name, also in code shared with raster.
+-- ----------------------------------------------------------------------------
+         fix_silly_rwn_names_t( keyvalues )
+
       end  -- walking
 
 -- ----------------------------------------------------------------------------
