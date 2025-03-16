@@ -11270,6 +11270,119 @@ function consolidate_lua_04_t( passedt )
 end -- consolidate_lua_04_t( passedt )
 
 
+function fix_silly_nt_names_t( passedt )
+-- ----------------------------------------------------------------------------
+-- For the English/Welsh National trails:
+-- These have a known operator, and there are a limited number of them.
+-- * We add a "ref" here designed to be shown withing a black and white 
+--   "shield".
+-- * We also consolidate names so that "names" like "King Charles III
+--   England  Coast Path: Folkestone to Ramsgate" get changed to just 
+--   "England Coast Path"
+-- ----------------------------------------------------------------------------
+    if ((( passedt.operator == "National Trails" )  or 
+         ( passedt.operator == "Natural England" )) and
+        (  passedt.name     ~= nil                ) and
+        (  passedt.name     ~= ""                 )) then
+       if ( passedt.name == "Cleveland Way" ) then
+          passedt.ref = "CW"
+       end
+
+       if ( string.match( passedt.name, "^Coast to Coast" )) then
+          passedt.ref = "C2C"
+          passedt.name = "Coast to Coast"
+       end
+
+-- ----------------------------------------------------------------------------
+-- No need to do the Cotswold Way - it has sensible name and ref already.
+-- ----------------------------------------------------------------------------
+
+-- ----------------------------------------------------------------------------
+-- In the case of "Glyndŵr's Way / Llwybr Glyndŵr" and 
+-- "Pembrokeshire Coast Path / Llwybr Arfordir Penfro" the code may enounter
+-- either language version depending on what is extracted and where the
+-- centroid ends up, so handle both language possibilities.
+-- ----------------------------------------------------------------------------
+       if ( passedt.name == "Glyndŵr's Way" ) then
+          passedt.ref = "GW"
+       end
+
+       if ( passedt.name == "Llwybr Glyndŵr" ) then
+          passedt.ref = "LG"
+       end
+
+       if ( passedt.name == "Hadrian's Wall Path" ) then
+          passedt.ref = "HW"
+       end
+
+       if ( string.match( passedt.name, "^North Downs Way" )) then
+          passedt.ref = "NDW"
+          passedt.name = "North Downs Way"
+       end
+
+-- ----------------------------------------------------------------------------
+-- No need to do the Offa's Dyke Path - it has sensible name and ref already.
+-- ----------------------------------------------------------------------------
+
+-- ----------------------------------------------------------------------------
+-- There are three "Peddars Way" variants with the same name that mostly
+-- follow the same route.  We only add shields for the walking one.
+-- ----------------------------------------------------------------------------
+       if ( passedt.name == "Peddars Way" ) then
+          passedt.ref = "PW"
+       end
+
+-- ----------------------------------------------------------------------------
+-- No need to do the Norfolk Coast Path (which forms one National Trail with 
+-- the Peddars Way) - it has sensible name and ref already.
+-- ----------------------------------------------------------------------------
+
+       if ( passedt.name == "Pembrokeshire Coast Path" ) then
+          passedt.ref = "PCP"
+       end
+
+       if ( passedt.name == "Llwybr Arfordir Penfro" ) then
+          passedt.ref = "LAP"
+       end
+
+-- ----------------------------------------------------------------------------
+-- The Pennine Bridleway is "network=ncn;nhn;nwn" and "route=horse;mtb;hiking"
+-- so is handled below
+-- ----------------------------------------------------------------------------
+
+       if ( string.match( passedt.name, "^Pennine Way" )) then
+          passedt.ref = "PW"
+          passedt.name = "Pennine Way"
+       end
+
+-- ----------------------------------------------------------------------------
+-- There are three "South Downs Way" variants - two walking routes (one is a 
+-- partial "inland" one) and a cycle one.
+-- Only one walking route is missing a ref.
+-- ----------------------------------------------------------------------------
+       if ( passedt.name == "South Downs Way" ) then
+          passedt.ref = "SDW"
+       end
+
+       if ( string.match( passedt.name, "^South West Coast Path" )) then
+          passedt.ref = "SWCP"
+          passedt.name = "South West Coast Path"
+       end
+
+       if ( passedt.name == "Yorkshire Wolds Way" ) then
+          passedt.ref = "YWW"
+       end
+
+       if (( string.match( passedt.name, "^England Coast Path"                  )) or
+           ( string.match( passedt.name, "^England Coastal Path"                )) or
+           ( string.match( passedt.name, "^King Charles III England Coast Path" ))) then
+          passedt.ref = "ECP"
+          passedt.name = "England Coast Path"
+       end
+    end -- National Trails
+end -- fix_silly_nt_names_t( passedt )
+
+
 function append_prow_ref_t( passedt )
     if (( passedt.prow_ref ~= nil ) and
         ( passedt.prow_ref ~= ""  )) then

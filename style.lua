@@ -1008,6 +1008,19 @@ function filter_tags_relation_member (keyvalues, keyvaluemembers, roles, memberc
          end
 
          keyvalues["highway"] = "ldpnwn"
+-- ----------------------------------------------------------------------------
+-- For the English/Welsh National trails:
+-- These have a known operator, and there are a limited number of them.
+-- * We add a "ref" here designed to be shown withing a black and white 
+--   "shield".
+-- * We also consolidate names so that "names" like "King Charles III
+--   England  Coast Path: Folkestone to Ramsgate" get changed to just 
+--   "England Coast Path"
+--
+-- This is done in code shared with raster.
+-- ----------------------------------------------------------------------------
+         fix_silly_nt_names_t( keyvalues )
+
       end  -- walking
 
 -- ----------------------------------------------------------------------------
