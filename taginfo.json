@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20250316T131901Z",
+  "data_updated": "20250319T134501Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -1686,9 +1686,8 @@
     { "key": "landcover", "description": "In most cases, obscure synonym for landuse" },
     { "key": "landcover", "value": "grass", "description": "An obscure synonym for landuse=grass" },
     { "key": "landcover", "value": "trees", "description": "An obscure synonym for natural=wood" },
-    { "key": "landmark", "description": "Beacons and obelisks" },
+    { "key": "landmark", "description": "Beacons" },
     { "key": "landmark", "value": "beacon", "description": "Shown as historic nonspecific" },
-    { "key": "landmark", "value": "obelisk", "description": "Shown as obelisk" },
     { "key": "landuse", "description": "All sorts of landuse" },
     { "key": "landuse", "value": "allotments", "description": "Show allotments" },
     { "key": "landuse", "value": "animal_keeping", "description": "All sorts of landuse" },

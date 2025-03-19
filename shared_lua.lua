@@ -7637,7 +7637,6 @@ function consolidate_lua_04_t( passedt )
 -- Memorial obelisks
 -- ----------------------------------------------------------------------------
    if ((   passedt.man_made      == "obelisk"     ) or
-       (   passedt.landmark      == "obelisk"     ) or
        ((  passedt.historic      == "memorial"   ) and
         (( passedt.memorial      == "obelisk"   )  or
          ( passedt["memorial:type"] == "obelisk"   )))) then
