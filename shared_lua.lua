@@ -2926,6 +2926,7 @@ function consolidate_lua_03_t( passedt )
         ( passedt.animal   == "cattle"                     )  or
         ( passedt.animal   == "chicken"                    )  or
         ( passedt.animal   == "horse"                      )  or
+        ( passedt.animal   == "yes"                        )  or
         ( passedt.meadow   == "agricultural"               )  or
         ( passedt.meadow   == "paddock"                    )  or
         ( passedt.meadow   == "pasture"                    )  or
@@ -2960,6 +2961,7 @@ function consolidate_lua_03_t( passedt )
         ( passedt.animal   == "cattle"       )  or
         ( passedt.animal   == "chicken"      )  or
         ( passedt.animal   == "horse"        )  or
+        ( passedt.animal   == "yes"          )  or
         ( passedt.farmland == "field"        )  or
         ( passedt.farmland == "pasture"      )  or
         ( passedt.farmland == "crofts"       ))) then

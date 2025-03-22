@@ -3,6 +3,7 @@ This page describes changes made in these projects: [SomeoneElse-style](https://
 
 ## As yet unreleased
 (raster, vector) Removed `landmark=obelisk`.  No longer in the data.
+(raster, vector) Use `animal=yes` to detect `farmgrass`.
 
 ## 17/03/2025
 (raster, vector) More National Trail name consolidation, including South West Coast Path.
