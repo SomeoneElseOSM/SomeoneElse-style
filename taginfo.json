@@ -1379,6 +1379,7 @@
     { "key": "highway", "value": "corridor", "description": "Shown as path" },
     { "key": "highway", "value": "crossing", "description": "Shown as crossing" },
     { "key": "highway", "value": "cycleway", "description": "Shown as cycleway" },
+    { "key": "highway", "value": "elevator", "description": "Shown as lift" },
     { "key": "highway", "value": "emergency_access_point", "description": "Shown as emergency access point" },
     { "key": "highway", "value": "emergency_bay", "description": "Shown as private parking" },
     { "key": "highway", "value": "escape", "description": "Shown as access=destination service road" },

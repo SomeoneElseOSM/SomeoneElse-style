@@ -2,6 +2,9 @@
 This page describes changes made in these projects: [SomeoneElse-style](https://github.com/SomeoneElseOSM/SomeoneElse-style), [SomeoneElse-style-legend](https://github.com/SomeoneElseOSM/SomeoneElse-style-legend) and [openstreetmap-carto-AJT](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT), and visible [on this site](//map.atownsend.org.uk/maps/map/map.html).  Since 2025 this also includes changes to lua code shared between raster and vector processing - hence the notes below about which a particular change applies to.  See [this changelog](https://github.com/SomeoneElseOSM/SomeoneElse-vector-extract/blob/main/resources/changelog_sve01.md) for where changes here affect the vector schema, and also other vector-only ones.
 
 ## As yet unreleased
+(raster) Show `highway=elevator` nodes and ways, with a name if present, and show in legend.
+
+## Vector 22/03/2025, Raster as yet unreleased
 (raster, vector) Removed `landmark=obelisk`.  No longer in the data.
 (raster, vector) Use `animal=yes` to detect `farmgrass`.
 
