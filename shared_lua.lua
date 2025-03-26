@@ -5169,6 +5169,16 @@ function consolidate_lua_03_t( passedt )
    end
 
 -- ----------------------------------------------------------------------------
+-- Pipelines
+-- Suppress substance=gas_topology
+-- See https://www.openstreetmap.org/changeset/130415897 for more on this.
+-- ----------------------------------------------------------------------------
+   if (( passedt.man_made  == "pipeline"     ) and
+       ( passedt.substance == "gas_topology" )) then
+      passedt.man_made     = nil
+   end
+
+-- ----------------------------------------------------------------------------
 -- Display "location=overground" and "location=overhead" pipelines as bridges.
 -- ----------------------------------------------------------------------------
    if ((  passedt.man_made == "pipeline"    ) and
@@ -5180,7 +5190,6 @@ function consolidate_lua_03_t( passedt )
    end
 
 -- ----------------------------------------------------------------------------
--- Pipelines
 -- We display pipelines as waterways, because there is explicit bridge handling
 -- for waterways.
 -- Also note that some seamarks
