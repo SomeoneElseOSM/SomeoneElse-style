@@ -4,6 +4,7 @@ This page describes changes made in these projects: [SomeoneElse-style](https://
 ## As yet unreleased
 (raster) Show `highway=elevator` nodes and ways, with a name if present, and show in legend.
 (raster, vector) Suppress `substance=gas_topology`.  Not really a pipeline.
+(raster) Show names on area runways on raster, just like on vector.
 
 ## Vector 22/03/2025, Raster as yet unreleased
 (raster, vector) Removed `landmark=obelisk`.  No longer in the data.
