@@ -1413,7 +1413,7 @@
     { "key": "highway", "value": "street_lamp", "description": "Shown as street lamp (gas or electric, depending on other tags)" },
     { "key": "highway", "value": "tertiary", "description": "Shown as tertiary" },
     { "key": "highway", "value": "tertiary_link", "description": "Shown as tertiary" },
-    { "key": "highway", "value": "toll_booth", "description": "Shown as a toll gantry" },
+    { "key": "highway", "value": "toll_gantry", "description": "Shown as a toll gantry" },
     { "key": "highway", "value": "track", "description": "Shown as track" },
     { "key": "highway", "value": "traffic_signals", "description": "Shown as traffic signals" },
     { "key": "highway", "value": "trailhead", "description": "Shown as route marker" },
