@@ -6487,6 +6487,14 @@ function consolidate_lua_03_t( passedt )
    end
 
 -- ----------------------------------------------------------------------------
+-- highway=toll_gantry is changed to barrier=toll_gantry, 
+-- which is easier for rendering code (raster or vector) to search for.
+-- ----------------------------------------------------------------------------
+   if ( passedt.highway == "toll_gantry" ) then
+      passedt.barrier = "toll_gantry"
+   end
+
+-- ----------------------------------------------------------------------------
 -- highway=escape to service
 -- There aren't many escape lanes mapped, but they do exist
 -- ----------------------------------------------------------------------------
