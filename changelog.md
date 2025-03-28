@@ -4,6 +4,7 @@ This page describes changes made in these projects: [SomeoneElse-style](https://
 ## As yet unreleased
 (raster, vector) Consolidate more RWN section names.
 (raster, vector) Removed `gate=kissing`.  No longer in the data.
+(raster, vector) Append "£" to toll roads and paths as if it was an official ref.
 
 ## Vector 26/03/2025, Raster as yet unreleased
 (raster) Show `highway=elevator` nodes and ways, with a name if present, and show in legend.

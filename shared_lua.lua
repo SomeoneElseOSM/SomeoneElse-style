@@ -176,6 +176,12 @@ end -- set_name_left_right_en_t
 
 -- ----------------------------------------------------------------------------
 -- Move refs to consider as "official" to official_ref
+--
+-- This may be sourced from various places, and if set from one, other potential
+-- sources are ignored.
+--
+-- Finally, "£" is appended on toll roads and paths, if the toll likely applies
+-- to foot traffic.
 -- ----------------------------------------------------------------------------
 function set_official_ref_t( passedt )
     if ((( passedt.official_ref        == nil )   or
@@ -209,7 +215,46 @@ function set_official_ref_t( passedt )
         (  passedt.loc_ref      ~= passedt.ref )) then
        passedt.official_ref = passedt.loc_ref
     end
+
+    if ( passedt.toll == "yes" ) then
+        if (( passedt["toll:foot"] ~= nil  ) and
+            ( passedt["toll:foot"] ~= ""   )) then
+-- ----------------------------------------------------------------------------
+-- A general "toll" tag is set, and there is an explicit "toll:foot" one as
+-- well.  Is "toll:foot" set to something other than "no"?  
+-- If so, assume a toll on foot applies.
+-- ----------------------------------------------------------------------------
+            if ( passedt["toll:foot"] ~= "no" ) then
+                append_pound_t( passedt )
+            end
+-- ----------------------------------------------------------------------------
+-- No "else" here, because a general "toll" tag is set, and there is an 
+-- explicit "toll:foot", but it is set to "no", so assume no foot toll applies.
+-- ----------------------------------------------------------------------------
+        else
+-- ----------------------------------------------------------------------------
+-- A general "toll" tag is set, and there is no explicit "toll:foot" one, so
+-- assume a foot toll applies.
+-- ----------------------------------------------------------------------------
+            append_pound_t( passedt )
+        end
+    end
 end -- set_official_ref_t()
+
+-- ----------------------------------------------------------------------------
+-- This lue is called both from within "osm2pgsql / pgsql output" 
+-- and from within tilemaker, so we can't rely on tilemaker to say "are we in
+-- Ireland?  If so append €"
+-- ----------------------------------------------------------------------------
+function append_pound_t( passedt )
+    if (( passedt.official_ref        == nil ) or
+        ( passedt.official_ref        == ""  )) then
+        passedt.official_ref = "£"
+    else
+        passedt.official_ref = passedt.official_ref .. " £"
+    end
+end -- append_pound_t( passedt )
+
 
 -- ----------------------------------------------------------------------------
 -- Consolidate some rare highway types into ones we can display.
