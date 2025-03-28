@@ -11409,6 +11409,10 @@ end -- fix_silly_nt_names_t( passedt )
 function fix_silly_rwn_names_t( passedt )
     if ((  passedt.name     ~= nil                ) and
         (  passedt.name     ~= ""                 )) then
+       if ( string.find( passedt.name, "Cape Wrath Trail", 1, true ) == 1 ) then
+          passedt.name = "Cape Wrath Trail"
+       end
+
        if ( string.find( passedt.name, "Essex Way", 1, true ) == 1 ) then
           passedt.name = "Essex Way"
        end
@@ -11431,6 +11435,10 @@ function fix_silly_rwn_names_t( passedt )
 
        if ( string.find( passedt.name, "Tameside Trail", 1, true ) == 1 ) then
           passedt.name = "Tameside Trail"
+       end
+
+       if ( string.find( passedt.name, "Teesdale Way", 1, true ) == 1 ) then
+          passedt.name = "Teesdale Way"
        end
 
        if ( string.find( passedt.name, "Three Choirs Way", 1, true ) == 1 ) then

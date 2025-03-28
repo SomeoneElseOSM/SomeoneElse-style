@@ -2,6 +2,9 @@
 This page describes changes made in these projects: [SomeoneElse-style](https://github.com/SomeoneElseOSM/SomeoneElse-style), [SomeoneElse-style-legend](https://github.com/SomeoneElseOSM/SomeoneElse-style-legend) and [openstreetmap-carto-AJT](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT), and visible [on this site](//map.atownsend.org.uk/maps/map/map.html).  Since 2025 this also includes changes to lua code shared between raster and vector processing - hence the notes below about which a particular change applies to.  See [this changelog](https://github.com/SomeoneElseOSM/SomeoneElse-vector-extract/blob/main/resources/changelog_sve01.md) for where changes here affect the vector schema, and also other vector-only ones.
 
 ## As yet unreleased
+(raster, vector) Consolidate more RWN section names.
+
+## Vector 26/03/2025, Raster as yet unreleased
 (raster) Show `highway=elevator` nodes and ways, with a name if present, and show in legend.
 (raster, vector) Suppress `substance=gas_topology`.  Not really a pipeline.
 (raster) Show names on area runways on raster, just like on vector.
@@ -13,7 +16,7 @@ This page describes changes made in these projects: [SomeoneElse-style](https://
 
 ## 17/03/2025
 (raster, vector) More National Trail name consolidation, including South West Coast Path.
-(raster, vector) Also consolidate some some RWN section names.
+(raster, vector) Also consolidate some RWN section names.
 
 ## Raster 17/03/2025, Vector 16/03/2025
 (raster, vector) Shorten some brand names, usually if another name exists.
