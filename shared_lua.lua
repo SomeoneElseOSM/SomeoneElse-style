@@ -7100,9 +7100,7 @@ function consolidate_lua_03_t( passedt )
 -- ----------------------------------------------------------------------------
    if ((  passedt.barrier   == "turnstile"              )  or
        (  passedt.barrier   == "full-height_turnstile"  )  or
-       (  passedt.barrier   == "kissing_gate;gate"      )  or
-       (( passedt.barrier   == "gate"                  )   and
-        ( passedt.gate      == "kissing"               ))) then
+       (  passedt.barrier   == "kissing_gate;gate"      )) then
       passedt.barrier = "kissing_gate"
    end
 
