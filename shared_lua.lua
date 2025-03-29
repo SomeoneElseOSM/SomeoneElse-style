@@ -8177,6 +8177,27 @@ function consolidate_lua_04_t( passedt )
    end
 
 -- ----------------------------------------------------------------------------
+-- Like with bus stops, set the "ele" value for charging stations 
+-- to "name + website".
+-- ----------------------------------------------------------------------------
+   if ( passedt.amenity == "charging_station" ) then
+      if (( passedt.name == nil ) or
+          ( passedt.name == ""  )) then
+         if (( passedt.website ~= nil ) and
+             ( passedt.website ~= ""  )) then
+            passedt.ele = passedt.website
+         end
+      else -- name not nil
+         if (( passedt.website == nil ) or
+             ( passedt.website == ""  )) then
+            passedt.ele = passedt.name
+         else -- website not nil
+            passedt.ele = passedt.name .. " " .. passedt.website
+         end
+      end
+   end
+
+-- ----------------------------------------------------------------------------
 -- office=estate_agent.  There's now an icon for "shop", so use that.
 -- Also letting_agent
 -- ----------------------------------------------------------------------------
