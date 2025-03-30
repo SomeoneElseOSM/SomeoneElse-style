@@ -1,20 +1,20 @@
 # Changes made to this rendering
 This page describes changes made in these projects: [SomeoneElse-style](https://github.com/SomeoneElseOSM/SomeoneElse-style), [SomeoneElse-style-legend](https://github.com/SomeoneElseOSM/SomeoneElse-style-legend) and [openstreetmap-carto-AJT](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT), and visible [on this site](//map.atownsend.org.uk/maps/map/map.html).  Since 2025 this also includes changes to lua code shared between raster and vector processing - hence the notes below about which a particular change applies to.  See [this changelog](https://github.com/SomeoneElseOSM/SomeoneElse-vector-extract/blob/main/resources/changelog_sve01.md) for where changes here affect the vector schema, and also other vector-only ones.
 
-## As yet unreleased
+## 30/03/2025
 (raster, vector) Consolidate more RWN section names.
 (raster, vector) Removed `gate=kissing`.  No longer in the data.
 (raster, vector) Append "£" to toll roads and paths as if it was an official ref.
 (raster, vector) Extract the `website` along with the `name` on `amenity=charging_station`.  The raster rendering code can render `ele` on nodes only currently, but the vector rendering code can also show `ele` (at high zooms) on (multi)polygons.
 (raster, vector) Removed `information=leaflet_board`.  No longer in the data.
 
-## Vector 26/03/2025, Raster as yet unreleased
+## Vector 26/03/2025, Raster 30/03/2025
 (raster) Show `highway=elevator` nodes and ways, with a name if present, and show in legend.
 (raster, vector) Suppress `substance=gas_topology`.  Not really a pipeline.
 (raster) Show names on area runways on raster, just like on vector.
 (raster, vector) Extract `highway=toll_gantry` as `barrier=toll_gantry` and show them.
 
-## Vector 22/03/2025, Raster as yet unreleased
+## Vector 22/03/2025, Raster 30/03/2025
 (raster, vector) Removed `landmark=obelisk`.  No longer in the data.
 (raster, vector) Use `animal=yes` to detect `farmgrass`.
 
