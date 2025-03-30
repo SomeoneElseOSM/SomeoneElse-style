@@ -6775,7 +6775,6 @@ function consolidate_lua_03_t( passedt )
          ( passedt.information == "information_board"                )    or
          ( passedt.information == "interpretation"                   )    or
          ( passedt.information == "interpretive_board"               )    or
-         ( passedt.information == "leaflet_board"                    )    or
          ( passedt.information == "leaflets"                         )    or
          ( passedt.information == "map and posters"                  )    or
          ( passedt.information == "map"                              )    or

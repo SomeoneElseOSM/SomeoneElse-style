@@ -6,6 +6,7 @@ This page describes changes made in these projects: [SomeoneElse-style](https://
 (raster, vector) Removed `gate=kissing`.  No longer in the data.
 (raster, vector) Append "£" to toll roads and paths as if it was an official ref.
 (raster, vector) Extract the `website` along with the `name` on `amenity=charging_station`.  The raster rendering code can render `ele` on nodes only currently, but the vector rendering code can also show `ele` (at high zooms) on (multi)polygons.
+(raster, vector) Removed `information=leaflet_board`.  No longer in the data.
 
 ## Vector 26/03/2025, Raster as yet unreleased
 (raster) Show `highway=elevator` nodes and ways, with a name if present, and show in legend.
