@@ -4920,8 +4920,7 @@ function consolidate_lua_03_t( passedt )
         ( passedt.sport   == "baseball;softball"                                ) or
         ( passedt.sport   == "baseball;cricket"                                 ) or
         ( passedt.sport   == "multi;baseball"                                   ) or
-        ( passedt.sport   == "baseball;lacrosse;multi"                          ) or
-        ( passedt.sport   == "baseball;american_football;ice_hockey;basketball" ))) then
+        ( passedt.sport   == "baseball;lacrosse;multi"                          ))) then
       passedt.amenity = "pitch_baseball"
       passedt.leisure = "unnamedpitch"
    end
