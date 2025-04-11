@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20250409T215601Z",
+  "data_updated": "20250411T102301Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -3571,7 +3571,7 @@
     { "key": "trail_visibility", "value": "medium", "description": "Processed as synonym for 'intermediate'.  Make intermediate etc. trails less visible" },
     { "key": "trail_visibility", "value": "nil", "description": "Processed as synonym for 'no'.  Make intermediate etc. trails less visible" },
     { "key": "trail_visibility", "value": "no", "description": "Make intermediate etc. trails less visible" },
-    { "key": "trail_visibility", "value": "none", "description": "Processed as synonym for 'no'.  Make intermediate etc. trails less visible" },
+    { "key": "trail_visibility", "value": "none", "description": "Not a current value in OSM data. Processed as synonym for 'no'.  Make intermediate etc. trails less visible" },
     { "key": "trail_visibility", "value": "poor", "description": "Processed as synonym for 'bad'.  Make intermediate etc. trails less visible" },
     { "key": "trail_visibility", "value": "very_bad", "description": "Processed as synonym for 'horrible'.  Make intermediate etc. trails less visible" },
     { "key": "training", "description": "Detect training" },
