@@ -3421,31 +3421,49 @@ function consolidate_lua_03_t( passedt )
 -- Wheelchair	      y, l, n or d
 -- Beer Garden	      g (beer garden), o (outside seating), d (don't know)
 -- ----------------------------------------------------------------------------
+
+-- ----------------------------------------------------------------------------
+-- Look at "noncarpeted floors" first.
+-- For these we might either see an explicit "floor:material" (which takes 
+-- precedence of set) or a more general "description:floor" (which if set to 
+-- anything is assumed to be noncarpeted)
+--
+-- Many "floor:material" are seicolon-separated values.  We're only interested
+-- in the first (assued to be "main") material, so remove the others.
+--
+-- The string.find parameters here are:
+-- * the string to search in
+-- *.the thing to look for
+-- * start looking from 1 (lua things are 1-based)
+-- * do an exact match not a pattern match
+--
+-- Values without semicolons or with a semicolon as the first character
+-- are returned as is.
+-- ----------------------------------------------------------------------------
+   if ( passedt["floor:material"] ~= nil ) then
+      commapos = string.find( passedt["floor:material"], ";", 1, true )
+
+      if (( commapos ~= nil                  ) and
+          ( commapos > 1                     )) then
+        passedt["floor:material"] = passedt["floor:material"].sub( passedt["floor:material"], 1, commapos-1 )
+      end
+   end
+
    if ((( passedt["description:floor"] ~= nil                 )  and
-        ( passedt["description:floor"] ~= ""                  )) or
+        ( passedt["description:floor"] ~= ""                  )  and
+        (( passedt["floor:material"]   == nil                )   or
+         ( passedt["floor:material"]   == ""                 ))) or
        (  passedt["floor:material"]    == "brick"              ) or
-       (  passedt["floor:material"]    == "brick;concrete"     ) or
        (  passedt["floor:material"]    == "concrete"           ) or
+       (  passedt["floor:material"]    == "glued gravel"       ) or
        (  passedt["floor:material"]    == "grubby carpet"      ) or
        (  passedt["floor:material"]    == "lino"               ) or
-       (  passedt["floor:material"]    == "lino;carpet"        ) or
-       (  passedt["floor:material"]    == "lino;rough_wood"    ) or
-       (  passedt["floor:material"]    == "lino;tiles;stone"   ) or
        (  passedt["floor:material"]    == "paving_stones"      ) or
        (  passedt["floor:material"]    == "rough_carpet"       ) or
        (  passedt["floor:material"]    == "rough_wood"         ) or
-       (  passedt["floor:material"]    == "rough_wood;carpet"  ) or
-       (  passedt["floor:material"]    == "rough_wood;lino"    ) or
-       (  passedt["floor:material"]    == "rough_wood;stone"   ) or
-       (  passedt["floor:material"]    == "rough_wood;tiles"   ) or
        (  passedt["floor:material"]    == "slate"              ) or
-       (  passedt["floor:material"]    == "slate;carpet"       ) or
        (  passedt["floor:material"]    == "stone"              ) or
-       (  passedt["floor:material"]    == "stone;carpet"       ) or
-       (  passedt["floor:material"]    == "stone;rough_carpet" ) or
-       (  passedt["floor:material"]    == "stone;rough_wood"   ) or
-       (  passedt["floor:material"]    == "tiles"              ) or
-       (  passedt["floor:material"]    == "tiles;rough_wood"   )) then
+       (  passedt["floor:material"]    == "tiles"              )) then
       passedt.noncarpeted = "yes"
    end
 
@@ -3482,8 +3500,8 @@ function consolidate_lua_03_t( passedt )
 -- Below we check for "any food value but no".
 -- Here we exclude certain food values from counting towards displaying the "F"
 -- that says a pub serves food.  As far as I am concerned, sandwiches, pies,
--- or even one of Michael Gove's scotch eggs would count as "food" but a packet
--- of crisps would not.
+-- or even one of (Lord?!) Michael Gove's scotch eggs would count as "food" 
+-- but a packet of crisps would not.
 -- ----------------------------------------------------------------------------
    if ((  passedt.amenity == "pub"         ) and
        (( passedt.food    == "snacks"     ) or
