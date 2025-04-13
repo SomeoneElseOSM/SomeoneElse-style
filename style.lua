@@ -591,7 +591,10 @@ function filter_tags_node (keyvalues, nokeys)
 
 -- ----------------------------------------------------------------------------
 -- AJT node-only additions.
---
+-- ----------------------------------------------------------------------------
+   keyvalues["sport"] = trim_after_semicolon( keyvalues["sport"] )
+
+-- ----------------------------------------------------------------------------
 -- Consolidate some "ford" values into "yes".
 -- This is here rather than in "generic" because "generic" is called after this
 -- There is a similar section in way-only.
@@ -726,7 +729,10 @@ function filter_tags_way (keyvalues, nokeys)
 
 -- ----------------------------------------------------------------------------
 -- AJT way-only additions.
---
+-- ----------------------------------------------------------------------------
+   keyvalues["sport"] = trim_after_semicolon( keyvalues["sport"] )
+
+-- ----------------------------------------------------------------------------
 -- Consolidate some "ford" values into "yes".
 -- This is here rather than in "generic" because "generic" is called after this
 -- There is a similar section in way-only.
@@ -859,8 +865,7 @@ function filter_tags_way (keyvalues, nokeys)
          keyvalues["highway"] = "gallop"
       else
          if ((( keyvalues["sport"]    == "motor"         )  or
-              ( keyvalues["sport"]    == "karting"       )  or
-              ( keyvalues["sport"]    == "motor;karting" )) and
+              ( keyvalues["sport"]    == "karting"       )) and
              (( keyvalues["area"]     == nil              )  or
               ( keyvalues["area"]     == "no"             ))) then
             keyvalues["highway"] = "raceway"
@@ -963,6 +968,8 @@ function filter_tags_relation_member (keyvalues, keyvaluemembers, roles, memberc
 -- ----------------------------------------------------------------------------
 -- AJT relation-only additions.
 -- ----------------------------------------------------------------------------
+   keyvalues["sport"] = trim_after_semicolon( keyvalues["sport"] )
+
    if (( keyvalues["type"]     == "multipolygon" ) and
        ( keyvalues["junction"] == "yes"          )) then
       keyvalues["type"] = nil

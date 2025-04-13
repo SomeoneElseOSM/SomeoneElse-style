@@ -3,6 +3,7 @@ This page describes changes made in these projects: [SomeoneElse-style](https://
 
 ## As yet unreleased
 (raster, vector) Changed the pub floor logic to only look at the first entry in semicolon-separated list.  Added "glued gravel" as a noncarpeted floor material.
+(raster, vector) The first pre-semicolon value for "sport" is now used, which has a minor impact on combinations such as "multi;soccer;basketball" which previously used the first non-multi value.
 
 ## Vector 11/04/2025, Raster as yet unreleased
 (raster, vector) Removed `sport=baseball;american_football;ice_hockey;basketball`.  No longer in the data.

@@ -2856,7 +2856,6 @@ function consolidate_lua_03_t( passedt )
        (( passedt.natural    == "stone"           )  and
         ( passedt.geological == "glacial_erratic" ))) then
       if (( passedt.sport    ~= "climbing"            ) and
-          ( passedt.sport    ~= "climbing;bouldering" ) and
           ( passedt.climbing ~= "boulder"             )) then
          passedt.natural = "rock"
       end
@@ -2867,7 +2866,6 @@ function consolidate_lua_03_t( passedt )
 -- "cricket_nets" is an oddity.  See https://lists.openstreetmap.org/pipermail/tagging/2023-January/thread.html#66908 .
 -- ----------------------------------------------------------------------------
    if (( passedt.sport   == "cricket_nets"       ) or
-       ( passedt.sport   == "cricket_nets;multi" ) or
        ( passedt.leisure == "practice_pitch"     )) then
       passedt.leisure = "pitch"
    end
@@ -2876,8 +2874,7 @@ function consolidate_lua_03_t( passedt )
 -- Show skate parks etc. (that aren't skate shops, or some other leisure 
 -- already) as pitches.
 -- ----------------------------------------------------------------------------
-   if ((( passedt.sport    == "skateboard"     )  or
-        ( passedt.sport    == "skateboard;bmx" )) and
+   if ((  passedt.sport    == "skateboard"      ) and
        (( passedt.shop     == nil              )  or
         ( passedt.shop     == ""               )) and
        (( passedt.leisure  == nil              )  or
@@ -3440,14 +3437,7 @@ function consolidate_lua_03_t( passedt )
 -- Values without semicolons or with a semicolon as the first character
 -- are returned as is.
 -- ----------------------------------------------------------------------------
-   if ( passedt["floor:material"] ~= nil ) then
-      commapos = string.find( passedt["floor:material"], ";", 1, true )
-
-      if (( commapos ~= nil                  ) and
-          ( commapos > 1                     )) then
-        passedt["floor:material"] = passedt["floor:material"].sub( passedt["floor:material"], 1, commapos-1 )
-      end
-   end
+   passedt["floor:material"] = trim_after_semicolon( passedt["floor:material"] )
 
    if ((( passedt["description:floor"] ~= nil                 )  and
         ( passedt["description:floor"] ~= ""                  )  and
@@ -4751,37 +4741,13 @@ function consolidate_lua_03_t( passedt )
    if ((  passedt.leisure == "pitch"                      )  and
        (( passedt.sport   == "association_football"      )   or
         ( passedt.sport   == "football"                  )   or
-        ( passedt.sport   == "multi;soccer;basketball"   )   or
-        ( passedt.sport   == "football;basketball"       )   or
-        ( passedt.sport   == "football;rugby"            )   or
-        ( passedt.sport   == "football;soccer"           )   or
-        ( passedt.sport   == "soccer"                    )   or
-        ( passedt.sport   == "soccer;archery"            )   or
-        ( passedt.sport   == "soccer;athletics"          )   or
-        ( passedt.sport   == "soccer;basketball"         )   or
-        ( passedt.sport   == "soccer;cricket"            )   or
-        ( passedt.sport   == "soccer;field_hockey"       )   or
-        ( passedt.sport   == "soccer;football"           )   or
-        ( passedt.sport   == "soccer;gaelic_games"       )   or
-        ( passedt.sport   == "soccer;gaelic_games;rugby" )   or
-        ( passedt.sport   == "soccer;hockey"             )   or
-        ( passedt.sport   == "soccer;multi"              )   or
-        ( passedt.sport   == "soccer;rugby"              )   or
-        ( passedt.sport   == "soccer;rugby_union"        )   or
-        ( passedt.sport   == "soccer;tennis"             ))) then
+        ( passedt.sport   == "soccer"                    ))) then
       passedt.amenity = "pitch_soccer"
       passedt.leisure = "unnamedpitch"
    end
 
-   if (( passedt.leisure == "pitch"                    )  and
-       (( passedt.sport  == "basketball"              )   or
-        ( passedt.sport  == "basketball;soccer"       )   or
-        ( passedt.sport  == "basketball;football"     )   or
-        ( passedt.sport  == "basketball;multi"        )   or
-        ( passedt.sport  == "basketball;netball"      )   or
-        ( passedt.sport  == "basketball;tennis"       )   or
-        ( passedt.sport  == "multi;basketball"        )   or
-        ( passedt.sport  == "multi;basketball;soccer" ))) then
+   if (( passedt.leisure == "pitch"     )  and
+       ( passedt.sport  == "basketball" )) then
       passedt.amenity = "pitch_basketball"
       passedt.leisure = "unnamedpitch"
    end
@@ -4789,37 +4755,27 @@ function consolidate_lua_03_t( passedt )
    if ((  passedt.leisure == "pitch"                )  and
        (( passedt.sport   == "cricket"             )   or
         ( passedt.sport   == "cricket_rugby_union" )   or
-        ( passedt.sport   == "cricket;soccer"      )   or
-        ( passedt.sport   == "cricket_nets"        )   or
-        ( passedt.sport   == "cricket_nets;multi"  ))) then
+        ( passedt.sport   == "cricket_nets"        ))) then
       passedt.amenity = "pitch_cricket"
       passedt.leisure = "unnamedpitch"
    end
 
-   if (( passedt.leisure == "pitch"           )  and
-       (( passedt.sport  == "skateboard"     )   or
-        ( passedt.sport  == "skateboard;bmx" ))) then
+   if (( passedt.leisure == "pitch"     )  and
+       ( passedt.sport  == "skateboard" )) then
       passedt.amenity = "pitch_skateboard"
       passedt.leisure = "unnamedpitch"
    end
 
-   if ((  passedt.leisure == "pitch"                )  and
-       (( passedt.sport   == "climbing"            )   or
-        ( passedt.sport   == "climbing;bouldering" ))) then
+   if (( passedt.leisure == "pitch"                )  and
+       ( passedt.sport   == "climbing"             )) then
       passedt.amenity = "pitch_climbing"
       passedt.leisure = "unnamedpitch"
    end
 
    if ((  passedt.leisure == "pitch"                )  and
        (( passedt.sport   == "rugby"               )   or
-        ( passedt.sport   == "rugby;cricket"       )   or
-        ( passedt.sport   == "rugby;football"      )   or
-        ( passedt.sport   == "rugby;rubgy_union"   )   or
-        ( passedt.sport   == "rugby;soccer"        )   or
         ( passedt.sport   == "rugby_league"        )   or
-        ( passedt.sport   == "rugby_union"         )   or
-        ( passedt.sport   == "rugby_union;cricket" )   or
-        ( passedt.sport   == "rugby_union;soccer"  ))) then
+        ( passedt.sport   == "rugby_union"         ))) then
       passedt.amenity = "pitch_rugby"
       passedt.leisure = "unnamedpitch"
    end
@@ -4830,22 +4786,14 @@ function consolidate_lua_03_t( passedt )
       passedt.leisure = "unnamedpitch"
    end
 
-   if ((  passedt.leisure == "pitch"              )  and
-       (( passedt.sport   == "tennis"            )   or
-        ( passedt.sport   == "tennis;basketball" )   or
-        ( passedt.sport   == "tennis;bowls"      )   or
-        ( passedt.sport   == "tennis;hockey"     )   or
-        ( passedt.sport   == "tennis;multi"      )   or
-        ( passedt.sport   == "tennis;netball"    )   or
-        ( passedt.sport   == "tennis;soccer"     )   or
-        ( passedt.sport   == "tennis;squash"     ))) then
+   if (( passedt.leisure == "pitch"  )  and
+       ( passedt.sport   == "tennis" )) then
       passedt.amenity = "pitch_tennis"
       passedt.leisure = "unnamedpitch"
    end
 
    if ((  passedt.leisure == "pitch"             )  and
        (( passedt.sport   == "athletics"        )   or
-        ( passedt.sport   == "athletics;soccer" )   or
         ( passedt.sport   == "long_jump"        )   or
         ( passedt.sport   == "running"          )   or
         ( passedt.sport   == "shot-put"         ))) then
@@ -4859,9 +4807,8 @@ function consolidate_lua_03_t( passedt )
       passedt.leisure = "unnamedpitch"
    end
 
-   if ((  passedt.leisure == "pitch"         )  and
-       (( passedt.sport   == "bowls"        )   or
-        ( passedt.sport   == "bowls;tennis" ))) then
+   if (( passedt.leisure == "pitch"         )  and
+       ( passedt.sport   == "bowls"         )) then
       passedt.amenity = "pitch_bowls"
       passedt.leisure = "unnamedpitch"
    end
@@ -4875,9 +4822,6 @@ function consolidate_lua_03_t( passedt )
    if ((  passedt.leisure == "pitch"         )  and
        (( passedt.sport   == "cycling"      )   or
         ( passedt.sport   == "bmx"          )   or
-        ( passedt.sport   == "cycling;bmx"  )   or
-        ( passedt.sport   == "bmx;mtb"      )   or
-        ( passedt.sport   == "bmx;cycling"  )   or
         ( passedt.sport   == "mtb"          ))) then
       passedt.amenity = "pitch_cycling"
       passedt.leisure = "unnamedpitch"
@@ -4891,8 +4835,6 @@ function consolidate_lua_03_t( passedt )
 
    if ((  passedt.leisure == "pitch"                  )  and
        (( passedt.sport   == "gaelic_games"          )   or
-        ( passedt.sport   == "gaelic_games;handball" )   or
-        ( passedt.sport   == "gaelic_games;soccer"   )   or
         ( passedt.sport   == "shinty"                ))) then
       passedt.amenity = "pitch_gaa"
       passedt.leisure = "unnamedpitch"
@@ -4900,9 +4842,7 @@ function consolidate_lua_03_t( passedt )
 
    if ((  passedt.leisure == "pitch"                  )  and
        (( passedt.sport   == "field_hockey"          )   or
-        ( passedt.sport   == "field_hockey;soccer"   )   or
-        ( passedt.sport   == "hockey"                )   or
-        ( passedt.sport   == "hockey;soccer"         ))) then
+        ( passedt.sport   == "hockey"                ))) then
       passedt.amenity = "pitch_hockey"
       passedt.leisure = "unnamedpitch"
    end
@@ -4932,13 +4872,8 @@ function consolidate_lua_03_t( passedt )
       passedt.leisure = "unnamedpitch"
    end
 
-   if ((  passedt.leisure == "pitch"                                             )  and
-       (( passedt.sport   == "baseball"                                         ) or
-        ( passedt.sport   == "baseball;soccer"                                  ) or
-        ( passedt.sport   == "baseball;softball"                                ) or
-        ( passedt.sport   == "baseball;cricket"                                 ) or
-        ( passedt.sport   == "multi;baseball"                                   ) or
-        ( passedt.sport   == "baseball;lacrosse;multi"                          ))) then
+   if (( passedt.leisure == "pitch"     )  and
+       ( passedt.sport   == "baseball"  )) then
       passedt.amenity = "pitch_baseball"
       passedt.leisure = "unnamedpitch"
    end
@@ -7312,7 +7247,6 @@ function consolidate_lua_03_t( passedt )
 -- display, so not cliffs etc.
 -- ----------------------------------------------------------------------------
    if ((( passedt.sport    == "climbing"            )  or
-        ( passedt.sport    == "climbing;bouldering" )  or
         ( passedt.climbing == "boulder"             )) and
        (  passedt.natural  ~= "hill"           ) and
        (  passedt.natural  ~= "peak"           ) and
@@ -10268,8 +10202,7 @@ function consolidate_lua_04_t( passedt )
        ( passedt.shop     == "fitness"                  ) or
        ( passedt.sport    == "laser_tag"                ) or
        ( passedt.sport    == "model_aerodrome"          ) or
-       ((( passedt.sport   == "yoga"                  )   or
-         ( passedt.sport   == "yoga;pilates"          ))  and
+       ((  passedt.sport   == "yoga"                   )  and
         (( passedt.shop     == nil                    )   or
          ( passedt.shop     == ""                     ))  and
         (( passedt.amenity  == nil                    )   or
@@ -11730,3 +11663,16 @@ function consolidate_place_t( passedt )
        passedt.place = "locality"
     end
 end -- consolidate_place_t()
+
+function trim_after_semicolon( passed_field )
+   if ( passed_field ~= nil ) then
+      commapos = string.find( passed_field, ";", 1, true )
+
+      if (( commapos ~= nil                  ) and
+          ( commapos > 1                     )) then
+        passed_field = passed_field.sub( passed_field, 1, commapos-1 )
+      end
+   end
+
+   return passed_field
+end -- trim_after_semicolon()
