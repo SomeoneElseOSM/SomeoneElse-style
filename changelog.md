@@ -5,6 +5,7 @@ This page describes changes made in these projects: [SomeoneElse-style](https://
 (raster, vector) Changed the pub floor logic to only look at the first entry in semicolon-separated list.  Added "glued gravel" as a noncarpeted floor material.
 (raster, vector) The first pre-semicolon value for "sport" is now used, which has a minor impact on combinations such as "multi;soccer;basketball" which previously used the first non-multi value.
 (raster) show battlefield, castle, manor and monastery at raster zoom 15 (to match vector).
+(raster, vector) If a `wetland` is mapped without `natural`, and without any other obvious key, assume `natural=wetland`.
 
 ## Vector 11/04/2025, Raster as yet unreleased
 (raster, vector) Removed `sport=baseball;american_football;ice_hockey;basketball`.  No longer in the data.

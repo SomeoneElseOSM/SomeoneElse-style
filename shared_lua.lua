@@ -1981,6 +1981,21 @@ function consolidate_lua_03_t( passedt )
    end
 
 -- ----------------------------------------------------------------------------
+-- Try and do something with "wetlands" not tagged as "natural",
+-- but not if some other tag is already set.
+-- ----------------------------------------------------------------------------
+   if ((( passedt.natural == nil )  or
+        ( passedt.natural == ""  )) and
+       (( passedt.landuse == nil )  or
+        ( passedt.landuse == ""  )) and
+       (( passedt.leisure == nil )  or
+        ( passedt.leisure == ""  )) and
+       (  passedt.wetland ~= nil  ) and
+       (  passedt.wetland ~= ""   )) then
+      passedt.natural = "wetland"
+   end
+
+-- ----------------------------------------------------------------------------
 -- Convert "natural=saltmarsh" into something we can handle below
 -- ----------------------------------------------------------------------------
    if ( passedt.natural == "saltmarsh" ) then
