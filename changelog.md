@@ -1,7 +1,7 @@
 # Changes made to this rendering
 This page describes changes made in these projects: [SomeoneElse-style](https://github.com/SomeoneElseOSM/SomeoneElse-style), [SomeoneElse-style-legend](https://github.com/SomeoneElseOSM/SomeoneElse-style-legend) and [openstreetmap-carto-AJT](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT), and visible [on this site](//map.atownsend.org.uk/maps/map/map.html).  Since 2025 this also includes changes to lua code shared between raster and vector processing - hence the notes below about which a particular change applies to.  See [this changelog](https://github.com/SomeoneElseOSM/SomeoneElse-vector-extract/blob/main/resources/changelog_sve01.md) for where changes here affect the vector schema, and also other vector-only ones.
 
-## As yet unreleased
+## Vector 14/04/2025, Raster as yet unreleased
 (raster, vector) Changed the pub floor logic to only look at the first entry in semicolon-separated list.  Added "glued gravel" as a noncarpeted floor material.
 (raster, vector) The first pre-semicolon value for "sport" is now used, which has a minor impact on combinations such as "multi;soccer;basketball" which previously used the first non-multi value.
 (raster) show battlefield, castle, manor and monastery at raster zoom 15 (to match vector).
