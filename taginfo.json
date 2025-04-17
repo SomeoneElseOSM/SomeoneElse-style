@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20250413T120101Z",
+  "data_updated": "20250417T024101Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -3269,6 +3269,12 @@
     { "key": "shoulder", "value": "left", "description": "Roads with shoulders are shown as having somewhere to walk" },
     { "key": "shoulder", "value": "right", "description": "Roads with shoulders are shown as having somewhere to walk" },
     { "key": "shoulder", "value": "yes", "description": "Roads with shoulders are shown as having somewhere to walk" },
+    { "key": "shoulder:both", "description": "Roads with shoulders are shown as having somewhere to walk" },
+    { "key": "shoulder:both", "value": "yes", "description": "Roads with shoulders are shown as having somewhere to walk" },
+    { "key": "shoulder:left", "description": "Roads with shoulders are shown as having somewhere to walk" },
+    { "key": "shoulder:left", "value": "yes", "description": "Roads with shoulders are shown as having somewhere to walk" },
+    { "key": "shoulder:right", "description": "Roads with shoulders are shown as having somewhere to walk" },
+    { "key": "shoulder:right", "value": "yes", "description": "Roads with shoulders are shown as having somewhere to walk" },
     { "key": "sidewalk", "description": "Decide if a road has a sidewalk" },
     { "key": "sidewalk", "value": "both", "description": "Decide if a road has a sidewalk" },
     { "key": "sidewalk", "value": "left", "description": "Decide if a road has a sidewalk" },

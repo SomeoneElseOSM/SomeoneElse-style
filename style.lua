@@ -212,11 +212,16 @@ function filter_tags_generic(keyvalues, nokeys)
           ( keyvalues["sidewalk:both"] == "yes"        ) or
           ( keyvalues["footway"]  == "separate"        ) or 
           ( keyvalues["footway"]  == "yes"             ) or
-          ( keyvalues["shoulder"] == "both"            ) or
-          ( keyvalues["shoulder"] == "left"            ) or 
-          ( keyvalues["shoulder"] == "right"           ) or 
-          ( keyvalues["shoulder"] == "yes"             ) or
-          ( keyvalues["hard_shoulder"] == "yes"        ) or
+          ((( keyvalues["shoulder"] == "both"        )   or
+            ( keyvalues["shoulder"] == "left"        )   or 
+            ( keyvalues["shoulder"] == "right"       )   or 
+            ( keyvalues["shoulder"] == "yes"         )   or
+            ( keyvalues["shoulder:both"] == "yes"    )   or
+            ( keyvalues["shoulder:left"] == "yes"    )   or
+            ( keyvalues["shoulder:right"] == "yes"   )   or
+            ( keyvalues["hard_shoulder"] == "yes"    ))  and
+           (  keyvalues["expressway"] ~= "yes"        )  and
+           (  keyvalues["motorroad"] ~= "yes"         )) or
           ( keyvalues["cycleway"] == "track"           ) or
           ( keyvalues["cycleway"] == "opposite_track"  ) or
           ( keyvalues["cycleway"] == "yes"             ) or
@@ -285,11 +290,16 @@ function filter_tags_generic(keyvalues, nokeys)
           ( keyvalues["sidewalk:both"] == "yes"        ) or
           ( keyvalues["footway"]  == "separate"        ) or 
           ( keyvalues["footway"]  == "yes"             ) or
-          ( keyvalues["shoulder"] == "both"            ) or
-          ( keyvalues["shoulder"] == "left"            ) or 
-          ( keyvalues["shoulder"] == "right"           ) or 
-          ( keyvalues["shoulder"] == "yes"             ) or
-          ( keyvalues["hard_shoulder"] == "yes"        ) or
+          ((( keyvalues["shoulder"] == "both"        )   or
+            ( keyvalues["shoulder"] == "left"        )   or 
+            ( keyvalues["shoulder"] == "right"       )   or 
+            ( keyvalues["shoulder"] == "yes"         )   or
+            ( keyvalues["shoulder:both"] == "yes"    )   or
+            ( keyvalues["shoulder:left"] == "yes"    )   or
+            ( keyvalues["shoulder:right"] == "yes"   )   or
+            ( keyvalues["hard_shoulder"] == "yes"    ))  and
+           (  keyvalues["expressway"] ~= "yes"        )  and
+           (  keyvalues["motorroad"] ~= "yes"         )) or
           ( keyvalues["cycleway"] == "track"           ) or
           ( keyvalues["cycleway"] == "opposite_track"  ) or
           ( keyvalues["cycleway"] == "yes"             ) or
@@ -364,10 +374,16 @@ function filter_tags_generic(keyvalues, nokeys)
           ( keyvalues["sidewalk:both"] == "yes"        ) or
           ( keyvalues["footway"]  == "separate"        ) or 
           ( keyvalues["footway"]  == "yes"             ) or
-          ( keyvalues["shoulder"] == "both"            ) or
-          ( keyvalues["shoulder"] == "left"            ) or 
-          ( keyvalues["shoulder"] == "right"           ) or 
-          ( keyvalues["shoulder"] == "yes"             ) or
+          ((( keyvalues["shoulder"] == "both"        )   or
+            ( keyvalues["shoulder"] == "left"        )   or 
+            ( keyvalues["shoulder"] == "right"       )   or 
+            ( keyvalues["shoulder"] == "yes"         )   or
+            ( keyvalues["shoulder:both"] == "yes"    )   or
+            ( keyvalues["shoulder:left"] == "yes"    )   or
+            ( keyvalues["shoulder:right"] == "yes"   )   or
+            ( keyvalues["hard_shoulder"] == "yes"    ))  and
+           (  keyvalues["expressway"] ~= "yes"        )  and
+           (  keyvalues["motorroad"] ~= "yes"         )) or
           ( keyvalues["cycleway"] == "track"           ) or
           ( keyvalues["cycleway"] == "opposite_track"  ) or
           ( keyvalues["cycleway"] == "yes"             ) or
@@ -432,10 +448,16 @@ function filter_tags_generic(keyvalues, nokeys)
           ( keyvalues["sidewalk:both"] == "yes"        ) or
           ( keyvalues["footway"]  == "separate"        ) or 
           ( keyvalues["footway"]  == "yes"             ) or
-          ( keyvalues["shoulder"] == "both"            ) or
-          ( keyvalues["shoulder"] == "left"            ) or 
-          ( keyvalues["shoulder"] == "right"           ) or 
-          ( keyvalues["shoulder"] == "yes"             ) or
+          ((( keyvalues["shoulder"] == "both"        )   or
+            ( keyvalues["shoulder"] == "left"        )   or 
+            ( keyvalues["shoulder"] == "right"       )   or 
+            ( keyvalues["shoulder"] == "yes"         )   or
+            ( keyvalues["shoulder:both"] == "yes"    )   or
+            ( keyvalues["shoulder:left"] == "yes"    )   or
+            ( keyvalues["shoulder:right"] == "yes"   )   or
+            ( keyvalues["hard_shoulder"] == "yes"    ))  and
+           (  keyvalues["expressway"] ~= "yes"        )  and
+           (  keyvalues["motorroad"] ~= "yes"         )) or
           ( keyvalues["cycleway"] == "track"           ) or
           ( keyvalues["cycleway"] == "opposite_track"  ) or
           ( keyvalues["cycleway"] == "yes"             ) or
@@ -490,10 +512,16 @@ function filter_tags_generic(keyvalues, nokeys)
           ( keyvalues["sidewalk:both"] == "yes"        ) or
           ( keyvalues["footway"]  == "separate"        ) or 
           ( keyvalues["footway"]  == "yes"             ) or
-          ( keyvalues["shoulder"] == "both"            ) or
-          ( keyvalues["shoulder"] == "left"            ) or 
-          ( keyvalues["shoulder"] == "right"           ) or 
-          ( keyvalues["shoulder"] == "yes"             ) or
+          ((( keyvalues["shoulder"] == "both"        )   or
+            ( keyvalues["shoulder"] == "left"        )   or 
+            ( keyvalues["shoulder"] == "right"       )   or 
+            ( keyvalues["shoulder"] == "yes"         )   or
+            ( keyvalues["shoulder:both"] == "yes"    )   or
+            ( keyvalues["shoulder:left"] == "yes"    )   or
+            ( keyvalues["shoulder:right"] == "yes"   )   or
+            ( keyvalues["hard_shoulder"] == "yes"    ))  and
+           (  keyvalues["expressway"] ~= "yes"        )  and
+           (  keyvalues["motorroad"] ~= "yes"         )) or
           ( keyvalues["cycleway"] == "track"           ) or
           ( keyvalues["cycleway"] == "opposite_track"  ) or
           ( keyvalues["cycleway"] == "yes"             ) or
