@@ -7042,6 +7042,7 @@ function consolidate_lua_03_t( passedt )
        (( passedt.waterway   == nil             )  or
         ( passedt.waterway   == ""              ))) then
       passedt.man_made = "levee"
+      passedt.area = "no"
       passedt.barrier = nil
       passedt.embankment = nil
    end
