@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20250419T052001Z",
+  "data_updated": "20250419T125201Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -1854,6 +1854,8 @@
     { "key": "leisure", "value": "yoga", "description": "Leisure amenities shown in green" },
     { "key": "level", "description": "Show certain corridors as paths" },
     { "key": "level", "value": "0", "description": "Decide whether to show a corridor as a path" },
+    { "key": "level", "value": "-1", "description": "Don't show underground buildings as such" },
+    { "key": "level", "value": "-2", "description": "Don't show underground buildings as such" },
     { "key": "lifeguard", "description": "Used by one possible tagging of lifeguard towers" },
     { "key": "lifeguard", "value": "base", "description": "Used by one possible tagging of lifeguard towers" },
     { "key": "lifeguard", "value": "tower", "description": "Used by one possible tagging of lifeguard towers" },
@@ -1861,7 +1863,7 @@
     { "key": "location", "description": "Waterways, pipelines and railway platforms" },
     { "key": "location", "value": "overground", "description": "Show overground pipelines as bridges" },
     { "key": "location", "value": "overhead", "description": "Show overground pipelines as bridges" },
-    { "key": "location", "value": "underground", "description": "Show underground waterways as tunnels, suppress underground railway platforms" },
+    { "key": "location", "value": "underground", "description": "Show underground waterways as tunnels, suppress underground railway platforms and buildings" },
     { "key": "lock", "description": "Display locks" },
     { "key": "lock", "value": "yes", "description": "Display locks" },
     { "key": "lock_name", "description": "Used, together with lock_ref, in place of name on locks" },

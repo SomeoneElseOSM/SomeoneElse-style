@@ -1581,6 +1581,8 @@ function consolidate_lua_03_t( passedt )
 
 -- ----------------------------------------------------------------------------
 -- Buildings that are not buildings - set as building=no.
+-- We also suppress underground buildings here, but any other tags associated
+-- with those are left, so an underground bunker will still appear as such.
 -- ----------------------------------------------------------------------------
    if (( passedt.building == "foundations" ) or
        ( passedt.building == "demolished"  ) or
@@ -1592,7 +1594,10 @@ function consolidate_lua_03_t( passedt )
        ( passedt.building == "base"        ) or
        ( passedt.building == "patio"       ) or
        ( passedt.building == "plot"        ) or
-       ( passedt.building == "razed"       )) then
+       ( passedt.building == "razed"       ) or
+       ( passedt.location == "underground" ) or
+       ( passedt.level    == "-1"          ) or
+       ( passedt.level    == "-2"          )) then
       passedt.building = "no"
    end
 

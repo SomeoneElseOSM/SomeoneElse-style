@@ -13,6 +13,7 @@ This page describes changes made in these projects: [SomeoneElse-style](https://
 ## As yet unreleased
 (raster, vector) Show more "not quite buildings" as such, including `construction`.
 (raster, vector) Don't show "not buildings" as such, including `demolished`.
+(raster, vector) Don't show underground buildings as buildings.
 
 ## Vector 11/04/2025, Raster 17/04/2025
 (raster, vector) Removed `sport=baseball;american_football;ice_hockey;basketball`.  No longer in the data.
