@@ -1522,22 +1522,42 @@ function consolidate_lua_03_t( passedt )
 
 -- ----------------------------------------------------------------------------
 -- Bridge structures - display as building=bridge_area.
--- Other "almost buildings - display as building=roof.
--- Also farmyard "bunker silos" and canopies, and natural arches.
--- Also railway traversers and more.
 -- ----------------------------------------------------------------------------
    if ( passedt.man_made == "bridge" ) then
       passedt.building = "bridge_area"
    end
 
+-- ----------------------------------------------------------------------------
+-- Other "almost buildings - display as building=roof.
+-- Also farmyard "bunker silos" and canopies, and natural arches.
+-- Also railway traversers and more.
+-- ----------------------------------------------------------------------------
    if ((    passedt.natural          == "arch"            ) or
        (    passedt.man_made         == "bunker_silo"     ) or
        (    passedt.man_made         == "crane"           ) or
        (    passedt.amenity          == "feeding_place"   ) or
        (    passedt.railway          == "traverser"       ) or
        (    passedt.railway          == "wash"            ) or
+       (    passedt.building         == "construction"    ) or
+       (    passedt.building         == "conservatory"    ) or
+       (    passedt.building         == "carport"         ) or
+       (    passedt.building         == "horsewalker"     ) or
+       (    passedt.building         == "glasshouse"      ) or
+       (    passedt.building         == "collapsed"       ) or
        (    passedt.building         == "canopy"          ) or
+       (    passedt.building         == "tent"            ) or
+       (    passedt.building         == "ruin"            ) or
+       (    passedt.building         == "gazebo"          ) or
+       (    passedt.building         == "polytunnel"      ) or
+       (    passedt.building         == "lych_gate"       ) or
        (    passedt.building         == "car_port"        ) or
+       (    passedt.building         == "marquee"         ) or
+       (    passedt.building         == "lychgate"        ) or
+       (    passedt.building         == "greenhouse_horticulture" ) or
+       (    passedt.building         == "car_wash"        ) or
+       (    passedt.building         == "covered_walkway" ) or
+       (    passedt.building         == "mineshaft_cap"   ) or
+       (    passedt.building         == "remains"         ) or
        (((( passedt["disused:building"] ~= nil            )    and
           ( passedt["disused:building"] ~= ""             ))   or
          (  passedt.amenity          == "parcel_locker" )   or
@@ -1557,6 +1577,23 @@ function consolidate_lua_03_t( passedt )
          (  passedt.tourism          == ""              )))) then
       passedt.building      = "roof"
       passedt["building:type"] = nil
+   end
+
+-- ----------------------------------------------------------------------------
+-- Buildings that are not buildings - set as building=no.
+-- ----------------------------------------------------------------------------
+   if (( passedt.building == "foundations" ) or
+       ( passedt.building == "demolished"  ) or
+       ( passedt.building == "window"      ) or
+       ( passedt.building == "proposed"    ) or
+       ( passedt.building == "sheepfold"   ) or
+       ( passedt.building == "destroyed"   ) or
+       ( passedt.building == "dismantled"  ) or
+       ( passedt.building == "base"        ) or
+       ( passedt.building == "patio"       ) or
+       ( passedt.building == "plot"        ) or
+       ( passedt.building == "razed"       )) then
+      passedt.building = "no"
    end
 
 -- ----------------------------------------------------------------------------

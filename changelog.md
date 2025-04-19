@@ -10,6 +10,10 @@ This page describes changes made in these projects: [SomeoneElse-style](https://
 (raster) show battlefield, castle, manor and monastery at raster zoom 15 (to match vector).
 (raster, vector) If a `wetland` is mapped without `natural`, and without any other obvious key, assume `natural=wetland`.
 
+## As yet unreleased
+(raster, vector) Show more "not quite buildings" as such, including `construction`.
+(raster, vector) Don't show "not buildings" as such, including `demolished`.
+
 ## Vector 11/04/2025, Raster 17/04/2025
 (raster, vector) Removed `sport=baseball;american_football;ice_hockey;basketball`.  No longer in the data.
 
