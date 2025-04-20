@@ -11512,6 +11512,13 @@ function fix_silly_rwn_names_t( passedt )
           passedt.name = "Teesdale Way"
        end
 
+-- ----------------------------------------------------------------------------
+-- This test is done after the previous one to avoid getting included in it.
+-- ----------------------------------------------------------------------------
+       if ( string.find( passedt.name, "Alternatives in Teesdale Way", 1, true ) == 1 ) then
+          passedt.name = "Teesdale Way (alt)"
+       end
+
        if ( string.find( passedt.name, "Three Choirs Way", 1, true ) == 1 ) then
           passedt.name = "Three Choirs Way"
        end

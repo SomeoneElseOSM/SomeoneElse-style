@@ -1,7 +1,14 @@
 # Changes made to this rendering
 This page describes changes made in these projects: [SomeoneElse-style](https://github.com/SomeoneElseOSM/SomeoneElse-style), [SomeoneElse-style-legend](https://github.com/SomeoneElseOSM/SomeoneElse-style-legend) and [openstreetmap-carto-AJT](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT), and visible [on this site](//map.atownsend.org.uk/maps/map/map.html).  Since 2025 this also includes changes to lua code shared between raster and vector processing - hence the notes below about which a particular change applies to.  See [this changelog](https://github.com/SomeoneElseOSM/SomeoneElse-vector-extract/blob/main/resources/changelog_sve01.md) for where changes here affect the vector schema, and also other vector-only ones.
 
+## As yet unreleased
+(raster, vector) Make displayed name of a Teesdale Way alt route more sensible.
+
 ## 17/04/2025
+(raster, vector) Show more "not quite buildings" as such, including `construction`.
+(raster, vector) Don't show "not buildings" as such, including `demolished`.
+(raster, vector) Don't show underground buildings as buildings.
+(raster) Show closed linear embankments as lines.
 (raster) Check `shoulder:both`, `shoulder:left`, and `shoulder:right` along with `shoulder`.  Check `expressway` and `motorroad` along with `shoulder` etc.
 
 ## Vector 14/04/2025, Raster 17/04/2025
@@ -9,12 +16,6 @@ This page describes changes made in these projects: [SomeoneElse-style](https://
 (raster, vector) The first pre-semicolon value for "sport" is now used, which has a minor impact on combinations such as "multi;soccer;basketball" which previously used the first non-multi value.
 (raster) show battlefield, castle, manor and monastery at raster zoom 15 (to match vector).
 (raster, vector) If a `wetland` is mapped without `natural`, and without any other obvious key, assume `natural=wetland`.
-
-## As yet unreleased
-(raster, vector) Show more "not quite buildings" as such, including `construction`.
-(raster, vector) Don't show "not buildings" as such, including `demolished`.
-(raster, vector) Don't show underground buildings as buildings.
-(raster) Show closed linear embankments as lines.
 
 ## Vector 11/04/2025, Raster 17/04/2025
 (raster, vector) Removed `sport=baseball;american_football;ice_hockey;basketball`.  No longer in the data.
