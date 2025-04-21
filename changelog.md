@@ -7,6 +7,7 @@ This page describes changes made in these projects: [SomeoneElse-style](https://
 
 ## 21/04/2025
 (raster) Update the "OS OpenMap Local" tiles to October 2024.
+(raster) Add a "Bustimes" button to the raster button menu
 
 ## 17/04/2025
 (raster, vector) Show more "not quite buildings" as such, including `construction`.
