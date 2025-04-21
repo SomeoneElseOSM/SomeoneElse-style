@@ -3,6 +3,7 @@ This page describes changes made in these projects: [SomeoneElse-style](https://
 
 ## As yet unreleased
 (raster, vector) Make displayed name of a Teesdale Way alt route more sensible.
+(raster, vector) Check `railway` before processing `railway:preserved=yes` so that only preserved rails are handled as such.
 
 ## 17/04/2025
 (raster, vector) Show more "not quite buildings" as such, including `construction`.

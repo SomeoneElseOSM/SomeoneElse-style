@@ -4993,7 +4993,8 @@ function consolidate_lua_03_t( passedt )
 -- instead of railway=preserved (which has the advantage of still allowing
 -- e.g. narrow_gauge in addition to rail).
 -- ----------------------------------------------------------------------------
-   if ( passedt["railway:preserved"] == "yes" ) then
+   if (( passedt["railway:preserved"] == "yes"  ) and
+       ( passedt.railway              == "rail" )) then
       passedt.railway = "preserved"
    end
 
