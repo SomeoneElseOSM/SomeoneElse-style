@@ -5,6 +5,9 @@ This page describes changes made in these projects: [SomeoneElse-style](https://
 (raster, vector) Make displayed name of a Teesdale Way alt route more sensible.
 (raster, vector) Check `railway` before processing `railway:preserved=yes` so that only preserved rails are handled as such.
 
+## 21/04/2025
+(raster) Update the "OS OpenMap Local" tiles to October 2024.
+
 ## 17/04/2025
 (raster, vector) Show more "not quite buildings" as such, including `construction`.
 (raster, vector) Don't show "not buildings" as such, including `demolished`.
