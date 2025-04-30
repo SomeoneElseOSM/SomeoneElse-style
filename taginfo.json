@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20250419T125201Z",
+  "data_updated": "20250430T135301Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -535,7 +535,7 @@
     { "key": "brand", "value": "independant", "description": "Suppressed as not a real brand" },
     { "key": "brand", "value": "independent", "description": "Suppressed as not a real brand" },
     { "key": "brand", "value": "Halfords Autocentre", "description": "Brand shortened to 'Halfords'" },
-    { "key": "brand", "value": "Halfords Garage Services", "description": "Brand shortened to 'Halfords'" },
+    { "key": "brand", "value": "Halfords Garage Services", "description": "Not an expected value in OSM data.  Brand shortened to 'Halfords'" },
     { "key": "brand", "value": "Marks & Spencer", "description": "Brand shortened to 'M&S'" },
     { "key": "brand", "value": "M&S Simply Food", "description": "Brand shortened to 'M&S'" },
     { "key": "brand", "value": "M&S Foodhall", "description": "Brand shortened to 'M&S'" },
