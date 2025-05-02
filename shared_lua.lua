@@ -1093,15 +1093,24 @@ function consolidate_lua_02_t( passedt )
 -- This selection does not currently include:
 -- protect_class==98  "intercontinental treaties..." (e.g. world heritage)
 -- ----------------------------------------------------------------------------
-   if (((  passedt.boundary      == "protected_area"            )   and
-        (( passedt.protect_class == "1"                        )    or
-         ( passedt.protect_class == "2"                        )    or
-         ( passedt.protect_class == "4"                        )    or
-         ( passedt.designation   == "national_nature_reserve"  )    or
-         ( passedt.designation   == "local_nature_reserve"     )    or
-         ( passedt.designation   == "Nature Reserve"           )    or
-         ( passedt.designation   == "Marine Conservation Zone" ))) and
-       (   passedt.leisure       == nil                          )) then
+   if (((  passedt.boundary      == "protected_area"                                                    )   and
+        (( passedt.protect_class == "1"                                                                )    or
+         ( passedt.protect_class == "2"                                                                )    or
+         ( passedt.protect_class == "4"                                                                )    or
+	 ( passedt.designation   == "access_land;site_of_special_scientific_interest"                  )    or
+	 ( passedt.designation   == "common;site_of_special_scientific_interest"                       )    or
+	 ( passedt.designation   == "national_nature_reserve;site_of_special_scientific_interest"      )    or
+	 ( passedt.designation   == "site_of_special_scientific_interest"                              )    or
+	 ( passedt.designation   == "site_of_special_scientific_interest;access_land"                  )    or
+	 ( passedt.designation   == "site_of_special_scientific_interest;common"                       )    or
+	 ( passedt.designation   == "site_of_special_scientific_interest;local_nature_reserve"         )    or
+	 ( passedt.designation   == "special_area_of_conservation;site_of_special_scientific_interest" )    or
+         ( passedt.designation   == "local_nature_reserve"                                             )    or
+         ( passedt.designation   == "national_nature_reserve"                                          )    or
+         ( passedt.designation   == "Nature Reserve"                                                   )    or
+         ( passedt.designation   == "Marine Conservation Zone"                                         )))  and
+       ((  passedt.leisure       == nil                                                                 )   or
+        (  passedt.leisure       == ""                                                                  ))) then
       passedt.leisure = "nature_reserve"
    end
 
