@@ -1072,12 +1072,15 @@ function filter_tags_relation_member (keyvalues, keyvaluemembers, roles, memberc
 -- We use "ref" rather than "name".
 -- We handle loops on the National Byway and append (r) on other RCNs.
 -- ----------------------------------------------------------------------------
-      if (((  keyvalues["network"] == "ncn"           )  or
-           (  keyvalues["network"] == "rcn"           )) and
-          ((  keyvalues["state"]   == nil             )  or
-           (( keyvalues["state"]   ~= "proposed"     )   and
-            ( keyvalues["state"]   ~= "construction" )   and
-            ( keyvalues["state"]   ~= "abandoned"    )))) then
+      if (((  keyvalues["network"]  == "ncn"                   )  or
+           (  keyvalues["network"]  == "rcn"                   )  or
+           ((  keyvalues["network"] == "lcn"                 )  and
+            (( keyvalues["name"]    == "Solar System Route"  )   or
+             ( keyvalues["name"]    == "Orbital Route"       )))) and
+          ((  keyvalues["state"]    == nil                     )  or
+           (( keyvalues["state"]    ~= "proposed"             )   and
+            ( keyvalues["state"]    ~= "construction"         )   and
+            ( keyvalues["state"]    ~= "abandoned"            )))) then
          keyvalues["highway"] = "ldpncn"
 
          if ( keyvalues["ref"] == "N/A" ) then

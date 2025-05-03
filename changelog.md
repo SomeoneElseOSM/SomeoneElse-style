@@ -6,6 +6,9 @@ This page describes changes made in these projects: [SomeoneElse-style](https://
 (raster, vector) Add more "nature reserve designations".
 (vector) Fix bug whereby some "nature reserve designations" were not shown correctly on vector.
 
+## As yet unreleased
+(raster) Show a couple of high profile LCNs as NCNs.
+
 ## Vector 26/04/2025, Raster as yet unreleased
 (raster, vector) Make displayed name of a Teesdale Way alt route more sensible.
 (raster, vector) Check `railway` before processing `railway:preserved=yes` so that only preserved rails are handled as such.
