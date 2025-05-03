@@ -1863,8 +1863,7 @@ function consolidate_lua_03_t( passedt )
 -- ----------------------------------------------------------------------------
 -- Electricity substations
 -- ----------------------------------------------------------------------------
-   if (( passedt.power == "substation"  )  or
-       ( passedt.power == "sub_station" )) then
+   if ( passedt.power == "substation" ) then
       passedt.power   = nil
 
       if (( passedt.building == nil  ) or
@@ -10134,7 +10133,6 @@ function consolidate_lua_04_t( passedt )
        ( passedt.amenity  == "conference_centre"        ) or
        ( passedt.amenity  == "dancing_school"           ) or
        ( passedt.amenity  == "dojo"                     ) or
-       ( passedt.amenity  == "escape_game"              ) or
        ( passedt.amenity  == "events_venue"             ) or
        ( passedt.amenity  == "exhibition_centre"        ) or
        ( passedt.amenity  == "function_room"            ) or

@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20250501T230901Z",
+  "data_updated": "20250503T093601Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -190,7 +190,6 @@
     { "key": "amenity", "value": "education_centre", "description": "Synonym for office=nonspecific" },
     { "key": "amenity", "value": "electronics_repair", "description": "Synonym for shop=electronics" },
     { "key": "amenity", "value": "embassy", "description": "Synonym for diplomatic=embassy" },
-    { "key": "amenity", "value": "escape_game", "description": "Shown as leisure=nonspecific" },
     { "key": "amenity", "value": "escooter_parking", "description": "Synonym for 'amenity=scooter_rental'.  Rendered with icon, name incorporates brand" },
     { "key": "amenity", "value": "escooter_rental", "description": "Synonym for 'amenity=scooter_rental'.  Rendered with icon, name incorporates brand" },
     { "key": "amenity", "value": "estate_agent", "description": "Synonym for shop=estate_agent" },
@@ -2469,7 +2468,6 @@
     { "key": "power", "value": "minor_line", "description": "Minor power lines" },
     { "key": "power", "value": "plant", "description": "Detect wind turbines" },
     { "key": "power", "value": "station", "description": "Detect power stations" },
-    { "key": "power", "value": "sub_station", "description": "Detect electricity substations" },
     { "key": "power", "value": "substation", "description": "Detect electricity substations" },
     { "key": "produce", "description": "Detect honesty box sales offerings; also farmland" },
     { "key": "produce", "value": "Silage", "description": "Render grassy farmland as mid-way between meadow and farmland" },
