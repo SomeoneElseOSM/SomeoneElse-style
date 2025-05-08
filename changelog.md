@@ -4,6 +4,7 @@ This page describes changes made in these projects: [SomeoneElse-style](https://
 ## As yet unreleased
 (raster) Show a couple of high profile LCNs as NCNs.
 (raster, vector) Removed `power=sub_station` and `amenity=escape_game`.  No longer in the data.
+(raster, vector) Show PROW fingerposts in green.
 
 ## Vector 02/05/2025, Raster as yet unreleased
 (raster) Add `disused:amenity` to the list of generic keys so that unnamed former pubs are shown as such.

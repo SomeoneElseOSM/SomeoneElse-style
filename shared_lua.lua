@@ -6844,7 +6844,12 @@ function consolidate_lua_03_t( passedt )
       if ( passedt.guide_type == "intermediary" ) then
          passedt.tourism = "informationroutemarker"
       else
-         passedt.tourism = "informationmarker"
+         if (( passedt.guidepost_type == "PROW"              ) or
+             ( passedt.guidepost_type == "route_marker;PROW" )) then
+            passedt.tourism = "informationprowmarker"
+         else
+            passedt.tourism = "informationmarker"
+         end
       end
 
       passedt.ele = nil
