@@ -9473,7 +9473,7 @@ function consolidate_lua_04_t( passedt )
 -- Add unnamedcommercial landuse to give non-building areas a background.
 --
 -- Places that _sell_ mobility aids are in here.  Shopmobility handled
--- seperately.
+-- separately.
 -- ----------------------------------------------------------------------------
    if (( passedt.shop        == "hearing_aids"                 ) or
        ( passedt.healthcare  == "hearing_care"                 ) or
