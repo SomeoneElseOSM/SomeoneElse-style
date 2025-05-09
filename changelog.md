@@ -1,17 +1,17 @@
 # Changes made to this rendering
 This page describes changes made in these projects: [SomeoneElse-style](https://github.com/SomeoneElseOSM/SomeoneElse-style), [SomeoneElse-style-legend](https://github.com/SomeoneElseOSM/SomeoneElse-style-legend) and [openstreetmap-carto-AJT](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT), and visible [on this site](//map.atownsend.org.uk/maps/map/map.html).  Since 2025 this also includes changes to lua code shared between raster and vector processing - hence the notes below about which a particular change applies to.  See [this changelog](https://github.com/SomeoneElseOSM/SomeoneElse-vector-extract/blob/main/resources/changelog_sve01.md) for where changes here affect the vector schema, and also other vector-only ones.
 
-## As yet unreleased
+## 09/05/2025
 (raster) Show a couple of high profile LCNs as NCNs.
 (raster, vector) Removed `power=sub_station` and `amenity=escape_game`.  No longer in the data.
 (raster, vector) Show PROW fingerposts in green.
 
-## Vector 02/05/2025, Raster as yet unreleased
+## Vector 02/05/2025, Raster 09/05/2025
 (raster) Add `disused:amenity` to the list of generic keys so that unnamed former pubs are shown as such.
 (raster, vector) Add more "nature reserve designations".
 (vector) Fix bug whereby some "nature reserve designations" were not shown correctly on vector.
 
-## Vector 26/04/2025, Raster as yet unreleased
+## Vector 26/04/2025, Raster 09/05/2025
 (raster, vector) Make displayed name of a Teesdale Way alt route more sensible.
 (raster, vector) Check `railway` before processing `railway:preserved=yes` so that only preserved rails are handled as such.
 
@@ -71,7 +71,7 @@ Extract (vector) and display (raster) linear `man_made=crane` as `railway=miniat
 (raster, vector) Removed `landmark=windsock`.  No longer in the data.
 (raster, vector) Added `shop=e-cigarette;convenience` as a synonym for `e-cigarette`, and various other similar synonyms.
 
-## Vector 23/02/2025, Raster as yet unreleased
+## Vector 23/02/2025, Raster 13/03/2025
 Extract (vector) and display (raster)  node and polygon `man_made=crane`.
 (raster, vector) Removed `information=noticeboard`, no longer in the data.  
 
