@@ -660,6 +660,16 @@ function consolidate_lua_01_t( passedt )
    end
 
 -- ----------------------------------------------------------------------------
+-- "access=emergency" is used surprisingly frequently.
+-- ----------------------------------------------------------------------------
+   if ((( passedt.access  == "emergency"        )  or
+        ( passedt.service == "emergency_access" )) and
+       (( passedt.foot == nil                   )  or
+        ( passedt.foot == ""                    ))) then
+      passedt.access = "no"
+   end
+
+-- ----------------------------------------------------------------------------
 -- Handle dodgy access tags.  Note that this doesn't affect my "designation"
 -- processing, but may be used by the main style, as "foot", "bicycle" and 
 -- "horse" are all in as columns.
@@ -722,7 +732,7 @@ function consolidate_lua_01_t( passedt )
    end
 
 -- ----------------------------------------------------------------------------
--- Here we apply the track grade rendering to road designations:
+-- Here we set the highway type based on road designations:
 --   unpaved roads                      unpaved
 --   narrow unclassigned_county_road    ucrnarrow
 --   wide unclassigned_county_road      ucrwide
