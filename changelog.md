@@ -3,6 +3,8 @@ This page describes changes made in these projects: [SomeoneElse-style](https://
 
 ## As yet unreleased
 (raster, vector) Treat `access=emergency` and `services=emergency_access` as "no access".
+(raster, vector) Fix bug where memorial benches were not shown as such.
+(raster, vector) Removed `shop=e-cigarette;confectionery;cbd`.  No longer in the data.
 
 ## 09/05/2025
 (raster) Show a couple of high profile LCNs as NCNs.

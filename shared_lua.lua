@@ -7715,6 +7715,7 @@ function consolidate_lua_04_t( passedt )
    if (( passedt.historic   == "memorial"    ) and
        ( passedt.memorial   == "bench"       )) then
       passedt.historic = "memorialbench"
+      passedt.amenity = nil
    end
 
 -- ----------------------------------------------------------------------------
@@ -8573,7 +8574,6 @@ function consolidate_lua_04_t( passedt )
        ( passedt.shop   == "vape_shop"                         ) or
        ( passedt.shop   == "e-cigarette;beverages"             ) or
        ( passedt.shop   == "e-cigarette;computer;mobile_phone" ) or
-       ( passedt.shop   == "e-cigarette;confectionery;cbd"     ) or
        ( passedt.shop   == "e-cigarette;convenience"           ) or
        ( passedt.shop   == "e-cigarette;mobile_phone"          )) then
       passedt.shop = "e-cigarette"

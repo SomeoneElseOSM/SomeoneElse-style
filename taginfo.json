@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20250510T211301Z",
+  "data_updated": "20250511T114701Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -2691,7 +2691,7 @@
     { "key": "shop", "value": "auctioneer", "description": "Various shops shown" },
     { "key": "shop", "value": "audio_video", "description": "Various shops shown" },
     { "key": "shop", "value": "audiologist", "description": "Various shops shown" },
-    { "key": "shop", "value": "automotive", "description": "Various shops shown" },
+    { "key": "shop", "value": "automotive", "description": "Not a current value in OSM data.  Treated as a synonym for 'car_parts'" },
     { "key": "shop", "value": "baby", "description": "Various shops shown" },
     { "key": "shop", "value": "baby_goods", "description": "Various shops shown" },
     { "key": "shop", "value": "bag", "description": "Various shops shown" },
@@ -2856,7 +2856,6 @@
     { "key": "shop", "value": "e-cigarette", "description": "Various shops shown" },
     { "key": "shop", "value": "e-cigarette;beverages", "description": "Shown as an e-cigarette shop" },
     { "key": "shop", "value": "e-cigarette;computer;mobile_phone", "description": "Shown as an e-cigarette shop" },
-    { "key": "shop", "value": "e-cigarette;confectionery;cbd", "description": "Shown as an e-cigarette shop" },
     { "key": "shop", "value": "e-cigarette;convenience", "description": "Shown as an e-cigarette shop" },
     { "key": "shop", "value": "e-cigarette;mobile_phone", "description": "Shown as an e-cigarette shop" },
     { "key": "shop", "value": "eco_refill", "description": "Shown as a grocer with an E" },
