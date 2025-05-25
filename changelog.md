@@ -3,6 +3,7 @@ This page describes changes made in these projects: [SomeoneElse-style](https://
 
 ## Vector 25/05/2025, Raster as yet unreleased
 (raster, vector) Revisit `basin` values to decide which are wet all the time and which merely `flood_prone`.  `intermittent` is still considered.
+On raster, `landuse=basin` is no longer shown as always wet.
 
 ## Vector 23/05/2025, Raster as yet unreleased
 (raster, vector) Treat `amenity=fast_food; cuisine==frozen_yogurt` as `cuisine=ice_cream`.
