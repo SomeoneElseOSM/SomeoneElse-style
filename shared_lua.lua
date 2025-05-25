@@ -2200,6 +2200,17 @@ function consolidate_lua_03_t( passedt )
    end
 
 -- ----------------------------------------------------------------------------
+-- Military markers
+-- ----------------------------------------------------------------------------
+   if ( passedt.military == "range_marker" ) then
+      passedt.man_made = "markermilitary"
+      passedt.boundary = nil
+      passedt.marker = nil
+      passedt.military = nil
+      passedt.operator = nil
+   end
+
+-- ----------------------------------------------------------------------------
 -- Boundary stones.  If they're already tagged as tourism=attraction, remove
 -- that tag.
 -- Note that "marker=stone" (for "non boundary stones") are handled elsewhere.
@@ -6783,6 +6794,17 @@ function consolidate_lua_03_t( passedt )
         ( passedt.operator  == "Peak and Northern Footpaths Society" )  or
         ( passedt.operator  == "Peak District & Northern Counties Footpaths Preservation Society" ))) then
       passedt.tourism = "informationpnfs"
+   end
+
+-- ----------------------------------------------------------------------------
+-- Convert military information boards to military signs
+-- ----------------------------------------------------------------------------
+   if (( passedt.tourism     == "information"         ) and
+       ( passedt.information == "board"               ) and
+       ( passedt.operator    == "Ministry of Defence" )) then
+      passedt.tourism = "militarysign"
+      passedt.information = nil
+      passedt.operator = nil
    end
 
 -- ----------------------------------------------------------------------------

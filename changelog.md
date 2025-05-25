@@ -3,6 +3,8 @@ This page describes changes made in these projects: [SomeoneElse-style](https://
 
 ## As yet unreleased
 (raster, vector) Removed `shop=clothing`.  No longer in the data
+(raster) Handle `military=range_marker` as military-coloured marker posts.
+(raster) Handle military information boards as military signs.
 
 ## Vector 25/05/2025, Raster as yet unreleased
 (raster, vector) Revisit `basin` values to decide which are wet all the time and which merely `flood_prone`.  `intermittent` is still considered.
