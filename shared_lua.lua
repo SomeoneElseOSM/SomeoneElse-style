@@ -7852,7 +7852,6 @@ function consolidate_lua_04_t( passedt )
        ( passedt.shop == "baby"         ) or
        ( passedt.shop == "dance"        ) or
        ( passedt.shop == "clothes_hire" ) or
-       ( passedt.shop == "clothing"     ) or
        ( passedt.shop == "hat"          ) or
        ( passedt.shop == "hats"         ) or
        ( passedt.shop == "wigs"         )) then

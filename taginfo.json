@@ -2804,7 +2804,6 @@
     { "key": "shop", "value": "clocks", "description": "Various shops shown" },
     { "key": "shop", "value": "clothes", "description": "Various shops shown" },
     { "key": "shop", "value": "clothes_hire", "description": "Various shops shown" },
-    { "key": "shop", "value": "clothing", "description": "Various shops shown" },
     { "key": "shop", "value": "clothing_alterations", "description": "Various shops shown" },
     { "key": "shop", "value": "coal_merchant", "description": "Various shops shown" },
     { "key": "shop", "value": "cobbler", "description": "Shown as shoe repair etc. shop" },
