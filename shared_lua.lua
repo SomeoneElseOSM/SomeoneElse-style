@@ -6235,17 +6235,36 @@ function consolidate_lua_03_t( passedt )
    end
 
 -- ----------------------------------------------------------------------------
+-- Ensure basins are tagged as such
+-- ----------------------------------------------------------------------------
+   if ((( passedt.landuse   == nil  ) or
+        ( passedt.landuse   == ""   )) and
+       (  passedt.basin     ~= nil   ) and
+       (  passedt.basin     ~= ""    )) then
+      passedt.landuse = "basin"
+   end
+
+-- ----------------------------------------------------------------------------
 -- Add "water" to some "wet" features for rendering.
 -- (the last part currently vector only)
 -- ----------------------------------------------------------------------------
-   if (( passedt.man_made   == "wastewater_reservoir"  ) or
-       ( passedt.man_made   == "lagoon"                ) or
-       ( passedt.man_made   == "lake"                  ) or
-       ( passedt.man_made   == "reservoir"             ) or
-       ( passedt.landuse    == "reservoir"             ) or
-       ( passedt.landuse    == "basin"                 ) or
-       ( passedt.basin      == "wastewater"            ) or
-       ( passedt.natural    == "lake"                  )) then
+   if ((   passedt.man_made   == "wastewater_reservoir"  ) or
+       (   passedt.man_made   == "lagoon"                ) or
+       (   passedt.man_made   == "lake"                  ) or
+       (   passedt.man_made   == "reservoir"             ) or
+       (   passedt.landuse    == "reservoir"             ) or
+       ((  passedt.landuse    == "basin"                )  and
+        (( passedt.basin      == nil                   )   or
+         ( passedt.basin      == ""                    )   or
+         ( passedt.basin      == "retention"           )   or
+         ( passedt.basin      == "evaporation"         )   or
+         ( passedt.basin      == "water"               )   or
+         ( passedt.basin      == "waste_water"         )   or
+         ( passedt.basin      == "settling"            )   or
+         ( passedt.basin      == "aereation"           )   or
+         ( passedt.basin      == "pond"                )   or
+         ( passedt.basin      == "wastewater"          ))) or
+       (   passedt.natural    == "lake"                  )) then
       passedt.natural = "water"
    end
 
@@ -6298,10 +6317,10 @@ function consolidate_lua_03_t( passedt )
          ( passedt.highway      == ""             ))) or
        ((( passedt.natural      == nil            )   or
          ( passedt.natural      == ""             ))  and
-        (  passedt.landuse      ~= "basin"         )  and
+        (  passedt.landuse      == "basin"         )  and
         (( passedt.basin        == "detention"    )   or
-         ( passedt.basin        == "retention"    )   or
          ( passedt.basin        == "infiltration" )   or
+         ( passedt.basin        == "stormwater"   )   or
          ( passedt.basin        == "side_pound"   )))) then
       passedt.natural = "flood_prone"
    end
