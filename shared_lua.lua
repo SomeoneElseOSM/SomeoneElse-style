@@ -2503,6 +2503,19 @@ function consolidate_lua_03_t( passedt )
    end
 
 -- ----------------------------------------------------------------------------
+-- Truncate the elevation on peaks and hills
+-- ----------------------------------------------------------------------------
+   if (( passedt.natural  == "volcano"      ) or
+       ( passedt.natural  == "peak"         ) or
+       ( passedt.natural  == "hill"         ) or
+       ( passedt.man_made == "cairn"        ) or
+       ( passedt.man_made == "survey_point" )) then
+      if (( tonumber(passedt.ele) or 0 ) >  0 ) then
+         passedt.ele = math.floor( passedt.ele + 0.5 )
+      end
+   end
+
+-- ----------------------------------------------------------------------------
 -- Various tags are used for milk churn stands
 -- They're extracted as "historic".
 -- ----------------------------------------------------------------------------
