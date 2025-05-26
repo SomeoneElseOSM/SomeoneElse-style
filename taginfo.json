@@ -1698,6 +1698,7 @@
     { "key": "information", "value": "hikingmap", "description": "Shown as information board" },
     { "key": "information", "value": "hospital map", "description": "Shown as information board" },
     { "key": "information", "value": "information_board", "description": "Shown as information board" },
+    { "key": "information", "value": "information_office", "description": "Shown as information office" },
     { "key": "information", "value": "interpretation", "description": "Shown as information board" },
     { "key": "information", "value": "interpretive_board", "description": "Shown as information board" },
     { "key": "information", "value": "kiosk", "description": "Shown as information office" },

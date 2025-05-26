@@ -6957,7 +6957,8 @@ function consolidate_lua_03_t( passedt )
    if ((  passedt.tourism     == "information"                       )  and
        (( passedt.information == "office"                           )   or
         ( passedt.information == "kiosk"                            )   or
-        ( passedt.information == "visitor_centre"                   ))) then
+        ( passedt.information == "visitor_centre"                   )   or
+        ( passedt.information == "information_office"               ))) then
       passedt.tourism = "informationoffice"
    end
 
