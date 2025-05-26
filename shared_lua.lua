@@ -6859,6 +6859,7 @@ function consolidate_lua_03_t( passedt )
        ((  passedt.tourism     == "information"                       )   and
         (( passedt.information == "board"                            )    or
          ( passedt.information == "board;map"                        )    or
+         ( passedt.information == "board;route_marker"               )    or
          ( passedt.information == "citymap"                          )    or
          ( passedt.information == "departure times and destinations" )    or
          ( passedt.information == "electronic_board"                 )    or
@@ -6875,9 +6876,12 @@ function consolidate_lua_03_t( passedt )
          ( passedt.information == "map"                              )    or
          ( passedt.information == "map;board"                        )    or
          ( passedt.information == "map_board"                        )    or
+         ( passedt.information == "map; history"                     )    or
          ( passedt.information == "nature"                           )    or
          ( passedt.information == "notice_board"                     )    or
          ( passedt.information == "orientation_map"                  )    or
+         ( passedt.information == "photo"                            )    or
+         ( passedt.information == "screen"                           )    or
          ( passedt.information == "sitemap"                          )    or
          ( passedt.information == "tactile_map"                      )    or
          ( passedt.information == "tactile_model"                    )    or
@@ -6916,7 +6920,7 @@ function consolidate_lua_03_t( passedt )
    if (((  passedt.tourism     == "information"                       )  and
         (( passedt.information == "guidepost"                        )   or
          ( passedt.information == "fingerpost"                       )   or
-         ( passedt.information == "marker"                           ))) or
+         ( passedt.information == "signpost"                         ))) or
        (   passedt.man_made    == "signpost"                           )) then
       if ( passedt.guide_type == "intermediary" ) then
          passedt.tourism = "informationroutemarker"
@@ -6941,7 +6945,8 @@ function consolidate_lua_03_t( passedt )
 
    if (((  passedt.tourism     == "information"                       )   and
         (( passedt.information == "route_marker"                     )    or
-         ( passedt.information == "trail_blaze"                      )))  or
+         ( passedt.information == "trail_blaze"                      )    or
+         ( passedt.information == "trail_marker"                     )))  or
        (   passedt.highway     == "trailhead"                          )) then
       passedt.tourism = "informationroutemarker"
       passedt.ele = nil
@@ -6958,7 +6963,9 @@ function consolidate_lua_03_t( passedt )
        (( passedt.information == "office"                           )   or
         ( passedt.information == "kiosk"                            )   or
         ( passedt.information == "visitor_centre"                   )   or
-        ( passedt.information == "information_office"               ))) then
+        ( passedt.information == "information_office"               )   or
+        ( passedt.information == "centre"                           )   or
+        ( passedt.information == "desk"                             ))) then
       passedt.tourism = "informationoffice"
    end
 
@@ -6969,7 +6976,23 @@ function consolidate_lua_03_t( passedt )
    end
 
    if (( passedt.tourism     == "information"                       )  and
-       ( passedt.information == "audioguide"                        )) then
+       ( passedt.information == "artwork"                           )) then
+      passedt.tourism = "informationartwork"
+   end
+
+   if ((  passedt.tourism     == "information"                       )  and
+       (( passedt.information == "stele"                           )   or
+        ( passedt.information == "qr_code"                         )   or
+        ( passedt.information == "marker"                          )   or
+        ( passedt.information == "stone"                           )   or
+        ( passedt.information == "pillar"                          )   or
+        ( passedt.information == "post"                            ))) then
+      passedt.tourism = "informationstele"
+   end
+
+   if ((  passedt.tourism     == "information"                       )  and
+       (( passedt.information == "audioguide"                       )   or
+        ( passedt.information == "handcrank_powered_speaker"        ))) then
       passedt.tourism = "informationear"
    end
 
