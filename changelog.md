@@ -1,12 +1,9 @@
 # Changes made to this rendering
 This page describes changes made in these projects: [SomeoneElse-style](https://github.com/SomeoneElseOSM/SomeoneElse-style), [SomeoneElse-style-legend](https://github.com/SomeoneElseOSM/SomeoneElse-style-legend) and [openstreetmap-carto-AJT](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT), and visible [on this site](//map.atownsend.org.uk/maps/map/map.html).  Since 2025 this also includes changes to lua code shared between raster and vector processing - hence the notes below about which a particular change applies to.  See [this changelog](https://github.com/SomeoneElseOSM/SomeoneElse-vector-extract/blob/main/resources/changelog_sve01.md) for where changes here affect the vector schema, and also other vector-only ones.
 
-## As yet unreleased
-(raster, vector) Removed `shop=clothing`.  No longer in the data
-(raster, vector) Handle `military=range_marker` as military-coloured marker posts.
-(raster, vector) Handle military information boards as military signs.
-(raster, vector) Show `ele` values on `man_made=survey_point` and `man_made=cairn`.
-(raster, vector) Round `ele` values on the features where it is shown (peaks, cairns, etc.).
+## Vector 26/05/2025, Raster as yet unreleased
+(vector) For trees with a sensble `diameter_crown`, set that as an attribute for later use.
+(vector) For trees without a sensble `diameter_crown`, set "5" as an attribute.
 
 ## Vector 25/05/2025, Raster as yet unreleased
 (raster, vector) Revisit `basin` values to decide which are wet all the time and which merely `flood_prone`.  `intermittent` is still considered.

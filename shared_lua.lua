@@ -2516,6 +2516,19 @@ function consolidate_lua_03_t( passedt )
    end
 
 -- ----------------------------------------------------------------------------
+-- Write something through as "diameter_crown" for trees
+-- ----------------------------------------------------------------------------
+   if ( passedt.natural == "tree" ) then
+      if (( tonumber(passedt.diameter_crown) or 0 ) == 0 ) then
+         passedt.diameter_crown = "5"
+      else
+         if ( tonumber(passedt.diameter_crown) > 35 ) then
+            passedt.diameter_crown = "35"
+         end
+      end
+   end
+
+-- ----------------------------------------------------------------------------
 -- Various tags are used for milk churn stands
 -- They're extracted as "historic".
 -- ----------------------------------------------------------------------------
