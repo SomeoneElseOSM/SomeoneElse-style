@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20250525T131801Z",
+  "data_updated": "20250527T231601Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -1332,7 +1332,7 @@
     { "key": "golf", "value": "fairway", "description": "Rendered as garden" },
     { "key": "golf", "value": "green", "description": "Rendered as golf green" },
     { "key": "golf", "value": "path", "description": "Rendered as path" },
-    { "key": "golf", "value": "pin", "description": "Rendered as nonspecific leisure" },
+    { "key": "golf", "value": "pin", "description": "Rendered as golf pin" },
     { "key": "golf", "value": "practice", "description": "Rendered as garden" },
     { "key": "golf", "value": "rough", "description": "Rendered as scrub" },
     { "key": "golf", "value": "tee", "description": "Rendered as garden" },

@@ -4743,7 +4743,7 @@ function consolidate_lua_03_t( passedt )
    end
 
    if ( passedt.golf == "pin" ) then
-      passedt.leisure = "leisurenonspecific"
+      passedt.man_made = "golfpin"
 
       if (( passedt.name == nil ) or
           ( passedt.name == ""  )) then
