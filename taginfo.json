@@ -489,7 +489,7 @@
     { "key": "barrier", "value": "wood_fence", "description": "Shown as a fence" },
     { "key": "barrier", "value": "yes", "description": "Unknown non-linear barriers shown as bollard; linear as fence" },
     { "key": "basin", "description": "Shown as either permanent water, intermittent or flood prone based on values" },
-    { "key": "basin", "value": "aereation", "description": "Shown as permanent water" },
+    { "key": "basin", "value": "aeration", "description": "Shown as permanent water" },
     { "key": "basin", "value": "detention", "description": "Shown as flood-prone" },
     { "key": "basin", "value": "evaporation", "description": "Shown as permanent water" },
     { "key": "basin", "value": "infiltration", "description": "Shown as flood-prone" },
