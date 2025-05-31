@@ -3612,6 +3612,17 @@ function consolidate_lua_03_t( passedt )
    end
 
 -- ----------------------------------------------------------------------------
+-- If a pub has a restaurant then it does serve food, 
+-- even if that is not tagged.
+-- ----------------------------------------------------------------------------
+   if ((  passedt.amenity    == "pub"    ) and
+       (( passedt.food       == nil     )  or
+        ( passedt.food       == ""      )) and
+        ( passedt.restaurant == "yes"    )) then
+      passedt.food = "yes"
+   end
+
+-- ----------------------------------------------------------------------------
 -- Main "real_ale icon selection" logic
 -- Note that there's no "if pub" here, so any non-pub establishment that serves
 -- real ale will get the icon (hotels, restaurants, cafes, etc.)

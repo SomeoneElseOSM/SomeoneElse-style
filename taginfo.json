@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20250529T093101Z",
+  "data_updated": "20250531T224101Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -2608,6 +2608,8 @@
     { "key": "residential", "value": "nursing_home", "description": "Detect care homes etc." },
     { "key": "residential", "value": "residential_home", "description": "Detect care homes etc." },
     { "key": "residential", "value": "sheltered_housing", "description": "Detect care homes etc." },
+    { "key": "restaurant", "description": "Detect pubs that serve food" },
+    { "key": "restaurant", "value": "yes", "description": "Detect pubs that serve food" },
     { "key": "reusable_packaging", "description": "Detect 'eco' shops and supermarkets" },
     { "key": "reusable_packaging", "value": "yes", "description": "Detect 'eco' shops and supermarkets" },
     { "key": "room", "description": "Used as one of the keys that real_ale can hang off" },
