@@ -4108,6 +4108,75 @@ function consolidate_lua_03_t( passedt )
       passedt.amenity = "restaurant_indian"
    end
 
+   if ((  passedt.amenity == "restaurant"              )  and
+       (( passedt.cuisine == "chinese"                )   or
+        ( passedt.cuisine == "thai"                   )   or
+        ( passedt.cuisine == "chinese;thai"           )   or
+        ( passedt.cuisine == "chinese;thai;malaysian" )   or
+        ( passedt.cuisine == "thai;chinese"           )   or
+        ( passedt.cuisine == "asian"                  )   or
+        ( passedt.cuisine == "japanese"               )   or
+        ( passedt.cuisine == "japanese;sushi"         )   or
+        ( passedt.cuisine == "sushi;japanese"         )   or
+        ( passedt.cuisine == "japanese;korean"        )   or
+        ( passedt.cuisine == "korean;japanese"        )   or
+        ( passedt.cuisine == "vietnamese"             )   or
+        ( passedt.cuisine == "korean"                 )   or
+        ( passedt.cuisine == "ramen"                  )   or
+        ( passedt.cuisine == "noodle"                 )   or
+        ( passedt.cuisine == "noodle;ramen"           )   or
+        ( passedt.cuisine == "malaysian"              )   or
+        ( passedt.cuisine == "malaysian;chinese"      )   or
+        ( passedt.cuisine == "indonesian"             )   or
+        ( passedt.cuisine == "cantonese"              )   or
+        ( passedt.cuisine == "chinese;cantonese"      )   or
+        ( passedt.cuisine == "chinese;asian"          )   or
+        ( passedt.cuisine == "oriental"               )   or
+        ( passedt.cuisine == "chinese;english"        )   or
+        ( passedt.cuisine == "chinese;japanese"       )   or
+        ( passedt.cuisine == "sushi"                  )   or
+        ( passedt.cuisine == "filipino"               ))) then
+      passedt.amenity = "restaurant_chinese"
+   end
+
+-- ----------------------------------------------------------------------------
+-- This is the same list as fast_food_pizza elsewhere.
+-- ----------------------------------------------------------------------------
+   if ((  passedt.amenity == "restaurant"                  )  and
+       (( passedt.cuisine == "italian"                    )   or
+        ( passedt.cuisine == "italian;pizza"              )   or
+        ( passedt.cuisine == "italian_pizza"              )   or
+        ( passedt.cuisine == "mediterranean"              )   or
+        ( passedt.cuisine == "pasta"                      )   or
+        ( passedt.cuisine == "pizza"                      )   or
+        ( passedt.cuisine == "pizza;burger"               )   or
+        ( passedt.cuisine == "pizza;burger;kebab"         )   or
+        ( passedt.cuisine == "pizza;chicken"              )   or
+        ( passedt.cuisine == "pizza;fish_and_chips"       )   or
+        ( passedt.cuisine == "pizza;indian"               )   or
+        ( passedt.cuisine == "pizza;italian"              )   or
+        ( passedt.cuisine == "pizza;kebab"                )   or
+        ( passedt.cuisine == "pizza;kebab;burger"         )   or
+        ( passedt.cuisine == "pizza;kebab;burger;chicken" )   or
+        ( passedt.cuisine == "pizza;kebab;chicken"        )   or
+        ( passedt.cuisine == "pizza;pasta"                ))) then
+      passedt.amenity = "restaurant_italian"
+   end
+
+   if ((  passedt.amenity == "restaurant"                         ) and
+       (( passedt.cuisine == "fish_and_chips"                    )  or
+        ( passedt.cuisine == "chinese;fish_and_chips"            )  or
+        ( passedt.cuisine == "fish"                              )  or
+        ( passedt.cuisine == "fish_and_chips;chinese"            )  or
+        ( passedt.cuisine == "fish_and_chips;indian"             )  or
+        ( passedt.cuisine == "fish_and_chips;kebab"              )  or
+        ( passedt.cuisine == "fish_and_chips;pizza;kebab"        )  or
+        ( passedt.cuisine == "fish_and_chips;pizza;burger;kebab" )  or
+        ( passedt.cuisine == "fish_and_chips;pizza"              )  or
+        ( passedt.cuisine == "friture"                           ))) then
+      passedt.amenity = "restaurant_fish_and_chips"
+   end
+
 -- ----------------------------------------------------------------------------
 -- "cafe" - consolidation of lesser used tags
 -- ----------------------------------------------------------------------------
