@@ -4081,6 +4081,34 @@ function consolidate_lua_03_t( passedt )
    end
 
 -- ----------------------------------------------------------------------------
+-- Restaurants with specific cuisines - allow a specific icon to be used,
+-- This is the same list as fast_food_indian elsewhere.
+-- ----------------------------------------------------------------------------
+   if ((  passedt.amenity == "restaurant"           ) and
+       (( passedt.cuisine == "indian"              )  or
+        ( passedt.cuisine == "curry"               )  or
+        ( passedt.cuisine == "nepalese"            )  or
+        ( passedt.cuisine == "nepalese;indian"     )  or
+        ( passedt.cuisine == "indian;nepalese"     )  or
+        ( passedt.cuisine == "bangladeshi"         )  or
+        ( passedt.cuisine == "indian;bangladeshi"  )  or
+        ( passedt.cuisine == "bangladeshi;indian"  )  or
+        ( passedt.cuisine == "indian;curry"        )  or
+        ( passedt.cuisine == "indian;kebab"        )  or
+        ( passedt.cuisine == "indian;kebab;burger" )  or
+        ( passedt.cuisine == "indian;thai"         )  or
+        ( passedt.cuisine == "curry;indian"        )  or
+        ( passedt.cuisine == "pakistani"           )  or
+        ( passedt.cuisine == "indian;pakistani"    )  or
+        ( passedt.cuisine == "tandoori"            )  or
+        ( passedt.cuisine == "afghan"              )  or
+        ( passedt.cuisine == "sri_lankan"          )  or
+        ( passedt.cuisine == "punjabi"             )  or
+        ( passedt.cuisine == "indian;pizza"        ))) then
+      passedt.amenity = "restaurant_indian"
+   end
+
+-- ----------------------------------------------------------------------------
 -- "cafe" - consolidation of lesser used tags
 -- ----------------------------------------------------------------------------
    if ( passedt.shop == "cafe"       ) then
@@ -8242,14 +8270,13 @@ function consolidate_lua_04_t( passedt )
         ( passedt.amenity  ~= ""                  )  and
         ( string.match( passedt.amenity, "pub_"  ))) or
        (  passedt.amenity   == "pub"               ) or
+       (( passedt.amenity  ~= nil                 )  and
+        ( passedt.amenity  ~= ""                  )  and
+        ( string.match( passedt.amenity, "cafe_" ))) or
        (  passedt.amenity   == "cafe"              ) or
-       (  passedt.amenity   == "cafe_dld"          ) or
-       (  passedt.amenity   == "cafe_dnd"          ) or
-       (  passedt.amenity   == "cafe_dyd"          ) or
-       (  passedt.amenity   == "cafe_ydd"          ) or
-       (  passedt.amenity   == "cafe_yld"          ) or
-       (  passedt.amenity   == "cafe_ynd"          ) or
-       (  passedt.amenity   == "cafe_yyd"          ) or
+       (( passedt.amenity  ~= nil                        )  and
+        ( passedt.amenity  ~= ""                         )  and
+        ( string.match( passedt.amenity, "restaurant_"  ))) or
        (  passedt.amenity   == "restaurant"        ) or
        (  passedt.amenity   == "restaccomm"        ) or
        (  passedt.amenity   == "doctors"           ) or
@@ -8497,6 +8524,9 @@ function consolidate_lua_04_t( passedt )
       passedt.amenity = "fast_food_ice_cream"
    end
 
+-- ----------------------------------------------------------------------------
+-- This is the same list as restaurant_indian elsewhere.
+-- ----------------------------------------------------------------------------
    if ((  passedt.amenity == "fast_food"            ) and
        (( passedt.cuisine == "indian"              )  or
         ( passedt.cuisine == "curry"               )  or

@@ -61,23 +61,23 @@ else
     touch update_render.running
 fi
 #
-# Next get the latest versions of each part of the map style.
+# Optionally, next get the latest versions of each part of the map style.
 #
 # This is run from sudo without a connection to an authentication agent, 
 # so it makes sense for the git config url to be "https" and the pushurl "git".  
 # See https://stackoverflow.com/a/73836045/8145448
 #
-cd /home/${local_filesystem_user}/src/SomeoneElse-style
-pwd
-sudo -u ${local_filesystem_user} git pull
-#
-cd /home/${local_filesystem_user}/src/SomeoneElse-style-legend
-pwd
-sudo -u ${local_filesystem_user} git pull
-#
-cd /home/${local_filesystem_user}/src/openstreetmap-carto-AJT
-pwd
-sudo -u ${local_filesystem_user} git pull
+#cd /home/${local_filesystem_user}/src/SomeoneElse-style
+#pwd
+#sudo -u ${local_filesystem_user} git pull
+##
+#cd /home/${local_filesystem_user}/src/SomeoneElse-style-legend
+#pwd
+#sudo -u ${local_filesystem_user} git pull
+##
+#cd /home/${local_filesystem_user}/src/openstreetmap-carto-AJT
+#pwd
+#sudo -u ${local_filesystem_user} git pull
 #
 # We create 3 XML files:
 #
@@ -88,6 +88,8 @@ sudo -u ${local_filesystem_user} git pull
 # https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT/tree/master/novispaths
 # This is a separate tile layer so that it can be used as an overlay.
 #
+cd /home/${local_filesystem_user}/src/openstreetmap-carto-AJT
+pwd
 carto project.mml > mapnik.xml
 sed "s/\[gis\]/[gis3]/" mapnik.xml > mapnik3.xml
 cd novispaths
@@ -97,8 +99,10 @@ cd ..
 /etc/init.d/renderd restart
 /etc/init.d/apache2 restart
 #
-rm -rf /var/cache/renderd/tiles/ajt3/?
-rm -rf /var/cache/renderd/tiles/ajt3/??
+# Optionally clear cached tiles in ajt3 
+#
+#rm -rf /var/cache/renderd/tiles/ajt3/?
+#rm -rf /var/cache/renderd/tiles/ajt3/??
 #
 # And final tidying up
 #
