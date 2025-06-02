@@ -4224,6 +4224,31 @@ function consolidate_lua_03_t( passedt )
       passedt.amenity = "restaurant_sandwich"
    end
 
+   if ((  passedt.amenity == "restaurant"              )  and
+       (( passedt.cuisine == "chicken"                )   or
+        ( passedt.cuisine == "chicken;burger;pizza"   )   or
+        ( passedt.cuisine == "chicken;fish_and_chips" )   or
+        ( passedt.cuisine == "chicken;grill"          )   or
+        ( passedt.cuisine == "chicken;kebab"          )   or
+        ( passedt.cuisine == "chicken;pizza"          )   or
+        ( passedt.cuisine == "chicken;portuguese"     )   or
+        ( passedt.cuisine == "fried_chicken"          )   or
+        ( passedt.cuisine == "wings"                  ))) then
+      passedt.amenity = "restaurant_chicken"
+   end
+
+   if ((  passedt.amenity == "restaurant"            ) and
+       (( passedt.cuisine == "kebab"                )  or
+        ( passedt.cuisine == "kebab;pizza"          )  or
+        ( passedt.cuisine == "kebab;pizza;burger"   )  or
+        ( passedt.cuisine == "kebab;burger;pizza"   )  or
+        ( passedt.cuisine == "kebab;burger;chicken" )  or
+        ( passedt.cuisine == "kebab;burger"         )  or
+        ( passedt.cuisine == "kebab;fish_and_chips" )  or
+        ( passedt.cuisine == "turkish"              ))) then
+      passedt.amenity = "restaurant_kebab"
+   end
+
 -- ----------------------------------------------------------------------------
 -- "cafe" - consolidation of lesser used tags
 -- ----------------------------------------------------------------------------
