@@ -1,27 +1,27 @@
 # Changes made to this rendering
 This page describes changes made in these projects: [SomeoneElse-style](https://github.com/SomeoneElseOSM/SomeoneElse-style), [SomeoneElse-style-legend](https://github.com/SomeoneElseOSM/SomeoneElse-style-legend) and [openstreetmap-carto-AJT](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT), and visible [on this site](//map.atownsend.org.uk/maps/map/map.html).  Since 2025 this also includes changes to lua code shared between raster and vector processing - hence the notes below about which a particular change applies to.  See [this changelog](https://github.com/SomeoneElseOSM/SomeoneElse-vector-extract/blob/main/resources/changelog_sve01.md) for where changes here affect the vector schema, and also other vector-only ones.
 
-## As yet unreleased
-(raster, vector) Use a unique icon for Indian, Chinese, Italian, Fish and Chips, Burger, Coffee Shop, Sandwich, Chicken and Kebab resturants.
+## 04/06/2025
+(raster, vector) Use a unique icon for Indian, Chinese, Italian, Fish and Chips, Burger, Coffee Shop, Sandwich, Chicken, Kebab and British resturants.
 
-## Vector 01/06/2025, raster as yet unreleased
+## Vector 01/06/2025, raster 04/06/2025
 (raster, vector) Use a unique icon for Indian resturants.
 
-## Vector 31/05/2025, raster as yet unreleased
+## Vector 31/05/2025, raster 04/06/2025
 (raster, vector) Use the `restaurant` tag on a pub to tell that it serves food.
 
-## Vector 27/05/2025, raster as yet unreleased
+## Vector 27/05/2025, raster 04/06/2025
 (raster, vector) Use a characteristic icon for `golf=pin` rather than  generic leisure one.
 
-## Vector 26/05/2025, raster as yet unreleased
+## Vector 26/05/2025, raster 04/06/2025
 (raster, vector) Treat various other `information` values as either new (stele, artwork) or existing.
 
 ## Vector and raster 26/05/2025
 (raster, vector) Treat `information=information_office` as `information=office`.
 
 ## Vector 26/05/2025
-(vector) For trees with a sensble `diameter_crown`, set that as an attribute for later use.
-(vector) For trees without a sensble `diameter_crown`, set "5" as an attribute.
+(vector) For trees with a sensible `diameter_crown`, set that as an attribute for later use.
+(vector) For trees without a sensible `diameter_crown`, set "5" as an attribute.
 
 ## Vector 25/05/2025, Raster 26/05/2025
 (raster, vector) Revisit `basin` values to decide which are wet all the time and which merely `flood_prone`.  `intermittent` is still considered.

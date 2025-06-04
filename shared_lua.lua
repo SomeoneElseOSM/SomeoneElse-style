@@ -4249,6 +4249,17 @@ function consolidate_lua_03_t( passedt )
       passedt.amenity = "restaurant_kebab"
    end
 
+   if ((  passedt.amenity == "restaurant"              ) and
+       (( passedt.cuisine == "british"                )  or
+        ( passedt.cuisine == "english"                )  or
+        ( passedt.cuisine == "pie_and_mash"           )  or
+        ( passedt.cuisine == "pub"                    )  or
+        ( passedt.cuisine == "british;breakfast"      )  or
+        ( passedt.cuisine == "breakfast;british"      )  or
+        ( passedt.cuisine == "modern_british"         ))) then
+      passedt.amenity = "restaurant_british"
+   end
+
 -- ----------------------------------------------------------------------------
 -- "cafe" - consolidation of lesser used tags
 -- ----------------------------------------------------------------------------
