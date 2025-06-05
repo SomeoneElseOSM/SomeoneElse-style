@@ -930,6 +930,8 @@
     { "key": "cuisine", "value": "fish_and_chips;pizza", "description": "Treated as fast food or restaurant that serves fish and chips" },
     { "key": "cuisine", "value": "fish_and_chips;pizza;burger;kebab", "description": "Treated as fast food or restaurant that serves fish and chips" },
     { "key": "cuisine", "value": "fish_and_chips;pizza;kebab", "description": "Treated as fast food or restaurant that serves fish and chips" },
+    { "key": "cuisine", "value": "french", "description": "Treated as fast food or restaurant that serves French food" },
+    { "key": "cuisine", "value": "french;italian", "description": "Treated as fast food or restaurant that serves French food" },
     { "key": "cuisine", "value": "fried_chicken", "description": "Treated as fast food or restaurant that serves chicken" },
     { "key": "cuisine", "value": "friture", "description": "Treated as fast food or restaurant that serves fish and chips" },
     { "key": "cuisine", "value": "frozen_yogurt", "description": "Treated as fast food or restaurant that serves ice cream" },
