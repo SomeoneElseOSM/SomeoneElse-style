@@ -3,6 +3,7 @@ This page describes changes made in these projects: [SomeoneElse-style](https://
 
 ## As yet unreleased
 (raster, vector) Use a unique icon for British fast food and Regional, Mexican and Greek fast food and restaurants.
+(raster, vector) Ensure that all restaurants with a non-no `accommodation` values are treated as having accommodation.
 
 ## 04/06/2025
 (raster, vector) Use a unique icon for Indian, Chinese, Italian, Fish and Chips, Burger, Coffee Shop, Sandwich, Chicken, Kebab and British resturants.

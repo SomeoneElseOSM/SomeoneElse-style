@@ -4075,8 +4075,10 @@ function consolidate_lua_03_t( passedt )
 -- ----------------------------------------------------------------------------
 -- Restaurants with accommodation
 -- ----------------------------------------------------------------------------
-   if (( passedt.amenity       == "restaurant" )  and
-       ( passedt.accommodation == "yes"        )) then
+   if ((  passedt.amenity       == "restaurant"  )  and
+       (( passedt.accommodation ~= nil          )   and
+        ( passedt.accommodation ~= ""           )   and
+        ( passedt.accommodation ~= "no"         ))) then
       passedt.amenity = "restaccomm"
    end
 
