@@ -4260,6 +4260,16 @@ function consolidate_lua_03_t( passedt )
       passedt.amenity = "restaurant_british"
    end
 
+   if ((  passedt.amenity == "restaurant"               ) and
+       (( passedt.cuisine == "regional"                )  or
+        ( passedt.cuisine == "regional;coffee_shop"    )  or
+        ( passedt.cuisine == "regional;burger"         )  or
+        ( passedt.cuisine == "regional;local"          )  or
+        ( passedt.cuisine == "regional;fish"           )  or
+        ( passedt.cuisine == "regional;sandwich"       ))) then
+      passedt.amenity = "restaurant_regional"
+   end
+
 -- ----------------------------------------------------------------------------
 -- "cafe" - consolidation of lesser used tags
 -- ----------------------------------------------------------------------------
@@ -8750,6 +8760,27 @@ function consolidate_lua_04_t( passedt )
         ( passedt.cuisine == "sandwich;bakery"      )   or
         ( passedt.cuisine == "sandwich;coffee_shop" ))) then
       passedt.amenity = "fast_food_sandwich"
+   end
+
+   if ((  passedt.amenity == "fast_food"               ) and
+       (( passedt.cuisine == "british"                )  or
+        ( passedt.cuisine == "english"                )  or
+        ( passedt.cuisine == "pie_and_mash"           )  or
+        ( passedt.cuisine == "pub"                    )  or
+        ( passedt.cuisine == "british;breakfast"      )  or
+        ( passedt.cuisine == "breakfast;british"      )  or
+        ( passedt.cuisine == "modern_british"         ))) then
+      passedt.amenity = "fast_food_british"
+   end
+
+   if ((  passedt.amenity == "fast_food"               ) and
+       (( passedt.cuisine == "regional"                )  or
+        ( passedt.cuisine == "regional;coffee_shop"    )  or
+        ( passedt.cuisine == "regional;burger"         )  or
+        ( passedt.cuisine == "regional;local"          )  or
+        ( passedt.cuisine == "regional;fish"           )  or
+        ( passedt.cuisine == "regional;sandwich"       ))) then
+      passedt.amenity = "fast_food_regional"
    end
 
 -- ----------------------------------------------------------------------------
