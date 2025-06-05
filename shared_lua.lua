@@ -4270,6 +4270,12 @@ function consolidate_lua_03_t( passedt )
       passedt.amenity = "restaurant_regional"
    end
 
+   if ((  passedt.amenity == "restaurant"               ) and
+       (( passedt.cuisine == "mexican"                )  or
+        ( passedt.cuisine == "tex-mex"                ))) then
+      passedt.amenity = "restaurant_mexican"
+   end
+
 -- ----------------------------------------------------------------------------
 -- "cafe" - consolidation of lesser used tags
 -- ----------------------------------------------------------------------------
@@ -8781,6 +8787,12 @@ function consolidate_lua_04_t( passedt )
         ( passedt.cuisine == "regional;fish"           )  or
         ( passedt.cuisine == "regional;sandwich"       ))) then
       passedt.amenity = "fast_food_regional"
+   end
+
+   if ((  passedt.amenity == "fast_food"               ) and
+       (( passedt.cuisine == "mexican"                )  or
+        ( passedt.cuisine == "tex-mex"                ))) then
+      passedt.amenity = "fast_food_mexican"
    end
 
 -- ----------------------------------------------------------------------------
