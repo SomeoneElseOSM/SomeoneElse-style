@@ -4336,6 +4336,13 @@ function consolidate_lua_03_t( passedt )
       passedt.amenity = "restaurant_lebanese"
    end
 
+   if ((  passedt.amenity == "restaurant"              ) and
+       (( passedt.cuisine == "dessert"               )  or
+        ( passedt.cuisine == "frozen_yogurt;dessert" )  or
+        ( passedt.cuisine == "frozen_yogurt"         ))) then
+      passedt.amenity = "restaurant_dessert"
+   end
+
 -- ----------------------------------------------------------------------------
 -- "cafe" - consolidation of lesser used tags
 -- ----------------------------------------------------------------------------
@@ -8895,6 +8902,14 @@ function consolidate_lua_04_t( passedt )
         ( passedt.cuisine == "lebanese;moroccan"      ))) then
       passedt.amenity = "fast_food_lebanese"
    end
+
+   if ((  passedt.amenity == "fast_food"              ) and
+       (( passedt.cuisine == "dessert"               )  or
+        ( passedt.cuisine == "frozen_yogurt;dessert" )  or
+        ( passedt.cuisine == "frozen_yogurt"         ))) then
+      passedt.amenity = "fast_food_dessert"
+   end
+
 -- ----------------------------------------------------------------------------
 -- Sundials
 -- ----------------------------------------------------------------------------
