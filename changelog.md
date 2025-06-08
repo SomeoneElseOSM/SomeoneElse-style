@@ -3,7 +3,7 @@ This page describes changes made in these projects: [SomeoneElse-style](https://
 
 ## As yet unreleased
 (raster, vector) Use a unique icon for ice cream restaurants.
-(raster, vector) Use a unique icon for Caribbean, Lebanese and dessert fast food and restaurants.
+(raster, vector) Use a unique icon for Caribbean, Lebanese, dessert and Spanish fast food and restaurants.
 
 ## Vector 07/06/2025, raster as yet unreleased
 (raster, vector) Use a unique icon for British fast food and Regional, Mexican, Greek, French and seafood fast food and restaurants.

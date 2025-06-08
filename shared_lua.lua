@@ -4336,11 +4336,19 @@ function consolidate_lua_03_t( passedt )
       passedt.amenity = "restaurant_lebanese"
    end
 
-   if ((  passedt.amenity == "restaurant"              ) and
+   if ((  passedt.amenity == "restaurant"             ) and
        (( passedt.cuisine == "dessert"               )  or
         ( passedt.cuisine == "frozen_yogurt;dessert" )  or
         ( passedt.cuisine == "frozen_yogurt"         ))) then
       passedt.amenity = "restaurant_dessert"
+   end
+
+   if ((  passedt.amenity == "restaurant"             ) and
+       (( passedt.cuisine == "spanish"               )  or
+        ( passedt.cuisine == "tapas"                 )  or
+        ( passedt.cuisine == "spanish;tapas"         )  or
+        ( passedt.cuisine == "tapas;spanish"         ))) then
+      passedt.amenity = "restaurant_spanish"
    end
 
 -- ----------------------------------------------------------------------------
@@ -8908,6 +8916,14 @@ function consolidate_lua_04_t( passedt )
         ( passedt.cuisine == "frozen_yogurt;dessert" )  or
         ( passedt.cuisine == "frozen_yogurt"         ))) then
       passedt.amenity = "fast_food_dessert"
+   end
+
+   if ((  passedt.amenity == "fast_food"              ) and
+       (( passedt.cuisine == "spanish"               )  or
+        ( passedt.cuisine == "tapas"                 )  or
+        ( passedt.cuisine == "spanish;tapas"         )  or
+        ( passedt.cuisine == "tapas;spanish"         ))) then
+      passedt.amenity = "fast_food_spanish"
    end
 
 -- ----------------------------------------------------------------------------
