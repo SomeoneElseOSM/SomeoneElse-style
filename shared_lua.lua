@@ -4351,6 +4351,14 @@ function consolidate_lua_03_t( passedt )
       passedt.amenity = "restaurant_spanish"
    end
 
+   if ((  passedt.amenity == "restaurant"             ) and
+       (( passedt.cuisine == "african"               )  or
+        ( passedt.cuisine == "african;caribbean"     )  or
+        ( passedt.cuisine == "south_african"         )  or
+        ( passedt.cuisine == "north_african"         ))) then
+      passedt.amenity = "restaurant_african"
+   end
+
 -- ----------------------------------------------------------------------------
 -- "cafe" - consolidation of lesser used tags
 -- ----------------------------------------------------------------------------
@@ -8892,7 +8900,6 @@ function consolidate_lua_04_t( passedt )
    if ((  passedt.amenity == "fast_food"             ) and
        (( passedt.cuisine == "caribbean"            )  or
         ( passedt.cuisine == "jamaican"             )  or
-        ( passedt.cuisine == "african;caribbean"    )  or
         ( passedt.cuisine == "caribbean;african"    )  or
         ( passedt.cuisine == "caribbean;english"    )  or
         ( passedt.cuisine == "afro_caribbean"       )  or
@@ -8930,6 +8937,14 @@ function consolidate_lua_04_t( passedt )
        (( passedt.cuisine == "donut"               )  or
         ( passedt.cuisine == "donut;coffee_shop"   ))) then
       passedt.amenity = "fast_food_donut"
+   end
+
+   if ((  passedt.amenity == "fast_food"              ) and
+       (( passedt.cuisine == "african"               )  or
+        ( passedt.cuisine == "african;caribbean"     )  or
+        ( passedt.cuisine == "south_african"         )  or
+        ( passedt.cuisine == "north_african"         ))) then
+      passedt.amenity = "fast_food_african"
    end
 
 -- ----------------------------------------------------------------------------
