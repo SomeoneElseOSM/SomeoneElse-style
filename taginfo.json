@@ -933,6 +933,8 @@
     { "key": "cuisine", "value": "frozen_yogurt;dessert", "description": "Treated as fast food or restaurant that serves desserts" },
     { "key": "cuisine", "value": "frozen_yogurt", "description": "Treated as fast food or restaurant that serves desserts" },
     { "key": "cuisine", "value": "diner", "description": "Treated as fast food or restaurant that serves burgers" },
+    { "key": "cuisine", "value": "donut", "description": "Treated as fast food that serves donuts" },
+    { "key": "cuisine", "value": "donut;coffee_shop", "description": "Treated as fast food that serves donuts" },
     { "key": "cuisine", "value": "english", "description": "Treated as fast food or restaurant that serves British food" },
     { "key": "cuisine", "value": "filipino", "description": "Treated as fast food or restaurant that serves chinese or similar food" },
     { "key": "cuisine", "value": "fish", "description": "Treated as fast food or restaurant that serves fish and chips" },

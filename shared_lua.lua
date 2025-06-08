@@ -8926,6 +8926,12 @@ function consolidate_lua_04_t( passedt )
       passedt.amenity = "fast_food_spanish"
    end
 
+   if ((  passedt.amenity == "fast_food"            ) and
+       (( passedt.cuisine == "donut"               )  or
+        ( passedt.cuisine == "donut;coffee_shop"   ))) then
+      passedt.amenity = "fast_food_donut"
+   end
+
 -- ----------------------------------------------------------------------------
 -- Sundials
 -- ----------------------------------------------------------------------------
