@@ -4314,6 +4314,20 @@ function consolidate_lua_03_t( passedt )
       passedt.amenity = "restaurant_ice_cream"
    end
 
+   if ((  passedt.amenity == "restaurant"            ) and
+       (( passedt.cuisine == "caribbean"            )  or
+        ( passedt.cuisine == "jamaican"             )  or
+        ( passedt.cuisine == "african;caribbean"    )  or
+        ( passedt.cuisine == "caribbean;african"    )  or
+        ( passedt.cuisine == "caribbean;english"    )  or
+        ( passedt.cuisine == "afro_caribbean"       )  or
+        ( passedt.cuisine == "afro-caribbean"       )  or
+        ( passedt.cuisine == "jamaican;caribbean"   )  or
+        ( passedt.cuisine == "afrocaribbean"        )  or
+        ( passedt.cuisine == "caribbean;jamaican"   ))) then
+      passedt.amenity = "restaurant_caribbean"
+   end
+
 -- ----------------------------------------------------------------------------
 -- "cafe" - consolidation of lesser used tags
 -- ----------------------------------------------------------------------------
@@ -8850,6 +8864,20 @@ function consolidate_lua_04_t( passedt )
         ( passedt.cuisine == "seafood;steak_house" )  or
         ( passedt.cuisine == "seafood;regional"    ))) then
       passedt.amenity = "fast_food_seafood"
+   end
+
+   if ((  passedt.amenity == "fast_food"             ) and
+       (( passedt.cuisine == "caribbean"            )  or
+        ( passedt.cuisine == "jamaican"             )  or
+        ( passedt.cuisine == "african;caribbean"    )  or
+        ( passedt.cuisine == "caribbean;african"    )  or
+        ( passedt.cuisine == "caribbean;english"    )  or
+        ( passedt.cuisine == "afro_caribbean"       )  or
+        ( passedt.cuisine == "afro-caribbean"       )  or
+        ( passedt.cuisine == "jamaican;caribbean"   )  or
+        ( passedt.cuisine == "afrocaribbean"        )  or
+        ( passedt.cuisine == "caribbean;jamaican"   ))) then
+      passedt.amenity = "fast_food_caribbean"
    end
 
 -- ----------------------------------------------------------------------------
