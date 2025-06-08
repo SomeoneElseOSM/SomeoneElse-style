@@ -7728,16 +7728,24 @@ function consolidate_lua_03_t( passedt )
 
 -- ----------------------------------------------------------------------------
 -- Big peaks and big prominent peaks
+--
+-- Anything > 914m is "big".
+-- Anything with a prominence > 500 is additionally "prominent".
+-- 
+-- Munros (Scottish mountains > 914m) that don't have a prominence are 
+-- additionally assumed to be "as prominent as their elevation"
+-- if we don't have a prominence value already.
 -- ----------------------------------------------------------------------------
    if ((  passedt.natural              == "peak"     ) and
        (( tonumber(passedt.ele) or 0 ) >  914        )) then
       if (( tonumber(passedt.prominence) or 0 ) == 0 ) then
          if ( passedt.munro == "yes" ) then
-            passedt.prominence = "0"
-         else
             passedt.prominence = passedt.ele
+         else
+            passedt.prominence = "0"
          end
       end
+
       if (( tonumber(passedt.prominence) or 0 ) >  500 ) then
          passedt.natural = "bigprompeak"
       else

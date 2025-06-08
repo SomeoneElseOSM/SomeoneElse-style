@@ -5,6 +5,7 @@ This page describes changes made in these projects: [SomeoneElse-style](https://
 (raster, vector) Use a unique icon for ice cream restaurants.
 (raster, vector) Use a unique icon for Caribbean, Lebanese, dessert, Spanish and African fast food and restaurants.
 (raster, vector) Use a unique icon for donut fast food places.
+(raster, vector) Fix a bug in the way that the "munro" tag was handled in Scotland (to assume prominence where none is given in the data).
 
 ## Vector 07/06/2025, raster as yet unreleased
 (raster, vector) Use a unique icon for British fast food and Regional, Mexican, Greek, French and seafood fast food and restaurants.
