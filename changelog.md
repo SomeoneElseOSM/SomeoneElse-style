@@ -1,13 +1,13 @@
 # Changes made to this rendering
 This page describes changes made in these projects: [SomeoneElse-style](https://github.com/SomeoneElseOSM/SomeoneElse-style), [SomeoneElse-style-legend](https://github.com/SomeoneElseOSM/SomeoneElse-style-legend) and [openstreetmap-carto-AJT](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT), and visible [on this site](//map.atownsend.org.uk/maps/map/map.html).  Since 2025 this also includes changes to lua code shared between raster and vector processing - hence the notes below about which a particular change applies to.  See [this changelog](https://github.com/SomeoneElseOSM/SomeoneElse-vector-extract/blob/main/resources/changelog_sve01.md) for where changes here affect the vector schema, and also other vector-only ones.
 
-## Vector 08/06/2025, raster as yet unreleased
+## Vector 08/06/2025, raster 09/06/2025
 (raster, vector) Use a unique icon for ice cream restaurants.
 (raster, vector) Use a unique icon for Caribbean, Lebanese, dessert, Spanish and African fast food and restaurants.
 (raster, vector) Use a unique icon for donut fast food places.
 (raster, vector) Fix a bug in the way that the "munro" tag was handled in Scotland (to assume prominence where none is given in the data).
 
-## Vector 07/06/2025, raster as yet unreleased
+## Vector 07/06/2025, raster 09/06/2025
 (raster, vector) Use a unique icon for British fast food and Regional, Mexican, Greek, French and seafood fast food and restaurants.
 (raster, vector) Ensure that all restaurants with a non-no `accommodation` values are treated as having accommodation.
 
