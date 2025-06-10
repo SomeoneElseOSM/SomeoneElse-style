@@ -2525,6 +2525,18 @@ function consolidate_lua_03_t( passedt )
          if ( tonumber(passedt.diameter_crown) > 35 ) then
             passedt.diameter_crown = "35"
          end
+
+         if ( tonumber(passedt.diameter_crown) > 30 ) then
+            passedt.natural = "tree_30m"
+         else
+            if ( tonumber(passedt.diameter_crown) > 20 ) then
+               passedt.natural = "tree_20m"
+            else
+               if ( tonumber(passedt.diameter_crown) > 10 ) then
+                  passedt.natural = "tree_10m"
+               end
+            end
+         end
       end
    end
 
