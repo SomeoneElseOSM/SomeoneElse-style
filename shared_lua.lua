@@ -4318,9 +4318,7 @@ function consolidate_lua_03_t( passedt )
         ( passedt.cuisine == "ice_cream;donut"                 )   or
         ( passedt.cuisine == "ice_cream;pizza"                 )   or
         ( passedt.cuisine == "ice_cream;sandwich"              )   or
-        ( passedt.cuisine == "ice_cream;tea;coffee"            )   or
-        ( passedt.cuisine == "frozen_yogurt"                   )   or
-        ( passedt.cuisine == "frozen_yogurt;dessert"           ))  or
+        ( passedt.cuisine == "ice_cream;tea;coffee"            ))  or
        (  passedt.shop    == "ice_cream"                        )  or
        (  passedt.amenity == "ice_cream"                        )) then
       passedt.amenity = "restaurant_ice_cream"
@@ -8787,9 +8785,7 @@ function consolidate_lua_04_t( passedt )
         ( passedt.cuisine == "ice_cream;donut"                 )   or
         ( passedt.cuisine == "ice_cream;pizza"                 )   or
         ( passedt.cuisine == "ice_cream;sandwich"              )   or
-        ( passedt.cuisine == "ice_cream;tea;coffee"            )   or
-        ( passedt.cuisine == "frozen_yogurt"                   )   or
-        ( passedt.cuisine == "frozen_yogurt;dessert"           ))  or
+        ( passedt.cuisine == "ice_cream;tea;coffee"            ))  or
        (  passedt.shop    == "ice_cream"                        )  or
        (  passedt.amenity == "ice_cream"                        )) then
       passedt.amenity = "fast_food_ice_cream"
