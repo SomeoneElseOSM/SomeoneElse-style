@@ -8650,6 +8650,11 @@ function consolidate_lua_04_t( passedt )
       passedt.amenity = "fast_food_african"
    end
 
+   if ( passedt.amenity == "fast_food" ) then
+      passedt.amenity = "fast_food_"
+      append_wheelchair_t( passedt )
+   end
+
 -- ----------------------------------------------------------------------------
 -- Sundials
 -- ----------------------------------------------------------------------------
