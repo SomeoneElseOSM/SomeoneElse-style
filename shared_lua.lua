@@ -4285,65 +4285,13 @@ function consolidate_lua_03_t( passedt )
 -- ----------------------------------------------------------------------------
    if ( passedt.amenity == "cafe" ) then
       if ( passedt.accommodation == "yes" ) then
-         if ( passedt.wheelchair == "yes" ) then
-            if ( passedt.outdoor_seating == "yes" ) then
-               passedt.amenity = "cafe_yyy"
-            else
-               passedt.amenity = "cafe_yyd"
-            end
-         else
-            if ( passedt.wheelchair == "limited" ) then
-               if ( passedt.outdoor_seating == "yes" ) then
-                  passedt.amenity = "cafe_yly"
-               else
-                  passedt.amenity = "cafe_yld"
-               end
-	    else
-	       if ( passedt.wheelchair == "no" ) then
-                  if ( passedt.outdoor_seating == "yes" ) then
-                     passedt.amenity = "cafe_yny"
-                  else
-                     passedt.amenity = "cafe_ynd"
-                  end
-	       else
-                  if ( passedt.outdoor_seating == "yes" ) then
-                     passedt.amenity = "cafe_ydy"
-                  else
-                     passedt.amenity = "cafe_ydd"
-                  end
-	       end
-	    end
-         end
+         passedt.amenity = "cafe_y"
+         append_wheelchair_t( passedt )
+         append_outdoor_seating_t( passedt )
       else
-         if ( passedt.wheelchair == "yes" ) then
-            if ( passedt.outdoor_seating == "yes" ) then
-               passedt.amenity = "cafe_dyy"
-            else
-               passedt.amenity = "cafe_dyd"
-            end
-         else
-            if ( passedt.wheelchair == "limited" ) then
-               if ( passedt.outdoor_seating == "yes" ) then
-                  passedt.amenity = "cafe_dly"
-               else
-                  passedt.amenity = "cafe_dld"
-               end
-	    else
-	       if ( passedt.wheelchair == "no" ) then
-                  if ( passedt.outdoor_seating == "yes" ) then
-                     passedt.amenity = "cafe_dny"
-                  else
-                     passedt.amenity = "cafe_dnd"
-                  end
-               else
-                  if ( passedt.outdoor_seating == "yes" ) then
-                     passedt.amenity = "cafe_ddy"
-                  else
-                     passedt.amenity = "cafe_ddd"
-                  end
-	       end
-	    end
-         end
+         passedt.amenity = "cafe_d"
+         append_wheelchair_t( passedt )
+         append_outdoor_seating_t( passedt )
       end
    end
 
@@ -4352,65 +4300,13 @@ function consolidate_lua_03_t( passedt )
 -- ----------------------------------------------------------------------------
    if ( passedt.amenity == "bar" ) then
       if ( passedt.accommodation == "yes" ) then
-         if ( passedt.wheelchair == "yes" ) then
-            if ( passedt.outdoor_seating == "yes" ) then
-               passedt.amenity = "bar_yyy"
-            else
-               passedt.amenity = "bar_yyd"
-            end
-         else
-            if ( passedt.wheelchair == "limited" ) then
-               if ( passedt.outdoor_seating == "yes" ) then
-                  passedt.amenity = "bar_yly"
-               else
-                  passedt.amenity = "bar_yld"
-               end
-	    else
-	       if ( passedt.wheelchair == "no" ) then
-                  if ( passedt.outdoor_seating == "yes" ) then
-                     passedt.amenity = "bar_yny"
-                  else
-                     passedt.amenity = "bar_ynd"
-                  end
-	       else
-                  if ( passedt.outdoor_seating == "yes" ) then
-                     passedt.amenity = "bar_ydy"
-                  else
-                     passedt.amenity = "bar_ydd"
-                  end
-	       end
-	    end
-         end
+         passedt.amenity = "bar_y"
+         append_wheelchair_t( passedt )
+         append_outdoor_seating_t( passedt )
       else
-         if ( passedt.wheelchair == "yes" ) then
-            if ( passedt.outdoor_seating == "yes" ) then
-               passedt.amenity = "bar_dyy"
-            else
-               passedt.amenity = "bar_dyd"
-            end
-         else
-            if ( passedt.wheelchair == "limited" ) then
-               if ( passedt.outdoor_seating == "yes" ) then
-                  passedt.amenity = "bar_dly"
-               else
-                  passedt.amenity = "bar_dld"
-               end
-	    else
-	       if ( passedt.wheelchair == "no" ) then
-                  if ( passedt.outdoor_seating == "yes" ) then
-                     passedt.amenity = "bar_dny"
-                  else
-                     passedt.amenity = "bar_dnd"
-                  end
-               else
-                  if ( passedt.outdoor_seating == "yes" ) then
-                     passedt.amenity = "bar_ddy"
-                  else
-                     passedt.amenity = "bar_ddd"
-                  end
-	       end
-	    end
-         end
+         passedt.amenity = "bar_d"
+         append_wheelchair_t( passedt )
+         append_outdoor_seating_t( passedt )
       end
    end
 
@@ -11858,6 +11754,17 @@ function append_prow_ref_t( passedt )
        end
     end
 end -- append_prow_ref_t
+
+
+function append_outdoor_seating_t( passedt )
+   if (( passedt.outdoor_seating ~= nil  ) and
+       ( passedt.outdoor_seating ~= ""   ) and
+       ( passedt.outdoor_seating ~= "no" )) then
+      passedt.amenity = passedt.amenity .. "y"
+   else
+      passedt.amenity = passedt.amenity .. "d"
+   end
+end -- append_outdoor_seating_t( passedt )
 
 
 function append_accommodation_t( passedt )
