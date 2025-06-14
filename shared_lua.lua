@@ -4085,6 +4085,11 @@ function consolidate_lua_03_t( passedt )
    end
 
 -- ----------------------------------------------------------------------------
+-- Trim cuisines to suppress any part after a semicolon.
+-- ----------------------------------------------------------------------------
+   passedt.cuisine = trim_after_semicolon( passedt.cuisine )
+
+-- ----------------------------------------------------------------------------
 -- Restaurants with accommodation
 -- ----------------------------------------------------------------------------
    if ((  passedt.amenity       == "restaurant"  )  and
@@ -4102,53 +4107,29 @@ function consolidate_lua_03_t( passedt )
        (( passedt.cuisine == "indian"              )  or
         ( passedt.cuisine == "curry"               )  or
         ( passedt.cuisine == "nepalese"            )  or
-        ( passedt.cuisine == "nepalese;indian"     )  or
-        ( passedt.cuisine == "indian;nepalese"     )  or
         ( passedt.cuisine == "bangladeshi"         )  or
-        ( passedt.cuisine == "indian;bangladeshi"  )  or
-        ( passedt.cuisine == "bangladeshi;indian"  )  or
-        ( passedt.cuisine == "indian;curry"        )  or
-        ( passedt.cuisine == "indian;kebab"        )  or
-        ( passedt.cuisine == "indian;kebab;burger" )  or
-        ( passedt.cuisine == "indian;thai"         )  or
-        ( passedt.cuisine == "curry;indian"        )  or
         ( passedt.cuisine == "pakistani"           )  or
-        ( passedt.cuisine == "indian;pakistani"    )  or
         ( passedt.cuisine == "tandoori"            )  or
         ( passedt.cuisine == "afghan"              )  or
         ( passedt.cuisine == "sri_lankan"          )  or
-        ( passedt.cuisine == "punjabi"             )  or
-        ( passedt.cuisine == "indian;pizza"        ))) then
+        ( passedt.cuisine == "punjabi"             ))) then
       passedt.amenity = "restaurant_indian"
    end
 
    if ((  passedt.amenity == "restaurant"              )  and
        (( passedt.cuisine == "chinese"                )   or
         ( passedt.cuisine == "thai"                   )   or
-        ( passedt.cuisine == "chinese;thai"           )   or
-        ( passedt.cuisine == "chinese;thai;malaysian" )   or
-        ( passedt.cuisine == "thai;chinese"           )   or
         ( passedt.cuisine == "asian"                  )   or
         ( passedt.cuisine == "japanese"               )   or
-        ( passedt.cuisine == "japanese;sushi"         )   or
-        ( passedt.cuisine == "sushi;japanese"         )   or
-        ( passedt.cuisine == "japanese;korean"        )   or
-        ( passedt.cuisine == "korean;japanese"        )   or
-        ( passedt.cuisine == "vietnamese"             )   or
+        ( passedt.cuisine == "sushi"                  )   or
         ( passedt.cuisine == "korean"                 )   or
+        ( passedt.cuisine == "vietnamese"             )   or
         ( passedt.cuisine == "ramen"                  )   or
         ( passedt.cuisine == "noodle"                 )   or
-        ( passedt.cuisine == "noodle;ramen"           )   or
         ( passedt.cuisine == "malaysian"              )   or
-        ( passedt.cuisine == "malaysian;chinese"      )   or
         ( passedt.cuisine == "indonesian"             )   or
         ( passedt.cuisine == "cantonese"              )   or
-        ( passedt.cuisine == "chinese;cantonese"      )   or
-        ( passedt.cuisine == "chinese;asian"          )   or
         ( passedt.cuisine == "oriental"               )   or
-        ( passedt.cuisine == "chinese;english"        )   or
-        ( passedt.cuisine == "chinese;japanese"       )   or
-        ( passedt.cuisine == "sushi"                  )   or
         ( passedt.cuisine == "filipino"               ))) then
       passedt.amenity = "restaurant_chinese"
    end
@@ -4158,35 +4139,16 @@ function consolidate_lua_03_t( passedt )
 -- ----------------------------------------------------------------------------
    if ((  passedt.amenity == "restaurant"                  )  and
        (( passedt.cuisine == "italian"                    )   or
-        ( passedt.cuisine == "italian;pizza"              )   or
         ( passedt.cuisine == "italian_pizza"              )   or
         ( passedt.cuisine == "mediterranean"              )   or
         ( passedt.cuisine == "pasta"                      )   or
-        ( passedt.cuisine == "pizza"                      )   or
-        ( passedt.cuisine == "pizza;burger"               )   or
-        ( passedt.cuisine == "pizza;burger;kebab"         )   or
-        ( passedt.cuisine == "pizza;chicken"              )   or
-        ( passedt.cuisine == "pizza;fish_and_chips"       )   or
-        ( passedt.cuisine == "pizza;indian"               )   or
-        ( passedt.cuisine == "pizza;italian"              )   or
-        ( passedt.cuisine == "pizza;kebab"                )   or
-        ( passedt.cuisine == "pizza;kebab;burger"         )   or
-        ( passedt.cuisine == "pizza;kebab;burger;chicken" )   or
-        ( passedt.cuisine == "pizza;kebab;chicken"        )   or
-        ( passedt.cuisine == "pizza;pasta"                ))) then
+        ( passedt.cuisine == "pizza"                      ))) then
       passedt.amenity = "restaurant_italian"
    end
 
    if ((  passedt.amenity == "restaurant"                         ) and
        (( passedt.cuisine == "fish_and_chips"                    )  or
-        ( passedt.cuisine == "chinese;fish_and_chips"            )  or
         ( passedt.cuisine == "fish"                              )  or
-        ( passedt.cuisine == "fish_and_chips;chinese"            )  or
-        ( passedt.cuisine == "fish_and_chips;indian"             )  or
-        ( passedt.cuisine == "fish_and_chips;kebab"              )  or
-        ( passedt.cuisine == "fish_and_chips;pizza;kebab"        )  or
-        ( passedt.cuisine == "fish_and_chips;pizza;burger;kebab" )  or
-        ( passedt.cuisine == "fish_and_chips;pizza"              )  or
         ( passedt.cuisine == "friture"                           ))) then
       passedt.amenity = "restaurant_fish_and_chips"
    end
@@ -4196,20 +4158,6 @@ function consolidate_lua_03_t( passedt )
         ( passedt.cuisine == "argentinian"                         )   or
         ( passedt.cuisine == "brazilian"                           )   or
         ( passedt.cuisine == "burger"                              )   or
-        ( passedt.cuisine == "burger;chicken"                      )   or
-        ( passedt.cuisine == "burger;chicken;fish_and_chips;kebab" )   or
-        ( passedt.cuisine == "burger;chicken;indian;kebab;pizza"   )   or
-        ( passedt.cuisine == "burger;chicken;kebab"                )   or
-        ( passedt.cuisine == "burger;chicken;kebab;pizza"          )   or
-        ( passedt.cuisine == "burger;chicken;pizza"                )   or
-        ( passedt.cuisine == "burger;fish_and_chips"               )   or
-        ( passedt.cuisine == "burger;fish_and_chips;kebab;pizza"   )   or
-        ( passedt.cuisine == "burger;indian;kebab;pizza"           )   or
-        ( passedt.cuisine == "burger;kebab"                        )   or
-        ( passedt.cuisine == "burger;kebab;pizza"                  )   or
-        ( passedt.cuisine == "burger;pizza"                        )   or
-        ( passedt.cuisine == "burger;pizza;kebab"                  )   or
-        ( passedt.cuisine == "burger;sandwich"                     )   or
         ( passedt.cuisine == "diner"                               )   or
         ( passedt.cuisine == "grill"                               )   or
         ( passedt.cuisine == "steak_house"                         ))) then
@@ -4219,33 +4167,17 @@ function consolidate_lua_03_t( passedt )
    if ((  passedt.amenity == "restaurant"                 )  and
        (( passedt.cuisine == "coffee"                    )   or
         ( passedt.cuisine == "coffee_shop"               )   or
-        ( passedt.cuisine == "coffee_shop;sandwich"      )   or
-        ( passedt.cuisine == "coffee_shop;local"         )   or
-        ( passedt.cuisine == "coffee_shop;regional"      )   or
-        ( passedt.cuisine == "coffee_shop;cake"          )   or
-        ( passedt.cuisine == "coffee_shop;sandwich;cake" )   or
-        ( passedt.cuisine == "coffee_shop;breakfast"     )   or
-        ( passedt.cuisine == "coffee_shop;italian"       )   or
-        ( passedt.cuisine == "cake;coffee_shop"          )   or
-        ( passedt.cuisine == "coffee_shop;ice_cream"     ))) then
+        ( passedt.cuisine == "cake"                      ))) then
       passedt.amenity = "restaurant_coffee"
    end
 
    if ((  passedt.amenity == "restaurant"            )  and
-       (( passedt.cuisine == "sandwich"             )   or
-        ( passedt.cuisine == "sandwich;bakery"      )   or
-        ( passedt.cuisine == "sandwich;coffee_shop" ))) then
+       (( passedt.cuisine == "sandwich"             ))) then
       passedt.amenity = "restaurant_sandwich"
    end
 
    if ((  passedt.amenity == "restaurant"              )  and
        (( passedt.cuisine == "chicken"                )   or
-        ( passedt.cuisine == "chicken;burger;pizza"   )   or
-        ( passedt.cuisine == "chicken;fish_and_chips" )   or
-        ( passedt.cuisine == "chicken;grill"          )   or
-        ( passedt.cuisine == "chicken;kebab"          )   or
-        ( passedt.cuisine == "chicken;pizza"          )   or
-        ( passedt.cuisine == "chicken;portuguese"     )   or
         ( passedt.cuisine == "fried_chicken"          )   or
         ( passedt.cuisine == "wings"                  ))) then
       passedt.amenity = "restaurant_chicken"
@@ -4253,12 +4185,6 @@ function consolidate_lua_03_t( passedt )
 
    if ((  passedt.amenity == "restaurant"            ) and
        (( passedt.cuisine == "kebab"                )  or
-        ( passedt.cuisine == "kebab;pizza"          )  or
-        ( passedt.cuisine == "kebab;pizza;burger"   )  or
-        ( passedt.cuisine == "kebab;burger;pizza"   )  or
-        ( passedt.cuisine == "kebab;burger;chicken" )  or
-        ( passedt.cuisine == "kebab;burger"         )  or
-        ( passedt.cuisine == "kebab;fish_and_chips" )  or
         ( passedt.cuisine == "turkish"              ))) then
       passedt.amenity = "restaurant_kebab"
    end
@@ -4268,57 +4194,39 @@ function consolidate_lua_03_t( passedt )
         ( passedt.cuisine == "english"                )  or
         ( passedt.cuisine == "pie_and_mash"           )  or
         ( passedt.cuisine == "pub"                    )  or
-        ( passedt.cuisine == "british;breakfast"      )  or
-        ( passedt.cuisine == "breakfast;british"      )  or
+        ( passedt.cuisine == "breakfast"              )  or
         ( passedt.cuisine == "modern_british"         ))) then
       passedt.amenity = "restaurant_british"
    end
 
    if ((  passedt.amenity == "restaurant"               ) and
-       (( passedt.cuisine == "regional"                )  or
-        ( passedt.cuisine == "regional;coffee_shop"    )  or
-        ( passedt.cuisine == "regional;burger"         )  or
-        ( passedt.cuisine == "regional;local"          )  or
-        ( passedt.cuisine == "regional;fish"           )  or
-        ( passedt.cuisine == "regional;sandwich"       ))) then
+       (  passedt.cuisine == "regional"                 )) then
       passedt.amenity = "restaurant_regional"
    end
 
-   if ((  passedt.amenity == "restaurant"               ) and
+   if ((  passedt.amenity == "restaurant"              ) and
        (( passedt.cuisine == "mexican"                )  or
         ( passedt.cuisine == "tex-mex"                ))) then
       passedt.amenity = "restaurant_mexican"
    end
 
-   if ((  passedt.amenity == "restaurant"             ) and
-       (( passedt.cuisine == "greek"                )  or
-        ( passedt.cuisine == "greek;mediterranean"  ))) then
+   if ((  passedt.amenity == "restaurant"            ) and
+       (  passedt.cuisine == "greek"                 )) then
       passedt.amenity = "restaurant_greek"
    end
 
    if ((  passedt.amenity == "restaurant"       ) and
-       (( passedt.cuisine == "french"          )  or
-        ( passedt.cuisine == "french;italian"  ))) then
+       (  passedt.cuisine == "french"           )) then
       passedt.amenity = "restaurant_french"
    end
 
    if ((  passedt.amenity == "restaurant"            ) and
-       (( passedt.cuisine == "seafood"              )  or
-        ( passedt.cuisine == "seafood;steak_house"  )  or
-        ( passedt.cuisine == "seafood;regional"     ))) then
+       (  passedt.cuisine == "seafood"               )) then
       passedt.amenity = "restaurant_seafood"
    end
 
-   if ((( passedt.amenity == "restaurant"                       )  and
-        ( passedt.cuisine == "ice_cream"                       )   or
-        ( passedt.cuisine == "ice_cream;cake;coffee"           )   or
-        ( passedt.cuisine == "ice_cream;cake;sandwich"         )   or
-        ( passedt.cuisine == "ice_cream;coffee_shop"           )   or
-        ( passedt.cuisine == "ice_cream;coffee;waffle"         )   or
-        ( passedt.cuisine == "ice_cream;donut"                 )   or
-        ( passedt.cuisine == "ice_cream;pizza"                 )   or
-        ( passedt.cuisine == "ice_cream;sandwich"              )   or
-        ( passedt.cuisine == "ice_cream;tea;coffee"            ))  or
+   if ((( passedt.amenity == "restaurant"                      )   and
+        ( passedt.cuisine == "ice_cream"                       ))  or
        (  passedt.shop    == "ice_cream"                        )  or
        (  passedt.amenity == "ice_cream"                        )) then
       passedt.amenity = "restaurant_ice_cream"
@@ -4327,43 +4235,33 @@ function consolidate_lua_03_t( passedt )
    if ((  passedt.amenity == "restaurant"            ) and
        (( passedt.cuisine == "caribbean"            )  or
         ( passedt.cuisine == "jamaican"             )  or
-        ( passedt.cuisine == "african;caribbean"    )  or
-        ( passedt.cuisine == "caribbean;african"    )  or
-        ( passedt.cuisine == "caribbean;english"    )  or
+        ( passedt.cuisine == "african"              )  or
         ( passedt.cuisine == "afro_caribbean"       )  or
         ( passedt.cuisine == "afro-caribbean"       )  or
-        ( passedt.cuisine == "jamaican;caribbean"   )  or
-        ( passedt.cuisine == "afrocaribbean"        )  or
-        ( passedt.cuisine == "caribbean;jamaican"   ))) then
+        ( passedt.cuisine == "afrocaribbean"        ))) then
       passedt.amenity = "restaurant_caribbean"
    end
 
    if ((  passedt.amenity == "restaurant"              ) and
        (( passedt.cuisine == "lebanese"               )  or
-        ( passedt.cuisine == "syrian"                 )  or
-        ( passedt.cuisine == "lebanese;mediterranean" )  or
-        ( passedt.cuisine == "lebanese;moroccan"      ))) then
+        ( passedt.cuisine == "syrian"                 ))) then
       passedt.amenity = "restaurant_lebanese"
    end
 
    if ((  passedt.amenity == "restaurant"             ) and
        (( passedt.cuisine == "dessert"               )  or
-        ( passedt.cuisine == "frozen_yogurt;dessert" )  or
         ( passedt.cuisine == "frozen_yogurt"         ))) then
       passedt.amenity = "restaurant_dessert"
    end
 
    if ((  passedt.amenity == "restaurant"             ) and
        (( passedt.cuisine == "spanish"               )  or
-        ( passedt.cuisine == "tapas"                 )  or
-        ( passedt.cuisine == "spanish;tapas"         )  or
-        ( passedt.cuisine == "tapas;spanish"         ))) then
+        ( passedt.cuisine == "tapas"                 ))) then
       passedt.amenity = "restaurant_spanish"
    end
 
    if ((  passedt.amenity == "restaurant"             ) and
        (( passedt.cuisine == "african"               )  or
-        ( passedt.cuisine == "african;caribbean"     )  or
         ( passedt.cuisine == "south_african"         )  or
         ( passedt.cuisine == "north_african"         ))) then
       passedt.amenity = "restaurant_african"
@@ -8683,20 +8581,6 @@ function consolidate_lua_04_t( passedt )
         ( passedt.cuisine == "argentinian"                         )   or
         ( passedt.cuisine == "brazilian"                           )   or
         ( passedt.cuisine == "burger"                              )   or
-        ( passedt.cuisine == "burger;chicken"                      )   or
-        ( passedt.cuisine == "burger;chicken;fish_and_chips;kebab" )   or
-        ( passedt.cuisine == "burger;chicken;indian;kebab;pizza"   )   or
-        ( passedt.cuisine == "burger;chicken;kebab"                )   or
-        ( passedt.cuisine == "burger;chicken;kebab;pizza"          )   or
-        ( passedt.cuisine == "burger;chicken;pizza"                )   or
-        ( passedt.cuisine == "burger;fish_and_chips"               )   or
-        ( passedt.cuisine == "burger;fish_and_chips;kebab;pizza"   )   or
-        ( passedt.cuisine == "burger;indian;kebab;pizza"           )   or
-        ( passedt.cuisine == "burger;kebab"                        )   or
-        ( passedt.cuisine == "burger;kebab;pizza"                  )   or
-        ( passedt.cuisine == "burger;pizza"                        )   or
-        ( passedt.cuisine == "burger;pizza;kebab"                  )   or
-        ( passedt.cuisine == "burger;sandwich"                     )   or
         ( passedt.cuisine == "diner"                               )   or
         ( passedt.cuisine == "grill"                               )   or
         ( passedt.cuisine == "steak_house"                         ))) then
@@ -8705,12 +8589,6 @@ function consolidate_lua_04_t( passedt )
 
    if ((  passedt.amenity == "fast_food"               )  and
        (( passedt.cuisine == "chicken"                )   or
-        ( passedt.cuisine == "chicken;burger;pizza"   )   or
-        ( passedt.cuisine == "chicken;fish_and_chips" )   or
-        ( passedt.cuisine == "chicken;grill"          )   or
-        ( passedt.cuisine == "chicken;kebab"          )   or
-        ( passedt.cuisine == "chicken;pizza"          )   or
-        ( passedt.cuisine == "chicken;portuguese"     )   or
         ( passedt.cuisine == "fried_chicken"          )   or
         ( passedt.cuisine == "wings"                  ))) then
       passedt.amenity = "fast_food_chicken"
@@ -8719,30 +8597,17 @@ function consolidate_lua_04_t( passedt )
    if ((  passedt.amenity == "fast_food"               )  and
        (( passedt.cuisine == "chinese"                )   or
         ( passedt.cuisine == "thai"                   )   or
-        ( passedt.cuisine == "chinese;thai"           )   or
-        ( passedt.cuisine == "chinese;thai;malaysian" )   or
-        ( passedt.cuisine == "thai;chinese"           )   or
         ( passedt.cuisine == "asian"                  )   or
         ( passedt.cuisine == "japanese"               )   or
-        ( passedt.cuisine == "japanese;sushi"         )   or
-        ( passedt.cuisine == "sushi;japanese"         )   or
-        ( passedt.cuisine == "japanese;korean"        )   or
-        ( passedt.cuisine == "korean;japanese"        )   or
-        ( passedt.cuisine == "vietnamese"             )   or
+        ( passedt.cuisine == "sushi"                  )   or
         ( passedt.cuisine == "korean"                 )   or
+        ( passedt.cuisine == "vietnamese"             )   or
         ( passedt.cuisine == "ramen"                  )   or
         ( passedt.cuisine == "noodle"                 )   or
-        ( passedt.cuisine == "noodle;ramen"           )   or
         ( passedt.cuisine == "malaysian"              )   or
-        ( passedt.cuisine == "malaysian;chinese"      )   or
         ( passedt.cuisine == "indonesian"             )   or
         ( passedt.cuisine == "cantonese"              )   or
-        ( passedt.cuisine == "chinese;cantonese"      )   or
-        ( passedt.cuisine == "chinese;asian"          )   or
         ( passedt.cuisine == "oriental"               )   or
-        ( passedt.cuisine == "chinese;english"        )   or
-        ( passedt.cuisine == "chinese;japanese"       )   or
-        ( passedt.cuisine == "sushi"                  )   or
         ( passedt.cuisine == "filipino"               ))) then
       passedt.amenity = "fast_food_chinese"
    end
@@ -8750,42 +8615,19 @@ function consolidate_lua_04_t( passedt )
    if ((  passedt.amenity == "fast_food"                  )  and
        (( passedt.cuisine == "coffee"                    )   or
         ( passedt.cuisine == "coffee_shop"               )   or
-        ( passedt.cuisine == "coffee_shop;sandwich"      )   or
-        ( passedt.cuisine == "coffee_shop;local"         )   or
-        ( passedt.cuisine == "coffee_shop;regional"      )   or
-        ( passedt.cuisine == "coffee_shop;cake"          )   or
-        ( passedt.cuisine == "coffee_shop;sandwich;cake" )   or
-        ( passedt.cuisine == "coffee_shop;breakfast"     )   or
-        ( passedt.cuisine == "coffee_shop;italian"       )   or
-        ( passedt.cuisine == "cake;coffee_shop"          )   or
-        ( passedt.cuisine == "coffee_shop;ice_cream"     ))) then
+        ( passedt.cuisine == "cake"                      ))) then
       passedt.amenity = "fast_food_coffee"
    end
 
    if ((  passedt.amenity == "fast_food"                          ) and
        (( passedt.cuisine == "fish_and_chips"                    )  or
-        ( passedt.cuisine == "chinese;fish_and_chips"            )  or
         ( passedt.cuisine == "fish"                              )  or
-        ( passedt.cuisine == "fish_and_chips;chinese"            )  or
-        ( passedt.cuisine == "fish_and_chips;indian"             )  or
-        ( passedt.cuisine == "fish_and_chips;kebab"              )  or
-        ( passedt.cuisine == "fish_and_chips;pizza;kebab"        )  or
-        ( passedt.cuisine == "fish_and_chips;pizza;burger;kebab" )  or
-        ( passedt.cuisine == "fish_and_chips;pizza"              )  or
         ( passedt.cuisine == "friture"                           ))) then
       passedt.amenity = "fast_food_fish_and_chips"
    end
 
-   if ((( passedt.amenity == "fast_food"                        )  and
-        ( passedt.cuisine == "ice_cream"                       )   or
-        ( passedt.cuisine == "ice_cream;cake;coffee"           )   or
-        ( passedt.cuisine == "ice_cream;cake;sandwich"         )   or
-        ( passedt.cuisine == "ice_cream;coffee_shop"           )   or
-        ( passedt.cuisine == "ice_cream;coffee;waffle"         )   or
-        ( passedt.cuisine == "ice_cream;donut"                 )   or
-        ( passedt.cuisine == "ice_cream;pizza"                 )   or
-        ( passedt.cuisine == "ice_cream;sandwich"              )   or
-        ( passedt.cuisine == "ice_cream;tea;coffee"            ))  or
+   if ((( passedt.amenity == "fast_food"                       )   and
+        ( passedt.cuisine == "ice_cream"                       ))  or
        (  passedt.shop    == "ice_cream"                        )  or
        (  passedt.amenity == "ice_cream"                        )) then
       passedt.amenity = "fast_food_ice_cream"
@@ -8798,34 +8640,17 @@ function consolidate_lua_04_t( passedt )
        (( passedt.cuisine == "indian"              )  or
         ( passedt.cuisine == "curry"               )  or
         ( passedt.cuisine == "nepalese"            )  or
-        ( passedt.cuisine == "nepalese;indian"     )  or
-        ( passedt.cuisine == "indian;nepalese"     )  or
         ( passedt.cuisine == "bangladeshi"         )  or
-        ( passedt.cuisine == "indian;bangladeshi"  )  or
-        ( passedt.cuisine == "bangladeshi;indian"  )  or
-        ( passedt.cuisine == "indian;curry"        )  or
-        ( passedt.cuisine == "indian;kebab"        )  or
-        ( passedt.cuisine == "indian;kebab;burger" )  or
-        ( passedt.cuisine == "indian;thai"         )  or
-        ( passedt.cuisine == "curry;indian"        )  or
         ( passedt.cuisine == "pakistani"           )  or
-        ( passedt.cuisine == "indian;pakistani"    )  or
         ( passedt.cuisine == "tandoori"            )  or
         ( passedt.cuisine == "afghan"              )  or
         ( passedt.cuisine == "sri_lankan"          )  or
-        ( passedt.cuisine == "punjabi"             )  or
-        ( passedt.cuisine == "indian;pizza"        ))) then
+        ( passedt.cuisine == "punjabi"             ))) then
       passedt.amenity = "fast_food_indian"
    end
 
    if ((  passedt.amenity == "fast_food"             ) and
        (( passedt.cuisine == "kebab"                )  or
-        ( passedt.cuisine == "kebab;pizza"          )  or
-        ( passedt.cuisine == "kebab;pizza;burger"   )  or
-        ( passedt.cuisine == "kebab;burger;pizza"   )  or
-        ( passedt.cuisine == "kebab;burger;chicken" )  or
-        ( passedt.cuisine == "kebab;burger"         )  or
-        ( passedt.cuisine == "kebab;fish_and_chips" )  or
         ( passedt.cuisine == "turkish"              ))) then
       passedt.amenity = "fast_food_kebab"
    end
@@ -8841,29 +8666,15 @@ function consolidate_lua_04_t( passedt )
 
    if ((  passedt.amenity == "fast_food"                   )  and
        (( passedt.cuisine == "italian"                    )   or
-        ( passedt.cuisine == "italian;pizza"              )   or
         ( passedt.cuisine == "italian_pizza"              )   or
         ( passedt.cuisine == "mediterranean"              )   or
         ( passedt.cuisine == "pasta"                      )   or
-        ( passedt.cuisine == "pizza"                      )   or
-        ( passedt.cuisine == "pizza;burger"               )   or
-        ( passedt.cuisine == "pizza;burger;kebab"         )   or
-        ( passedt.cuisine == "pizza;chicken"              )   or
-        ( passedt.cuisine == "pizza;fish_and_chips"       )   or
-        ( passedt.cuisine == "pizza;indian"               )   or
-        ( passedt.cuisine == "pizza;italian"              )   or
-        ( passedt.cuisine == "pizza;kebab"                )   or
-        ( passedt.cuisine == "pizza;kebab;burger"         )   or
-        ( passedt.cuisine == "pizza;kebab;burger;chicken" )   or
-        ( passedt.cuisine == "pizza;kebab;chicken"        )   or
-        ( passedt.cuisine == "pizza;pasta"                ))) then
+        ( passedt.cuisine == "pizza"                      ))) then
       passedt.amenity = "fast_food_pizza"
    end
 
    if ((  passedt.amenity == "fast_food"             )  and
-       (( passedt.cuisine == "sandwich"             )   or
-        ( passedt.cuisine == "sandwich;bakery"      )   or
-        ( passedt.cuisine == "sandwich;coffee_shop" ))) then
+       (  passedt.cuisine == "sandwich"              )) then
       passedt.amenity = "fast_food_sandwich"
    end
 
@@ -8872,19 +8683,13 @@ function consolidate_lua_04_t( passedt )
         ( passedt.cuisine == "english"                )  or
         ( passedt.cuisine == "pie_and_mash"           )  or
         ( passedt.cuisine == "pub"                    )  or
-        ( passedt.cuisine == "british;breakfast"      )  or
-        ( passedt.cuisine == "breakfast;british"      )  or
+        ( passedt.cuisine == "breakfast"              )  or
         ( passedt.cuisine == "modern_british"         ))) then
       passedt.amenity = "fast_food_british"
    end
 
-   if ((  passedt.amenity == "fast_food"               ) and
-       (( passedt.cuisine == "regional"                )  or
-        ( passedt.cuisine == "regional;coffee_shop"    )  or
-        ( passedt.cuisine == "regional;burger"         )  or
-        ( passedt.cuisine == "regional;local"          )  or
-        ( passedt.cuisine == "regional;fish"           )  or
-        ( passedt.cuisine == "regional;sandwich"       ))) then
+   if ((  passedt.amenity == "fast_food"                ) and
+       (  passedt.cuisine == "regional"                 )) then
       passedt.amenity = "fast_food_regional"
    end
 
@@ -8895,69 +8700,54 @@ function consolidate_lua_04_t( passedt )
    end
 
    if ((  passedt.amenity == "fast_food"             ) and
-       (( passedt.cuisine == "greek"                )  or
-        ( passedt.cuisine == "greek;mediterranean"  ))) then
+       (  passedt.cuisine == "greek"                 )) then
       passedt.amenity = "fast_food_greek"
    end
 
    if ((  passedt.amenity == "fast_food"       ) and
-       (( passedt.cuisine == "french"          )  or
-        ( passedt.cuisine == "french;italian"  ))) then
+       (  passedt.cuisine == "french"          )) then
       passedt.amenity = "fast_food_french"
    end
 
    if ((  passedt.amenity == "fast_food"            ) and
-       (( passedt.cuisine == "seafood"             )  or
-        ( passedt.cuisine == "seafood;steak_house" )  or
-        ( passedt.cuisine == "seafood;regional"    ))) then
+       (  passedt.cuisine == "seafood"              )) then
       passedt.amenity = "fast_food_seafood"
    end
 
    if ((  passedt.amenity == "fast_food"             ) and
        (( passedt.cuisine == "caribbean"            )  or
         ( passedt.cuisine == "jamaican"             )  or
-        ( passedt.cuisine == "caribbean;african"    )  or
-        ( passedt.cuisine == "caribbean;english"    )  or
         ( passedt.cuisine == "afro_caribbean"       )  or
         ( passedt.cuisine == "afro-caribbean"       )  or
-        ( passedt.cuisine == "jamaican;caribbean"   )  or
-        ( passedt.cuisine == "afrocaribbean"        )  or
-        ( passedt.cuisine == "caribbean;jamaican"   ))) then
+        ( passedt.cuisine == "afrocaribbean"        ))) then
       passedt.amenity = "fast_food_caribbean"
    end
 
    if ((  passedt.amenity == "fast_food"               ) and
        (( passedt.cuisine == "lebanese"               )  or
-        ( passedt.cuisine == "syrian"                 )  or
-        ( passedt.cuisine == "lebanese;mediterranean" )  or
-        ( passedt.cuisine == "lebanese;moroccan"      ))) then
+        ( passedt.cuisine == "syrian"                 ))) then
       passedt.amenity = "fast_food_lebanese"
    end
 
    if ((  passedt.amenity == "fast_food"              ) and
        (( passedt.cuisine == "dessert"               )  or
-        ( passedt.cuisine == "frozen_yogurt;dessert" )  or
         ( passedt.cuisine == "frozen_yogurt"         ))) then
       passedt.amenity = "fast_food_dessert"
    end
 
    if ((  passedt.amenity == "fast_food"              ) and
        (( passedt.cuisine == "spanish"               )  or
-        ( passedt.cuisine == "tapas"                 )  or
-        ( passedt.cuisine == "spanish;tapas"         )  or
-        ( passedt.cuisine == "tapas;spanish"         ))) then
+        ( passedt.cuisine == "tapas"                 ))) then
       passedt.amenity = "fast_food_spanish"
    end
 
    if ((  passedt.amenity == "fast_food"            ) and
-       (( passedt.cuisine == "donut"               )  or
-        ( passedt.cuisine == "donut;coffee_shop"   ))) then
+       (  passedt.cuisine == "donut"                )) then
       passedt.amenity = "fast_food_donut"
    end
 
    if ((  passedt.amenity == "fast_food"              ) and
        (( passedt.cuisine == "african"               )  or
-        ( passedt.cuisine == "african;caribbean"     )  or
         ( passedt.cuisine == "south_african"         )  or
         ( passedt.cuisine == "north_african"         ))) then
       passedt.amenity = "fast_food_african"
