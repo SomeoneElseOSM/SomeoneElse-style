@@ -6,6 +6,7 @@ This page describes changes made in these projects: [SomeoneElse-style](https://
 (raster) Move the rendering of `amenity=place_of_worship` from `buildings-lz` to `buildings`, so that non-building places of worship are not shown as buildings.
 (raster, vector) Fix bug where `frozen_yogurt` was assigned incorrectly to both `dessert` and `ice_cream`.
 (raster, vector) Trim cuisine values before the first semicolon, so that more semicolon combination combinations are handled.
+(raster) Reorder `fast_food` legend so that it is in the same logical order as `restaurant` - highest combinations of `fast_food` and `cuisine` first, then ordered by `cuisine` frequency in UK/IE.
 
 ## 12/06/2025
 (raster) Change raster tree sizes to match vector - larger overall, and larger trees are shown larger.
