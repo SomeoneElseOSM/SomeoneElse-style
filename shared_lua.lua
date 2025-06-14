@@ -8472,22 +8472,12 @@ function consolidate_lua_04_t( passedt )
       passedt.amenity = "fast_food"
    end
 
-   if ((  passedt.amenity == "fast_food"                            )  and
-       (( passedt.cuisine == "american"                            )   or
-        ( passedt.cuisine == "argentinian"                         )   or
-        ( passedt.cuisine == "brazilian"                           )   or
-        ( passedt.cuisine == "burger"                              )   or
-        ( passedt.cuisine == "diner"                               )   or
-        ( passedt.cuisine == "grill"                               )   or
-        ( passedt.cuisine == "steak_house"                         ))) then
-      passedt.amenity = "fast_food_burger"
-   end
-
-   if ((  passedt.amenity == "fast_food"               )  and
-       (( passedt.cuisine == "chicken"                )   or
-        ( passedt.cuisine == "fried_chicken"          )   or
-        ( passedt.cuisine == "wings"                  ))) then
-      passedt.amenity = "fast_food_chicken"
+   if ((  passedt.amenity == "fast_food"                          ) and
+       (( passedt.cuisine == "fish_and_chips"                    )  or
+        ( passedt.cuisine == "fish"                              )  or
+        ( passedt.cuisine == "friture"                           ))) then
+      passedt.amenity = "fast_food_fish_and_chips_"
+      append_wheelchair_t( passedt )
    end
 
    if ((  passedt.amenity == "fast_food"               )  and
@@ -8509,19 +8499,39 @@ function consolidate_lua_04_t( passedt )
       append_wheelchair_t( passedt )
    end
 
+   if ((  passedt.amenity == "fast_food"                   )  and
+       (( passedt.cuisine == "italian"                    )   or
+        ( passedt.cuisine == "italian_pizza"              )   or
+        ( passedt.cuisine == "mediterranean"              )   or
+        ( passedt.cuisine == "pasta"                      )   or
+        ( passedt.cuisine == "pizza"                      ))) then
+      passedt.amenity = "fast_food_pizza_"
+      append_wheelchair_t( passedt )
+   end
+
+   if ((  passedt.amenity == "fast_food"                            )  and
+       (( passedt.cuisine == "american"                            )   or
+        ( passedt.cuisine == "argentinian"                         )   or
+        ( passedt.cuisine == "brazilian"                           )   or
+        ( passedt.cuisine == "burger"                              )   or
+        ( passedt.cuisine == "diner"                               )   or
+        ( passedt.cuisine == "grill"                               )   or
+        ( passedt.cuisine == "steak_house"                         ))) then
+      passedt.amenity = "fast_food_burger"
+   end
+
+   if ((  passedt.amenity == "fast_food"               )  and
+       (( passedt.cuisine == "chicken"                )   or
+        ( passedt.cuisine == "fried_chicken"          )   or
+        ( passedt.cuisine == "wings"                  ))) then
+      passedt.amenity = "fast_food_chicken"
+   end
+
    if ((  passedt.amenity == "fast_food"                  )  and
        (( passedt.cuisine == "coffee"                    )   or
         ( passedt.cuisine == "coffee_shop"               )   or
         ( passedt.cuisine == "cake"                      ))) then
       passedt.amenity = "fast_food_coffee"
-   end
-
-   if ((  passedt.amenity == "fast_food"                          ) and
-       (( passedt.cuisine == "fish_and_chips"                    )  or
-        ( passedt.cuisine == "fish"                              )  or
-        ( passedt.cuisine == "friture"                           ))) then
-      passedt.amenity = "fast_food_fish_and_chips_"
-      append_wheelchair_t( passedt )
    end
 
    if ((( passedt.amenity == "fast_food"                       )   and
@@ -8560,15 +8570,6 @@ function consolidate_lua_04_t( passedt )
         ( passedt.cuisine == "pie"           )   or
         ( passedt.cuisine == "pies"          ))) then
       passedt.amenity = "fast_food_pie"
-   end
-
-   if ((  passedt.amenity == "fast_food"                   )  and
-       (( passedt.cuisine == "italian"                    )   or
-        ( passedt.cuisine == "italian_pizza"              )   or
-        ( passedt.cuisine == "mediterranean"              )   or
-        ( passedt.cuisine == "pasta"                      )   or
-        ( passedt.cuisine == "pizza"                      ))) then
-      passedt.amenity = "fast_food_pizza"
    end
 
    if ((  passedt.amenity == "fast_food"             )  and
