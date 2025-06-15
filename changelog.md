@@ -7,7 +7,7 @@ This page describes changes made in these projects: [SomeoneElse-style](https://
 (raster, vector) Fix bug where `frozen_yogurt` was assigned incorrectly to both `dessert` and `ice_cream`.
 (raster, vector) Trim cuisine values before the first semicolon, so that more semicolon combination combinations are handled.
 (raster) Reorder `fast_food` legend so that it is in the same logical order as `restaurant` - highest combinations of `fast_food` and `cuisine` first, then ordered by `cuisine` frequency in UK/IE.
-(raster, vector) Show `wheelchair` flash on `amenity=fast_food` with no `cuisine`, and `cuisine=fish_and_chips`, `chinese` and `pizza`.
+(raster, vector) Show `wheelchair` flash on `amenity=fast_food` with no `cuisine`, and `cuisine=fish_and_chips`, `chinese`, `pizza`, `sandwich`.
 
 ## 12/06/2025
 (raster) Change raster tree sizes to match vector - larger overall, and larger trees are shown larger.
