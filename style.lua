@@ -836,7 +836,6 @@ function filter_tags_way (keyvalues, nokeys)
        ( keyvalues["barrier"] == "steps"           ) or
        ( keyvalues["barrier"] == "step"            ) or
        ( keyvalues["barrier"] == "hoarding"        ) or
-       ( keyvalues["barrier"] == "hand_rail_fence" ) or
        ( keyvalues["barrier"] == "horse_stile"     ) or
        ( keyvalues["barrier"] == "chain"           ) or
        ( keyvalues["barrier"] == "stile"           ) or
