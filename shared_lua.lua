@@ -4268,6 +4268,11 @@ function consolidate_lua_03_t( passedt )
       passedt.amenity = "restaurant_african"
    end
 
+   if ( passedt.amenity == "restaurant" ) then
+      passedt.amenity = "restaurant_"
+      append_wheelchair_t( passedt )
+   end
+
 -- ----------------------------------------------------------------------------
 -- "cafe" - consolidation of lesser used tags
 -- ----------------------------------------------------------------------------
