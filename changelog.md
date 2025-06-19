@@ -1,13 +1,13 @@
 # Changes made to this rendering
 This page describes changes made in these projects: [SomeoneElse-style](https://github.com/SomeoneElseOSM/SomeoneElse-style), [SomeoneElse-style-legend](https://github.com/SomeoneElseOSM/SomeoneElse-style-legend) and [openstreetmap-carto-AJT](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT), and visible [on this site](//map.atownsend.org.uk/maps/map/map.html).  Since 2025 this also includes changes to lua code shared between raster and vector processing - hence the notes below about which a particular change applies to.  See [this changelog](https://github.com/SomeoneElseOSM/SomeoneElse-vector-extract/blob/main/resources/changelog_sve01.md) for where changes here affect the vector schema, and also other vector-only ones.
 
-## As yet unreleased
+## 19/06/2025
 (raster) Add different tree sizes to raster legend.
 (raster) Move the rendering of `amenity=place_of_worship` from `buildings-lz` to `buildings`, so that non-building places of worship are not shown as buildings.
 (raster, vector) Fix bug where `frozen_yogurt` was assigned incorrectly to both `dessert` and `ice_cream`.
 (raster, vector) Trim cuisine values before the first semicolon, so that more semicolon combination combinations are handled.
 (raster) Reorder `fast_food` legend so that it is in the same logical order as `restaurant` - highest combinations of `fast_food` and `cuisine` first, then ordered by `cuisine` frequency in UK/IE.
-(raster, vector) Show `wheelchair` flash on `amenity=fast_food` with no `cuisine`, and `cuisine=fish_and_chips`, `chinese`, `pizza`, `sandwich`, `burger`, `chicken`.
+(raster, vector) Show `wheelchair` flash on `amenity=fast_food` with no `cuisine`, and `cuisine=fish_and_chips`, `chinese`, `pizza`, `sandwich`, `burger`, `chicken`, `indian`.
 (raster, vector) Removed `barrier=hand_rail_fence`.  No longer in the data.
 
 ## 12/06/2025
