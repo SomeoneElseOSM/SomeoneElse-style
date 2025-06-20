@@ -4173,7 +4173,8 @@ function consolidate_lua_03_t( passedt )
        (( passedt.cuisine == "coffee"                    )   or
         ( passedt.cuisine == "coffee_shop"               )   or
         ( passedt.cuisine == "cake"                      ))) then
-      passedt.amenity = "restaurant_coffee"
+      passedt.amenity = "restaurant_coffee_"
+      append_wheelchair_t( passedt )
    end
 
    if ((  passedt.amenity == "restaurant"            )  and
