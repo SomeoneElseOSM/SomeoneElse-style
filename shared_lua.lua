@@ -4323,6 +4323,14 @@ function consolidate_lua_03_t( passedt )
    end
 
 -- ----------------------------------------------------------------------------
+-- Indian cafes
+-- ----------------------------------------------------------------------------
+   if (( passedt.amenity == "cafe"       ) and
+       ( passedt.cuisine == "indian"     )) then
+      passedt.amenity = "cafe_indian"
+   end
+
+-- ----------------------------------------------------------------------------
 -- Cafes with accommodation, without, and with wheelchair tags or without
 -- ----------------------------------------------------------------------------
    if ( passedt.amenity == "cafe" ) then
