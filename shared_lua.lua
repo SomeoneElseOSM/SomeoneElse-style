@@ -4149,7 +4149,12 @@ function consolidate_lua_03_t( passedt )
       append_wheelchair_t( passedt )
    end
 
-   if ((  passedt.amenity == "restaurant"                         ) and
+-- ----------------------------------------------------------------------------
+-- Places where you sit down and eat fish and chips are handled 
+-- as amenity=restaurant_fish_and_chips
+-- ----------------------------------------------------------------------------
+   if ((( passedt.amenity == "restaurant"                        )  or
+        ( passedt.amenity == "cafe"                              )) and
        (( passedt.cuisine == "fish_and_chips"                    )  or
         ( passedt.cuisine == "fish"                              )  or
         ( passedt.cuisine == "friture"                           ))) then
@@ -4239,10 +4244,15 @@ function consolidate_lua_03_t( passedt )
       append_wheelchair_t( passedt )
    end
 
-   if ((( passedt.amenity == "restaurant"                      )   and
-        ( passedt.cuisine == "ice_cream"                       ))  or
-       (  passedt.shop    == "ice_cream"                        )  or
-       (  passedt.amenity == "ice_cream"                        )) then
+-- ----------------------------------------------------------------------------
+-- Places where you sit down and eat ice cream are handled 
+-- as amenity=restaurant_ice_cream
+-- ----------------------------------------------------------------------------
+   if (((( passedt.amenity == "restaurant"                     )    or
+         ( passedt.amenity == "cafe"                           ))   and
+        (  passedt.cuisine == "ice_cream"                       ))  or
+       (   passedt.shop    == "ice_cream"                        )  or
+       (   passedt.amenity == "ice_cream"                        )) then
       passedt.amenity = "restaurant_ice_cream"
    end
 
@@ -4262,9 +4272,14 @@ function consolidate_lua_03_t( passedt )
       passedt.amenity = "restaurant_lebanese"
    end
 
-   if ((  passedt.amenity == "restaurant"             ) and
-       (( passedt.cuisine == "dessert"               )  or
-        ( passedt.cuisine == "frozen_yogurt"         ))) then
+-- ----------------------------------------------------------------------------
+-- Places where you sit down and eat desserts are handled 
+-- as amenity=restaurant_dessert
+-- ----------------------------------------------------------------------------
+   if (((  passedt.amenity == "restaurant"            )  or
+        (  passedt.amenity == "cafe"                  )) and
+       ((  passedt.cuisine == "dessert"               )  or
+        (  passedt.cuisine == "frozen_yogurt"         ))) then
       passedt.amenity = "restaurant_dessert"
    end
 
@@ -4297,6 +4312,14 @@ function consolidate_lua_03_t( passedt )
        ( passedt.shop == "sandwich"   )) then
       passedt.amenity = "cafe"
       passedt.cuisine = "sandwich"
+   end
+
+-- ----------------------------------------------------------------------------
+-- Bubble Tea has its own icon
+-- ----------------------------------------------------------------------------
+   if (( passedt.amenity == "cafe"       ) and
+       ( passedt.cuisine == "bubble_tea" )) then
+      passedt.amenity = "bubble_tea"
    end
 
 -- ----------------------------------------------------------------------------
