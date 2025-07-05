@@ -6539,9 +6539,9 @@ function consolidate_lua_03_t( passedt )
          ( passedt.waterway   ~= ""  )))) then
       if (( passedt.name == nil ) or
           ( passedt.name == ""  )) then
-         passedt.name = "{" .. passedt.bridge_ref .. ")"
+         passedt.name = "(" .. passedt.bridge_ref .. ")"
       else
-         passedt.name = passedt.name .. " {" .. passedt.bridge_ref .. ")"
+         passedt.name = passedt.name .. " (" .. passedt.bridge_ref .. ")"
       end
 
       passedt.bridge_ref = nil

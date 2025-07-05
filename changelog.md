@@ -10,6 +10,7 @@ This page describes changes made in these projects: [SomeoneElse-style](https://
 (raster, vector) Show noncommercial art galleries with a unique museum-like icon.
 (raster, vector) Handle more semicolon values.  Apart from some special cases, shops with semicolon values just use the first part.
 (raster) Show access=no and access=destination on roads shown as unpaved (no change needed to vector - that was already OK)
+(raster, vector) Change squiggly brackets at the start of appended bridge refs to round brackets.
 
 ## 03/07/2025
 (raster, vector) Show `wheelchair` flash on `amenity=fast_food` with `cuisine=kebab`, `cuisine=mexican` and synonyms.
