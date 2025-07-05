@@ -8,7 +8,7 @@ This page describes changes made in these projects: [SomeoneElse-style](https://
 (raster, vector) Removed `LPG=yes`.  No longer in the data.
 (raster, vector) Include galleries with artworks in former telephone box uses.
 (raster, vector) Show noncommercial art galleries with a unique museum-like icon.
-(raster, vector) Handle more semicolon values.
+(raster, vector) Handle more semicolon values.  Apart from some special cases, shops with semicolon values just use the first part.
 
 ## 03/07/2025
 (raster, vector) Show `wheelchair` flash on `amenity=fast_food` with `cuisine=kebab`, `cuisine=mexican` and synonyms.

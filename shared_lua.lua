@@ -2389,10 +2389,208 @@ function consolidate_lua_03_t( passedt )
    end
 
 -- ----------------------------------------------------------------------------
+-- Before trimming "shop" values down to what is before the semicolon, use
+-- some full values to make assignments.
+--
+-- Timpson and similar shops.
+-- Timpson is brand:wikidata=Q7807658, but all of those are name=Timpson.
+-- ----------------------------------------------------------------------------
+   if (( passedt.shop    == "shoe_repair"                        ) or
+       ( passedt.shop    == "keys"                               ) or
+       ( passedt.shop    == "key"                                ) or
+       ( passedt.shop    == "cobblers"                           ) or
+       ( passedt.shop    == "cobbler"                            ) or
+       ( passedt.shop    == "key_cutting"                        ) or
+       ( passedt.shop    == "key_cutting;shoe_repair"            ) or
+       ( passedt.shop    == "shoe_repair;key_cutting"            ) or
+       ( passedt.shop    == "locksmith;dry_cleaning;shoe_repair" ) or
+       ( passedt.craft   == "key_cutter"                         ) or
+       ( passedt.shop    == "key_cutter"                         ) or
+       ( passedt.craft   == "shoe_repair"                        ) or
+       ( passedt.craft   == "key_cutter;shoe_repair"             ) or
+       ( passedt.craft   == "shoemaker;key_cutter"               )) then
+      passedt.landuse = "unnamedcommercial"
+      passedt.shop    = "shoe_repair_etc"
+   end
+
+-- ----------------------------------------------------------------------------
+-- "jewellery" consolidation.  "jewelry" is in the database, until recently
+-- "jewellery" was too.  The style handles "jewellery", hence the change here.
+-- ----------------------------------------------------------------------------
+   if (( passedt.shop  == "jewelry"                 ) or
+       ( passedt.shop  == "jewelry;pawnbroker"      ) or
+       ( passedt.shop  == "yes;jewelry;e-cigarette" ) or
+       ( passedt.shop  == "jewelry;sunglasses"      ) or
+       ( passedt.shop  == "yes;jewelry"             ) or
+       ( passedt.shop  == "jewelry;art;crafts"      ) or
+       ( passedt.shop  == "jewelry;fabric"          ) or
+       ( passedt.shop  == "watch"                   ) or
+       ( passedt.shop  == "watches"                 ) or
+       ( passedt.craft == "jeweller"                ) or
+       ( passedt.craft == "jewellery_repair"        ) or
+       ( passedt.craft == "engraver"                )) then
+      passedt.shop  = "jewellery"
+      passedt.craft = nil
+   end
+
+   if (( passedt.shop    == "nursery"                    ) or
+       ( passedt.shop    == "lawn_mower"                 ) or
+       ( passedt.shop    == "lawnmowers"                 ) or
+       ( passedt.shop    == "garden_furniture"           ) or
+       ( passedt.shop    == "hot_tub"                    ) or
+       ( passedt.shop    == "garden_machinery"           ) or
+       ( passedt.shop    == "gardening"                  ) or
+       ( passedt.shop    == "garden_equipment"           ) or
+       ( passedt.shop    == "garden_tools"               ) or
+       ( passedt.shop    == "garden"                     ) or
+       ( passedt.shop    == "doityourself;garden_centre" ) or
+       ( passedt.shop    == "garden_machines"            ) or
+       ( passedt.shop    == "groundskeeping"             ) or
+       ( passedt.shop    == "plants"                     ) or
+       ( passedt.shop    == "garden_centre;interior_decoration;pet;toys" )) then
+      passedt.landuse = "unnamedcommercial"
+      passedt.shop    = "garden_centre"
+   end
+
+-- ----------------------------------------------------------------------------
+-- Some vending machines get the thing sold as the label.
+-- "farm shop honesty box" might have been assigned higher up.
+-- ----------------------------------------------------------------------------
+   if ((  passedt.amenity == "vending_machine"        ) and
+       (( passedt.name    == nil                     )  or
+        ( passedt.name    == ""                      )) and
+       (( passedt.vending == "milk"                  )  or
+        ( passedt.vending == "eggs"                  )  or
+        ( passedt.vending == "potatoes"              )  or
+        ( passedt.vending == "honey"                 )  or
+        ( passedt.vending == "cheese"                )  or
+        ( passedt.vending == "vegetables"            )  or
+        ( passedt.vending == "fruit"                 )  or
+        ( passedt.vending == "food"                  )  or
+        ( passedt.vending == "photos"                )  or
+        ( passedt.vending == "maps"                  )  or
+        ( passedt.vending == "newspapers"            )  or
+        ( passedt.vending == "farm shop honesty box" ))) then
+      passedt.name = "(" .. passedt.vending .. ")"
+   end
+
+-- ----------------------------------------------------------------------------
+-- Various single food item and other food shops
+-- Unnamed egg honesty boxes have been dealt with above.
+-- ----------------------------------------------------------------------------
+   if (( passedt.shop    == "cake"            ) or
+       ( passedt.shop    == "chocolate"       ) or
+       ( passedt.shop    == "milk"            ) or
+       ( passedt.shop    == "cheese"          ) or
+       ( passedt.shop    == "cheese;wine"     ) or
+       ( passedt.shop    == "wine;cheese"     ) or
+       ( passedt.shop    == "dairy"           ) or
+       ( passedt.shop    == "eggs"            ) or
+       ( passedt.shop    == "honey"           ) or
+       ( passedt.shop    == "catering"        ) or
+       ( passedt.shop    == "fishmonger"      ) or
+       ( passedt.shop    == "spices"          ) or
+       ( passedt.shop    == "nuts"            ) or
+       ( passedt.shop    == "patisserie"      )) then
+      passedt.shop = "shopnonspecific"
+   end
+
+-- ----------------------------------------------------------------------------
+-- Car parts
+-- ----------------------------------------------------------------------------
+   if ((( passedt.shop    == "trade"                       )  and
+        ( passedt.trade   == "car_parts"                   )) or
+       (  passedt.shop    == "car_accessories"              )  or
+       (  passedt.shop    == "tyres"                        )  or
+       (  passedt.shop    == "automotive"                   )  or
+       (  passedt.shop    == "battery"                      )  or
+       (  passedt.shop    == "batteries"                    )  or
+       (  passedt.shop    == "number_plate"                 )  or
+       (  passedt.shop    == "number_plates"                )  or
+       (  passedt.shop    == "license_plates"               )  or
+       (  passedt.shop    == "car_audio"                    )  or
+       (  passedt.shop    == "motor"                        )  or
+       (  passedt.shop    == "motor_spares"                 )  or
+       (  passedt.shop    == "motor_accessories"            )  or
+       (  passedt.shop    == "car_parts;car_repair"         )  or
+       (  passedt.shop    == "bicycle;car_parts"            )  or
+       (  passedt.shop    == "car_parts;bicycle"            )) then
+      passedt.shop = "car_parts"
+   end
+
+-- ----------------------------------------------------------------------------
+-- Tattoo
+-- ----------------------------------------------------------------------------
+   if (( passedt.shop    == "piercing"                ) or
+       ( passedt.shop    == "tattoo;piercing"         ) or
+       ( passedt.shop    == "piercing;tattoo"         ) or
+       ( passedt.shop    == "body_piercing"           ) or
+       ( passedt.shop    == "yes;piercing"            ) or
+       ( passedt.shop    == "piercings"               )) then
+      passedt.shop = "tattoo"
+   end
+
+-- ----------------------------------------------------------------------------
+-- Other "homeware-like" shops.  These get the furniture icon.
+-- Some are a bit of a stretch.
+-- Add unnamedcommercial landuse to give non-building areas a background.
+-- ----------------------------------------------------------------------------
+   if (( passedt.shop   == "upholsterer"                 ) or
+       ( passedt.shop   == "chair"                       ) or
+       ( passedt.shop   == "luggage"                     ) or
+       ( passedt.shop   == "clock"                       ) or
+       ( passedt.shop   == "clocks"                      ) or
+       ( passedt.shop   == "home_improvement"            ) or
+       ( passedt.shop   == "decorating"                  ) or
+       ( passedt.shop   == "bed;carpet"                  ) or
+       ( passedt.shop   == "country_store"               ) or
+       ( passedt.shop   == "equestrian"                  ) or
+       ( passedt.shop   == "kitchen"                     ) or
+       ( passedt.shop   == "bedroom"                     ) or
+       ( passedt.shop   == "bathroom"                    ) or
+       ( passedt.shop   == "glaziery"                    ) or
+       ( passedt.craft  == "glaziery"                    ) or
+       ( passedt.shop   == "glazier"                     ) or
+       ( passedt.shop   == "glazing"                     ) or
+       ( passedt.shop   == "stone"                       ) or
+       ( passedt.shop   == "brewing"                     ) or
+       ( passedt.shop   == "brewing_supplies"            ) or
+       ( passedt.shop   == "gates"                       ) or
+       ( passedt.shop   == "sheds"                       ) or
+       ( passedt.shop   == "shed"                        ) or
+       ( passedt.shop   == "ironmonger"                  ) or
+       ( passedt.shop   == "furnace"                     ) or
+       ( passedt.shop   == "plumbing"                    ) or
+       ( passedt.shop   == "plumbing_supplies"           ) or
+       ( passedt.craft  == "plumber"                     ) or
+       ( passedt.craft  == "carpenter"                   ) or
+       ( passedt.shop   == "carpenter"                   ) or
+       ( passedt.craft  == "decorator"                   ) or
+       ( passedt.shop   == "bed"                         ) or
+       ( passedt.shop   == "mattress"                    ) or
+       ( passedt.shop   == "waterbed"                    ) or
+       ( passedt.shop   == "glass"                       ) or
+       ( passedt.shop   == "garage"                      ) or
+       ( passedt.shop   == "conservatory"                ) or
+       ( passedt.shop   == "conservatories"              ) or
+       ( passedt.shop   == "bathrooms"                   ) or
+       ( passedt.shop   == "swimming_pool"               ) or
+       ( passedt.shop   == "fitted_furniture"            ) or
+       ( passedt.shop   == "upholstery"                  ) or
+       ( passedt.shop   == "saddlery"                    )) then
+      passedt.landuse = "unnamedcommercial"
+      passedt.shop = "furniture"
+   end
+
+-- ----------------------------------------------------------------------------
+-- Trim shops to suppress any part after a semicolon.
+-- ----------------------------------------------------------------------------
+   passedt.shop = trim_after_semicolon( passedt.shop )
+
+-- ----------------------------------------------------------------------------
 -- Mappings to shop=car
 -- ----------------------------------------------------------------------------
-   if (( passedt.shop    == "car;car_repair"  )  or
-       ( passedt.shop    == "car_showroom"    )  or
+   if (( passedt.shop    == "car_showroom"    )  or
        ( passedt.shop    == "vehicle"         )) then
       passedt.shop = "car"
    end
@@ -2414,8 +2612,6 @@ function consolidate_lua_03_t( passedt )
        ( passedt.shop    == "car_bodyshop"       )  or
        ( passedt.shop    == "vehicle_inspection" )  or
        ( passedt.shop    == "mechanic"           )  or
-       ( passedt.shop    == "car_repair;car"     )  or
-       ( passedt.shop    == "car_repair;tyres"   )  or
        ( passedt.shop    == "vehicle_repair"     )) then
       passedt.shop    = "car_repair"
       passedt.amenity = nil
@@ -4565,28 +4761,6 @@ function consolidate_lua_03_t( passedt )
       passedt.amenity = "vending_machine"
       passedt.vending = passedt.shop
       passedt.shop    = nil
-   end
-
--- ----------------------------------------------------------------------------
--- Some vending machines get the thing sold as the label.
--- "farm shop honesty box" might have been assigned higher up.
--- ----------------------------------------------------------------------------
-   if ((  passedt.amenity == "vending_machine"        ) and
-       (( passedt.name    == nil                     )  or
-        ( passedt.name    == ""                      )) and
-       (( passedt.vending == "milk"                  )  or
-        ( passedt.vending == "eggs"                  )  or
-        ( passedt.vending == "potatoes"              )  or
-        ( passedt.vending == "honey"                 )  or
-        ( passedt.vending == "cheese"                )  or
-        ( passedt.vending == "vegetables"            )  or
-        ( passedt.vending == "fruit"                 )  or
-        ( passedt.vending == "food"                  )  or
-        ( passedt.vending == "photos"                )  or
-        ( passedt.vending == "maps"                  )  or
-        ( passedt.vending == "newspapers"            )  or
-        ( passedt.vending == "farm shop honesty box" ))) then
-      passedt.name = "(" .. passedt.vending .. ")"
    end
 
 -- ----------------------------------------------------------------------------
@@ -7257,15 +7431,6 @@ function consolidate_lua_03_t( passedt )
       passedt.amenity = "bar"
    end
 
-   if (( passedt.shop == "butcher;greengrocer" ) or
-       ( passedt.shop == "butcher;deli"        )) then
-      passedt.shop = "butcher"
-   end
-
-   if ( passedt.shop == "greengrocer;florist" ) then
-      passedt.shop = "greengrocer"
-   end
-
 -- ----------------------------------------------------------------------------
 -- Things that are both peaks and memorials should render as the latter.
 -- ----------------------------------------------------------------------------
@@ -8091,11 +8256,7 @@ function consolidate_lua_04_t( passedt )
        ( passedt.shop   == "food"                    ) or
        ( passedt.shop   == "grocery"                 ) or
        ( passedt.shop   == "grocer"                  ) or
-       ( passedt.shop   == "frozen_food"             ) or
-       ( passedt.shop   == "convenience;alcohol"     ) or
-       ( passedt.shop   == "convenience;e-cigarette" ) or
-       ( passedt.shop   == "convenience;newsagent  " ) or
-       ( passedt.shop   == "newsagent;alcohol"       )) then
+       ( passedt.shop   == "frozen_food"             )) then
       passedt.shop = "convenience"
    end
 
@@ -8227,26 +8388,6 @@ function consolidate_lua_04_t( passedt )
        ( passedt.amenity == "funeral_directors"   ) or
        ( passedt.amenity == "undertaker"          )) then
       passedt.shop = "funeral_directors"
-   end
-
--- ----------------------------------------------------------------------------
--- "jewellery" consolidation.  "jewelry" is in the database, until recently
--- "jewellery" was too.  The style handles "jewellery", hence the change here.
--- ----------------------------------------------------------------------------
-   if (( passedt.shop  == "jewelry"                 ) or
-       ( passedt.shop  == "jewelry;pawnbroker"      ) or
-       ( passedt.shop  == "yes;jewelry;e-cigarette" ) or
-       ( passedt.shop  == "jewelry;sunglasses"      ) or
-       ( passedt.shop  == "yes;jewelry"             ) or
-       ( passedt.shop  == "jewelry;art;crafts"      ) or
-       ( passedt.shop  == "jewelry;fabric"          ) or
-       ( passedt.shop  == "watch"                   ) or
-       ( passedt.shop  == "watches"                 ) or
-       ( passedt.craft == "jeweller"                ) or
-       ( passedt.craft == "jewellery_repair"        ) or
-       ( passedt.craft == "engraver"                )) then
-      passedt.shop  = "jewellery"
-      passedt.craft = nil
    end
 
 -- ----------------------------------------------------------------------------
@@ -8588,25 +8729,6 @@ function consolidate_lua_04_t( passedt )
       passedt.shop    = "garden_centre"
    end
 
-   if (( passedt.shop    == "nursery"                    ) or
-       ( passedt.shop    == "lawn_mower"                 ) or
-       ( passedt.shop    == "lawnmowers"                 ) or
-       ( passedt.shop    == "garden_furniture"           ) or
-       ( passedt.shop    == "hot_tub"                    ) or
-       ( passedt.shop    == "garden_machinery"           ) or
-       ( passedt.shop    == "gardening"                  ) or
-       ( passedt.shop    == "garden_equipment"           ) or
-       ( passedt.shop    == "garden_tools"               ) or
-       ( passedt.shop    == "garden"                     ) or
-       ( passedt.shop    == "doityourself;garden_centre" ) or
-       ( passedt.shop    == "garden_machines"            ) or
-       ( passedt.shop    == "groundskeeping"             ) or
-       ( passedt.shop    == "plants"                     ) or
-       ( passedt.shop    == "garden_centre;interior_decoration;pet;toys" )) then
-      passedt.landuse = "unnamedcommercial"
-      passedt.shop    = "garden_centre"
-   end
-
 -- ----------------------------------------------------------------------------
 -- "fast_food" consolidation of lesser used tags.  
 -- Also render fish and chips etc. with a unique icon.
@@ -8888,9 +9010,7 @@ function consolidate_lua_04_t( passedt )
 -- ----------------------------------------------------------------------------
 -- hairdresser;beauty
 -- ----------------------------------------------------------------------------
-   if (( passedt.shop == "hairdresser;beauty"      ) or
-       ( passedt.shop == "barber"                  ) or
-       ( passedt.shop == "hairdresser;e-cigarette" )) then
+   if ( passedt.shop == "barber" ) then
       passedt.shop = "hairdresser"
    end
 
@@ -8912,11 +9032,7 @@ function consolidate_lua_04_t( passedt )
 -- e-cigarette
 -- ----------------------------------------------------------------------------
    if (( passedt.shop   == "vaping"                            ) or
-       ( passedt.shop   == "vape_shop"                         ) or
-       ( passedt.shop   == "e-cigarette;beverages"             ) or
-       ( passedt.shop   == "e-cigarette;computer;mobile_phone" ) or
-       ( passedt.shop   == "e-cigarette;convenience"           ) or
-       ( passedt.shop   == "e-cigarette;mobile_phone"          )) then
+       ( passedt.shop   == "vape_shop"                         )) then
       passedt.shop = "e-cigarette"
    end
 
@@ -8962,8 +9078,7 @@ function consolidate_lua_04_t( passedt )
        ( passedt.shop         == "tan"                ) or
        ( passedt.shop         == "suntan"             ) or
        ( passedt.leisure      == "tanning_salon"      ) or
-       ( passedt.shop         == "health_and_beauty"  ) or
-       ( passedt.shop         == "beauty;hairdresser" )) then
+       ( passedt.shop         == "health_and_beauty"  )) then
       passedt.shop = "beauty"
    end
 
@@ -9012,8 +9127,7 @@ function consolidate_lua_04_t( passedt )
        ( passedt.shop   == "phone_repair"             ) or
        ( passedt.shop   == "telephone"                ) or
        ( passedt.shop   == "mobile_phone_repair"      ) or
-       ( passedt.shop   == "mobile_phone_accessories" ) or
-       ( passedt.shop   == "mobile_phone;e-cigarette" )) then
+       ( passedt.shop   == "mobile_phone_accessories" )) then
       passedt.shop = "mobile_phone"
    end
 
@@ -9107,7 +9221,6 @@ function consolidate_lua_04_t( passedt )
        ( passedt.shop   == "homewares"                   ) or
        ( passedt.shop   == "home"                        ) or
        ( passedt.shop   == "carpet"                      ) or
-       ( passedt.shop   == "carpet;bed"                  ) or
        ( passedt.shop   == "rugs"                        ) or
        ( passedt.shop   == "interior_decoration"         ) or
        ( passedt.shop   == "household"                   ) or
@@ -9138,7 +9251,6 @@ function consolidate_lua_04_t( passedt )
        ( passedt.shop   == "picture_framing"             ) or
        ( passedt.shop   == "picture_framer"              ) or
        ( passedt.craft  == "framing"                     ) or
-       ( passedt.shop   == "frame;restoration"           ) or
        ( passedt.shop   == "bedding"                     ) or
        ( passedt.shop   == "cookware"                    ) or
        ( passedt.shop   == "glassware"                   ) or
@@ -9147,64 +9259,9 @@ function consolidate_lua_04_t( passedt )
        ( passedt.shop   == "catering_equipment"          ) or
        ( passedt.craft  == "upholsterer"                 ) or
        ( passedt.shop   == "doors"                       ) or
-       ( passedt.shop   == "doors;glaziery"              ) or
        ( passedt.shop   == "mirrors"                     )) then
       passedt.landuse = "unnamedcommercial"
       passedt.shop = "homeware"
-   end
-
--- ----------------------------------------------------------------------------
--- Other "homeware-like" shops.  These get the furniture icon.
--- Some are a bit of a stretch.
--- Add unnamedcommercial landuse to give non-building areas a background.
--- ----------------------------------------------------------------------------
-   if (( passedt.shop   == "upholsterer"                 ) or
-       ( passedt.shop   == "chair"                       ) or
-       ( passedt.shop   == "luggage"                     ) or
-       ( passedt.shop   == "clock"                       ) or
-       ( passedt.shop   == "clocks"                      ) or
-       ( passedt.shop   == "home_improvement"            ) or
-       ( passedt.shop   == "decorating"                  ) or
-       ( passedt.shop   == "bed;carpet"                  ) or
-       ( passedt.shop   == "country_store"               ) or
-       ( passedt.shop   == "equestrian"                  ) or
-       ( passedt.shop   == "kitchen"                     ) or
-       ( passedt.shop   == "kitchen;bathroom"            ) or
-       ( passedt.shop   == "kitchen;bathroom_furnishing" ) or
-       ( passedt.shop   == "bedroom"                     ) or
-       ( passedt.shop   == "bathroom"                    ) or
-       ( passedt.shop   == "glaziery"                    ) or
-       ( passedt.craft  == "glaziery"                    ) or
-       ( passedt.shop   == "glazier"                     ) or
-       ( passedt.shop   == "glazing"                     ) or
-       ( passedt.shop   == "stone"                       ) or
-       ( passedt.shop   == "brewing"                     ) or
-       ( passedt.shop   == "brewing_supplies"            ) or
-       ( passedt.shop   == "gates"                       ) or
-       ( passedt.shop   == "sheds"                       ) or
-       ( passedt.shop   == "shed"                        ) or
-       ( passedt.shop   == "ironmonger"                  ) or
-       ( passedt.shop   == "furnace"                     ) or
-       ( passedt.shop   == "plumbing"                    ) or
-       ( passedt.shop   == "plumbing_supplies"           ) or
-       ( passedt.craft  == "plumber"                     ) or
-       ( passedt.craft  == "carpenter"                   ) or
-       ( passedt.shop   == "carpenter"                   ) or
-       ( passedt.craft  == "decorator"                   ) or
-       ( passedt.shop   == "bed"                         ) or
-       ( passedt.shop   == "mattress"                    ) or
-       ( passedt.shop   == "waterbed"                    ) or
-       ( passedt.shop   == "glass"                       ) or
-       ( passedt.shop   == "garage"                      ) or
-       ( passedt.shop   == "conservatory"                ) or
-       ( passedt.shop   == "conservatories"              ) or
-       ( passedt.shop   == "bathrooms"                   ) or
-       ( passedt.shop   == "swimming_pool"               ) or
-       ( passedt.shop   == "fitted_furniture"            ) or
-       ( passedt.shop   == "upholstery"                  ) or
-       ( passedt.shop   == "saddlery"                    )) then
-      passedt.landuse = "unnamedcommercial"
-      passedt.shop = "furniture"
    end
 
 -- ----------------------------------------------------------------------------
@@ -9233,27 +9290,6 @@ function consolidate_lua_04_t( passedt )
 -- Difficult to do an icon for.
 -- ----------------------------------------------------------------------------
    if ( passedt.shop    == "printer_ink" ) then
-      passedt.shop = "shopnonspecific"
-   end
-
--- ----------------------------------------------------------------------------
--- Various single food item and other food shops
--- Unnamed egg honesty boxes have been dealt with above.
--- ----------------------------------------------------------------------------
-   if (( passedt.shop    == "cake"            ) or
-       ( passedt.shop    == "chocolate"       ) or
-       ( passedt.shop    == "milk"            ) or
-       ( passedt.shop    == "cheese"          ) or
-       ( passedt.shop    == "cheese;wine"     ) or
-       ( passedt.shop    == "wine;cheese"     ) or
-       ( passedt.shop    == "dairy"           ) or
-       ( passedt.shop    == "eggs"            ) or
-       ( passedt.shop    == "honey"           ) or
-       ( passedt.shop    == "catering"        ) or
-       ( passedt.shop    == "fishmonger"      ) or
-       ( passedt.shop    == "spices"          ) or
-       ( passedt.shop    == "nuts"            ) or
-       ( passedt.shop    == "patisserie"      )) then
       passedt.shop = "shopnonspecific"
    end
 
@@ -9335,8 +9371,7 @@ function consolidate_lua_04_t( passedt )
    if (( passedt.shop   == "comics"          ) or
        ( passedt.shop   == "comic"           ) or
        ( passedt.shop   == "anime"           ) or
-       ( passedt.shop   == "maps"            ) or
-       ( passedt.shop   == "books;music"     )) then
+       ( passedt.shop   == "maps"            )) then
       passedt.shop = "books"
    end
 
@@ -9362,7 +9397,6 @@ function consolidate_lua_04_t( passedt )
    if (( passedt.shop   == "craft"          ) or
        ( passedt.shop   == "art_supplies"   ) or
        ( passedt.shop   == "pottery"        ) or
-       ( passedt.shop   == "art;frame"      ) or
        ( passedt.craft  == "artist"         ) or
        ( passedt.craft  == "pottery"        ) or
        ( passedt.craft  == "sculptor"       )) then
@@ -9384,11 +9418,9 @@ function consolidate_lua_04_t( passedt )
 -- dog grooming).
 -- Add unnamedcommercial landuse to give non-building areas a background.
 -- ----------------------------------------------------------------------------
-   if (( passedt.shop    == "pet;garden"              ) or
-       ( passedt.shop    == "aquatic"                 ) or
+   if (( passedt.shop    == "aquatic"                 ) or
        ( passedt.shop    == "aquatics"                ) or
-       ( passedt.shop    == "aquarium"                ) or
-       ( passedt.shop    == "pet;corn"                )) then
+       ( passedt.shop    == "aquarium"                )) then
       passedt.landuse = "unnamedcommercial"
       passedt.shop = "pet"
    end
@@ -9451,29 +9483,6 @@ function consolidate_lua_04_t( passedt )
    end
 
 -- ----------------------------------------------------------------------------
--- Car parts
--- ----------------------------------------------------------------------------
-   if ((( passedt.shop    == "trade"                       )  and
-        ( passedt.trade   == "car_parts"                   )) or
-       (  passedt.shop    == "car_accessories"              )  or
-       (  passedt.shop    == "tyres"                        )  or
-       (  passedt.shop    == "automotive"                   )  or
-       (  passedt.shop    == "battery"                      )  or
-       (  passedt.shop    == "batteries"                    )  or
-       (  passedt.shop    == "number_plate"                 )  or
-       (  passedt.shop    == "number_plates"                )  or
-       (  passedt.shop    == "license_plates"               )  or
-       (  passedt.shop    == "car_audio"                    )  or
-       (  passedt.shop    == "motor"                        )  or
-       (  passedt.shop    == "motor_spares"                 )  or
-       (  passedt.shop    == "motor_accessories"            )  or
-       (  passedt.shop    == "car_parts;car_repair"         )  or
-       (  passedt.shop    == "bicycle;car_parts"            )  or
-       (  passedt.shop    == "car_parts;bicycle"            )) then
-      passedt.shop = "car_parts"
-   end
-
--- ----------------------------------------------------------------------------
 -- Shopmobility
 -- Note that "shop=mobility" is something that _sells_ mobility aids, and is
 -- handled as shop=nonspecific for now.
@@ -9499,8 +9508,7 @@ function consolidate_lua_04_t( passedt )
 -- ----------------------------------------------------------------------------
 -- Music
 -- ----------------------------------------------------------------------------
-   if (( passedt.shop    == "music;video"             ) or
-       ( passedt.shop    == "records"                 ) or
+   if (( passedt.shop    == "records"                 ) or
        ( passedt.shop    == "record"                  )) then
       passedt.shop = "music"
    end
@@ -9514,18 +9522,6 @@ function consolidate_lua_04_t( passedt )
        ( passedt.shop    == "atv"                          ) or
        ( passedt.shop    == "scooter"                      )) then
       passedt.shop = "motorcycle"
-   end
-
--- ----------------------------------------------------------------------------
--- Tattoo
--- ----------------------------------------------------------------------------
-   if (( passedt.shop    == "piercing"                ) or
-       ( passedt.shop    == "tattoo;piercing"         ) or
-       ( passedt.shop    == "piercing;tattoo"         ) or
-       ( passedt.shop    == "body_piercing"           ) or
-       ( passedt.shop    == "yes;piercing"            ) or
-       ( passedt.shop    == "piercings"               )) then
-      passedt.shop = "tattoo"
    end
 
 -- ----------------------------------------------------------------------------
@@ -9613,28 +9609,6 @@ function consolidate_lua_04_t( passedt )
    end
 
 -- ----------------------------------------------------------------------------
--- Timpson and similar shops.
--- Timpson is brand:wikidata=Q7807658, but all of those are name=Timpson.
--- ----------------------------------------------------------------------------
-   if (( passedt.shop    == "shoe_repair"                        ) or
-       ( passedt.shop    == "keys"                               ) or
-       ( passedt.shop    == "key"                                ) or
-       ( passedt.shop    == "cobblers"                           ) or
-       ( passedt.shop    == "cobbler"                            ) or
-       ( passedt.shop    == "key_cutting"                        ) or
-       ( passedt.shop    == "key_cutting;shoe_repair"            ) or
-       ( passedt.shop    == "shoe_repair;key_cutting"            ) or
-       ( passedt.shop    == "locksmith;dry_cleaning;shoe_repair" ) or
-       ( passedt.craft   == "key_cutter"                         ) or
-       ( passedt.shop    == "key_cutter"                         ) or
-       ( passedt.craft   == "shoe_repair"                        ) or
-       ( passedt.craft   == "key_cutter;shoe_repair"             ) or
-       ( passedt.craft   == "shoemaker;key_cutter"               )) then
-      passedt.landuse = "unnamedcommercial"
-      passedt.shop    = "shoe_repair_etc"
-   end
-
--- ----------------------------------------------------------------------------
 -- Taxi offices
 -- ----------------------------------------------------------------------------
    if (( passedt.shop    == "taxi"                    ) or
@@ -9667,7 +9641,6 @@ function consolidate_lua_04_t( passedt )
        ( passedt.shop    == "greeting_cards"          ) or
        ( passedt.shop    == "greetings_cards"         ) or
        ( passedt.shop    == "greetings"               ) or
-       ( passedt.shop    == "card;gift"               ) or
        ( passedt.craft   == "cobbler"                 ) or
        ( passedt.craft   == "shoemaker"               ) or
        ( passedt.shop    == "shoemaker"               ) or
@@ -9680,7 +9653,6 @@ function consolidate_lua_04_t( passedt )
        ( passedt.shop    == "erotic"                  ) or
        ( passedt.shop    == "service"                 ) or
        ( passedt.shop    == "tobacco"                 ) or
-       ( passedt.shop    == "tobacco;e-cigarette"     ) or
        ( passedt.shop    == "tobacconist"             ) or
        ( passedt.shop    == "ticket"                  ) or
        ( passedt.shop    == "insurance"               ) or
@@ -9732,9 +9704,7 @@ function consolidate_lua_04_t( passedt )
    end
 
    if (( passedt.shop    == "launderette"             ) or
-       ( passedt.shop    == "dry_cleaning"            ) or
-       ( passedt.shop    == "dry_cleaning;laundry"    ) or
-       ( passedt.shop    == "laundry;dry_cleaning"    )) then
+       ( passedt.shop    == "dry_cleaning"            )) then
       passedt.landuse = "unnamedcommercial"
       passedt.shop = "laundry"
    end
