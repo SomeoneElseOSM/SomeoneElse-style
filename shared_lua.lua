@@ -1498,8 +1498,7 @@ function consolidate_lua_03_t( passedt )
    end
 
    if ((  passedt.amenity     == "fuel"  ) and
-       (( passedt.LPG         == "yes"  )  or
-        ( passedt.fuel        == "lpg"  )  or
+       (( passedt.fuel        == "lpg"  )  or
         ( passedt["fuel:lpg"] == "yes"  ))) then
       passedt.amenity = "fuel_l"
    end
@@ -6758,7 +6757,7 @@ function consolidate_lua_03_t( passedt )
         ( passedt.crossing == "pegasus"                      )  or
         ( passedt.crossing == "traffic_signals;island"       )  or
         ( passedt.crossing == "traffic_lights"               )  or
-        ( passedt.crossing == "pelican;traffic_lights"       )  or
+        ( passedt.crossing == "pelican;traffic_signals"      )  or
         ( passedt.crossing == "signals"                      )  or
         ( passedt.crossing == "traffic_signals;uncontrolled" )  or
         ( passedt.crossing == "pelican;uncontrolled"         )  or

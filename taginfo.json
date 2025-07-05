@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20250705T004901Z",
+  "data_updated": "20250705T101501Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -10,8 +10,6 @@
     "contact_email": "SomeoneElse-style-taginfo@atownsend.org.uk"
   },
   "tags": [
-    { "key": "LPG", "description": "Detect non-standard tagging of LPG fuel stations" },
-    { "key": "LPG", "value": "yes", "description": "Detect non-standard tagging of LPG fuel stations" },
     { "key": "abandoned", "description": "Obscure tagging used to say if a canal has been abandoned" },
     { "key": "abandoned", "value": "waterway=canal", "description": "Obscure tagging used to say if a canal has been abandoned" },
     { "key": "abandoned:amenity", "description": "Obscure tagging used for former pubs and telephones" },
@@ -857,11 +855,11 @@
     { "key": "crossing", "value": "island;traffic_signals", "description": "Treated as 'highway=traffic_signals'" },
     { "key": "crossing", "value": "light controlled", "description": "Treated as 'highway=traffic_signals'" },
     { "key": "crossing", "value": "marked", "description": "Treated as 'highway=crossing'" },
-    { "key": "crossing", "value": "marked;controlled", "description": "Treated as 'highway=crossing'" },
+    { "key": "crossing", "value": "marked;uncontrolled", "description": "Treated as 'highway=crossing'" },
     { "key": "crossing", "value": "pedestrian_signals", "description": "Treated as 'highway=traffic_signals'" },
     { "key": "crossing", "value": "pegasus", "description": "Treated as 'highway=traffic_signals'" },
     { "key": "crossing", "value": "pelican", "description": "Treated as 'highway=traffic_signals'" },
-    { "key": "crossing", "value": "pelican;traffic_lights", "description": "Treated as 'highway=traffic_signals'" },
+    { "key": "crossing", "value": "pelican;traffic_signals", "description": "Treated as 'highway=traffic_signals'" },
     { "key": "crossing", "value": "pelican;uncontrolled", "description": "Treated as 'highway=traffic_signals'" },
     { "key": "crossing", "value": "pelican;marked", "description": "Treated as 'highway=traffic_signals'" },
     { "key": "crossing", "value": "puffin", "description": "Treated as 'highway=traffic_signals'" },
