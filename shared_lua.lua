@@ -2311,7 +2311,8 @@ function consolidate_lua_03_t( passedt )
                         passedt["disused:amenity"] = nil
                         passedt.tourism = nil
                      else
-                        if ( passedt.tourism == "artwork" ) then
+                        if (( passedt.tourism == "artwork" )  or
+                            ( passedt.tourism == "gallery" )) then
                            passedt.amenity = "boothartwork"
                            passedt["disused:amenity"] = nil
                            passedt.tourism = nil
@@ -2320,7 +2321,7 @@ function consolidate_lua_03_t( passedt )
                               passedt.amenity = "boothmuseum"
                               passedt["disused:amenity"] = nil
                               passedt.tourism = nil
-		  	   else
+                           else
                               if (( passedt["disused:amenity"]    == "telephone"        )  or
                                   ( passedt["removed:amenity"]    == "telephone"        )  or
                                   ( passedt["abandoned:amenity"]  == "telephone"        )  or
@@ -5567,7 +5568,7 @@ function consolidate_lua_03_t( passedt )
       passedt.man_made = nil
       passedt.tourism  = nil
    end
-   
+
 -- ----------------------------------------------------------------------------
 -- Things that are both towers and monuments or memorials 
 -- should render as the latter.
@@ -5578,9 +5579,15 @@ function consolidate_lua_03_t( passedt )
       passedt.man_made = nil
    end
 
-   if ((( passedt.tourism == "gallery"     )   or
-        ( passedt.tourism == "museum"      ))  and
-       (  passedt.amenity == "arts_centre"  )) then
+-- ----------------------------------------------------------------------------
+-- There are a few galleries that are also other amenities.
+-- Mostly the other amenity wins out, with these exceptions.
+-- ----------------------------------------------------------------------------
+   if ((( passedt.tourism == "gallery"      )   or
+        ( passedt.tourism == "museum"       ))  and
+       (( passedt.amenity == "arts_centre"  )   or
+        ( passedt.amenity == "art_gallery"  )   or
+        ( passedt.amenity == "gallery"      ))) then
       passedt.amenity = nil
    end
 
@@ -9627,6 +9634,9 @@ function consolidate_lua_04_t( passedt )
 -- name (e.g. the various card shops), they're difficult to do an icon for
 -- or they're rare.
 --
+-- "commercial" galleries (shop=gallery, amenity=gallery, amenity=art_gallery)
+-- are here, but "tourism=gallery" is sent through unchanged.
+--
 -- Add unnamedcommercial landuse to give non-building areas a background.
 -- ----------------------------------------------------------------------------
    if (( passedt.shop    == "card"                    ) or
@@ -9653,7 +9663,6 @@ function consolidate_lua_04_t( passedt )
        ( passedt.shop    == "ticket"                  ) or
        ( passedt.shop    == "insurance"               ) or
        ( passedt.shop    == "gallery"                 ) or
-       ( passedt.tourism == "gallery"                 ) or
        ( passedt.amenity == "gallery"                 ) or
        ( passedt.amenity == "art_gallery"             ) or
        ( passedt.shop    == "plumber"                 ) or
