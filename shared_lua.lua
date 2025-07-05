@@ -6732,22 +6732,88 @@ function consolidate_lua_03_t( passedt )
    end
 
 -- ----------------------------------------------------------------------------
+-- Some crossings aren't mapped as highways, so we look at the "crossing" tag.
+-- However, first remove disused and proposed crossings.
+-- ----------------------------------------------------------------------------
+   if ((( passedt["disused:railway"]  ~= nil )  and
+        ( passedt["disused:railway"]  ~= ""  )) or
+       (( passedt["disused:highway"]  ~= nil )  and
+        ( passedt["disused:highway"]  ~= ""  )) or
+       (( passedt["proposed:railway"] ~= nil )  and
+        ( passedt["proposed:railway"] ~= ""  )) or
+       (( passedt["proposed:highway"] ~= nil )  and
+        ( passedt["proposed:highway"] ~= ""  ))) then
+      passedt.crossing = nil
+   end
+
+-- ----------------------------------------------------------------------------
 -- Various types of traffic light controlled crossings
 -- ----------------------------------------------------------------------------
-   if ((( passedt.crossing == "traffic_signals"         )  or
-        ( passedt.crossing == "toucan"                  )  or
-        ( passedt.crossing == "puffin"                  )  or
-        ( passedt.crossing == "traffic_signals;island"  )  or
-        ( passedt.crossing == "traffic_lights"          )  or
-        ( passedt.crossing == "island;traffic_signals"  )  or
-        ( passedt.crossing == "signals"                 )  or
-        ( passedt.crossing == "pegasus"                 )  or
-        ( passedt.crossing == "pedestrian_signals"      )  or
-        ( passedt.crossing == "light controlled"        )) and
-       (( passedt.highway  == nil                       )  or
-        ( passedt.highway  == ""                        ))) then
+   if ((( passedt.crossing == "traffic_signals"              )  or
+        ( passedt.crossing == "pedestrian_signals"           )  or
+        ( passedt.crossing == "toucan"                       )  or
+        ( passedt.crossing == "pelican"                      )  or
+        ( passedt.crossing == "traffic_signals;marked"       )  or
+        ( passedt.crossing == "puffin"                       )  or
+        ( passedt.crossing == "pegasus"                      )  or
+        ( passedt.crossing == "traffic_signals;island"       )  or
+        ( passedt.crossing == "traffic_lights"               )  or
+        ( passedt.crossing == "pelican;traffic_lights"       )  or
+        ( passedt.crossing == "signals"                      )  or
+        ( passedt.crossing == "traffic_signals;uncontrolled" )  or
+        ( passedt.crossing == "pelican;uncontrolled"         )  or
+        ( passedt.crossing == "pelican;marked"               )  or
+        ( passedt.crossing == "traffic_signals;unmarked"     )  or
+        ( passedt["crossing:signals"] == "yes"               )  or
+        ( passedt.crossing_ref == "pegasus"                  )  or
+        ( passedt.crossing_ref == "toucan"                   )  or
+        ( passedt.crossing_ref == "pelican"                  )  or
+        ( passedt.crossing_ref == "puffin"                   )) and
+       (( passedt.highway  == nil                            )  or
+        ( passedt.highway  == ""                             ))) then
       passedt.highway = "traffic_signals"
       passedt.crossing = nil
+   end
+
+-- ----------------------------------------------------------------------------
+-- Which crossing values should be shown and which not?
+-- ----------------------------------------------------------------------------
+   if ((  passedt.crossing ~= nil         )  and
+       (  passedt.crossing ~= ""          )  and
+       (( passedt.highway  == nil        )   or
+        ( passedt.highway  == ""         )   or
+        ( passedt.highway  == "crossing" ))) then
+-- ----------------------------------------------------------------------------
+-- Crossing values that we should show as crossings
+-- ----------------------------------------------------------------------------
+      if (( passedt.crossing == "zebra"               )  or
+          ( passedt.crossing == "marked"              )  or
+          ( passedt.crossing == "island"              )  or
+          ( passedt.crossing == "controlled"          )  or
+          ( passedt.crossing == "marked;uncontrolled" )  or
+          ( passedt.crossing == "uncontrolled;marked" )  or
+          ( passedt.crossing == "traffic_island"      )  or
+          ( passedt.crossing == "zebra;marked"        )  or
+          ( passedt.crossing == "uncontrolled;zebra"  )  or
+          ( passedt.crossing == "zebra;island"        )) then
+         passedt.highway = "crossing"
+      else
+-- ----------------------------------------------------------------------------
+-- Other values with crossings that we should show as crossings
+-- ----------------------------------------------------------------------------
+         if (( passedt["crossing:island"]   == "yes"     ) or
+             ( passedt.crossing_ref         == "zebra"   ) or
+             ( passedt["crossing:markings"] == "yes"     ) or
+             ( passedt["crossing:markings"] == "zebra"   ) or
+             ( passedt["crossing:markings"] == "lines"   )) then
+            passedt.highway = "crossing"
+         else
+-- ----------------------------------------------------------------------------
+-- Other values (including informal ones) should not be shown as crossings
+-- ----------------------------------------------------------------------------
+            passedt.highway = nil
+         end
+      end
    end
 
 -- ----------------------------------------------------------------------------

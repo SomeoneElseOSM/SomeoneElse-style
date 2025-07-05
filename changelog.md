@@ -4,6 +4,7 @@ This page describes changes made in these projects: [SomeoneElse-style](https://
 ## As yet unreleased
 (raster, vector) Replace main `cafe` icon with a line-drawn one that looks much nicer.
 (raster, vector) Use a distinctive icon for cafes with `cuisine=bubble_tea` and `cuisine=indian`, and use restaurant icons for e.g. `fish_and_chips`.
+(raster, vector) Process various crossing tags to decide if a crossing should be shown.
 
 ## 03/07/2025
 (raster, vector) Show `wheelchair` flash on `amenity=fast_food` with `cuisine=kebab`, `cuisine=mexican` and synonyms.
