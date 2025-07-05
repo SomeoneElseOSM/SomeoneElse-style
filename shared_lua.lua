@@ -3360,6 +3360,14 @@ function consolidate_lua_03_t( passedt )
    end
 
 -- ----------------------------------------------------------------------------
+-- Treat a "pub;restaurant" as a pub that serves food.
+-- ----------------------------------------------------------------------------
+   if ( passedt.amenity == "pub;restaurant" ) then
+      passedt.amenity = "pub"
+      passedt.food    = "yes"
+   end
+
+-- ----------------------------------------------------------------------------
 -- Things that are both hotels, B&Bs etc. and pubs should render as pubs, 
 -- because I'm far more likely to be looking for the latter than the former.
 -- This is done by removing the tourism tag for them.
@@ -7405,18 +7413,30 @@ function consolidate_lua_03_t( passedt )
    end
 
 -- ----------------------------------------------------------------------------
--- Assume "natural=hedge" should be "barrier=hedge".
+-- Wall variations
 -- ----------------------------------------------------------------------------
-   if ( passedt.natural == "hedge" ) then
+   if ( passedt.barrier == "wall;fence" ) then
+      passedt.barrier = "wall"
+   end
+
+-- ----------------------------------------------------------------------------
+-- Hedge variations
+-- Assume "natural=hedge" should be "barrier=hedge".
+-- map "fences that are really hedges" as hedges.
+-- ----------------------------------------------------------------------------
+   if ((  passedt.natural    == "hedge"        ) or
+       (  passedt.barrier    == "hedge;fence"  ) or
+       (( passedt.barrier    == "fence"       )  and
+        ( passedt.fence_type == "hedge"       ))) then
       passedt.barrier = "hedge"
    end
 
 -- ----------------------------------------------------------------------------
--- map "fences that are really hedges" as fences.
+-- Fence variations
 -- ----------------------------------------------------------------------------
-   if (( passedt.barrier    == "fence" ) and
-       ( passedt.fence_type == "hedge" )) then
-      passedt.barrier = "hedge"
+   if (( passedt.barrier == "fence;wall"  )  or
+       ( passedt.barrier == "fence;hedge" )) then
+      passedt.barrier = "fence"
    end
 
 -- ----------------------------------------------------------------------------
@@ -7506,6 +7526,7 @@ function consolidate_lua_03_t( passedt )
        ( passedt.barrier   == "pengates"              )  or
        ( passedt.barrier   == "gate;stile"            )  or
        ( passedt.barrier   == "cattle_grid;gate"      )  or
+       ( passedt.barrier   == "cycle_barrier;gate"    )  or
        ( passedt.barrier   == "gate;kissing_gate"     )  or
        ( passedt.barrier   == "pull_apart_gate"       )  or
        ( passedt.barrier   == "snow_gate"             )) then
@@ -9607,7 +9628,8 @@ function consolidate_lua_04_t( passedt )
        ( passedt.craft   == "key_cutter"                         ) or
        ( passedt.shop    == "key_cutter"                         ) or
        ( passedt.craft   == "shoe_repair"                        ) or
-       ( passedt.craft   == "key_cutter;shoe_repair"             )) then
+       ( passedt.craft   == "key_cutter;shoe_repair"             ) or
+       ( passedt.craft   == "shoemaker;key_cutter"               )) then
       passedt.landuse = "unnamedcommercial"
       passedt.shop    = "shoe_repair_etc"
    end
@@ -11286,6 +11308,7 @@ function consolidate_lua_04_t( passedt )
         ( passedt.building                      == ""                             )) and
        (( passedt.departures_board              == "realtime"                     ) or
         ( passedt.departures_board              == "timetable; realtime"          ) or
+        ( passedt.departures_board              == "realtime; timetable"          ) or
         ( passedt.departures_board              == "realtime;timetable"           ) or
         ( passedt.departures_board              == "timetable;realtime"           ) or
         ( passedt.departures_board              == "realtime_multiline"           ) or
