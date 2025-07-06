@@ -505,6 +505,30 @@ function consolidate_lua_01_t( passedt )
    end
 
 -- ----------------------------------------------------------------------------
+-- Core path numbers in Scotland are often stored in "ref" as "Core Path XXX"
+-- rather than as prow_ref as elsewhere.
+--
+-- For a highway with a ref, if designation and prow_ref are unset, and
+-- if the ref starts with "Core Path", then set the designation to "core_path"
+-- and set prow_ref.
+-- 
+-- This lifts the path out of e.g. the low visibility check below.
+-- ----------------------------------------------------------------------------
+    if ((  passedt.ref         ~= nil                      ) and
+        (  passedt.highway     ~= nil                      ) and
+        (  passedt.highway     ~= ""                       ) and
+        (( passedt.designation == nil                     )  or
+         ( passedt.designation == ""                      )  or
+         ( passedt.designation == "core_path"             )) and
+        (( passedt.prow_ref    == nil                     )  or
+         ( passedt.prow_ref    == ""                      )) and
+        (  string.find( passedt.ref, "Core Path", 1, true ))) then
+        passedt.designation = "core_path"
+        passedt.prow_ref = passedt.ref
+        passedt.ref = nil
+    end
+
+-- ----------------------------------------------------------------------------
 -- Suppress non-designated very low-visibility paths
 -- Various low-visibility trail_visibility values have been set to "bad" above
 -- to suppress from normal display.
