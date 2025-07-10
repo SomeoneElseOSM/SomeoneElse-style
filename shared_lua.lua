@@ -8448,6 +8448,18 @@ function consolidate_lua_04_t( passedt )
    end
 
 -- ----------------------------------------------------------------------------
+-- Brands are sometimes used as something like "sells:brand", so suppress
+-- any brands with a semicolon in them.
+-- ----------------------------------------------------------------------------
+   if ( passedt.brand  ~= nil ) then
+      commapos = string.find( passedt.brand, ";", 1, true )
+
+      if ( commapos ~= nil ) then
+        passedt.brand = nil
+      end
+   end
+
+-- ----------------------------------------------------------------------------
 -- We're going to do some brand and operator tidying below, but first, tidy 
 -- some errant names.
 -- First, M&S.  The shorter of these is the more common by a country mile.

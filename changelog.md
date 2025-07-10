@@ -3,6 +3,7 @@ This page describes changes made in these projects: [SomeoneElse-style](https://
 
 ## As yet unreleased
 (raster, vector) Treat `natural=moor` as a geographic place like `cape`, `peninsula` etc. - all treated like `place=locality`.
+(raster, vector) Remove brands with semicolons in them as it's likely "brands sold here" not "brands of here".
 
 ## 06/07/2025
 (raster, vector) Replace main `cafe` icon with a line-drawn one that looks much nicer.
