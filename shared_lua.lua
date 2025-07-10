@@ -12090,12 +12090,17 @@ function consolidate_place_t( passedt )
 
 -- ----------------------------------------------------------------------------
 -- Handle natural=cape etc. as place=locality if no other place tag.
+--
+-- On vector, area localities are extracted with the same rules as 
+-- place=island - the names of large ones are shown at low zooms but the names 
+-- of small ones (and nodes) only at vector zoom 18.
 -- ----------------------------------------------------------------------------
     if ((( passedt.natural == "cape"      ) or
          ( passedt.natural == "headland"  ) or
+         ( passedt.natural == "moor"      ) or
+         ( passedt.natural == "point"     ) or
          ( passedt.natural == "peninsula" ) or
-         ( passedt.natural == "sound"     ) or
-         ( passedt.natural == "point"     )) and
+         ( passedt.natural == "sound"     )) and
         (( passedt.place == nil         ) or
          ( passedt.place == ""          ))) then
        passedt.place = "locality"

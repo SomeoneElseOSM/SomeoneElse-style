@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20250705T101501Z",
+  "data_updated": "20250710T095601Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -2296,6 +2296,7 @@
     { "key": "natural", "value": "hedge", "description": "Shown as a green line, like barrier=hedge" },
     { "key": "natural", "value": "hill", "description": "Like peak, but shown from higher zoom" },
     { "key": "natural", "value": "meadow", "description": "Treated as a synonym for landuse=meadow" },
+    { "key": "natural", "value": "moor", "description": "Treated in the same way as place=locality" },
     { "key": "natural", "value": "mud", "description": "Shown as a brown beach with fewer stones" },
     { "key": "natural", "value": "peak", "description": "Various natural features rendered" },
     { "key": "natural", "value": "peninsula", "description": "Shown as a synonym of natural=cape, as place=locality" },
