@@ -12104,6 +12104,18 @@ function consolidate_place_t( passedt )
     end
 
 -- ----------------------------------------------------------------------------
+-- Regions that are not really something else are set to locality.
+-- The type check here excludes "type=boundary", which includes some current
+-- and historic admin areas in Ireland.
+-- ----------------------------------------------------------------------------
+    if (( passedt.place     == "region"        ) and
+        (( passedt.type     == nil            )  or
+         ( passedt.type     == ""             )  or
+         ( passedt.type     == "multipolygon" ))) then
+       passedt.place = "locality"
+    end
+
+-- ----------------------------------------------------------------------------
 -- Handle natural=cape etc. as place=locality if no other place tag.
 --
 -- On vector, area localities are extracted with the same rules as 
