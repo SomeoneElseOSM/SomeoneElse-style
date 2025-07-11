@@ -2986,7 +2986,10 @@ function consolidate_lua_03_t( passedt )
 -- Inverse springs - where water seeps below ground
 -- We already show "dry" sinkholes; show these in the same way.
 -- ----------------------------------------------------------------------------
-   if ( passedt.waterway == "cave_of_debouchement" ) then
+   if (( passedt.waterway == "cave_of_debouchement" ) or
+       ( passedt.natural  == "shake_hole"           ) or
+       ( passedt.natural  == "shake_holes"          ) or
+       ( passedt.natural  == "shakehole"            )) then
       passedt.natural = "sinkhole"
    end
 
