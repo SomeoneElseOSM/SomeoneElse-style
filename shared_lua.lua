@@ -12122,13 +12122,14 @@ function consolidate_place_t( passedt )
 -- place=island - the names of large ones are shown at low zooms but the names 
 -- of small ones (and nodes) only at vector zoom 18.
 -- ----------------------------------------------------------------------------
-    if ((( passedt.natural == "cape"      ) or
-         ( passedt.natural == "headland"  ) or
-         ( passedt.natural == "moor"      ) or
-         ( passedt.natural == "point"     ) or
-         ( passedt.natural == "peninsula" ) or
-         ( passedt.natural == "sound"     ) or
-         ( passedt.natural == "strait"    )) and
+    if ((( passedt.natural == "cape"           ) or
+         ( passedt.natural == "headland"       ) or
+         ( passedt.natural == "moor"           ) or
+         ( passedt.natural == "mountain_range" ) or
+         ( passedt.natural == "point"          ) or
+         ( passedt.natural == "peninsula"      ) or
+         ( passedt.natural == "sound"          ) or
+         ( passedt.natural == "strait"         )) and
         (( passedt.place == nil         ) or
          ( passedt.place == ""          ))) then
        passedt.place = "locality"
