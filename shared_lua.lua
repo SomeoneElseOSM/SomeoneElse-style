@@ -7201,6 +7201,15 @@ function consolidate_lua_03_t( passedt )
    end
 
 -- ----------------------------------------------------------------------------
+-- There are only five place=ocean objects in OSM, and they are all nodes.
+-- We'll change those here to "sea" so that any downstream code can use a sqkm
+-- value (which these have) decide how to handle them.
+-- ----------------------------------------------------------------------------
+   if ( passedt.place   == "ocean" ) then
+      passedt.place = "sea"
+   end
+
+-- ----------------------------------------------------------------------------
 -- If a trailhead also has a tourism tag, go with whatever tourism tag that is,
 -- rather than sending it through as "informationroutemarker" below.
 -- ----------------------------------------------------------------------------

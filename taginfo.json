@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20250711T091201Z",
+  "data_updated": "20250712T161001Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -2548,8 +2548,10 @@
     { "key": "place", "value": "isolated_dwelling", "description": "Treated as isolated_dwelling" },
     { "key": "place", "value": "locality", "description": "Treated as locality" },
     { "key": "place", "value": "neighbourhood", "description": "Treated as neighbourhood" },
+    { "key": "place", "value": "ocean", "description": "Treated as sea" },
     { "key": "place", "value": "quarter", "description": "Treated as `place=neighbourhood`" },
     { "key": "place", "value": "region", "description": "Treated as `place=locality` if not a boundary" },
+    { "key": "place", "value": "sea", "description": "Treated as sea" },
     { "key": "place", "value": "state", "description": "Treated as state" },
     { "key": "place", "value": "suburb", "description": "Treated as suburb" },
     { "key": "place", "value": "town", "description": "Treated as town" },
