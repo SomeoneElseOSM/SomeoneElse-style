@@ -2295,6 +2295,7 @@
     { "key": "natural", "value": "heath", "description": "Various natural features rendered" },
     { "key": "natural", "value": "hedge", "description": "Treated as a green line, like barrier=hedge" },
     { "key": "natural", "value": "hill", "description": "Like peak, but handled from higher zoom only" },
+    { "key": "natural", "value": "isthmus", "description": "Treated as a place=locality" },
     { "key": "natural", "value": "landform", "description": "If not also historic, treated in the same way as `place=locality`" },
     { "key": "natural", "value": "meadow", "description": "Treated as a synonym for landuse=meadow" },
     { "key": "natural", "value": "moor", "description": "Treated in the same way as `place=locality`" },

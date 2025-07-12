@@ -12133,6 +12133,7 @@ function consolidate_place_t( passedt )
 -- ----------------------------------------------------------------------------
     if (((   passedt.natural == "cape"           ) or
          (   passedt.natural == "headland"       ) or
+         (   passedt.natural == "isthmus"        ) or
          ((  passedt.natural == "landform"      )  and
           (( passedt.historic == nil           )   or
            ( passedt.historic == ""            ))) or

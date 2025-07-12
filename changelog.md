@@ -3,6 +3,7 @@ This page describes changes made in these projects: [SomeoneElse-style](https://
 
 ## As yet unreleased
 (vector) Treat `place=ocean` as `place=sea`.  Other components of vector style will processed based on size.
+(raster, vector) Treat `natural=isthmus` as a geographic place like `cape`, `peninsula` etc. - all treated like `place=locality`.
 
 ## Vector 12/07/2025, raster as yet unreleased
 (raster, vector) Treat `natural=moor`, `natural=strait`, `natural=mountain_range` and `natural=landform` as a geographic place like `cape`, `peninsula` etc. - all treated like `place=locality`.
