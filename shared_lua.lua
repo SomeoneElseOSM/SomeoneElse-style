@@ -12132,13 +12132,20 @@ function consolidate_place_t( passedt )
 -- of small ones (and nodes) only at vector zoom 18.
 -- ----------------------------------------------------------------------------
     if (((   passedt.natural == "cape"           ) or
+         (   passedt.natural == "cirque"         ) or
+         (   passedt.natural == "creek"          ) or
+         (   passedt.natural == "fishing_bank"   ) or
          (   passedt.natural == "headland"       ) or
+         (   passedt.natural == "hillside"       ) or
+         (   passedt.natural == "inlet"          ) or
          (   passedt.natural == "isthmus"        ) or
+         (   passedt.natural == "land"           ) or
          ((  passedt.natural == "landform"      )  and
           (( passedt.historic == nil           )   or
            ( passedt.historic == ""            ))) or
          (   passedt.natural == "moor"           ) or
          (   passedt.natural == "mountain_range" ) or
+         (   passedt.natural == "pass"           ) or
          (   passedt.natural == "point"          ) or
          (   passedt.natural == "peninsula"      ) or
          (   passedt.natural == "sound"          ) or
