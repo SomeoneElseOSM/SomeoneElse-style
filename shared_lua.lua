@@ -12144,12 +12144,10 @@ function consolidate_place_t( passedt )
           (( passedt.historic == nil           )   or
            ( passedt.historic == ""            ))) or
          (   passedt.natural == "moor"           ) or
-         (   passedt.natural == "mountain_range" ) or
          (   passedt.natural == "pass"           ) or
          (   passedt.natural == "point"          ) or
          (   passedt.natural == "peninsula"      ) or
-         (   passedt.natural == "sound"          ) or
-         (   passedt.natural == "strait"         )) and
+         (   passedt.natural == "sound"          )) and
         ((   passedt.place == nil         ) or
          (   passedt.place == ""          ))) then
        passedt.place = "locality"
