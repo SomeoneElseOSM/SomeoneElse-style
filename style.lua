@@ -721,6 +721,22 @@ function filter_tags_node (keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- A natural=cliff et al node can't be drawn as a linear cliff, but we can
+-- treat it as a locality.
+-- ----------------------------------------------------------------------------
+   if ((( keyvalues["natural"] == "cliff"          )  or
+        ( keyvalues["natural"] == "ridge"          )  or
+        ( keyvalues["natural"] == "arch"           )  or
+        ( keyvalues["natural"] == "strait"         )  or
+        ( keyvalues["natural"] == "mountain_range" )  or
+        ( keyvalues["natural"] == "gully"          )) and
+       (( keyvalues["place"]   == nil              )  or
+        ( keyvalues["place"]   == ""               ))) then
+      keyvalues["place"]   = "locality"
+      keyvalues["natural"] = nil
+   end
+
+-- ----------------------------------------------------------------------------
 -- End of AJT node-only additions.
 -- ----------------------------------------------------------------------------
 
