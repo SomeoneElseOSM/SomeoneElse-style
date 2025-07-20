@@ -23,7 +23,7 @@
 -- cp /home/${local_filesystem_user}/src/SomeoneElse-style/shared_lua.lua -
 --      /usr/local/share/lua/5.3/
 -- ----------------------------------------------------------------------------
-require "shared_lua"
+require "shared_lua_raster"
 
 polygon_keys = { 'area:aeroway', 'boundary', 'building', 'landcover', 'landuse', 'amenity', 'harbour', 'historic', 'leisure', 
       'man_made', 'military', 'natural', 'office', 'place', 'police', 'power',

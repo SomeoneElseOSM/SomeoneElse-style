@@ -466,7 +466,7 @@ fi
 # Run osm2pgsql
 #
 mkdir -p /usr/local/share/lua/5.3/
-cp /home/${local_filesystem_user}/src/SomeoneElse-style/shared_lua.lua /usr/local/share/lua/5.3/
+cp /home/${local_filesystem_user}/src/SomeoneElse-style/shared_lua.lua /usr/local/share/lua/5.3/shared_lua_raster.lua
 #
 if sudo -u ${local_renderd_user} osm2pgsql --create --slim -d ${local_database} -C 2500 --number-processes 2 -S /home/${local_filesystem_user}/src/openstreetmap-carto-AJT/openstreetmap-carto.style --multi-geometry --tag-transform-script /home/${local_filesystem_user}/src/SomeoneElse-style/style.lua langs_${file_extension1}_merged.pbf
 then
