@@ -3,6 +3,7 @@ This page describes changes made in these projects: [SomeoneElse-style](https://
 
 ## As yet unreleased
 (raster) Treat linear `natural=gully`, `natural=strait` and `natural=mountain_range` as a linear `natural=valley`.
+(raster, vector) Suppress private `amenity=fast_food` in the same was as pubs and restaurants.
 
 ## 18/07/2025
 (vector) Treat linear `natural=strait` and `natural=mountain_range` as a linear `natural=valley`.

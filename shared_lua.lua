@@ -3553,6 +3553,7 @@ function consolidate_lua_03_t( passedt )
 -- ----------------------------------------------------------------------------
    if ((( passedt.amenity == "pub"        ) or
         ( passedt.amenity == "cafe"       ) or
+        ( passedt.amenity == "fast_food"  ) or
         ( passedt.amenity == "restaurant" )) and
        (  passedt.access  == "no"          )) then
       passedt.amenity = nil
