@@ -909,6 +909,7 @@ function filter_tags_way (keyvalues, nokeys)
          keyvalues["highway"] = "gallop"
       else
          if ((( keyvalues["sport"]    == "motor"         )  or
+              ( keyvalues["sport"]    == "motocross"     )  or
               ( keyvalues["sport"]    == "karting"       )) and
              (( keyvalues["area"]     == nil              )  or
               ( keyvalues["area"]     == "no"             ))) then

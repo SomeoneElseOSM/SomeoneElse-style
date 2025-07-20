@@ -11598,9 +11598,21 @@ function consolidate_lua_04_t( passedt )
 
 -- ----------------------------------------------------------------------------
 -- Prevent highway=raceway from appearing in the polygon table.
+-- If it really is an area, then send it through as "leisure=track".
+-- If we don't know, assume it is not.
 -- ----------------------------------------------------------------------------
    if ( passedt.highway == "raceway" ) then
-      passedt.area = "no"
+      if ( passedt.area == "yes" ) then
+         passedt.leisure = "track"
+         passedt.highway = nil
+
+         if (( passedt.sport == nil )  or
+             ( passedt.sport == ""  )) then
+            passedt.sport = "motor"
+         end
+      else
+         passedt.area = "no"
+      end
    end
 
 -- ----------------------------------------------------------------------------
