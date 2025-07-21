@@ -2,7 +2,8 @@
 This page describes changes made in these projects: [SomeoneElse-style](https://github.com/SomeoneElseOSM/SomeoneElse-style), [SomeoneElse-style-legend](https://github.com/SomeoneElseOSM/SomeoneElse-style-legend) and [openstreetmap-carto-AJT](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT), and visible [on this site](//map.atownsend.org.uk/maps/map/map.html).  Since 2025 this also includes changes to lua code shared between raster and vector processing - hence the notes below about which a particular change applies to.  See [this changelog](https://github.com/SomeoneElseOSM/SomeoneElse-vector-extract/blob/main/resources/changelog_sve01.md) for where changes here affect the vector schema, and also other vector-only ones.
 
 ## As yet unreleased
-Show hedges in a slightly darker colour than wood.
+(raster, vector) Show hedges in a slightly darker colour than wood.
+(raster) Show the names of any named `waterway=lock_gate`.
 
 ## 21/07/2025
 (raster) Treat linear `natural=gully`, `natural=strait` and `natural=mountain_range` as a linear `natural=valley`.
