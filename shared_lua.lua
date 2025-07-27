@@ -4491,7 +4491,6 @@ function consolidate_lua_03_t( passedt )
    if ((  passedt.amenity == "restaurant"            ) and
        (( passedt.cuisine == "caribbean"            )  or
         ( passedt.cuisine == "jamaican"             )  or
-        ( passedt.cuisine == "african"              )  or
         ( passedt.cuisine == "afro_caribbean"       )  or
         ( passedt.cuisine == "afro-caribbean"       )  or
         ( passedt.cuisine == "afrocaribbean"        ))) then

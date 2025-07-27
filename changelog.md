@@ -4,6 +4,7 @@ This page describes changes made in these projects: [SomeoneElse-style](https://
 ## As yet unreleased
 (raster, vector) Show hedges in a slightly darker colour than wood.
 (raster) Show the names of any named `waterway=lock_gate`.
+(raster, vector) Fix bug where African restaurant cuisine was miscategorised.
 
 ## 21/07/2025
 (raster) Treat linear `natural=gully`, `natural=strait` and `natural=mountain_range` as a linear `natural=valley`.
