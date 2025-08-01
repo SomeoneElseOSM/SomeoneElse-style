@@ -9158,6 +9158,7 @@ function consolidate_lua_04_t( passedt )
        ( passedt.leisure == "gambling"            ) or
        ( passedt.shop    == "lottery"             ) or
        ( passedt.amenity == "lottery"             ) or
+       ( passedt.shop    == "amusement"           ) or
        ( passedt.shop    == "amusements"          ) or
        ( passedt.amenity == "amusements"          ) or
        ( passedt.amenity == "amusement"           ) or
