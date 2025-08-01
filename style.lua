@@ -737,6 +737,14 @@ function filter_tags_node (keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- We treat node islands as just localities.
+-- ----------------------------------------------------------------------------
+   if (( keyvalues["place"] == "island" )  or
+       ( keyvalues["place"] == "islet"  )) then
+      keyvalues["place"] = "locality"
+   end
+
+-- ----------------------------------------------------------------------------
 -- End of AJT node-only additions.
 -- ----------------------------------------------------------------------------
 
