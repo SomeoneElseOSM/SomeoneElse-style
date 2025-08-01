@@ -5696,6 +5696,7 @@ function consolidate_lua_03_t( passedt )
 -- Supermarkets as normal buildings
 -- ----------------------------------------------------------------------------
    if ((  passedt.building   == "supermarket"      ) or
+       (  passedt.building   == "station"          ) or
        (  passedt.man_made   == "storage_tank"     ) or
        (  passedt.man_made   == "silo"             ) or
        (  passedt.man_made   == "tank"             ) or

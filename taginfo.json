@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20250801T124001Z",
+  "data_updated": "20250801T142001Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -642,7 +642,6 @@
     { "key": "building", "value": "service", "description": "Tell lifeboats from lifeboat stations" },
     { "key": "building", "value": "sheepfold", "description": "Used to help classify things as not buildings" },
     { "key": "building", "value": "ship", "description": "Tell lifeboats from lifeboat stations" },
-    { "key": "building", "value": "station", "description": "Special rendering for station buildings" },
     { "key": "building", "value": "supermarket", "description": "Shown as regular building" },
     { "key": "building", "value": "telephone_box", "description": "Used when deciding how to show telephone boxes and former telephone boxes (e.g. red or not red)" },
     { "key": "building", "value": "telephone_exchange", "description": "Used to identify telephone exchanges" },
