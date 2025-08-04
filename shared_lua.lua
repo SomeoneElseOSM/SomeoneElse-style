@@ -11360,6 +11360,15 @@ function consolidate_lua_04_t( passedt )
    end
 
 -- ----------------------------------------------------------------------------
+-- Something that is allegedly both a public transport platform and a bus stop
+-- should be processed as the latter.
+-- ----------------------------------------------------------------------------
+   if (( passedt.public_transport == "platform" ) and
+       ( passedt.highway          == "bus_stop" )) then
+      passedt.public_transport = nil
+   end
+
+-- ----------------------------------------------------------------------------
 -- Some people tag waste_basket on bus_stop.  We render just bus_stop.
 -- ----------------------------------------------------------------------------
    if (( passedt.highway == "bus_stop"     ) and
