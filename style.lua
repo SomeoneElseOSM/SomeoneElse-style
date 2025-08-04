@@ -745,6 +745,13 @@ function filter_tags_node (keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- All node highway=platform are actually highway=bus_stop
+-- ----------------------------------------------------------------------------
+   if ( keyvalues["highway"] == "platform" ) then
+      keyvalues["highway"] = "bus_stop"
+   end
+
+-- ----------------------------------------------------------------------------
 -- End of AJT node-only additions.
 -- ----------------------------------------------------------------------------
 

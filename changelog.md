@@ -3,6 +3,7 @@ This page describes changes made in these projects: [SomeoneElse-style](https://
 
 ## As yet unreleased
 (vector) Ensure that bus stops that have also been tagged as platforms are correctly treated as bus stops.
+(raster, vector) Node bus platforms are all mistagged bus stops.
 
 ## 01/08/2025
 (raster, vector) Show hedges in a slightly darker colour than wood.
