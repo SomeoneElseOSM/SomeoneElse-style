@@ -4830,7 +4830,7 @@ function consolidate_lua_03_t( passedt )
        (   passedt.amenity                == "kick-scooter_rental"     ) or
        (   passedt.amenity                == "small_electric_vehicle"  ) or
        ((  passedt.amenity                == "parking"                )  and
-        (( passedt.parking                == "e-scooter"             )   or
+        (( passedt.parking                == "e_scooter"             )   or
          ( passedt.small_electric_vehicle == "designated"            ))) or
        ((  passedt.amenity                == "bicycle_parking"        )  and
         (  passedt.small_electric_vehicle == "designated"             ))) then

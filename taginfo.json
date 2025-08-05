@@ -2522,7 +2522,7 @@
     { "key": "overgrown", "value": "yes", "description": "Make intermediate etc. trails less visible" },
     { "key": "parking", "description": "Detect e.g. bus depots ,motorcycle and e-scooter parking" },
     { "key": "parking", "value": "depot", "description": "Detect e.g. bus depots" },
-    { "key": "parking", "value": "e-scooter", "description": "Detect e-scooter parking.  Shown with icon, name incorporates brand" },
+    { "key": "parking", "value": "e_scooter", "description": "Detect e-scooter parking.  Shown with icon, name incorporates brand" },
     { "key": "parking", "value": "motorcycle", "description": "Detect motorcycle parking" },
     { "key": "parking_space", "description": "Show disabled parking spaces" },
     { "key": "parking_space", "value": "disabled", "description": "Show disabled parking spaces" },
