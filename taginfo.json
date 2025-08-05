@@ -155,7 +155,7 @@
     { "key": "amenity", "value": "clock", "description": "Shown with icon that varies by type; also used to detect clock towers" },
     { "key": "amenity", "value": "closed_pub", "description": "Synonym for lifecycle tag on pubs" },
     { "key": "amenity", "value": "club", "description": "Shown as leisure=nonspecific" },
-    { "key": "amenity", "value": "club_house", "description": "Shown as leisure=nonspecific" },
+    { "key": "amenity", "value": "club_house", "description": "Not a current value in OSM data.  Shown as leisure=nonspecific" },
     { "key": "amenity", "value": "clubhouse", "description": "Shown as leisure=nonspecific" },
     { "key": "amenity", "value": "coast_guard", "description": "Synonym for office=nonspecific" },
     { "key": "amenity", "value": "college", "description": "Landuse shown as education, name shown as per office=nonspecific" },
