@@ -4960,6 +4960,13 @@ function consolidate_lua_03_t( passedt )
 -- vector-specific rendering code can adjust it further.(raster will want to
 -- set it "no").
 -- ----------------------------------------------------------------------------
+   if ( passedt.highway == "emergency_bay" ) then
+      passedt.amenity = "parking_space"
+      passedt.highway = "service"
+      passedt.service = "parking_aisle"
+      passedt.access = "destination"
+   end
+
    if (( passedt.amenity == "parking_space" ) or
        ( passedt.highway == "emergency_bay" )) then
        if (( passedt.fee     ~= nil       )  and
