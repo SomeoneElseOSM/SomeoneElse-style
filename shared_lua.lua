@@ -6962,6 +6962,8 @@ function consolidate_lua_03_t( passedt )
         ( passedt["disused:railway"]  ~= ""  )) or
        (( passedt["disused:highway"]  ~= nil )  and
         ( passedt["disused:highway"]  ~= ""  )) or
+       (( passedt["removed:highway"]  ~= nil )  and
+        ( passedt["removed:highway"]  ~= ""  )) or
        (( passedt["proposed:railway"] ~= nil )  and
         ( passedt["proposed:railway"] ~= ""  )) or
        (( passedt["proposed:highway"] ~= nil )  and

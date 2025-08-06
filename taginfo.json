@@ -2703,6 +2703,8 @@
     { "key": "religion", "value": "taoist", "description": "Shown with appropriate religious symbol" },
     { "key": "removed:amenity", "description": "Detect removed amenities such as telephones" },
     { "key": "removed:amenity", "value": "telephone", "description": "Detect removed amenities such as telephones" },
+    { "key": "removed:highway", "description": "Detect removed crossings" },
+    { "key": "removed:highway", "value": "bus_stop", "description": "Detect removed crossings" },
     { "key": "rescue_equipment", "description": "Detect life rings" },
     { "key": "rescue_equipment", "value": "lifering", "description": "Detect life rings" },
     { "key": "residential", "description": "Detect care homes etc." },
