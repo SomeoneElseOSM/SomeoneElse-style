@@ -7,6 +7,7 @@ This page describes changes made in these projects: [SomeoneElse-style](https://
 (raster, vector) Changed "parking=e-scooter" to "parking=e_scooter" following a change to all the values in OSM.
 (raster, vector) Linear and area `highway=emergency_bay` are now both treated appropriately.
 (raster, vector) Detect removed crossings.
+(raster, vector) Changed Camra links from Whatpub to new Camra site.
 
 ## 01/08/2025
 (raster, vector) Show hedges in a slightly darker colour than wood.
