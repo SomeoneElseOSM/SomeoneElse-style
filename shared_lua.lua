@@ -1159,6 +1159,14 @@ function consolidate_lua_02_t( passedt )
    end
 
 -- ----------------------------------------------------------------------------
+-- Show leisure=bike_park as landuse=recreation_ground
+-- ----------------------------------------------------------------------------
+   if ( passedt.leisure == "bike_park" ) then
+      passedt.landuse = "recreation_ground"
+      passedt.leisure = nil
+   end
+
+-- ----------------------------------------------------------------------------
 -- "Nature reserve" doesn't say anything about what's inside; but one UK OSMer 
 -- changed "landuse" to "surface" (changeset 98859964).  This undoes that.
 -- ----------------------------------------------------------------------------
