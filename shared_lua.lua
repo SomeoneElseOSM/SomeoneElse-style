@@ -10497,8 +10497,11 @@ function consolidate_lua_04_t( passedt )
        ( passedt.office     == "association"             ) or
        ( passedt.amenity    == "advice"                  ) or
        ( passedt.amenity    == "advice_service"          )) then
-      passedt.landuse = "unnamedcommercial"
-      passedt.office  = "nonspecific"
+      passedt.office     = "nonspecific"
+      passedt.landuse    = "unnamedcommercial"
+      passedt.amenity    = nil
+      passedt.healthcare = nil
+      passedt.man_made   = nil
    end
 
 -- ----------------------------------------------------------------------------
