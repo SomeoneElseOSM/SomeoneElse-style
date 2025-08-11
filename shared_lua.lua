@@ -2260,6 +2260,242 @@ function consolidate_lua_03_t( passedt )
    end
 
 -- ----------------------------------------------------------------------------
+-- Various mistagging, comma and semicolon healthcare
+-- Note that health centres currently appear as "health nonspecific".
+-- ----------------------------------------------------------------------------
+   if ((   passedt.amenity            == "doctors; pharmacy"       ) or
+       (   passedt.amenity            == "surgery"                 ) or
+       ((( passedt.healthcare         == "doctor"                )   or
+         ( passedt.healthcare         == "doctor;pharmacy"       )   or
+         ( passedt.healthcare         == "general_practitioner"  ))  and
+        (( passedt.amenity            == nil                     )   or
+         ( passedt.amenity            == ""                      ))  and
+        (  passedt["disused:amenity"] ~= "doctors"                ))) then
+      passedt.amenity = "doctors"
+      passedt["disused:amenity"] = nil
+   end
+
+   if (((   passedt.healthcare               == "dentist"    )  or
+        ((  passedt["healthcare:speciality"] == "dentistry" )   and
+         (( passedt.healthcare               == "yes"      )    or
+          ( passedt.healthcare               == "centre"   )    or
+          ( passedt.healthcare               == "clinic"   )))) and
+       ((  passedt.amenity                   == nil          )  or
+        (  passedt.amenity                   == ""           ))  and
+       (   passedt["disused:amenity"]        ~= "dentist"     )) then
+      passedt.amenity = "dentist"
+      passedt["disused:amenity"] = nil
+      passedt.healthcare = nil
+   end
+
+   if ((  passedt.healthcare         == "hospital"  )  and
+       (( passedt.amenity            == nil        )   or
+        ( passedt.amenity            == ""         ))  and
+       (  passedt["disused:amenity"] ~= "hospital"  )) then
+      passedt.amenity = "hospital"
+      passedt["disused:amenity"] = nil
+      passedt.healthcare = nil
+   end
+
+-- ----------------------------------------------------------------------------
+-- Ensure that vaccination centries (e.g. for COVID 19) that aren't already
+-- something else get shown as something.
+-- Things that _are_ something else get (e.g. community centres) get left as
+-- that something else.
+-- ----------------------------------------------------------------------------
+   if ((( passedt.healthcare               == "vaccination_centre" )  or
+        ( passedt.healthcare               == "sample_collection"  )  or
+        ( passedt["healthcare:speciality"] == "vaccination"        )) and
+       (( passedt.amenity                  == nil                  )  or
+        ( passedt.amenity                  == ""                   )) and
+       (( passedt.leisure                  == nil                  )  or
+        ( passedt.leisure                  == ""                   )) and
+       (( passedt.shop                     == nil                  )  or
+        ( passedt.shop                     == ""                   ))) then
+      passedt.amenity = "clinic"
+      passedt["disused:amenity"] = nil
+      passedt.healthcare = nil
+   end
+
+   if (((( passedt.healthcare == "pharmacy"                  )   or
+         ( passedt.shop       == "pharmacy"                  ))  and
+        (( passedt.amenity    == nil                         )   or
+         ( passedt.amenity    == ""                          ))  and
+        (  passedt["disused:amenity"] ~= "pharmacy"           )) or
+       ((  passedt.shop       == "cosmetics"                  )  and
+        (  passedt.pharmacy   == "yes"                        )  and
+        (( passedt.amenity    == nil                         )   or
+         ( passedt.amenity    == ""                          ))) or
+       ((  passedt.shop       == "chemist"                    )  and
+        (  passedt.pharmacy   == "yes"                        )  and
+        (( passedt.amenity    == nil                         )   or
+         ( passedt.amenity    == ""                          ))) or
+       ((  passedt.amenity    == "clinic"                     )  and
+        (  passedt.pharmacy   == "yes"                        ))) then
+      passedt.amenity = "pharmacy"
+      passedt.healthcare = nil
+   end
+
+-- ----------------------------------------------------------------------------
+-- "woo" "healthcare" will get written through as a shop 
+-- even if e.g. amenity=clinic is set.
+-- ----------------------------------------------------------------------------
+   if ((  passedt.shop       == "alternative_medicine"    ) or
+       (  passedt.shop       == "massage"                 ) or
+       (  passedt.shop       == "herbalist"               ) or
+       (  passedt.shop       == "herbal_medicine"         ) or
+       (  passedt.shop       == "chinese_medicine"        ) or
+       (  passedt.shop       == "new_age"                 ) or
+       (  passedt.shop       == "psychic"                 ) or
+       (  passedt.shop       == "alternative_health"      ) or
+       (  passedt.shop       == "acupuncture"             ) or
+       (  passedt.shop       == "aromatherapy"            ) or
+       (  passedt.shop       == "meditation"              ) or
+       (  passedt.shop       == "esoteric"                ) or
+       ((( passedt.healthcare == "alternative"          )   or
+         ( passedt.healthcare == "acupuncture"          ))  and
+        ((  passedt.shop      == nil                    )   or
+         (  passedt.shop      == ""                     )))) then
+      passedt.shop = "shopnonspecific"
+      passedt.amenity = nil
+   end
+
+-- ----------------------------------------------------------------------------
+-- chiropodists etc. - render as "nonspecific health".
+-- Add unnamedcommercial landuse to give non-building areas a background.
+--
+-- Places that _sell_ mobility aids are in here.  Shopmobility handled
+-- separately.
+-- ----------------------------------------------------------------------------
+   if (( passedt.amenity     == "clinic"                       ) or
+       ((  passedt.healthcare  == "clinic"                    )  and
+        (( passedt.amenity     == nil                        )   or
+         ( passedt.amenity     == ""                         ))  and
+        (  passedt["disused:amenity"] ~= "clinic"             ))) then
+      passedt.shop               = "healthnonspecific"
+      passedt.landuse            = "unnamedcommercial"
+      passedt.amenity            = nil
+      passedt["disused:amenity"] = nil
+      passedt.healthcare         = nil
+   end
+
+   if (( passedt.amenity     == "social_facility"              ) or
+       ((( passedt.amenity         == nil                    )   or
+         ( passedt.amenity         == ""                     ))  and
+        (  passedt["disused:amenity"] ~= "social_facility"    )  and
+        (( passedt.social_facility == "group_home"           )   or
+         ( passedt.social_facility == "nursing_home"         )   or
+         ( passedt.social_facility == "assisted_living"      )   or
+         ( passedt.social_facility == "care_home"            )   or
+         ( passedt.social_facility == "shelter"              )   or
+         ( passedt.social_facility == "day_care"             )   or
+         ( passedt.social_facility == "day_centre"           )   or
+         ( passedt.social_facility == "residential_home"     )))) then
+      passedt.shop               = "healthnonspecific"
+      passedt.landuse            = "unnamedcommercial"
+      passedt.amenity            = nil
+      passedt["disused:amenity"] = nil
+      passedt.healthcare         = nil
+   end
+
+   if ((  passedt.shop        == "chiropodist"                   ) or
+       (  passedt.amenity     == "chiropodist"                   ) or
+       (  passedt.shop        == "hearing_aids"                  ) or
+       (  passedt.shop        == "medical_supply"                ) or
+       (  passedt.office      == "medical_supply"                ) or
+       (  passedt.shop        == "mobility"                      ) or
+       (  passedt.shop        == "mobility_scooter"              ) or
+       (  passedt.shop        == "wheelchair"                    ) or
+       (  passedt.shop        == "mobility_aids"                 ) or
+       (  passedt.shop        == "disability"                    ) or
+       (  passedt.amenity     == "chiropractor"                  ) or
+       (  passedt.shop        == "osteopath"                     ) or
+       (  passedt.office      == "osteopath"                     ) or
+       (  passedt.amenity     == "physiotherapist"               ) or
+       (  passedt.shop        == "physiotherapist"               ) or
+       (  passedt.shop        == "physiotherapy"                 ) or
+       (  passedt.amenity     == "podiatrist"                    ) or
+       (  passedt.amenity     == "healthcare"                    ) or
+       (  passedt.shop        == "clinic"                        ) or
+       (  passedt.amenity     == "nursing_home"                  ) or
+       (  passedt.residential == "nursing_home"                  ) or
+       (  passedt.building    == "nursing_home"                  ) or
+       (  passedt.amenity     == "care_home"                     ) or
+       (  passedt.residential == "care_home"                     ) or
+       (  passedt.amenity     == "retirement_home"               ) or
+       (  passedt.amenity     == "residential_home"              ) or
+       (  passedt.residential == "residential_home"              ) or
+       (  passedt.amenity     == "sheltered_housing"             ) or
+       (  passedt.residential == "sheltered_housing"             ) or
+       (  passedt.amenity     == "childcare"                     ) or
+       (  passedt.amenity     == "childrens_centre"              ) or
+       (  passedt.amenity     == "preschool"                     ) or
+       (  passedt.building    == "preschool"                     ) or
+       (  passedt.amenity     == "nursery"                       ) or
+       (  passedt.amenity     == "nursery_school"                ) or
+       (  passedt.amenity     == "health_centre"                 ) or
+       (  passedt.building    == "health_centre"                 ) or
+       (  passedt.amenity     == "medical_centre"                ) or
+       (  passedt.building    == "medical_centre"                ) or
+       (  passedt.craft       == "counsellor"                    ) or
+       (  passedt.amenity     == "hospice"                       ) or
+       (  passedt.shop        == "dentures"                      ) or
+       (  passedt.shop        == "denture"                       ) or
+       (  passedt.shop        == "audiologist"                   ) or
+       (  passedt.amenity     == "daycare"                       ) or
+       ((( passedt.amenity         == nil                       )  or
+         ( passedt.amenity         == ""                        )) and
+        (( passedt.shop            == nil                       )  or
+         ( passedt.shop            == ""                        )) and
+         (( passedt.healthcare  == "chiropodist"                ) or
+          ( passedt.healthcare  == "hearing_care"               ) or
+          ( passedt.healthcare  == "chiropractor"               ) or
+          ( passedt.healthcare  == "department"                 ) or
+          ( passedt.healthcare  == "diagnostics"                ) or
+          ( passedt.healthcare  == "dialysis"                   ) or
+          ( passedt.healthcare  == "physiotherapist"            ) or
+          ( passedt.healthcare  == "physiotherapist;podiatrist" ) or
+          ( passedt.healthcare  == "psychotherapist"            ) or
+          ( passedt.healthcare  == "therapy"                    ) or
+          ( passedt.healthcare  == "podiatrist"                 ) or
+          ( passedt.healthcare  == "podiatrist;chiropodist"     ) or
+          ( passedt.healthcare  == "physiotherapy"              ) or
+          ( passedt.healthcare  == "podiatry"                   ) or
+          ( passedt.healthcare  == "clinic;doctor"              ) or
+          ( passedt.healthcare  == "nursing_home"               ) or
+          ( passedt.healthcare  == "health_centre"              ) or
+          ( passedt.healthcare  == "centre"                     ) or
+          ( passedt.healthcare  == "counselling"                ) or
+          ( passedt.healthcare  == "hospice"                    ) or
+          ( passedt.healthcare  == "cosmetic"                   ) or
+          ( passedt.healthcare  == "cosmetic_surgery"           ) or
+          ( passedt.healthcare  == "dentures"                   ) or
+          ( passedt.healthcare  == "blood_donation"             ) or
+          ( passedt.healthcare  == "blood_bank"                 ) or
+          ( passedt.healthcare  == "sports_massage_therapist"   ) or
+          ( passedt.healthcare  == "massage"                    ) or
+          ( passedt.healthcare  == "rehabilitation"             ) or
+          ( passedt.healthcare  == "drug_rehabilitation"        ) or
+          ( passedt.healthcare  == "medical_imaging"            ) or
+          ( passedt.healthcare  == "midwife"                    ) or
+          ( passedt.healthcare  == "occupational_therapist"     ) or
+          ( passedt.healthcare  == "speech_therapist"           ) or
+          ( passedt.healthcare  == "tattoo_removal"             ) or
+          ( passedt.healthcare  == "trichologist"               ) or
+          ( passedt.healthcare  == "ocular_prosthetics"         ) or
+          ( passedt.healthcare  == "audiologist"                ) or
+          ( passedt.healthcare  == "hearing"                    ) or
+          ( passedt.healthcare  == "mental_health"              )))) then
+      passedt.shop               = "healthnonspecific"
+      passedt.landuse            = "unnamedcommercial"
+      passedt.amenity            = nil
+      passedt["disused:amenity"] = nil
+      passedt.craft              = nil
+      passedt.healthcare         = nil
+      passedt.office             = nil
+   end
+
+-- ----------------------------------------------------------------------------
 -- Former telephone boxes
 -- ----------------------------------------------------------------------------
    if ((( passedt.covered         == "booth"          )   and
@@ -4626,78 +4862,12 @@ function consolidate_lua_03_t( passedt )
    end
 
 -- ----------------------------------------------------------------------------
--- Various mistagging, comma and semicolon healthcare
--- Note that health centres currently appear as "health nonspecific".
--- ----------------------------------------------------------------------------
-   if ((   passedt.amenity    == "doctors; pharmacy"       ) or
-       (   passedt.amenity    == "surgery"                 ) or
-       ((( passedt.healthcare == "doctor"                )   or
-         ( passedt.healthcare == "doctor;pharmacy"       )   or
-         ( passedt.healthcare == "general_practitioner"  ))  and
-        (( passedt.amenity    == nil                     )   or
-         ( passedt.amenity    == ""                      )))) then
-      passedt.amenity = "doctors"
-   end
-
-   if (((   passedt.healthcare            == "dentist"    )  or
-        ((  passedt["healthcare:speciality"] == "dentistry" )   and
-         (( passedt.healthcare            == "yes"      )    or
-          ( passedt.healthcare            == "centre"   )    or
-          ( passedt.healthcare            == "clinic"   )))) and
-       ((  passedt.amenity    == nil                      )  or
-        (  passedt.amenity    == ""                       ))) then
-      passedt.amenity = "dentist"
-      passedt.healthcare = nil
-   end
-
-   if ((  passedt.healthcare == "hospital"  ) and
-       (( passedt.amenity    == nil        )  or
-        ( passedt.amenity    == ""         ))) then
-      passedt.amenity = "hospital"
-   end
-
--- ----------------------------------------------------------------------------
--- Ensure that vaccination centries (e.g. for COVID 19) that aren't already
--- something else get shown as something.
--- Things that _are_ something else get (e.g. community centres) get left as
--- that something else.
--- ----------------------------------------------------------------------------
-   if ((( passedt.healthcare               == "vaccination_centre" )  or
-        ( passedt.healthcare               == "sample_collection"  )  or
-        ( passedt["healthcare:speciality"] == "vaccination"        )) and
-       (( passedt.amenity                  == nil                  )  or
-        ( passedt.amenity                  == ""                   )) and
-       (( passedt.leisure                  == nil                  )  or
-        ( passedt.leisure                  == ""                   )) and
-       (( passedt.shop                     == nil                  )  or
-        ( passedt.shop                     == ""                   ))) then
-      passedt.amenity = "clinic"
-   end
-
--- ----------------------------------------------------------------------------
 -- If something is mapped both as a supermarket and a pharmacy, suppress the
 -- tags for the latter.
 -- ----------------------------------------------------------------------------
    if (( passedt.shop    == "supermarket" ) and
        ( passedt.amenity == "pharmacy"    )) then
       passedt.amenity = nil
-   end
-
-   if (((( passedt.healthcare == "pharmacy"                  )   or
-         ( passedt.shop       == "pharmacy"                  ))  and
-        (( passedt.amenity    == nil                         )   or
-         ( passedt.amenity    == ""                          ))) or
-       ((  passedt.shop       == "cosmetics"                  )  and
-        (  passedt.pharmacy   == "yes"                        )  and
-        (( passedt.amenity    == nil                         )   or
-         ( passedt.amenity    == ""                          ))) or
-       ((  passedt.shop       == "chemist"                    )  and
-        (  passedt.pharmacy   == "yes"                        )  and
-        (( passedt.amenity    == nil                         )   or
-         ( passedt.amenity    == ""                          ))) or
-       ((  passedt.amenity    == "clinic"                     )  and
-        (  passedt.pharmacy   == "yes"                        ))) then
-      passedt.amenity = "pharmacy"
    end
 
 -- ----------------------------------------------------------------------------
@@ -9404,23 +9574,6 @@ function consolidate_lua_04_t( passedt )
       end
    end
 
-   if (( passedt.shop       == "alternative_medicine"    ) or
-       ( passedt.shop       == "massage"                 ) or
-       ( passedt.shop       == "herbalist"               ) or
-       ( passedt.shop       == "herbal_medicine"         ) or
-       ( passedt.shop       == "chinese_medicine"        ) or
-       ( passedt.shop       == "new_age"                 ) or
-       ( passedt.shop       == "psychic"                 ) or
-       ( passedt.shop       == "alternative_health"      ) or
-       ( passedt.healthcare == "alternative"             ) or
-       ( passedt.shop       == "acupuncture"             ) or
-       ( passedt.healthcare == "acupuncture"             ) or
-       ( passedt.shop       == "aromatherapy"            ) or
-       ( passedt.shop       == "meditation"              ) or
-       ( passedt.shop       == "esoteric"                )) then
-      passedt.shop = "shopnonspecific"
-   end
-
 -- ----------------------------------------------------------------------------
 -- travel agents
 -- the name is usually characteristic
@@ -9849,122 +10002,25 @@ function consolidate_lua_04_t( passedt )
       passedt.shop    = "shopnonspecific"
    end
 
-   if (( passedt.amenity     == "optician"                     ) or
-       ( passedt.craft       == "optician"                     ) or
-       ( passedt.office      == "optician"                     ) or
-       ( passedt.shop        == "optometrist"                  ) or
-       ( passedt.amenity     == "optometrist"                  ) or
-       ( passedt.healthcare  == "optometrist"                  )) then
+-- ----------------------------------------------------------------------------
+-- If "healthcare" is set 
+-- make sure that "amenity" is not also set to something else.
+-- ----------------------------------------------------------------------------
+   if ((   passedt.amenity     == "optician"                     )  or
+       (   passedt.craft       == "optician"                     )  or
+       (   passedt.office      == "optician"                     )  or
+       (   passedt.shop        == "optometrist"                  )  or
+       (   passedt.amenity     == "optometrist"                  )  or
+       ((  passedt.healthcare  == "optometrist"                 )   and
+        (( passedt.amenity     == nil                          )    or
+         ( passedt.amenity     == ""                           ))   and
+        (( passedt.shop        == nil                          )    or
+         ( passedt.shop        == ""                           )))) then
       passedt.landuse = "unnamedcommercial"
       passedt.shop    = "optician"
-   end
-
--- ----------------------------------------------------------------------------
--- chiropodists etc. - render as "nonspecific health".
--- Add unnamedcommercial landuse to give non-building areas a background.
---
--- Places that _sell_ mobility aids are in here.  Shopmobility handled
--- separately.
--- ----------------------------------------------------------------------------
-   if (( passedt.shop        == "hearing_aids"                 ) or
-       ( passedt.healthcare  == "hearing_care"                 ) or
-       ( passedt.shop        == "medical_supply"               ) or
-       ( passedt.office      == "medical_supply"               ) or
-       ( passedt.shop        == "mobility"                     ) or
-       ( passedt.shop        == "mobility_scooter"             ) or
-       ( passedt.shop        == "wheelchair"                   ) or
-       ( passedt.shop        == "mobility_aids"                ) or
-       ( passedt.shop        == "disability"                   ) or
-       ( passedt.shop        == "chiropodist"                  ) or
-       ( passedt.amenity     == "chiropodist"                  ) or
-       ( passedt.healthcare  == "chiropodist"                  ) or
-       ( passedt.amenity     == "chiropractor"                 ) or
-       ( passedt.healthcare  == "chiropractor"                 ) or
-       ( passedt.healthcare  == "department"                   ) or
-       ( passedt.healthcare  == "diagnostics"                  ) or
-       ( passedt.healthcare  == "dialysis"                     ) or
-       ( passedt.shop        == "osteopath"                    ) or
-       ( passedt.office      == "osteopath"                    ) or
-       ( passedt.amenity     == "physiotherapist"              ) or
-       ( passedt.healthcare  == "physiotherapist"              ) or
-       ( passedt.healthcare  == "physiotherapist;podiatrist"   ) or
-       ( passedt.shop        == "physiotherapist"              ) or
-       ( passedt.healthcare  == "physiotherapy"                ) or
-       ( passedt.shop        == "physiotherapy"                ) or
-       ( passedt.healthcare  == "psychotherapist"              ) or
-       ( passedt.healthcare  == "therapy"                      ) or
-       ( passedt.healthcare  == "podiatrist"                   ) or
-       ( passedt.healthcare  == "podiatrist;chiropodist"       ) or
-       ( passedt.amenity     == "podiatrist"                   ) or
-       ( passedt.healthcare  == "podiatry"                     ) or
-       ( passedt.amenity     == "healthcare"                   ) or
-       ( passedt.amenity     == "clinic"                       ) or
-       ( passedt.healthcare  == "clinic"                       ) or
-       ( passedt.healthcare  == "clinic;doctor"                ) or
-       ( passedt.shop        == "clinic"                       ) or
-       ( passedt.amenity     == "social_facility"              ) or
-       ((( passedt.amenity         == nil                    )   or
-         ( passedt.amenity         == ""                     ))  and
-        (( passedt.social_facility == "group_home"           )   or
-         ( passedt.social_facility == "nursing_home"         )   or
-         ( passedt.social_facility == "assisted_living"      )   or
-         ( passedt.social_facility == "care_home"            )   or
-         ( passedt.social_facility == "shelter"              )   or
-         ( passedt.social_facility == "day_care"             )   or
-         ( passedt.social_facility == "day_centre"           )   or
-         ( passedt.social_facility == "residential_home"     ))) or
-       ( passedt.amenity     == "nursing_home"                 ) or
-       ( passedt.healthcare  == "nursing_home"                 ) or
-       ( passedt.residential == "nursing_home"                 ) or
-       ( passedt.building    == "nursing_home"                 ) or
-       ( passedt.amenity     == "care_home"                    ) or
-       ( passedt.residential == "care_home"                    ) or
-       ( passedt.amenity     == "retirement_home"              ) or
-       ( passedt.amenity     == "residential_home"             ) or
-       ( passedt.residential == "residential_home"             ) or
-       ( passedt.amenity     == "sheltered_housing"            ) or
-       ( passedt.residential == "sheltered_housing"            ) or
-       ( passedt.amenity     == "childcare"                    ) or
-       ( passedt.amenity     == "childrens_centre"             ) or
-       ( passedt.amenity     == "preschool"                    ) or
-       ( passedt.building    == "preschool"                    ) or
-       ( passedt.amenity     == "nursery"                      ) or
-       ( passedt.amenity     == "nursery_school"               ) or
-       ( passedt.amenity     == "health_centre"                ) or
-       ( passedt.healthcare  == "health_centre"                ) or
-       ( passedt.building    == "health_centre"                ) or
-       ( passedt.amenity     == "medical_centre"               ) or
-       ( passedt.building    == "medical_centre"               ) or
-       ( passedt.healthcare  == "centre"                       ) or
-       ( passedt.healthcare  == "counselling"                  ) or
-       ( passedt.craft       == "counsellor"                   ) or
-       ( passedt.amenity     == "hospice"                      ) or
-       ( passedt.healthcare  == "hospice"                      ) or
-       ( passedt.healthcare  == "cosmetic"                     ) or
-       ( passedt.healthcare  == "cosmetic_surgery"             ) or
-       ( passedt.healthcare  == "dentures"                     ) or
-       ( passedt.shop        == "dentures"                     ) or
-       ( passedt.shop        == "denture"                      ) or
-       ( passedt.healthcare  == "blood_donation"               ) or
-       ( passedt.healthcare  == "blood_bank"                   ) or
-       ( passedt.healthcare  == "sports_massage_therapist"     ) or
-       ( passedt.healthcare  == "massage"                      ) or
-       ( passedt.healthcare  == "rehabilitation"               ) or
-       ( passedt.healthcare  == "drug_rehabilitation"          ) or
-       ( passedt.healthcare  == "medical_imaging"              ) or
-       ( passedt.healthcare  == "midwife"                      ) or
-       ( passedt.healthcare  == "occupational_therapist"       ) or
-       ( passedt.healthcare  == "speech_therapist"             ) or
-       ( passedt.healthcare  == "tattoo_removal"               ) or
-       ( passedt.healthcare  == "trichologist"                 ) or
-       ( passedt.healthcare  == "ocular_prosthetics"           ) or
-       ( passedt.healthcare  == "audiologist"                  ) or
-       ( passedt.shop        == "audiologist"                  ) or
-       ( passedt.healthcare  == "hearing"                      ) or
-       ( passedt.healthcare  == "mental_health"                ) or
-       ( passedt.amenity     == "daycare"                      )) then
-      passedt.landuse = "unnamedcommercial"
-      passedt.shop    = "healthnonspecific"
+      passedt.amenity = nil
+      passedt.craft   = nil
+      passedt.amenity = nil
    end
 
 -- ----------------------------------------------------------------------------
@@ -10343,7 +10399,6 @@ function consolidate_lua_04_t( passedt )
        ( passedt.office      == "employment_agency"       ) or
        ( passedt.shop        == "home_care"               ) or
        ( passedt.office      == "home_care"               ) or
-       ( passedt.healthcare  == "home_care"               ) or
        ( passedt.shop        == "employment_agency"       ) or
        ( passedt.shop        == "employment"              ) or
        ( passedt.shop        == "jobs"                    ) or
@@ -10395,9 +10450,18 @@ function consolidate_lua_04_t( passedt )
        ( passedt.shop        == "water"                   ) or
        ( passedt.shop        == "pest_control"            ) or
        ( passedt.office      == "electrician"             ) or
-       ( passedt.shop        == "electrician"             )) then
-      passedt.landuse = "unnamedcommercial"
-      passedt.office = "nonspecific"
+       ( passedt.shop        == "electrician"             ) or
+       ((( passedt.amenity    == nil                    )   or
+         ( passedt.amenity    == ""                     ))  and
+        (( passedt.shop       == nil                    )   or
+         ( passedt.shop       == ""                     ))  and
+        (  passedt.healthcare == "home_care"             ))) then
+      passedt.office     = "nonspecific"
+      passedt.landuse    = "unnamedcommercial"
+      passedt.amenity    = nil
+      passedt.craft      = nil
+      passedt.healthcare = nil
+      passedt.shop       = nil
    end
 
 -- ----------------------------------------------------------------------------
