@@ -489,7 +489,8 @@ function consolidate_lua_01_t( passedt )
    if ( passedt.highway == "scramble"  ) then
       passedt.highway = "path"
 
-      if ( passedt.sac_scale == nil  ) then
+      if (( passedt.sac_scale == nil  ) or
+          ( passedt.sac_scale == ""   )) then
          passedt.sac_scale = "demanding_alpine_hiking"
       end
    end
@@ -545,13 +546,15 @@ function consolidate_lua_01_t( passedt )
           ( passedt.width == "2.5 m"              ) or
           ( passedt.width == "3 m"                ) or
           ( passedt.width == "4 m"                )) then
-         if ( passedt.bridge == nil ) then
+         if (( passedt.bridge == nil ) or
+             ( passedt.bridge == ""  )) then
             passedt.highway = "badpathwide"
          else
             passedt.highway = "intpathwide"
          end
       else
-         if ( passedt.bridge == nil ) then
+         if (( passedt.bridge == nil ) or
+             ( passedt.bridge == ""  )) then
             passedt.highway = "badpathnarrow"
          else
             passedt.highway = "intpathnarrow"
@@ -644,7 +647,8 @@ function consolidate_lua_01_t( passedt )
 -- difficult_alpine_hiking:
 -- http://www.openstreetmap.org/way/334306672   Jack's Rake, Pavey Ark
 -- ----------------------------------------------------------------------------
-   if ((  passedt.designation == nil                        ) and
+   if ((( passedt.designation == nil                       )  or
+        ( passedt.designation == ""                        )) and
        (( passedt.sac_scale   == "demanding_alpine_hiking" )  or
         ( passedt.sac_scale   == "difficult_alpine_hiking" ))) then
       if ((( tonumber(passedt.width) or 0 ) >=  2 ) or
@@ -1207,12 +1211,15 @@ function consolidate_lua_02_t( passedt )
 -- The "barrier" check is to avoid linear barriers with this tag as well 
 -- becoming area ones unexpectedly
 -- ----------------------------------------------------------------------------
-   if ((( passedt.natural == "garden"     )   or
-        ( passedt.natural == "plants"     )   or
-        ( passedt.natural == "flower_bed" ))  and
-       (( passedt.landuse == nil          )   and
-        ( passedt.leisure == nil          )   and
-        ( passedt.barrier == nil          ))) then
+   if (((  passedt.natural == "garden"      )   or
+        (  passedt.natural == "plants"      )   or
+        (  passedt.natural == "flower_bed"  ))  and
+       ((( passedt.landuse == nil          )    or
+         ( passedt.landuse == ""           ))   and
+        (( passedt.leisure == nil          )    or
+         ( passedt.leisure == ""           ))   and
+        (( passedt.barrier == nil          )    or
+         ( passedt.barrier == ""           )))) then
       passedt.leisure = "garden"
    end
 
@@ -3291,8 +3298,9 @@ function consolidate_lua_03_t( passedt )
           ( passedt.ruins    == "bunker"                     ))   or
          (  passedt.historic == "pillbox"                     )   or
          (  passedt.building == "pillbox"                     ))  and
-        (   passedt.military == nil                            )) or
-       ((   passedt["disused:military"] == "bunker"               )  and
+        ((  passedt.military == nil                           )   or
+         (  passedt.military == ""                            ))) or
+       ((   passedt["disused:military"] == "bunker"            )  and
         ((  passedt.military         == nil                   )   or
          (  passedt.military         == ""                    ))) or
        (((  passedt.military         == "bunker"              )   or
@@ -4974,7 +4982,8 @@ function consolidate_lua_03_t( passedt )
    if ( passedt.amenity == "piano" ) then
       passedt.amenity = "musical_instrument"
 
-      if ( passedt.name == nil ) then
+      if (( passedt.name == nil )  or
+          ( passedt.name == ""  )) then
             passedt.name = "Piano"
       end
    end
@@ -5545,7 +5554,8 @@ function consolidate_lua_03_t( passedt )
       else
          passedt.area = "yes"
 
-         if ( passedt.landuse == nil ) then
+         if (( passedt.landuse == nil )  or
+             ( passedt.landuse == ""  )) then
             passedt.landuse = "railway"
          end
       end

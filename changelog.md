@@ -7,6 +7,7 @@ This page describes changes made in these projects: [SomeoneElse-style](https://
 
 ## 10/08/2025
 (raster, vector) Show `leisure=bike_park` as `landuse=recreation_ground`.
+(vector) Fix some bugs in the shared lua that could potentially result in blank values being missed in comparisons.
 
 ## 06/08/2025
 (vector) Ensure that bus stops that have also been tagged as platforms are correctly treated as bus stops.
