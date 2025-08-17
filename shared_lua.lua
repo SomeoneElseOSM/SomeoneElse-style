@@ -11253,13 +11253,22 @@ function consolidate_lua_04_t( passedt )
 -- ----------------------------------------------------------------------------
 -- Clock towers
 -- ----------------------------------------------------------------------------
+   if (( passedt.building   == "church" ) and
+       ( passedt.amenity    == "clock"  )) then
+      passedt.man_made = "clocktower"
+      passedt.historic = nil
+      passedt.tourism = nil
+   end
+
    if (((  passedt.man_made   == "tower"        )  and
-        (( passedt["tower:type"] == "clock"       )   or
+        (( passedt["tower:type"] == "clock"    )   or
          ( passedt.building   == "clock_tower" )   or
+         ( passedt.building   == "clocktower"  )   or
          ( passedt.amenity    == "clock"       ))) or
        ((  passedt.amenity    == "clock"        )  and
         (  passedt.support    == "tower"        ))) then
       passedt.man_made = "clocktower"
+      passedt.historic = nil
       passedt.tourism = nil
    end
 
@@ -11270,6 +11279,7 @@ function consolidate_lua_04_t( passedt )
         ( passedt.support    == "plinth"       )   or
         ( passedt.support    == "column"       ))) then
       passedt.man_made = "clockpedestal"
+      passedt.historic = nil
       passedt.tourism = nil
    end
 
