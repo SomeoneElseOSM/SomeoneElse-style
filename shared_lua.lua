@@ -11256,6 +11256,7 @@ function consolidate_lua_04_t( passedt )
    if (( passedt.building   == "church" ) and
        ( passedt.amenity    == "clock"  )) then
       passedt.man_made = "clocktower"
+      passedt.amenity = nil
       passedt.historic = nil
       passedt.tourism = nil
    end
@@ -11268,6 +11269,7 @@ function consolidate_lua_04_t( passedt )
        ((  passedt.amenity    == "clock"        )  and
         (  passedt.support    == "tower"        ))) then
       passedt.man_made = "clocktower"
+      passedt.amenity = nil
       passedt.historic = nil
       passedt.tourism = nil
    end
@@ -11279,6 +11281,20 @@ function consolidate_lua_04_t( passedt )
         ( passedt.support    == "plinth"       )   or
         ( passedt.support    == "column"       ))) then
       passedt.man_made = "clockpedestal"
+      passedt.amenity = nil
+      passedt.historic = nil
+      passedt.tourism = nil
+   end
+
+-- ----------------------------------------------------------------------------
+-- If we still have a clock, try and show it.
+-- ----------------------------------------------------------------------------
+   if ((  passedt.amenity    == "clock"         )  and
+       (  passedt.indoor     ~= "yes"           )  and
+       (( passedt.office     == nil            )   or
+        ( passedt.office     == ""             ))) then
+      passedt.man_made = "clockface"
+      passedt.amenity = nil
       passedt.historic = nil
       passedt.tourism = nil
    end
