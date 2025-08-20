@@ -3,6 +3,7 @@ This page describes changes made in these projects: [SomeoneElse-style](https://
 
 ## As yet unreleased
 (raster, vector) Show clocks that are neither pedestal clocks nor clock towers.
+(raster, vector) Handle "eco" versions of doityourself, gift, beauty, pet, and discount shops.
 
 ## Vector 17/08/2025, raster as yet unreleased
 (raster, vector) Show some more clock towers.

@@ -8498,6 +8498,7 @@ function consolidate_lua_04_t( passedt )
 -- Render "eco" shops with their own icons
 -- ----------------------------------------------------------------------------
    if ((   passedt.shop               == "zero_waste"          ) or
+       (   passedt.shop               == "eco"                 ) or
        (   passedt.shop               == "eco_refill"          ) or
        (   passedt.shop               == "refill"              ) or
        ((( passedt.shop               == "convenience"        )  or
@@ -8541,6 +8542,15 @@ function consolidate_lua_04_t( passedt )
        ( passedt.shop   == "thrift"        ) or
        ( passedt.shop   == "variety_store" )) then
       passedt.shop = "discount"
+   end
+
+   if ((  passedt.shop               == "discount"         ) and
+       (( passedt.zero_waste         == "yes"             )  or
+        ( passedt.zero_waste         == "only"            )  or
+        ( passedt.bulk_purchase      == "yes"             )  or
+        ( passedt.bulk_purchase      == "only"            )  or
+        ( passedt.reusable_packaging == "yes"             ))) then
+      passedt.shop = "ecodiscount"
    end
 
 -- ----------------------------------------------------------------------------
@@ -9215,6 +9225,15 @@ function consolidate_lua_04_t( passedt )
       passedt.amenity = nil
    end
 
+   if ((  passedt.shop               == "doityourself"     ) and
+       (( passedt.zero_waste         == "yes"             )  or
+        ( passedt.zero_waste         == "only"            )  or
+        ( passedt.bulk_purchase      == "yes"             )  or
+        ( passedt.bulk_purchase      == "only"            )  or
+        ( passedt.reusable_packaging == "yes"             ))) then
+      passedt.shop = "ecodoityourself"
+   end
+
 -- ----------------------------------------------------------------------------
 -- Consolidate "lenders of last resort" as pawnbroker
 -- "money_transfer" and down from there is perhaps a bit of a stretch; 
@@ -9328,6 +9347,15 @@ function consolidate_lua_04_t( passedt )
       passedt.shop = "beauty"
    end
 
+   if ((  passedt.shop               == "beauty"           ) and
+       (( passedt.zero_waste         == "yes"             )  or
+        ( passedt.zero_waste         == "only"            )  or
+        ( passedt.bulk_purchase      == "yes"             )  or
+        ( passedt.bulk_purchase      == "only"            )  or
+        ( passedt.reusable_packaging == "yes"             ))) then
+      passedt.shop = "ecobeauty"
+   end
+
 -- ----------------------------------------------------------------------------
 -- "Non-electrical" electronics (i.e. ones for which the "electrical" icon
 -- is inappropriate).
@@ -9411,6 +9439,15 @@ function consolidate_lua_04_t( passedt )
        ( passedt.shop   == "armour"              ) or
        ( passedt.shop   == "arts_and_crafts"     )) then
       passedt.shop = "gift"
+   end
+
+   if ((  passedt.shop               == "gift"             ) and
+       (( passedt.zero_waste         == "yes"             )  or
+        ( passedt.zero_waste         == "only"            )  or
+        ( passedt.bulk_purchase      == "yes"             )  or
+        ( passedt.bulk_purchase      == "only"            )  or
+        ( passedt.reusable_packaging == "yes"             ))) then
+      passedt.shop = "ecogift"
    end
 
 -- ----------------------------------------------------------------------------
@@ -9653,6 +9690,15 @@ function consolidate_lua_04_t( passedt )
        ( passedt.shop    == "aquarium"                )) then
       passedt.landuse = "unnamedcommercial"
       passedt.shop = "pet"
+   end
+
+   if ((  passedt.shop               == "pet"              ) and
+       (( passedt.zero_waste         == "yes"             )  or
+        ( passedt.zero_waste         == "only"            )  or
+        ( passedt.bulk_purchase      == "yes"             )  or
+        ( passedt.bulk_purchase      == "only"            )  or
+        ( passedt.reusable_packaging == "yes"             ))) then
+      passedt.shop = "ecopet"
    end
 
 -- ----------------------------------------------------------------------------
