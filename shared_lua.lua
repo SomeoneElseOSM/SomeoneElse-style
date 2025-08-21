@@ -3405,6 +3405,13 @@ function consolidate_lua_03_t( passedt )
    end
 
 -- ----------------------------------------------------------------------------
+-- Handle blockfield as scree
+-- ----------------------------------------------------------------------------
+   if ( passedt.natural == "blockfield" ) then
+      passedt.natural = "scree"
+   end
+
+-- ----------------------------------------------------------------------------
 -- Render tidal beaches with more blue
 -- ----------------------------------------------------------------------------
    if ((  passedt.natural   == "beach"      ) and
