@@ -206,7 +206,6 @@ function filter_tags_generic(keyvalues, nokeys)
           ( keyvalues["sidewalk"] == "yes"             ) or
           ( keyvalues["sidewalk:left"] == "separate"   ) or 
           ( keyvalues["sidewalk:left"] == "yes"        ) or
-          ( keyvalues["sidewalk:left"] == "segregated" ) or
           ( keyvalues["sidewalk:right"] == "separate"  ) or 
           ( keyvalues["sidewalk:right"] == "yes"       ) or
           ( keyvalues["sidewalk:both"] == "separate"   ) or 
@@ -284,7 +283,6 @@ function filter_tags_generic(keyvalues, nokeys)
           ( keyvalues["sidewalk"] == "yes"             ) or
           ( keyvalues["sidewalk:left"] == "separate"   ) or 
           ( keyvalues["sidewalk:left"] == "yes"        ) or
-          ( keyvalues["sidewalk:left"] == "segregated" ) or
           ( keyvalues["sidewalk:right"] == "separate"  ) or 
           ( keyvalues["sidewalk:right"] == "yes"       ) or
           ( keyvalues["sidewalk:both"] == "separate"   ) or 
@@ -368,7 +366,6 @@ function filter_tags_generic(keyvalues, nokeys)
           ( keyvalues["sidewalk"] == "yes"             ) or
           ( keyvalues["sidewalk:left"] == "separate"   ) or 
           ( keyvalues["sidewalk:left"] == "yes"        ) or
-          ( keyvalues["sidewalk:left"] == "segregated" ) or
           ( keyvalues["sidewalk:right"] == "separate"  ) or 
           ( keyvalues["sidewalk:right"] == "yes"       ) or
           ( keyvalues["sidewalk:both"] == "separate"   ) or 
@@ -442,7 +439,6 @@ function filter_tags_generic(keyvalues, nokeys)
           ( keyvalues["sidewalk"] == "yes"             ) or
           ( keyvalues["sidewalk:left"] == "separate"   ) or 
           ( keyvalues["sidewalk:left"] == "yes"        ) or
-          ( keyvalues["sidewalk:left"] == "segregated" ) or
           ( keyvalues["sidewalk:right"] == "separate"  ) or 
           ( keyvalues["sidewalk:right"] == "yes"       ) or
           ( keyvalues["sidewalk:both"] == "separate"   ) or 
@@ -506,7 +502,6 @@ function filter_tags_generic(keyvalues, nokeys)
           ( keyvalues["sidewalk"] == "yes"             ) or
           ( keyvalues["sidewalk:left"] == "separate"   ) or 
           ( keyvalues["sidewalk:left"] == "yes"        ) or
-          ( keyvalues["sidewalk:left"] == "segregated" ) or
           ( keyvalues["sidewalk:right"] == "separate"  ) or 
           ( keyvalues["sidewalk:right"] == "yes"       ) or
           ( keyvalues["sidewalk:both"] == "separate"   ) or 

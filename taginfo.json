@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20250820T231801Z",
+  "data_updated": "20250821T094501Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -2858,7 +2858,7 @@
     { "key": "shop", "value": "bicycle_repair", "description": "Various shops shown" },
     { "key": "shop", "value": "blinds", "description": "Various shops shown" },
     { "key": "shop", "value": "boat", "description": "Various shops shown" },
-    { "key": "shop", "value": "boat_rental", "description": "Various shops shown" },
+    { "key": "shop", "value": "boat_rental", "description": "Not a current value in OSM data.  Shown as leisure=nonspecific" },
     { "key": "shop", "value": "boat_repair", "description": "Various shops shown" },
     { "key": "shop", "value": "body_piercing", "description": "Various shops shown" },
     { "key": "shop", "value": "bookmaker", "description": "Various shops shown" },
@@ -3465,7 +3465,6 @@
     { "key": "sidewalk:both", "value": "separate", "description": "Show sidewalks on roads" },
     { "key": "sidewalk:both", "value": "yes", "description": "Show sidewalks on roads" },
     { "key": "sidewalk:left", "description": "Show sidewalks on roads" },
-    { "key": "sidewalk:left", "value": "segregated", "description": "Show sidewalks on roads" },
     { "key": "sidewalk:left", "value": "separate", "description": "Show sidewalks on roads" },
     { "key": "sidewalk:left", "value": "yes", "description": "Show sidewalks on roads" },
     { "key": "sidewalk:right", "description": "Show sidewalks on roads" },
