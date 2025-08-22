@@ -10751,7 +10751,6 @@ function consolidate_lua_04_t( passedt )
        ( passedt.leisure  == "climbing"                 ) or
        ( passedt.leisure  == "club"                     ) or
        ( passedt.leisure  == "dance"                    ) or
-       ( passedt.leisure  == "dojo"                     ) or
        ( passedt.leisure  == "escape_game"              ) or
        ( passedt.leisure  == "firepit"                  ) or
        ( passedt.leisure  == "fitness_centre"           ) or

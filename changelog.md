@@ -1,18 +1,19 @@
 # Changes made to this rendering
 This page describes changes made in these projects: [SomeoneElse-style](https://github.com/SomeoneElseOSM/SomeoneElse-style), [SomeoneElse-style-legend](https://github.com/SomeoneElseOSM/SomeoneElse-style-legend) and [openstreetmap-carto-AJT](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT), and visible [on this site](//map.atownsend.org.uk/maps/map/map.html).  Since 2025 this also includes changes to lua code shared between raster and vector processing - hence the notes below about which a particular change applies to.  See [this changelog](https://github.com/SomeoneElseOSM/SomeoneElse-vector-extract/blob/main/resources/changelog_sve01.md) for where changes here affect the vector schema, and also other vector-only ones.
 
-## As yet unreleased
+## 22/08/2025
 (raster, vector) Removed `sidewalk:left=segregated`.  No longer in the data.
 (raster, vector) Handle `natural=blockfield` in the same way as `scree`.
+(raster, vector) Removed `leisure=dojo`.  No longer in the data.
 
-## Vector 20/08/2025, raster as yet unreleased
+## Vector 20/08/2025, raster 22/08/2025
 (raster, vector) Show clocks that are neither pedestal clocks nor clock towers.
 (raster, vector) Handle "eco" versions of doityourself, gift, beauty, pet, and discount shops.
 
-## Vector 17/08/2025, raster as yet unreleased
+## Vector 17/08/2025, raster 22/08/2025
 (raster, vector) Show some more clock towers.
 
-## Vector 16/08/2025, raster as yet unreleased
+## Vector 16/08/2025, raster 22/08/2025
 (raster, vector) Ensure that conditions that might clear `disused:amenity` are processed before `disused:amenity` itself is processed.
 (raster, vector) Process contradictory `healthcare` values better - `amenity` or `disused:amenity` etc. now take precedence.
 
