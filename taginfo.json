@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20250822T092701Z",
+  "data_updated": "20250824T105201Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -3643,6 +3643,8 @@
     { "key": "surface", "value": "unpaved", "description": "Show gravel residential an service roads as lower quality" },
     { "key": "surface", "value": "unpaved/paved", "description": "Used to determine if roads are unpaved" },
     { "key": "sustrans_ref", "description": "USed as ref on sustrans mileposts" },
+    { "key": "tactile_paving", "description": "Detect non-crossings added by StreetComplete" },
+    { "key": "tactile_paving", "value": "no", "description": "Detect non-crossings added by StreetComplete" },
     { "key": "taxon", "description": "Detect hogweed hazard" },
     { "key": "taxon", "value": "Heracleum mantegazzianum", "description": "Detect hogweed hazard" },
     { "key": "telecom", "description": "Used when detecting telephone exchanges" },

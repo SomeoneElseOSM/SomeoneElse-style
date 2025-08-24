@@ -7167,6 +7167,17 @@ function consolidate_lua_03_t( passedt )
    end
 
 -- ----------------------------------------------------------------------------
+-- Detect some "non-crossings" added by StreetComplete and remove them.
+-- ----------------------------------------------------------------------------
+   if (( passedt.highway              == "crossing" )  and
+       ( passedt["crossing:island"]   == "no"       )  and
+       ( passedt["crossing:markings"] == "no"       )  and
+       ( passedt["crossing:signals"]  == "no"       )  and
+       ( passedt.tactile_paving       == "no"       )) then
+      passedt.highway = nil
+   end
+
+-- ----------------------------------------------------------------------------
 -- Various types of traffic light controlled crossings
 -- ----------------------------------------------------------------------------
    if ((( passedt.crossing == "traffic_signals"              )  or
