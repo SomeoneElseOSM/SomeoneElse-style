@@ -88,10 +88,12 @@ mv /etc/cron.d/osm_ldp3 .
 df
 cd /home/${local_filesystem_user}/data
 #
-# Stop rendering so that we can use "ALTER" to change database names
+# Stop rendering and restart postgresql
+# so that we can use "ALTER" to change database names
 #
 /etc/init.d/renderd stop
 /etc/init.d/apache2 stop
+/etc/init.d/postgresql restart
 #
 # Rename the databases
 #

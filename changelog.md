@@ -3,6 +3,7 @@ This page describes changes made in these projects: [SomeoneElse-style](https://
 
 ## As yet unreleased
 (raster, vector) Detect "non-crossings" added by StreetComplete and remove them.
+(raster) When making a style live, restart postgresql before renaming databases to avoid problems with idle connections
 
 ## 22/08/2025
 (raster, vector) Removed `sidewalk:left=segregated`.  No longer in the data.
