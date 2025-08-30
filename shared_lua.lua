@@ -11442,7 +11442,7 @@ function consolidate_lua_04_t( passedt )
        ( passedt.man_made == "transmitter"          ) or
        ( passedt.man_made == "antenna"              ) or
        ( passedt.man_made == "mast"                 )) then
-      if (( tonumber(passedt.height) or 0 ) >  300 ) then
+      if (( tonumber(passedt.height) or 0 ) >  150 ) then
          passedt.man_made = "bigmast"
       else
          passedt.man_made = "mast"
