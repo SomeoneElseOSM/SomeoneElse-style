@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20250824T105201Z",
+  "data_updated": "20250830T233101Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -2288,6 +2288,7 @@
     { "key": "natural", "value": "earth_bank", "description": "Treated as a type of embankment" },
     { "key": "natural", "value": "embankment", "description": "Treated as a synonym for man_made=embankment" },
     { "key": "natural", "value": "fell", "description": "Various natural features shown" },
+    { "key": "natural", "value": "fen", "description": "Treated as place=locality" },
     { "key": "natural", "value": "fishing_bank", "description": "Treated as a place=locality" },
     { "key": "natural", "value": "floodplain", "description": "Various natural features shown" },
     { "key": "natural", "value": "flower_bed", "description": "Synonym for leisure=garden, if no other appropriate tag." },

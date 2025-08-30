@@ -2962,14 +2962,16 @@ function consolidate_lua_03_t( passedt )
 -- only at higher zooms.  See 19/03/2023 in changelog.html .
 -- ----------------------------------------------------------------------------
    if ((   passedt.place    == "locality"       ) and
-       ((  passedt.natural  == "peak"          )  or
-        (  passedt.natural  == "hill"          )  or
-        (( passedt.amenity  ~= nil            )   and
+       ((( passedt.amenity  ~= nil            )   and
          ( passedt.amenity  ~= ""             ))  or
         (( passedt.man_made ~= nil            )   and
          ( passedt.man_made ~= ""             ))  or
         (( passedt.historic ~= nil            )   and
-         ( passedt.historic ~= ""             )))) then
+         ( passedt.historic ~= ""             ))  or
+        (( passedt.landuse  ~= nil            )   and
+         ( passedt.landuse  ~= ""             ))  or
+        (( passedt.natural  ~= nil            )   and
+         ( passedt.natural  ~= ""             )))) then
       passedt.place = nil
    end
 
@@ -12330,6 +12332,16 @@ function consolidate_place_t( passedt )
        passedt.place = "locality"
     end
 
+-- ----------------------------------------------------------------------------
+-- We don't handle "natural=fen" as such.
+-- All but one in UK/IE are also "place=locality" already.
+-- We explicitly clear "natural=fen" so that we can check for "not set" later.
+-- ----------------------------------------------------------------------------
+    if ( passedt.natural  == "fen" ) then
+        passedt.natural = nil
+        passedt.place = "locality"
+    end
+       
 -- ----------------------------------------------------------------------------
 -- Handle natural=cape etc. as place=locality if no other place tag.
 --
