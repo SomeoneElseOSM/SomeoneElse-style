@@ -3,6 +3,7 @@ This page describes changes made in these projects: [SomeoneElse-style](https://
 
 ## As yet unreleased
 (raster, vector) Removed `information=sitemap`.  No longer in the data.
+(raster) If a `place=locality` is a `townland` or `subtownland` and a point, remove it, because there will probably be a duplicate area.
 
 ## Vector 31/08/2025, raster as yet unreleased
 (raster, vector) Treat `natural=fen` as `place=locality` (most already have that tag set).

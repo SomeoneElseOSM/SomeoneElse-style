@@ -747,6 +747,17 @@ function filter_tags_node (keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- We display localities at certain zoom levels, but there are _lots_ of 
+-- townlands in Ireland that are mapped as duplicate points and areas, so we
+-- have to manually remove the points.
+-- ----------------------------------------------------------------------------
+   if ((  keyvalues["place"]    == "locality"     )  and
+       (( keyvalues["locality"] == "townland"    )   or
+        ( keyvalues["locality"] == "subtownland" ))) then
+      keyvalues["place"] = nil
+   end
+
+-- ----------------------------------------------------------------------------
 -- End of AJT node-only additions.
 -- ----------------------------------------------------------------------------
 
@@ -758,17 +769,6 @@ function filter_basic_tags_rel (keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
 -- AJT relation-only additions.
 -- ----------------------------------------------------------------------------
-
--- ----------------------------------------------------------------------------
--- We display localities at certain zoom levels, but there are _lots_ of 
--- townlands in Ireland that are mapped as duplicate points and areas, so we
--- have to manually remove the areas.
--- ----------------------------------------------------------------------------
-   if ((  keyvalues["place"]    == "locality"     )  and
-       (( keyvalues["locality"] == "townland"    )   or
-        ( keyvalues["locality"] == "subtownland" ))) then
-      keyvalues["place"] = nil
-   end
 
 -- ----------------------------------------------------------------------------
 -- End of AJT relation-only additions.
@@ -988,17 +988,6 @@ function filter_tags_way (keyvalues, nokeys)
        ( keyvalues["natural"] == nil              )) then
       keyvalues["amenity"] = nil
       keyvalues["natural"] = "water"
-   end
-
--- ----------------------------------------------------------------------------
--- We display localities at certain zoom levels, but there are _lots_ of 
--- townlands in Ireland that are mapped as duplicate points and areas, so we
--- have to manually remove the areas.
--- ----------------------------------------------------------------------------
-   if ((  keyvalues["place"]    == "locality"     )  and
-       (( keyvalues["locality"] == "townland"    )   or
-        ( keyvalues["locality"] == "subtownland" ))) then
-      keyvalues["place"] = nil
    end
 
 -- ----------------------------------------------------------------------------
