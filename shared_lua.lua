@@ -7534,7 +7534,6 @@ function consolidate_lua_03_t( passedt )
          ( passedt.information == "orientation_map"                  )    or
          ( passedt.information == "photo"                            )    or
          ( passedt.information == "screen"                           )    or
-         ( passedt.information == "sitemap"                          )    or
          ( passedt.information == "tactile_map"                      )    or
          ( passedt.information == "tactile_model"                    )    or
          ( passedt.information == "terminal"                         )    or

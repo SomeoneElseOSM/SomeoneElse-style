@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20250830T233101Z",
+  "data_updated": "20250831T162101Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -1812,7 +1812,6 @@
     { "key": "information", "value": "screen", "description": "Treated as information board" },
     { "key": "information", "value": "sign", "description": "Treated as civilian or military information sign" },
     { "key": "information", "value": "signpost", "description": "Treated as civilian or military information sign" },
-    { "key": "information", "value": "sitemap", "description": "Treated as information board" },
     { "key": "information", "value": "stele", "description": "Treated as information stele (post)" },
     { "key": "information", "value": "stone", "description": "Treated as information stele (post)" },
     { "key": "information", "value": "tactile_map", "description": "Treated as information board" },
