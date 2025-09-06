@@ -1466,7 +1466,6 @@ function consolidate_lua_03_t( passedt )
 -- Covered values - render as "yes" if appropriate.
 -- ----------------------------------------------------------------------------
    if (( passedt.covered == "arcade"           ) or
-       ( passedt.covered == "covered"          ) or
        ( passedt.covered == "colonnade"        ) or
        ( passedt.covered == "building_passage" ) or
        ( passedt.covered == "building_arcade"  ) or
@@ -8651,13 +8650,6 @@ function consolidate_lua_04_t( passedt )
        ( passedt.amenity == "funeral_directors"   ) or
        ( passedt.amenity == "undertaker"          )) then
       passedt.shop = "funeral_directors"
-   end
-
--- ----------------------------------------------------------------------------
--- "department_store" consolidation.
--- ----------------------------------------------------------------------------
-   if ( passedt.shop == "department" ) then
-      passedt.shop = "department_store"
    end
 
 -- ----------------------------------------------------------------------------
