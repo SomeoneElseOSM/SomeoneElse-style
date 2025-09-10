@@ -9356,7 +9356,6 @@ function consolidate_lua_04_t( passedt )
        ( passedt.shop         == "beauty_treatment"   ) or
        ( passedt.shop         == "perfumery"          ) or
        ( passedt.shop         == "cosmetics"          ) or
-       ( passedt.shop         == "tanning"            ) or
        ( passedt.shop         == "tan"                ) or
        ( passedt.shop         == "suntan"             ) or
        ( passedt.leisure      == "tanning_salon"      ) or

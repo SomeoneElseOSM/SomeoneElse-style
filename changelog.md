@@ -3,6 +3,7 @@ This page describes changes made in these projects: [SomeoneElse-style](https://
 
 ## As yet unreleased
 (raster, vector) Detect dry-stone walls mapped via `fence_type`.
+(raster, vector) Removed `shop=tanning`; no longed in OSM data.
 
 ## Vector 06/09/2025, raster as yet unreleased
 (raster, vector) Removed `covered=covered`; no longed in OSM data.
