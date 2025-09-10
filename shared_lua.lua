@@ -7836,6 +7836,12 @@ function consolidate_lua_03_t( passedt )
       passedt.barrier = "wall"
    end
 
+   if ((  passedt.barrier    == "fence"          )  and
+       (( passedt.fence_type == "drystone_wall" )   or
+        ( passedt.fence_type == "dry_stone"     ))) then
+      passedt.barrier = "wall"
+   end
+
 -- ----------------------------------------------------------------------------
 -- Hedge variations
 -- Assume "natural=hedge" should be "barrier=hedge".
