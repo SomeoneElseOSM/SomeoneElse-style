@@ -1565,6 +1565,18 @@ function consolidate_lua_03_t( passedt )
    end
 
 -- ----------------------------------------------------------------------------
+-- If something is tagged as a tourist attraction but has no name it can't 
+-- really be a tourist attraction, can it?
+-- Usually the real world feature has a name, 
+-- and that's on some other OSM object.
+-- ----------------------------------------------------------------------------
+   if ((  passedt.tourism == "attraction"  ) and
+       (( passedt.name    == nil          )  or
+        ( passedt.name    == ""           ))) then
+      passedt.tourism = nil
+   end
+
+-- ----------------------------------------------------------------------------
 -- Retag any remaining animal attractions or zoo enclosures for rendering.
 -- ----------------------------------------------------------------------------
    if ((( passedt.attraction == "animal"    )  or
