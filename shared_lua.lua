@@ -6044,21 +6044,24 @@ function consolidate_lua_03_t( passedt )
 -- First make sure that we treat historic ones also tagged as man_made 
 -- as historic
 -- ----------------------------------------------------------------------------
-   if (((( passedt["disused:man_made"] == "mine"       )  or
+   if (((( passedt["disused:man_made"] == "adit"       )  or
+         ( passedt["disused:man_made"] == "mine"       )  or
          ( passedt["disused:man_made"] == "mineshaft"  )  or
          ( passedt["disused:man_made"] == "mine_shaft" )) and
-        (( passedt.man_made         == nil          )  or
-         ( passedt.man_made         == ""           ))) or
-       ((( passedt.man_made == "mine"               )  or
-         ( passedt.man_made == "mineshaft"          )  or
-         ( passedt.man_made == "mine_shaft"         )) and
-        (( passedt.historic == "yes"                )  or
-         ( passedt.historic == "mine"               )  or
-         ( passedt.historic == "mineshaft"          )  or
-         ( passedt.historic == "mine_shaft"         )  or
-         ( passedt.historic == "mine_adit"          )  or
-         ( passedt.historic == "mine_level"         )  or
-         ( passedt.disused  == "yes"                )))) then
+        (( passedt.man_made            == nil          )  or
+         ( passedt.man_made            == ""           ))) or
+       ((( passedt.man_made    == "adit"               )  or
+         ( passedt.man_made    == "mine"               )  or
+         ( passedt.man_made    == "mineshaft"          )  or
+         ( passedt.man_made    == "mine_shaft"         )) and
+        (( passedt.historic    == "yes"                )  or
+         ( passedt.historic    == "adit"               )  or
+         ( passedt.historic    == "mine"               )  or
+         ( passedt.historic    == "mineshaft"          )  or
+         ( passedt.historic    == "mine_shaft"         )  or
+         ( passedt.historic    == "mine_adit"          )  or
+         ( passedt.historic    == "mine_level"         )  or
+         ( passedt.disused     == "yes"                )))) then
       passedt.historic = "mineshaft"
       passedt.man_made = nil
       passedt["disused:man_made"] = nil
@@ -6068,7 +6071,8 @@ function consolidate_lua_03_t( passedt )
 -- ----------------------------------------------------------------------------
 -- Then other spellings of man_made=mineshaft
 -- ----------------------------------------------------------------------------
-   if (( passedt.man_made   == "mine"       )  or
+   if (( passedt.man_made   == "adit"       )  or
+       ( passedt.man_made   == "mine"       )  or
        ( passedt.industrial == "mine"       )  or
        ( passedt.man_made   == "mine_shaft" )) then
       passedt.man_made = "mineshaft"
@@ -6077,7 +6081,8 @@ function consolidate_lua_03_t( passedt )
 -- ----------------------------------------------------------------------------
 -- and the historic equivalents
 -- ----------------------------------------------------------------------------
-   if (( passedt.historic == "mine_shaft"        ) or
+   if (( passedt.historic == "adit"              ) or
+       ( passedt.historic == "mine_shaft"        ) or
        ( passedt.historic == "mine_adit"         ) or
        ( passedt.historic == "mine_level"        ) or
        ( passedt.historic == "mine"              )) then
