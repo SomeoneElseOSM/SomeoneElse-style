@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20250910T230601Z",
+  "data_updated": "20250912T204501Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -2069,6 +2069,10 @@
     { "key": "man_made", "value": "signpost", "description": "Handled as information=guidepost" },
     { "key": "man_made", "value": "silo", "description": "Most man-made items are shown" },
     { "key": "man_made", "value": "sluice_gate", "description": "Shown as sluice gate" },
+    { "key": "man_made", "value": "slurry_basin", "description": "Shown as wet" },
+    { "key": "man_made", "value": "slurry_pit", "description": "Shown as wet" },
+    { "key": "man_made", "value": "slurry_pond", "description": "Shown as wet" },
+    { "key": "man_made", "value": "slurry_tank", "description": "Shown as a building" },
     { "key": "man_made", "value": "sound mirror", "description": "Shown as nonspecific historic item" },
     { "key": "man_made", "value": "spillway", "description": "Most man-made items are shown" },
     { "key": "man_made", "value": "spoil_heap", "description": "Shown as landfill" },

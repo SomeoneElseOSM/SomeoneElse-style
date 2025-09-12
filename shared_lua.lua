@@ -6024,6 +6024,13 @@ function consolidate_lua_03_t( passedt )
    end
 
 -- ----------------------------------------------------------------------------
+-- We show things like slurry tanks as buildings, so:
+-- ----------------------------------------------------------------------------
+   if ( passedt.man_made == "slurry_tank" ) then
+      passedt.building = "yes"
+   end
+
+-- ----------------------------------------------------------------------------
 -- Mineshafts
 -- First make sure that we treat historic ones also tagged as man_made 
 -- as historic
@@ -6864,6 +6871,9 @@ function consolidate_lua_03_t( passedt )
        (   passedt.man_made   == "lagoon"                ) or
        (   passedt.man_made   == "lake"                  ) or
        (   passedt.man_made   == "reservoir"             ) or
+       (   passedt.man_made   == "slurry_basin"          ) or
+       (   passedt.man_made   == "slurry_pit"            ) or
+       (   passedt.man_made   == "slurry_pond"           ) or
        (   passedt.landuse    == "reservoir"             ) or
        ((  passedt.landuse    == "basin"                )  and
         (( passedt.basin      == nil                   )   or
