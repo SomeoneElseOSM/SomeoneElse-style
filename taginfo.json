@@ -2061,6 +2061,7 @@
     { "key": "man_made", "value": "pier", "description": "Shown as black line" },
     { "key": "man_made", "value": "pipeline", "description": "Show overground pipelines as bridges; show underground pipelines in light purple" },
     { "key": "man_made", "value": "pipeline_marker", "description": "Shown as aerial pipeline marker" },
+    { "key": "man_made", "value": "planter", "description": "Handled as grass with a wall around it" },
     { "key": "man_made", "value": "post", "description": "Handled as barrier=post" },
     { "key": "man_made", "value": "pumping_station", "description": "Most man-made items are shown" },
     { "key": "man_made", "value": "radio_mast", "description": "Most man-made items are shown" },
