@@ -6885,6 +6885,7 @@ function consolidate_lua_03_t( passedt )
        (   passedt.man_made   == "lagoon"                ) or
        (   passedt.man_made   == "lake"                  ) or
        (   passedt.man_made   == "reservoir"             ) or
+       (   passedt.man_made   == "clarifier"             ) or
        (   passedt.man_made   == "slurry_basin"          ) or
        (   passedt.man_made   == "slurry_pit"            ) or
        (   passedt.man_made   == "slurry_pond"           ) or
