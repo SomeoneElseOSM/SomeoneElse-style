@@ -12368,7 +12368,8 @@ function consolidate_place_t( passedt )
 -- ----------------------------------------------------------------------------
 -- Handle man_made=courtyard as place=locality if no other place tag.
 -- ----------------------------------------------------------------------------
-    if ((  passedt.man_made == "courtyard"  ) and
+    if ((( passedt.man_made == "courtyard" )  or
+         ( passedt.man_made == "quay"      )) and
         (( passedt.place    == nil         )  or
          ( passedt.place    == ""          ))) then
        passedt.place = "locality"
