@@ -12365,6 +12365,16 @@ function consolidate_place_t( passedt )
     end
 
 -- ----------------------------------------------------------------------------
+-- Handle man_made=courtyard as place=locality if no other place tag.
+-- ----------------------------------------------------------------------------
+    if ((  passedt.man_made == "courtyard"  ) and
+        (( passedt.place    == nil         )  or
+         ( passedt.place    == ""          ))) then
+       passedt.place = "locality"
+       passedt.man_made = nil
+    end
+
+-- ----------------------------------------------------------------------------
 -- We don't handle "natural=fen" as such.
 -- All but one in UK/IE are also "place=locality" already.
 -- We explicitly clear "natural=fen" so that we can check for "not set" later.
@@ -12373,7 +12383,7 @@ function consolidate_place_t( passedt )
         passedt.natural = nil
         passedt.place = "locality"
     end
-       
+
 -- ----------------------------------------------------------------------------
 -- Handle natural=cape etc. as place=locality if no other place tag.
 --
