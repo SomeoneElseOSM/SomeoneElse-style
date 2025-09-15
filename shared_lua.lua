@@ -10309,7 +10309,6 @@ function consolidate_lua_04_t( passedt )
        ( passedt.amenity    == "office"            ) or
        ( passedt.office     == "private"           ) or
        ( passedt.office     == "research"          ) or
-       ( passedt.office     == "office"            ) or
        ( passedt.office     == "yes"               ) or
        ( passedt.commercial == "office"            )) then
       passedt.landuse = "unnamedcommercial"
