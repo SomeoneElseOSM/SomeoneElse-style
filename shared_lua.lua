@@ -6941,6 +6941,14 @@ function consolidate_lua_03_t( passedt )
       passedt.landuse = nil
    end
 
+   if ((  passedt.natural == "water"         ) and
+       (( passedt.basin   == "detention"    )  or
+        ( passedt.basin   == "infiltration" )  or
+        ( passedt.basin   == "stormwater"   )  or
+        ( passedt.basin   == "side_pound"   ))) then
+      passedt.natural = "intermittentwater"
+   end
+
 -- ----------------------------------------------------------------------------
 -- Also try and detect flood plains etc.
 -- ----------------------------------------------------------------------------
