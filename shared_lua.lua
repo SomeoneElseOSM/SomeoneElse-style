@@ -7070,45 +7070,48 @@ function consolidate_lua_03_t( passedt )
    end
 
 -- ----------------------------------------------------------------------------
--- Water monitoring stations
+-- Water quality monitoring stations
+-- Once we've decided how to classify something we clear the tags
+-- so that it won't get picked up as something else below.
 -- ----------------------------------------------------------------------------
-   if ((  passedt.man_made                  == "monitoring_station"  ) and
-       (( passedt["monitoring:water_level"]    == "yes"                )  or
-        ( passedt["monitoring:water_flow"]     == "yes"                )  or
-        ( passedt["monitoring:water_velocity"] == "yes"                ))) then
-      passedt.man_made = "monitoringwater"
-   end
+   if ((  passedt.man_made                    == "monitoring_station"  ) and
+       (( passedt["monitoring:bathing_water"] == "yes"                )  or
+        ( passedt["monitoring:water_quality"] == "yes"                ))) then
+      passedt.man_made = "monitoringwaterquality" 
+      passedt["monitoring:bathing_water"] = nil
+      passedt["monitoring:water_quality"] = nil
+  end
 
 -- ----------------------------------------------------------------------------
--- Weather monitoring stations
+-- Other water monitoring stations
 -- ----------------------------------------------------------------------------
-   if ((  passedt.man_made                  == "monitoring_station" ) and
-       (  passedt["monitoring:weather"]     == "yes"                ) and
-       (( passedt["weather:radar"]          == nil                 )  or
-        ( passedt["weather:radar"]          == ""                  )) and
-       (( passedt["monitoring:water_level"] == nil                 )  or
-        ( passedt["monitoring:water_level"] == ""                  ))) then
-      passedt.man_made = "monitoringweather"
+   if ((( passedt.man_made                     == "monitoring_station" )   or
+        ( passedt.man_made                     == "monitoring_gauge"   ))  and
+       (( passedt["monitoring:flood"]          == "yes"                )  or
+        ( passedt["monitoring:flow_rate"]      == "yes"                )  or
+        ( passedt["monitoring:river_level"]    == "yes"                )  or
+        ( passedt["monitoring:water_level"]    == "yes"                )  or
+        ( passedt["monitoring:water_flow"]     == "yes"                )  or
+        ( passedt["monitoring:water_velocity"] == "yes"                )  or
+        ( passedt.monitoring                   == "water"              )  or
+        ( passedt.monitoring                   == "river_level"        ))) then
+      passedt.man_made = "monitoringwater"
+      passedt.monitoring                   = nil
+      passedt["monitoring:flood"]          = nil
+      passedt["monitoring:flow_rate"]      = nil
+      passedt["monitoring:river_level"]    = nil
+      passedt["monitoring:water_level"]    = nil
+      passedt["monitoring:water_flow"]     = nil
+      passedt["monitoring:water_velocity"] = nil
    end
 
 -- ----------------------------------------------------------------------------
 -- Rainfall monitoring stations
 -- ----------------------------------------------------------------------------
    if ((  passedt.man_made               == "monitoring_station" ) and
-       (  passedt["monitoring:rainfall"]    == "yes"                ) and
-       (( passedt["monitoring:weather"]     == nil                 )  or
-        ( passedt["monitoring:weather"]     == ""                  )) and
-       (( passedt["monitoring:water_level"] == nil                 )  or
-        ( passedt["monitoring:water_level"] == ""                  ))) then
+       (  passedt["monitoring:rainfall"] == "yes"                )) then
       passedt.man_made = "monitoringrainfall"
-   end
-
--- ----------------------------------------------------------------------------
--- Earthquake monitoring stations
--- ----------------------------------------------------------------------------
-   if (( passedt.man_made                     == "monitoring_station" ) and
-       ( passedt["monitoring:seismic_activity"]  == "yes"                )) then
-      passedt.man_made = "monitoringearthquake"
+      passedt["monitoring:rainfall"] = nil
    end
 
 -- ----------------------------------------------------------------------------
@@ -7117,15 +7120,52 @@ function consolidate_lua_03_t( passedt )
    if (( passedt.man_made                   == "monitoring_station" ) and
        ( passedt["monitoring:sky_brightness"]  == "yes"                )) then
       passedt.man_made = "monitoringsky"
+      passedt["monitoring:sky_brightness"] = nil
+   end
+
+-- ----------------------------------------------------------------------------
+-- Earthquake monitoring stations
+-- ----------------------------------------------------------------------------
+   if (( passedt.man_made                     == "monitoring_station" ) and
+       ( passedt["monitoring:seismic_activity"]  == "yes"                )) then
+      passedt.man_made = "monitoringearthquake"
+      passedt["monitoring:seismic_activity"] = nil
+   end
+
+-- ----------------------------------------------------------------------------
+-- Generic Weather monitoring stations
+-- ----------------------------------------------------------------------------
+   if ((  passedt.man_made                  == "monitoring_station"  ) and
+       (( passedt["monitoring:weather"]     == "yes"                )  or
+        ( passedt["monitoring:temperature"] == "yes"                )  or
+        ( passedt.monitoring                == "weather_station"    )) and
+       (( passedt["weather:radar"]          == nil                  )  or
+        ( passedt["weather:radar"]          == ""                   ))) then
+      passedt.man_made = "monitoringweather"
+      passedt.monitoring                = nil
+      passedt["monitoring:temperature"] = nil
+      passedt["monitoring:weather"]     = nil
+   end
+
+-- ----------------------------------------------------------------------------
+-- Wind speed and direction monitoring stations
+-- ----------------------------------------------------------------------------
+   if ((  passedt.man_made                      == "monitoring_station"  ) and
+       (( passedt["monitoring:wind_direction"]  == "yes"                )  or
+        ( passedt["monitoring:wind_speed"]      == "yes"                )  or
+        ( passedt["monitoring:wind"]            == "yes"                ))) then
+      passedt.man_made = "monitoringwind"
+      passedt["monitoring:wind_direction"] = nil
+      passedt["monitoring:wind_speed"]     = nil
+      passedt["monitoring:wind"]           = nil
    end
 
 -- ----------------------------------------------------------------------------
 -- Air quality monitoring stations
 -- ----------------------------------------------------------------------------
-   if ((  passedt.man_made                  == "monitoring_station" ) and
-       (  passedt["monitoring:air_quality"] == "yes"                ) and
-       (( passedt["monitoring:weather"]     == nil                 )  or
-        ( passedt["monitoring:weather"]     == ""                  ))) then
+   if ((  passedt.man_made                  == "monitoring_station"  ) and
+       (( passedt["monitoring:air_quality"] == "yes"                )  or
+        ( passedt["monitoring"]             == "air_quality"        ))) then
       passedt.man_made = nil
       passedt.landuse = "industrial"
       if (( passedt.name == nil ) or
