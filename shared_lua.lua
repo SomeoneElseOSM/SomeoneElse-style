@@ -7620,8 +7620,7 @@ function consolidate_lua_03_t( passedt )
          ( passedt.information == "screen"                           )    or
          ( passedt.information == "tactile_map"                      )    or
          ( passedt.information == "tactile_model"                    )    or
-         ( passedt.information == "terminal"                         )    or
-         ( passedt.information == "wildlife"                         )))) then
+         ( passedt.information == "terminal"                         )))) then
       if ( passedt.board_type == "public_transport" ) then
          passedt.tourism = "informationpublictransport"
       else
