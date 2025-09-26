@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20250924T213601Z",
+  "data_updated": "20250926T113401Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -46,7 +46,7 @@
     { "key": "access:horse", "description": "Obscure synonym for horse" },
     { "key": "access:horse", "value": "yes", "description": "Obscure synonym for horse" },
     { "key": "accommodation", "description": "Causes 'roof' over pubs with accommodation" },
-    { "key": "accomodation", "description": "Misspelling of accommodation" },
+    { "key": "accomodation", "description": "Not an expected value in OSM data.  Misspelling of accommodation" },
     { "key": "addr:housename", "description": "Displayed if present and if some other formatted version of the name isn't used" },
     { "key": "addr:housenumber", "description": "Appended to addr:unit, if set" },
     { "key": "addr:interpolation", "description": "Address interpolation" },
