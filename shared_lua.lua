@@ -5216,7 +5216,7 @@ function consolidate_lua_03_t( passedt )
          if ( passedt.parking_space == "disabled" ) then
             passedt.amenity = "parking_freedisabled"
          else
-            passedt.amenity = "parking"
+            passedt.amenity = "parking_space"
             passedt.parking_space = "parking"
          end
       end
