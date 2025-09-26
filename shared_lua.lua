@@ -7144,13 +7144,14 @@ function consolidate_lua_03_t( passedt )
 
 -- ----------------------------------------------------------------------------
 -- Generic Weather monitoring stations
+-- We exclude weather radar towers here because they are dealt with elsewhere,
 -- ----------------------------------------------------------------------------
    if ((  passedt.man_made                  == "monitoring_station"  ) and
        (( passedt["monitoring:weather"]     == "yes"                )  or
         ( passedt["monitoring:temperature"] == "yes"                )  or
         ( passedt.monitoring                == "weather_station"    )) and
-       (( passedt["weather:radar"]          == nil                  )  or
-        ( passedt["weather:radar"]          == ""                   ))) then
+       (  passedt["tower:type"]             ~= "radar"               ) and
+       (  passedt["tower:type"]             ~= "weather_radar"       )) then
       passedt.man_made = "monitoringweather"
       passedt.monitoring                = nil
       passedt["monitoring:temperature"] = nil
