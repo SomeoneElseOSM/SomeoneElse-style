@@ -758,6 +758,18 @@ function filter_tags_node (keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- "junction=yes" nodes with a name and no other highway tags.
+-- ----------------------------------------------------------------------------
+   if ((  keyvalues["junction"] == "yes" ) and
+       (  keyvalues["name"]     ~= nil   ) and
+       (  keyvalues["name"]     ~= ""    ) and
+       (( keyvalues["highway"]  == nil  )  or
+        ( keyvalues["highway"]  == ""   ))) then
+      keyvalues["highway"]  = "motorway_junction"
+      keyvalues["junction"] = nil
+   end
+
+-- ----------------------------------------------------------------------------
 -- End of AJT node-only additions.
 -- ----------------------------------------------------------------------------
 

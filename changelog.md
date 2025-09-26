@@ -5,6 +5,7 @@ This page describes changes made in these projects: [SomeoneElse-style](https://
 (raster only) Display power generator names from raster 16 rather than raster 15.
 (raster, vector) Use "(hydro)" as a name for unnamed hydro power.
 (raster, vector) Fixed a bug where weather stations weren't shown even if they didn't have a weather radar tower, which is handled elsewhere.
+(raster only) Show "junction=yes" nodes with a name and no other highway tags.
 
 ## Vector 24/09/2025, Raster as yet unreleased
 Removed `information=wildlife`; no longer in OSM data.
