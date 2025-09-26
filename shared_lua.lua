@@ -1952,6 +1952,16 @@ function consolidate_lua_03_t( passedt )
    end
 
 -- ----------------------------------------------------------------------------
+-- Unnamed hydro power
+-- ----------------------------------------------------------------------------
+   if ((  passedt.power               == "generator"  ) and
+       (  passedt["generator:source"] == "hydro"      ) and
+       (( passedt.name == nil                        ) or
+        ( passedt.name == ""                         ))) then
+      passedt.name = "(hydro)"
+   end
+
+-- ----------------------------------------------------------------------------
 -- Pretend add landuse=industrial to some industrial sub-types to force 
 -- name rendering.  Similarly, some commercial and leisure.
 -- man_made=works drops the man_made tag to avoid duplicate labelling.
