@@ -2795,6 +2795,7 @@
     { "key": "ruins", "value": "well", "description": "Detect ruined wells" },
     { "key": "ruins", "value": "windmill", "description": "Detect ruined windmills" },
     { "key": "ruins", "value": "yes", "description": "Detect ruins" },
+    { "key": "ruined:building", "description": "If no other building tag, show as ruins" },
     { "key": "ruins:building", "description": "Detect ruins" },
     { "key": "ruins:building", "value": "yes", "description": "Detect ruins" },
     { "key": "ruins:man_made", "description": "Detect ruins" },

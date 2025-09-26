@@ -1615,6 +1615,7 @@ function consolidate_lua_03_t( passedt )
        (    passedt.amenity          == "feeding_place"   ) or
        (    passedt.railway          == "traverser"       ) or
        (    passedt.railway          == "wash"            ) or
+       (    passedt.building         == "collapsed"       ) or
        (    passedt.building         == "construction"    ) or
        (    passedt.building         == "conservatory"    ) or
        (    passedt.building         == "carport"         ) or
@@ -1635,8 +1636,14 @@ function consolidate_lua_03_t( passedt )
        (    passedt.building         == "covered_walkway" ) or
        (    passedt.building         == "mineshaft_cap"   ) or
        (    passedt.building         == "remains"         ) or
-       (((( passedt["disused:building"] ~= nil            )    and
+       (((( passedt["building:ruins"]   ~= nil            )    and
+          ( passedt["building:ruins"]   ~= ""             ))   or
+         (( passedt["disused:building"] ~= nil            )    and
           ( passedt["disused:building"] ~= ""             ))   or
+         (( passedt["ruined:building"]  ~= nil            )    and
+          ( passedt["ruined:building"]  ~= ""             ))   or
+         (( passedt["ruins:building"]   ~= nil            )    and
+          ( passedt["ruins:building"]   ~= ""             ))   or
          (  passedt.amenity          == "parcel_locker" )   or
          (  passedt.amenity          == "zooaviary"     )   or
          (  passedt.animal           == "horse_walker"  )   or
@@ -5979,14 +5986,10 @@ function consolidate_lua_03_t( passedt )
          (   passedt.ruins           == "house"          )    or
          (   passedt.ruins           == "hut"            )    or
          (   passedt.ruins           == "farm_auxiliary" )    or
-         (   passedt.ruins           == "farmhouse"      )))  or
-       (     passedt["ruins:building"]  == "yes"              )  or
-       (     passedt["building:ruins"]  == "yes"              )  or
-       (     passedt["ruined:building"] == "yes"              )  or
-       (     passedt.building        == "collapsed"        )) then
+         (   passedt.ruins           == "farmhouse"      )))) then
       passedt.building = "ruins"
    end
-   
+
 -- ----------------------------------------------------------------------------
 -- Map man_made=monument to historic=monument (handled below).
 -- ----------------------------------------------------------------------------

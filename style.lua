@@ -34,7 +34,7 @@ generic_keys = {'access','addr:housename','addr:housenumber','addr:interpolation
    'aeroway','amenity','animal','area','area:aeroway', 'area:highway','barrier',
    'bicycle','brand','bridge','bridleway','booth','boundary','building', 'canoe', 'capital','construction','covered',
    'culvert','cutting','denomination','departures_board','designation','disused',
-   'disused:amenity','disused:highway','disused:man_made',
+   'disused:amenity','disused:building','disused:highway','disused:man_made',
    'disused:military','disused:railway','disused:shop','ele',
    'embankment','emergency','entrance','foot','flood_prone','generation:source','geological','golf','government',
    'harbour','hazard_prone','hazard_type','highway','historic','horse','hours','information','intermittent',
@@ -42,7 +42,7 @@ generic_keys = {'access','addr:housename','addr:housenumber','addr:interpolation
    'man_made','marker','military','motor_car','name','natural','ncn_milepost','office','oneway','operator',
    'opening_hours:covid19','outlet','passenger_information_display','pipeline','pitch','place','playground',
    'poi','population','police', 'power','power_source','public_transport',
-   'railway','railway:historic','ref','religion','rescue_equipment','route',
+   'railway','railway:historic','ref','religion','rescue_equipment','route','ruined:building','ruins:building',
    'school','seamark:type','seamark:rescue_station:category','service','shop','sport','surface',
    'toll','tourism','tower:type', 'tracktype','training','tunnel','water','waterway',
    'wetland', 'whitewater', 'width','wood','type', 'zoo' }

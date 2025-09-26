@@ -6,6 +6,8 @@ This page describes changes made in these projects: [SomeoneElse-style](https://
 (raster, vector) Use "(hydro)" as a name for unnamed hydro power.
 (raster, vector) Fixed a bug where weather stations weren't shown even if they didn't have a weather radar tower, which is handled elsewhere.
 (raster only) Show "junction=yes" nodes with a name and no other highway tags.
+(raster) Fixed a bug where "disused:building" and "ruins:building" were missing from raster node keys, resulting in objects with only that tag being omitted. 
+(raster) Added "ruined:building" to list of tags treated as "not quite a building".
 
 ## Vector 24/09/2025, Raster as yet unreleased
 Removed `information=wildlife`; no longer in OSM data.
