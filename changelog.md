@@ -9,6 +9,7 @@ This page describes changes made in these projects: [SomeoneElse-style](https://
 (raster) Fixed a bug where "disused:building" and "ruins:building" were missing from raster node keys, resulting in objects with only that tag being omitted. 
 (raster) Added "ruined:building" to list of tags treated as "not quite a building".
 (raster, vector) Don't show parking spaces at low zooms.
+(raster, vector) Extract satellite dishes with a unique icon.
 
 ## Vector 24/09/2025, Raster as yet unreleased
 Removed `information=wildlife`; no longer in OSM data.

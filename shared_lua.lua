@@ -11583,6 +11583,13 @@ function consolidate_lua_04_t( passedt )
    end
 
 -- ----------------------------------------------------------------------------
+-- man_made=satellite_dish
+-- ----------------------------------------------------------------------------
+   if ( passedt.man_made == "communications_dish" ) then
+      passedt.man_made = "satellite_dish"
+   end
+
+-- ----------------------------------------------------------------------------
 -- highway=streetlamp
 -- ----------------------------------------------------------------------------
    if ( passedt.highway == "street_lamp" ) then
