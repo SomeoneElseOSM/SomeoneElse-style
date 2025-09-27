@@ -2027,6 +2027,7 @@
     { "key": "man_made", "value": "filtration_bed", "description": "Most man-made items are shown" },
     { "key": "man_made", "value": "flagpole", "description": "Shown as a flagpole, military or otherwise" },
     { "key": "man_made", "value": "footwear_decontamination", "description": "Shown as black shallow dish" },
+    { "key": "man_made", "value": "fuel_pump", "description": "Most man-made items are handled" },
     { "key": "man_made", "value": "gantry", "description": "Most man-made items are shown" },
     { "key": "man_made", "value": "gas_station", "description": "Most man-made items are shown" },
     { "key": "man_made", "value": "gas_works", "description": "Most man-made items are shown" },

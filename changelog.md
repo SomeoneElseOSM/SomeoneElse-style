@@ -10,6 +10,7 @@ This page describes changes made in these projects: [SomeoneElse-style](https://
 (raster) Added "ruined:building" to list of tags treated as "not quite a building".
 (raster, vector) Don't show parking spaces at low zooms.
 (raster, vector) Extract satellite dishes with a unique icon.
+(raster, vector) Extract `man_made=fuel_pump` with a unique icon.
 
 ## Vector 24/09/2025, Raster as yet unreleased
 Removed `information=wildlife`; no longer in OSM data.
