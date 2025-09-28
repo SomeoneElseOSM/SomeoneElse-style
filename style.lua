@@ -770,6 +770,15 @@ function filter_tags_node (keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- node waterway=fish_pass are changed to waterway=weir
+-- "usage" is unset to avoid any 
+-- ----------------------------------------------------------------------------
+   if ( keyvalues["waterway"] == "fish_pass" ) then
+      keyvalues["waterway"] = "weir"
+      keyvalues["usage"] = nil
+   end
+
+-- ----------------------------------------------------------------------------
 -- End of AJT node-only additions.
 -- ----------------------------------------------------------------------------
 
@@ -1000,6 +1009,21 @@ function filter_tags_way (keyvalues, nokeys)
        ( keyvalues["natural"] == nil              )) then
       keyvalues["amenity"] = nil
       keyvalues["natural"] = "water"
+   end
+
+-- ----------------------------------------------------------------------------
+-- way waterway=fish_pass are changed to "waterway=drain"
+-- ----------------------------------------------------------------------------
+   if ((  keyvalues["waterway"] == "fish_pass" ) and
+       (( keyvalues["natural"] == nil         )  or
+        ( keyvalues["natural"] == ""          ))) then
+      keyvalues["usage"] = nil
+
+      if ( keyvalues["area"] == "yes" ) then
+         keyvalues["natural"] = "water"
+      else
+         keyvalues["waterway"] = "drain"
+      end
    end
 
 -- ----------------------------------------------------------------------------

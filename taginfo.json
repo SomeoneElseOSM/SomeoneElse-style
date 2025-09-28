@@ -3830,7 +3830,7 @@
     { "key": "usage", "description": "Canal leats and spillways; tourist railway stations" },
     { "key": "usage", "value": "headrace", "description": "Canal leats and spillways" },
     { "key": "usage", "value": "spillway", "description": "Canal leats and spillways" },
-    { "key": "usage", "value": "tourism", "description": "Canal leats and spillways; tourist railway stations" },
+    { "key": "usage", "value": "tourism", "description": "Tourist railway stations" },
     { "key": "utility", "description": "Detect utility aerial pipeline markers" },
     { "key": "utility", "value": "yes", "description": "Detect utility aerial pipeline markers" },
     { "key": "vending", "description": "Parcel lockers, roadside stands, excrement bags" },

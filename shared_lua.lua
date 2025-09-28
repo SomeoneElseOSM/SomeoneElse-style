@@ -5770,10 +5770,12 @@ function consolidate_lua_03_t( passedt )
 -- ----------------------------------------------------------------------------
 -- Display "waterway=leat" and "waterway=spillway" etc. as drain.
 -- "man_made=spillway" tends to be used on areas, hence show as "natural=water".
+--
+-- Note that "fish_pass" are handled differently whether node or way, 
+-- so not here.
 -- ----------------------------------------------------------------------------
    if ((   passedt.waterway == "leat"        )  or
        (   passedt.waterway == "spillway"    )  or
-       (   passedt.waterway == "fish_pass"   )  or
        (   passedt.waterway == "rapids"      )  or
        ((  passedt.waterway == "canal"      )   and
         (( passedt.usage    == "headrace"  )    or
