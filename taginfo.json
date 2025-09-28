@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20250926T113401Z",
+  "data_updated": "20250928T144601Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -2085,7 +2085,7 @@
     { "key": "man_made", "value": "slurry_pond", "description": "Shown as wet" },
     { "key": "man_made", "value": "slurry_tank", "description": "Shown as a building" },
     { "key": "man_made", "value": "sound mirror", "description": "Shown as nonspecific historic item" },
-    { "key": "man_made", "value": "spillway", "description": "Most man-made items are shown" },
+    { "key": "man_made", "value": "spillway", "description": "Not a current value in OSM data.  Treated as a water area" },
     { "key": "man_made", "value": "spoil_heap", "description": "Shown as landfill" },
     { "key": "man_made", "value": "standing_stone", "description": "Detect standing stones and ogham stones" },
     { "key": "man_made", "value": "stone", "description": "Detect standing stones and ogham stones" },
@@ -3924,7 +3924,7 @@
     { "key": "waterway", "value": "riverbank", "description": "Many water features shown" },
     { "key": "waterway", "value": "sluice", "description": "Many water features shown" },
     { "key": "waterway", "value": "sluice_gate", "description": "Many water features shown" },
-    { "key": "waterway", "value": "spillway", "description": "Many water features shown" },
+    { "key": "waterway", "value": "spillway", "description": "Not a current value in OSM data.  Treated as `waterway=drain`" },
     { "key": "waterway", "value": "stream", "description": "Many water features shown" },
     { "key": "waterway", "value": "tidal_channel", "description": "Handled as per 'stream'" },
     { "key": "waterway", "value": "water_point", "description": "Shown as drinking or nondrinking water" },
