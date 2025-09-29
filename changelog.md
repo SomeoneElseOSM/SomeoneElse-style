@@ -13,6 +13,7 @@ This page describes changes made in these projects: [SomeoneElse-style](https://
 (raster, vector) Extract `man_made=fuel_pump` with a unique icon.
 (raster) Extract node `waterway=fish_pass` as `waterway=weir` so that it can get processed as a node waterway feature.
 (raster) Extract way `waterway=fish_pass` as either `natural=water` (if `area` is set) or `waterway=drain` (if not) so that it can get processed as an polygon or line waterway feature.
+(raster) Extract closed `waterway=stream` etc. ways as linear.
 
 ## Vector 24/09/2025, Raster as yet unreleased
 Removed `information=wildlife`; no longer in OSM data.

@@ -1012,6 +1012,17 @@ function filter_tags_way (keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- way waterway=stream or drain have area=no set, if no area tag.
+-- ----------------------------------------------------------------------------
+   if ((( keyvalues["waterway"] == "stream" )  or
+        ( keyvalues["waterway"] == "drain" )  or
+        ( keyvalues["waterway"] == "ditch" )) and
+       (( keyvalues["area"] == nil          )  or
+        ( keyvalues["area"] == ""           ))) then
+      keyvalues["area"] = "no"
+   end
+
+-- ----------------------------------------------------------------------------
 -- way waterway=fish_pass are changed to "waterway=drain"
 -- ----------------------------------------------------------------------------
    if ((  keyvalues["waterway"] == "fish_pass" ) and
