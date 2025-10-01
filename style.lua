@@ -862,7 +862,13 @@ function filter_tags_way (keyvalues, nokeys)
    if (( keyvalues["barrier"]  == "door"       ) or
        ( keyvalues["barrier"]  == "swing_gate" ) or
        ( keyvalues["waterway"] == "lock_gate"  )) then
-      keyvalues["barrier"]  = "gate"
+      if ( keyvalues["area"] == "yes" ) then
+         keyvalues["building"] = "yes"
+         keyvalues["barrier"] = nil
+      else
+         keyvalues["barrier"] = "gate"
+      end
+
       keyvalues["waterway"] = nil
    end
 
