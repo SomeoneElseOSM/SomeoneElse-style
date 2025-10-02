@@ -1,7 +1,7 @@
 # Changes made to this rendering
 This page describes changes made in these projects: [SomeoneElse-style](https://github.com/SomeoneElseOSM/SomeoneElse-style), [SomeoneElse-style-legend](https://github.com/SomeoneElseOSM/SomeoneElse-style-legend) and [openstreetmap-carto-AJT](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT), and visible [on this site](//map.atownsend.org.uk/maps/map/map.html).  Since 2025 this also includes changes to lua code shared between raster and vector processing - hence the notes below about which a particular change applies to.  See [this changelog](https://github.com/SomeoneElseOSM/SomeoneElse-vector-extract/blob/main/resources/changelog_sve01.md) for where changes here affect the vector schema, and also other vector-only ones.
 
-## As yet unreleased
+## 02/10/2025
 (raster only) Display power generator names from raster 16 rather than raster 15.
 (raster, vector) Use "(hydro)" as a name for unnamed hydro power.
 (raster, vector) Fixed a bug where weather stations weren't shown even if they didn't have a weather radar tower, which is handled elsewhere.
@@ -17,7 +17,7 @@ This page describes changes made in these projects: [SomeoneElse-style](https://
 (raster) Extract `gate` features as buildings if `area` is set.
 (raster) Area floating_barrier, waterfall and weirs are sent through on raster as `dam`; linear as `weir`.
 
-## Vector 24/09/2025, Raster as yet unreleased
+## Vector 24/09/2025, Raster 02/10/2025
 Removed `information=wildlife`; no longer in OSM data.
 
 ## Vector, 20/09/2025 raster 21/09/2025
