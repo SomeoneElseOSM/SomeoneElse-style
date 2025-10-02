@@ -5703,6 +5703,7 @@ function consolidate_lua_03_t( passedt )
 -- ----------------------------------------------------------------------------
    if ((  passedt.waterway     == "sluice_gate"      ) or
        (  passedt.waterway     == "sluice"           ) or
+       (  passedt.waterway     == "floodgate"        ) or
        (( passedt.waterway     == "flow_control"    )  and
         ( passedt.flow_control == "sluice_gate"     ))) then
       passedt.waterway = "sluice_gate"

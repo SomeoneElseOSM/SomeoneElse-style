@@ -3910,6 +3910,7 @@
     { "key": "waterway", "value": "drainage_channel", "description": "Handled as per 'ditch'" },
     { "key": "waterway", "value": "fish_pass", "description": "Many water features shown" },
     { "key": "waterway", "value": "floating_barrier", "description": "Many water features shown" },
+    { "key": "waterway", "value": "floodgate", "description": "Handled as `sluice_gate`" },
     { "key": "waterway", "value": "flow_control", "description": "Many water features shown" },
     { "key": "waterway", "value": "flowline", "description": "Many water features shown" },
     { "key": "waterway", "value": "former_canal", "description": "Many water features shown" },
