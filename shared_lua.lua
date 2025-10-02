@@ -11575,6 +11575,13 @@ function consolidate_lua_04_t( passedt )
    end
 
 -- ----------------------------------------------------------------------------
+-- Consolidate amenity=sanitary_dump_station
+-- ----------------------------------------------------------------------------
+   if ( passedt.waterway == "sanitary_dump_station" ) then
+      passedt.amenity = "sanitary_dump_station"
+   end
+
+-- ----------------------------------------------------------------------------
 -- man_made=maypole
 -- ----------------------------------------------------------------------------
    if ((  passedt.man_made == "maypole"   ) or

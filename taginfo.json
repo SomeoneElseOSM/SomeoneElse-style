@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20250928T144601Z",
+  "data_updated": "20251002T214301Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -305,6 +305,7 @@
     { "key": "amenity", "value": "residential_home", "description": "Synonym for shop=healthnonspecific" },
     { "key": "amenity", "value": "restaurant", "description": "Restaurants: Roof shows accommodation available" },
     { "key": "amenity", "value": "retirement_home", "description": "Synonym for shop=healthnonspecific" },
+    { "key": "amenity", "value": "sanitary_dump_station", "description": "Sanitary Dump Station" },
     { "key": "amenity", "value": "school", "description": "Shown as school" },
     { "key": "amenity", "value": "scooter_parking", "description": "Synonym for 'amenity=scooter_rental'.  Shown with icon, name incorporates brand" },
     { "key": "amenity", "value": "scooter_rental", "description": "Shown with icon, name incorporates brand" },
@@ -3922,6 +3923,7 @@
     { "key": "waterway", "value": "rapids", "description": "Many water features shown" },
     { "key": "waterway", "value": "river", "description": "Many water features shown" },
     { "key": "waterway", "value": "riverbank", "description": "Many water features shown" },
+    { "key": "waterway", "value": "sanitary_dump_station", "description": "Sanitary Dump Station" },
     { "key": "waterway", "value": "sluice", "description": "Many water features shown" },
     { "key": "waterway", "value": "sluice_gate", "description": "Many water features shown" },
     { "key": "waterway", "value": "spillway", "description": "Not a current value in OSM data.  Treated as `waterway=drain`" },
