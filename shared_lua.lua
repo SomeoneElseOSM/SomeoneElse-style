@@ -5736,7 +5736,8 @@ function consolidate_lua_03_t( passedt )
        (   passedt["waterway:historic"]  == "canal"           ) or
        (   passedt["waterway:abandoned"] == "canal"           ) or
        (   passedt.abandoned             == "waterway=canal"  ) or
-       ((  passedt.historic              == "moat"           )  and
+       ((( passedt.historic              == "moat"          )   or
+         ( passedt.defensive_works       == "moat"          ))  and
         (( passedt.natural               == nil             )   or
          ( passedt.natural               == ""              ))  and
         (( passedt.man_made              == nil             )   or
@@ -5808,6 +5809,13 @@ function consolidate_lua_03_t( passedt )
 
    if ( passedt.waterway == "drainage_channel" ) then
       passedt.waterway = "ditch"
+   end
+
+-- ----------------------------------------------------------------------------
+-- Handle moats as drains
+-- ----------------------------------------------------------------------------
+   if ( passedt.waterway == "moat" ) then
+      passedt.waterway = "drain"
    end
 
 -- ----------------------------------------------------------------------------
