@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20251003T011401Z",
+  "data_updated": "20251003T131801Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -3903,6 +3903,7 @@
     { "key": "waterway", "value": "brook", "description": "Many water features shown" },
     { "key": "waterway", "value": "canal", "description": "Many water features shown" },
     { "key": "waterway", "value": "cave_of_debouchement", "description": "Many water features shown" },
+    { "key": "waterway", "value": "construction", "description": "Treated as `derelict_canal`" },
     { "key": "waterway", "value": "derelict_canal", "description": "Many water features shown" },
     { "key": "waterway", "value": "disused_canal", "description": "Many water features shown" },
     { "key": "waterway", "value": "ditch", "description": "Many water features shown" },

@@ -5722,6 +5722,8 @@ function consolidate_lua_03_t( passedt )
 --
 -- Also treat historic=moat in the same way, unless it has an area=yes tag.
 -- Most closed ways for historic=moat appear to be linear ways, not areas.
+--
+-- waterway=construction (of which there are few) is treated in the same way.
 -- ----------------------------------------------------------------------------
    if ((   passedt.historic              == "canal"           ) or
        (   passedt["historic:waterway"]  == "canal"           ) or
@@ -5733,6 +5735,7 @@ function consolidate_lua_03_t( passedt )
        (   passedt.waterway              == "historic_canal"  ) or
        (   passedt.waterway              == "abandoned_canal" ) or
        (   passedt.waterway              == "former_canal"    ) or
+       (   passedt.waterway              == "construction"    ) or
        (   passedt["waterway:historic"]  == "canal"           ) or
        (   passedt["waterway:abandoned"] == "canal"           ) or
        (   passedt.abandoned             == "waterway=canal"  ) or
