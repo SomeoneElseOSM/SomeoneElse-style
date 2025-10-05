@@ -5,6 +5,7 @@ This page describes changes made in these projects: [SomeoneElse-style](https://
 (raster, vector) Extract sanitary dump stations with a unique value.
 (raster, vector) Handle `waterway=floodgate` as `waterway=sluice_gate`.
 (raster, vector) Handle `waterway=construction` as `waterway=derelict_canal`, as many are.
+(raster) Fuel pumps, satellite dishes, electricity substations, sewage works, hydro power stations added to legend.
 
 ## 02/10/2025
 (raster only) Display power generator names from raster 16 rather than raster 15.
