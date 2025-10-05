@@ -6,6 +6,7 @@ This page describes changes made in these projects: [SomeoneElse-style](https://
 (raster, vector) Handle `waterway=floodgate` as `waterway=sluice_gate`.
 (raster, vector) Handle `waterway=construction` as `waterway=derelict_canal`, as many are.
 (raster) Fuel pumps, satellite dishes, electricity substations, sewage works, hydro power stations added to legend.
+(raster, vector) Extract `man_made=charging_point` with a unique icon, analagous to `fuel_pump`.
 
 ## 02/10/2025
 (raster only) Display power generator names from raster 16 rather than raster 15.

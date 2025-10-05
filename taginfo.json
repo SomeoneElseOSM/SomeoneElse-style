@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20251003T131801Z",
+  "data_updated": "20251005T231401Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -2014,6 +2014,7 @@
     { "key": "man_made", "value": "bunker_silo", "description": "Shown in lighter colour" },
     { "key": "man_made", "value": "cairn", "description": "Most man-made items are shown" },
     { "key": "man_made", "value": "campanile", "description": "Most man-made items are shown" },
+    { "key": "man_made", "value": "charge_point", "description": "Most man-made items are handled" },
     { "key": "man_made", "value": "chimney", "description": "Shown as large or small chimney" },
     { "key": "man_made", "value": "communications_mast", "description": "Most man-made items are shown" },
     { "key": "man_made", "value": "communications_dish", "description": "Most man-made items are handled" },
