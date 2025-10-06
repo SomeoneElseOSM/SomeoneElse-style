@@ -12245,6 +12245,10 @@ function fix_silly_rwn_names_t( passedt )
        if ( string.find( passedt.name, "Viking Way", 1, true ) == 1 ) then
           passedt.name = "Viking Way"
        end
+
+       if ( string.len( passedt.name ) > 32 ) then
+           passedt.name = string.sub( passedt.name, 1, 29 ) .. "..."
+       end
     end
 end -- fix_silly_rwn_names_t( passedt )
 
