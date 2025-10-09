@@ -6060,6 +6060,15 @@ function consolidate_lua_03_t( passedt )
    end
 
 -- ----------------------------------------------------------------------------
+-- Penguin artworks
+-- ----------------------------------------------------------------------------
+   if ((  passedt.tourism         == "artwork"     )   and
+       (( passedt.artwork_subject == "penguins"   )    or
+        ( passedt.artwork_subject == "5 penguins" ))) then
+      passedt.tourism = "penguinartwork"
+   end
+
+-- ----------------------------------------------------------------------------
 -- We show things like slurry tanks as buildings, so:
 -- ----------------------------------------------------------------------------
    if ( passedt.man_made == "slurry_tank" ) then

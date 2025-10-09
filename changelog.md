@@ -1,13 +1,14 @@
 # Changes made to this rendering
 This page describes changes made in these projects: [SomeoneElse-style](https://github.com/SomeoneElseOSM/SomeoneElse-style), [SomeoneElse-style-legend](https://github.com/SomeoneElseOSM/SomeoneElse-style-legend) and [openstreetmap-carto-AJT](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT), and visible [on this site](//map.atownsend.org.uk/maps/map/map.html).  Since 2025 this also includes changes to lua code shared between raster and vector processing - hence the notes below about which a particular change applies to.  See [this changelog](https://github.com/SomeoneElseOSM/SomeoneElse-vector-extract/blob/main/resources/changelog_sve01.md) for where changes here affect the vector schema, and also other vector-only ones.
 
-## As yet unreleased
+## Vector 09/10/2025, raster as yet unreleased
 (raster, vector) Extract sanitary dump stations with a unique value.
 (raster, vector) Handle `waterway=floodgate` as `waterway=sluice_gate`.
 (raster, vector) Handle `waterway=construction` as `waterway=derelict_canal`, as many are.
 (raster) Fuel pumps, satellite dishes, electricity substations, sewage works, hydro power stations added to legend.
 (raster, vector) Extract `man_made=charging_point` with a unique icon, analagous to `fuel_pump`.
 (raster, vector) Suppress silly very long walking relation names.
+(raster, vector) Handle "penguin" artwork separately to allow a different icon to be shown.
 
 ## 02/10/2025
 (raster only) Display power generator names from raster 16 rather than raster 15.
