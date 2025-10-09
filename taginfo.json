@@ -313,6 +313,7 @@
     { "key": "amenity", "value": "scout_hall", "description": "Shown as leisure=nonspecific" },
     { "key": "amenity", "value": "scout_hut", "description": "Shown as leisure=nonspecific" },
     { "key": "amenity", "value": "scrapyard", "description": "Synonym for indstrial landuse" },
+    { "key": "amenity", "value": "security_control", "description": "Shown as a lift_gate" },
     { "key": "amenity", "value": "self_storage", "description": "Synonym for shop=storage" },
     { "key": "amenity", "value": "shelter", "description": "Various shelters shown as a roof" },
     { "key": "amenity", "value": "sheltered_housing", "description": "Synonym for shop=healthnonspecific" },

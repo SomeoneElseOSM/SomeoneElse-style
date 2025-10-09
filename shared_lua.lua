@@ -8091,6 +8091,7 @@ function consolidate_lua_03_t( passedt )
        ( passedt.barrier    == "ticket_barrier"   ) or
        ( passedt.barrier    == "ticket"           ) or
        ( passedt.barrier    == "security_control" ) or
+       ( passedt.amenity    == "security_control" ) or
        ( passedt.barrier    == "checkpoint"       ) or
        ( passedt.industrial == "checkpoint"       ) or
        ( passedt.police     == "checkpoint"       ) or
