@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20251009T140101Z",
+  "data_updated": "20251010T131601Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -392,8 +392,9 @@
     { "key": "area:aeroway", "description": "Used as part of aeroway processing, but not itself shown." },
     { "key": "area:highway", "description": "Show traffic islands as kerbs" },
     { "key": "area:highway", "value": "traffic_island", "description": "Shown as a kerb" },
-    { "key": "artwork_type", "description": "Detect penguins" },
-    { "key": "artwork_type", "value": "artwork", "description": "Detect penguins" },
+    { "key": "artwork_subject", "description": "Detect penguins" },
+    { "key": "artwork_subject", "value": "penguins", "description": "Detect penguins" },
+    { "key": "artwork_subject", "value": "5 penguins", "description": "Detect penguins" },
     { "key": "attraction", "description": "Mazes and zoo enclosures" },
     { "key": "attraction", "value": "animal", "description": "Shown as zoo enclosure" },
     { "key": "attraction", "value": "maze", "description": "Shown as nonspecific leisure item" },
