@@ -10727,6 +10727,14 @@ function consolidate_lua_04_t( passedt )
    end
 
 -- ----------------------------------------------------------------------------
+-- Don't show underground swimming pools
+-- ----------------------------------------------------------------------------
+   if (( passedt.leisure == "swimming_pool" ) and
+       ( passedt.level   == "-1"            )) then
+      passedt.leisure = nil
+   end
+
+-- ----------------------------------------------------------------------------
 -- A couple of odd sports taggings:
 -- ----------------------------------------------------------------------------
    if ( passedt.leisure == "sport" ) then

@@ -3,6 +3,7 @@ This page describes changes made in these projects: [SomeoneElse-style](https://
 
 ## As yet unreleased
 (raster, vector) Handle `amenity=security_control` as a barrier.
+(raster, vector) Don't extract underground (`level=-1`) swimming pools.
 
 ## Vector 09/10/2025, raster as yet unreleased
 (raster, vector) Extract sanitary dump stations with a unique value.
