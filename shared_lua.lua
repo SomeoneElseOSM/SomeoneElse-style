@@ -156,7 +156,7 @@ end -- fix_corridors_t()
 
 -- ----------------------------------------------------------------------------
 -- "Different names on each side of the street" and
--- "name:en" is set by "name" is not.
+-- "name:en" is set by "name" if not already present.
 -- ----------------------------------------------------------------------------
 function set_name_left_right_en_t( passedt )
     if (( passedt["name:left"]  ~= nil ) and
@@ -171,6 +171,75 @@ function set_name_left_right_en_t( passedt )
         (  passedt["name:en"] ~= nil  ) and
         (  passedt["name:en"] ~= ""   )) then
        passedt.name = passedt["name:en"]
+    end
+
+-- ----------------------------------------------------------------------------
+-- Now default some "language names" to "name" if unset.
+-- "name" will have been set based on the geographical location; for example if
+-- in Welsh-speaking Wales, it'll be in Welsh.
+--
+-- However, we try and fallback to a "nearby language" first, so GD to GA and
+-- vice-versa, and CY to one of those before just "name".
+-- ----------------------------------------------------------------------------
+    if (( passedt["name:cy"] == nil )  or
+        ( passedt["name:cy"] == ""  )) then
+        if (( passedt["name:ga"] ~= nil )  and
+            ( passedt["name:ga"] ~= ""  )) then
+            passedt["name:cy"] = passedt["name:ga"]
+        else
+            if (( passedt["name:gd"] ~= nil )  and
+                ( passedt["name:gd"] ~= ""  )) then
+                passedt["name:cy"] = passedt["name:gd"]
+            else
+                if (( passedt["name"] ~= nil  ) and
+                    ( passedt["name"] ~= ""   )) then
+                    passedt["name:cy"] = passedt.name
+                end
+            end
+        end
+    end
+
+    if ((( passedt["name:en"] == nil )  or
+         ( passedt["name:en"] == ""  )) and
+        (  passedt["name"]    ~= nil  ) and
+        (  passedt["name"]    ~= ""   )) then
+       passedt["name:en"] = passedt.name
+    end
+
+    if (( passedt["name:ga"] == nil )  or
+        ( passedt["name:ga"] == ""  )) then
+        if (( passedt["name:gd"] ~= nil )  and
+            ( passedt["name:gd"] ~= ""  )) then
+            passedt["name:ga"] = passedt["name:gd"]
+        else
+            if (( passedt["name:cy"] ~= nil )  and
+                ( passedt["name:cy"] ~= ""  )) then
+                passedt["name:ga"] = passedt["name:cy"]
+            else
+                if (( passedt["name"] ~= nil  ) and
+                    ( passedt["name"] ~= ""   )) then
+                    passedt["name:ga"] = passedt.name
+                end
+            end
+        end
+    end
+
+    if (( passedt["name:gd"] == nil )  or
+        ( passedt["name:gd"] == ""  )) then
+        if (( passedt["name:ga"] ~= nil )  and
+            ( passedt["name:ga"] ~= ""  )) then
+            passedt["name:gd"] = passedt["name:ga"]
+        else
+            if (( passedt["name:cy"] ~= nil )  and
+                ( passedt["name:cy"] ~= ""  )) then
+                passedt["name:gd"] = passedt["name:cy"]
+            else
+                if (( passedt["name"] ~= nil  ) and
+                    ( passedt["name"] ~= ""   )) then
+                    passedt["name:gd"] = passedt.name
+                end
+            end
+        end
     end
 end -- set_name_left_right_en_t
 
