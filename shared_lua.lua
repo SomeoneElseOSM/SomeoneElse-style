@@ -10828,16 +10828,6 @@ function consolidate_lua_04_t( passedt )
    end
 
 -- ----------------------------------------------------------------------------
--- If we have any named leisure=outdoor_seating left, 
--- change it to "leisurenonspecific", but don't set landuse.
--- ----------------------------------------------------------------------------
-   if (( passedt.leisure == "outdoor_seating" ) and
-       ( passedt.name    ~= nil               ) and
-       ( passedt.name    ~= ""                )) then
-      passedt.leisure = "leisurenonspecific"
-   end
-
--- ----------------------------------------------------------------------------
 -- Mazes
 -- ----------------------------------------------------------------------------
    if ((( passedt.leisure    == "maze" )  or
