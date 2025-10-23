@@ -4,6 +4,7 @@ This page describes changes made in these projects: [SomeoneElse-style](https://
 ## As yet unreleased
 (raster, vector) Show an icon for outdoor seating areas.
 (raster, vector) Show manholes as small black marker at high zoom levels.
+(raster, vector) Treat `man_made=shooting_butt` as grouse butts.
 
 ## 18/10/2025
 (vector) Ensure all named things have something in name:cy, name:en, name:ga and name:gd

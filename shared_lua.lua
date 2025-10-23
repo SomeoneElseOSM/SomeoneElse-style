@@ -3610,7 +3610,8 @@ function consolidate_lua_03_t( passedt )
 
    if ((( passedt.amenity       == "hunting_stand" )   and
         ( passedt.hunting_stand == "grouse_butt"   ))  or
-       ( passedt.man_made       == "grouse_butt"    )) then
+       ( passedt.man_made       == "grouse_butt"    )  or
+       ( passedt.man_made       == "shooting_butt"  )) then
       passedt.leisure = "grouse_butt"
       passedt.amenity = nil
       passedt.man_made = nil
