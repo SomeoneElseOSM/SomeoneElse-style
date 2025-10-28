@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20251023T010300Z",
+  "data_updated": "20251028T002400Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -2028,6 +2028,7 @@
     { "key": "man_made", "value": "crane", "description": "Shown as crane" },
     { "key": "man_made", "value": "cross", "description": "Shown as cross" },
     { "key": "man_made", "value": "crane", "description": "Shown as 'land' over the top of any trees" },
+    { "key": "man_made", "value": "dovecote", "description": "Shown with unique icon" },
     { "key": "man_made", "value": "dyke", "description": "Used to detect embankments, which may have highways on them or not" },
     { "key": "man_made", "value": "embankment", "description": "Treated as a one-sided embankment" },
     { "key": "man_made", "value": "filter_bed", "description": "Most man-made items are shown" },

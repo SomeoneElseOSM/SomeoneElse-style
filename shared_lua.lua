@@ -6420,6 +6420,17 @@ function consolidate_lua_03_t( passedt )
    end
 
 -- ----------------------------------------------------------------------------
+-- Historic dovecotes
+-- ----------------------------------------------------------------------------
+   if ((  passedt.man_made == "dovecote"  ) and
+       (( passedt.historic == "yes"      )  or
+        ( passedt.historic == "building" )  or
+        ( passedt.historic == "ruins"    ))) then
+      passedt.historic = "dovecote"
+      passedt.man_made = nil
+   end
+
+-- ----------------------------------------------------------------------------
 -- City gates go through as "historic=city_gate"
 -- Note that historic=gate are generally much smaller and are not included here.
 --

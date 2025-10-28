@@ -5,6 +5,7 @@ This page describes changes made in these projects: [SomeoneElse-style](https://
 (raster, vector) Show an icon for outdoor seating areas.
 (raster, vector) Show manholes as small black marker at high zoom levels.
 (raster, vector) Treat `man_made=shooting_butt` as grouse butts.
+(raster, vector) Show `man_made=dovecote` as either historic or non-historic dovecotes.
 
 ## 18/10/2025
 (vector) Ensure all named things have something in name:cy, name:en, name:ga and name:gd
