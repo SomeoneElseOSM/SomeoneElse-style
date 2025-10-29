@@ -6431,6 +6431,14 @@ function consolidate_lua_03_t( passedt )
    end
 
 -- ----------------------------------------------------------------------------
+-- Some man_made=shaft are somewhat like ma_made=manhole
+-- Some are much bigger (and "manhole" won't be visible at low-medium zooms)
+-- ----------------------------------------------------------------------------
+   if ( passedt.man_made == "shaft" ) then
+      passedt.man_made = "manhole"
+   end
+
+-- ----------------------------------------------------------------------------
 -- City gates go through as "historic=city_gate"
 -- Note that historic=gate are generally much smaller and are not included here.
 --

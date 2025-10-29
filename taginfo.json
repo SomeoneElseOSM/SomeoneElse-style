@@ -2085,6 +2085,7 @@
     { "key": "man_made", "value": "reservoir_covered", "description": "Most man-made items are shown" },
     { "key": "man_made", "value": "satellite_dish", "description": "Most man-made items are handled" },
     { "key": "man_made", "value": "sewage_works", "description": "Synonym for wastewater_plant" },
+    { "key": "man_made", "value": "shaft", "description": "Shown like `manhole`, as small black marker at high zoom levels" },
     { "key": "man_made", "value": "shooting_butt", "description": "Detect grouse butts" },
     { "key": "man_made", "value": "signal_beacon", "description": "Most man-made items are shown" },
     { "key": "man_made", "value": "signpost", "description": "Handled as information=guidepost" },
