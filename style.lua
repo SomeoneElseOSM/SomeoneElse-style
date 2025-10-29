@@ -1055,6 +1055,13 @@ function filter_tags_way (keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Treat ladders that have been mapped as ways as steps.
+-- ----------------------------------------------------------------------------
+   if ( keyvalues["highway"] == "ladder" ) then
+      keyvalues["highway"] = "steps"
+   end
+
+-- ----------------------------------------------------------------------------
 -- End of AJT way-only additions.
 -- ----------------------------------------------------------------------------
 
