@@ -7419,6 +7419,21 @@ function consolidate_lua_03_t( passedt )
    end
 
 -- ----------------------------------------------------------------------------
+-- Detect some oddly tagged crossings
+-- ----------------------------------------------------------------------------
+   if (( passedt.highway == "traffic_signals;crossing" ) or
+       ( passedt.highway == "crossing;traffic_signals" )) then
+      passedt.highway = "traffic_signals"
+      passedt.crossing = nil
+   end
+
+   if (( passedt.highway == "give_way;crossing" ) or
+       ( passedt.highway == "crossing;give_way" )) then
+      passedt.highway = "crossing"
+      passedt.crossing = nil
+   end
+
+-- ----------------------------------------------------------------------------
 -- Which crossing values should be shown and which not?
 -- ----------------------------------------------------------------------------
    if ((  passedt.crossing ~= nil         )  and

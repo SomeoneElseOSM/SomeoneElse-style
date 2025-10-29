@@ -8,6 +8,7 @@ This page describes changes made in these projects: [SomeoneElse-style](https://
 (raster, vector) Show `man_made=dovecote` as either historic or non-historic dovecotes.
 (raster, vector) Treat `man_made=shaft` as manholes.
 (raster, vector) Treat `highway=ladder` ways as `steps`.
+(raster, vector) Treat objects tagged with `crossing` and some other tag with a semicolon as something appropriate.
 
 ## 18/10/2025
 (vector) Ensure all named things have something in name:cy, name:en, name:ga and name:gd
