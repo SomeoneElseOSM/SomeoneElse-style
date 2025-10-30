@@ -6438,6 +6438,11 @@ function consolidate_lua_03_t( passedt )
       passedt.man_made = "manhole"
    end
 
+   if ( passedt.highway == "wheelwash" ) then
+      passedt.man_made = "footwear_decontamination"
+      passedt.highway  = nil
+   end
+
 -- ----------------------------------------------------------------------------
 -- City gates go through as "historic=city_gate"
 -- Note that historic=gate are generally much smaller and are not included here.

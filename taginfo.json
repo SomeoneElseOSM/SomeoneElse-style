@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20251029T204300Z",
+  "data_updated": "20251030T012900Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -1569,6 +1569,7 @@
     { "key": "highway", "value": "turning_loop", "description": "Treated as turning circle on nodes; service road on ways" },
     { "key": "highway", "value": "unclassified", "description": "Treated as unclassified" },
     { "key": "highway", "value": "unclassified_link", "description": "Not an expected value in OSM data.  Treated as unclassified" },
+    { "key": "highway", "value": "wheelwash", "description": "Treated as `man_made=footwear_decontamination`; shown as black shallow dish" },
     { "key": "highway_authority_ref", "description": "Indicates an unsigned ref" },
     { "key": "highway_ref", "description": "Indicates an unsigned ref" },
     { "key": "historic", "description": "Various historic items shown.  Often another OSM tag is removed." },
