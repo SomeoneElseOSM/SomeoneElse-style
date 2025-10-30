@@ -11763,6 +11763,15 @@ function consolidate_lua_04_t( passedt )
    end
 
 -- ----------------------------------------------------------------------------
+-- Detect bus stops with semicolons in them
+-- ----------------------------------------------------------------------------
+   if (( passedt["highway"] == "bus_stop;street_lamp" ) or
+       ( passedt["highway"] == "street_lamp;bus_stop" )) then
+      passedt.highway = "bus_stop"
+      passedt.lit     = "yes"
+   end
+
+-- ----------------------------------------------------------------------------
 -- If a bus stop pole exists but it's known to be disused, indicate that.
 --
 -- We also show bus stands as disused bus stops - they are somewhere where you

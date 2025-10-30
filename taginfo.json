@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20251030T012900Z",
+  "data_updated": "20251030T130102Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -1515,6 +1515,7 @@
     { "key": "highway", "value": "bus_guideway", "description": "Treated as bus guideway" },
     { "key": "highway", "value": "bus_stand", "description": "Treated as disused bus stop" },
     { "key": "highway", "value": "bus_stop", "description": "Treated as bus stop" },
+    { "key": "highway", "value": "bus_stop;street_lamp", "description": "Treated as bus stop" },
     { "key": "highway", "value": "busway", "description": "Treated as service" },
     { "key": "highway", "value": "construction", "description": "Show under-construction highways" },
     { "key": "highway", "value": "corridor", "description": "Treated as narrow path based on designation" },
@@ -1556,6 +1557,7 @@
     { "key": "highway", "value": "services", "description": "Treated as commercial landuse" },
     { "key": "highway", "value": "steps", "description": "Treated as steps" },
     { "key": "highway", "value": "street_lamp", "description": "Treated as street lamp (gas or electric, depending on other tags)" },
+    { "key": "highway", "value": "street_lamp;bus_stop", "description": "Treated as bus stop" },
     { "key": "highway", "value": "tertiary", "description": "Treated as tertiary" },
     { "key": "highway", "value": "tertiary_link", "description": "Treated as tertiary" },
     { "key": "highway", "value": "toll_gantry", "description": "Treated as a toll gantry" },
