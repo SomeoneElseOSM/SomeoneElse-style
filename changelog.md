@@ -2,7 +2,6 @@
 This page describes changes made in these projects: [SomeoneElse-style](https://github.com/SomeoneElseOSM/SomeoneElse-style), [SomeoneElse-style-legend](https://github.com/SomeoneElseOSM/SomeoneElse-style-legend) and [openstreetmap-carto-AJT](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT), and visible [on this site](//map.atownsend.org.uk/maps/map/map.html).  Since 2025 this also includes changes to lua code shared between raster and vector processing - hence the notes below about which a particular change applies to.  See [this changelog](https://github.com/SomeoneElseOSM/SomeoneElse-vector-extract/blob/main/resources/changelog_sve01.md) for where changes here affect the vector schema, and also other vector-only ones.
 
 ## As yet unreleased.
-(raster, vector) Show an icon for outdoor seating areas.
 (raster, vector) Rewrote the "highway crossing" logic to be more tolerant of the bizarre tag combinations that now circulate in OSM.  The raster and vector rendering code expects `highway=crossing` or `highway=traffic_signals`.  The new code detects various semicolon combinations, and then (for something that isn't already some other sort of `highway`, `railway` or `disused`, checks a few other keys for known good values.  It then sets appropriate ones to `traffic_signals` and of the ones left checks for key/value combinations that indicate a _real_ crossing rather than an "informal way to cross a road with no infrastructure".
 
 ## 31/10/2025
