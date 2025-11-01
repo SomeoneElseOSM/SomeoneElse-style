@@ -7384,47 +7384,9 @@ function consolidate_lua_03_t( passedt )
    end
 
 -- ----------------------------------------------------------------------------
--- Detect some "non-crossings" added by StreetComplete and remove them.
--- ----------------------------------------------------------------------------
-   if (( passedt.highway              == "crossing" )  and
-       ( passedt["crossing:island"]   == "no"       )  and
-       ( passedt["crossing:markings"] == "no"       )  and
-       ( passedt["crossing:signals"]  == "no"       )  and
-       ( passedt.tactile_paving       == "no"       )) then
-      passedt.highway = nil
-   end
-
--- ----------------------------------------------------------------------------
--- Various types of traffic light controlled crossings
--- ----------------------------------------------------------------------------
-   if ((( passedt.crossing == "traffic_signals"              )  or
-        ( passedt.crossing == "pedestrian_signals"           )  or
-        ( passedt.crossing == "toucan"                       )  or
-        ( passedt.crossing == "pelican"                      )  or
-        ( passedt.crossing == "traffic_signals;marked"       )  or
-        ( passedt.crossing == "puffin"                       )  or
-        ( passedt.crossing == "pegasus"                      )  or
-        ( passedt.crossing == "traffic_signals;island"       )  or
-        ( passedt.crossing == "traffic_lights"               )  or
-        ( passedt.crossing == "pelican;traffic_signals"      )  or
-        ( passedt.crossing == "signals"                      )  or
-        ( passedt.crossing == "traffic_signals;uncontrolled" )  or
-        ( passedt.crossing == "pelican;uncontrolled"         )  or
-        ( passedt.crossing == "pelican;marked"               )  or
-        ( passedt.crossing == "traffic_signals;unmarked"     )  or
-        ( passedt["crossing:signals"] == "yes"               )  or
-        ( passedt.crossing_ref == "pegasus"                  )  or
-        ( passedt.crossing_ref == "toucan"                   )  or
-        ( passedt.crossing_ref == "pelican"                  )  or
-        ( passedt.crossing_ref == "puffin"                   )) and
-       (( passedt.highway  == nil                            )  or
-        ( passedt.highway  == ""                             ))) then
-      passedt.highway = "traffic_signals"
-      passedt.crossing = nil
-   end
-
--- ----------------------------------------------------------------------------
--- Detect some oddly tagged crossings
+-- Crossings are spectacularly complicated.
+--
+-- First, detect some oddly tagged crossings by the "highway" value.
 -- ----------------------------------------------------------------------------
    if (( passedt.highway == "traffic_signals;crossing" ) or
        ( passedt.highway == "crossing;traffic_signals" )) then
@@ -7439,41 +7401,179 @@ function consolidate_lua_03_t( passedt )
    end
 
 -- ----------------------------------------------------------------------------
--- Which crossing values should be shown and which not?
+-- Not all crossings have "highway=crossing" set.
+-- Some may have "railway=crossing" set, some may have neither.
+-- Some may be disused.
+--
+-- Many, but not all, will have "crossing=<something>" set.
+-- Some of these will not have "highway" set at all.
+-- Some will have "highway=<something>", where "something" is not "crossing".
+-- "crossing" can also be set to "no" or another non-"no" negative value.
+--
+-- Others again will have a tag such as "crossing:markings" set.
+-- That can of course be set to "no".
+-- Or if not "crossing:markings", maybe "crossing:signals" (which can also be "no").
+-- Or if not one of those, maybe "crossing:island" (which can also be "no",
+-- and can also be applied to a part of the crossing only).
+--
+-- We want to be able to processing highway crossings using either
+-- "highway=traffic_signals" or "highway=crossing".  The former for whenever
+-- there are traffic signals; the latter for "actual crossings".
+-- Detecting "actual crossings is difficult because a pile of other tags can
+-- get added to "somewhere you can cross the road" without any infrastructure.
+-- We try and weed that out so it's only available to be rendered if there is
+-- some actual infrastructure.
+--
+-- But first things first, try and fill in missing tags.  First, identify
+-- places where we can add "highway=crossing" by looking at the value of
+-- "crossing", if any.  For reference see
+-- https://taginfo.geofabrik.de/europe:britain-and-ireland/keys/crossing#values
+-- down to 5 uses or me.
 -- ----------------------------------------------------------------------------
-   if ((  passedt.crossing ~= nil         )  and
-       (  passedt.crossing ~= ""          )  and
-       (( passedt.highway  == nil        )   or
-        ( passedt.highway  == ""         )   or
-        ( passedt.highway  == "crossing" ))) then
--- ----------------------------------------------------------------------------
--- Crossing values that we should show as crossings
--- ----------------------------------------------------------------------------
-      if (( passedt.crossing == "zebra"               )  or
-          ( passedt.crossing == "marked"              )  or
-          ( passedt.crossing == "island"              )  or
-          ( passedt.crossing == "controlled"          )  or
-          ( passedt.crossing == "marked;uncontrolled" )  or
-          ( passedt.crossing == "uncontrolled;marked" )  or
-          ( passedt.crossing == "traffic_island"      )  or
-          ( passedt.crossing == "zebra;marked"        )  or
-          ( passedt.crossing == "uncontrolled;zebra"  )  or
-          ( passedt.crossing == "zebra;island"        )) then
+   if ((( passedt.highway             == nil        )   or
+        ( passedt.highway             == ""         ))  and
+       (( passedt["disused:highway"]  == nil        )   or
+        ( passedt["disused:highway"]  == ""         ))  and
+       (( passedt.railway             == nil        )   or
+        ( passedt.railway             == ""         ))  and
+       (( passedt["disused:railway"]  == nil        )   or
+        ( passedt["disused:railway"]  == ""         ))) then
+      if (( passedt.crossing == "traffic_signals"        ) and 
+          ( passedt.crossing == "marked"                 ) and 
+          ( passedt.crossing == "zebra"                  ) and 
+          ( passedt.crossing == "yes"                    ) and
+          ( passedt.crossing == "island"                 ) and
+          ( passedt.crossing == "pelican"                ) and
+          ( passedt.crossing == "pedestrian_signals"     ) and
+          ( passedt.crossing == "controlled"             ) and
+          ( passedt.crossing == "toucan"                 ) and
+          ( passedt.crossing == "traffic_island"         ) and
+          ( passedt.crossing == "traffic_signals;marked" ) and
+          ( passedt.crossing == "zebra;dots"             ) and
+          ( passedt.crossing == "uncontrolled;marked"    ) and
+          ( passedt.crossing == "marked;uncontrolled"    ) and
+          ( passedt.crossing == "puffin"                 ) and
+          ( passedt.crossing == "pegasus"                ) and
+          ( passedt.crossing == "traffic_signals;island" ) and
+          ( passedt.crossing == "tiger"                  )) then
          passedt.highway = "crossing"
       else
 -- ----------------------------------------------------------------------------
--- Other values with crossings that we should show as crossings
+-- What "crossing:" tags should we look at?
+-- https://taginfo.geofabrik.de/europe:britain-and-ireland/search?q=crossing
+-- shows which ones occur.
+--
+-- First "crossing:markings", processed in the negative, with "troll" values
 -- ----------------------------------------------------------------------------
-         if (( passedt["crossing:island"]   == "yes"     ) or
-             ( passedt.crossing_ref         == "zebra"   ) or
-             ( passedt["crossing:markings"] == "yes"     ) or
-             ( passedt["crossing:markings"] == "zebra"   ) or
-             ( passedt["crossing:markings"] == "lines"   )) then
+         if (( passedt["crossing:markings"] ~= nil       ) and
+             ( passedt["crossing:markings"] ~= ""        ) and
+             ( passedt["crossing:markings"] ~= "no"      ) and
+             ( passedt["crossing:markings"] ~= "surface" )) then
             passedt.highway = "crossing"
          else
 -- ----------------------------------------------------------------------------
--- Other values (including informal ones) should not be shown as crossings
+-- Next, just one positive value for "crossing:island"
 -- ----------------------------------------------------------------------------
+            if ( passedt["crossing:island"] == "yes" ) then
+               passedt.highway = "crossing"
+            else
+-- ----------------------------------------------------------------------------
+-- Next, "crossing_ref", in the negative, with "troll" or "irrelevant" values
+-- ----------------------------------------------------------------------------
+               if (( passedt.crossing_ref ~= nil        ) and
+                   ( passedt.crossing_ref ~= ""         ) and
+                   ( passedt.crossing_ref ~= "informal" ) and
+                   ( passedt.crossing_ref ~= "none"     )) then
+                  passedt.highway = "crossing"
+               else
+-- ----------------------------------------------------------------------------
+-- Next, "crossing:signals", in the negative, with "troll" or "irrelevant" values
+-- ----------------------------------------------------------------------------
+	          if (( passedt["crossing:signals"] ~= nil       ) and
+                      ( passedt["crossing:signals"] ~= ""        ) and
+                      ( passedt["crossing:signals"] ~= "no"      ) and
+                      ( passedt["crossing:signals"] ~= "separate" )) then
+                     passedt.highway = "crossing"
+-- ----------------------------------------------------------------------------
+--                  else
+-- "crossing:barrier" would be next, but isn't helpful, so ignore.
+-- Next, "crossing:continuous", but that implies no stopping for pedestrians, 
+-- so also ignore.
+-- "crossing:light" is mainly railway and isn't something we consider here.
+-- "crossing:bell" doesn't occur on its own.
+-- The "crossing:activation" outliers occur with crossing:light" and are ignored.
+-- "crossing:supervision" doesn't occur on its own.
+-- After that we're into the long tail of random lifecycle tags, all ignored.
+-- ----------------------------------------------------------------------------
+                  end
+               end
+            end
+         end
+      end
+   end
+
+-- ----------------------------------------------------------------------------
+-- We've now set "highway=crossing" for all "crossing", "crossing:" or 
+-- "crossing_ref" that might indicate a "highway=crossing".
+--
+-- Which of those should actually be "crossing=traffic_signals"?
+-- "crossing=controlled" is omitted from this list because often the traffic
+-- signals are mapped separately.
+-- ----------------------------------------------------------------------------
+   if ( passedt.highway == "crossing" ) then
+      if (( passedt.crossing == "traffic_signals"        ) or 
+          ( passedt.crossing == "pelican"                ) or
+          ( passedt.crossing == "pedestrian_signals"     ) or
+          ( passedt.crossing == "toucan"                 ) or
+          ( passedt.crossing == "traffic_signals;marked" ) or
+          ( passedt.crossing == "puffin"                 ) or
+          ( passedt.crossing == "pegasus"                ) or
+          ( passedt.crossing == "traffic_signals;island" ) or
+          ( passedt.crossing == "tiger"                  ) or
+          ( passedt.crossing_ref == "pelican"            ) or
+          ( passedt.crossing_ref == "toucan"             ) or
+          ( passedt.crossing_ref == "puffin"             ) or
+          ( passedt.crossing_ref == "pegasus"            ) or
+          ( passedt.crossing_ref == "tiger"              ) or
+          (( passedt["crossing:signals"] ~= nil         ) and
+           ( passedt["crossing:signals"] ~= ""          ) and
+           ( passedt["crossing:signals"] ~= "no"        ) and
+           ( passedt["crossing:signals"] ~= "separate"  ))) then
+         passedt.highway = "traffic_signals"
+      else
+-- ----------------------------------------------------------------------------
+-- Which of those should actually NOT be "highway=crossing"?
+-- If all of the "negative" tests are true together, it's not a crossing.
+-- Note that "tactile_paving" is also checked here.
+-- https://taginfo.geofabrik.de/europe:britain-and-ireland/keys/tactile_paving#values
+-- Has some garbage values, but we interpret garbage as 
+-- "some sort of crossing is intended here"
+-- ----------------------------------------------------------------------------
+         if ((( passedt.crossing             == nil         )  or 
+              ( passedt.crossing             == ""          )  or 
+              ( passedt.crossing             == "informal"  )  or 
+              ( passedt.crossing             == "no"        )  or
+              ( passedt.crossing             == "separate"  )  or
+              ( passedt.crossing             == "pavement"  )  or
+              ( passedt.crossing             == "stop_sign" )  or
+              ( passedt.crossing             == "unknown"   )  or
+              ( passedt.crossing             == "unmarked"  )) and
+             (( passedt["crossing:markings"] == nil         )  or
+              ( passedt["crossing:markings"] == ""          )  or
+              ( passedt["crossing:markings"] == "no"        )  or
+              ( passedt["crossing:markings"] == "surface"   )) and
+             (  passedt["crossing:island"]   ~= "yes"        ) and
+             (( passedt.crossing_ref         == nil         )  or
+              ( passedt.crossing_ref         == ""          )  or
+              ( passedt.crossing_ref         == "informal"  )  or
+              ( passedt.crossing_ref         == "none"      )) and
+	     (( passedt["crossing:signals"]  == nil         )  or
+              ( passedt["crossing:signals"]  == ""          )  or
+              ( passedt["crossing:signals"]  == "no"        )  or
+              ( passedt["crossing:signals"]  == "separate"  )) and
+             (( passedt.tactile_paving       == nil         )  or
+              ( passedt.tactile_paving       == ""          )  or
+              ( passedt.tactile_paving       == "no"        ))) then
             passedt.highway = nil
          end
       end
