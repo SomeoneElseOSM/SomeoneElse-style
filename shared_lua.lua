@@ -7573,7 +7573,14 @@ function consolidate_lua_03_t( passedt )
               ( passedt["crossing:signals"]  == "separate"  )) and
              (( passedt.tactile_paving       == nil         )  or
               ( passedt.tactile_paving       == ""          )  or
-              ( passedt.tactile_paving       == "no"        ))) then
+              ( passedt.tactile_paving       == "no"        )) and
+             (( passedt.traffic_calming      == nil         )  or
+              ( passedt.traffic_calming      == ""          )  or
+              ( passedt.traffic_calming      == "no"        )) and
+             (  passedt.kerb                 ~= "lowered"    ) and
+             (  passedt.kerb                 ~= "flush"      ) and
+             (  passedt.kerb                 ~= "no"         ) and
+             (  passedt.kerb                 ~= "none"       )) then
             passedt.highway = nil
          end
       end
