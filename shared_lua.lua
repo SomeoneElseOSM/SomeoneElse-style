@@ -7362,7 +7362,11 @@ function consolidate_lua_03_t( passedt )
 -- ----------------------------------------------------------------------------
 -- railway=crossing - show as level crossings.
 -- ----------------------------------------------------------------------------
-   if ( passedt.railway == "crossing" ) then
+   if (( passedt.railway == "crossing"                          ) or
+       ( passedt.railway == "tram_crossing"                     ) or
+       ( passedt.railway == "tram_level_crossing"               ) or
+       ( passedt.railway == "level_crossing;switch"             ) or
+       ( passedt.railway == "tram_level_crossing;tram_crossing" )) then
       passedt.railway = "level_crossing"
    end
 
