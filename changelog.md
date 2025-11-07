@@ -4,6 +4,9 @@ This page describes changes made in these projects: [SomeoneElse-style](https://
 ## As yet unreleased
 (raster, vector) Handle more synonyms for `level_crossing`.
 
+## Raster 07/11/2025
+OS OpenMap Local layer updated to October 2025.
+
 ## Vector 04/11/2025, Raster as yet unreleased.
 (raster, vector) Rewrote the "highway crossing" logic to be more tolerant of the bizarre tag combinations that now circulate in OSM.  The raster and vector rendering code expects `highway=crossing` or `highway=traffic_signals`.  The new code detects various semicolon combinations, and then (for something that isn't already some other sort of `highway`, `railway` or `disused`, checks a few other keys for known good values.  It then sets appropriate ones to `traffic_signals` and of the ones left checks for key/value combinations that indicate a _real_ crossing rather than an "informal way to cross a road with no infrastructure".
 
