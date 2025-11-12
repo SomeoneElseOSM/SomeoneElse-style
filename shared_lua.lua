@@ -12193,6 +12193,14 @@ function consolidate_lua_04_t( passedt )
    end
 
 -- ----------------------------------------------------------------------------
+-- Show highway=service areas
+-- ----------------------------------------------------------------------------
+   if ( passedt["area:highway"] == "service" ) then
+      passedt.highway = "service"
+      passedt.area    = "yes"
+   end
+
+-- ----------------------------------------------------------------------------
 -- name and addr:housename
 -- If a building that isn't something else has a name but no addr:housename,
 -- use that there.

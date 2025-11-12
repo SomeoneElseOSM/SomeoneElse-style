@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20251104T220402Z",
+  "data_updated": "20251112T012702Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -390,7 +390,8 @@
     { "key": "area", "description": "Drop some highway areas" },
     { "key": "area", "value": "yes", "description": "Detect and don't show some area highways" },
     { "key": "area:aeroway", "description": "Used as part of aeroway processing, but not itself shown." },
-    { "key": "area:highway", "description": "Show traffic islands as kerbs" },
+    { "key": "area:highway", "description": "Show traffic islands as kerbs, and service areas" },
+    { "key": "area:highway", "value": "service", "description": "Shown as a service area" },
     { "key": "area:highway", "value": "traffic_island", "description": "Shown as a kerb" },
     { "key": "artwork_subject", "description": "Detect penguins" },
     { "key": "artwork_subject", "value": "penguins", "description": "Detect penguins" },

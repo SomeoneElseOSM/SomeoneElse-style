@@ -3,6 +3,7 @@ This page describes changes made in these projects: [SomeoneElse-style](https://
 
 ## As yet unreleased
 (raster, vector) Handle name (and on vector, fill) of theme parks at varying zoom levels depending on size.
+(raster, vector) Show `area:highway=service` as service areas.
 
 ## 08/11/2025
 (raster, vector) Handle more synonyms for `level_crossing`.
