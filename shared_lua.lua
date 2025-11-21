@@ -11185,6 +11185,17 @@ function consolidate_lua_04_t( passedt )
    end
 
 -- ----------------------------------------------------------------------------
+-- Clearings
+-- There are very few of these, but map what there are to "man_made=pier", 
+-- which is used for "unknown ground and not sea", which other things can be
+-- displayed over.
+-- ----------------------------------------------------------------------------
+   if ( passedt.natural == "clearing" ) then
+      passedt.man_made = "pier"
+      passedt.natural = nil
+   end
+
+-- ----------------------------------------------------------------------------
 -- Let's send amenity=grave_yard and landuse=cemetery through as
 -- landuse=cemetery.
 -- ----------------------------------------------------------------------------
