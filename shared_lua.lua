@@ -3454,13 +3454,16 @@ function consolidate_lua_03_t( passedt )
         ( passedt.landuse      == "aquaculture"              ) or
         ( passedt.landuse      == "fishfarm"                 ) or
         ( passedt.landuse      == "institutional"            ) or
-        ( passedt.landuse      == "service"                  )) and
+        ( passedt.landuse      == "service"                  ) or
+        ( passedt.landuse      == "utility"                  )) and
        (( passedt.amenity      == nil                        ) or
         ( passedt.amenity      == ""                         )) and
        (( passedt.historic     == nil                        ) or
         ( passedt.historic     == ""                         )) and
        (( passedt.leisure      == nil                        ) or
         ( passedt.leisure      == ""                         )) and
+       (( passedt.man_made     == nil                        ) or
+        ( passedt.man_made     == ""                         )) and
        (( passedt.natural      == nil                        ) or
         ( passedt.natural      == ""                         ))) then
       passedt.landuse = "commercial"
@@ -3473,6 +3476,8 @@ function consolidate_lua_03_t( passedt )
         ( passedt.historic     == ""                         )) and
        (( passedt.landuse      == nil                        ) or
         ( passedt.landuse      == ""                         )) and
+       (( passedt.man_made     == nil                        ) or
+        ( passedt.man_made     == ""                         )) and
        (( passedt.natural      == nil                        ) or
         ( passedt.natural      == ""                         ))) then
       passedt.landuse = "commercial"
@@ -3489,6 +3494,8 @@ function consolidate_lua_03_t( passedt )
         ( passedt.historic     == ""                         )) and
        (( passedt.leisure      == nil                        ) or
         ( passedt.leisure      == ""                         )) and
+       (( passedt.man_made     == nil                        ) or
+        ( passedt.man_made     == ""                         )) and
        (( passedt.natural      == nil                        ) or
         ( passedt.natural      == ""                         ))) then
       passedt.landuse = "commercial"
