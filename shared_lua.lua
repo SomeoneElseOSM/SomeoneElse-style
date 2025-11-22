@@ -3449,13 +3449,35 @@ function consolidate_lua_03_t( passedt )
 -- Things without icons - add "commercial" landuse to include a name 
 -- (if one exists) too.
 -- ----------------------------------------------------------------------------
-   if (( passedt.landuse      == "churchyard"               ) or
-       ( passedt.landuse      == "religious"                ) or
-       ( passedt.leisure      == "racetrack"                ) or
-       ( passedt.landuse      == "aquaculture"              ) or
-       ( passedt.landuse      == "fishfarm"                 ) or
-       ( passedt.industrial   == "fish_farm"                ) or
-       ( passedt["seamark:type"] == "marine_farm"              )) then
+   if ((( passedt.landuse      == "churchyard"               ) or
+        ( passedt.landuse      == "religious"                ) or
+        ( passedt.landuse      == "aquaculture"              ) or
+        ( passedt.landuse      == "fishfarm"                 ) or
+        ( passedt.landuse      == "institutional"            )) and
+       (( passedt.amenity      == nil                        ) or
+        ( passedt.amenity      == ""                         )) and
+       (( passedt.leisure      == nil                        ) or
+        ( passedt.leisure      == ""                         ))) then
+      passedt.landuse = "commercial"
+   end
+
+   if ((  passedt.leisure      == "racetrack"                 ) and
+       (( passedt.amenity      == nil                        ) or
+        ( passedt.amenity      == ""                         )) and
+       (( passedt.landuse      == nil                        ) or
+        ( passedt.landuse      == ""                         ))) then
+      passedt.landuse = "commercial"
+      passedt.leisure = nil
+   end
+
+   if ((( passedt.industrial   == "fish_farm"                ) or
+        ( passedt["seamark:type"] == "marine_farm"           )) and
+       (( passedt.amenity      == nil                        ) or
+        ( passedt.amenity      == ""                         )) and
+       (( passedt.landuse      == nil                        ) or
+        ( passedt.landuse      == ""                         )) and
+       (( passedt.leisure      == nil                        ) or
+        ( passedt.leisure      == ""                         ))) then
       passedt.landuse = "commercial"
    end
 
