@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20251122T005502Z",
+  "data_updated": "20251122T233302Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -442,6 +442,7 @@
     { "key": "barrier", "value": "hampshire_gate", "description": "Shown as a gate or locked gate if locked" },
     { "key": "barrier", "value": "hedge", "description": "Shown as a green line" },
     { "key": "barrier", "value": "hedge;fence", "description": "Shown as hedge" },
+    { "key": "barrier", "value": "height_restrictor", "description": "Shown as a height restrictor" },
     { "key": "barrier", "value": "hoarding", "description": "Nodes shown as bollard; ways as fence" },
     { "key": "barrier", "value": "horse_barrier", "description": "Shown as a cycle_barrier" },
     { "key": "barrier", "value": "horse_jump", "description": "Shown as a fence" },

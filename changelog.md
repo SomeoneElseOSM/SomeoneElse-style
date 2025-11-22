@@ -8,6 +8,7 @@ This page describes changes made in these projects: [SomeoneElse-style](https://
 (raster, vector) Handle name (and on vector, fill) of theme parks at varying zoom levels depending on size.
 (raster, vector) Show `area:highway=service` as service areas.
 (raster, vector) Show `natural=clearing` as `man_made=pier` (essentially, "ground").
+(raster, vector) Added `barrier=height_restrictor`.
 
 ## 08/11/2025
 (raster, vector) Handle more synonyms for `level_crossing`.
