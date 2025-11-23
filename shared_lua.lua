@@ -1250,15 +1250,6 @@ function consolidate_lua_02_t( passedt )
    end
 
 -- ----------------------------------------------------------------------------
--- Treat planters as something "green" with a wall around it
--- ----------------------------------------------------------------------------
-   if ( passedt.man_made == "planter" ) then
-      passedt.barrier  = "wall"
-      passedt.landuse  = "grass"
-      passedt.man_made = nil
-   end
-
--- ----------------------------------------------------------------------------
 -- Treat landcover=grass as landuse=grass
 -- Also landuse=college_court, flowerbed
 -- ----------------------------------------------------------------------------

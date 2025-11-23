@@ -3,12 +3,13 @@ This page describes changes made in these projects: [SomeoneElse-style](https://
 
 ## As yet unreleased
 (raster, vector) Show `landuse=institutional`, `landuse=service` and `landuse=utility` as `landuse=commercial`.
+(raster, vector) Show `barrier=height_restrictor`.
+(raster, vector) Show point `barrier=planter` as bollards, lines as walls, areas walls around grass.
 
 ## Vector 21/11/2025, Raster as yet unreleased
 (raster, vector) Handle name (and on vector, fill) of theme parks at varying zoom levels depending on size.
 (raster, vector) Show `area:highway=service` as service areas.
 (raster, vector) Show `natural=clearing` as `man_made=pier` (essentially, "ground").
-(raster, vector) Added `barrier=height_restrictor`.
 
 ## 08/11/2025
 (raster, vector) Handle more synonyms for `level_crossing`.

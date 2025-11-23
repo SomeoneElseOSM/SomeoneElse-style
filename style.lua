@@ -663,7 +663,9 @@ function filter_tags_node (keyvalues, nokeys)
        ( keyvalues["barrier"]  == "gate_post"      ) or
        ( keyvalues["man_made"] == "gate_post"      ) or
        ( keyvalues["man_made"] == "gatepost"       ) or
-       ( keyvalues["barrier"]  == "pole"           )) then
+       ( keyvalues["barrier"]  == "pole"           ) or
+       ( keyvalues["barrier"]  == "planter"        ) or
+       ( keyvalues["man_made"] == "planter"        )) then
       keyvalues["barrier"] = "bollard"
    end
 
@@ -890,18 +892,25 @@ function filter_tags_way (keyvalues, nokeys)
 -- minimal thickness linear barrier".  If a narrower one is introduced it
 -- would make sense to make traversable ones in this list to that.
 -- ----------------------------------------------------------------------------
-   if (( keyvalues["barrier"] == "yes"             ) or
-       ( keyvalues["barrier"] == "barrier"         ) or
-       ( keyvalues["barrier"] == "bollard"         ) or
-       ( keyvalues["barrier"] == "steps"           ) or
-       ( keyvalues["barrier"] == "step"            ) or
-       ( keyvalues["barrier"] == "hoarding"        ) or
-       ( keyvalues["barrier"] == "horse_stile"     ) or
-       ( keyvalues["barrier"] == "chain"           ) or
-       ( keyvalues["barrier"] == "stile"           ) or
-       ( keyvalues["barrier"] == "v_stile"         ) or
-       ( keyvalues["barrier"] == "cycle_barrier"   )) then
+   if (( keyvalues["barrier"]  == "yes"             ) or
+       ( keyvalues["barrier"]  == "barrier"         ) or
+       ( keyvalues["barrier"]  == "bollard"         ) or
+       ( keyvalues["barrier"]  == "steps"           ) or
+       ( keyvalues["barrier"]  == "step"            ) or
+       ( keyvalues["barrier"]  == "hoarding"        ) or
+       ( keyvalues["barrier"]  == "horse_stile"     ) or
+       ( keyvalues["barrier"]  == "chain"           ) or
+       ( keyvalues["barrier"]  == "stile"           ) or
+       ( keyvalues["barrier"]  == "v_stile"         ) or
+       ( keyvalues["barrier"]  == "cycle_barrier"   )) then
       keyvalues["barrier"] = "fence"
+   end
+
+   if (( keyvalues["barrier"]  == "planter" ) or
+       ( keyvalues["man_made"] == "planter" )) then
+      keyvalues["barrier"]  = "wall"
+      keyvalues["landuse"]  = "grass"
+      keyvalues["man_made"] = nil
    end
 
    if (( keyvalues["public_transport"] == "platform" ) and
