@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20251122T233302Z",
+  "data_updated": "20251123T165902Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -238,6 +238,7 @@
     { "key": "amenity", "value": "library", "description": "Libraries: If in an old phone box, display as such" },
     { "key": "amenity", "value": "lifeboat", "description": "Lifeboats" },
     { "key": "amenity", "value": "lifeboat_station", "description": "Synonym for office=nonspecific" },
+    { "key": "amenity", "value": "loading_dock", "description": "Loading docks" },
     { "key": "amenity", "value": "lost_property", "description": "Shown as an office" },
     { "key": "amenity", "value": "lost_property_office", "description": "Shown as an office" },
     { "key": "amenity", "value": "lottery", "description": "Shown as gambling shop" },
