@@ -670,10 +670,10 @@ function filter_tags_node (keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
--- Render barrier=chain on nodes as horse_stile.  At least sone of the time 
+-- Render barrier=chain on nodes as horse_stile.  At least some of the time 
 -- it's correct.
 -- ----------------------------------------------------------------------------
-   if ( keyvalues["barrier"] == "chain" ) then
+   if (( keyvalues["barrier"] == "chain" ) then
       keyvalues["barrier"] = "horse_stile"
    end
 
@@ -902,7 +902,8 @@ function filter_tags_way (keyvalues, nokeys)
        ( keyvalues["barrier"]  == "chain"           ) or
        ( keyvalues["barrier"]  == "stile"           ) or
        ( keyvalues["barrier"]  == "v_stile"         ) or
-       ( keyvalues["barrier"]  == "cycle_barrier"   )) then
+       ( keyvalues["barrier"]  == "cycle_barrier"   ) or
+       ( keyvalues["barrier"]  == "handrail"        )) then
       keyvalues["barrier"] = "fence"
    end
 

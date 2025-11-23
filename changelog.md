@@ -5,6 +5,7 @@ This page describes changes made in these projects: [SomeoneElse-style](https://
 (raster, vector) Show `landuse=institutional`, `landuse=service` and `landuse=utility` as `landuse=commercial`.
 (raster, vector) Show `barrier=height_restrictor`.
 (raster, vector) Show point `barrier=planter` as bollards, lines as walls, areas walls around grass.
+(raster, vector) Show `barrier=handrail`.
 
 ## Vector 21/11/2025, Raster as yet unreleased
 (raster, vector) Handle name (and on vector, fill) of theme parks at varying zoom levels depending on size.

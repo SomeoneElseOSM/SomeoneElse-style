@@ -440,6 +440,7 @@
     { "key": "barrier", "value": "guard_rail", "description": "Shown as a fence" },
     { "key": "barrier", "value": "haha", "description": "Shown as wall" },
     { "key": "barrier", "value": "hampshire_gate", "description": "Shown as a gate or locked gate if locked" },
+    { "key": "barrier", "value": "handrail", "description": "Extracted as fence" },
     { "key": "barrier", "value": "hedge", "description": "Shown as a green line" },
     { "key": "barrier", "value": "hedge;fence", "description": "Shown as hedge" },
     { "key": "barrier", "value": "height_restrictor", "description": "Shown as a height restrictor" },
