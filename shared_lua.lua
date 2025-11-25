@@ -3354,6 +3354,15 @@ function consolidate_lua_03_t( passedt )
    end
 
 -- ----------------------------------------------------------------------------
+-- Boat storage - ignore if "leisure" is set to something (like "boatyard")
+-- ----------------------------------------------------------------------------
+   if (( passedt.amenity == "boat_storage" ) and
+       ( passedt.leisure ~= nil            ) and
+       ( passedt.leisure ~= ""             )) then
+      passedt.amenity = nil
+   end
+
+-- ----------------------------------------------------------------------------
 -- Beer gardens etc.
 -- ----------------------------------------------------------------------------
    if (( passedt.amenity == "beer_garden" ) or
