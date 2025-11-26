@@ -757,7 +757,11 @@ function consolidate_lua_01_t( passedt )
    end
 
 -- ----------------------------------------------------------------------------
--- "access=emergency" is used surprisingly frequently.
+-- "access=emergency" is used surprisingly frequently
+-- (and it's implied for "service=emergency_access").  Those and the others 
+-- below imply "access=no" unless overridden by "foot" - we're a 
+-- pedestrian-focused schema and so "foot" (whatever it is set to) takes
+-- prec
 -- ----------------------------------------------------------------------------
    if ((( passedt.access  == "emergency"        )  or
         ( passedt.service == "emergency_access" )  or
@@ -775,8 +779,8 @@ function consolidate_lua_01_t( passedt )
 
 -- ----------------------------------------------------------------------------
 -- Handle dodgy access tags.  Note that this doesn't affect my "designation"
--- processing, but may be used by the main style, as "foot", "bicycle" and 
--- "horse" are all in as columns.
+-- processing, but may be used by other styles working with this schema, 
+-- as "foot", "bicycle" and "horse" are all in the raster database as columns.
 -- ----------------------------------------------------------------------------
    if (passedt["access:foot"] == "yes") then
       passedt["access:foot"] = nil
@@ -795,9 +799,13 @@ function consolidate_lua_01_t( passedt )
 
 -- ----------------------------------------------------------------------------
 -- On footpaths, if foot=no set access=no
+-- This is done because we're a pedestrian-focussed schema and want to show
+-- foot-based access where relevant.
 --
--- Tracks etc. that aren't narrow won't be "pathnarrow" at this stage, and we
--- shouldn't set "access" based on "foot"
+-- Tracks and other wider ways that aren't narrow won't be "pathnarrow" at
+-- this stage, and we shouldn't set "access" based on "foot"; it would be
+-- silly for a motorway to have a "private" access overlay
+-- because you can't walk on it.
 --
 -- Things that are narrow but have a designation will either not be private to
 -- foot traffic or should be picked up by the TRO etc. handling below.
@@ -836,16 +844,26 @@ function consolidate_lua_01_t( passedt )
    end
 
 -- ----------------------------------------------------------------------------
--- Here we set the highway type based on road designations:
---   unpaved roads                      unpaved
---   narrow unclassigned_county_road    ucrnarrow
---   wide unclassigned_county_road      ucrwide
---   narrow BOAT			boatnarrow
---   wide BOAT				boatwide
---   narrow restricted byway		rbynarrow
---   wide restricted byway		rbywide
+-- The handling of service roads as gravel tracks (and will get further
+-- processed by the destination processing below) is because (in England,
+-- Wales, NI and IE at least) gravel etc. service roads tend not to be
+-- "somewhat accessible" but not technically part of the public road network.
 --
--- prow_ref is appended in brackets if present.
+-- Gravel etc. residential roads may be similar - not fully public.
+--
+-- Gravel etc. unclassified roads _are_ assumed to be public
+-- and are picked up below.
+-- ----------------------------------------------------------------------------
+   if ((( passedt.highway == "residential"  )  or
+        ( passedt.highway == "service"      )) and
+       (( passedt.surface == "unpaved"      )  or 
+        ( passedt.surface == "gravel"       ))) then
+      passedt.highway = "track"
+   end
+
+-- ----------------------------------------------------------------------------
+-- "highway=unpaved" sits in this schema below normal roads
+-- such as "unclassified" and above all PRoW types such as BOAT etc.
 -- ----------------------------------------------------------------------------
    if ((  passedt.highway == "unclassified"   ) and
        (( passedt.surface == "dirt"          )  or
@@ -864,13 +882,18 @@ function consolidate_lua_01_t( passedt )
       passedt.highway = "unpaved"
    end
 
-   if ((( passedt.highway == "residential"  )  or
-        ( passedt.highway == "service"      )) and
-       (( passedt.surface == "unpaved"      )  or 
-        ( passedt.surface == "gravel"       ))) then
-      passedt.highway = "track"
-   end
-
+-- ----------------------------------------------------------------------------
+-- Now we can set the highway type based on road designations:
+--   unpaved roads                      unpaved
+--   narrow unclassigned_county_road    ucrnarrow
+--   wide unclassigned_county_road      ucrwide
+--   narrow BOAT			boatnarrow
+--   wide BOAT				boatwide
+--   narrow restricted byway		rbynarrow
+--   wide restricted byway		rbywide
+--
+-- prow_ref is appended in brackets if present.
+-- ----------------------------------------------------------------------------
    if (( passedt.designation == "unclassified_county_road"                       ) or
        ( passedt.designation == "unclassified_country_road"                      ) or
        ( passedt.designation == "unclassified_highway"                           ) or
@@ -1013,6 +1036,8 @@ function consolidate_lua_01_t( passedt )
 -- England and Wales: public_footpath
 -- Scotland: core_path (ish - more general acess rights exist)
 -- Northern Ireland: public_footpath or PROW (actually "footpath" in law)
+-- "access_land" is a special case where there is legal access.
+--
 -- ----------------------------------------------------------------------------
    if (( passedt.designation == "public_footpath"                        ) or
        ( passedt.designation == "core_path"                              ) or 
@@ -1135,6 +1160,10 @@ function consolidate_lua_01_t( passedt )
 -- just remove the access=private tag as you ought to be able to walk there,
 -- unless there isn't foot=yes/designated to say you can, or there is an 
 -- explicit foot=no".
+-- "access" is the target tag here because we assume that renderers will 
+-- display access based on that tag (even though this code is designed to
+-- create "pedestrian" maps - based around "foot" and "designation" in
+-- the data).
 -- ----------------------------------------------------------------------------
    if (((   passedt.access      == "no"                          )  or
         (   passedt.access      == "destination"                 )) and
