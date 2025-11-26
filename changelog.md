@@ -12,6 +12,7 @@ This page describes changes made in these projects: [SomeoneElse-style](https://
 (raster, vector) Show point `barrier=planter` as bollards, lines as walls, areas walls around grass.
 (raster, vector) Show `barrier=handrail`.
 (raster, vector) Show `amenity=loading_dock`.
+(raster, vector) Handle more restricted `access` values (`employees`, etc.)
 
 ## Vector 21/11/2025, Raster 23/11/2025
 (raster, vector) Handle name (and on vector, fill) of theme parks at varying zoom levels depending on size.

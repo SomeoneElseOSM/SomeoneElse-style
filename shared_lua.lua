@@ -760,7 +760,14 @@ function consolidate_lua_01_t( passedt )
 -- "access=emergency" is used surprisingly frequently.
 -- ----------------------------------------------------------------------------
    if ((( passedt.access  == "emergency"        )  or
-        ( passedt.service == "emergency_access" )) and
+        ( passedt.service == "emergency_access" )  or
+        ( passedt.access  == "residents"        )  or
+        ( passedt.access  == "staff"            )  or
+        ( passedt.access  == "employees"        )  or
+        ( passedt.access  == "students"         )  or
+        ( passedt.access  == "members"          )  or
+        ( passedt.access  == "school"           )  or
+        ( passedt.access  == "university"       )) and
        (( passedt.foot == nil                   )  or
         ( passedt.foot == ""                    ))) then
       passedt.access = "no"
@@ -1070,7 +1077,8 @@ function consolidate_lua_01_t( passedt )
       passedt.access = "no"
    end
 
-   if ( passedt.access  == "customers" ) then
+   if (( passedt.access  == "customers"           ) or
+       ( passedt.access  == "customers;employees" )) then
       passedt.access = "destination"
    end
 
