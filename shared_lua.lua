@@ -5865,6 +5865,25 @@ function consolidate_lua_03_t( passedt )
    end
 
 -- ----------------------------------------------------------------------------
+-- Winding holes
+-- Processed as amenity for ease of processing on raster.
+-- ----------------------------------------------------------------------------
+   if ( passedt.waterway   == "turning_point"  ) then
+      passedt.amenity = "waterway_turning_point"
+      passedt.waterway = nil
+
+      if (( passedt.maxlength ~= nil ) and
+          ( passedt.maxlength ~= ""  )) then
+         if (( passedt.name == nil ) or
+             ( passedt.name == ""  )) then
+            passedt.name = "(" .. passedt.maxlength .. ")"
+         else
+            passedt.name = passedt.name .. " (" .. passedt.maxlength .. ")"
+         end
+      end
+   end
+
+-- ----------------------------------------------------------------------------
 -- In this shared lua, we just consolidate any alternative values for
 -- sluice_gate, waterfall, weir, floating_barrier.
 --

@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20251127T004702Z",
+  "data_updated": "20251127T103202Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -2180,6 +2180,7 @@
     { "key": "marker", "value": "post", "description": "Potentially show as aerial pipeline marker" },
     { "key": "marker", "value": "stone", "description": "Shown as boundary stone" },
     { "key": "marker", "value": "yes", "description": "Potentially show as aerial pipeline marker" },
+    { "key": "maxlength", "description": "If set on a `waterway=turning_point` (canal winding hole), append to name" },
     { "key": "maxwidth", "description": "Depending on context, go down a road class. Also changes path to track and vice versa." },
     { "key": "meadow", "description": "Show agricultural meadows as 'farm grass'" },
     { "key": "meadow", "value": "agricultural", "description": "Show agricultural meadows as 'farm grass'" },
@@ -3958,6 +3959,7 @@
     { "key": "waterway", "value": "canal", "description": "Many water features shown" },
     { "key": "waterway", "value": "cave_of_debouchement", "description": "Many water features shown" },
     { "key": "waterway", "value": "construction", "description": "Treated as `derelict_canal`" },
+    { "key": "waterway", "value": "dam", "description": "Linear and area dams" },
     { "key": "waterway", "value": "derelict_canal", "description": "Many water features shown" },
     { "key": "waterway", "value": "disused_canal", "description": "Many water features shown" },
     { "key": "waterway", "value": "ditch", "description": "Many water features shown" },
@@ -3986,6 +3988,7 @@
     { "key": "waterway", "value": "spillway", "description": "Not a current value in OSM data.  Treated as `waterway=drain`" },
     { "key": "waterway", "value": "stream", "description": "Many water features shown" },
     { "key": "waterway", "value": "tidal_channel", "description": "Handled as per 'stream'" },
+    { "key": "waterway", "value": "turning_point", "description": "Handled as a winding hole" },
     { "key": "waterway", "value": "water_point", "description": "Shown as drinking or nondrinking water" },
     { "key": "waterway", "value": "waterfall", "description": "Many water features shown" },
     { "key": "waterway", "value": "weir", "description": "Many water features shown" },
