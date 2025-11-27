@@ -1123,6 +1123,14 @@ function consolidate_lua_01_t( passedt )
       passedt.access = "destination"
    end
 
+   if (( passedt.foot  == "permit"       ) or
+       ( passedt.foot  == "agricultural" ) or
+       ( passedt.foot  == "forestry"     ) or
+       ( passedt.foot  == "delivery"     ) or
+       ( passedt.foot  == "military"     )) then
+      passedt.access = "no"
+   end
+
 -- ----------------------------------------------------------------------------
 -- Don't make driveways with a designation disappear.
 -- ----------------------------------------------------------------------------
