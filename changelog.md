@@ -8,6 +8,7 @@ This page describes changes made in these projects: [SomeoneElse-style](https://
 (raster, vector) Handle `foot=customers` and `foot=destination` as `access=destination`.
 (raster, vector) Handle `foot=permit` and others as `access=private`.
 (raster, vector) Handle `waterway=turning_point` (canal winding holes).
+(raster, vector) Handle `waterway=pressurised` as `man_made=pipeline`.
 
 ## 23/11/2025
 (raster, vector) Show `landuse=institutional`, `landuse=service` and `landuse=utility` as `landuse=commercial`.

@@ -6080,6 +6080,16 @@ function consolidate_lua_03_t( passedt )
    end
 
 -- ----------------------------------------------------------------------------
+-- Show pressurised water as pipelines
+-- ----------------------------------------------------------------------------
+   if ((  passedt.waterway == "pressurised"  ) and
+       (( passedt.man_made == nil           )  or
+        ( passedt.man_made == ""            ))) then
+      passedt.man_made = "pipeline"
+      passedt.waterway = nil
+   end
+
+-- ----------------------------------------------------------------------------
 -- Pipelines
 -- Suppress substance=gas_topology
 -- See https://www.openstreetmap.org/changeset/130415897 for more on this.

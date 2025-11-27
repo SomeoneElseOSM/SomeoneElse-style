@@ -3979,6 +3979,7 @@
     { "key": "waterway", "value": "lock_gate", "description": "Many water features shown" },
     { "key": "waterway", "value": "milestone", "description": "Many water features shown" },
     { "key": "waterway", "value": "mill_pond", "description": "Many water features shown" },
+    { "key": "waterway", "value": "pressurised", "description": "Handled as underground pipelines" },
     { "key": "waterway", "value": "rapids", "description": "Many water features shown" },
     { "key": "waterway", "value": "river", "description": "Many water features shown" },
     { "key": "waterway", "value": "riverbank", "description": "Many water features shown" },
