@@ -1102,8 +1102,24 @@ function consolidate_lua_01_t( passedt )
       passedt.access = "no"
    end
 
+-- ----------------------------------------------------------------------------
+-- Likewise treat access=customers as access=destination.
+-- ----------------------------------------------------------------------------
    if (( passedt.access  == "customers"           ) or
        ( passedt.access  == "customers;employees" )) then
+      passedt.access = "destination"
+   end
+
+-- ----------------------------------------------------------------------------
+-- Likewise treat foot=destination and foot=customers as access=destination.
+--
+-- "access" is the target tag here because we assume that renderers will 
+-- display access based on that tag (even though this code is designed to
+-- create "pedestrian" maps - based around "foot" and "designation" in
+-- the data).
+-- ----------------------------------------------------------------------------
+   if (( passedt.foot  == "destination" ) or
+       ( passedt.foot  == "customers"   )) then
       passedt.access = "destination"
    end
 
@@ -1160,6 +1176,7 @@ function consolidate_lua_01_t( passedt )
 -- just remove the access=private tag as you ought to be able to walk there,
 -- unless there isn't foot=yes/designated to say you can, or there is an 
 -- explicit foot=no".
+--
 -- "access" is the target tag here because we assume that renderers will 
 -- display access based on that tag (even though this code is designed to
 -- create "pedestrian" maps - based around "foot" and "designation" in

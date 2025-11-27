@@ -5,6 +5,7 @@ This page describes changes made in these projects: [SomeoneElse-style](https://
 (raster, vector) Show `amenity=weighbridge`.
 (raster, vector) Added icon for `leisure=marina`.  Also added to the raster legend.
 (raster, vector) Added icon for `amenity=boat_storage`.  Also added to the raster legend.
+(raster, vector) Handle `foot=customers` and `foot=destination` as `access=destination`.
 
 ## 23/11/2025
 (raster, vector) Show `landuse=institutional`, `landuse=service` and `landuse=utility` as `landuse=commercial`.

@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20251125T213302Z",
+  "data_updated": "20251127T004702Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -1366,7 +1366,9 @@
     { "key": "food:eggs", "description": "Detect honesty boxes for farm produce sales" },
     { "key": "food:eggs", "value": "yes", "description": "Detect honesty boxes for farm produce sales" },
     { "key": "foot", "description": "Foot access permission" },
+    { "key": "foot", "value": "customers", "description": "Used to set an access value that can be used to show access=destination" },
     { "key": "foot", "value": "designated", "description": "Foot access yes" },
+    { "key": "foot", "value": "destination", "description": "Used to set an access value that can be used to show access=destination" },
     { "key": "foot", "value": "no", "description": "Foot access no" },
     { "key": "foot", "value": "permissive", "description": "Foot access yes" },
     { "key": "foot", "value": "private", "description": "Foot access no" },
