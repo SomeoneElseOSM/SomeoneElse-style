@@ -12877,6 +12877,24 @@ function consolidate_place_t( passedt )
     end
 
 -- ----------------------------------------------------------------------------
+-- "leisure=bathing_place" are now mostly nodes in Scotland
+-- ----------------------------------------------------------------------------
+    if ((  passedt.leisure  == "bathing_place"  ) and
+        (( passedt.amenity  == nil             ) or
+         ( passedt.amenity  == ""              )) and
+        (( passedt.place    == nil             ) or
+         ( passedt.place    == ""              )) and
+        (( passedt.natural  == nil             ) or
+         ( passedt.natural  == ""              )) and
+        (( passedt.tourism  == nil             ) or
+         ( passedt.tourism  == ""              )) and
+        (  passedt.name     ~= nil              ) and
+        (  passedt.name     ~= ""               )) then
+        passedt.leisure = nil
+        passedt.place = "locality"
+    end
+
+-- ----------------------------------------------------------------------------
 -- Handle natural=cape etc. as place=locality if no other place tag.
 --
 -- On vector, area localities are extracted with the same rules as 

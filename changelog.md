@@ -10,6 +10,7 @@ This page describes changes made in these projects: [SomeoneElse-style](https://
 (raster, vector) Handle `waterway=turning_point` (canal winding holes).
 (raster, vector) Handle `waterway=pressurised` as `man_made=pipeline`.
 (raster, vector) Handle `waterway=junction`.
+(raster, vector) Handle `leisure=bathing_place` as `place=locality`.
 
 ## 23/11/2025
 (raster, vector) Show `landuse=institutional`, `landuse=service` and `landuse=utility` as `landuse=commercial`.
