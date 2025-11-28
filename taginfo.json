@@ -3974,6 +3974,7 @@
     { "key": "waterway", "value": "former_canal", "description": "Many water features shown" },
     { "key": "waterway", "value": "fuel", "description": "Maritime version of amenity=fuel" },
     { "key": "waterway", "value": "historic_canal", "description": "Many water features shown" },
+    { "key": "waterway", "value": "junction", "description": "Extracted as a waterway junction" },
     { "key": "waterway", "value": "leat", "description": "Many water features shown" },
     { "key": "waterway", "value": "lock", "description": "Many water features shown" },
     { "key": "waterway", "value": "lock_gate", "description": "Many water features shown" },

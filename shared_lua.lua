@@ -5884,6 +5884,15 @@ function consolidate_lua_03_t( passedt )
    end
 
 -- ----------------------------------------------------------------------------
+-- Waterway junctions
+-- Processed as amenity for ease of processing on raster.
+-- ----------------------------------------------------------------------------
+   if ( passedt.waterway   == "junction"  ) then
+      passedt.amenity = "waterway_junction"
+      passedt.waterway = nil
+   end
+
+-- ----------------------------------------------------------------------------
 -- In this shared lua, we just consolidate any alternative values for
 -- sluice_gate, waterfall, weir, floating_barrier.
 --
