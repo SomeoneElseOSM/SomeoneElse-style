@@ -1046,7 +1046,8 @@ function consolidate_lua_01_t( passedt )
        ( passedt.designation == "public_footpath;permissive_bridleway"   ) or 
        ( passedt.designation == "public_footpath;public_cycleway"        ) or
        ( passedt.designation == "PROW"                                   ) or
-       ( passedt.designation == "access_land"                            )) then
+       ( passedt.designation == "access_land"                            ) or
+       ( passedt.designation == "adopted_footway"                        )) then
       if (( passedt.highway == "intpathnarrow" ) or
           ( passedt.highway == "pathnarrow"    )) then
          if (( passedt.trail_visibility == "bad"          )  or
