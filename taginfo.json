@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20251130T003002Z",
+  "data_updated": "20251130T112602Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -3563,7 +3563,7 @@
     { "key": "sidewalk", "value": "mapped", "description": "Decide if a road has a sidewalk" },
     { "key": "sidewalk", "value": "right", "description": "Decide if a road has a sidewalk" },
     { "key": "sidewalk", "value": "separate", "description": "Decide if a road has a sidewalk" },
-    { "key": "sidewalk", "value": "separate", "description": "Decide if a road has a sidewalk" },
+    { "key": "sidewalk", "value": "shared", "description": "Decide if a road has a sidewalk" },
     { "key": "sidewalk", "value": "yes", "description": "Decide if a road has a sidewalk" },
     { "key": "sidewalk:both", "description": "Show sidewalks on roads" },
     { "key": "sidewalk:both", "value": "separate", "description": "Show sidewalks on roads" },
@@ -3885,6 +3885,7 @@
     { "key": "tunnel:name", "description": "Used in place of name on tunnels" },
     { "key": "type", "description": "Used in relation type filtering" },
     { "key": "type", "value": "boundary", "description": "Used in relation type filtering" },
+    { "key": "type", "value": "mine_shaft", "description": "Detect historic mine shafts" },
     { "key": "type", "value": "multipolygon", "description": "Used in relation type filtering" },
     { "key": "type", "value": "route", "description": "Used in relation type filtering" },
     { "key": "underground", "description": "Detect underground railway platforms" },

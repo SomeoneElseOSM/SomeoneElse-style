@@ -6325,6 +6325,14 @@ function consolidate_lua_03_t( passedt )
    end
 
 -- ----------------------------------------------------------------------------
+-- Then a bizarre form of tagging used in North Yorkshire and Westmoreland
+-- ----------------------------------------------------------------------------
+   if (( passedt.historic == "yes"        ) and
+       ( passedt.type     == "mine_shaft" )) then
+      passedt.historic = "mine_shaft"
+   end
+
+-- ----------------------------------------------------------------------------
 -- Then other spellings of man_made=mineshaft
 -- ----------------------------------------------------------------------------
    if (( passedt.man_made   == "adit"       )  or
