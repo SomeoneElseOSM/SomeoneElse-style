@@ -2902,6 +2902,9 @@ function consolidate_lua_03_t( passedt )
         ( passedt.vending == "vegetables"            )  or
         ( passedt.vending == "fruit"                 )  or
         ( passedt.vending == "food"                  )  or
+        ( passedt.vending == "drinks"                )  or
+        ( passedt.vending == "sweets"                )  or
+        ( passedt.vending == "coffee"                )  or
         ( passedt.vending == "photos"                )  or
         ( passedt.vending == "maps"                  )  or
         ( passedt.vending == "newspapers"            )  or
