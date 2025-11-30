@@ -8421,6 +8421,21 @@ function consolidate_lua_03_t( passedt )
    end
 
 -- ----------------------------------------------------------------------------
+-- Append maxheight to height restrictors
+-- ----------------------------------------------------------------------------
+   if ( passedt.barrier   == "height_restrictor" ) then
+      if (( passedt.maxheight ~= nil ) and
+          ( passedt.maxheight ~= ""  )) then
+         if (( passedt.name == nil ) or
+             ( passedt.name == ""  )) then
+            passedt.name = "(" .. passedt.maxheight .. ")"
+         else
+            passedt.name = passedt.name .. " (" .. passedt.maxheight .. ")"
+         end
+      end
+   end
+
+-- ----------------------------------------------------------------------------
 -- gates
 -- ----------------------------------------------------------------------------
    if (( passedt.barrier   == "gate"                  )  or
