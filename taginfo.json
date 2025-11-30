@@ -3885,6 +3885,7 @@
     { "key": "tunnel:name", "description": "Used in place of name on tunnels" },
     { "key": "type", "description": "Used in relation type filtering" },
     { "key": "type", "value": "boundary", "description": "Used in relation type filtering" },
+    { "key": "type", "value": "broad_leaf", "description": "Obscure tagging of `leaf_type=broadleaved`" },
     { "key": "type", "value": "mine_shaft", "description": "Detect historic mine shafts" },
     { "key": "type", "value": "multipolygon", "description": "Used in relation type filtering" },
     { "key": "type", "value": "route", "description": "Used in relation type filtering" },

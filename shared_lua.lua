@@ -3915,6 +3915,17 @@ function consolidate_lua_03_t( passedt )
       end
    end
 
+-- ----------------------------------------------------------------------------
+-- An odd mistagging in Scotland for broadleaved
+-- ----------------------------------------------------------------------------
+  if ((  passedt.natural   == "wood"        ) and
+      (( passedt.leaf_type == nil          )  or
+       ( passedt.leaf_type == ""           )) and
+      (  passedt.type      == "broad_leaf"  )) then
+      passedt.leaf_type = "broadleaved"
+      passedt.type      = nil
+  end
+
   if (((  passedt.landuse   == "forest"     )  and
        (  passedt.leaf_type ~= nil          )  and
        (  passedt.leaf_type ~= ""           )) or

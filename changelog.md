@@ -5,6 +5,7 @@ This page describes changes made in these projects: [SomeoneElse-style](https://
 (raster, vector) Append `maxheight` to height restrictors.
 (raster, vector) Show a few more vending machine labels.
 (raster, vector) Show historic mineshafts tagged with `historic=yes; type=mine_shaft`.
+(raster, vector) Show `type=broad_leaf` as `leaf_type=broadleaved`.
 
 ## 29/11/2025
 (raster, vector) Show `amenity=weighbridge`.
