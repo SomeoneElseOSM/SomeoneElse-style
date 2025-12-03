@@ -1984,7 +1984,8 @@ function consolidate_lua_03_t( passedt )
 -- Remove name from footway=sidewalk (we expect it to be rendered via the
 -- road that this is a sidewalk for), or "is_sidepath=yes" etc.
 -- ----------------------------------------------------------------------------
-   if (((  passedt.footway             == "sidewalk" )  or
+   if (((  passedt.footway             == "crossing" )  or
+        (  passedt.footway             == "sidewalk" )  or
         (  passedt.cycleway            == "sidewalk" )  or
         (  passedt.is_sidepath         == "yes"      )  or
         (( passedt["is_sidepath:of"]      ~= nil       )   and

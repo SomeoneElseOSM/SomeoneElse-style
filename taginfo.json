@@ -1384,6 +1384,7 @@
     { "key": "foot:physical", "description": "Indicates no physical foot access possible" },
     { "key": "foot:physical", "value": "no", "description": "Indicates no physical foot access possible" },
     { "key": "footway", "description": "Detect sidewalks" },
+    { "key": "footway", "value": "crossing", "description": "Detect things adjacent to sidewalks so that name can be removed" },
     { "key": "footway", "value": "separate", "description": "Obscure synonym for sidewalk" },
     { "key": "footway", "value": "sidewalk", "description": "Detect sidewalks so that name can be removed" },
     { "key": "footway", "value": "yes", "description": "Obscure synonym for sidewalk" },
