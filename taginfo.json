@@ -1452,6 +1452,7 @@
     { "key": "golf", "value": "driving_range", "description": "Shown as pitch" },
     { "key": "golf", "value": "fairway", "description": "Shown as garden" },
     { "key": "golf", "value": "green", "description": "Shown as golf green" },
+    { "key": "golf", "value": "lateral_water_hazard", "description": "Treated as water" },
     { "key": "golf", "value": "path", "description": "Shown as path" },
     { "key": "golf", "value": "pin", "description": "Shown as golf pin" },
     { "key": "golf", "value": "practice", "description": "Shown as garden" },

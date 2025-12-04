@@ -6003,9 +6003,10 @@ function consolidate_lua_03_t( passedt )
       passedt.waterway = "drain"
    end
 
-   if ((( passedt.man_made == "spillway"      )  or
-        ( passedt.leisure  == "paddling_pool" )  or
-        ( passedt.golf     == "water_hazard"  )) and
+   if ((( passedt.man_made == "spillway"             )  or
+        ( passedt.leisure  == "paddling_pool"        )  or
+        ( passedt.golf     == "water_hazard"         )  or
+        ( passedt.golf     == "lateral_water_hazard" )) and
        (( passedt.natural == nil              )  or
         ( passedt.natural == ""               ))) then
       passedt.natural = "water"

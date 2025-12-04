@@ -9,7 +9,7 @@ This page describes changes made in these projects: [SomeoneElse-style](https://
 (raster, vector) Handle `shop=pasta` as fast food that serves pizza or italian food.
 (raster, vector) Handle `shop=popup` as nonspecific shops.
 (raster, vector) Handle `shop=joiners` as nonspecific offices.
-(raster, vector) Handle `golf=water_hazard` as water.
+(raster, vector) Handle `golf=water_hazard` and `golf=lateral_water_hazard` as water.
 (raster, vector) Handle `golf=clubhouse` as leisure facilities.
 
 ## 04/12/2025
