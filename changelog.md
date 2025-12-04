@@ -4,6 +4,7 @@ This page describes changes made in these projects: [SomeoneElse-style](https://
 ## As yet unreleased
 (raster, vector) Added support for a couple of 3d printing shops as nonspecific shops.
 (raster, vector) Handle `shop=saddlery` as nonspecific offices.
+(raster, vector) Added `vape` as another synonym for `shop=e-cigarette`.
 
 ## 04/12/2025
 (raster, vector) Append `maxheight` to height restrictors.

@@ -9838,7 +9838,8 @@ function consolidate_lua_04_t( passedt )
 -- e-cigarette
 -- ----------------------------------------------------------------------------
    if (( passedt.shop   == "vaping"                            ) or
-       ( passedt.shop   == "vape_shop"                         )) then
+       ( passedt.shop   == "vape_shop"                         ) or
+       ( passedt.shop   == "vape"                              )) then
       passedt.shop = "e-cigarette"
    end
 
