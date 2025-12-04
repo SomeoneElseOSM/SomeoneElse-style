@@ -9127,7 +9127,8 @@ function consolidate_lua_04_t( passedt )
        ( passedt.shop == "clothes_hire" ) or
        ( passedt.shop == "hat"          ) or
        ( passedt.shop == "hats"         ) or
-       ( passedt.shop == "wigs"         )) then
+       ( passedt.shop == "wigs"         ) or
+       ( passedt.shop == "fan"          )) then
       passedt.shop = "clothes"
    end
 
@@ -11340,6 +11341,8 @@ function consolidate_lua_04_t( passedt )
          ( passedt.amenity  == ""                     ))  and
         (( passedt.leisure  == nil                    )   or
          ( passedt.leisure  == ""                     ))  and
+        (( passedt.shop     == nil                    )   or
+         ( passedt.shop     == ""                     ))  and
         (  passedt.sport    ~= nil                     )  and
         (  passedt.sport    ~= ""                      ))) then
       if (( passedt.landuse == nil ) or

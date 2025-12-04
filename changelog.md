@@ -7,6 +7,7 @@ This page describes changes made in these projects: [SomeoneElse-style](https://
 (raster, vector) Show historic mineshafts tagged with `historic=yes; type=mine_shaft`.
 (raster, vector) Show `type=broad_leaf` as `leaf_type=broadleaved`.
 (raster, vector) Treat `footway=crossing` as `footway=sidewalk` when suppressing name.
+(raster, vector) Treat `shop=fan` as `shop=clothes` (as mainly replica kits).
 
 ## 29/11/2025
 (raster, vector) Show `amenity=weighbridge`.
