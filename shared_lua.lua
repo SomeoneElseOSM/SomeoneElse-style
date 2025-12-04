@@ -9561,6 +9561,16 @@ function consolidate_lua_04_t( passedt )
       append_wheelchair_t( passedt )
    end
 
+-- ----------------------------------------------------------------------------
+-- All "shop=pasta" in UK/IE actually seem to be fast food places 
+-- or restaurants
+-- ----------------------------------------------------------------------------
+   if ( passedt.shop == "pasta" ) then
+      passedt.amenity = "fast_food_pizza_"
+      append_wheelchair_t( passedt )
+      passedt.shop = nil
+   end
+
    if ((  passedt.amenity == "fast_food"                   )  and
        (( passedt.cuisine == "italian"                    )   or
         ( passedt.cuisine == "italian_pizza"              )   or

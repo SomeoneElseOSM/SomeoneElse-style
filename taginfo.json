@@ -3360,7 +3360,8 @@
     { "key": "shop", "value": "paint", "description": "Various shops shown" },
     { "key": "shop", "value": "party", "description": "Various shops shown" },
     { "key": "shop", "value": "party_goods", "description": "Various shops shown" },
-    { "key": "shop", "value": "pastry", "description": "Various shops shown" },
+    { "key": "shop", "value": "pastry", "description": "Various shops shown" }
+    { "key": "shop", "value": "pasta", "description": "Treated as fast food that serves pizza or italian food" },
     { "key": "shop", "value": "patisserie", "description": "Shown as nonspecific shop" },
     { "key": "shop", "value": "pawnbroker", "description": "Various shops shown" },
     { "key": "shop", "value": "perfumery", "description": "Various shops shown" },

@@ -6,6 +6,7 @@ This page describes changes made in these projects: [SomeoneElse-style](https://
 (raster, vector) Handle `shop=saddlery` as nonspecific offices.
 (raster, vector) Added `vape` as another synonym for `shop=e-cigarette`.
 (raster, vector) Handle `shop=mobile_industrial_equipment` as nonspecific offices.
+(raster, vector) Handle `shop=pasta` as fast food that serves pizza or italian food.
 
 ## 04/12/2025
 (raster, vector) Append `maxheight` to height restrictors.
