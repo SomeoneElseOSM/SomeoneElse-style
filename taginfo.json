@@ -3308,6 +3308,7 @@
     { "key": "shop", "value": "milk", "description": "Various shops shown" },
     { "key": "shop", "value": "minicab", "description": "Various shops shown" },
     { "key": "shop", "value": "mirrors", "description": "Shown as homeware shop" },
+    { "key": "shop", "value": "mobile_industrial_equipment", "description": "Handled as `office=nonspecific`" },
     { "key": "shop", "value": "mobile_phone", "description": "Various shops shown" },
     { "key": "shop", "value": "mobile_phone;e-cigarette", "description": "Shown as mobile_phone shop" },
     { "key": "shop", "value": "mobile_phone_accessories", "description": "Shown as mobile_phone shop" },
