@@ -10466,6 +10466,7 @@ function consolidate_lua_04_t( passedt )
        ( passedt.shop    == "shoemaker"               ) or
        ( passedt.shop    == "watch_repair"            ) or
        ( passedt.shop    == "cleaning"                ) or
+       ( passedt.shop    == "cleaning_supplies"       ) or
        ( passedt.shop    == "collector"               ) or
        ( passedt.shop    == "coins"                   ) or
        ( passedt.shop    == "video"                   ) or

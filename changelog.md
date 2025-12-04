@@ -9,6 +9,7 @@ This page describes changes made in these projects: [SomeoneElse-style](https://
 (raster, vector) Treat `footway=crossing` as `footway=sidewalk` when suppressing name.
 (raster, vector) Treat `shop=fan` as `shop=clothes` (as mainly replica kits).
 (raster, vector) Treat `shop=country_store` etc. as `shop=pet_food` (a better match than the previous `furniture`).
+(raster, vector) Treat `shop=cleaning_supplies` as a nonspecific shop.
 
 ## 29/11/2025
 (raster, vector) Show `amenity=weighbridge`.
