@@ -3417,7 +3417,7 @@
     { "key": "shop", "value": "retail", "description": "Not an expected value in OSM data.  Shown as a generic shop" },
     { "key": "shop", "value": "roofing", "description": "Various shops shown" },
     { "key": "shop", "value": "rugs", "description": "Shown as homeware shop" },
-    { "key": "shop", "value": "saddlery", "description": "Various shops shown" },
+    { "key": "shop", "value": "saddlery", "description": "Treated as nonspecific office" },
     { "key": "shop", "value": "safety_equipment", "description": "Various shops shown" },
     { "key": "shop", "value": "salon", "description": "Various shops shown" },
     { "key": "shop", "value": "sandwich", "description": "Various shops shown" },

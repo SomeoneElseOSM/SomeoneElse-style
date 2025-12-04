@@ -3013,8 +3013,7 @@ function consolidate_lua_03_t( passedt )
        ( passedt.shop   == "bathrooms"                   ) or
        ( passedt.shop   == "swimming_pool"               ) or
        ( passedt.shop   == "fitted_furniture"            ) or
-       ( passedt.shop   == "upholstery"                  ) or
-       ( passedt.shop   == "saddlery"                    )) then
+       ( passedt.shop   == "upholstery"                  )) then
       passedt.landuse = "unnamedcommercial"
       passedt.shop = "furniture"
    end
@@ -10754,6 +10753,15 @@ function consolidate_lua_04_t( passedt )
       passedt.landuse = "unnamedcommercial"
       passedt.office  = "nonspecific"
       passedt.craft   = nil
+   end
+
+-- ----------------------------------------------------------------------------
+-- Like craft=saddler, handle shop=saddlery as office=nonspecific.
+-- ----------------------------------------------------------------------------
+   if ( passedt.shop == "saddlery" ) then
+      passedt.landuse = "unnamedcommercial"
+      passedt.office  = "nonspecific"
+      passedt.shop   = nil
    end
 
 -- ----------------------------------------------------------------------------
