@@ -3215,7 +3215,6 @@
     { "key": "shop", "value": "hardware", "description": "Various shops shown" },
     { "key": "shop", "value": "hardware_rental", "description": "Various shops shown" },
     { "key": "shop", "value": "hat", "description": "Various shops shown" },
-    { "key": "shop", "value": "hats", "description": "Various shops shown" },
     { "key": "shop", "value": "headshop", "description": "Shown as nonspecific shop" },
     { "key": "shop", "value": "health", "description": "Various shops shown" },
     { "key": "shop", "value": "health_and_beauty", "description": "Various shops shown" },

@@ -1,7 +1,7 @@
 # Changes made to this rendering
 This page describes changes made in these projects: [SomeoneElse-style](https://github.com/SomeoneElseOSM/SomeoneElse-style), [SomeoneElse-style-legend](https://github.com/SomeoneElseOSM/SomeoneElse-style-legend) and [openstreetmap-carto-AJT](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT), and visible [on this site](//map.atownsend.org.uk/maps/map/map.html).  Since 2025 this also includes changes to lua code shared between raster and vector processing - hence the notes below about which a particular change applies to.  See [this changelog](https://github.com/SomeoneElseOSM/SomeoneElse-vector-extract/blob/main/resources/changelog_sve01.md) for where changes here affect the vector schema, and also other vector-only ones.
 
-## As yet unreleased
+## 04/12/2025
 (raster, vector) Append `maxheight` to height restrictors.
 (raster, vector) Show a few more vending machine labels.
 (raster, vector) Show historic mineshafts tagged with `historic=yes; type=mine_shaft`.
@@ -10,6 +10,7 @@ This page describes changes made in these projects: [SomeoneElse-style](https://
 (raster, vector) Treat `shop=fan` as `shop=clothes` (as mainly replica kits).
 (raster, vector) Treat `shop=country_store` etc. as `shop=pet_food` (a better match than the previous `furniture`).
 (raster, vector) Treat `shop=cleaning_supplies` as a nonspecific shop.
+(raster, vector) Removed `shop=hats`; no longer in the data.
 
 ## 29/11/2025
 (raster, vector) Show `amenity=weighbridge`.
