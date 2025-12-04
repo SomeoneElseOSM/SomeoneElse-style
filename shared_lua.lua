@@ -2982,8 +2982,6 @@ function consolidate_lua_03_t( passedt )
        ( passedt.shop   == "home_improvement"            ) or
        ( passedt.shop   == "decorating"                  ) or
        ( passedt.shop   == "bed;carpet"                  ) or
-       ( passedt.shop   == "country_store"               ) or
-       ( passedt.shop   == "equestrian"                  ) or
        ( passedt.shop   == "kitchen"                     ) or
        ( passedt.shop   == "bedroom"                     ) or
        ( passedt.shop   == "bathroom"                    ) or
@@ -10259,7 +10257,9 @@ function consolidate_lua_04_t( passedt )
        ( passedt.shop    == "pet_supplies"            ) or
        ( passedt.shop    == "pet_care"                ) or
        ( passedt.shop    == "pet_food"                ) or
-       ( passedt.shop    == "animal_feed"             )) then
+       ( passedt.shop    == "animal_feed"             ) or
+       ( passedt.shop    == "country_store"           ) or
+       ( passedt.shop    == "equestrian"              )) then
       passedt.landuse = "unnamedcommercial"
       passedt.shop = "pet_food"
    end
