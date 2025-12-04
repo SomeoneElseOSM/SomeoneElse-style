@@ -3260,6 +3260,7 @@
     { "key": "shop", "value": "jewelry;pawnbroker", "description": "Synonym for 'jewelry'" },
     { "key": "shop", "value": "jewelry;sunglasses", "description": "Synonym for 'jewelry'" },
     { "key": "shop", "value": "jobs", "description": "Various shops shown" },
+    { "key": "shop", "value": "joiners", "description": "Handled as nonspecific offices" },
     { "key": "shop", "value": "joke", "description": "Shown as gift shop" },
     { "key": "shop", "value": "junk", "description": "Various shops shown" },
     { "key": "shop", "value": "key", "description": "Shown as shoe repair etc. shop" },

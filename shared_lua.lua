@@ -11054,6 +11054,7 @@ function consolidate_lua_04_t( passedt )
        ( passedt.office      == "hvac"                        ) or
        ( passedt.shop        == "hvac"                        ) or
        ( passedt.shop        == "heating"                     ) or
+       ( passedt.shop        == "joiners"                     ) or
        ( passedt.office      == "laundry"                     ) or
        ( passedt.amenity     == "coworking_space"             ) or
        ( passedt.office      == "coworking"                   ) or
