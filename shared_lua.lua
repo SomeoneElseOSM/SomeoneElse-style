@@ -11281,7 +11281,8 @@ function consolidate_lua_04_t( passedt )
          ( passedt.club    == "labour_club"           )   or
          ( passedt.club    == "boxing"                )   or
          ( passedt.club    == "game"                  )   or
-         ( passedt.club    == "automobile"            ))  and
+         ( passedt.club    == "automobile"            )   or
+         ( passedt.golf    == "clubhouse"             ))  and
         (( passedt.leisure == nil                     )   or
          ( passedt.leisure == ""                      ))  and
         (( passedt.amenity == nil                     )   or
