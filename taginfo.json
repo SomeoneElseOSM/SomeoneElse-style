@@ -2900,6 +2900,8 @@
     { "key": "shelter_type", "value": "shopping_cart", "description": "Don't use shelter icon on some shelter types" },
     { "key": "shelter_type", "value": "trolley_park", "description": "Don't use shelter icon on some shelter types" },
     { "key": "shop", "description": "All sorts of shops" },
+    { "key": "shop", "value": "3d_printing", "description": "Handled as a nonspecific shop" },
+    { "key": "shop", "value": "3d_shop", "description": "Handled as a nonspecific shop" },
     { "key": "shop", "value": "abandoned", "description": "Various shops shown" },
     { "key": "shop", "value": "accessories", "description": "Various shops shown" },
     { "key": "shop", "value": "accountant", "description": "Various shops shown" },

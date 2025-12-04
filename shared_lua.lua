@@ -10518,7 +10518,9 @@ function consolidate_lua_04_t( passedt )
        ( passedt.shop    == "ironing"                 ) or
        ( passedt.amenity == "stripclub"               ) or
        ( passedt.amenity == "courier"                 ) or
-       ( passedt.shop    == "safety_equipment"        )) then
+       ( passedt.shop    == "safety_equipment"        ) or
+       ( passedt.shop    == "3d_printing"             ) or
+       ( passedt.shop    == "3d_shop"                 )) then
       passedt.landuse = "unnamedcommercial"
       passedt.shop = "shopnonspecific"
    end
