@@ -10609,7 +10609,8 @@ function consolidate_lua_04_t( passedt )
        ( passedt.shop    == "hydroponics"        ) or
        ( passedt.shop    == "headshop"           ) or
        ( passedt.shop    == "skate"              ) or
-       ( passedt.shop    == "ethnic"             )) then
+       ( passedt.shop    == "ethnic"             ) or
+       ( passedt.shop    == "popup"              )) then
       passedt.landuse = "unnamedcommercial"
       passedt.shop    = "shopnonspecific"
    end
