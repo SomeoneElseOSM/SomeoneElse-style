@@ -1562,6 +1562,7 @@ function consolidate_lua_03_t( passedt )
        ( passedt.bridge == "pier"               ) or
        ( passedt.bridge == "plank"              ) or
        ( passedt.bridge == "plank_bridge"       ) or
+       ( passedt.bridge == "log_bridge"         ) or
        ( passedt.bridge == "pontoon"            ) or
        ( passedt.bridge == "rope"               ) or
        ( passedt.bridge == "swing"              ) or

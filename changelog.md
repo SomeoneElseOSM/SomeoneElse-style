@@ -11,6 +11,7 @@ This page describes changes made in these projects: [SomeoneElse-style](https://
 (raster, vector) Handle `shop=joiners` as nonspecific offices.
 (raster, vector) Handle `golf=water_hazard` and `golf=lateral_water_hazard` as water.
 (raster, vector) Handle `golf=clubhouse` as leisure facilities.
+(raster, vector) Add `log_bridge` to list of bridges processed.
 
 ## 04/12/2025
 (raster, vector) Append `maxheight` to height restrictors.
