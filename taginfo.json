@@ -3365,7 +3365,7 @@
     { "key": "shop", "value": "paint", "description": "Various shops shown" },
     { "key": "shop", "value": "party", "description": "Various shops shown" },
     { "key": "shop", "value": "party_goods", "description": "Various shops shown" },
-    { "key": "shop", "value": "pastry", "description": "Various shops shown" }
+    { "key": "shop", "value": "pastry", "description": "Various shops shown" },
     { "key": "shop", "value": "pasta", "description": "Treated as fast food that serves pizza or italian food" },
     { "key": "shop", "value": "patisserie", "description": "Shown as nonspecific shop" },
     { "key": "shop", "value": "pawnbroker", "description": "Various shops shown" },
@@ -4026,6 +4026,7 @@
     { "key": "waterway:historic", "description": "Handle disused version of tag" },
     { "key": "waterway:historic", "value": "canal", "description": "Disused canals are shown as derelict canals" },
     { "key": "weather:radar", "description": "Include weather radar stations as radar towers" },
+    { "key": "website", "description": "Include website in name at high zooms on some objects" },
     { "key": "wetland", "description": "Show some mainly mud wetlands as mud" },
     { "key": "wetland", "value": "bog", "description": "Show different sorts of wetlands" },
     { "key": "wetland", "value": "mud", "description": "Show some mainly mud wetlands as mud" },
