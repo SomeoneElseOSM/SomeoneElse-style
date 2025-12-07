@@ -8586,6 +8586,16 @@ function consolidate_lua_03_t( passedt )
    end
 
 -- ----------------------------------------------------------------------------
+-- Some pinfold etc. gates are mapped as "entrance=gate"
+-- ----------------------------------------------------------------------------
+   if ((  passedt.entrance   == "gate"  )  and
+       (( passedt.barrier    == nil    )   or
+        ( passedt.barrier    == ""     ))) then
+      passedt.barrier = "gate"
+      passedt.entrance = nil
+   end
+
+-- ----------------------------------------------------------------------------
 -- Render main entrances
 -- Note that "railway=train_station_entrance" isn't shown as a subway entrance.
 -- ----------------------------------------------------------------------------

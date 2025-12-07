@@ -1304,6 +1304,7 @@
     { "key": "emergency", "value": "water_rescue_station", "description": "Yet another tag used for coastguard huts etc." },
     { "key": "entrance", "description": "Show main entrances" },
     { "key": "entrance", "value": "entrance", "description": "Detect building entrances" },
+    { "key": "entrance", "value": "gate", "description": "Treated as a synonym for `barrier=gate`" },
     { "key": "entrance", "value": "main", "description": "Show main entrances" },
     { "key": "est_width", "description": "Estimated road width, used to adjust road categories" },
     { "key": "farmland", "description": "Show grassy farmland as mid-way between meadow and farmland" },

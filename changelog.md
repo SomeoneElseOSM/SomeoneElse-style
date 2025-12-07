@@ -19,6 +19,7 @@ This page describes changes made in these projects: [SomeoneElse-style](https://
 (raster, vector) Handle `railway=escape_shaft` as `man_made=shaft`.
 (raster, vector) Handle `railway=air_shaft` as yet another ventilation shaft synonym.
 (raster, vector) Use `leaf_cycle` as a proxy for `leaf_type`.
+(raster, vector) Handle `entrance=gate` as a synonym for `barrier=gate`.
 
 ## 04/12/2025
 (raster, vector) Append `maxheight` to height restrictors.
