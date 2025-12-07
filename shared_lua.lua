@@ -2201,7 +2201,8 @@ function consolidate_lua_03_t( passedt )
       end
    end
 
-   if ( passedt.man_made   == "water_tower" ) then
+   if (( passedt.man_made == "water_tower" )  or
+       ( passedt.railway  == "water_tower" )) then
       if ( passedt.building == "no" ) then
          passedt.landuse = "industrial"
       else

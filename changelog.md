@@ -15,6 +15,7 @@ This page describes changes made in these projects: [SomeoneElse-style](https://
 (raster, vector) Use `name` as `addr:name` on a number of `railway` features
 (raster, vector) All railway signal boxes are actually buildings.
 (raster, vector) Handle `railway=gantry` as `man_made=gantry`.
+(raster, vector) Handle `railway=water_tower` as `man_made=water_tower`.
 
 ## 04/12/2025
 (raster, vector) Append `maxheight` to height restrictors.
