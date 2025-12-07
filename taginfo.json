@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20251204T150201Z",
+  "data_updated": "20251207T015302Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -2769,6 +2769,7 @@
     { "key": "railway", "value": "proposed", "description": "Handle proposed railways" },
     { "key": "railway", "value": "rail", "description": "Treated as railway" },
     { "key": "railway", "value": "razed", "description": "Treated as dismantled railway" },
+    { "key": "railway", "value": "signal_box", "description": "Assumed to be buildings" },
     { "key": "railway", "value": "station", "description": "Show tourist stations in brown" },
     { "key": "railway", "value": "subway", "description": "Treated as subway" },
     { "key": "railway", "value": "subway_entrance", "description": "Treated as subway entrance" },
