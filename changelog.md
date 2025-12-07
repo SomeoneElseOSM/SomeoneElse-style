@@ -12,6 +12,7 @@ This page describes changes made in these projects: [SomeoneElse-style](https://
 (raster, vector) Handle `golf=water_hazard` and `golf=lateral_water_hazard` as water.
 (raster, vector) Handle `golf=clubhouse` as leisure facilities.
 (raster, vector) Add `log_bridge` to list of bridges processed.
+(raster, vector) Use `name` as `addr:name` on a number of `railway` features
 
 ## 04/12/2025
 (raster, vector) Append `maxheight` to height restrictors.

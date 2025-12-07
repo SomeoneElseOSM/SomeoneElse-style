@@ -8235,11 +8235,12 @@ function consolidate_lua_03_t( passedt )
    if ((( passedt["abandoned:railway"] == "station"             )  or
         ( passedt["disused:railway"]   == "station"             )  or
         ( passedt["historic:railway"]  == "station"             )  or
-        ( passedt.historic          == "railway_station"     )  or
-        ( passedt.railway           == "dismantled_colliery" )  or
-        ( passedt.railway           == "colliery_site"       )) and
-       (  passedt.tourism           ~= "information"          ) and
-       (  passedt.name              ~= nil                    )) then
+        ( passedt.historic             == "railway_station"     )  or
+        ( passedt.railway              == "dismantled_colliery" )  or
+        ( passedt.railway              == "colliery_site"       )) and
+       (  passedt.tourism              ~= "information"          ) and
+       (  passedt.name                 ~= nil                    ) and
+       (  passedt.name                 ~= ""                     )) then
       passedt.historic = "nonspecific"
    end
 
@@ -12466,8 +12467,10 @@ function consolidate_lua_04_t( passedt )
         ( passedt.natural        == ""   )) and
        (( passedt.office         == nil  )  or
         ( passedt.office         == ""   )) and
-       (( passedt.railway        == nil  )  or
-        ( passedt.railway        == ""   )) and
+       (  passedt.railway        ~= "station"           ) and
+       (  passedt.railway        ~= "tram_stop"         ) and
+       (  passedt.railway        ~= "turntable"         ) and
+       (  passedt.railway        ~= "ventilation_shaft" ) and
        (( passedt.shop           == nil  )  or
         ( passedt.shop           == ""   )) and
        (( passedt.sport          == nil  )  or
