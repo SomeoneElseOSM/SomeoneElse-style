@@ -6616,7 +6616,8 @@ function consolidate_lua_03_t( passedt )
 -- Some man_made=shaft are somewhat like ma_made=manhole
 -- Some are much bigger (and "manhole" won't be visible at low-medium zooms)
 -- ----------------------------------------------------------------------------
-   if ( passedt.man_made == "shaft" ) then
+   if (( passedt.man_made == "shaft"        ) or
+       ( passedt.railway  == "escape_shaft" )) then
       passedt.man_made = "manhole"
    end
 

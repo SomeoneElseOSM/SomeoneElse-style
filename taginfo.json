@@ -2754,6 +2754,7 @@
     { "key": "railway", "value": "dismantled_colliery", "description": "Detect historic railway sites" },
     { "key": "railway", "value": "disused", "description": "Treated as disused railway" },
     { "key": "railway", "value": "entrance", "description": "Treated as main entrance" },
+    { "key": "railway", "value": "escape_shaft", "description": "Shown like `manhole`, as small black marker at high zoom levels" },
     { "key": "railway", "value": "funicular", "description": "Treated as funicular railway" },
     { "key": "railway", "value": "gantry", "description": "Handled in same way as a pipeline bridge" },
     { "key": "railway", "value": "halt", "description": "Detect various railway tags" },
