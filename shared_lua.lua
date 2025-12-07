@@ -7353,6 +7353,7 @@ function consolidate_lua_03_t( passedt )
        ( passedt.man_made   == "air_shaft"            ) or
        ( passedt.tunnel     == "air_shaft"            ) or
        ( passedt.historic   == "air_shaft"            ) or
+       ( passedt.railway    == "air_shaft"            ) or
        ( passedt.railway    == "ventilation_shaft"    ) or
        ( passedt.tunnel     == "ventilation_shaft"    ) or
        ( passedt.tunnel     == "ventilation shaft"    ) or

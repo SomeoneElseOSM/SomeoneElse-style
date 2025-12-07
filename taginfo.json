@@ -2746,6 +2746,7 @@
     { "key": "public_transport", "value": "station", "description": "Detect public transport stations that are not obviously bus, railway or aerialway stations." },
     { "key": "railway", "description": "Detect railway tags and some obscure synonyms for which railway has also been used" },
     { "key": "railway", "value": "abandoned", "description": "Treated as abandoned railway" },
+    { "key": "railway", "value": "air_shaft", "description": "Handled as ventilation shaft" },
     { "key": "railway", "value": "colliery_site", "description": "Detect historic railway sites" },
     { "key": "railway", "value": "construction", "description": "Handle under construction railways" },
     { "key": "railway", "value": "crane", "description": "Treated as miniature railway" },

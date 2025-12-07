@@ -17,6 +17,7 @@ This page describes changes made in these projects: [SomeoneElse-style](https://
 (raster, vector) Handle `railway=gantry` as `man_made=gantry`.
 (raster, vector) Handle `railway=water_tower` as `man_made=water_tower`.
 (raster, vector) Handle `railway=escape_shaft` as `man_made=shaft`.
+(raster, vector) Handle `railway=air_shaft` as yet another ventilation shaft synonym.
 
 ## 04/12/2025
 (raster, vector) Append `maxheight` to height restrictors.
