@@ -3925,6 +3925,28 @@ function consolidate_lua_03_t( passedt )
    end
 
 -- ----------------------------------------------------------------------------
+-- Where we have "leaf_cycle" but not "leaf_type", use the former as a proxy
+-- for the latter.  It's not 100%, but it is better than nothing.
+-- https://taginfo.geofabrik.de/europe:britain-and-ireland/keys/leaf_cycle#values
+-- Actually has more values beyond these three, but the remainder are a
+-- bit unclear
+-- ----------------------------------------------------------------------------
+  if ((  passedt.leaf_cycle   ~= nil        ) and
+      (  passedt.leaf_cycle   ~= ""         ) and
+      (( passedt.leaf_type    == nil       )  or
+       ( passedt.leaf_type    == ""        ))) then
+      if ( passedt.leaf_cycle == "deciduous" ) then
+         passedt.leaf_type = "broadleaved"
+      else
+         if ( passedt.leaf_cycle == "evergreen" ) then
+            passedt.leaf_type = "needleleaved"
+         else
+            passedt.leaf_type = "mixed"
+         end
+      end
+  end
+
+-- ----------------------------------------------------------------------------
 -- An odd mistagging in Scotland for broadleaved
 -- ----------------------------------------------------------------------------
   if ((  passedt.natural   == "wood"        ) and
