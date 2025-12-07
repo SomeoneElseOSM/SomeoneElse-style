@@ -1729,6 +1729,15 @@ function consolidate_lua_03_t( passedt )
    end
 
 -- ----------------------------------------------------------------------------
+-- If a signal box is not a building, make it one.
+-- ----------------------------------------------------------------------------
+   if ((  passedt.railway  == "signal_box"  ) and
+       (( passedt.building == nil          )  or
+        ( passedt.building == ""           ))) then
+      passedt.building = "yes"
+   end
+
+-- ----------------------------------------------------------------------------
 -- Other "almost buildings - display as building=roof.
 -- Also farmyard "bunker silos" and canopies, and natural arches.
 -- Also railway traversers and more.
