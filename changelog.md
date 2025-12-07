@@ -14,6 +14,7 @@ This page describes changes made in these projects: [SomeoneElse-style](https://
 (raster, vector) Add `log_bridge` to list of bridges processed.
 (raster, vector) Use `name` as `addr:name` on a number of `railway` features
 (raster, vector) All railway signal boxes are actually buildings.
+(raster, vector) Handle `railway=gantry` as `man_made=gantry`.
 
 ## 04/12/2025
 (raster, vector) Append `maxheight` to height restrictors.

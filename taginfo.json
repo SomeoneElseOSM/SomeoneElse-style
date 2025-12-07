@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20251207T015302Z",
+  "data_updated": "20251207T111603Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -2087,7 +2087,7 @@
     { "key": "man_made", "value": "flagpole", "description": "Shown as a flagpole, military or otherwise" },
     { "key": "man_made", "value": "footwear_decontamination", "description": "Shown as black shallow dish" },
     { "key": "man_made", "value": "fuel_pump", "description": "Most man-made items are handled" },
-    { "key": "man_made", "value": "gantry", "description": "Most man-made items are shown" },
+    { "key": "man_made", "value": "gantry", "description": "Handled in same way as a pipeline bridge" },
     { "key": "man_made", "value": "gas_station", "description": "Most man-made items are shown" },
     { "key": "man_made", "value": "gas_works", "description": "Most man-made items are shown" },
     { "key": "man_made", "value": "gasometer", "description": "Most man-made items are shown" },
@@ -2755,6 +2755,7 @@
     { "key": "railway", "value": "disused", "description": "Treated as disused railway" },
     { "key": "railway", "value": "entrance", "description": "Treated as main entrance" },
     { "key": "railway", "value": "funicular", "description": "Treated as funicular railway" },
+    { "key": "railway", "value": "gantry", "description": "Handled in same way as a pipeline bridge" },
     { "key": "railway", "value": "halt", "description": "Detect various railway tags" },
     { "key": "railway", "value": "level_crossing", "description": "Treated as level crossing" },
     { "key": "railway", "value": "level_crossing;switch", "description": "Treated as level crossing" },

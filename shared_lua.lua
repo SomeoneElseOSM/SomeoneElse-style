@@ -6163,8 +6163,10 @@ function consolidate_lua_03_t( passedt )
 -- ----------------------------------------------------------------------------
 -- Display gantries as pipeline bridges
 -- ----------------------------------------------------------------------------
-   if ( passedt.man_made == "gantry" ) then
+   if (( passedt.man_made == "gantry" ) or
+       ( passedt.railway  == "gantry" )) then
       passedt.man_made = nil
+      passedt.railway = nil
       passedt.waterway = "pipeline"
       passedt.bridge = "yes"
    end
