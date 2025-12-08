@@ -1591,7 +1591,9 @@ function consolidate_lua_03_t( passedt )
        ( passedt.tunnel == "1"                   ) or
        ( passedt.tunnel == "cave"                ) or
        ( passedt.tunnel == "flooded"             ) or
-       ( passedt.tunnel == "building_passage"    )) then
+       ( passedt.tunnel == "building_passage"    ) or
+       ( passedt.tunnel == "pipe"                ) or
+       ( passedt.tunnel == "underpass"           )) then
       passedt.tunnel = "yes"
    end
 
@@ -7786,7 +7788,8 @@ function consolidate_lua_03_t( passedt )
               ( passedt.tactile_paving       == "no"        )) and
              (( passedt.traffic_calming      == nil         )  or
               ( passedt.traffic_calming      == ""          )  or
-              ( passedt.traffic_calming      == "no"        )) and
+              ( passedt.traffic_calming      == "no"        )  or
+              ( passedt.traffic_calming      == "none"      )) and
              (  passedt.kerb                 ~= "lowered"    ) and
              (  passedt.kerb                 ~= "flush"      ) and
              (  passedt.kerb                 ~= "no"         ) and
