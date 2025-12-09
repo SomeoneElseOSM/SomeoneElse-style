@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20251207T111603Z",
+  "data_updated": "20251208T203104Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -2330,7 +2330,7 @@
     { "key": "name", "value": "Job Centre Plus", "description": "shown in brackets; 'Community / Government Office'" },
     { "key": "name", "value": "JobCentre Plus", "description": "shown in brackets; 'Community / Government Office'" },
     { "key": "name", "value": "Jobcentre Plus", "description": "shown in brackets; 'Community / Government Office'" },
-    { "key": "name", "value": "Marks & Spencer Simply Food", "description": "Name shortened to 'M&S Simply Food'" },
+    { "key": "name", "value": "Marks & Spencer Simply Food", "description": "Not a current value in OSM data.  Name shortened to 'M&S Simply Food'" },
     { "key": "name", "value": "Marks & Spencer Food Hall", "description": "Name shortened to 'M&S Foodhall'" },
     { "key": "name", "value": "Mecca Bingo", "description": "description" },
     { "key": "name", "value": "O'Neills", "description": "If name has no apostrophe and brand/operator has, remove brand/operator" },
