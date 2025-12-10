@@ -197,40 +197,7 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["highway"] == "unclassified_link"  ) or
        ( keyvalues["highway"] == "residential"        ) or
        ( keyvalues["highway"] == "residential_link"   )) then
-      if (( keyvalues["sidewalk"] == "both"            ) or 
-          ( keyvalues["sidewalk"] == "left"            ) or 
-          ( keyvalues["sidewalk"] == "mapped"          ) or 
-          ( keyvalues["sidewalk"] == "separate"        ) or 
-          ( keyvalues["sidewalk"] == "right"           ) or 
-          ( keyvalues["sidewalk"] == "shared"          ) or 
-          ( keyvalues["sidewalk"] == "yes"             ) or
-          ( keyvalues["sidewalk:left"] == "separate"   ) or 
-          ( keyvalues["sidewalk:left"] == "yes"        ) or
-          ( keyvalues["sidewalk:right"] == "separate"  ) or 
-          ( keyvalues["sidewalk:right"] == "yes"       ) or
-          ( keyvalues["sidewalk:both"] == "separate"   ) or 
-          ( keyvalues["sidewalk:both"] == "yes"        ) or
-          ( keyvalues["footway"]  == "separate"        ) or 
-          ( keyvalues["footway"]  == "yes"             ) or
-          ((( keyvalues["shoulder"] == "both"        )   or
-            ( keyvalues["shoulder"] == "left"        )   or 
-            ( keyvalues["shoulder"] == "right"       )   or 
-            ( keyvalues["shoulder"] == "yes"         )   or
-            ( keyvalues["shoulder:both"] == "yes"    )   or
-            ( keyvalues["shoulder:left"] == "yes"    )   or
-            ( keyvalues["shoulder:right"] == "yes"   )   or
-            ( keyvalues["hard_shoulder"] == "yes"    ))  and
-           (  keyvalues["expressway"] ~= "yes"        )  and
-           (  keyvalues["motorroad"] ~= "yes"         )) or
-          ( keyvalues["cycleway"] == "track"           ) or
-          ( keyvalues["cycleway"] == "opposite_track"  ) or
-          ( keyvalues["cycleway"] == "yes"             ) or
-          ( keyvalues["cycleway"] == "separate"        ) or
-          ( keyvalues["cycleway"] == "sidewalk"        ) or
-          ( keyvalues["cycleway"] == "sidepath"        ) or
-          ( keyvalues["cycleway"] == "segregated"      ) or
-          ( keyvalues["segregated"] == "yes"           ) or
-          ( keyvalues["segregated"] == "right"         )) then
+      if ( calculate_sidewalk_edge( keyvalues )) then
           keyvalues["highway"] = "unclassified_sidewalk"
       end
    end
@@ -242,17 +209,7 @@ function filter_tags_generic(keyvalues, nokeys)
        ( keyvalues["highway"] == "unclassified_link" ) or
        ( keyvalues["highway"] == "residential"       ) or
        ( keyvalues["highway"] == "residential_link"  )) then
-      if (( keyvalues["verge"]       == "both"            ) or 
-          ( keyvalues["verge"]       == "left"            ) or 
-          ( keyvalues["verge"]       == "separate"        ) or 
-          ( keyvalues["verge"]       == "right"           ) or 
-          ( keyvalues["verge"]       == "yes"             ) or
-          ( keyvalues["verge:both"]  == "separate"        ) or
-          ( keyvalues["verge:both"]  == "yes"             ) or
-          ( keyvalues["verge:left"]  == "separate"        ) or
-          ( keyvalues["verge:left"]  == "yes"             ) or
-          ( keyvalues["verge:right"] == "separate"        ) or
-          ( keyvalues["verge:right"] == "yes"             )) then
+      if ( calculate_verge_edge( keyvalues )) then
           keyvalues["highway"] = "unclassified_verge"
       end
    end
@@ -274,40 +231,7 @@ function filter_tags_generic(keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
    if (( keyvalues["highway"] == "living_street"       ) or 
        ( keyvalues["highway"] == "living_street_link"  )) then
-      if (( keyvalues["sidewalk"] == "both"            ) or 
-          ( keyvalues["sidewalk"] == "left"            ) or 
-          ( keyvalues["sidewalk"] == "mapped"          ) or 
-          ( keyvalues["sidewalk"] == "separate"        ) or 
-          ( keyvalues["sidewalk"] == "right"           ) or 
-          ( keyvalues["sidewalk"] == "shared"          ) or 
-          ( keyvalues["sidewalk"] == "yes"             ) or
-          ( keyvalues["sidewalk:left"] == "separate"   ) or 
-          ( keyvalues["sidewalk:left"] == "yes"        ) or
-          ( keyvalues["sidewalk:right"] == "separate"  ) or 
-          ( keyvalues["sidewalk:right"] == "yes"       ) or
-          ( keyvalues["sidewalk:both"] == "separate"   ) or 
-          ( keyvalues["sidewalk:both"] == "yes"        ) or
-          ( keyvalues["footway"]  == "separate"        ) or 
-          ( keyvalues["footway"]  == "yes"             ) or
-          ((( keyvalues["shoulder"] == "both"        )   or
-            ( keyvalues["shoulder"] == "left"        )   or 
-            ( keyvalues["shoulder"] == "right"       )   or 
-            ( keyvalues["shoulder"] == "yes"         )   or
-            ( keyvalues["shoulder:both"] == "yes"    )   or
-            ( keyvalues["shoulder:left"] == "yes"    )   or
-            ( keyvalues["shoulder:right"] == "yes"   )   or
-            ( keyvalues["hard_shoulder"] == "yes"    ))  and
-           (  keyvalues["expressway"] ~= "yes"        )  and
-           (  keyvalues["motorroad"] ~= "yes"         )) or
-          ( keyvalues["cycleway"] == "track"           ) or
-          ( keyvalues["cycleway"] == "opposite_track"  ) or
-          ( keyvalues["cycleway"] == "yes"             ) or
-          ( keyvalues["cycleway"] == "separate"        ) or
-          ( keyvalues["cycleway"] == "sidewalk"        ) or
-          ( keyvalues["cycleway"] == "sidepath"        ) or
-          ( keyvalues["cycleway"] == "segregated"      ) or
-          ( keyvalues["segregated"] == "yes"           ) or
-          ( keyvalues["segregated"] == "right"         )) then
+      if ( calculate_sidewalk_edge( keyvalues )) then
           keyvalues["highway"] = "living_street_sidewalk"
       end
    end
@@ -317,17 +241,7 @@ function filter_tags_generic(keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
    if (( keyvalues["highway"] == "living_street"      ) or 
        ( keyvalues["highway"] == "living_street_link" )) then
-      if (( keyvalues["verge"]       == "both"           ) or 
-          ( keyvalues["verge"]       == "left"           ) or 
-          ( keyvalues["verge"]       == "separate"       ) or 
-          ( keyvalues["verge"]       == "right"          ) or 
-          ( keyvalues["verge"]       == "yes"            ) or
-          ( keyvalues["verge:both"]  == "separate"       ) or
-          ( keyvalues["verge:both"]  == "yes"            ) or
-          ( keyvalues["verge:left"]  == "separate"       ) or
-          ( keyvalues["verge:left"]  == "yes"            ) or
-          ( keyvalues["verge:right"] == "separate"       ) or
-          ( keyvalues["verge:right"] == "yes"            )) then
+      if ( calculate_verge_edge( keyvalues )) then
           keyvalues["highway"] = "living_street_verge"
       end
    end
@@ -357,40 +271,7 @@ function filter_tags_generic(keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
    if (( keyvalues["highway"] == "tertiary"      ) or 
        ( keyvalues["highway"] == "tertiary_link" )) then
-      if (( keyvalues["sidewalk"] == "both"            ) or 
-          ( keyvalues["sidewalk"] == "left"            ) or 
-          ( keyvalues["sidewalk"] == "mapped"          ) or 
-          ( keyvalues["sidewalk"] == "separate"        ) or 
-          ( keyvalues["sidewalk"] == "right"           ) or 
-          ( keyvalues["sidewalk"] == "shared"          ) or 
-          ( keyvalues["sidewalk"] == "yes"             ) or
-          ( keyvalues["sidewalk:left"] == "separate"   ) or 
-          ( keyvalues["sidewalk:left"] == "yes"        ) or
-          ( keyvalues["sidewalk:right"] == "separate"  ) or 
-          ( keyvalues["sidewalk:right"] == "yes"       ) or
-          ( keyvalues["sidewalk:both"] == "separate"   ) or 
-          ( keyvalues["sidewalk:both"] == "yes"        ) or
-          ( keyvalues["footway"]  == "separate"        ) or 
-          ( keyvalues["footway"]  == "yes"             ) or
-          ((( keyvalues["shoulder"] == "both"        )   or
-            ( keyvalues["shoulder"] == "left"        )   or 
-            ( keyvalues["shoulder"] == "right"       )   or 
-            ( keyvalues["shoulder"] == "yes"         )   or
-            ( keyvalues["shoulder:both"] == "yes"    )   or
-            ( keyvalues["shoulder:left"] == "yes"    )   or
-            ( keyvalues["shoulder:right"] == "yes"   )   or
-            ( keyvalues["hard_shoulder"] == "yes"    ))  and
-           (  keyvalues["expressway"] ~= "yes"        )  and
-           (  keyvalues["motorroad"] ~= "yes"         )) or
-          ( keyvalues["cycleway"] == "track"           ) or
-          ( keyvalues["cycleway"] == "opposite_track"  ) or
-          ( keyvalues["cycleway"] == "yes"             ) or
-          ( keyvalues["cycleway"] == "separate"        ) or
-          ( keyvalues["cycleway"] == "sidewalk"        ) or
-          ( keyvalues["cycleway"] == "sidepath"        ) or
-          ( keyvalues["cycleway"] == "segregated"      ) or
-          ( keyvalues["segregated"] == "yes"           ) or
-          ( keyvalues["segregated"] == "right"         )) then
+      if ( calculate_sidewalk_edge( keyvalues )) then
           keyvalues["highway"] = "tertiary_sidewalk"
       end
    end
@@ -400,17 +281,7 @@ function filter_tags_generic(keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
    if (( keyvalues["highway"] == "tertiary"      ) or 
        ( keyvalues["highway"] == "tertiary_link" )) then
-      if (( keyvalues["verge"]       == "both"           ) or 
-          ( keyvalues["verge"]       == "left"           ) or 
-          ( keyvalues["verge"]       == "separate"       ) or 
-          ( keyvalues["verge"]       == "right"          ) or 
-          ( keyvalues["verge"]       == "yes"            ) or
-          ( keyvalues["verge:both"]  == "separate"       ) or
-          ( keyvalues["verge:both"]  == "yes"            ) or
-          ( keyvalues["verge:left"]  == "separate"       ) or
-          ( keyvalues["verge:left"]  == "yes"            ) or
-          ( keyvalues["verge:right"] == "separate"       ) or
-          ( keyvalues["verge:right"] == "yes"            )) then
+      if ( calculate_verge_edge( keyvalues )) then
           keyvalues["highway"] = "tertiary_verge"
       end
    end
@@ -430,40 +301,7 @@ function filter_tags_generic(keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
    if (( keyvalues["highway"] == "secondary"      ) or 
        ( keyvalues["highway"] == "secondary_link" )) then
-      if (( keyvalues["sidewalk"] == "both"            ) or 
-          ( keyvalues["sidewalk"] == "left"            ) or 
-          ( keyvalues["sidewalk"] == "mapped"          ) or 
-          ( keyvalues["sidewalk"] == "separate"        ) or 
-          ( keyvalues["sidewalk"] == "right"           ) or 
-          ( keyvalues["sidewalk"] == "shared"          ) or 
-          ( keyvalues["sidewalk"] == "yes"             ) or
-          ( keyvalues["sidewalk:left"] == "separate"   ) or 
-          ( keyvalues["sidewalk:left"] == "yes"        ) or
-          ( keyvalues["sidewalk:right"] == "separate"  ) or 
-          ( keyvalues["sidewalk:right"] == "yes"       ) or
-          ( keyvalues["sidewalk:both"] == "separate"   ) or 
-          ( keyvalues["sidewalk:both"] == "yes"        ) or
-          ( keyvalues["footway"]  == "separate"        ) or 
-          ( keyvalues["footway"]  == "yes"             ) or
-          ((( keyvalues["shoulder"] == "both"        )   or
-            ( keyvalues["shoulder"] == "left"        )   or 
-            ( keyvalues["shoulder"] == "right"       )   or 
-            ( keyvalues["shoulder"] == "yes"         )   or
-            ( keyvalues["shoulder:both"] == "yes"    )   or
-            ( keyvalues["shoulder:left"] == "yes"    )   or
-            ( keyvalues["shoulder:right"] == "yes"   )   or
-            ( keyvalues["hard_shoulder"] == "yes"    ))  and
-           (  keyvalues["expressway"] ~= "yes"        )  and
-           (  keyvalues["motorroad"] ~= "yes"         )) or
-          ( keyvalues["cycleway"] == "track"           ) or
-          ( keyvalues["cycleway"] == "opposite_track"  ) or
-          ( keyvalues["cycleway"] == "yes"             ) or
-          ( keyvalues["cycleway"] == "separate"        ) or
-          ( keyvalues["cycleway"] == "sidewalk"        ) or
-          ( keyvalues["cycleway"] == "sidepath"        ) or
-          ( keyvalues["cycleway"] == "segregated"      ) or
-          ( keyvalues["segregated"] == "yes"           ) or
-          ( keyvalues["segregated"] == "right"         )) then
+      if ( calculate_sidewalk_edge( keyvalues )) then
           keyvalues["highway"] = "secondary_sidewalk"
       end
    end
@@ -473,17 +311,7 @@ function filter_tags_generic(keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
    if (( keyvalues["highway"] == "secondary"      ) or 
        ( keyvalues["highway"] == "secondary_link" )) then
-      if (( keyvalues["verge"]       == "both"           ) or 
-          ( keyvalues["verge"]       == "left"           ) or 
-          ( keyvalues["verge"]       == "separate"       ) or 
-          ( keyvalues["verge"]       == "right"          ) or 
-          ( keyvalues["verge"]       == "yes"            ) or
-          ( keyvalues["verge:both"]  == "separate"       ) or
-          ( keyvalues["verge:both"]  == "yes"            ) or
-          ( keyvalues["verge:left"]  == "separate"       ) or
-          ( keyvalues["verge:left"]  == "yes"            ) or
-          ( keyvalues["verge:right"] == "separate"       ) or
-          ( keyvalues["verge:right"] == "yes"            )) then
+      if ( calculate_verge_edge( keyvalues )) then
           keyvalues["highway"] = "secondary_verge"
       end
    end
@@ -493,40 +321,7 @@ function filter_tags_generic(keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
    if (( keyvalues["highway"] == "primary"      ) or 
        ( keyvalues["highway"] == "primary_link" )) then
-      if (( keyvalues["sidewalk"] == "both"            ) or 
-          ( keyvalues["sidewalk"] == "left"            ) or 
-          ( keyvalues["sidewalk"] == "mapped"          ) or 
-          ( keyvalues["sidewalk"] == "separate"        ) or 
-          ( keyvalues["sidewalk"] == "right"           ) or 
-          ( keyvalues["sidewalk"] == "shared"          ) or 
-          ( keyvalues["sidewalk"] == "yes"             ) or
-          ( keyvalues["sidewalk:left"] == "separate"   ) or 
-          ( keyvalues["sidewalk:left"] == "yes"        ) or
-          ( keyvalues["sidewalk:right"] == "separate"  ) or 
-          ( keyvalues["sidewalk:right"] == "yes"       ) or
-          ( keyvalues["sidewalk:both"] == "separate"   ) or 
-          ( keyvalues["sidewalk:both"] == "yes"        ) or
-          ( keyvalues["footway"]  == "separate"        ) or 
-          ( keyvalues["footway"]  == "yes"             ) or
-          ((( keyvalues["shoulder"] == "both"        )   or
-            ( keyvalues["shoulder"] == "left"        )   or 
-            ( keyvalues["shoulder"] == "right"       )   or 
-            ( keyvalues["shoulder"] == "yes"         )   or
-            ( keyvalues["shoulder:both"] == "yes"    )   or
-            ( keyvalues["shoulder:left"] == "yes"    )   or
-            ( keyvalues["shoulder:right"] == "yes"   )   or
-            ( keyvalues["hard_shoulder"] == "yes"    ))  and
-           (  keyvalues["expressway"] ~= "yes"        )  and
-           (  keyvalues["motorroad"] ~= "yes"         )) or
-          ( keyvalues["cycleway"] == "track"           ) or
-          ( keyvalues["cycleway"] == "opposite_track"  ) or
-          ( keyvalues["cycleway"] == "yes"             ) or
-          ( keyvalues["cycleway"] == "separate"        ) or
-          ( keyvalues["cycleway"] == "sidewalk"        ) or
-          ( keyvalues["cycleway"] == "sidepath"        ) or
-          ( keyvalues["cycleway"] == "segregated"      ) or
-          ( keyvalues["segregated"] == "yes"           ) or
-          ( keyvalues["segregated"] == "right"         )) then
+      if ( calculate_sidewalk_edge( keyvalues )) then
           keyvalues["highway"] = "primary_sidewalk"
       end
    end
@@ -536,20 +331,15 @@ function filter_tags_generic(keyvalues, nokeys)
 -- ----------------------------------------------------------------------------
    if (( keyvalues["highway"] == "primary"      ) or 
        ( keyvalues["highway"] == "primary_link" )) then
-      if (( keyvalues["verge"]       == "both"           ) or 
-          ( keyvalues["verge"]       == "left"           ) or 
-          ( keyvalues["verge"]       == "separate"       ) or 
-          ( keyvalues["verge"]       == "right"          ) or 
-          ( keyvalues["verge"]       == "yes"            ) or
-          ( keyvalues["verge:both"]  == "separate"       ) or
-          ( keyvalues["verge:both"]  == "yes"            ) or
-          ( keyvalues["verge:left"]  == "separate"       ) or
-          ( keyvalues["verge:left"]  == "yes"            ) or
-          ( keyvalues["verge:right"] == "separate"       ) or
-          ( keyvalues["verge:right"] == "yes"            )) then
+      if ( calculate_verge_edge( keyvalues )) then
           keyvalues["highway"] = "primary_verge"
       end
    end
+
+-- ----------------------------------------------------------------------------
+-- There's no trunk_sidewalk or trunk_verge on raster,
+-- and similarly no motorway.
+-- ----------------------------------------------------------------------------
 
 -- ----------------------------------------------------------------------------
 -- Consolidate more values for extraction / display

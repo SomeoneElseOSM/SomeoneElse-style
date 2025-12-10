@@ -1118,6 +1118,8 @@
     { "key": "cycleway", "value": "sidewalk", "description": "If present, show the road as having a sidewalk or equivalent" },
     { "key": "cycleway", "value": "track", "description": "If present, show the road as having a sidewalk or equivalent" },
     { "key": "cycleway", "value": "yes", "description": "If present, show the road as having a sidewalk or equivalent" },
+    { "key": "cycleway:both", "description": "Decide if a road has a sidewalk or equivalent" },
+    { "key": "cycleway:both", "value": "separate", "description": "If present, show the road as having a sidewalk or equivalent" },
     { "key": "dance:teaching", "description": "Detect dance places" },
     { "key": "dance:teaching", "value": "yes", "description": "Detect dance places" },
     { "key": "defensive_works", "description": "Detect batteries not mapped as historic" },

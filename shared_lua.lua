@@ -13062,3 +13062,65 @@ function trim_after_semicolon( passed_field )
 
    return passed_field
 end -- trim_after_semicolon()
+
+
+function calculate_sidewalk_edge( passedt )
+    if ((   passedt.sidewalk          == "both"                ) or 
+        (   passedt.sidewalk          == "left"                ) or 
+        (   passedt.sidewalk          == "mapped"              ) or 
+        (   passedt.sidewalk          == "separate"            ) or 
+        (   passedt.sidewalk          == "right"               ) or 
+        (   passedt.sidewalk          == "shared"              ) or 
+        (   passedt.sidewalk          == "yes"                 ) or
+        (   passedt["sidewalk:both"]  == "separate"            ) or 
+        (   passedt["sidewalk:both"]  == "yes"                 ) or
+        (   passedt["sidewalk:left"]  == "separate"            ) or 
+        (   passedt["sidewalk:left"]  == "yes"                 ) or
+        (   passedt["sidewalk:right"] == "separate"            ) or 
+        (   passedt["sidewalk:right"] == "yes"                 ) or
+        (   passedt.footway           == "separate"            ) or 
+        (   passedt.footway           == "yes"                 ) or
+        ((( passedt.shoulder          == "both"              )   or
+          ( passedt.shoulder          == "left"              )   or 
+          ( passedt.shoulder          == "right"             )   or 
+          ( passedt.shoulder          == "yes"               )   or
+          ( passedt["shoulder:both"]  == "yes"               )   or
+          ( passedt["shoulder:left"]  == "yes"               )   or
+          ( passedt["shoulder:right"] == "yes"               )   or
+          ( passedt.hard_shoulder     == "yes"               ))  and
+         (  passedt.expressway        ~= "yes"                )  and
+         (  passedt.motorroad         ~= "yes"                )) or
+        (   passedt.cycleway          == "track"               ) or
+        (   passedt.cycleway          == "opposite_track"      ) or
+        (   passedt.cycleway          == "yes"                 ) or
+        (   passedt.cycleway          == "separate"            ) or
+        (   passedt.cycleway          == "sidewalk"            ) or
+        (   passedt.cycleway          == "sidepath"            ) or
+        (   passedt.cycleway          == "segregated"          ) or
+        (   passedt["cycleway:both"]  == "separate"            ) or
+        (   passedt.segregated        == "yes"                 ) or
+        (   passedt.segregated        == "right"               )) then
+        return true
+    else
+        return false
+    end
+end  -- function calculate_sidewalk_edge( passedt )
+
+
+function calculate_verge_edge( passedt )
+    if (( passedt.verge          == "both"            ) or 
+        ( passedt.verge          == "left"            ) or 
+        ( passedt.verge          == "separate"        ) or 
+        ( passedt.verge          == "right"           ) or 
+        ( passedt.verge          == "yes"             ) or
+        ( passedt["verge:both"]  == "separate"        ) or
+        ( passedt["verge:both"]  == "yes"             ) or
+        ( passedt["verge:left"]  == "separate"        ) or
+        ( passedt["verge:left"]  == "yes"             ) or
+        ( passedt["verge:right"] == "separate"        ) or
+        ( passedt["verge:right"] == "yes"             )) then
+        return true
+    else
+        return false
+    end
+end  -- function calculate_verge_edge( passedt )
