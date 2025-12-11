@@ -5762,6 +5762,7 @@ function consolidate_lua_03_t( passedt )
 
    if ((  passedt.leisure == "pitch"                  )  and
        (( passedt.sport   == "gaelic_games"          )   or
+        ( passedt.sport   == "gaelic_football"       )   or
         ( passedt.sport   == "shinty"                ))) then
       passedt.amenity = "pitch_gaa"
       passedt.leisure = "unnamedpitch"

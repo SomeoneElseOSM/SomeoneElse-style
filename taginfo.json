@@ -3665,6 +3665,7 @@
     { "key": "sport", "value": "football;basketball", "description": "Show 'soccer' icon on sports pitches" },
     { "key": "sport", "value": "football;rugby", "description": "Show 'soccer' icon on sports pitches" },
     { "key": "sport", "value": "football;soccer", "description": "Show 'soccer' icon on sports pitches" },
+    { "key": "sport", "value": "gaelic_football", "description": "Show 'gaelic_games' icon on sports pitches" },
     { "key": "sport", "value": "gaelic_games", "description": "Show 'gaelic_games' icon on sports pitches" },
     { "key": "sport", "value": "gaelic_games;handball", "description": "Show 'gaelic_games' icon on sports pitches" },
     { "key": "sport", "value": "gaelic_games;soccer", "description": "Show 'gaelic_games' icon on sports pitches" },

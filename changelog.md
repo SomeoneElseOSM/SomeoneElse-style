@@ -5,6 +5,7 @@ This page describes changes made in these projects: [SomeoneElse-style](https://
 (raster, vector) Handle `traffic_calming=none` as `no`.
 (raster, vector) Treat `tunnel=pipe` and `underpass` as tunnels.
 (raster, vector) Treat `cycleway:both=separate` as "has something like a sidewalk".
+(raster, vector) Handle `sport=gaelic_football` like `gaelic_games`.
 
 ## Raster as yet unreleased, Vector 07/12/2025
 (raster, vector) Added support for a couple of 3d printing shops as nonspecific shops.
