@@ -8519,7 +8519,8 @@ function consolidate_lua_03_t( passedt )
        ( passedt.barrier   == "cycle_barrier;gate"    )  or
        ( passedt.barrier   == "gate;kissing_gate"     )  or
        ( passedt.barrier   == "pull_apart_gate"       )  or
-       ( passedt.barrier   == "snow_gate"             )) then
+       ( passedt.barrier   == "snow_gate"             )  or
+       ( passedt.barrier   == "sliding_gate"          )) then
       if (( passedt.locked == "yes"         ) or
           ( passedt.locked == "permanently" ) or
           ( passedt.status == "locked"      ) or
