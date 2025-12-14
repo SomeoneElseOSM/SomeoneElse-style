@@ -456,7 +456,8 @@ function filter_tags_node (keyvalues, nokeys)
        ( keyvalues["barrier"]  == "pole"           ) or
        ( keyvalues["barrier"]  == "planter"        ) or
        ( keyvalues["man_made"] == "planter"        ) or
-       ( keyvalues["barrier"]  == "log"            )) then
+       ( keyvalues["barrier"]  == "log"            ) or
+       ( keyvalues["barrier"]  == "tree"           )) then
       keyvalues["barrier"] = "bollard"
    end
 
