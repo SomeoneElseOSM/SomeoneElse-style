@@ -506,6 +506,7 @@
     { "key": "barrier", "value": "toll_booth", "description": "Shown as a paying gate" },
     { "key": "barrier", "value": "traffic_island", "description": "Shown as a fence" },
     { "key": "barrier", "value": "turnstile", "description": "Shown as a kissing_gate" },
+    { "key": "barrier", "value": "tyres", "description": "Shown as fence" },
     { "key": "barrier", "value": "v_stile", "description": "Nodes shown as stile; ways as fence" },
     { "key": "barrier", "value": "wall", "description": "Shown as a thicker line; Castle walls shown as citywalls" },
     { "key": "barrier", "value": "wall;fence", "description": "Shown as wall" },

@@ -696,7 +696,8 @@ function filter_tags_way (keyvalues, nokeys)
        ( keyvalues["barrier"]  == "cycle_barrier"   ) or
        ( keyvalues["barrier"]  == "handrail"        ) or
        ( keyvalues["barrier"]  == "water_gate"      ) or
-       ( keyvalues["barrier"]  == "rope"            )) then
+       ( keyvalues["barrier"]  == "rope"            ) or
+       ( keyvalues["barrier"]  == "tyres"           )) then
       keyvalues["barrier"] = "fence"
    end
 
