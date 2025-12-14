@@ -1,13 +1,13 @@
 # Changes made to this rendering
 This page describes changes made in these projects: [SomeoneElse-style](https://github.com/SomeoneElseOSM/SomeoneElse-style), [SomeoneElse-style-legend](https://github.com/SomeoneElseOSM/SomeoneElse-style-legend) and [openstreetmap-carto-AJT](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT), and visible [on this site](//map.atownsend.org.uk/maps/map/map.html).  Since 2025 this also includes changes to lua code shared between raster and vector processing - hence the notes below about which a particular change applies to.  See [this changelog](https://github.com/SomeoneElseOSM/SomeoneElse-vector-extract/blob/main/resources/changelog_sve01.md) for where changes here affect the vector schema, and also other vector-only ones.
 
-## As yet unreleased
+## 14/12/2025
 (raster, vector) Handle `traffic_calming=none` as `no`.
 (raster, vector) Treat `tunnel=pipe` and `underpass` as tunnels.
 (raster, vector) Treat `cycleway:both=separate` as "has something like a sidewalk".
 (raster, vector) Handle `sport=gaelic_football` like `gaelic_games`.
 
-## Raster as yet unreleased, Vector 07/12/2025
+## 14/12/2025, Vector 07/12/2025
 (raster, vector) Added support for a couple of 3d printing shops as nonspecific shops.
 (raster, vector) Handle `shop=saddlery` as nonspecific offices.
 (raster, vector) Added `vape` as another synonym for `shop=e-cigarette`.
