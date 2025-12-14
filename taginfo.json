@@ -464,6 +464,7 @@
     { "key": "barrier", "value": "kissing_gate", "description": "Shown as a kissing_gate" },
     { "key": "barrier", "value": "kissing_gate;gate", "description": "Shown as a kissing_gate" },
     { "key": "barrier", "value": "lift_gate", "description": "Shown as a lift_gate" },
+    { "key": "barrier", "value": "log", "description": "Points shown as a bollard" },
     { "key": "barrier", "value": "lych_gate", "description": "Shown as a gate or locked gate if locked" },
     { "key": "barrier", "value": "lytch_gate", "description": "Shown as a gate or locked gate if locked" },
     { "key": "barrier", "value": "motorcycle_barrier", "description": "Shown as a cycle_barrier" },

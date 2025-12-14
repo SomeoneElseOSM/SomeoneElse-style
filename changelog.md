@@ -3,6 +3,7 @@ This page describes changes made in these projects: [SomeoneElse-style](https://
 
 ## As yet unreleased
 (raster, vector) Handle linear `barrier=water_gate` and `barrier=rope` as `fence`.
+(raster, vector) Handle point `barrier=log` as `bollard`.
 
 ## 14/12/2025
 (raster, vector) Handle `traffic_calming=none` as `no`.
