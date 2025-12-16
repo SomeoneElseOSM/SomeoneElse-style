@@ -10872,13 +10872,14 @@ function consolidate_lua_04_t( passedt )
 -- Offices that we don't know the type of.  
 -- Add unnamedcommercial landuse to give non-building areas a background.
 -- ----------------------------------------------------------------------------
-   if (( passedt.office     == "company"           ) or
-       ( passedt.shop       == "office"            ) or
-       ( passedt.amenity    == "office"            ) or
-       ( passedt.office     == "private"           ) or
-       ( passedt.office     == "research"          ) or
-       ( passedt.office     == "yes"               ) or
-       ( passedt.commercial == "office"            )) then
+   if (( passedt.office     == "company"               ) or
+       ( passedt.shop       == "office"                ) or
+       ( passedt.amenity    == "office"                ) or
+       ( passedt.amenity    == "student_accommodation" ) or
+       ( passedt.office     == "private"               ) or
+       ( passedt.office     == "research"              ) or
+       ( passedt.office     == "yes"                   ) or
+       ( passedt.commercial == "office"                )) then
       passedt.landuse = "unnamedcommercial"
       passedt.office  = "nonspecific"
    end
