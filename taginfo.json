@@ -333,6 +333,7 @@
     { "key": "amenity", "value": "shower", "description": "Show according to gender, if set; show differently if non-free" },
     { "key": "amenity", "value": "showground", "description": "Synonym for meadow" },
     { "key": "amenity", "value": "small_electric_vehicle", "description": "Synonym for 'amenity=scooter_rental'.  Shown with icon, name incorporates brand" },
+    { "key": "amenity", "value": "smoking_area", "description": "Shown as smoking area" },
     { "key": "amenity", "value": "social_centre", "description": "Shown as leisure=nonspecific" },
     { "key": "amenity", "value": "social_club", "description": "Shown as leisure=nonspecific" },
     { "key": "amenity", "value": "social_facility", "description": "Synonym for shop=healthnonspecific" },
