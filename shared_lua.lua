@@ -9862,6 +9862,7 @@ function consolidate_lua_04_t( passedt )
 -- Other money shops
 -- ----------------------------------------------------------------------------
    if (( passedt.shop    == "money_transfer"      ) or
+       ( passedt.amenity == "money_transfer"      ) or
        ( passedt.shop    == "finance"             ) or
        ( passedt.office  == "finance"             ) or
        ( passedt.shop    == "financial"           ) or

@@ -7,7 +7,8 @@ This page describes changes made in these projects: [SomeoneElse-style](https://
 (raster, vector) Handle `barrier=sliding_gate` as `gate`.
 (raster, vector) Handle `amenity=student_accommodation` as `office`.
 (raster, vector) Handle `amenity=smoking_area`.
-	
+(raster, vector) Handle `amenity=money_transfer` as `shop`.
+
 ## 14/12/2025
 (raster, vector) Handle `traffic_calming=none` as `no`.
 (raster, vector) Treat `tunnel=pipe` and `underpass` as tunnels.
