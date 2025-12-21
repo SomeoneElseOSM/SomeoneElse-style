@@ -560,6 +560,21 @@ function filter_tags_node (keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Assume that a "junction=roundabout" node that is not any other sort of 
+-- "highway" is a mini roundabout.
+-- If it is some other sort of "highway" then assume that it is not really a
+-- roundabout.
+-- ----------------------------------------------------------------------------
+   if ( keyvalues["junction"] == "roundabout" ) then
+      if (( keyvalues["highway"]  == nil )  or
+          ( keyvalues["highway"]  == ""  )) then
+         keyvalues["highway"]  = "mini_roundabout"
+      end
+
+      keyvalues["junction"] = nil
+   end
+
+-- ----------------------------------------------------------------------------
 -- node waterway=fish_pass are changed to waterway=weir
 -- "usage" is unset to avoid any 
 -- ----------------------------------------------------------------------------

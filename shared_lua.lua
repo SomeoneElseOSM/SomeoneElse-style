@@ -546,6 +546,26 @@ function consolidate_lua_01_t( passedt )
    end
 
 -- ----------------------------------------------------------------------------
+-- A "junction=roundabout" or "junction=circular" that doesn't have a "oneway"
+-- tag should have that added.
+--
+-- Any node "junction=roundabout" will have been dealt with already in the 
+-- raster-only or vector-only code that calls this; there will be none left.
+--
+-- Various relations are tagged with "junction=roundabout" but all either have
+-- a relation type that will be ignored or "oneway" set already.
+--
+-- There are some "oneway=no" examples, but they tend to be mstagged as 
+-- junctions.
+-- ----------------------------------------------------------------------------
+   if ((( passedt.junction == "roundabout" )  or
+        ( passedt.junction == "circular"   )) and
+       (( passedt.oneway   == nil          )  or
+        ( passedt.oneway   == ""           ))) then
+      passedt.oneway = "yes"
+   end
+
+-- ----------------------------------------------------------------------------
 -- highway=scramble is used very occasionally
 --
 -- If sac_scale is unset, set it to "demanding_alpine_hiking" here so that
