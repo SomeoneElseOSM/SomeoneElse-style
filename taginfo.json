@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20251218T161207Z",
+  "data_updated": "20251222T012708Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -1464,7 +1464,7 @@
     { "key": "golf", "value": "green", "description": "Shown as golf green" },
     { "key": "golf", "value": "lateral_water_hazard", "description": "Treated as water" },
     { "key": "golf", "value": "path", "description": "Shown as path" },
-    { "key": "golf", "value": "pin", "description": "Shown as golf pin" },
+    { "key": "golf", "value": "pin", "description": "Shown as golf pin", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/golfpin.png" },
     { "key": "golf", "value": "practice", "description": "Shown as garden" },
     { "key": "golf", "value": "rough", "description": "Shown as scrub" },
     { "key": "golf", "value": "tee", "description": "Shown as garden" },
@@ -1984,7 +1984,7 @@
     { "key": "leisure", "value": "club", "description": "Leisure amenities shown in green" },
     { "key": "leisure", "value": "common", "description": "Leisure amenities shown in green" },
     { "key": "leisure", "value": "dance", "description": "Leisure amenities shown in green" },
-    { "key": "leisure", "value": "dog_park", "description": "Leisure amenities shown in green" },
+    { "key": "leisure", "value": "dog_park", "description": "Leisure amenities shown in green", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/leisure_dog_park.png" },
     { "key": "leisure", "value": "escape_game", "description": "Leisure amenities shown in green" },
     { "key": "leisure", "value": "firepit", "description": "Leisure amenities shown in green" },
     { "key": "leisure", "value": "fishing", "description": "Leisure amenities shown in green" },
