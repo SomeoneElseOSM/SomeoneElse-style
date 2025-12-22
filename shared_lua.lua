@@ -7860,7 +7860,7 @@ function consolidate_lua_03_t( passedt )
 --
 -- self catering       yes or no
 -- multiple occupancy  yes, no, or don't know
--- urban setting       urban, rural, or don't know
+-- urban setting       urban? (y), rural (n), or don't know (d)
 -- cheap               yes (like a hostel) or no (like a hotel)
 --
 -- The resulting values such as "tourism_guest_yyyy" are passed through to be 
