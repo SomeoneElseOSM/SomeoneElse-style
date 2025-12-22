@@ -3,6 +3,7 @@ This page describes changes made in these projects: [SomeoneElse-style](https://
 
 ## As yet unreleased
 (raster) Use regular rather than bold text for bins etc.
+(raster) Show localities from zoom 15 on raster.
 
 ## 21/12/2025
 (raster, vector) Handle linear `barrier=water_gate`, `barrier=rope` and `barrier=tyres` as `fence`.
