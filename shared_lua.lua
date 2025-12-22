@@ -7661,7 +7661,7 @@ function consolidate_lua_03_t( passedt )
 -- places where we can add "highway=crossing" by looking at the value of
 -- "crossing", if any.  For reference see
 -- https://taginfo.geofabrik.de/europe:britain-and-ireland/keys/crossing#values
--- down to 5 uses or me.
+-- down to 5 uses or so.
 -- ----------------------------------------------------------------------------
    if ((( passedt.highway             == nil        )   or
         ( passedt.highway             == ""         ))  and
