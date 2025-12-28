@@ -6432,6 +6432,16 @@ function consolidate_lua_03_t( passedt )
    end
 
 -- ----------------------------------------------------------------------------
+-- Some more historic mineshafts are tagged as "historic=archaeological_site; 
+-- archaeological_site=mineral_extraction"
+-- ----------------------------------------------------------------------------
+   if ((  passedt.historic            == "archaeological_site" ) and
+       (  passedt.archaeological_site == "mineral_extraction"  )) then
+      passedt.historic            = "quarry"
+      passedt.archaeological_site = nil
+   end
+
+-- ----------------------------------------------------------------------------
 -- Before we assume that a "historic=fort" is some sort of castle (big walls,
 -- moat, that sort of thing) check that it's not prehistoric or some sort of 
 -- hill fort (banks and ditches, people running around painted blue).  If it 

@@ -399,6 +399,7 @@
     { "key": "archaeological_site", "value": "hillfort", "description": "Not an expected value in OSM data.  Show hill forts with a unique icon" },
     { "key": "archaeological_site", "value": "hilltop_enclosure", "description": "Show hilltop enclosures as hill forts" },
     { "key": "archaeological_site", "value": "megalith", "description": "Detect standing stones and ogham stones" },
+    { "key": "archaeological_site", "value": "mineral_extraction", "description": "Treated as historic quarry" },
     { "key": "archaeological_site", "value": "settlement", "description": "Detect some ringforts" },
     { "key": "archaeological_site", "value": "standing_stone", "description": "Detect standing stones and ogham stones" },
     { "key": "archaeological_site", "value": "tumulus", "description": "Show archaeological tumuli" },
