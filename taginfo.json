@@ -394,6 +394,7 @@
     { "key": "archaeological_site", "description": "Show different archaeological sites differently" },
     { "key": "archaeological_site", "value": "castle", "description": "Not an expected value in OSM data.  Show castle with a unique icon" },
     { "key": "archaeological_site", "value": "crannog", "description": "Shown as an archaeological site on an island", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/historic_crannog.png" },
+    { "key": "archaeological_site", "value": "enclosure", "description": "Shown as an archaeological site in an enclosure with an entrance", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/historic_enclosure.png" },
     { "key": "archaeological_site", "value": "fortification", "description": "Show archaeological fortifications" },
     { "key": "archaeological_site", "value": "hill_fort", "description": "Not an expected value in OSM data.  Show hill forts with a unique icon" },
     { "key": "archaeological_site", "value": "hillfort", "description": "Not an expected value in OSM data.  Show hill forts with a unique icon" },

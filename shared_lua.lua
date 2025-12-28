@@ -9038,15 +9038,19 @@ function consolidate_lua_03_t( passedt )
                         if (( passedt.archaeological_site == "settlement" ) and
                             ( passedt.fortification_type  == "ringfort"   )) then
                            passedt.historic = "historicringfort"
+                        else
+                           if ( passedt.archaeological_site == "enclosure" ) then
+                              passedt.historic = "historicenclosure"
 -- ----------------------------------------------------------------------------
 -- There's no code an an "else" here, just this comment:
---                      else
+--                         else
 --
 -- If set, archaeological_site is not fortification, tumulus, 
 -- megalith / standing stone, hill fort, castle or settlement that is also 
--- a ringfort.  Most will not have archaeological_site set.
+-- a ringfort, enclosure.  Most will not have archaeological_site set.
 -- The standard icon for historic=archaeological_site will be used 
 -- ----------------------------------------------------------------------------
+                           end -- enclosure
                         end -- settlement that is also ringfort
                      end  -- crannog
                   end  -- if castle
