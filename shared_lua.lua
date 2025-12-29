@@ -9041,7 +9041,8 @@ function consolidate_lua_03_t( passedt )
                      passedt.historic = "historicarchcastle"
                   else
 -- ----------------------------------------------------------------------------
--- Is the archaeological site a crannog?
+-- Is the archaeological site a crannog? 
+-- (or a couple of others)
 -- ----------------------------------------------------------------------------
                      if ( passedt.archaeological_site == "crannog" ) then
                         passedt.historic = "historiccrannog"
@@ -9055,15 +9056,26 @@ function consolidate_lua_03_t( passedt )
                            else
                               if ( passedt.archaeological_site == "hut_circle" ) then
                                  passedt.historic = "historichutcircle"
+                              else
+-- ----------------------------------------------------------------------------
+-- Also for brochs:
+-- Confusingly, some of these are mapped as fortification_type and some as
+-- archaeological_site.
+-- ----------------------------------------------------------------------------
+                                 if ( passedt.archaeological_site == "broch" ) then
+                                    passedt.historic            = "historicfortification"
+                                    passedt.archaeological_site = nil
 -- ----------------------------------------------------------------------------
 -- There's no code an an "else" here, just this comment:
---                            else
+--                               else
 --
 -- If set, archaeological_site is not fortification, tumulus, 
 -- megalith / standing stone, hill fort, castle or settlement that is also 
--- a ringfort, enclosure.  Most will not have archaeological_site set.
+-- a ringfort, enclosure, hut circle, broch.  
+-- Most will not have archaeological_site set.
 -- The standard icon for historic=archaeological_site will be used 
 -- ----------------------------------------------------------------------------
+                                 end -- broch
                               end -- hut circle
                            end -- enclosure
                         end -- settlement that is also ringfort
@@ -11660,12 +11672,17 @@ function consolidate_lua_04_t( passedt )
        ( passedt.historic == "battlefield"           ) or
        ( passedt.historic == "castle"                ) or
        ( passedt.historic == "church"                ) or
+       ( passedt.historic == "historicarchcastle"    ) or
+       ( passedt.historic == "historiccrannog"       ) or
+       ( passedt.historic == "historicenclosure"     ) or
        ( passedt.historic == "historicfortification" ) or
        ( passedt.historic == "historichillfort"      ) or
+       ( passedt.historic == "historichutcircle"     ) or
        ( passedt.historic == "historicmegalithtomb"  ) or
        ( passedt.historic == "historicringfort"      ) or
        ( passedt.historic == "historicstandingstone" ) or
        ( passedt.historic == "historicstonecircle"   ) or
+       ( passedt.historic == "historicstonerow"      ) or
        ( passedt.historic == "historictumulus"       ) or
        ( passedt.historic == "manor"                 ) or
        ( passedt.historic == "memorial"              ) or
