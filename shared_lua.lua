@@ -10431,8 +10431,7 @@ function consolidate_lua_04_t( passedt )
        ((( passedt.shop     == "yes"                    )   or
          ( passedt.shop     == "mobility"               )   or
          ( passedt.shop     == "mobility_hire"          )   or
-         ( passedt.building == "yes"                    )   or
-         ( passedt.building == "unit"                   ))  and
+         ( passedt.office   == "charity"                ))  and
         (( passedt.name     == "Shopmobility"           )   or
          ( passedt.name     == "Shop Mobility"          )))) then
       passedt.landuse = "unnamedcommercial"
