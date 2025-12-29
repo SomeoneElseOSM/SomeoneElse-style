@@ -1953,6 +1953,17 @@ function consolidate_lua_03_t( passedt )
    end
 
 -- ----------------------------------------------------------------------------
+-- Pick up some odd taggings of lime kilns
+-- ----------------------------------------------------------------------------
+   if ((( passedt.historic             == "archaeological_site" )  or
+        ( passedt.historic             == "ruins"               )) and
+       (( passedt.archaeological_site  == "lime_kiln"           )  or
+        ( passedt.archaeological_site  == "kiln"                ))) then
+      passedt.historic            = "kiln"
+      passedt.archaeological_site = nil
+   end
+
+-- ----------------------------------------------------------------------------
 -- Render ruined mills and mines etc. that are not something else as historic.
 -- Items in this list are assumed to be not operational, so the "man_made" 
 -- tag is cleared.
