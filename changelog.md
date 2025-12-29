@@ -5,7 +5,7 @@ This page describes changes made in these projects: [SomeoneElse-style](https://
 (raster) Use regular rather than bold text for bins etc.
 (raster) Show localities from zoom 15 on raster.
 (raster, vector) Treat `archaeological_site=mineral_extraction` as `historic=quarry`.
-(raster, vector) Show historic enclosures with an icon and a name.
+(raster, vector) Show historic enclosures and hut circles with an icon and a name.
 
 ## 21/12/2025
 (raster, vector) Handle linear `barrier=water_gate`, `barrier=rope` and `barrier=tyres` as `fence`.
