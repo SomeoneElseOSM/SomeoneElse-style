@@ -8,6 +8,7 @@ This page describes changes made in these projects: [SomeoneElse-style](https://
 (raster, vector) Show historic enclosures and hut circles with an icon and a name.
 (raster, vector) Treat `archaeological_site=monastery` as `historic=monastery`.
 (raster, vector) Added `office=charity` to the list of tag values that can support a Shopmobility `name` match and removed `building`, to avoid problems with disused ones.
+(raster) Changed icon on where `tourism=chalet` is used for multiple holiday lodges to the "multiple builings by a tree" one.
 
 ## 21/12/2025
 (raster, vector) Handle linear `barrier=water_gate`, `barrier=rope` and `barrier=tyres` as `fence`.
