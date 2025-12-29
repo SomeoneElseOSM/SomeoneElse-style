@@ -401,6 +401,7 @@
     { "key": "archaeological_site", "value": "hilltop_enclosure", "description": "Show hilltop enclosures as hill forts" },
     { "key": "archaeological_site", "value": "hut_circle", "description": "Shown as an archaeological site in a dotted outline", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/historic_hutcircle.png" },
     { "key": "archaeological_site", "value": "megalith", "description": "Detect standing stones and ogham stones" },
+    { "key": "archaeological_site", "value": "monastery", "description": "Treated as 'historic=monastery'" },
     { "key": "archaeological_site", "value": "mineral_extraction", "description": "Treated as historic quarry" },
     { "key": "archaeological_site", "value": "settlement", "description": "Detect some ringforts" },
     { "key": "archaeological_site", "value": "standing_stone", "description": "Detect standing stones and ogham stones" },

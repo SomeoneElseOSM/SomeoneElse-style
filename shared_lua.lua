@@ -6551,6 +6551,16 @@ function consolidate_lua_03_t( passedt )
    end
 
 -- ----------------------------------------------------------------------------
+-- Send "archaeological_site=monastery" through as "historic=monastery",
+-- which will be checked for active worship and have landuse added
+-- immediately below.
+-- ----------------------------------------------------------------------------
+   if (( passedt.historic            == "archaeological_site" ) and
+       ( passedt.archaeological_site == "monastery"           )) then
+      passedt.historic = "monastery"
+   end
+
+-- ----------------------------------------------------------------------------
 -- Unless an active place of worship,
 -- monasteries etc. go through as "historic=monastery"
 -- "historic=ruins;ruins=monastery" are handled the same way.
