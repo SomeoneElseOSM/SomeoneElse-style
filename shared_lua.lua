@@ -3306,6 +3306,7 @@ function consolidate_lua_03_t( passedt )
         ( passedt.historic  == "locomotive"                )  or
         ( passedt.historic  == "martello_tower"            )  or
         ( passedt.historic  == "martello_tower;bunker"     )  or
+        ( passedt.historic  == "martello_tower;fort"       )  or
         ( passedt.historic  == "maypole"                   )  or
         ( passedt.historic  == "memorial"                  )  or
         ( passedt.historic  == "mill"                      )  or
