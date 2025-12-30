@@ -6458,8 +6458,10 @@ function consolidate_lua_03_t( passedt )
 -- Some more historic mineshafts are tagged as "historic=archaeological_site; 
 -- archaeological_site=mineral_extraction"
 -- ----------------------------------------------------------------------------
-   if ((  passedt.historic            == "archaeological_site" ) and
-       (  passedt.archaeological_site == "mineral_extraction"  )) then
+   if ((  passedt.historic            == "archaeological_site"      ) and
+       (( passedt.archaeological_site == "mineral_extraction"      )  or
+        ( passedt.archaeological_site == "mine"                    )  or
+        ( passedt.archaeological_site == "abandoned_mine_workings" ))) then
       passedt.historic            = "quarry"
       passedt.archaeological_site = nil
    end

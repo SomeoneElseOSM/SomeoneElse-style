@@ -4,7 +4,7 @@ This page describes changes made in these projects: [SomeoneElse-style](https://
 ## As yet unreleased
 (raster) Use regular rather than bold text for bins etc.
 (raster) Show localities from zoom 15 on raster.
-(raster, vector) Treat `archaeological_site=mineral_extraction` as `historic=quarry`.
+(raster, vector) Treat `archaeological_site=mineral_extraction` as `historic=quarry`, along with a couple of synonyms.
 (raster, vector) Show historic enclosures and hut circles with an icon and a name.
 (raster, vector) Treat `archaeological_site=monastery` as `historic=monastery`.
 (raster, vector) Added `office=charity` to the list of tag values that can support a Shopmobility `name` match and removed `building`, to avoid problems with disused ones.
