@@ -1518,6 +1518,7 @@
     { "key": "hard_shoulder", "description": "Roads with shoulders are shown as having somewhere to walk" },
     { "key": "hard_shoulder", "value": "yes", "description": "Roads with shoulders are shown as having somewhere to walk" },
     { "key": "hazard", "description": "A couple of specific hazards - hogweed and shooting ranges" },
+    { "key": "hazard", "value": "archery_range", "description": "Show archery ranges as no-go areas" },
     { "key": "hazard", "value": "contamination", "description": "Show contaminated areas as no-go areas" },
     { "key": "hazard", "value": "flooding", "description": "Show flood-prone areas as very intermittent water" },
     { "key": "hazard", "value": "mineshaft", "description": "Show open mineshaft areas as no-go areas" },
