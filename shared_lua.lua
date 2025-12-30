@@ -8370,6 +8370,7 @@ function consolidate_lua_03_t( passedt )
        (   passedt.hazard   == "mineshaft"                          ) or
        (   passedt.hazard   == "contamination"                      ) or
        (   passedt.hazard   == "sink_holes"                         ) or
+       (   passedt.hazard   == "wreck"                              ) or
        (   passedt.hazard   == "archery_range"                      ) or
        (   passedt.sport    == "shooting"                           ) or
        (   passedt.sport    == "shooting_range"                     ) or

@@ -1529,6 +1529,7 @@
     { "key": "hazard", "value": "shooting_range", "description": "Detect shooting ranges" },
     { "key": "hazard", "value": "sink_holes", "description": "Show sink hole areas as no-go" },
     { "key": "hazard", "value": "toxic_plant", "description": "Detect hogweed" },
+    { "key": "hazard", "value": "wreck", "description": "Show wreck areas as no-go" },
     { "key": "hazard_prone", "description": "Show flood-prone areas as very intermittent water" },
     { "key": "hazard_prone", "value": "yes", "description": "Show flood-prone areas as very intermittent water" },
     { "key": "hazard_type", "description": "Show flood-prone areas as very intermittent water" },
