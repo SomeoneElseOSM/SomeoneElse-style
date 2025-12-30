@@ -8368,6 +8368,7 @@ function consolidate_lua_03_t( passedt )
          ( passedt.man_made == ""                                 ))) or
        (   passedt.hazard   == "open_mineshaft"                     ) or
        (   passedt.hazard   == "mineshaft"                          ) or
+       (   passedt.hazard   == "contamination"                      ) or
        (   passedt.sport    == "shooting"                           ) or
        (   passedt.sport    == "shooting_range"                     ) or
        (   passedt.leisure  == "shooting_ground"                    ) or

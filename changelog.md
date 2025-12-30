@@ -6,6 +6,7 @@ This page describes changes made in these projects: [SomeoneElse-style](https://
 (raster, vector) Treat `boundary=fence` as a synonym for `barrier=fence`.
 (raster, vector) Treat `hazard=flooding` as a synonym for `flood_prone=yes`.
 (raster, vector) Treat `hazard=open_mineshaft`, `mineshaft` and `pit` as synonyms for `landuse=military`.
+(raster, vector) Treat `hazard=open_contamination` as a synonym for `landuse=military`.
 
 ## Raster as yet unreleased, vector 30/12/2025
 (raster) Use regular rather than bold text for bins etc.
