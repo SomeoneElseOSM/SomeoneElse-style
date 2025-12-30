@@ -3,6 +3,7 @@ This page describes changes made in these projects: [SomeoneElse-style](https://
 
 ## As yet unreleased
 (raster, vector) Removed `shop=yes;jewelry`; no longer in the data.
+(raster, vector) Treat `boundary=fence` as a synonym for `barrier=fence`.
 
 ## Raster as yet unreleased, vector 30/12/2025
 (raster) Use regular rather than bold text for bins etc.

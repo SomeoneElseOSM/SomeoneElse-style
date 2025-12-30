@@ -8476,6 +8476,11 @@ function consolidate_lua_03_t( passedt )
       passedt.barrier = "fence"
    end
 
+   if ( passedt.boundary == "fence" ) then
+      passedt.barrier = "fence"
+      passedt.boundary = nil
+   end
+
 -- ----------------------------------------------------------------------------
 -- At this point let's try and handle hedge tags on other area features as
 -- linear hedges.

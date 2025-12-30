@@ -567,6 +567,7 @@
     { "key": "booth", "value": "oakham", "description": "Detect telephone boxes" },
     { "key": "boundary", "description": "Various boundary features processed" },
     { "key": "boundary", "value": "administrative", "description": "Admin boundaries are not shown on main map but are shown on an overlay" },
+    { "key": "boundary", "value": "fence", "description": "Shown as a synonym for 'fence'" },
     { "key": "boundary", "value": "forest", "description": "Handled as landuse=forest" },
     { "key": "boundary", "value": "marker", "description": "Used as synonym for boundary stone" },
     { "key": "boundary", "value": "protected_area", "description": "Used to detect AONBs and National Parks" },
