@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20251229T114504Z",
+  "data_updated": "20251230T111705Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -1718,7 +1718,6 @@
     { "key": "historic", "value": "market_cross", "description": "Shown as historic cross" },
     { "key": "historic", "value": "martello_tower", "description": "Shown as a low uncrenellated tower in historic red", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/historic_martello.png" },
     { "key": "historic", "value": "martello_tower;bunker", "description": "Shown as a low uncrenellated tower in historic red", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/historic_martello.png" },
-    { "key": "historic", "value": "martello_tower;fort", "description": "Shown as a low uncrenellated tower in historic red", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/historic_martello.png" },
     { "key": "historic", "value": "maypole", "description": "Shown as nonspecific historic item" },
     { "key": "historic", "value": "memorial", "description": "Shown as red historic 'M' with 'nonspecific' dot modifier", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/memorial_nonspecific.png" },
     { "key": "historic", "value": "memorial_plaque", "description": "Shown as information plaque" },
@@ -3605,7 +3604,6 @@
     { "key": "shop", "value": "wool", "description": "Various shops shown" },
     { "key": "shop", "value": "yarn", "description": "Various shops shown" },
     { "key": "shop", "value": "yes", "description": "Shown as a generic shop" },
-    { "key": "shop", "value": "yes;jewelry", "description": "Synonym for 'jewelry'" },
     { "key": "shop", "value": "yes;jewelry;e-cigarette", "description": "Synonym for 'jewelry'" },
     { "key": "shop", "value": "yes;piercing", "description": "Various shops shown" },
     { "key": "shop", "value": "zero_waste", "description": "Shown as grocer with an E" },

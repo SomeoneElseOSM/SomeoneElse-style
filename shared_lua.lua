@@ -2912,7 +2912,6 @@ function consolidate_lua_03_t( passedt )
        ( passedt.shop  == "jewelry;pawnbroker"      ) or
        ( passedt.shop  == "yes;jewelry;e-cigarette" ) or
        ( passedt.shop  == "jewelry;sunglasses"      ) or
-       ( passedt.shop  == "yes;jewelry"             ) or
        ( passedt.shop  == "jewelry;art;crafts"      ) or
        ( passedt.shop  == "jewelry;fabric"          ) or
        ( passedt.shop  == "watch"                   ) or
@@ -3328,7 +3327,6 @@ function consolidate_lua_03_t( passedt )
         ( passedt.historic  == "locomotive"                )  or
         ( passedt.historic  == "martello_tower"            )  or
         ( passedt.historic  == "martello_tower;bunker"     )  or
-        ( passedt.historic  == "martello_tower;fort"       )  or
         ( passedt.historic  == "maypole"                   )  or
         ( passedt.historic  == "memorial"                  )  or
         ( passedt.historic  == "mill"                      )  or
@@ -6557,8 +6555,7 @@ function consolidate_lua_03_t( passedt )
 -- Some other structural tags that might otherwise get shown are removed.
 -- ----------------------------------------------------------------------------
    if (( passedt.historic == "martello_tower"        ) or
-       ( passedt.historic == "martello_tower;bunker" ) or
-       ( passedt.historic == "martello_tower;fort"   )) then
+       ( passedt.historic == "martello_tower;bunker" )) then
       passedt.historic = "martello_tower"
       passedt.fortification_type = nil
       passedt.man_made = nil
