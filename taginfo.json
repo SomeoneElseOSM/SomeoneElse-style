@@ -408,6 +408,7 @@
     { "key": "archaeological_site", "value": "mine", "description": "Treated as historic quarry" },
     { "key": "archaeological_site", "value": "monastery", "description": "Treated as 'historic=monastery'" },
     { "key": "archaeological_site", "value": "mineral_extraction", "description": "Treated as historic quarry" },
+    { "key": "archaeological_site", "value": "roman_fort", "description": "Roman forts are shown as archaeological fortifications", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/historic_fortification.png" },
     { "key": "archaeological_site", "value": "settlement", "description": "Detect some ringforts" },
     { "key": "archaeological_site", "value": "standing_stone", "description": "Detect standing stones and ogham stones" },
     { "key": "archaeological_site", "value": "tumulus", "description": "Shown as an archaeological site on an artificial mound", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/historic_tumulus.png" },

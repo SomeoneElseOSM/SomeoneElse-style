@@ -9082,11 +9082,12 @@ function consolidate_lua_03_t( passedt )
                                  passedt.historic = "historichutcircle"
                               else
 -- ----------------------------------------------------------------------------
--- Also for brochs:
+-- Also for brochs and roman forts:
 -- Confusingly, some of these are mapped as fortification_type and some as
--- archaeological_site.
+-- archaeological_site.  We send them through as historic fortifications.
 -- ----------------------------------------------------------------------------
-                                 if ( passedt.archaeological_site == "broch" ) then
+                                 if (( passedt.archaeological_site == "broch"      ) or
+                                     ( passedt.archaeological_site == "roman_fort" )) then
                                     passedt.historic            = "historicfortification"
                                     passedt.archaeological_site = nil
 -- ----------------------------------------------------------------------------

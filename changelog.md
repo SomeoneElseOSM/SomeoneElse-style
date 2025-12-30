@@ -12,6 +12,7 @@ This page describes changes made in these projects: [SomeoneElse-style](https://
 (raster, vector) Lots of brochs are mapped as `archaeological_site` rather than as a type of fortification.
 (raster, vector) Detect lime kilns that are tagged as archaeological sites.
 (raster, vector) Don't show "archaeological_site=ridge_and_furrow"
+(raster, vector) Detect roman forts that are tagged as archaeological sites as fortifications.
 
 ## 21/12/2025
 (raster, vector) Handle linear `barrier=water_gate`, `barrier=rope` and `barrier=tyres` as `fence`.
