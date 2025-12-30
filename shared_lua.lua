@@ -7352,10 +7352,15 @@ function consolidate_lua_03_t( passedt )
 -- ----------------------------------------------------------------------------
 -- Also try and detect flood plains etc.
 -- ----------------------------------------------------------------------------
+   if ( passedt.hazard == "flooding" ) then
+      passedt.flood_prone = "yes"
+   end
+
    if ((   passedt.natural      == "floodplain"     ) or
        ((( passedt.flood_prone  == "yes"          )   or
          (( passedt.hazard_prone == "yes"        )    and
-          ( passedt.hazard_type  == "flood"      )))  and
+          ( passedt.hazard_type  == "flood"      ))   or
+         ( passedt.hazard       == "flooding"     ))  and
         (( passedt.natural      == nil            )   or
          ( passedt.natural      == ""             ))  and
         (( passedt.highway      == nil            )   or
