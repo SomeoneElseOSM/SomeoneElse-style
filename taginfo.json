@@ -1521,6 +1521,7 @@
     { "key": "hazard", "value": "archery_range", "description": "Show archery ranges as no-go areas" },
     { "key": "hazard", "value": "contamination", "description": "Show contaminated areas as no-go areas" },
     { "key": "hazard", "value": "flooding", "description": "Show flood-prone areas as very intermittent water" },
+    { "key": "hazard", "value": "giant hogweed;stinging nettles", "description": "Detect hogweed" },
     { "key": "hazard", "value": "mineshaft", "description": "Show open mineshaft areas as no-go areas" },
     { "key": "hazard", "value": "open_mineshaft", "description": "Show open mineshaft areas as no-go areas" },
     { "key": "hazard", "value": "pit", "description": "Show open mineshaft areas as no-go areas" },

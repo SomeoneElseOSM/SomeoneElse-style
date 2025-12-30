@@ -7117,10 +7117,11 @@ function consolidate_lua_03_t( passedt )
 -- ----------------------------------------------------------------------------
 -- hazard=plant is fairly rare, but render as a nonspecific historic dot.
 -- ----------------------------------------------------------------------------
-   if ((( passedt.hazard  == "plant"                    )  or
-        ( passedt.hazard  == "toxic_plant"              )) and
-       (( passedt.species == "Heracleum mantegazzianum" )  or
-        ( passedt.taxon   == "Heracleum mantegazzianum" ))) then
+   if (((( passedt.hazard  == "plant"                         )   or
+         ( passedt.hazard  == "toxic_plant"                    ))  and
+        (( passedt.species == "Heracleum mantegazzianum"       )   or
+         ( passedt.taxon   == "Heracleum mantegazzianum"       ))) or
+       (   passedt.hazard  == "giant hogweed;stinging nettles"   )) then
       passedt.historic = "nonspecific"
       passedt.name = "Hogweed"
    end
