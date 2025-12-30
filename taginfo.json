@@ -2321,6 +2321,8 @@
     { "key": "military", "value": "office", "description": "Shown as military landuse" },
     { "key": "military", "value": "offices", "description": "Shown as military landuse" },
     { "key": "military", "value": "registration_and_enlistment_office", "description": "Shown as military landuse" },
+    { "key": "mineshaft_type", "description": "Used to identify vent shafts" },
+    { "key": "mineshaft_type", "value": "air", "description": "Shown as vent shaft" },
     { "key": "monitoring", "description": "Detect oddly tagged water and weather monitoring" },
     { "key": "monitoring", "value": "air_quality", "description": "Detect oddly tagged air quality monitoring" },
     { "key": "monitoring", "value": "climate_change", "description": "Detect oddly tagged weather monitoring" },

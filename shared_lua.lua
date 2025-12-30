@@ -6386,6 +6386,14 @@ function consolidate_lua_03_t( passedt )
    end
 
 -- ----------------------------------------------------------------------------
+-- Move some non-mineshafts out of the way.
+-- ----------------------------------------------------------------------------
+   if (( passedt.man_made       == "mineshaft" ) and
+       ( passedt.mineshaft_type == "air"       )) then
+      passedt.man_made = "ventilation_shaft"
+   end
+
+-- ----------------------------------------------------------------------------
 -- Mineshafts
 -- First make sure that we treat historic ones also tagged as man_made 
 -- as historic
