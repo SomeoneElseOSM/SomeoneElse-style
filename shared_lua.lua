@@ -1304,6 +1304,13 @@ function consolidate_lua_02_t( passedt )
       passedt.leisure = "nature_reserve"
    end
 
+   if ((  passedt.boundary    == "reserve"                              ) and
+       (  passedt.designation == "site_of_special_scientific_interest"  ) and
+       (( passedt.leisure    == nil                                    )  or
+        ( passedt.leisure    == ""                                     ))) then
+      passedt.leisure = "nature_reserve"
+   end
+
 -- ----------------------------------------------------------------------------
 -- Show grass schoolyards as green
 -- ----------------------------------------------------------------------------

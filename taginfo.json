@@ -571,6 +571,7 @@
     { "key": "boundary", "value": "forest", "description": "Handled as landuse=forest" },
     { "key": "boundary", "value": "marker", "description": "Used as synonym for boundary stone" },
     { "key": "boundary", "value": "protected_area", "description": "Used to detect AONBs and National Parks" },
+    { "key": "boundary", "value": "reserve", "description": "Used to detect SSSIs" },
     { "key": "brand", "description": "Used after name in brackets.  Some generic ones (e.g. Independent) are suppressed as not a real brand" },
     { "key": "brand", "value": "Amazon Hub", "description": "If another name present, brand shortened" },
     { "key": "brand", "value": "Amazon Locker", "description": "If another name present, brand shortened" },

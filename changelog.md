@@ -11,6 +11,7 @@ This page describes changes made in these projects: [SomeoneElse-style](https://
 (raster, vector) Treat `hazard=sink_holes` and `wreck` as synonyms for `landuse=military`.
 (raster, vector) Detect more hogweed.
 (raster, vector) Detect vent shafts mapped as mineshafts.
+(raster, vector) Detect more SSSIs.
 
 ## Raster as yet unreleased, vector 30/12/2025
 (raster) Use regular rather than bold text for bins etc.
