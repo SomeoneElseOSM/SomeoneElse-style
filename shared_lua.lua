@@ -1953,6 +1953,17 @@ function consolidate_lua_03_t( passedt )
    end
 
 -- ----------------------------------------------------------------------------
+-- Suppress "archaeological_site=ridge_and_furrow" because we're not really 
+-- interested it as the same level as other "archaeological_site"
+-- ----------------------------------------------------------------------------
+   if (( passedt.historic             == "archaeological_site" )  and
+       ( passedt.archaeological_site  == "ridge_and_furrow"    )) then
+      passedt.historic            = nil
+      passedt.archaeological_site = nil
+   end
+
+
+-- ----------------------------------------------------------------------------
 -- Pick up some odd taggings of lime kilns
 -- ----------------------------------------------------------------------------
    if ((( passedt.historic             == "archaeological_site" )  or
