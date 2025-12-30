@@ -8352,21 +8352,26 @@ function consolidate_lua_03_t( passedt )
    end
 
 -- ----------------------------------------------------------------------------
--- Add landuse=military to some military things.
+-- Add landuse=military to some military and other hazardous things.
 -- ----------------------------------------------------------------------------
-   if (( passedt.military == "office"                             ) or
-       ( passedt.military == "offices"                            ) or
-       ( passedt.military == "barracks"                           ) or
-       ( passedt.military == "naval_base"                         ) or
-       ( passedt.military == "depot"                              ) or
-       ( passedt.military == "registration_and_enlistment_office" ) or
-       ( passedt.military == "checkpoint"                         ) or
-       ( passedt.hazard   == "shooting_range"                     ) or
-       ( passedt.hazard   == "shooting"                           ) or
-       ( passedt.sport    == "shooting"                           ) or
-       ( passedt.sport    == "shooting_range"                     ) or
-       ( passedt.leisure  == "shooting_ground"                    ) or
-       ( passedt.leisure  == "shooting_range"                     )) then
+   if ((   passedt.military == "office"                             ) or
+       (   passedt.military == "offices"                            ) or
+       (   passedt.military == "barracks"                           ) or
+       (   passedt.military == "naval_base"                         ) or
+       (   passedt.military == "depot"                              ) or
+       (   passedt.military == "registration_and_enlistment_office" ) or
+       (   passedt.military == "checkpoint"                         ) or
+       (   passedt.hazard   == "shooting_range"                     ) or
+       (   passedt.hazard   == "shooting"                           ) or
+       ((  passedt.hazard   == "pit"                               )  and
+        (( passedt.man_made == nil                                )   or
+         ( passedt.man_made == ""                                 ))) or
+       (   passedt.hazard   == "open_mineshaft"                     ) or
+       (   passedt.hazard   == "mineshaft"                          ) or
+       (   passedt.sport    == "shooting"                           ) or
+       (   passedt.sport    == "shooting_range"                     ) or
+       (   passedt.leisure  == "shooting_ground"                    ) or
+       (   passedt.leisure  == "shooting_range"                     )) then
       passedt.landuse = "military"
    end
 
