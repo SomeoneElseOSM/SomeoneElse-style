@@ -1,7 +1,7 @@
 # Changes made to this rendering
 This page describes changes made in these projects: [SomeoneElse-style](https://github.com/SomeoneElseOSM/SomeoneElse-style), [SomeoneElse-style-legend](https://github.com/SomeoneElseOSM/SomeoneElse-style-legend) and [openstreetmap-carto-AJT](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT), and visible [on this site](//map.atownsend.org.uk/maps/map/map.html).  Since 2025 this also includes changes to lua code shared between raster and vector processing - hence the notes below about which a particular change applies to.  See [this changelog](https://github.com/SomeoneElseOSM/SomeoneElse-vector-extract/blob/main/resources/changelog_sve01.md) for where changes here affect the vector schema, and also other vector-only ones.
 
-## As yet unreleased
+## 31/12/2025
 (raster, vector) Removed `shop=yes;jewelry`; no longer in the data.
 (raster, vector) Treat `boundary=fence` as a synonym for `barrier=fence`.
 (raster, vector) Treat `hazard=flooding` as a synonym for `flood_prone=yes`.
@@ -13,7 +13,7 @@ This page describes changes made in these projects: [SomeoneElse-style](https://
 (raster, vector) Detect vent shafts mapped as mineshafts.
 (raster, vector) Detect more SSSIs.
 
-## Raster as yet unreleased, vector 30/12/2025
+## Raster 31/12/2025, vector 30/12/2025
 (raster) Use regular rather than bold text for bins etc.
 (raster) Show localities from zoom 15 on raster.
 (raster, vector) Treat `archaeological_site=mineral_extraction` as `historic=quarry`, along with a couple of synonyms.
