@@ -37,7 +37,7 @@ generic_keys = {'access','addr:housename','addr:housenumber','addr:interpolation
    'disused:amenity','disused:building','disused:highway','disused:man_made',
    'disused:military','disused:railway','disused:shop','ele',
    'embankment','emergency','entrance','foot','flood_prone','generation:source','geological','golf','government',
-   'harbour','hazard_prone','hazard_type','highway','historic','horse','hours','information','intermittent',
+   'harbour','hazard','hazard_prone','hazard_type','highway','historic','horse','hours','information','intermittent',
    'junction','landcover','landuse','layer','leisure','lcn_ref','lock','locked',
    'man_made','marker','military','motor_car','name','natural','ncn_milepost','office','oneway','operator',
    'opening_hours:covid19','outlet','passenger_information_display','pipeline','pitch','place','playground',

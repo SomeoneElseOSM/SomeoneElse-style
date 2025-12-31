@@ -1,6 +1,9 @@
 # Changes made to this rendering
 This page describes changes made in these projects: [SomeoneElse-style](https://github.com/SomeoneElseOSM/SomeoneElse-style), [SomeoneElse-style-legend](https://github.com/SomeoneElseOSM/SomeoneElse-style-legend) and [openstreetmap-carto-AJT](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT), and visible [on this site](//map.atownsend.org.uk/maps/map/map.html).  Since 2025 this also includes changes to lua code shared between raster and vector processing - hence the notes below about which a particular change applies to.  See [this changelog](https://github.com/SomeoneElseOSM/SomeoneElse-vector-extract/blob/main/resources/changelog_sve01.md) for where changes here affect the vector schema, and also other vector-only ones.
 
+## As yet unreleased
+(raster) Detect more hogweed.
+
 ## 31/12/2025
 (raster, vector) Removed `shop=yes;jewelry`; no longer in the data.
 (raster, vector) Treat `boundary=fence` as a synonym for `barrier=fence`.
@@ -9,7 +12,7 @@ This page describes changes made in these projects: [SomeoneElse-style](https://
 (raster, vector) Treat `hazard=contamination` as a synonym for `landuse=military`.
 (raster, vector) Treat `hazard=archery_range` as a synonym for `landuse=military`.
 (raster, vector) Treat `hazard=sink_holes` and `wreck` as synonyms for `landuse=military`.
-(raster, vector) Detect more hogweed.
+(vector) Detect more hogweed.
 (raster, vector) Detect vent shafts mapped as mineshafts.
 (raster, vector) Detect more SSSIs.
 
