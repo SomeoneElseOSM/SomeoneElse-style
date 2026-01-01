@@ -3,6 +3,7 @@ This page describes changes made in these projects: [SomeoneElse-style](https://
 
 ## As yet unreleased
 (raster) Detect more hogweed.
+(raster, vector) Show piers that are mapped as nodes with an icon and a name.
 
 ## 31/12/2025
 (raster, vector) Removed `shop=yes;jewelry`; no longer in the data.

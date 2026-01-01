@@ -584,6 +584,14 @@ function filter_tags_node (keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- node piers are changed to "man_made=pointpier" to make the processing logic
+-- easier.
+-- ----------------------------------------------------------------------------
+   if ( keyvalues["man_made"] == "pier" ) then
+      keyvalues["man_made"] = "pointpier"
+   end
+
+-- ----------------------------------------------------------------------------
 -- End of AJT node-only additions.
 -- ----------------------------------------------------------------------------
 

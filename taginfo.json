@@ -2180,7 +2180,7 @@
     { "key": "man_made", "value": "outfall", "description": "Show outfalls, sewage and otherwise, with a small black marker", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/outfall.png" },
     { "key": "man_made", "value": "petroleum_well", "description": "Most man-made items are shown" },
     { "key": "man_made", "value": "phone_mast", "description": "Shown as large or small mast" },
-    { "key": "man_made", "value": "pier", "description": "Linear ones shown as black line; areas as ground" },
+    { "key": "man_made", "value": "pier", "description": "Point piers shown with a pier icon, linear ones shown as a black line; area ones as ground", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/manmade_pointpier.png" },
     { "key": "man_made", "value": "pipeline", "description": "Show overground pipelines as bridges; show underground pipelines in light purple" },
     { "key": "man_made", "value": "pipeline_marker", "description": "Shown as aerial pipeline marker" },
     { "key": "man_made", "value": "planter", "description": "Points handled as bollards, lines handled as walls, areas handled as grass with a wall around it" },
