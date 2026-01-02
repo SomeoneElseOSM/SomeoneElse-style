@@ -5,6 +5,7 @@ This page describes changes made in these projects: [SomeoneElse-style](https://
 (raster) Detect more hogweed.
 (raster, vector) Show piers that are mapped as nodes with an icon and a name.
 (raster, vector) Handle more 'kerb' values that suggest there is a non-raised kerb.
+(raster, vector) Handle more 'wheelchair' values that map to 'yes', 'limited' or 'no'.
 
 ## 31/12/2025
 (raster, vector) Removed `shop=yes;jewelry`; no longer in the data.

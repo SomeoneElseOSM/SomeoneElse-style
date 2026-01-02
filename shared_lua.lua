@@ -4072,7 +4072,8 @@ function consolidate_lua_03_t( passedt )
        ( passedt.wheelchair == "only"             )  or
        ( passedt.wheelchair == "permissive"       )  or
        ( passedt.wheelchair == "ramp"             )  or
-       ( passedt.wheelchair == "unisex"           )) then
+       ( passedt.wheelchair == "unisex"           )  or
+       ( passedt.wheelchair == "yes;designated"   )) then
       passedt.wheelchair = "yes"
    end
 
@@ -4083,8 +4084,11 @@ function consolidate_lua_03_t( passedt )
       passedt.wheelchair = "limited"
    end
 
-   if ( passedt.wheelchair == "impractical" ) then
-      passedt.wheelchair = "limited"
+   if (( passedt.wheelchair == "bad"         )  or
+       ( passedt.wheelchair == "external"    )  or
+       ( passedt.wheelchair == "impractical" )  or
+       ( passedt.wheelchair == "no space"    )) then
+      passedt.wheelchair = "no"
    end
 
 -- ----------------------------------------------------------------------------
