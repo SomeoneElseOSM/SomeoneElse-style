@@ -8500,9 +8500,15 @@ function consolidate_lua_03_t( passedt )
       passedt.barrier = "wall"
    end
 
+-- ----------------------------------------------------------------------------
+-- Fence variations that are actually walls
+-- ----------------------------------------------------------------------------
    if ((  passedt.barrier    == "fence"          )  and
        (( passedt.fence_type == "drystone_wall" )   or
-        ( passedt.fence_type == "dry_stone"     ))) then
+        ( passedt.fence_type == "dry_stone"     )   or
+        ( passedt.fence_type == "brick"         )   or
+        ( passedt.fence_type == "stone"         )   or
+        ( passedt.fence_type == "wall"          ))) then
       passedt.barrier = "wall"
    end
 
