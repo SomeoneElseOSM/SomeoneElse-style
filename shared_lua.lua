@@ -4092,6 +4092,20 @@ function consolidate_lua_03_t( passedt )
    end
 
 -- ----------------------------------------------------------------------------
+-- Detect some unusual "closed" opening hours
+-- ----------------------------------------------------------------------------
+   if (( passedt.opening_hours == "24/7 closed"        )  or
+       ( passedt.opening_hours == "off"                )  or
+       ( passedt.opening_hours == "Mo-Su off"          )  or
+       ( passedt.opening_hours == "Closed"             )  or
+       ( passedt.opening_hours == '"Closed"'           )  or
+       ( passedt.opening_hours == "Permanently Closed" )  or
+       ( passedt.opening_hours == "Mo-Su closed"       )  or
+       ( passedt.opening_hours == "permanently closed" )) then
+      passedt.opening_hours = "closed"
+   end
+
+-- ----------------------------------------------------------------------------
 -- Remove "real_ale" tag on industrial and craft breweries that aren't also
 -- a pub, bar, restaurant, cafe etc. or hotel.
 -- ----------------------------------------------------------------------------
