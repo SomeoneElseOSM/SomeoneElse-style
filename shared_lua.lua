@@ -7874,6 +7874,8 @@ function consolidate_lua_03_t( passedt )
               ( passedt.traffic_calming      == ""          )  or
               ( passedt.traffic_calming      == "no"        )  or
               ( passedt.traffic_calming      == "none"      )) and
+             (  passedt.kerb                 ~= "rolled"     ) and
+             (  passedt.kerb                 ~= "sloped"     ) and
              (  passedt.kerb                 ~= "lowered"    ) and
              (  passedt.kerb                 ~= "flush"      ) and
              (  passedt.kerb                 ~= "no"         ) and

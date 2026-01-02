@@ -1936,6 +1936,8 @@
     { "key": "kerb", "value": "flush", "description": "Detect non-crossings" },
     { "key": "kerb", "value": "no", "description": "Detect non-crossings" },
     { "key": "kerb", "value": "none", "description": "Detect non-crossings" },
+    { "key": "kerb", "value": "rolled", "description": "Detect non-crossings" },
+    { "key": "kerb", "value": "sloped", "description": "Detect non-crossings" },
     { "key": "ladder", "description": "Show some sorts of ladder as steps" },
     { "key": "ladder", "value": "yes", "description": "Show some sorts of ladder as steps" },
     { "key": "lamp_type", "description": "Show electric and gas lights differently" },
