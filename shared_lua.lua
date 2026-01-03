@@ -7418,6 +7418,10 @@ function consolidate_lua_03_t( passedt )
    end
 
 -- ----------------------------------------------------------------------------
+-- The same icon is used for windpumps and wind turbines.
+-- The "power_source=wind" combination doesn't appear in OSM any more but is
+-- used internally here.
+--
 -- Map wind turbines to, er, wind turbines and make sure that they don't also
 -- appear as towers.
 --
