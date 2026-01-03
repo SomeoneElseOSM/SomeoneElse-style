@@ -4782,7 +4782,34 @@ function consolidate_lua_03_t( passedt )
 -- ----------------------------------------------------------------------------
    if ( passedt["disused:amenity"] == "pub" ) then
       passedt.amenity = "pub_nddddddd"
-                                                 -- no other attributes checked
+
+      if (( passedt.name == nil  ) or
+          ( passedt.name == ""   )) then
+         if (( passedt.old_name ~= nil  ) and
+             ( passedt.old_name ~= ""   )) then
+            passedt.name = passedt.old_name
+         else
+            if (( passedt["historic:name"] ~= nil  ) and
+                ( passedt["historic:name"] ~= ""   )) then
+               passedt.name = passedt["historic:name"]
+            else
+               if (( passedt["was:name"] ~= nil  ) and
+                   ( passedt["was:name"] ~= ""   )) then
+                  passedt.name = passedt["was:name"]
+               else
+                  if (( passedt["disused:name"] ~= nil  ) and
+                      ( passedt["disused:name"] ~= ""   )) then
+                     passedt.name = passedt["disused:name"]
+                  else
+                     if (( passedt["addr:housename"] ~= nil  ) and
+                         ( passedt["addr:housename"] ~= ""   )) then
+                        passedt.name = passedt["addr:housename"]
+                     end
+                  end
+               end
+            end
+         end
+      end
    end
 
 -- ----------------------------------------------------------------------------
