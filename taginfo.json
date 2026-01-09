@@ -4077,6 +4077,7 @@
     { "key": "was:waterway", "value": "canal", "description": "Disused canals are shown as derelict canals" },
     { "key": "water", "description": "River water areas and waterfalls" },
     { "key": "water", "value": "river", "description": "Suppress name on river water areas" },
+    { "key": "water", "value": "tidal", "description": "Obscure method of indicating a feature is tidal ('tidal=yes' more common)" },
     { "key": "water", "value": "waterfall", "description": "Show waterfalls" },
     { "key": "watermill:disused", "description": "Detect disused watermills" },
     { "key": "watermill:disused", "value": "yes", "description": "Detect disused watermills" },

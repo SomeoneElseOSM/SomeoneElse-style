@@ -832,6 +832,16 @@ function filter_tags_way (keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Render tidal rocks with more blue
+-- ----------------------------------------------------------------------------
+   if ((  keyvalues["natural"]   == "bare_rock"  )  and
+       (( keyvalues["tidal"]     == "yes"       )   or
+        ( keyvalues["wetland"]   == "tidalflat" )   or
+        ( keyvalues["water"]     == "tidal"     ))) then
+      keyvalues["natural"] = "tidal_rock"
+   end
+
+-- ----------------------------------------------------------------------------
 -- Where amenity=watering_place has been used on a way and there's no
 -- "natural" tag already, apply "natural=water".
 -- ----------------------------------------------------------------------------

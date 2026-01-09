@@ -9,6 +9,7 @@ This page describes changes made in these projects: [SomeoneElse-style](https://
 (raster, vector) Handle more synonyms for `opening_hours=closed`.
 (raster, vector) Handle more `fence_type` synonyms for `wall`.
 (raster, vector) Handle more old names for disused pubs.
+(raster, vector) Treat `water=tidal` the same as `tidal=yes`.
 
 ## 31/12/2025
 (raster, vector) Removed `shop=yes;jewelry`; no longer in the data.

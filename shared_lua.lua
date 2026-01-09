@@ -2421,9 +2421,10 @@ function consolidate_lua_03_t( passedt )
 -- ----------------------------------------------------------------------------
 -- Render tidal mud with more blue
 -- ----------------------------------------------------------------------------
-   if ((  passedt.natural   == "mud"        ) and
-       (( passedt.tidal     == "yes"       ) or
-        ( passedt.wetland   == "tidalflat" ))) then
+   if ((  passedt.natural   == "mud"        )  and
+       (( passedt.tidal     == "yes"       )   or
+        ( passedt.wetland   == "tidalflat" )   or
+        ( passedt.water     == "tidal"     ))) then
       passedt.natural = "tidal_mud"
    end
 
@@ -3691,23 +3692,26 @@ function consolidate_lua_03_t( passedt )
 -- ----------------------------------------------------------------------------
    if ((  passedt.natural   == "beach"      ) and
        (( passedt.tidal     == "yes"       )  or
-        ( passedt.wetland   == "tidalflat" ))) then
+        ( passedt.wetland   == "tidalflat" )  or
+        ( passedt.water     == "tidal"     ))) then
       passedt.natural = "tidal_beach"
    end
 
 -- ----------------------------------------------------------------------------
 -- Render tidal scree with more blue
 -- ----------------------------------------------------------------------------
-   if (( passedt.natural   == "scree" ) and
-       ( passedt.tidal     == "yes"   )) then
+   if ((  passedt.natural   == "scree"  )  and
+       (( passedt.tidal     == "yes"   )   or
+        ( passedt.water     == "tidal" ))) then
       passedt.natural = "tidal_scree"
    end
 
 -- ----------------------------------------------------------------------------
 -- Render tidal shingle with more blue
 -- ----------------------------------------------------------------------------
-   if (( passedt.natural   == "shingle" ) and
-       ( passedt.tidal     == "yes"     )) then
+   if ((  passedt.natural   == "shingle"  )  and
+       (( passedt.tidal     == "yes"     )   or
+        ( passedt.water     == "tidal"   ))) then
       passedt.natural = "tidal_shingle"
    end
 
@@ -3720,13 +3724,9 @@ function consolidate_lua_03_t( passedt )
    end
 
 -- ----------------------------------------------------------------------------
--- Render tidal rocks with more blue
+-- The code that did "Render tidal rocks with more blue" here has been moved
+-- to the way specific code for raster and vector.
 -- ----------------------------------------------------------------------------
-   if ((  passedt.natural   == "bare_rock"  ) and
-       (( passedt.tidal     == "yes"       )  or
-        ( passedt.wetland   == "tidalflat" ))) then
-      passedt.natural = "tidal_rock"
-   end
 
 -- ----------------------------------------------------------------------------
 -- Boulders - are they climbing boulders or not?
@@ -5607,9 +5607,10 @@ function consolidate_lua_03_t( passedt )
 -- ----------------------------------------------------------------------------
 -- Render tidal sand with more blue
 -- ----------------------------------------------------------------------------
-   if ((  passedt.natural   == "sand"       ) and
-       (( passedt.tidal     == "yes"       )  or
-        ( passedt.wetland   == "tidalflat" ))) then
+   if ((  passedt.natural   == "sand"       )  and
+       (( passedt.tidal     == "yes"       )   or
+        ( passedt.wetland   == "tidalflat" )   or
+        ( passedt.water     == "tidal"     ))) then
       passedt.natural = "tidal_sand"
    end
 
