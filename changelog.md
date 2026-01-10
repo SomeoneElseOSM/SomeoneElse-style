@@ -8,6 +8,7 @@ This page describes changes made in these projects: [SomeoneElse-style](https://
 (raster, vector) Detect more synonyms for "free".
 (raster, vector) Detect more synonyms of `cycleway=sidewalk`.
 (raster, vector) Also detect church towers mapped with `building:part=tower`
+(raster, vector) Detect more small canal channels.
 
 ## Raster as yet unreleased, vector 09/01/2026
 (raster) Detect more hogweed.

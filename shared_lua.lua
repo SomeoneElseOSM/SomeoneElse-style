@@ -6142,12 +6142,21 @@ function consolidate_lua_03_t( passedt )
 -- Note that "fish_pass" are handled differently whether node or way, 
 -- so not here.
 -- ----------------------------------------------------------------------------
-   if ((   passedt.waterway == "leat"        )  or
-       (   passedt.waterway == "spillway"    )  or
-       (   passedt.waterway == "rapids"      )  or
-       ((  passedt.waterway == "canal"      )   and
-        (( passedt.usage    == "headrace"  )    or
-         ( passedt.usage    == "spillway"  )))) then
+   if ((   passedt.waterway == "leat"                   )  or
+       (   passedt.waterway == "spillway"               )  or
+       (   passedt.waterway == "rapids"                 )  or
+       ((  passedt.waterway == "canal"                 )   and
+        (( passedt.usage    == "drain"                )    or
+         ( passedt.usage    == "headrace"             )    or
+         ( passedt.usage    == "intake"               )    or
+         ( passedt.usage    == "irrigation"           )    or
+         ( passedt.usage    == "millrace"             )    or
+         ( passedt.usage    == "outlet"               )    or
+         ( passedt.usage    == "penstock"             )    or
+         ( passedt.usage    == "spillway"             )    or
+         ( passedt.usage    == "tailrace"             )    or
+         ( passedt.usage    == "transmission"         )    or
+         ( passedt.usage    == "watershed_management" )))) then
       passedt.waterway = "drain"
    end
 
