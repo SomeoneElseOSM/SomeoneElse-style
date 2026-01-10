@@ -5409,7 +5409,9 @@ function consolidate_lua_03_t( passedt )
        (( passedt.fee     ~= nil       )  and
         ( passedt.fee     ~= ""        )  and
         ( passedt.fee     ~= "no"      )  and
-        ( passedt.fee     ~= "0"       ))) then
+        ( passedt.fee     ~= "0"       )  and
+        ( passedt.fee     ~= "£0.00"   )  and
+        ( passedt.fee     ~= "0.0"     ))) then
       passedt.amenity = "parking_pay"
    end
 
@@ -5420,7 +5422,9 @@ function consolidate_lua_03_t( passedt )
        (( passedt.fee     ~= nil               )  and
         ( passedt.fee     ~= ""                )  and
         ( passedt.fee     ~= "no"              )  and
-        ( passedt.fee     ~= "0"               ))) then
+        ( passedt.fee     ~= "0"               )  and
+        ( passedt.fee     ~= "£0.00"           )  and
+        ( passedt.fee     ~= "0.0"             ))) then
       passedt.amenity = "bicycle_parking_pay"
    end
 
@@ -5428,10 +5432,12 @@ function consolidate_lua_03_t( passedt )
 -- Render for-pay motorcycle_parking areas differently.
 -- ----------------------------------------------------------------------------
    if ((  passedt.amenity == "motorcycle_parking"  ) and
-       (( passedt.fee     ~= nil               )  and
-        ( passedt.fee     ~= ""                )  and
-        ( passedt.fee     ~= "no"              )  and
-        ( passedt.fee     ~= "0"               ))) then
+       (( passedt.fee     ~= nil                  )  and
+        ( passedt.fee     ~= ""                   )  and
+        ( passedt.fee     ~= "no"                 )  and
+        ( passedt.fee     ~= "0"                  )  and
+        ( passedt.fee     ~= "£0.00"              )  and
+        ( passedt.fee     ~= "0.0"                ))) then
       passedt.amenity = "motorcycle_parking_pay"
    end
 
@@ -5443,7 +5449,9 @@ function consolidate_lua_03_t( passedt )
       if (( passedt.fee     ~= nil       )  and
           ( passedt.fee     ~= ""        )  and
           ( passedt.fee     ~= "no"      )  and
-          ( passedt.fee     ~= "0"       )) then
+          ( passedt.fee     ~= "0"       )  and
+          ( passedt.fee     ~= "£0.00"   )  and
+          ( passedt.fee     ~= "0.0"     )) then
          if (( passedt.male   == "yes" ) and
              ( passedt.female ~= "yes" )) then
             passedt.amenity = "toilets_pay_m"
@@ -5476,7 +5484,9 @@ function consolidate_lua_03_t( passedt )
       if (( passedt.fee     ~= nil       )  and
           ( passedt.fee     ~= ""        )  and
           ( passedt.fee     ~= "no"      )  and
-          ( passedt.fee     ~= "0"       )) then
+          ( passedt.fee     ~= "0"       )  and
+          ( passedt.fee     ~= "£0.00"   )  and
+          ( passedt.fee     ~= "0.0"     )) then
          if (( passedt.male   == "yes" ) and
              ( passedt.female ~= "yes" )) then
             passedt.amenity = "shower_pay_m"
@@ -5526,7 +5536,9 @@ function consolidate_lua_03_t( passedt )
        if (( passedt.fee     ~= nil       )  and
            ( passedt.fee     ~= ""        )  and
            ( passedt.fee     ~= "no"      )  and
-           ( passedt.fee     ~= "0"       )) then
+           ( passedt.fee     ~= "0"       )  and
+           ( passedt.fee     ~= "£0.00"   )  and
+           ( passedt.fee     ~= "0.0"     )) then
          if ( passedt.parking_space == "disabled" ) then
             passedt.amenity = "parking_paydisabled"
          else
