@@ -12220,6 +12220,7 @@ function consolidate_lua_04_t( passedt )
 
    if (((  passedt.man_made         == "tower"           )  or
         (  passedt.building         == "tower"           )  or
+        (  passedt["building:part"] == "tower"           )  or
         (  passedt["building:part"] == "yes"             )) and
        ((  passedt["tower:type"]    == "church"          )   or
         (  passedt["tower:type"]    == "square"          )   or
@@ -12236,6 +12237,7 @@ function consolidate_lua_04_t( passedt )
 
    if (((  passedt.man_made         == "tower"            )  or
         (  passedt.building         == "tower"            )  or
+        (  passedt["building:part"] == "tower"            )  or
         (  passedt["building:part"] == "yes"              )) and
        ((  passedt["tower:type"]    == "spire"            )  or
         (  passedt["tower:type"]    == "steeple"          )  or
@@ -13300,6 +13302,8 @@ function calculate_sidewalk_edge( passedt )
         (   passedt.cycleway          == "sidewalk"            ) or
         (   passedt.cycleway          == "sidepath"            ) or
         (   passedt.cycleway          == "segregated"          ) or
+        (   passedt.cycleway          == "share_sidewalk"      ) or
+        (   passedt.cycleway          == "shared_sidewalk"     ) or
         (   passedt["cycleway:both"]  == "separate"            ) or
         (   passedt.segregated        == "yes"                 ) or
         (   passedt.segregated        == "right"               )) then
