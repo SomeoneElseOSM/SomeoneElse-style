@@ -12309,7 +12309,8 @@ function consolidate_lua_04_t( passedt )
 -- highway=streetlamp
 -- ----------------------------------------------------------------------------
    if ( passedt.highway == "street_lamp" ) then
-      if ( passedt.lamp_type == "gaslight" ) then
+      if (( passedt.lamp_type == "gaslight" ) or
+          ( passedt.lamp_type == "gas"      )) then
          passedt.highway = "streetlamp_gas"
       else
          passedt.highway = "streetlamp_electric"

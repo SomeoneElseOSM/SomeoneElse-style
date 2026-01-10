@@ -1961,6 +1961,7 @@
     { "key": "ladder", "description": "Show some sorts of ladder as steps" },
     { "key": "ladder", "value": "yes", "description": "Show some sorts of ladder as steps" },
     { "key": "lamp_type", "description": "Show electric and gas lights differently" },
+    { "key": "lamp_type", "value": "gas", "description": "Synonym for 'gaslight'", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/streetlamp_gas.png" },
     { "key": "lamp_type", "value": "gaslight", "description": "Shown as gas light", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/streetlamp_gas.png" },
     { "key": "landcover", "description": "In most cases, obscure synonym for landuse" },
     { "key": "landcover", "value": "grass", "description": "An obscure synonym for landuse=grass" },
