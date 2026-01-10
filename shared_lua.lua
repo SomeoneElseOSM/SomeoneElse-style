@@ -9413,7 +9413,6 @@ function consolidate_lua_04_t( passedt )
    if (( passedt.shop    == "funeral"             ) or
        ( passedt.office  == "funeral_director"    ) or
        ( passedt.office  == "funeral_directors"   ) or
-       ( passedt.amenity == "funeral"             ) or
        ( passedt.amenity == "funeral_directors"   ) or
        ( passedt.amenity == "undertaker"          )) then
       passedt.shop = "funeral_directors"

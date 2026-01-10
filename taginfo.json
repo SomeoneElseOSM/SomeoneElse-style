@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20260110T012004Z",
+  "data_updated": "20260110T110505Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -231,7 +231,6 @@
     { "key": "amenity", "value": "fuel", "description": "Shown with icon, name incorporates brand" },
     { "key": "amenity", "value": "fuel_depot", "description": "Synonym for indstrial landuse" },
     { "key": "amenity", "value": "function_room", "description": "Shown as leisure=nonspecific" },
-    { "key": "amenity", "value": "funeral", "description": "Synonym for shop=funeral_directors" },
     { "key": "amenity", "value": "funeral_directors", "description": "Synonym for shop=funeral_directors" },
     { "key": "amenity", "value": "gallery", "description": "Shown as nonspecific shop" },
     { "key": "amenity", "value": "gambling", "description": "Shown as gambling shop" },
