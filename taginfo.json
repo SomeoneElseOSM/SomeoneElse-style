@@ -1837,6 +1837,7 @@
     { "key": "historic:name", "description": "Name of derelict canals" },
     { "key": "historic:railway", "description": "Detect historic railway stations" },
     { "key": "historic:railway", "value": "station", "description": "Detect historic railway stations" },
+    { "key": "historic:railway", "value": "station_site", "description": "Detect historic railway stations" },
     { "key": "historic:waterway", "description": "Detect derelict canals" },
     { "key": "historic:waterway", "value": "canal", "description": "Detect derelict canals" },
     { "key": "horse", "description": "Horse access permission" },

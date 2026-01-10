@@ -3,6 +3,7 @@ This page describes changes made in these projects: [SomeoneElse-style](https://
 
 ## As yet unreleased
 (raster, vector) Removed `amenity=funeral`; no longer in the data.
+(raster, vector) Handle `historic:railway=station_site` as a nonspecific historic item.
 
 ## Raster as yet unreleased, vector 09/01/2026
 (raster) Detect more hogweed.
