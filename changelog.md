@@ -1,7 +1,7 @@
 # Changes made to this rendering
 This page describes changes made in these projects: [SomeoneElse-style](https://github.com/SomeoneElseOSM/SomeoneElse-style), [SomeoneElse-style-legend](https://github.com/SomeoneElseOSM/SomeoneElse-style-legend) and [openstreetmap-carto-AJT](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT), and visible [on this site](//map.atownsend.org.uk/maps/map/map.html).  Since 2025 this also includes changes to lua code shared between raster and vector processing - hence the notes below about which a particular change applies to.  See [this changelog](https://github.com/SomeoneElseOSM/SomeoneElse-vector-extract/blob/main/resources/changelog_sve01.md) for where changes here affect the vector schema, and also other vector-only ones.
 
-## As yet unreleased
+## Raster as yet unreleased, vector 09/01/2026
 (raster) Detect more hogweed.
 (raster, vector) Show piers that are mapped as nodes with an icon and a name.
 (raster, vector) Handle more 'kerb' values that suggest there is a non-raised kerb.
@@ -10,6 +10,7 @@ This page describes changes made in these projects: [SomeoneElse-style](https://
 (raster, vector) Handle more `fence_type` synonyms for `wall`.
 (raster, vector) Handle more old names for disused pubs.
 (raster, vector) Treat `water=tidal` the same as `tidal=yes`.
+(raster, vector) Handle a couple of extra uncomputable widths of narrow tertiary roads
 
 ## 31/12/2025
 (raster, vector) Removed `shop=yes;jewelry`; no longer in the data.

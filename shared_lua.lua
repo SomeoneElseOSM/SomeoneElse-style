@@ -1424,7 +1424,9 @@ function consolidate_lua_03_t( passedt )
        (( passedt.junction   == nil                )   or
         ( passedt.junction   == ""                 ))  and
        ((( tonumber(passedt.width)    or 4 ) <=  3 ) or
-        (( tonumber(passedt.maxwidth) or 4 ) <=  3 ))) then
+        (( tonumber(passedt.maxwidth) or 4 ) <=  3 ) or
+        ( passedt.width      == "narrow"           ) or
+        ( passedt.width      == "2.0 m"            ))) then
       passedt.highway = "unclassified_sidewalk"
    end
 
@@ -1462,7 +1464,9 @@ function consolidate_lua_03_t( passedt )
        (( passedt.junction   == nil              )   or
         ( passedt.junction   == ""               ))  and
        ((( tonumber(passedt.width)    or 4 ) <=  3 ) or
-        (( tonumber(passedt.maxwidth) or 4 ) <=  3 ))) then
+        (( tonumber(passedt.maxwidth) or 4 ) <=  3 ) or
+        ( passedt.width      == "narrow"           ) or
+        ( passedt.width      == "2.0 m"            ))) then
       passedt.highway = "unclassified_verge"
    end
 
@@ -1499,7 +1503,9 @@ function consolidate_lua_03_t( passedt )
        (( passedt.junction   == nil        )   or
         ( passedt.junction   == ""         ))  and
        ((( tonumber(passedt.width)    or 4 ) <=  3 ) or
-        (( tonumber(passedt.maxwidth) or 4 ) <=  3 ))) then
+        (( tonumber(passedt.maxwidth) or 4 ) <=  3 ) or
+        ( passedt.width      == "narrow"           ) or
+        ( passedt.width      == "2.0 m"            ))) then
       passedt.highway = "unclassified"
    end
 
