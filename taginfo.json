@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20260110T110505Z",
+  "data_updated": "20260111T153606Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -918,6 +918,8 @@
     { "key": "crossing", "value": "light controlled", "description": "Treated as 'highway=traffic_signals'" },
     { "key": "crossing", "value": "marked", "description": "Treated as 'highway=crossing'" },
     { "key": "crossing", "value": "marked;uncontrolled", "description": "Treated as 'highway=crossing'" },
+    { "key": "crossing", "value": "no", "description": "Treated as not a 'highway=crossing'" },
+    { "key": "crossing", "value": "no_traffic_signals", "description": "Treated as not a 'highway=crossing'" },
     { "key": "crossing", "value": "pedestrian_signals", "description": "Treated as 'highway=traffic_signals'" },
     { "key": "crossing", "value": "pegasus", "description": "Treated as 'highway=traffic_signals'" },
     { "key": "crossing", "value": "pelican", "description": "Treated as 'highway=traffic_signals'" },
@@ -935,7 +937,10 @@
     { "key": "crossing", "value": "traffic_signals;uncontrolled", "description": "Treated as 'highway=traffic_signals'" },
     { "key": "crossing", "value": "traffic_signals;unmarked", "description": "Treated as 'highway=traffic_signals'" },
     { "key": "crossing", "value": "uncontrolled;marked", "description": "Treated as 'highway=crossing'" },
+    { "key": "crossing", "value": "uncontrolled;unmarked", "description": "Treated as potentially not a 'highway=crossing'" },
     { "key": "crossing", "value": "uncontrolled;zebra", "description": "Treated as 'highway=crossing'" },
+    { "key": "crossing", "value": "unmarked", "description": "Treated as potentially not a 'highway=crossing'" },
+    { "key": "crossing", "value": "unmarked;uncontrolled", "description": "Treated as potentially not a 'highway=crossing'" },
     { "key": "crossing", "value": "zebra", "description": "Treated as 'highway=crossing'" },
     { "key": "crossing", "value": "zebra;dots", "description": "Treated as 'highway=crossing'" },
     { "key": "crossing", "value": "zebra;island", "description": "Treated as 'highway=crossing'" },

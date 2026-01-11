@@ -3,6 +3,7 @@ This page describes changes made in these projects: [SomeoneElse-style](https://
 
 ## As yet unreleased
 (raster, vector) Use `flashing_lights` as part of the check to detect non-crossings.
+(raster, vector) Add more `crossing` values to "is it or is it not a crossing" logic.
 
 ## Raster as yet unreleased, vector 10/01/2026
 (raster, vector) Removed `amenity=funeral`; no longer in the data.
