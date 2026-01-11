@@ -1425,6 +1425,8 @@
     { "key": "fence_type", "value": "wall", "description": "Detect obscure synonyms for walls" },
     { "key": "flag", "description": "Does a bus stop have a flag or pole?" },
     { "key": "flag", "value": "no", "description": "Shown as blue bus with no bus stop flag or pole", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/bus_stop_nothing.png" },
+    { "key": "flashing_lights", "description": "Does a potential crossing have flashing_lights?" },
+    { "key": "flashing_lights", "value": "no", "description": "No flashing lights on a crossing" },
     { "key": "flood_prone", "description": "Show flood-prone areas as very intermittent water" },
     { "key": "flood_prone", "value": "yes", "description": "Show flood-prone areas as very intermittent water" },
     { "key": "floor:material", "description": "Detect noncarpeted pub floors" },

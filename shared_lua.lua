@@ -7754,6 +7754,8 @@ function consolidate_lua_03_t( passedt )
    end
 
 -- ----------------------------------------------------------------------------
+-- Crossings are spectacularly complicated.
+--
 -- Some crossings aren't mapped as highways, so we look at the "crossing" tag.
 -- However, first remove disused and proposed crossings.
 -- ----------------------------------------------------------------------------
@@ -7771,9 +7773,7 @@ function consolidate_lua_03_t( passedt )
    end
 
 -- ----------------------------------------------------------------------------
--- Crossings are spectacularly complicated.
---
--- First, detect some oddly tagged crossings by the "highway" value.
+-- Next, detect some oddly tagged crossings by the "highway" value.
 -- ----------------------------------------------------------------------------
    if (( passedt.highway == "traffic_signals;crossing" ) or
        ( passedt.highway == "crossing;traffic_signals" )) then
@@ -7788,7 +7788,7 @@ function consolidate_lua_03_t( passedt )
    end
 
 -- ----------------------------------------------------------------------------
--- Not all crossings have "highway=crossing" set.
+-- Next, not all crossings have "highway=crossing" set.
 -- Some may have "railway=crossing" set, some may have neither.
 -- Some may be disused.
 --
@@ -7906,6 +7906,9 @@ function consolidate_lua_03_t( passedt )
 -- Which of those should actually be "crossing=traffic_signals"?
 -- "crossing=controlled" is omitted from this list because often the traffic
 -- signals are mapped separately.
+--
+-- Note that "flashing_lights" (which is sometimes set to "always" for 
+-- zebra crossings) doesn't count as traffic signals here.
 -- ----------------------------------------------------------------------------
    if ( passedt.highway == "crossing" ) then
       if (( passedt.crossing == "traffic_signals"        ) or 
@@ -7965,6 +7968,9 @@ function consolidate_lua_03_t( passedt )
               ( passedt.traffic_calming      == ""          )  or
               ( passedt.traffic_calming      == "no"        )  or
               ( passedt.traffic_calming      == "none"      )) and
+             (( passedt.flashing_lights      == nil         )  or
+              ( passedt.flashing_lights      == ""          )  or
+              ( passedt.flashing_lights      == "no"        )) and
              (  passedt.kerb                 ~= "rolled"     ) and
              (  passedt.kerb                 ~= "sloped"     ) and
              (  passedt.kerb                 ~= "lowered"    ) and
