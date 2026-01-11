@@ -4963,7 +4963,8 @@ function consolidate_lua_03_t( passedt )
         ( passedt.cuisine == "tandoori"            )  or
         ( passedt.cuisine == "afghan"              )  or
         ( passedt.cuisine == "sri_lankan"          )  or
-        ( passedt.cuisine == "punjabi"             ))) then
+        ( passedt.cuisine == "punjabi"             )  or
+        ( passedt.cuisine == "bengali"             ))) then
       passedt.amenity = "restaurant_indian_"
       append_wheelchair_t( passedt )
    end
@@ -4982,7 +4983,8 @@ function consolidate_lua_03_t( passedt )
         ( passedt.cuisine == "indonesian"             )   or
         ( passedt.cuisine == "cantonese"              )   or
         ( passedt.cuisine == "oriental"               )   or
-        ( passedt.cuisine == "filipino"               ))) then
+        ( passedt.cuisine == "filipino"               )   or
+        ( passedt.cuisine == "taiwanese"              ))) then
       passedt.amenity = "restaurant_chinese_"
       append_wheelchair_t( passedt )
    end
@@ -5020,7 +5022,9 @@ function consolidate_lua_03_t( passedt )
         ( passedt.cuisine == "burger"                              )   or
         ( passedt.cuisine == "diner"                               )   or
         ( passedt.cuisine == "grill"                               )   or
-        ( passedt.cuisine == "steak_house"                         ))) then
+        ( passedt.cuisine == "steak_house"                         )   or
+        ( passedt.cuisine == "steak"                               )   or
+        ( passedt.cuisine == "bar_and_grill"                       ))) then
       passedt.amenity = "restaurant_burger_"
       append_wheelchair_t( passedt )
    end
@@ -5028,7 +5032,8 @@ function consolidate_lua_03_t( passedt )
    if ((  passedt.amenity == "restaurant"                 )  and
        (( passedt.cuisine == "coffee"                    )   or
         ( passedt.cuisine == "coffee_shop"               )   or
-        ( passedt.cuisine == "cake"                      ))) then
+        ( passedt.cuisine == "cake"                      )   or
+        ( passedt.cuisine == "cafe"                      ))) then
       passedt.amenity = "restaurant_coffee_"
       append_wheelchair_t( passedt )
    end
@@ -5049,7 +5054,8 @@ function consolidate_lua_03_t( passedt )
 
    if ((  passedt.amenity == "restaurant"            ) and
        (( passedt.cuisine == "kebab"                )  or
-        ( passedt.cuisine == "turkish"              ))) then
+        ( passedt.cuisine == "turkish"              )  or
+        ( passedt.cuisine == "shawarma"             ))) then
       passedt.amenity = "restaurant_kebab_"
       append_wheelchair_t( passedt )
    end
@@ -5059,14 +5065,20 @@ function consolidate_lua_03_t( passedt )
         ( passedt.cuisine == "english"                )  or
         ( passedt.cuisine == "pie_and_mash"           )  or
         ( passedt.cuisine == "pub"                    )  or
+        ( passedt.cuisine == "pub_food"               )  or
         ( passedt.cuisine == "breakfast"              )  or
-        ( passedt.cuisine == "modern_british"         ))) then
+        ( passedt.cuisine == "modern_british"         )  or
+        ( passedt.cuisine == "brunch"                 )  or
+        ( passedt.cuisine == "carvery"                )  or
+        ( passedt.cuisine == "greasy_spoon"           ))) then
       passedt.amenity = "restaurant_british_"
       append_wheelchair_t( passedt )
    end
 
    if ((  passedt.amenity == "restaurant"               ) and
-       (  passedt.cuisine == "regional"                 )) then
+       (( passedt.cuisine == "regional"                )  or
+        ( passedt.cuisine == "local"                   )  or
+        ( passedt.cuisine == "scottish"                ))) then
       passedt.amenity = "restaurant_regional_"
       append_wheelchair_t( passedt )
    end
@@ -5079,7 +5091,8 @@ function consolidate_lua_03_t( passedt )
    end
 
    if ((  passedt.amenity == "restaurant"            ) and
-       (  passedt.cuisine == "greek"                 )) then
+       (( passedt.cuisine == "greek"                )  or
+        ( passedt.cuisine == "falafel"              ))) then
       passedt.amenity = "restaurant_greek"
    end
 
@@ -5118,7 +5131,8 @@ function consolidate_lua_03_t( passedt )
 
    if ((  passedt.amenity == "restaurant"              ) and
        (( passedt.cuisine == "lebanese"               )  or
-        ( passedt.cuisine == "syrian"                 ))) then
+        ( passedt.cuisine == "syrian"                 )  or
+        ( passedt.cuisine == "middle_eastern"         ))) then
       passedt.amenity = "restaurant_lebanese"
    end
 
@@ -9814,7 +9828,8 @@ function consolidate_lua_04_t( passedt )
         ( passedt.cuisine == "indonesian"             )   or
         ( passedt.cuisine == "cantonese"              )   or
         ( passedt.cuisine == "oriental"               )   or
-        ( passedt.cuisine == "filipino"               ))) then
+        ( passedt.cuisine == "filipino"               )   or
+        ( passedt.cuisine == "taiwanese"              ))) then
       passedt.amenity = "fast_food_chinese_"
       append_wheelchair_t( passedt )
    end
@@ -9852,7 +9867,9 @@ function consolidate_lua_04_t( passedt )
         ( passedt.cuisine == "burger"                              )   or
         ( passedt.cuisine == "diner"                               )   or
         ( passedt.cuisine == "grill"                               )   or
-        ( passedt.cuisine == "steak_house"                         ))) then
+        ( passedt.cuisine == "steak_house"                         )   or
+        ( passedt.cuisine == "steak"                               )   or
+        ( passedt.cuisine == "bar_and_grill"                       ))) then
       passedt.amenity = "fast_food_burger_"
       append_wheelchair_t( passedt )
    end
@@ -9868,7 +9885,8 @@ function consolidate_lua_04_t( passedt )
    if ((  passedt.amenity == "fast_food"                  )  and
        (( passedt.cuisine == "coffee"                    )   or
         ( passedt.cuisine == "coffee_shop"               )   or
-        ( passedt.cuisine == "cake"                      ))) then
+        ( passedt.cuisine == "cake"                      )   or
+        ( passedt.cuisine == "cafe"                      ))) then
       passedt.amenity = "fast_food_coffee"
    end
 
@@ -9891,14 +9909,16 @@ function consolidate_lua_04_t( passedt )
         ( passedt.cuisine == "tandoori"            )  or
         ( passedt.cuisine == "afghan"              )  or
         ( passedt.cuisine == "sri_lankan"          )  or
-        ( passedt.cuisine == "punjabi"             ))) then
+        ( passedt.cuisine == "punjabi"             )  or
+        ( passedt.cuisine == "bengali"             ))) then
       passedt.amenity = "fast_food_indian_"
       append_wheelchair_t( passedt )
    end
 
    if ((  passedt.amenity == "fast_food"             ) and
        (( passedt.cuisine == "kebab"                )  or
-        ( passedt.cuisine == "turkish"              ))) then
+        ( passedt.cuisine == "turkish"              )  or
+        ( passedt.cuisine == "shawarma"             ))) then
       passedt.amenity = "fast_food_kebab_"
       append_wheelchair_t( passedt )
    end
@@ -9917,13 +9937,19 @@ function consolidate_lua_04_t( passedt )
         ( passedt.cuisine == "english"                )  or
         ( passedt.cuisine == "pie_and_mash"           )  or
         ( passedt.cuisine == "pub"                    )  or
+        ( passedt.cuisine == "pub_food"               )  or
         ( passedt.cuisine == "breakfast"              )  or
-        ( passedt.cuisine == "modern_british"         ))) then
+        ( passedt.cuisine == "modern_british"         )  or
+        ( passedt.cuisine == "brunch"                 )  or
+        ( passedt.cuisine == "carvery"                )  or
+        ( passedt.cuisine == "greasy_spoon"           ))) then
       passedt.amenity = "fast_food_british"
    end
 
    if ((  passedt.amenity == "fast_food"                ) and
-       (  passedt.cuisine == "regional"                 )) then
+       (( passedt.cuisine == "regional"                )  or
+        ( passedt.cuisine == "local"                   )  or
+        ( passedt.cuisine == "scottish"                ))) then
       passedt.amenity = "fast_food_regional"
    end
 
@@ -9934,8 +9960,9 @@ function consolidate_lua_04_t( passedt )
       append_wheelchair_t( passedt )
    end
 
-   if ((  passedt.amenity == "fast_food"             ) and
-       (  passedt.cuisine == "greek"                 )) then
+   if ((  passedt.amenity == "fast_food"             )  and
+       (( passedt.cuisine == "greek"                )   or
+        ( passedt.cuisine == "falafel"              ))) then
       passedt.amenity = "fast_food_greek"
    end
 
@@ -9960,7 +9987,8 @@ function consolidate_lua_04_t( passedt )
 
    if ((  passedt.amenity == "fast_food"               ) and
        (( passedt.cuisine == "lebanese"               )  or
-        ( passedt.cuisine == "syrian"                 ))) then
+        ( passedt.cuisine == "syrian"                 )  or
+        ( passedt.cuisine == "middle_eastern"         ))) then
       passedt.amenity = "fast_food_lebanese"
    end
 
