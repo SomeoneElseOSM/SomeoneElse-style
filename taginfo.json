@@ -4192,7 +4192,7 @@
     { "key": "wheelchair", "value": "5", "description": "Handled as wheelchair=yes" },
     { "key": "wheelchair", "value": "bad", "description": "Handled as wheelchair=no" },
     { "key": "wheelchair", "value": "bell", "description": "Handled as wheelchair=yes" },
-    { "key": "wheelchair", "value": "customers", "description": "Handled as wheelchair=yes" },
+    { "key": "wheelchair", "value": "customers", "description": "Not a current value in OSM data. Handled as wheelchair=yes" },
     { "key": "wheelchair", "value": "designated", "description": "Handled as wheelchair=yes" },
     { "key": "wheelchair", "value": "destination", "description": "Handled as wheelchair=yes" },
     { "key": "wheelchair", "value": "difficult", "description": "Handled as wheelchair=limited" },
