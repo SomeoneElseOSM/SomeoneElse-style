@@ -7,6 +7,7 @@ This page describes changes made in these projects: [SomeoneElse-style](https://
 (raster, vector) Changed the `shop=seafood` icon to match the `cuisine=seafood` marker used on fast food and restaurants.  Previously it matched `cuisine=fish_and_chips`.
 (raster, vector) Handle a couple more `support` values for clocks.
 (raster, vector) Tiger crossings do not imply traffic signals.
+(raster, vector) Detect more TROs on BOATs.
 
 ## Raster as yet unreleased, vector 10/01/2026
 (raster, vector) Removed `amenity=funeral`; no longer in the data.

@@ -1167,6 +1167,22 @@ function consolidate_lua_01_t( passedt )
    end
 
 -- ----------------------------------------------------------------------------
+-- If vehicle=no or vehicle=destination is set on a BOAT, it's probably a TRO,
+-- so display as a bridleway instead
+-- ----------------------------------------------------------------------------
+   if ((  passedt.highway == "boatwide"     )  and
+       (( passedt.vehicle == "no"          )   or
+        ( passedt.vehicle == "destination" ))) then
+      passedt.highway = "bridlewaywide"
+   end
+
+   if ((  passedt.highway == "boatnarrow"  )  and
+       (( passedt.vehicle == "no"          )   or
+        ( passedt.vehicle == "destination" ))) then
+      passedt.highway = "bridlewaynarrow"
+   end
+
+-- ----------------------------------------------------------------------------
 -- If motor_vehicle=no is set on a BOAT, it's probably a TRO, so display as
 -- an RBY instead
 -- ----------------------------------------------------------------------------
