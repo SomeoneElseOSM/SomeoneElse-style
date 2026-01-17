@@ -1,7 +1,7 @@
 # Changes made to this rendering
 This page describes changes made in these projects: [SomeoneElse-style](https://github.com/SomeoneElseOSM/SomeoneElse-style), [SomeoneElse-style-legend](https://github.com/SomeoneElseOSM/SomeoneElse-style-legend) and [openstreetmap-carto-AJT](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT), and visible [on this site](//map.atownsend.org.uk/maps/map/map.html).  Since 2025 this also includes changes to lua code shared between raster and vector processing - hence the notes below about which a particular change applies to.  See [this changelog](https://github.com/SomeoneElseOSM/SomeoneElse-vector-extract/blob/main/resources/changelog_sve01.md) for where changes here affect the vector schema, and also other vector-only ones.
 
-## As yet unreleased
+## 17/01/2025
 (raster, vector) Use `flashing_lights` as part of the check to detect non-crossings.
 (raster, vector) Add more `crossing` values to "is it or is it not a crossing" logic.
 (raster, vector) Changed the `shop=seafood` icon to match the `cuisine=seafood` marker used on fast food and restaurants.  Previously it matched `cuisine=fish_and_chips`.
@@ -9,7 +9,7 @@ This page describes changes made in these projects: [SomeoneElse-style](https://
 (raster, vector) Tiger crossings do not imply traffic signals.
 (raster, vector) Detect more TROs on BOATs.
 
-## Raster as yet unreleased, vector 10/01/2026
+## Raster 17/01/2025, vector 10/01/2026
 (raster, vector) Removed `amenity=funeral`; no longer in the data.
 (raster, vector) Handle `historic:railway=station_site` as a nonspecific historic item.
 (raster, vector) Handle `lamp_type=gas` as a synonym for `gaslight`.
@@ -19,7 +19,7 @@ This page describes changes made in these projects: [SomeoneElse-style](https://
 (raster, vector) Detect more small canal channels.
 (raster, vector) Detect more cuisine synonyms.
 
-## Raster as yet unreleased, vector 09/01/2026
+## Raster 17/01/2025, vector 09/01/2026
 (raster) Detect more hogweed.
 (raster, vector) Show piers that are mapped as nodes with an icon and a name.
 (raster, vector) Handle more 'kerb' values that suggest there is a non-raised kerb.
