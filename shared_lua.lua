@@ -7920,12 +7920,10 @@ function consolidate_lua_03_t( passedt )
           ( passedt.crossing == "puffin"                  ) or
           ( passedt.crossing == "pegasus"                 ) or
           ( passedt.crossing == "traffic_signals;island"  ) or
-          ( passedt.crossing == "tiger"                   ) or
           ( passedt.crossing_ref == "pelican"             ) or
           ( passedt.crossing_ref == "toucan"              ) or
           ( passedt.crossing_ref == "puffin"              ) or
           ( passedt.crossing_ref == "pegasus"             ) or
-          ( passedt.crossing_ref == "tiger"               ) or
           (( passedt["crossing:signals"] ~= nil          ) and
            ( passedt["crossing:signals"] ~= ""           ) and
            ( passedt["crossing:signals"] ~= "no"         ) and
