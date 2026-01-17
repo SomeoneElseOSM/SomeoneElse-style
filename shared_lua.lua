@@ -4421,7 +4421,7 @@ function consolidate_lua_03_t( passedt )
       passedt.accommodation = passedt.accomodation
       passedt.accomodation  = nil
    end
-		  
+
 -- ----------------------------------------------------------------------------
 -- Next, "closed due to covid" pubs
 -- ----------------------------------------------------------------------------
@@ -12203,7 +12203,9 @@ function consolidate_lua_04_t( passedt )
    if ((  passedt.amenity    == "clock"         )  and
        (( passedt.support    == "pedestal"     )   or
         ( passedt.support    == "pole"         )   or
+        ( passedt.support    == "poles"        )   or
         ( passedt.support    == "stone_pillar" )   or
+        ( passedt.support    == "pillar"       )   or
         ( passedt.support    == "plinth"       )   or
         ( passedt.support    == "column"       ))) then
       passedt.man_made = "clockpedestal"
