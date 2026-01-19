@@ -12465,11 +12465,25 @@ function consolidate_lua_04_t( passedt )
    end
 
 -- ----------------------------------------------------------------------------
+-- One of "local_ref" or "naptan:Indicator" will be appended to the stop name
+-- if not blank.
+--
+-- Many "local_ref" are a couple of letters like "ED", but some are "Stop XYZ"
+-- or various other bits and pieces.  See 
+-- https://taginfo.openstreetmap.org/keys/local_ref#values
+-- We remove overly long ones.
+-- ----------------------------------------------------------------------------
+   if (( passedt.local_ref ~= nil           ) and
+       ( passedt.local_ref ~= ""            ) and
+       ( string.len( passedt.local_ref ) > 3 )) then
+      passedt.local_ref = nil
+   end
+
+-- ----------------------------------------------------------------------------
 -- Many "naptan:Indicator" are "opp" or "adj", but some are "Stop XYZ" or
 -- various other bits and pieces.  See 
 -- https://taginfo.openstreetmap.org/keys/naptan%3AIndicator#values
 -- We remove overly long ones.
--- Similarly, long "ref" values.
 -- ----------------------------------------------------------------------------
    if (( passedt["naptan:Indicator"] ~= nil           ) and
        ( passedt["naptan:Indicator"] ~= ""            ) and
@@ -12477,6 +12491,14 @@ function consolidate_lua_04_t( passedt )
       passedt["naptan:Indicator"] = nil
    end
 
+   if (( passedt.local_ref == nil           ) or
+       ( passedt.local_ref == ""            )) then
+      passedt.local_ref = passedt["naptan:Indicator"]
+   end
+
+-- ----------------------------------------------------------------------------
+-- Similarly, long "ref" values:
+-- ----------------------------------------------------------------------------
    if (( passedt.highway == "bus_stop" ) and
        ( passedt.ref     ~= nil        ) and
        ( passedt.ref     ~= ""         ) and
@@ -12508,31 +12530,36 @@ function consolidate_lua_04_t( passedt )
           ( passedt.name == ""  )) then
          if (( passedt.ref == nil ) or
              ( passedt.ref == ""  )) then
-            if (( passedt["naptan:Indicator"] ~= nil )  and
-                ( passedt["naptan:Indicator"] ~= ""  )) then
-               passedt.name = passedt["naptan:Indicator"]
+            if (( passedt.local_ref ~= nil )  and
+                ( passedt.local_ref ~= ""  )) then
+               passedt.name = passedt.local_ref
             end
-         else -- ref not nil
-            if (( passedt["naptan:Indicator"] == nil ) or
-                ( passedt["naptan:Indicator"] == ""  )) then
+         else -- name nil; ref not nil
+            if (( passedt.local_ref == nil                              ) or
+                ( passedt.local_ref == ""                               ) or
+                ( string.find( passedt.ref, passedt.local_ref, 1, true ))) then
                passedt.name = passedt.ref
             else
-               passedt.name = passedt.ref .. " " .. passedt["naptan:Indicator"]
+               passedt.name = passedt.ref .. " " .. passedt.local_ref
             end
          end
       else -- name not nil
          if (( passedt.ref == nil ) or
              ( passedt.ref == ""  )) then
-            if (( passedt["naptan:Indicator"] ~= nil )  and
-                ( passedt["naptan:Indicator"] ~= ""  )) then
-               passedt.name = passedt.name .. " " .. passedt["naptan:Indicator"]
+            if (( passedt.local_ref ~= nil                                   )  and
+                ( passedt.local_ref ~= ""                                    )  and
+                ( not string.find( passedt.name, passedt.local_ref, 1, true ))) then
+               passedt.name = passedt.name .. " " .. passedt.local_ref
             end
          else -- neither name nor ref nil
-            if (( passedt["naptan:Indicator"] == nil )  or
-                ( passedt["naptan:Indicator"] == ""  )) then
+            if ( not string.find( passedt.name, passedt.ref, 1, true )) then
                passedt.name = passedt.name .. " " .. passedt.ref
-            else -- naptanCIndicator not nil
-               passedt.name = passedt.name .. " " .. passedt.ref .. " " .. passedt["naptan:Indicator"]
+            end
+
+            if (( passedt.local_ref ~= nil                                   )  and
+                ( passedt.local_ref ~= ""                                    )  and
+                ( not string.find( passedt.name, passedt.local_ref, 1, true ))) then
+               passedt.name = passedt.name .. " " .. passedt.local_ref 
             end
          end
       end

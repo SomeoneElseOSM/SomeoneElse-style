@@ -2158,6 +2158,7 @@
     { "key": "lifeguard", "value": "base", "description": "Used by one possible tagging of lifeguard towers" },
     { "key": "lifeguard", "value": "tower", "description": "Used by one possible tagging of lifeguard towers" },
     { "key": "loc_ref", "description": "Indicates an unsigned ref, potentially displayed in brackets after any name" },
+    { "key": "local_ref", "description": "Extracted on bus stops if 3 characters or fewer." },
     { "key": "locality", "description": "Detect which localities are townlands and subtownlands to remove area versions" },
     { "key": "locality", "value": "townland", "description": "Detect which localities are townlands and subtownlands to remove area versions" },
     { "key": "locality", "value": "subtownland", "description": "Detect which localities are townlands and subtownlands to remove area versions" },
