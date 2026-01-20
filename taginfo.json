@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20260118T212301Z",
+  "data_updated": "20260120T014702Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -1206,6 +1206,14 @@
     { "key": "cycleway", "value": "yes", "description": "If present, show the road as having a sidewalk or equivalent" },
     { "key": "cycleway:both", "description": "Decide if a road has a sidewalk or equivalent" },
     { "key": "cycleway:both", "value": "separate", "description": "If present, show the road as having a sidewalk or equivalent" },
+    { "key": "cycleway:left", "description": "Decide if a road has a sidewalk or equivalent" },
+    { "key": "cycleway:left", "value": "separate", "description": "If present, show the road as having a sidewalk or equivalent" },
+    { "key": "cycleway:left", "value": "track", "description": "If present, show the road as having a sidewalk or equivalent" },
+    { "key": "cycleway:left", "value": "share_sidewalk", "description": "If present, show the road as having a sidewalk or equivalent" },
+    { "key": "cycleway:left", "value": "shared", "description": "If present, show the road as having a sidewalk or equivalent" },
+    { "key": "cycleway:left", "value": "opposite_track", "description": "If present, show the road as having a sidewalk or equivalent" },
+    { "key": "cycleway:left", "value": "separate track", "description": "If present, show the road as having a sidewalk or equivalent" },
+    { "key": "cycleway:left", "value": "sidewalk", "description": "If present, show the road as having a sidewalk or equivalent" },
     { "key": "dance:teaching", "description": "Detect dance places" },
     { "key": "dance:teaching", "value": "yes", "description": "Detect dance places" },
     { "key": "defensive_works", "description": "Detect batteries not mapped as historic" },
