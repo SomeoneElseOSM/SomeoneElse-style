@@ -10959,6 +10959,19 @@ function consolidate_lua_04_t( passedt )
       end
    end
 
+-- ----------------------------------------------------------------------------
+-- Bleed Control Kits
+-- Move these to the "amenity" key to reduce the code needed to render them.
+-- Ones with an non-public, non-yes access value will be rendered less opaque,
+-- like other private items such as car parks.
+-- ----------------------------------------------------------------------------
+   if ( passedt.emergency == "bleed_control_kit" ) then
+      passedt.amenity = "bleed_control_kit"
+      if ( passedt.indoor == "yes" ) then
+         passedt.access = "customers"
+      end
+   end
+
    if ((  passedt.emergency        == "life_ring"         ) or
        (  passedt.emergency        == "lifevest"          ) or
        (  passedt.emergency        == "flotation device"  ) or

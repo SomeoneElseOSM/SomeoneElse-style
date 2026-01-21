@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20260120T014702Z",
+  "data_updated": "20260121T224203Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -1381,6 +1381,7 @@
     { "key": "emergency", "value": "access_point", "description": "Emergency access points are shown as a pink dot", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/emergency_access_point.png" },
     { "key": "emergency", "value": "ambulance_station", "description": "Shown as a pink van in a rectangle", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/health_ambulance.p.16.png" },
     { "key": "emergency", "value": "beach_safety_sign", "description": "Shown as sign" },
+    { "key": "emergency", "value": "bleed_control_kit", "description": "Show bleed control kits as 'BCK' in pink", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/health_bleedcontrolkit.p.16.png" },
     { "key": "emergency", "value": "coast_guard", "description": "Shown as government office" },
     { "key": "emergency", "value": "defibrillator", "description": "Show defibrillators as 'AED' in pink", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/health_defibrillator.p.16.png" },
     { "key": "emergency", "value": "fire_extinguisher", "description": "Show fire extinguishers as a small pink 'F'", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/fireextinguisher.png" },
