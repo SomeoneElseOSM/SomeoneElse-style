@@ -1384,6 +1384,7 @@
     { "key": "emergency", "value": "bleed_control_kit", "description": "Show bleed control kits as 'BCK' in pink", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/health_bleedcontrolkit.p.16.png" },
     { "key": "emergency", "value": "coast_guard", "description": "Shown as government office" },
     { "key": "emergency", "value": "defibrillator", "description": "Show defibrillators as 'AED' in pink", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/health_defibrillator.p.16.png" },
+    { "key": "emergency", "value": "emergency_ward_entrance", "description": "Shown as a small black dot", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/entrancemain_18.png" },
     { "key": "emergency", "value": "fire_extinguisher", "description": "Show fire extinguishers as a small pink 'F'", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/fireextinguisher.png" },
     { "key": "emergency", "value": "fire_hydrant", "description": "Shown as a pink 'H'", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/firehydrant.png" },
     { "key": "emergency", "value": "fire_station", "description": "Show fire stations with their own icon" },

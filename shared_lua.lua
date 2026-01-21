@@ -8825,29 +8825,30 @@ function consolidate_lua_03_t( passedt )
 -- Render main entrances
 -- Note that "railway=train_station_entrance" isn't shown as a subway entrance.
 -- ----------------------------------------------------------------------------
-   if ((( passedt.entrance         == "main"                   )  or
-        ( passedt.building         == "entrance"               )  or
-        ( passedt.entrance         == "entrance"               )  or
-        ( passedt.public_transport == "entrance"               )  or
-        ( passedt.railway          == "entrance"               )  or
-        ( passedt.railway          == "train_station_entrance" )  or
-        ( passedt.school           == "entrance"               )) and
-       (( passedt.amenity          == nil                      )  or
-        ( passedt.amenity          == ""                       )) and
-       (( passedt.barrier          == nil                      )  or
-        ( passedt.barrier          == ""                       )) and
-       (( passedt.building         == nil                      )  or
-        ( passedt.building         == ""                       )) and
-       (( passedt.craft            == nil                      )  or
-        ( passedt.craft            == ""                       )) and
-       (( passedt.highway          == nil                      )  or
-        ( passedt.highway          == ""                       )) and
-       (( passedt.office           == nil                      )  or
-        ( passedt.office           == ""                       )) and
-       (( passedt.shop             == nil                      )  or
-        ( passedt.shop             == ""                       )) and
-       (( passedt.tourism          == nil                      )  or
-        ( passedt.tourism          == ""                       ))) then
+   if ((( passedt.entrance         == "main"                    )  or
+        ( passedt.building         == "entrance"                )  or
+        ( passedt.emergency        == "emergency_ward_entrance" )  or
+        ( passedt.entrance         == "entrance"                )  or
+        ( passedt.public_transport == "entrance"                )  or
+        ( passedt.railway          == "entrance"                )  or
+        ( passedt.railway          == "train_station_entrance"  )  or
+        ( passedt.school           == "entrance"                )) and
+       (( passedt.amenity          == nil                       )  or
+        ( passedt.amenity          == ""                        )) and
+       (( passedt.barrier          == nil                       )  or
+        ( passedt.barrier          == ""                        )) and
+       (( passedt.building         == nil                       )  or
+        ( passedt.building         == ""                        )) and
+       (( passedt.craft            == nil                       )  or
+        ( passedt.craft            == ""                        )) and
+       (( passedt.highway          == nil                       )  or
+        ( passedt.highway          == ""                        )) and
+       (( passedt.office           == nil                       )  or
+        ( passedt.office           == ""                        )) and
+       (( passedt.shop             == nil                       )  or
+        ( passedt.shop             == ""                        )) and
+       (( passedt.tourism          == nil                       )  or
+        ( passedt.tourism          == ""                        ))) then
       passedt.amenity = "entrancemain"
    end
 

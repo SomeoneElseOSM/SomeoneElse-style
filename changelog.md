@@ -4,6 +4,7 @@ This page describes changes made in these projects: [SomeoneElse-style](https://
 ## As yet unreleased
 (raster, vector) Include some `cycleway:left` values in deciding when there is a `sidewalk`.
 (raster, vector) Handle `emergency=bleed_control_kit` in a similar way to `defibrillator`.
+(raster, vector) Handle `emergency=emergency_ward_entrance` in a similar way to `entrance=main`.
 
 ## Raster as yet unreleased, vector 18/01/2026
 (raster, vector) On bus stops use a smarter combination of `name`, `ref`, `local_ref` and `naptan:Indicator`.  Avoid duplication.
