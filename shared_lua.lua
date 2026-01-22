@@ -10982,6 +10982,10 @@ function consolidate_lua_04_t( passedt )
       passedt.amenity = "life_ring"
    end
 
+   if ( passedt.emergency == "throw_bag" ) then
+      passedt.amenity = "emergency_throw_bag"
+   end
+
    if ( passedt.emergency == "fire_extinguisher" ) then
       passedt.amenity = "fire_extinguisher"
    end
