@@ -6372,6 +6372,7 @@ function consolidate_lua_03_t( passedt )
 -- ----------------------------------------------------------------------------
    if ((  passedt.building   == "supermarket"      ) or
        (  passedt.building   == "station"          ) or
+       (  passedt.emergency  == "water_tank"       ) or
        (  passedt.man_made   == "storage_tank"     ) or
        (  passedt.man_made   == "silo"             ) or
        (  passedt.man_made   == "tank"             ) or
