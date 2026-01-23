@@ -124,7 +124,7 @@
     { "key": "amenity", "value": "accountants", "description": "Synonym for office=nonspecific" },
     { "key": "amenity", "value": "advice", "description": "Synonym for office=nonspecific" },
     { "key": "amenity", "value": "advice_service", "description": "Synonym for office=nonspecific" },
-    { "key": "amenity", "value": "ambulance_station", "description": "Synonym for `emergency=embulance_station`", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/health_ambulance.p.16.png" },
+    { "key": "amenity", "value": "ambulance_station", "description": "Synonym for `emergency=ambulance_station`", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/health_ambulance.p.16.png" },
     { "key": "amenity", "value": "amusement", "description": "Shown as gambling shop" },
     { "key": "amenity", "value": "amusements", "description": "Shown as gambling shop" },
     { "key": "amenity", "value": "animal_boarding", "description": "Shown as a purple dogs paw with a shed roof, name incorporates brand", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/animal_boarding.p.16.png" },
