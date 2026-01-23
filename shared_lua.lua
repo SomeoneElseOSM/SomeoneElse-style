@@ -11422,8 +11422,7 @@ function consolidate_lua_04_t( passedt )
 -- If any of the "diplomatic" ones should be shown as embassies, the "office"
 -- tag will have been removed above.
 -- ----------------------------------------------------------------------------
-   if (( passedt.office     == "it"                      ) or
-       ( passedt.office     == "ngo"                     ) or
+   if (( passedt.office     == "ngo"                     ) or
        ( passedt.office     == "organization"            ) or
        ( passedt.office     == "diplomatic"              ) or
        ( passedt.office     == "educational_institution" ) or
