@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20260126T005703Z",
+  "data_updated": "20260126T005704Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -131,7 +131,7 @@
     { "key": "amenity", "value": "animal_shelter", "description": "Shown as a purple dogs paw with a cage roof, name incorporates brand", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/animal_shelter.p.16.png" },
     { "key": "amenity", "value": "archive", "description": "Most offices shown as black dots", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/office_nonspecific.p.16.png" },
     { "key": "amenity", "value": "art_gallery", "description": "Shown as a purple dot ('nonspecific shop')", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/shopping_nonspecific.p.16.png" },
-    { "key": "amenity", "value": "arts_centre", "description": "Shown as leisure=nonspecific; if tagged on a museum of gallery, remove tag" },
+    { "key": "amenity", "value": "arts_centre", "description": "Shown as green dot ('nonspecific leisure'); unless if tagged on a museum of gallery, in which case amenity tag is removed", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/leisure_nonspecific.p.16.png" },
     { "key": "amenity", "value": "atm", "description": "ATMs: If in an old phone box, display as such", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/atm2.p.16.png" },
     { "key": "amenity", "value": "bank", "description": "Banks: Underline shows wheelchair tags", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/am_bank_y.png" },
     { "key": "amenity", "value": "bar", "description": "Bars: Left coloured underline shows wheelchair tags, right underline shows outdoor seating, roof shows accommodation available", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/am_bar_yyy.png" },
@@ -145,7 +145,7 @@
     { "key": "amenity", "value": "bicycle_rental", "description": "Shown as blue key above blue bicycle, name incorporates brand", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/rental_bicycle.p.20.png" },
     { "key": "amenity", "value": "bicycle_repair_station", "description": "Public bike pumps, shown as a bike wheel and a bit of frame. If in an old phone box, display as such", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/bicyclerepairstation.png" },
     { "key": "amenity", "value": "biergarten", "description": "Shown as green.  If named, shown with brown beer stein icon; if not, without.", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/biergarten.p.16.png" },
-    { "key": "amenity", "value": "bingo", "description": "Shown as leisure=nonspecific" },
+    { "key": "amenity", "value": "bingo", "description": "Shown as green dot ('nonspecific leisure')", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/leisure_nonspecific.p.16.png" },
     { "key": "amenity", "value": "bird_hide", "description": "Shown as a brown bird", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/birdhide.p.16.png" },
     { "key": "amenity", "value": "boat_rental", "description": "Shown as leisure=nonspecific" },
     { "key": "amenity", "value": "boat_storage", "description": "Shown as a black boat with a roof over it", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/lifeboat.png" },
