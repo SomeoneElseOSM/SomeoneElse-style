@@ -148,7 +148,7 @@
     { "key": "amenity", "value": "bingo", "description": "Shown as green dot ('nonspecific leisure')", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/leisure_nonspecific.p.16.png" },
     { "key": "amenity", "value": "bird_hide", "description": "Shown as a brown bird", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/birdhide.p.16.png" },
     { "key": "amenity", "value": "boat_rental", "description": "Shown as green dot ('nonspecific leisure')", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/leisure_nonspecific.p.16.png" },
-    { "key": "amenity", "value": "boat_storage", "description": "Shown as a black boat with a roof over it", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/lifeboat.png" },
+    { "key": "amenity", "value": "boat_storage", "description": "Shown as a black boat with a roof over it", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/amenity_boat_storage.png" },
     { "key": "amenity", "value": "brothel", "description": "Shown as green dot ('nonspecific leisure')", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/leisure_nonspecific.p.16.png" },
     { "key": "amenity", "value": "building_society", "description": "Synonym for bank" },
     { "key": "amenity", "value": "bureau_de_change", "description": "Shown as nonspecific shop" },
