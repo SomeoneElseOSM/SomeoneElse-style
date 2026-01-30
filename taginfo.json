@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20260130T151401Z",
+  "data_updated": "20260130T151402Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -321,7 +321,7 @@
     { "key": "amenity", "value": "preschool", "description": "Shown as a pink dot ('nonspecific health')", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/health_nonspecific.p.16.png" },
     { "key": "amenity", "value": "printer", "description": "Synonym for office=nonspecific" },
     { "key": "amenity", "value": "prison", "description": "Shown as brown prison bars", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/amenity_prison.p.20.png" },
-    { "key": "amenity", "value": "pub", "description": "Pubs: Different colours show beer served, underlines show garden and wheelshair access, roof shows accommodation, name incorporates brand or operator", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/pub_yyyyydyy.p.16.png" },
+    { "key": "amenity", "value": "pub", "description": "Pubs: Different colours show beer served, underlines show garden and wheelchair access, roof shows accommodation, name incorporates brand or operator", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/pub_yyyyydyy.p.16.png" },
     { "key": "amenity", "value": "pub;restaurant", "description": "Shown as a pub that serves food" },
     { "key": "amenity", "value": "public_bath", "description": "Shown as green dot ('nonspecific leisure')", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/leisure_nonspecific.p.16.png" },
     { "key": "amenity", "value": "public_bookcase", "description": "Shown as a small library.  If in an old phone box shown as such", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/publicbookcase.png" },
