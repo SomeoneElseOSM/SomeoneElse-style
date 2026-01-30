@@ -7,6 +7,8 @@ This page describes changes made in these projects: [SomeoneElse-style](https://
 (raster, vector) Handle `emergency=emergency_ward_entrance` in a similar way to `entrance=main`.
 (raster, vector) Handle `emergency=water_tank` in a similar way to `man_made=water_tank`.
 (raster, vector) Handle `emergency=throw_bag` in a similar way to `life_ring`, but with a unique value.
+(raster, vector) Handle `office=property_management` in a similar way to other property offices.
+(raster, vector) Handle various commercial offices as generic offices.
 
 ## Raster as yet unreleased, vector 18/01/2026
 (raster, vector) On bus stops use a smarter combination of `name`, `ref`, `local_ref` and `naptan:Indicator`.  Avoid duplication.

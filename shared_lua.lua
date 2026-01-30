@@ -9802,11 +9802,12 @@ function consolidate_lua_04_t( passedt )
 -- office=estate_agent.  There's now an icon for "shop", so use that.
 -- Also letting_agent
 -- ----------------------------------------------------------------------------
-   if (( passedt.office  == "estate_agent"      ) or
-       ( passedt.amenity == "estate_agent"      ) or
-       ( passedt.shop    == "letting_agent"     ) or
-       ( passedt.shop    == "council_house"     ) or
-       ( passedt.office  == "letting_agent"     )) then
+   if (( passedt.office  == "estate_agent"        ) or
+       ( passedt.amenity == "estate_agent"        ) or
+       ( passedt.shop    == "letting_agent"       ) or
+       ( passedt.shop    == "council_house"       ) or
+       ( passedt.office  == "letting_agent"       ) or
+       ( passedt.office  == "property_management" )) then
       passedt.shop = "estate_agent"
    end
 
@@ -11446,7 +11447,25 @@ function consolidate_lua_04_t( passedt )
        ( passedt.office     == "quango"                  ) or
        ( passedt.office     == "association"             ) or
        ( passedt.amenity    == "advice"                  ) or
-       ( passedt.amenity    == "advice_service"          )) then
+       ( passedt.amenity    == "advice_service"          ) or
+       ( passedt.office     == "logistics"               ) or
+       ( passedt.office     == "healthcare"              ) or
+       ( passedt.office     == "moving_company"          ) or
+       ( passedt.office     == "energy_supplier"         ) or
+       ( passedt.office     == "transport"               ) or
+       ( passedt.office     == "publisher"               ) or
+       ( passedt.office     == "construction"            ) or
+       ( passedt.office     == "water_utility"           ) or
+       ( passedt.office     == "harbour_master"          ) or
+       ( passedt.office     == "bank"                    ) or
+       ( passedt.office     == "medical"                 ) or
+       ( passedt.office     == "printing"                ) or
+       ( passedt.office     == "adoption_agency"         ) or
+       ( passedt.office     == "hospital"                ) or
+       ( passedt.office     == "translator"              ) or
+       ( passedt.office     == "software"                ) or
+       ( passedt.office     == "church"                  ) or
+       ( passedt.office     == "care_provider"           )) then
       passedt.office     = "nonspecific"
       passedt.landuse    = "unnamedcommercial"
       passedt.amenity    = nil
