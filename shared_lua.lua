@@ -8265,7 +8265,6 @@ function consolidate_lua_03_t( passedt )
          ( passedt.information == "board;map"                        )    or
          ( passedt.information == "board;route_marker"               )    or
          ( passedt.information == "citymap"                          )    or
-         ( passedt.information == "departure times and destinations" )    or
          ( passedt.information == "electronic_board"                 )    or
          ( passedt.information == "estate_map"                       )    or
          ( passedt.information == "hikingmap"                        )    or

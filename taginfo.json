@@ -1961,7 +1961,6 @@
     { "key": "information", "value": "board;route_marker", "description": "Synonym for 'tourism=information'; 'information=board'.  Shown as a brown 'i' next to a brown board", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/informationboard.png" },
     { "key": "information", "value": "centre", "description": "Treated as information office" },
     { "key": "information", "value": "citymap", "description": "Synonym for 'tourism=information'; 'information=board'.  Shown as a brown 'i' next to a brown board", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/informationboard.png" },
-    { "key": "information", "value": "departure times and destinations", "description": "Treated as information board" },
     { "key": "information", "value": "desk", "description": "Treated as information office" },
     { "key": "information", "value": "electronic_board", "description": "Synonym for 'tourism=information'; 'information=board'.  Shown as a brown 'i' next to a brown board", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/informationboard.png" },
     { "key": "information", "value": "estate_map", "description": "Synonym for 'tourism=information'; 'information=board'.  Shown as a brown 'i' next to a brown board", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/informationboard.png" },
