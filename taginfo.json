@@ -1966,7 +1966,6 @@
     { "key": "information", "value": "electronic_board", "description": "Synonym for 'tourism=information'; 'information=board'.  Shown as a brown 'i' next to a brown board", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/informationboard.png" },
     { "key": "information", "value": "estate_map", "description": "Synonym for 'tourism=information'; 'information=board'.  Shown as a brown 'i' next to a brown board", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/informationboard.png" },
     { "key": "information", "value": "fingerpost", "description": "Treated as information guidepost" },
-    { "key": "information", "value": "former_telephone_box", "description": "Treated as information board" },
     { "key": "information", "value": "guidepost", "description": "Shown as 'i' with brown sign", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/informationmarker.png" },
     { "key": "information", "value": "handcrank_powered_speaker", "description": "Treated as information audioguide" },
     { "key": "information", "value": "hikingmap", "description": "Synonym for 'tourism=information'; 'information=board'.  Shown as a brown 'i' next to a brown board", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/informationboard.png" },

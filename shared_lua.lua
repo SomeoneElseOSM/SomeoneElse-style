@@ -8268,7 +8268,6 @@ function consolidate_lua_03_t( passedt )
          ( passedt.information == "departure times and destinations" )    or
          ( passedt.information == "electronic_board"                 )    or
          ( passedt.information == "estate_map"                       )    or
-         ( passedt.information == "former_telephone_box"             )    or
          ( passedt.information == "hikingmap"                        )    or
          ( passedt.information == "history"                          )    or
          ( passedt.information == "hospital map"                     )    or
