@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20260130T151404Z",
+  "data_updated": "20260130T151405Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -2731,10 +2731,12 @@
     { "key": "office", "value": "telecommunication", "description": "Most offices shown as black dots", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/office_nonspecific.p.16.png" },
     { "key": "office", "value": "therapist", "description": "Most offices shown as black dots", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/office_nonspecific.p.16.png" },
     { "key": "office", "value": "training", "description": "Most offices shown as black dots", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/office_nonspecific.p.16.png" },
+    { "key": "office", "value": "trade_union", "description": "Most offices shown as black dots", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/office_nonspecific.p.16.png" },
     { "key": "office", "value": "translator", "description": "Most offices shown as black dots", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/office_nonspecific.p.16.png" },
     { "key": "office", "value": "transport", "description": "Most offices shown as black dots", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/office_nonspecific.p.16.png" },
     { "key": "office", "value": "travel_agent", "description": "Most offices shown as black dots" },
     { "key": "office", "value": "tutoring", "description": "Shown as a purple dot ('nonspecific shop')", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/shopping_nonspecific.p.16.png" },
+    { "key": "office", "value": "union", "description": "Most offices shown as black dots", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/office_nonspecific.p.16.png" },
     { "key": "office", "value": "university", "description": "Most offices shown as black dots", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/office_nonspecific.p.16.png" },
     { "key": "office", "value": "vacant", "description": "Most offices shown as black dots", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/office_nonspecific.p.16.png" },
     { "key": "office", "value": "water_utility", "description": "Most offices shown as black dots", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/office_nonspecific.p.16.png" },

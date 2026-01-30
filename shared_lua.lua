@@ -11465,7 +11465,9 @@ function consolidate_lua_04_t( passedt )
        ( passedt.office     == "translator"              ) or
        ( passedt.office     == "software"                ) or
        ( passedt.office     == "church"                  ) or
-       ( passedt.office     == "care_provider"           )) then
+       ( passedt.office     == "care_provider"           ) or
+       ( passedt.office     == "union"                   ) or
+       ( passedt.office     == "trade_union"             )) then
       passedt.office     = "nonspecific"
       passedt.landuse    = "unnamedcommercial"
       passedt.amenity    = nil
