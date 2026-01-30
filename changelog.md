@@ -1,7 +1,7 @@
 # Changes made to this rendering
 This page describes changes made in these projects: [SomeoneElse-style](https://github.com/SomeoneElseOSM/SomeoneElse-style), [SomeoneElse-style-legend](https://github.com/SomeoneElseOSM/SomeoneElse-style-legend) and [openstreetmap-carto-AJT](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT), and visible [on this site](//map.atownsend.org.uk/maps/map/map.html).  Since 2025 this also includes changes to lua code shared between raster and vector processing - hence the notes below about which a particular change applies to.  See [this changelog](https://github.com/SomeoneElseOSM/SomeoneElse-vector-extract/blob/main/resources/changelog_sve01.md) for where changes here affect the vector schema, and also other vector-only ones.
 
-## As yet unreleased
+## 30/01/2026
 (raster, vector) Include some `cycleway:left` values in deciding when there is a `sidewalk`.
 (raster, vector) Handle `emergency=bleed_control_kit` in a similar way to `defibrillator`, but with a unique value.
 (raster, vector) Handle `emergency=emergency_ward_entrance` in a similar way to `entrance=main`.
@@ -10,7 +10,7 @@ This page describes changes made in these projects: [SomeoneElse-style](https://
 (raster, vector) Handle `office=property_management` in a similar way to other property offices.
 (raster, vector) Handle various commercial and noncommercial offices as generic offices.
 
-## Raster as yet unreleased, vector 18/01/2026
+## Raster 30/01/2026, vector 18/01/2026
 (raster, vector) On bus stops use a smarter combination of `name`, `ref`, `local_ref` and `naptan:Indicator`.  Avoid duplication.
 
 ## 17/01/2025
