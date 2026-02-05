@@ -3878,7 +3878,7 @@ function consolidate_lua_03_t( passedt )
         ( passedt.meadow   == "pasture"                    )  or
         ( passedt.produce  == "turf"                       )  or
         ( passedt.produce  == "grass"                      )  or
-        ( passedt.produce  == "Silage"                     )  or
+        ( passedt.produce  == "silage"                     )  or
         ( passedt.produce  == "cow"                        )  or
         ( passedt.produce  == "cattle"                     )  or
         ( passedt.produce  == "milk"                       )  or
