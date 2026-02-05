@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20260201T205503Z",
+  "data_updated": "20260205T112101Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -38,7 +38,7 @@
     { "key": "access", "value": "permissive", "description": "On parking, one of several 'yes' values" },
     { "key": "access", "value": "permit", "description": "Treated the same as 'no'" },
     { "key": "access", "value": "private", "description": "Treated the same as 'no'" },
-    { "key": "access", "value": "public", "description": "One of several 'yes' values" },
+    { "key": "access", "value": "public", "description": "Not a current value in OSM data.  One of several 'yes' values" },
     { "key": "access", "value": "residents", "description": "Treated the same as 'no'" },
     { "key": "access", "value": "school", "description": "Treated the same as 'no'" },
     { "key": "access", "value": "staff", "description": "Treated the same as 'no'" },
