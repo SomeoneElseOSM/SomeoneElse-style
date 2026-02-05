@@ -1074,10 +1074,17 @@ function filter_tags_relation_member (keyvalues, keyvaluemembers, roles, memberc
 
 -- ----------------------------------------------------------------------------
 -- Horse networks
+--
+-- In most cases we just use "network" to look for things like walking and
+-- cycling networks.  If a cycle network has no "network" tag we ignore it as
+-- likely not very important; likewise foot.  "horse" is the exception.
 -- ----------------------------------------------------------------------------
-      if (( keyvalues["network"] == "nhn"         ) or
-          ( keyvalues["network"] == "rhn"         )  or
-          ( keyvalues["network"] == "ncn;nhn;nwn" )) then
+      if (((  keyvalues["route"]   == "horse"       )   and
+           (( keyvalues["network"] == nil          )    or
+            ( keyvalues["network"] == ""           )))  or
+          (   keyvalues["network"] == "nhn"          )  or
+          (   keyvalues["network"] == "rhn"          )  or
+          (   keyvalues["network"] == "ncn;nhn;nwn"  )) then
          keyvalues["highway"] = "ldpnhn"
       end
 

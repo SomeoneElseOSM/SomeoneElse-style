@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20260205T112101Z",
+  "data_updated": "20260205T112102Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -3039,6 +3039,7 @@
     { "key": "room", "description": "Used as one of the keys that real_ale can hang off" },
     { "key": "route", "description": "Detect MTB networks, display ferry routes" },
     { "key": "route", "value": "ferry", "description": "Show ferry routes" },
+    { "key": "route", "value": "horse", "description": "Detect horse routes not tagged as 'network'" },
     { "key": "route", "value": "mtb", "description": "Detect MTB networks" },
     { "key": "ruined:building", "description": "Detect ruins" },
     { "key": "ruined:building", "value": "yes", "description": "Detect ruins" },
