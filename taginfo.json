@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20260205T112102Z",
+  "data_updated": "20260205T112103Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -2372,10 +2372,12 @@
     { "key": "meadow", "value": "cut", "description": "Show agricultural meadows as mid-way between meadow and farmland ('#eeefda'" },
     { "key": "meadow", "value": "hay", "description": "Show agricultural meadows as mid-way between meadow and farmland ('#eeefda'" },
     { "key": "meadow", "value": "managed", "description": "Show agricultural meadows as mid-way between meadow and farmland ('#eeefda'" },
+    { "key": "meadow", "value": "mown", "description": "Show agricultural meadows as mid-way between meadow and farmland ('#eeefda'" },
     { "key": "meadow", "value": "paddock", "description": "Show grassy farmland as mid-way between meadow and farmland ('#eeefda')" },
     { "key": "meadow", "value": "pasture", "description": "Show grassy farmland as mid-way between meadow and farmland ('#eeefda')" },
     { "key": "meadow", "value": "perpetual", "description": "Show as meadow with green dots" },
     { "key": "meadow", "value": "transitional", "description": "Show as meadow with brown dots" },
+    { "key": "meadow", "value": "wet_meadow", "description": "Show wet meadow wetlands as such" },
     { "key": "meadow", "value": "wildflower", "description": "Show as meadow with red dots" },
     { "key": "megalith_type", "description": "Used to identify standing and Ogham stones" },
     { "key": "megalith_type", "value": "alignment", "description": "Shown as a pair of standing stones in historic red", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/historic_stone_row.png" },

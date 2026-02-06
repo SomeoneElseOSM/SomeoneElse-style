@@ -2359,7 +2359,8 @@ function consolidate_lua_03_t( passedt )
 -- leisure=park, and no natural, landuse or leisure tags.
 -- In many cases we don't set natural=wetland, but in some we do.
 -- ----------------------------------------------------------------------------
-   if ((  passedt.wetland == "wet_meadow"  ) and
+   if ((( passedt.wetland == "wet_meadow" )  or
+        ( passedt.meadow  == "wet_meadow" )) and
        (( passedt.natural == nil          )  or
         ( passedt.natural == ""           )  or
         ( passedt.natural == "grassland"  )) and
@@ -2369,6 +2370,7 @@ function consolidate_lua_03_t( passedt )
         ( passedt.landuse == ""           )  or
         ( passedt.landuse == "meadow"     ))) then
       passedt.natural = "wetland"
+      passedt.landuse = nil
    end
 
 -- ----------------------------------------------------------------------------
@@ -3898,6 +3900,7 @@ function consolidate_lua_03_t( passedt )
         ( passedt.meadow   == "paddock"      )  or
         ( passedt.meadow   == "pasture"      )  or
         ( passedt.meadow   == "agriculture"  )  or
+        ( passedt.meadow   == "mown"         )  or
         ( passedt.meadow   == "hay"          )  or
         ( passedt.meadow   == "managed"      )  or
         ( passedt.meadow   == "cut"          )  or
