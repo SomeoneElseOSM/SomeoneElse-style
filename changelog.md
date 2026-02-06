@@ -5,6 +5,7 @@ This page describes changes made in these projects: [SomeoneElse-style](https://
 (raster, vector) Include some `route=horse` along with `network=nhn` etc. to show horse routes.
 (raster, vector) Detect wet meadows that are tagged as `meadow=wet_meadow`.
 (raster, vector) Treat `meadow=mown` like `meadow=hay`.
+(raster, vector) Handle more `sidewalk:both`, `sidewalk:left` and `sidewalk:right` values that indicate a sidewalk.
 
 ## 30/01/2026
 (raster, vector) Include some `cycleway:left` values in deciding when there is a `sidewalk`.

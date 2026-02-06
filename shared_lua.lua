@@ -13407,11 +13407,20 @@ function calculate_sidewalk_edge( passedt )
         (   passedt.sidewalk          == "right"               ) or 
         (   passedt.sidewalk          == "shared"              ) or 
         (   passedt.sidewalk          == "yes"                 ) or
+        (   passedt["sidewalk:both"]  == "lane"                ) or 
         (   passedt["sidewalk:both"]  == "separate"            ) or 
+        (   passedt["sidewalk:both"]  == "shared"              ) or
+        (   passedt["sidewalk:both"]  == "sidepath"            ) or
         (   passedt["sidewalk:both"]  == "yes"                 ) or
+        (   passedt["sidewalk:left"]  == "lane"                ) or 
         (   passedt["sidewalk:left"]  == "separate"            ) or 
+        (   passedt["sidewalk:left"]  == "shared"              ) or 
+        (   passedt["sidewalk:left"]  == "sidepath"            ) or 
         (   passedt["sidewalk:left"]  == "yes"                 ) or
+        (   passedt["sidewalk:right"] == "lane"                ) or 
         (   passedt["sidewalk:right"] == "separate"            ) or 
+        (   passedt["sidewalk:right"] == "shared"              ) or
+        (   passedt["sidewalk:right"] == "sidepath"            ) or
         (   passedt["sidewalk:right"] == "yes"                 ) or
         (   passedt.footway           == "separate"            ) or 
         (   passedt.footway           == "yes"                 ) or
