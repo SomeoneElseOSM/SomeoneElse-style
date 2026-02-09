@@ -3,6 +3,7 @@ This page describes changes made in these projects: [SomeoneElse-style](https://
 
 ## As yet unreleased
 (raster, vector) Handle `amenity=dressing_room`
+(raster, vector) Handle `amenity=reception_desk`
 
 ## Raster as yet unreleased, vector 09/02/2026
 (raster, vector) Include some `route=horse` along with `network=nhn` etc. to show horse routes.
