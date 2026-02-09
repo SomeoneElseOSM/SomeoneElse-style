@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20260205T112105Z",
+  "data_updated": "20260209T114301Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -257,6 +257,7 @@
     { "key": "amenity", "value": "kick-scooter_rental", "description": "Shown as blue key above blue scooter, name incorporates brand", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/rental_scooter.p.20.png" },
     { "key": "amenity", "value": "kindergarten", "description": "Landuse shown as education, name shown as per office=nonspecific" },
     { "key": "amenity", "value": "laboratory", "description": "Shown as a black dot", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/office_nonspecific.p.16.png" },
+    { "key": "amenity", "value": "language_school", "description": "Shown as a purple dot ('nonspecific shop')", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/shopping_nonspecific.p.16.png" },
     { "key": "amenity", "value": "lawyer", "description": "Most offices shown as black dots", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/office_nonspecific.p.16.png" },
     { "key": "amenity", "value": "layby", "description": "Synonym for 'amenity=parking'.  Shown as P, £ shown if pay, wheelchair shown if disabled, shown lighter if non-public, motorcycle shown differently", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/parking_free.png" },
     { "key": "amenity", "value": "left_luggage", "description": "Lockers shown with 'LL'", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/left_luggage.p.16.png" },

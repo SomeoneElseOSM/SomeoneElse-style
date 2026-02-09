@@ -10837,6 +10837,7 @@ function consolidate_lua_04_t( passedt )
          ( passedt.training == "language"           )   or
          ( passedt.training == "performing_arts"    ))) or
        ( passedt.amenity == "tutoring_centre"         ) or
+       ( passedt.amenity == "language_school"         ) or
        ( passedt.office  == "tutoring"                ) or
        ( passedt.shop    == "education"               ) or
        ( passedt.shop    == "ironing"                 ) or
