@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20260209T114301Z",
+  "data_updated": "20260209T114302Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -208,6 +208,7 @@
     { "key": "amenity", "value": "doctors; pharmacy", "description": "Synonym for doctors.  Shown as a pink cross in a pill bottle", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/health_doctors.p.16.png" },
     { "key": "amenity", "value": "dog_grooming", "description": "Synonym for 'pet_grooming'.  Shown as a purple pawprint with an 'G'", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/shop_pet_grooming.p.16.png" },
     { "key": "amenity", "value": "dojo", "description": "Shown as green dot ('nonspecific leisure')", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/leisure_nonspecific.p.16.png" },
+    { "key": "amenity", "value": "dressing_room", "description": "Shown as a black shirt in a room", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/amenity_dressing_room.png" },
     { "key": "amenity", "value": "drinking_water", "description": "Shown as brown tap and glass", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/tap_drinking.p.20.png" },
     { "key": "amenity", "value": "driving_school", "description": "Shown as a purple dot ('nonspecific shop')", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/shopping_nonspecific.p.16.png" },
     { "key": "amenity", "value": "education_centre", "description": "Most offices shown as black dots", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/office_nonspecific.p.16.png" },
