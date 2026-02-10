@@ -328,6 +328,7 @@
     { "key": "amenity", "value": "post_box", "description": "Shown as brown letter", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/post_box.p.16.png" },
     { "key": "amenity", "value": "post_depot", "description": "Most offices shown as black dots", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/office_nonspecific.p.16.png" },
     { "key": "amenity", "value": "post_office", "description": "Shown as brown letter in a circle", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/post_office.p.16.png" },
+    { "key": "amenity", "value": "prep_school", "description": "Shown as a purple dot ('nonspecific shop')", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/shopping_nonspecific.p.16.png" },
     { "key": "amenity", "value": "preschool", "description": "Shown as a pink dot ('nonspecific health')", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/health_nonspecific.p.16.png" },
     { "key": "amenity", "value": "printer", "description": "Synonym for office=nonspecific" },
     { "key": "amenity", "value": "prison", "description": "Shown as brown prison bars", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/amenity_prison.p.20.png" },
