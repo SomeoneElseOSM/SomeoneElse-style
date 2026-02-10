@@ -1436,7 +1436,8 @@ function consolidate_lua_03_t( passedt )
 -- ----------------------------------------------------------------------------
    if ((  passedt.highway    == "tertiary_sidewalk" )  and
        (( passedt.oneway     == nil                )   or
-        ( passedt.oneway     == ""                 ))  and
+        ( passedt.oneway     == ""                 )   or
+        ( passedt.oneway     == "no"               ))  and
        (( passedt.junction   == nil                )   or
         ( passedt.junction   == ""                 ))  and
        ((( tonumber(passedt.width)    or 4 ) <=  3 ) or
@@ -1453,7 +1454,8 @@ function consolidate_lua_03_t( passedt )
 -- ----------------------------------------------------------------------------
    if ((  passedt.highway        == "tertiary_sidewalk" )  and
        (( passedt.oneway         == nil                )   or
-        ( passedt.oneway         == ""                 ))  and
+        ( passedt.oneway         == ""                 )   or
+        ( passedt.oneway         == "no"               ))  and
        (( passedt.junction       == nil                )   or
         ( passedt.junction       == ""                 ))  and
        (( passedt.lanes          == nil                )   or
@@ -1476,7 +1478,8 @@ function consolidate_lua_03_t( passedt )
 -- ----------------------------------------------------------------------------
    if ((  passedt.highway    == "tertiary_verge"  )  and
        (( passedt.oneway     == nil              )   or
-        ( passedt.oneway     == ""               ))  and
+        ( passedt.oneway     == ""               )   or
+        ( passedt.oneway     == "no"             ))  and
        (( passedt.junction   == nil              )   or
         ( passedt.junction   == ""               ))  and
        ((( tonumber(passedt.width)    or 4 ) <=  3 ) or
@@ -1493,7 +1496,8 @@ function consolidate_lua_03_t( passedt )
 -- ----------------------------------------------------------------------------
    if ((  passedt.highway        == "tertiary_verge"    )  and
        (( passedt.oneway         == nil                )   or
-        ( passedt.oneway         == ""                 ))  and
+        ( passedt.oneway         == ""                 )   or
+        ( passedt.oneway         == "no"               ))  and
        (( passedt.junction       == nil                )   or
         ( passedt.junction       == ""                 ))  and
        (( passedt.lanes          == nil                )   or
@@ -1515,7 +1519,8 @@ function consolidate_lua_03_t( passedt )
 -- ----------------------------------------------------------------------------
    if ((  passedt.highway    == "tertiary"  )  and
        (( passedt.oneway     == nil        )   or
-        ( passedt.oneway     == ""         ))  and
+        ( passedt.oneway     == ""         )   or
+        ( passedt.oneway     == "no"       ))  and
        (( passedt.junction   == nil        )   or
         ( passedt.junction   == ""         ))  and
        ((( tonumber(passedt.width)    or 4 ) <=  3 ) or
@@ -1532,7 +1537,8 @@ function consolidate_lua_03_t( passedt )
 -- ----------------------------------------------------------------------------
    if ((  passedt.highway        == "tertiary"          )  and
        (( passedt.oneway         == nil                )   or
-        ( passedt.oneway         == ""                 ))  and
+        ( passedt.oneway         == ""                 )   or
+        ( passedt.oneway         == "no"               ))  and
        (( passedt.junction       == nil                )   or
         ( passedt.junction       == ""                 ))  and
        (( passedt.lanes          == nil                )   or

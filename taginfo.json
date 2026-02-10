@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20260209T114302Z",
+  "data_updated": "20260210T214301Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -2781,6 +2781,9 @@
     { "key": "old_amenity", "value": "telephone", "description": "Detect Former telephone boxes" },
     { "key": "old_name", "description": "Explicitly used as the name for some object types when current name is nil" },
     { "key": "oneway", "description": "Oneway arrow on roads" },
+    { "key": "oneway", "value": "-1", "description": "Show oneway arrow on roads" },
+    { "key": "oneway", "value": "no", "description": "Exclude from meaning 'oneway' arrow on circular roads" },
+    { "key": "oneway", "value": "yes", "description": "Show oneway arrow on roads" },
     { "key": "opening_hours", "description": "Detect closed pubs" },
     { "key": "opening_hours", "value": "closed", "description": "Detect closed pubs" },
     { "key": "opening_hours", "value": "24/7 closed", "description": "Synonym for 'closed'" },
