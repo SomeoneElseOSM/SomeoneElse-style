@@ -1186,13 +1186,15 @@ function consolidate_lua_01_t( passedt )
 -- If motor_vehicle=no is set on a BOAT, it's probably a TRO, so display as
 -- an RBY instead
 -- ----------------------------------------------------------------------------
-   if (( passedt.highway       == "boatwide"    )  and
-       ( passedt.motor_vehicle == "no"          )) then
+   if ((  passedt.highway       == "boatwide"    )  and
+       (( passedt.motorcar      == "no"         )   or
+        ( passedt.motor_vehicle == "no"         ))) then
       passedt.highway = "rbywide"
    end
 
-   if (( passedt.highway       == "boatnarrow"  )  and
-       ( passedt.motor_vehicle == "no"          )) then
+   if ((  passedt.highway       == "boatnarrow"  )  and
+       (( passedt.motorcar      == "no"         )   or
+        ( passedt.motor_vehicle == "no"         ))) then
       passedt.highway = "rbynarrow"
    end
 
@@ -6259,32 +6261,36 @@ function consolidate_lua_03_t( passedt )
 -- ----------------------------------------------------------------------------
 -- Display intermittent rivers as "intriver"
 -- ----------------------------------------------------------------------------
-   if (( passedt.waterway     == "river"  )  and
-       ( passedt.intermittent == "yes"    )) then
+   if ((  passedt.waterway     == "river"  )  and
+       (( passedt.intermittent == "yes"   )   or
+        ( passedt.intermittent == "dry"   ))) then
       passedt.waterway = "intriver"
    end
 
 -- ----------------------------------------------------------------------------
 -- Display intermittent stream as "intstream"
 -- ----------------------------------------------------------------------------
-   if (( passedt.waterway     == "stream"  )  and
-       ( passedt.intermittent == "yes"     )) then
+   if ((  passedt.waterway     == "stream"  )  and
+       (( passedt.intermittent == "yes"    )   or
+        ( passedt.intermittent == "dry"    ))) then
       passedt.waterway = "intstream"
    end
 
 -- ----------------------------------------------------------------------------
 -- Display intermittent drains as "intdrain"
 -- ----------------------------------------------------------------------------
-   if (( passedt.waterway     == "drain"  )  and
-       ( passedt.intermittent == "yes"    )) then
+   if ((  passedt.waterway     == "drain"  )  and
+       (( passedt.intermittent == "yes"   )   or
+        ( passedt.intermittent == "dry"   ))) then
       passedt.waterway = "intdrain"
    end
 
 -- ----------------------------------------------------------------------------
 -- Display intermittent ditches as "intditch"
 -- ----------------------------------------------------------------------------
-   if (( passedt.waterway     == "ditch"  )  and
-       ( passedt.intermittent == "yes"    )) then
+   if ((  passedt.waterway     == "ditch"  )  and
+       (( passedt.intermittent == "yes"   )   or
+        ( passedt.intermittent == "dry"   ))) then
       passedt.waterway = "intditch"
    end
 
@@ -7463,9 +7469,10 @@ function consolidate_lua_03_t( passedt )
 -- ----------------------------------------------------------------------------
 -- Handle intermittent water areas.
 -- ----------------------------------------------------------------------------
-   if ((( passedt.natural      == "water"  )  or
-        ( passedt.landuse      == "basin"  )) and
-       ( passedt.intermittent == "yes"      )) then
+   if ((( passedt.natural      == "water"  )    or
+        ( passedt.landuse      == "basin"  ))   and
+       (( passedt.intermittent == "yes"    )   or
+        ( passedt.intermittent == "dry"    ))) then
       passedt.natural = "intermittentwater"
       passedt.landuse = nil
    end
@@ -7507,8 +7514,9 @@ function consolidate_lua_03_t( passedt )
 -- ----------------------------------------------------------------------------
 -- Handle intermittent wetland areas.
 -- ----------------------------------------------------------------------------
-   if (( passedt.natural      == "wetland"  )  and
-       ( passedt.intermittent == "yes"      )) then
+   if ((  passedt.natural      == "wetland"  )  and
+       (( passedt.intermittent == "yes"     )   or
+        ( passedt.intermittent == "dry"     ))) then
       passedt.natural = "intermittentwetland"
    end
 

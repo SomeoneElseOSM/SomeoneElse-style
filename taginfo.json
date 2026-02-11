@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20260210T214301Z",
+  "data_updated": "20260210T214303Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -2034,6 +2034,7 @@
     { "key": "information", "value": "visitor_centre", "description": "Treated as information office" },
     { "key": "inscription", "description": "Appended to names of historic and boundary stones" },
     { "key": "intermittent", "description": "Intermittent waterways and wetland" },
+    { "key": "intermittent", "value": "dry", "description": "Intermittent waterways and wetland" },
     { "key": "intermittent", "value": "yes", "description": "Intermittent waterways and wetland" },
     { "key": "is_sidepath", "description": "Suppress names on roadside footpaths" },
     { "key": "is_sidepath", "value": "yes", "description": "Suppress names on roadside footpaths" },
@@ -2487,6 +2488,8 @@
     { "key": "monitoring:wind_direction", "value": "yes", "description": "Detect wind direction monitoring stations" },
     { "key": "monitoring:wind_speed", "description": "Detect wind speed monitoring stations" },
     { "key": "monitoring:wind_speed", "value": "yes", "description": "Detect wind speed monitoring stations" },
+    { "key": "motorcar", "description": "Detect whether a BOAT might have a TRO on it; if so, display as a restricted byway" },
+    { "key": "motorcar", "value": "no", "description": "Detect whether a BOAT might have a TRO on it; if so, display as a restricted byway" },
     { "key": "motor_vehicle", "description": "Detect whether a BOAT might have a TRO on it; if so, display as a restricted byway" },
     { "key": "motor_vehicle", "value": "no", "description": "Detect whether a BOAT might have a TRO on it; if so, display as a restricted byway" },
     { "key": "munro", "description": "Detect big peaks (munros) and prominent peaks" },

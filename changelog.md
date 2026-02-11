@@ -7,6 +7,8 @@ This page describes changes made in these projects: [SomeoneElse-style](https://
 (raster, vector) Handle `amenity=payment_terminal`
 (raster, vector) Added `amenity=prep_school` to list of nonspecific shops.
 (raster, vector) Fixed bug whereby `oneway=no` was missed when deciding if a road was one way or not.
+(raster, vector) Handle `intermittent=dry` as intermittent.
+(raster, vector) Use `motorcar` on BOATs in the same way as `motor_vehicle` to check for TROs.
 
 ## Raster as yet unreleased, vector 09/02/2026
 (raster, vector) Include some `route=horse` along with `network=nhn` etc. to show horse routes.
