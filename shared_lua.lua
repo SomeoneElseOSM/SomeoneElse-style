@@ -3321,6 +3321,17 @@ function consolidate_lua_03_t( passedt )
    end
 
 -- ----------------------------------------------------------------------------
+-- Before we start doing comparisons that include historic=wreck, make sure 
+-- that we have caught them all.
+-- ----------------------------------------------------------------------------
+   if ((  passedt["seamark:type"]              == "wreck"      ) and
+       (  passedt["seamark:wreck:water_level"] ~= "submerged"  ) and
+       (( passedt.historic                     == nil         )  or
+        ( passedt.historic                     == ""          ))) then
+      passedt.historic = "wreck"
+   end
+
+-- ----------------------------------------------------------------------------
 -- Things that are both viewpoints or attractions and monuments or memorials 
 -- should render as the latter.  Some are handled further down too.
 -- Also handle some other combinations.
