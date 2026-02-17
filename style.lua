@@ -485,6 +485,15 @@ function filter_tags_node (keyvalues, nokeys)
    end
 
 -- ----------------------------------------------------------------------------
+-- Before we start doing comparisons that include natural=rock, make sure 
+-- that we have caught them all.
+--
+-- The code to do this is shared between nodes and ways here (raster) and also
+-- vector.
+-- ----------------------------------------------------------------------------
+   consolidate_rock_t( keyvalues )
+
+-- ----------------------------------------------------------------------------
 -- Change natural=bare_rock and natural=rocks on nodes to natural=rock
 -- So that an icon (the all-black, non-climbing boulder one) is displayed
 -- ----------------------------------------------------------------------------
@@ -823,6 +832,15 @@ function filter_tags_way (keyvalues, nokeys)
       keyvalues["highway"] = "service"
       keyvalues["service"] = "driveway"
    end
+
+-- ----------------------------------------------------------------------------
+-- Before we start doing comparisons that include natural=rock, make sure 
+-- that we have caught them all.
+--
+-- The code to do this is shared between nodes and ways here (raster) and also
+-- vector.
+-- ----------------------------------------------------------------------------
+   consolidate_rock_t( keyvalues )
 
 -- ----------------------------------------------------------------------------
 -- natural=rock on ways to natural=bare_rock

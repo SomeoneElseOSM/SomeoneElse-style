@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20260215T152502Z",
+  "data_updated": "20260217T222601Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -3107,7 +3107,10 @@
     { "key": "seamark:type", "value": "coastguard_station", "description": "Coast guards" },
     { "key": "seamark:type", "value": "marine_farm", "description": "Show marine farms as commercial landuse" },
     { "key": "seamark:type", "value": "pipeline_submarine", "description": "Show pipelines" },
+    { "key": "seamark:type", "value": "rock", "description": "If not submerged, synonym for 'natural=rock' or 'natural=bare_rock' depending on whether node or way.  Ways are handled as 'natural=bare_rock', nodes as black boulders with black highlighting", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/rock.17.png" },
     { "key": "seamark:type", "value": "wreck", "description": "If not submerged, synonym for 'historic=wreck'.  Shown as building and as a historic red wreck", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/historic_wreck.png" },
+    { "key": "seamark:rock:water_level", "description": "Used to detect non-submerged rocks" },
+    { "key": "seamark:rock:water_level", "value": "submerged", "description": "Any value other than this is treated as not submerged" },
     { "key": "seamark:wreck:water_level", "description": "Used to detect non-submerged wrecks" },
     { "key": "seamark:wreck:water_level", "value": "submerged", "description": "Any value other than this is treated as not submerged" },
     { "key": "segregated", "description": "Detect sidewalks" },

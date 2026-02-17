@@ -13412,6 +13412,24 @@ function consolidate_place_t( passedt )
     end
 end -- consolidate_place_t()
 
+
+-- ----------------------------------------------------------------------------
+-- Before we start doing comparisons that include natural=rock, make sure 
+-- that we have caught them all.
+--
+-- The code to do this is shared between nodes and ways on both
+-- raster and vector.
+-- ----------------------------------------------------------------------------
+function consolidate_rock_t( passedt )
+   if ((  passedt["seamark:type"]             == "rock"       ) and
+       (  passedt["seamark:rock:water_level"] ~= "submerged"  ) and
+       (( passedt.natural                     == nil         )  or
+        ( passedt.natural                     == ""          ))) then
+      passedt.natural = "rock"
+   end
+end -- function consolidate_rock_t( passedt )
+
+
 function trim_after_semicolon( passed_field )
    if ( passed_field ~= nil ) then
       commapos = string.find( passed_field, ";", 1, true )
