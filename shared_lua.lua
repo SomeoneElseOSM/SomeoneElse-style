@@ -9304,6 +9304,17 @@ function consolidate_lua_03_t( passedt )
       passedt.amenity = nil
       passedt.historic = "massrock"
    end
+
+-- ----------------------------------------------------------------------------
+-- Before we start doing comparisons that include leisure=slipway, make sure 
+-- that we have caught them all.
+-- ----------------------------------------------------------------------------
+   if ((  passedt["seamark:type"]                          == "small_craft_facility"  ) and
+       (  passedt["seamark:small_craft_facility:category"] == "slipway"               ) and
+       (( passedt.leisure                                  == nil                    )  or
+        ( passedt.leisure                                  == ""                     ))) then
+      passedt.leisure = "slipway"
+   end
 end -- consolidate_lua_03_t( passedt )
 
 
