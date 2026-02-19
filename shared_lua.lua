@@ -1667,6 +1667,17 @@ function consolidate_lua_03_t( passedt )
    end
 
 -- ----------------------------------------------------------------------------
+-- Before we start doing comparisons that include amenity=fuel_station, 
+-- make sure that we have caught them all.
+-- ----------------------------------------------------------------------------
+   if ((  passedt["seamark:type"]                          == "small_craft_facility"  ) and
+       (  passedt["seamark:small_craft_facility:category"] == "fuel_station"          ) and
+       (( passedt.amenity                                  == nil                    )  or
+        ( passedt.amenity                                  == ""                     ))) then
+      passedt.amenity = "fuel"
+   end
+
+-- ----------------------------------------------------------------------------
 -- Alleged petrol stations that only do fuel:electricity are probably 
 -- actually charging stations.
 --
