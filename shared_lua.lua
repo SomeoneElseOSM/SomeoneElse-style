@@ -9326,6 +9326,17 @@ function consolidate_lua_03_t( passedt )
         ( passedt.leisure                                  == ""                     ))) then
       passedt.leisure = "slipway"
    end
+
+-- ----------------------------------------------------------------------------
+-- Before we start doing comparisons that include man_made=water_tap, make sure 
+-- that we have caught them all.
+-- ----------------------------------------------------------------------------
+   if ((  passedt["seamark:type"]                          == "small_craft_facility"  ) and
+       (  passedt["seamark:small_craft_facility:category"] == "water_tap"             ) and
+       (( passedt.man_made                                 == nil                    )  or
+        ( passedt.man_made                                 == ""                     ))) then
+      passedt.man_made = "water_tap"
+   end
 end -- consolidate_lua_03_t( passedt )
 
 
