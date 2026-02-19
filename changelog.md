@@ -4,6 +4,7 @@ This page describes changes made in these projects: [SomeoneElse-style](https://
 ## As yet unreleeased
 (raster, vector) Detect rocks that have `seamark` and not `natural` tags.
 (raster, vector) Detect slipways that have `seamark` and not `leisure` tags.
+(raster, vector) Detect cranes that have `seamark` and not `man_made` tags.
 
 ## 15/02/2026
 (raster, vector) Handle `amenity=dressing_room`

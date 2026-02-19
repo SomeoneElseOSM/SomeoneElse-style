@@ -1797,6 +1797,17 @@ function consolidate_lua_03_t( passedt )
    end
 
 -- ----------------------------------------------------------------------------
+-- Before we start doing comparisons that include man_made=crane, make sure 
+-- that we have caught them all.
+-- ----------------------------------------------------------------------------
+   if ((  passedt["seamark:type"]                          == "small_craft_facility"  ) and
+       (  passedt["seamark:small_craft_facility:category"] == "boat_hoist"            ) and
+       (( passedt.man_made                                 == nil                    )  or
+        ( passedt.man_made                                 == ""                     ))) then
+      passedt.man_made = "crane"
+   end
+
+-- ----------------------------------------------------------------------------
 -- Other "almost buildings - display as building=roof.
 -- Also farmyard "bunker silos" and canopies, and natural arches.
 -- Also railway traversers and more.
