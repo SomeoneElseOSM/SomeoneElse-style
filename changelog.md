@@ -6,6 +6,7 @@ This page describes changes made in these projects: [SomeoneElse-style](https://
 (raster, vector) Detect slipways that have `seamark` and not `leisure` tags.
 (raster, vector) Detect cranes that have `seamark` and not `man_made` tags.
 (raster, vector) Detect taps that have `seamark` and not `man_made` tags.
+(raster, vector) Detect toilets that have `seamark` and not `amenity` tags.
 
 ## 15/02/2026
 (raster, vector) Handle `amenity=dressing_room`

@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20260217T222604Z",
+  "data_updated": "20260217T222605Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -3106,6 +3106,7 @@
     { "key": "seamark:small_craft_facility:category", "description": "Slipways and cranes" },
     { "key": "seamark:small_craft_facility:category", "value": "boat_hoist", "description": "Cranes" },
     { "key": "seamark:small_craft_facility:category", "value": "slipway", "description": "Slipways" },
+    { "key": "seamark:small_craft_facility:category", "value": "toilets", "description": "Toilets" },
     { "key": "seamark:small_craft_facility:category", "value": "water_tap", "description": "Water taps" },
     { "key": "seamark:type", "description": "Detect some seamark tags that are regular OSM features not mapped with regular OSM tags" },
     { "key": "seamark:type", "value": "coastguard_station", "description": "Coast guards" },
