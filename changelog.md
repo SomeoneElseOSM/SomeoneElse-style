@@ -9,6 +9,7 @@ This page describes changes made in these projects: [SomeoneElse-style](https://
 (raster, vector) Detect toilets that have `seamark` but not `amenity` tags.
 (raster, vector) Detect fuel that has `seamark` but not `amenity` tags.
 (raster, vector) Detect platforms that have `seamark` but not `building` tags.
+(raster, vector) Detect linear barriers that have `seamark` but not other tags.
 
 ## 15/02/2026
 (raster, vector) Handle `amenity=dressing_room`

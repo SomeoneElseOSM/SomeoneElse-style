@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20260220T174401Z",
+  "data_updated": "20260220T174402Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -3101,6 +3101,11 @@
     { "key": "school", "value": "entrance", "description": "Detect school entrances" },
     { "key": "scramble", "description": "Shown as intermediate trail" },
     { "key": "scramble", "value": "yes", "description": "Shown as intermediate trail" },
+    { "key": "seamark:obstruction:category", "description": "Detect obstructions only mapped as seamarks" },
+    { "key": "seamark:obstruction:category", "value": "foul_area", "description": "Detect obstructions only mapped as seamarks" },
+    { "key": "seamark:obstruction:category", "value": "foul_ground", "description": "Detect obstructions only mapped as seamarks" },
+    { "key": "seamark:obstruction:water_level", "description": "Detect obstructions only mapped as seamarks" },
+    { "key": "seamark:obstruction:water_level", "value": "submerged", "description": "Detect obstructions only mapped as seamarks" },
     { "key": "seamark:rescue_station:category", "description": "Lifeboats" },
     { "key": "seamark:rescue_station:category", "value": "lifeboat_on_mooring", "description": "Lifeboats" },
     { "key": "seamark:small_craft_facility:category", "description": "Slipways and cranes" },
