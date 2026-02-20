@@ -414,7 +414,8 @@ function filter_tags_node (keyvalues, nokeys)
        ( keyvalues["ford"] == "intermittent"   ) or
        ( keyvalues["ford"] == "seasonal"       ) or
        ( keyvalues["ford"] == "stream"         ) or
-       ( keyvalues["ford"] == "tidal"          )) then
+       ( keyvalues["ford"] == "tidal"          ) or
+       ( keyvalues["ford"] == "boat"           )) then
       keyvalues["ford"] = "yes"
    end
 
@@ -651,7 +652,8 @@ function filter_tags_way (keyvalues, nokeys)
        ( keyvalues["ford"] == "intermittent"   ) or
        ( keyvalues["ford"] == "seasonal"       ) or
        ( keyvalues["ford"] == "stream"         ) or
-       ( keyvalues["ford"] == "tidal"          )) then
+       ( keyvalues["ford"] == "tidal"          ) or
+       ( keyvalues["ford"] == "boat"           )) then
       keyvalues["ford"] = "yes"
    end
 
