@@ -1830,6 +1830,16 @@ function consolidate_lua_03_t( passedt )
    end
 
 -- ----------------------------------------------------------------------------
+-- Before we start doing comparisons that include amenity=toilets, make sure 
+-- that we have caught them all.
+-- ----------------------------------------------------------------------------
+   if ((  passedt["seamark:type"]                          == "platform"              ) and
+       (( passedt.building                                 == nil                    )  or
+        ( passedt.building                                 == ""                     ))) then
+      passedt.building = "roof"
+   end
+
+-- ----------------------------------------------------------------------------
 -- Other "almost buildings - display as building=roof.
 -- Also farmyard "bunker silos" and canopies, and natural arches.
 -- Also railway traversers and more.
