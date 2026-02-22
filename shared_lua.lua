@@ -9476,7 +9476,6 @@ function consolidate_lua_04_t( passedt )
 -- popular tagging but "variety" is also used.
 -- ----------------------------------------------------------------------------
    if (( passedt.shop   == "variety"       ) or
-       ( passedt.shop   == "pound"         ) or
        ( passedt.shop   == "thrift"        ) or
        ( passedt.shop   == "variety_store" )) then
       passedt.shop = "discount"

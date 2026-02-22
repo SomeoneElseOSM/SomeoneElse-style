@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20260220T174402Z",
+  "data_updated": "20260222T131101Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -3658,7 +3658,6 @@
     { "key": "shop", "value": "plumbing_supplies", "description": "Shown as furniture" },
     { "key": "shop", "value": "popup", "description": "Shown as a purple dot ('nonspecific shop')", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/shopping_nonspecific.p.16.png" },
     { "key": "shop", "value": "pottery", "description": "Shown as a synonym for 'art'" },
-    { "key": "shop", "value": "pound", "description": "Various shops shown" },
     { "key": "shop", "value": "print", "description": "Synonym for 'shop=copyshop'.  Shown as two a4 pieces of paper", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/shop_copyshop.png" },
     { "key": "shop", "value": "printer", "description": "Synonym for 'shop=copyshop'.  Shown as two a4 pieces of paper", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/shop_copyshop.png" },
     { "key": "shop", "value": "printer_ink", "description": "Various shops shown" },

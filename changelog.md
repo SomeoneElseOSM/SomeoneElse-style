@@ -11,6 +11,7 @@ This page describes changes made in these projects: [SomeoneElse-style](https://
 (raster, vector) Detect platforms that have `seamark` but not `building` tags.
 (raster, vector) Detect linear barriers that have `seamark` but not other tags.
 (raster, vector) Detect `ford=boat` as a ford.
+(raster, vector) Removed `shop=pound`; no longer in the data.
 
 ## 15/02/2026
 (raster, vector) Handle `amenity=dressing_room`

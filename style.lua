@@ -901,21 +901,21 @@ function filter_tags_way (keyvalues, nokeys)
 -- Before we start doing comparisons that include waterway=floating_barrier, make sure 
 -- that we have caught them all.
 -- ----------------------------------------------------------------------------
-   if ((  passedt["seamark:type"]                    == "obstruction"  )  and
-       (  passedt["seamark:obstruction:category"]    ~= "foul_area"    )  and
-       (  passedt["seamark:obstruction:category"]    ~= "foul_ground"  )  and
-       (  passedt["seamark:obstruction:water_level"] ~= "submerged"    )  and
-       (( passedt["barrier"]                         == nil            )  or
-        ( passedt["barrier"]                         == ""             )) an
-       (( passedt["landuse"]                         == nil            )  or
-        ( passedt["landuse"]                         == ""             )) and
-       (( passedt["man_made"]                        == nil            )  or
-        ( passedt["man_made"]                        == ""             )) and
-       (( passedt["natural"]                         == nil            )  or
-        ( passedt["natural"]                         == ""             )) and
-       (( passedt["waterway"]                        == nil            )  or
-        ( passedt["waterway"]                        == ""             ))) then
-      passedt.waterway = "floating_barrier"
+   if ((  keyvalues["seamark:type"]                    == "obstruction"  )  and
+       (  keyvalues["seamark:obstruction:category"]    ~= "foul_area"    )  and
+       (  keyvalues["seamark:obstruction:category"]    ~= "foul_ground"  )  and
+       (  keyvalues["seamark:obstruction:water_level"] ~= "submerged"    )  and
+       (( keyvalues["barrier"]                         == nil            )  or
+        ( keyvalues["barrier"]                         == ""             )) and
+       (( keyvalues["landuse"]                         == nil            )  or
+        ( keyvalues["landuse"]                         == ""             )) and
+       (( keyvalues["man_made"]                        == nil            )  or
+        ( keyvalues["man_made"]                        == ""             )) and
+       (( keyvalues["natural"]                         == nil            )  or
+        ( keyvalues["natural"]                         == ""             )) and
+       (( keyvalues["waterway"]                        == nil            )  or
+        ( keyvalues["waterway"]                        == ""             ))) then
+      keyvalues["waterway"] = "floating_barrier"
    end
 
 -- ----------------------------------------------------------------------------
