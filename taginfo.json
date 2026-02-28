@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20260227T225501Z",
+  "data_updated": "20260227T225502Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -1251,6 +1251,7 @@
     { "key": "cycleway:left", "value": "shared", "description": "If present, show the road as having a sidewalk or equivalent" },
     { "key": "cycleway:left", "value": "opposite_track", "description": "If present, show the road as having a sidewalk or equivalent" },
     { "key": "cycleway:left", "value": "separate track", "description": "If present, show the road as having a sidewalk or equivalent" },
+    { "key": "cycleway:left", "value": "sidepath", "description": "If present, show the road as having a sidewalk or equivalent" },
     { "key": "cycleway:left", "value": "sidewalk", "description": "If present, show the road as having a sidewalk or equivalent" },
     { "key": "cycleway:left", "value": "yes", "description": "If present, show the road as having a sidewalk or equivalent" },
     { "key": "cycleway:right", "description": "Decide if a road has a sidewalk or equivalent" },
@@ -1261,6 +1262,7 @@
     { "key": "cycleway:right", "value": "opposite", "description": "If present, show the road as having a sidewalk or equivalent" },
     { "key": "cycleway:right", "value": "opposite_track", "description": "If present, show the road as having a sidewalk or equivalent" },
     { "key": "cycleway:right", "value": "separate track", "description": "If present, show the road as having a sidewalk or equivalent" },
+    { "key": "cycleway:right", "value": "sidepath", "description": "If present, show the road as having a sidewalk or equivalent" },
     { "key": "cycleway:right", "value": "sidewalk", "description": "If present, show the road as having a sidewalk or equivalent" },
     { "key": "cycleway:right", "value": "yes", "description": "If present, show the road as having a sidewalk or equivalent" },
     { "key": "dance:teaching", "description": "Detect dance places" },
