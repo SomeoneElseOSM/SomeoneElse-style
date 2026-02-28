@@ -13560,6 +13560,16 @@ function calculate_sidewalk_edge( passedt )
         (   passedt["cycleway:left"]  == "opposite_track"      ) or
         (   passedt["cycleway:left"]  == "separate track"      ) or
         (   passedt["cycleway:left"]  == "sidewalk"            ) or
+        (   passedt["cycleway:left"]  == "yes"                 ) or
+        (   passedt["cycleway:right"] == "separate"            ) or
+        (   passedt["cycleway:right"] == "track"               ) or
+        (   passedt["cycleway:right"] == "share_sidewalk"      ) or
+        (   passedt["cycleway:right"] == "shared"              ) or
+        (   passedt["cycleway:right"] == "opposite"            ) or
+        (   passedt["cycleway:right"] == "opposite_track"      ) or
+        (   passedt["cycleway:right"] == "separate track"      ) or
+        (   passedt["cycleway:right"] == "sidewalk"            ) or
+        (   passedt["cycleway:right"] == "yes"                 ) or
         (   passedt.segregated        == "yes"                 ) or
         (   passedt.segregated        == "right"               )) then
         return true
