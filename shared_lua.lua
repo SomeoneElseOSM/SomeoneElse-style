@@ -13382,6 +13382,14 @@ end -- append_directions_t( passedt )
 
 function consolidate_place_t( passedt )
 -- ----------------------------------------------------------------------------
+-- Exclude historic boundaries as places
+-- ----------------------------------------------------------------------------
+    if (( passedt.place    == "locality" ) and
+        ( passedt.boundary == "historic" )) then
+       passedt.place = nil
+    end
+
+-- ----------------------------------------------------------------------------
 -- Handle place=islet as place=island
 -- ----------------------------------------------------------------------------
     if ( passedt.place == "islet" ) then
