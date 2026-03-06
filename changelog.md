@@ -1,10 +1,10 @@
 # Changes made to this rendering
 This page describes changes made in these projects: [SomeoneElse-style](https://github.com/SomeoneElseOSM/SomeoneElse-style), [SomeoneElse-style-legend](https://github.com/SomeoneElseOSM/SomeoneElse-style-legend) and [openstreetmap-carto-AJT](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT), and visible [on this site](//map.atownsend.org.uk/maps/map/map.html).  Since 2025 this also includes changes to lua code shared between raster and vector processing - hence the notes below about which a particular change applies to.  See [this changelog](https://github.com/SomeoneElseOSM/SomeoneElse-vector-extract/blob/main/resources/changelog_sve01.md) for where changes here affect the vector schema, and also other vector-only ones.
 
-## As yet unreleased
+## 06/03/2026
 (raster, vector) Include some `cycleway:right` values in deciding when there is a `sidewalk`.
 
-## Raster as yet unreleased, vector 20/02/2026
+## Raster 06/03/2026, vector 20/02/2026
 (raster, vector) Detect rocks that have `seamark` but not `natural` tags.
 (raster, vector) Detect slipways that have `seamark` but not `leisure` tags.
 (raster, vector) Detect cranes that have `seamark` but not `man_made` tags.
