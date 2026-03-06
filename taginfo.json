@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20260227T225502Z",
+  "data_updated": "20260306T214401Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -4005,6 +4005,7 @@
     { "key": "status", "value": "abandoned", "description": "Handle as a synonym for 'disused=yes'" },
     { "key": "status", "value": "locked", "description": "Locked gates are shown as a traditional 5-bar gate with an 'L'", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/gate_lockedx2.png" },
     { "key": "stone_type", "description": "Potentially used to identify standing and Ogham stones" },
+    { "key": "subject", "description": "Obtain a name for ghost bikes" },
     { "key": "substance", "description": "Detect non-pipeline pipelines" },
     { "key": "substance", "value": "gas_topology", "description": "Detect non-pipeline pipelines" },
     { "key": "support", "description": "Clock towers and pedestal clocks" },

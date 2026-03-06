@@ -9077,6 +9077,21 @@ function consolidate_lua_03_t( passedt )
       passedt.historic = "memorialsculpture"
    end
 
+-- ----------------------------------------------------------------------------
+-- Split out memorial=ghostbike has a specific value
+-- ----------------------------------------------------------------------------
+   if (( passedt.historic   == "memorial"   )  and
+       ( passedt.memorial   == "ghost_bike" )) then
+      if ((( passedt.name    == nil )   or
+           ( passedt.name    == ""  ))  and
+          (  passedt.subject ~= nil  )  and
+          (  passedt.subject ~= ""   )) then
+         passedt.name = passedt.subject
+      end
+
+      passedt.historic = "memorialghostbike"
+   end
+
    if (( passedt.historic   == "memorial"    ) and
        ( passedt.memorial   == "stone"       )) then
       passedt.historic = "memorialstone"
