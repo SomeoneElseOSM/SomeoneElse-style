@@ -3,6 +3,7 @@ This page describes changes made in these projects: [SomeoneElse-style](https://
 
 ## As yet unreleased
 (raster, vector) Don't show `place=locality` that are `boundary=historic`.
+(raster, vector) Suppress silly very long walking relation names on John Muir Way.
 
 ## 06/03/2026
 (raster, vector) Include some `cycleway:right` values in deciding when there is a `sidewalk`.

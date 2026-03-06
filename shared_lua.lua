@@ -13161,6 +13161,10 @@ function fix_silly_rwn_names_t( passedt )
           passedt.name = "Gritstone Trail"
        end
 
+       if ( string.find( passedt.name, "John Muir Way", 1, true ) == 1 ) then
+          passedt.name = "John Muir Way"
+       end
+
        if ( string.find( passedt.name, "John O'Groats Trail", 1, true ) == 1 ) then
           passedt.name = "John O'Groats Trail"
        end
