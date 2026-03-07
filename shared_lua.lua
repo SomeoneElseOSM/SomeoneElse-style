@@ -11961,6 +11961,16 @@ function consolidate_lua_04_t( passedt )
    end
 
 -- ----------------------------------------------------------------------------
+-- Named airstrips - handle as aerodromes.
+-- These will tend to have no iata and not be military so will appear brown.
+-- ----------------------------------------------------------------------------
+   if (( passedt.aeroway == "airstrip" ) and
+       ( passedt.name    ~= nil        ) and
+       ( passedt.name    ~= ""         )) then
+      passedt.aeroway = "aerodrome"
+   end
+
+-- ----------------------------------------------------------------------------
 -- Disused aerodromes etc. - handle disused=yes.
 -- ----------------------------------------------------------------------------
    if (( passedt.aeroway        == "aerodrome" ) and

@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20260306T214401Z",
+  "data_updated": "20260306T214402Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -91,6 +91,7 @@
     { "key": "aerodrome:type", "value": "military", "description": "Military aerodromes are not treated as large airports" },
     { "key": "aeroway", "description": "Many aeroway features are shown.  Also used to detect and not show non-historic beacons" },
     { "key": "aeroway", "value": "aerodrome", "description": "Aerodromes: depending on other tags (iata etc.) classified as large or small and shown at different zoom levels.  No icon." },
+    { "key": "aeroway", "value": "airstrip", "description": "Named airstrips are handled as aerodromes" },
     { "key": "aeroway", "value": "apron", "description": "Runway aprons: depending on other tags (surface etc.) shown as normal or grass" },
     { "key": "aeroway", "value": "control_tower", "description": "Aircraft control towers are shown as large square towers with a door at the bottom and windows at the top", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/aircraftcontroltower.png" },
     { "key": "aeroway", "value": "fuel", "description": "Synonym for 'amenity=fuel'.  Regular fuel stations are shown as a purple petrol pump", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/fuel.p.16.png" },
