@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20260306T214402Z",
+  "data_updated": "20260306T214403Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -102,6 +102,7 @@
     { "key": "aeroway", "value": "runway", "description": "Runways: depending on other tags (surface etc.) treated as normal or grass" },
     { "key": "aeroway", "value": "taxiway", "description": "Aerodrome taxiways" },
     { "key": "aeroway", "value": "terminal", "description": "Special rendering (airport purple) for airport terminals" },
+    { "key": "aeroway", "value": "tower", "description": "Aircraft control towers are shown as large square towers with a door at the bottom and windows at the top", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/aircraftcontroltower.png" },
     { "key": "aeroway", "value": "windsock", "description": "Shown as orange windsock", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/windsock.png" },
     { "key": "agrarian", "description": "Used to distinguish agricultural machinery and feed shops" },
     { "key": "agrarian", "value": "agricultural_machinery", "description": "Agricultural_machinery shops are shown as a purple dot ('nonspecific shop')", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/shopping_nonspecific.p.16.png" },
