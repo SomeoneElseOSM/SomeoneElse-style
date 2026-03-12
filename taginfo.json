@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20260312T162101Z",
+  "data_updated": "20260312T162102Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -502,6 +502,8 @@
     { "key": "barrier", "value": "fence", "description": "Shown as a thin line" },
     { "key": "barrier", "value": "fence;hedge", "description": "Shown as fence" },
     { "key": "barrier", "value": "fence;wall", "description": "Shown as fence" },
+    { "key": "barrier", "value": "floating_barrier", "description": "Shown as grey line (if line)" },
+    { "key": "barrier", "value": "floating_boom", "description": "Shown as grey line (if line)" },
     { "key": "barrier", "value": "flood_bank", "description": "Shown as an embankment or an embanked highway" },
     { "key": "barrier", "value": "flood_gate", "description": "Shown as a gate or locked gate if locked" },
     { "key": "barrier", "value": "flood_wall", "description": "Shown as wall" },
@@ -4295,7 +4297,7 @@
     { "key": "waterway", "value": "drain", "description": "Many water features shown" },
     { "key": "waterway", "value": "drainage_channel", "description": "Handled as per 'ditch'" },
     { "key": "waterway", "value": "fish_pass", "description": "Many water features shown" },
-    { "key": "waterway", "value": "floating_barrier", "description": "Shown as grey dot", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/lock_gate.png" },
+    { "key": "waterway", "value": "floating_barrier", "description": "Shown as grey dot (point) or grey line (line)", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/lock_gate.png" },
     { "key": "waterway", "value": "floodgate", "description": "Handled as `sluice_gate`" },
     { "key": "waterway", "value": "flow_control", "description": "Many water features shown" },
     { "key": "waterway", "value": "flowline", "description": "Many water features shown" },

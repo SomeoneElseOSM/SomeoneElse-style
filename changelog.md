@@ -7,6 +7,7 @@ This page describes changes made in these projects: [SomeoneElse-style](https://
 (raster, vector) Detect ghost bikes and handle as a special type of memorial.
 (raster, vector) Handle named airstrips as aerodromes.
 (raster, vector) Handle `aeroway=tower` as aircraft control towers.
+(raster, vector) Handle `barrier=floating_barrier` and `barrier=floating_boom` as `waterway=floating_barrier`.
 
 ## 06/03/2026
 (raster, vector) Include some `cycleway:right` values in deciding when there is a `sidewalk`.

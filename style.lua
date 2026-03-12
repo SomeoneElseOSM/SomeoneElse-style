@@ -901,6 +901,19 @@ function filter_tags_way (keyvalues, nokeys)
 -- Before we start doing comparisons that include waterway=floating_barrier, make sure 
 -- that we have caught them all.
 -- ----------------------------------------------------------------------------
+   if ((( keyvalues["barrier"]                         == "floating_barrier" )  or
+        ( keyvalues["barrier"]                         == "floating_boom"    )) and
+       (( keyvalues["landuse"]                         == nil                )  or
+        ( keyvalues["landuse"]                         == ""                 )) and
+       (( keyvalues["man_made"]                        == nil                )  or
+        ( keyvalues["man_made"]                        == ""                 )) and
+       (( keyvalues["natural"]                         == nil                )  or
+        ( keyvalues["natural"]                         == ""                 )) and
+       (( keyvalues["waterway"]                        == nil                )  or
+        ( keyvalues["waterway"]                        == ""                 ))) then
+      keyvalues["waterway"] = "floating_barrier"
+   end
+
    if ((  keyvalues["seamark:type"]                    == "obstruction"  )  and
        (  keyvalues["seamark:obstruction:category"]    ~= "foul_area"    )  and
        (  keyvalues["seamark:obstruction:category"]    ~= "foul_ground"  )  and
