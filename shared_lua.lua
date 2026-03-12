@@ -11638,10 +11638,13 @@ function consolidate_lua_04_t( passedt )
    if ( passedt.leisure == "horse_riding" ) then
       passedt.leisure = "leisurenonspecific"
 
-      if ((  passedt.surface == "grass"  ) and
-          (( passedt.landuse == nil     )  or
-           ( passedt.landuse == ""      ))) then
-         passedt.landuse = "unnamedgrass"
+      if (( passedt.landuse == nil     )  or
+          ( passedt.landuse == ""      )) then
+         if ( passedt.surface == "grass" ) then
+            passedt.landuse = "unnamedgrass"
+         else
+            passedt.landuse = "unnamedcommercial"
+         end
       end
    end
 
