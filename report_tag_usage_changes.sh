@@ -40,6 +40,8 @@
 # The results of the diff (if any) are what we are interested in.
 # This script is designed to run from cron as "local_filesystem_user".
 # Any output will be emailed.
+#
+# Can be run from any user account.
 # -----------------------------------------------------------------------------
 local_filesystem_user=ajtown
 tag_count=30
