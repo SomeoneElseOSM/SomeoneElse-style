@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20260312T162102Z",
+  "data_updated": "20260316T234801Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -2392,7 +2392,6 @@
     { "key": "maxwidth", "description": "Depending on context, go down a road class. Also changes path to track and vice versa." },
     { "key": "meadow", "description": "Show agricultural meadows as mid-way between meadow and farmland ('#eeefda'" },
     { "key": "meadow", "value": "agricultural", "description": "Show grassy farmland as mid-way between meadow and farmland ('#eeefda')" },
-    { "key": "meadow", "value": "agriculture", "description": "Show agricultural meadows as mid-way between meadow and farmland ('#eeefda'" },
     { "key": "meadow", "value": "cut", "description": "Show agricultural meadows as mid-way between meadow and farmland ('#eeefda'" },
     { "key": "meadow", "value": "hay", "description": "Show agricultural meadows as mid-way between meadow and farmland ('#eeefda'" },
     { "key": "meadow", "value": "managed", "description": "Show agricultural meadows as mid-way between meadow and farmland ('#eeefda'" },

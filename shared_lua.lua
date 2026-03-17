@@ -3961,7 +3961,6 @@ function consolidate_lua_03_t( passedt )
        (( passedt.meadow   == "agricultural" )  or
         ( passedt.meadow   == "paddock"      )  or
         ( passedt.meadow   == "pasture"      )  or
-        ( passedt.meadow   == "agriculture"  )  or
         ( passedt.meadow   == "mown"         )  or
         ( passedt.meadow   == "hay"          )  or
         ( passedt.meadow   == "managed"      )  or
