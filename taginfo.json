@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20260316T234801Z",
+  "data_updated": "20260318T221801Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -1364,7 +1364,7 @@
     { "key": "diplomatic", "value": "consulate;embassy", "description": "Shown as embassy" },
     { "key": "diplomatic", "value": "embassy", "description": "Shown as embassy (brown flag) or office (black dot) depending on subtag", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/embassy.png" },
     { "key": "diplomatic", "value": "embassy;consulate", "description": "Shown as embassy" },
-    { "key": "diplomatic", "value": "embassy;mission", "description": "Shown as embassy" },
+    { "key": "diplomatic", "value": "embassy;mission", "description": "Not a current value in OSM data.  Shown as embassy" },
     { "key": "diplomatic", "value": "liaison", "description": "Shown as office rather than as embassy" },
     { "key": "diplomatic", "value": "mission", "description": "Shown as office rather than as embassy" },
     { "key": "diplomatic", "value": "non_diplomatic", "description": "Shown as office rather than as embassy" },
