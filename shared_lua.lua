@@ -4152,7 +4152,6 @@ function consolidate_lua_03_t( passedt )
        ( passedt.wheelchair == "destination"      )  or
        ( passedt.wheelchair == "friendly"         )  or
        ( passedt.wheelchair == "full"             )  or
-       ( passedt.wheelchair == "number of rooms"  )  or
        ( passedt.wheelchair == "official"         )  or
        ( passedt.wheelchair == "on request"       )  or
        ( passedt.wheelchair == "only"             )  or

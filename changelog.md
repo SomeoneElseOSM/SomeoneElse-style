@@ -3,6 +3,7 @@ This page describes changes made in these projects: [SomeoneElse-style](https://
 
 ## As yet unreleased
 Removed `meadow=agriculture`; no longer in the data.
+Removed `wheelchair=number of rooms`; no longer in the data.
 
 ## Raster as yet unreleased, vector 12/03/2026
 (raster, vector) Don't show `place=locality` that are `boundary=historic`.
