@@ -1,11 +1,11 @@
 # Changes made to this rendering
 This page describes changes made in these projects: [SomeoneElse-style](https://github.com/SomeoneElseOSM/SomeoneElse-style), [SomeoneElse-style-legend](https://github.com/SomeoneElseOSM/SomeoneElse-style-legend) and [openstreetmap-carto-AJT](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT), and visible [on this site](//map.atownsend.org.uk/maps/map/map.html).  Since 2025 this also includes changes to lua code shared between raster and vector processing - hence the notes below about which a particular change applies to.  See [this changelog](https://github.com/SomeoneElseOSM/SomeoneElse-vector-extract/blob/main/resources/changelog_sve01.md) for where changes here affect the vector schema, and also other vector-only ones.
 
-## As yet unreleased
+## 21/03/2026
 Removed `meadow=agriculture`; no longer in the data.
 Removed `wheelchair=number of rooms`; no longer in the data.
 
-## Raster as yet unreleased, vector 12/03/2026
+## 21/03/2026, vector 12/03/2026
 (raster, vector) Don't show `place=locality` that are `boundary=historic`.
 (raster, vector) Suppress silly very long walking relation names on John Muir Way.
 (raster, vector) Detect ghost bikes and handle as a special type of memorial.
