@@ -3375,6 +3375,32 @@ function consolidate_lua_03_t( passedt )
    end
 
 -- ----------------------------------------------------------------------------
+-- Map man_made=monument to historic=monument (handled below).
+-- ----------------------------------------------------------------------------
+   if ( passedt.man_made == "monument"  ) then
+      if ( passedt.tourism ~= "artwork"  ) then
+         passedt.historic = "monument"
+         passedt.tourism  = nil
+      end
+
+      passedt.man_made = nil
+   end
+
+-- ----------------------------------------------------------------------------
+-- Map tower:type=monument to historic=monument (handled below).
+-- ----------------------------------------------------------------------------
+   if ((  passedt.man_made      == "tower"     )  and
+       (  passedt["tower:type"] == "monument"  )) then
+      if (( passedt.tourism ~= "artwork"     )  and
+          ( passedt.tourism ~= "information" )) then
+         passedt.historic = "monument"
+         passedt.tourism  = nil
+      end
+
+      passedt.man_made = nil
+   end
+
+-- ----------------------------------------------------------------------------
 -- Things that are both viewpoints or attractions and monuments or memorials 
 -- should render as the latter.  Some are handled further down too.
 -- Also handle some other combinations.
@@ -6490,16 +6516,6 @@ function consolidate_lua_03_t( passedt )
          (   passedt.ruins           == "farm_auxiliary" )    or
          (   passedt.ruins           == "farmhouse"      )))) then
       passedt.building = "ruins"
-   end
-
--- ----------------------------------------------------------------------------
--- Map man_made=monument to historic=monument (handled below).
--- ----------------------------------------------------------------------------
-   if ((  passedt.man_made == "monument" )  and
-       (( passedt.tourism  == nil       )   or
-        ( passedt.tourism  == ""        ))) then
-      passedt.historic = "monument"
-      passedt.man_made = nil
    end
 
 -- ----------------------------------------------------------------------------

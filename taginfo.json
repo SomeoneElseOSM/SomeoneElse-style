@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20260322T000302Z",
+  "data_updated": "20260322T000303Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -4133,6 +4133,7 @@
     { "key": "tower:type", "value": "hose", "description": "Shown as a black tower with no windows (if not historic)", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/squaretower.png" },
     { "key": "tower:type", "value": "lighting", "description": "Shown as a tall black lighting tower", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/illuminationtower.png" },
     { "key": "tower:type", "value": "minaret", "description": "Minarets are shown as large conical towers with tall windows below", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/churchspire.png" },
+    { "key": "tower:type", "value": "monument", "description": "Shown as 'historic=munument'; like an obelisk, but without the memorial 'M'", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/historic_monument.png" },
     { "key": "tower:type", "value": "observation", "description": "Shown as a black flat topped tower without windows (if not historic)", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/observationtower.png" },
     { "key": "tower:type", "value": "observation", "description": "Shown as a historic red flat topped tower without windows (if historic)", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/historicobservationtower.png" },
     { "key": "tower:type", "value": "pagoda", "description": "Pagodas are shown in the same way as steeples - large conical towers", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/churchspire.png" },
