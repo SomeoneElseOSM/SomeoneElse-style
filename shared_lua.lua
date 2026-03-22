@@ -3855,7 +3855,7 @@ function consolidate_lua_03_t( passedt )
    end
 
 -- ----------------------------------------------------------------------------
--- Some things are rendered line pitch to differentiate from any underlying park.
+-- Some things are rendered like pitch to differentiate from any underlying park.
 -- "cricket_nets" is an oddity.  See https://lists.openstreetmap.org/pipermail/tagging/2023-January/thread.html#66908 .
 -- ----------------------------------------------------------------------------
    if (( passedt.sport   == "cricket_nets"       ) or
@@ -5883,6 +5883,16 @@ function consolidate_lua_03_t( passedt )
         ( passedt.leisure    == ""           ))  and
        (  passedt.playground == "roundabout"  )) then
       passedt.amenity = "playground_roundabout"
+   end
+
+-- ----------------------------------------------------------------------------
+-- "climbing towers" are a bit of a special case.  Many are mistagged.
+-- They shouldn't be tagged as "leisure=pitch" because many are also buildings.
+-- ----------------------------------------------------------------------------
+   if (( passedt.man_made      == "tower"    ) and
+       ( passedt["tower:type"] == "climbing" )) then
+      passedt.amenity  = "pitch_climbing"
+      passedt.man_made = nil
    end
 
 -- ----------------------------------------------------------------------------

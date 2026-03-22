@@ -5,6 +5,7 @@ This page describes changes made in these projects: [SomeoneElse-style](https://
 Handle `tower:type=clock_tower` as an alias for `tower:type=clock`.
 Handle `tower:type=pagoda` in the same way as `tower:type=spire`.
 Handle `tower:type=monument` in the same way as `historic=monument`.
+Handle `tower:type=climbing` in the same way as other artificial sport climbing things.
 
 ## 21/03/2026
 Removed `meadow=agriculture`; no longer in the data.
