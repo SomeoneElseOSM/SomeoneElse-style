@@ -3401,6 +3401,17 @@ function consolidate_lua_03_t( passedt )
    end
 
 -- ----------------------------------------------------------------------------
+-- Map tower:type=folly to historic=folly (handled below).
+-- If also set and not already "folly", "historic" tends to be something 
+-- nondescript so don't worry about overwriting.
+-- ----------------------------------------------------------------------------
+   if ((  passedt.man_made      == "tower"     )  and
+       (  passedt["tower:type"] == "folly"  )) then
+      passedt.historic = "folly"
+      passedt.man_made = nil
+   end
+
+-- ----------------------------------------------------------------------------
 -- Things that are both viewpoints or attractions and monuments or memorials 
 -- should render as the latter.  Some are handled further down too.
 -- Also handle some other combinations.

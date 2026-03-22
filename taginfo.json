@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20260322T000307Z",
+  "data_updated": "20260322T000308Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -4132,6 +4132,7 @@
     { "key": "tower:type", "value": "defensive", "description": "Shown as a black defensive tower (if not historic)", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/defensivetower.png" },
     { "key": "tower:type", "value": "defensive", "description": "Shown as a defensive tower in historic red (if historic)", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/historicdefensivetower.png" },
     { "key": "tower:type", "value": "firefighter_training", "description": "Shown as a black tower with no windows (if not historic)", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/squaretower.png" },
+    { "key": "tower:type", "value": "folly", "description": "Shown as falling-down castle in historic red", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/historic_folly.png" },
     { "key": "tower:type", "value": "hose", "description": "Shown as a black tower with no windows (if not historic)", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/squaretower.png" },
     { "key": "tower:type", "value": "intake", "description": "Shown as a small black vertical tower", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/ventshaft_17.png" },
     { "key": "tower:type", "value": "lighting", "description": "Shown as a tall black lighting tower", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/illuminationtower.png" },
