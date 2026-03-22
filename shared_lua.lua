@@ -7674,7 +7674,8 @@ function consolidate_lua_03_t( passedt )
        ( passedt.man_made   == "vent_shaft"           ) or
        ( passedt["tower:type"] == "vent"              ) or
        ( passedt["tower:type"] == "ventilation"       ) or
-       ( passedt["tower:type"] == "ventilation_shaft" )) then
+       ( passedt["tower:type"] == "ventilation_shaft" ) or
+       ( passedt["tower:type"] == "intake"            )) then
       passedt.man_made = "ventilation_shaft"
 
       if (( passedt.building == nil ) or
