@@ -12465,6 +12465,7 @@ function consolidate_lua_04_t( passedt )
         (  passedt["tower:type"]    == "steeple"          )  or
         (  passedt["tower:type"]    == "minaret"          )  or
         (  passedt["tower:type"]    == "round"            )  or
+        (  passedt["tower:type"]    == "pagoda"           )  or
         (  passedt["tower"]         == "round"            )) and
        ((  passedt.amenity          == nil                )  or
         (  passedt.amenity          == ""                 )  or

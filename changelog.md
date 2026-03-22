@@ -3,6 +3,7 @@ This page describes changes made in these projects: [SomeoneElse-style](https://
 
 ## As yet unreleased
 Handle `tower:type=clock_tower` as an alias for `tower:type=clock`.
+Handle `tower:type=pagoda` in the same way as `tower:type=spire`.
 
 ## 21/03/2026
 Removed `meadow=agriculture`; no longer in the data.

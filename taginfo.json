@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20260322T000301Z",
+  "data_updated": "20260322T000302Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -4135,6 +4135,7 @@
     { "key": "tower:type", "value": "minaret", "description": "Minarets are shown as large conical towers with tall windows below", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/churchspire.png" },
     { "key": "tower:type", "value": "observation", "description": "Shown as a black flat topped tower without windows (if not historic)", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/observationtower.png" },
     { "key": "tower:type", "value": "observation", "description": "Shown as a historic red flat topped tower without windows (if historic)", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/historicobservationtower.png" },
+    { "key": "tower:type", "value": "pagoda", "description": "Pagodas are shown in the same way as steeples - large conical towers", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/churchspire.png" },
     { "key": "tower:type", "value": "radar", "description": "Shown as a black radome on a structure", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/radartower.png" },
     { "key": "tower:type", "value": "round", "description": "Round towers are shown as large conical towers with tall windows below", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/churchspire.png" },
     { "key": "tower:type", "value": "round_tower", "description": "Shown as a historic red tall tower with few windows (if historic)", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/historicroundtower.png" },
