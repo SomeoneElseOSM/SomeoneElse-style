@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20260322T000306Z",
+  "data_updated": "20260322T000307Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -4119,6 +4119,7 @@
     { "key": "tower:construction", "value": "stone", "description": "Classify various towers" },
     { "key": "tower:type", "description": "Classify various towers" },
     { "key": "tower:type", "value": "aircraft_control", "description": "Aircraft control towers are shown as large square towers with a door at the bottom and windows at the top", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/aircraftcontroltower.png" },
+    { "key": "tower:type", "value": "air_traffic_control", "description": "Aircraft control towers are shown as large square towers with a door at the bottom and windows at the top", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/aircraftcontroltower.png" },
     { "key": "tower:type", "value": "bell_tower", "description": "Shown as a black church tower (if not historic)", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/churchtower.png" },
     { "key": "tower:type", "value": "bell_tower", "description": "Shown as a church tower in historic red (if historic)", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/historicchurchtower.png" },
     { "key": "tower:type", "value": "campanile", "description": "Campaniles are shown as large rectangular towers with tall windows below", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/churchtower.png" },

@@ -12429,11 +12429,12 @@ function consolidate_lua_04_t( passedt )
 -- ----------------------------------------------------------------------------
 -- Aircraft control towers
 -- ----------------------------------------------------------------------------
-   if (((  passedt.man_made   == "tower"             )   and
-        (( passedt["tower:type"] == "aircraft_control" )    or
-         ( passedt.service    == "aircraft_control" )))  or
-       (   passedt.aeroway    == "control_tower"      )  or
-       (   passedt.aeroway    == "tower"              )) then
+   if (((  passedt.man_made   == "tower"                   )   and
+        (( passedt["tower:type"] == "aircraft_control"    )    or
+         ( passedt["tower:type"] == "air_traffic_control" )    or
+         ( passedt.service    == "aircraft_control"       )))  or
+       (   passedt.aeroway    == "control_tower"            )  or
+       (   passedt.aeroway    == "tower"                    )) then
       passedt.man_made = "aircraftcontroltower"
       passedt.building = "yes"
       passedt.tourism = nil
