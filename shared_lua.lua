@@ -12461,7 +12461,8 @@ function consolidate_lua_04_t( passedt )
 
    if ((  passedt.man_made      == "tower"                 ) and
        (( passedt["tower:type"] == "hose"                 ) or
-        ( passedt["tower:type"] == "firefighter_training" ))) then
+        ( passedt["tower:type"] == "firefighter_training" ) or
+        ( passedt["tower:type"] == "training"             ))) then
       passedt.man_made = "squaretower"
       passedt.building = "yes"
       passedt.tourism = nil

@@ -7,6 +7,7 @@ Handle `tower:type=pagoda` in the same way as `tower:type=spire`.
 Handle `tower:type=monument` in the same way as `historic=monument`.
 Handle `tower:type=climbing` in the same way as other artificial sport climbing things.
 Handle `tower:type=intake` in the same way as ventilation shafts.
+Handle `tower:type=training` in the same way as `tower:type=firefighter_training`.
 
 ## 21/03/2026
 Removed `meadow=agriculture`; no longer in the data.

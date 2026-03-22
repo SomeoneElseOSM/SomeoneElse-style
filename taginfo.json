@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20260322T000305Z",
+  "data_updated": "20260322T000306Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -4147,6 +4147,7 @@
     { "key": "tower:type", "value": "square", "description": "Shown as a black tower with church windows (if on a church and if not historic)", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/churchtower.png" },
     { "key": "tower:type", "value": "square", "description": "Shown as a historic red tower with no windows (if historic).  Also used as a catch-all for 'tower:type'", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/historicsquaretower.png" },
     { "key": "tower:type", "value": "steeple", "description": "Church steeples are shown as large conical towers with tall windows below", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/churchspire.png" },
+    { "key": "tower:type", "value": "training", "description": "Shown as a black tower with no windows (if not historic)", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/squaretower.png" },
     { "key": "tower:type", "value": "vent", "description": "Shown as a small black vertical tower", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/ventshaft_17.png" },
     { "key": "tower:type", "value": "ventilation_shaft", "description": "Shown as a small black vertical tower", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/ventshaft_17.png" },
     { "key": "tower:type", "value": "watchtower", "description": "Shown as a historic red flat topped tower without windows (if historic)", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/historicobservationtower.png" },
