@@ -12614,6 +12614,7 @@ function consolidate_lua_04_t( passedt )
         ( passedt.departures_board              == "realtime,timetable"           ) or
         ( passedt.departures_board              == "multiline"                    ) or
         ( passedt.departures_board              == "realtime_multiline;timetable" ) or
+        ( passedt.departures_board              == "yes;delay;realtime;timetable" ) or
         ( passedt.passenger_information_display == "realtime"                     ))) then
          passedt.highway = "board_realtime"
    end
