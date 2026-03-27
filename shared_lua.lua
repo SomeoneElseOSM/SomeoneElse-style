@@ -3968,6 +3968,7 @@ function consolidate_lua_03_t( passedt )
         ( passedt.farmland == "crofts"                     )  or
         ( passedt.farmland == "scrub"                      )  or
         ( passedt.farmland == "pasture;wetland"            )  or
+        ( passedt.farmland == "rough_pasture"              )  or
         ( passedt.farmland == "equestrian"                 )  or
         ( passedt.animal   == "cow"                        )  or
         ( passedt.animal   == "cattle"                     )  or
@@ -3994,24 +3995,26 @@ function consolidate_lua_03_t( passedt )
       passedt.landuse = "farmgrass"
    end
 
-   if ((  passedt.landuse  == "meadow"        ) and
-       (( passedt.meadow   == "agricultural" )  or
-        ( passedt.meadow   == "paddock"      )  or
-        ( passedt.meadow   == "pasture"      )  or
-        ( passedt.meadow   == "mown"         )  or
-        ( passedt.meadow   == "hay"          )  or
-        ( passedt.meadow   == "managed"      )  or
-        ( passedt.meadow   == "cut"          )  or
-        ( passedt.animal   == "pig"          )  or
-        ( passedt.animal   == "sheep"        )  or
-        ( passedt.animal   == "cow"          )  or
-        ( passedt.animal   == "cattle"       )  or
-        ( passedt.animal   == "chicken"      )  or
-        ( passedt.animal   == "horse"        )  or
-        ( passedt.animal   == "yes"          )  or
-        ( passedt.farmland == "field"        )  or
-        ( passedt.farmland == "pasture"      )  or
-        ( passedt.farmland == "crofts"       ))) then
+   if ((  passedt.landuse  == "meadow"         ) and
+       (( passedt.meadow   == "agricultural"  )  or
+        ( passedt.meadow   == "paddock"       )  or
+        ( passedt.meadow   == "pasture"       )  or
+        ( passedt.meadow   == "mown"          )  or
+        ( passedt.meadow   == "hay"           )  or
+        ( passedt.meadow   == "managed"       )  or
+        ( passedt.meadow   == "cut"           )  or
+        ( passedt.animal   == "pig"           )  or
+        ( passedt.animal   == "sheep"         )  or
+        ( passedt.animal   == "cow"           )  or
+        ( passedt.animal   == "cattle"        )  or
+        ( passedt.animal   == "chicken"       )  or
+        ( passedt.animal   == "horse"         )  or
+        ( passedt.animal   == "yes"           )  or
+        ( passedt.farmland == "field"         )  or
+        ( passedt.farmland == "pasture"       )  or
+        ( passedt.farmland == "rough;pasture" )  or
+        ( passedt.farmland == "crofts"        )  or
+        ( passedt.farmland == "arable"        ))) then
       passedt.landuse = "farmgrass"
    end
 

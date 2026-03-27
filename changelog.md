@@ -10,7 +10,9 @@ Handle `tower:type=intake` in the same way as ventilation shafts.
 Handle `tower:type=training` in the same way as `tower:type=firefighter_training`.
 Handle `tower:type=air_traffic_control` in the same way as `tower:type=aircraft_control`.
 Handle `tower:type=folly` in the same way as `historic=folly`.
-Handle `yes;delay;realtime;timetable` as `realtime`
+Handle `departures_board=yes;delay;realtime;timetable` as `realtime`.
+Handle `farmland=rough_pasture` as `pasture`.
+Handle `landuse=meadow that is also `farmland=arable` as mid way between.`
 
 ## 21/03/2026
 Removed `meadow=agriculture`; no longer in the data.
