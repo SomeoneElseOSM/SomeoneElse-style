@@ -6089,17 +6089,18 @@ function consolidate_lua_03_t( passedt )
 -- Handle razed railways and old inclined_planes as dismantled.
 -- dismantled, abandoned are now handled separately to disused in roads.mss
 -- ----------------------------------------------------------------------------
-   if ((( passedt["railway:historic"] == "rail"           )  or
-        ( passedt.historic         == "inclined_plane" )  or
-        ( passedt.historic         == "tramway"        )) and
-       (( passedt.building         == nil              )  or
-        ( passedt.building         == ""               )) and
-       (( passedt.highway          == nil              )  or
-        ( passedt.highway          == ""               )) and
-       (( passedt.railway          == nil              )  or
-        ( passedt.railway          == ""               )) and
-       (( passedt.waterway         == nil              )  or
-        ( passedt.waterway         == ""               ))) then
+   if ((( passedt["railway:historic"]  == "rail"           )  or
+        ( passedt.historic             == "inclined_plane" )  or
+        ( passedt.historic             == "tramway"        )  or
+        ( passedt["abandoned:railway"] == "rail"           )) and
+       (( passedt.building         == nil                  )  or
+        ( passedt.building         == ""                   )) and
+       (( passedt.highway          == nil                  )  or
+        ( passedt.highway          == ""                   )) and
+       (( passedt.railway          == nil                  )  or
+        ( passedt.railway          == ""                   )) and
+       (( passedt.waterway         == nil                  )  or
+        ( passedt.waterway         == ""                   ))) then
       passedt.railway = "abandoned"
    end
 

@@ -13,10 +13,13 @@ Handle `tower:type=folly` in the same way as `historic=folly`.
 Handle `departures_board=yes;delay;realtime;timetable` as `realtime`.
 Handle `farmland=rough_pasture` as `pasture`.
 Handle `landuse=meadow that is also `farmland=arable` as mid way between.`
+(raster only) Handle `abandoned:railway=rail` as `railway=abandoned`.
 
 ## 21/03/2026
 Removed `meadow=agriculture`; no longer in the data.
 Removed `wheelchair=number of rooms`; no longer in the data.
+
+## Changes above here are both raster and vector unless otherwise specified
 
 ## 21/03/2026, vector 12/03/2026
 (raster, vector) Don't show `place=locality` that are `boundary=historic`.
