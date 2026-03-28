@@ -13,9 +13,9 @@ Handle `tower:type=folly` in the same way as `historic=folly`.
 Handle `departures_board=yes;delay;realtime;timetable` as `realtime`.
 Handle `farmland=rough_pasture` as `pasture`.
 Handle `landuse=meadow that is also `farmland=arable` as mid way between.`
-(raster only) Handle `abandoned:railway=rail` as `railway=abandoned`.
-(raster only) Handle `razed:railway=rail` as `railway=dismantled`.
-(raster only) Handle `disused:railway=rail` as `railway=disused`.
+Handle `abandoned:railway=rail` as `railway=abandoned`.
+Handle `razed:railway=rail` as `railway=dismantled`.
+Handle `disused:railway=rail` as `railway=disused`.
 
 ## 21/03/2026
 Removed `meadow=agriculture`; no longer in the data.
