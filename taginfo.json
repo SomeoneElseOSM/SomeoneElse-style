@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20260322T000312Z",
+  "data_updated": "20260322T000313Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -1415,6 +1415,7 @@
     { "key": "disused:pub", "description": "Former pubs are shown as closed pubs if no other tag applies" },
     { "key": "disused:pub", "value": "yes", "description": "If no other tag applies, treated as synonym for 'disused:amenity=pub'.  Shown as a brown beer glass with a black 'X' in it", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/pub_nddddddd.p.16.png" },
     { "key": "disused:railway", "description": "Former railway stations shown as nonspecific historical objects" },
+    { "key": "disused:railway", "value": "rail", "description": "Treated as disused railway" },
     { "key": "disused:railway", "value": "station", "description": "Former railway stations are shown as nonspecific historical objects", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/historic_nonspecific.p.16.png" },
     { "key": "disused:railway", "value": "water_crane", "description": "Shown as a historic red railway water crane", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/historic_watercrane.png" },
     { "key": "disused:shop", "description": "Show former feature in brackets, or '(vacant)'" },
@@ -3032,6 +3033,8 @@
     { "key": "railway:preserved", "value": "yes", "description": "Detect preserved railways" },
     { "key": "razed:amenity", "description": "Former telephone boxes" },
     { "key": "razed:amenity", "value": "telephone", "description": "Former telephone boxes" },
+    { "key": "razed:railway", "description": "Detect former railway stations" },
+    { "key": "razed:railway", "value": "rail", "description": "Synonym for 'railway=dismantled'.  Shown as a dismantled railway" },
     { "key": "real_ale", "description": "Detect pubs that serve real ale" },
     { "key": "real_ale", "value": "maybe", "description": "Detect real_ale pubs" },
     { "key": "real_ale", "value": "no", "description": "Detect real_ale pubs" },

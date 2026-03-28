@@ -30,7 +30,8 @@ polygon_keys = { 'area:aeroway', 'boundary', 'building', 'landcover', 'landuse',
       'public_transport', 'seamark:type', 'shop', 'sport', 'tourism', 'waterway',
       'wetland', 'water', 'aeroway' }
 
-generic_keys = {'access','addr:housename','addr:housenumber','addr:interpolation','admin_level','advertising','aerialway',
+generic_keys = {'access','abandoned:railway','addr:housename','addr:housenumber','addr:interpolation',
+   'admin_level','advertising','aerialway',
    'aeroway','amenity','animal','area','area:aeroway', 'area:highway','barrier',
    'bicycle','brand','bridge','bridleway','booth','boundary','building', 'canoe', 'capital','construction','covered',
    'culvert','cutting','denomination','departures_board', 'defensive_works', 'designation','disused',
@@ -42,7 +43,7 @@ generic_keys = {'access','addr:housename','addr:housenumber','addr:interpolation
    'man_made','marker','military','motor_car','name','natural','ncn_milepost','office','oneway','operator',
    'opening_hours:covid19','outlet','passenger_information_display','pipeline','pitch','place','playground',
    'poi','population','police', 'power','power_source','public_transport',
-   'railway','railway:historic','ref','religion','rescue_equipment','route','ruined:building','ruins:building',
+   'railway','railway:historic','razed:railway','ref','religion','rescue_equipment','route','ruined:building','ruins:building',
    'school','seamark:type','seamark:rescue_station:category','service','shop','sport','surface',
    'toll','tourism','tower:type', 'tracktype','training','tunnel','water','waterway',
    'wetland', 'whitewater', 'width','wood','type', 'zoo' }
