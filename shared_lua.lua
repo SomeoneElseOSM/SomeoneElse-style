@@ -8611,9 +8611,12 @@ function consolidate_lua_03_t( passedt )
 -- Render historic railway stations.
 -- ----------------------------------------------------------------------------
    if ((( passedt["abandoned:railway"] == "station"             )  or
+        ( passedt["abandoned:railway"] == "halt"                )  or
         ( passedt["disused:railway"]   == "station"             )  or
+        ( passedt["disused:railway"]   == "halt"                )  or
         ( passedt["historic:railway"]  == "station"             )  or
         ( passedt["historic:railway"]  == "station_site"        )  or
+        ( passedt["historic:railway"]  == "halt"                )  or
         ( passedt.historic             == "railway_station"     )  or
         ( passedt.railway              == "dismantled_colliery" )  or
         ( passedt.railway              == "colliery_site"       )) and

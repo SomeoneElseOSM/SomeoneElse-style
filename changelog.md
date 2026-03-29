@@ -3,6 +3,7 @@ This page describes changes made in these projects: [SomeoneElse-style](https://
 
 ## As yet unreleased
 Handle `abandoned:railway=narrow_gauge` as `railway=abandoned`.
+Handle `abandoned:railway=halt` `disused:railway=halt` and `historic:railway=halt` as `disused:railway=station`.
 
 ## Vector 28/03/2026, Raster as yet unlreleased
 Handle `tower:type=clock_tower` as an alias for `tower:type=clock`.

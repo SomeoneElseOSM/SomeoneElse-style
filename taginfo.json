@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20260329T163101Z",
+  "data_updated": "20260329T163103Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -16,6 +16,7 @@
     { "key": "abandoned:amenity", "value": "pub", "description": "Synonym for 'disused:amenity=pub'.  Shown as a brown beer glass with a black 'X' in it", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/pub_nddddddd.p.16.png" },
     { "key": "abandoned:amenity", "value": "telephone", "description": "Synonym for 'disused:amenity=telephone'.  Former phone boxes that contain something else (e.g. a defibrillator) are shown as both those things", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/boothdefibrillator.png" },
     { "key": "abandoned:railway", "description": "Detect former railway stations" },
+    { "key": "abandoned:railway", "value": "halt", "description": "Synonym for 'disused:railway=station'.  Former railway stations are shown as nonspecific historical objects", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/historic_nonspecific.p.16.png" },
     { "key": "abandoned:railway", "value": "narrow_gauge", "description": "Synonym for 'railway=abandoned'.  Shown as an abandoned railway" },
     { "key": "abandoned:railway", "value": "rail", "description": "Synonym for 'railway=abandoned'.  Shown as an abandoned railway" },
     { "key": "abandoned:railway", "value": "station", "description": "Synonym for 'disused:railway=station'.  Former railway stations are shown as nonspecific historical objects", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/historic_nonspecific.p.16.png" },
@@ -1416,6 +1417,7 @@
     { "key": "disused:pub", "description": "Former pubs are shown as closed pubs if no other tag applies" },
     { "key": "disused:pub", "value": "yes", "description": "If no other tag applies, treated as synonym for 'disused:amenity=pub'.  Shown as a brown beer glass with a black 'X' in it", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/pub_nddddddd.p.16.png" },
     { "key": "disused:railway", "description": "Former railway stations shown as nonspecific historical objects" },
+    { "key": "disused:railway", "value": "halt", "description": "Synonym for 'disused:railway=station'.  Former railway stations are shown as nonspecific historical objects", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/historic_nonspecific.p.16.png" },
     { "key": "disused:railway", "value": "rail", "description": "Treated as disused railway" },
     { "key": "disused:railway", "value": "station", "description": "Former railway stations are shown as nonspecific historical objects", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/historic_nonspecific.p.16.png" },
     { "key": "disused:railway", "value": "water_crane", "description": "Shown as a historic red railway water crane", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/historic_watercrane.png" },
@@ -1951,6 +1953,7 @@
     { "key": "historic:civilization", "value": "prehistoric", "description": "Used to detect forts that are archeological rather than historic" },
     { "key": "historic:name", "description": "Name of derelict canals" },
     { "key": "historic:railway", "description": "Detect historic railway stations" },
+    { "key": "historic:railway", "value": "halt", "description": "Synonym for 'disused:railway=station'.  Former railway stations are shown as nonspecific historical objects", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/historic_nonspecific.p.16.png" },
     { "key": "historic:railway", "value": "station", "description": "Detect historic railway stations" },
     { "key": "historic:railway", "value": "station_site", "description": "Detect historic railway stations" },
     { "key": "historic:waterway", "description": "Detect derelict canals" },
