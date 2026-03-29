@@ -6107,7 +6107,8 @@ function consolidate_lua_03_t( passedt )
    if ((( passedt["railway:historic"]  == "rail"           )  or
         ( passedt.historic             == "inclined_plane" )  or
         ( passedt.historic             == "tramway"        )  or
-        ( passedt["abandoned:railway"] == "rail"           )) and
+        ( passedt["abandoned:railway"] == "rail"           )  or
+        ( passedt["abandoned:railway"] == "narrow_gauge"   )) and
        (( passedt.building         == nil                  )  or
         ( passedt.building         == ""                   )) and
        (( passedt.highway          == nil                  )  or
