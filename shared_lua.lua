@@ -13305,9 +13305,11 @@ function fix_silly_rwn_names_t( passedt )
           passedt.name = "Viking Way"
        end
 
-       if ( string.len( passedt.name ) > 32 ) then
-           passedt.name = string.sub( passedt.name, 1, 29 ) .. "..."
-       end
+-- lua's string.sub doesn't (out of the box) support UTF-8?
+-- Let's party like it's 1999..
+--       if ( string.len( passedt.name ) > 32 ) then
+--           passedt.name = string.sub( passedt.name, 1, 29 ) .. "..."
+--       end
     end
 end -- fix_silly_rwn_names_t( passedt )
 
