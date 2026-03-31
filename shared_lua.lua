@@ -13250,8 +13250,28 @@ end -- fix_silly_nt_names_t( passedt )
 function fix_silly_rwn_names_t( passedt )
     if ((  passedt.name     ~= nil                ) and
         (  passedt.name     ~= ""                 )) then
+       if ( string.find( passedt.name, "ACW Circular Walk 12C", 1, true ) == 1 ) then
+          passedt.name = "ACW 12C"
+       end
+
+       if ( string.find( passedt.name, "ACW Circular Walk 13C", 1, true ) == 1 ) then
+          passedt.name = "ACW 13C"
+       end
+
        if ( string.find( passedt.name, "Cape Wrath Trail", 1, true ) == 1 ) then
           passedt.name = "Cape Wrath Trail"
+       end
+
+       if ( string.find( passedt.name, "Circular Meadow", 1, true ) == 1 ) then
+          passedt.name = "Circular Meadow"
+       end
+
+       if ( string.find( passedt.name, "Cliddesden Duck Pond", 1, true ) == 1 ) then
+          passedt.name = "Cliddesden Duck Pond"
+       end
+
+       if ( string.find( passedt.name, "Dunstable Downs Five Knolls", 1, true ) == 1 ) then
+          passedt.name = "Five Knolls"
        end
 
        if ( string.find( passedt.name, "Essex Way", 1, true ) == 1 ) then
@@ -13272,6 +13292,10 @@ function fix_silly_rwn_names_t( passedt )
 
        if ( string.find( passedt.name, "John O'Groats Trail", 1, true ) == 1 ) then
           passedt.name = "John O'Groats Trail"
+       end
+
+       if ( string.find( passedt.name, "Pennine Way (Tan Hill to Yeltholm) - deviation", 1, true ) == 1 ) then
+          passedt.name = "Pennine Way (dev)"
        end
 
        if ( string.find( passedt.name, "Staffordshire Way", 1, true ) == 1 ) then
@@ -13303,6 +13327,10 @@ function fix_silly_rwn_names_t( passedt )
 
        if ( string.find( passedt.name, "Viking Way", 1, true ) == 1 ) then
           passedt.name = "Viking Way"
+       end
+
+       if ( string.find( passedt.name, "Watership Down", 1, true ) == 1 ) then
+          passedt.name = "Watership Down"
        end
 
 -- lua's string.sub doesn't (out of the box) support UTF-8?

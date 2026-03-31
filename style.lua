@@ -1123,6 +1123,13 @@ function filter_tags_relation_member (keyvalues, keyvaluemembers, roles, memberc
          if ( keyvalues["name"] == nil ) then
             keyvalues["highway"] = nil
          else
+-- ----------------------------------------------------------------------------
+-- Some "regional" trails are also split into portions and given silly names
+-- such as "Trans-Pennine Trail (Warrington to Ashton-upon-Mersey)".
+-- We remove the silly part of the name, also in code shared with raster.
+-- ----------------------------------------------------------------------------
+            fix_silly_rwn_names_t( keyvalues )
+
             keyvalues["name"] = keyvalues["name"] .. " (m)"
          end
       end -- MTB
