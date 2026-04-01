@@ -3,6 +3,7 @@ This page describes changes made in these projects: [SomeoneElse-style](https://
 
 ## As yet unreleased
 Suppress some more silly very long walking relation names.
+A bugfix to the shared lua to fix long name truncation of UTF-8 names requires lua 5.3, so "sudo apt install lua5.3 liblua5.3-dev ".
 
 ## Raster 29/03/2026, vector as yet unreleased
 Handle `abandoned:railway=narrow_gauge` as `railway=abandoned`.

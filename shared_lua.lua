@@ -13345,11 +13345,19 @@ function fix_silly_rwn_names_t( passedt )
           passedt.name = "Wey Navigation"
        end
 
--- lua's string.sub doesn't (out of the box) support UTF-8?
--- Let's party like it's 1999..
---       if ( string.len( passedt.name ) > 32 ) then
---           passedt.name = string.sub( passedt.name, 1, 29 ) .. "..."
---       end
+-- ------------------------------------------------------------------------------
+-- passedt.name is a UTF8 string.  lua's string functions just work with bytes,
+-- but a UTF8 character may have multiple bytes.
+-- Therefore when truncating, we have to be careful to split it at a byte that 
+-- is between UTF8 characters.
+--
+-- UTF8 support (included by 'local utf8 = require "utf8"' in "style.lua" and
+-- "process-sve01.lua") is in lua 5.3 and above only.
+-- ------------------------------------------------------------------------------
+      if ( utf8.len( passedt.name ) > 32 ) then
+          start33 = utf8.offset( passedt.name, 33 )
+          passedt.name = string.sub( passedt.name, 1, start33-4 ) .. "..."
+      end
     end
 end -- fix_silly_rwn_names_t( passedt )
 

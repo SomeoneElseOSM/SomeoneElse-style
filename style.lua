@@ -24,6 +24,7 @@
 --      /usr/local/share/lua/5.3/
 -- ----------------------------------------------------------------------------
 require "shared_lua_raster"
+local utf8 = require "utf8"
 
 polygon_keys = { 'area:aeroway', 'boundary', 'building', 'landcover', 'landuse', 'amenity', 'harbour', 'historic', 'leisure', 
       'man_made', 'military', 'natural', 'office', 'place', 'police', 'power',
