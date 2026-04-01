@@ -13354,9 +13354,9 @@ function fix_silly_rwn_names_t( passedt )
 -- UTF8 support (included by 'local utf8 = require "utf8"' in "style.lua" and
 -- "process-sve01.lua") is in lua 5.3 and above only.
 -- ------------------------------------------------------------------------------
-      if ( utf8.len( passedt.name ) > 32 ) then
-          start33 = utf8.offset( passedt.name, 33 )
-          passedt.name = string.sub( passedt.name, 1, start33-4 ) .. "..."
+      if ( utf8.len( passedt.name ) > 28 ) then
+          start33 = utf8.offset( passedt.name, 29 )
+          passedt.name = string.sub( passedt.name, 1, start33-1 ) .. "..."
       end
     end
 end -- fix_silly_rwn_names_t( passedt )
