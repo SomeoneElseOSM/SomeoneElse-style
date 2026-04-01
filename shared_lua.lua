@@ -13294,7 +13294,15 @@ function fix_silly_rwn_names_t( passedt )
           passedt.name = "John O'Groats Trail"
        end
 
-       if ( string.find( passedt.name, "Pennine Way (Tan Hill to Yeltholm) - deviation", 1, true ) == 1 ) then
+       if ( string.find( passedt.name, "Lundy Bay and Port Quin", 1, true ) == 1 ) then
+          passedt.name = "Lundy Bay and Port Quin"
+       end
+
+       if ( string.find( passedt.name, "Melford Hall to Lavenham", 1, true ) == 1 ) then
+          passedt.name = "Melford Hall to Lavenham"
+       end
+
+       if ( string.find( passedt.name, "Pennine Way (Tan Hill to Yetholm) - deviation", 1, true ) == 1 ) then
           passedt.name = "Pennine Way (dev)"
        end
 
@@ -13331,6 +13339,10 @@ function fix_silly_rwn_names_t( passedt )
 
        if ( string.find( passedt.name, "Watership Down", 1, true ) == 1 ) then
           passedt.name = "Watership Down"
+       end
+
+       if ( string.find( passedt.name, "Wey Navigation", 1, true ) == 1 ) then
+          passedt.name = "Wey Navigation"
        end
 
 -- lua's string.sub doesn't (out of the box) support UTF-8?
