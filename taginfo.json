@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20260329T163103Z",
+  "data_updated": "20260402T183301Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -4097,6 +4097,7 @@
     { "key": "tourism", "value": "chalet", "description": "Single chalets shown as a small blue house by a swimming pool", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/chalet.p.16.png" },
     { "key": "tourism", "value": "chalet", "description": "Multiple chalets shown as small blue houses by tree", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/tourism_guest_yynd.png" },
     { "key": "tourism", "value": "cottage", "description": "Shown as small blue house with a tree", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/tourism_guest_ynnn.png" },
+    { "key": "tourism", "value": "fishing village", "description": "Used a comparison tag when looking for things that are also places." },
     { "key": "tourism", "value": "gallery", "description": "Shown as brown building with columns with 'A' on a plinth in it", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/gallery.png" },
     { "key": "tourism", "value": "guest_house", "description": "Shown as a small blue multiple-occupancy house", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/tourism_guest_nydn.png" },
     { "key": "tourism", "value": "holiday_cottage", "description": "Shown as small blue house with a tree", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/tourism_guest_ynnn.png" },

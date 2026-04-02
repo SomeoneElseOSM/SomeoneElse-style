@@ -3,6 +3,7 @@ This page describes changes made in these projects: [SomeoneElse-style](https://
 
 ## As yet unreleased
 Handle `school=art` as `office=yes`.
+If both `place` and `tourism` are set, pick the most appropriate one to keep.
 
 ## 01/04/2026
 Suppress some more silly very long walking relation names.

@@ -1780,6 +1780,26 @@ function consolidate_lua_03_t( passedt )
    end
 
 -- ----------------------------------------------------------------------------
+-- Things that are allegedly places and tourism features.
+-- First, get rid of any tourism=attraction or other non-tags.
+-- Then remove the place tags from those that are left
+-- ----------------------------------------------------------------------------
+   if ((( passedt.tourism == "attraction"      )   or
+        ( passedt.tourism == "fishing village" )   or
+        ( passedt.tourism == "yes"             ))  and
+       (  passedt.place   ~= nil           )  and
+       (  passedt.place   ~= ""            )) then
+      passedt.tourism = nil
+   end
+
+   if (( passedt.place    ~= nil  )  and
+       ( passedt.place    ~= ""   )  and
+       ( passedt.tourism  ~= nil  )  and
+       ( passedt.tourism  ~= ""   )) then
+      passedt.place = nil
+   end
+
+-- ----------------------------------------------------------------------------
 -- Retag any remaining animal attractions or zoo enclosures for rendering.
 -- ----------------------------------------------------------------------------
    if ((( passedt.attraction == "animal"    )  or
