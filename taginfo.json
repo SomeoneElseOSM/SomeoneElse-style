@@ -2252,6 +2252,7 @@
     { "key": "lock_name", "description": "Used, together with lock_ref, in place of name on locks" },
     { "key": "lock_ref", "description": "Used, together with lock_name, in place of ref on locks" },
     { "key": "locked", "description": "Display locked gates different to other ones" },
+    { "key": "locked", "value": "key-pad", "description": "Locked gates are shown as a traditional 5-bar gate with an 'L'", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/gate_lockedx2.png" },
     { "key": "locked", "value": "permanently", "description": "Locked gates are shown as a traditional 5-bar gate with an 'L'", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/gate_lockedx2.png" },
     { "key": "locked", "value": "yes", "description": "Locked gates are shown as a traditional 5-bar gate with an 'L'", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/gate_lockedx2.png" },
     { "key": "male", "description": "Show gendered toilets" },

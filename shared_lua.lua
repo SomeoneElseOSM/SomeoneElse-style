@@ -8905,6 +8905,7 @@ function consolidate_lua_03_t( passedt )
        ( passedt.barrier   == "sliding_gate"          )) then
       if (( passedt.locked == "yes"         ) or
           ( passedt.locked == "permanently" ) or
+          ( passedt.locked == "key-pad"     ) or
           ( passedt.status == "locked"      ) or
           ( passedt.gate   == "locked"      )) then
          passedt.barrier = "gate_locked"
