@@ -3126,6 +3126,7 @@
     { "key": "sac_scale", "value": "demanding_alpine_hiking", "description": "Suppress some unfeasible walking paths wth no explicit PRoW" },
     { "key": "sac_scale", "value": "difficult_alpine_hiking", "description": "Suppress some unfeasible walking paths wth no explicit PRoW" },
     { "key": "school", "description": "Detect school entrances" },
+    { "key": "school", "value": "art", "description": "Art schools are shown as black dots, like offices", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/office_nonspecific.p.16.png" },
     { "key": "school", "value": "entrance", "description": "Detect school entrances" },
     { "key": "scramble", "description": "Shown as intermediate trail" },
     { "key": "scramble", "value": "yes", "description": "Shown as intermediate trail" },

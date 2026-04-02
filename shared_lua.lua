@@ -10941,6 +10941,16 @@ function consolidate_lua_04_t( passedt )
    end
 
 -- ----------------------------------------------------------------------------
+-- Art schools are shown as commercial rather than actual schools
+-- ----------------------------------------------------------------------------
+   if (( passedt.amenity == "school" ) and
+       ( passedt.school  == "art"    )) then
+      passedt.office  = "yes"
+      passedt.amenity = nil
+      passedt.school  = nil
+   end
+
+-- ----------------------------------------------------------------------------
 -- Other shops that don't have a specific icon are handled here. including
 -- variations.
 --
