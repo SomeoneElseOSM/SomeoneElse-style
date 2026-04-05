@@ -8001,23 +8001,23 @@ function consolidate_lua_03_t( passedt )
         ( passedt.railway             == ""         ))  and
        (( passedt["disused:railway"]  == nil        )   or
         ( passedt["disused:railway"]  == ""         ))) then
-      if (( passedt.crossing == "traffic_signals"        ) and 
-          ( passedt.crossing == "marked"                 ) and 
-          ( passedt.crossing == "zebra"                  ) and 
-          ( passedt.crossing == "yes"                    ) and
-          ( passedt.crossing == "island"                 ) and
-          ( passedt.crossing == "pelican"                ) and
-          ( passedt.crossing == "pedestrian_signals"     ) and
-          ( passedt.crossing == "controlled"             ) and
-          ( passedt.crossing == "toucan"                 ) and
-          ( passedt.crossing == "traffic_island"         ) and
-          ( passedt.crossing == "traffic_signals;marked" ) and
-          ( passedt.crossing == "zebra;dots"             ) and
-          ( passedt.crossing == "uncontrolled;marked"    ) and
-          ( passedt.crossing == "marked;uncontrolled"    ) and
-          ( passedt.crossing == "puffin"                 ) and
-          ( passedt.crossing == "pegasus"                ) and
-          ( passedt.crossing == "traffic_signals;island" ) and
+      if (( passedt.crossing == "traffic_signals"        ) or 
+          ( passedt.crossing == "marked"                 ) or 
+          ( passedt.crossing == "zebra"                  ) or 
+          ( passedt.crossing == "yes"                    ) or
+          ( passedt.crossing == "island"                 ) or
+          ( passedt.crossing == "pelican"                ) or
+          ( passedt.crossing == "pedestrian_signals"     ) or
+          ( passedt.crossing == "controlled"             ) or
+          ( passedt.crossing == "toucan"                 ) or
+          ( passedt.crossing == "traffic_island"         ) or
+          ( passedt.crossing == "traffic_signals;marked" ) or
+          ( passedt.crossing == "zebra;dots"             ) or
+          ( passedt.crossing == "uncontrolled;marked"    ) or
+          ( passedt.crossing == "marked;uncontrolled"    ) or
+          ( passedt.crossing == "puffin"                 ) or
+          ( passedt.crossing == "pegasus"                ) or
+          ( passedt.crossing == "traffic_signals;island" ) or
           ( passedt.crossing == "tiger"                  )) then
          passedt.highway = "crossing"
       else
@@ -8079,12 +8079,12 @@ function consolidate_lua_03_t( passedt )
 -- We've now set "highway=crossing" for all "crossing", "crossing:" or 
 -- "crossing_ref" that might indicate a "highway=crossing".
 --
--- Which of those should actually be "crossing=traffic_signals"?
+-- Which of those should actually be "crossing=signalised_crossing"?
 -- "crossing=controlled" is omitted from this list because often the traffic
 -- signals are mapped separately.
 --
 -- Note that "flashing_lights" (which is sometimes set to "always" for 
--- zebra crossings) doesn't count as traffic signals here.
+-- zebra crossings) doesn't count as "signalised_crossing" here.
 -- ----------------------------------------------------------------------------
    if ( passedt.highway == "crossing" ) then
       if (( passedt.crossing == "traffic_signals"         ) or 
@@ -8104,7 +8104,7 @@ function consolidate_lua_03_t( passedt )
            ( passedt["crossing:signals"] ~= ""           ) and
            ( passedt["crossing:signals"] ~= "no"         ) and
            ( passedt["crossing:signals"] ~= "separate"   ))) then
-         passedt.highway = "traffic_signals"
+         passedt.highway = "signalised_crossing"
       else
 -- ----------------------------------------------------------------------------
 -- Which of those should actually NOT be "highway=crossing"?
