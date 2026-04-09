@@ -6608,12 +6608,14 @@ function consolidate_lua_03_t( passedt )
    end
 
 -- ----------------------------------------------------------------------------
--- Things that are both towers and monuments or memorials 
+-- Things that are both towers and monuments, memorials or fortifications etc.
 -- should render as the latter.
 -- ----------------------------------------------------------------------------
-   if ((  passedt.man_made  == "tower"     ) and
-       (( passedt.historic  == "memorial" )  or
-        ( passedt.historic  == "monument" ))) then
+   if ((  passedt.man_made  == "tower"          ) and
+       (( passedt.historic  == "memorial"      )  or
+        ( passedt.historic  == "monument"      )  or
+        ( passedt.historic  == "fortification" )  or
+        ( passedt.historic  == "ruins"         ))) then
       passedt.man_made = nil
    end
 

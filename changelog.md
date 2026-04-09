@@ -6,6 +6,7 @@ Handle `school=art` as `office=yes`.
 If both `place` and `tourism` are set, pick the most appropriate one to keep.
 A key-pad indicates a locked gate.
 Change the icon shown on signalised crossing to include both "traffic lights" and "crossing" elements.
+Towers that are also historic fortifications or ruins are now shown as the latter.
 
 ## 01/04/2026
 Suppress some more silly very long walking relation names.
