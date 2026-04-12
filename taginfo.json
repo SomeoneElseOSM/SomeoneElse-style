@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20260412T122203Z",
+  "data_updated": "20260412T122204Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -2443,6 +2443,7 @@
     { "key": "memorial", "value": "column", "description": "Shown as red historic 'M' alongside obelisk", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/memorial_obelisk.png" },
     { "key": "memorial", "value": "cross", "description": "Shown as red historic 'M' alongside cross", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/memorial_cross.png" },
     { "key": "memorial", "value": "cross;stone", "description": "Shown as memorial cross" },
+    { "key": "memorial", "value": "ghost_bike", "description": "Shown as red historic 'M' alongside bicycle", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/memorial_ghostbike.png" },
     { "key": "memorial", "value": "grave", "description": "Shown as red historic 'M' alongside gravestone", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/memorial_grave.png" },
     { "key": "memorial", "value": "graveyard", "description": "Shown as memorial grave" },
     { "key": "memorial", "value": "mercat_cross", "description": "Shown as memorial cross" },
