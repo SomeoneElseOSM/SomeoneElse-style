@@ -9511,6 +9511,15 @@ function consolidate_lua_04_t( passedt )
    end
 
 -- ----------------------------------------------------------------------------
+-- Memorial cairns
+-- ----------------------------------------------------------------------------
+   if (( passedt.historic   == "memorial"    ) and
+       ( passedt.memorial   == "cairn"       )) then
+      passedt.historic = "memorialcairn"
+      passedt.amenity = nil
+   end
+
+-- ----------------------------------------------------------------------------
 -- Historic graves, and memorial graves and graveyards
 -- ----------------------------------------------------------------------------
    if ((   passedt.historic   == "grave"         ) or

@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20260410T010101Z",
+  "data_updated": "20260412T122201Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -2438,6 +2438,7 @@
     { "key": "memorial", "description": "Show different memorial types differently" },
     { "key": "memorial", "value": "bench", "description": "Shown as red historic 'M' alongside bench", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/memorial_bench.png" },
     { "key": "memorial", "value": "blue_plaque", "description": "Shown as memorial plaque" },
+    { "key": "memorial", "value": "cairn", "description": "Shown as red historic 'M' alongside cairn", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/memorial_cairn.png" },
     { "key": "memorial", "value": "celtic_cross", "description": "Shown as memorial cross" },
     { "key": "memorial", "value": "cross", "description": "Shown as red historic 'M' alongside cross", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/memorial_cross.png" },
     { "key": "memorial", "value": "cross;stone", "description": "Shown as memorial cross" },

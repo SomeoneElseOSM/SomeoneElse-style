@@ -4,6 +4,7 @@ This page describes changes made in these projects: [SomeoneElse-style](https://
 ## As yet unreleased
 Treat `war_memorial=yes` as a war_memorial if no other type fits.
 Treat `memorial=tablet` like `memorial=plate`.
+Detect `memorial=cairn` and handle as a special type of memorial.
 
 ## 10/04/2026
 Handle `school=art` as `office=yes`.
