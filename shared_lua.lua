@@ -9496,7 +9496,8 @@ function consolidate_lua_04_t( passedt )
 -- ----------------------------------------------------------------------------
    if ((  passedt.historic      == "memorial"  ) and
        (( passedt.memorial      == "plate"    )  or
-        ( passedt["memorial:type"] == "plate"    ))) then
+        ( passedt.memorial      == "tablet"   )  or
+        ( passedt["memorial:type"] == "plate" ))) then
       passedt.historic = "memorialplate"
    end
 
