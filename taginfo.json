@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20260412T122204Z",
+  "data_updated": "20260412T122205Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -4181,6 +4181,10 @@
     { "key": "traffic_calming", "description": "Detect non-crossings" },
     { "key": "traffic_calming", "value": "no", "description": "Detect non-crossings" },
     { "key": "traffic_calming", "value": "none", "description": "Detect non-crossings" },
+    { "key": "traffic_signals:sound", "description": "Detect signalised crossings with sound" },
+    { "key": "traffic_signals:sound", "value": "yes", "description": "Detect signalised crossings with sound" },
+    { "key": "traffic_signals:vibration", "description": "Detect signalised crossings with vibration" },
+    { "key": "traffic_signals:vibration", "value": "yes", "description": "Detect signalised crossings with vibration" },
     { "key": "trail_visibility", "description": "Make intermediate etc. trails less visible" },
     { "key": "trail_visibility", "value": "bad", "description": "Make intermediate etc. trails less visible" },
     { "key": "trail_visibility", "value": "horrible", "description": "Make intermediate etc. trails less visible" },

@@ -8106,7 +8106,22 @@ function consolidate_lua_03_t( passedt )
            ( passedt["crossing:signals"] ~= ""           ) and
            ( passedt["crossing:signals"] ~= "no"         ) and
            ( passedt["crossing:signals"] ~= "separate"   ))) then
-         passedt.highway = "signalised_crossing"
+-- ----------------------------------------------------------------------------
+-- We've got a signalised crossing, but is there sound or vibration?
+-- ----------------------------------------------------------------------------
+         if ( passedt["traffic_signals:sound"] == "yes" ) then
+            if ( passedt["traffic_signals:vibration"] == "yes" ) then
+               passedt.highway = "signalised_soundvibration_crossing"
+            else
+               passedt.highway = "signalised_sound_crossing"
+            end
+         else
+            if ( passedt["traffic_signals:vibration"] == "yes" ) then
+               passedt.highway = "signalised_vibration_crossing"
+            else
+               passedt.highway = "signalised_crossing"
+            end
+         end
       else
 -- ----------------------------------------------------------------------------
 -- Which of those should actually NOT be "highway=crossing"?
