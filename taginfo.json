@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20260412T122201Z",
+  "data_updated": "20260412T122203Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -2440,6 +2440,7 @@
     { "key": "memorial", "value": "blue_plaque", "description": "Shown as memorial plaque" },
     { "key": "memorial", "value": "cairn", "description": "Shown as red historic 'M' alongside cairn", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/memorial_cairn.png" },
     { "key": "memorial", "value": "celtic_cross", "description": "Shown as memorial cross" },
+    { "key": "memorial", "value": "column", "description": "Shown as red historic 'M' alongside obelisk", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/memorial_obelisk.png" },
     { "key": "memorial", "value": "cross", "description": "Shown as red historic 'M' alongside cross", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/memorial_cross.png" },
     { "key": "memorial", "value": "cross;stone", "description": "Shown as memorial cross" },
     { "key": "memorial", "value": "grave", "description": "Shown as red historic 'M' alongside gravestone", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/memorial_grave.png" },
@@ -2452,7 +2453,8 @@
     { "key": "memorial", "value": "plate", "description": "Not a current value in OSM data.  Shown as red historic 'M' alongside rectangular plate", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/memorial_plate.png" },
     { "key": "memorial", "value": "sculpture", "description": "Shown as red historic 'M' alongside a sculpture on a stick", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/memorial_sculpture.png" },
     { "key": "memorial", "value": "statue", "description": "Shown as red historic 'M' alongside a mammal on a plinth", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/memorial_statue.png" },
-    { "key": "memorial", "value": "stone", "description": "Shown as red historic 'M' alongside a rectangular stone with writing on it", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/memorial_statue.png" },
+    { "key": "memorial", "value": "stele", "description": "Shown as red historic 'M' alongside a rectangular stone with writing on it", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/memorial_stone.png" },
+    { "key": "memorial", "value": "stone", "description": "Shown as red historic 'M' alongside a rectangular stone with writing on it", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/memorial_stone.png" },
     { "key": "memorial", "value": "tablet", "description": "Shown as red historic 'M' alongside rectangular plate", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/memorial_plate.png" },
     { "key": "memorial", "value": "war_memorial", "description": "Shown as red historic 'M' alongside war memorial", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/memorial_warmemorial.png" },
     { "key": "memorial:type", "description": "Show different memorial types differently" },

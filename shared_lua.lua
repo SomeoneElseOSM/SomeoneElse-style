@@ -9186,8 +9186,9 @@ function consolidate_lua_03_t( passedt )
       passedt.historic = "memorialghostbike"
    end
 
-   if (( passedt.historic   == "memorial"    ) and
-       ( passedt.memorial   == "stone"       )) then
+   if ((  passedt.historic   == "memorial"     ) and
+       (( passedt.memorial   == "stone"       )  or
+        ( passedt.memorial   == "stele"       ))) then
       passedt.historic = "memorialstone"
    end
 
@@ -9532,11 +9533,15 @@ function consolidate_lua_04_t( passedt )
 -- ----------------------------------------------------------------------------
 -- Memorial obelisks
 -- ----------------------------------------------------------------------------
-   if ((   passedt.man_made      == "obelisk"     ) or
-       ((  passedt.historic      == "memorial"   ) and
-        (( passedt.memorial      == "obelisk"   )  or
-         ( passedt["memorial:type"] == "obelisk"   )))) then
+   if ((   passedt.man_made         == "obelisk"    ) or
+       ((  passedt.historic         == "memorial"   ) and
+        (( passedt.memorial         == "obelisk"   )  or
+         ( passedt["memorial:type"] == "obelisk"   )  or
+         ( passedt.memorial         == "column"    )))) then
       passedt.historic = "memorialobelisk"
+      passedt.man_made = nil
+      passedt.memorial = nil
+      passedt["memorial:type"] = nil
    end
 
 -- ----------------------------------------------------------------------------
