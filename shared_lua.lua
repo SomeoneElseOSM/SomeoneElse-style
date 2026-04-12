@@ -9192,6 +9192,15 @@ function consolidate_lua_03_t( passedt )
    end
 
 -- ----------------------------------------------------------------------------
+-- If we still haven't classified our memorial, and "war_memorial=yes", then
+-- use that.
+-- ----------------------------------------------------------------------------
+   if (( passedt.historic     == "memorial"     ) and
+       ( passedt.war_memorial == "yes" )) then
+      passedt.historic = "warmemorial"
+   end
+
+-- ----------------------------------------------------------------------------
 -- Ogham stones mapped without other tags
 -- ----------------------------------------------------------------------------
    if ( passedt.historic   == "ogham_stone" ) then

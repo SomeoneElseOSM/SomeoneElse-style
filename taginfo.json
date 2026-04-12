@@ -4281,6 +4281,8 @@
     { "key": "volcano:status", "value": "extinct", "description": "Detect extinct volcanos" },
     { "key": "wall", "description": "Show castle walls as city walls" },
     { "key": "wall", "value": "castle_wall", "description": "Show castle walls as city walls" },
+    { "key": "war_memorial", "description": "Show different war_memorial types differently" },
+    { "key": "war_memorial", "value": "yes", "description": "Shown as red historic 'M' alongside war memorial", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/memorial_warmemorial.png" },
     { "key": "was:aeroway", "description": "Handle disused version of tag" },
     { "key": "was:aeroway", "value": "aerodrome", "description": "Handle disused version of tag (actual action depends on value)" },
     { "key": "was:aeroway", "value": "runway", "description": "Handle disused version of tag (actual action depends on value)" },
