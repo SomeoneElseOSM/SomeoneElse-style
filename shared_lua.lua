@@ -12008,7 +12008,7 @@ function consolidate_lua_04_t( passedt )
 
 -- ----------------------------------------------------------------------------
 -- A special case to check before the "vacant shops" check at the end - 
--- potentially remove disusedCamenity=grave_yard
+-- potentially remove disused:amenity=grave_yard
 -- ----------------------------------------------------------------------------
    if (( passedt["disused:amenity"] == "grave_yard" ) and
        ( passedt.landuse         == "cemetery"   )) then
@@ -12935,13 +12935,18 @@ function consolidate_lua_04_t( passedt )
 
 -- ----------------------------------------------------------------------------
 -- Names for vacant shops
+-- (pubs and telephones are explicitly handled elsewhere)
 -- ----------------------------------------------------------------------------
-   if ((((( passedt["disused:shop"]    ~= nil        )    and
-          ( passedt["disused:shop"]    ~= ""         ))   or
-         (( passedt["disused:amenity"] ~= nil        )    and
-          ( passedt["disused:amenity"] ~= ""         )))  and
-         (  passedt["disused:amenity"] ~= "fountain"   )  and
-         (  passedt["disused:amenity"] ~= "parking"    )  and
+   if ((((( passedt["disused:shop"]    ~= nil           )    and
+          ( passedt["disused:shop"]    ~= ""            ))   or
+         (( passedt["disused:amenity"] ~= nil           )    and
+          ( passedt["disused:amenity"] ~= ""            )))  and
+         (  passedt["disused:amenity"] ~= "fountain"      )  and
+         (  passedt["disused:amenity"] ~= "letter_box"    )  and
+         (  passedt["disused:amenity"] ~= "parking"       )  and
+         (  passedt["disused:amenity"] ~= "parking_space" )  and
+         (  passedt["disused:amenity"] ~= "stile"         )  and
+         (  passedt["disused:amenity"] ~= "tidal_pool"    )  and
          (( passedt.shop            == nil         )   or
           ( passedt.shop            == ""          ))  and
          (( passedt.amenity         == nil         )   or

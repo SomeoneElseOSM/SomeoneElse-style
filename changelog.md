@@ -7,6 +7,7 @@ Treat `memorial=tablet` like `memorial=plate`.
 Detect `memorial=cairn` and handle as a special type of memorial.
 Treat `memorial=stele` like `memorial=stone`.
 Treat `memorial=column` like `memorial=obelisk`.
+Added some more `disused:amenity` to the "ignore" list.
 
 ## 10/04/2026
 Handle `school=art` as `office=yes`.
