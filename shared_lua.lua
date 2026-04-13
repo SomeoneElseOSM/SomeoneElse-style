@@ -13070,10 +13070,11 @@ function consolidate_lua_04_t( passedt )
    end
 
 -- ----------------------------------------------------------------------------
--- Show traffic islands as kerbs
+-- Show traffic islands as kerbs, and also "area steps".
 -- ----------------------------------------------------------------------------
    if (( passedt["area:highway"] == "traffic_island" )  or
-       ( passedt.landuse      == "traffic_island" )) then
+       ( passedt["area:highway"] == "steps"          )  or
+       ( passedt.landuse         == "traffic_island" )) then
       passedt.barrier = "kerb"
    end
 
