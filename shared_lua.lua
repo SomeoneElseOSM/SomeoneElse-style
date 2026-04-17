@@ -6175,6 +6175,22 @@ function consolidate_lua_03_t( passedt )
    end
 
 -- ----------------------------------------------------------------------------
+-- Historically, OSM Carto has had:
+-- when railway='preserved' and service in ('siding','yard') then 'INT-preserved-ssy
+-- when (railway='rail' and service in ('siding','yard'))  then 'INT-spur-siding-yard'
+--
+-- The equivalent in this schema is "railminor" - the SVWD01 style shows it
+-- exactly like rail but with a slightly less dark grey.
+-- ----------------------------------------------------------------------------
+   if ((  passedt.railway == "rail"                     ) and
+       (( passedt.service                 == "siding"  ) or
+        ( passedt.service                 == "yard"    ) or
+        ( passedt["railway:traffic_mode"] == "freight" ))) then
+      passedt.railway = "railminor"
+      passedt.service = nil
+   end
+
+-- ----------------------------------------------------------------------------
 -- Show preserved railway tunnels as tunnels.
 -- ----------------------------------------------------------------------------
    if (( passedt.railway == "preserved" ) and

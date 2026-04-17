@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20260412T122206Z",
+  "data_updated": "20260412T122207Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -3042,6 +3042,8 @@
     { "key": "railway:miniature", "value": "station", "description": "Miniature railway stations" },
     { "key": "railway:preserved", "description": "Detect preserved railways" },
     { "key": "railway:preserved", "value": "yes", "description": "Detect preserved railways" },
+    { "key": "railway:traffic_mode", "description": "Detect freight railways" },
+    { "key": "railway:traffic_mode", "value": "freight", "description": "Detect freight railways" },
     { "key": "razed:amenity", "description": "Former telephone boxes" },
     { "key": "razed:amenity", "value": "telephone", "description": "Former telephone boxes" },
     { "key": "razed:railway", "description": "Detect former railway stations" },

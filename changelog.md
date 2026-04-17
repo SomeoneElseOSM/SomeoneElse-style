@@ -10,6 +10,9 @@ Treat `memorial=column` like `memorial=obelisk`.
 Added some more `disused:amenity` to the "ignore" list.
 Detect `traffic_signals:sound` and `traffic_signals:vibration`.
 Treat `area:highway=steps` similarly to `area:highway=traffic_island`.  It's mapped to kerb so that a renderer will (raster) or can (vector) put a small black line around it.
+Raster has always had `railway=rail` sidings and yards as less prominent than other `railway=rail`.  
+This has now been applied to vector (as `railway=railminor` in the schema), and the raster `railway=rail` code also uses this too rather than horrible "INT" SQL.
+On both raster an vector, `railway:traffic_mode=freight` is also treated as `railminor`.
 
 ## 10/04/2026
 Handle `school=art` as `office=yes`.
