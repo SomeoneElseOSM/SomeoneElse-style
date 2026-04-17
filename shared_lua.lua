@@ -13203,7 +13203,8 @@ function consolidate_lua_04_t( passedt )
          ( passedt.amenity    ~= "pitch_skateboard"  )   and
          ( passedt.amenity    ~= "pitch_soccer"      )   and
          ( passedt.amenity    ~= "pitch_tabletennis" )   and
-         ( passedt.amenity    ~= "pitch_tennis"      ))  or
+         ( passedt.amenity    ~= "pitch_tennis"      )   and
+         ( passedt.amenity    ~= "pub_nddddddd"      ))  or
         (  passedt.tourism    == "hotel"              )  or
         (  passedt.tourism    == "guest_house"        )  or
         (  passedt.tourism    == "viewpoint"          )  or
