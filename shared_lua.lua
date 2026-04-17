@@ -3780,6 +3780,8 @@ function consolidate_lua_03_t( passedt )
        ( passedt.amenity == "food_court"      ) or
        ( passedt.shop    == "shopping_centre" )) then
       passedt.landuse = "retail"
+      passedt.amenity = nil
+      passedt.shop    = nil
    end
 
 -- ----------------------------------------------------------------------------
@@ -3790,6 +3792,8 @@ function consolidate_lua_03_t( passedt )
        ( passedt.leisure   == "fishing"        ) or
        ( passedt.leisure   == "outdoor_centre" )) then
       passedt.leisure = "park"
+      passedt.amenity = nil
+      passedt.landuse = nil
    end
 
 -- ----------------------------------------------------------------------------
@@ -4306,10 +4310,10 @@ function consolidate_lua_03_t( passedt )
 -- "bar" and "pub" can be changed below based on other tags.
 -- ----------------------------------------------------------------------------
    if ( passedt.leisure == "music_venue" ) then
-      if (( passedt.amenity == "bar" ) or
-          ( passedt.amenity == "pub" )) then
-         passedt.leisure = nil
-      else
+      passedt.leisure = nil
+
+      if (( passedt.amenity ~= "bar" ) and
+          ( passedt.amenity ~= "pub" )) then
          passedt.amenity = "concert_hall"
       end
    end
@@ -5764,6 +5768,7 @@ function consolidate_lua_03_t( passedt )
    if (( passedt.amenity == "leisure_centre" ) or
        ( passedt.leisure == "leisure_centre" )) then
       passedt.leisure = "sports_centre"
+      passedt.amenity = nil
    end
 
 -- ----------------------------------------------------------------------------
@@ -7774,6 +7779,8 @@ function consolidate_lua_03_t( passedt )
        ( passedt.amenity   == "mounting_steps"       ) or
        ( passedt.amenity   == "horse_dismount_block" )) then
       passedt.man_made = "mounting_block"
+      passedt.amenity  = nil
+      passedt.historic = nil
    end
 
 -- ----------------------------------------------------------------------------
@@ -8406,6 +8413,7 @@ function consolidate_lua_03_t( passedt )
 -- ----------------------------------------------------------------------------
    if ( passedt.amenity == "information"  ) then
       passedt.tourism = "information"
+      passedt.amenity = nil
    end
 
 -- ----------------------------------------------------------------------------
@@ -8479,6 +8487,9 @@ function consolidate_lua_03_t( passedt )
          ( passedt.information == "tactile_map"                      )    or
          ( passedt.information == "tactile_model"                    )    or
          ( passedt.information == "terminal"                         )))) then
+      passedt.amenity  = nil
+      passedt.man_made = nil
+
       if ( passedt.board_type == "public_transport" ) then
          passedt.tourism = "informationpublictransport"
       else
@@ -8491,6 +8502,8 @@ function consolidate_lua_03_t( passedt )
        (  passedt.emergency   == "beach_safety_sign"  )  or
        (( passedt.tourism     == "information"       )   and
         ( passedt.information == "sign"              ))) then
+      passedt.amenity  = nil
+
       if ( passedt["operator:type"] == "military" ) then
          passedt.tourism = "militarysign"
       else
@@ -8960,6 +8973,7 @@ function consolidate_lua_03_t( passedt )
        ( passedt.police     == "checkpoint"       ) or
        ( passedt.barrier    == "gatehouse"        )) then
       passedt.barrier = "lift_gate"
+      passedt.amenity = nil
    end
 
 -- ----------------------------------------------------------------------------
@@ -9690,7 +9704,9 @@ function consolidate_lua_04_t( passedt )
        ( passedt.craft   == "electronics_repair"      ) or
        ( passedt.shop    == "electronics_repair"      ) or
        ( passedt.amenity == "electronics_repair"      )) then
-      passedt.shop = "electronics"
+      passedt.shop    = "electronics"
+      passedt.amenity = nil
+      passedt.craft   = nil
    end
 
 -- ----------------------------------------------------------------------------
@@ -9731,7 +9747,9 @@ function consolidate_lua_04_t( passedt )
        ( passedt.office  == "funeral_directors"   ) or
        ( passedt.amenity == "funeral_directors"   ) or
        ( passedt.amenity == "undertaker"          )) then
-      passedt.shop = "funeral_directors"
+      passedt.shop    = "funeral_directors"
+      passedt.amenity = nil
+      passedt.office  = nil
    end
 
 -- ----------------------------------------------------------------------------
@@ -10064,7 +10082,9 @@ function consolidate_lua_04_t( passedt )
        ( passedt.shop    == "council_house"       ) or
        ( passedt.office  == "letting_agent"       ) or
        ( passedt.office  == "property_management" )) then
-      passedt.shop = "estate_agent"
+      passedt.shop    = "estate_agent"
+      passedt.amenity = nil
+      passedt.office  = nil
    end
 
 -- ----------------------------------------------------------------------------
@@ -10085,6 +10105,7 @@ function consolidate_lua_04_t( passedt )
 -- ----------------------------------------------------------------------------
    if ( passedt.shop == "fast_food" ) then
       passedt.amenity = "fast_food"
+      passedt.shop    = nil
    end
 
    if ((  passedt.amenity == "fast_food"                          ) and
@@ -10341,6 +10362,8 @@ function consolidate_lua_04_t( passedt )
       passedt.landuse = "unnamedcommercial"
       passedt.shop    = "doityourself"
       passedt.amenity = nil
+      passedt.craft   = nil
+      passedt.office  = nil
    end
 
    if ((  passedt.shop               == "doityourself"     ) and
@@ -10388,7 +10411,9 @@ function consolidate_lua_04_t( passedt )
        ( passedt.shop    == "financial_advice"    ) or
        ( passedt.amenity == "bureau_de_change"    ) or
        ( passedt.shop    == "gold_buyer"          )) then
-      passedt.shop = "shopnonspecific"
+      passedt.shop    = "shopnonspecific"
+      passedt.amenity = nil
+      passedt.office  = nil
    end
 
 -- ----------------------------------------------------------------------------
@@ -10463,7 +10488,10 @@ function consolidate_lua_04_t( passedt )
        ( passedt.shop         == "suntan"             ) or
        ( passedt.leisure      == "tanning_salon"      ) or
        ( passedt.shop         == "health_and_beauty"  )) then
-      passedt.shop = "beauty"
+      passedt.shop    = "beauty"
+      passedt.amenity = nil
+      passedt.leisure = nil
+      passedt.tourism = nil
    end
 
    if ((  passedt.shop               == "beauty"           ) and
@@ -10511,7 +10539,9 @@ function consolidate_lua_04_t( passedt )
        ( passedt.leisure == "video_arcade"        ) or
        ( passedt.leisure == "adult_gaming_centre" ) or
        ( passedt.amenity == "casino"              )) then
-      passedt.shop = "bookmaker"
+      passedt.shop    = "bookmaker"
+      passedt.amenity = nil
+      passedt.leisure = nil
    end
 
 -- ----------------------------------------------------------------------------
@@ -10850,7 +10880,9 @@ function consolidate_lua_04_t( passedt )
        ( passedt.craft   == "dog_grooming"            ) or
        ( passedt.animal  == "wellness"                )) then
       passedt.landuse = "unnamedcommercial"
-      passedt.shop = "pet_grooming"
+      passedt.shop    = "pet_grooming"
+      passedt.amenity = nil
+      passedt.craft   = nil
    end
 
 -- ----------------------------------------------------------------------------
@@ -10858,6 +10890,7 @@ function consolidate_lua_04_t( passedt )
 -- ----------------------------------------------------------------------------
    if ( passedt.shop == "veterinary" ) then
       passedt.amenity = "veterinary"
+      passedt.shop    = nil
    end
 
 -- ----------------------------------------------------------------------------
@@ -10917,7 +10950,8 @@ function consolidate_lua_04_t( passedt )
        ( passedt.amenity == "motorcycle_rental"            ) or
        ( passedt.shop    == "atv"                          ) or
        ( passedt.shop    == "scooter"                      )) then
-      passedt.shop = "motorcycle"
+      passedt.shop    = "motorcycle"
+      passedt.amenity = nil
    end
 
 -- ----------------------------------------------------------------------------
@@ -10948,7 +10982,9 @@ function consolidate_lua_04_t( passedt )
        ( passedt.amenity == "self_storage"         ) or
        ( passedt.office  == "storage_rental"       ) or
        ( passedt.shop    == "storage"              )) then
-      passedt.shop = "storage_rental"
+      passedt.shop    = "storage_rental"
+      passedt.amenity = nil
+      passedt.office  = nil
    end
 
 -- ----------------------------------------------------------------------------
@@ -10961,7 +10997,8 @@ function consolidate_lua_04_t( passedt )
        ( passedt.shop    == "car_rental"                   ) or
        ( passedt.shop    == "van_rental"                   )) then
       passedt.landuse = "unnamedcommercial"
-      passedt.amenity    = "car_rental"
+      passedt.amenity = "car_rental"
+      passedt.shop    = nil
    end
 
 -- ----------------------------------------------------------------------------
@@ -11002,6 +11039,7 @@ function consolidate_lua_04_t( passedt )
        ( passedt.shop    == "boat_repair"                  )) then
       passedt.landuse = "unnamedcommercial"
       passedt.shop    = "shopnonspecific"
+      passedt.amenity = nil
    end
 
 -- ----------------------------------------------------------------------------
@@ -11111,7 +11149,10 @@ function consolidate_lua_04_t( passedt )
        ( passedt.shop    == "3d_printing"             ) or
        ( passedt.shop    == "3d_shop"                 )) then
       passedt.landuse = "unnamedcommercial"
-      passedt.shop = "shopnonspecific"
+      passedt.shop    = "shopnonspecific"
+      passedt.amenity = nil
+      passedt.craft   = nil
+      passedt.office  = nil
    end
 
    if (( passedt.shop    == "launderette"             ) or
@@ -11192,6 +11233,9 @@ function consolidate_lua_04_t( passedt )
        ( passedt.shop    == "popup"              )) then
       passedt.landuse = "unnamedcommercial"
       passedt.shop    = "shopnonspecific"
+      passedt.amenity = nil
+      passedt.craft   = nil
+      passedt.office  = nil
    end
 
 -- ----------------------------------------------------------------------------
@@ -11319,6 +11363,9 @@ function consolidate_lua_04_t( passedt )
        ( passedt.craft   == "print_shop"        )) then
       passedt.landuse = "unnamedcommercial"
       passedt.office  = "nonspecific"
+      passedt.amenity = nil
+      passedt.craft   = nil
+      passedt.shop    = nil
    end
 
 -- ----------------------------------------------------------------------------
@@ -11423,6 +11470,8 @@ function consolidate_lua_04_t( passedt )
        ( passedt.commercial == "office"                )) then
       passedt.landuse = "unnamedcommercial"
       passedt.office  = "nonspecific"
+      passedt.amenity = nil
+      passedt.shop    = nil
    end
 
 -- ----------------------------------------------------------------------------
@@ -11536,10 +11585,11 @@ function consolidate_lua_04_t( passedt )
        (  passedt.amenity    == "archive"                  ) or
        (  passedt.amenity    == "lost_property"            ) or
        (  passedt.amenity    == "lost_property_office"     )) then
-      passedt.landuse = "unnamedcommercial"
-      passedt.office  = "nonspecific"
-      passedt.government  = nil
-      passedt.tourism  = nil
+      passedt.landuse    = "unnamedcommercial"
+      passedt.office     = "nonspecific"
+      passedt.amenity    = nil
+      passedt.government = nil
+      passedt.tourism    = nil
    end
 
 -- ----------------------------------------------------------------------------
@@ -11757,6 +11807,7 @@ function consolidate_lua_04_t( passedt )
    if (( passedt.amenity == "swimming_pool" ) and
        ( passedt.access  ~= "no"            )) then
       passedt.leisure = "leisurenonspecific"
+      passedt.amenity = nil
    end
 
 -- ----------------------------------------------------------------------------
@@ -11994,7 +12045,9 @@ function consolidate_lua_04_t( passedt )
          passedt.landuse = "unnamedcommercial"
       end
 
-      passedt.leisure = "leisurenonspecific"
+      passedt.leisure            = "leisurenonspecific"
+      passedt.amenity            = nil
+      passedt.tourism            = nil
       passedt["disused:amenity"] = nil
    end
 
