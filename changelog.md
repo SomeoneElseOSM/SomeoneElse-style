@@ -3,6 +3,7 @@ This page describes changes made in these projects: [SomeoneElse-style](https://
 
 ## As yet unreleased.
 Treat disused pubs (in the code, `amenity=pub_nddddddd`) as "not something that should have unnamedcommercial landuse attached".
+If a cafe has no seating, it is probably fast_food.
 
 ## 17/04/2026
 Treat `war_memorial=yes` as a war_memorial if no other type fits.

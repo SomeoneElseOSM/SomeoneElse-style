@@ -5338,6 +5338,20 @@ function consolidate_lua_03_t( passedt )
    end
 
 -- ----------------------------------------------------------------------------
+-- If something is a cafe but you can't sit down, it's actually fast_food
+-- If no cuisine is set, assume it's a coffee shop.
+-- ----------------------------------------------------------------------------
+   if (( passedt.amenity        == "cafe" )  and
+       ( passedt.indoor_seating == "no"   )) then
+      passedt.amenity = "fast_food"
+
+      if (( passedt.cuisine == nil ) or
+          ( passedt.cuisine == ""  )) then
+         passedt.cuisine = "coffee_shop"
+      end
+   end
+
+-- ----------------------------------------------------------------------------
 -- Cafes with accommodation, without, and with wheelchair tags or without
 -- ----------------------------------------------------------------------------
    if ( passedt.amenity == "cafe" ) then
