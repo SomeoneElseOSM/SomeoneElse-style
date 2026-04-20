@@ -5094,6 +5094,14 @@ function consolidate_lua_03_t( passedt )
    end
 
 -- ----------------------------------------------------------------------------
+-- If something is a restaurant but you can't sit down, it's actually fast_food
+-- ----------------------------------------------------------------------------
+   if (( passedt.amenity        == "restaurant" )  and
+       ( passedt.indoor_seating == "no"         )) then
+      passedt.amenity = "fast_food"
+   end
+
+-- ----------------------------------------------------------------------------
 -- Restaurants with specific cuisines - allow a specific icon to be used,
 -- This is the same list as fast_food_indian elsewhere.
 -- ----------------------------------------------------------------------------
