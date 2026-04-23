@@ -5,6 +5,7 @@ This page describes changes made in these projects: [SomeoneElse-style](https://
 Treat disused pubs (in the code, `amenity=pub_nddddddd`) as "not something that should have unnamedcommercial landuse attached".
 If a cafe or a restaurant has no seating, it is probably fast_food.
 Removed `cycleway:left=separate track`; no longer in the data.
+(raster) Increased width of the four types of path, footway, bridleway at higher zooms.
 
 ## 17/04/2026
 Treat `war_memorial=yes` as a war_memorial if no other type fits.
