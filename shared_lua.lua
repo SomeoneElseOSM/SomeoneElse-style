@@ -13957,10 +13957,40 @@ end  -- function calculate_verge_edge( passedt )
 -- ----------------------------------------------------------------------------
 -- At this point we have a something that is at least a "pathnarrow".  Is the
 -- surface good enough to make it a "goodpathnarrow"?
+-- This list is from 
+-- https://taginfo.geofabrik.de/europe:britain-and-ireland/keys/surface#values
+-- sorted by usage
 -- ----------------------------------------------------------------------------
 function set_goodpathnarrow( passedt )
-    if (( passedt.surface   == "asphalt"         ) or
-        ( passedt.surface   == "paved"           )) then
+    if (( passedt.surface   == "asphalt"               ) or
+        ( passedt.surface   == "paved"                 ) or
+        ( passedt.surface   == "paving_stones"         ) or
+        ( passedt.surface   == "concrete"              ) or
+        ( passedt.surface   == "compacted"             ) or
+        ( passedt.surface   == "sett"                  ) or
+        ( passedt.surface   == "fine_gravel"           ) or
+        ( passedt.surface   == "pebblestone"           ) or
+        ( passedt.surface   == "concrete:plates"       ) or
+        ( passedt.surface   == "cobblestone"           ) or
+        ( passedt.surface   == "metal"                 ) or
+        ( passedt.surface   == "stone"                 ) or
+        ( passedt.surface   == "bitmac"                ) or
+        ( passedt.surface   == "brick"                 ) or
+        ( passedt.surface   == "unhewn_cobblestone"    ) or
+        ( passedt.surface   == "grass_paver"           ) or
+        ( passedt.surface   == "tartan"                ) or
+        ( passedt.surface   == "brick_weave"           ) or
+        ( passedt.surface   == "bricks"                ) or
+        ( passedt.surface   == "concrete:lanes"        ) or
+        ( passedt.surface   == "rubber"                ) or
+        ( passedt.surface   == "chipseal"              ) or
+        ( passedt.surface   == "slabs"                 ) or
+        ( passedt.surface   == "tarmac"                ) or
+        ( passedt.surface   == "tactile_paving"        ) or
+        ( passedt.surface   == "boardwalk"             ) or
+        ( passedt.surface   == "tiles"                 ) or
+        ( passedt.surface   == "cobblestone:flattened" ) or
+        ( passedt.surface   == "metal_grid"            )) then
         passedt.highway = "goodpathnarrow"
     else
         passedt.highway = "pathnarrow"

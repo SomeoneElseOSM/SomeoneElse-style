@@ -1,12 +1,12 @@
 # Changes made to this rendering
 This page describes changes made in these projects: [SomeoneElse-style](https://github.com/SomeoneElseOSM/SomeoneElse-style), [SomeoneElse-style-legend](https://github.com/SomeoneElseOSM/SomeoneElse-style-legend) and [openstreetmap-carto-AJT](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT), and visible [on this site](//map.atownsend.org.uk/maps/map/map.html).  Since 2025 this also includes changes to lua code shared between raster and vector processing - hence the notes below about which a particular change applies to.  See [this changelog](https://github.com/SomeoneElseOSM/SomeoneElse-vector-extract/blob/main/resources/changelog_sve01.md) for where changes here affect the vector schema, and also other vector-only ones.
 
-## As yet unreleased.
+## 24/04/2026
 Treat disused pubs (in the code, `amenity=pub_nddddddd`) as "not something that should have unnamedcommercial landuse attached".
 If a cafe or a restaurant has no seating, it is probably fast_food.
 Removed `cycleway:left=separate track`; no longer in the data.
 (raster) Increased width of the four types of path, footway, bridleway at higher zooms.
-Change dash array for "good" (currently paved or asphalt) narrow paths.
+Change dash array for "good surface" narrow paths.
 
 ## 17/04/2026
 Treat `war_memorial=yes` as a war_memorial if no other type fits.
