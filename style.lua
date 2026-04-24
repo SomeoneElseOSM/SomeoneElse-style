@@ -46,7 +46,7 @@ generic_keys = {'access','abandoned:railway','addr:housename','addr:housenumber'
    'poi','population','police', 'power','power_source','public_transport',
    'railway','railway:historic','razed:railway','ref','religion','rescue_equipment','route','ruined:building','ruins:building',
    'school','seamark:type','seamark:rescue_station:category','service','shop','sport','surface',
-   'toll','tourism','tower:type', 'tracktype','training','tunnel','water','waterway',
+   'toll','tourism','tower:type', 'training','tunnel','water','waterway',
    'wetland', 'whitewater', 'width','wood','type', 'zoo' }
 
 function add_z_order(keyvalues)
@@ -131,23 +131,23 @@ function filter_tags_generic(keyvalues, nokeys)
 --
 -- The changes here do the following:
 -- 1) Render any non-designated footway, bridleway, cycleway or track as "path" 
---    (grey dashes in the "standard" style)
+--    (grey dashes)
 -- 2) Render anything designated as "public_footpath" as a "footway" (dotted 
 --    salmon)
 -- 3) Render anything designated as "public_bridleway" as a "bridleway" (dotted 
---    green).
+--    blue).
 -- 4) Render anything designated as "restricted_byway" as something a bit like
 --    a bridleway, but with different dashes.  Likewise "public_right_of_way".
 -- 5) Render anything designated as "byway_open_to_all_traffic" as something
 --    like a track (dashed brown)
 -- 6) Render anything designated as "unclassified_county_road" or a 
 --    misspelling also like a track, but longer dashed brown.
+-- 7) Unpaved roads as a solid brown line.
 --
--- These changes do mean that the the resulting database isn't any use for
--- anything other than rendering, but they do allow designations to be 
--- displayed without any stylesheet changes.
+-- The schema is the same as used for vector tiles, and
+-- https://github.com/SomeoneElseOSM/SomeoneElse-vector-extract/blob/main/resources/README_sve01.md
+-- describes that in some detial.
 -- ----------------------------------------------------------------------------
-   keyvalues["tracktype"] = nil
 
 -- ----------------------------------------------------------------------------
 -- Before processing footways, turn certain corridors into footways
