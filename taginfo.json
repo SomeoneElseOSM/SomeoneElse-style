@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20260412T122209Z",
+  "data_updated": "20260424T014901Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -4044,6 +4044,7 @@
     { "key": "support", "value": "pillar", "description": "Clocks on a stone pllar are shown as pedestal clocks", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/clockpedestal.png" },
     { "key": "support", "value": "tower", "description": "Clocks that are towers are shown as one", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/clocktower.png" },
     { "key": "surface", "description": "Show gravel residentials etc. as tracks; show grass beer gardens in green" },
+    { "key": "surface", "value": "asphalt", "description": "Considered a good path surface" },
     { "key": "surface", "value": "bare_rock", "description": "Show wetlands based on the surface that is set" },
     { "key": "surface", "value": "concrete", "description": "Show wetlands based on the surface that is set" },
     { "key": "surface", "value": "dirt", "description": "Used to determine if roads are unpaved" },
@@ -4055,6 +4056,7 @@
     { "key": "surface", "value": "gravel", "description": "Show gravel residential an service roads as lower quality; show wetlands based on the surface that is set" },
     { "key": "surface", "value": "ground", "description": "Used to determine if roads are unpaved" },
     { "key": "surface", "value": "mud", "description": "Show wetlands based on the surface that is set" },
+    { "key": "surface", "value": "paved", "description": "Considered a good path surface" },
     { "key": "surface", "value": "pebblestone", "description": "Show wetlands based on the surface that is set" },
     { "key": "surface", "value": "rock", "description": "Show wetlands based on the surface that is set" },
     { "key": "surface", "value": "sand", "description": "Show wetlands based on the surface that is set" },

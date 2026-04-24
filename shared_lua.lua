@@ -687,7 +687,11 @@ function consolidate_lua_01_t( passedt )
              ( passedt.trail_visibility == "intermediate" )) then
             passedt.highway = "intpathnarrow"
          else
-            passedt.highway = "pathnarrow"
+-- ----------------------------------------------------------------------------
+-- At this point we have a something that is at least a "pathnarrow".  Is the
+-- surface good enough to make it a "goodpathnarrow"?
+-- ----------------------------------------------------------------------------
+            set_goodpathnarrow( passedt )
          end
       end
    end
@@ -722,7 +726,11 @@ function consolidate_lua_01_t( passedt )
              ( passedt.trail_visibility == "intermediate" )) then
             passedt.highway = "intpathnarrow"
          else
-            passedt.highway = "pathnarrow"
+-- ----------------------------------------------------------------------------
+-- At this point we have a something that is at least a "pathnarrow".  Is the
+-- surface good enough to make it a "goodpathnarrow"?
+-- ----------------------------------------------------------------------------
+            set_goodpathnarrow( passedt )
          end
       end
    end
@@ -830,17 +838,18 @@ function consolidate_lua_01_t( passedt )
 -- Things that are narrow but have a designation will either not be private to
 -- foot traffic or should be picked up by the TRO etc. handling below.
 -- ----------------------------------------------------------------------------
-   if ((  passedt.highway == "pathnarrow" ) and
-       (( passedt.foot    == "private"   )  or
-        ( passedt.foot    == "no"        )) and
-       (( passedt.bicycle == nil         )  or
-        ( passedt.bicycle == ""          )  or
-        ( passedt.bicycle == "private"   )  or
-        ( passedt.bicycle == "no"        )) and
-       (( passedt.horse   == nil         )  or
-        ( passedt.horse   == ""          )  or
-        ( passedt.horse   == "private"   )  or
-        ( passedt.horse   == "no"        ))) then
+   if ((( passedt.highway == "goodpathnarrow" ) or
+        ( passedt.highway == "pathnarrow"     )) and
+       (( passedt.foot    == "private"        )  or
+        ( passedt.foot    == "no"             )) and
+       (( passedt.bicycle == nil              )  or
+        ( passedt.bicycle == ""               )  or
+        ( passedt.bicycle == "private"        )  or
+        ( passedt.bicycle == "no"             )) and
+       (( passedt.horse   == nil              )  or
+        ( passedt.horse   == ""               )  or
+        ( passedt.horse   == "private"        )  or
+        ( passedt.horse   == "no"             ))) then
       passedt.access = "no"
    end
 
@@ -932,9 +941,10 @@ function consolidate_lua_01_t( passedt )
        ( passedt.designation == "public_road"                                    ) or
        ( passedt.designation == "quiet_lane;unclassified_highway"                ) or
        ( passedt.designation == "unclassified_highway;quiet_lane"                )) then
-      if (( passedt.highway == "steps"         ) or 
-          ( passedt.highway == "intpathnarrow" ) or
-          ( passedt.highway == "pathnarrow"    )) then
+      if (( passedt.highway == "steps"             ) or 
+          ( passedt.highway == "intpathnarrow"     ) or
+          ( passedt.highway == "goodpathnarrow"    ) or
+          ( passedt.highway == "pathnarrow"        )) then
           passedt.highway = "ucrnarrow"
       else
          if (( passedt.highway == "service"     ) or 
@@ -953,9 +963,10 @@ function consolidate_lua_01_t( passedt )
        ( passedt.designation == "public_byway"              ) or 
        ( passedt.designation == "byway"                     ) or
        ( passedt.designation == "carriageway"               )) then
-      if (( passedt.highway == "steps"         ) or 
-          ( passedt.highway == "intpathnarrow" ) or
-          ( passedt.highway == "pathnarrow"    )) then
+      if (( passedt.highway == "steps"             ) or 
+          ( passedt.highway == "intpathnarrow"     ) or
+          ( passedt.highway == "goodpathnarrow"    ) or
+          ( passedt.highway == "pathnarrow"        )) then
           passedt.highway = "boatnarrow"
           passedt.designation = "byway_open_to_all_traffic"
       else
@@ -987,9 +998,10 @@ function consolidate_lua_01_t( passedt )
        ( passedt.designation == "tertiary_highway;restricted_byway"       ) or 
        ( passedt.designation == "orpa"                                    ) or
        ( passedt.designation == "restricted_byway;quiet_lane"             )) then
-      if (( passedt.highway == "steps"         ) or 
-          ( passedt.highway == "intpathnarrow" ) or
-          ( passedt.highway == "pathnarrow"    )) then
+      if (( passedt.highway == "steps"          ) or 
+          ( passedt.highway == "intpathnarrow"  ) or
+          ( passedt.highway == "goodpathnarrow" ) or
+          ( passedt.highway == "pathnarrow"     )) then
          passedt.highway = "rbynarrow"
          passedt.designation = "restricted_byway"
       else
@@ -1017,8 +1029,9 @@ function consolidate_lua_01_t( passedt )
        ( passedt.designation == "public_bridleway;public_cycleway"    ) or 
        ( passedt.designation == "public_cycleway;public_bridleway"    ) or 
        ( passedt.designation == "public_bridleway;public_footpath"    )) then
-      if (( passedt.highway == "intpathnarrow" ) or
-          ( passedt.highway == "pathnarrow"    )) then
+      if (( passedt.highway == "intpathnarrow"     ) or
+          ( passedt.highway == "goodpathnarrow"    ) or
+          ( passedt.highway == "pathnarrow"        )) then
          if (( passedt.trail_visibility == "bad"          )  or
              ( passedt.trail_visibility == "intermediate" )) then
             passedt.highway = "intbridlewaynarrow"
@@ -1068,8 +1081,9 @@ function consolidate_lua_01_t( passedt )
        ( passedt.designation == "PROW"                                   ) or
        ( passedt.designation == "access_land"                            ) or
        ( passedt.designation == "adopted_footway"                        )) then
-      if (( passedt.highway == "intpathnarrow" ) or
-          ( passedt.highway == "pathnarrow"    )) then
+      if (( passedt.highway == "intpathnarrow"     ) or
+          ( passedt.highway == "goodpathnarrow"    ) or
+          ( passedt.highway == "pathnarrow"        )) then
          if (( passedt.trail_visibility == "bad"          )  or
              ( passedt.trail_visibility == "intermediate" )) then
             passedt.highway = "intfootwaynarrow"
@@ -1241,7 +1255,8 @@ function consolidate_lua_01_t( passedt )
          (  passedt.foot        ~= nil                          )   and
          (  passedt.foot        ~= ""                           )   and
          (  passedt.foot        ~= "no"                         ))  or
-        ((( passedt.highway     == "pathnarrow"                )    or
+        ((( passedt.highway     == "goodpathnarrow"            )    or
+          ( passedt.highway     == "pathnarrow"                )    or
           ( passedt.highway     == "pathwide"                  )    or
           ( passedt.highway     == "intpathnarrow"             )    or
           ( passedt.highway     == "intpathwide"               )    or
@@ -5873,7 +5888,11 @@ function consolidate_lua_03_t( passedt )
    if ((  passedt.golf    == "path"  ) and
        (( passedt.highway == nil    )  or
         ( passedt.highway == ""     ))) then
-      passedt.highway = "pathnarrow"
+-- ----------------------------------------------------------------------------
+-- At this point we have a something that is at least a "pathnarrow".  Is the
+-- surface good enough to make it a "goodpathnarrow"?
+-- ----------------------------------------------------------------------------
+      set_goodpathnarrow( passedt )
    end
 
    if ((  passedt.golf    == "practice"  ) and
@@ -13934,3 +13953,16 @@ function calculate_verge_edge( passedt )
         return false
     end
 end  -- function calculate_verge_edge( passedt )
+
+-- ----------------------------------------------------------------------------
+-- At this point we have a something that is at least a "pathnarrow".  Is the
+-- surface good enough to make it a "goodpathnarrow"?
+-- ----------------------------------------------------------------------------
+function set_goodpathnarrow( passedt )
+    if (( passedt.surface   == "asphalt"         ) or
+        ( passedt.surface   == "paved"           )) then
+        passedt.highway = "goodpathnarrow"
+    else
+        passedt.highway = "pathnarrow"
+    end
+end  -- function set_goodpathnarrow( passedt )
