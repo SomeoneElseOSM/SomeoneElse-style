@@ -680,7 +680,11 @@ function consolidate_lua_01_t( passedt )
              ( passedt.trail_visibility == "intermediate" )) then
             passedt.highway = "intpathwide"
          else
-            passedt.highway = "pathwide"
+-- ----------------------------------------------------------------------------
+-- At this point we have a something that is at least a "pathwide".  Is the
+-- surface good enough to make it a "goodpathwide"?
+-- ----------------------------------------------------------------------------
+            set_goodpathwide( passedt )
          end
       else
          if (( passedt.trail_visibility == "bad"          )  or
@@ -719,7 +723,11 @@ function consolidate_lua_01_t( passedt )
              ( passedt.trail_visibility == "intermediate" )) then
             passedt.highway = "intpathwide"
          else
-            passedt.highway = "pathwide"
+-- ----------------------------------------------------------------------------
+-- At this point we have a something that is at least a "pathwide".  Is the
+-- surface good enough to make it a "goodpathwide"?
+-- ----------------------------------------------------------------------------
+            set_goodpathwide( passedt )
          end
       else
          if (( passedt.trail_visibility == "bad"          )  or
@@ -947,11 +955,12 @@ function consolidate_lua_01_t( passedt )
           ( passedt.highway == "pathnarrow"        )) then
           passedt.highway = "ucrnarrow"
       else
-         if (( passedt.highway == "service"     ) or 
-             ( passedt.highway == "road"        ) or
-             ( passedt.highway == "track"       ) or
-             ( passedt.highway == "intpathwide" ) or
-             ( passedt.highway == "pathwide"    )) then
+         if (( passedt.highway == "service"      ) or 
+             ( passedt.highway == "road"         ) or
+             ( passedt.highway == "track"        ) or
+             ( passedt.highway == "intpathwide"  ) or
+             ( passedt.highway == "goodpathwide" ) or
+             ( passedt.highway == "pathwide"     )) then
              passedt.highway = "ucrwide"
          end
       end
@@ -970,11 +979,12 @@ function consolidate_lua_01_t( passedt )
           passedt.highway = "boatnarrow"
           passedt.designation = "byway_open_to_all_traffic"
       else
-         if (( passedt.highway == "service"     ) or 
-             ( passedt.highway == "road"        ) or
-             ( passedt.highway == "track"       ) or
-             ( passedt.highway == "intpathwide" ) or
-             ( passedt.highway == "pathwide"    )) then
+         if (( passedt.highway == "service"      ) or 
+             ( passedt.highway == "road"         ) or
+             ( passedt.highway == "track"        ) or
+             ( passedt.highway == "intpathwide"  ) or
+             ( passedt.highway == "goodpathwide" ) or
+             ( passedt.highway == "pathwide"     )) then
              passedt.highway = "boatwide"
              passedt.designation = "byway_open_to_all_traffic"
          end
@@ -1005,11 +1015,12 @@ function consolidate_lua_01_t( passedt )
          passedt.highway = "rbynarrow"
          passedt.designation = "restricted_byway"
       else
-         if (( passedt.highway == "service"     ) or 
-             ( passedt.highway == "road"        ) or
-             ( passedt.highway == "track"       ) or
-             ( passedt.highway == "intpathwide" ) or
-             ( passedt.highway == "pathwide"    )) then
+         if (( passedt.highway == "service"      ) or 
+             ( passedt.highway == "road"         ) or
+             ( passedt.highway == "track"        ) or
+             ( passedt.highway == "intpathwide"  ) or
+             ( passedt.highway == "goodpathwide" ) or
+             ( passedt.highway == "pathwide"     )) then
             passedt.highway = "rbywide"
             passedt.designation = "restricted_byway"
          end
@@ -1043,11 +1054,12 @@ function consolidate_lua_01_t( passedt )
              ( passedt.highway == "bridlewaysteps" )) then
             passedt.highway = "bridlewaysteps"
          else
-            if (( passedt.highway == "service"     ) or 
-                ( passedt.highway == "road"        ) or
-                ( passedt.highway == "track"       ) or
-                ( passedt.highway == "intpathwide" ) or
-                ( passedt.highway == "pathwide"    )) then
+            if (( passedt.highway == "service"      ) or 
+                ( passedt.highway == "road"         ) or
+                ( passedt.highway == "track"        ) or
+                ( passedt.highway == "intpathwide"  ) or
+                ( passedt.highway == "goodpathwide" ) or
+                ( passedt.highway == "pathwide"     )) then
                if (( passedt.trail_visibility == "bad"          )  or
                    ( passedt.trail_visibility == "intermediate" )) then
                   passedt.highway = "intbridlewaywide"
@@ -1095,11 +1107,12 @@ function consolidate_lua_01_t( passedt )
              ( passedt.highway == "footwaysteps" )) then
             passedt.highway = "footwaysteps"
          else
-            if (( passedt.highway == "service"     ) or 
-                ( passedt.highway == "road"        ) or
-                ( passedt.highway == "track"       ) or
-                ( passedt.highway == "intpathwide" ) or
-                ( passedt.highway == "pathwide"    )) then
+            if (( passedt.highway == "service"      ) or 
+                ( passedt.highway == "road"         ) or
+                ( passedt.highway == "track"        ) or
+                ( passedt.highway == "intpathwide"  ) or
+                ( passedt.highway == "goodpathwide" ) or
+                ( passedt.highway == "pathwide"     )) then
                if (( passedt.trail_visibility == "bad"          )  or
                    ( passedt.trail_visibility == "intermediate" )) then
                   passedt.highway = "intfootwaywide"
@@ -1121,7 +1134,11 @@ function consolidate_lua_01_t( passedt )
           ( passedt.trail_visibility == "intermediate" )) then
          passedt.highway = "intpathwide"
       else
-         passedt.highway = "pathwide"
+-- ----------------------------------------------------------------------------
+-- At this point we have a something that is at least a "pathwide".  Is the
+-- surface good enough to make it a "goodpathwide"?
+-- ----------------------------------------------------------------------------
+         set_goodpathwide( passedt )
       end
    end
 
@@ -1257,6 +1274,7 @@ function consolidate_lua_01_t( passedt )
          (  passedt.foot        ~= "no"                         ))  or
         ((( passedt.highway     == "goodpathnarrow"            )    or
           ( passedt.highway     == "pathnarrow"                )    or
+          ( passedt.highway     == "goodpathwide"              )    or
           ( passedt.highway     == "pathwide"                  )    or
           ( passedt.highway     == "intpathnarrow"             )    or
           ( passedt.highway     == "intpathwide"               )    or
@@ -12542,7 +12560,11 @@ function consolidate_lua_04_t( passedt )
 
    if (( passedt.aeroway == "taxiway"  ) and
        ( passedt.surface == "grass"    )) then
-      passedt.highway = "pathwide"
+-- ----------------------------------------------------------------------------
+-- At this point we have a something that is at least a "pathwide".  Is the
+-- surface good enough to make it a "goodpathwide"?
+-- ----------------------------------------------------------------------------
+      set_goodpathwide( passedt )
       passedt.aeroway = nil
    end
 
@@ -13996,3 +14018,46 @@ function set_goodpathnarrow( passedt )
         passedt.highway = "pathnarrow"
     end
 end  -- function set_goodpathnarrow( passedt )
+
+-- ----------------------------------------------------------------------------
+-- At this point we have a something that is at least a "pathwide".  Is the
+-- surface good enough to make it a "goodpathwide"?
+-- This list is from 
+-- https://taginfo.geofabrik.de/europe:britain-and-ireland/keys/surface#values
+-- sorted by usage
+-- ----------------------------------------------------------------------------
+function set_goodpathwide( passedt )
+    if (( passedt.surface   == "asphalt"               ) or
+        ( passedt.surface   == "paved"                 ) or
+        ( passedt.surface   == "paving_stones"         ) or
+        ( passedt.surface   == "concrete"              ) or
+        ( passedt.surface   == "compacted"             ) or
+        ( passedt.surface   == "sett"                  ) or
+        ( passedt.surface   == "fine_gravel"           ) or
+        ( passedt.surface   == "pebblestone"           ) or
+        ( passedt.surface   == "concrete:plates"       ) or
+        ( passedt.surface   == "cobblestone"           ) or
+        ( passedt.surface   == "metal"                 ) or
+        ( passedt.surface   == "stone"                 ) or
+        ( passedt.surface   == "bitmac"                ) or
+        ( passedt.surface   == "brick"                 ) or
+        ( passedt.surface   == "unhewn_cobblestone"    ) or
+        ( passedt.surface   == "grass_paver"           ) or
+        ( passedt.surface   == "tartan"                ) or
+        ( passedt.surface   == "brick_weave"           ) or
+        ( passedt.surface   == "bricks"                ) or
+        ( passedt.surface   == "concrete:lanes"        ) or
+        ( passedt.surface   == "rubber"                ) or
+        ( passedt.surface   == "chipseal"              ) or
+        ( passedt.surface   == "slabs"                 ) or
+        ( passedt.surface   == "tarmac"                ) or
+        ( passedt.surface   == "tactile_paving"        ) or
+        ( passedt.surface   == "boardwalk"             ) or
+        ( passedt.surface   == "tiles"                 ) or
+        ( passedt.surface   == "cobblestone:flattened" ) or
+        ( passedt.surface   == "metal_grid"            )) then
+        passedt.highway = "goodpathwide"
+    else
+        passedt.highway = "pathwide"
+    end
+end  -- function set_goodpathwide( passedt )
