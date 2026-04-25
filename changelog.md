@@ -7,6 +7,9 @@ If a cafe or a restaurant has no seating, it is probably fast_food.
 Removed `cycleway:left=separate track`; no longer in the data.
 (raster) Increased width of the four types of path, footway, bridleway at higher zooms.
 Change dash array for "good surface" narrow paths.
+(raster) Increased width of the various types of "restricted byway" and "byway open to all traffic" at higher zooms.
+(raster) Also increase the dasharray length with zoom on "restricted byway" and "byway open to all traffic" at higher zooms.
+
 
 ## 17/04/2026
 Treat `war_memorial=yes` as a war_memorial if no other type fits.
