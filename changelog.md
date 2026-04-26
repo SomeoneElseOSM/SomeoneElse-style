@@ -4,6 +4,7 @@ This page describes changes made in these projects: [SomeoneElse-style](https://
 ## As yet unreleased
 (raster) Increased width of the various types of "restricted byway" and "byway open to all traffic" at higher zooms.
 (raster) Also increase the dasharray length with zoom on "restricted byway" and "byway open to all traffic" at higher zooms.
+Change dash array for "good surface" wide paths.
 
 ## 24/04/2026
 Treat disused pubs (in the code, `amenity=pub_nddddddd`) as "not something that should have unnamedcommercial landuse attached".
