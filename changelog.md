@@ -1,6 +1,12 @@
 # Changes made to this rendering
 This page describes changes made in these projects: [SomeoneElse-style](https://github.com/SomeoneElseOSM/SomeoneElse-style), [SomeoneElse-style-legend](https://github.com/SomeoneElseOSM/SomeoneElse-style-legend) and [openstreetmap-carto-AJT](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT), and visible [on this site](//map.atownsend.org.uk/maps/map/map.html).  Since 2025 this also includes changes to lua code shared between raster and vector processing - hence the notes below about which a particular change applies to.  See [this changelog](https://github.com/SomeoneElseOSM/SomeoneElse-vector-extract/blob/main/resources/changelog_sve01.md) for where changes here affect the vector schema, and also other vector-only ones.
 
+## Raster 26/04/2026, vector as yet unreleased
+A "dark teal" colour is now used for restricted byways rather than the previous "bridleway blue".
+(raster) Unpaved, UCRs, BOATS, qqq now scale with zoom (like paths etc.)
+The dasharrays for the different widths of UCRs are now much longer than previously, to clearly distinguish them from the different widths of BOATs (both have the same colour).
+The dasharrays for the different widths of BOATs and Restricted Byways now match that for bridleways (only one dash length, with different colours), to allow the display of "good surface" examples later (as already happens with paths).
+
 ## Raster as yet unreleased, vector 26/04/2026
 (raster) Increased width of the various types of "restricted byway" and "byway open to all traffic" at higher zooms.
 (raster) Also increase the dasharray length with zoom on "restricted byway" and "byway open to all traffic" at higher zooms.
