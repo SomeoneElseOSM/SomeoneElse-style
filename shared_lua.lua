@@ -7989,6 +7989,14 @@ function consolidate_lua_03_t( passedt )
    end
 
 -- ----------------------------------------------------------------------------
+-- Split out tube stations so that renderers can show at a different zoom
+-- ----------------------------------------------------------------------------
+   if (( passedt.railway == "station" ) and
+       ( passedt.station == "subway"  )) then
+      passedt.railway = "tubestation"
+   end
+
+-- ----------------------------------------------------------------------------
 -- "tourism" stations - show with brown text rather than blue.
 -- ----------------------------------------------------------------------------
    if (((( passedt.railway           == "station"   )    or
