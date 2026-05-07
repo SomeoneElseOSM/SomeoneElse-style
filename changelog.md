@@ -3,6 +3,7 @@ This page describes changes made in these projects: [SomeoneElse-style](https://
 
 ## As yet unreleased
 Regular railway stations (`railway=station`) are still extracted as such, but those with `station=subway` are now extracted as `railway=tubestation`.  No change to raster or to SVWD01 vector rendering.  The SVWD10 vector rendering shows regular stations from vector 7 and tube stations from vector 9.
+Detect historic kilns that are mapped as `man_made` with `disused=yes` and `disused:man_made`.
 
 ## Raster 26/04/2026 PM, vector 27/04/2026
 A "dark teal" colour is now used for restricted byways rather than the previous "bridleway blue".

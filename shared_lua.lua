@@ -2097,8 +2097,25 @@ function consolidate_lua_03_t( passedt )
 
 
 -- ----------------------------------------------------------------------------
--- Pick up some odd taggings of lime kilns
+-- Pick up some odd taggings of lime and other kilns
 -- ----------------------------------------------------------------------------
+   if ((((  passedt.man_made            == "kiln"                   )  and
+         (  passedt.disused             == "yes"                    )) or
+        ((  passedt["disused:man_made"] == "kiln"                   )  and
+         (( passedt.man_made            == nil                     )   or
+          ( passedt.man_made            == ""                      )))) and
+       (( passedt.historic              == nil                       )   or
+        ( passedt.historic              == ""                        )   or
+        ( passedt.historic              == "kiln"                    )   or
+        ( passedt.historic              == "lime_kiln"               )   or
+        ( passedt.historic              == "yes"                     )   or
+        ( passedt.historic              == "ruins"                   )   or
+        ( passedt.historic              == "archaeological_site"     )   or
+        ( passedt.historic              == "building"                ))) then
+      passedt.historic  = "kiln"
+      passedt.man_made  = nil
+   end
+
    if ((( passedt.historic             == "archaeological_site" )  or
         ( passedt.historic             == "ruins"               )) and
        (( passedt.archaeological_site  == "lime_kiln"           )  or
@@ -3383,8 +3400,8 @@ function consolidate_lua_03_t( passedt )
         ( passedt.sport           == "bowling" )) and
        (( passedt.leisure         == nil       )  or
         ( passedt.leisure         == ""        )) and
-       (( passedt.disusedCleisure == nil       )  or
-        ( passedt.disusedCleisure == ""        )) and
+       (( passedt["disused:leisure"] == nil       )  or
+        ( passedt["disused:leisure"] == ""        )) and
        (( passedt.amenity         == nil       )  or
         ( passedt.amenity         == ""        )) and
        (( passedt.shop            == nil       )  or
@@ -3401,8 +3418,8 @@ function consolidate_lua_03_t( passedt )
    if ((  passedt.sport           == "skiing"  ) and
        (( passedt.leisure         == nil      )  or
         ( passedt.leisure         == ""       )) and
-       (( passedt.disusedCleisure == nil      )  or
-        ( passedt.disusedCleisure == ""       )) and
+       (( passedt["disused:leisure"] == nil      )  or
+        ( passedt["disused:leisure"] == ""       )) and
        (( passedt.amenity         == nil      )  or
         ( passedt.amenity         == ""       )) and
        (( passedt.shop            == nil      )  or
