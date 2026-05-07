@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20260507T212402Z",
+  "data_updated": "20260507T212403Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -1406,6 +1406,7 @@
     { "key": "disused:landuse", "value": "quarry", "description": "Disused quarries are still shown as quarries" },
     { "key": "disused:man_made", "description": "Disused mines are shown as a historic mines" },
     { "key": "disused:man_made", "value": "adit", "description": "Shown as a historic mine - an 'M' in a hillside", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/historic_mine.png" },
+    { "key": "disused:man_made", "value": "dovecote", "description": "Shown as a dovecote on a pole in historic red", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/historic_dovecote.png" },
     { "key": "disused:man_made", "value": "kiln", "description": "Shown as a historic red bottle kiln shape", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/historic_kiln.png" },
     { "key": "disused:man_made", "value": "mine", "description": "Shown as a historic mine - an 'M' in a hillside", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/historic_mine.png" },
     { "key": "disused:man_made", "value": "mine_shaft", "description": "Shown as a historic mine - an 'M' in a hillside", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/historic_mine.png" },

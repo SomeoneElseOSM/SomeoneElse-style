@@ -7075,10 +7075,27 @@ function consolidate_lua_03_t( passedt )
 -- ----------------------------------------------------------------------------
 -- Historic dovecotes
 -- ----------------------------------------------------------------------------
-   if ((  passedt.man_made == "dovecote"  ) and
-       (( passedt.historic == "yes"      )  or
-        ( passedt.historic == "building" )  or
-        ( passedt.historic == "ruins"    ))) then
+   if ((  passedt["disused:man_made"] == "dovecote"   ) and
+       (( passedt.man_made            == nil         )  or
+        ( passedt.man_made            == ""          )) and
+       (( passedt.historic            == nil         )  or
+        ( passedt.historic            == ""          )  or
+        ( passedt.historic            == "yes"       )  or
+        ( passedt.historic            == "building"  )  or
+        ( passedt.historic            == "ruins"     ))) then
+      passedt.historic = "dovecote"
+   end
+
+   if ((   passedt.man_made == "dovecote"   ) and
+       ((  passedt.historic == "yes"       )  or
+        (  passedt.historic == "building"  )  or
+        (  passedt.historic == "ruins"     )) or
+       ((  passedt.disused  == "yes"       ) and
+        (( passedt.historic == nil        )  or
+         ( passedt.historic == ""         )  or
+         ( passedt.historic == "yes"      )  or
+         ( passedt.historic == "building" )  or
+         ( passedt.historic == "ruins"    )))) then
       passedt.historic = "dovecote"
       passedt.man_made = nil
    end
