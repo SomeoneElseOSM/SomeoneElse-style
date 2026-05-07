@@ -3457,6 +3457,16 @@ function consolidate_lua_03_t( passedt )
    end
 
 -- ----------------------------------------------------------------------------
+-- There are a couple of "disused:man_made=tower"
+-- Towers are big things; show then as towers.
+-- ----------------------------------------------------------------------------
+   if ((  passedt["disused:man_made"] == "tower"  )  and
+       (( passedt.man_made            == nil     )   or
+        ( passedt.man_made            == ""      ))) then
+      passedt.man_made = "tower"
+   end
+
+-- ----------------------------------------------------------------------------
 -- Map tower:type=monument to historic=monument (handled below).
 -- ----------------------------------------------------------------------------
    if ((  passedt.man_made      == "tower"     )  and
@@ -12756,7 +12766,15 @@ function consolidate_lua_04_t( passedt )
        ((  passedt.amenity          == nil                )  or
         (  passedt.amenity          == ""                 )  or
         (  passedt.amenity          ~= "place_of_worship" ))) then
-      passedt.man_made = "churchtower"
+      if ((  passedt.disused  == "yes" ) and
+          (( passedt.historic == nil  ) or
+           ( passedt.historic == ""   ))) then
+         passedt.historic = "historicchurchtower"
+         passedt.man_made = nil
+      else
+         passedt.man_made = "churchtower"
+      end
+
       passedt.building = "yes"
       passedt.tourism = nil
    end
