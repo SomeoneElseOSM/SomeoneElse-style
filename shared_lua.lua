@@ -7504,6 +7504,12 @@ function consolidate_lua_03_t( passedt )
       passedt.historic = nil
    end
 
+   if ((  passedt["disused:man_made"] == "chimney"  ) and
+       (( passedt.man_made            == nil       ) or
+        ( passedt.man_made            == ""        ))) then
+      passedt.man_made = "chimney"
+   end
+
    if (( passedt.historic == "chimney" ) or
        ( passedt.man_made == "chimney" ) or
        ( passedt.building == "chimney" )) then

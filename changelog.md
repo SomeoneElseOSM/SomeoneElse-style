@@ -6,6 +6,7 @@ Regular railway stations (`railway=station`) are still extracted as such, but th
 Detect historic kilns that are mapped as `man_made` with `disused=yes` and `disused:man_made`.
 Detect historic towers that are mapped as `man_made` with `disused=yes` and `disused:man_made`.
 Detect historic dovecotes that are mapped as `man_made` with `disused=yes` and `disused:man_made`.
+Detect chimneys that are mapped as `disused:man_made`.
 
 ## Raster 26/04/2026 PM, vector 27/04/2026
 A "dark teal" colour is now used for restricted byways rather than the previous "bridleway blue".
