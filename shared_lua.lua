@@ -10238,7 +10238,12 @@ function consolidate_lua_04_t( passedt )
        ( passedt.shop    == "plant_nursery"              ) or
        ( passedt.shop    == "plant_centre"               )) then
       passedt.landuse = "unnamedorchard"
-      passedt.shop    = "garden_centre"
+
+      if ( passedt.disused == "yes" ) then
+         passedt.shop    = "vacant"
+      else
+         passedt.shop    = "garden_centre"
+      end
    end
 
 -- ----------------------------------------------------------------------------
