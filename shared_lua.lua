@@ -6837,6 +6837,13 @@ function consolidate_lua_03_t( passedt )
    end
 
 -- ----------------------------------------------------------------------------
+-- Some quarry-adjacent features are mapped as landuse=pit
+-- ----------------------------------------------------------------------------
+   if ( passedt.landuse == "pit" ) then
+      passedt.landuse = "quarry"
+   end
+
+-- ----------------------------------------------------------------------------
 -- Some more historic mineshafts are tagged as "historic=archaeological_site; 
 -- archaeological_site=mineral_extraction"
 -- ----------------------------------------------------------------------------
@@ -7086,16 +7093,16 @@ function consolidate_lua_03_t( passedt )
       passedt.historic = "dovecote"
    end
 
-   if ((   passedt.man_made == "dovecote"   ) and
-       ((  passedt.historic == "yes"       )  or
-        (  passedt.historic == "building"  )  or
-        (  passedt.historic == "ruins"     )) or
-       ((  passedt.disused  == "yes"       ) and
-        (( passedt.historic == nil        )  or
-         ( passedt.historic == ""         )  or
-         ( passedt.historic == "yes"      )  or
-         ( passedt.historic == "building" )  or
-         ( passedt.historic == "ruins"    )))) then
+   if ((    passedt.man_made == "dovecote"    ) and
+       (((  passedt.historic == "yes"       )  or
+         (  passedt.historic == "building"  )  or
+         (  passedt.historic == "ruins"     )) or
+        ((  passedt.disused  == "yes"       ) and
+         (( passedt.historic == nil        )  or
+          ( passedt.historic == ""         )  or
+          ( passedt.historic == "yes"      )  or
+          ( passedt.historic == "building" )  or
+          ( passedt.historic == "ruins"    ))))) then
       passedt.historic = "dovecote"
       passedt.man_made = nil
    end
