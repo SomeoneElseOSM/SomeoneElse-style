@@ -467,6 +467,24 @@ function consolidate_lua_01_t( passedt )
    end
 
 -- ----------------------------------------------------------------------------
+-- Try and do something sensible with disused military
+-- ----------------------------------------------------------------------------
+   if (( passedt.landuse == "military" )  and
+       ( passedt.disused == "yes"      )) then
+      passedt.military = nil
+      passedt.aeroway = nil
+
+      if ((( passedt.building ~= nil )   and
+           ( passedt.building ~= ""  ))  or
+          (( passedt.natural  ~= nil )   and
+           ( passedt.natural  ~= ""  ))) then
+         passedt.landuse = nil
+      else
+         passedt.landuse = "brownfield"
+      end
+   end
+
+-- ----------------------------------------------------------------------------
 -- Render old names on farmland etc.
 -- ----------------------------------------------------------------------------
    if ((( passedt.landuse  == "farmland"       )  or
