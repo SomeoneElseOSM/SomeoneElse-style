@@ -10,6 +10,7 @@ Detect chimneys that are mapped as `disused:man_made`.
 Handle `landuse=pit` as `landuse=quarry`.
 Detect former military that are mapped as `disused=yes` as `brownfield` if appropriate.
 Detect former plant nurseries that are mapped as with `disused=yes` as `vacant` rather than `garden_centre`.
+(raster) Increase the zoom level at which locks and lock gates are shown so that lock gate names do not overwhelm other features.
 
 ## Raster 26/04/2026 PM, vector 27/04/2026
 A "dark teal" colour is now used for restricted byways rather than the previous "bridleway blue".

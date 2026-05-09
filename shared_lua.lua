@@ -7561,6 +7561,10 @@ function consolidate_lua_03_t( passedt )
 -- ----------------------------------------------------------------------------
 -- If something has a "lock_ref", append it to "lock_name" (if it exists) or
 -- "name" (if it doesn't)
+--
+-- The selection of things with lock_name can be seen at
+-- nwr["lock_name"][!"waterway"][!"disused:waterway"][!"demolished:waterway"][!"water"][!"historic"][!"highway"];
+-- https://overpass-turbo.eu/s/2puE
 -- ----------------------------------------------------------------------------
    if (( passedt.lock_ref ~= nil ) and
        ( passedt.lock_ref ~= ""  )) then
