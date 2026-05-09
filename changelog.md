@@ -3,6 +3,7 @@ This page describes changes made in these projects: [SomeoneElse-style](https://
 
 ## As yet unreleased
 (raster) Steps that are not public footpaths etc. now use larger dasharray sizes and widths at higher zooms.
+(raster) Steps that are `designation=public_footpath` also use larger dasharray sizes and widths at higher zooms.
 
 ## 09/05/2026
 Regular railway stations (`railway=station`) are still extracted as such, but those with `station=subway` are now extracted as `railway=tubestation`.  No change to raster or to SVWD01 vector rendering.  The SVWD10 vector rendering shows regular stations from vector 7 and tube stations from vector 9.
