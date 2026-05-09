@@ -2,8 +2,8 @@
 This page describes changes made in these projects: [SomeoneElse-style](https://github.com/SomeoneElseOSM/SomeoneElse-style), [SomeoneElse-style-legend](https://github.com/SomeoneElseOSM/SomeoneElse-style-legend) and [openstreetmap-carto-AJT](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT), and visible [on this site](//map.atownsend.org.uk/maps/map/map.html).  Since 2025 this also includes changes to lua code shared between raster and vector processing - hence the notes below about which a particular change applies to.  See [this changelog](https://github.com/SomeoneElseOSM/SomeoneElse-vector-extract/blob/main/resources/changelog_sve01.md) for where changes here affect the vector schema, and also other vector-only ones.
 
 ## As yet unreleased
-(raster) Steps that are: not public footpaths, `designation=public_footpath` and `designation=public_bridleway` also use larger dasharray sizes and widths at higher zooms.
-(raster) Steps that are not public footpaths: size bridge and levee casing and fill with zoom.
+(raster) Steps of all designations and none use larger dasharray sizes and widths at higher zooms.  Bridge and levee casings and fill are also sized with zoom
+(raster) Bridge and levee casings of paths of all designations and none are also sized with zoom.
 
 ## 09/05/2026
 Regular railway stations (`railway=station`) are still extracted as such, but those with `station=subway` are now extracted as `railway=tubestation`.  No change to raster or to SVWD01 vector rendering.  The SVWD10 vector rendering shows regular stations from vector 7 and tube stations from vector 9.
