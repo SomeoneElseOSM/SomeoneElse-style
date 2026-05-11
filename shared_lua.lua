@@ -1118,7 +1118,7 @@ function consolidate_lua_01_t( passedt )
              ( passedt.trail_visibility == "intermediate" )) then
             passedt.highway = "intfootwaynarrow"
          else
-            passedt.highway = "footwaynarrow"
+            set_goodfootwaynarrow( passedt )
          end
       else
          if (( passedt.highway == "steps"        ) or
@@ -1135,7 +1135,7 @@ function consolidate_lua_01_t( passedt )
                    ( passedt.trail_visibility == "intermediate" )) then
                   passedt.highway = "intfootwaywide"
                else
-                  passedt.highway = "footwaywide"
+                  set_goodfootwaywide( passedt )
                end
             end
          end
@@ -14161,3 +14161,89 @@ function set_goodpathwide( passedt )
         passedt.highway = "pathwide"
     end
 end  -- function set_goodpathwide( passedt )
+
+-- ----------------------------------------------------------------------------
+-- At this point we have a something that is at least a "footwaynarrow".  Is the
+-- surface good enough to make it a "goodfootwaynarrow"?
+-- This list is from 
+-- https://taginfo.geofabrik.de/europe:britain-and-ireland/keys/surface#values
+-- sorted by usage
+-- ----------------------------------------------------------------------------
+function set_goodfootwaynarrow( passedt )
+    if (( passedt.surface   == "asphalt"               ) or
+        ( passedt.surface   == "paved"                 ) or
+        ( passedt.surface   == "paving_stones"         ) or
+        ( passedt.surface   == "concrete"              ) or
+        ( passedt.surface   == "compacted"             ) or
+        ( passedt.surface   == "sett"                  ) or
+        ( passedt.surface   == "fine_gravel"           ) or
+        ( passedt.surface   == "pebblestone"           ) or
+        ( passedt.surface   == "concrete:plates"       ) or
+        ( passedt.surface   == "cobblestone"           ) or
+        ( passedt.surface   == "metal"                 ) or
+        ( passedt.surface   == "stone"                 ) or
+        ( passedt.surface   == "bitmac"                ) or
+        ( passedt.surface   == "brick"                 ) or
+        ( passedt.surface   == "unhewn_cobblestone"    ) or
+        ( passedt.surface   == "grass_paver"           ) or
+        ( passedt.surface   == "tartan"                ) or
+        ( passedt.surface   == "brick_weave"           ) or
+        ( passedt.surface   == "bricks"                ) or
+        ( passedt.surface   == "concrete:lanes"        ) or
+        ( passedt.surface   == "rubber"                ) or
+        ( passedt.surface   == "chipseal"              ) or
+        ( passedt.surface   == "slabs"                 ) or
+        ( passedt.surface   == "tarmac"                ) or
+        ( passedt.surface   == "tactile_paving"        ) or
+        ( passedt.surface   == "boardwalk"             ) or
+        ( passedt.surface   == "tiles"                 ) or
+        ( passedt.surface   == "cobblestone:flattened" ) or
+        ( passedt.surface   == "metal_grid"            )) then
+        passedt.highway = "goodfootwaynarrow"
+    else
+        passedt.highway = "footwaynarrow"
+    end
+end  -- function set_goodfootwaynarrow( passedt )
+
+-- ----------------------------------------------------------------------------
+-- At this point we have a something that is at least a "footwaywide".  Is the
+-- surface good enough to make it a "goodfootwaywide"?
+-- This list is from 
+-- https://taginfo.geofabrik.de/europe:britain-and-ireland/keys/surface#values
+-- sorted by usage
+-- ----------------------------------------------------------------------------
+function set_goodfootwaywide( passedt )
+    if (( passedt.surface   == "asphalt"               ) or
+        ( passedt.surface   == "paved"                 ) or
+        ( passedt.surface   == "paving_stones"         ) or
+        ( passedt.surface   == "concrete"              ) or
+        ( passedt.surface   == "compacted"             ) or
+        ( passedt.surface   == "sett"                  ) or
+        ( passedt.surface   == "fine_gravel"           ) or
+        ( passedt.surface   == "pebblestone"           ) or
+        ( passedt.surface   == "concrete:plates"       ) or
+        ( passedt.surface   == "cobblestone"           ) or
+        ( passedt.surface   == "metal"                 ) or
+        ( passedt.surface   == "stone"                 ) or
+        ( passedt.surface   == "bitmac"                ) or
+        ( passedt.surface   == "brick"                 ) or
+        ( passedt.surface   == "unhewn_cobblestone"    ) or
+        ( passedt.surface   == "grass_paver"           ) or
+        ( passedt.surface   == "tartan"                ) or
+        ( passedt.surface   == "brick_weave"           ) or
+        ( passedt.surface   == "bricks"                ) or
+        ( passedt.surface   == "concrete:lanes"        ) or
+        ( passedt.surface   == "rubber"                ) or
+        ( passedt.surface   == "chipseal"              ) or
+        ( passedt.surface   == "slabs"                 ) or
+        ( passedt.surface   == "tarmac"                ) or
+        ( passedt.surface   == "tactile_paving"        ) or
+        ( passedt.surface   == "boardwalk"             ) or
+        ( passedt.surface   == "tiles"                 ) or
+        ( passedt.surface   == "cobblestone:flattened" ) or
+        ( passedt.surface   == "metal_grid"            )) then
+        passedt.highway = "goodfootwaywide"
+    else
+        passedt.highway = "footwaywide"
+    end
+end  -- function set_goodfootwaywide( passedt )

@@ -4,6 +4,7 @@ This page describes changes made in these projects: [SomeoneElse-style](https://
 ## As yet unreleased
 (raster) Steps of all designations and none use larger dasharray sizes and widths at higher zooms.  Bridge and levee casings and fill are also sized with zoom
 (raster) Bridge and levee casings of paths of all designations and none are also sized with zoom.
+Change dash array for "good surface" narrow and wide public foopaths (`footwaynarrow` and `footwaywide` in the schema).
 
 ## 09/05/2026
 Regular railway stations (`railway=station`) are still extracted as such, but those with `station=subway` are now extracted as `railway=tubestation`.  No change to raster or to SVWD01 vector rendering.  The SVWD10 vector rendering shows regular stations from vector 7 and tube stations from vector 9.
