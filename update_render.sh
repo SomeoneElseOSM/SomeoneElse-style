@@ -306,7 +306,7 @@ file_extension1=`cat last_modified1.$$`
 #
 if test -e ${file_prefix1}_${file_extension1}.osm.pbf
 then
-    echo "File1 already downloaded"
+    echo "File1 ${file_prefix1}_${file_extension1}.osm.pbf already downloaded"
 else
     wget $file_url1 -O ${file_prefix1}_${file_extension1}.osm.pbf
 fi
@@ -326,7 +326,7 @@ file_extension2=`cat last_modified2.$$`
 #
 if test -e ${file_prefix2}_${file_extension2}.osm.pbf
 then
-    echo "File2 already downloaded"
+    echo "File2 ${file_prefix2}_${file_extension2}.osm.pbf already downloaded"
 else
     wget $file_url2 -O ${file_prefix2}_${file_extension2}.osm.pbf
 fi
@@ -346,7 +346,7 @@ file_extension3=`cat last_modified3.$$`
 #
 if test -e ${file_prefix3}_${file_extension3}.osm.pbf
 then
-    echo "File3 already downloaded"
+    echo "File3 ${file_prefix3}_${file_extension3}.osm.pbf already downloaded"
 else
     wget $file_url3 -O ${file_prefix3}_${file_extension3}.osm.pbf
 fi
@@ -366,7 +366,7 @@ file_extension4=`cat last_modified4.$$`
 #
 if test -e ${file_prefix4}_${file_extension4}.osm.pbf
 then
-    echo "File4 already downloaded"
+    echo "File4 ${file_prefix4}_${file_extension4}.osm.pbf already downloaded"
 else
     wget $file_url4 -O ${file_prefix4}_${file_extension4}.osm.pbf
 fi
