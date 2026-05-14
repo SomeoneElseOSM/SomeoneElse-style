@@ -1030,7 +1030,11 @@ function consolidate_lua_01_t( passedt )
           ( passedt.highway == "intpathnarrow"  ) or
           ( passedt.highway == "goodpathnarrow" ) or
           ( passedt.highway == "pathnarrow"     )) then
-         passedt.highway = "rbynarrow"
+-- ----------------------------------------------------------------------------
+-- We don't yet have an "intrbynarrow" so there's no trail_visibility check
+-- here yet, like there is with bridlewaynarrow.
+-- ----------------------------------------------------------------------------
+         set_goodrbynarrow( passedt )
          passedt.designation = "restricted_byway"
       else
          if (( passedt.highway == "service"      ) or 
@@ -1039,7 +1043,11 @@ function consolidate_lua_01_t( passedt )
              ( passedt.highway == "intpathwide"  ) or
              ( passedt.highway == "goodpathwide" ) or
              ( passedt.highway == "pathwide"     )) then
-            passedt.highway = "rbywide"
+-- ----------------------------------------------------------------------------
+-- We don't yet have an "intrbywide" so there's no trail_visibility check
+-- here yet, like there is with bridlewaywide.
+-- ----------------------------------------------------------------------------
+            set_goodrbywide( passedt )
             passedt.designation = "restricted_byway"
          end
       end
@@ -1238,13 +1246,13 @@ function consolidate_lua_01_t( passedt )
    if ((  passedt.highway       == "boatwide"    )  and
        (( passedt.motorcar      == "no"         )   or
         ( passedt.motor_vehicle == "no"         ))) then
-      passedt.highway = "rbywide"
+      set_goodrbywide( passedt )
    end
 
    if ((  passedt.highway       == "boatnarrow"  )  and
        (( passedt.motorcar      == "no"         )   or
         ( passedt.motor_vehicle == "no"         ))) then
-      passedt.highway = "rbynarrow"
+      set_goodrbynarrow( passedt )
    end
 
 -- ----------------------------------------------------------------------------
@@ -14333,3 +14341,89 @@ function set_goodbridlewaywide( passedt )
         passedt.highway = "bridlewaywide"
     end
 end  -- function set_goodbridlewaywide( passedt )
+
+-- ----------------------------------------------------------------------------
+-- At this point we have a something that is at least a "rbynarrow".  Is the
+-- surface good enough to make it a "goodrbynarrow"?
+-- This list is from 
+-- https://taginfo.geofabrik.de/europe:britain-and-ireland/keys/surface#values
+-- sorted by usage
+-- ----------------------------------------------------------------------------
+function set_goodrbynarrow( passedt )
+    if (( passedt.surface   == "asphalt"               ) or
+        ( passedt.surface   == "paved"                 ) or
+        ( passedt.surface   == "paving_stones"         ) or
+        ( passedt.surface   == "concrete"              ) or
+        ( passedt.surface   == "compacted"             ) or
+        ( passedt.surface   == "sett"                  ) or
+        ( passedt.surface   == "fine_gravel"           ) or
+        ( passedt.surface   == "pebblestone"           ) or
+        ( passedt.surface   == "concrete:plates"       ) or
+        ( passedt.surface   == "cobblestone"           ) or
+        ( passedt.surface   == "metal"                 ) or
+        ( passedt.surface   == "stone"                 ) or
+        ( passedt.surface   == "bitmac"                ) or
+        ( passedt.surface   == "brick"                 ) or
+        ( passedt.surface   == "unhewn_cobblestone"    ) or
+        ( passedt.surface   == "grass_paver"           ) or
+        ( passedt.surface   == "tartan"                ) or
+        ( passedt.surface   == "brick_weave"           ) or
+        ( passedt.surface   == "bricks"                ) or
+        ( passedt.surface   == "concrete:lanes"        ) or
+        ( passedt.surface   == "rubber"                ) or
+        ( passedt.surface   == "chipseal"              ) or
+        ( passedt.surface   == "slabs"                 ) or
+        ( passedt.surface   == "tarmac"                ) or
+        ( passedt.surface   == "tactile_paving"        ) or
+        ( passedt.surface   == "boardwalk"             ) or
+        ( passedt.surface   == "tiles"                 ) or
+        ( passedt.surface   == "cobblestone:flattened" ) or
+        ( passedt.surface   == "metal_grid"            )) then
+        passedt.highway = "goodrbynarrow"
+    else
+        passedt.highway = "rbynarrow"
+    end
+end  -- function set_goodrbynarrow( passedt )
+
+-- ----------------------------------------------------------------------------
+-- At this point we have a something that is at least a "rbywide".  Is the
+-- surface good enough to make it a "goodrbywide"?
+-- This list is from 
+-- https://taginfo.geofabrik.de/europe:britain-and-ireland/keys/surface#values
+-- sorted by usage
+-- ----------------------------------------------------------------------------
+function set_goodrbywide( passedt )
+    if (( passedt.surface   == "asphalt"               ) or
+        ( passedt.surface   == "paved"                 ) or
+        ( passedt.surface   == "paving_stones"         ) or
+        ( passedt.surface   == "concrete"              ) or
+        ( passedt.surface   == "compacted"             ) or
+        ( passedt.surface   == "sett"                  ) or
+        ( passedt.surface   == "fine_gravel"           ) or
+        ( passedt.surface   == "pebblestone"           ) or
+        ( passedt.surface   == "concrete:plates"       ) or
+        ( passedt.surface   == "cobblestone"           ) or
+        ( passedt.surface   == "metal"                 ) or
+        ( passedt.surface   == "stone"                 ) or
+        ( passedt.surface   == "bitmac"                ) or
+        ( passedt.surface   == "brick"                 ) or
+        ( passedt.surface   == "unhewn_cobblestone"    ) or
+        ( passedt.surface   == "grass_paver"           ) or
+        ( passedt.surface   == "tartan"                ) or
+        ( passedt.surface   == "brick_weave"           ) or
+        ( passedt.surface   == "bricks"                ) or
+        ( passedt.surface   == "concrete:lanes"        ) or
+        ( passedt.surface   == "rubber"                ) or
+        ( passedt.surface   == "chipseal"              ) or
+        ( passedt.surface   == "slabs"                 ) or
+        ( passedt.surface   == "tarmac"                ) or
+        ( passedt.surface   == "tactile_paving"        ) or
+        ( passedt.surface   == "boardwalk"             ) or
+        ( passedt.surface   == "tiles"                 ) or
+        ( passedt.surface   == "cobblestone:flattened" ) or
+        ( passedt.surface   == "metal_grid"            )) then
+        passedt.highway = "goodrbywide"
+    else
+        passedt.highway = "rbywide"
+    end
+end  -- function set_goodrbywide( passedt )

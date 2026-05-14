@@ -7,6 +7,7 @@ This page describes changes made in these projects: [SomeoneElse-style](https://
 Change dash array for "good surface" narrow and wide public foopaths (`footwaynarrow` and `footwaywide` in the schema).
 (raster) Ford casings of paths are now wider at zooms 18 and 19.
 Change dash array for "good surface" narrow and wide public bridleways (`bridlewaynarrow` and `bridlewaywide` in the schema).
+Change dash array for "good surface" narrow and wide restricted byways (`rbynarrow` and `rbywide` in the schema).
 
 ## 09/05/2026
 Regular railway stations (`railway=station`) are still extracted as such, but those with `station=subway` are now extracted as `railway=tubestation`.  No change to raster or to SVWD01 vector rendering.  The SVWD10 vector rendering shows regular stations from vector 7 and tube stations from vector 9.
