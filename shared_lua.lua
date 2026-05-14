@@ -1065,7 +1065,7 @@ function consolidate_lua_01_t( passedt )
              ( passedt.trail_visibility == "intermediate" )) then
             passedt.highway = "intbridlewaynarrow"
          else
-            passedt.highway = "bridlewaynarrow"
+            set_goodbridlewaynarrow( passedt )
          end
       else
          if (( passedt.highway == "steps"          ) or
@@ -1082,7 +1082,7 @@ function consolidate_lua_01_t( passedt )
                    ( passedt.trail_visibility == "intermediate" )) then
                   passedt.highway = "intbridlewaywide"
                else
-                  passedt.highway = "bridlewaywide"
+                  set_goodbridlewaywide( passedt )
                end
             end
          end
@@ -1222,13 +1222,13 @@ function consolidate_lua_01_t( passedt )
    if ((  passedt.highway == "boatwide"     )  and
        (( passedt.vehicle == "no"          )   or
         ( passedt.vehicle == "destination" ))) then
-      passedt.highway = "bridlewaywide"
+      set_goodbridlewaywide( passedt )
    end
 
    if ((  passedt.highway == "boatnarrow"  )  and
        (( passedt.vehicle == "no"          )   or
         ( passedt.vehicle == "destination" ))) then
-      passedt.highway = "bridlewaynarrow"
+      set_goodbridlewaynarrow( passedt )
    end
 
 -- ----------------------------------------------------------------------------
@@ -14247,3 +14247,89 @@ function set_goodfootwaywide( passedt )
         passedt.highway = "footwaywide"
     end
 end  -- function set_goodfootwaywide( passedt )
+
+-- ----------------------------------------------------------------------------
+-- At this point we have a something that is at least a "bridlewaynarrow".  Is the
+-- surface good enough to make it a "goodbridlewaynarrow"?
+-- This list is from 
+-- https://taginfo.geofabrik.de/europe:britain-and-ireland/keys/surface#values
+-- sorted by usage
+-- ----------------------------------------------------------------------------
+function set_goodbridlewaynarrow( passedt )
+    if (( passedt.surface   == "asphalt"               ) or
+        ( passedt.surface   == "paved"                 ) or
+        ( passedt.surface   == "paving_stones"         ) or
+        ( passedt.surface   == "concrete"              ) or
+        ( passedt.surface   == "compacted"             ) or
+        ( passedt.surface   == "sett"                  ) or
+        ( passedt.surface   == "fine_gravel"           ) or
+        ( passedt.surface   == "pebblestone"           ) or
+        ( passedt.surface   == "concrete:plates"       ) or
+        ( passedt.surface   == "cobblestone"           ) or
+        ( passedt.surface   == "metal"                 ) or
+        ( passedt.surface   == "stone"                 ) or
+        ( passedt.surface   == "bitmac"                ) or
+        ( passedt.surface   == "brick"                 ) or
+        ( passedt.surface   == "unhewn_cobblestone"    ) or
+        ( passedt.surface   == "grass_paver"           ) or
+        ( passedt.surface   == "tartan"                ) or
+        ( passedt.surface   == "brick_weave"           ) or
+        ( passedt.surface   == "bricks"                ) or
+        ( passedt.surface   == "concrete:lanes"        ) or
+        ( passedt.surface   == "rubber"                ) or
+        ( passedt.surface   == "chipseal"              ) or
+        ( passedt.surface   == "slabs"                 ) or
+        ( passedt.surface   == "tarmac"                ) or
+        ( passedt.surface   == "tactile_paving"        ) or
+        ( passedt.surface   == "boardwalk"             ) or
+        ( passedt.surface   == "tiles"                 ) or
+        ( passedt.surface   == "cobblestone:flattened" ) or
+        ( passedt.surface   == "metal_grid"            )) then
+        passedt.highway = "goodbridlewaynarrow"
+    else
+        passedt.highway = "bridlewaynarrow"
+    end
+end  -- function set_goodbridlewaynarrow( passedt )
+
+-- ----------------------------------------------------------------------------
+-- At this point we have a something that is at least a "bridlewaywide".  Is the
+-- surface good enough to make it a "goodbridlewaywide"?
+-- This list is from 
+-- https://taginfo.geofabrik.de/europe:britain-and-ireland/keys/surface#values
+-- sorted by usage
+-- ----------------------------------------------------------------------------
+function set_goodbridlewaywide( passedt )
+    if (( passedt.surface   == "asphalt"               ) or
+        ( passedt.surface   == "paved"                 ) or
+        ( passedt.surface   == "paving_stones"         ) or
+        ( passedt.surface   == "concrete"              ) or
+        ( passedt.surface   == "compacted"             ) or
+        ( passedt.surface   == "sett"                  ) or
+        ( passedt.surface   == "fine_gravel"           ) or
+        ( passedt.surface   == "pebblestone"           ) or
+        ( passedt.surface   == "concrete:plates"       ) or
+        ( passedt.surface   == "cobblestone"           ) or
+        ( passedt.surface   == "metal"                 ) or
+        ( passedt.surface   == "stone"                 ) or
+        ( passedt.surface   == "bitmac"                ) or
+        ( passedt.surface   == "brick"                 ) or
+        ( passedt.surface   == "unhewn_cobblestone"    ) or
+        ( passedt.surface   == "grass_paver"           ) or
+        ( passedt.surface   == "tartan"                ) or
+        ( passedt.surface   == "brick_weave"           ) or
+        ( passedt.surface   == "bricks"                ) or
+        ( passedt.surface   == "concrete:lanes"        ) or
+        ( passedt.surface   == "rubber"                ) or
+        ( passedt.surface   == "chipseal"              ) or
+        ( passedt.surface   == "slabs"                 ) or
+        ( passedt.surface   == "tarmac"                ) or
+        ( passedt.surface   == "tactile_paving"        ) or
+        ( passedt.surface   == "boardwalk"             ) or
+        ( passedt.surface   == "tiles"                 ) or
+        ( passedt.surface   == "cobblestone:flattened" ) or
+        ( passedt.surface   == "metal_grid"            )) then
+        passedt.highway = "goodbridlewaywide"
+    else
+        passedt.highway = "bridlewaywide"
+    end
+end  -- function set_goodbridlewaywide( passedt )
