@@ -297,9 +297,8 @@ then
     echo "Using current data"
     ls -t | grep "${file_prefix1}_" | head -1 | sed "s/${file_prefix1}_//" | sed "s/.osm.pbf//" > last_modified1.$$
 else
-    wget $file_page1 -O file_page1.$$
+    wget ${file_page1} -O file_page1.$$
     grep " and contains all OSM data up to " file_page1.$$ | sed "s/.*and contains all OSM data up to //" | sed "s/. File size.*//" > last_modified1.$$
-    rm file_page1.$$
 fi
 #
 file_extension1=`cat last_modified1.$$`
@@ -317,9 +316,15 @@ if [ "$1" = "current" ]
 then
     ls -t | grep "${file_prefix2}_" | head -1 | sed "s/${file_prefix2}_//" | sed "s/.osm.pbf//" > last_modified2.$$
 else
-    wget $file_page2 -O file_page2.$$
+    if [ "${file_page1}" = "${file_page2}" ]
+    then
+        echo "We already have a date for ${file_prefix2}"
+        cp file_page1.$$ file_page2.$$
+    else
+        wget ${file_page2} -O file_page2.$$
+    fi
+
     grep " and contains all OSM data up to " file_page2.$$ | sed "s/.*and contains all OSM data up to //" | sed "s/. File size.*//" > last_modified2.$$
-    rm file_page2.$$
 fi
 #
 file_extension2=`cat last_modified2.$$`
@@ -337,9 +342,15 @@ if [ "$1" = "current" ]
 then
     ls -t | grep "${file_prefix3}_" | head -1 | sed "s/${file_prefix3}_//" | sed "s/.osm.pbf//" > last_modified3.$$
 else
-    wget $file_page3 -O file_page3.$$
+    if [ "${file_page1}" = "${file_page3}" ]
+    then
+        echo "We already have a date for ${file_prefix3}"
+        cp file_page1.$$ file_page3.$$
+    else
+	wget ${file_page3} -O file_page3.$$
+    fi
+
     grep " and contains all OSM data up to " file_page3.$$ | sed "s/.*and contains all OSM data up to //" | sed "s/. File size.*//" > last_modified3.$$
-    rm file_page3.$$
 fi
 #
 file_extension3=`cat last_modified3.$$`
@@ -357,10 +368,21 @@ if [ "$1" = "current" ]
 then
     ls -t | grep "${file_prefix4}_" | head -1 | sed "s/${file_prefix4}_//" | sed "s/.osm.pbf//" > last_modified4.$$
 else
-    wget $file_page4 -O file_page4.$$
+    if [ "${file_page1}" = "${file_page4}" ]
+    then
+        echo "We already have a date for ${file_prefix4}"
+        cp file_page1.$$ file_page4.$$
+    else
+        wget ${file_page4} -O file_page4.$$
+    fi
+
     grep " and contains all OSM data up to " file_page4.$$ | sed "s/.*and contains all OSM data up to //" | sed "s/. File size.*//" > last_modified4.$$
-    rm file_page4.$$
 fi
+#
+rm file_page1.$$
+rm file_page2.$$
+rm file_page3.$$
+rm file_page4.$$
 #
 file_extension4=`cat last_modified4.$$`
 #
