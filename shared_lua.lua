@@ -971,7 +971,11 @@ function consolidate_lua_01_t( passedt )
           ( passedt.highway == "intpathnarrow"     ) or
           ( passedt.highway == "goodpathnarrow"    ) or
           ( passedt.highway == "pathnarrow"        )) then
-          passedt.highway = "ucrnarrow"
+-- ----------------------------------------------------------------------------
+-- We don't yet have an "intucrnarrow" so there's no trail_visibility check
+-- here yet, like there is with bridlewaynarrow.
+-- ----------------------------------------------------------------------------
+         set_gooducrnarrow( passedt )
       else
          if (( passedt.highway == "service"      ) or 
              ( passedt.highway == "road"         ) or
@@ -979,7 +983,11 @@ function consolidate_lua_01_t( passedt )
              ( passedt.highway == "intpathwide"  ) or
              ( passedt.highway == "goodpathwide" ) or
              ( passedt.highway == "pathwide"     )) then
-             passedt.highway = "ucrwide"
+-- ----------------------------------------------------------------------------
+-- We don't yet have an "intucrwide" so there's no trail_visibility check
+-- here yet, like there is with bridlewaywide.
+-- ----------------------------------------------------------------------------
+            set_gooducrwide( passedt )
          end
       end
 
@@ -995,8 +1003,8 @@ function consolidate_lua_01_t( passedt )
           ( passedt.highway == "goodpathnarrow"    ) or
           ( passedt.highway == "pathnarrow"        )) then
 -- ----------------------------------------------------------------------------
--- We don't yet have an "intboatwide" so there's no trail_visibility check
--- here yet, like there is with bridlewaywide.
+-- We don't yet have an "intboatnarrow" so there's no trail_visibility check
+-- here yet, like there is with bridlewaynarrow.
 -- ----------------------------------------------------------------------------
           set_goodboatnarrow( passedt )
           passedt.designation = "byway_open_to_all_traffic"
@@ -14525,3 +14533,89 @@ function set_goodboatwide( passedt )
         passedt.highway = "boatwide"
     end
 end  -- function set_goodboatwide( passedt )
+
+-- ----------------------------------------------------------------------------
+-- At this point we have a something that is at least a "ucrnarrow".  Is the
+-- surface good enough to make it a "gooducrnarrow"?
+-- This list is from 
+-- https://taginfo.geofabrik.de/europe:britain-and-ireland/keys/surface#values
+-- sorted by usage
+-- ----------------------------------------------------------------------------
+function set_gooducrnarrow( passedt )
+    if (( passedt.surface   == "asphalt"               ) or
+        ( passedt.surface   == "paved"                 ) or
+        ( passedt.surface   == "paving_stones"         ) or
+        ( passedt.surface   == "concrete"              ) or
+        ( passedt.surface   == "compacted"             ) or
+        ( passedt.surface   == "sett"                  ) or
+        ( passedt.surface   == "fine_gravel"           ) or
+        ( passedt.surface   == "pebblestone"           ) or
+        ( passedt.surface   == "concrete:plates"       ) or
+        ( passedt.surface   == "cobblestone"           ) or
+        ( passedt.surface   == "metal"                 ) or
+        ( passedt.surface   == "stone"                 ) or
+        ( passedt.surface   == "bitmac"                ) or
+        ( passedt.surface   == "brick"                 ) or
+        ( passedt.surface   == "unhewn_cobblestone"    ) or
+        ( passedt.surface   == "grass_paver"           ) or
+        ( passedt.surface   == "tartan"                ) or
+        ( passedt.surface   == "brick_weave"           ) or
+        ( passedt.surface   == "bricks"                ) or
+        ( passedt.surface   == "concrete:lanes"        ) or
+        ( passedt.surface   == "rubber"                ) or
+        ( passedt.surface   == "chipseal"              ) or
+        ( passedt.surface   == "slabs"                 ) or
+        ( passedt.surface   == "tarmac"                ) or
+        ( passedt.surface   == "tactile_paving"        ) or
+        ( passedt.surface   == "boardwalk"             ) or
+        ( passedt.surface   == "tiles"                 ) or
+        ( passedt.surface   == "cobblestone:flattened" ) or
+        ( passedt.surface   == "metal_grid"            )) then
+        passedt.highway = "gooducrnarrow"
+    else
+        passedt.highway = "ucrnarrow"
+    end
+end  -- function set_gooducrnarrow( passedt )
+
+-- ----------------------------------------------------------------------------
+-- At this point we have a something that is at least a "ucrwide".  Is the
+-- surface good enough to make it a "gooducrwide"?
+-- This list is from 
+-- https://taginfo.geofabrik.de/europe:britain-and-ireland/keys/surface#values
+-- sorted by usage
+-- ----------------------------------------------------------------------------
+function set_gooducrwide( passedt )
+    if (( passedt.surface   == "asphalt"               ) or
+        ( passedt.surface   == "paved"                 ) or
+        ( passedt.surface   == "paving_stones"         ) or
+        ( passedt.surface   == "concrete"              ) or
+        ( passedt.surface   == "compacted"             ) or
+        ( passedt.surface   == "sett"                  ) or
+        ( passedt.surface   == "fine_gravel"           ) or
+        ( passedt.surface   == "pebblestone"           ) or
+        ( passedt.surface   == "concrete:plates"       ) or
+        ( passedt.surface   == "cobblestone"           ) or
+        ( passedt.surface   == "metal"                 ) or
+        ( passedt.surface   == "stone"                 ) or
+        ( passedt.surface   == "bitmac"                ) or
+        ( passedt.surface   == "brick"                 ) or
+        ( passedt.surface   == "unhewn_cobblestone"    ) or
+        ( passedt.surface   == "grass_paver"           ) or
+        ( passedt.surface   == "tartan"                ) or
+        ( passedt.surface   == "brick_weave"           ) or
+        ( passedt.surface   == "bricks"                ) or
+        ( passedt.surface   == "concrete:lanes"        ) or
+        ( passedt.surface   == "rubber"                ) or
+        ( passedt.surface   == "chipseal"              ) or
+        ( passedt.surface   == "slabs"                 ) or
+        ( passedt.surface   == "tarmac"                ) or
+        ( passedt.surface   == "tactile_paving"        ) or
+        ( passedt.surface   == "boardwalk"             ) or
+        ( passedt.surface   == "tiles"                 ) or
+        ( passedt.surface   == "cobblestone:flattened" ) or
+        ( passedt.surface   == "metal_grid"            )) then
+        passedt.highway = "gooducrwide"
+    else
+        passedt.highway = "ucrwide"
+    end
+end  -- function set_gooducrwide( passedt )
