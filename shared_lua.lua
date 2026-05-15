@@ -994,7 +994,11 @@ function consolidate_lua_01_t( passedt )
           ( passedt.highway == "intpathnarrow"     ) or
           ( passedt.highway == "goodpathnarrow"    ) or
           ( passedt.highway == "pathnarrow"        )) then
-          passedt.highway = "boatnarrow"
+-- ----------------------------------------------------------------------------
+-- We don't yet have an "intboatwide" so there's no trail_visibility check
+-- here yet, like there is with bridlewaywide.
+-- ----------------------------------------------------------------------------
+          set_goodboatnarrow( passedt )
           passedt.designation = "byway_open_to_all_traffic"
       else
          if (( passedt.highway == "service"      ) or 
@@ -1003,7 +1007,11 @@ function consolidate_lua_01_t( passedt )
              ( passedt.highway == "intpathwide"  ) or
              ( passedt.highway == "goodpathwide" ) or
              ( passedt.highway == "pathwide"     )) then
-             passedt.highway = "boatwide"
+-- ----------------------------------------------------------------------------
+-- We don't yet have an "intboatwide" so there's no trail_visibility check
+-- here yet, like there is with bridlewaywide.
+-- ----------------------------------------------------------------------------
+             set_goodboatwide( passedt )
              passedt.designation = "byway_open_to_all_traffic"
          end
       end
@@ -1227,15 +1235,17 @@ function consolidate_lua_01_t( passedt )
 -- If vehicle=no or vehicle=destination is set on a BOAT, it's probably a TRO,
 -- so display as a bridleway instead
 -- ----------------------------------------------------------------------------
-   if ((  passedt.highway == "boatwide"     )  and
-       (( passedt.vehicle == "no"          )   or
-        ( passedt.vehicle == "destination" ))) then
+   if ((( passedt.highway == "goodboatwide" )   or
+        ( passedt.highway == "boatwide"     ))  and
+       (( passedt.vehicle == "no"           )   or
+        ( passedt.vehicle == "destination"  ))) then
       set_goodbridlewaywide( passedt )
    end
 
-   if ((  passedt.highway == "boatnarrow"  )  and
-       (( passedt.vehicle == "no"          )   or
-        ( passedt.vehicle == "destination" ))) then
+   if ((( passedt.highway == "goodboatnarrow" )   or
+        ( passedt.highway == "boatnarrow"     ))  and
+       (( passedt.vehicle == "no"             )   or
+        ( passedt.vehicle == "destination"    ))) then
       set_goodbridlewaynarrow( passedt )
    end
 
@@ -1243,15 +1253,17 @@ function consolidate_lua_01_t( passedt )
 -- If motor_vehicle=no is set on a BOAT, it's probably a TRO, so display as
 -- an RBY instead
 -- ----------------------------------------------------------------------------
-   if ((  passedt.highway       == "boatwide"    )  and
-       (( passedt.motorcar      == "no"         )   or
-        ( passedt.motor_vehicle == "no"         ))) then
+   if ((( passedt.highway       == "goodboatwide" )   or
+        ( passedt.highway       == "boatwide"     ))  and
+       (( passedt.motorcar      == "no"           )   or
+        ( passedt.motor_vehicle == "no"           ))) then
       set_goodrbywide( passedt )
    end
 
-   if ((  passedt.highway       == "boatnarrow"  )  and
-       (( passedt.motorcar      == "no"         )   or
-        ( passedt.motor_vehicle == "no"         ))) then
+   if ((( passedt.highway       == "goodboatnarrow" )   or
+        ( passedt.highway       == "boatnarrow"     ))  and
+       (( passedt.motorcar      == "no"             )   or
+        ( passedt.motor_vehicle == "no"             ))) then
       set_goodrbynarrow( passedt )
    end
 
@@ -14427,3 +14439,89 @@ function set_goodrbywide( passedt )
         passedt.highway = "rbywide"
     end
 end  -- function set_goodrbywide( passedt )
+
+-- ----------------------------------------------------------------------------
+-- At this point we have a something that is at least a "boatnarrow".  Is the
+-- surface good enough to make it a "goodboatnarrow"?
+-- This list is from 
+-- https://taginfo.geofabrik.de/europe:britain-and-ireland/keys/surface#values
+-- sorted by usage
+-- ----------------------------------------------------------------------------
+function set_goodboatnarrow( passedt )
+    if (( passedt.surface   == "asphalt"               ) or
+        ( passedt.surface   == "paved"                 ) or
+        ( passedt.surface   == "paving_stones"         ) or
+        ( passedt.surface   == "concrete"              ) or
+        ( passedt.surface   == "compacted"             ) or
+        ( passedt.surface   == "sett"                  ) or
+        ( passedt.surface   == "fine_gravel"           ) or
+        ( passedt.surface   == "pebblestone"           ) or
+        ( passedt.surface   == "concrete:plates"       ) or
+        ( passedt.surface   == "cobblestone"           ) or
+        ( passedt.surface   == "metal"                 ) or
+        ( passedt.surface   == "stone"                 ) or
+        ( passedt.surface   == "bitmac"                ) or
+        ( passedt.surface   == "brick"                 ) or
+        ( passedt.surface   == "unhewn_cobblestone"    ) or
+        ( passedt.surface   == "grass_paver"           ) or
+        ( passedt.surface   == "tartan"                ) or
+        ( passedt.surface   == "brick_weave"           ) or
+        ( passedt.surface   == "bricks"                ) or
+        ( passedt.surface   == "concrete:lanes"        ) or
+        ( passedt.surface   == "rubber"                ) or
+        ( passedt.surface   == "chipseal"              ) or
+        ( passedt.surface   == "slabs"                 ) or
+        ( passedt.surface   == "tarmac"                ) or
+        ( passedt.surface   == "tactile_paving"        ) or
+        ( passedt.surface   == "boardwalk"             ) or
+        ( passedt.surface   == "tiles"                 ) or
+        ( passedt.surface   == "cobblestone:flattened" ) or
+        ( passedt.surface   == "metal_grid"            )) then
+        passedt.highway = "goodboatnarrow"
+    else
+        passedt.highway = "boatnarrow"
+    end
+end  -- function set_goodboatnarrow( passedt )
+
+-- ----------------------------------------------------------------------------
+-- At this point we have a something that is at least a "boatwide".  Is the
+-- surface good enough to make it a "goodboatwide"?
+-- This list is from 
+-- https://taginfo.geofabrik.de/europe:britain-and-ireland/keys/surface#values
+-- sorted by usage
+-- ----------------------------------------------------------------------------
+function set_goodboatwide( passedt )
+    if (( passedt.surface   == "asphalt"               ) or
+        ( passedt.surface   == "paved"                 ) or
+        ( passedt.surface   == "paving_stones"         ) or
+        ( passedt.surface   == "concrete"              ) or
+        ( passedt.surface   == "compacted"             ) or
+        ( passedt.surface   == "sett"                  ) or
+        ( passedt.surface   == "fine_gravel"           ) or
+        ( passedt.surface   == "pebblestone"           ) or
+        ( passedt.surface   == "concrete:plates"       ) or
+        ( passedt.surface   == "cobblestone"           ) or
+        ( passedt.surface   == "metal"                 ) or
+        ( passedt.surface   == "stone"                 ) or
+        ( passedt.surface   == "bitmac"                ) or
+        ( passedt.surface   == "brick"                 ) or
+        ( passedt.surface   == "unhewn_cobblestone"    ) or
+        ( passedt.surface   == "grass_paver"           ) or
+        ( passedt.surface   == "tartan"                ) or
+        ( passedt.surface   == "brick_weave"           ) or
+        ( passedt.surface   == "bricks"                ) or
+        ( passedt.surface   == "concrete:lanes"        ) or
+        ( passedt.surface   == "rubber"                ) or
+        ( passedt.surface   == "chipseal"              ) or
+        ( passedt.surface   == "slabs"                 ) or
+        ( passedt.surface   == "tarmac"                ) or
+        ( passedt.surface   == "tactile_paving"        ) or
+        ( passedt.surface   == "boardwalk"             ) or
+        ( passedt.surface   == "tiles"                 ) or
+        ( passedt.surface   == "cobblestone:flattened" ) or
+        ( passedt.surface   == "metal_grid"            )) then
+        passedt.highway = "goodboatwide"
+    else
+        passedt.highway = "boatwide"
+    end
+end  -- function set_goodboatwide( passedt )
