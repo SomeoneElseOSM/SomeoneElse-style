@@ -1013,6 +1013,8 @@ function filter_tags_relation_member (keyvalues, keyvaluemembers, roles, memberc
 -- Note that we're not doing any per-member processing for routes - we just
 -- add a highway type to the relation and ensure that the style rules for it
 -- handle it sensibly, as it's going to be overlaid over other highway types.
+-- This can cause problems when people add e.g. buildings to route relations.
+--
 -- "ldpnwn" is used to allow for future different processing of different 
 -- relations.
 --
@@ -1022,16 +1024,27 @@ function filter_tags_relation_member (keyvalues, keyvaluemembers, roles, memberc
 -- route (including LCN, which isn't actually shown in this rendering).
 --
 -- Processing routes,
--- Walking networks first.
--- We use "ref" rather than "name" on IWNs but not others.
--- We use "colour" as "name" if "colour" is set and "name" is not.
 -- ----------------------------------------------------------------------------
    if (type == "route") then
+-- ----------------------------------------------------------------------------
+-- Throw out any alleged historic routes immediately.
+-- ----------------------------------------------------------------------------
+      if ( keyvalues["route"] == "historic" ) then
+         keyvalues["network"] = nil
+      end
+
+-- ----------------------------------------------------------------------------
+-- Walking networks first.
+-- We use "ref" rather than "name" on IWNs but not others.
+-- ----------------------------------------------------------------------------
       if (( keyvalues["network"] == "iwn" ) and
           ( keyvalues["ref"]     ~= nil   )) then
          keyvalues["name"] = keyvalues["ref"]
       end
 
+-- ----------------------------------------------------------------------------
+-- We use "colour" as "name" if "colour" is set and "name" is not.
+-- ----------------------------------------------------------------------------
       if ((( keyvalues["network"] == "iwn"         ) or
            ( keyvalues["network"] == "nwn"         ) or
            ( keyvalues["network"] == "rwn"         ) or
