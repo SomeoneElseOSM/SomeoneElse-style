@@ -3538,6 +3538,15 @@ function consolidate_lua_03_t( passedt )
    end
 
 -- ----------------------------------------------------------------------------
+-- Show village_pump as water_pump
+-- ----------------------------------------------------------------------------
+   if (( passedt.historic  == "village_pump" ) or
+       ( passedt.man_made  == "water_pump"   )) then
+      passedt.historic = "water_pump"
+      passedt.man_made = nil
+   end
+
+-- ----------------------------------------------------------------------------
 -- Things that are both viewpoints or attractions and monuments or memorials 
 -- should render as the latter.  Some are handled further down too.
 -- Also handle some other combinations.
@@ -7265,13 +7274,6 @@ function consolidate_lua_03_t( passedt )
        ( passedt["ruins:man_made"] == "kiln"      )) then
       passedt.historic       = "kiln"
       passedt["ruins:man_made"] = nil
-   end
-
--- ----------------------------------------------------------------------------
--- Show village_pump as water_pump
--- ----------------------------------------------------------------------------
-   if ( passedt.historic  == "village_pump" ) then
-      passedt.historic = "water_pump"
    end
 
 -- ----------------------------------------------------------------------------
