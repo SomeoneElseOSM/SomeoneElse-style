@@ -6075,6 +6075,12 @@ function consolidate_lua_03_t( passedt )
       passedt.amenity = "playground_balancebeam"
    end
 
+   if ((( passedt.leisure    == nil             )   or
+        ( passedt.leisure    == ""              ))  and
+       (  passedt.playground == "playhouse"      )) then
+      passedt.amenity = "playground_playhouse"
+   end
+
 -- ----------------------------------------------------------------------------
 -- "climbing towers" are a bit of a special case.  Many are mistagged.
 -- They shouldn't be tagged as "leisure=pitch" because many are also buildings.
