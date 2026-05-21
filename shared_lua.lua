@@ -2881,7 +2881,6 @@ function consolidate_lua_03_t( passedt )
           ( passedt.healthcare  == "therapy"                    ) or
           ( passedt.healthcare  == "podiatrist"                 ) or
           ( passedt.healthcare  == "podiatrist;chiropodist"     ) or
-          ( passedt.healthcare  == "physiotherapy"              ) or
           ( passedt.healthcare  == "podiatry"                   ) or
           ( passedt.healthcare  == "clinic;doctor"              ) or
           ( passedt.healthcare  == "nursing_home"               ) or
