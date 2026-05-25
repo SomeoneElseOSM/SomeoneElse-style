@@ -6030,7 +6030,8 @@ function consolidate_lua_03_t( passedt )
 
    if ((( passedt.leisure    == nil             )   or
         ( passedt.leisure    == ""              ))  and
-       (  passedt.playground == "climbingframe"  )) then
+       (( passedt.playground == "climbingframe" )   or
+        ( passedt.playground == "climbingwall"  ))) then
       passedt.amenity = "playground_climbingframe"
    end
 

@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20260507T212405Z",
+  "data_updated": "20260525T183501Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -2939,6 +2939,7 @@
     { "key": "playground", "value": "balance_posts", "description": "Synonym for 'playground=balancebeam'.  Shown as a green playground balancebeam", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/playground_balancebeam.p21.png" },
     { "key": "playground", "value": "basketswing", "description": "Explicitly show some playground features" },
     { "key": "playground", "value": "climbingframe", "description": "Shown as a green playground climbing frame", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/playground_climbingframe.p21.png" },
+    { "key": "playground", "value": "climbingwall", "description": "Synonym for 'playground=climbingframe'. Shown as a green playground climbing frame", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/playground_climbingframe.p21.png" },
     { "key": "playground", "value": "roundabout", "description": "Shown as a green playground roundabout", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/playground_roundabout.p21.png" },
     { "key": "playground", "value": "playhouse", "description": "Shown as a green playground playhouse", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/playground_playhouse.p21.png" },
     { "key": "playground", "value": "sandpit", "description": "Explicitly show some playground features" },
