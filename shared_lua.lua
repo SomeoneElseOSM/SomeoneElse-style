@@ -253,10 +253,22 @@ end -- set_name_left_right_en_t
 -- to foot traffic.
 -- ----------------------------------------------------------------------------
 function set_official_ref_t( passedt )
-    if ((( passedt.official_ref        == nil )   or
-         ( passedt.official_ref        == ""  ))  and
-        (  passedt.highway_authority_ref ~= nil  )) then
-       passedt.official_ref          = passedt.highway_authority_ref
+    if (( passedt.highway_authority_ref ~= nil )  and
+        ( passedt.highway_authority_ref ~= ""  )) then
+        if (( passedt["highway_authority_ref:signed"] == nil )  or
+            ( passedt["highway_authority_ref:signed"] == ""  )) then
+            if (( passedt.official_ref == nil )  or
+                ( passedt.official_ref == ""  )) then
+                passedt.official_ref = passedt.highway_authority_ref
+                passedt.highway_authority_ref = nil
+            end
+        else
+            if (( passedt.ref == nil )  or
+                ( passedt.ref == ""  )) then
+                passedt.ref = passedt.highway_authority_ref
+                passedt.highway_authority_ref = nil
+            end
+        end
     end
 
     if ((( passedt.official_ref == nil )   or
