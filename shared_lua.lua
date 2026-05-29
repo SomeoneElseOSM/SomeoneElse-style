@@ -1888,6 +1888,44 @@ function consolidate_lua_03_t( passedt )
       passedt.amenity = "zooenclosure"
       passedt.attraction = nil
       passedt.zoo = nil
+
+      if (( passedt.natural == "bare_rock" ) or
+          ( passedt.natural == "rock"      )) then
+         passedt.natural = "unnamedbare_rock"
+      end
+
+      if ( passedt.natural == "beach" ) then
+         passedt.natural = "unnamedbeach"
+      end
+
+      if ( passedt.natural == "sand" ) then
+         passedt.natural = "unnamedsand"
+      end
+
+      if (( passedt.landuse == "forest" )  or
+          ( passedt.natural == "wood"   )) then
+         passedt.natural = "unnamedwood"
+      end
+
+      if (( passedt.landuse == "grass"     ) or
+          ( passedt.landuse == "meadow"    ) or
+          ( passedt.natural == "meadow"    ) or
+          ( passedt.natural == "grass"     ) or
+          ( passedt.natural == "grassland" )) then
+         passedt.natural = "unnamedgrassland"
+      end
+
+      if ( passedt.natural == "mud" ) then
+         passedt.natural = "unnamedmud"
+      end
+
+      if ( passedt.natural == "scrub" ) then
+         passedt.natural = "unnamedscrub"
+      end
+
+      if ( passedt.natural == "wetland" ) then
+         passedt.natural = "unnamedwetland"
+      end
    end
 
 -- ----------------------------------------------------------------------------
@@ -13475,11 +13513,12 @@ function consolidate_lua_04_t( passedt )
         (  passedt.tourism    == "gallery"            )  or
         (  passedt.tourism    == "apartment"          )  or
         (  passedt.tourism    == "bed_and_breakfast"  )  or
-        (  passedt.tourism    == "motel"              )  or
-        (  passedt.tourism    == "theme_park"         )) and
+        (  passedt.tourism    == "motel"              )) and
        (   passedt.leisure    ~= "garden"              )) then
-      if (( passedt.landuse == nil ) or
-          ( passedt.landuse == ""  )) then
+      if ((( passedt.landuse == nil )  or
+           ( passedt.landuse == ""  )) and
+          (( passedt.natural == nil )  or
+           ( passedt.natural == ""  ))) then
          passedt.landuse = "unnamedcommercial"
       end
    end
