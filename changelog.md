@@ -5,6 +5,7 @@ This page describes changes made in these projects: [SomeoneElse-style](https://
 Don't add "unnamedcommercial" to theme parks.
 Do add a land2 value for zoo enclosures - often grass, wood, etc.
 If `highway_authority_ref:signed=yes` is set, treat it as a `ref` not an `official_ref`.
+Make trees less prominent at lower zooms.
 
 ## Vector 25/05/2026, raster 27/05/2026
 Handle `man_made=water_pump` as `historic=water_pump`.
