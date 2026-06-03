@@ -3791,7 +3791,7 @@
     { "key": "shop", "value": "telephone", "description": "Various shops shown" },
     { "key": "shop", "value": "textiles", "description": "Shown as nonspecific shop" },
     { "key": "shop", "value": "thrift", "description": "Various shops shown" },
-    { "key": "shop", "value": "ticket", "description": "Shown as a purple dot ('nonspecific shop')", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/shopping_nonspecific.p.16.png" },
+    { "key": "shop", "value": "ticket", "description": "Shown as a purple ticket", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/shop_ticket.png" },
     { "key": "shop", "value": "tile", "description": "Various shops shown" },
     { "key": "shop", "value": "tiles", "description": "Various shops shown" },
     { "key": "shop", "value": "timber", "description": "Shown as a synonym for 'shop=doityourself'.  Shown as a hammer and a spanner", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/shop_diy.p.16.png" },

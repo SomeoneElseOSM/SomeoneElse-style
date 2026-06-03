@@ -6,6 +6,7 @@ Don't add "unnamedcommercial" to theme parks.
 Do add a land2 value for zoo enclosures - often grass, wood, etc.
 If `highway_authority_ref:signed=yes` is set, treat it as a `ref` not an `official_ref`.
 Make trees less prominent at lower zooms.
+Added icon for `shop=ticket`.  Also added to the raster legend.
 
 ## Vector 25/05/2026, raster 27/05/2026
 Handle `man_made=water_pump` as `historic=water_pump`.
@@ -206,7 +207,7 @@ Removed `wheelchair=number of rooms`; no longer in the data.
 (raster, vector) Show historic enclosures and hut circles with an icon and a name.
 (raster, vector) Treat `archaeological_site=monastery` as `historic=monastery`.
 (raster, vector) Added `office=charity` to the list of tag values that can support a Shopmobility `name` match and removed `building`, to avoid problems with disused ones.
-(raster) Changed icon on where `tourism=chalet` is used for multiple holiday lodges to the "multiple builings by a tree" one.
+(raster) Changed icon on where `tourism=chalet` is used for multiple holiday lodges to the "multiple buildings by a tree" one.
 (raster, vector) Lots of brochs are mapped as `archaeological_site` rather than as a type of fortification.
 (raster, vector) Detect lime kilns that are tagged as archaeological sites.
 (raster, vector) Don't show "archaeological_site=ridge_and_furrow"

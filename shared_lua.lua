@@ -11346,7 +11346,6 @@ function consolidate_lua_04_t( passedt )
        ( passedt.shop    == "service"                 ) or
        ( passedt.shop    == "tobacco"                 ) or
        ( passedt.shop    == "tobacconist"             ) or
-       ( passedt.shop    == "ticket"                  ) or
        ( passedt.shop    == "insurance"               ) or
        ( passedt.shop    == "gallery"                 ) or
        ( passedt.amenity == "gallery"                 ) or
