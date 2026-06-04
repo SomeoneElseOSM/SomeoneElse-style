@@ -7,6 +7,7 @@ Do add a land2 value for zoo enclosures - often grass, wood, etc.
 If `highway_authority_ref:signed=yes` is set, treat it as a `ref` not an `official_ref`.
 Make trees less prominent at lower zooms.
 Added icon for `shop=ticket`.  Also added to the raster legend.
+Various historic cemetery tags are now processed and historic cemeteries are now shown in a similar way to historic quarries.
 
 ## Vector 25/05/2026, raster 27/05/2026
 Handle `man_made=water_pump` as `historic=water_pump`.

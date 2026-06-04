@@ -102,6 +102,13 @@ function treat_was_as_disused_t( passedt )
       passedt["disused:landuse"] = passedt["was:landuse"]
    end
 
+   if ((  passedt["historic:landuse"] ~= nil  ) and
+       (  passedt["historic:landuse"] ~= ""   ) and
+       (( passedt["disused:landuse"]  == nil )  or
+        ( passedt["disused:landuse"]  == ""  ))) then
+      passedt["disused:landuse"] = passedt["historic:landuse"]
+   end
+
    if ((  passedt["was:shop"]     ~= nil  ) and
        (  passedt["was:shop"]     ~= ""   ) and
        (( passedt["disused:shop"] == nil )  or
@@ -7270,24 +7277,65 @@ function consolidate_lua_03_t( passedt )
    end
 
 -- ----------------------------------------------------------------------------
--- historic=grave_yard goes through as historic=nonspecific, with fill for 
--- amenity=grave_yard if no landuse fill already.
+-- Handle graveyards and cemeteries with disused=yes as "disused:"
+-- A "cillín" (note the Irish accent in the tagging) is always historic, even
+-- if not tagged as such.
+-- Some are also set as historic=archaeological_site (which we want to show an
+-- icon for) or historic=yes (which we want to replace).
+-- Where a current landuse is set we do not overwrite that.
 -- ----------------------------------------------------------------------------
-   if (((  passedt.historic        == "grave_yard"  )  or
-        (  passedt.historic        == "cemetery"    )  or
+   if ((   passedt.cemetery == "cillín"      ) or
+       ((( passedt.amenity == "grave_yard" )   or
+         ( passedt.landuse == "cemetery"   )) and
+        (  passedt.disused == "yes"         ))) then
+      if ( passedt.amenity == "grave_yard" ) then
+         passedt.amenity = nil
+      end
+
+      if ( passedt.landuse == "cemetery" ) then
+         passedt.landuse = nil
+      end
+
+      if (( passedt.historic == nil   )  or
+          ( passedt.historic == ""    )  or
+          ( passedt.historic == "yes" )) then
+         passedt.historic = "nonspecific"
+      end
+
+      if ((( passedt.landuse == nil )  or
+           ( passedt.landuse == ""  )) and
+          (( passedt.leisure == nil )  or
+           ( passedt.leisure == ""  )) and
+          (( passedt.natural == nil )  or
+           ( passedt.natural == ""  ))) then
+         passedt.landuse = "historiccemetery"
+      end
+   end
+
+-- ----------------------------------------------------------------------------
+-- Other variations on historic=grave_yard goes through as 
+-- historic=nonspecific, with fill for landuse=historiccemetery if no landuse 
+-- fill already.
+-- ----------------------------------------------------------------------------
+   if (((  passedt.historic        == "grave_yard"     )  or
+        (  passedt.historic        == "cemetery"       )  or
+        (  passedt.historic        == "burial_ground"  )  or
         (  passedt["disused:amenity"] == "grave_yard"  )  or
-        (( passedt.historic        == "ruins"      )   and
-         ( passedt.ruins           == "grave_yard" ))) and
-       (( passedt.amenity         == nil          )  or
-        ( passedt.amenity         == ""           )) and
-       (  passedt.landuse         ~= "cemetery"    )) then
+        (  passedt["disused:landuse"] == "cemetery"    )  or
+        (( passedt.historic        == "ruins"         )   and
+         ( passedt.ruins           == "grave_yard"    ))) and
+       (( passedt.amenity         == nil             )  or
+        ( passedt.amenity         == ""              )) and
+       (  passedt.landuse         ~= "cemetery"       )) then
       passedt.historic = "nonspecific"
 
       if ((( passedt.landuse == nil )  or
            ( passedt.landuse == ""  )) and
           (( passedt.leisure == nil )  or
-           ( passedt.leisure == ""  ))) then
-         passedt.landuse = "cemetery"
+           ( passedt.leisure == ""  )) and
+          (( passedt.natural == nil )  or
+           ( passedt.natural == ""  ))) then
+         passedt.landuse = "historiccemetery"
       end
    end
 
@@ -12622,6 +12670,10 @@ function consolidate_lua_04_t( passedt )
 
       if ( passedt.landuse == "othercemetery" ) then
          passedt.landuse = "unnamedothercemetery"
+      end
+
+      if ( passedt.landuse == "historiccemetery" ) then
+         passedt.landuse = "unnamedhistoriccemetery"
       end
 
       if ( passedt.landuse == "commercial" ) then

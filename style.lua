@@ -26,10 +26,11 @@
 require "shared_lua_raster"
 local utf8 = require "utf8"
 
-polygon_keys = { 'area:aeroway', 'boundary', 'building', 'landcover', 'landuse', 'amenity', 'harbour', 'historic', 'leisure', 
+polygon_keys = { 'aeroway', 'area:aeroway', 'boundary', 'building', 'disused:landuse', 'landcover', 'landuse', 'amenity', 'harbour', 
+      'historic', 'historic:landuse', 'leisure', 
       'man_made', 'military', 'natural', 'office', 'place', 'police', 'power',
       'public_transport', 'seamark:type', 'shop', 'sport', 'tourism', 'waterway',
-      'wetland', 'water', 'aeroway' }
+      'wetland', 'was:landuse', 'water'  }
 
 generic_keys = {'access','abandoned:railway','addr:housename','addr:housenumber','addr:interpolation',
    'admin_level','advertising','aerialway',
