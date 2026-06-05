@@ -5633,7 +5633,6 @@ function consolidate_lua_03_t( passedt )
 -- ----------------------------------------------------------------------------
    if (((  passedt.amenity         == "vending_machine"                )  and
         (( passedt.vending         == "parcel_pickup;parcel_mail_in"  )   or
-         ( passedt.vending         == "parcel_mail_in;parcel_pickup"  )   or
          ( passedt.vending         == "parcel_mail_in"                )   or
          ( passedt.vending         == "parcel_pickup"                 )   or
          ( passedt.vending_machine == "parcel_pickup"                 )))  or
