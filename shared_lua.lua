@@ -4475,18 +4475,14 @@ function consolidate_lua_03_t( passedt )
    end
 
 -- ----------------------------------------------------------------------------
--- If "leisure=music_venue" is set try and work out if something should take 
--- precedence.
--- We do this check here rather than at "concert_hall" further down because 
--- "bar" and "pub" can be changed below based on other tags.
+-- Previously, if "leisure=music_venue" was we set tried to work out if 
+-- something should take precedence.
+-- This no longer happens and they go through as music venues.
+-- "attraction=music_venue" is also occasionally set.
 -- ----------------------------------------------------------------------------
-   if ( passedt.leisure == "music_venue" ) then
-      passedt.leisure = nil
-
-      if (( passedt.amenity ~= "bar" ) and
-          ( passedt.amenity ~= "pub" )) then
-         passedt.amenity = "concert_hall"
-      end
+   if (( passedt.leisure    == "music_venue" ) or
+       ( passedt.attraction == "music_venue" )) then
+      passedt.amenity = "music_venue"
    end
 
 -- ----------------------------------------------------------------------------

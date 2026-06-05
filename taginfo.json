@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20260605T120901Z",
+  "data_updated": "20260605T120902Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -294,7 +294,7 @@
     { "key": "amenity", "value": "mounting_step", "description": "Horse mounting blocks are shown as a small black step", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/mountingblock.png" },
     { "key": "amenity", "value": "mounting_steps", "description": "Horse mounting blocks are shown as a small black step", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/mountingblock.png" },
     { "key": "amenity", "value": "music_school", "description": "Most offices shown as black dots", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/office_nonspecific.p.16.png" },
-    { "key": "amenity", "value": "music_venue", "description": "If a pub or a bar, show as that.  If not, show as a synonym for 'amenity=concert_hall' - as a black musical note", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/concert_hall.png" },
+    { "key": "amenity", "value": "music_venue", "description": "Show as a synonym for 'amenity=concert_hall' - as a black musical note", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/concert_hall.png" },
     { "key": "amenity", "value": "musical_instrument", "description": "Shown from raster zoom 21 as a brown musical quaver", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/musical_instrument.p.20.png" },
     { "key": "amenity", "value": "nightclub", "description": "Shown with a bar-like icon and a speaker", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/nightclub.png" },
     { "key": "amenity", "value": "notice_board", "description": "Synonym for 'tourism=information'; 'information=board'.  Shown as a brown 'i' next to a brown board", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/informationboard.png" },
@@ -478,6 +478,7 @@
     { "key": "attraction", "description": "Mazes and zoo enclosures" },
     { "key": "attraction", "value": "animal", "description": "Enclosures within a zoo - shown as a small 'z' under a cage roof", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/zooenclosure.png" },
     { "key": "attraction", "value": "maze", "description": "Shown as green dot ('nonspecific leisure')", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/leisure_nonspecific.p.16.png" },
+    { "key": "attraction", "value": "music_venue", "description": "Show as a synonym for 'amenity=concert_hall' - as a black musical note", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/concert_hall.png" },
     { "key": "attraction", "value": "showground", "description": "Shown as a meadow, with a light green fill ('#e8f6d5') and an olive green name ('#2a5818#)" },
     { "key": "barrier", "description": "Most barriers shown" },
     { "key": "barrier", "value": "a_frame", "description": "Shown in black as a cyclists-eye view of a barrier", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/cyclebarrierx2.png" },
