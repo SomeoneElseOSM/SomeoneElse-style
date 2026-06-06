@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20260605T120902Z",
+  "data_updated": "20260605T120903Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -3972,7 +3972,7 @@
     { "key": "sport", "value": "football;basketball", "description": "Synonym for 'soccer',  A green football goal is used to represent football pitches", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/pitch_soccer.png" },
     { "key": "sport", "value": "football;rugby", "description": "Synonym for 'soccer',  A green football goal is used to represent football pitches", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/pitch_soccer.png" },
     { "key": "sport", "value": "football;soccer", "description": "Synonym for 'soccer',  A green football goal is used to represent football pitches", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/pitch_soccer.png" },
-    { "key": "sport", "value": "gaelic_football", "description": "Synonym for 'gaelic_games'.  A green GAA goal is used to represent GAA pitches", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/pitch_gaa.png" },
+    { "key": "sport", "value": "gaelic_football", "description": "Not a current value in OSM data.  Synonym for 'gaelic_games'.  A green GAA goal is used to represent GAA pitches", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/pitch_gaa.png" },
     { "key": "sport", "value": "gaelic_games", "description": "A green GAA goal is used to represent GAA pitches", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/pitch_gaa.png" },
     { "key": "sport", "value": "gaelic_games;handball", "description": "Synonym for 'gaelic_games'.  A green GAA goal is used to represent GAA pitches", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/pitch_gaa.png" },
     { "key": "sport", "value": "gaelic_games;soccer", "description": "Synonym for 'gaelic_games'.  A green GAA goal is used to represent GAA pitches", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/pitch_gaa.png" },
