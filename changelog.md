@@ -5,6 +5,7 @@ This page describes changes made in these projects: [SomeoneElse-style](https://
 Removed `vending=parcel_mail_in;parcel_pickup`; no longer in the data.
 Music venues that have some sort of music venue main tag (`amenity`, `leisure` and also `attraction`) are handled as such, not as pubs, bars or nightclubs.  This does not include e.g. pubs with `live_music=yes`.
 Added icons for `amenity=binoculars` (free and pay).  Also added to the raster legend.
+Handle `sport=archery` with a unique icon.
 
 ## 04/06/2026
 Don't add "unnamedcommercial" to theme parks.

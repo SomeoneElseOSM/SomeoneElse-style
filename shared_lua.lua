@@ -6179,6 +6179,12 @@ function consolidate_lua_03_t( passedt )
       passedt.leisure = "unnamedpitch"
    end
 
+   if (( passedt.leisure == "pitch"     )  and
+       ( passedt.sport  == "archery"    )) then
+      passedt.amenity = "pitch_archery"
+      passedt.leisure = "unnamedpitch"
+   end
+
    if ((  passedt.leisure == "pitch"                )  and
        (( passedt.sport   == "cricket"             )   or
         ( passedt.sport   == "cricket_rugby_union" )   or
@@ -13551,28 +13557,7 @@ function consolidate_lua_04_t( passedt )
          ( passedt.amenity    ~= "holy_well"         )   and
          ( passedt.amenity    ~= "holy_spring"       )   and
          ( passedt.amenity    ~= "biergarten"        )   and
-         ( passedt.amenity    ~= "pitch_baseball"    )   and
-         ( passedt.amenity    ~= "pitch_basketball"  )   and
-         ( passedt.amenity    ~= "pitch_chess"       )   and
-         ( passedt.amenity    ~= "pitch_cricket"     )   and
-         ( passedt.amenity    ~= "pitch_climbing"    )   and
-         ( passedt.amenity    ~= "pitch_athletics"   )   and
-         ( passedt.amenity    ~= "pitch_boules"      )   and
-         ( passedt.amenity    ~= "pitch_bowls"       )   and
-         ( passedt.amenity    ~= "pitch_croquet"     )   and
-         ( passedt.amenity    ~= "pitch_cycling"     )   and
-         ( passedt.amenity    ~= "pitch_equestrian"  )   and
-         ( passedt.amenity    ~= "pitch_gaa"         )   and
-         ( passedt.amenity    ~= "pitch_hockey"      )   and
-         ( passedt.amenity    ~= "pitch_multi"       )   and
-         ( passedt.amenity    ~= "pitch_netball"     )   and
-         ( passedt.amenity    ~= "pitch_polo"        )   and
-         ( passedt.amenity    ~= "pitch_shooting"    )   and
-         ( passedt.amenity    ~= "pitch_rugby"       )   and
-         ( passedt.amenity    ~= "pitch_skateboard"  )   and
-         ( passedt.amenity    ~= "pitch_soccer"      )   and
-         ( passedt.amenity    ~= "pitch_tabletennis" )   and
-         ( passedt.amenity    ~= "pitch_tennis"      )   and
+         ( not string.match( passedt.amenity, "pitch_" ))   and 
          ( passedt.amenity    ~= "pub_nddddddd"      ))  or
         (  passedt.tourism    == "hotel"              )  or
         (  passedt.tourism    == "guest_house"        )  or

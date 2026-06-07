@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20260605T120904Z",
+  "data_updated": "20260605T120905Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -3932,6 +3932,7 @@
     { "key": "sport", "description": "Used to classify and clarify many other tags" },
     { "key": "sport", "value": "10pin", "description": "Detect bowling alleys" },
     { "key": "sport", "value": "9pin", "description": "Detect bowling alleys" },
+    { "key": "sport", "value": "archery", "description": "A green bow and target is used to represent archery ranges", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/pitch_archery.png" },
     { "key": "sport", "value": "association_football", "description": "Synonym for 'soccer',  A green football goal is used to represent football pitches", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/pitch_soccer.png" },
     { "key": "sport", "value": "athletics", "description": "A green athletics track is used to represent athletics tracks", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/pitch_athletics.png" },
     { "key": "sport", "value": "athletics;soccer", "description": "Synonym for 'athletics'.  A green athletics track is used to represent athletics tracks", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/pitch_athletics.png" },
