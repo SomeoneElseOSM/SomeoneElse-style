@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20260605T120905Z",
+  "data_updated": "20260605T120907Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -133,6 +133,7 @@
     { "key": "amenity", "value": "amusement", "description": "Synonym for 'shop=bookmaker'.  Shown as a set of unlikely odds", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/shop_bookmaker.p.16.png" },
     { "key": "amenity", "value": "amusements", "description": "Synonym for 'shop=bookmaker'.  Shown as a set of unlikely odds", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/shop_bookmaker.p.16.png" },
     { "key": "amenity", "value": "animal_boarding", "description": "Shown as a purple dogs paw with a shed roof, name incorporates brand", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/animal_boarding.p.16.png" },
+    { "key": "amenity", "value": "animal_breeding", "description": "Shown as nonspecific office - a black dot", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/office_nonspecific.p.16.png" },
     { "key": "amenity", "value": "animal_shelter", "description": "Shown as a purple dogs paw with a cage roof, name incorporates brand", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/animal_shelter.p.16.png" },
     { "key": "amenity", "value": "archive", "description": "Most offices shown as black dots", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/office_nonspecific.p.16.png" },
     { "key": "amenity", "value": "art_gallery", "description": "Shown as a purple dot ('nonspecific shop')", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/shopping_nonspecific.p.16.png" },

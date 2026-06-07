@@ -11727,6 +11727,17 @@ function consolidate_lua_04_t( passedt )
    end
 
 -- ----------------------------------------------------------------------------
+-- Also handle amenity=animal_breeding as office=nonspecific.
+-- ----------------------------------------------------------------------------
+   if ((  passedt.amenity == "animal_breeding"  )  and
+       (( passedt.landuse == nil               )   or
+        ( passedt.landuse == ""                ))) then
+      passedt.landuse = "unnamedcommercial"
+      passedt.office  = "nonspecific"
+      passedt.amenity   = nil
+   end
+
+-- ----------------------------------------------------------------------------
 -- Telephone Exchanges
 -- ----------------------------------------------------------------------------
    if ((    passedt.man_made   == "telephone_exchange"  )  or
