@@ -4082,6 +4082,17 @@ function consolidate_lua_03_t( passedt )
    end
 
 -- ----------------------------------------------------------------------------
+-- Binoculars - is there a fee?
+-- ----------------------------------------------------------------------------
+   if ( passedt.amenity == "binoculars" ) then
+      if ( passedt.fee == "yes" ) then
+         passedt.amenity  = "binoculars_pay"
+      else
+         passedt.amenity  = "binoculars_free"
+      end
+   end
+
+-- ----------------------------------------------------------------------------
 -- Map leisure=wildlife_hide to bird_hide etc.  Many times it will be.
 -- ----------------------------------------------------------------------------
    if (( passedt.leisure      == "wildlife_hide" ) or

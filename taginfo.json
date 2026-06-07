@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20260605T120903Z",
+  "data_updated": "20260605T120904Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -151,6 +151,7 @@
     { "key": "amenity", "value": "bicycle_repair_station", "description": "Public bike pumps, shown as a bike wheel and a bit of frame. If in an old phone box, display as such", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/bicyclerepairstation.png" },
     { "key": "amenity", "value": "biergarten", "description": "Shown as green.  If named, shown with brown beer stein icon; if not, without.", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/biergarten.p.16.png" },
     { "key": "amenity", "value": "bingo", "description": "Shown as green dot ('nonspecific leisure')", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/leisure_nonspecific.p.16.png" },
+    { "key": "amenity", "value": "binoculars", "description": "Shown as binoculars, £ shown if pay", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/binoculars_pay.png" },
     { "key": "amenity", "value": "bird_hide", "description": "Shown as a synonym for 'leisure=bird_hide', as a brown bird", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/birdhide.p.16.png" },
     { "key": "amenity", "value": "boat_rental", "description": "Shown as green dot ('nonspecific leisure')", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/leisure_nonspecific.p.16.png" },
     { "key": "amenity", "value": "boat_storage", "description": "Shown as a black boat with a roof over it", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/amenity_boat_storage.png" },
