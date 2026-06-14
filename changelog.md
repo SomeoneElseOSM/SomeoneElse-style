@@ -1,7 +1,7 @@
 # Changes made to this rendering
 This page describes changes made in these projects: [SomeoneElse-style](https://github.com/SomeoneElseOSM/SomeoneElse-style), [SomeoneElse-style-legend](https://github.com/SomeoneElseOSM/SomeoneElse-style-legend) and [openstreetmap-carto-AJT](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT), and visible [on this site](//map.atownsend.org.uk/maps/map/map.html).  Since 2025 this also includes changes to lua code shared between raster and vector processing - hence the notes below about which a particular change applies to.  See [this changelog](https://github.com/SomeoneElseOSM/SomeoneElse-vector-extract/blob/main/resources/changelog_sve01.md) for where changes here affect the vector schema, and also other vector-only ones.
 
-## As yet unreleased
+## 14/06/2026
 Removed `vending=parcel_mail_in;parcel_pickup`; no longer in the data.
 Music venues that have some sort of music venue main tag (`amenity`, `leisure` and also `attraction`) are handled as such, not as pubs, bars or nightclubs.  This does not include e.g. pubs with `live_music=yes`.
 Added icons for `amenity=binoculars` (free and pay).  Also added to the raster legend.
