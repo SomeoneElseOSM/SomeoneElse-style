@@ -7188,7 +7188,6 @@ function consolidate_lua_03_t( passedt )
        (( passedt.shop     == nil                )  or
         ( passedt.shop     == ""                 ))) then
       passedt.historic = "church"
-      passedt.building = "yes"
       passedt.tourism = nil
 
       if ((( passedt.landuse == nil )  or
