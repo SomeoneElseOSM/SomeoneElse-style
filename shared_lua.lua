@@ -9851,11 +9851,22 @@ function consolidate_lua_04_t( passedt )
 
 -- ----------------------------------------------------------------------------
 -- Memorial benches
+-- Quite a lot of these are tagged as "amenity=bench; memorial=bench" with no
+-- "historic" tag.
 -- ----------------------------------------------------------------------------
-   if (( passedt.historic   == "memorial"    ) and
-       ( passedt.memorial   == "bench"       )) then
+   if ( passedt.memorial   == "bench" ) then
       passedt.historic = "memorialbench"
       passedt.amenity = nil
+
+      if (( passedt.name == nil ) or 
+          ( passedt.name == ""  )) then
+         passedt.name = passedt.inscription
+      end
+
+      if ( utf8.len( passedt.name ) > 28 ) then
+          start33 = utf8.offset( passedt.name, 29 )
+          passedt.name = string.sub( passedt.name, 1, start33-1 ) .. "..."
+      end
    end
 
 -- ----------------------------------------------------------------------------
