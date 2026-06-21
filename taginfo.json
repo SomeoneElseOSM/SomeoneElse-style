@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20260605T120908Z",
+  "data_updated": "20260621T101101Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -4143,7 +4143,7 @@
     { "key": "tourism", "value": "aquarium", "description": "Shown as a brown 'Z' over a fish", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/tourism_aquarium.png" },
     { "key": "tourism", "value": "artwork", "description": "Shown as a brown 'A' on a plinth", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/artwork.p16.png" },
     { "key": "tourism", "value": "attraction", "description": "Many tourism tags handled" },
-    { "key": "tourism", "value": "bed_and_breakfast", "description": "Shown as 'B&B' in blue", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/bandb.p.20.png" },
+    { "key": "tourism", "value": "bed_and_breakfast", "description": "Not a current value in OSM data.  Shown as 'B&B' in blue", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/bandb.p.20.png" },
     { "key": "tourism", "value": "cabin", "description": "Shown as unnamed commercial landuse and as green dot ('nonspecific leisure')", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/leisure_nonspecific.p.16.png" },
     { "key": "tourism", "value": "camp_pitch", "description": "Shown as a small blue dot", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/camp_pitch.png" },
     { "key": "tourism", "value": "camp_site", "description": "Shown as a white tent on a blue background", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/camping.n.16.png" },
