@@ -9856,7 +9856,9 @@ function consolidate_lua_04_t( passedt )
          passedt.name = passedt.inscription
       end
 
-      if ( utf8.len( passedt.name ) > 28 ) then
+      if (( passedt.name             ~= nil ) and
+          ( passedt.name             ~= ""  ) and
+          ( utf8.len( passedt.name ) > 28   )) then
           start33 = utf8.offset( passedt.name, 29 )
           passedt.name = string.sub( passedt.name, 1, start33-1 ) .. "..."
       end
