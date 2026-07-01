@@ -2372,6 +2372,7 @@
     { "key": "man_made", "value": "storage_tank", "description": "Most man-made items are shown" },
     { "key": "man_made", "value": "street_cabinet", "description": "Most man-made items are shown" },
     { "key": "man_made", "value": "summit_cross", "description": "Shown as cross" },
+    { "key": "man_made", "value": "surveillance", "description": "Shown as a CCTV camera", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/surveillance.png" },
     { "key": "man_made", "value": "survey_point", "description": "Shown as brown trig point", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/survey_point.png" },
     { "key": "man_made", "value": "tank", "description": "Most man-made items are shown" },
     { "key": "man_made", "value": "telephone_box", "description": "Used to identify former phoneboxes" },
