@@ -3937,13 +3937,12 @@ function consolidate_lua_03_t( passedt )
 
 -- ----------------------------------------------------------------------------
 -- Shop groups - mostly just treat as retail landuse.
--- An exception is "amenity=marketplace", of which quite a few unnamed examples
--- exist, so it gets an icon.
+-- Exceptions are "amenity=marketplace" and "amenity=food_court", of which
+-- quite a few unnamed examples exist, so they get an icon.
 -- ----------------------------------------------------------------------------
    if (( passedt.shop    == "mall"            ) or
        ( passedt.shop    == "market"          ) or
        ( passedt.amenity == "market"          ) or
-       ( passedt.amenity == "food_court"      ) or
        ( passedt.shop    == "shopping_centre" )) then
       passedt.landuse = "retail"
       passedt.amenity = nil
