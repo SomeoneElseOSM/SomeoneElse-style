@@ -4404,7 +4404,6 @@ function consolidate_lua_03_t( passedt )
 
    if (( passedt.wheelchair == "difficult"                    )  or
        ( passedt.wheelchair == "limited (No automatic door)"  )  or
-       ( passedt.wheelchair == "limited, notice required"     )  or
        ( passedt.wheelchair == "restricted"                   )) then
       passedt.wheelchair = "limited"
    end

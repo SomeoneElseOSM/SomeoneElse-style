@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20260621T101101Z",
+  "data_updated": "20260621T101102Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -96,7 +96,7 @@
     { "key": "aeroway", "value": "aerodrome", "description": "Aerodromes: depending on other tags (iata etc.) classified as large or small and shown at different zoom levels.  No icon." },
     { "key": "aeroway", "value": "airstrip", "description": "Named airstrips are handled as aerodromes" },
     { "key": "aeroway", "value": "apron", "description": "Runway aprons: depending on other tags (surface etc.) shown as normal or grass" },
-    { "key": "aeroway", "value": "control_tower", "description": "Aircraft control towers are shown as large square towers with a door at the bottom and windows at the top", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/aircraftcontroltower.png" },
+    { "key": "aeroway", "value": "control_tower", "description": "Not a current value in OSM data.  Aircraft control towers are shown as large square towers with a door at the bottom and windows at the top", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/aircraftcontroltower.png" },
     { "key": "aeroway", "value": "fuel", "description": "Synonym for 'amenity=fuel'.  Regular fuel stations are shown as a purple petrol pump", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/fuel.p.16.png" },
     { "key": "aeroway", "value": "gate", "description": "No icon is used for aircraft parking gates; 'ref' used as 'name'" },
     { "key": "aeroway", "value": "helipad", "description": "Helipads are shown as a blue 'H' in a circle", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/helipad.p.16.png" },
@@ -4439,7 +4439,6 @@
     { "key": "wheelchair", "value": "full", "description": "Handled as wheelchair=yes" },
     { "key": "wheelchair", "value": "impractical", "description": "Handled as wheelchair=no" },
     { "key": "wheelchair", "value": "limited", "description": "Show the wheelchair-friendliness of pubs as a coloured underline at the left of the icon" },
-    { "key": "wheelchair", "value": "limited, notice required", "description": "Handled as wheelchair=limited" },
     { "key": "wheelchair", "value": "no", "description": "Show the wheelchair-friendliness of pubs as a coloured underline at the left of the icon" },
     { "key": "wheelchair", "value": "no space", "description": "Handled as wheelchair=no" },
     { "key": "wheelchair", "value": "official", "description": "Handled as wheelchair=yes" },
