@@ -1044,6 +1044,8 @@ function filter_tags_relation_member (keyvalues, keyvaluemembers, roles, memberc
       end
 
 -- ----------------------------------------------------------------------------
+-- Detect walking networks.
+-- We ignore "lcn" below so include "lcn;lwn" in with "lwn" here.
 -- We use "colour" as "name" if "colour" is set and "name" is not.
 -- ----------------------------------------------------------------------------
       if ((( keyvalues["network"] == "iwn"         ) or
@@ -1051,7 +1053,9 @@ function filter_tags_relation_member (keyvalues, keyvaluemembers, roles, memberc
            ( keyvalues["network"] == "rwn"         ) or
            ( keyvalues["network"] == "lwn"         ) or
            ( keyvalues["network"] == "lwn;lcn"     ) or
-           ( keyvalues["network"] == "lwn;lcn;lhn" )) and
+           ( keyvalues["network"] == "lcn;lwn"     ) or
+           ( keyvalues["network"] == "lwn;lcn;lhn" ) or
+           ( keyvalues["network"] == "lcn;lwn;lhn" )) and
           (( keyvalues["name"]    ~= nil           )  or
            ( keyvalues["colour"]  ~= nil           ))) then
          if (( keyvalues["name"]   == nil ) and
@@ -1083,7 +1087,7 @@ function filter_tags_relation_member (keyvalues, keyvaluemembers, roles, memberc
       end  -- walking
 
 -- ----------------------------------------------------------------------------
--- Cycle networks
+-- Cycle networks - detect "rcn" and upwards
 -- We exclude some obviously silly refs.
 -- We use "ref" rather than "name".
 -- We handle loops on the National Byway and append (r) on other RCNs.
