@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20260621T101103Z",
+  "data_updated": "20260712T101901Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -477,6 +477,8 @@
     { "key": "artwork_subject", "description": "Detect penguins on artworks" },
     { "key": "artwork_subject", "value": "penguins", "description": "Shown penguin-related artworks as penguins", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/penguinartwork.png" },
     { "key": "artwork_subject", "value": "5 penguins", "description": "Shown penguin-related artworks as penguins", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/penguinartwork.png" },
+    { "key": "atm", "description": "Banks with ATMs" },
+    { "key": "atm", "value": "yes", "description": "Banks with ATMs" },
     { "key": "attraction", "description": "Mazes and zoo enclosures" },
     { "key": "attraction", "value": "animal", "description": "Enclosures within a zoo - shown as a small 'z' under a cage roof", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/zooenclosure.png" },
     { "key": "attraction", "value": "maze", "description": "Shown as green dot ('nonspecific leisure')", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/leisure_nonspecific.p.16.png" },

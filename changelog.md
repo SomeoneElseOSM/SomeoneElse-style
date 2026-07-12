@@ -4,6 +4,7 @@ This page describes changes made in these projects: [SomeoneElse-style](https://
 ## As yet unreleased
 Treat `network=lcn;lwn` and `lcn;lwn;lhn` like `network=lwn;lcn`.
 Create new icons for `amenity=bank` (which a coloured flash for wheelchair access) and `amenity=atm`.
+Banks with ATMs are now shown with a unique icon (which a coloured flash for wheelchair access).
 
 ## 04/07/2026
 Show `man_made=surveillance` as CCTV cameras from zoom 20.

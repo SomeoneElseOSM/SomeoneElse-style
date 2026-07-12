@@ -5563,10 +5563,15 @@ function consolidate_lua_03_t( passedt )
 -- ----------------------------------------------------------------------------
 -- Render building societies as banks.  Also shop=bank and credit unions.
 -- ----------------------------------------------------------------------------
-   if (( passedt.amenity == "building_society" ) or
+   if (( passedt.amenity == "bank"             ) or
+       ( passedt.amenity == "building_society" ) or
        ( passedt.shop    == "bank"             ) or
        ( passedt.amenity == "credit_union"     )) then
-      passedt.amenity = "bank"
+      if ( passedt.atm == "yes" ) then
+         passedt.amenity = "bankatm"
+      else
+         passedt.amenity = "bank"
+      end
    end
 
 -- ----------------------------------------------------------------------------
@@ -5581,6 +5586,23 @@ function consolidate_lua_03_t( passedt )
          else
             if ( passedt.wheelchair == "no" ) then
                passedt.amenity = "bank_n"
+            end
+          end
+      end
+   end
+
+-- ----------------------------------------------------------------------------
+-- Banks with atms with wheelchair tags or without
+-- ----------------------------------------------------------------------------
+   if ( passedt.amenity == "bankatm" ) then
+      if ( passedt.wheelchair == "yes" ) then
+         passedt.amenity = "bankatm_y"
+      else
+         if ( passedt.wheelchair == "limited" ) then
+            passedt.amenity = "bankatm_l"
+         else
+            if ( passedt.wheelchair == "no" ) then
+               passedt.amenity = "bankatm_n"
             end
           end
       end
