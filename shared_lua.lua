@@ -9463,9 +9463,10 @@ function consolidate_lua_03_t( passedt )
    end
 
 -- ----------------------------------------------------------------------------
--- Do show loungers as benches.
+-- Do show loungers and chairs as benches.
 -- ----------------------------------------------------------------------------
-   if ( passedt.amenity == "lounger" ) then
+   if (( passedt.amenity == "lounger" ) or
+       ( passedt.amenity == "chair"   )) then
       passedt.amenity = "bench"
    end
 

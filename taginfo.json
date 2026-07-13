@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20260712T101901Z",
+  "data_updated": "20260712T101902Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -171,6 +171,7 @@
     { "key": "amenity", "value": "care_home", "description": "Shown as a pink dot ('nonspecific health')", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/health_nonspecific.p.16.png" },
     { "key": "amenity", "value": "casino", "description": "Synonym for 'shop=bookmaker'.  Shown as a set of unlikely odds", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/shop_bookmaker.p.16.png" },
     { "key": "amenity", "value": "cattery", "description": "Synonym for 'animal_boarding'.  Shown as a purple dogs paw with a shed roof, name incorporates brand", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/animal_boarding.p.16.png" },
+    { "key": "amenity", "value": "chair", "description": "Synonym for 'amenity=bench'.  Non-standing benches are shown as benches", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/bench.p21.png" },
     { "key": "amenity", "value": "charging_station", "description": "Shown as a purple rectangular box with '+' and '-' on it, name incorporates brand", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/charging_station.png" },
     { "key": "amenity", "value": "childcare", "description": "Shown as a pink dot ('nonspecific health')", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/health_nonspecific.p.16.png" },
     { "key": "amenity", "value": "childrens_centre", "description": "Shown as a pink dot ('nonspecific health')", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/health_nonspecific.p.16.png" },
