@@ -5,6 +5,7 @@ This page describes changes made in these projects: [SomeoneElse-style](https://
 Show chairs as benches.
 Change one of the bus guideways in the legend to a busway.
 (raster) Don't show an extra "industrial" name on `power=plant`
+Detect zebra crossings.
 
 ## 12/07/2026
 Treat `network=lcn;lwn` and `lcn;lwn;lhn` like `network=lwn;lcn`.

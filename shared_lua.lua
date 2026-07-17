@@ -8469,6 +8469,17 @@ function consolidate_lua_03_t( passedt )
             end
          end
       else
+         if (( passedt["crossing:markings"] == "zebra"          ) or
+             ( passedt["crossing:markings"] == "zebra;dots"     ) or
+             ( passedt["crossing:markings"] == "zebra;dashes"   ) or
+             ( passedt["crossing:markings"] == "zebra:bicolour" ) or
+             ( passedt["crossing:markings"] == "zebra;yes"      ) or
+             ( passedt["crossing:markings"] == "zebra:dots"     ) or
+             ( passedt["crossing:markings"] == "dots;zebra"     ) or
+             ( passedt["crossing_ref"]      == "zebra"          ) or
+             ( passedt["crossing"]          == "zebra"          )) then
+            passedt.highway = "zebra_crossing"
+         else
 -- ----------------------------------------------------------------------------
 -- Which of those should actually NOT be "highway=crossing"?
 -- If all of the "negative" tests are true together, it's not a crossing.
@@ -8477,48 +8488,49 @@ function consolidate_lua_03_t( passedt )
 -- Has some garbage values, but we interpret garbage as 
 -- "some sort of crossing is intended here"
 -- ----------------------------------------------------------------------------
-         if ((( passedt.crossing             == nil                     )  or 
-              ( passedt.crossing             == ""                      )  or 
-              ( passedt.crossing             == "informal"              )  or 
-              ( passedt.crossing             == "no"                    )  or
-              ( passedt.crossing             == "no_traffic_signals"    )  or
-              ( passedt.crossing             == "separate"              )  or
-              ( passedt.crossing             == "pavement"              )  or
-              ( passedt.crossing             == "stop_sign"             )  or
-              ( passedt.crossing             == "unknown"               )  or
-              ( passedt.crossing             == "uncontrolled;unmarked" )  or
-              ( passedt.crossing             == "unmarked;uncontrolled" )  or
-              ( passedt.crossing             == "unmarked"              )) and
-             (( passedt["crossing:markings"] == nil                     )  or
-              ( passedt["crossing:markings"] == ""                      )  or
-              ( passedt["crossing:markings"] == "no"                    )  or
-              ( passedt["crossing:markings"] == "surface"               )) and
-             (  passedt["crossing:island"]   ~= "yes"                    ) and
-             (( passedt.crossing_ref         == nil                     )  or
-              ( passedt.crossing_ref         == ""                      )  or
-              ( passedt.crossing_ref         == "informal"              )  or
-              ( passedt.crossing_ref         == "none"                  )) and
-	     (( passedt["crossing:signals"]  == nil                     )  or
-              ( passedt["crossing:signals"]  == ""                      )  or
-              ( passedt["crossing:signals"]  == "no"                    )  or
-              ( passedt["crossing:signals"]  == "separate"              )) and
-             (( passedt.tactile_paving       == nil                     )  or
-              ( passedt.tactile_paving       == ""                      )  or
-              ( passedt.tactile_paving       == "no"                    )) and
-             (( passedt.traffic_calming      == nil                     )  or
-              ( passedt.traffic_calming      == ""                      )  or
-              ( passedt.traffic_calming      == "no"                    )  or
-              ( passedt.traffic_calming      == "none"                  )) and
-             (( passedt.flashing_lights      == nil                     )  or
-              ( passedt.flashing_lights      == ""                      )  or
-              ( passedt.flashing_lights      == "no"                    )) and
-             (  passedt.kerb                 ~= "rolled"                 ) and
-             (  passedt.kerb                 ~= "sloped"                 ) and
-             (  passedt.kerb                 ~= "lowered"                ) and
-             (  passedt.kerb                 ~= "flush"                  ) and
-             (  passedt.kerb                 ~= "no"                     ) and
-             (  passedt.kerb                 ~= "none"                   )) then
-            passedt.highway = nil
+            if ((( passedt.crossing             == nil                     )  or 
+                 ( passedt.crossing             == ""                      )  or 
+                 ( passedt.crossing             == "informal"              )  or 
+                 ( passedt.crossing             == "no"                    )  or
+                 ( passedt.crossing             == "no_traffic_signals"    )  or
+                 ( passedt.crossing             == "separate"              )  or
+                 ( passedt.crossing             == "pavement"              )  or
+                 ( passedt.crossing             == "stop_sign"             )  or
+                 ( passedt.crossing             == "unknown"               )  or
+                 ( passedt.crossing             == "uncontrolled;unmarked" )  or
+                 ( passedt.crossing             == "unmarked;uncontrolled" )  or
+                 ( passedt.crossing             == "unmarked"              )) and
+                (( passedt["crossing:markings"] == nil                     )  or
+                 ( passedt["crossing:markings"] == ""                      )  or
+                 ( passedt["crossing:markings"] == "no"                    )  or
+                 ( passedt["crossing:markings"] == "surface"               )) and
+                (  passedt["crossing:island"]   ~= "yes"                    ) and
+                (( passedt.crossing_ref         == nil                     )  or
+                 ( passedt.crossing_ref         == ""                      )  or
+                 ( passedt.crossing_ref         == "informal"              )  or
+                 ( passedt.crossing_ref         == "none"                  )) and
+                (( passedt["crossing:signals"]  == nil                     )  or
+                 ( passedt["crossing:signals"]  == ""                      )  or
+                 ( passedt["crossing:signals"]  == "no"                    )  or
+                 ( passedt["crossing:signals"]  == "separate"              )) and
+                (( passedt.tactile_paving       == nil                     )  or
+                 ( passedt.tactile_paving       == ""                      )  or
+                 ( passedt.tactile_paving       == "no"                    )) and
+                (( passedt.traffic_calming      == nil                     )  or
+                 ( passedt.traffic_calming      == ""                      )  or
+                 ( passedt.traffic_calming      == "no"                    )  or
+                 ( passedt.traffic_calming      == "none"                  )) and
+                (( passedt.flashing_lights      == nil                     )  or
+                 ( passedt.flashing_lights      == ""                      )  or
+                 ( passedt.flashing_lights      == "no"                    )) and
+                (  passedt.kerb                 ~= "rolled"                 ) and
+                (  passedt.kerb                 ~= "sloped"                 ) and
+                (  passedt.kerb                 ~= "lowered"                ) and
+                (  passedt.kerb                 ~= "flush"                  ) and
+                (  passedt.kerb                 ~= "no"                     ) and
+                (  passedt.kerb                 ~= "none"                   )) then
+               passedt.highway = nil
+            end
          end
       end
    end
