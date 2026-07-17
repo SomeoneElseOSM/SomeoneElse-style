@@ -2454,9 +2454,16 @@ function consolidate_lua_03_t( passedt )
        ( passedt.man_made   == "petroleum_well"         ) or 
        ( passedt.man_made   == "pumping_station"        ) or
        ( passedt.man_made   == "water_treatment"        ) or
-       ( passedt.man_made   == "water_works"            ) or
-       ( passedt.power      == "plant"                  )) then
+       ( passedt.man_made   == "water_works"            )) then
       passedt.landuse = "industrial"
+   end
+
+-- ----------------------------------------------------------------------------
+-- A name is already shown for power=plant but on raster we still need the 
+-- industrial background.
+-- ----------------------------------------------------------------------------
+   if ( passedt.power == "plant" ) then
+      passedt.landuse = "unnamedindustrial"
    end
 
 -- ----------------------------------------------------------------------------
