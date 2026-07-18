@@ -1988,12 +1988,32 @@ function consolidate_lua_03_t( passedt )
    end
 
 -- ----------------------------------------------------------------------------
--- Before we start doing comparisons that include amenity=toilets, make sure 
+-- Before we start doing comparisons that include man_made=offshore_platform, make sure 
 -- that we have caught them all.
 -- ----------------------------------------------------------------------------
-   if ((  passedt["seamark:type"]                          == "platform"              ) and
-       (( passedt.building                                 == nil                    )  or
-        ( passedt.building                                 == ""                     ))) then
+   if ((  passedt["seamark:type"]                          == "platform"  ) and
+       (( passedt.man_made                                 == nil        )  or
+        ( passedt.man_made                                 == ""         ))) then
+      passedt.man_made = "offshore_platform"
+   end
+
+-- ----------------------------------------------------------------------------
+-- Suppress man_made items that we process a power key for.
+-- ----------------------------------------------------------------------------
+   if ((  passedt.man_made == "offshore_platform"  ) and
+       (( passedt.power    == "generator"         )  or
+        ( passedt.power    == "plant"             )  or
+        ( passedt.power    == "station"           )  or
+        ( passedt.power    == "substation"        ))) then
+      passedt.man_made = nil
+   end
+
+-- ----------------------------------------------------------------------------
+-- In addition, treat offshore platforms as "almost a building".
+-- ----------------------------------------------------------------------------
+   if ((  passedt.man_made == "offshore_platform"     ) and
+       (( passedt.building == nil                    )  or
+        ( passedt.building == ""                     ))) then
       passedt.building = "roof"
    end
 
@@ -2459,6 +2479,7 @@ function consolidate_lua_03_t( passedt )
        ( passedt.landuse    == "depot"                  ) or
        ( passedt.man_made   == "gas_station"            ) or
        ( passedt.man_made   == "gas_works"              ) or
+       ( passedt.man_made   == "offshore_platform"      ) or
        ( passedt.man_made   == "petroleum_well"         ) or 
        ( passedt.man_made   == "pumping_station"        ) or
        ( passedt.man_made   == "water_treatment"        ) or

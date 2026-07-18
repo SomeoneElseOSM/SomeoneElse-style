@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20260712T101904Z",
+  "data_updated": "20260718T121901Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -2342,6 +2342,7 @@
     { "key": "man_made", "value": "mounting_block", "description": "Shown as mouting block" },
     { "key": "man_made", "value": "obelisk", "description": "Shown as an obelisk" },
     { "key": "man_made", "value": "observatory", "description": "Shown as a black dot", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/office_nonspecific.p.16.png" },
+    { "key": "man_made", "value": "offshore_platform", "description": "Shown as industrial" },
     { "key": "man_made", "value": "oil_tank", "description": "Most man-made items are shown" },
     { "key": "man_made", "value": "outfall", "description": "Show outfalls, sewage and otherwise, with a small black marker", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/outfall.png" },
     { "key": "man_made", "value": "petroleum_well", "description": "Most man-made items are shown" },

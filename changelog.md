@@ -8,6 +8,7 @@ Change one of the bus guideways in the legend to a busway.
 Detect zebra crossings and show with variation of crossing icon.
 Show `amenity=kitchen` with a unique icon.
 Use `seamark:name` in place of `name` if the former set and the latter not.
+Show `man_made=offshore_platform` and `seamark:type` as generic industrial.  If not already a building, area ones are treated as "almost a building".
 
 ## 12/07/2026
 Treat `network=lcn;lwn` and `lcn;lwn;lhn` like `network=lwn;lcn`.
