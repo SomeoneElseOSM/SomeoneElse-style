@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20260718T121901Z",
+  "data_updated": "20260718T121902Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -251,6 +251,7 @@
     { "key": "amenity", "value": "gym", "description": "Shown as green dot ('nonspecific leisure')", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/leisure_nonspecific.p.16.png" },
     { "key": "amenity", "value": "hall", "description": "Most offices shown as black dots", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/office_nonspecific.p.16.png" },
     { "key": "amenity", "value": "health_centre", "description": "Shown as a pink dot ('nonspecific health')", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/health_nonspecific.p.16.png" },
+    { "key": "amenity", "value": "health_post", "description": "Synonym for 'clinic' unless an alternative 'healthcare' tag is set.  Shown as a pink dot ('nonspecific health')", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/health_nonspecific.p.16.png" },
     { "key": "amenity", "value": "healthcare", "description": "Shown as a pink dot ('nonspecific health')", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/health_nonspecific.p.16.png" },
     { "key": "amenity", "value": "holy_well", "description": "Synonym for 'amenity=place of worship'; 'place of worship=holy_well'.  Shown as a well with a black highlight", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/holy_well.png" },
     { "key": "amenity", "value": "horse_dismount_block", "description": "Horse mounting blocks are shown as a small black step", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/mountingblock.png" },
@@ -3344,6 +3345,7 @@
     { "key": "shop", "value": "childrens", "description": "Shown as a purple dot ('nonspecific shop')", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/shopping_nonspecific.p.16.png" },
     { "key": "shop", "value": "chinese_medicine", "description": "Various shops shown" },
     { "key": "shop", "value": "chiropodist", "description": "Shown as a pink dot ('nonspecific health')", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/health_nonspecific.p.16.png" },
+    { "key": "shop", "value": "chiropractor", "description": "Shown as a pink dot ('nonspecific health')", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/health_nonspecific.p.16.png" },
     { "key": "shop", "value": "chocolate", "description": "Various shops shown" },
     { "key": "shop", "value": "christmas", "description": "Various shops shown" },
     { "key": "shop", "value": "cleaning", "description": "Shown as a purple dot ('nonspecific shop')", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/shopping_nonspecific.p.16.png" },

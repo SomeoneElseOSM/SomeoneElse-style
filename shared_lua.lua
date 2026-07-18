@@ -2769,6 +2769,16 @@ function consolidate_lua_03_t( passedt )
    end
 
 -- ----------------------------------------------------------------------------
+-- Synonym for clinic
+-- ----------------------------------------------------------------------------
+   if (( passedt.amenity     == "health_post"       )  and
+       ( passedt.healthcare  ~= "acupuncture"       )  and
+       ( passedt.healthcare  ~= "alternative"       )) then
+      passedt.amenity    = "clinic"
+      passedt.healthcare = nil
+   end
+
+-- ----------------------------------------------------------------------------
 -- Various mistagging, comma and semicolon healthcare
 -- Note that health centres currently appear as "health nonspecific".
 -- ----------------------------------------------------------------------------
@@ -2918,6 +2928,7 @@ function consolidate_lua_03_t( passedt )
        (  passedt.shop        == "mobility_aids"                 ) or
        (  passedt.shop        == "disability"                    ) or
        (  passedt.amenity     == "chiropractor"                  ) or
+       (  passedt.shop        == "chiropractor"                  ) or
        (  passedt.shop        == "osteopath"                     ) or
        (  passedt.office      == "osteopath"                     ) or
        (  passedt.amenity     == "physiotherapist"               ) or
