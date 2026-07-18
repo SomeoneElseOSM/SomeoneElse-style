@@ -163,7 +163,8 @@ end -- fix_corridors_t()
 
 -- ----------------------------------------------------------------------------
 -- "Different names on each side of the street" and
--- "name:en" is set by "name" if not already present.
+-- "name:en" is used for "name" if "name" is not already present.
+-- Similarly, "seamark:name"
 -- ----------------------------------------------------------------------------
 function set_name_left_right_en_t( passedt )
     if (( passedt["name:left"]  ~= nil ) and
@@ -178,6 +179,13 @@ function set_name_left_right_en_t( passedt )
         (  passedt["name:en"] ~= nil  ) and
         (  passedt["name:en"] ~= ""   )) then
        passedt.name = passedt["name:en"]
+    end
+
+    if ((( passedt["name"]  == nil )  or
+         ( passedt["name"]  == ""  )) and
+        (  passedt["seamark:name"] ~= nil  ) and
+        (  passedt["seamark:name"] ~= ""   )) then
+       passedt.name = passedt["seamark:name"]
     end
 
 -- ----------------------------------------------------------------------------
