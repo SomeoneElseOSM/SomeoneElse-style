@@ -11678,6 +11678,27 @@ function consolidate_lua_04_t( passedt )
       end
    end
 
+-- ----------------------------------------------------------------------------
+-- Help points
+-- There are relatively few of these mapped.  We consolidate them to the most
+-- common value, amenity=help_point
+-- ----------------------------------------------------------------------------
+   if ((  passedt.amenity     == "emergency_help_point" ) or
+       (  passedt.amenity     == "help_point"           ) or
+       (  passedt.emergency   == "help_point"           ) or
+       (( passedt.emergency   == "phone"               )  and
+        ( passedt.ref         == "Help Point"          )) or
+       (  passedt.information == "help_point"           ) or
+       (( passedt.information == "terminal"            )  and
+        ( passedt.name        == "Help Point"          )) or
+       (  passedt.railway     == "help_point"           )) then
+      passedt.amenity     = "help_point"
+      passedt.emergency   = nil
+      passedt.information = nil
+      passedt.railway     = nil
+      passedt.tourism     = nil
+   end
+
    if ((  passedt.emergency        == "life_ring"         ) or
        (  passedt.emergency        == "lifevest"          ) or
        (  passedt.emergency        == "flotation device"  ) or
