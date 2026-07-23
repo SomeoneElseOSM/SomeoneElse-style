@@ -1,9 +1,9 @@
 # Changes made to this rendering
 This page describes changes made in these projects: [SomeoneElse-style](https://github.com/SomeoneElseOSM/SomeoneElse-style), [SomeoneElse-style-legend](https://github.com/SomeoneElseOSM/SomeoneElse-style-legend) and [openstreetmap-carto-AJT](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT), and visible [on this site](//map.atownsend.org.uk/maps/map/map.html).  Since 2025 this also includes changes to lua code shared between raster and vector processing - hence the notes below about which a particular change applies to.  See [this changelog](https://github.com/SomeoneElseOSM/SomeoneElse-vector-extract/blob/main/resources/changelog_sve01.md) for where changes here affect the vector schema, and also other vector-only ones.
 
-## As yet unreleased
+## 23/07/2026
 Show chairs as benches.
-Change one of the bus guideways in the legend to a busway.
+(raster) Change one of the bus guideways in the legend to a busway.
 (raster) Don't show an extra "industrial" name on `power=plant`
 Detect zebra crossings and show with variation of crossing icon.
 Show `amenity=kitchen` with a unique icon.
