@@ -4506,6 +4506,32 @@ function consolidate_lua_03_t( passedt )
    end
 
 -- ----------------------------------------------------------------------------
+-- Remove "shop=alcohol" (and others) tag 
+-- on "amenity=pub" (and other amenities).
+-- We pick one thing to display them as, and in this case it's "amenity".
+-- ----------------------------------------------------------------------------
+   if ((( passedt.amenity == "pub"         )  or
+        ( passedt.amenity == "bar"         )  or
+        ( passedt.amenity == "cafe"        )  or
+        ( passedt.amenity == "fast_food"   )  or
+        ( passedt.amenity == "restaurant"  )  or
+        ( passedt.amenity == "post_office" )) and
+       (( passedt.shop    == "alcohol"     )  or
+        ( passedt.shop    == "beer"        )  or
+        ( passedt.shop    == "beverages"   )  or
+        ( passedt.shop    == "books"       )  or
+        ( passedt.shop    == "convenience" )  or
+        ( passedt.shop    == "deli"        )  or
+        ( passedt.shop    == "games"       )  or
+        ( passedt.shop    == "gift"        )  or
+        ( passedt.shop    == "music"       )  or
+        ( passedt.shop    == "supermarket" )  or
+        ( passedt.shop    == "vacant"      )  or
+        ( passedt.shop    == "yes"         ))) then
+      passedt.shop = nil
+   end
+
+-- ----------------------------------------------------------------------------
 -- Don't show pubs, cafes or restaurants if you can't actually get to them.
 -- ----------------------------------------------------------------------------
    if ((( passedt.amenity == "pub"        ) or
