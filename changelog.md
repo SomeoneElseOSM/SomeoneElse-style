@@ -3,6 +3,8 @@ This page describes changes made in these projects: [SomeoneElse-style](https://
 
 ## As yet unreleased
 Where something is tagged as `amenity=pub` (and some others) and `shop=alcohol` (and some others), remove the shop tag.
+Removed `shop=piercings`; no longer in the data.
+Removed `archaeological_site=abandoned_mine_workings`; no longer in the data.
 
 ## 23/07/2026
 Show chairs as benches.

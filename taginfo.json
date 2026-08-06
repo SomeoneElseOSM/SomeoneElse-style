@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20260722T235802Z",
+  "data_updated": "20260806T095701Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -452,7 +452,6 @@
     { "key": "animal", "value": "wellness", "description": "Synonym for 'pet_grooming'.  Shown as a purple pawprint with an 'G'", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/shop_pet_grooming.p.16.png" },
     { "key": "animal", "value": "yes", "description": "Show grassy farmland as mid-way between meadow and farmland ('#eeefda')" },
     { "key": "archaeological_site", "description": "Show different archaeological sites differently" },
-    { "key": "archaeological_site", "value": "abandoned_mine_workings", "description": "Synonym for historic quarry.  Icon like normal one but greyer.", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/historic_quarry.png" },
     { "key": "archaeological_site", "value": "broch", "description": "Brochs are shown as archaeological fortifications", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/historic_fortification.png" },
     { "key": "archaeological_site", "value": "castle", "description": "Not an expected value in OSM data.  Shown as a red castle with an archaeological site inside it.", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/historic_arch_castle.png" },
     { "key": "archaeological_site", "value": "crannog", "description": "Shown as an archaeological site on an island", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/historic_crannog.png" },
@@ -3724,7 +3723,6 @@
     { "key": "shop", "value": "picture_framing", "description": "Various shops shown" },
     { "key": "shop", "value": "piercing", "description": "Various shops shown" },
     { "key": "shop", "value": "piercing;tattoo", "description": "Various shops shown" },
-    { "key": "shop", "value": "piercings", "description": "Various shops shown" },
     { "key": "shop", "value": "plant_centre", "description": "Various shops shown" },
     { "key": "shop", "value": "plant_hire", "description": "Shown as a synonym for 'shop=doityourself'.  Shown as a hammer and a spanner", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/shop_diy.p.16.png" },
     { "key": "shop", "value": "plant_nursery", "description": "Various shops shown" },

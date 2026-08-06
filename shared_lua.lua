@@ -3314,8 +3314,7 @@ function consolidate_lua_03_t( passedt )
        ( passedt.shop    == "tattoo;piercing"         ) or
        ( passedt.shop    == "piercing;tattoo"         ) or
        ( passedt.shop    == "body_piercing"           ) or
-       ( passedt.shop    == "yes;piercing"            ) or
-       ( passedt.shop    == "piercings"               )) then
+       ( passedt.shop    == "yes;piercing"            )) then
       passedt.shop = "tattoo"
    end
 
@@ -7077,8 +7076,7 @@ function consolidate_lua_03_t( passedt )
 -- ----------------------------------------------------------------------------
    if ((  passedt.historic            == "archaeological_site"      ) and
        (( passedt.archaeological_site == "mineral_extraction"      )  or
-        ( passedt.archaeological_site == "mine"                    )  or
-        ( passedt.archaeological_site == "abandoned_mine_workings" ))) then
+        ( passedt.archaeological_site == "mine"                    ))) then
       passedt.historic            = "quarry"
       passedt.archaeological_site = nil
    end
