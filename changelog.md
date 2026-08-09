@@ -3,6 +3,7 @@ This page describes changes made in these projects: [SomeoneElse-style](https://
 
 ## As yet unreleased
 Changed cross icon for most christian places of worship to a solid black one which looks nicer.  
+Places of worship now have religion appended for both raster and vector (and for Jehovah's Witness, also denomination).  Generic reigious symbol used for Jehovah's Witness.
 
 ## Vector 06/08/2026, Raster as yet unreleased
 Where something is tagged as `amenity=pub` (and some others) and `shop=alcohol` (and some others), remove the shop tag.

@@ -9933,6 +9933,52 @@ function consolidate_lua_03_t( passedt )
         ( passedt.man_made                                 == ""                     ))) then
       passedt.man_made = "water_tap"
    end
+
+-- ----------------------------------------------------------------------------
+-- If we still have an "amenity=place_of_worship", 
+-- send places of worship through to the vector rendering code as 
+-- a specific place_of_woship type
+-- ----------------------------------------------------------------------------
+   if ( passedt.amenity == "place_of_worship" ) then
+      if ( passedt.religion == "christian" ) then
+         if ( passedt.denomination == "jehovahs_witness" ) then
+            passedt.amenity = "place_of_worship_christian_jehovahs_witness"
+         else
+            passedt.amenity = "place_of_worship_christian"
+         end
+      else
+         if ( passedt.religion == "muslim" ) then
+            passedt.amenity = "place_of_worship_muslim"
+         else
+            if ( passedt.religion == "sikh" ) then
+               passedt.amenity = "place_of_worship_sikh"
+            else
+               if ( passedt.religion == "jewish" ) then
+                  passedt.amenity = "place_of_worship_jewish"
+               else
+                  if ( passedt.religion == "hindu" ) then
+                     passedt.amenity = "place_of_worship_hindu"
+                  else
+                     if ( passedt.religion == "buddhist" ) then
+                        passedt.amenity = "place_of_worship_buddhist"
+                     else
+                        if ( passedt.religion == "shinto" ) then
+                           passedt.amenity = "place_of_worship_shinto"
+                        else
+                           if ( passedt.religion == "taoist" ) then
+                              passedt.amenity = "place_of_worship_taoist"
+                           else
+                              passedt.amenity = "place_of_worship_other"
+                           end
+                        end
+                     end
+                  end
+               end
+            end
+         end
+      end
+   end
+
 end -- consolidate_lua_03_t( passedt )
 
 
