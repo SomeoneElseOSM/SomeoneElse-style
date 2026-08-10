@@ -4443,7 +4443,6 @@ function consolidate_lua_03_t( passedt )
        ( passedt.wheelchair == "only"             )  or
        ( passedt.wheelchair == "permissive"       )  or
        ( passedt.wheelchair == "ramp"             )  or
-       ( passedt.wheelchair == "unisex"           )  or
        ( passedt.wheelchair == "yes;designated"   )) then
       passedt.wheelchair = "yes"
    end
