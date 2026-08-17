@@ -13504,7 +13504,6 @@ function consolidate_lua_04_t( passedt )
          if (( passedt.departures_board              == "timetable"        ) or
              ( passedt.departures_board              == "schedule"         ) or
              ( passedt.departures_board              == "separate"         ) or
-             ( passedt.departures_board              == "paper timetable"  ) or
              ( passedt.departures_board              == "yes"              ) or
              ( passedt.passenger_information_display == "timetable"        ) or
              ( passedt.passenger_information_display == "yes"              )) then

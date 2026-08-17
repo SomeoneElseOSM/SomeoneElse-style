@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20260806T095704Z",
+  "data_updated": "20260806T095705Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -1294,7 +1294,6 @@
     { "key": "denomination", "value": "jehovahs_witness", "description": "Don't use a cross for Jehovahs Witness buildings", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/place_of_worship3.p.16.png" },
     { "key": "departures_board", "description": "What sort of departures board does a bus stop have?" },
     { "key": "departures_board", "value": "multiline", "description": "Synonym for 'realtime'; shown as a blue bus with an 'r'", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/bus_stop_realtime_24.png" },
-    { "key": "departures_board", "value": "paper timetable", "description": "Synonym for 'timetable'.  Shown as blue bus with pole and 'T'", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/bus_stop_timetable.png" },
     { "key": "departures_board", "value": "realtime", "description": "Bus stops with realtime departures boards are shown as a blue bus with an 'r'", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/bus_stop_realtime_24.png" },
     { "key": "departures_board", "value": "realtime; timetable", "description": "Synonym for 'realtime'" },
     { "key": "departures_board", "value": "realtime,timetable", "description": "Synonym for 'realtime'; shown as a blue bus with an 'r'", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/bus_stop_realtime_24.png" },
