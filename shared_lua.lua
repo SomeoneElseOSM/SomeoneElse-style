@@ -2249,6 +2249,12 @@ function consolidate_lua_03_t( passedt )
       passedt.archaeological_site = nil
    end
 
+   if (( passedt.historic             == "archaeological_site" ) and
+       ( passedt.archaeological_site  == "water_well"          )) then
+      passedt.historic            = "well"
+      passedt.archaeological_site = nil
+   end
+
 -- ----------------------------------------------------------------------------
 -- Render ruined mills and mines etc. that are not something else as historic.
 -- Items in this list are assumed to be not operational, so the "man_made" 
