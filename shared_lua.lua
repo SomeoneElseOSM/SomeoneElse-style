@@ -3245,6 +3245,40 @@ function consolidate_lua_03_t( passedt )
    end
 
 -- ----------------------------------------------------------------------------
+-- If a farm shop doesn't have a name but does have named produce, map across
+-- to vending machine, and also the produce into "vending" for consideration 
+-- below.
+-- ----------------------------------------------------------------------------
+   if ((  passedt.shop                == "farm"   )  and
+       (( passedt.name                == nil     )   or
+        ( passedt.name                == ""      ))  and
+       ((( passedt.produce             ~= nil    )   and
+         ( passedt.produce             ~= ""     ))  or
+        (  passedt["payment:honesty_box"] == "yes"   ))) then
+      passedt.amenity = "vending_machine"
+
+      if (( passedt.produce == nil ) or
+          ( passedt.produce == ""  )) then
+         if ( passedt["food:eggs"] == "yes" )  then
+            passedt.produce = "eggs"
+         else
+            passedt.produce = "farm shop honesty box"
+         end
+      end
+
+      passedt.vending = passedt.produce
+      passedt.shop    = nil
+   end
+
+   if ((  passedt.shop == "eggs"  )  and
+       (( passedt.name == nil    )   or
+        ( passedt.name == ""     ))) then
+      passedt.amenity = "vending_machine"
+      passedt.vending = passedt.shop
+      passedt.shop    = nil
+   end
+
+-- ----------------------------------------------------------------------------
 -- Some vending machines get the thing sold as the label.
 -- "farm shop honesty box" might have been assigned higher up.
 -- ----------------------------------------------------------------------------
@@ -5755,40 +5789,6 @@ function consolidate_lua_03_t( passedt )
    if (( passedt.amenity == "vending_machine" ) and
        ( passedt.vending == "bottle_return"   )) then
       passedt.amenity  = "bottle_return"
-   end
-
--- ----------------------------------------------------------------------------
--- If a farm shop doesn't have a name but does have named produce, map across
--- to vending machine, and also the produce into "vending" for consideration 
--- below.
--- ----------------------------------------------------------------------------
-   if ((  passedt.shop                == "farm"   )  and
-       (( passedt.name                == nil     )   or
-        ( passedt.name                == ""      ))  and
-       ((( passedt.produce             ~= nil    )   and
-         ( passedt.produce             ~= ""     ))  or
-        (  passedt["payment:honesty_box"] == "yes"   ))) then
-      passedt.amenity = "vending_machine"
-
-      if (( passedt.produce == nil ) or
-          ( passedt.produce == ""  )) then
-         if ( passedt["food:eggs"] == "yes" )  then
-            passedt.produce = "eggs"
-         else
-            passedt.produce = "farm shop honesty box"
-         end
-      end
-
-      passedt.vending = passedt.produce
-      passedt.shop    = nil
-   end
-
-   if ((  passedt.shop == "eggs"  )  and
-       (( passedt.name == nil    )   or
-        ( passedt.name == ""     ))) then
-      passedt.amenity = "vending_machine"
-      passedt.vending = passedt.shop
-      passedt.shop    = nil
    end
 
 -- ----------------------------------------------------------------------------

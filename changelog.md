@@ -7,6 +7,7 @@ Places of worship now have religion appended for both raster and vector (and for
 Removed `wheelchair=unisex`; no longer in the data.
 Removed `departures_board=paper timetable`; no longer in the data.
 Treat `historic=archaeological_site; archaeological_site=water_well` as `historic=well`.
+Fixed bug whereby farm shop produce types weren't appearing as bracketed names.
 
 ## Vector 06/08/2026, Raster as yet unreleased
 Where something is tagged as `amenity=pub` (and some others) and `shop=alcohol` (and some others), remove the shop tag.
