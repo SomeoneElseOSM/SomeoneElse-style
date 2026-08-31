@@ -842,7 +842,7 @@ function consolidate_lua_01_t( passedt )
 -- (and it's implied for "service=emergency_access").  Those and the others 
 -- below imply "access=no" unless overridden by "foot" - we're a 
 -- pedestrian-focused schema and so "foot" (whatever it is set to) takes
--- prec
+-- precedence.
 -- ----------------------------------------------------------------------------
    if ((( passedt.access  == "emergency"        )  or
         ( passedt.service == "emergency_access" )  or
