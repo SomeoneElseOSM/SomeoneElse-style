@@ -2,7 +2,7 @@
 This page describes changes made in these projects: [SomeoneElse-style](https://github.com/SomeoneElseOSM/SomeoneElse-style), [SomeoneElse-style-legend](https://github.com/SomeoneElseOSM/SomeoneElse-style-legend) and [openstreetmap-carto-AJT](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT), and visible [on this site](//map.atownsend.org.uk/maps/map/map.html).  Since 2025 this also includes changes to lua code shared between raster and vector processing - hence the notes below about which a particular change applies to.  See [this changelog](https://github.com/SomeoneElseOSM/SomeoneElse-vector-extract/blob/main/resources/changelog_sve01.md) for where changes here affect the vector schema, and also other vector-only ones.
 
 ## Raster 31/08/2026, Vector n/a
-Fixed bug whereby the three types of steps in the schema had been missed from `no and `destination` colouring (raster only).
+Fixed bug whereby the three types of steps in the schema had been missed from `no` and `destination` colouring (raster only).
 
 ## Vector 29/08/2026, Raster 31/08/2026
 Changed cross icon for most christian places of worship to a solid black one which looks nicer.  
