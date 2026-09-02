@@ -13135,10 +13135,14 @@ function consolidate_lua_04_t( passedt )
       passedt.tourism = nil
    end
 
-   if ((( passedt.man_made   == "tower"              )   or
-        ( passedt.man_made   == "monitoring_station" ))  and
-       (( passedt["tower:type"] == "radar"              )   or
-        ( passedt["tower:type"] == "weather_radar"      ))) then
+   if (((   passedt.man_made            == "tower"               )   or
+        (   passedt.man_made            == "monitoring_station"  )   or
+        ((( passedt.man_made            == nil                 )     or
+          ( passedt.man_made            == ""                  ))    and
+         (( passedt["disused:man_made"] == nil                 )     or
+          ( passedt["disused:man_made"] == ""                  ))))  and
+       ((   passedt["tower:type"]       == "radar"               )   or
+        (   passedt["tower:type"]       == "weather_radar"       ))) then
       passedt.man_made = "radartower"
       passedt.building = "yes"
       passedt.tourism = nil
