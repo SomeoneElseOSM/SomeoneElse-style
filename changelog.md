@@ -3,6 +3,7 @@ This page describes changes made in these projects: [SomeoneElse-style](https://
 
 ## As yet unreleased
 Detect radomes which are mapped as buildings rather than `man_made`.
+Where something is mapped as a `place=island` or `place=islet` and some other tag (e.g. `landuse`); remove the `place` tag.
 
 ## Raster 31/08/2026, Vector n/a
 Fixed bug whereby the three types of steps in the schema had been missed from `no` and `destination` colouring (raster only).

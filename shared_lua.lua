@@ -13675,6 +13675,31 @@ function consolidate_lua_04_t( passedt )
    end
 
 -- ----------------------------------------------------------------------------
+-- "place=island" and "leisure=nature_reserve" etc.
+-- We want to show those as the "leisure" tag.
+-- (we've consolidated "islet" into "island" already in "consolidate_place_t")
+-- Remove the place tag.
+-- ----------------------------------------------------------------------------
+   if ((  passedt.place   == "island"          ) and
+       (( passedt.landuse == "cemetery"       )  or
+        ( passedt.landuse == "farmland"       )  or
+        ( passedt.landuse == "forest"         )  or
+        ( passedt.landuse == "grass"          )  or
+        ( passedt.landuse == "industrial"     )  or
+        ( passedt.landuse == "meadow"         )  or
+        ( passedt.leisure == "garden"         )  or
+        ( passedt.leisure == "nature_reserve" )  or
+        ( passedt.leisure == "park"           )  or
+        ( passedt.leisure == "pitch"          )  or
+        ( passedt.leisure == "sports_centre"  )  or
+        ( passedt.natural == "bare_rock"      )  or
+        ( passedt.natural == "heath"          )  or
+        ( passedt.natural == "scrub"          )  or
+        ( passedt.natural == "wetland"        ))) then
+      passedt.place = nil
+   end
+
+-- ----------------------------------------------------------------------------
 -- name and addr:housename
 -- If a building that isn't something else has a name but no addr:housename,
 -- use that there.
