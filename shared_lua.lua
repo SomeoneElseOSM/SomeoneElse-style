@@ -936,10 +936,26 @@ function consolidate_lua_01_t( passedt )
 -- Gravel etc. unclassified roads _are_ assumed to be public
 -- and are picked up below.
 -- ----------------------------------------------------------------------------
-   if ((( passedt.highway == "residential"  )  or
-        ( passedt.highway == "service"      )) and
-       (( passedt.surface == "unpaved"      )  or 
-        ( passedt.surface == "gravel"       ))) then
+   if ((( passedt.highway == "residential"     )  or
+        ( passedt.highway == "service"         )) and
+       (( passedt.surface == "unpaved"         )  or 
+        ( passedt.surface == "gravel"          )  or
+        ( passedt.surface == "compacted"       )  or
+        ( passedt.surface == "fine_gravel"     )  or
+        ( passedt.surface == "dirt"            )  or
+        ( passedt.surface == "pebblestone"     )  or
+        ( passedt.surface == "ground"          )  or
+        ( passedt.surface == "grass"           )  or
+        ( passedt.surface == "shingle"         )  or
+        ( passedt.surface == "grass_paver"     )  or
+        ( passedt.surface == "wood"            )  or
+        ( passedt.surface == "mixed"           )  or
+        ( passedt.surface == "earth"           )  or
+        ( passedt.surface == "artificial_turf" )  or
+        ( passedt.surface == "mud"             )  or
+        ( passedt.surface == "sand"            )  or
+        ( passedt.surface == "dirt/sand"       )  or
+        ( passedt.surface == "woodchips"       ))) then
       passedt.highway = "track"
    end
 
