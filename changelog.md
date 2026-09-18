@@ -3,6 +3,8 @@ This page describes changes made in these projects: [SomeoneElse-style](https://
 
 ## As yet unreleased
 Add more soft `surface` values which cause `unclassified`, `residential` and `service` roads to be handled differently.
+Removed `amenity=preschool`; no longer in the data.
+No need to separately check `building=preschool`.
 
 ## Raster as yet unreleased, Vector 10/09/2026
 Detect radomes which are mapped as buildings rather than `man_made`.

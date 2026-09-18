@@ -2971,8 +2971,6 @@ function consolidate_lua_03_t( passedt )
        (  passedt.residential == "sheltered_housing"             ) or
        (  passedt.amenity     == "childcare"                     ) or
        (  passedt.amenity     == "childrens_centre"              ) or
-       (  passedt.amenity     == "preschool"                     ) or
-       (  passedt.building    == "preschool"                     ) or
        (  passedt.amenity     == "nursery"                       ) or
        (  passedt.amenity     == "nursery_school"                ) or
        (  passedt.amenity     == "health_centre"                 ) or
@@ -14031,6 +14029,18 @@ function fix_silly_rwn_names_t( passedt )
 
        if ( string.find( passedt.name, "Wey Navigation", 1, true ) == 1 ) then
           passedt.name = "Wey Navigation"
+       end
+
+-- ------------------------------------------------------------------------------
+-- West Highland Way - try and deal with the "alt" relations first.
+-- ------------------------------------------------------------------------------
+       if (( string.find( passedt.name, "West Highland Way alt",   1, true ) == 1 )  or
+           ( string.find( passedt.name, "West Highland Way - alt", 1, true ) == 1 )) then
+          passedt.name = "West Highland Way alt"
+       else
+          if ( string.find( passedt.name, "West Highland Way", 1, true ) == 1 ) then
+             passedt.name = "West Highland Way"
+          end
        end
 
 -- ------------------------------------------------------------------------------
