@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20260918T190301Z",
+  "data_updated": "20260918T190302Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -2198,7 +2198,7 @@
     { "key": "leisure", "value": "fishing", "description": "Synonym for park.  Shown with a green fill ('#b6fdb6') with the name in very dark green ('#2c4b2c')" },
     { "key": "leisure", "value": "fitness_centre", "description": "Shown as unnamed commercial landuse and as green dot ('nonspecific leisure')", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/leisure_nonspecific.p.16.png" },
     { "key": "leisure", "value": "fitness_station", "description": "Shown as a small black icon", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/leisure_fitnessstation.p.16.png" },
-    { "key": "leisure", "value": "gambling", "description": "Synonym for 'shop=bookmaker'.  Not a current value in OSM data.  Shown as a set of unlikely odds", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/shop_bookmaker.p.16.png" },
+    { "key": "leisure", "value": "gambling", "description": "Not a current value in OSM data.  Synonym for 'shop=bookmaker'.  Shown as a set of unlikely odds", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/shop_bookmaker.p.16.png" },
     { "key": "leisure", "value": "garden", "description": "Leisure amenities shown in green" },
     { "key": "leisure", "value": "golf_course", "description": "Shown as a green triangular flag", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/leisure_golf.png" },
     { "key": "leisure", "value": "hackerspace", "description": "Shown as unnamed commercial landuse and as green dot ('nonspecific leisure')", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/leisure_nonspecific.p.16.png" },
