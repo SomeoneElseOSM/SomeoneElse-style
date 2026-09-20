@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20260918T190303Z",
+  "data_updated": "20260918T190304Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -1620,7 +1620,7 @@
     { "key": "fuel:lpg", "value": "yes", "description": "Regular fuel stations that also sell LPG are shown as a purple petrol pump with an 'L' to the side", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/fuel_l.16.png" },
     { "key": "gambling", "description": "Detect bingo halls" },
     { "key": "gambling", "value": "bingo", "description": "Shown as unnamed commercial landuse and as green dot ('nonspecific leisure')", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/leisure_nonspecific.p.16.png" },
-    { "key": "gambling;slot_machines", "value": "bingo", "description": "Shown as unnamed commercial landuse and as green dot ('nonspecific leisure')", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/leisure_nonspecific.p.16.png" },
+    { "key": "gambling", "value": "bingo;slot_machines", "description": "Shown as unnamed commercial landuse and as green dot ('nonspecific leisure')", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/leisure_nonspecific.p.16.png" },
     { "key": "garden", "description": "Detect beer gardens" },
     { "key": "garden", "value": "beer_garden", "description": "Detect beer gardens" },
     { "key": "gate", "description": "Detect locked gates" },
