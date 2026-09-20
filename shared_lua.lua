@@ -11005,6 +11005,17 @@ function consolidate_lua_04_t( passedt )
    end
 
 -- ----------------------------------------------------------------------------
+-- All bingo has been tagfiddled to gambling.
+-- Let's detect and set bingo befor consolidated other gambling / betting 
+-- places.
+-- ----------------------------------------------------------------------------
+   if ((  passedt.amenity  == "gambling"             ) and
+       (( passedt.gambling == "bingo"               )  or
+        ( passedt.gambling == "bingo;slot_machines" ))) then
+      passedt.amenity = "bingo"
+   end
+
+-- ----------------------------------------------------------------------------
 -- Betting Shops etc.
 -- ----------------------------------------------------------------------------
    if (( passedt.shop    == "betting"             ) or
@@ -12485,7 +12496,6 @@ function consolidate_lua_04_t( passedt )
          ( passedt.landuse == ""                      ))  and
         (( passedt.name    ~= nil                     )   and
          ( passedt.name    ~= ""                      ))) or
-       ( passedt.gambling == "bingo"                    ) or
        ( passedt.leisure  == "adventure_park"           ) or
        ( passedt.leisure  == "beach_resort"             ) or
        ( passedt.leisure  == "bingo"                    ) or
