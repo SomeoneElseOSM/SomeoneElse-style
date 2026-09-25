@@ -1,13 +1,13 @@
 # Changes made to this rendering
 This page describes changes made in these projects: [SomeoneElse-style](https://github.com/SomeoneElseOSM/SomeoneElse-style), [SomeoneElse-style-legend](https://github.com/SomeoneElseOSM/SomeoneElse-style-legend) and [openstreetmap-carto-AJT](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT), and visible [on this site](//map.atownsend.org.uk/maps/map/map.html).  Since 2025 this also includes changes to lua code shared between raster and vector processing - hence the notes below about which a particular change applies to.  See [this changelog](https://github.com/SomeoneElseOSM/SomeoneElse-vector-extract/blob/main/resources/changelog_sve01.md) for where changes here affect the vector schema, and also other vector-only ones.
 
-## As yet unreleased
+## 25/09/2026
 Add more soft `surface` values which cause `unclassified`, `residential` and `service` roads to be handled differently.
 Removed `amenity=preschool`; no longer in the data.
 No need to separately check `building=preschool`.
 Detect bingo, as it has been tagfiddled to gambling, to show as leisure not bookmakers.
 
-## Raster as yet unreleased, Vector 10/09/2026
+## Raster 25/09/2026, Vector 10/09/2026
 Detect radomes which are mapped as buildings rather than `man_made`.
 Where something is mapped as a `place=island` or `place=islet` and some other tag (e.g. `landuse`); remove the `place` tag.
 
