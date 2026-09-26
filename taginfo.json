@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20260926T125702Z",
+  "data_updated": "20260926T125705Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -1445,6 +1445,10 @@
     { "key": "drinking_water", "value": "yes", "description": "Causes features with other tags to be shown as a brown tap and glass", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/tap_drinking.p.20.png" },
     { "key": "ele", "description": "Detect big peaks (ele > 914 munros) and prominent peaks, and show them more prominently" },
     { "key": "embankment", "description": "Used to detect invalid layer values and also levees (standalone or on other features)" },
+    { "key": "embankment", "value": "both", "description": "Used to detect levees (standalone or on other features)" },
+    { "key": "embankment", "value": "dyke", "description": "Used to detect levees (standalone or on other features)" },
+    { "key": "embankment", "value": "left", "description": "Used to detect levees (standalone or on other features)" },
+    { "key": "embankment", "value": "levee", "description": "Used to detect levees (standalone or on other features)" },
     { "key": "embankment", "value": "yes", "description": "Used to detect invalid layer values and also levees (standalone or on other features)" },
     { "key": "embassy", "description": "Shown as either embassy or office" },
     { "key": "embassy", "value": "branch_embassy", "description": "Shown as office rather than embassy" },

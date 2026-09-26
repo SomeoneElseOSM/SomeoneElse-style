@@ -9177,6 +9177,10 @@ function consolidate_lua_03_t( passedt )
         ( passedt.man_made   == "dyke"          )  or
         ( passedt.man_made   == "levee"         )  or
         ( passedt.embankment == "yes"           )  or
+        ( passedt.embankment == "dyke"          )  or
+        ( passedt.embankment == "levee"         )  or
+        ( passedt.embankment == "both"          )  or
+        ( passedt.embankment == "left"          )  or
         ( passedt.barrier    == "berm"          )  or
         ( passedt.natural    == "ridge"         )  or
         ( passedt.natural    == "earth_bank"    )  or
@@ -9203,6 +9207,10 @@ function consolidate_lua_03_t( passedt )
         (  passedt.man_made   == "dyke"           )  or
         (  passedt.man_made   == "levee"          )  or
         (  passedt.embankment == "yes"            )  or
+        (  passedt.embankment == "dyke"           )  or
+        (  passedt.embankment == "levee"          )  or
+        (  passedt.embankment == "both"           )  or
+        (  passedt.embankment == "left"           )  or
         (  passedt.natural    == "ridge"          )  or
         (  passedt.natural    == "arete"          )) and
        ((( passedt.highway    ~= nil             )   and
