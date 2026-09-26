@@ -408,6 +408,16 @@ function filter_tags_node (keyvalues, nokeys)
    keyvalues["sport"] = trim_after_semicolon( keyvalues["sport"] )
 
 -- ----------------------------------------------------------------------------
+-- Catch unusual use of "sac_scale=tidal"
+-- ----------------------------------------------------------------------------
+   if ((  keyvalues["sac_scale"] == "tidal"  ) and
+       (( keyvalues["ford"]      == nil     )  or
+        ( keyvalues["ford"]      == ""      ))) then
+      keyvalues["sad_scale"] = nil
+      keyvalues["ford"] = "yes"
+   end
+
+-- ----------------------------------------------------------------------------
 -- Consolidate some "ford" values into "yes".
 -- This is here rather than in "generic" because "generic" is called after this
 -- There is a similar section in way-only.
@@ -646,9 +656,19 @@ function filter_tags_way (keyvalues, nokeys)
    keyvalues["sport"] = trim_after_semicolon( keyvalues["sport"] )
 
 -- ----------------------------------------------------------------------------
+-- Catch unusual use of "sac_scale=tidal"
+-- ----------------------------------------------------------------------------
+   if ((  keyvalues["sac_scale"] == "tidal"  ) and
+       (( keyvalues["ford"]      == nil     )  or
+        ( keyvalues["ford"]      == ""      ))) then
+      keyvalues["sad_scale"] = nil
+      keyvalues["ford"] = "yes"
+   end
+
+-- ----------------------------------------------------------------------------
 -- Consolidate some "ford" values into "yes".
 -- This is here rather than in "generic" because "generic" is called after this
--- There is a similar section in way-only.
+-- There is a similar section in node-only.
 -- ----------------------------------------------------------------------------
    if (( keyvalues["ford"] == "tidal_causeway" ) or
        ( keyvalues["ford"] == "ford"           ) or 

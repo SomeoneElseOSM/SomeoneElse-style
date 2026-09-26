@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20260918T190304Z",
+  "data_updated": "20260926T125701Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -3170,6 +3170,7 @@
     { "key": "sac_scale", "description": "Suppress some unfeasible walking paths wth no explicit PRoW" },
     { "key": "sac_scale", "value": "demanding_alpine_hiking", "description": "Suppress some unfeasible walking paths wth no explicit PRoW" },
     { "key": "sac_scale", "value": "difficult_alpine_hiking", "description": "Suppress some unfeasible walking paths wth no explicit PRoW" },
+    { "key": "sac_scale", "value": "tidal", "description": "Detected as long ford" },
     { "key": "school", "description": "Detect school entrances" },
     { "key": "school", "value": "art", "description": "Art schools are shown as black dots, like offices", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/office_nonspecific.p.16.png" },
     { "key": "school", "value": "entrance", "description": "Detect school entrances" },
