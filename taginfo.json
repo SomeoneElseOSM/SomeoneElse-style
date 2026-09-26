@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20260926T125701Z",
+  "data_updated": "20260926T125702Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -3087,6 +3087,7 @@
     { "key": "real_ale", "value": "no", "description": "Detect real_ale pubs" },
     { "key": "recycling_type", "description": "Show recycling centres and containers differently" },
     { "key": "recycling_type", "value": "centre", "description": "Shown as a recycling centre in a brown building", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/recyclingcentre.p.16.png" },
+    { "key": "recycling_type", "value": "reverse_vending_machine", "description": "Handled as reverse vending machine" },
     { "key": "recycling_type", "value": "scrap_yard", "description": "Show as regular scrapyard" },
     { "key": "reef", "description": "Is a reef rocky or sandy" },
     { "key": "reef", "value": "sand", "description": "Is a reef rocky or sandy" },

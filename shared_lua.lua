@@ -2385,6 +2385,11 @@ function consolidate_lua_03_t( passedt )
          passedt.amenity = "scrapyard"
    end
 
+   if (( passedt.amenity == "recycling"                      ) and
+       ( passedt.recycling_type == "reverse_vending_machine" )) then
+         passedt.amenity = "bottle_return"
+   end
+
    if ( passedt.amenity == "recycling" ) then
       if ( passedt.recycling_type == "centre" ) then
          passedt.amenity = "recyclingcentre"
