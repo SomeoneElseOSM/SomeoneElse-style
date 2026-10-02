@@ -192,25 +192,20 @@ function set_name_left_right_en_t( passedt )
 -- Now default some "language names" to "name" if unset.
 -- "name" will have been set based on the geographical location; for example if
 -- in Welsh-speaking Wales, it'll be in Welsh.
+-- In Scots Gaelic parts of Scotland, it'll be in Scots Gaelic
+-- In Ireland it'll just be "name"
+-- Everywhere else it'll be "name:en".
 --
--- However, we try and fallback to a "nearby language" first, so GD to GA and
--- vice-versa, and CY to one of those before just "name".
+-- However, if a language name is unsert we try and fallback to a 
+-- "nearby language" first, so GD to GA and vice-versa.
+-- CY falls back to "name" (which will already be one of "name:en", "name:gd" 
+-- or the original "name" tag as described above).
 -- ----------------------------------------------------------------------------
     if (( passedt["name:cy"] == nil )  or
         ( passedt["name:cy"] == ""  )) then
-        if (( passedt["name:ga"] ~= nil )  and
-            ( passedt["name:ga"] ~= ""  )) then
-            passedt["name:cy"] = passedt["name:ga"]
-        else
-            if (( passedt["name:gd"] ~= nil )  and
-                ( passedt["name:gd"] ~= ""  )) then
-                passedt["name:cy"] = passedt["name:gd"]
-            else
-                if (( passedt["name"] ~= nil  ) and
-                    ( passedt["name"] ~= ""   )) then
-                    passedt["name:cy"] = passedt.name
-                end
-            end
+        if (( passedt["name"] ~= nil  ) and
+            ( passedt["name"] ~= ""   )) then
+           passedt["name:cy"] = passedt.name
         end
     end
 
