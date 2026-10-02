@@ -11550,8 +11550,7 @@ function consolidate_lua_04_t( passedt )
    if (( passedt.shop    == "taxi"                    ) or
        ( passedt.office  == "taxi"                    ) or
        ( passedt.office  == "minicab"                 ) or
-       ( passedt.shop    == "minicab"                 ) or
-       ( passedt.amenity == "minicab"                 )) then
+       ( passedt.shop    == "minicab"                 )) then
       passedt.landuse = "unnamedcommercial"
       passedt.amenity = "taxi_office"
       passedt.shop    = nil
