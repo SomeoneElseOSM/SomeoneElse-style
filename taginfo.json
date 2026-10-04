@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20261002T165701Z",
+  "data_updated": "20261002T165702Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -1340,6 +1340,7 @@
     { "key": "designation", "value": "public_bridleway;public_footpath", "description": "Shown as public bridleway" },
     { "key": "designation", "value": "public_byway", "description": "Shown as byway open to all traffic" },
     { "key": "designation", "value": "public_cycleway;public_bridleway", "description": "Shown as public bridleway" },
+    { "key": "designation", "value": "public_cycleway;public_footpath", "description": "Shown as public footpath" },
     { "key": "designation", "value": "public_footpath", "description": "Shown as public footpath" },
     { "key": "designation", "value": "public_footpath;permissive_bridleway", "description": "Shown as public footpath" },
     { "key": "designation", "value": "public_footpath;public_cycleway", "description": "Shown as public footpath" },
@@ -3949,6 +3950,8 @@
     { "key": "social_facility", "value": "residential_home", "description": "Shown as a pink dot ('nonspecific health')", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/health_nonspecific.p.16.png" },
     { "key": "social_facility", "value": "shelter", "description": "Shown as a pink dot ('nonspecific health')", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/health_nonspecific.p.16.png" },
     { "key": "social_facility", "value": "shopmobility", "description": "Shopmobility: shown as a brown mobility scooter", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/shopmobility.p.16.png" },
+    { "key": "source:designation", "description": "Detect public cycleways on list of streets" },
+    { "key": "source:designation", "value": "list_of_streets", "description": "Detect public cycleways on list of streets" },
     { "key": "species", "description": "Detect hogweed hazard" },
     { "key": "species", "value": "Heracleum mantegazzianum", "description": "Detect hogweed hazard" },
     { "key": "sport", "description": "Used to classify and clarify many other tags" },

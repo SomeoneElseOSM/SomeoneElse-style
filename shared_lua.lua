@@ -1161,18 +1161,21 @@ function consolidate_lua_01_t( passedt )
 -- England and Wales: public_footpath
 -- Scotland: core_path (ish - more general acess rights exist)
 -- Northern Ireland: public_footpath or PROW (actually "footpath" in law)
--- "access_land" is a special case where there is legal access.
---
+-- "access_land" is a special case where there is legal access.  In OSM it's 
+-- used on both highways and non-highways.
 -- ----------------------------------------------------------------------------
-   if (( passedt.designation == "public_footpath"                        ) or
-       ( passedt.designation == "core_path"                              ) or 
-       ( passedt.designation == "footpath"                               ) or 
-       ( passedt.designation == "public_footway"                         ) or 
-       ( passedt.designation == "public_footpath;permissive_bridleway"   ) or 
-       ( passedt.designation == "public_footpath;public_cycleway"        ) or
-       ( passedt.designation == "PROW"                                   ) or
-       ( passedt.designation == "access_land"                            ) or
-       ( passedt.designation == "adopted_footway"                        )) then
+   if ((  passedt.designation == "public_footpath"                        ) or
+       (  passedt.designation == "core_path"                              ) or 
+       (  passedt.designation == "footpath"                               ) or 
+       (  passedt.designation == "public_footway"                         ) or 
+       (  passedt.designation == "public_footpath;permissive_bridleway"   ) or 
+       (  passedt.designation == "public_footpath;public_cycleway"        ) or
+       (  passedt.designation == "PROW"                                   ) or
+       (  passedt.designation == "access_land"                            ) or
+       (  passedt.designation == "adopted_footway"                        ) or
+       (  passedt.designation == "public_cycleway;public_footpath"        ) or 
+       (( passedt.designation == "public_cycleway"                       )  and
+        ( passedt["source:designation"] == "list_of_streets"             ))) then
       if (( passedt.highway == "intpathnarrow"     ) or
           ( passedt.highway == "goodpathnarrow"    ) or
           ( passedt.highway == "pathnarrow"        )) then
@@ -1199,6 +1202,9 @@ function consolidate_lua_01_t( passedt )
                else
                   set_goodfootwaywide( passedt )
                end
+-- ----------------------------------------------------------------------------
+-- No "else" here - we do not consider non-highway designations at this point.
+-- ----------------------------------------------------------------------------
             end
          end
       end

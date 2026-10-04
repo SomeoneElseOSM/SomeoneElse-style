@@ -7,6 +7,7 @@ Detect `recycling_type=reverse_vending_machine as a reverse vending machine.
 Detect `embankment=dyke`, `embankment=levee`, `embankment=both` `embankment=left` as a standalone or other (highway-carrying) embankment.
 The language fallback for Welsh is now "whatever the default language for the location would be" rather than GA or GD.  See comments at https://www.openstreetmap.org/changeset/169884727 .
 Removed `amenity=minicab`; no longer in the data.
+Detect public cycleways on list of streets as "public"
 
 ## 25/09/2026
 Add more soft `surface` values which cause `unclassified`, `residential` and `service` roads to be handled differently.
