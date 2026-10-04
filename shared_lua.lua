@@ -1173,6 +1173,7 @@ function consolidate_lua_01_t( passedt )
        (  passedt.designation == "PROW"                                   ) or
        (  passedt.designation == "access_land"                            ) or
        (  passedt.designation == "adopted_footway"                        ) or
+       (  passedt.designation == "public_coast_path"                      ) or
        (  passedt.designation == "public_cycleway;public_footpath"        ) or 
        (( passedt.designation == "public_cycleway"                       )  and
         ( passedt["source:designation"] == "list_of_streets"             ))) then

@@ -8,6 +8,7 @@ Detect `embankment=dyke`, `embankment=levee`, `embankment=both` `embankment=left
 The language fallback for Welsh is now "whatever the default language for the location would be" rather than GA or GD.  See comments at https://www.openstreetmap.org/changeset/169884727 .
 Removed `amenity=minicab`; no longer in the data.
 Detect public cycleways on list of streets as "public"
+Detect `designation=public_coast_path` as public footpath.
 
 ## 25/09/2026
 Add more soft `surface` values which cause `unclassified`, `residential` and `service` roads to be handled differently.
