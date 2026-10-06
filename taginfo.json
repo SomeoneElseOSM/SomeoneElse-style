@@ -1661,6 +1661,8 @@
     { "key": "government", "description": "Detect government and non-station police offices" },
     { "key": "government", "value": "customs", "description": "Government customs offices are shown as black dots", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/office_nonspecific.p.16.png" },
     { "key": "government", "value": "police", "description": "Non-station police offices are shown as black dots", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/office_nonspecific.p.16.png" },
+    { "key": "grassland", "description": "Detect bracken" },
+    { "key": "grassland", "value": "bracken", "description": "Detect bracken as scrub" },
     { "key": "guest_house", "description": "Show Bed and Breakfast places as such" },
     { "key": "guest_house", "value": "bed_and_breakfast", "description": "Shown as 'B&B' in blue", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/bandb.p.20.png" },
     { "key": "guide_type", "description": "Show intermediary guideposts as route markers" },

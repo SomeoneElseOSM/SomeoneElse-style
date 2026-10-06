@@ -484,7 +484,9 @@ function consolidate_lua_01_t( passedt )
 -- ----------------------------------------------------------------------------
 -- Show natural=bracken as scrub
 -- ----------------------------------------------------------------------------
-   if ( passedt.natural  == "bracken" ) then
+   if ((  passedt.natural  == "bracken"      ) or
+       (( passedt.natural    == "grassland" ) and
+        ( passedt.grassland  == "bracken"   ))) then
       passedt.natural = "scrub"
    end
 

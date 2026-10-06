@@ -9,6 +9,7 @@ The language fallback for Welsh is now "whatever the default language for the lo
 Removed `amenity=minicab`; no longer in the data.
 Detect public cycleways on list of streets as "public"
 Detect `designation=public_coast_path` as public footpath.
+Detect `grassland=bracken` as scrub.
 
 ## 25/09/2026
 Add more soft `surface` values which cause `unclassified`, `residential` and `service` roads to be handled differently.
