@@ -1469,7 +1469,8 @@ function consolidate_lua_02_t( passedt )
 -- ----------------------------------------------------------------------------
 -- Show leisure=bike_park as landuse=recreation_ground
 -- ----------------------------------------------------------------------------
-   if ( passedt.leisure == "bike_park" ) then
+   if (( passedt.leisure == "bike_park"  )  or
+       ( passedt.leisure == "pitch_area" )) then
       passedt.landuse = "recreation_ground"
       passedt.leisure = nil
    end
