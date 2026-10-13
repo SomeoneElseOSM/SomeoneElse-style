@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20261011T171001Z",
+  "data_updated": "20261011T171002Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -249,7 +249,7 @@
     { "key": "amenity", "value": "gambling", "description": "Synonym for 'shop=bookmaker'.  Shown as a set of unlikely odds", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/shop_bookmaker.p.16.png" },
     { "key": "amenity", "value": "grave_yard", "description": "Shown as graveyard" },
     { "key": "amenity", "value": "grit_bin", "description": "Shown as brown grit bin", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/smoking_area.png" },
-    { "key": "amenity", "value": "gym", "description": "Shown as green dot ('nonspecific leisure')", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/leisure_nonspecific.p.16.png" },
+    { "key": "amenity", "value": "gym", "description": "Not a current value in OSM data.  Shown as green dot ('nonspecific leisure')", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/leisure_nonspecific.p.16.png" },
     { "key": "amenity", "value": "hall", "description": "Most offices shown as black dots", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/office_nonspecific.p.16.png" },
     { "key": "amenity", "value": "health_centre", "description": "Shown as a pink dot ('nonspecific health')", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/health_nonspecific.p.16.png" },
     { "key": "amenity", "value": "health_post", "description": "Synonym for 'clinic' unless an alternative 'healthcare' tag is set.  Shown as a pink dot ('nonspecific health')", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/health_nonspecific.p.16.png" },
