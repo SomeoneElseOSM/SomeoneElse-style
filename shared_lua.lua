@@ -1707,6 +1707,48 @@ function consolidate_lua_03_t( passedt )
    end
 
 -- ----------------------------------------------------------------------------
+-- Wide covered roads are treated as tunnels in both raster and vector.
+-- Previously raster only treated covered as tunnel.
+-- ----------------------------------------------------------------------------
+   if ((( passedt.highway   == "motorway"               ) or
+        ( passedt.highway   == "motorway_link"          ) or
+        ( passedt.highway   == "trunk"                  ) or
+        ( passedt.highway   == "trunk_link"             ) or
+        ( passedt.highway   == "primary"                ) or
+        ( passedt.highway   == "primary_link"           ) or
+        ( passedt.highway   == "primary_sidewalk"       ) or
+        ( passedt.highway   == "primary_verge"          ) or
+        ( passedt.highway   == "secondary"              ) or
+        ( passedt.highway   == "secondary_link"         ) or
+        ( passedt.highway   == "secondary_sidewalk"     ) or
+        ( passedt.highway   == "secondary_verge"        ) or
+        ( passedt.highway   == "tertiary"               ) or
+        ( passedt.highway   == "tertiary_link"          ) or
+        ( passedt.highway   == "tertiary_sidewalk"      ) or
+        ( passedt.highway   == "tertiary_verge"         ) or
+        ( passedt.highway   == "tertiary_ford"          ) or
+        ( passedt.highway   == "bus_guideway"           ) or
+        ( passedt.highway   == "busway"                 ) or
+        ( passedt.highway   == "residential"            ) or
+        ( passedt.highway   == "unclassified"           ) or
+        ( passedt.highway   == "unclassified_sidewalk"  ) or
+        ( passedt.highway   == "unclassified_verge"     ) or
+        ( passedt.highway   == "unclassified_ford"      ) or
+        ( passedt.highway   == "road"                   ) or
+        ( passedt.highway   == "service"                ) or
+        ( passedt.highway   == "service_ford"           ) or
+        ( passedt.highway   == "pedestrian"             ) or
+        ( passedt.highway   == "raceway"                ) or
+        ( passedt.highway   == "living_street"          ) or
+        ( passedt.highway   == "living_street_sidewalk" ) or
+        ( passedt.highway   == "living_street_verge"    ) or
+        ( passedt.highway   == "living_street_ford"     ) or
+        ( passedt.highway   == "construction"           )) and
+       (  passedt.covered   == "yes"                     )) then
+      passedt.tunnel = "yes"
+   end
+
+-- ----------------------------------------------------------------------------
 -- Something that is allegedly both a bridge and a tunnel on a waterway is 
 -- unlikely to be both of those things.
 -- ----------------------------------------------------------------------------

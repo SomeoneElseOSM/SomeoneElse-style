@@ -3,6 +3,7 @@ This page describes changes made in these projects: [SomeoneElse-style](https://
 
 ## As yet unreleased
 Show `leisure=pitch_area` as `landuse=recreation_ground`.
+Wide covered roads are treated as tunnels in both raster and vector.  Previously raster only treated covered as tunnel.
 
 ## Vector 11/10/2026, Raster as yet unreleased
 Detect `sac_scale=tidal` as a long ford.
