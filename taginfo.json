@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20261011T171004Z",
+  "data_updated": "20261011T171005Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -1474,6 +1474,7 @@
     { "key": "emergency", "value": "fire_extinguisher", "description": "Show fire extinguishers as a small pink 'F'", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/fireextinguisher.png" },
     { "key": "emergency", "value": "fire_hydrant", "description": "Shown as a pink 'H'", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/firehydrant.png" },
     { "key": "emergency", "value": "fire_station", "description": "Synonym for 'amenity=fire_station'.  Shown as a brown flame", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/firestation.p.16.png" },
+    { "key": "emergency", "value": "first_aid_kit", "description": "Detect bleed control kits" },
     { "key": "emergency", "value": "flotation device", "description": "Shown as a small pink ring" },
     { "key": "emergency", "value": "help_point", "description": "Show railway help points as 'HELP' in pink", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/help_point.png" },
     { "key": "emergency", "value": "life_ring", "description": "Shown as a small pink ring" },
@@ -1529,6 +1530,8 @@
     { "key": "fence_type", "value": "hedge", "description": "Detect obscure synonyms for hedges" },
     { "key": "fence_type", "value": "stone", "description": "Detect obscure synonyms for walls" },
     { "key": "fence_type", "value": "wall", "description": "Detect obscure synonyms for walls" },
+    { "key": "first_aid_kit", "description": "Various features extracted" },
+    { "key": "first_aid_kit", "value": "bleed_control_kit", "description": "Detect bleed control kits" },
     { "key": "flag", "description": "Does a bus stop have a flag or pole?" },
     { "key": "flag", "value": "no", "description": "Shown as blue bus with no bus stop flag or pole", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/bus_stop_nothing.png" },
     { "key": "flashing_lights", "description": "Does a potential crossing have flashing_lights?" },

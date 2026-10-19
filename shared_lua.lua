@@ -11907,6 +11907,14 @@ function consolidate_lua_04_t( passedt )
 -- Ones with an non-public, non-yes access value will be rendered less opaque,
 -- like other private items such as car parks.
 -- ----------------------------------------------------------------------------
+   if (( passedt.emergency     == "first_aid_kit"     ) and
+       ( passedt.first_aid_kit == "bleed_control_kit" )) then
+      passedt.amenity = "bleed_control_kit"
+      if ( passedt.indoor == "yes" ) then
+         passedt.access = "customers"
+      end
+   end
+
    if ( passedt.emergency == "bleed_control_kit" ) then
       passedt.amenity = "bleed_control_kit"
       if ( passedt.indoor == "yes" ) then
