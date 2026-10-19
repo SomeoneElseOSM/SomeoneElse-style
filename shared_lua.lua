@@ -102,6 +102,27 @@ function treat_was_as_disused_t( passedt )
       passedt["disused:landuse"] = passedt["was:landuse"]
    end
 
+   if ((  passedt["was:highway"]     ~= nil  ) and
+       (  passedt["was:highway"]     ~= ""   ) and
+       (( passedt["disused:highway"] == nil )  or
+        ( passedt["disused:highway"] == ""  ))) then
+      passedt["disused:highway"] = passedt["was:highway"]
+   end
+
+   if ((  passedt["was:leisure"]     ~= nil  ) and
+       (  passedt["was:leisure"]     ~= ""   ) and
+       (( passedt["disused:leisure"] == nil )  or
+        ( passedt["disused:leisure"] == ""  ))) then
+      passedt["disused:leisure"] = passedt["was:leisure"]
+   end
+
+   if ((  passedt["abandoned:public_transport"] ~= nil  ) and
+       (  passedt["abandoned:public_transport"] ~= ""   ) and
+       (( passedt["disused:public_transport"]  == nil )  or
+        ( passedt["disused:public_transport"]  == ""  ))) then
+      passedt["disused:public_transport"] = passedt["abandoned:public_transport"]
+   end
+
    if ((  passedt["historic:landuse"] ~= nil  ) and
        (  passedt["historic:landuse"] ~= ""   ) and
        (( passedt["disused:landuse"]  == nil )  or
@@ -1952,6 +1973,14 @@ function consolidate_lua_03_t( passedt )
         ( passedt.tourism == "yes"             ))  and
        (  passedt.place   ~= nil           )  and
        (  passedt.place   ~= ""            )) then
+      passedt.tourism = nil
+   end
+
+-- ----------------------------------------------------------------------------
+-- Bizarrely, sometimes tourism=attraction is used on tourist bus stops.
+-- ----------------------------------------------------------------------------
+   if (( passedt.tourism == "attraction" )  and
+       ( passedt.bus     == "yes"        )) then
       passedt.tourism = nil
    end
 
@@ -9629,6 +9658,54 @@ function consolidate_lua_03_t( passedt )
 -- ----------------------------------------------------------------------------
    if (( passedt.amenity == "lounger" ) or
        ( passedt.amenity == "chair"   )) then
+      passedt.amenity = "bench"
+   end
+
+-- ----------------------------------------------------------------------------
+-- Show things which have benches as an attribute as benches, if the thing
+-- isn't shown as something else
+-- ----------------------------------------------------------------------------
+   if ((  passedt.bench                       == "yes"     )  and
+       (( passedt.highway                     == nil      )   or
+        ( passedt.highway                     == ""       ))  and
+       (( passedt["disused:highway"]          == nil      )   or
+        ( passedt["disused:highway"]          == ""       ))  and
+       (( passedt["proposed:highway"]         == nil      )   or
+        ( passedt["proposed:highway"]         == ""       ))  and
+       (( passedt.leisure                     == nil      )   or
+        ( passedt.leisure                     == ""       ))  and
+       (( passedt["disused:leisure"]          == nil      )   or
+        ( passedt["disused:leisure"]          == ""       ))  and
+       (( passedt["demolished:leisure"]       == nil      )   or
+        ( passedt["demolished:leisure"]       == ""       ))  and
+       (( passedt.amenity                     == nil      )   or
+        ( passedt.amenity                     == ""       ))  and
+       (( passedt.railway                     == nil      )   or
+        ( passedt.railway                     == ""       ))  and
+       (( passedt["disused:railway"]          == nil      )   or
+        ( passedt["disused:railway"]          == ""       ))  and
+       (( passedt.public_transport            == nil      )   or
+        ( passedt.public_transport            == ""       ))  and
+       (( passedt["disused:public_transport"] == nil      )   or
+        ( passedt["disused:public_transport"] == ""       ))  and
+       (( passedt.natural                     == nil      )   or
+        ( passedt.natural                     == ""       ))  and
+       (( passedt.playground                  == nil      )   or
+        ( passedt.playground                  == ""       ))  and
+       (( passedt.tourism                     == nil      )   or
+        ( passedt.tourism                     == ""       ))  and
+       (( passedt.historic                    == nil      )   or
+        ( passedt.historic                    == ""       ))  and
+       (( passedt.man_made                    == nil      )   or
+        ( passedt.man_made                    == ""       ))  and
+       (( passedt.physically_present          == nil      )   or
+        ( passedt.physically_present          == ""       ))  and
+       (( passedt.barrier                     == nil      )   or
+        ( passedt.barrier                     == ""       ))  and
+       (( passedt.building                    == nil      )   or
+        ( passedt.building                    == ""       ))  and
+       (( passedt.landuse                     == nil      )   or
+        ( passedt.landuse                     == ""       ))) then
       passedt.amenity = "bench"
    end
 

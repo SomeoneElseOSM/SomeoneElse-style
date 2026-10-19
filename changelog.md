@@ -4,6 +4,9 @@ This page describes changes made in these projects: [SomeoneElse-style](https://
 ## As yet unreleased
 Show `leisure=pitch_area` as `landuse=recreation_ground`.
 Wide covered roads are treated as tunnels in both raster and vector.  Previously raster only treated covered as tunnel.
+Treat "was:highway" as "disused:highway", "was:leisure" as "disused:leisure", "was:public_transport" as "disused:public_transport".
+Detect benches that are not mapped as `amenity=bench` or as some other feature.
+Remove `tourism=attraction` from what are basically tourist bus stops.
 
 ## Vector 11/10/2026, Raster as yet unreleased
 Detect `sac_scale=tidal` as a long ford.

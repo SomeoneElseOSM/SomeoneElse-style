@@ -32,22 +32,22 @@ polygon_keys = { 'aeroway', 'area:aeroway', 'boundary', 'building', 'disused:lan
       'public_transport', 'seamark:type', 'shop', 'sport', 'tourism', 'waterway',
       'wetland', 'was:landuse', 'water'  }
 
-generic_keys = {'access','abandoned:railway','addr:housename','addr:housenumber','addr:interpolation',
+generic_keys = {'access', 'abandoned:public_transport', 'abandoned:railway','addr:housename','addr:housenumber','addr:interpolation',
    'admin_level','advertising','aerialway',
-   'aeroway','amenity','animal','area','area:aeroway', 'area:highway','barrier',
-   'bicycle','brand','bridge','bridleway','booth','boundary','building', 'canoe', 'capital','construction','covered',
-   'culvert','cutting','denomination','departures_board', 'defensive_works', 'designation','disused',
-   'disused:amenity','disused:building','disused:highway','disused:man_made',
-   'disused:military','disused:railway','disused:shop','ele',
+   'aeroway','amenity','animal','area','area:aeroway', 'area:highway', 'barrier', 'bench',
+   'bicycle','brand', 'bus', 'bridge','bridleway','booth','boundary','building', 'canoe', 'capital','construction','covered',
+   'culvert','cutting','denomination','departures_board', 'defensive_works', 'demolished:leisure', 'designation','disused',
+   'disused:amenity','disused:building','disused:highway', 'disused:leisure', 'disused:man_made',
+   'disused:military', 'disused:public_transport', 'disused:railway','disused:shop','ele',
    'embankment','emergency','entrance','foot','flood_prone','generation:source','geological','golf','government',
    'harbour','hazard','hazard_prone','hazard_type','highway','historic','horse','hours','information','intermittent',
    'junction','landcover','landuse','layer','leisure','lcn_ref','lock','locked',
-   'man_made','marker','military','motor_car','name','natural','ncn_milepost','office','oneway','operator',
-   'opening_hours:covid19','outlet','passenger_information_display','pipeline','pitch','place','playground',
-   'poi','population','police', 'power','power_source','public_transport',
+   'man_made','marker','military','motor_car','name','naptan:BusStopType', 'natural','ncn_milepost','office','oneway','operator',
+   'opening_hours:covid19','outlet','passenger_information_display', 'physically_present', 'pipeline','pitch','place','playground',
+   'poi','population','police', 'power','power_source', 'proposed:highway', 'public_transport',
    'railway','railway:historic','razed:railway','ref','religion','rescue_equipment','route','ruined:building','ruins:building',
    'school','seamark:type','seamark:rescue_station:category','service','shop','sport','surface',
-   'toll','tourism','tower:type', 'training','tunnel','water','waterway',
+   'toll','tourism','tower:type', 'training','tunnel', 'was:highway', 'was:leisure', 'water','waterway',
    'wetland', 'whitewater', 'width','wood','type', 'zoo' }
 
 function add_z_order(keyvalues)
