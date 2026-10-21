@@ -8,6 +8,7 @@ Treat "was:highway" as "disused:highway", "was:leisure" as "disused:leisure", "w
 Detect benches that are not mapped as `amenity=bench` or as some other feature.
 Remove `tourism=attraction` from what are basically tourist bus stops.
 Detect bleed control kits mapped as first aid kits.
+Changes green polygon colours for raster, svwd01 and svwd08 to match svwd03 changes in https://github.com/SomeoneElseOSM/SomeoneElse-vector-web-display/issues/50
 
 ## Vector 11/10/2026, Raster as yet unreleased
 Detect `sac_scale=tidal` as a long ford.
