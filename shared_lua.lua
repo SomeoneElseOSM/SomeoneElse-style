@@ -8110,6 +8110,14 @@ function consolidate_lua_03_t( passedt )
    end
 
 -- ----------------------------------------------------------------------------
+-- Handle tidal water areas.
+-- ----------------------------------------------------------------------------
+   if (( passedt.natural == "water"  )   and
+       ( passedt.tidal   == "yes"    )) then
+      passedt.natural = "tidalwater"
+   end
+
+-- ----------------------------------------------------------------------------
 -- Handle intermittent water areas.
 -- ----------------------------------------------------------------------------
    if ((( passedt.natural      == "water"  )    or
