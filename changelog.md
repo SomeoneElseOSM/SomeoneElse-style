@@ -1,7 +1,7 @@
 # Changes made to this rendering
 This page describes changes made in these projects: [SomeoneElse-style](https://github.com/SomeoneElseOSM/SomeoneElse-style), [SomeoneElse-style-legend](https://github.com/SomeoneElseOSM/SomeoneElse-style-legend) and [openstreetmap-carto-AJT](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT), and visible [on this site](//map.atownsend.org.uk/maps/map/map.html).  Since 2025 this also includes changes to lua code shared between raster and vector processing - hence the notes below about which a particular change applies to.  See [this changelog](https://github.com/SomeoneElseOSM/SomeoneElse-vector-extract/blob/main/resources/changelog_sve01.md) for where changes here affect the vector schema, and also other vector-only ones.
 
-## As yet unreleased
+## 22/10/2026
 Show `leisure=pitch_area` as `landuse=recreation_ground`.
 Wide covered roads are treated as tunnels in both raster and vector.  Previously raster only treated covered as tunnel.
 Treat "was:highway" as "disused:highway", "was:leisure" as "disused:leisure", "was:public_transport" as "disused:public_transport".
@@ -11,7 +11,7 @@ Detect bleed control kits mapped as first aid kits.
 Changes green polygon colours for raster, svwd01 and svwd08 to match svwd03 changes in https://github.com/SomeoneElseOSM/SomeoneElse-vector-web-display/issues/50
 Change tidal water colour to be sightly less blue.
 
-## Vector 11/10/2026, Raster as yet unreleased
+## Vector 11/10/2026, Raster 22/10/2026
 Detect `sac_scale=tidal` as a long ford.
 Detect `recycling_type=reverse_vending_machine as a reverse vending machine.
 Detect `embankment=dyke`, `embankment=levee`, `embankment=both` `embankment=left` as a standalone or other (highway-carrying) embankment.
