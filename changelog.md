@@ -3,6 +3,7 @@ This page describes changes made in these projects: [SomeoneElse-style](https://
 
 ## As yet unreleased
 Treat `amenity=playing_field`, `leisure=pitch_area` and `leisure=pitch_surface` as `leisure=recreation_ground`.
+Use benches, bins and shelters to detect that disused bus stops are physically present.
 
 ## 22/10/2026
 Show `leisure=pitch_area` as `landuse=recreation_ground`.

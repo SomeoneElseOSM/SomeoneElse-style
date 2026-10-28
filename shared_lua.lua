@@ -13509,10 +13509,13 @@ function consolidate_lua_04_t( passedt )
 -- We also show bus stands as disused bus stops - they are somewhere where you
 -- might expect to be able to get on a bus, but cannot.
 -- ----------------------------------------------------------------------------
-   if ((( passedt["disused:highway"]    == "bus_stop"  )  and
-        ( passedt.physically_present == "yes"       )) or
-       (  passedt.highway            == "bus_stand"  ) or
-       (  passedt.amenity            == "bus_stand"  )) then
+   if (((  passedt["disused:highway"] == "bus_stop"    )  and
+        (( passedt.physically_present == "yes"        )   or
+         ( passedt.shelter            == "yes"        )   or
+         ( passedt.bench              == "yes"        )   or
+         ( passedt.bin                == "yes"        ))) or
+       (   passedt.highway            == "bus_stand"    ) or
+       (   passedt.amenity            == "bus_stand"    )) then
       passedt.highway = "bus_stop_disused_pole"
       passedt["disused:highway"] = nil
       passedt.amenity = nil
