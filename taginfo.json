@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20261011T171005Z",
+  "data_updated": "20261011T171006Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -335,6 +335,7 @@
     { "key": "amenity", "value": "place_of_worship", "description": "Places of worship are shown with an appropriate symbol, such as 'taoist'", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/taoist.png" },
     { "key": "amenity", "value": "plant_hire;tool_hire", "description": "Shown as a synonym for 'shop=doityourself'.  Shown as a hammer and a spanner", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/shop_diy.p.16.png" },
     { "key": "amenity", "value": "playground_structure", "description": "Synonym for 'playground=structure'.  Shown as a green playground structure", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/playground_structure.p21.png" },
+    { "key": "amenity", "value": "playing_field", "description": "Synonym for recreation_ground" },
     { "key": "amenity", "value": "podiatrist", "description": "Shown as a pink dot ('nonspecific health')", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/health_nonspecific.p.16.png" },
     { "key": "amenity", "value": "police", "description": "Shown as brown handcuffs", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/police.p.16.png" },
     { "key": "amenity", "value": "post_box", "description": "Shown as brown letter", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/post_box.p.16.png" },
@@ -2236,6 +2237,7 @@
     { "key": "leisure", "value": "picnic_table", "description": "Shown as a brown picnic table", "icon_url": "https://raw.githubusercontent.com/SomeoneElseOSM/openstreetmap-carto-AJT/master/symbols/picnic.p.16.png" },
     { "key": "leisure", "value": "pitch", "description": "Leisure amenities shown in green" },
     { "key": "leisure", "value": "pitch_area", "description": "Treated as a synonym of `landuse=recreation_ground`" },
+    { "key": "leisure", "value": "pitch_surface", "description": "Treated as a synonym of `landuse=recreation_ground`" },
     { "key": "leisure", "value": "playground", "description": "Shown as playground" },
     { "key": "leisure", "value": "pool", "description": "Shown as 'leisure=swimming_pool'" },
     { "key": "leisure", "value": "practice_pitch", "description": "Shown as pitch" },
