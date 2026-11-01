@@ -4,6 +4,8 @@ This page describes changes made in these projects: [SomeoneElse-style](https://
 ## As yet unreleased
 Farm shops no longer need to be unnamed to count as "vending machines" - just either named produce or self service (but not take e.g. credit cards).
 Also, `self_service=only` is yet another way of hiding farm shops in plain sight.
+Don't show the various `pathnarrow` or `pathwide` tunnels until raster zoom 14.
+Don't show the raster "access=no" colouring until raster zoom 14.
 
 ## Vector 29/10/2026, Raster as yet unreleased
 Treat `amenity=playing_field`, `leisure=pitch_area` and `leisure=pitch_surface` as `leisure=recreation_ground`.
