@@ -3343,16 +3343,23 @@ function consolidate_lua_03_t( passedt )
    end
 
 -- ----------------------------------------------------------------------------
--- If a farm shop doesn't have a name but does have named produce, map across
+-- If a farm shop does have named produce or honesty box payment, map across
 -- to vending machine, and also the produce into "vending" for consideration 
 -- below.
 -- ----------------------------------------------------------------------------
-   if ((  passedt.shop                == "farm"   )  and
-       (( passedt.name                == nil     )   or
-        ( passedt.name                == ""      ))  and
-       ((( passedt.produce             ~= nil    )   and
-         ( passedt.produce             ~= ""     ))  or
-        (  passedt["payment:honesty_box"] == "yes"   ))) then
+   if ((   passedt.shop                    == "farm"   )  and
+       ((  passedt["payment:credit_cards"] == nil   )     or
+        (  passedt["payment:credit_cards"] == ""    ))    and
+       ((  passedt["payment:debit_cards"]  == nil   )     or
+        (  passedt["payment:debit_cards"]  == ""    ))    and
+       ((  passedt["payment:lightning"]    == nil   )     or
+        (  passedt["payment:lightning"]    == ""    ))    and
+       ((  passedt.phone                   == nil   )     or
+        (  passedt.phone                   == ""    ))    and
+       ((( passedt.produce                 ~= nil    )    and
+         ( passedt.produce                 ~= ""     ))   or
+        (  passedt["payment:honesty_box"]  == "yes"   )   or
+        (  passedt.self_service            == "only"  ))) then
       passedt.amenity = "vending_machine"
 
       if (( passedt.produce == nil ) or
@@ -3368,6 +3375,9 @@ function consolidate_lua_03_t( passedt )
       passedt.shop    = nil
    end
 
+-- ----------------------------------------------------------------------------
+-- "shop=eggs" is a special-case mapping to vending machine.
+-- ----------------------------------------------------------------------------
    if ((  passedt.shop == "eggs"  )  and
        (( passedt.name == nil    )   or
         ( passedt.name == ""     ))) then
@@ -3378,27 +3388,31 @@ function consolidate_lua_03_t( passedt )
 
 -- ----------------------------------------------------------------------------
 -- Some vending machines get the thing sold as the label.
--- "farm shop honesty box" might have been assigned higher up.
+-- "farm shop honesty box" might have been assigned just above.
 -- ----------------------------------------------------------------------------
-   if ((  passedt.amenity == "vending_machine"        ) and
-       (( passedt.name    == nil                     )  or
-        ( passedt.name    == ""                      )) and
-       (( passedt.vending == "milk"                  )  or
-        ( passedt.vending == "eggs"                  )  or
-        ( passedt.vending == "potatoes"              )  or
-        ( passedt.vending == "honey"                 )  or
-        ( passedt.vending == "cheese"                )  or
-        ( passedt.vending == "vegetables"            )  or
-        ( passedt.vending == "fruit"                 )  or
-        ( passedt.vending == "food"                  )  or
-        ( passedt.vending == "drinks"                )  or
-        ( passedt.vending == "sweets"                )  or
-        ( passedt.vending == "coffee"                )  or
-        ( passedt.vending == "photos"                )  or
-        ( passedt.vending == "maps"                  )  or
-        ( passedt.vending == "newspapers"            )  or
-        ( passedt.vending == "farm shop honesty box" ))) then
-      passedt.name = "(" .. passedt.vending .. ")"
+   if ( passedt.amenity == "vending_machine" ) then
+      if (( passedt.vending == "milk"                  )  or
+          ( passedt.vending == "eggs"                  )  or
+          ( passedt.vending == "potatoes"              )  or
+          ( passedt.vending == "honey"                 )  or
+          ( passedt.vending == "cheese"                )  or
+          ( passedt.vending == "vegetables"            )  or
+          ( passedt.vending == "fruit"                 )  or
+          ( passedt.vending == "food"                  )  or
+          ( passedt.vending == "drinks"                )  or
+          ( passedt.vending == "sweets"                )  or
+          ( passedt.vending == "coffee"                )  or
+          ( passedt.vending == "photos"                )  or
+          ( passedt.vending == "maps"                  )  or
+          ( passedt.vending == "newspapers"            )  or
+          ( passedt.vending == "farm shop honesty box" )) then
+         if (( passedt.name    == nil                     )  or
+             ( passedt.name    == ""                      )) then
+            passedt.name = "(" .. passedt.vending .. ")"
+         else
+            passedt.name = passedt.name .. " (" .. passedt.vending .. ")"
+         end
+      end
    end
 
 -- ----------------------------------------------------------------------------
