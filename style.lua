@@ -36,6 +36,7 @@ generic_keys = {'access', 'abandoned:public_transport', 'abandoned:railway','add
    'admin_level','advertising','aerialway',
    'aeroway','amenity','animal','area','area:aeroway', 'area:highway', 'barrier', 'bench',
    'bicycle','brand', 'bus', 'bridge','bridleway','booth','boundary','building', 'canoe', 'capital','construction','covered',
+   'crossing', 'crossing:markings', 'crossing:island', 'crossing_ref', 'crossing:signals', 
    'culvert','cutting','denomination','departures_board', 'defensive_works', 'demolished:leisure', 'designation','disused',
    'disused:amenity','disused:building','disused:highway', 'disused:leisure', 'disused:man_made',
    'disused:military', 'disused:public_transport', 'disused:railway','disused:shop','ele',
