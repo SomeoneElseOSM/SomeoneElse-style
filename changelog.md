@@ -1,6 +1,9 @@
 # Changes made to this rendering
 This page describes changes made in these projects: [SomeoneElse-style](https://github.com/SomeoneElseOSM/SomeoneElse-style), [SomeoneElse-style-legend](https://github.com/SomeoneElseOSM/SomeoneElse-style-legend) and [openstreetmap-carto-AJT](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT), and visible [on this site](//map.atownsend.org.uk/maps/map/map.html).  Since 2025 this also includes changes to lua code shared between raster and vector processing - hence the notes below about which a particular change applies to.  See [this changelog](https://github.com/SomeoneElseOSM/SomeoneElse-vector-extract/blob/main/resources/changelog_sve01.md) for where changes here affect the vector schema, and also other vector-only ones.
 
+## As yet unreleased
+Removed `tourism=attraction` from bandstands - they are already shown as bandstands.
+
 ## Vector 05/11/2026, Raster as yet unreleased
 Farm shops no longer need to be unnamed to count as "vending machines" - just either named produce or self service (but not take e.g. credit cards).
 Also, `self_service=only` is yet another way of hiding farm shops in plain sight.

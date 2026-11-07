@@ -3900,7 +3900,8 @@ function consolidate_lua_03_t( passedt )
         ( passedt.leisure   == "garden"                    )  or
         ( passedt.leisure   == "nature_reserve"            )  or
         ( passedt.leisure   == "park"                      )  or
-        ( passedt.leisure   == "sports_centre"             ))) then
+        ( passedt.leisure   == "sports_centre"             )  or
+        ( passedt.leisure   == "bandstand"                 ))) then
       passedt.tourism = nil
    end
 
