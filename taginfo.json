@@ -984,7 +984,6 @@
     { "key": "crossing", "value": "pegasus", "description": "Treated as 'highway=traffic_signals'" },
     { "key": "crossing", "value": "pelican", "description": "Treated as 'highway=traffic_signals'" },
     { "key": "crossing", "value": "pelican;traffic_signals", "description": "Treated as 'highway=traffic_signals'" },
-    { "key": "crossing", "value": "pelican;uncontrolled", "description": "Treated as 'highway=traffic_signals'" },
     { "key": "crossing", "value": "pelican;marked", "description": "Treated as 'highway=traffic_signals'" },
     { "key": "crossing", "value": "puffin", "description": "Treated as 'highway=traffic_signals'" },
     { "key": "crossing", "value": "signals", "description": "Treated as 'highway=traffic_signals'" },
