@@ -13721,10 +13721,14 @@ function consolidate_lua_04_t( passedt )
                passedt.highway = "bus_stop_timetable"
             end
          else
-            if (( passedt.flag               == "no"  ) or
-                ( passedt.pole               == "no"  ) or
-                ( passedt.physically_present == "no"  ) or
-                ( passedt["naptan:BusStopType"] == "CUS" )) then
+            if ((   passedt.flag                  == "no"    ) or
+                (   passedt.pole                  == "no"    ) or
+                (   passedt.physically_present    == "no"    ) or
+                ((  passedt.flag                  ~= "yes"  )  and
+                 (  passedt.pole                  ~= "yes"  )  and
+                 (  passedt.physically_present    ~= "yes"  )  and
+                 (( passedt["naptan:BusStopType"] == "CUS" )   or
+                  ( passedt["naptan:BusStopType"] == "HAR" )))) then
                passedt.highway = "bus_stop_nothing"
             else
                passedt.highway = "bus_stop_pole"

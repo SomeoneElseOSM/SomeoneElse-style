@@ -4,6 +4,7 @@ This page describes changes made in these projects: [SomeoneElse-style](https://
 ## As yet unreleased
 Removed `tourism=attraction` from bandstands - they are already shown as bandstands.
 Suppress some more silly very long walking relation names.
+Treat NaPTAN "hail and ride" stops as "pole not present" ones.  If a CUS or HAR stop is `physically_present`, show it as such.
 
 ## Vector 05/11/2026, Raster as yet unreleased
 Farm shops no longer need to be unnamed to count as "vending machines" - just either named produce or self service (but not take e.g. credit cards).
