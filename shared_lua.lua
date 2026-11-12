@@ -13601,6 +13601,22 @@ function consolidate_lua_04_t( passedt )
    end
 
 -- ----------------------------------------------------------------------------
+-- Some bus stops have been imported without a "highway" tag.  We'll set that
+-- here, and they'll be shown based on the "physically_present" tag later.
+-- If a stop has been verified as disused 
+-- we obviously do not add a "highway" tag.
+-- ----------------------------------------------------------------------------
+   if (( passedt["naptan:BusStopType"] == "HAR"     )  and
+       (( passedt.bighway              == nil      )   or
+        ( passedt.highway              == ""       ))  and
+       (( passedt["disused:highway"]   == nil      )   or
+        ( passedt["disused:highway"]   == ""       ))  and
+       (( passedt["proposed:highway"]  == nil      )   or
+        ( passedt["proposed:highway"]  == ""       ))) then
+      passedt.highway = "bus_stop"
+   end
+   
+-- ----------------------------------------------------------------------------
 -- Concatenate a couple of names for bus stops so that the most useful ones
 -- are displayed.
 -- ----------------------------------------------------------------------------
