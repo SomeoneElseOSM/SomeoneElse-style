@@ -14214,6 +14214,10 @@ function fix_silly_rwn_names_t( passedt )
           passedt.name = "John O'Groats Trail"
        end
 
+       if ( string.find( passedt.name, "Lark Rise Farm Walks", 1, true ) == 1 ) then
+          passedt.name = "Lark Rise Farm Walks"
+       end
+
        if ( string.find( passedt.name, "Lundy Bay and Port Quin", 1, true ) == 1 ) then
           passedt.name = "Lundy Bay and Port Quin"
        end
@@ -14222,12 +14226,32 @@ function fix_silly_rwn_names_t( passedt )
           passedt.name = "Melford Hall to Lavenham"
        end
 
+       if ( string.find( passedt.name, "North Sperrins Way", 1, true ) == 1 ) then
+          passedt.name = "North Sperrins Way"
+       end
+
+       if ( string.find( passedt.name, "Pennine Way (Tan Hill to Kirk Yetholm) - deviation", 1, true ) == 1 ) then
+          passedt.name = "Pennine Way (dev)"
+       end
+
        if ( string.find( passedt.name, "Pennine Way (Tan Hill to Yetholm) - deviation", 1, true ) == 1 ) then
           passedt.name = "Pennine Way (dev)"
        end
 
+       if ( string.find( passedt.name, "Pentland Way", 1, true ) == 1 ) then
+          passedt.name = "Pentland Way"
+       end
+
        if ( string.find( passedt.name, "Sandlings Walk", 1, true ) == 1 ) then
           passedt.name = "Sandlings Walk"
+       end
+
+       if ( string.find( passedt.name, "Southern Upland Way", 1, true ) == 1 ) then
+          passedt.name = "Southern Upland Way"
+       end
+
+       if ( string.find( passedt.name, "Southern Uplands Way", 1, true ) == 1 ) then
+          passedt.name = "Southern Uplands Way"
        end
 
        if ( string.find( passedt.name, "Staffordshire Way", 1, true ) == 1 ) then
@@ -14257,12 +14281,20 @@ function fix_silly_rwn_names_t( passedt )
           passedt.name = "Trans-Pennine Trail"
        end
 
+       if ( string.find( passedt.name, "Valley Walk (Red Route)", 1, true ) == 1 ) then
+          passedt.name = "Valley Walk (Red Route)"
+       end
+
        if ( string.find( passedt.name, "Viking Way", 1, true ) == 1 ) then
           passedt.name = "Viking Way"
        end
 
-       if ( string.find( passedt.name, "Watership Down", 1, true ) == 1 ) then
-          passedt.name = "Watership Down"
+       if ( string.find( passedt.name, "Wales Coast Path", 1, true ) == 1 ) then
+          passedt.name = "Wales Coast Path"
+       end
+
+       if ( string.find( passedt.name, "Water of Leith Walkway", 1, true ) == 1 ) then
+          passedt.name = "Water of Leith Walkway"
        end
 
        if ( string.find( passedt.name, "Wey Navigation", 1, true ) == 1 ) then
