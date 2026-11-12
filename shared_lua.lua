@@ -8595,8 +8595,9 @@ function consolidate_lua_03_t( passedt )
                       ( passedt["crossing:signals"] ~= "no"      ) and
                       ( passedt["crossing:signals"] ~= "separate" )) then
                      passedt.highway = "crossing"
+                  else
 -- ----------------------------------------------------------------------------
---                  else
+-- of the "crossing:" tags,
 -- "crossing:barrier" would be next, but isn't helpful, so ignore.
 -- Next, "crossing:continuous", but that implies no stopping for pedestrians, 
 -- so also ignore.
@@ -8605,7 +8606,20 @@ function consolidate_lua_03_t( passedt )
 -- The "crossing:activation" outliers occur with crossing:light" and are ignored.
 -- "crossing:supervision" doesn't occur on its own.
 -- After that we're into the long tail of random lifecycle tags, all ignored.
+-- Next; what tags with a crossing tag (but not on their own) 
+-- should we consider?
 -- ----------------------------------------------------------------------------
+                     if (((  passedt.crossing        == "unmarked"     )  or 
+                          (  passedt.crossing        == "uncontrolled" )) and
+                         ((( passedt.tactile_paving  ~= nil           )   and
+                           ( passedt.tactile_paving  ~= ""            )   and
+                           ( passedt.tactile_paving  ~= "no"          ))  or
+                          (( passedt.traffic_calming ~= nil           )   and
+                           ( passedt.traffic_calming ~= ""            )   and
+                           ( passedt.traffic_calming ~= "no"          )   and
+                           ( passedt.traffic_calming ~= "none"        )))) then
+                        passedt.highway = "crossing"
+                     end
                   end
                end
             end
