@@ -1009,6 +1009,8 @@
     { "key": "crossing:markings", "value": "surface", "description": "Excluded from 'highway=crossing'" },
     { "key": "crossing:signals", "description": "Some crossing:signals types extracted as 'highway=traffic_signals'" },
     { "key": "crossing:signals", "value": "yes", "description": "Extracted as 'highway=traffic_signals'" },
+    { "key": "crossing:signed", "description": "'crossing:signed' implies 'really a crossing'" },
+    { "key": "crossing:signed", "value": "yes", "description": "'crossing:signed' implies 'really a crossing'" },
     { "key": "crossing_ref", "description": "Some crossing_ref types extracted as 'highway=traffic_signals'" },
     { "key": "crossing_ref", "value": "informal", "description": "Indicates no formal crossing" },
     { "key": "crossing_ref", "value": "none", "description": "Indicates no formal crossing" },

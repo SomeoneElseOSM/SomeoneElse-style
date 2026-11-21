@@ -8717,6 +8717,7 @@ function consolidate_lua_03_t( passedt )
                  ( passedt["crossing:signals"]  == ""                      )  or
                  ( passedt["crossing:signals"]  == "no"                    )  or
                  ( passedt["crossing:signals"]  == "separate"              )) and
+                (  passedt["crossing:signed"]   ~= "yes"                    ) and
                 (( passedt.tactile_paving       == nil                     )  or
                  ( passedt.tactile_paving       == ""                      )  or
                  ( passedt.tactile_paving       == "no"                    )) and
