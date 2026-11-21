@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://raw.githubusercontent.com/SomeoneElseOSM/SomeoneElse-style/master/taginfo.json",
-  "data_updated": "20261028T115902Z",
+  "data_updated": "20261028T115903Z",
   "project": {
     "name": "SomeoneElse: Rural pedestrian CartoCSS maps",
     "description": "This map style is designed for England and Wales-based rural pedestrians.  It shows public rights of way and long distance paths.",
@@ -974,8 +974,6 @@
     { "key": "crossing", "description": "Some crossing types treated as 'highway=traffic_signals'" },
     { "key": "crossing", "value": "controlled", "description": "Treated as 'highway=crossing'" },
     { "key": "crossing", "value": "island", "description": "Treated as 'highway=crossing'" },
-    { "key": "crossing", "value": "island;traffic_signals", "description": "Treated as 'highway=traffic_signals'" },
-    { "key": "crossing", "value": "light controlled", "description": "Treated as 'highway=traffic_signals'" },
     { "key": "crossing", "value": "marked", "description": "Treated as 'highway=crossing'" },
     { "key": "crossing", "value": "marked;uncontrolled", "description": "Treated as 'highway=crossing'" },
     { "key": "crossing", "value": "no", "description": "Treated as not a 'highway=crossing'" },
