@@ -107,7 +107,7 @@ fi
 # What's the first file that we are interested in?
 #
 #file_prefix1=europe
-#file_page1=https://download.geofabrik.de/${file_prefix1}.html
+#file_page1=https://download.geofabrik.de/${file_prefix1}/index.html
 #file_url1=https://download.geofabrik.de/${file_prefix1}/${file_prefix1}-latest.osm.pbf
 #
 #file_prefix1=britain-and-ireland
