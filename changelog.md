@@ -1,10 +1,10 @@
 # Changes made to this rendering
 This page describes changes made in these projects: [SomeoneElse-style](https://github.com/SomeoneElseOSM/SomeoneElse-style), [SomeoneElse-style-legend](https://github.com/SomeoneElseOSM/SomeoneElse-style-legend) and [openstreetmap-carto-AJT](https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT), and visible [on this site](//map.atownsend.org.uk/maps/map/map.html).  Since 2025 this also includes changes to lua code shared between raster and vector processing - hence the notes below about which a particular change applies to.  See [this changelog](https://github.com/SomeoneElseOSM/SomeoneElse-vector-extract/blob/main/resources/changelog_sve01.md) for where changes here affect the vector schema, and also other vector-only ones.
 
-## As yet unreleased
+## 21/11/2026
 `crossing:signed` is yet another "random" value that can influence whether something that might be a crossing in OSM actually is.
 
-## Raster as yet unreleased, vector 16/11/2026
+## Raster 21/11/2026, vector 16/11/2026
 If NaPTAN "hail and ride" stops have been imported without `highway` tags, show as other HAR stops (based on the `physically_present` tag).
 Detect some more "actual crossings" based on e.g. `tactile_paving` or `traffic_calming`.
 Suppress some more silly very long walking relation names.
